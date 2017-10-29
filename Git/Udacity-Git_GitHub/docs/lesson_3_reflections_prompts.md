@@ -1,7 +1,26 @@
 Using GitHub to Collaborate
 ===========================
 
-# 
+# Create a GitHub account
+In this lesson, you'll be sharing changes on GitHub, so you'll need a GitHub account. If you don't already have one, you can create an account by visiting github.com and clicking "Sign up for GitHub".
+
+When you're asked to choose a plan, you can choose a free plan, since we won't be using any of the paid features in this course.
+
+## Set up Password Caching
+Every time you send changes to GitHub via the command line, you'll need to type your password to prove that you have permission to modify the repository. This can get annoying quickly, so many people like to set up password caching, which will let you type your password once and have it auto-filled on that computer in the future. To do this, follow the instructions here. If you're using Windows and you followed our Git installation instructions earlier, you're using msysgit, so you can follow the instructions for msysgit.
+
+
+# Adding A Remote
+## Copy the HTTPS URL, not the SSH URL!
+At 1:29, Caroline copies the URL to the repository. The video mistakenly shows the URL to use if the repository is accessed over SSH. The course assumes that the student will use HTTPS, not SSH. Please click on the `HTTPS` button and copy the URL that shows up for HTTPS. It will begin with `https://` rather than `git@github.com`.
+
+If you are interested in using SSH instead, you can follow the instructions [here](https://help.github.com/articles/generating-ssh-keys/), but this is not recommended unless you are already familiar with SSH keys.
+
+## Sharing your reflections
+We encourage you to be bold in sharing your reflections on GitHub. If you're not happy with any of your responses, the best solution is to update that response in one or more new commits. The previous response will still be visible in the commit history, but updating your perspective over time is part of the learning process! Having a commit history that shows your updating perspective will reflect well on you, not poorly.
+
+That said, if you've written anything in your reflections repository that you are not comfortable sharing, you can checkout the commit before you introduced that change, create a new branch at that point, and commit any other changes you are willing to share to the new branch. Then, by only pushing your new branch, you can keep the changes on your original branch private.
+
 
 
 
