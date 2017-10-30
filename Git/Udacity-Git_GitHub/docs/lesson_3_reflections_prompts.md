@@ -22,7 +22,44 @@ We encourage you to be bold in sharing your reflections on GitHub. If you're not
 That said, if you've written anything in your reflections repository that you are not comfortable sharing, you can checkout the commit before you introduced that change, create a new branch at that point, and commit any other changes you are willing to share to the new branch. Then, by only pushing your new branch, you can keep the changes on your original branch private.
 
 
+# Make changes on GitHub
+Now that you've seen how to create a remote repository and push changes to it, use the GitHub website to create a new file for your lesson 3 reflections and add the below question and your thoughts on it.
 
+If you prefer to start from the file [lesson_3_reflection_prompts.txt](https://www.udacity.com/api/nodes/3055218617/supplemental_media/lesson-3-reflection-promptstxt/download) in the Downloadables section, you can download that file, commit it locally, push to GitHub, then add your response using the GitHub website.
+
+## Reflect: Using a remote repository
+Use the following reflection prompt:
+    __When would you want to use a remote repository rather than keeping all your work local?__
+
+
+# Concept Map: GitHub, Push, Pull, Remote
+We’ve introduced a few new concepts since we last revisited our concept map.
++ GitHub
++ git push
++ git pull
++ remote
+
+## Previous Version
+Here’s what the map looked like the last time we added new concepts.
+[!Concept Map from last time](https://lh5.ggpht.com/Z28RbAv_05Kk0yYk3MSBNqMIM8zRWSLL4rTmhwnX4oQ8Xwt30mndbKJT2vJ8bATFAiDomLL3O2VgUD2VUrk=s300)
+
+## Where Do the New Concepts Go?
+There's wasn't a lot of screen real estate left, so we pruned off some of the concepts from last lesson that aren't tightly entwined with the new ones that will come up this lesson, and added in nodes for the new concepts.
+
+[!Which concept belongs where? Concept Map with blanks](https://lh3.ggpht.com/6cQ5xH6wnhnVXUanc5R2HE0-ayTaL-4eApx7F2D7gPiRCMmFET3lXH_WiC2GpU6yZm-RwNwA_v69TPZkJK0=s300#w=1800&h=1012)
+
+In the following quiz, write in the concept that you think belongs in each new empty node.
+
+Remember that this map is subjective, so what we have here may not fit your mental model exactly; feel free to draw out the connections you see between the concepts and share your version on the forums!
+
+
+# Reflect: Manual vs. automatic pull
+Now that you've both pushed changes to GitHub, and pulled changes from GitHub, add the following question and your thoughts on it to your reflections file:
+    __Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?__
+
+
+# Fork The Recipes Repository
+Larry's repository on GitHub can be found [here](https://github.com/LarryMad/recipes).
 
 
 
