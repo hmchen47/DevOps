@@ -115,6 +115,26 @@ You'll want to make sure you check out the master branch before following the st
 Just as in lesson 2, before running `git commit` to create the merge commit, you'll need to use `git add` to add any files that had conflicts to the staging area.
 
 
+# Commit merging a pull request
+After running git log -n 1, you should have seen output something like this:
+> commit bc368511c6406028c77e2631f77c4d22a5da16d0
+> Merge: 79fff84 23d1775
+> Author: cbuckey 
+> Date:   Tue Sep 30 18:50:28 2014 -0400
+> 
+>     Merge pull request #1 from cbuckey-uda/different-oil
+> 
+>     Change vegetable oil to canola oil
+
+Notice that the commit message:
++ Indicates that a pull request was merged
++ Gives the number of the pull request (#1 here)
++ Gives the branch the pull request was merged from (cbuckey-uda/different-oil here).
++ Contains the title of the pull request.
+
+GitHub automatically creates a commit message like this whenever a pull request is merged to make it easy to see pull requests in the commit history. Even when the merge is a fast-forward merge, GitHub still creates this commit.
+
+
 # Concept Map: Fork, Fetch, Pull Request, Fast-Forward Merge
 Here are the big new concepts we’ve introduced since we last revisited our concept map:
 + fork
@@ -173,6 +193,8 @@ If your pull request would result in a merge conflict, and you're not sure how t
 
 
 
+Original refection contents
+---------------------------
 
 When would you want to use a remote repository rather than keeping all your work local?
 
