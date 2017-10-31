@@ -62,15 +62,112 @@ Now that you've both pushed changes to GitHub, and pulled changes from GitHub, a
 Larry's repository on GitHub can be found [here](https://github.com/LarryMad/recipes).
 
 
+# Add a new recipe to the repository
+On your own computer, add a new recipe for a food that you like and commit it on the master branch.
+
+## Push your changes
+Push the master branch to your fork. If you're having trouble remembering how to push, you may want to rewatch [this video](https://classroom.udacity.com/courses/ud775/lessons/3105028581/concepts/30736788930923#). When you're finished, continue to the next screen to answer a question about where your commit exists at different points in time.
 
 
+# Forks, Clones, and Branches
+Now that you've seen how you can make a copy of a repository on GitHub by forking it, go add the the following question and your thoughts on it to your reflections file:
+    __Describe the differences between forks, clones, and branches. When would you use one instead of another?__
 
 
+# Simulate Sarah's Changes
+In the Downloadables section, there is a file called [sarah_changes.sh](https://www.udacity.com/api/nodes/3108878699/supplemental_media/sarah-changessh/download?_ga=1.34385894.672083044.1467344711), which contains code to make it look like Sarah has modified your fork on GitHub. To run the code, download the file, then using Git Bash or your terminal, cd to the directory where you've saved it. Then type `bash sarah_changes.sh` followed by a space, followed by the url to your fork. For example, if Caroline were running the code, she would type bash `sarah_changes.sh` https://github.com/cbuckey-uda/recipes.git, but you should use the url for your fork, not Caroline's fork. If you haven't set up password caching, then you will be prompted to enter your GitHub username and password.
+
+# Which commits exist where?
+The commit by Larry adding the chili recipe should have been in both places, since it was present in the original repository before you forked it. Your commit adding a new spice should only have been present locally, since you made the commit locally but didn't push. The commit by Sarah removing cumin should only have been present on GitHub, since Sarah made the change and pushed it to GitHub, but you didn't pull yet.
 
 
+# Reflect: Local copies of remote branches
+Now that you've seen how to update your local copy of remote branches, and how to combine conflicting changes from multiple people, add the following question and your thoughts on it to your reflections file:
+    __What is the benefit of having a copy of the last known state of the remote stored locally?__
 
 
+# Making A Pull Request
+Suppose you run each of the given commands in order with the local `master` branch checked out. Check each place (working directory, staging area, local `master`, or GitHub `master`) where the files would be changed by that command.
 
+Sarah accidentally says that the local master is the only thing that changes when you run `git pull origin master`. However, the working directory and staging area will also update when you run `git pull`. That's why when you run `git pull`, you see your files update, not just the `git log` output.
+
+
+# Reflect: Collaboration using Git and GitHub
+Now that you've seen how multiple people can share changes to a project using GitHub, and review proposed changes using pull requests, go add the following question and your thoughts on it to your reflections file:
+    __How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?__
+
+
+# Updating Your Local Repository
+You can download `sarah_changes_2.sh` [here](https://www.udacity.com/api/nodes/3106648623/supplemental_media/sarah-changes-2sh/download?_ga=1.238512199.672083044.1467344711)
+
+## Simulate Sarah's changes
+To simulate Sarah's changes, first download the file `sarah_changes_2.sh` from the Downloadables section. Then, using Git Bash or your terminal, cd to the directory where you've saved the file. Then type `bash sarah_changes_2.sh` followed by a space, followed by the url to your fork. For example, if Caroline were running the code, she would type `bash sarah_changes_2.sh https://github.com/cbuckey-uda/recipes.git`, but you should use the url for your fork, not Caroline's fork. If you haven't set up password-caching, then you will be prompted to enter your GitHub username and password.
+
+Note: This code will not actually create a pull request. Instead, it will update the commit history on GitHub to make it look as though the pull request has already been merged. You will not need to merge a pull request. Instead, check for a commit on the master branch on GitHub with the message "Merge pull request".
+
+## Make sure you are on the master branch
+You'll want to make sure you check out the master branch before following the steps in this video.
+
+## Make sure you are on the master branch
+You'll want to make sure you check out the master branch before following the steps in the instructions video.
+
+## Use `git add` on the conflicting files before committing
+Just as in lesson 2, before running `git commit` to create the merge commit, you'll need to use `git add` to add any files that had conflicts to the staging area.
+
+
+# Concept Map: Fork, Fetch, Pull Request, Fast-Forward Merge
+Here are the big new concepts we’ve introduced since we last revisited our concept map:
++ fork
++ fetch
++ pull request
++ fast-forward merge
+
+## Previous Version
+Here’s what the map looked like the last time we added new concepts.
+[!Concept Map from last time](https://lh4.ggpht.com/wEnzBhcuYbVkhm9Np2M10M2WyL6hwyZntk7CQurM-40ivnwYZpcFDNYD7XLez3fw2mHSHfzxrjSUsVVoKQ=s350)
+
+## Where Do the New Concepts Go?
+Here's how we fit the new concepts in to the map. Which new concept belongs where?  
+[!Concept Map with blanks](https://lh4.ggpht.com/08c6Bro_8Pv-IpiEBLkupgi6Z8EQI-5REm9ts1vf3BjkkGC2V3_lilY9P5vc-AjSBUUCNzV7TVf2klrTUogO=s350#w=1800&h=1012)
+
+In the following quiz, write in the concept that you think belongs in each new empty node.
+
+Remember that this map is subjective, so what we have here may not fit your mental model exactly; feel free to draw out the connections you see between the concepts and share your version on the forums!
+
+
+# Concept Map: Fork, Fetch, Pull Request
+You can see the [full final version](https://www.udacity.com/wiki/ud775/concept-map?nocache) of the concept map here, with all the nodes, including those we pruned in earlier versions.
+
+
+# Reflect: When to use a separate branch
+You just saw that the workflow when making changes in a separate branch is more complicated than working directly in master, especially when you need to stay up-to-date with changes others are making. Rather than simply pulling and pushing, you need to pull changes into your local master branch, merge the local master into your branch (different-oil, in our case), then push your branch to the remote before finally merging your branch into master, either locally or on GitHub.
+
+Given that, please add the following question and your thoughts on it to your reflections file:
+    __When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?__
+
+
+# Fork the repository and clone your fork
+Now that you've learned how to fork a repository, push changes to your fork, and make a pull request, you’re ready to contribute to the create-your-own-adventure story that you saw at the beginning of the lesson. To do this, first you should fork [this repository](https://github.com/udacity/create-your-own-adventure). Then clone your fork, and make a branch to make your changes in.
+
+Note: You could make your changes directly to the master branch in your fork, but when contributing to a public repository, it’s standard practice to make the changes in a non-master branch within the fork. This way, you can easily keep your master branch up-to-date with master of the original repository, and merge changes from master into your branch when you are ready.
+
+Note for Windows Users: The story has grown so large that it exceeds Windows' path length limit. If you encounter an error when cloning you can work around it by modifying a configuration setting. Run this command in git bash: `git config --system core.longpaths true`.
+
+## Make a change to the story
+Next, you should actually make a change to the story. For instructions on how to do so, please read the [README](https://github.com/udacity/create-your-own-adventure/blob/master/README.md) in the create-your-own-adventure repository.
+
+## Make a pull request
+Next, you should make a pull request containing your changes to the original repository. To do this, click the "pull request" button from your branch like you did before, but this time, leave the original repository as the base.
+
+## Ask for your pull request to be merged
+You don't have permission to modify this repository, so you'll need someone at Udacity to merge your pull request. Our helpful bot Casey may be able to merge your pull request automatically. To have your pull request automatically merged, you'll need to follow the guidelines in the [README](https://github.com/udacity/create-your-own-adventure/blob/master/README.md) of the repository, and in addition you won't be able to delete or modify lines. That restriction on deletions is because Casey doesn't want to merge a request that accidentally deletes part of the story, and she can't tell the difference between an accidental deletion and an intentional modification. To request auto-merging, leave a comment on the pull request containing "@casey-collab". For example "Please review this, @casey-collab". Make sure to leave the comment on the "Conversation" tab of the pull request, not the "Files changed" tab.
+
+There are some valid pull requests that Casey won't be able to merge. For example, she won't accept a pull request that fixes a typo, since that modifies a line. If you'd like to make a pull request Casey can't merge, feel free to do so, and someone from Udacity will merge the pull request if we have time. However, we can't guarantee a response to these pull requests.
+
+## If needed, update your pull request
+If someone merges your pull request or leaves a comment, GitHub will email you and let you know. If you're asked to make some changes, push those changes to your fork to update the pull request. Make sure you let the reviewer know that they should take another look!
+
+If your pull request would result in a merge conflict, and you're not sure how to resolve it, see the next video for instructions.
 
 
 
