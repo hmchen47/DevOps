@@ -44,42 +44,41 @@ A virtual machine is a program that runs on your Windows or Mac computer, and th
     + On Windows, Git will provide you with the Git Bash terminal program, which you will use to run and connect to your Linux VM.
 
 2. Find your terminal program
-To take this course you will need to use a terminal program, which presents the shell user interface and lets you log in to your Linux VM.
-
-Windows: Use the Git Bash program, which is installed with Git (above).
-Mac OS X: Use the Terminal program, located in your Applications/Utilities folder.
-Linux: Use any terminal program (e.g. xterm or gnome-terminal).
+    To take this course you will need to use a terminal program, which presents the shell user interface and lets you log in to your Linux VM.
+    + Windows: Use the Git Bash program, which is installed with Git (above).
+    + Mac OS X: Use the Terminal program, located in your Applications/Utilities folder.
+    + Linux: Use any terminal program (e.g. xterm or gnome-terminal).
 3. Install VirtualBox
-VirtualBox is the software that actually runs the VM. You can download it from virtualbox.org, here. Install the platform package for your operating system. You do not need the extension pack or the SDK. You do not need to launch VirtualBox after installing it.
+    VirtualBox is the software that actually runs the VM. You can download it from virtualbox.org, here. Install the platform package for your operating system. You do not need the extension pack or the SDK. You do not need to launch VirtualBox after installing it.
 
-Ubuntu 14.04 Note: If you are running Ubuntu 14.04, install VirtualBox using the Ubuntu Software Center, not the virtualbox.org web site. Due to a reported bug, installing VirtualBox from the site may uninstall other software you need.
+    Ubuntu 14.04 Note: If you are running Ubuntu 14.04, install VirtualBox using the Ubuntu Software Center, not the virtualbox.org web site. Due to a reported bug, installing VirtualBox from the site may uninstall other software you need.
 
 4. Install Vagrant
-Vagrant is the software that configures the VM and lets you share files between your host computer and the VM's filesystem. You can download it from vagrantup.com. Install the version for your operating system.
+    Vagrant is the software that configures the VM and lets you share files between your host computer and the VM's filesystem. You can download it from vagrantup.com. Install the version for your operating system.
 
-Windows Note: The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
+    Windows Note: The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
 
 5. Download the VM configuration file
-Make a new folder to keep your workspace for this course. You might call it Shell, but whatever name you pick is OK. Keep track of what folder you created it in (for instance, Desktop).
+    Make a new folder to keep your workspace for this course. You might call it Shell, but whatever name you pick is OK. Keep track of what folder you created it in (for instance, Desktop).
 
-In the Supporting Materials section of this page, below, you'll find a link to the configuration file, called Vagrantfile. Download this file into the new folder you just created.
+    In the Supporting Materials section of this page, below, you'll find a link to the configuration file, called Vagrantfile. Download this file into the new folder you just created.
 
 6. Run the virtual machine!
-Open your terminal program. Type this shell command and press Enter:
+    Open your terminal program. Type this shell command and press Enter:
+    ```
+    cd Desktop/Shell
+    ```
+    (If your new folder is called something other than "Shell", or is located somewhere other than "Desktop", change those.)
 
-cd Desktop/Shell
+    Then start the VM by running the command `vagrant up`.
 
-(If your new folder is called something other than "Shell", or is located somewhere other than "Desktop", change those.)
+    This will make your system download the Linux OS and start up the virtual machine. Unfortunately, this will take a long time on most network connections. Fortunately, you only have to do it once, and the same Linux OS image will work for later Udacity courses too.
 
-Then start the VM by running the command vagrant up.
-
-This will make your system download the Linux OS and start up the virtual machine. Unfortunately, this will take a long time on most network connections. Fortunately, you only have to do it once, and the same Linux OS image will work for later Udacity courses too.
-
-Once it is done, run the command vagrant ssh.
+    Once it is done, run the command `vagrant ssh`.
 
 And you will be logged in to the virtual machine and ready to do the course exercises!
-The Udacity VM is the official shell for this class, but if your computer already has a Unix* shell you can use it if you prefer.
+    The Udacity VM is the official shell for this class, but if your computer already has a Unix* shell you can use it if you prefer.
 
-Caveat: Your computer's own shell may differ from the VM in unanticipated ways, and may not have all the programs installed which the VM provides. The recommended environment is the VM.
+    Caveat: Your computer's own shell may differ from the VM in unanticipated ways, and may not have all the programs installed which the VM provides. The recommended environment is the VM.
 
 * if you're running Linux or Mac OS X for instance
