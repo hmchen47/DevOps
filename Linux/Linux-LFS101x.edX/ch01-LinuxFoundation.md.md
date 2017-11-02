@@ -143,4 +143,8 @@ The three distribution families (Fedora, SUSE, and Debian) we are using are upst
 [diagram](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ce902e4a060199a9fd62587d89b81768/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Drag_and_Drop_Background.png)
 
 
-
+# Summary
+You have completed this chapter. Let’s summarize the key concepts covered:
++ The Linux Foundation is the umbrella organization for many critical open source projects that power corporations today, spanning all industry sectors. Its work today extends far beyond Linux, fostering innovation at every layer of the software stack.
++ The Linux Foundation training is for the community and by the community. Linux training is distribution-flexible, technically advanced, and created with the leaders of the Linux development community.
++ There are three major distribution families within Linux: __Fedora__, __SUSE__ and __Debian__. In this course, we will work with representative members of all of these families throughout.
