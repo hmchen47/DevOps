@@ -168,7 +168,7 @@ Termonologies:
 
 	A. A collection of software making up a Linux-based Operating system.
 	B. A program that runs as a background process.
-	C. An interface for typing commands for the Operating System to execute. correct
+	C. An interface for typing commands for the Operating System to execute. 
 	D. A list of commands requested to be run in the order presented.
 
 	Ans: C
@@ -203,10 +203,10 @@ Many commercial distributors, including __Red Hat, Ubuntu, SUSE__, and __Oracle_
 
 # Knowledge Check
 1. In addition to the kernel, what are some of the purposes of the other software tools required for developing a full Linux distribution?
-    A. Performing file-related operations correct
+    A. Performing file-related operations 
     B. Catering to different audiences
-    C. Maintaining user management correct
-    D. Taking care of software package management correct
+    C. Maintaining user management 
+    D. Taking care of software package management 
 
     Ans: A, C, D
     Explanation
@@ -214,9 +214,9 @@ Many commercial distributors, including __Red Hat, Ubuntu, SUSE__, and __Oracle_
 
 2. Which of the following are binary-compatible Linux distributions which are free alternatives to Red Hat Enterprise Linux (RHEL)? Choose all that apply.
 
-    A. CentOS correct
+    A. CentOS 
     B. Ubuntu
-    C. Scientific Linux correct
+    C. Scientific Linux 
     D. openSUSE
 
     Ans: A, C
