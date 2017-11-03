@@ -18,10 +18,11 @@ Vagrant also makes it easy to edit files that are in the VM from programs instal
 ## Command Line Interface
 Programmers encounter many different command line interfaces (__CLI__s) in their work. Any computer interface where the user enters textual commands and gets textual responses is a CLI. While CLIs vary significantly, proficiency in one will give you a head start learning another. In this class we mostly work with the Linux command line interface in a VM, but in order to access that you need to use your host OS's command line interface. Other command line interfaces you might encounter as a developer are your browser's tools and Python's interactive interpreter.
 
-[!picture1](https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57d744b9_devtoolscli/devtoolscli.png)
+![picture1](https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57d744b9_devtoolscli/devtoolscli.png)
 
 A screenshot of Chrome Developer Tools' console, which is a sort of command line interface with your browser.
-[!picture2](https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57d74547_pythoncli/pythoncli.png)
+
+![picture2](https://d17h27t6h515a5.cloudfront.net/topher/2016/September/57d74547_pythoncli/pythoncli.png)
 
 Different programming languages will have different Command Line Interfaces (CLIs). A screenshot of an interactive Python session on the command line using the Python CLI. Instead of using a software program with a more standard visual user interface, many programmers often use the command line with a CLI as shown above.
 
@@ -154,4 +155,4 @@ Almost everything in this course will work the same in any of these shell progra
 + `history`: commands used
 
 # Difference between shell command and Python or JavaScript language
->>>>>>> Shell
+> Shell
