@@ -136,7 +136,7 @@ Some key facts about the Debian family are listed below:
 
 + The __Debian__ family is upstream for __Ubuntu__, and __Ubuntu__ is upstream for __Linux Mint__ and others.
 + Kernel version 4.4 is used in __Ubuntu 16.04 LTS__.
-+ It uses the __DPKG__-based __APTv package manager (using __apt-get__, __apt-cache__ etc. which we cover in more detail later) to install, update, and remove packages in the system.
++ It uses the __DPKG__-based __APTv__ package manager (using __apt-get__, __apt-cache__ etc. which we cover in more detail later) to install, update, and remove packages in the system.
 + __Ubuntu__ has been widely used for cloud deployments.
 + While __Ubuntu__ is built on top of Debian and is __GNOME__-based under the hood, it uses the Unity graphical interface and differs quite a bit visually from the interface on standard Debian, as well as other distributions.
 
