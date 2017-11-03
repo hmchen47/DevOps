@@ -5,13 +5,14 @@ Chapter 01: The Linux Foundation
 --------------------------------
 
 # Introduction
-[video](https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V010000_DTH.mp4)
+[video][video1]
 
 ## The Linux Foundation
-[video](https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V005800_DTH.mp4)
+[video][video2]
 
 # Learning Objectives
 By the end of this chapter, you should be able to:
+
 + Discuss the role of The Linux Foundation.
 + Appreciate the learning opportunities provided by The Linux Foundation's training program.
 + Describe the software environment required for this course.
@@ -26,19 +27,21 @@ The Linux Foundation partners with the world's leading developers and companies 
 Linux is the world's largest and most pervasive open source software project in history. The Linux Foundation is home to Linux creator Linus Torvalds and lead maintainer Greg Kroah-Hartman, and provides a neutral home where Linux kernel development can be protected and accelerated for years to come. The success of Linux has catalyzed growth in the open source community, demonstrating the commercial efficacy of open source and inspiring countless new projects across all industries and levels of the technology stack.
 
 The Linux Foundation's work today extends far beyond Linux, fostering innovation at every layer of the software stack. The Linux Foundation is the umbrella organization for many critical open source projects that power corporations today, spanning all industry sectors:
-+ Networking: [OpenDaylight](https://www.opendaylight.org/), [OPNFV](https://www.opnfv.org/)
-+ Embedded: [Dronecode](https://www.dronecode.org/)
-+ Web tools: [JS Foundation](https://js.foundation/), [Node.js](https://nodejs.org/en/)
-+ Cloud computing: [Cloud Foundry](https://www.cloudfoundry.org/), [Cloud Native Computing Foundation](https://cncf.io/), [Open Container Initiative](https://www.opencontainers.org/)
-+ Automotive: [Automotive Grade Linux](https://www.automotivelinux.org/)
-+ Security: [The Core Infrastructure Initiative](https://www.coreinfrastructure.org/)
-+ Blockchain: [Hyperledger](https://www.hyperledger.org/)
+
++ Networking: [OpenDaylight][OpenDaylight], [OPNFV][OPNFV]
++ Embedded: [Dronecode][Dronecode]
++ Web tools: [JS Foundation[JSFoundation], [Node.js][Node.js]
++ Cloud computing: [Cloud Foundry][CF], [Cloud Native Computing Foundation][CNCF], [Open Container Initiative][OCI]
++ Automotive: [Automotive Grade Linux][AGL]
++ Security: [The Core Infrastructure Initiative][CII]
++ Blockchain: [Hyperledger][HL]
 + And many more.
 
-To learn more about The Linux Foundation, [click here](https://www.linuxfoundation.org/).
+To learn more about The Linux Foundation, [click here][LF].
 
 ## The Linux Foundation Events
 The Linux Foundation hosts conferences and other events throughout the world which bring community members together in person. These events: 
+
 + Provide an open forum for development of the next kernel (the actual operating system) release.
 + Bring together developers and system administrators to solve problems in a real-time environment.
 + Host workgroups and community groups for active discussions.
@@ -46,10 +49,11 @@ The Linux Foundation hosts conferences and other events throughout the world whi
 + Encourage collaboration among the entire community.
 + Provide an atmosphere that is unmatched in its ability to further the platform.
 
- view a [video](https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V006200_DTH.mp4) on the events organized by The Linux Foundation.
+ view a [video][vidoe3] on the events organized by The Linux Foundation.
 
 ## Knowledge Check
 What are the objectives of The Linux Foundation?
+
 A. To promote Linux and provide neutral collaboration and education.
 B. To improve Linux as a technical platform.
 C. To sponsor the work of Linus Torvalds.
@@ -66,7 +70,7 @@ The Linux Foundation training is for the community and is designed by members of
 
 The Linux Foundation training is distribution-flexible, technically advanced, and created with the actual leaders of the Linux development community themselves. Most courses are more than 50% focused on hands-on labs and activities to build real world skills.
 
-[video](https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V007400_DTH.mp4)
+[video][video4]
 
 ## Copyright
 The Linux Foundation has a copyright on all the materials in this course.
@@ -82,12 +86,13 @@ In order to fully benefit from this course, you will need to have at least one _
 On the next screen, you will learn some more details about the many available __Linux__ distributions and the __families__ they can be considered to belong to. Because there are literally hundreds of distributions, we have not covered them all in this course. Instead, we have decided to focus on the three major distribution families, and we have chosen one specific distribution from within each family to use for all illustrations, examples, and exercises. This is not meant to suggest that we endorse these specific distributions; they were simply chosen because they are fairly widely used and each is broadly representative of its respective family.
 
 The families and representative distributions we are using are: 
+
 + Debian Family Systems (such as Ubuntu)
 + SUSE Family Systems (such as openSUSE)
 + Fedora Family Systems (such as CentOS)
 
 ## Focus on Three Major Linux Distribution Families
-[!graph](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/7175fc9c8300a1e9937054f0debe55f6/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/chapter01_screen18.jpg)
+![LinuxDistFamilies][LunixDistFam]
 
 In the next chapter you will learn about the components that make up a Linux distribution. For now, what you need to know is that this course focuses on the three major Linux distribution families that currently exist. However, as long as there are talented contributors, the families of distributions and the distributions within these families will continue to change and grow. People see a need and develop special configurations and utilities to respond to that need. Sometimes that effort creates a whole new distribution of Linux. Sometimes, that effort will leverage an existing distribution to expand the members of an existing family. For a rather long list of available distributions, see [https://lwn.net/Distributions/](https://lwn.net/Distributions/)
 
@@ -100,6 +105,7 @@ For this reason, we have standardized the __Fedora__ part of this course materia
 
 ## Key Facts About the Fedora Family
 Some of the key facts about the Fedora distribution family are:
+
 + The __Fedora__ family is upstream for __CentOS, RHEL, and Oracle Linux__.
 + Kernel version 3.10 is used in __RHEL/CentOS 7__.
 + It supports hardware platforms such as x86, x86-64, Itanium, PowerPC, and IBM System z.
@@ -111,10 +117,11 @@ The relationship between __SUSE__, __SUSE Linux Enterprise Server (SLES)__, and 
 
 ## Key Facts About the SUSE Family
 Some of the key facts about the SUSE family are listed below:
+
 + __SUSE Linux Enterprise Server (SLES)__ is upstream for __openSUSE__.
 + Kernel version 4.4 is used in __openSUSE-Leap-42.2__.
 + It uses the __RPM__-based __zypper__ package manager (we cover it in more detail later) to install, update, and remove packages in the system.
-+ It includes the __YaST__ (__Y__et __A__nother __S__etup __T__ool) application for system administration purposes.
++ It includes the __YaST__ (Yet Another Setup Tool) application for system administration purposes.
 + __SLES__ is widely used in retail and other sectors.
 
 # The Debian Family
@@ -122,10 +129,11 @@ The __Debian__ distribution is upstream for several other distributions, includi
 
 __Debian__ provides by far the largest and most complete software repository to its users of any Linux distribution.
 
-__Ubuntu__ aims at providing a good compromise between long term stability and ease of use. Since __Ubuntu__ gets most of its packages from __Debian__’s stable branch, __Ubuntu__ also has access to a very large software repository. For those reasons, we will use __Ubuntu 16.04 LTS__ (__L__ong __T__erm __S__upport) as the reference __Debian__ family distribution for this course. Ubuntu is a registered trademark of __Canonical Ltd.__ and is used throughout this course with their permission.
+__Ubuntu__ aims at providing a good compromise between long term stability and ease of use. Since __Ubuntu__ gets most of its packages from __Debian__’s stable branch, __Ubuntu__ also has access to a very large software repository. For those reasons, we will use __Ubuntu 16.04 LTS__ (Long Term Support) as the reference __Debian__ family distribution for this course. Ubuntu is a registered trademark of __Canonical Ltd.__ and is used throughout this course with their permission.
 
 ## Key Facts About the Debian Family
 Some key facts about the Debian family are listed below:
+
 + The __Debian__ family is upstream for __Ubuntu__, and __Ubuntu__ is upstream for __Linux Mint__ and others.
 + Kernel version 4.4 is used in __Ubuntu 16.04 LTS__.
 + It uses the __DPKG__-based __APTv package manager (using __apt-get__, __apt-cache__ etc. which we cover in more detail later) to install, update, and remove packages in the system.
@@ -140,11 +148,31 @@ The desktop environment used for this course is __GNOME__. As we will note in Ch
 ## Knowledge Check
 The three distribution families (Fedora, SUSE, and Debian) we are using are upstream for a number of Linux distributions. Some distributions are listed below.
 
-[diagram](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ce902e4a060199a9fd62587d89b81768/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Drag_and_Drop_Background.png)
-
+`Centos`,  `Linux Mint`,  'SLES`,  `Oracle Linux`, `Ubuntu`
+![Linux Distribution Drag & Drop][LinuxDistD&D]
 
 # Summary
 You have completed this chapter. Let’s summarize the key concepts covered:
 + The Linux Foundation is the umbrella organization for many critical open source projects that power corporations today, spanning all industry sectors. Its work today extends far beyond Linux, fostering innovation at every layer of the software stack.
 + The Linux Foundation training is for the community and by the community. Linux training is distribution-flexible, technically advanced, and created with the leaders of the Linux development community.
 + There are three major distribution families within Linux: __Fedora__, __SUSE__ and __Debian__. In this course, we will work with representative members of all of these families throughout.
+
+
+[LF]: https://www.linuxfoundation.org/
+[LinuxDistFam]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/7175fc9c8300a1e9937054f0debe55f6/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/chapter01_screen18.jpg
+[LinuxDistD&D]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ce902e4a060199a9fd62587d89b81768/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Drag_and_Drop_Background.png
+[OpenDaylight]: https://www.opendaylight.org/
+[OPNFV]: https://www.opnfv.org/
+[Dronecode]: https://www.dronecode.org/
+[JSFoundation]: https://js.foundation/
+[Node.js]: https://nodejs.org/en/
+[CF]: https://www.cloudfoundry.org/
+[CNCF]: https://cncf.io/
+[OCI]: https://www.opencontainers.org/
+[AGL]: https://www.automotivelinux.org/
+[CII]: https://www.coreinfrastructure.org/
+[HL]: https://www.hyperledger.org/
+[video1]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V010000_DTH.mp4
+[video2]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V005800_DTH.mp4
+[video3]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V006200_DTH.mp4
+[video4]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V007400_DTH.mp4
