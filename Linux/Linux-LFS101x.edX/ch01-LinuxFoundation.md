@@ -60,6 +60,8 @@ C. To sponsor the work of Linus Torvalds.
 D. To manage Linux and UNIX servers on a commercial basis.
 
 Ans: A, B, C
+Explanation
+The Linux Foundation aims to promote Linux, provide neutral collaboration and education, improve Linux as a technical platform, and protect and support Linux development. It sponsors the work of Linus Torvalds.
 
 # Section 2: The Linux Foundation Training
 ## The Linux Foundation Training
