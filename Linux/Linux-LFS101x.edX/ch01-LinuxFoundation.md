@@ -10,7 +10,7 @@ Chapter 01: The Linux Foundation
 ## The Linux Foundation
 [video][video2]
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter, you should be able to:
 
 + Discuss the role of The Linux Foundation.
@@ -54,14 +54,14 @@ The Linux Foundation hosts conferences and other events throughout the world whi
 ## Knowledge Check
 What are the objectives of The Linux Foundation?
 
-A. To promote Linux and provide neutral collaboration and education.
-B. To improve Linux as a technical platform.
-C. To sponsor the work of Linus Torvalds.
-D. To manage Linux and UNIX servers on a commercial basis.
+    A. To promote Linux and provide neutral collaboration and education.
+    B. To improve Linux as a technical platform.
+    C. To sponsor the work of Linus Torvalds.
+    D. To manage Linux and UNIX servers on a commercial basis.
 
-Ans: A, B, C
-Explanation
-The Linux Foundation aims to promote Linux, provide neutral collaboration and education, improve Linux as a technical platform, and protect and support Linux development. It sponsors the work of Linus Torvalds.
+    Ans: A, B, C
+    Explanation
+    The Linux Foundation aims to promote Linux, provide neutral collaboration and education, improve Linux as a technical platform, and protect and support Linux development. It sponsors the work of Linus Torvalds.
 
 # Section 2: The Linux Foundation Training
 ## The Linux Foundation Training
@@ -150,8 +150,9 @@ The desktop environment used for this course is __GNOME__. As we will note in Ch
 ## Knowledge Check
 The three distribution families (Fedora, SUSE, and Debian) we are using are upstream for a number of Linux distributions. Some distributions are listed below.
 
-`Centos`,  `Linux Mint`,  'SLES`,  `Oracle Linux`, `Ubuntu`
-![Linux Distribution Drag & Drop][LinuxDistD&D]
+    `Centos`,  `Linux Mint`,  'SLES`,  `Oracle Linux`, `Ubuntu`
+    
+    ![Linux Distribution Drag & Drop][LinuxDistDD]
 
 # Summary
 You have completed this chapter. Let’s summarize the key concepts covered:
@@ -163,7 +164,7 @@ You have completed this chapter. Let’s summarize the key concepts covered:
 
 [LF]: https://www.linuxfoundation.org/
 [LinuxDistFam]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/7175fc9c8300a1e9937054f0debe55f6/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/chapter01_screen18.jpg
-[LinuxDistD&D]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ce902e4a060199a9fd62587d89b81768/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Drag_and_Drop_Background.png
+[LinuxDistDD]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ce902e4a060199a9fd62587d89b81768/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Drag_and_Drop_Background.png
 [OpenDaylight]: https://www.opendaylight.org/
 [OPNFV]: https://www.opnfv.org/
 [Dronecode]: https://www.dronecode.org/

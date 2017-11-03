@@ -4,11 +4,10 @@ Introduction to Linux
 Chapter 02: Linux Philosophy and Concepts
 =========================================
 
-Introduction/ Learning Objectives
----------------------------------
+# Introduction/ Learning Objectives
 [video][video1]
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter, you should be able to:
 
 + Discuss the history and philosophy of Linux.
@@ -16,24 +15,23 @@ By the end of this chapter, you should be able to:
 + Define the common terms associated with Linux.
 + Discuss the components of a Linux distribution.
 
-Section 1: Linux History
-------------------------
-# Introduction
+# Section 1: Linux History
+## Introduction
 Linux is a free open source computer operating system, initially developed for Intel __x86-based__ personal computers. It has been subsequently ported to many other hardware platforms.
 
 In this section, you will become familiar with how Linux evolved from a student project into a massive effort with an enormous impact on today's world.
 
-# Linux History
+## Linux History
 Linus Torvalds was a student in Helsinki, Finland, in 1991, when he started a project: writing his own operating system __kernel__. He also collected together and/or developed the other essential ingredients required to construct an entire __operating system__ with his kernel at the center. Soon, this became known as the __Linux__ kernel. 
 
 In 1992, Linux was re-licensed using the __General Public License (GPL)__ by __GNU__ (a project of the Free Software Foundation or FSF, which promotes freely available software), which made it possible to build a worldwide community of developers. By combining the kernel with other system components from the GNU project, numerous other developers created complete systems called __Linux Distributions__ in the mid-90’s.
 
-# More About Linux History
+## More About Linux History
 The Linux distributions created in the mid-90s provided the basis for fully free computing and became a driving force in the open source software movement. In 1998, major companies like __IBM__ and __Oracle__ announced their support for the Linux platform and began major development efforts as well.
 
 Today, Linux powers more than half of the servers on the Internet, the majority of smartphones (via the __Android__ system, which is built on top of Linux), and nearly all of the world’s most powerful supercomputers.
 
-# Knowledge Check
+## Knowledge Check
 When did Linus Torvalds start writing the Linux kernel?
 
     A. 1952
@@ -45,21 +43,20 @@ When did Linus Torvalds start writing the Linux kernel?
     Explanation
     Linus Torvalds started writing the Linux kernel as a hobby in Helsinki in 1991 and later became its chief designer.
 
-Section 2: Linux Philosophy
----------------------------------
-# Introduction
+# Section 2: Linux Philosophy
+## Introduction
 Every organization or project has a philosophy that works as a guide while framing its objectives and delineating its growth path. This section contains a description of the Linux philosophy and how this philosophy has impacted its development.
 
 Linux is constantly enhanced and maintained by a network of developers from all over the world collaborating over the Internet, with Linus Torvalds at the head. Technical skill and a desire to contribute are the only qualifications for participating.
 
-# Linux Philosophy
+## Linux Philosophy
 Linux borrows heavily from the __UNIX__ operating system because it was written to be a free and open source version of __UNIX__. Files are stored in a hierarchical filesystem, with the top node of the system being `root` or simply `"/"`. Whenever possible, Linux makes its components available via files or objects that look like files. Processes, devices, and network sockets are all represented by `file-like objects`, and can often be worked with using the same utilities used for regular files.
 
 Linux is a fully __multitasking__ (i.e., multiple threads of execution are performed simultaneously), __multiuser__ operating system, with built-in networking and service processes known as __daemons__ in the __UNIX__ world.
 
 [How Linux Is Built-video][video2]
 
-# Knowledge Check
+## Knowledge Check
 1. Drag the following statements associated with the Linux philosophy to its corresponding column. (True/False)
 
 	A. Linux was written to be a free and open source version of UNIX.
@@ -80,15 +77,14 @@ Linux is a fully __multitasking__ (i.e., multiple threads of execution are perfo
 	Explanation
 	Linux is developed by a loose confederation of developers from all over the world, collaborating over the Internet, with Linus Torvalds at the head. Technical skill and a desire to contribute are the only qualifications for participating.
 
-Section 3: Linux Community
----------------------------------
-# Introduction to the Community
+# Section 3: Linux Community
+## Introduction to the Community
 Suppose that, as part of your job, you need to configure a Linux file server, and you run into some difficulties. If you are not able to figure out the answer yourself or get help from a co-worker, the Linux community might just save the day! There are many ways to engage with the Linux community: you can post queries on relevant discussion forums, subscribe to discussion threads, and even join local Linux groups that meet in your area.
 
-# Linux Community
+## Linux Community
 [video][video3]
 
-# More About The Linux Community
+## More About The Linux Community
 The Linux community is a far-reaching ecosystem consisting of developers, system administrators, users and vendors, who use many different forums to connect with one another. Among the most popular are:
 
 + Linux User Groups (both local and online)
@@ -105,13 +101,13 @@ One of the most powerful online user communities is [linux.com][linuxcom]. This 
 
 We will refer several times in this course to relevant articles or tutorials on this site.
 
-# Knowledge Check
+## Knowledge Check
 Which of the following communication channels does the Linux community use to communicate?
 
-A. cnn.com
-B. IRC Channels
-C. Mailing Lists
-D. Community Events
+	A. cnn.com
+	B. IRC Channels
+	C. Mailing Lists
+	D. Community Events
 
 Ans: B, C, D
 Explanation
@@ -120,10 +116,10 @@ The Linux community consists of vendors, developers, and active users. They comm
 
 Section 4: Linux Terminology
 ---------------------------------
-# Introduction
+## Introduction
 When you start exploring Linux, you will soon come across some unfamiliar terms, like distribution, boot loader, desktop environment, etc. So, before we proceed further, let's stop and take a look at some basic terminology used in Linux to help you get up to speed.
 
-# Linux Terminology
+## Linux Terminology
 [vidoe][video4]
 
 Termonologies:
@@ -140,7 +136,7 @@ Termonologies:
 + Command line: interface for typing commands on top of the operating system
 + shell: command line interpreter that interprets the command line input and instructs the OS to perform any necessary tasks and commands, e.g., bash, tcsh, csh
 
-# Knowledge Check
+## Knowledge Check
 1. What is a kernel?
 
 	A. The glue between hardware and applications.
@@ -176,12 +172,11 @@ Termonologies:
 	A __command line__ is an interface for typing commands for the Operating System to execute.
 
 
-Section 5: Linux Distributions
----------------------------------
-# Introduction
+# Section 5: Linux Distributions
+## Introduction
 Suppose you have been assigned to a project building a product for a Linux platform. Project requirements include making sure the project works properly on the most widely used Linux distributions. To accomplish this, you need to learn about the different components, services, and configurations associated with each distribution. We are about to look at how you would go about doing exactly that.
 
-# Linux Distributions
+## Linux Distributions
 ![Linus kernel][kernel]
 
 So, what is a Linux distribution and how does it relate to the Linux kernel?
@@ -192,7 +187,7 @@ As mentioned earlier, the current Linux kernel, along with past Linux kernels (a
 
 Examples of other essential tools and ingredients provided by distributions include the __C/C++__ compiler, the __gdb__ debugger, the core system libraries applications need to link with in order to run, the low-level interface for drawing graphics on the screen, as well as the higher-level desktop environment, and the system for installing and updating the various components, including the kernel itself.
 
-# Services Associated with Distributions
+## Services Associated with Distributions
 ![Services][srv]
 
 The vast variety of Linux distributions are designed to cater to many different audiences and organizations, according to their specific needs and tastes. However, large organizations, such as companies and governmental institutions and other entities, tend to choose the major commercially-supported distributions from __Red Hat, SUSE__, and __Canonical (Ubuntu)__.
@@ -201,7 +196,7 @@ __CentOS__ is a popular free alternative to __Red Hat Enterprise Linux (RHEL)__ 
 
 Many commercial distributors, including __Red Hat, Ubuntu, SUSE__, and __Oracle__, provide long term fee-based support for their distributions, as well as hardware and software certification. All major distributors provide update services for keeping your system primed with the latest security and bug fixes, and performance enhancements, as well as provide online support resources.
 
-# Knowledge Check
+## Knowledge Check
 1. In addition to the kernel, what are some of the purposes of the other software tools required for developing a full Linux distribution?
     A. Performing file-related operations 
     B. Catering to different audiences
@@ -224,8 +219,7 @@ Many commercial distributors, including __Red Hat, Ubuntu, SUSE__, and __Oracle_
     __CentOS__ and __Scientific Linux__ are both binary-compatible Linux distributions which are free alternatives to __Red Hat Enterprise Linux (RHEL)__.
 
 
-Summary
--------
+# Summary
 You have completed this chapter. Let’s summarize the key concepts covered:+ 
 
 + Linux borrows heavily from the __UNIX__ operating system, with which its creators were well versed. 
