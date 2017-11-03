@@ -6,5 +6,5 @@
 alias prj='cd ~/Projects'
 #alias prjm='sudo mount -t vboxsf Projects ~/Projects'
 #alias prjln='ln -s /media/sf_Projects ~/Projects'
-alias glog1='git log --oneline -n 15'
-alias glogg='git log --graph --oneline -n 15'
+alias gl1='git log --oneline -30'
+alias glg='git log --graph --oneline -30'
