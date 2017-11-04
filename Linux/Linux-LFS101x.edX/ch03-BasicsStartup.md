@@ -64,9 +64,7 @@ The __initramfs__ filesystem image contains programs and binary files that perfo
 
 The __mount__ program instructs the operating system that a filesystem is ready for use, and associates it with a particular point in the overall hierarchy of the filesystem (the __mount point__). If this is successful, the __initramfs__ is cleared from RAM and the __init__ program on the root filesystem (/sbin/init) is executed.
 
-__init__ handles the mounting and pivoting over to the final real root filesystem. If special hardware drivers are needed before the mass storage can be accessed, they must be in the __initramfs__ image.
 
-![image][img5]
 
 ## Text-Mode Login
 Near the end of the boot process, __init__ starts a number of text-mode login prompts. These enable you to type your username, followed by your password, and to eventually get a command shell. However, if you are running a system with a graphical login interface, you will not see these at first.
@@ -245,7 +243,6 @@ Nearly all installers provide a reasonable filesystem layout by default, with ei
 
 ![image][imgc]
 
-## More About Planning in Linux Installation
 All installations include the bare minimum software for running a Linux distribution.
 
 Most installers also provide options for adding categories of software. Common applications (such as the __Firefox__ web browser and __LibreOffice__ office suite), developer tools (like the __vi__ and __emacs__ text editors, which we will explore later in this course), and other popular services, (such as the __Apache__ web server tools or __MySQL__ database) are usually included. In addition, a desktop environment is installed by default.
@@ -352,7 +349,7 @@ You have completed this chapter. Let’s summarize the key concepts covered:
 [vid5]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V007700_DTH.mp4
 [vid6]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V010400_DTH.mp4
 
-[img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/0ca63407bd9efcd5b980b6df0ea07ef2/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/chapter03_flowchart_scr15_th_1.jpg
+[img1]: https://preview.edge.edx.org/c4x/Linux/LFS101/asset/chapter03_flowchart_scr15_1.jpg
 [img2]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f02a193180acffca543bf8f69870cc79/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch03_screen16.jpg
 [img3]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/b053b7b69e99a0c06ef0da7fd84236d7/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch03_screen20.jpg
 [img4]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/abd1fcc0cc9a6fe48d886efdd98711ef/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch03_screen18.jpg
