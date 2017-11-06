@@ -30,7 +30,7 @@ There are some basic command line utilities that are used constantly, and it wou
 + `tail`: used to show the last few lines of a file
 + `man`: used to view documentation.
 
-The screenshot shows elementary uses of these programs. Note the use of the `pipe` symbol (`|`)  used to have one program take as input the output of another.
+The screenshot shows elementary uses of these programs. Note the use of the `pipe` symbol (`|`) used to have one program take as input the output of another.
 
 For the most part, we will only use these utilities in screenshots displaying various activities, before we discuss them in detail.
 
@@ -92,7 +92,7 @@ To open a terminal in __Ubuntu 16.04 LTS__:
 
 + Click the Ubuntu icon and type `terminal` in the Search box.
 
-If the __nautilus-open-terminal__ package is installed on any but some of the most recent __GNOME__-based distributions, you can always open a terminal by right-clicking anywhere on the desktop background and selecting Open in `Terminal`.  This may work even if the package is not installed.
+If the __nautilus-open-terminal__ package is installed on any but some of the most recent __GNOME__-based distributions, you can always open a terminal by right-clicking anywhere on the desktop background and selecting Open in `Terminal`. This may work even if the package is not installed.
 
 You can also hit `Alt-F2` and type in either __gnome-terminal__ or __konsole__, whichever is appropriate.
 
@@ -122,7 +122,7 @@ To switch between the VTs, press `CTRL-ALT-corresponding function key` for the V
 ## Turning Off the Graphical Desktop
 Linux distributions can start and stop the graphical desktop in various ways. The exact method differs from distribution and among distribution versions. For the newer systemd-based distributions, the display manager is run as a service, you can stop the GUI desktop with the `systemctl` utility and most distributions will also work with the telinit command, as in:
 
-+ `sudo systemctl stop gdm`  (or `sudo telinit 3`)
++ `sudo systemctl stop gdm` (or `sudo telinit 3`)
 
 and restart it (after logging into the console) with:
 
@@ -133,25 +133,25 @@ On Ubuntu, substitute `lightdm` for `gdm`.
 ## Knowledge Check
 1. Which key combination would allow you to switch from the GUI to the text virtual terminal 4?
 
-        A. CTRL-SHIFT-F4
-        B. CTRL-ALT-SHIFT-SUPER-F4
-        C. CTRL-ALT-F4
-        D. CTRL-SHIFT-F4
+    A. CTRL-SHIFT-F4
+    B. CTRL-ALT-SHIFT-SUPER-F4
+    C. CTRL-ALT-F4
+    D. CTRL-SHIFT-F4
 
-        Ans: C
-        Explanation
-        The CTRL-ALT-F4 allows you to switch from the GUI to the text virtual terminal 4.
+    Ans: C
+    Explanation
+    The CTRL-ALT-F4 allows you to switch from the GUI to the text virtual terminal 4.
 
 2. Assuming you are not the root user, which of the following commands would turn off the graphical desktop, depending on your specific Linux distribution?
 
-        A. sudo telinit 3 
-        B. sudo systemctl stop gdm 
-        C. init 3
-        D. sudo systemctl stop lightdm 
+    A. sudo telinit 3 
+    B. sudo systemctl stop gdm 
+    C. init 3
+    D. sudo systemctl stop lightdm 
 
-        Ans: A, B, D
-        Explanation
-        The exact method of bringing down the graphical interface is indeed Linux distribution dependent. The 3 methods will work depending on what display manager you are using and other factors.
+    Ans: A, B, D
+    Explanation
+    The exact method of bringing down the graphical interface is indeed Linux distribution dependent. The 3 methods will work depending on what display manager you are using and other factors.
 
 ## Lab 1: Killing the Graphical User Interface
 From within a graphical terminal (gnome-terminal, konsole, etc), kill the current graphical desktop.
@@ -196,9 +196,9 @@ If which does not find the program, `whereis` is a good alternative because it l
 as well as locating __source__ and __man__ files packaged with the program.
 
 ## Accessing Directories
-When you first log into a system or open a terminal, the default directory should be your __home directory__; you can print the exact path of this by typing `echo $HOME`. (Many Linux distributions actually open new graphical terminals in `$HOME/Desktop`.)  The following commands are useful for directory navigation:
+When you first log into a system or open a terminal, the default directory should be your __home directory__; you can print the exact path of this by typing `echo $HOME`. (Many Linux distributions actually open new graphical terminals in `$HOME/Desktop`.) The following commands are useful for directory navigation:
 
-| Command  | Result  |
+| Command | Result |
 |----------|---------|
 | `pwd` | Displays the present working directory |
 | `cd ~` or `cd` | Change to your home directory (short-cut name is ~ (tilde))|
@@ -300,36 +300,36 @@ Click below to view a demonstration on how to navigate the directory history usi
 ## Knowledge Check
 1. Assuming you are the root user, which commands allow you to shut down your system without rebooting?
 
-        A. halt 
-        B. shutdown -r now
-        C. poweroff 
-        D. shutdown -h now 
+    A. halt 
+    B. shutdown -r now
+    C. poweroff 
+    D. shutdown -h now 
 
-        Ans: A, C, D
-        Explanation
-        The halt, poweroff, and shutdown -h now commands allow you to shut down the system, as root, without rebooting.
+    Ans: A, C, D
+    Explanation
+    The halt, poweroff, and shutdown -h now commands allow you to shut down the system, as root, without rebooting.
 
 2. Which commands allow you to locate programs?
 
-        A. whichis
-        B. which 
-        C. whichever
-        D. whereis 
+    A. whichis
+    B. which 
+    C. whichever
+    D. whereis 
 
-        Ans: B, D
-        Explanation
-        The which and whereis commands allow you to locate programs.
+    Ans: B, D
+    Explanation
+    The which and whereis commands allow you to locate programs.
 
 3. Which of the following are examples of an absolute path?
 
-        A. /etc/passwd 
-        B. ../passwd
-        C. //etc/passwd 
-        D. \\passwd
+    A. /etc/passwd 
+    B. ../passwd
+    C. //etc/passwd 
+    D. \\passwd
 
-        Ans: A, C
-        Explanation
-        /etc/passwd and //etc/passwd are valid examples of an absolute path. The multiple slashes (//) are legal, but all but one is ignored.
+    Ans: A, C
+    Explanation
+    /etc/passwd and //etc/passwd are valid examples of an absolute path. The multiple slashes (//) are legal, but all but one is ignored.
 
 ## Lab 2: Locating Applications
 Find out the location of the ip network utility.
@@ -433,34 +433,333 @@ To practice, click the link provided below.
 ## Knowledge Check
 1. Using which command can you view an entire file with scroll-back?
 
-        a. tail
-        b. cat
-        c. less 
-        d. head
+    a. tail
+    b. cat
+    c. less 
+    d. head
 
-        Ans: C
-        Explanation
-        The less command is used to view the entire file with scroll-back.
+    Ans: C
+    Explanation
+    The less command is used to view the entire file with scroll-back.
 2. Using which command you forcefully remove a directory recursively?
 
-        A. rmdir
-        B. rm –rf 
-        C. rmdir –f
-        D. mv –rf
+    A. rmdir
+    B. rm –rf 
+    C. rmdir –f
+    D. mv –rf
 
-        Ans: B
-        Explanation
-        The rm -rf command is used to forcefully remove a directory.
+    Ans: B
+    Explanation
+    The rm -rf command is used to forcefully remove a directory.
+
+## Lab 3: Creating, Moving and Removing Files
+Create an empty file named `exercise.txt` and move this file to the `/tmp` directory, using a relative pathname from your home directory. Then, delete this file using an absolute pathname.
+
+Click [the link][lab3] to view a solution to the Lab exercise.
+
 
 # Section 4: Searching for Files
+## Standard File Streams
+When commands are executed, by default there are three standard __file streams__ (or __descriptors__) always open for use: standard input (standard in or __stdin__), standard output (standard out or __stdout__) and standard error (or __stderr__).
 
+| Name | Symbolic Name | Value | Example |
+|------|---------------|-------|---------|
+| standard input | `stdin` | 0 | keyboard |
+| standard output | `stdout` | 1 | terminal |
+| standard error | `stderr` | 2 | log file |
+
+Usually, `stdin` is your keyboard, `stdout` and `stderr` are printed on your terminal; often, `stderr` is redirected to an error logging file. `stdin` is often supplied by directing input to come from a file or from the output of a previous command through a __pipe__. `stdout` is also often redirected into a file. Since `stderr` is where error messages are written, often nothing will go there.
+
+In Linux, all open files are represented internally by what are called __file descriptors__. Simply put, these are represented by numbers starting at zero. `stdin` is file descriptor 0, `stdout` is file descriptor 1, and `stderr` is file descriptor 2. Typically, if other files are opened in addition to these three, which are opened by default, they will start at file descriptor 3 and increase from there.
+
+On the next screen and in the chapters ahead, you will see examples which alter where a running command gets its input, where it writes its output, or where it prints diagnostic (error) messages. 
+
+## I/O Redirection
+Through the command __shell__ we can __redirect__ the three standard file streams so that we can get input from either a file or another command instead of from our keyboard, and we can write output and errors to files or send them as input for subsequent commands.
+
+For example, if we have a program called `do_something` that reads from `stdin` and writes to `stdout` and `stderr`, we can change its input source by using the less-than sign ( `<` ) followed by the name of the file to be consumed for input data:
+
+`$ do_something < input-file`
+
+If you want to send the output to a file, use the greater-than sign ( `>` ) as in:
+
+`$ do_something > output-file`
+
+Because `stderr` is not the same as `stdout`, error messages will still be seen on the terminal windows in the above example.
+
+If you want to redirect `stderr` to a separate file, you use stderr’s file descriptor number (__2__), the greater-than sign ( `>` ), followed by the name of the file you want to hold everything the running command writes to stderr:
+
+`$ do_something 2> error-file`
+
+A special shorthand notation can be used to put anything written to file descriptor 2 (`stderr`) in the same place as file descriptor 1 (stdout): `2>&1`
+
+`$ do_something > all-output-file 2>&1`
+
+bash permits an easier syntax for the above:
+
+`$ do_something >& all-output-file`
+
+## Pipes
+The UNIX/Linux philosophy is to have many simple and short programs (or commands) cooperate together to produce quite complex results, rather than have one complex program with many possible options and modes of operation. In order to accomplish this, extensive use of __pipes__ is made; you can pipe the output of one command or program into another as its input.
+
+In order to do this, we use the vertical-bar, `|`, (pipe symbol) between commands as in:
+ 
+`$ command1 | command2 | command3`
+
+The above represents what we often call a __pipeline__ and allows Linux to combine the actions of several commands into one. This is extraordinarily efficient because `command2` and `command3` do not have to wait for the previous pipeline commands to complete before they can begin hacking at the data in their input streams; on multiple CPU or core systems the available computing power is much better utilized and things get done quicker. In addition, there is no need to save output in (temporary) files between the stages in the pipeline, which saves disk space and reduces reading and writing from disk, which is often the slowest bottleneck in getting something done.
+
+## Searching for Files
+Being able to quickly find the files you are looking for will make you a much happier Linux user! You can search for files in your parent directory or any other directory on the system as needed.
+
+We will now learn how to use the `locate` and `find` utilities, and how to use wildcards in bash.
+
+## locate
+The `locate` utility program performs a search through a previously constructed database of files and directories on your system, matching all entries that contain a specified character string. This can sometimes result in a very long list.
+
+To get a shorter more relevant list, we can use the `grep` program as a filter; `grep` will print only the lines that contain one or more specified strings, as in: 
+
+`$ locate zip | grep bin`
+
+which will list all the files and directories with both "zip" and "bin" in their name . (We will cover grep in much more detail later.) Notice the use of `|` to pipe the two commands together.
+
+`locate` utilizes the database created by another program, `updatedb`. Most Linux systems run this automatically once a day. However, you can update it at any time by just running `updatedb` from the command line as the root user.
+
+![image][imga]
+
+### Locating Files
+Click below to view a demonstration on how to locate files using the command prompt.
+
+[video][vid6]
+
+### Try-It-Yourself: Locating Files
+To practice, click the link provided below.
+
+[Locating Files][lf]
+
+## Wildcards and Matching File Names
+You can search for a filename containing specific characters using wildcards.
+
+| Wildcard | Result |
+|----------|--------|
+| `?` | Matches any single character |
+| `*` | Matches any string of characters |
+| `[set]` | Matches any character in the set of characters, for example [adf] will match any occurrence of "a", "d", or "f" |
+| `[!set]` | Matches any character not in the set of characters |
+
+To search for files using the `?` wildcard, replace each unknown character with `?`, e.g. if you know only the first 2 letters are 'ba' of a 3-letter filename with an extension of `.out`, type `ls ba?.out`.
+
+To search for files using the `*` wildcard, replace the unknown string with `*`, e.g. if you remember only that the extension was .out, type `ls *.out`
+
+### Using bash Wildcards to Search Files
+Click below to view a demonstration on how to use bash Wildcards to search files.
+
+[video][vid7]
+
+### Try-It-Yourself: Using bash Wildcards with ls
+To practice, click the link provided below.
+
+[Locating Files Using bash Wildcards][wild]
+
+## Finding Files
+`find` is an extremely useful and often-used utility program in the daily life of a Linux system administrator. It recurses down the filesystem tree from any particular directory (or set of directories) and locates files that match specified conditions. The default pathname is always the present working directory.
+
+For example, administrators sometimes scan for large __core__ files (which contain diagnostic information after a program fails) that are more than several weeks old in order to remove them. It is also common to remove files in `/tmp` (and other temporary directories, such as those containing cached files) that have not been accessed recently. Many distros use automated scripts that run periodically to accomplish such house cleaning.
+
+![image][imgb]
+
+### Using find
+When no arguments are given, find lists all files in the current directory and all of its subdirectories. Commonly used options to shorten the list include `-name` (only list files with a certain pattern in their name), `-iname` (also ignore the case of file names), and `-type` (which will restrict the results to files of a certain specified type, such as `d` for directory, `l` for symbolic link, or `f` for a regular file, etc). 
+
+Searching for files and directories named "gcc":
+
+`$ find /usr -name gcc`
+
+Searching only for directories named "gcc":
+
+`$ find /usr -type d -name gcc`
+
+Searching only for regular files named "gcc":
+
+`$ find /usr -type f -name gcc`
+
+### Using Advanced find Options
+Another good use of find is being able to run commands on the files that match your search criteria. The `-exec` option is used for this purpose.
+
+To find and remove all files that end with .swp:
+
+`$ find -name "*.swp" -exec rm {} ’;’`
+
+The `{}` (squiggly brackets) is a place holder that will be filled with all the file names that result from the find expression, and the preceding command will be run on each one individually.
+
+Please note that you have to end the command with either `‘;’` (including the single-quotes) or `"\;"`. Both forms are fine.
+
+One can also use the `-ok` option, which behaves the same as `-exec`, except that `find` will prompt you for permission before executing the command. This makes it a good way to test your results before blindly executing any potentially dangerous commands.
+
+![image][imgc]
+
+### Finding Files Based on Time and Size
+It is sometimes the case that you wish to find files according to attributes, such as when they were created, last used, etc., or based on their size. Both are easy to accomplish.
+
+To find files based on time:
+
+`$ find / -ctime 3`
+
+Here, `-ctime` is when the inode metadata (i.e., file ownership, permissions, etc.) last changed; it is often, but not necessarily, when the file was first created. You can also search for accessed/last read (`-atime`) or modified/last written (`-mtime`) times. The number is the number of __days__ and can be expressed as either a number (`n`) that means exactly that value, `+n`, which means greater than that number, or `-n`, which means less than that number. There are similar options for times in minutes (as in `-cmin`, `-amin`, and `-mmin`).
+
+To find files based on sizes:
+
+`$ find / -size 0`
+
+Note the size here is in __512-byte blocks__, by default; you can also specify bytes (`c`), kilobytes (`k`), megabytes (`M`), gigabytes (`G`), etc. As with the time numbers above, file sizes can also be exact numbers (`n`), `+n` or `-n`. For details, consult the man page for find.
+
+For example, to find files greater than 10 MB in size and running a command on those files:
+
+`$ find / -size +10M -exec command {} ’;’`
+
+### Finding Files In a Directory
+Click below to view a demonstration on how to find files in a directory.
+
+[video][vid8]
+
+### Try-It-Yourself: Using find
+To practice, click the link provided below.
+
+[Using find][find]
+
+## Knowledge Check
+1. Which command is used to perform a database search of pathnames given the substring that is provided as a parameter?
+
+    Explanation
+    The locate program performs a database search of pathnames given the substring that is provided as a parameter to locate.
+
+2. Which bash wildcard is used to match any single character?
+
+    Explanation
+    The ? bash wildcard is used to match any single character.
+
+
+## Lab 4: Finding Directories and Creating Symbolic Links
+Find the `init.d` directory, starting from `/`, and then create a symbolic link from within your home directory to this directory.
+
+(Note that this SysVinit directory is no longer used much in systemd-based systems, but is kept for backwards compatibility reasons.)
+
+Click [the link][lab4] to view a solution to the Lab exercise.
 
 
 # Section 5: Installing Software
+## Package Management Systems on Linux
+The core parts of a Linux distribution and most of its add-on software are installed via the __Package Management System__. Each package contains the files and other instructions needed to make one software component work on the system. Packages can depend on each other. For example, a package for a web-based application written in PHP can depend on the PHP package.
 
+There are two broad families of package managers: those based on __Debian__ and those which use __RPM__ as their low-level package manager. The two systems are incompatible, but provide the same features at a broad level. There are some other systems used by more specialized Linux distributions.
+
+In this section, you will learn how to install, remove, or search for packages using the different package management tools.
+
+## Package Managers: Two Levels
+Both package management systems provide two tool levels: a low-level tool (such as `dpkg` or `rpm`) takes care of the details of unpacking individual packages, running scripts, getting the software installed correctly, while a high-level tool (such as `apt-get`, `yum`, or `zypper`) works with groups of packages, downloads packages from the vendor, and figures out dependencies.
+
+Most of the time users need work only with the high-level tool, which will take care of calling the low-level tool as needed. Dependency tracking is a particularly important feature of the high-level tool, as it handles the details of finding and installing each dependency for you. Be careful, however, as installing a single package could result in many dozens or even hundreds of dependent packages being installed.
+
+![image][imgd]
+
+## Working With Different Package Management Systems
+The __Advanced Packaging Tool (apt)__ is the underlying package management system that manages software on __Debian__-based systems. While it forms the backend for graphical package managers, such as the __Ubuntu Software Center__ and __synaptic__, its native user interface is at the command line, with programs that include `apt-get` and `apt-cache`.
+
+__Yellowdog Updater Modified (yum)__ is an open source command-line package-management utility for __RPM__-compatible Linux systems, basically what we have called the __Fedora__ family. yum has both command line and graphical user interfaces. Recent __Fedora__ versions have replaced yum with a new utility called `dnf`, which has less historical baggage, has nice new capabilities and is mostly backwards compatible with `yum` for day-to-day commands.
+
+`zypper` is a package management system for __openSUSE__ that is based on __RPM__. `zypper` also allows you to manage repositories from the command line. `zypper` is fairly straightforward to use and resembles yum quite closely.
+
+To learn the basic packaging commands, click the link below:
+
+[Basic Packaging Commands][bpc]
+
+ | Operation | RPM | deb |
+ |-----------|-----|-----|
+ | Install package | `rpm -i foo.rpm` | `dpkg --install foo.deb` | 
+ | Install package, dependencies | `yum install foo` | `apt-get install foo` | 
+ | Remove package | `rpm -e foo.rpm` | `dpkg --remove foo.deb` | 
+ | Remove package, dependencies | `yum remove foo` | `apt-get autoremove foo` | 
+ | Update package | `rpm -U foo.rpm` | `dpkg --install foo.deb` | 
+ | Update package, dependencies | `yum update foo` | `apt-get install foo` | 
+ | Update entire system | `yum update` | `apt-get dist-upgrade` | 
+ | Show all installed packages | `rpm -qa` or `yum list installed` | `dpkg --list` | 
+ | Get information on package | `rpm -qil foo` | `dpkg --listfiles foo` | 
+ | Show packages named foo | `yum list "foo"` | `apt-cache search foo` | 
+ | Show all available packages | `yum list` | `apt-cache dumpavail foo` | 
+ | What package is file part of? | `rpm -qf file` | `dpkg --search file` | 
+
+Note: The next few screens cover the demonstrations of a member of each of the three Linux distribution families we cover in this course. You can view a demonstration for the distribution type of your choice.
+
+## Managing Software Packages on Ubuntu
+Click below to view a demonstration on how to manage software packages on __Ubuntu__.
+
+[video][vid9]
+
+## Managing Software Packages on CentOS
+Click below to view a demonstration on how to manage software packages on __CentOS__.
+
+[video][vida]
+
+## Managing Software Packages on openSUSE
+Click below to view a demonstration on how to manage Linux package on __openSUSE__.
+
+[video][vidb]
+
+## Knowledge Check
+1. Which of the following are high-level package managers?
+
+        A. dpkg
+        B. apt 
+        C. yum 
+        D. zypper 
+
+        Ans: B, C, D
+        Explanation
+        apt, yum, and zypper are high-level package managers.
+
+2. Which of the following are low-level package managers?
+
+        A. dpkg 
+        B. apt
+        C. yum
+        D. rpm 
+
+        Ans: A, D
+        Explanation
+        dpkg and rpm are low-level package managers.
+
+## Lab 5: Installing and Removing Software Packages
+Using the upper level package management system appropriate for your Linux distribution, do the following:
+
++ Install the dump package on your system.
++ Remove the dump package from your system.
+
+NOTE: If dump is already installed (you will be told so when you try to install), then do things in opposite order, i.e., remove and then install.
+
+Click [the link][lab5] to view a solution to the Lab exercise.
 
 
 # Summary
+You have completed this chapter. Let’s summarize the key concepts we covered:
+
++ __Virtual terminals (VT)__ in Linux are consoles, or command line terminals that use the connected monitor and keyboard.
++ Different Linux distributions start and stop the graphical desktop in different ways.
++ A terminal emulator program on the graphical desktop works by emulating a terminal within a window on the desktop.
++ The Linux system allows you to either log in via text terminal or remotely via the console.
++ When typing your password, nothing is printed to the terminal, not even a generic symbol to indicate that you typed.
++ The preferred method to shut down or reboot the system is to use the `shutdown` command.
++ There are two types of __pathnames__: absolute and relative.
++ An absolute pathname begins with the root directory and follows the tree, branch by branch, until it reaches the desired directory or file.
++ A relative pathname starts from the present working directory.
++ Using __hard__ and __soft__ (symbolic) links is extremely useful in Linux.
++ `cd` remembers where you were last, and lets you get back there with `cd -`.
++ `locate` performs a database search to find all file names that match a given pattern.
++ `find` locates files recursively from a given directory or set of directories.
++ `find` is able to run commands on the files that it lists, when used with the `-exec` option.
++ `touch` is used to set the access, change, and edit times of files, as well as to create empty files.
++ The __Advanced Packaging Tool (apt)__ package management system is used to manage installed software on __Debian__-based systems.
++ You can use the __Yellowdog Updater Modified (yum)__ open source command-line package-management utility for __RPM__-compatible Linux operating systems.
++ The `zypper` package management system is based on __RPM__ and used for __openSUSE__.
+
 
 
 [viid0]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002200_DTH.mp4
@@ -469,8 +768,12 @@ To practice, click the link provided below.
 [vid3]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002600_DTH.mp4
 [vid4]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V001200_DTH.mp4
 [vid5]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V005000_DTH.mp4
-[vid6]: 
-[vid7]: 
+[vid6]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V003900_DTH.mp4
+[vid7]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V010300_DTH.mp4
+[vid8]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002100_DTH.mp4
+[vid9]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V004100_DTH.mp4
+[vida]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V005100_DTH.mp4
+[vidb]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V004000_DTH.mp4
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6861da296abac83526d30c5e1ca0567b/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/cmdutils.png
 [img2]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/8de9705c7b1a71d12ec2d5308478064e/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/commandall.png
@@ -481,15 +784,21 @@ To practice, click the link provided below.
 [img7]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/aefe6c7fa6a198680e110ceae5c95c11/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/lnubuntu.png
 [img8]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/cea407ef8cfd36b34ede2a154959a98f/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/lnsubuntu.png
 [img9]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/8cda89b4595a6b8dde4ba73674b88261/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/pushdcentos.png
-[imga]: 
-[imgb]: 
-[imgc]: 
+[imga]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/db04248c7965e78a927a0fa8a42fc703/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/locatesuse.png
+[imgb]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/102046563ac484a6047300c801886837/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/findubuntu.png
+[imgc]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/cbdf6dc606a39eace7d669077837e628/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch06_screen41.jpg
+[imgd]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/8c786acf21df4cc0c81d315e375896d4/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch06_screen60.jpg
+
 
 [lab1]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-killgui.html
 [lab2]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-whereis.html
-[lab3]: 
-[lab4]: 
-[lab5]: 
+[lab3]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-fileops.html
+[lab4]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-find.html
+[lab5]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-package.html
 
 [cpad]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usingcd/index.html
 [cpfd]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usingfilesdirs/index.html
+[lf]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usinglocate/index.html
+[wild]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usinglswildcards/index.html
+[find]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usingfind/index.html
+[bpc]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f478e1c28b54f5df1d53ef1bc855b2e3/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/Basic_Packagaing_Commands.pdf
