@@ -139,7 +139,7 @@ All Linux distributions have network configuration files, but file formats and l
 In this section, you will learn how to manage network connections, including wired and wireless connections, and mobile broadband and VPN connections.
 
 ## Wired and Wireless Connections
-Wired connections usually do not require complicated or manual configuration. The hardware interface and signal presence are automatically detected, and then ___Network Manager__ sets the actual network settings via __DHCP (Dynamic Host Control Protocol)__.
+Wired connections usually do not require complicated or manual configuration. The hardware interface and signal presence are automatically detected, and then __Network Manager__ sets the actual network settings via __DHCP (Dynamic Host Control Protocol)__.
 
 For __static__ configurations that do not use __DHCP__, manual setup can also be done easily through __Network Manager__. You can also change the __Ethernet Media Access Control (MAC)__ address if your hardware supports it. (The MAC address is a unique hexadecimal number of your network card.)
 
@@ -169,7 +169,7 @@ To configure __Wireless Network__ in __Ubuntu__:
 
 Configuring __Wireless Connections__ in __openSUSE__
 
-___openSUSE__ looks different from __CentOS__ or __Ubuntu__, but Wired, Wireless, Mobile Broadband, VPN, and DSL are all available from the __Network Connections__ dialog box, as you will see in the upcoming demonstration.
+__openSUSE__ looks different from __CentOS__ or __Ubuntu__, but Wired, Wireless, Mobile Broadband, VPN, and DSL are all available from the __Network Connections__ dialog box, as you will see in the upcoming demonstration.
 
 The next few screens are demonstrations for the Linux distributions that we cover in this course. You can view a demonstration for the distribution family of your choice. 
 
