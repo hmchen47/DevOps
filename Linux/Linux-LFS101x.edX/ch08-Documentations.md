@@ -53,7 +53,7 @@ __man__ pages are often converted to:
 + Other formats.
 
 ## man
-The man program searches, formats, and displays the information contained in the man pages. Because many topics have a lot of information, output is piped through a  pager program such as `less` to be viewed one page at a time; at the same time, the information is formatted for a good visual display.
+The `man` program searches, formats, and displays the information contained in the man pages. Because many topics have a lot of information, output is piped through a  pager program such as `less` to be viewed one page at a time; at the same time, the information is formatted for a good visual display.
 
 When no options are given, by default one sees only the dedicated page specifically about the topic. You can broaden this to view all pages containing a string in their name by using the `-f` option. You can also view all pages that discuss a specified subject (even if the specified subject is not present in the name) by using the `–k` option.
 
