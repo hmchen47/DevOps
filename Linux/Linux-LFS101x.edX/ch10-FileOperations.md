@@ -155,7 +155,7 @@ Compare the results.  What are the differences?
 
 Find another way to see a list of the mounted filesystems,  by examining the `/proc` pseudo-filesystem.
 
-Click [the link][lab1] to view a solution to the Lab exercise.
+Click [the link][] to view a solution to the Lab exercise.
 
 Solution:
 > Typically, mount will show more filesystems mounted than are shown in `/etc/fstab` , which only lists those which are explicitly requested.
@@ -424,27 +424,198 @@ Click [the link][lab2] to view a solution to the Lab exercise.
 
 # Section 4: Backing Up and Compressing Data
 ## Backing Up Data
-There are many ways you can back up data or even your entire system. Basic ways to do so include the use of simple copying with cp and use of the more robust rsync.
+There are many ways you can back up data or even your entire system. Basic ways to do so include the use of simple copying with `cp` and use of the more robust `rsync`.
 
-Both can be used to synchronize entire directory trees. However, rsync is more efficient, because it checks if the file being copied already exists. If the file exists and there is no change in size or modification time, rsync will avoid an unnecessary copy and save time. Furthermore, because rsync copies only the parts of files that have actually changed, it can be very fast.
+Both can be used to synchronize entire directory trees. However, `rsync` is more efficient, because it checks if the file being copied already exists. If the file exists and there is no change in size or modification time, `rsync` will avoid an unnecessary copy and save time. Furthermore, because `rsync` copies only the parts of files that have actually changed, it can be very fast.
 
-cp can only copy files to and from destinations on the local machine (unless you are copying to or from a filesystem mounted using NFS), but rsync can also be used to copy files from one machine to another. Locations are designated in the target:path form, where target can be in the form of [user@]host. The user@ part is optional and used if the remote user is different from the local user.
+`cp` can only copy files to and from destinations on the local machine (unless you are copying to or from a filesystem mounted using NFS), but `rsync` can also be used to copy files from one machine to another. Locations are designated in the `target:path` form, where `target` can be in the form of `[user@]host`. The `user@` part is optional and used if the remote user is different from the local user.
 
-rsync is very efficient when recursively copying one directory tree to another, because only the differences are transmitted over the network. One often synchronizes the destination directory tree with the origin, using the -r option to recursively walk down the directory tree copying all files and directories below the one listed as the source.
+`rsync` is very efficient when recursively copying one directory tree to another, because only the differences are transmitted over the network. One often synchronizes the destination directory tree with the origin, using the `-r` option to recursively walk down the directory tree copying all files and directories below the one listed as the source.
 
+## Using rsync
+__rsync__ is a very powerful utility. For example, a very useful way to back up a project directory might be to use the following command:
 
-[image][imgi]
+`$ rsync -r project-X archive-machine:archives/project-X`
+
+Note that rsync can be very destructive! Accidental misuse can do a lot of harm to data and programs, by inadvertently copying changes to where they are not wanted. Take care to specify the correct options and paths. It is highly recommended that you first test your `rsync` command using the `-dry-run` option to ensure that it provides the results that you want.
+
+To use __rsync__ at the command prompt, type `rsync sourcefile destinationfile`, where either file can be on the local machine or on a networked machine.
+
+The contents of `sourcefile` are copied to `destinationfile`.
+
+## Compressing Data
+File data is often compressed to save disk space and reduce the time it takes to transmit files over networks.
+
+Linux uses a number of methods to perform this compression, including:
+
+| Command | Usage |
+|---------|-------|
+| `gzip` | The most frequently used Linux compression utility |
+| `bzip2` | Produces files significantly smaller than those produced by gzip |
+| `xz` | The most space-efficient compression utility used in Linux |
+| `zip` | Is often required to examine and decompress archives from other operating systems |
+
+These techniques vary in the efficiency of the compression (how much space is saved) and in how long they take to compress; generally, the more efficient techniques take longer. Decompression time does not vary as much across different methods.
+
+In addition, the `tar` utility is often used to group files in an __archive__ and then compress the whole archive at once.
+
+## Compressing Data Using gzip
+__gzip__ is the most often used Linux compression utility. It compresses very well and is very fast. The following table provides some usage examples:
+
+| Command | Usage |
+|---------|-------|
+| `gzip *` | Compresses all files in the current directory; each file is compressed and renamed with a `.gz` extension. |
+| `gzip -r projectX` | Compresses all files in the `projectX` directory, along with all files in all of the directories under `projectX`. |
+| `gunzip foo` | De-compresses `foo` found in the file `foo.gz`. Under the hood, the `gunzip` command is actually the same as `gzip –d`. |
+
+## Compressing Data Using bzip2
+__bzip2__ has a syntax that is similar to gzip but it uses a different compression algorithm and produces significantly smaller files, at the price of taking a longer time to do its work. Thus, it is more likely to be used to compress larger files.
+
+Examples of common usage are also similar to gzip:
+
+| Command | Usage |
+|---------|-------|
+| `bzip2 *` | Compresses all of the files in the current directory and replaces each file with a file renamed with a `.bz2` extension. |
+| `bunzip2 *.bz2` | Decompresses all of the files with an extension of .bz2 in the current directory. Under the hood, bunzip2 is the same as calling `bzip2 -d`. |
+
+## Compressing Data Using xz
+__xz__ is the most space efficient compression utility used in Linux and is now used by `www.kernel.org` to store archives of the Linux kernel. Once again, it trades a slower compression speed for an even higher compression ratio.
+
+Some usage examples:
+
+| Command | Usage |
+|---------| ------|
+| `xz *` | Compresses all of the files in the current directory and replaces each file with one with a `.xz` extension. |
+| `xz foo` | Compresses the file foo into `foo.xz` using the default compression level (-6), and removes foo if compression succeeds. |
+| `xz -dk bar.xz` | Decompresses `bar.xz` into bar and does not remove bar.xz even if decompression is successful. |
+| `xz -dcf a.txt b.txt.xz > abcd.txt` | Decompresses a mix of compressed and uncompressed files to standard output, using a single command. |
+| `xz -d *.xz` | Decompresses the files compressed using xz.|
+
+Compressed files are stored with a `.xz` extension. 
+
+## Handling Files Using zip
+The `zip` program is not often used to compress files in Linux, but is often required to examine and decompress archives from other operating systems. It is only used in Linux when you get a zipped file from a Windows user. It is a legacy program.
+
+| Command | Usage |
+|--|--|
+| `zip backup *` | Compresses all files in the current directory and places them in the file backup.zip. |
+| `zip -r backup.zip ~` | Archives your login directory (~) and all files and directories under it in the file backup.zip. |
+| `unzip backup.zip` | Extracts all files in the file backup.zip and places them in the current directory. |
+
+## Archiving and Compressing Data Using tar
+Historically, __tar__ stood for "tape archive" and was used to archive files to a magnetic tape. It allows you to create or extract files from an archive file, often called a __tarball__. At the same time, you can optionally compress while creating the archive, and decompress while extracting its contents.
+
+Here are some examples of the use of `tar`:
+
+| Command | Usage |
+|---|---|
+| `tar xvf mydir.tar` | Extract all the files in mydir.tar into the mydir directory |
+| `tar zcvf mydir.tar.gz mydir` | Create the archive and compress with `gzip` |
+| `tar jcvf mydir.tar.bz2 mydir` | Create the archive and compress with `bz2` |
+| `tar Jcvf mydir.tar.xz mydir` | Create the archive and compress with `xz` |
+| `tar xvf mydir.tar.gz` | Extract all the files in `mydir.tar.gz` into the mydir directory. Note you do not have to tell tar it is in gzip format. |
+
+You can separate out the archiving and compression stages, as in:
+```
+$ tar mydir.tar mydir ; gzip mydir.tar
+$ gunzip mydir.tar.gz ; tar xvf mydir.tar
+```
+but this is slower and wastes space by creating an unneeded intermediary `.tar` file.
+
+## Disk-to-Disk Copying
+The __dd__ program is very useful for making copies of `raw disk space`. For example, to back up your __Master Boot Record (MBR)__ (the first 512-byte sector on the disk that contains a table describing the partitions on that disk), you might type:
+
+`dd if=/dev/sda of=sda.mbr bs=512 count=1`
+
+To use `dd` to make a copy of one disk onto another, (WARNING!) deleting everything that previously existed on the second disk, type:
+
+`dd if=/dev/sda of=/dev/sdb`
+
+An exact copy of the first disk device is created on the second disk device.
+
+Do not experiment with this command as written above, as it can erase a hard disk!
+
+Exactly what the name `dd` stands for is an often-argued item. The words __data definition__ is the most popular theory and has roots in early __IBM__ history. Often, people joke that it means __disk destroyer__ and other variants such as __delete data__!
+
+## Knowledge Check
+1. While copying one directory to a similar directory on another system over the network, rsync copies:
+
+        A. all files
+        B. all subdirectories
+        C. all files and subdirectories that have changed
+        D. only the parts of all files and subdirectories that have changed 
+
+        Ans: D
+        Explanation
+        While copying one directory to a similar directory on another system over the network, rsync copies only the parts of all files and subdirectories that have changed.
+
+2. The command tar zcvf backup.tar.gz ~ will archive which of the following in the file backup.tar.gz?
+
+        A. The user's home directory
+        B. The user's entire home directory tree 
+        C. The entire Hard Disk
+        D. The entire partition the user's home directory resides in
+
+        Ans: B
+        Explanation
+        The command `tar zcvf backup.tar.gz ~` will archive the user's entire home directory tree in the file `backup.tar.gz`.
+
+3. Which of the following commands will compress all the files in some_dir, along with all of the files in all the directories under it?
+
+        A. $ gzip *
+        B. $ gzip -r some_dir 
+        C. $ gzip -d some_dir
+        D. $ gunzip some_dir
+
+        Ans: B
+        Explanation
+        The $ gzip -r some_dir will compress all the files in some_dir, along with all of the files in all of the subdirectories under it.
+
+4. The two commands gunzip foo and gzip -d foo do the same thing.
+
+        Ans: True
+        Explanation
+        The two commands gunzip foo and gzip -d foo do the same thing; they decompress the contents of the file foo.
+
+## Lab 3: Archiving (Backing Up) the Home Directory
+Archiving (or backing up) your files from time to time is essential good hygiene. You might type a command and thereby unintentionally clobber files you need and did not mean to alter.
+
+Furthermore, while your hardware may be deemed fairly reliable, all devices do fail in some fashion eventually (even if it is just an unexpected power failure). Often, this happens at the worst possible time. Periodically backing up files is a good habit to get into.
+
+It is, of course, important to do backups to external systems through a network, or onto external storage, such as an external drive or USB stick. Here, we will be making a back up archive on the same system, which is very useful, but won’t help if the drive fails catastrophically, or your computer is stolen or the building gets zapped by an asteroid or a fire.
+
+First, using `tar`, back up all files and subdirectories under your home directory. Place the resulting tarball file in the /tmp directory, giving it the name backup.tar .
+
+Second, accomplish the same task with `gzip` compression using the `-z` option to tar, creating `/tmp/backup.tar.gz`.
+
+Compare the size of the two files (with ls `-l` ).
+
+For additional experience, make backups using the `-j` option using the `bzip2` compression, and `-J` option for using `xz` compression.
+
+Click [the link][lab3] to view a solution to the Lab exercise.
+
 
 # Summary
+The key concepts we covered in this chapter are:
+
++ The filesystem tree starts at what is often called the __root__ directory (or __trunk__, or __/__).
++ The __Filesystem Hierarchy Standard (FHS)__ provides Linux developers and system administrators a standard directory structure for the filesystem.
++ Partitions help to segregate files according to usage, ownership, and type.
++ Filesystems can be __mounted__ anywhere on the main filesystem tree at a mount point. Automatic filesystem mounting can be set up by editing `/etc/fstab`.
++ __NFS (The Network Filesystem)__ is a useful method for sharing files and data through the network systems.
++ Filesystems like `/proc` are called pseudo filesystems because they exist only in memory.
++ `/root` (slash-root) is the home directory for the root user.
++ `/var` may be put in its own filesystem so that growth can be contained and not fatally affect the system.
++ `/boot` contains the basic files needed to boot the system.
++ `patch` is a very useful tool in Linux. Many modifications to source code and configuration files are distributed with patch files, as they contain the deltas or changes to go from an old version of a file to the new version of a file.
++ File extensions in Linux do not necessarily mean that a file is of a certain type.
++ `cp` is used to copy files on the local machine, while `rsync` can also be used to copy files from one machine to another, as well as synchronize contents.
++ `gzip`, `bzip2`, `xz` and `zip` are used to compress files.
++ `tar` allows you to create or extract files from an archive file, often called a __tarball__. You can optionally compress while creating the archive, and decompress while extracting its contents.
++ `dd`  can be used to make large exact copies, even of entire disk partitions, efficiently.
 
 
 [vid0]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V009500_DTH.mp4
-[vid1]: 
-[vid2]: 
-[vid3]: 
-[vid4]: 
-[vid5]: 
-[vid6]: 
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6c6a76e5e83450a2f75777a86ba8e790/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch08_screen_03.jpg
 [img2]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ac62a14ab6f4013601e09546d5a7e70c/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/LFS01_ch08_screen05.jpg
@@ -463,15 +634,10 @@ rsync is very efficient when recursively copying one directory tree to another, 
 [imgf]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/33d173c484df38d28dcb85d2a49a010e/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/diff3centos.png
 [imgg]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6bb8e04e57d74c83cd0de7335128892d/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/patchrhel.png
 [imgh]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/257161c915cc7d71d00efa086067716d/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/fileprogrhel.png
-[imgi]: 
-[imgj]: 
-[imgk]: 
 
 [lab1]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-mount.html
 [lab2]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-diff.html
-[lab3]: 
-[lab4]: 
-[lab5]: 
+[lab3]: https://courses.edx.org/asset-v1:LinuxFoundationX+LFS101x+1T2017+type@asset+block/labsol-archive.html
 
 [compf]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usingdiff/index.html
 [file]: http://linuxfoundation.s3-website-us-east-1.amazonaws.com/TIY/usingfile/index.html
