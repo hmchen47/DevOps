@@ -41,7 +41,7 @@ Most input lines entered at the shell prompt have three basic elements:
 
 + Command
 + Options
-+ Ar_`uments.
++ Arguments.
 
 The __command__ is the name of the program you are executing. It may be followed by one or more __options__ (or switches) that modify what the command may do. Options usually start with one or two dashes, for example, `-p` or `--print`, in order to differentiate them from __arguments__, which represent what the command operates on.
 
@@ -120,7 +120,7 @@ To switch between the VTs, press `CTRL-ALT-corresponding function key` for the V
 ![image][img4]
 
 ## Turning Off the Graphical Desktop
-Linux distributions can start and stop the graphical desktop in various ways. The exact method differs from distribution and among distribution versions. For the newer systemd-based distributions, the display manager is run as a service, you can stop the GUI desktop with the `systemctl` utility and most distributions will also work with the telinit command, as in:
+Linux distributions can start and stop the graphical desktop in various ways. The exact method differs from distribution and among distribution versions. For the newer systemd-based distributions, the display manager is run as a service, you can stop the GUI desktop with the `systemctl` utility and most distributions will also work with the `telinit` command, as in:
 
 + `sudo systemctl stop gdm` (or `sudo telinit 3`)
 
@@ -176,7 +176,7 @@ Once your session is started (either by logging into a text terminal or via a gr
 ## Rebooting and Shutting Down
 The preferred method to shut down or reboot the system is to use the `shutdown` command. This sends a warning message and then prevents further users from logging in. The `init` process will then control shutting down or rebooting the system. It is important to always shut down properly; failure to do so can result in damage to the system and/or loss of data.
 
-The __halt__ and __poweroff__ commands issue `shutdown -h` to halt the system; reboot issues `shutdown -r` and causes the machine to reboot instead of just shutting down. Both rebooting and shutting down from the command line requires superuser (root) access.
+The `halt` and `poweroff` commands issue `shutdown -h` to halt the system; reboot issues `shutdown -r` and causes the machine to reboot instead of just shutting down. Both rebooting and shutting down from the command line requires superuser (root) access.
 
 When administering a multiuser system, you have the option of notifying all users prior to shutdown, as in:
 
@@ -270,8 +270,8 @@ If you edit one of the files, exactly what happens depends on your editor; most 
 ## Soft (Symbolic) Links
 __Soft__ (or __Symbolic links__ are created with the `-s` option as in:
 ```
-$ ln -s file1 file3`
-$ ls -li file1 file3`
+$ ln -s file1 file3
+$ ls -li file1 file3
 ```
 ![image][img8]
 
@@ -380,7 +380,7 @@ __mkdir__ is used to create a directory.:
 + To create a sample directory named `sampdir` under the current directory, type `mkdir sampdir`.
 + To create a sample directory called `sampdir` under `/usr`, type `mkdir /usr/sampdir`.
 
-Removing a directory is simply done with rmdir. The directory must be empty or it will fail. To remove a directory and all of its contents you have to do `rm -rf`, as we shall discuss.
+Removing a directory is simply done with `rmdir`. The directory must be empty or it will fail. To remove a directory and all of its contents you have to do `rm -rf`, as we shall discuss.
 
 ## Removing a File
 | Command | Usage |
