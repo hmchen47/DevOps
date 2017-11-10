@@ -451,7 +451,7 @@ Linux uses a number of methods to perform this compression, including:
 | Command | Usage |
 |---------|-------|
 | `gzip` | The most frequently used Linux compression utility |
-| `bzip2` | Produces files significantly smaller than those produced by gzip |
+| `bzip2` | Produces files significantly smaller than those produced by `gzip` |
 | `xz` | The most space-efficient compression utility used in Linux |
 | `zip` | Is often required to examine and decompress archives from other operating systems |
 
@@ -489,18 +489,18 @@ Some usage examples:
 | `xz foo` | Compresses the file foo into `foo.xz` using the default compression level (-6), and removes foo if compression succeeds. |
 | `xz -dk bar.xz` | Decompresses `bar.xz` into bar and does not remove bar.xz even if decompression is successful. |
 | `xz -dcf a.txt b.txt.xz > abcd.txt` | Decompresses a mix of compressed and uncompressed files to standard output, using a single command. |
-| `xz -d *.xz` | Decompresses the files compressed using xz.|
+| `xz -d *.xz` | Decompresses the files compressed using `xz`.|
 
-Compressed files are stored with a `.xz` extension. 
+Compressed files are stored with a `.xz` extension.
 
 ## Handling Files Using zip
 The `zip` program is not often used to compress files in Linux, but is often required to examine and decompress archives from other operating systems. It is only used in Linux when you get a zipped file from a Windows user. It is a legacy program.
 
 | Command | Usage |
 |--|--|
-| `zip backup *` | Compresses all files in the current directory and places them in the file backup.zip. |
-| `zip -r backup.zip ~` | Archives your login directory (~) and all files and directories under it in the file backup.zip. |
-| `unzip backup.zip` | Extracts all files in the file backup.zip and places them in the current directory. |
+| `zip backup *` | Compresses all files in the current directory and places them in the file `backup.zip`. |
+| `zip -r backup.zip ~` | Archives your login directory (~) and all files and directories under it in the file `backup.zip`. |
+| `unzip backup.zip` | Extracts all files in the file `backup.zip` and places them in the current directory. |
 
 ## Archiving and Compressing Data Using tar
 Historically, __tar__ stood for "tape archive" and was used to archive files to a magnetic tape. It allows you to create or extract files from an archive file, often called a __tarball__. At the same time, you can optionally compress while creating the archive, and decompress while extracting its contents.
