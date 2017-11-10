@@ -313,9 +313,9 @@ me@example.com:~$ export PS1='$ '
 $
 ```
 An even better practice would be to save the old prompt first and then restore, as in:
-
-`$ OLD_PS1=$PS1`
-
+```bash
+$ OLD_PS1=$PS1
+```
 change the prompt, and eventually change it back with:
 ```bash
 $ PS1=$OLD_PS1
@@ -437,12 +437,12 @@ The table describes the syntax used to execute previously used commands:
 
 | Syntax | Task |
 |--------|------|
-| `!` | Sart a history substitution |
-| `!$` | efer to the last argument in a line |
-| `!n` | efer to the nth command line |
-| `!strin` | Refer to the most recent command starting with string |
+| `!` | Start a history substitution |
+| `!$` | Refer to the last argument in a line |
+| `!n` | Refer to the nth command line |
+| `!string` | Refer to the most recent command starting with string |
 
-All history substitutions start with !. In the line `$ ls -l /bin /etc /var !$` refers to `/var`, which is the last argument in the line.
+All history substitutions start with `!`. In the line `$ ls -l /bin /etc /var` `!$` refers to `/var`, which is the last argument in the line.
 
 Here are more examples:
 
@@ -468,6 +468,7 @@ $
 You can use keyboard shortcuts to perform different tasks quickly. The table lists some of these keyboard shortcuts and their uses.
 
 | Keyboard Shortcut | Task |
+|-------------------|------|
 | `CTRL-L` | Clears the screen |
 | `CTRL-D` | Exits the current shell |
 | `CTRL-Z` | Puts the current process into suspended background |
