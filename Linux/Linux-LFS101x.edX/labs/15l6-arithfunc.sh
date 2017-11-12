@@ -6,7 +6,7 @@
 #              method 2 uses let
 #              method 3 uses expr
 
-add() {
+add1() {
     answer1=$(($1 + $2))
     let answer2=($1 + $2)
     answer3=`expr $1 + $2`
@@ -26,6 +26,7 @@ div() {
     let answer2=($1 / $2)
     answer3=`expr $1 / $2`
 }
+
 # End of functions
 #
 
