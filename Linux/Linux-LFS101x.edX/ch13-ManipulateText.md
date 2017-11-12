@@ -59,7 +59,7 @@ Note that `EOF` is case sensitive. (One can also use another word, such as `STOP
 ## Using cat
 Click below to view a demonstration on how to use cat.
 
-![video][vid1]
+[video][vid1]
 
 ## Try-It-Yourself : Using cat
 To practice, click the link provided below.
@@ -246,7 +246,7 @@ __awk__ has the following features:
 
 + It is a powerful utility and interpreted programming language.
 + It is used to manipulate data files, retrieving, and processing text.
-+ It works well with __fields__ (containing a single piece of data, essentially a column) and records (a collection of fields, essentially a line in a file).
++ It works well with __fields__ (containing a single piece of data, essentially a column) and __records__ (a collection of fields, essentially a line in a file).
 
 __awk__ is invoked as shown in the following:
 
@@ -262,7 +262,7 @@ As with `sed`, short `awk` commands can be specified directly at the command lin
 ## awk Basic Operations
 The table explains the basic tasks that can be performed using __awk__. The input file is read one line at a time, and, for each line, __awk__ matches the given pattern in the given order and performs the requested action. The `-F` option allows you to specify a particular __field separator__ character. For example, the `/etc/passwd` file uses "`:`" to separate the fields, so the `-F:` option is used with the `/etc/passwd` file.
 
-The command/action in __awk__ needs to be surrounded with apostrophes (or single-quote (')). __awk__ can be used as follows:
+The command/action in __awk__ needs to be surrounded with apostrophes (or single-quote (`'`)). __awk__ can be used as follows:
 
 | Command | Usage |
 |---------|-------|
