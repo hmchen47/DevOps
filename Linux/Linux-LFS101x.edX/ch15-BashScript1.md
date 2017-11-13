@@ -128,7 +128,7 @@ Click [the link][lab1] below to view a solution to the Lab exercise.
 ## Basic Syntax and Special Characters
 Scripts require you to follow a standard language syntax. Rules delineate how to define variables and how to construct and format allowed statements, etc. The table lists some special character usages within __bash__ scripts:
 
-| Character` | Description |
+| Character | Description |
 |------------|-------------|
 | `#` | Used to add a comment, except when used as `\#`, or as `#!` when starting a script |
 | `\` | Used at the end of a line to indicate continuation on to the next line |
@@ -243,7 +243,6 @@ If you type in the script shown in the figure, make the script executable with `
 
 The final statement becomes: All done with param.sh
 
-## Script Parameters (Video)
 Please note that this is an illustrated video that shows the steps, there is no audio.
 
 [video][vid1]
@@ -514,7 +513,7 @@ __Objective__: To accept a number and display whether it is equal to or greater 
 ```bash
 #!/bin/bash
 
-echo -n "Entera number: "
+echo -n "Enter a number: "
 read count
 
 if [ $count -eq 100 ]
