@@ -119,9 +119,9 @@ To practice, click the link provided below.
 ## Network Configuration Files
 Network configuration files are essential to ensure that interfaces function correctly. They are located in the `/etc` directory tree. However, the exact files used have historically been dependent on the particular Linux distribution and version being used.
 
-For __Debian__ family configurations, the basic network configuration files could be found under `/etc/network/`, while for Fedora and __SUSE__ family systems one needed to inspect `/etc/sysconfig/network`. 
+For __Debian__ family configurations, the basic network configuration files could be found under `/etc/network/`, while for __Fedora__ and __SUSE__ family systems one needed to inspect `/etc/sysconfig/network`. 
 
-Modern systems emphasize the use of __Network Manager__, which we briefly discussed when we considered graphical system administration, rather than try to keep up with the vagaries of the files in /etc. While the graphical versions of __Network Manager__ do look somewhat different in different distributions, the __nmtui__ utility (shown in the screenshot) varies almost not at all, as does the even more sparse __nmcli (command line interface)__ utility. If you are proficient in the use of the GUIs, by all means, use them. If you are working on a variety of systems, the lower level utilities may make life easier.
+Modern systems emphasize the use of __Network Manager__, which we briefly discussed when we considered graphical system administration, rather than try to keep up with the vagaries of the files in `/etc`. While the graphical versions of __Network Manager__ do look somewhat different in different distributions, the __nmtui__ utility (shown in the screenshot) varies almost not at all, as does the even more sparse __nmcli (command line interface)__ utility. If you are proficient in the use of the GUIs, by all means, use them. If you are working on a variety of systems, the lower level utilities may make life easier.
 
 ![image][img7]
 
