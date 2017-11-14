@@ -90,7 +90,7 @@ Click below to view the demonstration to install CUPS in Ubuntu.
 ## Managing CUPS
 After installing CUPS, you'll need to start and manage the CUPS daemon so that CUPS is ready for configuring a printer. Managing the CUPS daemon is simple; all management features are wrapped around the cups init script, which can be easily started, stopped, and restarted.
 
-### Managing the CUPS daemon in Ubuntu
+### Managing the CUPS daemon in __Ubuntu__
 Click below to view the demonstration to manage CUPS daemon in __Ubuntu__.
 
 [video][vid2]
@@ -108,7 +108,7 @@ $ sudo update-rc -f cups default
 $ sudo update-rc cups disable
 ```
 
-### Managing the CUPS daemon in openSUSE
+### Managing the CUPS daemon in __openSUSE__
 Click below to view the demonstration to manage CUPS daemon in __openSUSE__.
 
 [video][vid3]
@@ -121,11 +121,10 @@ $ sudo /etc/init.d/cups status
 $ sudo /etc/init.d/cups stop
 
 # boot time printer service
-$ sudo chkconfig xups on
-$ sudo chkconfig xups off
+$ sudo chkconfig cups on
 ```
 
-### Managing the CUPS in CentOS
+### Managing the CUPS in __CentOS__
 Click below to view the demonstration to manage CUPS daemon in __CentOS__.
 
 [video][vid4]
@@ -168,12 +167,12 @@ This web interface allows you to:
 
 + Add and remove local/remote printers
 + Configure printers:
-    – Local/remote printers
-    – Share a printer as a CUPS server
+    + Local/remote printers
+    + Share a printer as a CUPS server
 + Control print jobs:
-    – Monitor jobs
-    – Show completed or pending jobs
-    – Cancel or move jobs.
+    + Monitor jobs
+    + Show completed or pending jobs
+    + Cancel or move jobs.
 
 The __CUPS__ web interface is available on your browser at: `http://localhost:631`
 
@@ -284,10 +283,9 @@ Most users today are far more accustomed to working with files in __PDF__ format
 
 From time to time, you may need to convert files from one format to the other, and there are very simple utilities for accomplishing that task. __ps2pdf__ and __pdf2ps__ are part of the ghostscript package installed on or available on all Linux distributions. As an alternative, there are __pstopdf__ and __pdftops__ which are usually part of the __poppler__ package, which may need to be added through your package manager. Unless you are doing a lot of conversions or need some of the fancier options (which you can read about in the man pages for these utilities), it really does not matter which ones you use.
 
-Another possibility is to use the very powerful convert program, which is part of the ImageMagick package.
+Another possibility is to use the very powerful __convert__ program, which is part of the __ImageMagick__ package.
 
 Some usage examples:
-
 | Command | Usage |
 |---------|-------|
 | `pdf2ps file.pdf` | Converts `file.pdf` to `file.ps` |
