@@ -2,7 +2,7 @@ Chapter 16: Bash Shell Scripting II
 ===================================
 
 # Introduction/ Learning Objectives
-[video[vid0]]
+[video][vid0]
 
 ## Learning Objectives
 By the end of this chapter, you should be able to:
@@ -125,7 +125,7 @@ Below are some of the advantages of using the case statement:
 + It enables you to compare a variable against several values at once.
 + It reduces the complexity of a program.
 
-![image][img3]
+[image][img3]
 
 ## Structure of the case Statement
 Here is the basic structure of the case statement:
