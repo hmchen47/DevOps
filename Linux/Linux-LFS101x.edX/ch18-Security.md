@@ -139,7 +139,7 @@ auth could not identify password for [op]
 op : 1 incorrect password attempt ;
 TTY=pts/6 ; PWD=/var/log ; USER=root ; COMMAND=/bin/bash
 ```
-[image][img3]
+![image][img3]
 
 ## The sudoers File
 Whenever __sudo__ is invoked, a trigger will look at `/etc/sudoers` and the files in `/etc/sudoers.d` to determine if the user has the right to use __sudo__ and what the scope of their privilege is. Unknown user requests and requests to do operations not allowed to the user even with __sudo__ are reported. You can edit the `sudoers` file by using `visudo`, which ensures that only one person is editing the file at a time, has the proper permissions, and refuses to write out the file and exit if there is an error in the changes made.
