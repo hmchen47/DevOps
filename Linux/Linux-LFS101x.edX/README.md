@@ -1,4 +1,4 @@
-Introduction to Linux
+[Introduction to Linux][https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/course/]
 =====================
 ## 
 # [Welcome and Introduction][./ch00-toc.md]
