@@ -1,16 +1,16 @@
-[Introduction to Linux][https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/course/]
+(Introduction to Linux](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS101x+1T2017/course/)
 =====================
 ## 
-# [Welcome and Introduction][./ch00-toc.md]
+# [Welcome and Introduction](./ch00-toc.md)
 
-# Chapter 01: [The Linux Foundation][./ch01-LinuxFoundation.md]
+# Chapter 01: [The Linux Foundation](./ch01-LinuxFoundation.md)
 ## Introduction/ Learning Objectives
 ## Section 1: The Linux Foundation
 ## Section 2: The Linux Foundation Training
 ## Section 3: Course Linux Requirements
 ## Summary
 
-# Chapter 02: [Linux Philosophy and Concepts][./ch02-PhilosophyConcepts.md]
+# Chapter 02: [Linux Philosophy and Concepts](./ch02-PhilosophyConcepts.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Linux History
 ## Section 2: Linux Philosophy
@@ -19,7 +19,7 @@
 ## Section 5: Linux Distributions
 ## Summary
 
-# Chapter 03: [Linux Basics and System Startup][./ch03-BasicsStartup.md]
+# Chapter 03: [Linux Basics and System Startup](./ch03-BasicsStartup.md)
 ## Introduction/ Learning Objectives
 ## Section 1: The Boot Process
 ## Section 2: Kernel, init and Services
@@ -27,21 +27,21 @@
 ## Section 4: Linux Distribution Installation
 ## Summary
 
-# Chapter 04: [Graphical Interface][./ch04-GUI.md]
+# Chapter 04: [Graphical Interface](./ch04-GUI.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Graphical Desktop
 ## Section 2: Session Management
 ## Section 3: Basic Operations
 ## Summary
 
-# Chapter 05: [System Configuration from the Graphical Interface][./ch05-SysConfigwGUI.md]
+# Chapter 05: [System Configuration from the Graphical Interface](./ch05-SysConfigwGUI.md)
 ## Introduction/ Learning Objectives
 ## Section 1: System, Display, Date and Time Settings
 ## Section 2: Network Manager
 ## Section 3: Installing and Updating Software
 ## Summary
 
-# Chapter 06: [Common Applications][./ch06-CommonApps.md]
+# Chapter 06: [Common Applications](./ch06-CommonApps.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Internet Applications
 ## Section 2: Productivity and Development Applications
@@ -49,7 +49,7 @@
 ## Section 4: Graphics Editors and Utilities
 ## Summary
 
-# Chapter 07: [Command Line Operations][./ch07-CLOperations.md]
+# Chapter 07: [Command Line Operations](./ch07-CLOperations.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Command Line Mode Options
 ## Section 2: Basic Operations
@@ -58,7 +58,7 @@
 ## Section 5: Installing Software
 ## Summary
 
-# Chapter 08: [Finding Linux Documentation][./ch08-Documentations.md]
+# Chapter 08: [Finding Linux Documentation](./ch08-Documentations.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Documentation Sources
 ## Section 2: The man pages
@@ -67,7 +67,7 @@
 ## Section 5: Other Documentation Sources
 ## Summary
 
-# Chapter 09: [Processes][./ch09-Processes.md]
+# Chapter 09: [Processes](./ch09-Processes.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Introduction to Processes and Process Attributes
 ## Section 2: Process Metrics and Process Control
@@ -75,7 +75,7 @@
 ## Section 4: Starting Processes in the Future
 ## Summary
 
-# Chapter 10: [File Operations][./ch10-FileOperations.md]
+# Chapter 10: [File Operations](./ch10-FileOperations.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Filesystems
 ## Section 2: Filesystem Architecture
@@ -83,13 +83,13 @@
 ## Section 4: Backing Up and Compressing Data
 ## Summary
 
-# Chapter 11: [Text Editors][./ch11-TextEditors.md]
+# Chapter 11: [Text Editors](./ch11-TextEditors.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Basic Editors: nano and gedit
 ## Section 2: More Advanced Editors: vi and emacs
 ## Summary
 
-# Chapter 12: [User Environment][./ch12-UserEnvironment.md]
+# Chapter 12: [User Environment](./ch12-UserEnvironment.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Accounts, Users and Groups
 ## Section 2: Environment Variables
@@ -97,7 +97,7 @@
 ## Section 4: File Permissions
 ## Summary
 
-# Chapter 13 : [Manipulating Text][./ch13-ManipulateText.md]
+# Chapter 13 : [Manipulating Text](./ch13-ManipulateText.md)
 ## Introduction/ Learning Objectives
 ## Section 1: cat and echo
 ## Section 2: Working with Large and Compressed Files
@@ -107,7 +107,7 @@
 ## Section 6: Miscellaneous Text Utilities
 ## Summary
 
-# Chapter 14: [Network Operations][./ch14-NetworkOperations.md]
+# Chapter 14: [Network Operations](./ch14-NetworkOperations.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Network Addresses and DNS
 ## Section 2: Networking Configuration and Tools
@@ -115,14 +115,14 @@
 ## Section 4: Transferring Files
 ## Summary
 
-# Chapter 15 : [Bash Shell Scripting I][./ch15-BashScript1.md]
+# Chapter 15 : [Bash Shell Scripting I](./ch15-BashScript1.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Features and Capabilities
 ## Section 2: Syntax
 ## Section 3: Constructs
 ## Summary
 
-# Chapter 16: [Bash Shell Scripting II][./ch16-BashScript2.md]
+# Chapter 16: [Bash Shell Scripting II](./ch16-BashScript2.md)
 ## Introduction/ Learning Objectives
 ## Section 1: String Manipulation
 ## Section 2: The Case Statement
@@ -131,14 +131,14 @@
 ## Section 5: Some Additional Useful Techniques
 ## Summary
 
-# Chapter 17: [Printing][./ch17-Prinitng.md]
+# Chapter 17: [Printing](./ch17-Prinitng.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Configuration
 ## Section 2: Printing Operations
 ## Section 3: Manipulating Postscript and PDF Files
 ## Summary
 
-# Chapter 18: [Local Security Principles][./ch18-Security.md]
+# Chapter 18: [Local Security Principles](./ch18-Security.md)
 ## Introduction/ Learning Objectives
 ## Section 1: Understanding Linux Security
 ## Section 2: When Are root Privileges Required?
