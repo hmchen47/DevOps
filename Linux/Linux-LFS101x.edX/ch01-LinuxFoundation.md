@@ -49,7 +49,7 @@ The Linux Foundation hosts conferences and other events throughout the world whi
 + Encourage collaboration among the entire community.
 + Provide an atmosphere that is unmatched in its ability to further the platform.
 
- view a [video][vidoe3] on the events organized by The Linux Foundation.
+ view a [video][video3] on the events organized by The Linux Foundation.
 
 ## Knowledge Check
 What are the objectives of The Linux Foundation?

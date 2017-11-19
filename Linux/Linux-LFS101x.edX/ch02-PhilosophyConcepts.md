@@ -115,7 +115,7 @@ The Linux community consists of vendors, developers, and active users. They comm
 
 
 Section 4: Linux Terminology
----------------------------------
+----------------------------
 ## Introduction
 When you start exploring Linux, you will soon come across some unfamiliar terms, like distribution, boot loader, desktop environment, etc. So, before we proceed further, let's stop and take a look at some basic terminology used in Linux to help you get up to speed.
 
@@ -124,17 +124,17 @@ When you start exploring Linux, you will soon come across some unfamiliar terms,
 
 Termonologies:
 
-+ kernel: glue between hardware and applications, e.g. Linux kernel
-+ distribution (distro): collection of software making up a Linux-based operating system, e.g., RHEL, Fedora, Ubuntu, and Gentoo
-+ boot loader: program that boots the operating system, e.g. GRUB and ISOLINUX
-+ service: program that runs as a background perocess, e.g., httpd, ftsd, ntpd, ftpd, and named
-+ filesystem: mtethod for storing and organizing files, e.g., ext3, ext4, FAT, XFS, BTFS, and Btrfs
-+ X Window System: graphical subsystem on nearly all Linux systems
++ __kernel__: glue between hardware and applications, e.g. Linux kernel
++ __distribution (distro)__: collection of software making up a Linux-based operating system, e.g., RHEL, Fedora, Ubuntu, and Gentoo
++ __boot loader__: program that boots the operating system, e.g. GRUB and ISOLINUX
++ __service__: program that runs as a background perocess, e.g., httpd, ftsd, ntpd, ftpd, and named
++ __filesystem__: method for storing and organizing files, e.g., ext3, ext4, FAT, XFS, BTFS, and Btrfs
++ __X Windows System__: graphical subsystem on nearly all Linux systems
     + GUI: Desktop - KDE, XFCE; Window manager; X Window System/X11
     + Console: CLI/shell; kernel; hardware
-+ Desktop environment: graphical user interface on top of the operating system, e.g., GNOME, KDE, Xfce, and Fluxbox
-+ Command line: interface for typing commands on top of the operating system
-+ shell: command line interpreter that interprets the command line input and instructs the OS to perform any necessary tasks and commands, e.g., bash, tcsh, csh
++ __Desktop environment__: graphical user interface on top of the operating system, e.g., GNOME, KDE, Xfce, and Fluxbox
++ __Command line__: interface for typing commands on top of the operating system
++ __shell__: command line interpreter that interprets the command line input and instructs the OS to perform any necessary tasks and commands, e.g., bash, tcsh, csh
 
 ## Knowledge Check
 1. What is a kernel?
