@@ -762,7 +762,7 @@ You have completed this chapter. Let’s summarize the key concepts we covered:
 
 
 
-[viid0]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002200_DTH.mp4
+[vid0]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002200_DTH.mp4
 [vid1]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V005500_DTH.mp4
 [vid2]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V006100_DTH.mp4
 [vid3]: https://d2f1egay8yehza.cloudfront.net/LINLFS10/LINLFS102014-V002600_DTH.mp4

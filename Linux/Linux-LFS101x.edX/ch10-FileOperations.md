@@ -214,7 +214,7 @@ The `/proc` filesystem contains virtual files (files that exist only in memory) 
 /proc/<Process-ID-#>
 /proc/sys
 ```
-The first example shows there is a directory for every process running on the system, which contains vital information about it. The second example shows a virtual directory that contains a lot of information about the entire system, in particular its hardware and configuration. The `/pro`c` filesystem is very useful because the information it reports is gathered only as needed and never needs storage on the disk.
+The first example shows there is a directory for every process running on the system, which contains vital information about it. The second example shows a virtual directory that contains a lot of information about the entire system, in particular its hardware and configuration. The `/proc` filesystem is very useful because the information it reports is gathered only as needed and never needs storage on the disk.
 
 ![image][img9]
 
