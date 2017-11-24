@@ -218,7 +218,7 @@ Some `lp` commands and other printing utilities you can use are listed in the ta
 |---------|-------|
 | `lp <filename>` | To print the file to default printer |
 | `lp -d printer <filename>` | To print to a specific printer (useful if multiple printers are available) |
-| `program | lp` or `echo string | lp` | To print the output of a program  |
+| `program` \| `lp` or `echo string` \| `lp` | To print the output of a program  |
 | `lp -n number <filename>` | To print multiple copies |
 | `lpoptions -d printer` | To set the default printer |
 | `lpq -a` | To show the queue status |
@@ -287,6 +287,7 @@ From time to time, you may need to convert files from one format to the other, a
 Another possibility is to use the very powerful __convert__ program, which is part of the __ImageMagick__ package.
 
 Some usage examples:
+
 | Command | Usage |
 |---------|-------|
 | `pdf2ps file.pdf` | Converts `file.pdf` to `file.ps` |
