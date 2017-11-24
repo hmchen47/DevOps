@@ -122,6 +122,7 @@ $ sudo /etc/init.d/cups stop
 
 # boot time printer service
 $ sudo chkconfig cups on
+$ sudo chkconfig cups off
 ```
 
 ### Managing the CUPS in __CentOS__
@@ -137,8 +138,8 @@ sudo service cups status
 sudo service cups stop
 
 # boot time printer service
-$ sudo chkconfig xups on
-$ sudo chkconfig xups off
+$ sudo chkconfig cups on
+$ sudo chkconfig cups off
 ```
 ## Configuring a Printer from the GUI
 Each Linux distribution has a GUI application that lets you add, remove, and configure local or remote printers. Using this application, you can easily set up the system to use both local and network printers. The following screens show how to find and use the appropriate application in each of the distribution families covered in this course.
