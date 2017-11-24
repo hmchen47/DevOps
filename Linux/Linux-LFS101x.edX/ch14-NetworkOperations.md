@@ -352,11 +352,15 @@ Click [the link][lab1] to view a solution to the Lab exercise.
 
 Solution:
 ```
-Troubleshooting network problems is something that you will often encounter if you haven't already. We are going to practice some of the previously discussed tools, that can help you isolate, troubleshoot and fix problems in your network.
+Troubleshooting network problems is something that you will often encounter if you 
+haven't already. We are going to practice some of the previously discussed tools, that 
+can help you isolate, troubleshoot and fix problems in your network.
 
-Suppose you need to perform an Internet search, but your web browser can not find google.com, saying the host is unknown. Let's proceed step by step to fix this.
+Suppose you need to perform an Internet search, but your web browser can not find 
+google.com, saying the host is unknown. Let's proceed step by step to fix this.
 
-First make certain your network is properly configured. If your Ethernet device is up and running, running ifconfig should display something like:
+First make certain your network is properly configured. If your Ethernet device is up 
+and running, running ifconfig should display something like:
 
 student:/tmp> /sbin/ifconfig
  eno167777 Link encap:Ethernet  HWaddr 00:0C:29:BB:92:C2
@@ -377,7 +381,9 @@ lo        Link encap:Local Loopback
           collisions:0 txqueuelen:0
           RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b) 
 
-On older systems you probably will see a less cryptic name than eno167777, like eth0, or for a wireless connection, you might see something like wlan0 or wlp3s0. You can also show your IP address with:
+On older systems you probably will see a less cryptic name than eno167777, like eth0, 
+or for a wireless connection, you might see something like wlan0 or wlp3s0. You can 
+also show your IP address with:
 
 student:/tmp> ip addr show
  1: lo:  mtu 65536 qdisc noqueue state UNKNOWN group default
@@ -396,9 +402,11 @@ p    inet 192.168.1.14/24 brd 192.168.1.255 scope global dynamic eno16777736
     inet6 fe80::20c:29ff:febb:92c2/64 scope link
        valid_lft forever preferred_lft forever
       
-Does the IP address look valid? Depending on where you are using this from, it is most likely a Class C IP address; in the above this is 192.168.1.14
+Does the IP address look valid? Depending on where you are using this from, it is most 
+likely a Class C IP address; in the above this is 192.168.1.14
 
-If it does not show a device with an IP address, you may need to start or restart the network and/or NetworkManager. Exactly how you do this depends on your system. 
+If it does not show a device with an IP address, you may need to start or restart the 
+network and/or NetworkManager. Exactly how you do this depends on your system. 
 
 For most distributions one of these commands will accomplish this:
 
@@ -407,19 +415,26 @@ student:/tmp> sudo systemctl restart network
 student:/tmp> sudo service NetworkManager restart
 student:/tmp> sudo service network restart
       
-If your device was up but had no IP address, the above should have helped fix it, but you can try to get a fresh address with:
+If your device was up but had no IP address, the above should have helped fix it, but 
+you can try to get a fresh address with:
 
 student:/tmp> sudo dhclient eth0
       
 substituting the right name for the Ethernet device.
 
-If your interface is up and running with an assigned IP address and you still can not reach google.com, we should make sure you have a valid hostname assigned to your machine, with hostname:
+If your interface is up and running with an assigned IP address and you still can not 
+reach google.com, we should make sure you have a valid hostname assigned to your 
+machine, with hostname:
+
 student:/tmp> hostname
  openSUSE
       
-It is rare you would have a problem here, as there is probably always at least a default hostname, such as localhost.
+It is rare you would have a problem here, as there is probably always at least a 
+default hostname, such as localhost.
 
-When you type in a name of a site such as google.com, that name needs to be connected to a known IP address. This is usually done employing the DNS sever (Domain Name System)
+When you type in a name of a site such as google.com, that name needs to be connected 
+to a known IP address. This is usually done employing the DNS sever (Domain Name 
+System)
 
 First, see if the site is up and reachable with ping:
 
@@ -434,21 +449,24 @@ PING google.com (216.58.216.238) 56(84) bytes of data.
 rtt min/avg/max/mdev = 21.388/22.331/23.813/1.074 ms
       
 Note:
-We have used sudo for ping; recent Linux distributions have required this to avoid clueless or malicious users from flooding systems with such queries.
+We have used sudo for ping; recent Linux distributions have required this to avoid 
+clueless or malicious users from flooding systems with such queries.
 
 We have used -c 3 to limit to 3 packets; otherwise ping would run forever until forcibly terminated, say with CTRL-C.
 
 If the result was:
  ping: unknown host google.com
       
-It is likely that something is wrong with your DNS set-up. (Note on some systems you will never see the unknown host message, but you will get a suspicious result like:
+It is likely that something is wrong with your DNS set-up. (Note on some systems you 
+will never see the unknown host message, but you will get a suspicious result like:
 
 student:/tmp> sudo ping l89xl28vkjs.com
  PING l89xl28vkjs.com.site (127.0.53.53) 56(84) bytes of data.
 64 bytes from 127.0.53.53: icmp_seq=1 ttl=64 time=0.016 ms
 ...
       
-where the 127.0.x.x address is a loop feeding back to the host machine you are on. You can eliminate this as being a valid address by doing:
+where the 127.0.x.x address is a loop feeding back to the host machine you are on. You 
+can eliminate this as being a valid address by doing:
 
 student:/tmp> host l89xl28vkjs.com
 Host l89xl28vkjs.com not found: 3(NXDOMAIN)
@@ -463,7 +481,8 @@ google.com mail is handled by 30 alt2.aspmx.l.google.com.
 google.com mail is handled by 40 alt3.aspmx.l.google.com.
 google.com mail is handled by 50 alt4.aspmx.l.google.com.
 
-The above command utilizes the DNS server configured in /etc/resolv.conf on your machine. If you wanted to override that you could do:
+The above command utilizes the DNS server configured in /etc/resolv.conf on your 
+machine. If you wanted to override that you could do:
 
 host 8.8.8.8
  8.8.8.8.in-addr.arpa domain name pointer google-public-dns-a.google.com.
@@ -477,9 +496,13 @@ google.com has address 216.58.216.110
 google.com has IPv6 address 2607:f8b0:4009:804::1002
 ...\
 
-where we have used the publicly available DNS server provided by Google itself. (Using this or another public server can be a good trick sometimes if your network is up but DNS is ill; in that case you can also enter it in resolv.conf.)
+where we have used the publicly available DNS server provided by Google itself. (Using 
+this or another public server can be a good trick sometimes if your network is up but 
+DNS is ill; in that case you can also enter it in resolv.conf.)
 
-Note that there is another file, /etc/hosts, where you can associate names with IP addresses, which is used before the DNS server is consulted. This is most useful for specifying nodes on your local network.
+Note that there is another file, /etc/hosts, where you can associate names with IP 
+addresses, which is used before the DNS server is consulted. This is most useful for 
+specifying nodes on your local network.
 
 You could also use the dig utility if you prefer:
 
@@ -513,11 +536,14 @@ google.com.             244     IN      A       173.194.46.78
 ;; WHEN: Mon Apr 20 08:58:58 CDT 2015
 ;; MSG SIZE  rcvd: 215
 
-Suppose host or dig fail to connect the name to an IP address. There are many reasons DNS can fail, some of which are:
+Suppose host or dig fail to connect the name to an IP address. There are many reasons 
+DNS can fail, some of which are:
 
-The DNS server is down. In this case try pinging it to see if it is alive (you should have the IP address in /etc/resolv.conf.
+The DNS server is down. In this case try pinging it to see if it is alive (you should 
+have the IP address in /etc/resolv.conf.
 
-The server can be up and running, but DNS may not be currently available on the machine.
+The server can be up and running, but DNS may not be currently available on the 
+machine.
 
 Your route to the DNS server may not be correct.
 
@@ -544,7 +570,8 @@ student@linux:~> sudo traceroute 8.8.8.8
    25.758 ms 216.239.50.123 (216.239.50.123)  25.433 ms
 14  google-public-dns-a.google.com (8.8.8.8)  25.239 ms  24.003 ms  23.795 ms
 
-Again, this should likely work for you, but what if you only got the first line in the traceroute output?
+Again, this should likely work for you, but what if you only got the first line in the 
+traceroute output?
 
 If this happened, most likely your default route is wrong. Try:
 
@@ -552,11 +579,14 @@ student:/tmp> ip route show
 efault via 192.168.1.1 dev eno16777736  proto static  metric 1024
 192.168.1.0/24 dev eno16777736  proto kernel  scope link  src 192.168.1.14
 
-Most likely this is set to your network interface and the IP address of your router, DSL, or Cable Modem. Let's say that it is blank or simply points to your own machine.
+Most likely this is set to your network interface and the IP address of your router, 
+DSL, or Cable Modem. Let's say that it is blank or simply points to your own machine.
 
-Here's your problem! At this point, you would need to add a proper default route and run some of the same tests we just did.
+Here's your problem! At this point, you would need to add a proper default route and 
+run some of the same tests we just did.
 
-Note, an enhanced version of traceroute is supplied by mtr, which runs continuously (like top). Running it with the --report-cycles option to limit how long it runs:
+Note, an enhanced version of traceroute is supplied by mtr, which runs continuously 
+(like top). Running it with the --report-cycles option to limit how long it runs:
 
 student:/tmp> sudo mtr --report-cycles 3 8.8.8.8
                              My traceroute  [v0.85]
@@ -598,33 +628,58 @@ We have discussed non-graphical browsers:
 + links and elinks
 + w3m
 
-There are times when you will not have a graphical window interface running on your Linux machine and you need to look something up on the web or download a driver (like a graphics driver in order to bring up a graphical window interface). So, it is a good idea to practice using a non-graphical web browser to do some work.
+There are times when you will not have a graphical window interface running on your 
+Linux machine and you need to look something up on the web or download a driver (like 
+a graphics driver in order to bring up a graphical window interface). So, it is a good 
+idea to practice using a non-graphical web browser to do some work.
 
-With links, you can use your mouse to click on the top line of the screen to get a menu. In this case, we want to go to google.com (or your favorite search engine), so you can just type g to go to a typed-in URL.
+With links, you can use your mouse to click on the top line of the screen to get a 
+menu. In this case, we want to go to google.com (or your favorite search engine), so 
+you can just type g to go to a typed-in URL.
 
-Pressing the TAB key will move your cursor to the OK button. You can then press the ENTER key.
+Pressing the TAB key will move your cursor to the OK button. You can then press the 
+ENTER key.
 
-You should now be at google.com (or your favorite search engine). Use the down-arrow key to move through the choices until you reach the blank line used to enter your search query. Now type Intel Linux graphics drivers in the search box. Use the down-arrow key to move you to the Google Search button. With that highlighted, press the ENTER key.
+You should now be at google.com (or your favorite search engine). Use the down-arrow 
+key to move through the choices until you reach the blank line used to enter your 
+search query. Now type Intel Linux graphics drivers in the search box. Use the 
+down-arrow key to move you to the Google Search button. With that highlighted, press 
+the ENTER key.
 
-Use your down-arrow key to move to the entry: Intel(R) Graphics Drivers for Linux - Download Center. It may take several presses of the down-arrow key. You can press the space-bar to move down the page or the â€˜bâ€™ key to move back up the page if needed. Once this line is highlighted, press the ENTER key. You will now go to the Intel Graphics Driver for Linux page. If you want, you can read the page. Remember, the space-bar will page you down the page while the â€˜bâ€™ key will move you back up the page. The Page Down and Page Up keys will do the same thing if you prefer. Find the URL under the line
+Use your down-arrow key to move to the entry: Intel(R) Graphics Drivers for Linux - 
+Download Center. It may take several presses of the down-arrow key. You can press the 
+space-bar to move down the page or the â€˜bâ€™ key to move back up the page if needed. 
+Once this line is highlighted, press the ENTER key. You will now go to the Intel 
+Graphics Driver for Linux page. If you want, you can read the page. Remember, the 
+space-bar will page you down the page while the â€˜bâ€™ key will move you back up the 
+page. The Page Down and Page Up keys will do the same thing if you prefer. Find the 
+URL under the line
 
 URL Location:
       
-Position your cursor at this line using the up-arrow or down-arrow key. Press the ENTER key to go to this location.
+Position your cursor at this line using the up-arrow or down-arrow key. Press the 
+ENTER key to go to this location.
 
 Page down this page until you see the line:
 
 Latest Releases
       
-If you move your cursor with the arrow keys, find the latest version (with the most recent release date) under this section. If using your arrow-keys, you should highlight Release Notes. Press the ENTER key.
+If you move your cursor with the arrow keys, find the latest version (with the most 
+recent release date) under this section. If using your arrow-keys, you should 
+highlight Release Notes. Press the ENTER key.
 
-This has installers for versions of Ubuntu and Fedora, along with the source code. You will need to page down a page or two depending on the size of your screen.
+This has installers for versions of Ubuntu and Fedora, along with the source code. You 
+will need to page down a page or two depending on the size of your screen.
 
-Select one of the installers, perhaps for the version of Linux that you are running, or just a random one, and press the ENTER key.
+Select one of the installers, perhaps for the version of Linux that you are running, 
+or just a random one, and press the ENTER key.
 
-You should see a text dialog box with choices of what to do. Save the package wherever you want to.
+You should see a text dialog box with choices of what to do. Save the package wherever 
+you want to.
 
-You can now quit your non-graphical browser. If you used links, then click on the top line of the screen, select the File drop-down menu item, and click on Exit. Confirm that you really want to exit Links. You should now see your shell prompt.
+You can now quit your non-graphical browser. If you used links, then click on the top 
+line of the screen, select the File drop-down menu item, and click on Exit. Confirm 
+that you really want to exit Links. You should now see your shell prompt.
 ```
 
 # Summary
