@@ -452,7 +452,8 @@ Note:
 We have used sudo for ping; recent Linux distributions have required this to avoid 
 clueless or malicious users from flooding systems with such queries.
 
-We have used -c 3 to limit to 3 packets; otherwise ping would run forever until forcibly terminated, say with CTRL-C.
+We have used -c 3 to limit to 3 packets; otherwise ping would run forever until 
+forcibly terminated, say with CTRL-C.
 
 If the result was:
  ping: unknown host google.com
@@ -610,7 +611,9 @@ Unable to allocate IPv6 socket for nameserver communication: Address family not 
 13. 72.14.237.35                      0.0%     3   21.2  21.0  19.8  21.9   1.0
 14. google-public-dns-a.google.com    0.0%     3   26.7  23.0  21.0  26.7   3.2
       
-Hopefully, running through some of these commands helped. It actually helps to see what the correct output for your system looks like. Practice using these commands; it is very likely that you will need them someday.
+Hopefully, running through some of these commands helped. It actually helps to see 
+what the correct output for your system looks like. Practice using these commands; it 
+is very likely that you will need them someday.
 ```
 
 ## Lab 2: Non-graphical Browsers
