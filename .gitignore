@@ -36,6 +36,7 @@
 *.gif
 *.png
 *.jpeg
+*.svg
 
 # Logs and databases #
 ######################
