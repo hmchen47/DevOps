@@ -62,7 +62,7 @@ Generally, a Cloud is deployed in the following models:
     - Store sensitive information on a Private Cloud, while offering public services based on that information from a Public Cloud.
     - Meet the temporary resources needed from the Public Cloud. These temporary resources cannot be met from a Private Cloud.
 
-![Figure 1.1: Cloud Computing Types (by Sam Johnston, licensed under CC BY-SA 3.0, retrieved from Wikipedia)][img1]([CC BY-SA 3.0][bysa] & [Wikipedia][cctype])
+![image][img1](Figure 1.1: Cloud Computing Types (by Sam Johnston, licensed under [CC BY-SA 3.0][bysa], retrieved from [Wikipedia][cctype]))
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6f3bd09c6693af43ba9fe43d0ab1bb58/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Cloud_computing_types.svg
 [stack]: https://www.openstack.org/
