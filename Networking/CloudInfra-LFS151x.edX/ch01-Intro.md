@@ -4,7 +4,7 @@ Introduction to Cloud Infrastructure Technologies
 # Chapter 1. Welcome and Introduction
 
 ## Introduction to Cloud Computing and Technologies
-Historically, the word __Cloud__ was used as a metaphor for Internet. Later on, it was used to depict the Internet in computer network diagrams. To find out more about the origin of the Cloud, you can take a look at the details provided on [Wikipedia][wiki]. 
+Historically, the word __Cloud__ was used as a metaphor for Internet. Later on, it was used to depict the Internet in computer network diagrams. To find out more about the origin of the Cloud, you can take a look at the details provided on [Wikipedia][wiki].
 
 __Cloud Computing__ can be referred as the allocation of resources on the Cloud. According to [NIST (National Institute of Standard and Technology)][nist], the formal definition of __Cloud Computing__  is the following: 
 
