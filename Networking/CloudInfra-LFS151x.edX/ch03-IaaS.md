@@ -58,7 +58,7 @@ Let's take a look at the following demo, which illustrates an example of how to 
 ### Benefits of Using Amazon EC2
 Some of the benefits of using __Amazon EC2__ are:
 
-+ It is an easy-to-use __Iaa__S solution.
++ It is an easy-to-use __IaaS__ solution.
 + It is flexible and scalable.
 + It provides a secure and robust functionality for your compute resources.
 + It enables automation.
