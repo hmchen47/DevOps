@@ -1,5 +1,3 @@
-Introduction to Cloud Infrastructure Technologies
-=================================================
 
 # Chapter 1. Welcome and Introduction
 
@@ -8,7 +6,7 @@ Historically, the word __Cloud__ was used as a metaphor for Internet. Later on, 
 
 __Cloud Computing__ can be referred as the allocation of resources on the Cloud. According to [NIST (National Institute of Standard and Technology)][nist], the formal definition of __Cloud Computing__  is the following: 
 
-    "__Cloud Computing__ is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."
+> "__Cloud Computing__ is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction."
 
 __Cloud Computing__ providers offer different kinds of services built on top of basic provisioning and releasing of resources. Most of these services fall into one of the following categories: 
 
@@ -17,9 +15,6 @@ __Cloud Computing__ providers offer different kinds of services built on top of 
 + Software as a Service (SaaS). 
 
 We will cover these categories and others throughout the course. Most providers use some form of web interface, on top of which we can build the desired stack. Cloud Providers use a pay-as-you-go model, in which we pay for the resources we have used in a given duration. 
-
-[wiki]: https://en.wikipedia.org/wiki/Cloud_computing#Origin_of_the_term
-[nist]: http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
 
 
 ## Key Features of Cloud Computing
@@ -62,12 +57,8 @@ Generally, a Cloud is deployed in the following models:
     - Store sensitive information on a Private Cloud, while offering public services based on that information from a Public Cloud.
     - Meet the temporary resources needed from the Public Cloud. These temporary resources cannot be met from a Private Cloud.
 
-![image][img1](Figure 1.1: Cloud Computing Types (by Sam Johnston, licensed under [CC BY-SA 3.0][bysa], retrieved from [Wikipedia][cctype]))
-
-[img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6f3bd09c6693af43ba9fe43d0ab1bb58/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Cloud_computing_types.svg
-[stack]: https://www.openstack.org/
-[bysa]: https://creativecommons.org/licenses/by-sa/3.0/
-[cctype]: https://upload.wikimedia.org/wikipedia/commons/8/87/Cloud_computing_types.svg
+![image][img1]
+Figure 1.1: Cloud Computing Types (by Sam Johnston, licensed under [CC BY-SA 3.0][bysa], retrieved from [Wikipedia][cctype]
 
 
 ## The Linux Foundation
@@ -87,20 +78,6 @@ __The Linux Foundation__'s work today extends far beyond Linux, fostering innova
 + And many more.
 
 To learn more about The Linux Foundation, click [here][lfun].
-
-[dayl]: https://www.opendaylight.org/
-[opnfv]: https://www.opnfv.org/
-[dron]: https://www.dronecode.org/
-[jsfd]: https://js.foundation/
-[node]: https://nodejs.org/en/
-[cfun]: https://www.cloudfoundry.org/
-[cncf]: https://cncf.io/
-[oci]: https://www.opencontainers.org/
-[agl]: https://www.automotivelinux.org/
-[cii]: https://www.coreinfrastructure.org/
-[hl]: https://www.hyperledger.org/
-[lfun]: https://www.linuxfoundation.org/
-
 
 ## The Linux Foundation Events
 The Linux Foundation hosts an increasing number of events each year, including:
@@ -137,6 +114,29 @@ For additional information, including technical requirements and other logistics
 [lpdt]:http://training.linuxfoundation.org/linux-courses/development-training
 [admin]: http://training.linuxfoundation.org/linux-courses/system-administration-training
 [oscc]: http://training.linuxfoundation.org/linux-courses/open-source-compliance-courses
+
+
+[wiki]: https://en.wikipedia.org/wiki/Cloud_computing#Origin_of_the_term
+[nist]: http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf
+
+[img0]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/6f3bd09c6693af43ba9fe43d0ab1bb58/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Cloud_computing_types.svg
+[img1]: ./diagrams/Cloud_computing_types.svg
+[stack]: https://www.openstack.org/
+[bysa]: https://creativecommons.org/licenses/by-sa/3.0/
+[cctype]: https://upload.wikimedia.org/wikipedia/commons/8/87/Cloud_computing_types.svg
+
+[dayl]: https://www.opendaylight.org/
+[opnfv]: https://www.opnfv.org/
+[dron]: https://www.dronecode.org/
+[jsfd]: https://js.foundation/
+[node]: https://nodejs.org/en/
+[cfun]: https://www.cloudfoundry.org/
+[cncf]: https://cncf.io/
+[oci]: https://www.opencontainers.org/
+[agl]: https://www.automotivelinux.org/
+[cii]: https://www.coreinfrastructure.org/
+[hl]: https://www.hyperledger.org/
+[lfun]: https://www.linuxfoundation.org/
 
 
 
