@@ -38,11 +38,12 @@ By the end of this chapter you should be able to:
 ### Introduction to KVM
 According to linux-kvm.org, 
 
-"KVM for (Kernel-based Virtual Machine) is  a full virtualization solution for Linux on x86 hardware."
+> "KVM for (Kernel-based Virtual Machine) is  a full virtualization solution for Linux on x86 hardware."
 
 It is part of the main-line Linux Kernel. It is ported for S/390, PowerPC, IA-64 and ARM as well.
 
-![KVM][img1](Figure 2.1: A High-Level Overview of the KVM/QEMU Virtualization Environment (by V4711, licensed under [CC BY-SA 4.0][bysc4], retrieved from [Wikipedia][wikikvm]))
+![KVM][img1]
+Figure 2.1: A High-Level Overview of the KVM/QEMU Virtualization Environment (by V4711, licensed under [CC BY-SA 4.0][bysc4], retrieved from [Wikipedia][wikikvm])
 
 ### Features
 __KVM__ is an Open Source software. It supports various Guest OSes, like __Linux__, __Windows__, __Solaris__, etc. 
