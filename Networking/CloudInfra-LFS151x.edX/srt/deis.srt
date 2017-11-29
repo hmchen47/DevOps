@@ -1,0 +1,88 @@
+0
+00:00:01,090 --> 00:00:06,650
+Deis is a PaaS platform, which is built on both Docker and CoreOS.
+
+1
+00:00:07,800 --> 00:00:12,860
+In this demo, we will see how we can deploy an application on Deis.
+
+2
+00:00:14,320 --> 00:00:19,880
+For the demo, I have already configured a three node cluster using Vagrant.
+
+3
+00:00:22,780 --> 00:00:27,760
+Let us login to our Deis environment with the username I have created earlier.
+
+4
+00:00:31,260 --> 00:00:38,180
+We can deploy applications using Heroku buildpacks, Dockerfiles, and Docker images.
+
+5
+00:00:39,320 --> 00:00:47,480
+For the demo, we will use Heroku buildpacks and we’ll follow the instructions mentioned on the Deis website.
+
+6
+00:00:49,900 --> 00:00:55,360
+So, let us first clone the sample Ruby application on our workstation.
+
+7
+00:01:10,380 --> 00:01:14,700
+Now, as shown in the documentation, let us create an application,
+
+8
+00:01:20,820 --> 00:01:28,740
+which is named as “hungry-lakeside” and it has created a “Git remote” for our Deis environment.
+
+9
+00:01:32,660 --> 00:01:38,980
+Now, we can use a “git push” command to deploy our application on our Deis environment.
+
+10
+00:01:41,820 --> 00:01:51,080
+The “git push” command would send our code from the local workstation to the Deis, and then a build process would be triggered.
+
+11
+00:01:52,840 --> 00:01:57,260
+As we can see, the build process has detected our Ruby application,
+
+12
+00:01:58,040 --> 00:02:01,440
+which would then fetch the corresponding Ruby buildpack,
+
+13
+00:02:02,980 --> 00:02:07,000
+using which it would then build our application.
+
+14
+00:02:19,020 --> 00:02:23,040
+As we know, Deis uses Docker to deploy our application.
+
+15
+00:02:25,300 --> 00:02:35,280
+In the build process, Deis creates a Docker image with our application and then pushes it to an internal Docker Registry.
+
+16
+00:02:44,260 --> 00:02:49,500
+After pushing the resulting image to the registry, it would launch the application.
+
+17
+00:02:51,620 --> 00:02:57,540
+Our application is now launched and we can access it over the URL currently shown on the screen [http://hungry-lakeside.local3.deisapp.com].
+
+18
+00:02:59,440 --> 00:03:03,960
+We can scale our application with “deis scale” command.
+
+19
+00:03:08,220 --> 00:03:11,900
+We have now scaled our application to 3.
+
+20
+00:03:13,360 --> 00:03:22,300
+Now, if we access our application multiple times, we can see that it is being served by different containers.
+
+21
+00:03:30,640 --> 00:03:37,500
+So, in this demo we have seen how we can use Deis to deploy our application and then scale it up.
+
