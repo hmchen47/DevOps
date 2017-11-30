@@ -170,7 +170,7 @@ __OpenShift v3__ integrates well with Continuous Deployment tools to deploy appl
 With the _Dedicated_ or _Enterprise_ plans you get a GUI to manage projects, users, access, etc.
 
 ### Installing OpenShift
-You do not have to worry about the installation if you opt for the _Online_ or _Dedicated_ plans, as the __Red Hat__ engineering or support team will assist you with it. As announced in January of 2016, __Google__ and __Red Ha__t will be working closely to integrate and deliver __OpenShift Dedicated__ on the Google Cloud Platform.
+You do not have to worry about the installation if you opt for the _Online_ or _Dedicated_ plans, as the __Red Hat__ engineering or support team will assist you with it. As announced in January of 2016, __Google__ and __Red Hat__ will be working closely to integrate and deliver __OpenShift Dedicated__ on the Google Cloud Platform.
 
 Detailed instructions for installing __OpenShift v3__ are given in the [documentation][osdoc].
 
@@ -215,13 +215,13 @@ but it can be easily extended to other languages.
 ### Heroku Core Concepts
 The __Heroku__-centric development and deployment workflow needs to be followed if you want to use it. This workflow is very developer-friendly. Let's take a look at some of its core concepts next:
 
-+ Applications should contain the source code, its dependency information and the list of named commands to be executed to deploy the it, in a file called [`Procfile`][procf].
++ Applications should contain the source code, its dependency information and the list of named commands to be executed to deploy it, in a file called [`Procfile`][procf].
 + For each supported language, it has a pre-built image, which contains a compiler for that language. This pre-built image is referred to as a [buildpack][buip]. [More than one buildpacks][mbuip] can be used together. We can also create a custom buildpack as well.
 + While deploying, we need to send the application's content to __Heroku__, either via __Git, GitHub, Dropbox__ or via an API. Once the application is received by __Heroku__, a buildpack is selected based on the language of preference.
 + To create the runtime which is ready for execution, we compile the application after fetching its dependency and configuration variables on the selected buildpack. This runtime is often referred to as a __slug__.
 + We can also use third party [add-ons][addon] to get access to value-added services like logging, caching, monitoring, etc.
 + A combination of _slug, configuration variables_, and _add-ons_ is referred to as a __release__, on which we can perform upgrade or rollback.
-+ Depending on the process-type declaration in the `Procfile`, a virtualized __UNIX__ container is created to serve the process in an isolated environment, which can be scaled up or down, based on the requirements. Each virtualized __UNIX__ container is referred to as a __Dyno__. Each _dyn_o gets its own ephemeral storage.
++ Depending on the process-type declaration in the `Procfile`, a virtualized __UNIX__ container is created to serve the process in an isolated environment, which can be scaled up or down, based on the requirements. Each virtualized __UNIX__ container is referred to as a __Dyno__. Each _dyno_ gets its own ephemeral storage.
 + __Dyno Manager__ manages  across all applications running on __Heroku__.
 
 ### Features
@@ -253,7 +253,7 @@ Some of the benefits of using the __Heroku__ platform are:
 
 ## Deis
 ### Introduction to Deis
-__Deis__ (pronounced DAY-iss) is an Open Source __PaaS__ platform, which runs on top of __Docker__ and [CoreO][core].
+__Deis__ (pronounced DAY-iss) is an Open Source __PaaS__ platform, which runs on top of __Docker__ and [__CoreOS__][core].
 
 ### The Underlying Technology
 #### Docker
@@ -262,12 +262,12 @@ __Docker__ is the container runtime used by __Deis__ to run applications. For mo
 
 #### CoreOS
 
-__CoreO__S is a lightweight OS to run just containers. We will learn about it in Chapter 6 (Micro OSes for Containers). As of now, __CoreOS__ supports __Docker__ and __rkt__ as container runtime. __Deis__ supports __Docker__ for the time being.
+__CoreOS__ is a lightweight OS to run just containers. We will learn about it in Chapter 6 (Micro OSes for Containers). As of now, __CoreOS__ supports __Docker__ and __rkt__ as container runtime. __Deis__ supports __Docker__ for the time being.
 
 ### The System Architecture of Deis
 The diagram below illustrates the System Architecture of __Deis__, which showcases three major components:
 
-![image][img2] 
+![image][img2]
 
 Figure 4.2: The System Architecture of Deis (by [Engine Yard][eng], retrieved from [deis.io][deisio])
 
