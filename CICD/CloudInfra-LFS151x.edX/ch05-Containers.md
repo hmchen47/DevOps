@@ -74,7 +74,7 @@ In the last few years, we have seen a rapid growth in the interest and adoption 
 #### [Docker][docker]
 __Docker__ is an Open Source, __Apache 2.0__-licensed project. __Docker, Inc.__ is the primary sponsor of the project.
 
-Until __Docker 1.10__ release, __Docker__ used [libcontainer][libcont] to access the host's kernel features to create containers. With __Docker 1.11__ it started using __runC__ as container runtime, which is an implementation of the [OCI specifications][ocispec]. __Docker__ uses the containerd daemon to control __runC__ containers.
+Until __Docker 1.10__ release, __Docker__ used [libcontainer][libcont] to access the host's kernel features to create containers. With __Docker 1.11__ it started using __runC__ as container runtime, which is an implementation of the [OCI specifications][ocispec]. __Docker__ uses the `containerd` daemon to control __runC__ containers.
 
 ![image][img3]
 
@@ -109,7 +109,7 @@ __Docker__ uses a client-server architecture, in which a __Docker client__ conne
 
 ![image][img5]
 
-Figure 5.5: Docker Architecture (by Docker, Inc., retrieved from docker.com)
+Figure 5.5: Docker Architecture (by Docker, Inc., retrieved from [docker.com][dockerarch])
 
 ### Basic Docker Operations
 You can find a list of basic Docker operations below:
@@ -188,18 +188,12 @@ Some of the benefits of using containers are:
 
 
 [vid1]: https://edx-video.net/LINLFS15/LINLFS152016-V001000_DTH.mp4
-[vid2]: 
-[vid3]: 
-[vid4]: 
-[vid5]: 
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f6a8a12f7176586ff22a63aaae7eb4f8/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Running_an_Application.jpg
 [img2]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/ab813032f150e0d74d9016b2e8a55ed3/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Docker_Container.jpeg
 [img3]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/164b808d0b00542b6fb5ffe53980125e/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Docker_Engine_and_containerd.png
 [img4]:https://prod-edxapp.edx-cdn.org/assets/courseware/v1/dda30a84088be3492f2f5ca355c395ab/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Docker_Containers_vs._VMs.png
 [img5]: ./diagrams/architecture.svg
-[img6]: 
-[img7]: 
 
 [oslv]: https://en.wikipedia.org/wiki/Operating-system-level_virtualization
 [dockerapp]: https://blog.docker.com/wp-content/uploads/2013/08/the_challenge.jpg
