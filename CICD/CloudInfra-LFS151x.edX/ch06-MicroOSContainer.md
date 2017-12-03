@@ -139,7 +139,7 @@ CoreOS is built on top of the following:
     ```
 
 ### Support
-As a company, __CoreOS__ [provides paid support][paid] for the production environment. They have a [hosted][host] and [enterprise][enter] registry product called [Quay][quay]. They also enterprise the __Kubernetes__ solution called [Tectonic][tectno].
+As a company, __CoreOS__ [provides paid support][paid] for the production environment. They have a [hosted][host] and [enterprise][enter] registry product called [Quay][quay]. They also enterprise the __Kubernetes__ solution called [Tectonic][tecton].
 
 ### Demo
 In the following video will see what are the requirements to create a CoreOS cluster and deploy a sample application on top of it.
@@ -242,13 +242,11 @@ Some of the benefits of using __RancherOS__ are:
 [vid2]: https://edx-video.net/LINLFS15/LINLFS152016-V001300_DTH.mp4
 [vid3]: https://edx-video.net/LINLFS15/LINLFS152016-V004200_DTH.mp4
 [vid4]: https://edx-video.net/LINLFS15/LINLFS152016-V002300_DTH.mp4
-[vid5]: 
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/4737e5aa0cad67db9b1979342a89736d/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Micro_OSes_for_Containers.png
 [img2]: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/CoreOS_Architecture_Diagram.svg/2000px-CoreOS_Architecture_Diagram.svg.png
 [img3]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/658654242ec996b0d44dd0a9461880d6/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/2c4clustered-computing-with-coreos-fleet-and-etcd-49-638.jpg
 [img4]: ./diagrams/Figure_6.4-_RancherOS_Architecture.png
-[img5]: 
 
 [atomh]: http://www.projectatomic.io/
 [nulec]: http://www.projectatomic.io/docs/nulecule/
@@ -265,7 +263,8 @@ Some of the benefits of using __RancherOS__ are:
 [etcd]: https://coreos.com/etcd/
 [sysd]: https://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/
 [fleet]: https://coreos.com/using-coreos/clustering/
-[host]: https://coreos.com/products/premium-managed-linux/
+[host]: https://quay.io/plans/
+[paid]: https://coreos.com/products/premium-managed-linux/
 [enter]: https://tectonic.com/quay-enterprise/
 [quay]: https://quay.io/
 [tecton]: https://tectonic.com/
