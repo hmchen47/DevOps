@@ -26,7 +26,7 @@ In this chapter, we will provide more details on the options available.
 ### Learning Objectives
 By the end of this chapter you should be able to:
 
-+ Describe different container orchestration tools: __Docker Swarm, Kubernetes__, Mesos, Nomad, Amazon ECS, Google Container Engine__, and __Azure Container Service__.
++ Describe different container orchestration tools: __Docker Swarm, Kubernetes, Mesos, Nomad, Amazon ECS, Google Container Engine__, and __Azure Container Service__.
 + Deploy sample applications using various container orchestration tools: __Docker Swarm, Kubernetes, Mesos, Nomad, Amazon ECS, Google Container Engine__, and __Azure Container Service__.
 
 
@@ -606,7 +606,7 @@ Next, we will discuss in more detail some of its components:
     It is a Docker container created from the task definition.
 
 ### Amazon ECS Features
-Among the features of __Amazon ECS_ are the following:
+Among the features of _Amazon ECS_ are the following:
 
 + It is compatible with Docker, as each Amazon ECS instance runs the __Docker Daemon__.
 + It provides a managed cluster, so that users do not have to worry about managing and scaling the cluster.
@@ -724,8 +724,8 @@ Ans: C
 
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/8b5dbcc9d903ba0d592ece5adfb30b20/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Components_of_a_Docker_Swarm_Cluster.jpg
 [img2]: https://docs.docker.com/machine/img/provision-use-case.png
-[img3]: ./diagrams/kubernetes-architecture.png
-[img4]: ./diagrams/architecture3.jpg
+[img3]: http://blog.arungupta.me/wp-content/uploads/2015/01/kubernetes-architecture.png
+[img4]: http://mesos.apache.org/assets/img/documentation/architecture3.jpg
 [img5]: http://www.allthingsdistributed.com/images/ecs1.png
 [img6]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/0a8a441c624f75e936547c2b5e369625/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Figure_7.7-_The_ACS_Cluster.png
 
