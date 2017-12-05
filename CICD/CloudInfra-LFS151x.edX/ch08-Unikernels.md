@@ -47,7 +47,7 @@ Next, we will see how we can use the __Unik__ tool to create a very basic uniker
 + Efficient resource utilization.
 + A simplified development and management model.
 + A more secured application than the traditional VM, as the attack surface is reduced.
-+ An easily-reproducible VM environment, which can be managed through a source control + system like __Git__.
++ An easily-reproducible VM environment, which can be managed through a source control system like __Git__.
 
 ### Unikernel Implementations
 There are many implementations of __Unikernels__, and they are divided into two categories:
@@ -74,6 +74,7 @@ Figure 8.2: Shared Kernel vs. Unikernel
 
 ## Knowledge Check
 1. With Unikernels, the resulting image is a _____________. Please select the correct answer.
+
         A. Container image
         B. VM image 
         C. Container or VM image
