@@ -43,23 +43,23 @@ Also, if we need a new functionality while we are converting the monolith to mic
 ### Benefits of Microservices
 Next, we will highlight some of the benefits of microservices:
 
-+ No language or technology lock-in 
++ __No language or technology lock-in__
 
     As each service works independently, we can choose any language or technology to develop it. We just need to make sure its API end points return the expected output.
 
-+ Easy Deployment 
++ __Easy Deployment__
 
     Each service in a microservice can be deployed independently.
 
-+ Updating and Scaling 
++ __Updating and Scaling__
     
     We do not have to take an entire application down just to update or scale a component. Each service can be updated or scaled independently. This gives us the ability to respond faster.
 
-+ No cascading failure
++ __No cascading failure__
     
     If one service fails, then its failure does not have a cascading effect. This helps in debugging as well.
 
-+ The ability to reuse 
++ __The ability to reuse__
     
     Once the code of a service is written, it can be used in other projects, where the same functionality is needed.
 
@@ -70,24 +70,24 @@ Just like any other technology, there are also challenges and disadvantages to u
     
     While breaking the monolith application or creating microservices from scratch, it is very important to choose the right functionality for a service. For example, if we create a microservice for each function of a monolith, then we would end up with lots of small services, which would bring unnecessary complexity. 
 
-+ Deployment
++ __Deployment__
 
     We can easily deploy a monolith application. However, to deploy a microservice, we need to use a distributed environment such as Kubernetes. 
 
-+ Testing 
++ __Testing__
 
     With lots of services and their inter-dependency, sometimes it becomes challenging to do end-to-end testing of a microservice.  
 
-+ Inter-service communication 
++ __Inter-service communication__
 
     Inter-service communication can be very costly if it is not implemented correctly. There are options such as message passing, RPC, etc., and we need to choose the one that fits our requirement and has the least overhead. 
 
-+ Managing Databases 
++ __Managing Databases__
 
     When it comes to the microservices' architecture, we may decide to implement a database local to a microservice. But, to close a business loop, we might require changes on other related databases. This can create problems (e.g. partitioned databases). 
 
-+ Monitoring 
-    
++ __Monitoring__
+
     Monitoring individual services in a microservices environment can be challenging.  This challenge is being addresses, and a new set of tools, like [sysdig][sysdig] or [Datadog][datadog], is being developed to monitor and debug microservices. 
 
 Even with the above challenges and drawbacks, deploying microservices makes sense when applications are complex and continuously evolving.
