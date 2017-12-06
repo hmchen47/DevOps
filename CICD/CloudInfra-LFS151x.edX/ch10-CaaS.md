@@ -116,7 +116,7 @@ Next, we will talk about the building blocks of __OpenStack Magnum__:
 ### Features and Benefits
 Some of the features and benefits of __OpenStack Magnum__ are:
 
-+ __Magnumv offers an asynchronous API that is compatible with __Keystone__.
++ __Magnum__ offers an asynchronous API that is compatible with __Keystone__.
 + It brings multi-tenancy by default, as it creates a __Bay__ per tenant. This means that for each tenant there would be a separate cluster, depending on the __COE__.
 + __Magnum__ makes containers available as first-class citizens in __OpenStack__.
 + It enables High Availability and scalability.
