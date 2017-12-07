@@ -354,7 +354,6 @@ In the following video we will see how we can leverage Docker's multi-host netwo
 [video][vid1]
 
 ## Docker Networking Plugins
-### Docker Networking Plugins
 We can extend the functionality of Docker with plugins. __Docker__ provides plugins for `Network` and `Volumes`. Some of the Docker network plugins are:
 
 + [__Weave Network Plugin__][wnetp]
