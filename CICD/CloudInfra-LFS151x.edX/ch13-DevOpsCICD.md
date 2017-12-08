@@ -46,7 +46,7 @@ The flowchart below illustrates a sample deployment using the __Pipeline Plugin_
 
 ![image][img1]
 
-Figure 13.1: Jenkins Pipeline (by Jenkins/CC BY-SA 4.0, retrieved from jenkins.io)
+Figure 13.1: Jenkins Pipeline (by Jenkins/[CC BY-SA 4.0][bysa4], retrieved from [jenkins.io][jpipe])
 
 Jenkins can be hosted on-premise, on the cloud, or we can just use it as SaaS.
 
@@ -247,6 +247,8 @@ Some of the benefits of using Shippable are:
 [img1]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/a5a50fb48bc49ae00bd8df6bcf47203e/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Fig_13.1-Jenkins_Pipeline.png
 [img2]: https://prod-edxapp.edx-cdn.org/assets/courseware/v1/a1a26989ad0b17e71b3dda66a5376a0d/asset-v1:LinuxFoundationX+LFS151.x+2T2016+type@asset+block/Fig_13.1-The_shippable.yml_Structure.png
 
+[bysa4]: https://creativecommons.org/licenses/by-sa/4.0/
+[jpipe]: https://jenkins.io/images/pipeline/realworld-pipeline-flow.png
 [water]: https://en.wikipedia.org/wiki/Waterfall_model
 [agile]: https://en.wikipedia.org/wiki/Agile_software_development
 [jenkins]: https://jenkins-ci.org/2.0/
