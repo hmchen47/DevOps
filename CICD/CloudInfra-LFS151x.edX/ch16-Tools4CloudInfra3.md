@@ -6,7 +6,7 @@ While building any distributed and dynamically-scalable environment, we need an 
 
 As the name suggests, the __Key-Value Pair Storage__ provides the functionality to store or retrieve the `value` of a `key`. Most of the `Key Value` stores provide REST APIs to do operations like `GET`, `PUT`, `DELETE` etc., which helps when doing all the operations over `HTTP`. Some examples of Key-Value stores are:
 
-+ __etcd__
++ __etcd__ 
 + __Consul__.
 
 ## Learning Objectives
@@ -87,7 +87,7 @@ Q. Is etcd based on the Raft Consensus Algorithm?
 [raft]: https://raft.github.io/
 [coreos]: https://coreos.com/
 [consul]: https://www.consul.io/
-[sef]: https://www.serfdom.io/
+[serf]: https://www.serfdom.io/
 
 
 
