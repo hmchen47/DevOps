@@ -74,7 +74,7 @@ Some of the key concepts around BOSH are detailed next:
 
 + Stemcell 
 
-    A Stemcell is a versioned, IaaS-specific, Operating System image with some pre-installed utilities (e.g. BOSH Agent). Stemcells do not contain any application-specific code. The BOSH team is in charge of releasing stemcells, which are listed here.
+    A Stemcell is a versioned, IaaS-specific, Operating System image with some pre-installed utilities (e.g. BOSH Agent). Stemcells do not contain any application-specific code. The BOSH team is in charge of releasing stemcells, which are listed [here][stemcell].
 
 + Release
 
@@ -187,5 +187,5 @@ Some of the benefits of using BOSH are:
 
 [terra]: https://www.terraform.io/intro/index.html
 [depmani]: https://bosh.io/docs/deployment-basics.html
-
+[stemcell]: https://bosh.io/stemcells
 
