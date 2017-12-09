@@ -288,7 +288,7 @@ A server is referred to as a __Salt Master__. Multi-master is also supported.
 
 Figure 14.4: Salt Master (by SaltStack, Inc., retrieved from [saltstack.com][saltmst])
 
-In a default setup, the __Salt Master__ and __Minions__ communicate over a high speed data bus, [ZeroMQ][zromq], which requires an agent to be installed on each minion. Salt also supports an agentless setup on top of SSH. The Salt Master and Minions communicate over a secure and encrypted channel.
+In a default setup, the __Salt Master__ and __Minions__ communicate over a high speed data bus, [ZeroMQ][zeromq], which requires an agent to be installed on each minion. Salt also supports an agentless setup on top of SSH. The Salt Master and Minions communicate over a secure and encrypted channel.
 
 ### Other Components: Modules, Returners, Grains, Pillar Data
 Remote execution is based on [Modules][mod] and [Returners][retrn].
@@ -350,7 +350,7 @@ Which of the following configuration management tools is completely agentless? P
 [playbook]: http://docs.ansible.com/ansible/playbooks.html
 [ansigal]: https://galaxy.ansible.com/
 [ansitow]: https://www.ansible.com/tower
-[pupet]: https://puppet.com/
+[puppet]: https://puppet.com/
 [pupent]: https://puppet.com/product
 [bysa3]: https://creativecommons.org/licenses/by-sa/3.0/
 [chef]: https://docs.chef.io/_images/chef_overview.svg
