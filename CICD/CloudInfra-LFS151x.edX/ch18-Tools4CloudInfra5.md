@@ -1,6 +1,5 @@
 # Chapter 18. Tools for Cloud Infrastructure V (Debugging, Logging, and Monitoring for Containerized Applications)
 
-
 ## Introduction and Learning Objectives
 
 
@@ -33,10 +32,10 @@
 
 
 [vid1]: 
-[vid1]: 
-[vid1]: 
-[vid1]: 
-[vid1]: 
+[vid2]: 
+[vid3]: 
+[vid4]: 
+[vid5]: 
 
 [img1]: 
 [img2]: 

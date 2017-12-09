@@ -1,6 +1,5 @@
 # Chapter 16. Tools for Cloud Infrastructure III (Key-Value Pair Store)
 
-
 ## Introduction and Learning Objectives
 
 
@@ -23,10 +22,10 @@
 
 
 [vid1]: 
-[vid1]: 
-[vid1]: 
-[vid1]: 
-[vid1]: 
+[vid2]: 
+[vid3]: 
+[vid4]: 
+[vid5]: 
 
 [img1]: 
 [img2]: 
