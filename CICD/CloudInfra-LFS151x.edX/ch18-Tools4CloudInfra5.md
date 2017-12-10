@@ -143,7 +143,7 @@ Figure 18.1: Host System Resource Usage with cAdvisor
 ### Docker Host Specific Details with cAdvisor
 Figure 18.2 shows the number of running containers, as well as details about Docker Engine and images.
 
-[image][img2]
+![image][img2]
 
 Figure 18.2 Docker Host Specific Details with cAdvisor
 
@@ -160,7 +160,7 @@ Figure 18.2 Docker Host Specific Details with cAdvisor
 
 Figure 18.1: Fluentd Architecture (by Treasure Data, Inc., retrieved from [fluentd.org][fluarch])
 
-Fluentd tries to structure the data in json as much as possible. It supports more than [300 plugins][fluplug] to connect input sources to output sources, after doing filtering, buffering and routing.
+Fluentd tries to structure the data in `json` as much as possible. It supports more than [300 plugins][fluplug] to connect input sources to output sources, after doing filtering, buffering and routing.
 
 ### Docker Support for Fluentd
 From version 1.8, Docker supports [logging drivers][logging] and Fluentd is one of them.
@@ -208,7 +208,7 @@ Figure 18.3 illustrates valuable information about containers:
 + The most resource-consuming pods
 + Docker logs, etc.
 
-[image][img5]
+![image][img5]
 
 Figure 18.3: Docker Containers - Kubernetes Monitoring with Datadog (by Datadog, Inc., retrieved from [datadoghq.com][datahq])
 
