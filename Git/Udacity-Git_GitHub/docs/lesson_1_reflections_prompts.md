@@ -100,7 +100,7 @@ Populate `lesson_1_reflections.txt` with the following question and your thought
 When you've created your document, written down your thoughts, and saved the file, click "Next" to learn about some systems that can help you create these versions of your files.
     Like Sarah said, there is a lot of research out there on reflection. If you want a quick intro with some neat graphics, check out [this site](https://sites.google.com/site/reflection4learning/why-reflect).
     
-> For a more in-depth look, check out [this seminal 20-page paper](http://184.182.233.150/rid=1LW06D9V6-26428MK-1Z64/Mezirow's%20chapter,%20How%20Critical%20Refletion%20Triggers%20TL.pdf) on the topic.
+    For a more in-depth look, check out [this seminal 20-page paper](http://184.182.233.150/rid=1LW06D9V6-26428MK-1Z64/Mezirow's%20chapter,%20How%20Critical%20Refletion%20Triggers%20TL.pdf) on the topic.
 
 Populate `lesson_1_reflections.txt` with the following question and your thoughts on it:
     __How did viewing a diff between two versions of a file help you see the bug that was introduced?__
@@ -116,7 +116,7 @@ Now that you know about `git diff`, you can add it to the concept map.
 
 ## Previous version
 First, let’s look at the original map:
-![Original Concept Map](https://lh4.ggpht.com/3NnbttO-b4oJKwGdQmGWL-bzrZx7IXECjkIKPRTZ6UeRa04VCQBq01867CCC2e3AeMJMmmh71aCio33fAEA=s450)
+[!Original Concept Map](https://lh4.ggpht.com/3NnbttO-b4oJKwGdQmGWL-bzrZx7IXECjkIKPRTZ6UeRa04VCQBq01867CCC2e3AeMJMmmh71aCio33fAEA=s450)
 
 ## New addition
 Remember that we are trying to avoid cluttering up our map, so try to only add relationships that would not be implied by other relationships already on the map.
