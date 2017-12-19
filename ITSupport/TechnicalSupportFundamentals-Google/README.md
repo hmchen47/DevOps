@@ -143,6 +143,9 @@ If you're unable to use Google Chrome and the Chrome RDP App to connect, you can
 ## [Impact](https://www.coursera.org/learn/technical-support-fundamentals/lecture/Q0g6N/impact)
 ## [Discussion Prompt: The Internet and You](https://www.coursera.org/learn/technical-support-fundamentals/discussionPrompt/kixpk/the-internet-and-you)
 ## [Internet of Things](https://www.coursera.org/learn/technical-support-fundamentals/lecture/CnwcI/internet-of-things)
+
+For more information about this topic on this Video Lecture: Internet of Things, click [here](http://www.wired.co.uk/article/internet-of-things-what-is-explained-iot).
+
 ## [Supplemental Reading for Video Lecture: Internet of Things](https://www.coursera.org/learn/technical-support-fundamentals/supplement/POcQR/supplemental-reading-for-video-lecture-internet-of-things)
 ## [Privacy and Security](https://www.coursera.org/learn/technical-support-fundamentals/lecture/y4Eyk/privacy-and-security)
 
