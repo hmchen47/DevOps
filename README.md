@@ -20,3 +20,9 @@ Contents:
 
 5. Git
     + [How to Use Git & GitHub - Udacity](./Git/Udacity-Git_GitHub)
+
+6. IT Support
+    + [Technical Support Fundamental - Google, Coursera](./ITSupport/TechnicalSupportFundamentals-Google)
+
+
+
