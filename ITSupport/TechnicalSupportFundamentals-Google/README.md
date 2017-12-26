@@ -205,6 +205,65 @@ For more information about software versioning, click [here](https://en.wikipedi
 ## [Install, Update and Remove Software for Linux](https://www.coursera.org/learn/technical-support-fundamentals/gradedLti/JKvpx/install-update-and-remove-software-for-linux)
 
 
+# Troubleshooting Best Practices
+## [Module Introduction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/yyGRU/module-introduction)
+## [Ask Questions!](https://www.coursera.org/learn/technical-support-fundamentals/lecture/u3zo8/ask-questions)
++ troubleshooting is the ability to diadnose and resolve a problem
++ ask questions = gathering information
++ Always try to create a positive expereince for the user.
+## [Isolating the Problem](https://www.coursera.org/learn/technical-support-fundamentals/lecture/46iLv/isolating-the-problem)
++ isolate problem: shrinking the scope of the problem
++ root cause: the main factor that's causing a rangeof issues
+## [Follow the Cookie Crumbs](https://www.coursera.org/learn/technical-support-fundamentals/lecture/i9GdQ/follow-the-cookie-crumbs)
++ log message & error message
+## [Start with the Quickest Step First](https://www.coursera.org/learn/technical-support-fundamentals/lecture/XLYKd/start-with-the-quickest-step-first)
+## [Troubleshooting Pitfalls to Avoid](https://www.coursera.org/learn/technical-support-fundamentals/lecture/Uhoe2/troubleshooting-pitfalls-to-avoid)
++ Pitfall #1: Going into autopilot
++ Pitfall #2: Not finding the root cause
+## Discussion Prompt: Troubleshooting in Daily Life
+## Practice Quiz: Troubleshooting Best Practices
+
+# Customer Service
+## [Intro to Soft Skills](https://www.coursera.org/learn/technical-support-fundamentals/lecture/7CKEv/intro-to-soft-skills)
++ build trust between customer and you -> loyality
++ Greate customer service requirements:
+    + exhibiting empathy: the action you take by looking at it forom their perspective is what empythy is all about
+    + being conscious of your tone
+    + acknowledging the person: how you working to solve the issue
+    + developing trust
++ Empathy and acknowledgement are a big part of building trust.  Without these, you'll find it difficult to connect with the user.
+## [Anatomy of an Interaction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/OJkh0/anatomy-of-an-interaction)
++ Just be perfessional, acknowledge the user, and show them some respect.
++ how you response to customer
++ To really build a rapport, try to remember a personal fact they've mentioned and bring it up later.
+## [How to Deal with Difficult Situations](https://www.coursera.org/learn/technical-support-fundamentals/lecture/yWuOR/how-to-deal-with-difficult-situations)
++ "reboot" yourself to slow down your pulse
++ be patient
++ try to see things from other people's point of view.
+## [Interviewing Tips: Amir Khalil](https://www.coursera.org/learn/technical-support-fundamentals/lecture/cAEJD/interviewing-tips-amir-khalil)
+## Practice Quiz: Customer Service
+
+# Documentation
+## [Ticketing Systems and Documenting Your Work](https://www.coursera.org/learn/technical-support-fundamentals/lecture/OWWVd/ticketing-systems-and-documenting-your-work)
++ Tickets are a common way of documenting an issue.
++ bugs are issues with the system that weren't cause by an external source.
++ Ticket system: Bugzilla, JIRA, Redmine
++ Write down procedures and policies to create a documentation trail.
++ update the issue as it is
+    + keep the user in the loop
+    + help you audit your steps in case you need to go back and see what you did
+## [Process Documentation](https://www.coursera.org/learn/technical-support-fundamentals/lecture/ql4zM/process-documentation)
+## [Documenting in Ticketing Systems](https://www.coursera.org/learn/technical-support-fundamentals/lecture/T0HgU/documenting-in-ticketing-systems)
+## [Module Wrap Up](https://www.coursera.org/learn/technical-support-fundamentals/lecture/bETXx/module-wrap-up)
++ to be great at customer service, sometimes you need to take a moment to __pause, reflect__, and __listen__.
+
+# Graded Assessments
+## [Peer-graded Assignment: Writing Effective Documentation](https://www.coursera.org/learn/technical-support-fundamentals/peer/UycJN/writing-effective-documentation)
+## [Review Your Peers: Writing Effective Documentation](https://www.coursera.org/learn/technical-support-fundamentals/peer/UycJN/writing-effective-documentation/give-feedback)
+
+# Course Wrap-Up
+## Discussion Prompt: Your Learning Journey
+## [Course Wrap-Up](https://www.coursera.org/learn/technical-support-fundamentals/lecture/HdQZf/course-wrap-up)
 
 
 

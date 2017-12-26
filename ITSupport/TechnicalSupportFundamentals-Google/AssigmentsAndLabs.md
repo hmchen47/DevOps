@@ -682,7 +682,38 @@ This confirms that GIMP was successfully removed from your computer.
 You've successfully installed Firefox, updated VLC, and uninstalled GIMP on a Linux machine. Sweet! You've completed this lab, but please feel free to return to it if you ever need a refresher.
 
 
+# Peer-graded Assignment: Writing Effective Documentation
+## Important Information
+It is especially important to submit this assignment before the deadline, January 21, 11:59 PM PST, because it must be graded by others. If you submit late, there may not be enough classmates around to review your work. This makes it difficult - and in some cases, impossible - to produce a grade. Submit on time to avoid these risks.
 
+## Instructions
+Overview: Documentation is an important part of an IT Support Specialist role. It’s vital to document processes and policies not only for yourself but for your teammates that may encounter the same issue. This writing assessment will help you get in the habit of writing good documentation and you’ll also see how documentation may be presented to you by reviewing your peers’ documentation.
+
+What You'll Do: For this writing project, you will write documentation to explain the process of making a peanut butter and jelly sandwich to someone who has never seen one before. You’ll want to be detailed yet concise. Specifically, the documentation should have:
+
+1. A description of the problem.
+2. A description of the end result.
+3. The solution detailed in a step-by-step manner.
+
+Grading: This is a required activity for the module. The activity is peer reviewed, so after you submit your response, you need to review and evaluate three submissions from other learners taking this course. To grade other submissions, follow the instructions and respond to the questions.
+
+### Review criterialess
+After submitting your review, you will evaluate three of your peers. You will give a quantitative (multiple choice) assessment of the response to each question. Then, you will provide qualitative (open response) feedback for the assignment as a whole. This writing project will be graded out of a total of 5 points. Please add up all the points based on the rubric below:
+
++ (20%): Description of the problem is included
++ (20%): Description of the end result is included
++ (20%): Solution is detailed in a step-by-step manner
++ (20%): Directions are concise
++ (20%): Could someone who didn’t know what a peanut butter and jelly sandwich was read this documentation and be able to assemble one?
+
+### Step-By-Step Assignment Instructionsless 
+Write documentation to explain the process of making a peanut butter and jelly sandwich to someone who has never seen one before. You’ll want to be detailed yet concise. Specifically begin the documentation process by describing the problem and writing the solution step-by-step.
+
+Consider the following questions as you develop your process review:
+
++ Is the documentation overly bloated to include unnecessary details?
++ Is the documentation clearly organized and structured?
++ Is the documentation easy to read and understand?
 
 
 
