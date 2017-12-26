@@ -164,172 +164,287 @@ What is the difference between a ROM chip and a RAM chip? Check all that apply.
 # Create a File with Windows
 1. Qwiklabs-managed Google Cloud Console accounts are permanent, and can be accessed after a lab ends.
 
-Ans: False
-All Qwiklabs-managed Google Cloud Console accounts, and their associated resources, will be deleted once the lab ends.
+        Ans: False
+        All Qwiklabs-managed Google Cloud Console accounts, and their associated resources, will be deleted once the lab ends.
 
 2. Before you access a Windows virtual machine for the first time in Google Cloud Console, you must:
 
-A. Click the SSH button next to the name of the virtual machine.
-B. Set a Windows password.
-C. Close the Server Manager application on the virtual machine.
-D. Use the sudo command.
+        A. Click the SSH button next to the name of the virtual machine.
+        B. Set a Windows password.
+        C. Close the Server Manager application on the virtual machine.
+        D. Use the sudo command.
 
-Ans: B
-Before connecting to a Windows virtual machine, you need to set a Windows username and password; if this doesn’t happen, you’ll be unable to authenticate. Make sure to do this for each Qwiklabs that uses Windows
+        Ans: B
+        Before connecting to a Windows virtual machine, you need to set a Windows username and password; if this doesn’t happen, you’ll be unable to authenticate. Make sure to do this for each Qwiklabs that uses Windows
 
 3. True or false: You can use the same Google Cloud Console username and password for every Qwiklabs exercise throughout the program.
 
-Ans: False
-Every Qwiklabs exercise will provide a unique username and password to access your Google Cloud console. These credentials expire once the lab is complete.
+        Ans: False
+        Every Qwiklabs exercise will provide a unique username and password to access your Google Cloud console. These credentials expire once the lab is complete.
 
 4. What’s the default name for a new folder in Windows?
 
-A. Untitled folder
-B. New folders don’t have names; they’re just blank
-C. New folder
-D. My Super Cool Folder
+        A. Untitled folder
+        B. New folders don’t have names; they’re just blank
+        C. New folder
+        D. My Super Cool Folder
 
-Ans: C
-If you create a new folder in Windows, and don’t specify a name, it’ll default to New folder. A folder’s name can be changed at any point in the future.
+        Ans: C
+        If you create a new folder in Windows, and don’t specify a name, it’ll default to New folder. A folder’s name can be changed at any point in the future.
+
 5. In Google Cloud Console, virtual machines can be found under which of the following menu options:
 
-A. Compute Engine -> VM instances
-B. Container Engine -> Container clusters
-C. App Engine -> Instances
-D. Instances -> Virtual machines
+        A. Compute Engine -> VM instances
+        B. Container Engine -> Container clusters
+        C. App Engine -> Instances
+        D. Instances -> Virtual machines
 
-Ans: A
-In Google Cloud Console, virtual machines for labs are available in the Menu, by selecting the Compute Engine category, then VM instances.
+        Ans: A
+        In Google Cloud Console, virtual machines for labs are available in the Menu, by selecting the Compute Engine category, then VM instances.
 
 
 # Limitations of the Internet
 1. True or false: The Internet is the World Wide Web.
 
-Ans: False
- The Internet is mistakenly referred to as the World Wide Web, but it's just the physical connection of computers and wires around the world. The Web is the information on the Internet.
+        Ans: False
+        The Internet is mistakenly referred to as the World Wide Web, but it's just the physical connection of computers and wires around the world. The Web is the information on the Internet.
 
 2. What is the fundamental protocol that the Internet uses today
 
-A. DHCP
-B. HTTP
-C. TCP/IP
-D. FTP
+        A. DHCP
+        B. HTTP
+        C. TCP/IP
+        D. FTP
 
-Ans: C
-The TCP/IP protocol is what allowed computers to share information outside their network, which stemmed the creation of the Internet as we know it today.
+        Ans: C
+        The TCP/IP protocol is what allowed computers to share information outside their network, which stemmed the creation of the Internet as we know it today.
 
 3. What is the protocol that the Internet uses today?
 
-Ans: TCP/IP
-The TCP/IP protocol is what allowed computers to share information outside their network, which stemmed the creation of the Internet as we know it today.
+        Ans: TCP/IP
+        The TCP/IP protocol is what allowed computers to share information outside their network, which stemmed the creation of the Internet as we know it today.
 
 4. Free text: In what other ways has the Internet changed the way society functions?
 
-What do you think?
+        What do you think?
 
-Ans: It is much easier to contact friends via social media which is based ion Internet. It was post mail the only way.
-It's crazy to think about how the Internet has completely changed our lives. Thank you for submitting your response to this prompt. In the future, you may even see the Internet change things that we have yet to imagine.
+        Ans: It is much easier to contact friends via social media which is based ion Internet. It was post mail the only way.
+        It's crazy to think about how the Internet has completely changed our lives. Thank you for submitting your response to this prompt. In the future, you may even see the Internet change things that we have yet to imagine.
 
 5. Which of these describes servers and clients? Check all that apply.
 
-A. A client connects directly to the Internet.
-B. Servers serve website content.
-C. Servers connect directly to the Internet.
-D. Clients request content from servers.
+        A. A client connects directly to the Internet.
+        B. Servers serve website content.
+        C. Servers connect directly to the Internet.
+        D. Clients request content from servers.
 
-Ans: B, C, D
-Clients, like our phones, request content from servers.
+        Ans: B, C, D
+        Clients, like our phones, request content from servers.
 
 6. True or false: You should only worry about computer security if you work in a computer security role.
 
-Ans: False
-Computer security affects everyone whether it's in your personal life or work life. You and everyone around you should exercise good computer security practices.
+        Ans: False
+        Computer security affects everyone whether it's in your personal life or work life. You and everyone around you should exercise good computer security practices.
 
 7. There are 4 bytes in an IPv4 address. What is the highest decimal value you can have for one byte?
 
-Ans: 255
-There are 256 available values in a byte with decimal values ranging from 0 to 255.
+        Ans: 255
+        There are 256 available values in a byte with decimal values ranging from 0 to 255.
 
 
 # Networking
 1. Which of the following cables are used in networking? Check all that apply.
 
-A. Ethernet
-B. Fiber optic cable
-C. HDMI cable
-D. Auxilary cable
+        A. Ethernet
+        B. Fiber optic cable
+        C. HDMI cable
+        D. Auxilary cable
 
-Ans: A, B
-An ethernet and fiber optic cable are used in networking.
+        Ans: A, B
+        An ethernet and fiber optic cable are used in networking.
 
 2. Which of the following devices are used in networking? Check all that apply.
 
-A. TCP
-B. Routers
-C. Switches
-D. Hubs
+        A. TCP
+        B. Routers
+        C. Switches
+        D. Hubs
 
-Ans: B, C, D
-These are all physical devices used in networking.
+        Ans: B, C, D
+        These are all physical devices used in networking.
 
 3. What do we call data that's broken down into bits and sent through a network?
 
-A. Packets
-B. Pages
-C. Memory
-D. Binary
+        A. Packets
+        B. Pages
+        C. Memory
+        D. Binary
 
-Ans: A
-Data is sent through packets on a network.
+        Ans: A
+        Data is sent through packets on a network.
 
 4. Which network protocol is used to handle reliable delivery of information?
 
-Ans: TCP
-TCP is used to handle reliable delivery of information in a network.
+        Ans: TCP
+        TCP is used to handle reliable delivery of information in a network.
 
 5. Which network protocol is used to route IP addresses?
 
-Ans: IP
-IP is used to route IP addresses in a network.
+        Ans: IP
+        IP is used to route IP addresses in a network.
 
 6. What protocol allows us to use a domain name like google.com instead of an IP address?
 
-Ans: DNS
-DNS allows us to use easy-to-remember names as opposed to IP addresses.
+        Ans: DNS
+        DNS allows us to use easy-to-remember names as opposed to IP addresses.
 
 7. What are some of the ways we can resolve IPv4 address shortages?
 
-A. Network Address Translation
-B, Using IPv6 addresses
-C. Border Gateway Protocol
-D. Autonomous Systems
+        A. Network Address Translation
+        B, Using IPv6 addresses
+        C. Border Gateway Protocol
+        D. Autonomous Systems
 
-Ans: A, B
-Using NAT and IPv6 addresses, we can resolve the shortcomings of IPv4 addresses.
+        Ans: A, B
+        Using NAT and IPv6 addresses, we can resolve the shortcomings of IPv4 addresses.
 
 8. Which one of these are a valid IPv4 address? Check all that apply.
 
-A. 255.255.255.0
-B. 345.0.24.6
-C. 1.1.1.1
-D. 54.45.43.54
+        A. 255.255.255.0
+        B. 345.0.24.6
+        C. 1.1.1.1
+        D. 54.45.43.54
 
-Ans: A, C, D
-IPv4 address are separated into 4 bytes, and each byte can have a value from 0 to 255.
+        Ans: A, C, D
+        IPv4 address are separated into 4 bytes, and each byte can have a value from 0 to 255.
 
 9. True or false: You can create a network with two computers.
 
-Ans: True
-A network can be made up of two or more computers.
+        Ans: True
+        A network can be made up of two or more computers.
 
 10. Devices on a network are identified by which of the following?
 
-A. MAC address and IP address
-B. Username and IP addresses
-C. Ethernet cable
-D. ISPs and IP addresses
+        A. MAC address and IP address
+        B. Username and IP addresses
+        C. Ethernet cable
+        D. ISPs and IP addresses
 
-Ans: A
-The MAC address and IP address are the unique identifiers that identify devices on a network.
+        Ans: A
+        The MAC address and IP address are the unique identifiers that identify devices on a network.
+
+
+# Introduction to Software
+1. Which of these is application software? Check all that apply.
+
+        A. RAM
+        B. Web browser
+        C. Email client
+        D. CPU
+
+        Ans: B, C
+        Your web browser and email clients are considered application software.
+
+
+2. Which of these is system software? Check all that apply.
+
+        A. Windows OS
+        B. BIOS
+        C. Text editor
+        D. CPU
+
+        Ans: A, B
+        The Windows OS and the BIOS are considered system software.
+
+3. What is the difference between an interpreted and a compiled language?
+
+        A. Interpreted languages are not broken into machine instructions beforehand.
+        B. Compiled languages are translated into machine instructions beforehand.
+        C. Compiled languages are not translated into machine instructions beforehand.
+        D. Interpreted languages are broken into machine instructions beforehand.
+
+        Ans: A, B
+        Interpreted languages are not broken into machine instructions beforehand, like compiled languages are.
+
+
+# Interacting with Software
+Q. In the Linux distribution Ubuntu, what command would you use to install an application?
+
+        A. apt
+        B. execute
+        C. run
+        D. application
+
+        Ans: A
+        apt is a command we use in Ubuntu for package installs.
+
+
+# Install, Update and Remove Software for Windows
+1. Which of the following is a tool to repair or uninstall software in Windows?
+
+        A. Programs and Features
+        B. System Preferences
+        C. Synaptic Package Manager
+        D. Advanced Package Tool
+
+        Ans: A
+        In Windows 10, nearly all apps and programs installed will be listed in Programs and Features, with an option to uninstall.
+
+2. In the prior lab, what action did you take with Mozilla Firefox?
+
+        A. Updated it
+        B. Installed it
+        C. Uninstalled it
+        D. No action was taken
+
+        Ans: B
+        Mozilla Firefox was installed by downloading the package from the official website.
+
+3. In the prior lab, what action did you take with VLC Media Player?
+
+        A. Updated it
+        B. Installed it
+        C. Uninstalled it
+        D. No action was taken
+
+        Ans: A
+        VLC Media Player was updated to a current version.
+
+4. In the prior lab, what action did you take with GIMP?
+
+        A. Updated it
+        B. Installed it
+        C. Uninstalled it
+        D. No action was taken
+
+        Ans: C
+        GIMP was uninstalled by using the Programs and Features tool in Windows.
+
+5. In the prior lab, what action did you take with Microsoft Office?
+
+        A. Updated it
+        B. Installed it
+        C. Uninstalled it
+        D. No action was taken
+
+        Ans: D
+
+
+6. In the prior lab, why was certain software updated?
+
+        A. The software wasn’t working correctly.
+        B. The software wasn’t installed yet.
+        C .A newer version was available.
+        D. There was no software updated in the lab.
+
+        Ans: C
+        A newer version of VLC was available. It’s important to keep software up-to-date to ensure that you receive security updates and get all the newest features!
+
+
+
+
+
+
+
 
 

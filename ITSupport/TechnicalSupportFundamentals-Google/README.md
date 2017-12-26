@@ -153,6 +153,58 @@ For more information about this topic on this Video Lecture: Internet of Things,
 ## [Quiz: Networking](https://www.coursera.org/learn/technical-support-fundamentals/exam/6iOxj/networking)
 
 
+# Introduction to Software
+## [Module Introduction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/i1Fed/module-introduction)
+## [What is Software?](https://www.coursera.org/learn/technical-support-fundamentals/lecture/UQ0QB/what-is-software)
++ coding: translating one language to another
++ scripting: mainly used to perform a single or limited range task when writing code
++ programming: coding in a programming lanugae
+
+Programming languages are special languages that software developers use to write instructions for computers to execute.
+
+## [Types of Software](https://www.coursera.org/learn/technical-support-fundamentals/lecture/Jrdiw/types-of-software)
+License: 
++ commercial
++ open source: free to use, modified, and shared
+
+Purpose:
++ Applications, Browser
++ System software, e.g. OS. and utilities
++ Firmware: permanenetly stored in a computer component, e.g. BIOS
+
+## [Supplemental Reading for Software Versioning](https://www.coursera.org/learn/technical-support-fundamentals/supplement/AEdYd/supplemental-reading-for-software-versioning)
+
+For more information about software versioning, click [here](https://en.wikipedia.org/wiki/Software_versioning).
+
+## [Revisiting Abstraction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/0CBZN/revisiting-abstraction)
++ Abstraction: a concept of taking a complex system and simplifying it for use
+
+## [Recipe for Computing](https://www.coursera.org/learn/technical-support-fundamentals/lecture/hex6B/recipe-for-computing)
++ Absembly language: allow computer scientisits to use human readable instructions, assembled into code that the machines could understand
++ complied programming language: uses human readable instructions, then sends them through a compiler
++ interpreted language: script run by an interpreter, which interprets the code into CPU instructions just in time to run them
+
+## Practice Quiz: Introduction to Software
+
+# Interacting with Software
+## [Managing Software](https://www.coursera.org/learn/technical-support-fundamentals/lecture/8kNiH/managing-software)
++ Bug: an error in software that causes unexpected results
++ software management: taks such as installing, updating, and removing software
+
+## [Installing, Updating, and Removing Software on Windows](https://www.coursera.org/learn/technical-support-fundamentals/lecture/VYjxC/installing-updating-and-removing-software-on-windows)
+## [Installing, Updating, and Removing Software on Linux](https://www.coursera.org/learn/technical-support-fundamentals/lecture/7sPEc/installing-updating-and-removing-software-on-linux)
+## [Software Automation](https://www.coursera.org/learn/technical-support-fundamentals/lecture/Tqfec/software-automation)
++ Automation: making processes work automatically
+
+## Discussion Prompt: Your Favorite Software
+## Practice Quiz: Interacting with Software
+
+# Graded Assessments
+## [Install, Update and Remove Software for Windows](https://www.coursera.org/learn/technical-support-fundamentals/gradedLti/9o9z5/install-update-and-remove-software-for-windows)
+## Quiz: Install, Update and Remove Software for Windows
+## [Install, Update and Remove Software for Linux](https://www.coursera.org/learn/technical-support-fundamentals/gradedLti/JKvpx/install-update-and-remove-software-for-linux)
+
+
 
 
 

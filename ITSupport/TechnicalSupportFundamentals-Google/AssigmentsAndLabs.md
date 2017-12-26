@@ -436,6 +436,252 @@ That's it! You've successfully navigated the Google Cloud Console and accessed t
 
 You can now close the browser window that you have open to the Google Cloud Console or this lab, and any RDP/SSH window. You can manually end the lab, or it will automatically end when the time runs out.
 
+# Install, Update and Remove Software for Windows
+## Lab Introduction
+This lab will teach you how to perform basic software maintenance on Windows machines. This includes installing software that’s not already present on the machines, updating existing software to the newest version, and uninstalling software that‘s no longer needed. All of these tasks are very common in the IT world, so it’s important that you’re able to do them quickly and effectively.
+
+## What you’ll do
+There are three learning objectives for this lab:
+
++ Install - You’ll install the Mozilla Firefox web browser. There’s currently no version of Firefox on the machine you’ll be using, so it will be a fresh installation.
++ Update - The machine you’ll be using comes preinstalled with an old version of the VLC Media Player. You’ll update VLC to the newest version.
++ Uninstall - You’ll uninstall the GIMP photo-editing tool from the machine, removing it entirely.
+
+You will have 60 minutes to complete this lab.
+
+This course uses a third-party tool, Install, Update and Remove Software for Windows, to enhance your learning experience. The tool will reference basic information like your name, email, and Coursera ID.
+
+# Install, Update, and Remove Software in Windows - Labs
+## Introduction
+This lab will teach you how to perform basic software maintenance on Windows machines. This includes installing software that's not already present on the machines, updating existing software to the newest version, and uninstalling software that‘s no longer needed. All of these tasks are very common in the IT world, so it's important that you're able to do them quickly and effectively.
+
+You will have 60 minutes to complete this lab.
+
+### What you'll do
+
+There are three learning objectives for this lab:
+
++ Install: You'll install the Mozilla Firefox web browser. There's currently no version of Firefox on the machine you'll be using, so it will be a fresh installation.
++ Update: The machine you'll be using comes preinstalled with an old version of the VLC Media Player. You'll update VLC to the newest version.
++ Uninstall: You'll uninstall the GIMP photo-editing tool from the machine, removing it entirely.
+
+### Verifying Windows configuration
+
+The first steps of this lab will be to verify that the initial software setup, or "configuration," of programs on your machines is correct. These should already be set exactly as you'll need them, but it's important to know how to check for this information when working in an IT role.
+
+You'll verify that Mozilla Firefox isn't installed on either machine, and that both GIMP and version 2.0.1 of VLC Media Player are installed on both. We'll work with the Windows machine first.
+
+### Accessing your Windows instance
+
+As a reminder, your machines are available in Google Cloud Console under Compute Engine -> VM instances. You'll need to set a Windows username and password before attempting to connect with RDP. If you're having difficulty connecting to your instance, follow the steps outlined in the the [Accessing Qwiklabs reading](https://www.coursera.org/learn/technical-support-fundamentals/supplement/NlrJ3/accessing-qwiklab-instructions) for detailed instructions on how to connect.
+
+### Verifying initial setup on Windows
+
+To verify whether or not a program is installed in Windows, click the Start icon in the bottom-left of the taskbar, and start typing "Programs and Features" to search (as shown below). Then, click "Programs and Features." You can also right-click on the Start icon, and click on "Programs and Features" at the top of the menu.
+
+[image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/2a2176641e74ede3.png)
+
+This will bring up the Programs and Features Control Panel applet, which shows a list of every program that's installed on the computer.
+
+[image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/fdce64c5cf949e0d.png)
+
+By looking at this applet, you can see that Mozilla software isn't present, so we know that it's not currently installed. Similarly, we can see that VLC and GIMP are both already installed, so we're ready to proceed. Note that the installed version of VLC is 2.0.1; this isn't the most recent version, so we'll update it later on in this lab.
+
+### Maintaining software on Windows
+
+Now that we know that the Windows instance is properly configured (i.e. we have verified that Mozilla is not installed, but VLC and GIMP are both already installed), you can move on to the hands-on part of the lab; maintaining the software.
+
+### Installing Mozilla Firefox
+
+First, you'll install the Mozilla Firefox browser in the Windows instance. To install Firefox, you need to download the Windows installer from the Firefox website. To do this, double-click the Google Chrome icon on the left side of the desktop screen, and navigate to this url:
+
+https://www.mozilla.org/en-US/firefox/new/
+
+From this site, click the "Download" link to download the installer.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/7a9e0a8d8a20cbbb.png)
+
+Once the installation finishes, click the installer icon in the bottom-left side of the browser window.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/98c6a98875a1a3d9.png)
+
+This launches the installer, and starts the installation process. Click "Yes" if Windows asks if you wish to install it, and the installer should open and begin.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/14f41b191869d9ab.png)
+
+Click "Next" through any options that appear during the installation process. Wait for this process to finish, and Mozilla will be installed. A shortcut to Firefox will be added to the desktop, and you can double-click it to open your newly installed browser.
+
+Congratulations! You've now done a "clean install" of software using Windows. Pretty simple, right? Next, you'll configure the updates for software already installed on your machine.
+
+### Updating VLC Media Player
+
+We saw before that an old version of VLC Media Player is already installed on the Windows VM we're using. This is an old version; we'll now learn how to update it in Windows. First, you need to get an installer for the new version from VLC's website:
+
+https://www.videolan.org/vlc/download-windows.html
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/7967e0aabedae075.png)
+
+Click "Download VLC", then wait for the installer to finish downloading. When it's finished, click on the installer to open it (like you did for Firefox).
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/f9a31c338d89dd86.png)
+
+Once the installer opens, choose whichever language you're comfortable with, then click "Next" to begin the process. Soon the window will change, letting you know that an old version has been found.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/72ef426043439664.png)
+
+Click "Next" until a progress bar appears and the upgrade process begins. When the process is finished, a confirmation message will appear. Uncheck the option to run VLC, then click "Finish" to close the installer.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/7e6110b531ab7d7f.png)
+
+Reopen the "Programs and Features" window and you'll see that VLC is now at the latest version.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/d46d4253bb967621.png)
+
+### Uninstalling GIMP
+
+Uninstalling a program on Windows is super simple. Navigate back to "Programs and Features" and right click on the program you want to remove (i.e. GIMP). A single-item dropdown menu should appear:
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/1f46fa9598456c06.png)
+
+Click on the "Uninstall" option in the dropdown. A confirmation menu will appear, asking if you're sure you want to proceed. Click "Yes" and the uninstallation process will begin.
+
+[image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/50d976971c8dd7c9.png)
+
+When this process finishes, a confirmation menu will appear. Clicking "OK" on that menu will close it, and GIMP should no longer appear on the list of installed programs. This completes the uninstallation process.
+
+[image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37975/original/img/84e591712a2284bc.png)
+
+### Congratulations!
+
+You've successfully installed Firefox, updated VLC, and uninstalled GIMP on a Windows machine. Wohoo! You've completed this lab, but please feel free to return to it if you ever need a refresher.
+
+
+# Install, Update and Remove Software for Linux
+## Lab Introduction
+This lab will teach you how to perform basic software maintenance on Linux machines. This includes installing software that’s not already present on the machines, updating existing software to the newest version, and uninstalling software that‘s no longer needed. All of these tasks are very common in the IT world, so it’s important that you’re able to do them quickly and effectively.
+
+## What you’ll do
+
+There are three learning objectives for this lab:
+
++ Install - You’ll install the Mozilla Firefox web browser. There’s currently no version of Firefox on the machine you’ll be using, so it will be a fresh installation.
++ Update - The machine you’ll be using comes preinstalled with an old version of the VLC Media Player. You’ll update VLC to the newest version.
++ Uninstall - You’ll uninstall the GIMP photo-editing tool from the machine, removing it entirely.
+
+You will have 60 minutes to complete this lab.
+
+This course uses a third-party tool, Install, Update and Remove Software for Linux, to enhance your learning experience. The tool will reference basic information like your name, email, and Coursera ID.
+
+# Install, Update, and Remove Software in Linux - Labs
+## Introduction
+This lab will teach you how to perform basic software maintenance on Linux machines. This includes installing software that's not already present on the machines, updating existing software to the newest version, and uninstalling software that‘s no longer needed. All of these tasks are very common in the IT world, so it's important that you're able to do them quickly and effectively.
+
+You will have 60 minutes to complete this lab.
+
+## What you'll do
+
+There are three learning objectives for this lab:
+
+Install: You'll install the Mozilla Firefox web browser. There's currently no version of Firefox on the machine you'll be using, so it will be a fresh installation.
+Update: The machine you'll be using comes preinstalled with an old version of the VLC Media Player. You'll update VLC to the newest version.
+Uninstall: You'll uninstall the GIMP photo-editing tool from the machine, removing it entirely.
+Verifying Linux configuration
+
+Head's up: Many of the commands you'll use in this section start with the word "sudo". This is not specific to these tasks; it's used across Linux to tell the operating system that you're the "superuser." This grants you permissions to perform sensitive operations, like installing or uninstalling software. You may be prompted for a password to prove that you're authorized to do this.
+
+## Accessing your Linux instance
+
+Make sure you're still logged into the Google Cloud Console using the username and password provided with the lab. As a reminder, your machines are available in Google Cloud Console under Compute Engine -> VM instances. If you're having difficulty connecting to your instance, no worries! Just follow the steps outlined in the [Accessing Qwiklabs reading](https://www.coursera.org/learn/technical-support-fundamentals/supplement/NlrJ3/accessing-qwiklab-instructions) for detailed instructions on how to connect. There will be two different virtual machines. Make sure to select the Linux machine.
+
+Navigate back to the "VM Instances" page, which shows the instance you have available to you for the lab. Find the "Connect" field, and click "SSH" for the Linux instance.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/5fd8e7538847e3fe.png)
+
+This will open a pop-up window that contains a terminal that will allow you to interact with your Linux instance. (Make sure that pop-ups are enabled in your browser.) An example terminal is shown below. You'll use this terminal for the rest of the lab when working with the Linux machine.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/c1bb32f8e7edad6f.png)
+
+You're now ready to continue with the lab.
+
+## Verifying installed software on Linux
+
+To quickly check if a program is installed on Linux, you can use the command "dpkg -s" followed by the unique package name for that program. The "-s" flag in dpkg stands for "search," which allows you to search for a program on your machine and check if it's installed. For example, we know that Firefox isn't currently installed, but GIMP is. Running "dpkg -s firefox" shows this output:
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/7ac0036d710bb59b.png)
+
+This shows you that Firefox isn't currently installed on the system. To check GIMP, modify the earlier command and enter "dpkg -s GIMP" to see the output below. (Note that only part of the output is shown.)
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/b111ec78f0afc868.png)
+
+You can see that the status of gimp is "installed". As long as you know the package name, you can use "dpkg" to check the status of any program.
+
+Running "dpkg -s vlc" shows you that vlc is installed, but also that the version is out-of-date. (Version 1.1.9 is installed, but the newest version is at least 2.2.2)
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/8b7c577dac3cc175.png)
+
+## Maintaining software on Linux
+
+### Installing Mozilla Firefox
+
+First, we'll install the Mozilla Firefox web browser. Parts of this process will be unique to this specific installation, but most of the steps you'll take will be identical, regardless of the software.
+
+Lots of common programs, including Firefox, are set up in repositories that most Linux distributions are aware of, by default. This makes installing these programs super easy, and allows you to bypass having to manually download and install the program. To make sure these repositories are up-to-date, run this command in the terminal:
+
+> `sudo apt-get update`
+
+This will start the repository update process, which should look something like this when it's finished:
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/8591fe25c651a187.png)
+
+Now you're ready to install Firefox. Run the command below in the terminal:
+
+> `sudo apt-get install firefox`
+
+You'll be prompted to confirm that you‘d like to continue with the installation. To continue, enter "y" (as in "yes") into the terminal, and hit "enter". For future reference, to cancel the installation process, you'd just enter anything other than "y".
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/7d3726671c15258a.png)
+
+After confirming the installation, the terminal will briefly fill with lines of text. Once this process is complete, Firefox will be installed on your instance. To verify that it's installed, enter "dpkg -s firefox" into the terminal window again, and you'll see different output than before:
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/f5a67026faf23f3.png)
+
+You can see that the status is listed as "installed", meaning that the process was successfully completed. Wohoo! Now you can move onto updating software.
+
+## Updating VLC Media Player
+
+Unlike Firefox, VLC media player is already installed on your computer, but the version that's installed is out-of-date. You'll fix that now by updating it to the newest version. To do that, force an update of the package manager, using this command:
+
+> `sudo apt-get install -f`
+
+This kicks off the update process. It will print out lots of text to your terminal, and ask you if you'd like to continue. Enter "y" for "yes". When the process is finished, type "dpkg -s vlc" again to verify the installation.
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/709ab95dc4e48c85.png)
+
+You can see here that VLC has been updated to a newer version (2.2.2 was the newest at the time this screenshot was taken). Your version should be at least 2.2.2, but could be higher if newer versions have been released.
+
+### Uninstalling GIMP
+
+When it's no longer necessary to have a specific program installed on your computer, it's usually a good idea to uninstall it to clear up space. Now, you'll uninstall the GIMP photo-editing software, removing it from the computer completely.
+
+GIMP, like Firefox, can be installed and uninstalled using the "apt-get" commands that you used to install Firefox. To uninstall GIMP, a very similar command is used:
+
+> `sudo apt-get remove gimp`
+
+This command will kick off the process of uninstalling GIMP from your instance. Shortly after starting, it will prompt you to confirm the uninstallation. Enter "y" to confirm, and the process will begin:
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/c906e456c886b422.png)
+
+After receiving your confirmation, the process will continue and GIMP will be uninstalled. You can verify that the process was successful by running the same command we used to verify its installation ("dpkg -s gimp"). You'll receive the following message. (Only part of the message is shown below.) Note the this message shows that GIMP has been "deinstalled".
+
+![image](https://run-qwiklab-website-prod.s3.amazonaws.com/instructions/documents/37974/original/img/e717006194ce10cf.png)
+
+This confirms that GIMP was successfully removed from your computer.
+
+## Congratulations!
+
+You've successfully installed Firefox, updated VLC, and uninstalled GIMP on a Linux machine. Sweet! You've completed this lab, but please feel free to return to it if you ever need a refresher.
+
+
 
 
 
