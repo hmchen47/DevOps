@@ -1,0 +1,47 @@
+Version Control with Git
+========================
+
+by Atlassian
+
+# Welcome!
+## [Welcome](https://www.coursera.org/learn/version-control-with-git/supplement/nOCfq/welcome)
+
+# DevOps and Git in a Nutshell
+## [DevOps and Git in a Nutshell](https://www.coursera.org/learn/version-control-with-git/lecture/ySzMb/devops-and-git-in-a-nutshell)
+
+# Git Overview
+## [Git Overview](https://www.coursera.org/learn/version-control-with-git/lecture/WFdJp/git-overview)
+## [(Sourcetree) Installation and Getting Started](https://www.coursera.org/learn/version-control-with-git/lecture/COD2g/sourcetree-installation-and-getting-started)
+## [(Lab- Sourcetree) Installation and Getting Started](https://www.coursera.org/learn/version-control-with-git/supplement/iqpYl/lab-sourcetree-installation-and-getting-started)
+## [(Command Line) Installation and Getting Started](https://www.coursera.org/learn/version-control-with-git/lecture/AiSks/command-line-installation-and-getting-started)
+## [(Lab- Command Line) Installation and Getting Started](https://www.coursera.org/learn/version-control-with-git/supplement/dF2Zr/lab-command-line-installation-and-getting-started)
+
+# Git Locations
+## [Git Locations](https://www.coursera.org/learn/version-control-with-git/lecture/SMJIy/git-locations)
+## [(Sourcetree) Create a Local Repository](https://www.coursera.org/learn/version-control-with-git/lecture/qNBvT/sourcetree-create-a-local-repository)
+## [(Lab- Sourcetree) Create a Local Repository](https://www.coursera.org/learn/version-control-with-git/supplement/ea4gj/lab-sourcetree-create-a-local-repository)
+## [(Command Line) Create a Local Repository](https://www.coursera.org/learn/version-control-with-git/lecture/f9fbm/command-line-create-a-local-repository)
+## [(Lab- Command Line) Create a Local Repository](https://www.coursera.org/learn/version-control-with-git/supplement/KqYRY/lab-command-line-create-a-local-repository)
+
+# Commit to a Local Repository
+## [(Sourcetree) Commit to a Local Repository](https://www.coursera.org/learn/version-control-with-git/lecture/QaM9E/sourcetree-commit-to-a-local-repository)
+## [(Lab- Sourcetree) Commit to a Local Repository](https://www.coursera.org/learn/version-control-with-git/supplement/AdPgN/lab-sourcetree-commit-to-a-local-repository)
+## [(Command Line) Commit to a Local Repository](https://www.coursera.org/learn/version-control-with-git/lecture/zBlSu/command-line-commit-to-a-local-repository)
+## [(Lab- Command Line) Commit to a Local Repository](https://www.coursera.org/learn/version-control-with-git/supplement/OjWu9/lab-command-line-commit-to-a-local-repository)
+
+# Create a Remote Repository
+## [Create a Remote Repository](https://www.coursera.org/learn/version-control-with-git/lecture/umjj0/create-a-remote-repository)
+## [(Lab) - Create a Remote Repository](https://www.coursera.org/learn/version-control-with-git/supplement/Ewi6x/lab-create-a-remote-repository)
+
+# Push to a Remote Repository
+## [(Sourcetree) Push to a Remote Repository](https://www.coursera.org/learn/version-control-with-git/lecture/i5VLw/sourcetree-push-to-a-remote-repository)
+## [(Lab- Sourcetree) Push to a Remote Repository](https://www.coursera.org/learn/version-control-with-git/supplement/Dx84X/lab-sourcetree-push-to-a-remote-repository)
+## [(Command Line) Push to a Remote Repository](https://www.coursera.org/learn/version-control-with-git/lecture/nv7Jn/command-line-push-to-a-remote-repository)
+## [(Lab- Command Line) Push to a Remote Repository](https://www.coursera.org/learn/version-control-with-git/supplement/o8vxz/lab-command-line-push-to-a-remote-repository)
+
+## Module Assessment
+## [Quiz: Module 1 Assessment](https://www.coursera.org/learn/version-control-with-git/exam/Y0SDD/module-1-assessment)
+
+
+
+
