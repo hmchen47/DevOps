@@ -43,5 +43,34 @@ by Atlassian
 ## [Quiz: Module 1 Assessment](https://www.coursera.org/learn/version-control-with-git/exam/Y0SDD/module-1-assessment)
 
 
+# Git's Graph Model
+## [Git's Graph Model](https://www.coursera.org/learn/version-control-with-git/lecture/x0o8D/gits-graph-model)
+
+# Git IDs
+## [(Sourcetree) Git IDs](https://www.coursera.org/learn/version-control-with-git/lecture/ofoex/sourcetree-git-ids)
+## [(Command Line) Git IDs](https://www.coursera.org/learn/version-control-with-git/lecture/YPuVp/command-line-git-ids)
+
+# Git References
+## [(Sourcetree) Git References](https://www.coursera.org/learn/version-control-with-git/lecture/yAsY8/sourcetree-git-references)
+## [(Lab- Sourcetree) Git References](https://www.coursera.org/learn/version-control-with-git/supplement/rwfGZ/lab-sourcetree-git-references)
+## [(Command Line) Git References](https://www.coursera.org/learn/version-control-with-git/lecture/BSNHm/command-line-git-references)
+## [(Lab- Command Line) Git References](https://www.coursera.org/learn/version-control-with-git/supplement/jxfkW/lab-command-line-git-references)
+
+# Branches
+## [(Sourcetree) Branches](https://www.coursera.org/learn/version-control-with-git/lecture/pK9Wb/sourcetree-branches)
+## [(Lab- Sourcetree) Branches](https://www.coursera.org/learn/version-control-with-git/supplement/j9tQU/lab-sourcetree-branches)
+## [(Command Line) Branches](https://www.coursera.org/learn/version-control-with-git/lecture/cLDjx/command-line-branches)
+## [(Lab- Command Line) Branches](https://www.coursera.org/learn/version-control-with-git/supplement/Hmjsz/lab-command-line-branches)
+
+# Merging
+## [(Sourcetree) Merging](https://www.coursera.org/learn/version-control-with-git/lecture/x6SW6/sourcetree-merging)
+## [(Lab- Sourcetree) Merging](https://www.coursera.org/learn/version-control-with-git/supplement/PBKmh/lab-sourcetree-merging)
+## [(Command Line) Merging](https://www.coursera.org/learn/version-control-with-git/lecture/aK0aX/command-line-merging)
+## [(Lab- Command Line) Merging](https://www.coursera.org/learn/version-control-with-git/supplement/iJ1ie/lab-command-line-merging)
+
+# Module 2 Assessment
+## Quiz: Module 2 Assessment
+
+
 
 
