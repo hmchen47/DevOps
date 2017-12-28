@@ -72,5 +72,43 @@ by Atlassian
 ## Quiz: Module 2 Assessment
 
 
+# Resolving Merge Conflicts
+## [(Sourcetree) Resolving Merge Conflicts](https://www.coursera.org/learn/version-control-with-git/lecture/GEciH/sourcetree-resolving-merge-conflicts)
+## [(Lab- Sourcetree) Resolving Merge Conflicts](https://www.coursera.org/learn/version-control-with-git/supplement/GUGFq/lab-sourcetree-resolving-merge-conflicts)
+## [(Command Line) Resolving Merge Conflicts](https://www.coursera.org/learn/version-control-with-git/lecture/yDY82/command-line-resolving-merge-conflicts)
+## [(Lab- Command Line) Resolving Merge Conflicts](https://www.coursera.org/learn/version-control-with-git/supplement/C71VK/lab-command-line-resolving-merge-conflicts)
+
+# Tracking Branches
+## [(Sourcetree) Tracking Branches](https://www.coursera.org/learn/version-control-with-git/lecture/R3ILp/sourcetree-tracking-branches)
+## [(Lab- Sourcetree) Tracking Branches](https://www.coursera.org/learn/version-control-with-git/supplement/tbiLM/lab-sourcetree-tracking-branches)
+## [(Command Line) Tracking Branches](https://www.coursera.org/learn/version-control-with-git/lecture/4PQke/command-line-tracking-branches)
+## [(Lab- Command Line) Tracking Branches](https://www.coursera.org/learn/version-control-with-git/supplement/Ja4fC/lab-command-line-tracking-branches)
+
+# Fetch, Pull and Push
+## [(Sourcetree) Fetch, Pull and Push](https://www.coursera.org/learn/version-control-with-git/lecture/bEdx0/sourcetree-fetch-pull-and-push)
+## [(Lab- Sourcetree) Fetch, Pull and Push](https://www.coursera.org/learn/version-control-with-git/supplement/csXIR/lab-sourcetree-fetch-pull-and-push)
+## [(Command Line) Fetch, Pull and Push](https://www.coursera.org/learn/version-control-with-git/lecture/AZKTo/command-line-fetch-pull-and-push)
+## [(Lab- Command Line) Fetch, Pull and Push](https://www.coursera.org/learn/version-control-with-git/supplement/6wr4f/lab-command-line-fetch-pull-and-push)
+
+# Rebasing
+## [(Sourcetree) Rebasing](https://www.coursera.org/learn/version-control-with-git/lecture/Miziw/sourcetree-rebasing)
+## [(Lab- Sourcetree) Rebasing](https://www.coursera.org/learn/version-control-with-git/supplement/7daMz/lab-sourcetree-rebasing)
+## [(Command Line) Rebasing](https://www.coursera.org/learn/version-control-with-git/lecture/Ypbmn/command-line-rebasing)
+## [(Lab- Command Line) Rebasing](https://www.coursera.org/learn/version-control-with-git/supplement/tVC5g/lab-command-line-rebasing)
+
+# Rewriting History
+## [(Sourcetree) Rewriting History](https://www.coursera.org/learn/version-control-with-git/lecture/kINuI/sourcetree-rewriting-history)
+## [(Lab- Sourcetree) Rewriting History](https://www.coursera.org/learn/version-control-with-git/supplement/DbIcc/lab-sourcetree-rewriting-history)
+## [(Command Line) Rewriting History](https://www.coursera.org/learn/version-control-with-git/lecture/ztbsT/command-line-rewriting-history)
+## [(Lab- Command Line) Rewriting History](https://www.coursera.org/learn/version-control-with-git/supplement/cu5Fe/lab-command-line-rewriting-history)
+
+# Module 3 Assessment
+## Quiz: Module 3 Assessment
+
+
+
+
+
+
 
 
