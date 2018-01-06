@@ -117,6 +117,7 @@ CoreOS is built on top of the following:
     WantedBy=multi-user.target
     ```
 + [fleet][fleet]
+
     It is used to launch applications using the `systemd` unit files. With `fleet`, we can treat the __CoreOS cluster__ as a single __init__ system. A sample `fleet` configuration file looks like the following:
     ```bash
     [Unit]
