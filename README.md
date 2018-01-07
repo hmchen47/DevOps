@@ -20,6 +20,7 @@ Contents:
 
 5. Git
     + [How to Use Git & GitHub - Udacity](./Git/Udacity-Git_GitHub)
+    + [Version Control with Git - Coursera, Atlassian](./Git/VersionControlGit-Coursera)
 
 6. IT Support
     + [Technical Support Fundamental - Google, Coursera](./ITSupport/TechnicalSupportFundamentals-Google)
