@@ -8,15 +8,41 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 3. Text Lecture: How to Take this Course and How to Get Support
 4. Course Slides:  Docker Slides.pdf
 5. Introduction to Virtualization Technologies
+    + Hypervisor-based virtualization
+    + Hypervisor-based vs. Container-based virtualization
+    + Runtime isolation
+    + Container virtualization
 6. Docker Software's Client-Server Architecture
+    + Docker client - CLI & Kitematic
+    + Docker daemon = Docker Engine = Docker server - Linux-based only
 7. Install Docker for Mac/Windows
-8. Install Docker Toolbox
-9. Install Docker Toolbox
+    + Google w/  Docker install
+8. Install Docker Toolbox - Mac
+9. Install Docker Toolbox - Windows
 10. Important Concepts of Docker Technology
+    + Images
+    + Containers
+    + Registries and Repositories
 11. Run Our First Hello World Docker Container
+    + Docker Hub - busybox <- official image
+    + syntax: `docker run [-flag...][--lflag...] <image:tag> [cmd [args]]`
+        + ex: `docker run busybox:1.28 echo "Hello world!"` -> display "Hello world!" in stdout
+        + ex: `docker run busybox:1.28 sleep 100` -> sleep 100 secs
+        + flags: `-i` = interactive; `-t` = pseudo tty
 12. Deep Dive into Docker Containers
+    + Foreground vs. detached: -d = background; ex. `docker run -d busybox:1.28 sleep 100`
+    + display instaces: `docker ps [-a]`
+        + fiedls: CONTAINER ID [cid]; IMAGE; COMMAND; CREATED; STATUS; PORTS; NAMES
+    + remove instace after completion: `--rm`; ex. `docker run --rm busybox:1.28 sleep 1`
+    + display low level info about a image or container: `docker inspect <cid>`
 13. Docker Port Mapping and Docker Logs Command
-14. Extra Learning: Deep Dive into Docker Logging
+    + Docker Hub: tomcat:8.0 - Apache server, port 8080
+    + Access outside of the host on port 8888
+        + syntax: `docker -it -d -rm -p 8888:8080 tomcat:8.0`
+        + flag: `-p host_port:container_port`
+        + broswer: http://localhost:8888 or http://host-ip:8888
+    + Docker log: `docker logs <cid>`
+14. Extra Learning: [Deep Dive into Docker Logging](https://www.level-up.one/deep-dive-into-docker-logging/)
 
 # Section: 2 - Working with Docker Images
 15. Docker Image Layers
