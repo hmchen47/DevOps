@@ -1,7 +1,7 @@
 Introduction to DevOps: Transforming and Improving Operations
 =============================================================
 
-# [Welcome and Introduction](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/jump_to/block-v1:LinuxFoundationX+LFS161x+2T2016+type@sequential+block@49e349c0589e4225b508b436a77d3d3e)
+# [Welcome and Introduction](./ch00-Introduction.md)
 
 # Chapter 1: Why Do DevOps?
 ## Learning Objectives
