@@ -46,7 +46,26 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 
 # Section: 2 - Working with Docker Images
 15. Docker Image Layers
+    + kernel (bootfs), base image (OS), images, writable (container)
+    + writable layer 
 16. Build Docker Images by using Docker Commit Command
+    + Ways to build Docker container - Commit change & Dockerfile
+    + Docker Commit:
+        + Git packge required
+        + Syntax: `docker commit <cid> <image:tag>`
+        + Verify: `docker images`
+    + Dockerfile: 
+        + Instruction -> image
+        + Syntax: `docker build -t <image:tag> <.|path>`
+        + FROM instruction: base image
+        + Chain RUN instruction: a RUN, an image -> chain cmds, sorted
+        + CMD instruction: container inside cmds
+        + COPY instruction: copy local files or dirs
+        + ADD instruction: Internet, not recommended
+    + Docker cache & Aggregate caching: 
+        + Not updated as needed when caching
+        + Sol 1: chain instruction -> RUN instruction changed
+        + Sol 2: `docker build -t <image:tag> --no-chache=true`
 17. Build Docker Images by Writing Dockerfile
 18. Dockerfile In-depth
 19. Push Docker Images to Docker Hub
