@@ -54,6 +54,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + Git packge required
         + Syntax: `docker commit <cid> <image:tag>`
         + Verify: `docker images`
+17. Build Docker Images by Writing Dockerfile
     + Dockerfile: 
         + Instruction -> image
         + Syntax: `docker build -t <image:tag> <.|path>`
@@ -62,13 +63,18 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + CMD instruction: container inside cmds
         + COPY instruction: copy local files or dirs
         + ADD instruction: Internet, not recommended
+18. Dockerfile In-depth
     + Docker cache & Aggregate caching: 
         + Not updated as needed when caching
         + Sol 1: chain instruction -> RUN instruction changed
         + Sol 2: `docker build -t <image:tag> --no-chache=true`
-17. Build Docker Images by Writing Dockerfile
-18. Dockerfile In-depth
 19. Push Docker Images to Docker Hub
+    + Lastest tag: 
+        + avoid
+        + assign tag: `docker tag <cid> <image:tag>`
+    + Docker Hub
+        + URL: https://hub.docker.com
+        + link anme: `docker_hub_id/repo_name`
 
 # Section: 3 - Create Containerized Web Applications
 20. Containerize a Simple Hello World Web Application
