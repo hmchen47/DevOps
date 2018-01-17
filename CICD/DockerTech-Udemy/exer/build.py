@@ -164,7 +164,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 def build(debug = False):
     passwd = 'beatrice'
     imgname = 'dockerapp'
-    tag = 'v0.1'
+    tag = 'v0.2'
     port = '5000:5000'
 
     del_dockerporc(imgname, tag, passwd, debug)
