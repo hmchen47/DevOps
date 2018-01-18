@@ -128,7 +128,7 @@ def build_img(imgname, tag, passwd, debug = False):
 def run_proc(imgname, tag, passwd, port, debug=False):
     ''' run docker image '''
 
-    cmd = 'echo ' + passwd + '| sudo -S docker run -d -p ' + port + ' ' + imgname + ':' + tag + ' .'
+    cmd = 'echo ' + passwd + '| sudo -S docker run -d -p ' + port + ' ' + imgname + ':' + tag
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
 
@@ -176,5 +176,5 @@ def build(debug = False):
     return 0
 
 if __name__ == '__main__':
-    build()
-    # build(debug = True)
+    # build()
+    build(debug = True)
