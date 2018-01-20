@@ -4,6 +4,7 @@
 import subprocess as subproc
 import re
 import os
+import time
 
 def chk_proc(imgname, tag, line, debug = False):
     ''' check the existing pf process and return container ID if existed'''
@@ -106,12 +107,15 @@ def build_img(imgname, tag, passwd, debug = False):
 
     ''' verify the built image'''
     cmd = 'echo ' + passwd + '| sudo -S docker images'
+    time.sleep(2)
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
     
     imglst, err = proc.communicate()
 
     lines = (imglst.decode('ascii')).splitlines()
+    if debug:
+        print("Images: \n{}\n".format("\n".join(lines)))
 
     for line in lines: 
         contid = chk_img(imgname, tag, line, debug)
@@ -120,7 +124,7 @@ def build_img(imgname, tag, passwd, debug = False):
             print("Container built: {}".format(contid))
             return contid
 
-    print("No image build: \n{}".format(lines))
+    print("No image build: \n{}".format("\n".join(lines)))
     exit(1)
 
     return 1
@@ -128,7 +132,10 @@ def build_img(imgname, tag, passwd, debug = False):
 def run_proc(imgname, tag, passwd, port, debug=False):
     ''' run docker image '''
 
-    cmd = 'echo ' + passwd + '| sudo -S docker run -d -p ' + port + ' ' + imgname + ':' + tag + ' .'
+    cmd = 'echo ' + passwd + '| sudo -S docker run -d -p ' + port + ' ' + \
+            ' --name ' + imgname + tag + ' ' + imgname + ':' + tag
+    if debug:
+        print("Run process cmd: \n {}".format(cmd))
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
 
@@ -141,6 +148,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 
     ''' verify running process'''
     cmd = 'echo ' + passwd + '| sudo -S docker ps -a'
+    time.sleep(2)
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
     
@@ -148,6 +156,9 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 
     lines = (proclst.decode('ascii')).splitlines()
     
+    if debug:
+        print("Processes: \n{}\n".format("\n".join(lines)))
+
     for line in lines:
         contid = chk_proc(imgname, tag, line, debug)
 
@@ -155,7 +166,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
             print("Process run: {}".format(contid))
             return contid    
 
-    print("No process run: \n{}".format(lines))
+    print("No process run: \n{}".format("\n".join(lines)))
     exit(1)
 
     return 1
@@ -164,7 +175,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 def build(debug = False):
     passwd = 'beatrice'
     imgname = 'dockerapp'
-    tag = 'v0.1'
+    tag = 'v0.2'
     port = '5000:5000'
 
     del_dockerporc(imgname, tag, passwd, debug)
@@ -176,5 +187,5 @@ def build(debug = False):
     return 0
 
 if __name__ == '__main__':
-    build()
-    # build(debug = True)
+    # build()
+    build(debug = True)
