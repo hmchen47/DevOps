@@ -4,6 +4,7 @@
 import subprocess as subproc
 import re
 import os
+import time
 
 def chk_proc(imgname, tag, line, debug = False):
     ''' check the existing pf process and return container ID if existed'''
@@ -106,6 +107,7 @@ def build_img(imgname, tag, passwd, debug = False):
 
     ''' verify the built image'''
     cmd = 'echo ' + passwd + '| sudo -S docker images'
+    time.sleep(2)
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
     
@@ -146,6 +148,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 
     ''' verify running process'''
     cmd = 'echo ' + passwd + '| sudo -S docker ps -a'
+    time.sleep(2)
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
         stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
     
@@ -155,6 +158,7 @@ def run_proc(imgname, tag, passwd, port, debug=False):
     
     if debug:
         print("Processes: \n{}\n".format("\n".join(lines)))
+
     for line in lines:
         contid = chk_proc(imgname, tag, line, debug)
 
