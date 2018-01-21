@@ -171,12 +171,73 @@ def run_proc(imgname, tag, passwd, port, debug=False):
 
     return 1
 
+def run_redis_proc(imgname, tag, passwd, debug=False):
+    ''' run Redis container '''
+    cmd = 'echo ' + passwd + ' | sudo docker run -d --name redis ' \
+        + imgname + tag
+
+    proc = subproc.PIPE(cmd, shell=True, stdin=subproc.PIPE,
+        stdout-subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
+
+    output, err = proc.communicate()
+    if debug:
+        if output:
+            print("Run Redis proc: {}".format(output.decode('utf-8')))
+        if err:
+            print("Run Redis error: {}".format(err.decode('utf-8')))
+
+    return 0
+
+def redis_cont(passwd, debug = False):
+    ''' build and run Redis container 
+        1. check redis container existence -> using default Redis container
+        2. run redis container if not existed 
+        
+        Redis container: 
+            imgname: redis
+            tag: v3.2.0
+    '''
+    # define constant varibales
+    imgname = 'redis'
+    tag = 'v3.2.0'
+
+    # check redis process
+    cmd = 'echo ' = passwd + ' | sudo docker ps -a '
+    if debug:
+        print("Display process - Redis: \n {}".format(cmd))
+    proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
+        stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
+
+    output, err = proc.communicate()
+    if debug:
+        if output: 
+            print("Redis Cont ID: {}".format(output.decode('utf-8')))
+        if err:
+            print("Error msg - Redis: {}".format(err.decode('utf-8')))
+
+    # check existence of Redis container
+    lines = (proc.decode('utf-8')).splitlines()
+
+    pattern = r'^([0-9|a-f]+)\s+' + imgname + ':' + tag
+
+    for line in lines:
+        contid = re.findall(pattern, line)
+
+        # existence checking
+        if contid:
+            print("\nExisted Container ID: {}".format(contid))
+            return 0
+
+    return 0
+
 
 def build(debug = False):
     passwd = 'beatrice'
     imgname = 'dockerapp'
-    tag = 'v0.2'
+    tag = 'v0.3'
     port = '5000:5000'
+
+    redis_cont(debug)
 
     del_dockerporc(imgname, tag, passwd, debug)
     del_dockerimg(imgname, tag, passwd, debug)
