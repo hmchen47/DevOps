@@ -83,7 +83,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 23. Create Docker Container Links
 24. D3: Automate Current Workflow with Docker Compose
 25. Deep Dive into Docker Compose Workflow
-26. Extra Learning: Things to Watch out When Working with Docker Containers
+26. Extra Learning: [Things to Watch out When Working with Docker Containers](https://www.level-up.one/things-watch-working-docker-containers/)
 
 # Section: 4 - Docker Networking
 27. Introduction to Docker Networking
