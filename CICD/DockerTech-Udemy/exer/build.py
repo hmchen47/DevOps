@@ -175,9 +175,8 @@ def run_redis_proc(imgname, tag, passwd, debug=False):
     ''' run Redis container '''
     cmd = 'echo ' + passwd + ' | sudo docker run -d --name redis ' \
         + imgname + tag
-
-    proc = subproc.PIPE(cmd, shell=True, stdin=subproc.PIPE,
-        stdout-subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
+    proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
+        stdout=subproc.PIPE, stderr=subproc.STDOUT, close_fds=True)
 
     output, err = proc.communicate()
     if debug:
@@ -202,7 +201,7 @@ def redis_cont(passwd, debug = False):
     tag = 'v3.2.0'
 
     # check redis process
-    cmd = 'echo ' = passwd + ' | sudo docker ps -a '
+    cmd = 'echo ' + passwd + '| sudo -S docker ps -a'
     if debug:
         print("Display process - Redis: \n {}".format(cmd))
     proc = subproc.Popen(cmd, shell=True, stdin=subproc.PIPE, 
@@ -216,7 +215,7 @@ def redis_cont(passwd, debug = False):
             print("Error msg - Redis: {}".format(err.decode('utf-8')))
 
     # check existence of Redis container
-    lines = (proc.decode('utf-8')).splitlines()
+    lines = (output.decode('utf-8')).splitlines()
 
     pattern = r'^([0-9|a-f]+)\s+' + imgname + ':' + tag
 
@@ -237,7 +236,7 @@ def build(debug = False):
     tag = 'v0.3'
     port = '5000:5000'
 
-    redis_cont(debug)
+    redis_cont(passwd, debug)
 
     del_dockerporc(imgname, tag, passwd, debug)
     del_dockerimg(imgname, tag, passwd, debug)
