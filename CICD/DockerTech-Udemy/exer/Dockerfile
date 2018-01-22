@@ -4,7 +4,6 @@ RUN useradd -ms /bin/bash james
 USER james
 WORKDIR /app
 COPY app /app
-CMD ["ls". "-al"
+CMD ["ls", "-al"
 CMD ["chmod", "+rx", "app.py"] 
-CMD ["ls". "-al"
 CMD ["python", "app.py"] 
