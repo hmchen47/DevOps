@@ -79,8 +79,9 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 # Section: 3 - Create Containerized Web Applications
 20. Containerize a Simple Hello World Web Application
     + Build docker container: `docker build -t <imgname:tag>`
-    + Verify: `dcoker images`
+    + Verify images: `dcoker images`
     + Execute docker container: `docker run -d -p 5000:5000 <CONTID>`
+    + Verify process: `docker ps` - running processes, `docker ps -a` - all processes
 21. Text Direction: Containerize a Hello World Web Application
 22. Implement a Simple Key-value Lookup Service
     + checkout dockerapp v0.2: `git stash && git checkout v0.2`
