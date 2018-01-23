@@ -22,14 +22,14 @@ def mainpage(debug=False):
         print("After key ...")
 
     if request.method == 'POST' and request.form['submit'] == 'save':
-	cache.set(key, request.form['cache_value'])
+        cache.set(key, request.form['cache_value'])
 
     if debug: 
         print("After request ...")
 
-    cache_value = None;
+    cache_value = None
     if cache.get(key):
-	cache_value = cache.egt(key).decode('utf-8')
+	    cache_value = cache.get(key).decode('utf-8')
 
     return render_template('index.html', key=key, cache_value=cache_value)
 

@@ -55,7 +55,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + Syntax: `docker commit <cid> <image:tag>`
         + Verify: `docker images`
 17. Build Docker Images by Writing Dockerfile
-    + Dockerfile: 
+    + Dockerfile:
         + Instruction -> image
         + Syntax: `docker build -t <image:tag> <.|path>`
         + FROM instruction: base image
@@ -78,19 +78,28 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 
 # Section: 3 - Create Containerized Web Applications
 20. Containerize a Simple Hello World Web Application
+    + Build docker container: `docker build -t <imgname:tag>`
+    + Verify images: `dcoker images`
+    + Execute docker container: `docker run -d -p 5000:5000 <CONTID>`
+    + Verify process: `docker ps` - running processes, `docker ps -a` - all processes
 21. Text Direction: Containerize a Hello World Web Application
 22. Implement a Simple Key-value Lookup Service
+    + checkout dockerapp v0.2: `git stash && git checkout v0.2`
+    + Redis:
+        + in-memory data structure store, used as DB, cache, and message broker
+        + built-in replication and different level of on-disk persistence
+        + Python implementation: check app/app.py for dockerapp v0.2
 23. Create Docker Container Links
 24. D3: Automate Current Workflow with Docker Compose
 25. Deep Dive into Docker Compose Workflow
-26. Extra Learning: Things to Watch out When Working with Docker Containers
+26. Extra Learning: [Things to Watch out When Working with Docker Containers](https://www.level-up.one/things-watch-working-docker-containers/)
 
 # Section: 4 - Docker Networking
 27. Introduction to Docker Networking
 28. None Network
 29. Bridge Network
 30. D3: Host Network and Overlay Network
-31. D3: Text Lecture: Overlay Network
+31. D3: Text Lecture: [Overlay Network](https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster)
 32. D3: Define Container Networks with Docker Compose
 
 # Section: 5 - Create a Continuous Integration Pipeline
