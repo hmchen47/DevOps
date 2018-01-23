@@ -106,6 +106,10 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 33. Write and Run Unit Tests inside Containers
 34. Introduction to Continuous Integration
 35. Text Direction: Introduction to Continuous Integration
+    + URL of the Github account to fork: https://github.com/jleetutorial/dockerapp
+    + Checking for existing SSH keys: https://help.github.com/articles/checking-for-existing-ssh-keys/
+    + Generating a new SSH key and adding it to the ssh-agent: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+    + Adding a new SSH key to your GitHub account: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 36. D3: Link CircleCI with Github Account for Setting up a CI Workflow
 37. Push Docker Images To DockerHub from CircleCI
 38. Trouble Shooting: Push Docker Images to Docker Hub
