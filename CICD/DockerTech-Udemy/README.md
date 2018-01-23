@@ -99,7 +99,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 28. None Network
 29. Bridge Network
 30. D3: Host Network and Overlay Network
-31. D3: Text Lecture: Overlay Network
+31. D3: Text Lecture: [Overlay Network](https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster)
 32. D3: Define Container Networks with Docker Compose
 
 # Section: 5 - Create a Continuous Integration Pipeline
