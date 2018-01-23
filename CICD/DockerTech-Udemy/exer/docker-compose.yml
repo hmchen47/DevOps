@@ -1,6 +1,7 @@
 version: '3'
 services:
     dockerapp:
+        image: dockerapp:v0.4
         container_name: dockerappv0.4
         build: .
         ports:
@@ -9,12 +10,13 @@ services:
             - redis
         networks: 
             - my_net
+        privileged: true
     redis:
-        container_name: redis
         image: redis:3.2.0
+        container_name: redis
         networks:
             - my_net
-
+        privileged: true
 networks:
     my_net: 
         driver: bridge
