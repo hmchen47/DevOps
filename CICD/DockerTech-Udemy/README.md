@@ -81,7 +81,9 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + Build docker container: `docker build -t <imgname:tag>`
     + Verify images: `dcoker images`
     + Execute docker container: `docker run -d -p 5000:5000 <CONTID>`
-    + Verify process: `docker ps` - running processes, `docker ps -a` - all processes
+    + Verify process: 
+        + running processes: `docker ps`
+        + all processes including stop ones: `docker ps -a`
 21. Text Direction: Containerize a Hello World Web Application
 22. Implement a Simple Key-value Lookup Service
     + checkout dockerapp v0.2: `git stash && git checkout v0.2`
@@ -113,24 +115,25 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 36. D3: Link CircleCI with Github Account for Setting up a CI Workflow
 37. Push Docker Images To DockerHub from CircleCI
 38. Trouble Shooting: Push Docker Images to Docker Hub
+
     If you are able to run `docker login`, but encountered the following __unauthorized: authentication required__ error while running `docker push`
     ```
     [root@terry ~]# docker login --username=1972
-    Password: 
+    Password:
     Login Succeeded
-    [root@terry ~]# 
+    [root@terry ~]#
     [root@terry ~]# docker push asiye_yigit_tutorial/debian:1.01
     The push refers to a repository [docker.io/asiye_yigit_tutorial/debian]
-    29303f03b719: Preparing 
-    77a77cd4826d: Preparing 
-    fe4c16cbf7a4: Preparing 
+    29303f03b719: Preparing
+    77a77cd4826d: Preparing
+    fe4c16cbf7a4: Preparing
     unauthorized: authentication require
     ```
-    Soution: 
+    Soution:
 
         Creating the repository on Docker hub before running docker push.
 
-    Take a look at http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login
+    Take a look at [stackoverflow.com](http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login)
 
 # Section: 6 - Deploy Docker Containers in Production
 39. D3: Introduction to Running Docker Containers in Production
