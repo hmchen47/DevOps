@@ -81,7 +81,9 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + Build docker container: `docker build -t <imgname:tag>`
     + Verify images: `dcoker images`
     + Execute docker container: `docker run -d -p 5000:5000 <CONTID>`
-    + Verify process: `docker ps` - running processes, `docker ps -a` - all processes
+    + Verify process: 
+        + running processes: `docker ps`
+        + all processes including stop ones: `docker ps -a`
 21. Text Direction: Containerize a Hello World Web Application
 22. Implement a Simple Key-value Lookup Service
     + checkout dockerapp v0.2: `git stash && git checkout v0.2`
@@ -90,8 +92,32 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + built-in replication and different level of on-disk persistence
         + Python implementation: check app/app.py for dockerapp v0.2
 23. Create Docker Container Links
+    + link: secure channel between containers w/o network ports
+    + redis: link flask and Python app container
+    + build radis: `docker run -d --name redis radis:3.2.0`
+    + checkout dockerapp v0.3
+    + run dockerapp w/ redis link: `docker run -d -p 5000:5000 --link redis dockerapp:v0.3`
+    + Verify:
+        + login container: `docker exec -it <contid> bash`
+        + get redis IP addr: `ping <ip addr of redis>`
+    + purpose: isolation of containers -> Microservice architecture
 24. D3: Automate Current Workflow with Docker Compose
+    + Tool for defining and running multi-container Docker apps
+    + Compose file: 
+        1. define environment w/ Dockerfile
+        2. define services w/docker-compose.yml
+        3. run `docker-compose up -d`
+    + Verify: `docker-compse ps`
+    + Stop services: `docker-compose stop`
+    + display images: `docker-compose images`
 25. Deep Dive into Docker Compose Workflow
+    + Containers start: `docker-compose up -d`
+    + Container instances: `docker-compose ps`
+    + Logging:
+        + Output colored and aggregated logs: `docker-compose logs`
+        + Follow log output: `docker-compose logs -f`
+    + Remove all containers: `docker-compose rm`
+    + Rebuild all the images: `docker-compose build`
 26. Extra Learning: [Things to Watch out When Working with Docker Containers](https://www.level-up.one/things-watch-working-docker-containers/)
 
 # Section: 4 - Docker Networking
@@ -106,9 +132,32 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 33. Write and Run Unit Tests inside Containers
 34. Introduction to Continuous Integration
 35. Text Direction: Introduction to Continuous Integration
+    + URL of the Github account to fork: https://github.com/jleetutorial/dockerapp
+    + Checking for existing SSH keys: https://help.github.com/articles/checking-for-existing-ssh-keys/
+    + Generating a new SSH key and adding it to the ssh-agent: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+    + Adding a new SSH key to your GitHub account: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 36. D3: Link CircleCI with Github Account for Setting up a CI Workflow
 37. Push Docker Images To DockerHub from CircleCI
 38. Trouble Shooting: Push Docker Images to Docker Hub
+
+    If you are able to run `docker login`, but encountered the following __unauthorized: authentication required__ error while running `docker push`
+    ```
+    [root@terry ~]# docker login --username=1972
+    Password:
+    Login Succeeded
+    [root@terry ~]#
+    [root@terry ~]# docker push asiye_yigit_tutorial/debian:1.01
+    The push refers to a repository [docker.io/asiye_yigit_tutorial/debian]
+    29303f03b719: Preparing
+    77a77cd4826d: Preparing
+    fe4c16cbf7a4: Preparing
+    unauthorized: authentication require
+    ```
+    Soution:
+
+        Creating the repository on Docker hub before running docker push.
+
+    Take a look at [stackoverflow.com](http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login)
 
 # Section: 6 - Deploy Docker Containers in Production
 39. D3: Introduction to Running Docker Containers in Production
