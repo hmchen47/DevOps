@@ -122,9 +122,34 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 
 # Section: 4 - Docker Networking
 27. Introduction to Docker Networking
+    + types of networks: 
+        + closed network / None network
+        + bridge network
+        + host network
+        + overlay network
+    + Display networks" `docker network ls`
 28. None Network
+    + no network - totally isolated
+    + max level of network protection
+    + create none network container: `docker run -d --net none busybox sleep 1000`
+    + Verify:
+        + host connectivity: `ping 8.8.8.8`
+        + login Docker container: `docker exec -it <contid> /bin/bash`
+        + container connectivity: `ping 8.8.8.8`
 29. Bridge Network
+    + 2 network interfaces: loopback and private
+    + no connectivity between two different bridge networks -> sol: manually connect 
+    + reduce level of network isolation
+    + detail inspection: `docker network inspect [bridge]` -> get subnet for bridge network
+    + exam network within container: `docker exec -it <cont> ifconfig`
+    + create customized bridge network: `docker network create --driver bridge <net_name>`
+    + verify IP range: `docker network inspect <net_name>`
+    + new container w/ new bridge network: `docker run -d --name <cont_name> --net <net_name> busybox sleep 1000`
 30. D3: Host Network and Overlay Network
+    + open network: full access to the host's interface
+    + min network security model
+    + create open container: `docker run -d --name <cont_name> --net host <img>`
+    + overlay network: support mult-host networking out-of-box
 31. D3: Text Lecture: [Overlay Network](https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster)
 32. D3: Define Container Networks with Docker Compose
 
