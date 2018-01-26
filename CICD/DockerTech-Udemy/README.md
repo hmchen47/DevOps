@@ -154,7 +154,19 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 32. D3: Define Container Networks with Docker Compose
     + Start docker containers: `docker-compose up -d`
     + Removing default network: `docker-compose down`
-    + docker-compose.yml: networks section
+    + docker-compose.yml:
+        ```yaml
+        networks:
+            my_net:
+                driver: bridge
+        Service:
+            ...
+                networks:
+                    - my_net
+            redis:
+                networks:
+                    -my_net
+        ```
 
 # Section: 5 - Create a Continuous Integration Pipeline
 33. Write and Run Unit Tests inside Containers
