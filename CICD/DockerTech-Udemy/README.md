@@ -237,7 +237,17 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
                 docker-compose run dockerapp python test.py
 
     ```
+    + Circule CI
+        + Sigup CircleCI wirh GitHub
+        + Add Project > select and setup project
+        + start build -> auto test with `config.yml`
+    + Procedure
+        1. edit local files and git commits
+        2. push to GitHub
+        3. login CircleCI and/or refresh
+        4. select releated branch and start build -> auto test with unit test module
 37. Push Docker Images To DockerHub from CircleCI
+    + 
 38. Trouble Shooting: Push Docker Images to Docker Hub
 
     If you are able to run `docker login`, but encountered the following __unauthorized: authentication required__ error while running `docker push`
