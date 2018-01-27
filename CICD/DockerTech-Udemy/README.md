@@ -92,27 +92,151 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + built-in replication and different level of on-disk persistence
         + Python implementation: check app/app.py for dockerapp v0.2
 23. Create Docker Container Links
+    + link: secure channel between containers w/o network ports
+    + redis: link flask and Python app container
+    + build radis: `docker run -d --name redis radis:3.2.0`
+    + checkout dockerapp v0.3
+    + run dockerapp w/ redis link: `docker run -d -p 5000:5000 --link redis dockerapp:v0.3`
+    + Verify:
+        + login container: `docker exec -it <contid> bash`
+        + get redis IP addr: `ping <ip addr of redis>`
+    + purpose: isolation of containers -> Microservice architecture
 24. D3: Automate Current Workflow with Docker Compose
+    + Tool for defining and running multi-container Docker apps
+    + Compose file: 
+        1. define environment w/ Dockerfile
+        2. define services w/docker-compose.yml
+        3. run `docker-compose up -d`
+    + Verify: `docker-compse ps`
+    + Stop services: `docker-compose stop`
+    + display images: `docker-compose images`
 25. Deep Dive into Docker Compose Workflow
+    + Containers start: `docker-compose up -d`
+    + Container instances: `docker-compose ps`
+    + Logging:
+        + Output colored and aggregated logs: `docker-compose logs`
+        + Follow log output: `docker-compose logs -f`
+    + Remove all containers: `docker-compose rm`
+    + Rebuild all the images: `docker-compose build`
 26. Extra Learning: [Things to Watch out When Working with Docker Containers](https://www.level-up.one/things-watch-working-docker-containers/)
 
 # Section: 4 - Docker Networking
 27. Introduction to Docker Networking
+    + types of networks: 
+        + closed network / None network
+        + bridge network
+        + host network
+        + overlay network
+    + Display networks" `docker network ls`
 28. None Network
+    + no network - totally isolated
+    + max level of network protection
+    + create none network container: `docker run -d --net none busybox sleep 1000`
+    + Verify:
+        + host connectivity: `ping 8.8.8.8`
+        + login Docker container: `docker exec -it <contid> /bin/bash`
+        + container connectivity: `ping 8.8.8.8`
 29. Bridge Network
+    + 2 network interfaces: loopback and private
+    + no connectivity between two different bridge networks -> sol: manually connect 
+    + reduce level of network isolation
+    + detail inspection: `docker network inspect [bridge]` -> get subnet for bridge network
+    + exam network within container: `docker exec -it <cont> ifconfig`
+    + create customized bridge network: `docker network create --driver bridge <net_name>`
+    + verify IP range: `docker network inspect <net_name>`
+    + new container w/ new bridge network: `docker run -d --name <cont_name> --net <net_name> busybox sleep 1000`
 30. D3: Host Network and Overlay Network
+    + open network: full access to the host's interface
+    + min network security model
+    + create open container: `docker run -d --name <cont_name> --net host <img>`
+    + overlay network: support mult-host networking out-of-box
 31. D3: Text Lecture: [Overlay Network](https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster)
 32. D3: Define Container Networks with Docker Compose
+    + Start docker containers: `docker-compose up -d`
+    + Removing default network: `docker-compose down`
+    + docker-compose.yml:
+        ```yaml
+        networks:
+            my_net:
+                driver: bridge
+        Service:
+            ...
+                networks:
+                    - my_net
+            redis:
+                networks:
+                    -my_net
+        ```
 
 # Section: 5 - Create a Continuous Integration Pipeline
 33. Write and Run Unit Tests inside Containers
+    + unit test: test some basic functionality of docker app code
+    + external services
+    + execute asap
+    + Python pakage:
+        + unit testing framework
+        + import unittest
+        + checkout dockerapp v0.5
+    + Pros: single container image for development, test, and production
+    + app/test.py added
+    ```python
+    import unittest
+    import app
+
+    class TestDockerapp(unittest.TestCase):
+
+        def setUp(self):
+            self.app = app.app.test_client()
+
+        def test_save_value(self):
+            response = self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
+            assert response.status_code == 200
+            assert b'2' in response.data
+            assert b'two' in response.data
+
+        def test_load_value(self):
+            self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
+            response = self.app.post('/', data=dict(submit='load', key='2'))
+            assert response.status_code == 200
+            assert b'2' in response.data
+            assert b'two' in response.data
+
+    if __name__=='__main__':
+    unittest.main()
+    ```
 34. Introduction to Continuous Integration
+    + a software engineering practice in which isolated changes are immediately tested and reported
 35. Text Direction: Introduction to Continuous Integration
     + URL of the Github account to fork: https://github.com/jleetutorial/dockerapp
     + Checking for existing SSH keys: https://help.github.com/articles/checking-for-existing-ssh-keys/
     + Generating a new SSH key and adding it to the ssh-agent: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
     + Adding a new SSH key to your GitHub account: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-36. D3: Link CircleCI with Github Account for Setting up a CI Workflow
+36. D3: [Link CircleCI with Github Account for Setting up a CI Workflow](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers/learn/v4/t/lecture/8288504?start=0)
+    + checkout dockerapp v0.6
+    + CircleCI: hosted countinous integration server
+    + edit `.circlci/config.yml`
+    ```yaml
+    version: 2
+    jobs:
+    build:
+        working_directory: /dockerapp
+        docker:
+        - image: docker:17.05.0-ce-git
+        steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Install dependencies
+            command: |
+                apk add --no-cache py-pip=9.0.0-r1
+                pip install docker-compose==1.15.0
+        - run:
+            name: Run tests
+            command: |
+                docker-compose up -d
+                docker-compose run dockerapp python test.py
+
+    ```
 37. Push Docker Images To DockerHub from CircleCI
 38. Trouble Shooting: Push Docker Images to Docker Hub
 
