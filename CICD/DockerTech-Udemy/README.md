@@ -282,9 +282,46 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 
 # Section: 7 - Additional Learning Materials
 46. What is new in Docker 17.06
+
+    Docker 17.06 (stable) was out at June 2017!  Docker moves very fast, with an edge channel released every month and a stable release every 3 months. 
+
+    Watch [a Video of Mano giving an overview of the new features in Docker 17.06 Community Edition](https://www.youtube.com/watch?v=-NeaXUGEK_g).
+
+    For a detailed list of changes, look through the [Docker CE release notes on GitHub](https://github.com/docker/docker-ce/releases).
+
 47. Docker's Native support for Kubernetes
+
+    At DockerCon 2017 in Copenhagen, Docker announced that it's adding support to run applications using Docker’s Swarm orchestrator with Kubernetes on the same computer cluster itself!
+
+    Kubernetes is an container orchestration platform which we didn't cover much in this course(We are going to have a course about Kubernetes soon!) . You can think of Kubernetes as a Docker Swarm alternative, but Kubernetes is more production ready than Docker Swarm.
+
+    This is an exiting news! The introduction of Docker's native support for Kubernetes gives us the ability to make an orchestration choice with the added security, management and end-to-end Docker experience that we have expected for so long!
+
+    Want to read more? Check the news out!
+
+    https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/
+
 48. Future Learning
 49. Text Lecture: Future Learning
+    + Get a FREE copy of our [DevOps book](https://www.level-up.one/devops-pdf-book/)
+    + Join our [DevOps Facebook Group](https://www.facebook.com/groups/1911219079195863/)
 50. Coupons to Our Other Courses
+
+    We are happy to offer a $15 discount to our existing students for all our other Udemy courses.
+    The Complete Jenkins Course For Developers and DevOps($15, Udemy Best Seller in Jenkins category)
+
+    IntelliJ IDEA Tricks to Boost Productivity for Java Devs ($15)
+
+    Apache Spark with Java - Mastering Big Data! ($15, Udemy Best Seller in Apache Spark Category)
+
+    Apache Spark with Scala - Learn Spark from a Big Data Guru($15, Udemy Best Seller in Apache Spark Category)
+
+    If you want more discounts, you can join my mailing list and you will get any of these courses with only $10 (more than 90% discount)
+
+    http://www.level-up.one/join/
+
+    As always, thanks for having us in your learning journey!
+
+    James and Tao
 
 
