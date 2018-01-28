@@ -211,9 +211,45 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + Checking for existing SSH keys: https://help.github.com/articles/checking-for-existing-ssh-keys/
     + Generating a new SSH key and adding it to the ssh-agent: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
     + Adding a new SSH key to your GitHub account: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-36. D3: Link CircleCI with Github Account for Setting up a CI Workflow
+36. D3: [Link CircleCI with Github Account for Setting up a CI Workflow](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers/learn/v4/t/lecture/8288504?start=0)
     + checkout dockerapp v0.6
+    + CircleCI: hosted countinous integration server
+    + edit `.circlci/config.yml`
+    ```yaml
+    version: 2
+    jobs:
+    build:
+        working_directory: /dockerapp
+        docker:
+        - image: docker:17.05.0-ce-git
+        steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Install dependencies
+            command: |
+                apk add --no-cache py-pip=9.0.0-r1
+                pip install docker-compose==1.15.0
+        - run:
+            name: Run tests
+            command: |
+                docker-compose up -d
+                docker-compose run dockerapp python test.py
+
+    ```
+    + Circule CI
+        + Sigup CircleCI wirh GitHub
+        + Add Project > select and setup project
+        + start build -> auto test with `config.yml`
+    + Procedure
+        1. edit local files and git commits
+        2. push to GitHub
+        3. login CircleCI and/or refresh
+        4. select releated branch and start build -> auto test with unit test module
+>>>>>>> dockerappv0.6
 37. Push Docker Images To DockerHub from CircleCI
+    + add deploy section for .circleci/config.yml
+    + add docker bub push command
 38. Trouble Shooting: Push Docker Images to Docker Hub
 
     If you are able to run `docker login`, but encountered the following __unauthorized: authentication required__ error while running `docker push`
