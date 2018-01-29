@@ -348,7 +348,73 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + join swarm: `docker swarm join`
         + leave swarm: `docker swarm leave`
 44. D3: Deploy Docker App Services to the Cloud via Docker Swarm
+    + Docker services:
+        + define in Docker Compose file
+        + Service define:
+            + which Doeck image to run
+            + the port mapping
+            + dependency btw services
+            + docker-compose.yml
+                ```yaml
+                version: "3.0"
+                services:
+                    dockerapp:
+                        build: .
+                        ports:
+                            - "5000:5000"
+                        depends_on:
+                            - redis
+                    redis:
+                        image: redis:3.2.0
+                ```
+        + deploy key:
+            + deploying service in the swarm mode
+            + only available on compose version: 3+
+            + used to load balancing and optimze performance
+            + prod.yml
+                ```yaml
+                version: "3.0"
+                services:
+                    dockerapp:
+                        image: jleetutorial/dockerapp
+                        ports:
+                            - "5000:5000"
+                        depends_on:
+                            - redis
+                        deploy:
+                            replicas: 2
+                    redis:
+                        image: redis:3.2.0
+                ```
+    + Replicas
+        + connect to service through manager node
+        + ingress load balcncing
+    + Docker Stack
+        + a group of interrelated services sharing dependencies and able to orchestrate and scale
+        + create stack via compose: `docker stack deploy`
+        + Docekr Swarm Mode:
+            + Docker Compse file used for service definitions
+            + `docker-compose` cmd only for single node
+            + `docker stack` cmd for Docker Swarm mode
+    + Operations
+        + Edit prod.yml to add replicas
+        + Build Docker stack: `docker stack deploy --compose-file prod.yml dockerapp_stack` -> default network created
+        + Verify stack: `docker stack ls`
+        + Verify all services: `docker stack services dockerapp_stack`
+        + Verify all VMs: `docker-machine ls`
+        + Verify final production with web browser
+    + Update service:
+        + change service config
+        + Run docker stack again
+        + Verify
+    + Remove service: `docker stack rm <stack_name>
 45. Extra learning Material: Dockers Monitoring Tools
+
+    We didn't cover much about Docker monitoring strategy in this course. However, monitoring tools are handy option for a smooth functioning of your ops. If properly configured, logs and visual data can make a huge difference during troubleshooting.
+    
+    We have written a post to summarize some of the popular Docker monitoring tools that you can choose for your environment depending upon your needs.
+
+    Check [this](https://www.level-up.one/dockers-monitoring-tools/) up if you are interested.
 
 # Section: 7 - Additional Learning Materials
 46. What is new in Docker 17.06
