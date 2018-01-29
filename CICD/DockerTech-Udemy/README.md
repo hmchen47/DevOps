@@ -273,10 +273,80 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
 
 # Section: 6 - Deploy Docker Containers in Production
 39. D3: Introduction to Running Docker Containers in Production
+    + Concerns about running Docker in Production:
+        + missing pieces about data persistent, networking, security, anf logging, etc.
+        + tools under development - monitoring, logging, etc.
+    + Dcoker in VMs
+        + security
+        + hardware level isolation
+    + Docker Machine
+        + provision new VMs
+        + install Docker engine
+        + config Docker client
+    + VirtualBox required for Docekr machine
+    + Drivers for Docker Machine: AWS, VirtualBox, DigitalOcean, and Google app engine
 40. Register Digital Ocean Account for Deploying Containerized Applications
+    + ref: https://digitalocean.com
+    + get promotion from Goole search
+    + Create Digital Ocean account
+    + API > Generate Token w/ pri name: dockerapp > copy token to a file
 41. D3: Deploy Docker Application to the Cloud with Docker Machine
+    + Install Docker Machine
+    + Operations:
+        + create Docker machine with digitalocean acct: `docker-machine ceate --driver digitalocean --digitalocean-access-token <token> <vm_name>`
+        + connect docker client to docker engine: `docker-machine env <vm_name>`
+        + create environment value: `eval$(docker_app env dockerapp_node)`
+        + verify VM: `docker info`
+        + create prod.yml based on docker-compose.yml
+            ```yaml
+            version: "3.0"
+            services:
+            dockerapp:
+                image: jleetutorial/dockerapp
+                ports:
+                - "5000:5000"
+                depends_on:
+                - redis
+            redis:
+                image: redis:3.2.0
+            ```
+        + deploy dockerapp: `docker-compose -f prod.yml up -d`
+        + verify: `docker-machine ls` -> `*` indicates active machine
+        + verify on browser w/ VM IP addr and port 5000
 42. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
+
+    Docker Machine Create command
+
+    `docker-machine create --driver digitalocean --digitalocean-access-token <xxxxx> docker-app-machine`
+
 43. D3: Introduction to Docker Swarm and Set up Swarm Cluster
+    + Docker Swarm
+        + tool that clusters many Docker Engines and schedules containers
+        + decide which host to run the container based on schdeuling method
+    + Components of Swarm cluster
+        + manager node: 
+            + dispatch tasks to work nodes
+            + perform orchestration and cluster management fucntions
+        + worker node:
+            + receive and execute task
+            + current state of assigned task -> manager node
+        + agent: 
+            + run on each worker node
+            + report the state of task assigned
+    + Provision Swarm Cluster
+        1. create manager and worker nodes: 
+            + manager node: `docker-machine create --driver digitalocean --digitalocean-access-token <token> swarm-manager`
+            + worker node: `docker-machine create --driver digitalocean --digitalocean-access-token <token> swarm-node`
+            + connect docker client to docker engine: `docker-machine env <vm_name>`
+            + verify active VM: `docker-machine ls`
+        2. Apply Swarm manager as Manager Node: `docker swarm init --advertise-addr <public_IP>`
+        3. Work node joins Swarm cluster:
+            + switch to worker node: `docker-machine ssh swarm-node`
+            + add worker node to Swarm cluster: `docker swarm join --token <token> <IP:port>`
+    + Docker Swarm commands:
+        + Initialization: `docker swarm init`
+        + join swarm: `docker swarm join`
+        + leave swarm: `docker swarm leave`
 44. D3: Deploy Docker App Services to the Cloud via Docker Swarm
 45. Extra learning Material: Dockers Monitoring Tools
 
