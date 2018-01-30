@@ -346,7 +346,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + Operations:
         + create Docker machine with digitalocean acct: `docker-machine ceate --driver digitalocean --digitalocean-access-token <token> <vm_name>`
         + connect docker client to docker engine: `docker-machine env <vm_name>`
-        + create environment value: `eval$(docker_app env dockerapp_node)`
+        + set active machine: `eval$(docker_app env dockerapp_node)`
         + verify VM: `docker info`
         + create prod.yml based on docker-compose.yml
             ```yaml
