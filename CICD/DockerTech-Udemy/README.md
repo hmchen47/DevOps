@@ -252,28 +252,28 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + checkout dockerapp v0.6
     + CircleCI: hosted countinous integration server
     + edit `.circlci/config.yml`
-    ```yaml
-    version: 2
-    jobs:
-    build:
-        working_directory: /dockerapp
-        docker:
-        - image: docker:17.05.0-ce-git
-        steps:
-        - checkout
-        - setup_remote_docker
-        - run:
-            name: Install dependencies
-            command: |
-                apk add --no-cache py-pip=9.0.0-r1
-                pip install docker-compose==1.15.0
-        - run:
-            name: Run tests
-            command: |
-                docker-compose up -d
-                docker-compose run dockerapp python test.py
+        ```yaml
+        version: 2
+        jobs:
+        build:
+            working_directory: /dockerapp
+            docker:
+            - image: docker:17.05.0-ce-git
+            steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Install dependencies
+                command: |
+                    apk add --no-cache py-pip=9.0.0-r1
+                    pip install docker-compose==1.15.0
+            - run:
+                name: Run tests
+                command: |
+                    docker-compose up -d
+                    docker-compose run dockerapp python test.py
 
-    ```
+        ```
     + Circule CI
         + Sigup CircleCI wirh GitHub
         + Add Project > select and setup project
