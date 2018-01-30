@@ -283,10 +283,24 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         2. push to GitHub
         3. login CircleCI and/or refresh
         4. select releated branch and start build -> auto test with unit test module
->>>>>>> dockerappv0.6
 37. Push Docker Images To DockerHub from CircleCI
     + add deploy section for .circleci/config.yml
-    + add docker bub push command
+        ```yaml
+        - run:
+            name: Install dependencies
+            command:
+                apk add --no-cache py-pip=9.0.0-r1
+                pip install docker-compose==1.15.0
+        - deploy:
+            name: Push application Docker image
+            command:
+                docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+                docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CICLE_SHA1
+                docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
+                docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+                docker push $DOCKER_HUB_USER_ID/dockerapp:latest
+        ```
+    + docker hub push command
 38. Trouble Shooting: Push Docker Images to Docker Hub
 
     If you are able to run `docker login`, but encountered the following __unauthorized: authentication required__ error while running `docker push`
