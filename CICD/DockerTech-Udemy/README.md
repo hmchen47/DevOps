@@ -366,9 +366,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + verify on browser w/ VM IP addr and port 5000
 42. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
 
-    Docker Machine Create command
-
-    `docker-machine create --driver digitalocean --digitalocean-access-token <xxxxx> docker-app-machine`
+    Docker Machine Create command: `docker-machine create --driver digitalocean --digitalocean-access-token <xxxxx> docker-app-machine`
 
 43. D3: Introduction to Docker Swarm and Set up Swarm Cluster
     + Docker Swarm
