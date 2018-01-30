@@ -390,7 +390,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
             + verify active VM: `docker-machine ls`
         2. Apply Swarm manager as Manager Node: `docker swarm init --advertise-addr <public_IP>`
         3. Work node joins Swarm cluster:
-            + switch to worker node: `docker-machine ssh swarm-node`
+            + switch to worker node: `docker-machine ssh swarm-node` or `eval $(swarm env swarm_node)
             + add worker node to Swarm cluster: `docker swarm join --token <token> <IP:port>`
     + Docker Swarm commands:
         + Initialization: `docker swarm init`
@@ -420,24 +420,38 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
             + deploying service in the swarm mode
             + only available on compose version: 3+
             + used to load balancing and optimze performance
-            + prod.yml
-                ```yaml
-                version: "3.0"
-                services:
-                    dockerapp:
-                        image: jleetutorial/dockerapp
-                        ports:
-                            - "5000:5000"
-                        depends_on:
-                            - redis
-                        deploy:
-                            replicas: 2
-                    redis:
-                        image: redis:3.2.0
-                ```
+            ```yaml
+            version: "3.3"
+            service:
+                nginx: nginx:latest
+                ports:
+                    - "80:80"
+                deploy:
+                    replicas: 3
+                    limits:
+                        cpus: '0.1'
+                        memory: 50M
+                    restart_policy:
+                        condition: on-failure
+            ```
     + Replicas
         + connect to service through manager node
         + ingress load balcncing
+        + prod.yml
+            ```yaml
+            version: "3.0"
+            services:
+                dockerapp:
+                    image: jleetutorial/dockerapp
+                    ports:
+                        - "5000:5000"
+                    depends_on:
+                        - redis
+                    deploy:
+                        replicas: 2
+                redis:
+                    image: redis:3.2.0
+            ```
     + Docker Stack
         + a group of interrelated services sharing dependencies and able to orchestrate and scale
         + create stack via compose: `docker stack deploy`
