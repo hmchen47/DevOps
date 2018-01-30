@@ -340,7 +340,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
     + ref: https://digitalocean.com
     + get promotion from Goole search
     + Create Digital Ocean account
-    + API > Generate Token w/ pri name: dockerapp > copy token to a file
+    + API > Generate Token w/ name: dockerapp > copy token to a file
 41. D3: Deploy Docker Application to the Cloud with Docker Machine
     + Install Docker Machine
     + Operations:
