@@ -355,9 +355,9 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
             dockerapp:
                 image: jleetutorial/dockerapp
                 ports:
-                - "5000:5000"
+                    - "5000:5000"
                 depends_on:
-                - redis
+                    - redis
             redis:
                 image: redis:3.2.0
             ```
