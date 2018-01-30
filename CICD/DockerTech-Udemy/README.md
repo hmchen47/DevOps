@@ -215,38 +215,39 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
         + checkout dockerapp v0.5
     + Pros: single container image for development, test, and production
     + app/test.py added
-    ```python
-    import unittest
-    import app
+        ```python
+        import unittest
+        import app
 
-    class TestDockerapp(unittest.TestCase):
+        class TestDockerapp(unittest.TestCase):
 
-        def setUp(self):
-            self.app = app.app.test_client()
+            def setUp(self):
+                self.app = app.app.test_client()
 
-        def test_save_value(self):
-            response = self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
-            assert response.status_code == 200
-            assert b'2' in response.data
-            assert b'two' in response.data
+            def test_save_value(self):
+                response = self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
+                assert response.status_code == 200
+                assert b'2' in response.data
+                assert b'two' in response.data
 
-        def test_load_value(self):
-            self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
-            response = self.app.post('/', data=dict(submit='load', key='2'))
-            assert response.status_code == 200
-            assert b'2' in response.data
-            assert b'two' in response.data
+            def test_load_value(self):
+                self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
+                response = self.app.post('/', data=dict(submit='load', key='2'))
+                assert response.status_code == 200
+                assert b'2' in response.data
+                assert b'two' in response.data
 
-    if __name__=='__main__':
-    unittest.main()
-    ```
+        if __name__=='__main__':
+        unittest.main()
+        ```
 34. Introduction to Continuous Integration
     + a software engineering practice in which isolated changes are immediately tested and reported
+    + provide rapid feedback
 35. Text Direction: Introduction to Continuous Integration
-    + URL of the Github account to fork: https://github.com/jleetutorial/dockerapp
-    + Checking for existing SSH keys: https://help.github.com/articles/checking-for-existing-ssh-keys/
-    + Generating a new SSH key and adding it to the ssh-agent: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-    + Adding a new SSH key to your GitHub account: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+    + [URL of the Github account to fork](https://github.com/jleetutorial/dockerapp)
+    + [Checking for existing SSH keys](https://help.github.com/articles/checking-for-existing-ssh-keys/)
+    + [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+    + [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 36. D3: [Link CircleCI with Github Account for Setting up a CI Workflow](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers/learn/v4/t/lecture/8288504?start=0)
     + checkout dockerapp v0.6
     + CircleCI: hosted countinous integration server
