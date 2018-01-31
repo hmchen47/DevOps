@@ -435,7 +435,7 @@ By [W. Tao](https://www.udemy.com/docker-tutorial-for-devops-run-docker-containe
                         condition: on-failure
             ```
     + Replicas
-        + connect to service through manager node
+        + connect to services through manager node
         + ingress load balcncing
         + prod.yml
             ```yaml
