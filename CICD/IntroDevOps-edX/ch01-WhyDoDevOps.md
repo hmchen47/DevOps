@@ -95,32 +95,58 @@ By the end of this chapter, you should be able to:
 
 [video][vid9]
 
-[vid9]: 
+[vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V001100_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part V)
 
 [video][vid10]
 
-[vid10]: 
+[vid10]: https://edx-video.net/LINLFS16/LINLFS162016-V001200_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part VI)
 
 [video][vid11]
 
-[vid11]: 
+[vid11]: https://edx-video.net/LINLFS16/LINLFS162016-V001300_DTH.mp4
 
 ## Recommended Resources
-
++ John Willis, [DevOps Connect cdSummit: John Willis Kata Presentation](https://www.youtube.com/watch?v=0N0SBcp0mjY)
++ John Willis, [The Convergence Of DevOps](https://itrevolution.com/the-convergence-of-devops/)
++ John Robins, [Operations is a competitive advantage… (Secret Sauce for Startups!)](http://radar.oreilly.com/2007/10/operations-is-a-competitive-ad.html)
++ Damon Edwards, [The History Of DevOps](https://itrevolution.com/the-history-of-devops/)
++ John Allspaw and Paul Hammond, [Velocity 09: John Allspaw and Paul Hammond, "10+ Deploys Per Day"](https://www.youtube.com/watch?v=LdOe18KhtT4)
++ Ben Rockwood, [The DevOps Transformation](https://www.youtube.com/watch?v=3KpPBnEtRj4)
++ Andrew Shafer, [Agile Infrastructure with Andrew Shafer – Agile Executive 004](https://theagileexecutive.com/2009/07/17/agileexec004/)
  
-
 ## Extra Resources
-
-
++ John Willis, [Botchagalupe Presentations](https://gist.github.com/botchagalupe/984acf7b7ffeeb287ffe)
++ John Willis, [The Andon Cord](https://itrevolution.com/kata/)
++ Netflix, [Netflix Culture Deck](https://www.slideshare.net/BarbaraGill3/netflix-culture-deck)
++ Spotify, [Spotify engineering culture](https://www.slideshare.net/ertansonat/spotify-engineering-culture-52284519)
++ Andrew Shafer, [Agile Infrastructure Velocity 09](https://www.slideshare.net/littleidea/agile-infrastructure-velocity-09)
++ Andrew Shafer, [there is no talent shortage -- velocity NYC 2013 -- andrew clay shafer](https://www.youtube.com/watch?v=P_sWGl7MzhU)
++ Damon Edwards, [What is DevOps?](http://dev2ops.org/2010/02/what-is-devops/)
 
 # Summary
 
+[video][vid12]
 
+[vid12]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/5aeeeb047ff7403e95677005afb1d69c/05032ef7ee8e4c838003a0406ba6cfa1/?child=first
 
 # Knowledge Check
+Q1. Some of the characteristics of a high-performance organization are: make work visible, manage WIP, and manage Flow. Please select the correct answer.
 
+    Ans: True
 
+Q2. The principles of Continuous Delivery are: "Build quality in", "Work in large batches", "Automate repeatable tasks", "Pursue continuous improvement", and "Everyone is responsible". Please select the correct answer.
+
+    Ans: False
+
+Q3. Which of the following companies describes their infrastructure contributions as "Code as Craft"? Please select the correct answer.
+
+    a. Etsy
+    b. Netflix
+    c. Google
+    d. Spotify
+
+    Ans: a
