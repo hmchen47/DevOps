@@ -18,16 +18,28 @@ Chapter 2: Understanding the Value Stream
 
 [vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
 
-### Recommended Resources
+## Recommended Resources
 + Karen Martin, Mike Osterling, "[Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.ca/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)"
 + Damon Edwars, [DevOps Kaizen: Practical Steps to Start & Sustain a Transformation](https://www.slideshare.net/dev2ops/devops-kaizen-practical-steps-to-start-sustain-a-transformation)
 
-### Extra Resources
+## Extra Resources
 + Mike Rother,‎ John Shook, [Learning to See: Value Stream Mapping to Add Value and Eliminate Muda](https://www.amazon.ca/Learning-See-Stream-Mapping-Eliminate/dp/0966784308)
 + Damon Edwards, [Support and Initiate a DevOps Transformation](https://www.slideshare.net/dev2ops/support-and-initiate-a-devops-transformation)
 + Steven Smith, [The Satir Change Model](https://stevenmsmith.com/ar-satir-change-model/)
 
 # Section 2: The Three Ways of DevOps
+
+[video][vidx]
+
+[vidx]: https://edx-video.net/LINLFS16/LINLFS162016-V002800_DTH.mp4
+
+## Recommended Resources
++ [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.com/the-three-ways-principles-underpinning-devops/)
++ [A Personal Reinterpretation of The Three Ways](http://itrevolution.com/a-personal-reinterpretation-of-the-three-ways/)
++ [Docker and the Three Ways of DevOps Part 1: The First Way - Systems Thinking](https://blog.docker.com/2015/05/docker-three-ways-devops/)
++ [Docker and the Three Ways of DevOps](https://www.docker.com/sites/default/files/WP_Docker%20and%20the%203%20ways%20devops_07.31.2015%20(1).pdf)
+
+# Section 3: The First Way - Flow
 ## The First Way - Flow (Part I)
 
 [video][vid1]
@@ -42,7 +54,6 @@ Chapter 2: Understanding the Value Stream
 [vid2]: 
 
 
-# Section 3: The First Way - Flow
 ## The First Way - Flow (Part III)
 
 [video][vid3]
@@ -62,7 +73,6 @@ Chapter 2: Understanding the Value Stream
 [video][vid5]
 
 [vid5]: 
-
 
 
 # Section 4: The Second Way - Feedback Loops
