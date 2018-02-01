@@ -44,14 +44,29 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid1]
 
-[vid1]: 
+[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V001700_DTH.mp4
 
+### Recommanded Resources
++ [David Anderson Kanban At Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
++ [Kanbans and DevOps: Resource Guide for “The Phoenix Project” (Part 2)](http://itrevolution.com/resource-guide-for-the-phoenix-project-kanbans-part-2/)
+
+### Extra Resources
++ Jim Benson, [Personal Kanban: Mapping Work|Navigating Life](https://www.amazon.com/Personal-Kanban-Mapping-Work-Navigating/dp/1453802266/ref=_1_1?s=books&ie=UTF8&qid=1466121877&sr=1-1&keywords=jim+benson) 
++ David J. Anderson, [Kanban: Successful Evolutionary Change for Your Technology Business](https://www.amazon.com/Kanban-Successful-Evolutionary-Technology-Business/dp/0984521402)
 
 ## The First Way - Flow (Part II)
 
 [video][vid2]
 
-[vid2]: 
+[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V001600_DTH.mp4
+
+### Recommanded Resources
++ Thomas A. Limoncelli, [The Small Batches Principle](https://queue.acm.org/detail.cfm?id=2945077)
++ Gemba Academy, [Watch This One Piece Flow vs. Mass Production Envelope Stuffing Lean Thinking Simulation](https://www.youtube.com/watch?v=Dr67i5SdXiM)
++ John Allspaw and Jess Robins, [Web Operations: Keeping the Data on Time (Chapter 4)](https://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440)
+
+### Extra Resources
++ Eric Reis, [The Lean Startup: How Today’s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898)
 
 
 ## The First Way - Flow (Part III)
@@ -60,12 +75,20 @@ Chapter 2: Understanding the Value Stream
 
 [vid3]: 
 
+### Recommanded Resources
+
+### Extra Resources
+
 
 ## The First Way - Flow (Part IV)
 
 [video][vid4]
 
 [vid4]: 
+
+### Recommanded Resources
+
+### Extra Resources
 
 
 ## The First Way - Flow (Part V)
@@ -74,6 +97,16 @@ Chapter 2: Understanding the Value Stream
 
 [vid5]: 
 
+### Recommanded Resources
+
+### Extra Resources
+
++ [David Anderson Kanban at Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
++ [DOES15 - Dominica DeGrandis - The Shape of Uncertainty](https://www.youtube.com/watch?v=Gp05i0d34gg)
++ [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development)
++ [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
++ [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
++ [Beyond the Goal: Eliyahu Goldratt Speaks on the Theory of Constraints (Your Coach in a Box)](https://www.amazon.com/Beyond-Goal-Eliyahu-Goldratt-Constraints/dp/1596590238)
 
 # Section 4: The Second Way - Feedback Loops
 ## The Second Way - Feedback Loops (Part I)
