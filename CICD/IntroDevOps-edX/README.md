@@ -3,7 +3,7 @@ Introduction to DevOps: Transforming and Improving Operations
 
 # [Welcome and Introduction](./ch00-Introduction.md)
 
-# Chapter 1: Why Do DevOps?
+# Chapter 1: [Why Do DevOps?](./ch01-WhyDoDevOps.md)
 ## Learning Objectives
 ## Section 1: Understanding Improvement
 ## Section 2: The Convergence, History, and Value of DevOps
