@@ -73,12 +73,11 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid3]
 
-[vid3]: 
+[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V001800_DTH.mp4
 
 ### Recommanded Resources
-
-### Extra Resources
-
++ [David Anderson Kanban At Q Con]+ [David Anderson Kanban at Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
++ [DOES15 - Dominica DeGrandis - The Shape of Uncertainty](https://www.youtube.com/watch?v=Gp05i0d34gg)
 
 ## The First Way - Flow (Part IV)
 
@@ -101,8 +100,6 @@ Chapter 2: Understanding the Value Stream
 
 ### Extra Resources
 
-+ [David Anderson Kanban at Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
-+ [DOES15 - Dominica DeGrandis - The Shape of Uncertainty](https://www.youtube.com/watch?v=Gp05i0d34gg)
 + [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development)
 + [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
 + [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
