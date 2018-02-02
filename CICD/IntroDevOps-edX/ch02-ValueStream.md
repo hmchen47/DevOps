@@ -109,7 +109,13 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid6]
 
-[vid6]: 
+[vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V002500_DTH.mp4
+
+### Recommanded Resources
+
+
+### Extra Resources
+
 
 ## The Second Way - Feedback Loops (Part II)
 
@@ -117,17 +123,35 @@ Chapter 2: Understanding the Value Stream
 
 [vid7]: 
 
+### Recommanded Resources
+
+
+### Extra Resources
+
+
 ## The Second Way - Feedback Loops (Part III)
 
 [video][vid8]
 
 [vid8]: 
 
+### Recommanded Resources
+
+
+### Extra Resources
+
+
 ## The Second Way - Feedback Loops (Part IV)
 
 [video][vid9]
 
 [vid9]: 
+
+### Recommanded Resources
+
+
+### Extra Resources
+
 
 
 # Section 5: The Third Way - Culture of Continual Experimentation and Learning
@@ -137,11 +161,23 @@ Chapter 2: Understanding the Value Stream
 
 [vida]: 
 
+### Recommanded Resources
+
+
+### Extra Resources
+
+
 ## The Third Way - Culture of Continual Experimentation and Learning (Part II)
 
 [video][vidb]
 
 [vidb]: 
+
+### Recommanded Resources
+
+
+### Extra Resources
+
 
 ## The Third Way - Culture of Continual Experimentation and Learning (Part III)
 
