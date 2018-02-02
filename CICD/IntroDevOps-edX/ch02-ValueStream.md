@@ -124,17 +124,14 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid7]
 
-[vid7]: 
+[vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V002600_DTH.mp4
 
 ### Recommanded Resources
 + Jesse Robbins, [GameDay: Creating Resiliency Through Destruction](https://www.youtube.com/watch?v=zoz0ZjfrQ9s)
-+ [Resilience Engineering: Learning To Embrace Failure](http://queue.acm.org/detail.cfm?id=2371297)
-+ [Fault Injection in Production - making the case for resilience testing](
-http://queue.acm.org/detail.cfm?id=2353017)
++ Jesse Robbins, Kripa Krishnan, John Allspaw, and Tom Limoncelli, [Resilience Engineering: Learning To Embrace Failure](http://queue.acm.org/detail.cfm?id=2371297)
++ John Allspaw, [Fault Injection in Production - making the case for resilience testing](http://queue.acm.org/detail.cfm?id=2353017)
 + [The Netflix Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html)
 + [FIT: Failure Injection Testing](http://techblog.netflix.com/2014/10/fit-failure-injection-testing.html)
-
-### Extra Resources
 
 
 ## The Second Way - Feedback Loops (Part III)
