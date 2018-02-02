@@ -208,6 +208,42 @@ Chapter 2: Understanding the Value Stream
 
 # Summary
 
+[Vido][vidd]
 
+[vicd]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/03573d7b3e074966a56e9651adb1e0c8/00c4c518e74c49bf8eba839822f910cc/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS161x%2B2T2016%2Btype%40sequential%2Bblock%4000c4c518e74c49bf8eba839822f910cc
 
 # Knowledge Check
+Q1. Which of the following is considered part of the Cycle Time? 
+
+    Ans: Check into version control, deploy into production, and validate the custoner experience
+
+Q2. Which of the following is not a way of reducing Lead Time?
+
+    Ans: optimize locally 
+    
+    [make work visible, reduce batch size, limit WIP, eliminate wast (1x1 flow), reduce bottleneck (system thinking)]
+
+Q3. What does PDCA stand for and who is its author? Please select the correct answer.
+
+    a. Plan-Do-Check-Act/Deming
+    b. Plan-Do-Change-Act/Deming
+    c. Plan-Do-Check-Act/Rother
+    d. Plan-Do-Change-Act/Rother
+
+    Ans: a
+
+Q4. The Three Ways of DevOps are: the First Way - Accelerate Flow, the Second Way - Amplify Feedback, and the Third Way - Continuous Integration. 
+
+    Ans: False
+
+    The Three Ways of DevOps are: the First Way - Accelerate Flow, the Second Way - Amplify Feedback Loops, and the Third Way - Culture of Continuous Experimentation and Learning.
+
+Q5. Which of the following is a popular tool in DevOps to help manage Flow and make work visible??
+
+    a. Scrum
+    b. Chef
+    c. Puppet
+    d. Kanban
+
+    Ans: d
+
