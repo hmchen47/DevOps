@@ -112,10 +112,13 @@ Chapter 2: Understanding the Value Stream
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V002500_DTH.mp4
 
 ### Recommanded Resources
-
++ Toufic Boubez, [Simple math for anomaly detection](http://www.slideshare.net/tboubez/simple-math-for-anomaly-detection-toufic-boubez-metafor-software-monitorama-pdx-20140505)
++ Toufic Boubez, [Some Simple Math for Anomaly Detection](https://vimeo.com/95069158)
 
 ### Extra Resources
-
++ James Turnbull, [The Art of Monitoring](https://www.artofmonitoring.com/)
++ Jason Dixon, [Monitoring with Graphite Tracking Dynamic Host and Application Metrics at Scale](http://shop.oreilly.com/product/0636920035794.do)
++ [Monitorama’s Videos](https://vimeo.com/monitorama/videos/)
 
 ## The Second Way - Feedback Loops (Part II)
 
@@ -124,7 +127,12 @@ Chapter 2: Understanding the Value Stream
 [vid7]: 
 
 ### Recommanded Resources
-
++ Jesse Robbins, [GameDay: Creating Resiliency Through Destruction](https://www.youtube.com/watch?v=zoz0ZjfrQ9s)
++ [Resilience Engineering: Learning To Embrace Failure](http://queue.acm.org/detail.cfm?id=2371297)
++ [Fault Injection in Production - making the case for resilience testing](
+http://queue.acm.org/detail.cfm?id=2353017)
++ [The Netflix Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html)
++ [FIT: Failure Injection Testing](http://techblog.netflix.com/2014/10/fit-failure-injection-testing.html)
 
 ### Extra Resources
 
@@ -136,7 +144,13 @@ Chapter 2: Understanding the Value Stream
 [vid8]: 
 
 ### Recommanded Resources
-
++ Dave Zwieback, [DevOps keeps it cool with ICE](http://radar.oreilly.com/2015/01/devops-keeps-it-cool-with-ice.html)
++ Dave Snowden, [The Cynefin Framework](https://www.youtube.com/watch?v=N7oz366X0-8)
++ John Allspaw and Jesse Robbins, [Web Operations: Keeping the Data on Time (Chapter 7)](https://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440)
++ Jeff Sussna, [Empathy: The Essence of DevOps](http://blog.ingineering.it/post/72964480807/empathy-the-essence-of-devops)
++ Jennifer Davis and Katherine Daniels, [Effective DevOps](https://www.safaribooksonline.com/library/view/effective-devops/9781491926291/)
++ Christina Maslach, [Reversing Burnout](http://graphics8.nytimes.com/packages/pdf/business/06.BURNOUT.FINAL.pdf)
++ [Botchagalupe on Burnout](https://github.com/botchagalupe/my-presentations)
 
 ### Extra Resources
 
@@ -148,7 +162,10 @@ Chapter 2: Understanding the Value Stream
 [vid9]: 
 
 ### Recommanded Resources
-
++ [Feature flags, dark launches, and canary releases for all: LaunchDarkly, first year in review](http://blog.launchdarkly.com/feature-flags-dark-launches-and-canary-releases-for-all-launchdarkly-first-year-in-review/)
++ [Feature flags and canary, dark, and A/B releases](http://www.pragmaticdevops.com/2014/05/continuous-delivery/feature-flags-and-canary-dark-and-ab-releases/)
++ [How does Easy manage development and operations?](https://codeascraft.com/2011/02/04/how-does-etsy-manage-development-and-operations/)
++ Tom Limoncello, [The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
 
 ### Extra Resources
 
