@@ -138,18 +138,18 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid8]
 
-[vid8]: 
+[vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V002700_DTH.mp4
 
 ### Recommanded Resources
 + Dave Zwieback, [DevOps keeps it cool with ICE](http://radar.oreilly.com/2015/01/devops-keeps-it-cool-with-ice.html)
 + Dave Snowden, [The Cynefin Framework](https://www.youtube.com/watch?v=N7oz366X0-8)
 + John Allspaw and Jesse Robbins, [Web Operations: Keeping the Data on Time (Chapter 7)](https://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440)
 + Jeff Sussna, [Empathy: The Essence of DevOps](http://blog.ingineering.it/post/72964480807/empathy-the-essence-of-devops)
+
+### Extra Resources
 + Jennifer Davis and Katherine Daniels, [Effective DevOps](https://www.safaribooksonline.com/library/view/effective-devops/9781491926291/)
 + Christina Maslach, [Reversing Burnout](http://graphics8.nytimes.com/packages/pdf/business/06.BURNOUT.FINAL.pdf)
 + [Botchagalupe on Burnout](https://github.com/botchagalupe/my-presentations)
-
-### Extra Resources
 
 
 ## The Second Way - Feedback Loops (Part IV)
