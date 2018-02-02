@@ -88,20 +88,21 @@ Chapter 2: Understanding the Value Stream
 ### Recommanded Resources
 + [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development)
 
+### Extra Resources
++ [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
 
 ## The First Way - Flow (Part V)
 
 [video][vid5]
 
-[vid5]: 
+[vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V002100_DTH.mp4
 
 ### Recommanded Resources
++ [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
 
 ### Extra Resources
-
-+ [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
-+ [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
 + [Beyond the Goal: Eliyahu Goldratt Speaks on the Theory of Constraints (Your Coach in a Box)](https://www.amazon.com/Beyond-Goal-Eliyahu-Goldratt-Constraints/dp/1596590238)
+
 
 # Section 4: The Second Way - Feedback Loops
 ## The Second Way - Feedback Loops (Part I)
