@@ -172,10 +172,10 @@ Chapter 2: Understanding the Value Stream
 
 [video][vida]
 
-[vida]: 
+[vida]: https://edx-video.net/LINLFS16/LINLFS162016-V003000_DTH.mp4
 
 ### Recommanded Resources
-
++ Bethany Macri, [Morgue: Helping Better Understand Events by Building a Post Mortem Tool](https://vimeo.com/77206751)
 
 ### Extra Resources
 
@@ -197,6 +197,18 @@ Chapter 2: Understanding the Value Stream
 [video][vidc]
 
 [vidc]: 
+
+### Recommanded Resources
++ Mike Rother, [Introduction to the Improvement Kata](http://www.slideshare.net/mike734/introduction-to-the-improvement-kata)
++ DOES15, [Courtney Kissler & Jason Josephy - Mindsets and Metrics and Mainframes... Oh My!](https://www.youtube.com/watch?v=88_y1YFsRig)
++ DOES15, [Steven Spear - Creating High Velocity Organizations](https://www.youtube.com/watch?v=onwhZwroQHs)
++ [How Many Times Do You Pull the Andon Cord Each Day](https://blog.gembaacademy.com/2008/04/08/how_many_times_do_you_pull_the_andon_cord_each_day/)
++ [Botchagalupe presentations](https://gist.github.com/botchagalupe/984acf7b7ffeeb287ffe)
+
+### Extra Resources
++ John Kotter & Dan Cohen, [The Heart of Change: Real-Life Stories of How People Change Their Organizations](https://www.amazon.com/Heart-Change-Real-Life-Stories-Organizations/dp/1422187330)
++ Velocity NYC 2013 - Andrew Clay Shafer, [There Is No Talent Shortage](https://www.youtube.com/watch?v=P_sWGl7MzhU)
++ Drake Baer, [How Changing One Habit Helped Quintuple Alcoa's Income](http://www.businessinsider.com/how-changing-one-habit-quintupled-alcoas-income-2014-4)
 
 # Summary
 
