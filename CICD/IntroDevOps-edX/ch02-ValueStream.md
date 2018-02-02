@@ -184,13 +184,9 @@ Chapter 2: Understanding the Value Stream
 
 [video][vidb]
 
-[vidb]: 
+[vidb]: https://edx-video.net/LINLFS16/LINLFS162016-V003100_DTH.mp4
 
-### Recommanded Resources
-
-
-### Extra Resources
-
++ [The Improvement Kata Pattern](https://www.slideshare.net/mike734/introduction-to-the-improvement-kata)
 
 ## The Third Way - Culture of Continual Experimentation and Learning (Part III)
 
