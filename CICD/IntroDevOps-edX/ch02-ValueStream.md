@@ -156,16 +156,15 @@ Chapter 2: Understanding the Value Stream
 
 [video][vid9]
 
-[vid9]: 
+[vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V002900_DTH.mp4
 
 ### Recommanded Resources
 + [Feature flags, dark launches, and canary releases for all: LaunchDarkly, first year in review](http://blog.launchdarkly.com/feature-flags-dark-launches-and-canary-releases-for-all-launchdarkly-first-year-in-review/)
 + [Feature flags and canary, dark, and A/B releases](http://www.pragmaticdevops.com/2014/05/continuous-delivery/feature-flags-and-canary-dark-and-ab-releases/)
 + [How does Easy manage development and operations?](https://codeascraft.com/2011/02/04/how-does-etsy-manage-development-and-operations/)
-+ Tom Limoncello, [The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
 
 ### Extra Resources
-
++ Tom Limoncello, [The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
 
 
 # Section 5: The Third Way - Culture of Continual Experimentation and Learning
