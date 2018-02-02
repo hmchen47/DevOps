@@ -11,7 +11,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Knowledge Check
 ## Learning Objectives (Review)
 
-# Chapter 2: Understanding the Value Stream
+# Chapter 2: [Understanding the Value Stream](./ch02-ValueStream.md)
 ## Learning Objectives
 ## Section 1: Analyzing the Technology Value Stream
 ## Section 2: The Three Ways of DevOps
