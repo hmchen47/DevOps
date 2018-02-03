@@ -7,7 +7,7 @@ Chapter 3: Getting Started With Devops
 + Discuss the tools that can be used to map a Value Stream.
 + Explain the concept of organizational change.
 + Enable transformation.
-+ Review real-world use cases and reports from organizations undergoing DevOps + transformations.
++ Review real-world use cases and reports from organizations undergoing DevOps transformations.
 + Discuss Conway's Law and its impact on organizational change.
 + Explain the concepts of Mindsets.
 
@@ -29,16 +29,15 @@ Chapter 3: Getting Started With Devops
 
 [video][vid2]
 
-[vid2]: 
+[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V003600_DTH.mp4
 
 ### Recommended Resources
 + [Damon Edwards presentation](https://vimeo.com/69079272)
 + Erik Hollnagel, [The ETTO Principle - Efficiency-Thoroughness Trade-Off](http://erikhollnagel.com/ideas/etto-principle/index.html)
-+ Mike Rother, [Learning to See: Value Stream Mapping to Add Value and Eliminate MUDA](https://www.amazon.com/Learning-See-Stream-Mapping-Eliminate/dp/0966784308?ie=UTF8&hvadid=30911744901&hvdev=c&hvexid=&hvnetw=g&hvpone=60.00&hvpos=1t1&hvptwo=&hvqmt=b&hvrand=8624445624253798359&ref=pd_sl_3hk32rzq94_b&tag=googhydr-20)
-+ Karen Martin and Mike Osterling, [Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.com/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)
 
 ### Extra Resources
-
++ Mike Rother, [Learning to See: Value Stream Mapping to Add Value and Eliminate MUDA](https://www.amazon.com/Learning-See-Stream-Mapping-Eliminate/dp/0966784308?ie=UTF8&hvadid=30911744901&hvdev=c&hvexid=&hvnetw=g&hvpone=60.00&hvpos=1t1&hvptwo=&hvqmt=b&hvrand=8624445624253798359&ref=pd_sl_3hk32rzq94_b&tag=googhydr-20)
++ Karen Martin and Mike Osterling, [Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.com/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)
 
 ## Picking a Value Stream (Part III)
 
@@ -100,7 +99,7 @@ Chapter 3: Getting Started With Devops
 [vid7]: 
 
 ### Recommended Resources
-+ DOES15 - Carmen DeArdo, How DevOps Is Enabling Lean Application Development](https://www.youtube.com/watch?v=sL7wHJj25DA)
++ DOES15 - Carmen DeArdo, [How DevOps Is Enabling Lean Application Development](https://www.youtube.com/watch?v=sL7wHJj25DA)
 
 ### Extra Resources
 
