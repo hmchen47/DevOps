@@ -20,6 +20,7 @@ Chapter 3: Getting Started With Devops
 [vid1]: 
 
 ### Recommended Resources
++ Erik Hollnagel, [The ETTO Principle - Efficiency-Thoroughness Trade-Off](http://erikhollnagel.com/ideas/etto-principle/index.html)
 
 ### Extra Resources
 
@@ -31,6 +32,10 @@ Chapter 3: Getting Started With Devops
 [vid2]: 
 
 ### Recommended Resources
++ [Damon Edwards presentation](https://vimeo.com/69079272)
++ Erik Hollnagel, [The ETTO Principle - Efficiency-Thoroughness Trade-Off](http://erikhollnagel.com/ideas/etto-principle/index.html)
++ Mike Rother, [Learning to See: Value Stream Mapping to Add Value and Eliminate MUDA](https://www.amazon.com/Learning-See-Stream-Mapping-Eliminate/dp/0966784308?ie=UTF8&hvadid=30911744901&hvdev=c&hvexid=&hvnetw=g&hvpone=60.00&hvpos=1t1&hvptwo=&hvqmt=b&hvrand=8624445624253798359&ref=pd_sl_3hk32rzq94_b&tag=googhydr-20)
++ Karen Martin and Mike Osterling, [Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.com/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)
 
 ### Extra Resources
 
@@ -42,6 +47,9 @@ Chapter 3: Getting Started With Devops
 [vid3]: 
 
 ### Recommended Resources
++ Paula Thrasher, [Three Steps to Change: Lessons from Battling Bureaucracy (DOES15](https://www.youtube.com/watch?v=Hen6lk3J_ss)
++ Courtney Kissler, [Nordstrom-Transforming to a Culture of Continuous Improvement (DOES14)](https://www.youtube.com/watch?v=0ZAcsrZBSlo)
++ Jody Mulkey, [DevOps in the Enterprise: A Transformation Journey](https://www.youtube.com/watch?v=USYrDaPEFtM)
 
 ### Extra Resources
 
@@ -53,6 +61,7 @@ Chapter 3: Getting Started With Devops
 [vid4]: 
 
 ### Recommended Resources
++ DOES15 - Heather Mickman & Ross Clanton, [(Re)building an Engineering Culture: DevOps at Target](https://www.youtube.com/watch?v=7s-VbB1fG5o)
 
 ### Extra Resources
 
@@ -64,6 +73,7 @@ Chapter 3: Getting Started With Devops
 [vid5]: 
 
 ### Recommended Resources
++ DOES15 - Heather Mickman & Ross Clanton, [(Re)building an Engineering Culture: DevOps at Target](https://www.youtube.com/watch?v=7s-VbB1fG5o)
 
 ### Extra Resources
 
@@ -75,6 +85,10 @@ Chapter 3: Getting Started With Devops
 [vid6]: 
 
 ### Recommended Resources
++ Martin Fowler, [Strangler Application](http://www.martinfowler.com/bliki/StranglerApplication.html)
++ [Acceptance test-driven development](https://en.wikipedia.org/wiki/Acceptance_test%E2%80%93driven_development)
++ DOES15 - Scott Prugh & Erica Morrison, [Conway & Taylor Meet the Strangler (v2.0)](https://www.youtube.com/watch?v=tKdIHCL0DUg)
++ DOES14 - Scott Prugh - CSG, [DevOps and Lean in Legacy Environments](https://www.youtube.com/watch?v=f4et0EGvKXA)
 
 ### Extra Resources
 
@@ -86,6 +100,7 @@ Chapter 3: Getting Started With Devops
 [vid7]: 
 
 ### Recommended Resources
++ DOES15 - Carmen DeArdo, How DevOps Is Enabling Lean Application Development](https://www.youtube.com/watch?v=sL7wHJj25DA)
 
 ### Extra Resources
 
@@ -97,6 +112,8 @@ Chapter 3: Getting Started With Devops
 [vid8]: 
 
 ### Recommended Resources
++ Ernest Mueller, James Wickett, Karthik Gaekwad, [The Story of DevOps at National Instruments](https://vimeo.com/62931927)
++ DOES15 - Ernest Mueller, [DevOps Transformations at National Instruments](https://www.youtube.com/watch?v=6Ry40h1UAyE)
 
 ### Extra Resources
 
