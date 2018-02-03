@@ -17,7 +17,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vid1]
 
-[vid1]: 
+[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V003500_DTH.mp4
 
 ### Recommended Resources
 + Erik Hollnagel, [The ETTO Principle - Efficiency-Thoroughness Trade-Off](http://erikhollnagel.com/ideas/etto-principle/index.html)
