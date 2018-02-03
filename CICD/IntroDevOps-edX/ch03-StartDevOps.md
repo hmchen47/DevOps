@@ -22,8 +22,6 @@ Chapter 3: Getting Started With Devops
 ### Recommended Resources
 + Erik Hollnagel, [The ETTO Principle - Efficiency-Thoroughness Trade-Off](http://erikhollnagel.com/ideas/etto-principle/index.html)
 
-### Extra Resources
-
 
 ## Picking a Value Stream (Part II)
 
@@ -43,14 +41,12 @@ Chapter 3: Getting Started With Devops
 
 [video][vid3]
 
-[vid3]: 
+[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V003700_DTH.mp4
 
 ### Recommended Resources
 + Paula Thrasher, [Three Steps to Change: Lessons from Battling Bureaucracy (DOES15](https://www.youtube.com/watch?v=Hen6lk3J_ss)
 + Courtney Kissler, [Nordstrom-Transforming to a Culture of Continuous Improvement (DOES14)](https://www.youtube.com/watch?v=0ZAcsrZBSlo)
 + Jody Mulkey, [DevOps in the Enterprise: A Transformation Journey](https://www.youtube.com/watch?v=USYrDaPEFtM)
-
-### Extra Resources
 
 
 ## Picking a Value Stream (Part IV)
