@@ -53,12 +53,10 @@ Chapter 3: Getting Started With Devops
 
 [video][vid4]
 
-[vid4]: 
+[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V003400_DTH.mp4
 
 ### Recommended Resources
 + DOES15 - Heather Mickman & Ross Clanton, [(Re)building an Engineering Culture: DevOps at Target](https://www.youtube.com/watch?v=7s-VbB1fG5o)
-
-### Extra Resources
 
 
 ## Picking a Value Stream (Part V)
