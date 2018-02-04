@@ -121,6 +121,9 @@ Chapter 3: Getting Started With Devops
 [vid0]: 
 
 ### Recommended Resources
++ Kelly McGonigal, [How to make stress your friend](https://www.ted.com/talks/kelly_mcgonigal_how_to_make_stress_your_friend?language=en)
++ Carol S. Dweck, [Mindset: The New Psychology of Success](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322)
++ Kelly McGonigal, [The Upside of Stress: Why Stress Is Good for You, and How to Get Good at It](https://www.amazon.com/Upside-Stress-Why-Good-You/dp/1101982934)
 
 ### Extra Resources
 
@@ -132,6 +135,8 @@ Chapter 3: Getting Started With Devops
 [vida]: 
 
 ### Recommended Resources
++ David Marquet, [Turn the Ship Around! How to Create Leaders at Every Level](https://www.youtube.com/watch?v=iiwUqnvY1l0)
++ Simon Sinek, [How Great Leaders Inspire Action](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action?language=en)
 
 ### Extra Resources
 
@@ -143,6 +148,8 @@ Chapter 3: Getting Started With Devops
 [vidb]: 
 
 ### Recommended Resources
++ Abhimanyu Ghoshal, [Two-pizza teams: Werner Vogels on Amazon's secrets for innovation at TNV Europe Conference](http://thenextweb.com/insider/2015/04/23/two-pizza-teams-werner-vogels-on-amazons-secrets-for-innovation-at-tnw-europe-conference/)
++ Sam Newman, [Building Microservices](http://samnewman.io/books/building_microservices/)
 
 ### Extra Resources
 
@@ -176,6 +183,8 @@ Chapter 3: Getting Started With Devops
 [vide]: 
 
 ### Recommended Resources
++ Pedro Canahuati, [Growing from the Few to the Many: Scaling the Operations Organization at Facebook](https://www.infoq.com/presentations/scaling-operations-facebook)
++ Velocity 2012 - Jesse Robbins, [Changing Culture & Being a Force for Awesome](https://www.youtube.com/watch?v=OU8ihx3nT6I)
 
 ### Extra Resources
 
@@ -187,6 +196,8 @@ Chapter 3: Getting Started With Devops
 [vidf]: 
 
 ### Recommended Resources
++ [561: NUMMI 2015 - This American Life](http://www.thisamericanlife.org/radio-archives/episode/561/nummi-2015)
+
 
 ### Extra Resources
 
