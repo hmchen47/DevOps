@@ -113,7 +113,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vid0]
 
-[vid0]: 
+[vid0]: https://edx-video.net/LINLFS16/LINLFS162016-V004400_DTH.mp4
 
 ### Recommended Resources
 + Kelly McGonigal, [How to make stress your friend](https://www.ted.com/talks/kelly_mcgonigal_how_to_make_stress_your_friend?language=en)
