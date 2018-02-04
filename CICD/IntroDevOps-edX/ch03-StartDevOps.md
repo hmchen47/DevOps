@@ -73,7 +73,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vid6]
 
-[vid6]: 
+[vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V004000_DTH.mp4
 
 ### Recommended Resources
 + Martin Fowler, [Strangler Application](http://www.martinfowler.com/bliki/StranglerApplication.html)
