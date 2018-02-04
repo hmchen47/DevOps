@@ -81,14 +81,11 @@ Chapter 3: Getting Started With Devops
 + DOES15 - Scott Prugh & Erica Morrison, [Conway & Taylor Meet the Strangler (v2.0)](https://www.youtube.com/watch?v=tKdIHCL0DUg)
 + DOES14 - Scott Prugh - CSG, [DevOps and Lean in Legacy Environments](https://www.youtube.com/watch?v=f4et0EGvKXA)
 
-### Extra Resources
-
-
 ## Picking a Value Stream (Part VII)
 
 [video][vid7]
 
-[vid7]: 
+[vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V005100_DTH.mp4
 
 ### Recommended Resources
 + DOES15 - Carmen DeArdo, [How DevOps Is Enabling Lean Application Development](https://www.youtube.com/watch?v=sL7wHJj25DA)
