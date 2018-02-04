@@ -90,20 +90,16 @@ Chapter 3: Getting Started With Devops
 ### Recommended Resources
 + DOES15 - Carmen DeArdo, [How DevOps Is Enabling Lean Application Development](https://www.youtube.com/watch?v=sL7wHJj25DA)
 
-### Extra Resources
-
 
 ## Picking a Value Stream (Part VIII)
 
 [video][vid8]
 
-[vid8]: 
+[vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V004200_DTH.mp4
 
 ### Recommended Resources
 + Ernest Mueller, James Wickett, Karthik Gaekwad, [The Story of DevOps at National Instruments](https://vimeo.com/62931927)
 + DOES15 - Ernest Mueller, [DevOps Transformations at National Instruments](https://www.youtube.com/watch?v=6Ry40h1UAyE)
-
-### Extra Resources
 
 
 # Section 2: Understanding Organizational Change
