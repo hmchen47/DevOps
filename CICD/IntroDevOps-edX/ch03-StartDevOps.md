@@ -120,20 +120,15 @@ Chapter 3: Getting Started With Devops
 + Carol S. Dweck, [Mindset: The New Psychology of Success](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322)
 + Kelly McGonigal, [The Upside of Stress: Why Stress Is Good for You, and How to Get Good at It](https://www.amazon.com/Upside-Stress-Why-Good-You/dp/1101982934)
 
-### Extra Resources
-
-
 ## Understanding Organizational Change (Part III)
 
 [video][vida]
 
-[vida]: 
+[vida]: https://edx-video.net/LINLFS16/LINLFS162016-V005200_DTH.mp4
 
 ### Recommended Resources
 + David Marquet, [Turn the Ship Around! How to Create Leaders at Every Level](https://www.youtube.com/watch?v=iiwUqnvY1l0)
 + Simon Sinek, [How Great Leaders Inspire Action](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action?language=en)
-
-### Extra Resources
 
 
 ## Understanding Organizational Change (Part IV)
