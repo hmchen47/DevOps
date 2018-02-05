@@ -146,7 +146,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vidc]
 
-[vidc]: 
+[vidc]: https://edx-video.net/LINLFS16/LINLFS162016-V004600_DTH.mp4
 
 ### Recommended Resources
 
