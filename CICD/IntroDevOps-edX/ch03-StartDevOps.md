@@ -135,13 +135,11 @@ Chapter 3: Getting Started With Devops
 
 [video][vidb]
 
-[vidb]: 
+[vidb]: https://edx-video.net/LINLFS16/LINLFS162016-V004700_DTH.mp4
 
 ### Recommended Resources
 + Abhimanyu Ghoshal, [Two-pizza teams: Werner Vogels on Amazon's secrets for innovation at TNV Europe Conference](http://thenextweb.com/insider/2015/04/23/two-pizza-teams-werner-vogels-on-amazons-secrets-for-innovation-at-tnw-europe-conference/)
 + Sam Newman, [Building Microservices](http://samnewman.io/books/building_microservices/)
-
-### Extra Resources
 
 
 ## Understanding Organizational Change (Part V)
