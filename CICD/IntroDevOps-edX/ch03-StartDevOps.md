@@ -202,4 +202,41 @@ Chapter 3: Getting Started With Devops
 [vidi]: https://edx-video.net/LINLFS16/LINLFS162016-V005400_DTH.mp4
 
 # Knowledge Check
+Q1. Which type of value stream is associated with the Strangler Pattern?
+
+    a. Legacy
+    b. Brownfield
+    c. Greenfield
+
+    Ans: b
+
+Q2. Which of the following tools is used to map out value streams?
+
+    a. Value Stream Marketing
+    b. Value Stream Mapping
+    c. Value Stream Management
+    d. Value Stream Map
+
+    Ans: b
+
+Q3. Which of the following statements best describes Conway's Law?
+
+    a. Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.
+    b. Organizations which design systems copy the designs of the communication structures of these organizations.
+    c. Organizations which decouple systems are constrained to produce designs which are copies of the communication structures of these organizations.
+    unanswered
+
+    Ans: a
+
+Q4. Which of the following examples best describes a growth mindset?
+
+    Ans: alternative belief, effort based, developed abilities through dedicationa nd hard work
+
+Q5. Which of the following best describes the significance of the NUMMI story?
+
+    a. The same workers can change their habits in a transformative culture
+    b. Plants managed by Toyota are better than plants managed by GM
+    c. Culture does not matter when it comes to managing factories
+
+    Ans: a
 
