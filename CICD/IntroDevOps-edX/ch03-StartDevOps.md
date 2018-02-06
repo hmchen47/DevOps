@@ -177,19 +177,12 @@ Chapter 3: Getting Started With Devops
 + [561: NUMMI 2015 - This American Life](http://www.thisamericanlife.org/radio-archives/episode/561/nummi-2015)
 
 
-### Extra Resources
-
-
 # Section 3: Enabling Transformation
 ## Enabling Transformation (Part I)
 
 [video][vidg]
 
 [vidg]: 
-
-### Recommedned Resources
-
-### Extra Resources
 
 ## Enabling Transformation (Part II)
 
@@ -198,8 +191,8 @@ Chapter 3: Getting Started With Devops
 [vidh]: 
 
 ### Recommedned Resources
-
-### Extra Resources
++ Jennifer Davis and Katherine Daniels, [Effective DevOps: Building a Culture of Collaboration, Affinity and Tooling at Scale](https://www.amazon.com/Effective-DevOps-Building-Collaboration-Affinity/dp/1491926309)
++ John Kotter, [The Heart of Change: Real-Life Stories of How People Change Their Organizations](https://www.amazon.com/Heart-Change-Real-Life-Stories-Organizations/dp/1422187330)
 
 
 # Summary
