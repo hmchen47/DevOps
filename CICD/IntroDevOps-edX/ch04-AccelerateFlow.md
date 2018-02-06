@@ -19,10 +19,10 @@ Chapter 4: The First Way - Accelerate Flow
 [vid1]: 
 
 ## Recommended Resources
-
-
-## Extra Resources
-
++ James Womack and Daniel Jones, [How to Root Out Waste and Pursue Perfection](https://hbr.org/1996/09/how-to-root-out-waste-and-pursue-perfection)
++ Jez Humble and David Farley, [Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912)
++ Thomas A. Limoncelli, [The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
++ Jennifer Davis and Katherine Daniels, [Effective DevOps: Building a Culture of Collaboration, Affinity, and Tooling at Scale](https://www.amazon.com/Effective-DevOps-Building-Collaboration-Affinity/dp/1491926309)
 
 
 # Section 2: The Deployment Pipeline
