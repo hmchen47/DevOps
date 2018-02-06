@@ -160,13 +160,11 @@ Chapter 3: Getting Started With Devops
 
 [video][vide]
 
-[vide]: 
+[vide]: https://edx-video.net/LINLFS16/LINLFS162016-V005000_DTH.mp4
 
 ### Recommended Resources
 + Pedro Canahuati, [Growing from the Few to the Many: Scaling the Operations Organization at Facebook](https://www.infoq.com/presentations/scaling-operations-facebook)
 + Velocity 2012 - Jesse Robbins, [Changing Culture & Being a Force for Awesome](https://www.youtube.com/watch?v=OU8ihx3nT6I)
-
-### Extra Resources
 
 
 ## Understanding Organizational Change (Part VIII)
