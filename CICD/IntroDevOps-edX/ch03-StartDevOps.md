@@ -182,7 +182,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vidg]
 
-[vidg]: 
+[vidg]: https://edx-video.net/LINLFS16/LINLFS162016-V005300_DTH.mp4
 
 ## Enabling Transformation (Part II)
 
