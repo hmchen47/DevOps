@@ -188,7 +188,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vidh]
 
-[vidh]: 
+[vidh]: https://edx-video.net/LINLFS162016-V011800_DTH.mp4
 
 ### Recommedned Resources
 + Jennifer Davis and Katherine Daniels, [Effective DevOps: Building a Culture of Collaboration, Affinity and Tooling at Scale](https://www.amazon.com/Effective-DevOps-Building-Collaboration-Affinity/dp/1491926309)
