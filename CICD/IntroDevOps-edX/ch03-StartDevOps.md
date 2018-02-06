@@ -199,7 +199,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vidi]
 
-[vidi]: 
+[vidi]: https://edx-video.net/LINLFS16/LINLFS162016-V005400_DTH.mp4
 
 # Knowledge Check
 
