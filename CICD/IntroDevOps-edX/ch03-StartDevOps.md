@@ -148,20 +148,12 @@ Chapter 3: Getting Started With Devops
 
 [vidc]: https://edx-video.net/LINLFS16/LINLFS162016-V004600_DTH.mp4
 
-### Recommended Resources
-
-### Extra Resources
-
 
 ## Understanding Organizational Change (Part VI)
 
 [video][vidd]
 
-[vidd]: 
-
-### Recommended Resources
-
-### Extra Resources
+[vidd]: https://edx-video.net/LINLFS16/LINLFS162016-V004900_DTH.mp4
 
 
 ## Understanding Organizational Change (Part VII)
