@@ -22,7 +22,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Knowledge Check
 ## Learning Objectives (Review)
 
-# Chapter 3: Getting Started With Devops
+# Chapter 3: [Getting Started With Devops](./ch03-StartDevOps.md)
 ## Learning Objectives
 ## Section 1: Picking a Value Stream
 ## Section 2: Understanding Organizational Change
