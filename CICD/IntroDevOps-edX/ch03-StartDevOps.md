@@ -171,7 +171,7 @@ Chapter 3: Getting Started With Devops
 
 [video][vidf]
 
-[vidf]: 
+[vidf]: https://edx-video.net/LINLFS16/LINLFS162016-V004800_DTH.mp4
 
 ### Recommended Resources
 + [561: NUMMI 2015 - This American Life](http://www.thisamericanlife.org/radio-archives/episode/561/nummi-2015)
