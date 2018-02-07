@@ -63,7 +63,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vid5]
 
-[vid5]: 
+[vid5]: https://edx-video.net/LINLFS162016-V006000_DTH.mp4
 
 
 ### Recommended Resource
