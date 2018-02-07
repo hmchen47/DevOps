@@ -48,20 +48,15 @@ Chapter 4: The First Way - Accelerate Flow
 ### Recommended Resource
 + Damon Edwards, [what is a Service Delivery Platform?](https://vimeo.com/46125904)
 
-### Extra Resources
-
-
 ## The Deployment Pipeline (Part III)
 
 [video][vid4]
 
-[vid4]: 
+[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V005700_DTH.mp4
 
 
 ### Recommended Resource
 + Mitchell Hashimoto, [Vagrant: Up and Running](https://www.amazon.com/Vagrant-Up-Running-Mitchell-Hashimoto/dp/1449335837)
-
-### Extra Resources
 
 
 ## The Deployment Pipeline (Part IV)
