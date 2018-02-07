@@ -16,7 +16,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vid1]
 
-[vid1]: 
+[vid1]: https://edx-video.net/LINLFS162016-V008900_DTH.mp4
 
 ## Recommended Resources
 + James Womack and Daniel Jones, [How to Root Out Waste and Pursue Perfection](https://hbr.org/1996/09/how-to-root-out-waste-and-pursue-perfection)
@@ -34,7 +34,9 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resource
-
++ Tom Limoncelli, [The Practice of System and Network Administration](https://www.amazon.com/Practice-System-Network-Administration-Second/dp/0321492668)
++ Jez Humble and David Farley, [Continuous Delivery](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912)
++ Damon Edwards and John Willis, [Better, Faster AND Cheaper. How?](https://www.youtube.com/watch?v=j9fC4raB-bA)
 
 ### Extra Resources
 
@@ -47,7 +49,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resource
-
++ Damon Edwards, [what is a Service Delivery Platform?](https://vimeo.com/46125904)
 
 ### Extra Resources
 
@@ -60,7 +62,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resource
-
++ Mitchell Hashimoto, [Vagrant: Up and Running](https://www.amazon.com/Vagrant-Up-Running-Mitchell-Hashimoto/dp/1449335837)
 
 ### Extra Resources
 
@@ -73,6 +75,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resource
++ Botchagalupe, [Immutable Delivery (The Agile Admin)](https://theagileadmin.com/2015/11/24/immutable-delivery/)
 
 
 ### Extra Resources
