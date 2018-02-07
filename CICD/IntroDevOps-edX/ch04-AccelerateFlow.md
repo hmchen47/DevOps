@@ -30,16 +30,13 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vid2]
 
-[vid2]: 
+[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V005500_DTH.mp4
 
 
 ### Recommended Resource
 + Tom Limoncelli, [The Practice of System and Network Administration](https://www.amazon.com/Practice-System-Network-Administration-Second/dp/0321492668)
 + Jez Humble and David Farley, [Continuous Delivery](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912)
 + Damon Edwards and John Willis, [Better, Faster AND Cheaper. How?](https://www.youtube.com/watch?v=j9fC4raB-bA)
-
-### Extra Resources
-
 
 ## The Deployment Pipeline (Part II)
 
