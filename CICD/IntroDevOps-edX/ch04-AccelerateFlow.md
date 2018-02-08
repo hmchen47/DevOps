@@ -70,34 +70,11 @@ Chapter 4: The First Way - Accelerate Flow
 + Botchagalupe, [Immutable Delivery (The Agile Admin)](https://theagileadmin.com/2015/11/24/immutable-delivery/)
 
 
-### Extra Resources
-
-
 ## The Deployment Pipeline (Part V)
 
 [video][vid6]
 
-[vid6]: 
-
-
-### Recommended Resource
-
-
-### Extra Resources
-
-
-## The Deployment Pipeline (Part VI)
-[video][vid]
-
-[vid]: 
-
-
-### Recommended Resource
-
-
-### Extra Resources
-
-
+[vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V005900_DTH.mp4
 
 
 # Section 3: Creating Consistency in the Pipeline
