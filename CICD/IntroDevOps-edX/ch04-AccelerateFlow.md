@@ -162,9 +162,6 @@ Chapter 4: The First Way - Accelerate Flow
 + The Netflix Tech Blog, [Building with Legos](http://techblog.netflix.com/2011/08/building-with-legos.html)
 + Kief Morris, [ImmutableServer](http://martinfowler.com/bliki/ImmutableServer.html)
 
-### Extra Resources
-
-
 
 ## Creating Consistency in the Pipeline (Part VIII)
 
