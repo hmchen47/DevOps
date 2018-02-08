@@ -123,11 +123,11 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vid0]
 
 
-[vid0]: 
+[vid0]: https://edx-video.net/LINLFS162016-V006400_DTH.mp4
 
 
 ### Recommended Resources
-
++ IBM - Boden Russel, [Realizing Linux Container (LXC) - Building Blocks, Underpinning & Motivations](https://www.slideshare.net/BodenRussell/realizing-linux-containerslxc)
 
 ### Extra Resources
 
