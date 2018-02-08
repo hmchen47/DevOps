@@ -83,15 +83,12 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vid7]
 
 
-[vid7]: 
+[vid7]: https://edx-video.net/LINLFS162016-V006100_DTH.mp4
 
 
 ### Recommended Resources
 + Netflix - Jason Chan, [Real World Cloud Application Security](https://vimeo.com/54157394)
 + Randy Bias, [Pets vs. Cattle: The Elastic Cloud Story](http://cloudscaling.com/blog/cloud-computing/pets-vs-cattle-the-elastic-cloud-story/)
-
-### Extra Resources
-
 
 
 ## Creating Consistency in the Pipeline (Part II)
