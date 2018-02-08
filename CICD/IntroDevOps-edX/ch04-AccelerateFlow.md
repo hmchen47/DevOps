@@ -87,7 +87,8 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Netflix - Jason Chan, [Real World Cloud Application Security](https://vimeo.com/54157394)
++ Randy Bias, [Pets vs. Cattle: The Elastic Cloud Story](http://cloudscaling.com/blog/cloud-computing/pets-vs-cattle-the-elastic-cloud-story/)
 
 ### Extra Resources
 
@@ -102,7 +103,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Steve Traugott, [Why Order Matters: Turing Equivalence in Automated Systems Administration](http://www.infrastructures.org/papers/turing/turing.html)
 
 ### Extra Resources
 
@@ -117,7 +118,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Rob Hirschfeld, [Digital Rebar Quick Start to K8s](https://www.youtube.com/watch?v=bn4LLNtPF6c)
++ Abe Hassan Blog, [baked servers vs fried servers](http://if.andonlyif.net/blog/2012/10/baked-servers-vs-fried-servers.html)
++ [Cloudinit](http://cloudinit.readthedocs.io/en/latest/)
++ [Cloudinit on RedHat](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/4/html/End_User_Guide/user-data.html)
 
 ### Extra Resources
 
@@ -147,6 +151,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
++ Kief Morris, [Infrastructure as Code](http://shop.oreilly.com/product/0636920039297.do)
 
 
 ### Extra Resources
@@ -177,7 +182,8 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ The Netflix Tech Blog, [Building with Legos](http://techblog.netflix.com/2011/08/building-with-legos.html)
++ Kief Morris, [ImmutableServer](http://martinfowler.com/bliki/ImmutableServer.html)
 
 ### Extra Resources
 
@@ -192,7 +198,11 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ John Willis, [Docker and the Three Ways of DevOps](https://www.docker.com/sites/default/files/WP_Docker%20and%20the%203%20ways%20devops_07.31.2015%20(1).pdf)
++ Gartner, [Assessing Docker and Containers for Five Software Delivery Use Cases](https://www.gartner.com/doc/3038125/assessing-docker-containers-software-delivery)
++ DOES15, [Joshua Corman and John Willis - Immutable Awesomeness](https://www.youtube.com/watch?v=FV9X0xj6fFw)
++ Steve Traugott, [Why Order Matters: Turing Equivalence in Automated Systems Administration](http://www.infrastructures.org/papers/turing/turing.html)
++ DockerCon2014 - Michael Bryzek, [Immutable Infrastructure with Docker and EC2](https://www.youtube.com/watch?v=GaHzdqFithc]
 
 ### Extra Resources
 
@@ -207,7 +217,9 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ GlueCon 2015 - Jerome Petazzoni, [Immutable Infrastructure with Docker and Containers](http://www.slideshare.net/jpetazzo/immutable-infrastructure-with-docker-and-containers-gluecon-2015)
++ Jared Diamond, [Guns, Germs, and Steel: The Fates of Human Societies](https://www.amazon.com/Guns-Germs-Steel-Fates-Societies/dp/0393317552)
++ [socketplane/docker-ovs](https://github.com/socketplane/docker-ovs/blob/master/Dockerfile)
 
 ### Extra Resources
 
