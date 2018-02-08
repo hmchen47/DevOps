@@ -129,24 +129,17 @@ Chapter 4: The First Way - Accelerate Flow
 ### Recommended Resources
 + IBM - Boden Russel, [Realizing Linux Container (LXC) - Building Blocks, Underpinning & Motivations](https://www.slideshare.net/BodenRussell/realizing-linux-containerslxc)
 
-### Extra Resources
-
-
 
 ## Creating Consistency in the Pipeline (Part V)
 
 [video][vida]
 
 
-[vida]: 
+[vida]: https://edx-video.net/LINLFS162016-V006800_DTH.mp4
 
 
 ### Recommended Resources
 + Kief Morris, [Infrastructure as Code](http://shop.oreilly.com/product/0636920039297.do)
-
-
-### Extra Resources
-
 
 
 ## Creating Consistency in the Pipeline (Part VI)
