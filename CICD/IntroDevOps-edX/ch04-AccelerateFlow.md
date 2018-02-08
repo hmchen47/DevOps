@@ -168,7 +168,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidd]
 
 
-[vidd]: 
+[vidd]: https://edx-video.net/LINLFS162016-V006600_DTH.mp4
 
 
 ### Recommended Resources
@@ -177,9 +177,6 @@ Chapter 4: The First Way - Accelerate Flow
 + DOES15, [Joshua Corman and John Willis - Immutable Awesomeness](https://www.youtube.com/watch?v=FV9X0xj6fFw)
 + Steve Traugott, [Why Order Matters: Turing Equivalence in Automated Systems Administration](http://www.infrastructures.org/papers/turing/turing.html)
 + DockerCon2014 - Michael Bryzek, [Immutable Infrastructure with Docker and EC2](https://www.youtube.com/watch?v=GaHzdqFithc]
-
-### Extra Resources
-
 
 
 ## Creating Consistency in the Pipeline (Part IX)
