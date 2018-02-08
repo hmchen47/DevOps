@@ -147,14 +147,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidb]
 
 
-[vidb]: 
-
-
-### Recommended Resources
-
-
-### Extra Resources
-
+[vidb]: https://edx-video.net/LINLFS162016-V006700_DTH.mp4
 
 
 ## Creating Consistency in the Pipeline (Part VII)
@@ -162,7 +155,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidc]
 
 
-[vidc]: 
+[vidc]: https://edx-video.net/LINLFS162016-V006500_DTH.mp4
 
 
 ### Recommended Resources
