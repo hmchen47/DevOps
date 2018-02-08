@@ -96,14 +96,11 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vid8]
 
 
-[vid8]: 
+[vid8]: https://edx-video.net/LINLFS162016-V006200_DTH.mp4
 
 
 ### Recommended Resources
 + Steve Traugott, [Why Order Matters: Turing Equivalence in Automated Systems Administration](http://www.infrastructures.org/papers/turing/turing.html)
-
-### Extra Resources
-
 
 
 ## Creating Consistency in the Pipeline (Part III)
