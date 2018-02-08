@@ -108,7 +108,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vid9]
 
 
-[vid9]: 
+[vid9]: https://edx-video.net/LINLFS162016-V006300_DTH.mp4
 
 
 ### Recommended Resources
@@ -116,9 +116,6 @@ Chapter 4: The First Way - Accelerate Flow
 + Abe Hassan Blog, [baked servers vs fried servers](http://if.andonlyif.net/blog/2012/10/baked-servers-vs-fried-servers.html)
 + [Cloudinit](http://cloudinit.readthedocs.io/en/latest/)
 + [Cloudinit on RedHat](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux_OpenStack_Platform/4/html/End_User_Guide/user-data.html)
-
-### Extra Resources
-
 
 
 ## Creating Consistency in the Pipeline (Part IV)
