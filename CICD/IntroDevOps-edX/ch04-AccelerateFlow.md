@@ -272,13 +272,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vidl]
 
-[vidl]: 
+[vidl]: https://edx-video.net/LINLFS162016-V007800_DTH.mp4
 
 ### Recommended Resources
 + Tom Limoncelli, [The Practice of Cloud System Administration Book](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
-
-
-### Extra Resources
 
 
 ## Deployment Strategies (Part II)
