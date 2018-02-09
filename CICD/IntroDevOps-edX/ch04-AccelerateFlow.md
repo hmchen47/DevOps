@@ -184,17 +184,13 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vide]
 
 
-[vide]: 
+[vide]: https://edx-video.net/LINLFS162016-V006600_DTH.mp4
 
 
 ### Recommended Resources
 + GlueCon 2015 - Jerome Petazzoni, [Immutable Infrastructure with Docker and Containers](http://www.slideshare.net/jpetazzo/immutable-infrastructure-with-docker-and-containers-gluecon-2015)
 + Jared Diamond, [Guns, Germs, and Steel: The Fates of Human Societies](https://www.amazon.com/Guns-Germs-Steel-Fates-Societies/dp/0393317552)
 + [socketplane/docker-ovs](https://github.com/socketplane/docker-ovs/blob/master/Dockerfile)
-
-### Extra Resources
-
-
 
 
 # Section 4: Automated Testing
