@@ -266,8 +266,6 @@ Chapter 4: The First Way - Accelerate Flow
 + Eran Messeri, [What goes wrong when thousands of engineers share the same continuous build?](http://gotocon.com/dl/goto-aar-2013/slides/EranMesseri_WhatGoesWrongWhenThousandsOfEngineersShareTheSameContinuousBuild.pdf)
 + [Intuit Prepares for Tax Day Filing Surge with SOASTA (case study)](http://www.soasta.com/wp-content/uploads/2015/12/Intuit_CS.pdf)
 
-### Extra Resources
-
 
 # Section 5: Deployment Strategies (Zero Downtime Release)
 ## Deployment Strategies (Part I)
@@ -277,6 +275,7 @@ Chapter 4: The First Way - Accelerate Flow
 [vidl]: 
 
 ### Recommended Resources
++ Tom Limoncelli, [The Practice of Cloud System Administration Book](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
 
 
 ### Extra Resources
@@ -288,11 +287,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 [vidm]: 
 
-### Recommended Resources
-
-
-### Extra Resources
-
 
 ## Deployment Strategies (Part III)
 
@@ -301,10 +295,8 @@ Chapter 4: The First Way - Accelerate Flow
 [vidn]: 
 
 ### Recommended Resources
-
-
-### Extra Resources
-
++ John Allspaw and Paul Hammond, [10+ Deploys Per Day](https://www.youtube.com/watch?v=LdOe18KhtT4)
++ Eugene Letuchy, [Facebook Chat](https://www.facebook.com/note.php?note_id=14218138919&id=9445547199&index=0)
 
 
 # Summary
