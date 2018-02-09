@@ -199,14 +199,12 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidf]
 
 
-[vidf]: 
+[vidf]: https://edx-video.net/LINLFS162016-V007200_DTH.mp4
 
 
 ### Recommended Resources
 + Elisabeth Hendrickson, [Agile Testing: Nine Principles and Six Concrete Practices for Testing on Agile Teams](http://testobsessed.com/wp-content/uploads/2011/04/AgileTestingOverview.pdf)
 + [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
-
-### Extra Resources
 
 
 ## Automated Testing (Part II)
