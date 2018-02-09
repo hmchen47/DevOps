@@ -247,13 +247,11 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidj]
 
 
-[vidj]: 
+[vidj]: https://edx-video.net/LINLFS162016-V007500_DTH.mp4
 
 
 ### Recommended Resources
 + [Open Mic 2: Continuous Deployment and Operations Dashboards at kaChing (Wealthfront)](https://vimeo.com/14830327)
-
-### Extra Resources
 
 
 ## Automated Testing (Part VI)
