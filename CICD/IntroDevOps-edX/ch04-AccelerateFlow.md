@@ -239,7 +239,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidi]
 
 
-[vidi]: 
+[vidi]: https://edx-video.net/LINLFS162016-V007400_DTH.mp4
 
 
 ## Automated Testing (Part V)
