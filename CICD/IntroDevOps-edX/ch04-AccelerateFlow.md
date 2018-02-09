@@ -212,7 +212,7 @@ Chapter 4: The First Way - Accelerate Flow
 [video][vidg]
 
 
-[vidg]: 
+[vidg]: https://edx-video.net/LINLFS162016-V007100_DTH.mp4
 
 
 ### Recommended Resources
@@ -220,8 +220,6 @@ Chapter 4: The First Way - Accelerate Flow
 + Dan North, [What's in a Story?](https://dannorth.net/whats-in-a-story/)
 + James Wickett, [Hands-on GauntIt: Security Testing for Developers](https://leanpub.com/hands-on-gauntlt)
 + Petr Lapukhov (Facebook), [Move Fast, Unbreak Things!](https://www.youtube.com/watch?v=zs2Zn9rW3Ow)
-
-### Extra Resources
 
 
 ## Automated Testing (Part III)
