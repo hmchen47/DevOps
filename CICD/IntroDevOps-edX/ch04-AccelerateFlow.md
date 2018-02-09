@@ -203,9 +203,11 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Elisabeth Hendrickson, [Agile Testing: Nine Principles and Six Concrete Practices for Testing on Agile Teams](http://testobsessed.com/wp-content/uploads/2011/04/AgileTestingOverview.pdf)
++ [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
 
 ### Extra Resources
+
 
 ## Automated Testing (Part II)
 
@@ -216,7 +218,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Eric Evans, [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215)
++ Dan North, [What's in a Story?](https://dannorth.net/whats-in-a-story/)
++ James Wickett, [Hands-on GauntIt: Security Testing for Developers](https://leanpub.com/hands-on-gauntlt)
++ Petr Lapukhov (Facebook), [Move Fast, Unbreak Things!](https://www.youtube.com/watch?v=zs2Zn9rW3Ow)
 
 ### Extra Resources
 
@@ -230,7 +235,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ [Open Mic 2: Continuous Deployment and Operations Dashboards at kaChing (Wealthfront)](https://vimeo.com/14830327)
 
 ### Extra Resources
 
@@ -243,12 +248,6 @@ Chapter 4: The First Way - Accelerate Flow
 [vidi]: 
 
 
-### Recommended Resources
-
-
-### Extra Resources
-
-
 ## Automated Testing (Part V)
 
 [video][vidj]
@@ -258,7 +257,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ [Open Mic 2: Continuous Deployment and Operations Dashboards at kaChing (Wealthfront)](https://vimeo.com/14830327)
 
 ### Extra Resources
 
@@ -272,7 +271,8 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ### Recommended Resources
-
++ Eran Messeri, [What goes wrong when thousands of engineers share the same continuous build?](http://gotocon.com/dl/goto-aar-2013/slides/EranMesseri_WhatGoesWrongWhenThousandsOfEngineersShareTheSameContinuousBuild.pdf)
++ [Intuit Prepares for Tax Day Filing Surge with SOASTA (case study)](http://www.soasta.com/wp-content/uploads/2015/12/Intuit_CS.pdf)
 
 ### Extra Resources
 
