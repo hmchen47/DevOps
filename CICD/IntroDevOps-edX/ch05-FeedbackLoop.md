@@ -24,9 +24,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid1]: 
 
 ### Recommended Resources
-
-
-### Extra Resources
++ [Site Reliability Engineering: How Google Runs Production Systems](http://shop.oreilly.com/product/0636920041528.do)
 
 
 ## Creating a Service Reliability Culture (Part II)
@@ -45,10 +43,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid3]: 
 
 ### Recommended Resources
-
-
-### Extra Resources
-
++ USENIX 2014 - Ben Treynor Sloss, [Keys to SRE](https://www.youtube.com/watch?v=n4Wf14e2jxQ)
 
 
 ## Creating a Service Reliability Culture (Part IV)
@@ -59,9 +54,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid4]: 
 
 ### Recommended Resources
-
-
-### Extra Resources
++ [Site reliability Engineering](http://shop.oreilly.com/product/0636920041528.do)
 
 
 ## Creating a Service Reliability Culture (Part V)
@@ -72,12 +65,13 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid5]: 
 
 ### Recommended Resources
++ Wired, [Her Code Got Humans on the Moon - And Invented Software Itself](https://www.wired.com/2015/10/margaret-hamilton-nasa-apollo/)
++ Gene Kranz, [Failure Is Not an Option: Mission Control From Mercury to Apollo 13 and Beyond](https://www.amazon.com/Failure-Not-Option-Mission-Control/dp/1439148813)
++ Diane Vaughan, [The Challenger Launch Decision: Risky Technology, Culture, and Deviance at NASA](https://www.amazon.com/Challenger-Launch-Decision-Technology-Deviance/dp/0226851761)
++ Steven Spear, [The High-Velocity Edge: How Market Leaders Leverage Operational Excellence to Beat the Competition](https://www.amazon.com/High-Velocity-Edge-Operational-Excellence-Competition/dp/0071741410)
 
 
-### Extra Resources
-
-
-## Creating a Service Reliability Culture (Part VI)##+ Creating a Service Reliability Culture (Part VII)
+## Creating a Service Reliability Culture (Part VI)
 
 [video][vid6]
 
@@ -86,9 +80,18 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 
 ### Recommended Resources
++ John Allspaw and Paul Hammond, [10+ Deploys Per Day](https://www.youtube.com/watch?v=LdOe18KhtT4)
++ John Allspaw, [Trade-Offs Under Pressure: Heuristics and Observations of Teams Resolving Internet Service Outages](https://drive.google.com/file/d/0Bx50LgK_RXNmUTRDSUhyam9ranM/view)
++ John Allspaw, [Incident Response: Trade-offs Under Pressure](https://www.infoq.com/presentations/incident-response)
++ Amazon.com, [Summary of the AWS Service Event in the US East Region](https://aws.amazon.com/message/67457/)
 
 
-### Extra Resources
+## Creating a Service Reliability Culture (Part VII)
+
+[video][vid6]
+
+
+[vid6]: 
 
 
 
