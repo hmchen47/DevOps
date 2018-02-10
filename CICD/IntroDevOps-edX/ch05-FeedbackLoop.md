@@ -40,7 +40,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [video][vid3]
 
 
-[vid3]: 
+[vid3]: https://edx-video.net/LINLFS162016-V008300_DTH.mp4
 
 ### Recommended Resources
 + USENIX 2014 - Ben Treynor Sloss, [Keys to SRE](https://www.youtube.com/watch?v=n4Wf14e2jxQ)
