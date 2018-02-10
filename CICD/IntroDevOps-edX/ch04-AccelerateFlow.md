@@ -289,7 +289,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vidn]
 
-[vidn]: 
+[vidn]: https://edx-video.net/LINLFS162016-V008000_DTH.mp4
 
 ### Recommended Resources
 + John Allspaw and Paul Hammond, [10+ Deploys Per Day](https://www.youtube.com/watch?v=LdOe18KhtT4)
@@ -297,7 +297,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 # Summary
-
 
 
 # Knowledge Check
