@@ -31,7 +31,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Knowledge Check
 ## Learning Objectives (Review)
 
-# Chapter 4: The First Way - Accelerate Flow
+# Chapter 4: [The First Way - Accelerate Flow](./ch04-AccelerateFlow.md)
 ## Learning Objectives
 ## Section 1: Continuous Delivery Patterns and Practices
 ## Section 2: The Deployment Pipeline
