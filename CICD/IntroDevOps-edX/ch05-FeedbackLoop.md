@@ -21,7 +21,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [video][vid1]
 
 
-[vid1]: 
+[vid1]: https://edx-video.net/LINLFS162016-V008500_DTH.mp4
 
 ### Recommended Resources
 + [Site Reliability Engineering: How Google Runs Production Systems](http://shop.oreilly.com/product/0636920041528.do)
