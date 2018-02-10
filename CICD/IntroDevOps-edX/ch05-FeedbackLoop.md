@@ -32,7 +32,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [video][vid2]
 
 
-[vid2]: 
+[vid2]: https://edx-video.net/LINLFS162016-V008400_DTH.mp4
 
 
 ## Creating a Service Reliability Culture (Part III)
