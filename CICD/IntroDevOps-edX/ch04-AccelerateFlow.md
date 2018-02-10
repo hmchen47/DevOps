@@ -282,7 +282,7 @@ Chapter 4: The First Way - Accelerate Flow
 
 [video][vidm]
 
-[vidm]: 
+[vidm]: https://edx-video.net/LINLFS162016-V008100_DTH.mp4
 
 
 ## Deployment Strategies (Part III)
