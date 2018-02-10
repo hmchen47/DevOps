@@ -303,6 +303,40 @@ Chapter 4: The First Way - Accelerate Flow
 [vid0]: https://edx-video.net/LINLFS162016-V007900_DTH.mp4
 
 # Knowledge Check
+Q1. Which of the following best describes the idea of reducing bottlenecks? Please select the correct answer.
+    a. Lean
+    b. The Theory of Constraints
+    c. Agile
+    d. DevOps
+
+    Ans: b
+
+Q2. What is the primary difference between Continuos Delivery and Continuous Deployment? Please select the correct answer.
+    a. Continuous Deployment can be deployed to production and Continuous Delivery is deployed into production
+    b. Continuous Delivery can be deployed to production and Continuous Deployment is deployed into production
+    c. Continuous Delivery can be deployed to test and Continuous Deployment is deployed into production
+    d. Continuous Delivery can be deployed to production and Continuous Deployment is deployed into test
+
+    Ans: b
+
+Q3. What is the difference between Test-Driven Development (TDD) and Behavior-Driven Development (BDD)? Please select the correct answer.
+    a. TDD is where developers write the code first, before testing, and BDD is where tests are designed to test how the code works versus how it behaves
+    b. TDD is where developers write the code first, before testing, and BDD is where tests are designed to test how the code behaves versus how it works
+    c. TDD is where developers write tests first, before coding, and BDD is where tests are designed to test how the code works versus how it behaves
+    d. TDD is where developers write tests first, before coding, and BDD is where tests are designed to test how the code behaves versus how it works
+
+    Ans: d
 
 
+Q4. The following three items are considered types of zero downtime deployment patterns: rolling upgrades, canary, blue-green deployments. 
+
+    Ans: True
+
+
+Q5. Which of the following statements best describes the concept of "pets versus cattle"? Please select the correct answer.
+    a. "Pets" are like treating your infrastructure like pets (not giving servers' names) and "Cattle" is like treating your infrastructure as cattle (giving your servers' names)
+    b. "Pets" are like treating your infrastructure like pets (never logging into them) and "Cattle" is like treating your infrastructure as cattle (giving your servers' names)
+    c. "Pets" are like treating your infrastructure like pets (giving servers' names) and "Cattle" is like treating your infrastructure as cattle (ephemeral infrastructure)
+
+    Ans: c
 
