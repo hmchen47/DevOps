@@ -111,16 +111,13 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid7]
 
-[vid7]: 
+[vid7]: https://edx-video.net/LINLFS162016-V009100_DTH.mp4
 
 ### Recommended Resources
 + Peter Senge, [The Fifth Discipline: The Art & Practice of The Learning Organization](https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0553456342)
 + Donella Meadows, [Thinking in Systems](https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557)
 + InfoQ - Dan North, [Making a Sandwich - Effective Feedback Techniques](https://www.infoq.com/presentations/feedback-models-techniques)
 + Jeff Sussna, [Designing Delivery: Rethinking IT in the Digital Service Economy](http://shop.oreilly.com/product/0636920033080.do)
-
-### Extra Resources
-
 
 
 ## Fast Feedback (Part III)
