@@ -57,7 +57,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid5]
 
-[vid5]: 
+[vid5]: https://edx-video.net/LINLFS162016-V008600_DTH.mp4
 
 ### Recommended Resources
 + Wired, [Her Code Got Humans on the Moon - And Invented Software Itself](https://www.wired.com/2015/10/margaret-hamilton-nasa-apollo/)
