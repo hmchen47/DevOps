@@ -1,4 +1,4 @@
-Chapter 5: The Second Way - Amplify Feedback Loops
+Chapter 5: The Second Way, [Amplify Feedback Loops
 ==================================================
 
 
@@ -153,7 +153,10 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Kevin Behr, Gene Kim, George Spafford, [The Visible Ops Handbook](https://www.amazon.com/Visible-Ops-Handbook-Implementing-Practical/dp/0975568612)
++ Mike Brittain, [Tracking Every Release (Code as Craft Blog)](https://codeascraft.com/2010/12/08/track-every-release/)
++ Petr Lapukhov (Facebook), [Move Fast, Unbreak Things!](https://www.youtube.com/watch?v=zs2Zn9rW3Ow)
++ ChefConf 2016 - Veresh Sita, [Alaska Airlines ](https://www.youtube.com/watch?v=mGJkhuRlvTo)
 
 ### Extra Resources
 
@@ -167,7 +170,14 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Tom Limoncelli, [The Practice of Cloud System Administration](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed/dp/032194318X)
++ James Turnbull, [The Art of Monitoring](https://www.amazon.com/Art-Monitoring-James-Turnbull-ebook/dp/B01GU387MS)
++ Gene Kim, Jez Humble, Patrick Debois, John Willis, [The DevOps Handbook](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002)
++ [Site Reliability Engineering: How Google Runs Production Systems](http://shop.oreilly.com/product/0636920041528.do)
++ iSixSigma Blog, [Variation - The Root of All Process Evil](https://www.isixsigma.com/tools-templates/variation/variation-root-all-process-evil/)
++ [The Flaw of Averages](http://www.flawofaverages.com/)
++ Michael Kopp, [Why Averages Suck and Percentiles are Great](http://apmblog.dynatrace.com/2012/11/14/why-averages-suck-and-percentiles-are-great/)
++ [Khan Academy](https://www.khanacademy.org/)
 
 ### Extra Resources
 
@@ -181,7 +191,8 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Theo Schlossnagle, [Adaptive Availability for Quality of Service](https://www.infoq.com/presentations/time-series-database)
++ Theo Schlossnagle, [Adaptive Availability](http://www.slideshare.net/postwait/adaptive-availability)
 
 ### Extra Resources
 
@@ -195,7 +206,12 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Jason Dixon, [Monitoring with Graphite](https://www.amazon.com/dp/1491916435)
++ James Turnbull, [The Art of Monitoring](https://www.amazon.com/Art-Monitoring-James-Turnbull-ebook/dp/B01GU387MS)
++ Varun Chandola, Arindam Banerjee, & Vipin Kumar, [Anomaly Detection: A Suervey](http://www-users.cs.umn.edu/~banerjee/papers/09/anomaly.pdf)
++ The Netflix Tech Blog, [RAD, Outlier Detection on Big Data](http://techblog.netflix.com/2015/02/rad-outlier-detection-on-big-data.html)
++ David Goldberg, [Statistical Anomaly Detection](http://www.ebaytechblog.com/2015/08/19/statistical-anomaly-detection/)
++ David Golberg, Yinan Shan, [The Importance of Features for Statistical Anomaly Detection](https://www.usenix.org/sites/default/files/conference/protected-files/hotcloud15_slides_goldberg.pdf)
 
 ### Extra Resources
 
