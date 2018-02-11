@@ -124,13 +124,10 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid8]
 
-[vid8]: 
+[vid8]: https://edx-video.net/LINLFS162016-V009200_DTH.mp4
 
 ### Recommended Resources
 + John Allspaw, [Go or No-Go: Operability and Contingency Planning at Etsy.com](http://www.slideshare.net/jallspaw/go-or-nogo-operability-and-contingency-planning-at-etsycom)
-
-### Extra Resources
-
 
 
 ## Fast Feedback (Part IV)
