@@ -92,11 +92,10 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vidz]
 
-[vidz]: 
+[vidz]: https://edx-video.net/LINLFS162016-V009300_DTH.mp4
 
 ### Recommended Resources
 + Jesse Robbins, Kripa Krishnan, John Allspaw, and Tom Limoncelli, [Resilience Engineering: Learning to Embrace Failure](http://queue.acm.org/detail.cfm?id=2371297)
-+ Tom Limoncelli, [The Practice of Cloud System Administration, vol 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed-ebook/dp/B00N7N2CRQ)
 + Jez Humble, Joanne Molesky, and Barry O'Reilly, [Lean Enterprise](https://www.amazon.com/Lean-Enterprise-Performance-Organizations-Innovate/dp/1449368425)
 + Gene Kim, Jez Humble, Patrick Debois, and John Willis, [The DevOps Handbook](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002)
 + Jesse Robbins, [GameDay: Creating Resiliency Through Destruction](https://www.youtube.com/watch?v=zoz0ZjfrQ9s)
@@ -105,7 +104,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 + The Netflix Tech Blog, [FIT: Failure Injection Testing](http://techblog.netflix.com/2014/10/fit-failure-injection-testing.html)
 
 ### Extra Resources
-
++ Tom Limoncelli, [The Practice of Cloud System Administration, vol 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed-ebook/dp/B00N7N2CRQ)
 
 
 ## Fast Feedback (Part II)
