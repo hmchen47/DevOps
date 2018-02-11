@@ -20,7 +20,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid1]
 
-
 [vid1]: https://edx-video.net/LINLFS162016-V008500_DTH.mp4
 
 ### Recommended Resources
@@ -31,14 +30,12 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid2]
 
-
 [vid2]: https://edx-video.net/LINLFS162016-V008400_DTH.mp4
 
 
 ## Creating a Service Reliability Culture (Part III)
 
 [video][vid3]
-
 
 [vid3]: https://edx-video.net/LINLFS162016-V008300_DTH.mp4
 
@@ -50,8 +47,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid4]
 
-
-[vid4]: 
+[vid4]: https://edx-video.net/LINLFS162016-V008200_DTH.mp4
 
 ### Recommended Resources
 + [Site reliability Engineering](http://shop.oreilly.com/product/0636920041528.do)
@@ -60,7 +56,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Creating a Service Reliability Culture (Part V)
 
 [video][vid5]
-
 
 [vid5]: 
 
@@ -74,7 +69,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Creating a Service Reliability Culture (Part VI)
 
 [video][vid6]
-
 
 [vid6]: 
 
@@ -90,7 +84,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid6]
 
-
 [vid6]: 
 
 
@@ -99,7 +92,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Fast Feedback (Part I)
 
 [video][vid]
-
 
 [vid]: 
 
@@ -114,7 +106,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid7]
 
-
 [vid7]: 
 
 ### Recommended Resources
@@ -127,7 +118,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Fast Feedback (Part III)
 
 [video][vid8]
-
 
 [vid8]: 
 
@@ -142,7 +132,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid9]
 
-
 [vid9]: 
 
 ### Recommended Resources
@@ -155,7 +144,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Understanding Monitoring (Part I)
 
 [video][vid0]
-
 
 [vid0]: 
 
@@ -171,7 +159,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vida]
 
-
 [vida]: 
 
 
@@ -186,7 +173,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vidb]
 
-
 [vidb]: 
 
 
@@ -200,7 +186,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Understanding Monitoring (Part IV)
 
 [video][vidc]
-
 
 [vidc]: 
 
@@ -217,7 +202,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vidd]
 
-
 [vidd]: 
 
 
@@ -231,7 +215,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 ## Understanding Complexity (Part II)
 
 [video][vide]
-
 
 [vide]: 
 
@@ -247,7 +230,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vidf]
 
-
 [vidf]: 
 
 
@@ -262,7 +244,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vidg]
 
-
 [vidg]: 
 
 
@@ -276,7 +257,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 # Summary
 
 [video][vidh]
-
 
 [vidh]: 
 
