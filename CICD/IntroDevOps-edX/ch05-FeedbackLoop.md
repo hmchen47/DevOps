@@ -82,18 +82,17 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part VII)
 
-[video][vid6]
+[video][vidy]
 
-[vid6]: 
-
+[vidy]: https://edx-video.net/LINLFS162016-V008800_DTH.mp4
 
 
 # Section 2: Fast Feedback
 ## Fast Feedback (Part I)
 
-[video][vid]
+[video][vidz]
 
-[vid]: 
+[vidz]: 
 
 ### Recommended Resources
 
