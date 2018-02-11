@@ -95,7 +95,14 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vidz]: 
 
 ### Recommended Resources
-
++ Jesse Robbins, Kripa Krishnan, John Allspaw, and Tom Limoncelli, [Resilience Engineering: Learning to Embrace Failure](http://queue.acm.org/detail.cfm?id=2371297)
++ Tom Limoncelli, [The Practice of Cloud System Administration, vol 2](https://www.amazon.com/Practice-Cloud-System-Administration-Distributed-ebook/dp/B00N7N2CRQ)
++ Jez Humble, Joanne Molesky, and Barry O'Reilly, [Lean Enterprise](https://www.amazon.com/Lean-Enterprise-Performance-Organizations-Innovate/dp/1449368425)
++ Gene Kim, Jez Humble, Patrick Debois, and John Willis, [The DevOps Handbook](https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1942788002)
++ Jesse Robbins, [GameDay: Creating Resiliency Through Destruction](https://www.youtube.com/watch?v=zoz0ZjfrQ9s)
++ John Allspaw, [Fault Injection in Production: Making the Case for Resilience Testing](http://queue.acm.org/detail.cfm?id=2353017)
++ The Netflix Tech Blog, [The Netflix Simian Army](http://techblog.netflix.com/2011/07/netflix-simian-army.html)
++ The Netflix Tech Blog, [FIT: Failure Injection Testing](http://techblog.netflix.com/2014/10/fit-failure-injection-testing.html)
 
 ### Extra Resources
 
@@ -108,7 +115,10 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid7]: 
 
 ### Recommended Resources
-
++ Peter Senge, [The Fifth Discipline: The Art & Practice of The Learning Organization](https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0553456342)
++ Donella Meadows, [Thinking in Systems](https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557)
++ InfoQ - Dan North, [Making a Sandwich - Effective Feedback Techniques](https://www.infoq.com/presentations/feedback-models-techniques)
++ Jeff Sussna, [Designing Delivery: Rethinking IT in the Digital Service Economy](http://shop.oreilly.com/product/0636920033080.do)
 
 ### Extra Resources
 
@@ -121,7 +131,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid8]: 
 
 ### Recommended Resources
-
++ John Allspaw, [Go or No-Go: Operability and Contingency Planning at Etsy.com](http://www.slideshare.net/jallspaw/go-or-nogo-operability-and-contingency-planning-at-etsycom)
 
 ### Extra Resources
 
@@ -134,7 +144,11 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 [vid9]: 
 
 ### Recommended Resources
-
++ Attlassian Blogs - Sean Regan, [What is ChatOps? A guide to its evolution, adoption, and significance](http://blogs.atlassian.com/2016/01/what-is-chatops-adoption-guide/)
++ Jesse Newland, [ChatOps at GitHub](https://www.youtube.com/watch?v=NST3u-GjjFw)
++ Jason Hand (VictorOps), [Real World ChatOps](https://www.youtube.com/watch?v=X9FLsMup0A0)
++ Jason Hand (VictorOps), [ChatOps Unplugged: A Beginner's Guide](https://www.youtube.com/watch?v=1srw4yjQcN0)
++ GitHub Blog, [Say Hello to Hubot](https://github.com/blog/968-say-hello-to-hubot)
 
 ### Extra Resources
 
