@@ -134,7 +134,7 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 
 [video][vid9]
 
-[vid9]: 
+[vid9]: https://edx-video.net/LINLFS162016-V009400_DTH.mp4
 
 ### Recommended Resources
 + Attlassian Blogs - Sean Regan, [What is ChatOps? A guide to its evolution, adoption, and significance](http://blogs.atlassian.com/2016/01/what-is-chatops-adoption-guide/)
@@ -142,8 +142,6 @@ Chapter 5: The Second Way - Amplify Feedback Loops
 + Jason Hand (VictorOps), [Real World ChatOps](https://www.youtube.com/watch?v=X9FLsMup0A0)
 + Jason Hand (VictorOps), [ChatOps Unplugged: A Beginner's Guide](https://www.youtube.com/watch?v=1srw4yjQcN0)
 + GitHub Blog, [Say Hello to Hubot](https://github.com/blog/968-say-hello-to-hubot)
-
-### Extra Resources
 
 
 # Section 3: Understanding Monitoring
