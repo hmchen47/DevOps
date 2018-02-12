@@ -176,23 +176,17 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 + Michael Kopp, [Why Averages Suck and Percentiles are Great](http://apmblog.dynatrace.com/2012/11/14/why-averages-suck-and-percentiles-are-great/)
 + [Khan Academy](https://www.khanacademy.org/)
 
-### Extra Resources
-
-
 
 ## Understanding Monitoring (Part III)
 
 [video][vidb]
 
-[vidb]: 
+[vidb]: https://edx-video.net/LINLFS162016-V009800_DTH.mp4
 
 
 ### Recommended Resources
 + Theo Schlossnagle, [Adaptive Availability for Quality of Service](https://www.infoq.com/presentations/time-series-database)
 + Theo Schlossnagle, [Adaptive Availability](http://www.slideshare.net/postwait/adaptive-availability)
-
-### Extra Resources
-
 
 
 ## Understanding Monitoring (Part IV)
