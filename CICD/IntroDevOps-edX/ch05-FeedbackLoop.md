@@ -149,17 +149,14 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vid0]
 
-[vid0]: 
+[vid0]: https://edx-video.net/LINLFS162016-V009700_DTH.mp4
 
 
 ### Recommended Resources
 + Kevin Behr, Gene Kim, George Spafford, [The Visible Ops Handbook](https://www.amazon.com/Visible-Ops-Handbook-Implementing-Practical/dp/0975568612)
 + Mike Brittain, [Tracking Every Release (Code as Craft Blog)](https://codeascraft.com/2010/12/08/track-every-release/)
 + Petr Lapukhov (Facebook), [Move Fast, Unbreak Things!](https://www.youtube.com/watch?v=zs2Zn9rW3Ow)
-+ ChefConf 2016 - Veresh Sita, [Alaska Airlines ](https://www.youtube.com/watch?v=mGJkhuRlvTo)
-
-### Extra Resources
-
++ ChefConf 2016 - Veresh Sita, [Alaska Airlines](https://www.youtube.com/watch?v=mGJkhuRlvTo)
 
 
 ## Understanding Monitoring (Part II)
