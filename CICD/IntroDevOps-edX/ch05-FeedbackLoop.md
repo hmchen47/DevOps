@@ -193,7 +193,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vidc]
 
-[vidc]: 
+[vidc]: https://edx-video.net/LINLFS162016-V009500_DTH.mp4
 
 
 ### Recommended Resources
@@ -203,9 +203,6 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 + The Netflix Tech Blog, [RAD, Outlier Detection on Big Data](http://techblog.netflix.com/2015/02/rad-outlier-detection-on-big-data.html)
 + David Goldberg, [Statistical Anomaly Detection](http://www.ebaytechblog.com/2015/08/19/statistical-anomaly-detection/)
 + David Golberg, Yinan Shan, [The Importance of Features for Statistical Anomaly Detection](https://www.usenix.org/sites/default/files/conference/protected-files/hotcloud15_slides_goldberg.pdf)
-
-### Extra Resources
-
 
 
 # Section 4: Understanding Complexity
