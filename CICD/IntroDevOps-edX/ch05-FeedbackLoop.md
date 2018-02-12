@@ -214,7 +214,15 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Eliyahu Goldratt, [Beyond the Goal: Theory of Constraints](https://www.amazon.com/dp/B000ELJ9NO)
++ Gene Kim, Kevin Behr, George Spafford, [The Phoenix Project](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592)
++ Eliyahu Goldratt, [The Goal](https://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951)
++ Gene Kim, Jez Humble, Patrick Debois, John Willis, [The DevOps Handbook](https://www.amazon.com/The-DevOps-Handbook-World-Class-Organizations/dp/1942788002)
++ Mark Burgess, [In Search of Certainty: The science of our information infrastructure](https://www.amazon.com/Search-Certainty-science-information-infrastructure/dp/1492389161)
++ Jeff Sussna, [Designing Delivery: Rethinking IT in the Digital Service Economy](http://shop.oreilly.com/product/0636920033080.do)
++ Jeff Sussna, [From Cybernetics to DevOps and Beyond (DevOps Days Belgium, 2014)](https://vimeo.com/114017635)
++ David Snowden, Mary Boone, [A Leader's Framework for Decision Making](https://hbr.org/2007/11/a-leaders-framework-for-decision-making)
++ [Cognitive Edge](http://cognitive-edge.com/)
 
 ### Extra Resources
 
@@ -228,7 +236,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Mike Nygard, [Release It!: Design and Deploy Production-Ready Software](https://www.amazon.com/Release-Production-Ready-Software-Pragmatic-Programmers/dp/0978739213)
++ DevOps Cafe, [Episode 50: Adrian Cockcroft](http://devopscafe.org/show/2014/7/22/devops-cafe-episode-50-adrian-cockcroft.html)
++ Martin Fowler, [CircuitBreaker](http://martinfowler.com/bliki/CircuitBreaker.html)
++ Ben Christensen, [Introducing Hystrix for Resilience Engineering (The Netflix Tech Blog)](http://techblog.netflix.com/2012/11/hystrix.html)
 
 ### Extra Resources
 
@@ -242,7 +253,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ### Recommended Resources
-
++ Mark Burgess, [Thinking in Promises: Designing Systems for Cooperation](https://www.amazon.com/Thinking-Promises-Mark-Burgess/dp/1491917873)
++ Mark Burgess, [In Search of Certainty: The science of our information infrastructure](https://www.amazon.com/Search-Certainty-science-information-infrastructure/dp/1492389161)
++ Jeff Sussna, [Designing Delivery: Rethinking IT in the Digital Service Economy](http://shop.oreilly.com/product/0636920033080.do)
++ John Willis, [Promise Theory for Dummies](https://www.youtube.com/watch?v=y3yplqTFywY)
 
 ### Extra Resources
 
