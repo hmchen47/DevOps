@@ -261,5 +261,92 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 # Knowledge Check
+Q01. Which of the following statements best explains the primary difference between an SLA and an SLO, as described in the course? Please select the correct answer.
+    a. An SLA is based between the internal service team and the system in which it operates and an SLO is based between the business and the customer.
+    b. An SLA is based between the internal service team and the system in which it operates and an SLO is based on the organizational chart.
+    c. An SLA is based between the business and the customer and an SLO is based between the internal service team and the system in which it operates.
+    d. An SLA is based between the developers and the customer and an SLO is based between the operations team and the customer.
 
+    Ans: c
+
+Q02. What was Diane Vaughan’s significant contribution, as discussed in this chapter? Please select the correct answer.
+    a. She studied the NASA Challenger disaster and coined the concept of “Deviance of Normalization”.
+    b. She studied under Sydney Dekker, and co-authored “Drift into Failure”.
+    c. She studied the NASA Challenger disaster and coined the concept of “Normalization of Deviance”.
+    d. She studied under John Allspaw and coined the concept of “Normalization of Deviance”.
+    unanswered
+
+    Ans: c
+
+Q03. Which of the statements below is True? Please select the correct answer.
+    a. Accelerating Loop - Accelerates suppressive behavior, and Diminishing Loop - Diminishes feedback
+    b. Balancing Loop - Moves towards an unstable goal, and Thrashing Loop - Oscillates between states
+    c. Accelerating Loop - Amplifies behavior, and Diminishing Loop - Diminishes feedback
+    d. Accelerating Loop - Amplifies behavior, and Diminishing Loop - Suppresses behavior
+
+    Ans: d
+
+
+Q04. Which of the following is not one of the five layers of a monitoring stack, as discussed in this chapter? Please select the correct answer.
+    a. Business indicators
+    b. Application indicators
+    c. Infrastructure indicators
+    d. CPU utilization
+    e. Deployment indicators
+
+    Ans: d
+
+
+Q05. Given the following vector, "X=c(2,4,4,4,5,5,7,9)", what is the Mean, Median and Standard Deviation? Please select the correct answer.
+    a. Mean=5, Median=4.5, Standard Deviation=2.1
+    b. Mean=4, Median=4.5, Standard Deviation=1.5
+    c. Mean=5, Median=5, Standard Deviation=2.1
+    d. Mean=4, Median=4.5, Standard Deviation=1.5
+
+    Ans: a
+
+
+Q06. In the 68-95-99.7 Rule, which value would be 3 Sigma? Please select the correct answer.
+    a. 68
+    b. 65
+    c. 99.9
+    d. 99.7
+
+    Ans: d
+
+
+Q07. Who was the primary author of Cybernetics? Please select the correct answer.
+    a. Sydney Dekker
+    b. Jeff Sussna
+    c. Norbert Weiner
+    d. Gene Kim
+
+    Ans: c
+
+
+Q08. Which of the following is not part of Cynefin? Please select the correct answer.
+    a. Obvious
+    b. Correlated
+    c. Complicated
+    d. Chaotic
+    e. Complex
+
+    Ans: b
+
+Q09. Which of the following open source projects is based on Mike Nygard's Circuit Breaker Patterns concept? Please select the correct answer.
+    a. Nginx
+    b. Hystrix
+    c. Spring Boot
+    d. Chaos Monkey
+
+    Ans: b
+
+
+Q10. Which of the following companies created ChatOps? Please select the correct answer.
+    a. Etsy
+    b. Netflix
+    c. GitHub
+    d. Atlassian
+
+    Ans: c
 
