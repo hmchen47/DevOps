@@ -243,7 +243,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vidf]
 
-[vidf]: 
+[vidf]: https://edx-video.net/LINLFS162016-V010000_DTH.mp4
 
 
 ### Recommended Resources
@@ -251,23 +251,6 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 + Mark Burgess, [In Search of Certainty: The science of our information infrastructure](https://www.amazon.com/Search-Certainty-science-information-infrastructure/dp/1492389161)
 + Jeff Sussna, [Designing Delivery: Rethinking IT in the Digital Service Economy](http://shop.oreilly.com/product/0636920033080.do)
 + John Willis, [Promise Theory for Dummies](https://www.youtube.com/watch?v=y3yplqTFywY)
-
-### Extra Resources
-
-
-
-## Understanding Complexity (Part IV) 
-
-[video][vidg]
-
-[vidg]: 
-
-
-### Recommended Resources
-
-
-### Extra Resources
-
 
 
 # Summary
