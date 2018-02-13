@@ -42,7 +42,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Knowledge Check
 ## Learning Objectives (Review)
 
-# Chapter 5: The Second Way - Amplify Feedback Loops
+# Chapter 5: [The Second Way - Amplify Feedback Loops](./ch05-FeedbackLoop.md)
 ## Learning Objectives
 ## Section 1: Creating a Service Reliability Culture
 ## Section 2: Fast Feedback
