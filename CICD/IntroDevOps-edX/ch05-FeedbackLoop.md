@@ -229,7 +229,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vide]
 
-[vide]: 
+[vide]: https://edx-video.net/LINLFS162016-V009900_DTH.mp4
 
 
 ### Recommended Resources
@@ -237,9 +237,6 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 + DevOps Cafe, [Episode 50: Adrian Cockcroft](http://devopscafe.org/show/2014/7/22/devops-cafe-episode-50-adrian-cockcroft.html)
 + Martin Fowler, [CircuitBreaker](http://martinfowler.com/bliki/CircuitBreaker.html)
 + Ben Christensen, [Introducing Hystrix for Resilience Engineering (The Netflix Tech Blog)](http://techblog.netflix.com/2012/11/hystrix.html)
-
-### Extra Resources
-
 
 
 ## Understanding Complexity (Part III)
