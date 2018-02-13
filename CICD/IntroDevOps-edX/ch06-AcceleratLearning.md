@@ -1,4 +1,4 @@
-Chapter 6: The Third Way - Accelerate Learning
+Chapter 6: The Third Way: Accelerate Learning
 ==============================================
 
 # Learning Objectives
@@ -19,12 +19,20 @@ Chapter 6: The Third Way - Accelerate Learning
 # Section 1: Learning Organizations
 ## Learning Organizations (Part I)
 
-[video][vid]
+[video][vid1]
 
-[vid]:
+[vid1]:
 
 ### Recommended Resources
-
++ Andrew Clay Shafer, [There Is No Talent Shortage (Velocity NYC 2013)](https://www.youtube.com/watch?v=P_sWGl7MzhU)
++ Andrew Clay Shafer, [DevOps ... What Is Missing? What Is Next?](http://www.slideshare.net/littleidea/devops-whats-missing-whats-next)
++ Steven Spear and Kent Bowen, [Decoding The DNA of the Toyota Production System](https://hbr.org/1999/09/decoding-the-dna-of-the-toyota-production-system)
++ Mike Rother, [Toyota Kata: Managing People for Improvement, Adaptiveness and Superior Results](https://www.amazon.com/Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238)
++ W. Edwards Deming, [Out of Crisis](https://www.amazon.com/Out-Crisis-Press-Edwards-Deming/dp/0262541157)
++ W. Edwards Deming, [14 Points](https://www.deming.org/theman/theories/fourteenpoints)
++ W. Edwards Deming, [The New Economics for Industry, Government, Education](https://www.amazon.com/New-Economics-Industry-Government-Education/dp/0262541165)
++ John Willis' Ignite talk, [DevOps and Dr. Deming's 14 Points (Velocity NY 2014)](https://www.youtube.com/watch?v=7g3uqSzWVZs)
++ John Willis, [Deming to DevOps: The Science Behind DevOps](https://www.youtube.com/watch?v=QcRWQIL5qus)
 
 ### Extra Resource
 
@@ -32,12 +40,15 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Learning Organizations (Part II)
 
-[video][vid]
+[video][vid2]
 
-[vid]:
+[vid2]:
 
 ### Recommended Resources
-
++ Peter Senge, [The Fifth Discipline: The Art & Practice of The Learning Organization](https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0385517254)
++ Mark Smith (Infoed), [Peter Senge and the learning organization](http://infed.org/mobi/peter-senge-and-the-learning-organization/)
++ Edward Muzio, [The Ladder of Inference Creates Bad Judgement](https://www.youtube.com/watch?v=K9nFhs5W8o8)
++ Trevor Maber, [Rethinking Thinking](http://ed.ted.com/lessons/rethinking-thinking-trevor-maber)
 
 ### Extra Resource
 
@@ -45,36 +56,36 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Learning Organizations (Part III)
 
-[video][vid]
+[video][vid3]
 
-[vid]:
+[vid3]:
 
 ### Recommended Resources
-
-
++ Victoria Marsick, [The Dimensions of a Learning Organization Questionnaire (DLOQ)](http://adh.sagepub.com/content/15/2/127)
++ Karen Watkins and Victoria Marsick, [Dimensions of the Learning Organization Questionnaire: Introduction](http://www.partnersforlearning.com/instructions.html)
+ 
 ### Extra Resource
 
 
 
 ## Learning Organizations (Part IV)
-[video][vid]
+[video][vid4]
 
-[vid]:
+[vid4]:
 
 ### Recommended Resources
-
++ Reed Hastings, [Seven Aspects of Our Culture](http://www.slideshare.net/reed2001/culture-1798664/2-We_Seek_ExcellenceOur_culture_focuses)
++ Patty McCord, [A Culture of Innovation](https://www.youtube.com/watch?v=o3e1lnixKBM)
 
 ### Extra Resource
-
-
 
 
 # Section 2: Communication
 ## Communication (Part I)
 
-[video][vid]
+[video][vid5]
 
-[vid]: 
+[vid5]: 
 
 
 ### Recommended Resources
@@ -85,9 +96,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Communication (Part II)
 
-[video][vid]
+[video][vid6]
 
-[vid]: 
+[vid6]: 
 
 
 ### Recommended Resources
@@ -98,9 +109,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Communication (Part III)
 
-[video][vid]
+[video][vid7]
 
-[vid]: 
+[vid7]: 
 
 
 ### Recommended Resources
@@ -112,9 +123,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Communication (Part IV)
 
-[video][vid]
+[video][vid8]
 
-[vid]: 
+[vid8]: 
 
 
 ### Recommended Resources
@@ -126,9 +137,9 @@ Chapter 6: The Third Way - Accelerate Learning
 # Section 3: Blameless Culture
 ## Blameless Culture (Part I)
 
-[video][vid]
+[video][vid9]
 
-[vid]: 
+[vid9]: 
 
 
 ### Recommended Resources
@@ -140,9 +151,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Blameless Culture (Part II)
 
-[video][vid]
+[video][vid0]
 
-[vid]: 
+[vid0]: 
 
 
 ### Recommended Resources
@@ -154,9 +165,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Blameless Culture (Part III)
 
-[video][vid]
+[video][vida]
 
-[vid]: 
+[vida]: 
 
 
 ### Recommended Resources
@@ -167,9 +178,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 ## Blameless Culture (Part IV)
 
-[video][vid]
+[video][vidb]
 
-[vid]: 
+[vidb]: 
 
 
 ### Recommended Resources
@@ -179,9 +190,9 @@ Chapter 6: The Third Way - Accelerate Learning
 
 # Summary
 
-[video][vid]
+[video][vidc]
 
-[vid]:
+[vidc]:
 
 # Knowledge Check
 
