@@ -210,7 +210,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vidd]
 
-[vidd]: 
+[vidd]: https://edx-video.net/LINLFS162016-V010100_DTH.mp4
 
 
 ### Recommended Resources
@@ -223,9 +223,6 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 + Jeff Sussna, [From Cybernetics to DevOps and Beyond (DevOps Days Belgium, 2014)](https://vimeo.com/114017635)
 + David Snowden, Mary Boone, [A Leader's Framework for Decision Making](https://hbr.org/2007/11/a-leaders-framework-for-decision-making)
 + [Cognitive Edge](http://cognitive-edge.com/)
-
-### Extra Resources
-
 
 
 ## Understanding Complexity (Part II)
