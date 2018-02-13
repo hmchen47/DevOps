@@ -257,7 +257,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 [video][vidh]
 
-[vidh]: 
+[vidh]: https://edx-video.net/LINLFS162016-V010300_DTH.mp4
 
 
 # Knowledge Check
