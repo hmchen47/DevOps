@@ -21,7 +21,7 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid1]
 
-[vid1]:
+[vid1]: https://edx-video.net/LINLFS162016-V010400_DTH.mp4
 
 ### Recommended Resources
 + Andrew Clay Shafer, [There Is No Talent Shortage (Velocity NYC 2013)](https://www.youtube.com/watch?v=P_sWGl7MzhU)
@@ -33,9 +33,6 @@ Chapter 6: The Third Way: Accelerate Learning
 + W. Edwards Deming, [The New Economics for Industry, Government, Education](https://www.amazon.com/New-Economics-Industry-Government-Education/dp/0262541165)
 + John Willis' Ignite talk, [DevOps and Dr. Deming's 14 Points (Velocity NY 2014)](https://www.youtube.com/watch?v=7g3uqSzWVZs)
 + John Willis, [Deming to DevOps: The Science Behind DevOps](https://www.youtube.com/watch?v=QcRWQIL5qus)
-
-### Extra Resource
-
 
 
 ## Learning Organizations (Part II)
