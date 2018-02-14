@@ -52,20 +52,18 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid3]
 
-[vid3]:
+[vid3]: https://edx-video.net/LINLFS162016-V010600_DTH.mp4
 
 ### Recommended Resources
 + Victoria Marsick, [The Dimensions of a Learning Organization Questionnaire (DLOQ)](http://adh.sagepub.com/content/15/2/127)
 + Karen Watkins and Victoria Marsick, [Dimensions of the Learning Organization Questionnaire: Introduction](http://www.partnersforlearning.com/instructions.html)
  
-### Extra Resource
-
-
 
 ## Learning Organizations (Part IV)
+
 [video][vid4]
 
-[vid4]:
+[vid4]: 
 
 ### Recommended Resources
 + Reed Hastings, [Seven Aspects of Our Culture](http://www.slideshare.net/reed2001/culture-1798664/2-We_Seek_ExcellenceOur_culture_focuses)
