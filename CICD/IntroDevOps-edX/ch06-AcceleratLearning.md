@@ -120,15 +120,12 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid9]
 
-[vid9]: 
+[vid9]: https://edx-video.net/LINLFS162016-V011400_DTH.mp4
 
 
 ### Recommended Resources
 + Sidney Dekker, [The Field Guide to Understanding "Human Error"](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265)
 + Sidney Dekker,  [System Failure, Human Error: Who's to Blame? (DevOps Days Brisbane, 2014)](ttps://vimeo.com/102167635)
-
-### Extra Resources
-
 
 
 ## Blameless Culture (Part II)
