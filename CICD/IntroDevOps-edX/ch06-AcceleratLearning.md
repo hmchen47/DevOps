@@ -132,14 +132,11 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid0]
 
-[vid0]: 
+[vid0]: https://edx-video.net/LINLFS162016-V011300_DTH.mp4
 
 
 ### Recommended Resources
 + Sidney Dekker, [Just Culture: Balancing Safety and Accountability](https://www.amazon.com/Just-Culture-Balancing-Safety-Accountability/dp/1409440605)
-
-### Extra Resources
-
 
 
 ## Blameless Culture (Part III)
