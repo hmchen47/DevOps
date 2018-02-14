@@ -79,7 +79,7 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ John Willis, [Neo Taylorism or DevOps Anti Patterns](http://itrevolution.com/neo-taylorism-or-devops-anti-patterns/)
 
 ### Extra Resources
 
@@ -90,13 +90,6 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [vid6]: 
 
-
-### Recommended Resources
-
-
-### Extra Resources
-
-
 ## Communication (Part III)
 
 [video][vid7]
@@ -105,7 +98,8 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ Dan North, [Making a Sandwich: Effective Feedback Techniques](https://qconlondon.com/speakers/dan-north)
++ Ben Linders, ]Applying Feedback Techniques](https://www.infoq.com/news/2016/03/feedback-techniques)
 
 ### Extra Resources
 
@@ -119,7 +113,9 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ Rebecca Miller-Webster, [Frameworks for Feedback](https://www.youtube.com/watch?v=WcdNAIoTjfU&list=PL5pdUnQbCX6sgW8SUD0yE7dWiL1SHTO1o&index=4)
++ Rebecca Miller-Webster, [Frameworks for Feedback](https://speakerdeck.com/rmw/frameworks-for-feedback-long-version-2016-may-self-conference)
++ [The Feeling Wheel](http://blogs.edweek.org/teachers/coaching_teachers/Feeling-Wheel.jpg)
 
 ### Extra Resources
 
