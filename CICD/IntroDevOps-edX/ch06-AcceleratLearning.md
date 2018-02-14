@@ -106,15 +106,13 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid8]
 
-[vid8]: 
+[vid8]: https://edx-video.net/LINLFS162016-V011100_DTH.mp4
 
 
 ### Recommended Resources
 + Rebecca Miller-Webster, [Frameworks for Feedback](https://www.youtube.com/watch?v=WcdNAIoTjfU&list=PL5pdUnQbCX6sgW8SUD0yE7dWiL1SHTO1o&index=4)
 + Rebecca Miller-Webster, [Frameworks for Feedback](https://speakerdeck.com/rmw/frameworks-for-feedback-long-version-2016-may-self-conference)
 + [The Feeling Wheel](http://blogs.edweek.org/teachers/coaching_teachers/Feeling-Wheel.jpg)
-
-### Extra Resources
 
 
 # Section 3: Blameless Culture
