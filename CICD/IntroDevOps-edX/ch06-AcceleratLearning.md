@@ -39,16 +39,13 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid2]
 
-[vid2]:
+[vid2]: https://edx-video.net/LINLFS162016-V010500_DTH.mp4
 
 ### Recommended Resources
 + Peter Senge, [The Fifth Discipline: The Art & Practice of The Learning Organization](https://www.amazon.com/Fifth-Discipline-Practice-Learning-Organization/dp/0385517254)
 + Mark Smith (Infoed), [Peter Senge and the learning organization](http://infed.org/mobi/peter-senge-and-the-learning-organization/)
 + Edward Muzio, [The Ladder of Inference Creates Bad Judgement](https://www.youtube.com/watch?v=K9nFhs5W8o8)
 + Trevor Maber, [Rethinking Thinking](http://ed.ted.com/lessons/rethinking-thinking-trevor-maber)
-
-### Extra Resource
-
 
 
 ## Learning Organizations (Part III)
