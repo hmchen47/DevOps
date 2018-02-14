@@ -124,7 +124,8 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ Sidney Dekker, [The Field Guide to Understanding "Human Error"](https://www.amazon.com/Field-Guide-Understanding-Human-Error/dp/0754648265)
++ Sidney Dekker,  [System Failure, Human Error: Who's to Blame? (DevOps Days Brisbane, 2014)](ttps://vimeo.com/102167635)
 
 ### Extra Resources
 
@@ -138,7 +139,7 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ Sidney Dekker, [Just Culture: Balancing Safety and Accountability](https://www.amazon.com/Just-Culture-Balancing-Safety-Accountability/dp/1409440605)
 
 ### Extra Resources
 
@@ -152,7 +153,8 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ Dave Zwieback, [The Human Side of Postmortems: Managing Stress and Cognitive Biases](http://www.oreilly.com/webops-perf/free/the-human-side-of-postmortems.csp)
++ John Allspaw, [Blameless PostMortems and a Just Culture](https://codeascraft.com/2012/05/22/blameless-postmortems/)
 
 ### Extra Resources
 
@@ -165,7 +167,8 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ### Recommended Resources
-
++ VictorOps, [Blameless Post-Mortems ... and how to do them](https://victorops.com/wp-content/uploads/2014/09/Blameless-Post-Mortems.pdf)
++ Dave Zwieback, [Beyond Blame: Learning from Failure and Success](https://www.amazon.com/gp/product/1491906413)
 
 ### Extra Resources
 
