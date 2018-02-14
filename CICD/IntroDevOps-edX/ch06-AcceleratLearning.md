@@ -63,13 +63,11 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid4]
 
-[vid4]: 
+[vid4]: https://edx-video.net/LINLFS162016-V010700_DTH.mp4
 
 ### Recommended Resources
 + Reed Hastings, [Seven Aspects of Our Culture](http://www.slideshare.net/reed2001/culture-1798664/2-We_Seek_ExcellenceOur_culture_focuses)
 + Patty McCord, [A Culture of Innovation](https://www.youtube.com/watch?v=o3e1lnixKBM)
-
-### Extra Resource
 
 
 # Section 2: Communication
