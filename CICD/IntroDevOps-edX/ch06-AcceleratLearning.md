@@ -94,15 +94,12 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid7]
 
-[vid7]: 
+[vid7]: https://edx-video.net/LINLFS162016-V010800_DTH.mp4
 
 
 ### Recommended Resources
 + Dan North, [Making a Sandwich: Effective Feedback Techniques](https://qconlondon.com/speakers/dan-north)
 + Ben Linders, ]Applying Feedback Techniques](https://www.infoq.com/news/2016/03/feedback-techniques)
-
-### Extra Resources
-
 
 
 ## Communication (Part IV)
