@@ -88,7 +88,7 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vid6]
 
-[vid6]: 
+[vid6]: https://edx-video.net/LINLFS162016-V011000_DTH.mp4
 
 ## Communication (Part III)
 
