@@ -1,8 +1,8 @@
 Introduction to Kubernetes
 ==========================
 
-# Welcome & Introduction
-## Welcome & Introduction
+# [Welcome & Introduction](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/courseware/c98b9cbbec544343aa07f511f58732f6/78d9828d5b214e18b3a37c12cceaf3ac/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS158x%2B2T2017%2Btype%40sequential%2Bblock%4078d9828d5b214e18b3a37c12cceaf3ac)
+## [Welcome & Introduction](./00-Intro.md)
 
 # Chapter 1. Container Orchestration
 ## Introduction & Learning Objectives
