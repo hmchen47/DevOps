@@ -348,5 +348,9 @@ Q10. Which of the following companies created ChatOps? Please select the correct
     c. GitHub
     d. Atlassian
 
+<<<<<<< HEAD
     Ans: c
+=======
+    Ans: 
+>>>>>>> doch6
 
