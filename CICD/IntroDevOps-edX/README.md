@@ -62,5 +62,4 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Learning Objectives (Review)
 
 # Final Exam
-## Before You Begin Your Final Exam
-## Final Exam
+## [Final Exam](./finalExam.md)
