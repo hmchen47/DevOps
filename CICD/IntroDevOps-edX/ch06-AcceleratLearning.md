@@ -166,7 +166,7 @@ Chapter 6: The Third Way: Accelerate Learning
 
 [video][vidc]
 
-[vidc]:
+[vidc]: https://edx-video.net/LINLFS162016-V011600_DTH.mp4
 
 # Knowledge Check
 
