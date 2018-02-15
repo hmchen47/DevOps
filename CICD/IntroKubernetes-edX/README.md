@@ -1,14 +1,15 @@
-Introduction to Kubernetes
-==========================
+Introduction to Kubernetes - LFS158x
+====================================
 
 # [Welcome & Introduction](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/courseware/c98b9cbbec544343aa07f511f58732f6/78d9828d5b214e18b3a37c12cceaf3ac/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS158x%2B2T2017%2Btype%40sequential%2Bblock%4078d9828d5b214e18b3a37c12cceaf3ac)
 ## [Welcome & Introduction](./00-Intro.md)
 
 # Chapter 1. Container Orchestration
-## Introduction & Learning Objectives
-## Container Orchestration
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@e10a62dcf641474c997eabd0602111cb)
+## [Container Orchestration](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@c77f2d1b11234afb9886680612041ab2)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@7d16280b45f847a4924156760d9bb140)
 
+## [Contents](./01-ContainerOrchestration.md)
 
 # Chapter 2. Kubernetes
 ## Introduction & Learning Objectives
