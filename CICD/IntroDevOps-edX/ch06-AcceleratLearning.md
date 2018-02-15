@@ -169,4 +169,71 @@ Chapter 6: The Third Way: Accelerate Learning
 [vidc]: https://edx-video.net/LINLFS162016-V011600_DTH.mp4
 
 # Knowledge Check
+Q1. On which of the following is PDCA based? Please select the correct answer.
+
+    a. ODDA Loops
+    b. Toyota Kata
+    c. Lean
+    d. Scientific method
+
+    Ans: d
+
+
+Q2. Which of the following is not part of Peter Senge's five disciplines? Please select the best answer.
+
+    a. Systems Thinking
+    b. Personal Mastery
+    c. Mental Models
+    d. Kata
+    e. Team Learning
+
+    Ans: d
+
+
+Q3. Which of the following was created by Chris Argyris?
+
+    Ans: The Ladder of Influence
+
+
+Q4. Netflix defines 9 behaviors they look for in their culture. How do they maintain those values? Please select the correct answer.
+
+    a. They do yearly performance reviews and compensate, promote, or let people go, based on the performance reviews
+    b. They evaluate employees MBOs at the end of each year and compensate, promote, or let people go, based on the hit or missed objectives
+    c. Managers decide who should be compensated, promoted, or let go, based on their assessment
+    d. They compensate, promote or let go people who either practice or don’t practice these behaviors as part of their overall value system.
+
+    Ans: c
+
+
+Q5. What is the single most important thing to do when receiving feedback? 
+
+    Ans: Unconditionally thank them
+
+
+Q6. What are the components of SBI? Please select the correct answer.
+
+    a. Survey, Behavior, Impact
+    b. Situation, Behavior, Impact
+    c. Situation, Behavior, Interpret
+    d. Situation, Believe, Impact
+
+    Ans: b
+
+Q7. In his "Field Guide to Understanding Human Error", Sidney Dekker describes two different views of human error. Which of the following best describes the new view of human error?
+
+    a. Human error is a cause of accidents
+    b. To explain failure, you must seek failure
+    c. Human error is a symptom of trouble deeper inside a system
+    d. You must find people's inaccurate assessments, wrong decisions, bad judgements.
+
+    Ans: c
+
+Q8. According to John Willis, the course instructor, which cognitive bias is the worst of all? Please select the correct answer.
+
+    a. Fundamental attribution error
+    b. Hindsight bias
+    c. Outcome bias
+    d. Availability bias
+
+    Ans: a
 
