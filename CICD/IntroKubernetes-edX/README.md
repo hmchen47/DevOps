@@ -12,10 +12,11 @@ Introduction to Kubernetes - LFS158x
 ## [Contents](./01-ContainerOrchestration.md)
 
 # Chapter 2. Kubernetes
-## Introduction & Learning Objectives
-## Kubernetes
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@dd59e7933e4741a784cdbf6d3ba33ba7)
+## [Kubernetes](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@669a580b34764a0cadee817202b8c74a)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@98b37b37a0ae412bb1f148e25c318fdf)
 
+## [Contents](./02-Kubernetes.md)
 
 # Chapter 3. Kubernetes Architecture - Overview
 ## Introduction & Learning Objectives
