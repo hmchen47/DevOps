@@ -52,7 +52,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Knowledge Check
 ## Learning Objectives (Review)
 
-## Chapter 6: The Third Way - Accelerate Learning
+## Chapter 6: [The Third Way - Accelerate Learning](./ch06-AcceleratLearning.md)
 ## Learning Objectives
 ## Section 1: Learning Organizations
 ## Section 2: Communication
