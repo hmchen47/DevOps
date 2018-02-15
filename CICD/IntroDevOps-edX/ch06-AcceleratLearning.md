@@ -150,21 +150,17 @@ Chapter 6: The Third Way: Accelerate Learning
 + Dave Zwieback, [The Human Side of Postmortems: Managing Stress and Cognitive Biases](http://www.oreilly.com/webops-perf/free/the-human-side-of-postmortems.csp)
 + John Allspaw, [Blameless PostMortems and a Just Culture](https://codeascraft.com/2012/05/22/blameless-postmortems/)
 
-### Extra Resources
-
 
 ## Blameless Culture (Part IV)
 
 [video][vidb]
 
-[vidb]: 
-
+[vidb]: https://edx-video.net/LINLFS162016-V011200_DTH.mp4
 
 ### Recommended Resources
 + VictorOps, [Blameless Post-Mortems ... and how to do them](https://victorops.com/wp-content/uploads/2014/09/Blameless-Post-Mortems.pdf)
 + Dave Zwieback, [Beyond Blame: Learning from Failure and Success](https://www.amazon.com/gp/product/1491906413)
 
-### Extra Resources
 
 # Summary
 
