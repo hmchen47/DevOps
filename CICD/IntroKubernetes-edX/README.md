@@ -37,9 +37,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 5. Setting Up a Single-Node Kubernetes Cluster with Minikube
-## Introduction & Learning Objectives
-## Setting Up a Single-Node Kubernetes Cluster with Minikube
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@7fe624f246544f2aa42ac21eede02425)
+## [Setting Up a Single-Node Kubernetes Cluster with Minikube](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@bf7d2b08dfe74bcbb030d3ae91154510)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@e012a7735fdb464c8b1909124e4ea018)
+
+## [Contents](./05-SingleNodeK8S.md)
 
 
 # Chapter 6. Accessing Minikube
