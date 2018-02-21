@@ -18,6 +18,40 @@ Chapter 2: Understanding the Value Stream
 
 [vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
 
++ The Value Stream:
+    + 1st def: the sequence of activities an organization undertakes to delivery upon a customer request
+    + 2nd def: the sequence of acticities required to design, produce and deliver a service to a customer
++ Workflow (flow) 
+    + the work of a value stream
+    + the waste (Muda) of the work
+    + the evenness (Mura) of the work
++ Lead Time
+    + the time that a process of the value stream from start to finish
+    + the time from the request to end delivery
+    + what the customer sees
++ Cycle Time
+    + how often a part or product actually is completed by a process
+    + time time from a work begin based on request to the item delivered
+    + mechanical measure of process capacity
++ Types of Lead Time
+    + design lead time - design and development
+        + typically new work
+        + uncertain estimates
+        + outcomes w/ high variability
+    + deployment lead time - test and oepration
+        + repeatable process (automated)
+        + process times should be predictable
+        + outcomes have lower variability
++ value stream map
+    + how things work (runner)
+    + the work (button) - observing
++ How to reduce development lead time
+    + small batch
+    + reduce WIP
+    + single piece flow
+    + reduce bottleneck (TOC)
+    + optimize globally
+
 ## Recommended Resources
 + Karen Martin, Mike Osterling, "[Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.ca/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)"
 + Damon Edwars, [DevOps Kaizen: Practical Steps to Start & Sustain a Transformation](https://www.slideshare.net/dev2ops/devops-kaizen-practical-steps-to-start-sustain-a-transformation)
