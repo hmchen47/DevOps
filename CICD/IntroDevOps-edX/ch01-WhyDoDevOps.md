@@ -17,11 +17,28 @@ By the end of this chapter, you should be able to:
 
 [vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V000200_DTH.mp4
 
++ Three ways of DevOps:
+    + The first way - accelerating delivery
+    + The second way - feedback loop
+    + The third way - continuous learning
++ IT characteristics w/o conflict
+    + faster
+    + cheaper
+    + safer
++ Categories of organizations:
+    + Pathological - power oriented
+    + Bureaucrative 
+    + Generative - preformance oriented
+
 ## Understanding Improvement (Part II)
 
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V000300_DTH.mp4
+
++ Culture: consistent response by a group of people to conditions
++ Continuous Improvement (CAMS - Culture, Automation, Measurement, Sharing)
+    ![CAMS diagram](https://image.slidesharecdn.com/theartofthepossible-serverlessconf17-171011102208/95/art-of-the-possible-serverless-conference-nyc-2017-17-638.jpg?cb=1507717390)
 
 ## Understanding Improvement (Part III)
 
@@ -29,11 +46,44 @@ By the end of this chapter, you should be able to:
 
 [vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V000400_DTH.mp4
 
++ Toyota Production Systems
+    + Muda (wate)
+    + Muri (stress)
+    + Mura (flow)
+    + kaizen (imrovement)
+    + kata(form)
++ High Performance Organizations
+    + make work visible
+    + manage WIP
+    + manage flow
+    + create high trust workenvironment
+    + learn and embrace failure (PDCA)
+
 ## Understanding Improvement (Part IV)
 
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V000500_DTH.mp4
+
++ Continuous Deliveray Principles
+    + build quality in
+    + work in small batches
+    + automate repeatable tasks
+    + purse continuous improvement
+    + everyone is responsible
++ Anti-Patterns:
+    + incongruent testing and production environment
+    + testing tasks too long
+    + manual regression and acceptance tests
+    + long lead times'+ high technical debt
+    + slow and hard to change
++ Patterns: 
+    + everyting starts in source control
+    + peer review (pull requests)
+    + automate everything
+    + trunk based deployment
+    + done means released
+    + stop the line - in some cases, people swarm to do the fix
 
 ## Understanding Improvement (Part V)
 
@@ -79,11 +129,29 @@ By the end of this chapter, you should be able to:
 
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V000700_DTH.mp4
 
++ Direct Drivers:
+    + open source - monitoring & config management
+    + continuous delivery - integration, delivery and deployment
++ Indirect influencers: 
+    + Lean - the machine that changes the world
+    + Agile - implementing lean software development
+    + web scale - web operations
+
 ## The Convergence, History and Value of DevOps (Part II)
 
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V000900_DTH.mp4
+
++ Lean startup:
+    + MVP (Minimum Viable Product)
+    + Pivot - understand & be able to pivot if cx did not like it
+    + continuous deployment
+    + actionable metrics
+    + no vanity metrics - useless and easily manipulated ones
+    + 5 why's
+    + split testing (A/B testing)
++ Wall of confustion (btw Dev & Ops)
 
 ## The Convergence, History and Value of DevOps (Part III)
 
@@ -103,11 +171,28 @@ By the end of this chapter, you should be able to:
 
 [vid10]: https://edx-video.net/LINLFS16/LINLFS162016-V001200_DTH.mp4
 
++ DevOps Values ...
+    + no rock start mentality
+    + shared contributions
+    + healthy attitudes towards failure
+    + failures are learning opportunities
+    + the problem is the enemy
+    + no blame games
+    + no victims
+    + share balme
+    + 5 why's
+    + develop share metrics
+    + alignment of purpose
+    + shared goals / slay the dragon
+    + aim, goal, why
+
 ## The Convergence, History and Value of DevOps (Part VI)
 
 [video][vid11]
 
 [vid11]: https://edx-video.net/LINLFS16/LINLFS162016-V001300_DTH.mp4
+
++ Netflix for values: who gets rewarded, promoted or let go
 
 ## Recommended Resources
 + John Willis, [DevOps Connect cdSummit: John Willis Kata Presentation](https://www.youtube.com/watch?v=0N0SBcp0mjY)
@@ -132,6 +217,11 @@ By the end of this chapter, you should be able to:
 [video][vid12]
 
 [vid12]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/5aeeeb047ff7403e95677005afb1d69c/05032ef7ee8e4c838003a0406ba6cfa1/?child=first
+
++ High performance organizations
++ Continuous delivery principles
++ CAMS
++ Convergence - drivers, influencers
 
 # Knowledge Check
 Q1. Some of the characteristics of a high-performance organization are: make work visible, manage WIP, and manage Flow. Please select the correct answer.
