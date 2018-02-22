@@ -14,10 +14,6 @@ Chapter 2: Understanding the Value Stream
 
 [vid0]: https://edx-video.net/LINLFS16/LINLFS162016-V002200_DTH.mp4
 
-[video][vid00]
-
-[vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
-
 + The Value Stream:
     + 1st def: the sequence of activities an organization undertakes to delivery upon a customer request
     + 2nd def: the sequence of acticities required to design, produce and deliver a service to a customer
@@ -42,6 +38,11 @@ Chapter 2: Understanding the Value Stream
         + repeatable process (automated)
         + process times should be predictable
         + outcomes have lower variability
+
+[video][vid00]
+
+[vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
+
 + value stream map
     + how things work (runner)
     + the work (button) - observing
@@ -67,6 +68,25 @@ Chapter 2: Understanding the Value Stream
 
 [vidx]: https://edx-video.net/LINLFS16/LINLFS162016-V002800_DTH.mp4
 
++ The First Way - Accelerate Flow
+    + -->
+    + system thinking - global/local optimization
+    + increased visibility
+    + Just in Time (JIT)
+    + shorten lead time
++ The Second Way - Amplify Feedback
+    + <--
+    + shorten feedback loops
+    + learn faster
+    + fix defects faster
+    + embedded knowledge
++ The Third Way - Continuous Learning
+    + full cycle
+    + continual experiemntation
+    + learniung from failure
+    + repetition and practice
+    + increase resilience
+
 ## Recommended Resources
 + [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.com/the-three-ways-principles-underpinning-devops/)
 + [A Personal Reinterpretation of The Three Ways](http://itrevolution.com/a-personal-reinterpretation-of-the-three-ways/)
@@ -79,6 +99,20 @@ Chapter 2: Understanding the Value Stream
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V001700_DTH.mp4
+
++ Maximize flow (the work)
+    + make work visible
+    + reduce batch size
+    + limit WIP
+    + eliminate wate
+    + reduce bottleneck
++ Visiable Storyboard
+    + Scrum
+    + Scrumban
+    + Kanban
++ Kanban Board
+    + basic: card wall, activities, work items
+    + advanced: two tierd, swim lanes, WIP limit, blockers
 
 ### Recommanded Resources
 + [David Anderson Kanban At Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
@@ -93,6 +127,24 @@ Chapter 2: Understanding the Value Stream
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V001600_DTH.mp4
+
++ Samll Batches Principles
+    + faster feedback
+    + mean time to detect is faster
+    + mean time to resolve is faster
+    + reduce risk
+    + lss overhead
++ Single Piece Flow (1 x 1 flow)
+    + no inventory reduces cycle time
+    + smoother workflow
+    + catch error earlier
+    + create learning opportunities
++ Samll Batch & Single Piece Flow in Software
+    + small piece of code (e.g. feature)
+    + chick in w/ source control
+    + merge into trunk
+    + testing
+    + deployment
 
 ### Recommanded Resources
 + Thomas A. Limoncelli, [The Small Batches Principle](https://queue.acm.org/detail.cfm?id=2945077)
@@ -109,6 +161,18 @@ Chapter 2: Understanding the Value Stream
 
 [vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V001800_DTH.mp4
 
++ Limiting WIP
+    + cognitive work - creaive solution
+    + interruptions - reducing
+    + context switching - reduce
+    + multitasking - prevent
+    + handoffsm - reduce
++ Purpose
+    + regulate flow
+    + reduce multitasking
+    + emergent
++ WIP Limit Implementation - Queues & Buffers
+
 ### Recommanded Resources
 + [David Anderson Kanban at Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
 + [DOES15 - Dominica DeGrandis - The Shape of Uncertainty](https://www.youtube.com/watch?v=Gp05i0d34gg)
@@ -118,6 +182,35 @@ Chapter 2: Understanding the Value Stream
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V001900_DTH.mp4
+
++ Lean Principles
+    + eliminate waste
+    + amplify learning
+    + describe as late as possible
+    + deliver as fast as possible
+    + empower the team
+    + build integrity in
+    + see the whole
++ Types of wate
+    + Muda (unproductive)
+    + Mura (inconsistent)
+    + Muri (unreasonable)
++ Seven Wastes
+    + transport
+    + inventory
+    + motion
+    + waiting
+    + overproduction
+    + over processing
+    + defects
++ Lean Software Development (Principles)
+    + eliminate wate
+    + build quality in
+    + create knowledge
+    + defer commitment
+    + deliver fast
+    + respect people
+    + optimize the whole
 
 ### Recommanded Resources
 + [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development)
@@ -130,6 +223,17 @@ Chapter 2: Understanding the Value Stream
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V002100_DTH.mp4
+
++ Procedure to eliminate TOC
+    1. identify the system constraints
+    2. decide how to expolit them
+    3. subordinate everything elese to the above decision
+    4. elevate the system constraints
+    5. repeate step 1~4 if required
++ Way to Smooth Bottlenecks
+    + WIP limit
+    + Queues
+    + Buffers
 
 ### Recommanded Resources
 + [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
