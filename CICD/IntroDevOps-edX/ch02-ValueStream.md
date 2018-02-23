@@ -244,7 +244,21 @@ Chapter 2: Understanding the Value Stream
 
 # Section 4: The Second Way - Feedback Loops
 ## The Second Way - Feedback Loops (Part I)
+### Notes
++ Accelerate Feedback
+    + telemetry
+    + fault injection
+    + safety culture
+    + fast feedback
++ Telemetry
+    + monitoring
+        + legacy: HP Openview, IBM Tivoli, BMC Patrol
+        + open source: Nagio, Zenoss, Sensu (Nagio + Python)
+        + SaaS: DataDog, NewRelic, SignalFX
+    + logging: Splunk, Loggly, ELK (ElasticSearch, Logstash, Kibana)
+    + analytics: Graphite, Riemann, Hadoop/Spark
 
+### Video 
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V002500_DTH.mp4
@@ -259,7 +273,22 @@ Chapter 2: Understanding the Value Stream
 + [Monitorama’s Videos](https://vimeo.com/monitorama/videos/)
 
 ## The Second Way - Feedback Loops (Part II)
+### Notes
++ Purpose of Fault Injection: reduce MTBF & MTTR
++ Examples of Fault Injection
+    + GameDay: reduce MTBF; reduce MTTR
+    + Netflix Simian Army
+        + Chaos Monkey (Hosts)
+        + Chaos Gorilla (Data Center)
+        + Latency Monkey (Inject Latency)
+        + Comformity Monkey (best practice)
+        + Security Monkey (Security violations)
+    + FIT (Fault Injection Testing) - Netflix
+        + limit blast ratio of the failure
+        + telemetry of path of the failure
+        + dependency telemetry
 
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V002600_DTH.mp4
@@ -273,7 +302,22 @@ Chapter 2: Understanding the Value Stream
 
 
 ## The Second Way - Feedback Loops (Part III)
+### Notes
++ Safety Culture: loose taxonomy of DevOps - ICE
+    + Inclusivity
+        + Diversity
+        + Relationship
+        + Team Culture
+        + Team Cohesion
+    + Complexity
+        + Cybernetic feedback loop - CAMS
+        + Cynefin framewwork: simple, complicated, complex, chaotic
+    + Empathy
+        + Dev ... Ops
+        + Embedded Engineers
+        + Blameless postmortems
 
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V002700_DTH.mp4
@@ -291,7 +335,15 @@ Chapter 2: Understanding the Value Stream
 
 
 ## The Second Way - Feedback Loops (Part IV)
+### Notes
++ Features for live upgrade
+    + rolling upgrades
+    + canary - a pattern for rolling out releases to a subset of users or servers
+    + blue green deploy - identical envs w/ diff apps (e.g. versions)
+    + toggling feature - on/off switch
++ [Toyota Production System - Lean Thinkng](http://www.getbusymedia.com/wp-content/uploads/2012/03/toyota21.jpg)
 
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V002900_DTH.mp4
