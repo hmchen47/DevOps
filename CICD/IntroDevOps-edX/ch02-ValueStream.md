@@ -374,6 +374,8 @@ Chapter 2: Understanding the Value Stream
     + 200x shorter lead times
     + 60x less failure
     + 166x shorter MTTR
++ A Typology of Organization Culture - R. Westrum
+    ![culture](https://cdn-images-1.medium.com/max/2000/1*WhJ9IvNkRleAaFCqKN83pg.png)
 
 ### Video
 [video][vida]
@@ -432,7 +434,41 @@ Chapter 2: Understanding the Value Stream
 + Drake Baer, [How Changing One Habit Helped Quintuple Alcoa's Income](http://www.businessinsider.com/how-changing-one-habit-quintupled-alcoas-income-2014-4)
 
 # Summary
+## Notes:
++ Value Stream
+    + Definitions
+    + Lead Time & Cycle Time
+    + DevOps Value Stream - Lead Time
+        + Design Lead Time
+            1. create an idea
+            2. add work to the backlog
+            3. create a user story
+            4. implement as code
+        + Deployment Lead Time = Cycle Time
+            5. check into version control
+            6. deploy into production
+            7. validate the customer experience
+    + Value Streaming Mapping - Damon Edwards, DOT solution
++ The Three Ways of DevOps
+    + The first way - accelerating flow: max flow
+        + make work visible
+        + reduce batch size
+        + limit WIP
+        + eliminate waste
+        + reduce bottleneck
+    + The second way - feedback loops
+        + telemetry
+        + fault injection
+        + safety culture
+        + fast feedback
+    + The third way - continuous learning
+        + a typology of organizational culture
+        + Toyota Kata - Mike Rother
+        + Deming Methodologies: cycle, system thinking, scientific thinking
+        + 5th discipline - Peter Senge
+        + The Hear of Change - J. Kotter
 
+## Video
 [Vido][vidd]
 
 [vicd]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/03573d7b3e074966a56e9651adb1e0c8/00c4c518e74c49bf8eba839822f910cc/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS161x%2B2T2016%2Btype%40sequential%2Bblock%4000c4c518e74c49bf8eba839822f910cc
