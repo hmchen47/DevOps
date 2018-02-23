@@ -12,11 +12,7 @@ By the end of this chapter, you should be able to:
 
 # Section 1: Understanding Improvement
 ## Understanding Improvement (Part I)
-
-[video][vid1]
-
-[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V000200_DTH.mp4
-
+### Notes
 + Three ways of DevOps:
     + The first way - accelerating delivery
     + The second way - feedback loop
@@ -30,6 +26,11 @@ By the end of this chapter, you should be able to:
     + Bureaucrative 
     + Generative - preformance oriented
 
+### Video
+[video][vid1]
+
+[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V000200_DTH.mp4
+
 ## Understanding Improvement (Part II)
 
 [video][vid2]
@@ -41,11 +42,7 @@ By the end of this chapter, you should be able to:
     ![CAMS diagram](https://image.slidesharecdn.com/theartofthepossible-serverlessconf17-171011102208/95/art-of-the-possible-serverless-conference-nyc-2017-17-638.jpg?cb=1507717390)
 
 ## Understanding Improvement (Part III)
-
-[video][vid3]
-
-[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V000400_DTH.mp4
-
+### Notes
 + Toyota Production Systems
     + Muda (wate)
     + Muri (stress)
@@ -59,12 +56,14 @@ By the end of this chapter, you should be able to:
     + create high trust workenvironment
     + learn and embrace failure (PDCA)
 
+### Video
+[video][vid3]
+
+[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V000400_DTH.mp4
+
+
 ## Understanding Improvement (Part IV)
-
-[video][vid4]
-
-[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V000500_DTH.mp4
-
+### Notes
 + Continuous Deliveray Principles
     + build quality in
     + work in small batches
@@ -85,8 +84,13 @@ By the end of this chapter, you should be able to:
     + done means released
     + stop the line - in some cases, people swarm to do the fix
 
-## Understanding Improvement (Part V)
+### Video
+[video][vid4]
 
+[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V000500_DTH.mp4
+
+## Understanding Improvement (Part V)
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V000600_DTH.mp4
@@ -124,11 +128,7 @@ By the end of this chapter, you should be able to:
 # Section 2: The Convergence, History, and Value of DevOps
 
 ## The Convergence, History and Value of DevOps (Part I)
-
-[video][vid6]
-
-[vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V000700_DTH.mp4
-
+### Notes
 + Direct Drivers:
     + open source - monitoring & config management
     + continuous delivery - integration, delivery and deployment
@@ -137,12 +137,13 @@ By the end of this chapter, you should be able to:
     + Agile - implementing lean software development
     + web scale - web operations
 
+### Video
+[video][vid6]
+
+[vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V000700_DTH.mp4
+
 ## The Convergence, History and Value of DevOps (Part II)
-
-[video][vid7]
-
-[vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V000900_DTH.mp4
-
+### Notes
 + Lean startup:
     + MVP (Minimum Viable Product)
     + Pivot - understand & be able to pivot if cx did not like it
@@ -153,24 +154,25 @@ By the end of this chapter, you should be able to:
     + split testing (A/B testing)
 + Wall of confustion (btw Dev & Ops)
 
-## The Convergence, History and Value of DevOps (Part III)
+### Video
+[video][vid7]
 
+[vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V000900_DTH.mp4
+
+## The Convergence, History and Value of DevOps (Part III)
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V001000_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part IV)
-
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V001100_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part V)
-
-[video][vid10]
-
-[vid10]: https://edx-video.net/LINLFS16/LINLFS162016-V001200_DTH.mp4
-
+### Notes
 + DevOps Values ...
     + no rock start mentality
     + shared contributions
@@ -186,13 +188,19 @@ By the end of this chapter, you should be able to:
     + shared goals / slay the dragon
     + aim, goal, why
 
-## The Convergence, History and Value of DevOps (Part VI)
+### Video
+[video][vid10]
 
+[vid10]: https://edx-video.net/LINLFS16/LINLFS162016-V001200_DTH.mp4
+
+## The Convergence, History and Value of DevOps (Part VI)
+### Notes
++ Netflix for values: who gets rewarded, promoted or let go
+
+### Video
 [video][vid11]
 
 [vid11]: https://edx-video.net/LINLFS16/LINLFS162016-V001300_DTH.mp4
-
-+ Netflix for values: who gets rewarded, promoted or let go
 
 ## Recommended Resources
 + John Willis, [DevOps Connect cdSummit: John Willis Kata Presentation](https://www.youtube.com/watch?v=0N0SBcp0mjY)
@@ -213,15 +221,18 @@ By the end of this chapter, you should be able to:
 + Damon Edwards, [What is DevOps?](http://dev2ops.org/2010/02/what-is-devops/)
 
 # Summary
-
-[video][vid12]
-
-[vid12]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/5aeeeb047ff7403e95677005afb1d69c/05032ef7ee8e4c838003a0406ba6cfa1/?child=first
+## Notes
 
 + High performance organizations
 + Continuous delivery principles
 + CAMS
 + Convergence - drivers, influencers
+
+## Video
+[video][vid12]
+
+[vid12]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/5aeeeb047ff7403e95677005afb1d69c/05032ef7ee8e4c838003a0406ba6cfa1/?child=first
+
 
 # Knowledge Check
 Q1. Some of the characteristics of a high-performance organization are: make work visible, manage WIP, and manage Flow. Please select the correct answer.
