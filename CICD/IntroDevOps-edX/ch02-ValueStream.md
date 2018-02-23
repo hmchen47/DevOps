@@ -368,7 +368,14 @@ Chapter 2: Understanding the Value Stream
 
 # Section 5: The Third Way - Culture of Continual Experimentation and Learning
 ## The Third Way - Culture of Continual Experimentation and Learning (Part I)
+### Notes
++ 2015 State of DevOps Report
+    + 30x deployments
+    + 200x shorter lead times
+    + 60x less failure
+    + 166x shorter MTTR
 
+### Video
 [video][vida]
 
 [vida]: https://edx-video.net/LINLFS16/LINLFS162016-V003000_DTH.mp4
@@ -376,11 +383,21 @@ Chapter 2: Understanding the Value Stream
 ### Recommanded Resources
 + Bethany Macri, [Morgue: Helping Better Understand Events by Building a Post Mortem Tool](https://vimeo.com/77206751)
 
-### Extra Resources
-
 
 ## The Third Way - Culture of Continual Experimentation and Learning (Part II)
+### Notes
++ Toyota: an organization defined primarily by the unique behavior routines it continually teaches to all its members
++ Learning Organizaton
+    + Invisible: Culture -> Behavior -> Habbit -> Autonomic
+    + Visible (Scientific Thinking): Scientific Method -> Depersonalized -> Non-Blameful -> Non Deterministics => Deming Cycle PDCA
++ Toyota Kata
+    ![kata](https://kaizeninstituteindia.files.wordpress.com/2014/02/p2.png?w=768)
+    + Improving
+        ![improvment](https://image.slidesharecdn.com/toyotakata-100207234813-phpapp01/95/toyota-kata-11-638.jpg?cb=1374427899)
+    + Coaching
+        ![coaching](https://kaizeninstituteindia.files.wordpress.com/2014/02/i18.png?w=768)
 
+### Video
 [video][vidb]
 
 [vidb]: https://edx-video.net/LINLFS16/LINLFS162016-V003100_DTH.mp4
@@ -388,7 +405,16 @@ Chapter 2: Understanding the Value Stream
 + [The Improvement Kata Pattern](https://www.slideshare.net/mike734/introduction-to-the-improvement-kata)
 
 ## The Third Way - Culture of Continual Experimentation and Learning (Part III)
+### Notes
++ Capabilities of High Velocity Edge
+    1. seeing problem s as they occur
+    2. swarming and solving problems as they are seen to build new knowledge
+    3. spreading new knowledge throughout the organization
+    4. learning by developing
++ Change management Model - John Kotter
+    ![Diagram](https://www.scrumalliance.org/getattachment/Community/Articles/Newly-Submitted/Change-Management-Models/fig-2-(2).jpg.aspx)
 
+### Video
 [video][vidc]
 
 [vidc]: https://edx-video.net/LINLFS16/LINLFS162016-V003200_DTH.mp4
