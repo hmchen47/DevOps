@@ -14,7 +14,9 @@ Chapter 3: Getting Started With Devops
 
 # Section 1: Picking a Value Stream
 ## Picking a Value Stream (Part I)
+### Notes
 
+### Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V003500_DTH.mp4
@@ -24,7 +26,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Picking a Value Stream (Part II)
+### Notes
 
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V003600_DTH.mp4
@@ -38,7 +42,9 @@ Chapter 3: Getting Started With Devops
 + Karen Martin and Mike Osterling, [Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.com/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)
 
 ## Picking a Value Stream (Part III)
+### Notes
 
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V003700_DTH.mp4
@@ -50,7 +56,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Picking a Value Stream (Part IV)
+### Notes
 
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V003400_DTH.mp4
@@ -60,7 +68,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Picking a Value Stream (Part V)
+### Notes
 
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V003800_DTH.mp4 
@@ -70,7 +80,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Picking a Value Stream (Part VI)
+### Notes
 
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V004000_DTH.mp4
@@ -82,7 +94,9 @@ Chapter 3: Getting Started With Devops
 + DOES14 - Scott Prugh - CSG, [DevOps and Lean in Legacy Environments](https://www.youtube.com/watch?v=f4et0EGvKXA)
 
 ## Picking a Value Stream (Part VII)
+### Notes
 
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V005100_DTH.mp4
@@ -92,7 +106,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Picking a Value Stream (Part VIII)
+### Notes
 
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V004200_DTH.mp4
@@ -104,13 +120,17 @@ Chapter 3: Getting Started With Devops
 
 # Section 2: Understanding Organizational Change
 ## Understanding Organizational Change (Part I)
+### Notes
 
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V004300_DTH.mp4
 
 ## Understanding Organizational Change (Part II)
+### Notes
 
+### Video
 [video][vid0]
 
 [vid0]: https://edx-video.net/LINLFS16/LINLFS162016-V004400_DTH.mp4
@@ -121,7 +141,9 @@ Chapter 3: Getting Started With Devops
 + Kelly McGonigal, [The Upside of Stress: Why Stress Is Good for You, and How to Get Good at It](https://www.amazon.com/Upside-Stress-Why-Good-You/dp/1101982934)
 
 ## Understanding Organizational Change (Part III)
+### Notes
 
+### Video
 [video][vida]
 
 [vida]: https://edx-video.net/LINLFS16/LINLFS162016-V005200_DTH.mp4
@@ -132,7 +154,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Understanding Organizational Change (Part IV)
+### Notes
 
+### Video
 [video][vidb]
 
 [vidb]: https://edx-video.net/LINLFS16/LINLFS162016-V004700_DTH.mp4
@@ -143,21 +167,27 @@ Chapter 3: Getting Started With Devops
 
 
 ## Understanding Organizational Change (Part V)
+### Notes
 
+### Video
 [video][vidc]
 
 [vidc]: https://edx-video.net/LINLFS16/LINLFS162016-V004600_DTH.mp4
 
 
 ## Understanding Organizational Change (Part VI)
+### Notes
 
+### Video
 [video][vidd]
 
 [vidd]: https://edx-video.net/LINLFS16/LINLFS162016-V004900_DTH.mp4
 
 
 ## Understanding Organizational Change (Part VII)
+### Notes
 
+### Video
 [video][vide]
 
 [vide]: https://edx-video.net/LINLFS16/LINLFS162016-V005000_DTH.mp4
@@ -168,7 +198,9 @@ Chapter 3: Getting Started With Devops
 
 
 ## Understanding Organizational Change (Part VIII)
+### Notes
 
+### Video
 [video][vidf]
 
 [vidf]: https://edx-video.net/LINLFS16/LINLFS162016-V004800_DTH.mp4
@@ -179,13 +211,17 @@ Chapter 3: Getting Started With Devops
 
 # Section 3: Enabling Transformation
 ## Enabling Transformation (Part I)
+### Notes
 
+### Video
 [video][vidg]
 
 [vidg]: https://edx-video.net/LINLFS16/LINLFS162016-V005300_DTH.mp4
 
 ## Enabling Transformation (Part II)
+### Notes
 
+### Video
 [video][vidh]
 
 [vidh]: https://edx-video.net/LINLFS162016-V011800_DTH.mp4
@@ -196,7 +232,9 @@ Chapter 3: Getting Started With Devops
 
 
 # Summary
+## Notes
 
+## Video
 [video][vidi]
 
 [vidi]: https://edx-video.net/LINLFS16/LINLFS162016-V005400_DTH.mp4
