@@ -9,11 +9,7 @@ Chapter 2: Understanding the Value Stream
 
 # Section 1: Analyzing the Technology Value Stream
 ## The Three Ways of DevOps - The Value Stream
-
-[video][vid0]
-
-[vid0]: https://edx-video.net/LINLFS16/LINLFS162016-V002200_DTH.mp4
-
+### Notes 1
 + The Value Stream:
     + 1st def: the sequence of activities an organization undertakes to delivery upon a customer request
     + 2nd def: the sequence of acticities required to design, produce and deliver a service to a customer
@@ -39,10 +35,12 @@ Chapter 2: Understanding the Value Stream
         + process times should be predictable
         + outcomes have lower variability
 
-[video][vid00]
+### Video1
+[video][vid0]
 
-[vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
+[vid0]: https://edx-video.net/LINLFS16/LINLFS162016-V002200_DTH.mp4
 
+### Notes 2
 + value stream map
     + how things work (runner)
     + the work (button) - observing
@@ -52,6 +50,11 @@ Chapter 2: Understanding the Value Stream
     + single piece flow
     + reduce bottleneck (TOC)
     + optimize globally
+
+### Video2
+[video][vid00]
+
+[vid00]: https://edx-video.net/LINLFS16/LINLFS162016-V002300_DTH.mp4
 
 ## Recommended Resources
 + Karen Martin, Mike Osterling, "[Value Stream Mapping: How to Visualize Work and Align Leadership for Organizational Transformation](https://www.amazon.ca/Value-Stream-Mapping-Organizational-Transformation/dp/0071828915)"
@@ -63,11 +66,7 @@ Chapter 2: Understanding the Value Stream
 + Steven Smith, [The Satir Change Model](https://stevenmsmith.com/ar-satir-change-model/)
 
 # Section 2: The Three Ways of DevOps
-
-[video][vidx]
-
-[vidx]: https://edx-video.net/LINLFS16/LINLFS162016-V002800_DTH.mp4
-
+### Notes
 + The First Way - Accelerate Flow
     + -->
     + system thinking - global/local optimization
@@ -87,6 +86,11 @@ Chapter 2: Understanding the Value Stream
     + repetition and practice
     + increase resilience
 
+### Notes
+[video][vidx]
+
+[vidx]: https://edx-video.net/LINLFS16/LINLFS162016-V002800_DTH.mp4
+
 ## Recommended Resources
 + [The Three Ways: The Principles Underpinning DevOps](http://itrevolution.com/the-three-ways-principles-underpinning-devops/)
 + [A Personal Reinterpretation of The Three Ways](http://itrevolution.com/a-personal-reinterpretation-of-the-three-ways/)
@@ -95,11 +99,7 @@ Chapter 2: Understanding the Value Stream
 
 # Section 3: The First Way - Flow
 ## The First Way - Flow (Part I)
-
-[video][vid1]
-
-[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V001700_DTH.mp4
-
+### Notes
 + Maximize flow (the work)
     + make work visible
     + reduce batch size
@@ -114,6 +114,11 @@ Chapter 2: Understanding the Value Stream
     + basic: card wall, activities, work items
     + advanced: two tierd, swim lanes, WIP limit, blockers
 
+### Video
+[video][vid1]
+
+[vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V001700_DTH.mp4
+
 ### Recommanded Resources
 + [David Anderson Kanban At Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
 + [Kanbans and DevOps: Resource Guide for “The Phoenix Project” (Part 2)](http://itrevolution.com/resource-guide-for-the-phoenix-project-kanbans-part-2/)
@@ -123,11 +128,7 @@ Chapter 2: Understanding the Value Stream
 + David J. Anderson, [Kanban: Successful Evolutionary Change for Your Technology Business](https://www.amazon.com/Kanban-Successful-Evolutionary-Technology-Business/dp/0984521402)
 
 ## The First Way - Flow (Part II)
-
-[video][vid2]
-
-[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V001600_DTH.mp4
-
+### Notes
 + Samll Batches Principles
     + faster feedback
     + mean time to detect is faster
@@ -146,6 +147,11 @@ Chapter 2: Understanding the Value Stream
     + testing
     + deployment
 
+### Video
+[video][vid2]
+
+[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V001600_DTH.mp4
+
 ### Recommanded Resources
 + Thomas A. Limoncelli, [The Small Batches Principle](https://queue.acm.org/detail.cfm?id=2945077)
 + Gemba Academy, [Watch This One Piece Flow vs. Mass Production Envelope Stuffing Lean Thinking Simulation](https://www.youtube.com/watch?v=Dr67i5SdXiM)
@@ -156,11 +162,7 @@ Chapter 2: Understanding the Value Stream
 
 
 ## The First Way - Flow (Part III)
-
-[video][vid3]
-
-[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V001800_DTH.mp4
-
+### Notes
 + Limiting WIP
     + cognitive work - creaive solution
     + interruptions - reducing
@@ -173,16 +175,17 @@ Chapter 2: Understanding the Value Stream
     + emergent
 + WIP Limit Implementation - Queues & Buffers
 
+### Video
+[video][vid3]
+
+[vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V001800_DTH.mp4
+
 ### Recommanded Resources
 + [David Anderson Kanban at Q Con](http://www.slideshare.net/deimos/david-anderson-kanban-at-q-con)
 + [DOES15 - Dominica DeGrandis - The Shape of Uncertainty](https://www.youtube.com/watch?v=Gp05i0d34gg)
 
 ## The First Way - Flow (Part IV)
-
-[video][vid4]
-
-[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V001900_DTH.mp4
-
+### Notes
 + Lean Principles
     + eliminate waste
     + amplify learning
@@ -212,6 +215,11 @@ Chapter 2: Understanding the Value Stream
     + respect people
     + optimize the whole
 
+### Video
+[video][vid4]
+
+[vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V001900_DTH.mp4
+
 ### Recommanded Resources
 + [Lean software development](https://en.wikipedia.org/wiki/Lean_software_development)
 
@@ -219,11 +227,7 @@ Chapter 2: Understanding the Value Stream
 + [Lean Software Development: An Agile Toolkit](https://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
 
 ## The First Way - Flow (Part V)
-
-[video][vid5]
-
-[vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V002100_DTH.mp4
-
+### Notes
 + Procedure to eliminate TOC
     1. identify the system constraints
     2. decide how to expolit them
@@ -234,6 +238,11 @@ Chapter 2: Understanding the Value Stream
     + WIP limit
     + Queues
     + Buffers
+
+### Video
+[video][vid5]
+
+[vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V002100_DTH.mp4
 
 ### Recommanded Resources
 + [Theory of Constraints](https://en.wikipedia.org/wiki/Theory_of_constraints)
