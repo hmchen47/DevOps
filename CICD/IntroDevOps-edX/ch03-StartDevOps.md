@@ -88,6 +88,19 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part III)
 ### Notes
++ Nordstom: value stream workshop --> manual formas bottleneck
++ Ticketmaster - Transformation Patterns
+    + Empathy: 
+        + breath customer oxygen
+        + everyone is a fan
+    + Empowerment: 
+        + teams deploy their own code
+        + four in a box
+        + self service everything
+    + Metrics
+        + Business metrics --> system metrics
+        + outcomes over output
+        + democratize the data
 
 ### Video
 [video][vid3]
