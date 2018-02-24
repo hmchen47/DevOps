@@ -62,6 +62,16 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part II)
 ### Notes
++ Value Stream Mapping - D. Edwards
+    ![diagram](https://image.slidesharecdn.com/dod-rome2012-culture-121014173650-phpapp02/95/you-cant-change-culture-but-you-can-change-behavior-devopsdays-rome-2012-55-728.jpg?cb=1350236860)
++ Waste Analysis - Seven Wastes of Software
+    1. Partially done work --> Inventory
+    2. Extra features --> Overproduction
+    3. Relearning --> Extra Processing
+    4. Handoffs --> Transportation
+    5. Delays --> Waiting
+    6. Task switching --> Motion
+    7. Defects --> Defects
 
 ### Video
 [video][vid2]
