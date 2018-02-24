@@ -115,6 +115,15 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part IV)
 ### Notes
++ Target API Enablement Team:
+    + Days in stead of months
+    + Took over operations responsibilities
+    + Reduce handoffs
+    + Agile not waterfall
+    + Insource work
+    + Single sourth of truth
+    + Design a decouple architecture
+    + Brought in Kafka & Cassandra
 
 ### Video
 [video][vid4]
