@@ -11,10 +11,45 @@ Chapter 3: Getting Started With Devops
 + Discuss Conway's Law and its impact on organizational change.
 + Explain the concepts of Mindsets.
 
+## Notes
++ Initialize Transformation Porcess
+    + pick up a value stream
+    + understanding organizational culture
+    + Enable Transformation
++ Improvement Paradox
+    + small enough for success and safe
+    + large enough for furture improvements
 
 # Section 1: Picking a Value Stream
 ## Picking a Value Stream (Part I)
 ### Notes
++ Types of Value Stream 
+    + Legacy
+    + Borwnfield
+    + Greenfield
++ Types of legacy transformation
+    + System of Records - core to services
+    + System of Engagement - cx or employee facing stuff
++ Components of Risk Management (3Rs): reward, risk, resistance
++ 3R for Legacy Trasformation
+    + leadership support is critical
+    + look for innovators and early adopter
+    + prior knowledge of DevOps helps
+    + SOE better than SOR
+    + build on success
++ The ETTO Principle
+    + Efficiency: low investment, sufficient to achieve the goal
+    + Thoroughness: w/o side-effect, intended outcomes
++ Simple Value Stream Analysis
+    + value added time
+    + wait time
+    + elapsed time
++ Value Stream Analyssi from Lean software development
+    + geta pencile nd pad
+    + start w/ the cx' request
+    + follow all the activities
+    + sketch each activity as a process
+    + draw a line at the botto w/ wait time and value added time
 
 ### Video
 [video][vid1]
