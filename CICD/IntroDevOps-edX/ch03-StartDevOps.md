@@ -136,6 +136,29 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part V)
 ### Notes
++ Target DevOps Dojo:
+    + dedicated space @ HQ
+    + coaches & subject matter experts (SMEs)
+    + Goal: create an engineering culture
++ Workship format
+    + Challenges: 30 days experience; Agile, Lean, DevOps
+    + Flashbuilds: 1~3 days events; new features, solve a specific problem
+    + Open Labs: 90 min sessions; Q&A, Inspiration
++ Results:
+    + Outcomes: consistency, velocity, founfation
+    + Personel: team building, confidence, collaboration
++ Less Learned
+    + MVP's Rock
+    + Signed commitments
+    + Collaborate with facilities
+    + Don't overly focus on one area
+    + Get comfortable w/ uncomfortable
++ Advise:
+    + Don't wait to start
+    + Be exclusively inclusive
+    + Empower change agents
+    + Unlearn what have learned
+    + Connect and share experience internally and externally
 
 ### Video
 [video][vid5]
