@@ -268,8 +268,41 @@ Chapter 3: Getting Started With Devops
 
 
 # Section 2: Understanding Organizational Change
+## Notes
++ Organizational Goals
+    + The pipeline is everyone's responsibility
+    + Focus on making more generalist
+    + Fund servers not projects
+    + Encourage loose coupling
+    + Smaller teams
+    + High Trust and low blame
+    + Make work visible
+
 ## Understanding Organizational Change (Part I)
 ### Notes
++ Individual level
+    + I/T/E-shape individuals
+    + Mindsets
+    + Motivation
+    + Intent
++ I/T/E-Shaped Individuals
+
+    | Feature | I-Shaped | T-Shaped | E-Shaped |
+    | ------- | -------- | -------- | -------- |
+    | Type | Specialist | Generalist | High Impact Individual |
+    | Deep Skill | one | one | a few |
+    | broad Skill | none | a few | a few |
+    | Bottleneck | creator | helper | remover |
+    | Downstream Waste | creator | remover | remover |
++ Mindsets
+    + Fixed
+        + fixed belief
+        + outcome based
+        + belief that Intelligence and Talent are fixed traits
+    + Growth
+        + alternative belief
+        + Effort based
+        + belief that abailities can be developed through dedication and hard work
 
 ### Video
 [video][vid9]
