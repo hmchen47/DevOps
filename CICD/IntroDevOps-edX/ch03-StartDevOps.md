@@ -242,6 +242,20 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part VIII)
 ### Notes
++ NI - Greenfield
+    + Constraints: 
+        + not existing IT systems
+        + not existing tools
+        + security first
+        + automation first
+    + Everything was new, simultanrously develop
+        + product
+        + team
+        + process
+        + systems
+        + code
+        + operations
+        + system automation
 
 ### Video
 [video][vid8]
