@@ -324,6 +324,37 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part III)
 ### Notes
++ Motivation
+    + Intrinsic: personal reward
+        + Autonomy
+        + Sense of achievement
+        + Passion
+    + Extrinsic: external reward and punishment
+        + Pay increase
+        + Promotion
+        + Bonouses
++ Overjustification Effect
+    + Extrinsic reqard can decrease an individual intrinsic motivation
+    + Individuals might pay more attention to the extrinsic rewards instead of their instrinsic motivations
+    + Reinforces extrinsic motivation mindsets
+    + Effort over outcome based extrinsic rewards are less influenced by Overjustification Effect
++ Motivation Suggestions
+    + Use incentives appropriately
+    + Chanllenge midsets
+    + Visualize the effort not the success
+    + Intent based motivation
+    + The effort not the outcome
++ Mindset Change
+    + create leaders at every level
+    + Traditional leadership paradox
+    + Leader-Leader vs. Leader-Follower
++ Leader Model- Captain Marguet Four Point Leader
+    + Control - given control, not taken control
+    + Compentence - provide the tool to be technically competent
+    + Clarity - give clear, open and honest goals
+    + Courage - trust the Leader-Leader model
++ Start with Why Golden Circle with Human Braon 
+    ![diagram](http://healthydealer.com/wp-content/uploads/2017/12/Human-Brain-and-Motivation.jpg)
 
 ### Video
 [video][vida]
