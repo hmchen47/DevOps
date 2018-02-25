@@ -181,7 +181,7 @@ Chapter 3: Getting Started With Devops
     + Ledgacy Test Automation (ATDD)
 + Strangler Patterns for Ledgacy
     + Specflow tests for the ledgacy applications
-    + Once they weent sufficient coverage they port over to the modern system w/ very low risk
+    + Once they went sufficient coverage they port over to the modern system w/ very low risk
     + Then they can compare test results against the modern system
     + They fail if the results are not identical 
     + Catches missing business logic between systems
@@ -201,7 +201,7 @@ Chapter 3: Getting Started With Devops
 + ATDD for Unimodal Test
     + Improve velocity & quality
     + Reduce risk of change
-    + Strangle the complecity
+    + Strangle the complexity
     + Go see and Role rotation
     + Telemetry and shared understanding
 + Benefits in Increased Developer Time
@@ -225,6 +225,11 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part VII)
 ### Notes
++ Types of Work - Standard Work Input (TPP)
+    + Project (business value)
+    + Changes
+    + Operations
+    + Unplanned
 
 ### Video
 [video][vid7]
