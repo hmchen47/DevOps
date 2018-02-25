@@ -294,6 +294,14 @@ Chapter 3: Getting Started With Devops
     | broad Skill | none | a few | a few |
     | Bottleneck | creator | helper | remover |
     | Downstream Waste | creator | remover | remover |
+
+### Video
+[video][vid9]
+
+[vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V004300_DTH.mp4
+
+## Understanding Organizational Change (Part II)
+### Notes
 + Mindsets
     + Fixed
         + fixed belief
@@ -303,14 +311,6 @@ Chapter 3: Getting Started With Devops
         + alternative belief
         + Effort based
         + belief that abailities can be developed through dedication and hard work
-
-### Video
-[video][vid9]
-
-[vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V004300_DTH.mp4
-
-## Understanding Organizational Change (Part II)
-### Notes
 
 ### Video
 [video][vid0]
