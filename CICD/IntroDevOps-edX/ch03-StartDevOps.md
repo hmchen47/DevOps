@@ -171,6 +171,46 @@ Chapter 3: Getting Started With Devops
 
 ## Picking a Value Stream (Part VI)
 ### Notes
++ Brownfield Calssification
+    + Adding a new feature to ledgacy
+    + Altering fncationality of a service
+    + Up=grading a core service of a ledgacy application
++ Strangler Applications for Brownfield
+    + Event interception
+    + Asset capture
+    + Ledgacy Test Automation (ATDD)
++ Strangler Patterns for Ledgacy
+    + Specflow tests for the ledgacy applications
+    + Once they weent sufficient coverage they port over to the modern system w/ very low risk
+    + Then they can compare test results against the modern system
+    + They fail if the results are not identical 
+    + Catches missing business logic between systems
++ CSG - Case Study
+    + Challenges:
+        + Pressure to make SORs / SOEs
+        + Demand for speed and quality 
+        + Customer & Customer's customer expecations
+        + Organizationa nd Technical debt
+    + Solutions:
+        + Holistic incident visibility
+        + Team dependency visibility
+        + Team shared KPIs
+        + Double loop learning
+        + Cross functional teams
+        + Ledgacy Test Automation (ATDD)
++ ATDD for Unimodal Test
+    + Improve velocity & quality
+    + Reduce risk of change
+    + Strangle the complecity
+    + Go see and Role rotation
+    + Telemetry and shared understanding
++ Benefits in Increased Developer Time
+    + Planning time reduced
+    + Environmental setup time reduced
+    + Code builds reduced
+    + Support reduced
+    + Testing reduced
+    + Feature development increased
 
 ### Video
 [video][vid6]
