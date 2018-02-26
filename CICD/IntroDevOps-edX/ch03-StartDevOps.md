@@ -436,6 +436,36 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part VI)
 ### Notes
++ Types of Organizational Structures
+    + Functional oriented - optimized for cost
+        + designed around expertise
+        + hierarchical in structure --> silos
+        + defferent teams for systems, networking, security and database
+        + more handoffs and longer lead times
+        + lead to local optimization
+        + lead to bottleneck
+    + Matrix oriented - hybrid
+        + bridge expertise and speed
+        + dotted line cross functional alignment
+        + complicated structures
+        + can lead to a lack of ownership
+    + Market Oriented - optimized for speed
+        + fast structure
+        + small teams
+        + highly coordinated and collaborated
+        + tight coordination
+        + less handoffs and shorter lead times
+        + globally optimized
+        + cross functional w/ less bottlenecks
++ The Second Toyota
+    + decisive factor: how people act and react
+    + success factor: developing capability and habits in its people
+    + Paradox - Toyota is Functional oriented - prerequisites
+        + high trus
+        + transparent workflow
+        + managed WIP
+        + shared goals
+        + generate and accumulate knowledge
 
 ### Video
 [video][vidd]
