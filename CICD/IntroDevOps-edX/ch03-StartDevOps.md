@@ -550,6 +550,35 @@ Chapter 3: Getting Started With Devops
 
 ## Enabling Transformation (Part II)
 ### Notes
++ Pillars of Effective DevOps
+    + Collaboration
+        + micro aggression and non violent communcaition
+        + asynchronous code review (pull requests)
+        + pair programming
+        + chatops
+        + standups
+    + Affinity
+        + relationships
+        + empathy and trust
+        + inter-team relationships
+        + team culture and culture fit
+        + blamelessness
+        + respectiful of individual differences and backgrounds
+        + team diversity
+    + Tools
+        + use tool as an accelerator to enforce culture
+        + do the tools shorten lead time
+        + version control
+        + artifacte management
+        + automation, monitoring, logging and altering
+        + continuous integrationa nd delivery
+        + open source can help scale
+        + in house avs open source vs commercial
+    + Scaling
+        + grow and mature the transformation
+        + expand to otther organizations service groups
+        + managing zombie projects
+        + the service is never down
 
 ### Video
 [video][vidh]
