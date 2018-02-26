@@ -368,6 +368,31 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part IV)
 ### Notes
++ Team Level
+    + Conway's Law
+    + Technology Adoption Curve
+    + Organizational Structures
+    + The Schneider Culture Model Assessment
++ Conway's Law:
+    + Def: system constrained to produce designs which are copies of the __communciation structures__ of the organization
+    + Example: 
+        + COBOL compiler w/ 5 develoeprs --> 5 phases
+        + ALGO compiler w/ 3 developers --> 3 phases
+        + Eric Raymond: 4 groups working on compiler --> 4 pass compiler
++ Conway's Law & DevOps:
+    + refactor organization to improve systems
+    + how teams are orgined will effect service delivery
+    + use Conway's Law for ourselves advantages
+    + understand teanm boundaries for service optimization
++ Inverse Conway Maneuver
+    + Break down silos that constraint the team's ability to collaborative effective
+    + Samll teams (two pizza teams)
+    + Colocate teams
+    + Work from trunk
++ Hacking Conway's Law
+    + SOA
+    + Bounded contest (Domain Driven Design)
+    + Loosely coupled service oriented architectures w/ bounded context
 
 ### Video
 [video][vidb]
