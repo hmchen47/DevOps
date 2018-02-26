@@ -13,7 +13,43 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 # Section 1: Continuous Delivery Patterns and Practices
+## Notes
++ The First Way = Continuous Delivery
+    + continuous delivery patterns and practices
+    + the deployment pipeline
+    + creating consistency in the pipeline
+    + automated testing
+    + deployment strategies (zero downtime release)
++ Principle of the First Way
+    + create automated and repeatable environments at each stage of th epipeline
+    + apply automated testing at every stage of the pipeline
+    + increase flow and shorten lead times
+    + global optimization vs local optimization
++ Steps to Increase Value and Flow
+    1. define value precisely from the perspective of the end customer
+    2. identify the entire value stream for each product or product family and eliminate waste
+    3. make the remaining value-creating steps flow
+    4. design and provide what the customer wants only when the customer wants it
+    5. pursue perfection
++ Termonologies:
+    + __Continuous Integration__: the process of integrating components of a feature, application or service
+    + __Continuous Delivery__: use continuous integration to create installable artifcats (packages) that can be deployed
+    + __Continuous Deployment__: the process of deploying a feature, application or service to production
++ Continuous Delivery
+    + the build phase
+    + typically integrated by a code commit
+    + typically builds asre done from trunk
+    + the process happens every time someone commits code
+    + code is compiled and libraries are built
+    + builds trigger package, artifact and image creation
++ Principles of Continuous Delivery
+    + depolying changes to production
+    + release vs deploy
+    + system, performance and load testing
+    + fast deploys help learn faster
+    + installation, configuration and orchestration
 
+## Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS162016-V008900_DTH.mp4
@@ -27,7 +63,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 # Section 2: The Deployment Pipeline
 ## The Deployment Pipeline (Part I)
+### Notes
 
+
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V005500_DTH.mp4
@@ -39,7 +78,10 @@ Chapter 4: The First Way - Accelerate Flow
 + Damon Edwards and John Willis, [Better, Faster AND Cheaper. How?](https://www.youtube.com/watch?v=j9fC4raB-bA)
 
 ## The Deployment Pipeline (Part II)
+### Notes
 
+
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V005600_DTH.mp4
@@ -49,7 +91,10 @@ Chapter 4: The First Way - Accelerate Flow
 + Damon Edwards, [what is a Service Delivery Platform?](https://vimeo.com/46125904)
 
 ## The Deployment Pipeline (Part III)
+### Notes
 
+
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V005700_DTH.mp4
@@ -60,7 +105,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## The Deployment Pipeline (Part IV)
+### Notes
 
+
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS162016-V006000_DTH.mp4
@@ -71,7 +119,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## The Deployment Pipeline (Part V)
+### Notes
 
+
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V005900_DTH.mp4
@@ -79,7 +130,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 # Section 3: Creating Consistency in the Pipeline
 ## Creating Consistency in the Pipeline (Part I)
+### Notes
 
+
+### Video
 [video][vid7]
 
 
@@ -92,7 +146,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part II)
+### Notes
 
+
+### Video
 [video][vid8]
 
 
@@ -104,7 +161,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part III)
+### Notes
 
+
+### Video
 [video][vid9]
 
 
@@ -119,7 +179,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part IV)
+### Notes
 
+
+### Video
 [video][vid0]
 
 
@@ -131,7 +194,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part V)
+### Notes
 
+
+### Video
 [video][vida]
 
 
@@ -143,7 +209,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part VI)
+### Notes
 
+
+### Video
 [video][vidb]
 
 
@@ -151,7 +220,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part VII)
+### Notes
 
+
+### Video
 [video][vidc]
 
 
@@ -164,7 +236,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part VIII)
+### Notes
 
+
+### Video
 [video][vidd]
 
 
@@ -180,7 +255,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Creating Consistency in the Pipeline (Part IX)
+### Notes
 
+
+### Video
 [video][vide]
 
 
@@ -195,7 +273,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 # Section 4: Automated Testing
 ## Automated Testing (Part I)
+### Notes
 
+
+### Video
 [video][vidf]
 
 
@@ -208,7 +289,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Automated Testing (Part II)
+### Notes
 
+
+### Video
 [video][vidg]
 
 
@@ -223,7 +307,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Automated Testing (Part III)
+### Notes
 
+
+### Video
 [video][vidh]
 
 
@@ -235,7 +322,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Automated Testing (Part IV)
+### Notes
 
+
+### Video
 [video][vidi]
 
 
@@ -243,7 +333,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Automated Testing (Part V)
+### Notes
 
+
+### Video
 [video][vidj]
 
 
@@ -255,7 +348,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Automated Testing (Part VI)
+### Notes
 
+
+### Video
 [video][vidk]
 
 
@@ -269,7 +365,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 # Section 5: Deployment Strategies (Zero Downtime Release)
 ## Deployment Strategies (Part I)
+### Notes
 
+
+### Video
 [video][vidl]
 
 [vidl]: https://edx-video.net/LINLFS162016-V007800_DTH.mp4
@@ -279,14 +378,20 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 ## Deployment Strategies (Part II)
+### Notes
 
+
+### Video
 [video][vidm]
 
 [vidm]: https://edx-video.net/LINLFS162016-V008100_DTH.mp4
 
 
 ## Deployment Strategies (Part III)
+### Notes
 
+
+### Video
 [video][vidn]
 
 [vidn]: https://edx-video.net/LINLFS162016-V008000_DTH.mp4
@@ -297,7 +402,10 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 # Summary
+## Notes
 
+
+## Video
 [video][vido]
 
 [vid0]: https://edx-video.net/LINLFS162016-V007900_DTH.mp4
