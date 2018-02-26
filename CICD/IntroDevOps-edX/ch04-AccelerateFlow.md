@@ -103,6 +103,42 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## The Deployment Pipeline (Part II)
 ### Notes
++ Source Control
+    + local: __Git__, Team Foundaton Server, Perforce
+    + cloud: __GitHub__, Bit Bucket, GitLab
++ Bill Console:
+    + __Jenkins__
+    + __Travis CI__
+    + Bamboo
+    + Circle CI
+    + Team City
+    + Shippable
++ Reposiory Managers
+    + __Nexus__ (Java)
+    + __Docker Hub__
+    + __Artifact__
+    + __Docker Trust Registry__
+    + Google container Registry
++ Operation Console
+    + __Rundeck__
+    + Asgard - Netflix
+    + Marathon - Messo
+    + Spainker - Netflix
+    + Weave Scope
++ Automation
+    + CFengine (Ruby)
+    + Puppet (CFe3ngine extension)
+    + Chef (CFEngine extension)
+    + Ansible (YAML)
+    + Docker Compose (YAML)
+    + Cloud Foundation (Amazon)
+    + TerraForm
++ Infrastructure Management
+    + VMWare
+    + Public Cloud: AWS, GCE, Azure
+    + Private Cloud: OpenStack, CloudStack
+    + Container: Doecker, rkt, LXC
+    + Orchestration: Swarm, Messo, Kubernetes
 
 ### Video
 [video][vid3]
