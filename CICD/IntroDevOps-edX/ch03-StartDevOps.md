@@ -393,6 +393,9 @@ Chapter 3: Getting Started With Devops
     + SOA
     + Bounded contest (Domain Driven Design)
     + Loosely coupled service oriented architectures w/ bounded context
++ Microservices
+    + samll autonomous service athat work together
+    + loosely coupled service oriented architectures with bounded context
 
 ### Video
 [video][vidb]
@@ -406,7 +409,7 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part V)
 ### Notes
-+ Technology Adotion Curve
++ Technology Adoption Curve
     ![diagram](http://www.jumpassociates.com/wp-content/uploads/2016/08/The-Technology-Adoption-Curve.png)
     + Innovator:
         + typically risk takers
@@ -592,6 +595,44 @@ Chapter 3: Getting Started With Devops
 
 # Summary
 ## Notes
++ Improvement Paradox
+    + small enough --> success and safety
+    + large enough --> imapct for future improvement
++ Brownfield
+    + adding new feature to ledgacy
+    + altering functionality of a service
+    + upgrading a core service of a ledgacy application
++ Atrangler Applications for Brownfield
+    + event interception
+    + asset capture
+    + ledgacy test automation
++ Individual Level of Organizational Change
+    + I/T/E-shaed individuals
+    + mindsets
+    + motivation
+    + intent: leader-leader vs leader-follower
++ Team Level of Organizational Change
+    + Conway's law
+    + tehcnology adoption curve
+    + organizational structures
+    + the Schneider culture mode assessment
++ Microservices
+    + samll autonomous service athat work together
+    + loosely coupled service oriented architectures with bounded context
++ Organizational Structures
+    + functional
+    + matrix
+    + market
++ The Schneider Culture Model Assessment
+    + Collaboration
+    + Control
+    + Competence
+    + Cultivation
++ General Hacks to Enable Transformation
+    + self-service
+    + embedded ops
+    + liaison
+    + restrospective andstandups
 
 ## Video
 [video][vidi]
