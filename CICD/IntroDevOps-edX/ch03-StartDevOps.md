@@ -406,6 +406,27 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part V)
 ### Notes
++ Technology Adotion Curve
+    ![diagram](http://www.jumpassociates.com/wp-content/uploads/2016/08/The-Technology-Adoption-Curve.png)
+    + Innovator:
+        + typically risk takers
+        + have financial or scial capital to take risk
+        + higher failure tolerance
+        + tren to be good internal champions
+    + Early Adaptor
+        + similar characteristics of innovators
+        + opinion learship
+        + more discreet in adoption choices
+        + tend to be more centralized than innovators
++ Strategies to be innovator or early adoptors
+    + Look for gate keepers
+    + Identify champions
+    + Identify and manage resistors
+    + Defuse cynicism
++ Types of Leaders
+    + Opinion leaders - credibility
+    + Network leader - Influence
+    + Hierarchical leader - Support
 
 ### Video
 [video][vidc]
