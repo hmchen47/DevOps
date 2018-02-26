@@ -151,6 +151,20 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## The Deployment Pipeline (Part III)
 ### Notes
++ Vagrant Concepts:
+    + Host & Guest (Desktop & VMs)
+    + Provider & Provisioner
+    + Boxes (abstration for images)
+    + vagrantfile (Ruby)
+    + Synched Folders
++ Vagrant Commands: vagrant [cmd]
+    + up
+    + reload
+    + suspend
+    + resume
+    + destory
+    + halt
+    + ssh
 
 
 ### Video
