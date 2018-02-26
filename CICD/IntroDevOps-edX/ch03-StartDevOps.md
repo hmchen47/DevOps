@@ -522,6 +522,26 @@ Chapter 3: Getting Started With Devops
 # Section 3: Enabling Transformation
 ## Enabling Transformation (Part I)
 ### Notes
++ Best Practics:
+    + alignment around the transformation
+    + shared goal
+    + buffer / non-fucntional (20% tiem)
+    + generalist strategies
+    + team w/ credibility & influence leaders
+    + physical workspace
+    + freedom
++ Planning Process
+    + shorter planning cycles
+    + outcome based not budget
+    + re-planning
+    + MVPs and pivots
+    + enfforce learning as core objective
+    + quick start initiatives
++ General Hacks
+    + self-service: allow team to create fast implementation
+    + embedded ops: embed ops into dev or dev into ops
+    + liaison: internal consultants (designated ops)
+    + retrospectives and standups: invite all related 
 
 ### Video
 [video][vidg]
