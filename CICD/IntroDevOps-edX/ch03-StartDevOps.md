@@ -500,6 +500,15 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part VIII)
 ### Notes
++ NUMMI
+    + GM & Toyota join venture
+    + GM: mass production, Taylorism, extrinsic motivation
+    + TPS: 
+        + teamwork
+        + kaizen
+        + intrinsic
+        + kata
+    + It was the system taht make it bad, not the people
 
 ### Video
 [video][vidf]
