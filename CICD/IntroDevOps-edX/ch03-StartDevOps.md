@@ -475,6 +475,18 @@ Chapter 3: Getting Started With Devops
 
 ## Understanding Organizational Change (Part VII)
 ### Notes
++ The Schneider Culture Model Assessment
+    ![diagram](http://agilitrix.com/wp-content/uploads/2011/03/Schneider-Culture-Model-1024x751.jpg)
+    + Collaboration cultre: success by working together
+    + Control culture: success by keeping control
+    + Competence culture: success by being the best
+    + Cultivation culture: success by fulfilling a vision
++ Culture Change Rule - Dpn't fight stupod, make more awesome, Jessie Robbins
+    + start small, build trust and safety
+    + create champions
+    + use metric to gain confidence
+    + celebrate success
+    + exploit compelling events
 
 ### Video
 [video][vide]
