@@ -62,9 +62,33 @@ Chapter 4: The First Way - Accelerate Flow
 
 
 # Section 2: The Deployment Pipeline
+## Notes
++ The Deployment Pipeline
+    + Visibility: all stages are visible to everyone responsible for delivery of the service
+    + Feedback: designed "gates" to eliminate downstream defects
+    + Continually Deploy: any patch, update or new feature can be automated for delivery, deploy and releaase
++ High Performaers: SDLC for everything
+    ![diagram](./SDLC4Everyone.PNG)
++ DevOps Release Pipeline Overview
+    ![diagram](https://pdn.pega.com/sites/pdn.pega.com/files/images/PRPC/articles/1272951/pipeline-overview-update-1-31-17.png)
++ DevOps & Tools 
+    ![diagram](http://milindtech.com/wp-content/uploads/2016/02/DevOps-Milind-Tech-2.jpg)
+
 ## The Deployment Pipeline (Part I)
 ### Notes
-
++ Continuous Delivery Process
+    ![diagram](https://upload.wikimedia.org/wikipedia/commons/7/74/Continuous_Delivery_process_diagram.png)
++ Service Delivery Platform Design Patterns
+    ![diagram](http://dev2ops.org/wp-content/uploads/2012/09/Service-Delivery-Platform-Elements2-e1348178561602.png)
+    + Build phase
+        + source repository
+        + Build console
+    + Package Repository
+        + Build artifacts
+        + + Store & Retrieve
+    + Deployment Phase
+        + Pre-production (stage)
+        + Production
 
 ### Video
 [video][vid2]
@@ -79,7 +103,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## The Deployment Pipeline (Part II)
 ### Notes
-
 
 ### Video
 [video][vid3]
