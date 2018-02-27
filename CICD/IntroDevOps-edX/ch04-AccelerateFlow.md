@@ -316,7 +316,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vid7]
 
-
 [vid7]: https://edx-video.net/LINLFS162016-V006100_DTH.mp4
 
 
@@ -345,7 +344,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vid8]
 
-
 [vid8]: https://edx-video.net/LINLFS162016-V006200_DTH.mp4
 
 
@@ -355,11 +353,60 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part III)
 ### Notes
-
++ Consistent Infrastructure
+    + Bare Metal provisioning
+    + Virtual machine provisioning
+    + Cloud provisioning
+    + Container provisioning
++ Bare Metal (BM) Provisioning
+    + Products
+        + kickstart
+        + cobbler
+        + FAI (Fully Automatic Installation)
+        + Foremen
+        + Razor
+        + MAAS
+        + Ironic
+        + RackN - Digital Rebar
+    + Characteristics
+        + BM scripts or DSL in version control
+        + BM scripts --> configuration management process
+        + BM & CM tools integrated
++ Virtual Machine Provisioning
+    + Virtual Machine
+        + Type 1 Hypervisor (on top of BM): VMWare ESX/vSphere, XEN, HyperV
+        + Type 2 Hypervisor (on top of OS): KVM, VMWare Workstation, Oracle VirtualBox, Xhyve (Hyperkit-Docker)
+    + Characteristics:
+        + VM images build scripts, meta and templates -< version control\
+        + VM images reproducible from source
+        + CM tools automate VM provisioning
+        + Image strategies (Bake-large but fast vs Fry-small but slow)
+    + Desktop VMs
+        + Vagrant
+        + Docker toolbox
+        + Docker for Mac
+        + Docker for Windows
++ Cloud Provisioning
+    + Public Cloud (IaaS)
+        + Amazon (AWS)
+        + Google (GCE)
+        + Microsoft (Azure)
+        + Rackspace
+        + Digital Ocean
+    + Provate Cloud (IaaS)
+        + Openstack
+        + Cloudstack
+        + VMWare vCloud
+        + Microsoft (Azure)
+    + Characteristics
+        + Cloud image build scripts, meta and templates --> version control
+        + Clould images reducible from source (version control)
+        + CM tools automate cloud provisioning
+        + Cloud-init/user-data/cloud-config file format
+        + Image strategies (Bake vs Fry)
 
 ### Video
 [video][vid9]
-
 
 [vid9]: https://edx-video.net/LINLFS162016-V006300_DTH.mp4
 
@@ -377,7 +424,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 ### Video
 [video][vid0]
-
 
 [vid0]: https://edx-video.net/LINLFS162016-V006400_DTH.mp4
 
@@ -419,7 +465,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vidc]
 
-
 [vidc]: https://edx-video.net/LINLFS162016-V006500_DTH.mp4
 
 
@@ -454,7 +499,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vide]
 
-
 [vide]: https://edx-video.net/LINLFS162016-V006600_DTH.mp4
 
 
@@ -472,7 +516,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vidf]
 
-
 [vidf]: https://edx-video.net/LINLFS162016-V007200_DTH.mp4
 
 
@@ -483,7 +526,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part II)
 ### Notes
-
 
 ### Video
 [video][vidg]
@@ -505,7 +547,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 ### Video
 [video][vidh]
-
 
 [vidh]: https://edx-video.net/LINLFS162016-V007000_DTH.mp4
 
@@ -532,7 +573,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vidj]
 
-
 [vidj]: https://edx-video.net/LINLFS162016-V007500_DTH.mp4
 
 
@@ -546,7 +586,6 @@ Chapter 4: The First Way - Accelerate Flow
 
 ### Video
 [video][vidk]
-
 
 [vidk]: https://edx-video.net/LINLFS162016-V009000_DTH.mp4
 
