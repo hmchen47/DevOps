@@ -456,6 +456,47 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part V)
 ### Notes
++ Consistently Operatiing System Environment Patterns
+    + scripted environments
+    + infrastructue as code
+    + immutable infrastructure
+    + immutable delivery
++ Scripted Environments
+    + Pros
+        + easier to build
+        + lower learning curve
+        + language consistency
+        + easy to change
+    + Cons
+        + environment abstractions are harder to code
+        + typically lower reusability
+        + harder to provide data driven models
+        + cloud cause inconsistent environments builds
+        + no really self-documentaing
+        + cloud lead to local improvements and not global
+        + no really good testing interfaces
++ Interfrastructure as Code
+    + Characteristics
+        + Infrastructure primitives defind as DSL
+        + highly parameterized
+        + desired stated based
+    + Principles
+        + Moduality
+        + Composibility
+        + Extensibility
+        + Flexibility
+        + Repeatability
+        + Declaration
+        + Abstraction
+        + Idempotence
+        + Convergency
+    + pros:
+        + powerful abstraction DSLs
+        + self documenting
+        + high reusability code/modules
+        + easy to provide data driven models
+        + generally more consistent than scripted patterns
+        + most major CM's hae good testing abstration
 
 
 ### Video
