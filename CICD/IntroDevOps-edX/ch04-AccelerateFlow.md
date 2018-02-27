@@ -166,7 +166,6 @@ Chapter 4: The First Way - Accelerate Flow
     + halt
     + ssh
 
-
 ### Video
 [video][vid4]
 
@@ -179,7 +178,39 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## The Deployment Pipeline (Part IV)
 ### Notes
-
++ Build Phase Example
+    + update code from source control (if existing)
+    + service is coded (if new)
+    + run a local build in your developemnt enviroinment
+    + service code is committed to the source repository
+    + artifacts are tagged and packaged
+    + packages are registered in a repository
++ Cimmit Phase
+    + files are uploaded to the source repository
+    + all source code should be working code
+    + code should have full coverage unit code
+    + committed source should not break the build
+    + pre-sumbmit checks (bugs, lint, code styles)
+    + automated trigger of the build stage
++ Build Phase
+    + compling code
+    + invoke build tools (ANT, Maven, Mercury, IVY, Make)
+    + build time dependencies
+    + creating and/or converting images
+    + running funcational/unit tests
+    + automated trigger of integration and acceptance testing
++ Packages/Artifacts
+    + compiled executable
+    + components
+    + libraries
+    + Tar's and/or compressed binaraies
++ Package/Artifact Repository
+    + managing the distribution of packages or artifaccts
+    + all packages/artifacts must be dependencies from source
+    + cryptographically hashed or digitally signed
+    + manages security access management
+    + invoked vunlnerability scanning
+    + provide usage reporting
 
 ### Video
 [video][vid5]
