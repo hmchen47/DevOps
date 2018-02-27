@@ -582,7 +582,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vidd]
 
-
 [vidd]: https://edx-video.net/LINLFS162016-V006600_DTH.mp4
 
 
@@ -596,7 +595,27 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part IX)
 ### Notes
-
++ Onfiguration Management - Container Model
+    + Immutable Delivery model
+    + Orchestration for provisioning
+    + Meta layer
++ Orchestration Tools - Containers
+    + Docker Swarm
+    + Mesos
+    + Kubernetes
++ Pros of Immutable Delivery
+    + least variation pattern
+    + faster provision model
+    + fit well w/ microservices architectures
+    + really no need for infrastructure as code
+    + binary consistency from desktop to production
+    + buils into the CI process
++ Cons of Immutable Delivery
+    + DSL abstraction not as mature as Infrastructure as Code
+    + smaller changes are harder to manage
+    + debugging is harder
+    + need a good model for image management
+    + not all delivery models fit well
 
 ### Video
 [video][vide]
