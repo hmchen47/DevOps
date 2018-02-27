@@ -512,7 +512,22 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part VI)
 ### Notes
-
++ Interfrastructure as Code
+    + Cons
+        + abstraction DSL's have higher learning curve
+        + complex edge case scenarios/failures
+        + script/shell primitives are used often
+        + point and time divergent
+        + integration interface are more complex
+        + infrastructure is bult Just in Time (JIT)
+        + slower to provision
+        + builds are convergent not congruent
+    + Solutions
+        + CFEngine
+        + Puppet
+        + Chef
+        + Ansible
+        + Salt
 
 ### Video
 [video][vidb]
