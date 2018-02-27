@@ -269,7 +269,49 @@ Chapter 4: The First Way - Accelerate Flow
 # Section 3: Creating Consistency in the Pipeline
 ## Creating Consistency in the Pipeline (Part I)
 ### Notes
-
++ Continuous Delivery Anti-Patterns
+    + incongruent testing and production environment
+    + testing takes too long
+    + manual regression and acceptance tests
+    + high technical debt
+    + slow and hard to change
+    + hight MTTR
++ Consistent Pipeline Challenges
+    + Snowflakes: server hugger, repeatable
+    + Sprwal: strategy for image cataloging
+    + Drift: out of sync
+    + Documentation
++ Consistent Environments in all Stages
+    + goal is to create consistent environments
+    + all elements of the pipeline should be disposable and reproducible
+    + all environment should look like production
+    + decrease variability between elements in the pipeline
+    + repeatability increases speed rebuilding environments
+    + reduced erros related to inconsistence
+    + increases security related to inconsistence
++ Version Control Everything
+    + keep a history of all changes
+    + can easy check differences between versions
+    + can erstore and rebuild all elements
+    + everything can be versioned and tagged
+    + all changes ae visible and audited for everyone
+    + changes can be automated
++ What should be in version control
+    + application code
+    + configuration scripts
+    + configuration management DSL code
+    + image build scripts
+    + meta definitions
+    + automated tests, test scripts nad test DSL code
+    + documentation, procedures, release notes
+    + templates
+    + database schema abstration, DNS and firewall definitions
+    + network definitions
++ Google's SysOps Death Squads
+    + Only 2 Linux versions at any given time
+    + rolled off old version as new version introduced
+    + identify deprecated server versions 
+    + help owner depreciate and/or pressure until marked done
 
 ### Video
 [video][vid7]
