@@ -420,7 +420,29 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part IV)
 ### Notes
-
++ Container Provisioing 
+    + Types 
+        + Type 1 Hypervisor
+        + Type 2 Hypervisor
+        + Linux Container
+            ![diagram](https://image.slidesharecdn.com/realizinglinuxcontainerslxc-140311110026-phpapp02/95/realizing-linux-containers-lxc-4-638.jpg?cb=1394535785)
+    + Products
+        + Docker
+        + rkt (Rocket)
+        + LXD
+        + LXC (Native Linux Conatiners)
+        + Microsoft (ACS)
+        + Google (GCS)
+    + Characteristics
+        + Container image build scripts, meta and templates --> version control
+        + Container images reproducible from source
+        + CM tools not used inside of a running container
+        + Configuration files and meta shared by container host
+        + Container works well w/ Immutable Delivery Models
+    + Infrastructure image portability
+        + conversions between different infrastructures
+        + conversions between different stages in the pipeline
+        + directory structures and shared files
 
 ### Video
 [video][vid0]
