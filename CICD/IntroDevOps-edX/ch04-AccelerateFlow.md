@@ -502,7 +502,6 @@ Chapter 4: The First Way - Accelerate Flow
 ### Video
 [video][vida]
 
-
 [vida]: https://edx-video.net/LINLFS162016-V006800_DTH.mp4
 
 
@@ -538,7 +537,24 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part VII)
 ### Notes
-
++ Immutable Infrastructure
+    + Immutable Configuration Management
+        + deploy the immutable imaqge from an artifacts repository
+        + uses a meta layering tool to converge a service or a cluster
+    + Orchestration
+        + Virtual servers: OpenStack, CloudStack
+        + Cloud: Amazpn AWS, Google (GCE), Microsoft (Azure)
+    + Pros
+        + less variation than infrastructure as code
+        + faster to provision than infrastructure as code
+        + typically use infrastructure as code to build
+        + build into the CI processes
+    + Cons
+        + more variation than Immutable Delivery model
+        + need a good model for image management
+        + slower to provision than Immutable Delivery model
+        + might still need Infrastructure as Code abstraction
+        + not immutable from the developers prespective
 
 ### Video
 [video][vidc]
