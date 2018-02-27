@@ -569,7 +569,15 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part VIII)
 ### Notes
-
++ 4V - Toyota Supply Chain Management
+    + Variety (increase): determinging your variety of offerings based on operational efficiecny and marketing demand
+    + Velocity (increase): maintain a steady flow through all processes of the supply chain
+    + Varability (decrease): manage inconsistentcies carefully to reduce cost and improve quality
+    + Visibility (increase): ensure the transparency of all processes to enable continuous learning and improvement
++ Fields on Velocity
+    + developer flow
+    + integration flow
+    + development flow
 
 ### Video
 [video][vidd]
