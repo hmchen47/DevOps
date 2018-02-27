@@ -327,7 +327,20 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Creating Consistency in the Pipeline (Part II)
 ### Notes
++ Why Order Matters
+    + Divergence
 
+        ![divergence](http://www.infrastructures.org/papers/turing/images/divergence.png)
+    + Convergence
+
+        ![convergence](http://www.infrastructures.org/papers/turing/images/convergence.png)
+    + Congruence
+
+        ![congruence](http://www.infrastructures.org/papers/turing/images/congruence.png)
++ Why Order Matetrs
+    + Circular dependencies
+    + Right Command Wrong Order
+    + Right Package Wrong Order
 
 ### Video
 [video][vid8]
