@@ -224,7 +224,41 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## The Deployment Pipeline (Part V)
 ### Notes
-
++ Deploy Phase
+    + promotion
+    + provisioning
+    + installation
+    + configuration
+    + orchestration
++ Promotion - moving btw stages
+    + candidate release are selected
+    + versions are selected and worked
+    + tagging strategies
+    + multiple repostories strategies
++ Tagging Strategies
+    + marked "Production"
+    + marked "Latest"
+    + pinning
++ Multiple Repositories Strategies
+    + development
+    + testing
+    + production
++ Provisioning
+    + Bare metal provisioning
+    + Virtual image provisioning
+    + Cloud provisioning
+    + Container provisioning
++ Installation
+    + Internally written installers
+    + Before and after scripts
+    + System level packages (RPM/YUM, DEB/APT)
++ Configuration Management (Non Immutable)
+    + Install the service
+    + Infrastructure as Code
+    + Desired State Configuration
+    + Convergence
+    + CFEngine, Chef, Puppet, Ansible
++ Virtualization Sprawl: a phenomenon that occurs when the number of VMs on a network reaches a point where the administrator can no longer manage them effectively
 
 ### Video
 [video][vid6]
