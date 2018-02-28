@@ -889,7 +889,44 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Deployment Strategies (Part II)
 ### Notes
-
++ Rolling Upgrades
+    + servers are removed from service and upgrade one at a time
+    + the process is completed when all the serversare updated
+    + During the upgrade there is a temporary reduction in capacity
+    + server is first drained by removing from load balancer
++ Canary
+    + similar to rolling upgrade but to a subset of servers
+    + apply skome, performane and load tests
+    + if no problem arise, add more subsets
+    + server is first drained by removing from the load balancer
+    + can also be done by percentage of servers
+    + able to combine w/ other rollout strategies
+    + designed to find defect release
++ Phased Roll-Outs
+    + partitioned by user or groups
+    + categorized by risk tolerance
+    + if no problems arise, add more subsets
+    + sometimes internal employees can be the first roll-out group
+    + power user or meta communities roll-outs
++ Proportional Shedding
+    + a new service is built on new server
+    + the load balancers shed small percentages of traffic to the new service
+    + the percentage is increased is no issue are found
+    + the old service is turned off when all traffic is moved to the new service w/ no errors
+    + bare metal this can be expensive, cloud makes this more economical
++ Blue-Green Deploy
+    + similar to proportaional shedding accept you duplicate the applications not the services
+    + Green is the live service
+    + Blue is domant and requires limited resources
+    + when the release goes live, the two are swapped
+    + rolling back is easier to do
+    + very popular technique
++ Toggling Features
+    + a.k.a. __feature flags__
+    + flags ae set in the code that can turn on or off a feature
+    + allow a developer to continuously deploy new code decoupled from a release
+    + distributed key value stores like zookeeper, etcd, and consul cba be used for frature toggle
+    + features can be gradually introduced or be point and time released
 
 ### Video
 [video][vidm]
