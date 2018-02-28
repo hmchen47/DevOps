@@ -936,7 +936,20 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Deployment Strategies (Part III)
 ### Notes
-
++ Amazon Cloud Deploy
+    + Actions:
+        + cloud w/o restrictions on the number of servers
+        + entire copy of running fleet -> upgrade, perfromance tests, etc.,w/o toching the live service
+        + flip the load balancer to point to the new fleet
+        + deply flip in seond
+        + rollbaclk in seconds
+    + Results
+        + 75% reduction in outages triggerd by software deploys
+        + 90% reductionin outage minutes triggered by software deploys
+        + ~0.001% of software deployments cause an outage
+        + Instantaneous automated rollback
+        + reception in compplexity
++ Dark Launch of Facebook Chat
 
 ### Video
 [video][vidn]
