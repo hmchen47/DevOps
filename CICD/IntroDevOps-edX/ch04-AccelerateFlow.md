@@ -770,7 +770,33 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part V)
 ### Notes
-
++ Deploy Phase Tests
+    + System Testing
+    + Performance Testing
+    + Load Testing
+    + Security Testing
+    + Configuration Management Testing
++ System Testing
+    + precondition for realease before turned on in production
+    + testing of external interface
+    + synethetic testing, emulation of user iteractions
+    + tests can be emulated from APIs, consoles, web devices, mobile & even from laser printer
++ Performance Testing
+    + tests the speed and latency of a service
+    + can test against customer's SLA
+    + performacne regression tests
++ Load Testing
+    + test how much load a serveice can handle
+    + test involve increasing traffic to fix maximum load
+    + perofrmance regression load tests
++ Security Testing
+    + SQL Injection
+    + Cross siteScripting
+    + Unprotected redirects
+    + Unsafe file access
+    + Version-specific issues
+    + Symbol Dos
+    + Remote code extension
 
 ### Video
 [video][vidj]
