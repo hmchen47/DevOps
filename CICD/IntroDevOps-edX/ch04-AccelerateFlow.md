@@ -863,7 +863,20 @@ Chapter 4: The First Way - Accelerate Flow
 # Section 5: Deployment Strategies (Zero Downtime Release)
 ## Deployment Strategies (Part I)
 ### Notes
-
++ General Patterns and Constraints
+    + changing data in the release can be more difficult
+    + Orchestrated release rollback can be more difficult
+    + best time to to reply is during production
+    + log deployment activities
+    + don't delete old files
+    + use warmup methodologies
++ Upgrading Live Services
+    + Rolling upgrades
+    + Canary
+    + Phased roll-outs
+    + Proportional shedding
+    + Blue-Green Deployment
+    + Toggling features
 
 ### Video
 [video][vidl]
