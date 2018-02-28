@@ -632,7 +632,28 @@ Chapter 4: The First Way - Accelerate Flow
 # Section 4: Automated Testing
 ## Automated Testing (Part I)
 ### Notes
-
++ The First Way (Continuous Delivery)
+    + build quality in as early as possible
+    + find bugs as early as possible
+    + everything gets tested
+    + if it hurts, bring the pain forward
+    + create fast feedback
+    + version control tests
+    + continuous testing ensures continuous improvements
++ The Principles for Testing
+    1. Change the adersarial mindset to a collaboration mindset
+    2. Change the 'dev then ops' mindset to 'dev and test'
+    3. Instead of having test team, you have an everyone test team
+    4. Test early, test often and shorten the feedback loop
+    5. Test should have reasonable expecttions
+    6. Fix bugs when you find them
+    7. Reduce test documentation, automate the expectation
+    8. Done meanss release
+    9. Test implement vs Implement Test
++ Testing Methodologies
+    + Test Driven Development (TDD)
+    + Acceptance Test Driven Development (ATDD)
+    + Behaviour Driven Development (BDD)
 
 ### Video
 [video][vidf]
