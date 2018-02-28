@@ -810,7 +810,44 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part VI)
 ### Notes
-
++ Tools
+    + Unit Testing
+        + JUnit (Java)
+        + JTest (Java)
+        + CUnit (C)
+        + RSpec (Ruby)
+        + Google Test
+        + Parasoft
+        + Visual Studio
+    + Load and Performance Testing
+        + Apache Bench
+        + Apache JMeter
+        + HP LoadRunner
+        + Rational Performance Tester
+        + Selenium
+        + Neoload
+        + SOASTA - synthetic user testing
+    + BDD Testing
+        + Cucumber (Ruby)
+        + Cactus (Python)
+        + JBehave (Java)
+        + SpecFlow (Cucumber for .Net)
+    + Security Testing
+        + Brakeman
+        + Gauntlet
+        + Nmap
+        + OWASP
+    + Configuration Management Testing
+        + Chef
+            + ChefSpec (Unit)
+            + Test Kitchen (Integration)
+            + Cucumber-Chef (BDD)
+            + Food Critic (Lint)
+        + Puppet
+            + rspec-puppet (Unit)
+            + Test Kitchen (Integration)
+            + Beaker (Integration)
+            + Puppet-Lint (Lint)
 
 ### Video
 [video][vidk]
