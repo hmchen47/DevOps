@@ -722,7 +722,7 @@ Chapter 4: The First Way - Accelerate Flow
 + Unit Tests
     + testing the source code by class or fucntion
     + typically done at commit or before commit
-    + typically 'moks' are created for interface call
+    + typically 'mokcs' are created for interface call
     + typically created by developer
     + develop intention checking
     + should be run on every change
@@ -742,11 +742,28 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part IV)
 ### Notes
-
++ Acceptance Tests
+    + testing multiple classes or fucntions
+    + should verify a user story
+    + should be written before code
+    + checks for regressions
+    + tests what the customer expects
+    + specification written in Domain Specific Language (DSL)
+    + run after the build and all unit tests have passed
++ Integration Tests
+    + testing integration w/ other applications and services
+    + all code and modules are tested as a group
+    + tests are systems wide view of the service
+    + tests real interface not 'mocks'
+    + integration tests are typically more expensive
+    + run after build, all unit tests and acceptance have passed
++ User Acceptance Tests (Manual)
+    + testing done by customers
+    + ensure the applications or service meets the requirements
+    + catch defects from a customer's perspective
 
 ### Video
 [video][vidi]
-
 
 [vidi]: https://edx-video.net/LINLFS162016-V007400_DTH.mp4
 
