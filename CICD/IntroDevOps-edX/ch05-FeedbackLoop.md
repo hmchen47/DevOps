@@ -16,8 +16,13 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 # Section 1: Creating a Service Reliability Culture
-## Creating a Service Reliability Culture (Part I)
+## Notes
 
+## Creating a Service Reliability Culture (Part I)
+### Notes
+
+
+### Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS162016-V008500_DTH.mp4
@@ -27,14 +32,20 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part II)
+### Notes
 
+
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS162016-V008400_DTH.mp4
 
 
 ## Creating a Service Reliability Culture (Part III)
+### Notes
 
+
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS162016-V008300_DTH.mp4
@@ -44,7 +55,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part IV)
+### Notes
 
+
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS162016-V008200_DTH.mp4
@@ -54,7 +68,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part V)
+### Notes
 
+
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS162016-V008600_DTH.mp4
@@ -67,7 +84,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part VI)
+### Notes
 
+
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS162016-V008700_DTH.mp4
@@ -81,7 +101,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part VII)
+### Notes
 
+
+### Video
 [video][vidy]
 
 [vidy]: https://edx-video.net/LINLFS162016-V008800_DTH.mp4
@@ -89,7 +112,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 2: Fast Feedback
 ## Fast Feedback (Part I)
+### Notes
 
+
+### Video
 [video][vidz]
 
 [vidz]: https://edx-video.net/LINLFS162016-V009300_DTH.mp4
@@ -108,7 +134,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part II)
+### Notes
 
+
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS162016-V009100_DTH.mp4
@@ -121,7 +150,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part III)
+### Notes
 
+
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS162016-V009200_DTH.mp4
@@ -131,7 +163,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part IV)
+### Notes
 
+
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS162016-V009400_DTH.mp4
@@ -146,7 +181,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 3: Understanding Monitoring
 ## Understanding Monitoring (Part I)
+### Notes
 
+
+### Video
 [video][vid0]
 
 [vid0]: https://edx-video.net/LINLFS162016-V009700_DTH.mp4
@@ -160,7 +198,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Monitoring (Part II)
+### Notes
 
+
+### Video
 [video][vida]
 
 [vida]: https://edx-video.net/LINLFS162016-V009600_DTH.mp4
@@ -178,23 +219,26 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Monitoring (Part III)
+### Notes
 
+
+### Video
 [video][vidb]
 
 [vidb]: https://edx-video.net/LINLFS162016-V009800_DTH.mp4
-
 
 ### Recommended Resources
 + Theo Schlossnagle, [Adaptive Availability for Quality of Service](https://www.infoq.com/presentations/time-series-database)
 + Theo Schlossnagle, [Adaptive Availability](http://www.slideshare.net/postwait/adaptive-availability)
 
-
 ## Understanding Monitoring (Part IV)
+### Notes
 
+
+### Video
 [video][vidc]
 
 [vidc]: https://edx-video.net/LINLFS162016-V009500_DTH.mp4
-
 
 ### Recommended Resources
 + Jason Dixon, [Monitoring with Graphite](https://www.amazon.com/dp/1491916435)
@@ -207,11 +251,13 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 4: Understanding Complexity
 ## Understanding Complexity (Part I)
+### Notes
 
+
+### Video
 [video][vidd]
 
 [vidd]: https://edx-video.net/LINLFS162016-V010100_DTH.mp4
-
 
 ### Recommended Resources
 + Eliyahu Goldratt, [Beyond the Goal: Theory of Constraints](https://www.amazon.com/dp/B000ELJ9NO)
@@ -226,7 +272,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Complexity (Part II)
+### Notes
 
+
+### Video
 [video][vide]
 
 [vide]: https://edx-video.net/LINLFS162016-V009900_DTH.mp4
@@ -240,11 +289,13 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Complexity (Part III)
+### Notes
 
+
+### Video
 [video][vidf]
 
 [vidf]: https://edx-video.net/LINLFS162016-V010000_DTH.mp4
-
 
 ### Recommended Resources
 + Mark Burgess, [Thinking in Promises: Designing Systems for Cooperation](https://www.amazon.com/Thinking-Promises-Mark-Burgess/dp/1491917873)
@@ -254,7 +305,10 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 # Summary
+## Notes
 
+
+## Video
 [video][vidh]
 
 [vidh]: https://edx-video.net/LINLFS162016-V010300_DTH.mp4
