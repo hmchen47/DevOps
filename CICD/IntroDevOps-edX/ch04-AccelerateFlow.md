@@ -281,6 +281,7 @@ Chapter 4: The First Way - Accelerate Flow
     + Sprwal: strategy for image cataloging
     + Drift: out of sync
     + Documentation
++ Pets vs Cattle
 + Consistent Environments in all Stages
     + goal is to create consistent environments
     + all elements of the pipeline should be disposable and reproducible
@@ -963,7 +964,65 @@ Chapter 4: The First Way - Accelerate Flow
 
 # Summary
 ## Notes
-
++ The First Way Principles
+    + create automated and repeatable environment at each stage of the pipeline
+    + apply automated testing at every stage of the pipeline
+    + increase flow and shorten lead times
+    + global optimzation vs local optimization
++ Comtinuous Integration: integrating components of a feature, application or service
++ Continuous Delivery: the continuous integration to create installable artifacts (packages) that cabn be deployed
++ Continuous Deployment: the process of deploying a feature, application or service to production
++ Principle of Continuous Delivery
+    1. Create a repeatable, reliabile process for releasing software
+    2. Automated almost everything
+    3. Keep everything in version control
+    4. If it hurts, do it more frequently and bring the pain forward.
+    5. Build quality in
+    6. Done means released
+    7. Everybody is responsible for the delivery process.
+    8. Continuous improvement
++ The Deployment Pipeline:
+    + Visibility: all the stages of the pipeline are visible to everyone responsible for the delivery of the service
+    + Feedback: each stage in the pipeline has designed "gates" created to eliminate downstream defects
+    + Continuous Deploy: the design of the pipeline is such that any patch, update or new feature can be automated for delivery, deploy and releases.
++ Consistent Pipeline Challenges
+    + Snowflake
+    + Sprawl
+    + Drift
+    + Documentation
++ Pets vs Cattles
++ Version Control Everything
+    + kee a history of all changes
+    + can restore and rebuild all elements
+    + everything can be versioned and tagged
+    + all changes are visible and audited for everyone
+    + Changes can be automated
++ Order matters
++ Providers of Consistent Infeastructure
+    + Bare Metal provisoning
+    + Virtual Machine Provisioning
+    + Cloud Provisioning
+    + Container Provisioning
++ Consistent Operating System Environment Patterns
+    + Scripted environments
+    + Infrastructure as Code
+    + Immutable Infrastructure
+    + Immutable Delivery
++ Automated Testing
+    + Test Driven Development (TDD)
+    + Acceptance Test Driven Development (ATDD)
+    + Behavior Deiven Development (BDD)
+    + Automated Tests (Build & Deploy)
+    + Tools
++ Agile Testing Pyramid: UI/Integration Tests/Automated Unit Test
++ Deployment Strategies: Upgrading
+    + Rolling upgrades
+    + Canary
+    + Phased Roll-Outs
+    + Proportional Shedding
+    + Blue-Green Deployment
+    + Toggle Features
+    
 
 ## Video
 [video][vido]
