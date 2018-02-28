@@ -703,7 +703,32 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part III)
 ### Notes
++ Agile Testing Pyramid
 
+    ![diagram](https://www.symbio.com/wp-content/uploads/2015/01/Screen-Shot-2015-06-09-at-11.51.06-AM.png)
++ Build Phase Tests
+    + Unit Tests
+    + Acceptance Tests
+    + Integration Tests
+    + User Acceptance Tests
++ Automating the Tests
+    + automated tests ae always running
+    + every commit
+    + nightly functional testing
+    + smoke testing
+    + stability testing
+    + performance testing
+    + zero configuation
++ Unit Tests
+    + testing the source code by class or fucntion
+    + typically done at commit or before commit
+    + typically 'moks' are created for interface call
+    + typically created by developer
+    + develop intention checking
+    + should be run on every change
+    + unit test should be fast
+    + clear results
+    + TDD based
 
 ### Video
 [video][vidh]
