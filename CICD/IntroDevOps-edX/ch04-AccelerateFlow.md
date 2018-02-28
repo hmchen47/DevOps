@@ -668,10 +668,28 @@ Chapter 4: The First Way - Accelerate Flow
 
 ## Automated Testing (Part II)
 ### Notes
++ Test Driven Development (TDD)
+
+    ![diagram](https://lh4.ggpht.com/-duxfZvz3yZg/UHaLmc6U-KI/AAAAAAAABg8/mtkdfrdVvfk/image_thumb3.png?imgmax=800)
+    + RED: write a test based on the requriements; make it fail
+    + GREEN: write a small piece of code to make it pass
+    + REFACTOR: refactor the code by improving it w/o changing the behavior and repeat
++ Benefits of TDD
+    + prevent scope creep
+    + create design issues early
+    + create cleaner code
+    + build trust w/ other service owners
+    + create a consistent rhythm
++ Acceptance Test Driven Development (ATDD)
+    Business stack holders
+    + Discuss
+    + Distill: collaborate
+    + Develop: TDD
+    + Demostrate: shoe nre feature -> get feedback
+
 
 ### Video
 [video][vidg]
-
 
 [vidg]: https://edx-video.net/LINLFS162016-V007100_DTH.mp4
 
