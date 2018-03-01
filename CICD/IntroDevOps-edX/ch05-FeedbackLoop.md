@@ -16,11 +16,19 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 # Section 1: Creating a Service Reliability Culture
-## Notes
-
 ## Creating a Service Reliability Culture (Part I)
 ### Notes
-
++ Service Reliability Culture
+    + Availability
+    + Latency
+    + Performance
+    + Change Management
+    + Monitoring
+    + Emergency Response
+    + Capacity Planning
++ Core Conflcit of Dev & OPs
+    + Operations don't really know the code base
+    + The operation teams knows least about the code typically has the responsibility of its launch
 
 ### Video
 [video][vid1]
