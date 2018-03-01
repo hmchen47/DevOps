@@ -107,7 +107,62 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part IV)
 ### Notes
-
++ Site Reliability Engineers
+    + title created by Google in 2003
+    + No NOC
+    + team focuses on reliability -> Service + Engineering
++ Google Pratices
+    + Hire only coder
+    + Have an SLA for your service
+    + Measure and report performance against the SLA
+    + Use Error Budgets and gate launches on them
+    + Common satffing pool for SRE and Develoeprs
+    + Excess Operational work overflow to the Development team
+    + Cap SRE operational load at 50%
+    + Shae 5% of Ops w/ the Dev team
+    + On-call team: >= 8 for single location and >=6/site for multiple locations
+    + Aim for a maximum of 2 events / oncall shift
+    + Do a postmortem for every event
+    + Postmortem: blameless and focusing on process and technology
++ Error Budget
+    + DON'T for Google SRE
+        + Access launch
+        + Avoid outage
+        + Set release policy
+    + Theory: 100% reliability is a wrong target for bascially everything
+    + Service objective -1 is the unavailability service's error budget -> resolve the dev (create new) ops (protect the infrastructure) conflict
+    + Dev teams self police
+    + The service team gets to take SLA-1 feature/risk velocity
++ LRR/HRR:
+    + Launch Readiness Review (LRR)
+        + Sign-off before any service goes life
+        + ZDevelop-er managed state
+    + Handoff Readiness Review (HRR)
+        + Sign-off for a service at high acceptance
+        + Operations managed state
+    + The Service Handbook
+        + process to put a service back to developer managed status
++ Google and Operational Work
+    + SRE operational work: 50%
+    + SRE imporovement work: 50%
+    + operational work = on-call + interrupt driven work
+    + Types of work
+        + Software engineering: developing and design
+        + System engineering: configuration system (sysadmin work)
+        + Toil: manual, not repeated work
+        + Overhead: administration, HR and training
+    + Goals:
+        + create good moral
+        + create positive career growth
+        + Create clearer communication
+        + Unset bad precedents
+        + Keep good failth
+    + Areas for further Investigation
+        + On call support
+        + Create positive career
+        + emergency response
+        + incident management
+        + outages
 
 ### Video
 [video][vid4]
