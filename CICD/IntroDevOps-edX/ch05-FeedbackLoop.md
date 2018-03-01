@@ -85,7 +85,16 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part III)
 ### Notes
-
++ Risk & Failure
+    + myth: 100 reliability
+        + all systems go down
+        + not all service equal
+    + manage by service\
+    + manageing reliability = manageing risk
+    + managing risk = cost
++ The Cost of Reliability - tradeoff
+    + High availability systems
+    + Opportunity cost
 
 ### Video
 [video][vid3]
