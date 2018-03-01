@@ -41,7 +41,41 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part II)
 ### Notes
-
++ Service Levels
+    + Service Level Agreements (SLA)
+    + Service Level Objectives (SLO)
+    + Service Level Indicators (SLI)
++ Service Level Agreements (SLA)
+    + between the business and the customers
+    + typically a financial contract
+    + can be MTTR & MTBF based
+    + not all service has an explicit SLA
++ Service Level Objectives (SLO)
+    + Definition
+        + Typically the basis of SLAs
+        + between the service and the system
+        + typically target based
+        + all services should have an SLO
+        + determine actions to take on missed SLOs
+    + Picking Targets
+        + Try and keep the sample
+        + Don't over design
+        + Let them envolve
+        + Will learn over time
++ Service Level Indicators (SLI)
+    + Definition:
+        + Quantaative measure of a service
+        + Used as indicators of the SLOs
+        + Monitor SLIs and compare to SLOs
+    + Eamples:
+        + Latency
+        + Errors
+        + Availability
+        + Throughput
++ Generalized Indicators
+    + Management By Objectives (MBO)
+    + Key Performance Indicators (KPI)
+    + Objective and Key Results (OKR)
 
 ### Video
 [video][vid2]
