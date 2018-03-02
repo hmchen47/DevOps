@@ -175,7 +175,13 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part V)
 ### Notes
-
++ NASA Stories
+    + Margaret Hamilton: Pre-launch document to save Applo 13
+    + Gene Kranz: book for emergency reponse gto Applo 13
+    + Diane Vaughan: 
+        + Therory of the Normalization of Deviance
+        + blind sport/outcome bias
+        + Challenger launch decision
 
 ### Video
 [video][vid5]
