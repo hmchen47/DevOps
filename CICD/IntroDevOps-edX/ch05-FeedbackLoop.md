@@ -263,7 +263,39 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 # Section 2: Fast Feedback
 ## Fast Feedback (Part I)
 ### Notes
-
++ Fast Feedback
+    + Design for Failure
+    + Adaptive stsrems - Feedback Loops
+    + Developer managed services
+    + Contigency, peer review and pairing
+    + Embedded engineers
++ Activities for Design for Failure w/ High Performance Organizations
+    + MTTR over MTBF
+    + Game Days
+    + Chaos Monkey(s)
+    + Fault Injection
++ Game Days
+    + Reduces MTTR
+    + Reduces MTBF
++ Netflix Simian Army
+    + Chaos Monkey (Hosts)
+    + Chaos Gorilla (Data Center)
+    + Latency Monkey (Inject Latency)
+    + Conformity Monkey (Best Practice)
+    + Security Monkey (Security Violations)
++ Fault Injection Testing (FIT)
+    + Limit the blast ratio of the failure
+    + Telemetry of path of the filaure
+    + Dependency telemetry
++ Deploys - Upgrading Live Services
+    + Rolling upgrades
+    + Canary
+    + Blue-Green Deploys
+    + Toggling features
++ Methodologies for Fast Feedback
+    + A/B testing
+    + Dark deploys
+    + Inject Deployment Metrics in Monitoring
 
 ### Video
 [video][vidz]
