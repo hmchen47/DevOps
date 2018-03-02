@@ -197,7 +197,36 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part VI)
 ### Notes
-
++ Concepts of Anomaly Response:
+    + Coputers do not resolve outages ... people do
+    + Trade-offs under pressure
+    + Cognition in the wild
+        + An outage is not a detective story
+        + With each step, the story changes
+    + Need to see what's happening with incomplete info
+    + Tools don't always make things better
++ Internet Service are Opaque
+    + Network layer architectures
+    + Varability in network performance
+    + Interdependent and decoupled services
+    + Internet based distributed computing
+    + Geographically distributed communication
+    + Open Internet facing interactions
++ Challenges
+    + Team work
+    + Communciation
+    + Diagnosis
+    + Decision making
+    + Coordination
+    + Improvisation
+    + Tooling
++ Dynamic Fault Management
+    + Cascading effects
+    + Temporary changes and time pressure
+    + Multiple Interleaved tasks
+    + Multiple interacting goals
+    + Need to revise assessments as new evidence comes in
++ Model of reasoning in Anomaly Response
 
 ### Video
 [video][vid6]
