@@ -362,7 +362,42 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Fast Feedback (Part III)
 ### Notes
-
++ Contigency
+    + Some release need contigency reviews
+    + Go/No Go for major releases
+    + Universal agreement for launch
++ Practice: Esty 10 Minutes Review
+    + Teams
+        + Product
+        + Development
+        + Operations
+        + Design
+        + Communit
+        + Support
+    + Taks
+        + When will it be launched
+        + Who is launching it
+        + Has it been in production yet
+        + Can it be dark, feature or percentage launched
+        + Is it new infrastructure
+        + Has an on/off switch
+        + All parties available at launch time
+        + Contigency checklist
++ Peer Review
+    + All changes are peer reviewed
+    + Everyone monitors the commit logs
+    + High risk changes should include an SME (Suject Matter Expert)
+    + Break up larger changes into smaller ones
++ Pairing Programming
+    + Pair programming for everything
+    + Pair programming is slower but decreases bugs up to 70~80%
+    + Spread knowledge
+    + Great for training
+    + Setup pair times
+    + Need a cluture that value pair programming
++ Embedded Engineers
+    + Operations in Development
+    + Development in Operations
 
 ### Video
 [video][vid8]
