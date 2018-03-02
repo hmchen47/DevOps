@@ -243,7 +243,16 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Creating a Service Reliability Culture (Part VII)
 ### Notes
-
++ Heuristic Approaches for Abnomaly Response
+    + 1st Heuristic: Look for correlation btw the behavior and any recent changes made in the software
+    + 2nd Heuristic: Widen the search to any potential contributors imaged
+    + 3rd Heuristic: Validate hypothesis that most easily come to mind
+    + 4th Heuristic: Rely on peer review of changes more than automated testing
++ Furthyer Research
+    + Distributed cognition
+    + Plan and situated actions
+    + Directed attention and alert design
+    + Expertise
 
 ### Video
 [video][vidy]
