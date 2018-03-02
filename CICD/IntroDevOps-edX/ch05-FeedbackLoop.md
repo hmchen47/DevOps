@@ -410,7 +410,28 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Fast Feedback (Part IV)
 ### Notes
-
++ ChatOps
+    + Definition (Atlassian): a collaboraton model that connect people, tools, process and autiomation into a transparent workflow
+    + Origins
+        + based on chat bot
+        + GitHub use Hubot
+        + putting tools in the middle of the conversation
+    + Primary engines
+        + Hubot (Node-based, Coffee-script)
+        + Lita (Ruby)
+        + Er (Python)
+    + Chat Tools
+        + Slack (w/ Hubot -> popular)
+        + Compfile (37 signals)
+        + Hipchat (Altassian)
++ Benefits of ChatOps
+    + a multiuser terminal where everyone can see the conversation and the commands interoven
+    + historical records of the commands and the conversaton
+    + training tool - teaching by doing
+    + tactical incident resolution - everyone gets to see the commands and the conversation
+    + dynamically manage the on-call rotation
+    + manage all aspects of the devops practices from one central place
+    + mobile operations for free
 
 ### Video
 [video][vid9]
