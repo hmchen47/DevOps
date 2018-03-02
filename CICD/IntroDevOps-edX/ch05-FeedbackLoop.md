@@ -317,7 +317,36 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Fast Feedback (Part II)
 ### Notes
-
++ System Thinking
+    + Look at system as a whole
+    + Global Efficiency vs Local Efficiency
+    + Feedback loops vs cause-and-effect
+    + Trends not target
+    + The system is greather than the sum of parts
++ Feedback Originates from System Theory
+    + Accelerating Loop - Amplifies behavior
+    + Diminishing Loop - Suppresses behavior
+    + Balancing Loop - Toward a stable goal
+    + Thrashing Loop - Oscilating between states
++ Impacts on Feedback
+    + Delay in feedback increases drift
+    + Limit options
+    + Increases processing effort
++ Designing Delivery
+    + Design for failure
+    + Designing for services, not just software
+    + Minimizing latency and maximizing feedback
+    + Designing for failure and operating to learn
+    + Using operations as input to design to learn
+    + Seeking empathy
++ Developers wear Pager - Google
+    + 1st call: dev rotation team
+    + 2nd call: VP of Engineering
+    + 3rd call: CTO
++ Developers Operate the Service
+    + Launch
+    + Monitor
+    + Guidance from operations
 
 ### Video
 [video][vid7]
