@@ -18,7 +18,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 # Section 1: Learning Organizations
 ## Learning Organizations (Part I)
+### Notes
 
+
+### Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS162016-V010400_DTH.mp4
@@ -36,7 +39,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Learning Organizations (Part II)
+### Notes
 
+
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS162016-V010500_DTH.mp4
@@ -49,7 +55,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Learning Organizations (Part III)
+### Notes
 
+
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS162016-V010600_DTH.mp4
@@ -60,7 +69,10 @@ Chapter 6: The Third Way: Accelerate Learning
  
 
 ## Learning Organizations (Part IV)
+### Notes
 
+
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS162016-V010700_DTH.mp4
@@ -72,7 +84,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 # Section 2: Communication
 ## Communication (Part I)
+### Notes
 
+
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS162016-V010900_DTH.mp4
@@ -81,17 +96,21 @@ Chapter 6: The Third Way: Accelerate Learning
 ### Recommended Resources
 + John Willis, [Neo Taylorism or DevOps Anti Patterns](http://itrevolution.com/neo-taylorism-or-devops-anti-patterns/)
 
-### Extra Resources
-
 
 ## Communication (Part II)
+### Notes
 
+
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS162016-V011000_DTH.mp4
 
 ## Communication (Part III)
+### Notes
 
+
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS162016-V010800_DTH.mp4
@@ -103,7 +122,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Communication (Part IV)
+### Notes
 
+
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS162016-V011100_DTH.mp4
@@ -117,7 +139,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 # Section 3: Blameless Culture
 ## Blameless Culture (Part I)
+### Notes
 
+
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS162016-V011400_DTH.mp4
@@ -129,7 +154,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Blameless Culture (Part II)
+### Notes
 
+
+### Video
 [video][vid0]
 
 [vid0]: https://edx-video.net/LINLFS162016-V011300_DTH.mp4
@@ -140,7 +168,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Blameless Culture (Part III)
+### Notes
 
+
+### Video
 [video][vida]
 
 [vida]: https://edx-video.net/LINLFS162016-V011500_DTH.mp4
@@ -152,7 +183,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 ## Blameless Culture (Part IV)
+### Notes
 
+
+### Video
 [video][vidb]
 
 [vidb]: https://edx-video.net/LINLFS162016-V011200_DTH.mp4
@@ -163,7 +197,10 @@ Chapter 6: The Third Way: Accelerate Learning
 
 
 # Summary
+## Notes
 
+
+## Video
 [video][vidc]
 
 [vidc]: https://edx-video.net/LINLFS162016-V011600_DTH.mp4
