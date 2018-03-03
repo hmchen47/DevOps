@@ -490,7 +490,37 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Understanding Monitoring (Part II)
 ### Notes
-
++ Components of Monitoring Stsrem
+    + Sensing/Measuring
+    + Collecting
+    + Analysis/Computation
+    + Alerting
+    + Escalation
+    + Visualization
++ Black Box vs White box
+    + Black Box
+        + Symptom based
+        + Active problem
+        + User's experience
+    + White Box
+        + Agents
+        + Logs
+        + Instrumentation
++ Types of Metrics
+    + Raw: Gauges, Counter, Timers
+    + Derived: Delat, Rates, Ratios
++ Analyssi:
+    + Real time
+    + Correlation
+    + Historical
+    + Anomaly Detection
+    + Machine Learning
++ Statistical Analysis
+    + Mean
+    + Median
+    + Percentiles
+    + Standard Deviation
+    + Median Absolute Deviation (MAD)
 
 ### Video
 [video][vida]
