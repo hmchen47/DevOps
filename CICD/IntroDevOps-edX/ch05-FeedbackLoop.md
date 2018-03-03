@@ -521,6 +521,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
     + Percentiles
     + Standard Deviation
     + Median Absolute Deviation (MAD)
++ The Flow of Averages --> Standard Deviation is more important
 
 ### Video
 [video][vida]
@@ -541,6 +542,28 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Understanding Monitoring (Part III)
 ### Notes
++ Bell Curve/Distribution
+
+    ![diagram](https://www.mathworks.com/matlabcentral/answers/uploaded_files/37896/b4Q2ruvoGkiWTXql01ksDg.jpg)
++ Non-Gaussian Distribution Data
+    + Most IT operations and performance data doesn't have a Gaussian Distribution
+    + This can lead to over or under alerting
++ Visual Graphs for Gaussian Distribution
+    + Histograms
+    + Percentiles
++ Inverse Quantile - Rare cases
+    + NOT: measuring how many slow transations there are (99 Quantile)
+    + measuring how many transaction are too slow
+    + Modality changes
++ Time Series Database
+    + Whisper (Graphnite)
+    +Influx DB
+    + OpenTs DB
+    + Kudu (Hadoop)
++ Advanced Monitoring Tools
+    + Graphite - built-in, time-series, powerful
+    + Stats D - Etsy
+    + ELK (ElasticSearch-Logstatsh-kibana)
 
 
 ### Video
