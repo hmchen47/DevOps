@@ -688,7 +688,6 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
     + Provides fall back options (errors, default value, null value, or special error)
     + Tomcat Java Application
 
-
 ### Video
 [video][vide]
 
@@ -704,7 +703,42 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Understanding Complexity (Part III)
 ### Notes
-
++ Promise Theory
+    + Definition: A model of voluntary cooporation between individual, automatous actors or agents
+    + The Basics of Promise Theory
+        1. An agent can promise its own behaviors (possible proxy)
+        2. Imposition on others is likely ineffective w/o promise to accept
+        3. Both giver (+) and receiver (-) agents have to promise for effect
+        4. Every agent accesses other's promises from its own perspective
+        5. Dependency on another agent's promise may invalidate a promise (because of 1)
+    + Assumption: as opposed to deterministic model, centralized service existed
++ Utilizing Promise Theory
+    + Economics and Game Theory
+    + Organizational Behavor
+    + Systems Management
+    + Quentified Self Movement
+    + Network Policy (CDN)
++ Obligation Model vs Coopportation Model
+    + Failure: 'It's must not fail' vs 'It's will fail'
+    + Automation: 'It must look like this' vs 'It should look like this'
+    + Visualization: 'Show me what it looks like' vs 'Show me what you think it looks like'
++ Promise theory --> Cooporation Model: never 100% deterministic
++ Obligationsvs Promises
+    + obligation is not a promise
+    + obligations are a problematic idea
+    + obligations oversimplify information
+    + obligation allows you to take things granted
+    + obligations can come from everywhere
++ Properties of Promise Theory
+    + There must be agents in order for promises to exist
+    + Intention is a description of behavior
+    + Body explains the quality and quantity of the intention
+        + Quality: type, topic or subject for the promise
+        + Quantity: how much of the realm of possibility for taht subject is being promised
+    + One of the strengths of this way of thinking is that it does not let you take things for granted
+    + Decomposing into agents and promises allows us to see how a system works
+    + Confronting details (atomic) exception of behavior, not just the ones that we think are big and important
+    + The entire chain of responsibility begins to appear as we start thinking in thses terms
 
 ### Video
 [video][vidf]
