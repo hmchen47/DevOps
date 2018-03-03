@@ -754,7 +754,112 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Summary
 ## Notes
-
++ The Second Way
+    + Creating a Service Reliability Culture
+    + Fast Feedback
+    + Understanding Monitoring
+    + Understanding Complexity
++ Service Reliability Culture
+    + Availability
+    + Latency
+    + Performance
+    + Change Management
+    + Monitoring
+    + Energency Response
+    + Capacity planning
++ Service Levels
+    + Service Level Agreeemnts (SLA)
+    + Service Level Objectives/Targets (SLO) ~ ITILv3
+    + Service Level Indicators (SLI) ~ KPI
++ Risk and Failure
+    + 100% reliability is a myth
+    + All systems go down
+    + Not all services are equal
+    + Managing risk and failure by service
+    + Managing reliability is about managing risk
+    + Managing risk is about risk
++ Google SRE Practice: Error Budget
+    + 100% realibility: wrong target
+    + Unavailability service's error budget: service objective -1 
+    + Resolve the dev (create new) and the ops (protect the infrastructure) conflict
+    + Math problem not opinion or power
+    + Devs team self police
++ Google SRE Practice: LHH/HRR
+    + Launch Readiness Review
+        + Sign-off before service gors live at Google
+        + Development managed state
+    + Handoff Readness Review
+        + Sign-off for a service at higher acceptance
+        + Operations managed stste
+    + The Service Handbook
+        + Process to put a service back to developer managed status
++ Service Reliability Culture - NASA stories
++ Fast Feedback
+    + Design for Failure
+        + Software resiliency typically is better than hardware based
+        + Cost
+        + Easier to change (fix, upgrade, replace)
+        + Faster to fix
+        + Easier to experiment
+    + System Thinking
+        + Looks the system as a whole
+        + Global Efficiency vs Local Efficiency
+        + Feedback Loop vs Cause-and-Effect
+        + Trends not Tragets
+        + The system is greater than the sum of the parts
+    +Feedback Originates from Systems Theory
+        + Accelerating loop: amplifies behavior
+        + Diminihsing Loop: suppresses behavior
+        + Balanced Loop: toward stable goal
+        + Thrashing Loop: oscillating between states
+    + Pairing
+        + Pair programming for everything
+        + Pair programming is slower but decrease bugs up to 70~80%
+        + Spreads knowledge
+        + Great for training
+        + Setup pair times
+        + Need a cluture that values pair programming
+    + Embedded Engineers
+        + Operations in development
+        + Development in operations
++ Culture of Causality - The Visible Ops Handbook
+    + change -> 80% of all outages
+    + Figuring out what changes --> 80% restoration time
+    + High performance organizations look for the most recent change first
++ Metrics of Service Stack
+    + Business Indicators
+    + Application Indicators
+    + Infrastructure Indicators
+    + User Based Indicators
+    + Deployment IOndicators
++ Statistical Analysis
+    + Mean
+    + Median
+    + Percentile
+    + Standard Deviation
+    + Median Absolute Averages (MAD)
++ Anomaly Detection
+    + Finding patterns in data that do not cnform to expected behavior
+    + Can be used for noise reduction
++ In Search of Certainity - Mark Burgress
+    + Desired State Configuration Management
+    + Promise Theory
++ Cybernetics - Norbert Weiner, 1948
+    + Circular Causality
+    + Self Steering Approach
+    + Listen, Calibrate, Change and Adapt
+    + Systematic Approach
++ Cynefine - Dave Snowden
+    + Designed to describe the evolutionary nnature of complex systems
+    + Draws on research from complex adaptive systems theory, cognitive science, anthropology and psychology
++ Circuit Breaker Patterns
+    + Wrap a protected fucntion call in a circuit breaker object
+    + monitoring for failure
+    + When a threshold is met, trip a circuit breaker
+    + Calls are then returned with an error
++ Promise Theory
+    + A model of voluntary cooporation between individual, automomous actors or agents
+    + Who publish their intentions to one another in the form of promises
 
 ## Video
 [video][vidh]
