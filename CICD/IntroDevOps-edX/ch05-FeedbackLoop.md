@@ -449,7 +449,31 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 # Section 3: Understanding Monitoring
 ## Understanding Monitoring (Part I)
 ### Notes
-
++ Culture of Causality
+    + change --> 80% outages
+    + ficguring out what changes --> 80% restoration times
+    + looking for the most recent change first
++ Monitoring Mathodologies
+    + Altering - emailo, web page, graph
+    + Visualizaing - dashboard, change, graph
+    + Collecting - how to collect, usage, diagonistic
+    + Trending - direction, growing, shrinking
+    + Learning - machine learning
++ Google's Four Golden Signals
+    + Latency
+    + Traffic
+    + Errors
+    + Saturation
++ Indicators of Service Stack
+    + Business Indicators
+    + Application Indicators
+    + Infrastructure Indicators
+    + User based Indicators
+    + Deployment Indicators
++ Case Studies -the most important matric
+    + Amazon: order rate
+    + Facebook: packet loss for all layer and systems
+    + Alaska Air: time, logistics, how fast to get into gate, door open
 
 ### Video
 [video][vid0]
