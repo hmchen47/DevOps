@@ -610,7 +610,43 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 # Section 4: Understanding Complexity
 ## Understanding Complexity (Part I)
 ### Notes
++ In Search of Certainty - Mark Burgress
+    + Desired State Configuration Management
+    + Promise Theory
++ Cybernetics - Norbert Wiener, 1948
+    + Circular Causality
+    + Self-steering approach
+    + Listen, Calibrate, Chnage and Adapt
+    + Systematic Approach
++ Cybernetics w/ Empathy & Human Interaction
+    + DevOps
+    + Agile
+    + Cloud
+    + Lean UX
++ Cynefin - Dave Snowden
+    + Def: the evolutionary nature of complex systems
 
+        ![Diagram](https://recruiterbox.com/blog/wp-content/uploads/2015/09/cynefin-model.png)
+    + Obvious: Cause and Effect is obvious
+        + Sense: see what's coming in
+        + Categories: make it fir pre-determined categories
+        + Response: decise what to do
+        + Situation: known-know
+    + Cpmplicated: Cause and Effect irequires Analysis
+        + Sense: see what's coming in
+        + Analyze: investigate or analyse, using expert knowledge (SME)
+        + Response: decide what to do
+        + Situation: known-unknown
+    + Complex: Cause and Effect in Retrospect
+        + Prob: experimental input
+        + Sense: failures or successes
+        + Response: decide what to do, amplify or dampen
+        + Situation: unknown-unknown
+    + Chaotic: Cause and Effect Undetermined
+        + Act: attempt to stablize
+        + Sense: failure or successes
+        + Response: decide what to do next
+        + Situation: unclear
 
 ### Video
 [video][vidd]
