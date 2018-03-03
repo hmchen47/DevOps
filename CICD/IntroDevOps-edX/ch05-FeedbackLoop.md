@@ -667,6 +667,26 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Understanding Complexity (Part II)
 ### Notes
++ Mechanism of Circuit Breaker Patterns:
+    + wraps a protected function call in a circuit breaker object
+    + Monitors for failures
+    + When a threshold met, trip a circuit breaker
+    + Calls are the returned with an error
++ Pattern Diagram
+    
+    ![diagram](https://martinfowler.com/bliki/images/circuitBreaker/sketch.png)
+    + Action: reset
+    + Resetting factor: event-drive or time-driven
++ Practice - Hystrix @ Netflix
+    + Give protect from or control over latency and failure from dependencies assessed
+    + Stop cascading failures in a complex distributed system
+    + Fail fast and rapid recover
+    + Fallback and gracefully degrade when possible
+    + Enable near real-time monitoring, alerting and operational control
+    + Isolates access points between services
+    + Can setup triggers (trip 10 calls ithin 10 secs take longer than 5 secs)
+    + Provides fall back options (errors, default value, null value, or special error)
+    + Tomcat Java Application
 
 
 ### Video
