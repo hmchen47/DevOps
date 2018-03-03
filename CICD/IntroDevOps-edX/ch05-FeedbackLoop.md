@@ -577,7 +577,21 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 ## Understanding Monitoring (Part IV)
 ### Notes
++ Purpose of Anomaly Detection
+    + finding patterns in data that do not comfirm to expectated behavor
+    + Can be used for noise reduction
 
+    ![diagram](https://image.slidesharecdn.com/hawkeyefifthelephant2015satnam-150816101333-lva1-app6891/95/hawkeye-a-realtime-anomaly-detection-system-5-638.jpg?cb=1439720088)
++ Research Areas
+    + Statistics
+    + Machine Learning
+    + Information Theory
+    + Data Mining
++ Characteristics
+    + High cardinality
+    + Minimize False Positives
+    + Seasonality
+    + Non Normal Distribution
 
 ### Video
 [video][vidc]
