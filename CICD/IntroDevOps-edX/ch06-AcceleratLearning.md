@@ -238,7 +238,40 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Learning Organizations (Part IV)
 ### Notes
-
++ Netflix Culture: Freedom and Responsibility
++ Netflix values: who get rewards, promoted, or let go
++ Netflix Behavior
+    + Judgement
+    + Communication
+    + Impact
+    + Curiosity
+    + Innovation
+    + Courage
+    + Passion
+    + Honesty
+    + Selflessness
++ Netflix freedom and responsibility ...
+    + Self motivation
+    + Self aware
+    + Self disciplined
+    + Self improving
+    + Acts like a leader
+    + Doesn't wait to be told what to do
+    + Pick up the trash lying on the floor
++ Netflix Context vs Control
+    + Context:
+        + Strategy
+        + Metrics
+        + Assumptions
+        + Objectives
+        + Clearly-defined roles
+        + Knowledgeof the stakes
+        + Transparency around decision-making
+    + Control
+        + Top-down decision-making
+        + Management approval
+        + Committees
+        + Planning and process valued more than results
 
 ### Video
 [video][vid4]
