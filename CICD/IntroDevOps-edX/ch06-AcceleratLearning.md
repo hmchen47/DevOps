@@ -196,7 +196,35 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Learning Organizations (Part III)
 ### Notes
-
++ The Dimensions of Learning Organization Questionaire (DLOQ)
+    + Measures important shifts in an organization's climate, culture, systems and structures that influence whether individuals learn
+    + Two components: people in an organization; the structure of the culture
++ Levels of a Learning Organization
+    + Individual levle: continuous learning, dialog and inquery
+    + Team or Group level: team learning and collaboration
+    + Organizational level: organization learning and empowerment
+    + Global level: system level and strategic leadership
++ Dimensions of Learning Organizaton
+    + Create continuous learning opportunities
+        + Learning is designed into work so that people can learn on the job
+        + Opportunities are provided for ongoing education and growth
+    + Promote Inquiry and dialog
+        + People gainproductive reasoning skills to express their views and the capacity to listen and inquery into the view of others
+        + The culture is changed to support questioning, feedback, and experimentation
+    + Encourage collaboration and team learning
+        + Work is designed to use groups to access different modes of thinking
+        + Groups are expected to learn together and work together
+        + Collaboration is valued by the culture and rewarded
+    + Empower people toward a collective vision
+        + People are involved in setting, owningand implementing a join vision
+        + Responsibility is distributed close to decision-making so that people are motivated to learn toward what they are held accountable to do
+    + Connect the organization to its environment
+        + People are help to see the effect of their work on the entire enterprise
+        + People scan the environment and use information to adjust work practices
+        + The organization is linked to its communities
+    + Provide strategic leadership for learning
+        + Leaders modle, champion, and support learning
+        + Leadership uses learning strategically for business results
 
 ### Video
 [video][vid3]
