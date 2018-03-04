@@ -464,7 +464,30 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Blameless Culture (Part II)
 ### Notes
-
++ Just Culture - Sidney Dekker
+    + A culture of trust, learning, and accountability. It is important to have when something goes wrong in your organization.
+    + Jus culture: Peope are making effort to balance safety and accountabilitty.
++ A Retributive Just Culture
+    + Questins:
+        + Whick rule is broken?
+        + Who did it?
+        + How bad was the breach, and what should the consequence be?
+        + Who goes to describe this?
+    + Shades of Culpability
+        + Honest mistake: stay
+        + Risk-taking: get warming
+        + Negligence: let go
++ A Restoration Just Culture
+    + Questions:
+        + Whi is hurt?
+        + What do they need?
+        + Whose obligation is it to meet that need?
+        + How do you involve the community in this conversation?
+    + Shades of Culpability
+        + Investigation the mistakes that focuses on failures mechanisms and decision-making processes
+        + Allow individuals to give detailed accounts w/o fear of punishment or retribution
++ Blameless Culture
+    > A blamesless cluture believes that systems are __NOT__ inherently safe and humans do the best they can to keep them running.
 
 ### Video
 [video][vid0]
