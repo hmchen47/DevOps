@@ -352,7 +352,20 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Communication (Part III)
 ### Notes
-
++ Types of Feedback
+    + Porpoise feedback
+    + Sandwich feedback
+    + Atkins feedback
++ Porpoise Feedback (used in Low Trust)
+    + Only provide positive feedback
+    + Assume everything else will self-control
+    + Everything else self control
++ Swanch Feedback (used in Medium Trust)
+    + Often positive feedback
+    + Give constructive feedback (critical/safe)
+    + Offer general positive feedback
++ Atkins Feedback (used in Low Trust)
+    + Give constructive feedback (critical/safe) only
 
 ### Video
 [video][vid7]
