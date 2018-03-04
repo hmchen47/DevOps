@@ -380,7 +380,40 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Communication (Part IV)
 ### Notes
-
++ Frameworks of Feedback
+    + Mirror, Validate, Empathy
+    + Start, Stop, Continue (SSC)
+    + Power Dynamics
+    + Microagressions
+    + Non Violent Communication
++ Mirror, Validate, Empathy
+    + Mirror: repeat and confirm what was said
+    + Validate: validate what makes sense or not
+    + Empathy: the service tries to assume what the sender is feeling (verballly)
++ Empathy is a skill
+    + Not really taught
+    + We can get better at it
+    + Listen and Summarize
+    + Recognized and poi9nt out your own emotions
+    + Shut off your inner narrator (day dreaming)
++ SSC
+    + Start: what should I start doing
+    + Stop: what should I stop doing
+    + Continue: what should I continue doing
++ Power Dyanmics
+    + power dynamics exists whether we acknowledge them or not
+    + power can be formal or informal
+    + words form a person of a power have experimental impact
+    + consider the power dynamics when giving feedback
++ Microaggressions
+    + A subtle but offensive comment or action directed a minority or other non dominant group that is often unintentional or unconsciously reinforces a stereotype
+    + Tone policing
+    + Othering (not one of us)
++ Non Violent Communication
+    + Facts: what happen w/o commentary
+    + Feelings: emotion it made you feel
+    + Needs: human needs that wasn't met
+    + Requests: what you would like the person to do in the future
 
 ### Video
 [video][vid8]
