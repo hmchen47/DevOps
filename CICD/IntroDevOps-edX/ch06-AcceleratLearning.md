@@ -335,6 +335,14 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Communication (Part II)
 ### Notes
++ Feedback 
+    + People need feedback to get better
+    + Often feedback is vague and leads to misunderstanding
+    + Often feedback is not actionable
++ SBI - The Situation, Behavior, Impack Feedback Tool
+    + __Situation__: Put feedback in the context of the situation. Define the where and when of the situation.
+    + __Behavior__: Describe the behavior, non-personal.
+    + __Impact__: Describe the impact. Use 'I' statement on how their behavior has affected you or the team.
 
 
 ### Video
