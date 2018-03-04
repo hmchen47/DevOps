@@ -133,7 +133,54 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Learning Organizations (Part II)
 ### Notes
-
++ Five Disciplines of Learning Organizations
+    + System Thinking
+        + Most important
+        + Concept of global thinking
+        + Measure the performance of an organization as a whole
+    + Personal Mastery
+        + Learning quickly, practice daily
+        + Transferred into organizatinal learning
+        + Toyota Kata
+    + Mental Models
+        + Assumptions must be challenged
+        + Unlearning old ideas, theories, ...
+        + PDCA - constantly questioning the models
+    + Shared Vision
+        + The shared goals of the whole organization
+        + Flat or Decentralized
+        + Not command-and-control
+    + Team Lewarning
+        + Boundary crossing, openness, shared, ...
+        + Shared meaning, understanding
++ Toyota Kata
+    + Improvement kata, coaching kata
+    + PDCA -> question assumption -> personal mastery, mental model
++ Building Blocks of Learning Organization
+    + Psychological Safety
+    + Appreciation of Differences
+    + Openness to New Ideas <- TOC
+    + Time or Reflection <- TOC
+    + Systematic knowledge sharing
+    + Education and Experimentation
+    + Reinforced Learning
++ Ladder of Influence (upward) - Chris Argyris
+    + Action - doing
+    + Belief - reflection, pattern
+    + Conclusion - draw
+    + Assumptions - abstration
+    + Meanings - filter
+    + Select - data
+    + Observ - collection
++ Issues and Solutions of Ladder of Leadership
+    + Can create bad judgement
+    + Our assumptions can lead us to bad conclusions
+    + Questions your assumptions and conclusions
+    + Seek contrary data
+    + Make your assumption visible to others
+    + Invite others to test your assumptions and conclusions
+    + Inquery other people's assumptions and conclusions
+    + Move down the ladder instead of up
 
 ### Video
 [video][vid2]
