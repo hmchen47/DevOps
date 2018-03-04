@@ -286,6 +286,41 @@ Chapter 6: The Third Way: Accelerate Learning
 # Section 2: Communication
 ## Communication (Part I)
 ### Notes
++ Communication Feedback
+    + Communicatoin feedback is a system
+    + How to give critical/negative feedback
+    + Importance of positive feedback
+    + people are motivated more by progress than accomplishments
+    + Creating a cadence for feedback building trust and safety
+    + Ad-hoc feedback feedback doesn't work w/o a regularly understood process
+    + Feedback should be goal related
+    + Goals should be for learning, improvement and trust
+    + Feedback should not be personal, it should be about behavior and be actinable
+    + engaged works w/ negative feedbvack = 20 x no feedback
++ Anti-Patterns
+    + I'm right, you ae wrong
+    + Assigning blame
+    + Sacrasm
+    + Sugarcoating
+    + Beating around the bush
+    + Passive-aggression
+    + One-way conversations
++ Patterns
+    + Honesty
+    + Being straightforward
+    + Timely
++ Receiving Feedback
+    + Good listening
+    + Ask questions to understand
+    + __Always reply with thank you__
++ Methods Avoided when Giving Feedback
+    + Email
+    + Phone
+    + Chat
+    + Socla media
++ The Magical Phrase
+
+    __I'm giving you these comments because I have very high expectations, and I know that you can reach them.__
 
 
 ### Video
