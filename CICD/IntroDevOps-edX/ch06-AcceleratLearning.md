@@ -430,7 +430,26 @@ Chapter 6: The Third Way: Accelerate Learning
 # Section 3: Blameless Culture
 ## Blameless Culture (Part I)
 ### Notes
-
++ The Old View of Human Error (First Story)
+    + The cause of accidents
+    + To explain faulure, seek failure
+    + find poeple's: inaccurate assessments, wrong decisions, bad judgement
++ The New View of Human Error (Second Story)
+    + A symptom of trouble deeper in side system
+    + To explain faulure, do not try to find where people went wrong
+    + Fin people's assessments and actions made sense at the time , given the circumstances that surrounded them
++ Bad Apple Theory - Throw Away the Bad Apples
+    + bad apples = unreliable people
+    + protect complex systems from bad apples though they are basically safe
+    + human error causes accidents: 3/2 miships
+    + causes of error: lost of situation awareness, complacency, negligence
+    + errors introduced to the system only through the inherent unreliability of people
++ Taylorism Principles
+    + efficiency models based on scientific method
+    + maximum efficiency
+    + managers -> plan; workers -> execute
+    + monitoring and supervision -> efficiency
++ Murphy's Law is wrong: what can goes wrong usually goes right, but then we draw the wrong conclusion. - Dekker
 
 ### Video
 [video][vid9]
