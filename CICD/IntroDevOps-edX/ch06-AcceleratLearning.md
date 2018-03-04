@@ -16,10 +16,103 @@ Chapter 6: The Third Way: Accelerate Learning
 + Use the cognitive bias to create a blameless culture.
 + Explain the concept of the blameless postmortem.
 
+## Notes
++ The Third Way - Full Cycle
+    + Learning Organization
+    + Communication
+    + Blameless Culture
+
 # Section 1: Learning Organizations
 ## Learning Organizations (Part I)
 ### Notes
-
++ The Third Way - Full Cycle
+    + Learning Organization
+    + Communication
+    + Blameless Culture
++ Dr. Deming's Contributions
+    + Demin Cycle - PDCA
+        + scientific method
+        + learning organization and continuous learning
+        + core concept of improvement kata
+    + System of Profound Knowledge
+        + statistical process control
+        + variation - another form of learning
++ Deming's 14 Points - Out of the Crisis
+    1. Create Consistency of Purpose
+        + Deming: AIM - target for every organizatoin
+        + Goldratt: Goal
+        + Simon Sinek: Why
+        + Rother: Vision - part of improvement kata
+    2. Adopt the New Philsoph
+        + Lead not manage
+        + Replace top down management
+        + Replace command and control management
+        + cCreate cooporative leadership models
+    3. Cease Dependence on Inspection to Achieve Quality
+        + Don't wait till its done to test it
+        + Build quality from start to ehd (flow)
+        + Make sure the door fits before it's built (SPC)
+        + Core principles of Learn and DevOps
+    4. End the Practice of Awarding Business on the Basics of Price Tag
+        + Top line ROI and Bottom line ROI
+        + It's not how much it cost to make
+        + It's how much money you make once its built
+        + Work towards a mission not a budget
+        + Lean Startup/MVP
+    5. Improve Constantly and Forever the System of Production snf Service
+        + The second way
+        + Create feedback loop (PDCA)
+        + The Andon cord
+        + Devs waering pagers
+        + Tests, TDD/BDD
+    6. Institute Training on the Job
+        + Create team and system thinking
+        + Create a learning organization
+        + 5th Discipline, Peter Seign
+        + Core principle of 'Coaching Kata'
+    7. Help People, Machines and Gadgets do a Better Job
+        + Modern complex systems are based on humans and machines interacting
+        + Deming understood this 60 year ago
+        + Human/Machine relationship need to be non-deterministic not deterministic
+        + Deming, Goldratt and Burgress all started out as physcisits
+    8. Drive Out Fear, So that Everyone May Work Effectively for the Company
+        + Fail fast fail often
+        + Learn from failing
+        + Chaos Monkey, GIT GameDay
+        + Blameless Post-Mortem
+        + MTTR focus
+        + Embrace failure by normalixing fear
+    9. Break Down Barriers Between Departments
+        + Organization culture is the strongest predictor to IT performance - DevOps Survey
+        + High trust
+        + Cross functional collaboration
+        + Shared responsibilities
+    10. Stop Management by Solgans
+        + Stop slagon slaying
+        + Zero Defecct/Never Fail
+        + Quotas are a form of load optimization
+        + 100% Availability
+    11. Supervisors Must Change from Sheer Numbers to Quality
+        + Work must feel prode in what they do
+        + Intend not demand driven management
+        + Quantity creates volume but not quantity
+        + Leader-Lead not Leader-Follower
+        + Effort over Outcomes
+    12. Abolishment of the Annual or Merit Rating and MBOs
+        + Demin hated MBOs
+        + They create wrong incentives
+        + Management should not be driven by determinism
+        + Another expression of management by intent
+    13. Institute a Vigorous Program of Education and Self-Improvement
+        + Kaizen (Self-Improvement)
+        + Kata (Vigorous Self-Improvement)
+        + Improvement Kata (Mike Rother)
+        + Moving from Improvement to an Art Form
+    14. The Transformation is Everydbody's Job
+        + Back to the AIM/Goal/Why
+        + Transformation must be global
+        + If only one group is optimized, it is call local optima
+        + Global optima eats local optima for breakfast
 
 ### Video
 [video][vid1]
