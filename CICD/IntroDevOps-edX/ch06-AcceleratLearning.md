@@ -535,7 +535,28 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Blameless Culture (Part IV)
 ### Notes
-
++ Etsy - Just Culture
+    + encoourage learning: balmeless postmortems
+    + Understand how an accidents happen -> prevent happening in the future
+    + detals from multiple prespectives on failures and NOT punish people for making mistakes
+    + mistakers as experts -> how not make them in the future with the reset of the organizaton
+    + Exist discretionary space where humans can decide to make action or not <- hindsight
+    + Hindsight Bias: cloud assessment of the past events and need to work hard to eliminate
+    + Foundamental Attribution Error: difficult to eliminate -> focus on the environment and circustances people are working in
++ Victor
+    + Postmortem Checklist
+        + Document timeline and log data
+        + Document conversation
+        + Leave room for notes
+        + Meantime to resolution / other time calculations
+        + Level of security
+        + Achieve for historical retrival
+        + Remediation - make it actionable
+    + Awesome Postmortem Framework
+        + Set the context
+        + Build a timeline
+        + Determine and Prioritize the remediation items
+        + Publish the postmortem write-up as widely as possible
 
 ### Video
 [video][vidb]
