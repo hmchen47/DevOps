@@ -501,7 +501,26 @@ Chapter 6: The Third Way: Accelerate Learning
 
 ## Blameless Culture (Part III)
 ### Notes
-
++ Formula for a Satisfying Apology - 3Rs
+    + Regret: an acknowledgement of the impact of the outage and an appology
+    + Reason: a linear outage timeline, from initial incident detection to resolution, including the so-called 'root causes'
++ Awesome Postmortem - Mindweather LLC
+    + No root cause in complex system, except
+        + multiple conditions, some are unknownable, unfixable, out of control
+        + no counterfactuals: people did what make sense at the time, given the info they had 
+    + Bothe failures and success are normal
+    + Getting full account for what happened is more important than balme/punishmnet
++ Cognitive Biases
+    + Hindsight Bias: knew-it-all-along to see the event as having been predictable, counterfactural
+    + Outcome Bias: evaluating a quality of decision whenthe outcome of what decision is already known
+    + Availability Bias: preference by decision makers to information and events that are more recent
+    + Fundamental Attribution Error: explain behavior in terms of internal disposition, such as personality traits, abilities, motivates, etc., as opposed to external situational factors
++ Blameless Postmortems and Just Culture
+    + what action they took at what time
+    + what effect they observed
+    + expectations they had
+    + assumptions they had made
+    + their undestanding of timeline of events as they occured
 
 ### Video
 [video][vida]
