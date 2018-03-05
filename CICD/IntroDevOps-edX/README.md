@@ -9,7 +9,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Section 2: The Convergence, History, and Value of DevOps
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
+
 
 # Chapter 2: [Understanding the Value Stream](./ch02-ValueStream.md)
 ## Learning Objectives
@@ -20,7 +20,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Section 5: The Third Way - Culture of Continual Experimentation and Learning
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
+
 
 # Chapter 3: [Getting Started With Devops](./ch03-StartDevOps.md)
 ## Learning Objectives
@@ -29,7 +29,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Section 3: Enabling Transformation
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
+
 
 # Chapter 4: [The First Way - Accelerate Flow](./ch04-AccelerateFlow.md)
 ## Learning Objectives
@@ -40,7 +40,7 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Section 5: Deployment Strategies (Zero Downtime Release)
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
+
 
 # Chapter 5: [The Second Way - Amplify Feedback Loops](./ch05-FeedbackLoop.md)
 ## Learning Objectives
@@ -50,16 +50,16 @@ Introduction to DevOps: Transforming and Improving Operations
 ## Section 4: Understanding Complexity
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
 
-## Chapter 6: [The Third Way - Accelerate Learning](./ch06-AcceleratLearning.md)
+
+# Chapter 6: [The Third Way - Accelerate Learning](./ch06-AcceleratLearning.md)
 ## Learning Objectives
 ## Section 1: Learning Organizations
 ## Section 2: Communication
 ## Section 3: Blameless Culture
 ## Summary
 ## Knowledge Check
-## Learning Objectives (Review)
+
 
 # Final Exam
 ## [Final Exam](./finalExam.md)

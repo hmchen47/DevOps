@@ -12,31 +12,87 @@ By the end of this chapter, you should be able to:
 
 # Section 1: Understanding Improvement
 ## Understanding Improvement (Part I)
+### Notes
++ Three ways of DevOps:
+    + The first way - accelerating delivery
+    + The second way - feedback loop
+    + The third way - continuous learning
++ IT characteristics w/o conflict
+    + faster
+    + cheaper
+    + safer
++ Categories of organizations:
+    + Pathological - power oriented
+    + Bureaucrative 
+    + Generative - preformance oriented
 
+### Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V000200_DTH.mp4
 
 ## Understanding Improvement (Part II)
+### Notes
 
++ Culture: consistent response by a group of people to conditions
++ Continuous Improvement (CAMS - Culture, Automation, Measurement, Sharing)
+    ![CAMS diagram](https://image.slidesharecdn.com/theartofthepossible-serverlessconf17-171011102208/95/art-of-the-possible-serverless-conference-nyc-2017-17-638.jpg?cb=1507717390)
+
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V000300_DTH.mp4
 
 ## Understanding Improvement (Part III)
+### Notes
++ Toyota Production Systems
+    + Muda (wate)
+    + Muri (stress)
+    + Mura (flow)
+    + kaizen (imrovement)
+    + kata(form)
++ High Performance Organizations
+    + make work visible
+    + manage WIP
+    + manage flow
+    + create high trust workenvironment
+    + learn and embrace failure (PDCA)
 
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS16/LINLFS162016-V000400_DTH.mp4
 
-## Understanding Improvement (Part IV)
 
+## Understanding Improvement (Part IV)
+### Notes
++ Continuous Deliveray Principles
+    + build quality in
+    + work in small batches
+    + automate repeatable tasks
+    + purse continuous improvement
+    + everyone is responsible
++ Anti-Patterns:
+    + incongruent testing and production environment
+    + testing tasks too long
+    + manual regression and acceptance tests
+    + long lead times'+ high technical debt
+    + slow and hard to change
++ Patterns: 
+    + everyting starts in source control
+    + peer review (pull requests)
+    + automate everything
+    + trunk based deployment
+    + done means released
+    + stop the line - in some cases, people swarm to do the fix
+
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS16/LINLFS162016-V000500_DTH.mp4
 
 ## Understanding Improvement (Part V)
-
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS16/LINLFS162016-V000600_DTH.mp4
@@ -58,15 +114,15 @@ By the end of this chapter, you should be able to:
     + [2017](https://puppet.com/blog-tags/2017-state-devops-report)
 + Ron Westrum Model: [How organisations process information](http://qualitysafety.bmj.com/content/13/suppl_2/ii22)
 
-| Pathological | Bureaucratic | Generative |
-|--------------|--------------|------------|
-| Power oriented | Rule oriented | Performance oriented |
-| Low cooperation | Modest cooperation | High cooperation |
-| Messengers shot | Messengers neglected | Messengers trained |
-| Responsibilities shirked | Narrow responsibilities | Risks are shared |
-| Bridging discouraged | Bridging tolerated | Bridging encouraged |
-| Failure→scapegoating | Failure→ justice | Failure→ inquiry |
-| Novelty crushed | Novelty→ problems | Novelty implemented |
+    | Pathological | Bureaucratic | Generative |
+    |--------------|--------------|------------|
+    | Power oriented | Rule oriented | Performance oriented |
+    | Low cooperation | Modest cooperation | High cooperation |
+    | Messengers shot | Messengers neglected | Messengers trained |
+    | Responsibilities shirked | Narrow responsibilities | Risks are shared |
+    | Bridging discouraged | Bridging tolerated | Bridging encouraged |
+    | Failure→scapegoating | Failure→ justice | Failure→ inquiry |
+    | Novelty crushed | Novelty→ problems | Novelty implemented |
 + Wikipedia - [Lean Siftware Development ](https://en.wikipedia.org/wiki/Lean_software_development)
 + [DevOps Enterprise Summit](https://www.youtube.com/results?search_query=DevOps+Enterprise+Summit)
 + [Continuous Delivery](https://continuousdelivery.com/)
@@ -74,37 +130,76 @@ By the end of this chapter, you should be able to:
 # Section 2: The Convergence, History, and Value of DevOps
 
 ## The Convergence, History and Value of DevOps (Part I)
+### Notes
++ Direct Drivers:
+    + open source - monitoring & config management
+    + continuous delivery - integration, delivery and deployment
++ Indirect influencers: 
+    + Lean - the machine that changes the world
+    + Agile - implementing lean software development
+    + web scale - web operations
 
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS16/LINLFS162016-V000700_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part II)
+### Notes
++ Lean startup:
+    + MVP (Minimum Viable Product)
+    + Pivot - understand & be able to pivot if cx did not like it
+    + continuous deployment
+    + actionable metrics
+    + no vanity metrics - useless and easily manipulated ones
+    + 5 why's
+    + split testing (A/B testing)
++ Wall of confustion (btw Dev & Ops)
 
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS16/LINLFS162016-V000900_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part III)
-
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS16/LINLFS162016-V001000_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part IV)
-
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS16/LINLFS162016-V001100_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part V)
+### Notes
++ DevOps Values ...
+    + no rock start mentality
+    + shared contributions
+    + healthy attitudes towards failure
+    + failures are learning opportunities
+    + the problem is the enemy
+    + no blame games
+    + no victims
+    + share balme
+    + 5 why's
+    + develop share metrics
+    + alignment of purpose
+    + shared goals / slay the dragon
+    + aim, goal, why
 
+### Video
 [video][vid10]
 
 [vid10]: https://edx-video.net/LINLFS16/LINLFS162016-V001200_DTH.mp4
 
 ## The Convergence, History and Value of DevOps (Part VI)
+### Notes
++ Netflix for values: who gets rewarded, promoted or let go
 
+### Video
 [video][vid11]
 
 [vid11]: https://edx-video.net/LINLFS16/LINLFS162016-V001300_DTH.mp4
@@ -128,10 +223,18 @@ By the end of this chapter, you should be able to:
 + Damon Edwards, [What is DevOps?](http://dev2ops.org/2010/02/what-is-devops/)
 
 # Summary
+## Notes
 
++ High performance organizations
++ Continuous delivery principles
++ CAMS
++ Convergence - drivers, influencers
+
+## Video
 [video][vid12]
 
 [vid12]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/5aeeeb047ff7403e95677005afb1d69c/05032ef7ee8e4c838003a0406ba6cfa1/?child=first
+
 
 # Knowledge Check
 Q1. Some of the characteristics of a high-performance organization are: make work visible, manage WIP, and manage Flow. Please select the correct answer.

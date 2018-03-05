@@ -17,7 +17,20 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 1: Creating a Service Reliability Culture
 ## Creating a Service Reliability Culture (Part I)
+### Notes
++ Service Reliability Culture
+    + Availability
+    + Latency
+    + Performance
+    + Change Management
+    + Monitoring
+    + Emergency Response
+    + Capacity Planning
++ Core Conflcit of Dev & OPs
+    + Operations don't really know the code base
+    + The operation teams knows least about the code typically has the responsibility of its launch
 
+### Video
 [video][vid1]
 
 [vid1]: https://edx-video.net/LINLFS162016-V008500_DTH.mp4
@@ -27,14 +40,63 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part II)
+### Notes
++ Service Levels
+    + Service Level Agreements (SLA)
+    + Service Level Objectives (SLO)
+    + Service Level Indicators (SLI)
++ Service Level Agreements (SLA)
+    + between the business and the customers
+    + typically a financial contract
+    + can be MTTR & MTBF based
+    + not all service has an explicit SLA
++ Service Level Objectives (SLO)
+    + Definition
+        + Typically the basis of SLAs
+        + between the service and the system
+        + typically target based
+        + all services should have an SLO
+        + determine actions to take on missed SLOs
+    + Picking Targets
+        + Try and keep the sample
+        + Don't over design
+        + Let them envolve
+        + Will learn over time
++ Service Level Indicators (SLI)
+    + Definition:
+        + Quantaative measure of a service
+        + Used as indicators of the SLOs
+        + Monitor SLIs and compare to SLOs
+    + Eamples:
+        + Latency
+        + Errors
+        + Availability
+        + Throughput
++ Generalized Indicators
+    + Management By Objectives (MBO)
+    + Key Performance Indicators (KPI)
+    + Objective and Key Results (OKR)
 
+### Video
 [video][vid2]
 
 [vid2]: https://edx-video.net/LINLFS162016-V008400_DTH.mp4
 
 
 ## Creating a Service Reliability Culture (Part III)
+### Notes
++ Risk & Failure
+    + myth: 100 reliability
+        + all systems go down
+        + not all service equal
+    + manage by service\
+    + manageing reliability = manageing risk
+    + managing risk = cost
++ The Cost of Reliability - tradeoff
+    + High availability systems
+    + Opportunity cost
 
+### Video
 [video][vid3]
 
 [vid3]: https://edx-video.net/LINLFS162016-V008300_DTH.mp4
@@ -44,7 +106,65 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part IV)
+### Notes
++ Site Reliability Engineers
+    + title created by Google in 2003
+    + No NOC
+    + team focuses on reliability -> Service + Engineering
++ Google Pratices
+    + Hire only coder
+    + Have an SLA for your service
+    + Measure and report performance against the SLA
+    + Use Error Budgets and gate launches on them
+    + Common satffing pool for SRE and Develoeprs
+    + Excess Operational work overflow to the Development team
+    + Cap SRE operational load at 50%
+    + Shae 5% of Ops w/ the Dev team
+    + On-call team: >= 8 for single location and >=6/site for multiple locations
+    + Aim for a maximum of 2 events / oncall shift
+    + Do a postmortem for every event
+    + Postmortem: blameless and focusing on process and technology
++ Error Budget
+    + DON'T for Google SRE
+        + Access launch
+        + Avoid outage
+        + Set release policy
+    + Theory: 100% reliability is a wrong target for bascially everything
+    + Service objective -1 is the unavailability service's error budget -> resolve the dev (create new) ops (protect the infrastructure) conflict
+    + Dev teams self police
+    + The service team gets to take SLA-1 feature/risk velocity
++ LRR/HRR:
+    + Launch Readiness Review (LRR)
+        + Sign-off before any service goes life
+        + ZDevelop-er managed state
+    + Handoff Readiness Review (HRR)
+        + Sign-off for a service at high acceptance
+        + Operations managed state
+    + The Service Handbook
+        + process to put a service back to developer managed status
++ Google and Operational Work
+    + SRE operational work: 50%
+    + SRE imporovement work: 50%
+    + operational work = on-call + interrupt driven work
+    + Types of work
+        + Software engineering: developing and design
+        + System engineering: configuration system (sysadmin work)
+        + Toil: manual, not repeated work
+        + Overhead: administration, HR and training
+    + Goals:
+        + create good moral
+        + create positive career growth
+        + Create clearer communication
+        + Unset bad precedents
+        + Keep good failth
+    + Areas for further Investigation
+        + On call support
+        + Create positive career
+        + emergency response
+        + incident management
+        + outages
 
+### Video
 [video][vid4]
 
 [vid4]: https://edx-video.net/LINLFS162016-V008200_DTH.mp4
@@ -54,7 +174,16 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part V)
+### Notes
++ NASA Stories
+    + Margaret Hamilton: Pre-launch document to save Applo 13
+    + Gene Kranz: book for emergency reponse gto Applo 13
+    + Diane Vaughan: 
+        + Therory of the Normalization of Deviance
+        + blind sport/outcome bias
+        + Challenger launch decision
 
+### Video
 [video][vid5]
 
 [vid5]: https://edx-video.net/LINLFS162016-V008600_DTH.mp4
@@ -67,7 +196,39 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part VI)
+### Notes
++ Concepts of Anomaly Response:
+    + Coputers do not resolve outages ... people do
+    + Trade-offs under pressure
+    + Cognition in the wild
+        + An outage is not a detective story
+        + With each step, the story changes
+    + Need to see what's happening with incomplete info
+    + Tools don't always make things better
++ Internet Service are Opaque
+    + Network layer architectures
+    + Varability in network performance
+    + Interdependent and decoupled services
+    + Internet based distributed computing
+    + Geographically distributed communication
+    + Open Internet facing interactions
++ Challenges
+    + Team work
+    + Communciation
+    + Diagnosis
+    + Decision making
+    + Coordination
+    + Improvisation
+    + Tooling
++ Dynamic Fault Management
+    + Cascading effects
+    + Temporary changes and time pressure
+    + Multiple Interleaved tasks
+    + Multiple interacting goals
+    + Need to revise assessments as new evidence comes in
++ Model of reasoning in Anomaly Response
 
+### Video
 [video][vid6]
 
 [vid6]: https://edx-video.net/LINLFS162016-V008700_DTH.mp4
@@ -81,7 +242,19 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Creating a Service Reliability Culture (Part VII)
+### Notes
++ Heuristic Approaches for Abnomaly Response
+    + 1st Heuristic: Look for correlation btw the behavior and any recent changes made in the software
+    + 2nd Heuristic: Widen the search to any potential contributors imaged
+    + 3rd Heuristic: Validate hypothesis that most easily come to mind
+    + 4th Heuristic: Rely on peer review of changes more than automated testing
++ Furthyer Research
+    + Distributed cognition
+    + Plan and situated actions
+    + Directed attention and alert design
+    + Expertise
 
+### Video
 [video][vidy]
 
 [vidy]: https://edx-video.net/LINLFS162016-V008800_DTH.mp4
@@ -89,7 +262,42 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 2: Fast Feedback
 ## Fast Feedback (Part I)
+### Notes
++ Fast Feedback
+    + Design for Failure
+    + Adaptive stsrems - Feedback Loops
+    + Developer managed services
+    + Contigency, peer review and pairing
+    + Embedded engineers
++ Activities for Design for Failure w/ High Performance Organizations
+    + MTTR over MTBF
+    + Game Days
+    + Chaos Monkey(s)
+    + Fault Injection
++ Game Days
+    + Reduces MTTR
+    + Reduces MTBF
++ Netflix Simian Army
+    + Chaos Monkey (Hosts)
+    + Chaos Gorilla (Data Center)
+    + Latency Monkey (Inject Latency)
+    + Conformity Monkey (Best Practice)
+    + Security Monkey (Security Violations)
++ Fault Injection Testing (FIT)
+    + Limit the blast ratio of the failure
+    + Telemetry of path of the filaure
+    + Dependency telemetry
++ Deploys - Upgrading Live Services
+    + Rolling upgrades
+    + Canary
+    + Blue-Green Deploys
+    + Toggling features
++ Methodologies for Fast Feedback
+    + A/B testing
+    + Dark deploys
+    + Inject Deployment Metrics in Monitoring
 
+### Video
 [video][vidz]
 
 [vidz]: https://edx-video.net/LINLFS162016-V009300_DTH.mp4
@@ -108,7 +316,39 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part II)
+### Notes
++ System Thinking
+    + Look at system as a whole
+    + Global Efficiency vs Local Efficiency
+    + Feedback loops vs cause-and-effect
+    + Trends not target
+    + The system is greather than the sum of parts
++ Feedback Originates from System Theory
+    + Accelerating Loop - Amplifies behavior
+    + Diminishing Loop - Suppresses behavior
+    + Balancing Loop - Toward a stable goal
+    + Thrashing Loop - Oscilating between states
++ Impacts on Feedback
+    + Delay in feedback increases drift
+    + Limit options
+    + Increases processing effort
++ Designing Delivery
+    + Design for failure
+    + Designing for services, not just software
+    + Minimizing latency and maximizing feedback
+    + Designing for failure and operating to learn
+    + Using operations as input to design to learn
+    + Seeking empathy
++ Developers wear Pager - Google
+    + 1st call: dev rotation team
+    + 2nd call: VP of Engineering
+    + 3rd call: CTO
++ Developers Operate the Service
+    + Launch
+    + Monitor
+    + Guidance from operations
 
+### Video
 [video][vid7]
 
 [vid7]: https://edx-video.net/LINLFS162016-V009100_DTH.mp4
@@ -121,7 +361,45 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part III)
+### Notes
++ Contigency
+    + Some release need contigency reviews
+    + Go/No Go for major releases
+    + Universal agreement for launch
++ Practice: Esty 10 Minutes Review
+    + Teams
+        + Product
+        + Development
+        + Operations
+        + Design
+        + Communit
+        + Support
+    + Taks
+        + When will it be launched
+        + Who is launching it
+        + Has it been in production yet
+        + Can it be dark, feature or percentage launched
+        + Is it new infrastructure
+        + Has an on/off switch
+        + All parties available at launch time
+        + Contigency checklist
++ Peer Review
+    + All changes are peer reviewed
+    + Everyone monitors the commit logs
+    + High risk changes should include an SME (Suject Matter Expert)
+    + Break up larger changes into smaller ones
++ Pairing Programming
+    + Pair programming for everything
+    + Pair programming is slower but decreases bugs up to 70~80%
+    + Spread knowledge
+    + Great for training
+    + Setup pair times
+    + Need a cluture that value pair programming
++ Embedded Engineers
+    + Operations in Development
+    + Development in Operations
 
+### Video
 [video][vid8]
 
 [vid8]: https://edx-video.net/LINLFS162016-V009200_DTH.mp4
@@ -131,7 +409,31 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Fast Feedback (Part IV)
+### Notes
++ ChatOps
+    + Definition (Atlassian): a collaboraton model that connect people, tools, process and autiomation into a transparent workflow
+    + Origins
+        + based on chat bot
+        + GitHub use Hubot
+        + putting tools in the middle of the conversation
+    + Primary engines
+        + Hubot (Node-based, Coffee-script)
+        + Lita (Ruby)
+        + Er (Python)
+    + Chat Tools
+        + Slack (w/ Hubot -> popular)
+        + Compfile (37 signals)
+        + Hipchat (Altassian)
++ Benefits of ChatOps
+    + a multiuser terminal where everyone can see the conversation and the commands interoven
+    + historical records of the commands and the conversaton
+    + training tool - teaching by doing
+    + tactical incident resolution - everyone gets to see the commands and the conversation
+    + dynamically manage the on-call rotation
+    + manage all aspects of the devops practices from one central place
+    + mobile operations for free
 
+### Video
 [video][vid9]
 
 [vid9]: https://edx-video.net/LINLFS162016-V009400_DTH.mp4
@@ -146,7 +448,34 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 3: Understanding Monitoring
 ## Understanding Monitoring (Part I)
+### Notes
++ Culture of Causality
+    + change --> 80% outages
+    + ficguring out what changes --> 80% restoration times
+    + looking for the most recent change first
++ Monitoring Mathodologies
+    + Altering - emailo, web page, graph
+    + Visualizaing - dashboard, change, graph
+    + Collecting - how to collect, usage, diagonistic
+    + Trending - direction, growing, shrinking
+    + Learning - machine learning
++ Google's Four Golden Signals
+    + Latency
+    + Traffic
+    + Errors
+    + Saturation
++ Indicators of Service Stack
+    + Business Indicators
+    + Application Indicators
+    + Infrastructure Indicators
+    + User based Indicators
+    + Deployment Indicators
++ Case Studies -the most important matric
+    + Amazon: order rate
+    + Facebook: packet loss for all layer and systems
+    + Alaska Air: time, logistics, how fast to get into gate, door open
 
+### Video
 [video][vid0]
 
 [vid0]: https://edx-video.net/LINLFS162016-V009700_DTH.mp4
@@ -160,7 +489,41 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Monitoring (Part II)
+### Notes
++ Components of Monitoring Stsrem
+    + Sensing/Measuring
+    + Collecting
+    + Analysis/Computation
+    + Alerting
+    + Escalation
+    + Visualization
++ Black Box vs White box
+    + Black Box
+        + Symptom based
+        + Active problem
+        + User's experience
+    + White Box
+        + Agents
+        + Logs
+        + Instrumentation
++ Types of Metrics
+    + Raw: Gauges, Counter, Timers
+    + Derived: Delat, Rates, Ratios
++ Analyssi:
+    + Real time
+    + Correlation
+    + Historical
+    + Anomaly Detection
+    + Machine Learning
++ Statistical Analysis
+    + Mean
+    + Median
+    + Percentiles
+    + Standard Deviation
+    + Median Absolute Deviation (MAD)
++ The Flow of Averages --> Standard Deviation is more important
 
+### Video
 [video][vida]
 
 [vida]: https://edx-video.net/LINLFS162016-V009600_DTH.mp4
@@ -178,23 +541,62 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Monitoring (Part III)
+### Notes
++ Bell Curve/Distribution
 
+    ![diagram](https://www.mathworks.com/matlabcentral/answers/uploaded_files/37896/b4Q2ruvoGkiWTXql01ksDg.jpg)
++ Non-Gaussian Distribution Data
+    + Most IT operations and performance data doesn't have a Gaussian Distribution
+    + This can lead to over or under alerting
++ Visual Graphs for Gaussian Distribution
+    + Histograms
+    + Percentiles
++ Inverse Quantile - Rare cases
+    + NOT: measuring how many slow transations there are (99 Quantile)
+    + measuring how many transaction are too slow
+    + Modality changes
++ Time Series Database
+    + Whisper (Graphnite)
+    +Influx DB
+    + OpenTs DB
+    + Kudu (Hadoop)
++ Advanced Monitoring Tools
+    + Graphite - built-in, time-series, powerful
+    + Stats D - Etsy
+    + ELK (ElasticSearch-Logstatsh-kibana)
+
+
+### Video
 [video][vidb]
 
 [vidb]: https://edx-video.net/LINLFS162016-V009800_DTH.mp4
-
 
 ### Recommended Resources
 + Theo Schlossnagle, [Adaptive Availability for Quality of Service](https://www.infoq.com/presentations/time-series-database)
 + Theo Schlossnagle, [Adaptive Availability](http://www.slideshare.net/postwait/adaptive-availability)
 
-
 ## Understanding Monitoring (Part IV)
+### Notes
++ Purpose of Anomaly Detection
+    + finding patterns in data that do not comfirm to expectated behavor
+    + Can be used for noise reduction
 
+    ![diagram](https://image.slidesharecdn.com/hawkeyefifthelephant2015satnam-150816101333-lva1-app6891/95/hawkeye-a-realtime-anomaly-detection-system-5-638.jpg?cb=1439720088)
++ Research Areas
+    + Statistics
+    + Machine Learning
+    + Information Theory
+    + Data Mining
++ Characteristics
+    + High cardinality
+    + Minimize False Positives
+    + Seasonality
+    + Non Normal Distribution
+
+### Video
 [video][vidc]
 
 [vidc]: https://edx-video.net/LINLFS162016-V009500_DTH.mp4
-
 
 ### Recommended Resources
 + Jason Dixon, [Monitoring with Graphite](https://www.amazon.com/dp/1491916435)
@@ -207,11 +609,49 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Section 4: Understanding Complexity
 ## Understanding Complexity (Part I)
+### Notes
++ In Search of Certainty - Mark Burgress
+    + Desired State Configuration Management
+    + Promise Theory
++ Cybernetics - Norbert Wiener, 1948
+    + Circular Causality
+    + Self-steering approach
+    + Listen, Calibrate, Chnage and Adapt
+    + Systematic Approach
++ Cybernetics w/ Empathy & Human Interaction
+    + DevOps
+    + Agile
+    + Cloud
+    + Lean UX
++ Cynefin - Dave Snowden
+    + Def: the evolutionary nature of complex systems
 
+        ![Diagram](https://recruiterbox.com/blog/wp-content/uploads/2015/09/cynefin-model.png)
+    + Obvious: Cause and Effect is obvious
+        + Sense: see what's coming in
+        + Categories: make it fir pre-determined categories
+        + Response: decise what to do
+        + Situation: known-know
+    + Cpmplicated: Cause and Effect irequires Analysis
+        + Sense: see what's coming in
+        + Analyze: investigate or analyse, using expert knowledge (SME)
+        + Response: decide what to do
+        + Situation: known-unknown
+    + Complex: Cause and Effect in Retrospect
+        + Prob: experimental input
+        + Sense: failures or successes
+        + Response: decide what to do, amplify or dampen
+        + Situation: unknown-unknown
+    + Chaotic: Cause and Effect Undetermined
+        + Act: attempt to stablize
+        + Sense: failure or successes
+        + Response: decide what to do next
+        + Situation: unclear
+
+### Video
 [video][vidd]
 
 [vidd]: https://edx-video.net/LINLFS162016-V010100_DTH.mp4
-
 
 ### Recommended Resources
 + Eliyahu Goldratt, [Beyond the Goal: Theory of Constraints](https://www.amazon.com/dp/B000ELJ9NO)
@@ -226,7 +666,29 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Complexity (Part II)
+### Notes
++ Mechanism of Circuit Breaker Patterns:
+    + wraps a protected function call in a circuit breaker object
+    + Monitors for failures
+    + When a threshold met, trip a circuit breaker
+    + Calls are the returned with an error
++ Pattern Diagram
+    
+    ![diagram](https://martinfowler.com/bliki/images/circuitBreaker/sketch.png)
+    + Action: reset
+    + Resetting factor: event-drive or time-driven
++ Practice - Hystrix @ Netflix
+    + Give protect from or control over latency and failure from dependencies assessed
+    + Stop cascading failures in a complex distributed system
+    + Fail fast and rapid recover
+    + Fallback and gracefully degrade when possible
+    + Enable near real-time monitoring, alerting and operational control
+    + Isolates access points between services
+    + Can setup triggers (trip 10 calls ithin 10 secs take longer than 5 secs)
+    + Provides fall back options (errors, default value, null value, or special error)
+    + Tomcat Java Application
 
+### Video
 [video][vide]
 
 [vide]: https://edx-video.net/LINLFS162016-V009900_DTH.mp4
@@ -240,11 +702,48 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 ## Understanding Complexity (Part III)
+### Notes
++ Promise Theory
+    + Definition: A model of voluntary cooporation between individual, automatous actors or agents
+    + The Basics of Promise Theory
+        1. An agent can promise its own behaviors (possible proxy)
+        2. Imposition on others is likely ineffective w/o promise to accept
+        3. Both giver (+) and receiver (-) agents have to promise for effect
+        4. Every agent accesses other's promises from its own perspective
+        5. Dependency on another agent's promise may invalidate a promise (because of 1)
+    + Assumption: as opposed to deterministic model, centralized service existed
++ Utilizing Promise Theory
+    + Economics and Game Theory
+    + Organizational Behavor
+    + Systems Management
+    + Quentified Self Movement
+    + Network Policy (CDN)
++ Obligation Model vs Coopportation Model
+    + Failure: 'It's must not fail' vs 'It's will fail'
+    + Automation: 'It must look like this' vs 'It should look like this'
+    + Visualization: 'Show me what it looks like' vs 'Show me what you think it looks like'
++ Promise theory --> Cooporation Model: never 100% deterministic
++ Obligationsvs Promises
+    + obligation is not a promise
+    + obligations are a problematic idea
+    + obligations oversimplify information
+    + obligation allows you to take things granted
+    + obligations can come from everywhere
++ Properties of Promise Theory
+    + There must be agents in order for promises to exist
+    + Intention is a description of behavior
+    + Body explains the quality and quantity of the intention
+        + Quality: type, topic or subject for the promise
+        + Quantity: how much of the realm of possibility for taht subject is being promised
+    + One of the strengths of this way of thinking is that it does not let you take things for granted
+    + Decomposing into agents and promises allows us to see how a system works
+    + Confronting details (atomic) exception of behavior, not just the ones that we think are big and important
+    + The entire chain of responsibility begins to appear as we start thinking in thses terms
 
+### Video
 [video][vidf]
 
 [vidf]: https://edx-video.net/LINLFS162016-V010000_DTH.mp4
-
 
 ### Recommended Resources
 + Mark Burgess, [Thinking in Promises: Designing Systems for Cooperation](https://www.amazon.com/Thinking-Promises-Mark-Burgess/dp/1491917873)
@@ -254,7 +753,115 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 
 # Summary
+## Notes
++ The Second Way
+    + Creating a Service Reliability Culture
+    + Fast Feedback
+    + Understanding Monitoring
+    + Understanding Complexity
++ Service Reliability Culture
+    + Availability
+    + Latency
+    + Performance
+    + Change Management
+    + Monitoring
+    + Energency Response
+    + Capacity planning
++ Service Levels
+    + Service Level Agreeemnts (SLA)
+    + Service Level Objectives/Targets (SLO) ~ ITILv3
+    + Service Level Indicators (SLI) ~ KPI
++ Risk and Failure
+    + 100% reliability is a myth
+    + All systems go down
+    + Not all services are equal
+    + Managing risk and failure by service
+    + Managing reliability is about managing risk
+    + Managing risk is about risk
++ Google SRE Practice: Error Budget
+    + 100% realibility: wrong target
+    + Unavailability service's error budget: service objective -1 
+    + Resolve the dev (create new) and the ops (protect the infrastructure) conflict
+    + Math problem not opinion or power
+    + Devs team self police
++ Google SRE Practice: LHH/HRR
+    + Launch Readiness Review
+        + Sign-off before service gors live at Google
+        + Development managed state
+    + Handoff Readness Review
+        + Sign-off for a service at higher acceptance
+        + Operations managed stste
+    + The Service Handbook
+        + Process to put a service back to developer managed status
++ Service Reliability Culture - NASA stories
++ Fast Feedback
+    + Design for Failure
+        + Software resiliency typically is better than hardware based
+        + Cost
+        + Easier to change (fix, upgrade, replace)
+        + Faster to fix
+        + Easier to experiment
+    + System Thinking
+        + Looks the system as a whole
+        + Global Efficiency vs Local Efficiency
+        + Feedback Loop vs Cause-and-Effect
+        + Trends not Tragets
+        + The system is greater than the sum of the parts
+    +Feedback Originates from Systems Theory
+        + Accelerating loop: amplifies behavior
+        + Diminihsing Loop: suppresses behavior
+        + Balanced Loop: toward stable goal
+        + Thrashing Loop: oscillating between states
+    + Pairing
+        + Pair programming for everything
+        + Pair programming is slower but decrease bugs up to 70~80%
+        + Spreads knowledge
+        + Great for training
+        + Setup pair times
+        + Need a cluture that values pair programming
+    + Embedded Engineers
+        + Operations in development
+        + Development in operations
++ Culture of Causality - The Visible Ops Handbook
+    + change -> 80% of all outages
+    + Figuring out what changes --> 80% restoration time
+    + High performance organizations look for the most recent change first
++ Metrics of Service Stack
+    + Business Indicators
+    + Application Indicators
+    + Infrastructure Indicators
+    + User Based Indicators
+    + Deployment IOndicators
++ Statistical Analysis
+    + Mean
+    + Median
+    + Percentile
+    + Standard Deviation
+    + Median Absolute Averages (MAD)
++ Anomaly Detection
+    + Finding patterns in data that do not cnform to expected behavior
+    + Can be used for noise reduction
++ In Search of Certainity - Mark Burgress
+    + Desired State Configuration Management
+    + Promise Theory
++ Cybernetics - Norbert Weiner, 1948
+    + Circular Causality
+    + Self Steering Approach
+    + Listen, Calibrate, Change and Adapt
+    + Systematic Approach
++ Cynefine - Dave Snowden
+    + Designed to describe the evolutionary nnature of complex systems
+    + Draws on research from complex adaptive systems theory, cognitive science, anthropology and psychology
++ Circuit Breaker Patterns
+    + Wrap a protected fucntion call in a circuit breaker object
+    + monitoring for failure
+    + When a threshold is met, trip a circuit breaker
+    + Calls are then returned with an error
++ Promise Theory
+    + A model of voluntary cooporation between individual, automomous actors or agents
+    + Who publish their intentions to one another in the form of promises
 
+## Video
 [video][vidh]
 
 [vidh]: https://edx-video.net/LINLFS162016-V010300_DTH.mp4
@@ -262,6 +869,7 @@ Chapter 5: The Second Way, [Amplify Feedback Loops
 
 # Knowledge Check
 Q01. Which of the following statements best explains the primary difference between an SLA and an SLO, as described in the course? Please select the correct answer.
+
     a. An SLA is based between the internal service team and the system in which it operates and an SLO is based between the business and the customer.
     b. An SLA is based between the internal service team and the system in which it operates and an SLO is based on the organizational chart.
     c. An SLA is based between the business and the customer and an SLO is based between the internal service team and the system in which it operates.
@@ -270,6 +878,7 @@ Q01. Which of the following statements best explains the primary difference betw
     Ans: c
 
 Q02. What was Diane Vaughan’s significant contribution, as discussed in this chapter? Please select the correct answer.
+
     a. She studied the NASA Challenger disaster and coined the concept of “Deviance of Normalization”.
     b. She studied under Sydney Dekker, and co-authored “Drift into Failure”.
     c. She studied the NASA Challenger disaster and coined the concept of “Normalization of Deviance”.
@@ -288,6 +897,7 @@ Q03. Which of the statements below is True? Please select the correct answer.
 
 
 Q04. Which of the following is not one of the five layers of a monitoring stack, as discussed in this chapter? Please select the correct answer.
+
     a. Business indicators
     b. Application indicators
     c. Infrastructure indicators
@@ -298,6 +908,7 @@ Q04. Which of the following is not one of the five layers of a monitoring stack,
 
 
 Q05. Given the following vector, "X=c(2,4,4,4,5,5,7,9)", what is the Mean, Median and Standard Deviation? Please select the correct answer.
+
     a. Mean=5, Median=4.5, Standard Deviation=2.1
     b. Mean=4, Median=4.5, Standard Deviation=1.5
     c. Mean=5, Median=5, Standard Deviation=2.1
@@ -307,6 +918,7 @@ Q05. Given the following vector, "X=c(2,4,4,4,5,5,7,9)", what is the Mean, Media
 
 
 Q06. In the 68-95-99.7 Rule, which value would be 3 Sigma? Please select the correct answer.
+
     a. 68
     b. 65
     c. 99.9
@@ -316,6 +928,7 @@ Q06. In the 68-95-99.7 Rule, which value would be 3 Sigma? Please select the cor
 
 
 Q07. Who was the primary author of Cybernetics? Please select the correct answer.
+
     a. Sydney Dekker
     b. Jeff Sussna
     c. Norbert Weiner
@@ -325,6 +938,7 @@ Q07. Who was the primary author of Cybernetics? Please select the correct answer
 
 
 Q08. Which of the following is not part of Cynefin? Please select the correct answer.
+
     a. Obvious
     b. Correlated
     c. Complicated
@@ -334,6 +948,7 @@ Q08. Which of the following is not part of Cynefin? Please select the correct an
     Ans: b
 
 Q09. Which of the following open source projects is based on Mike Nygard's Circuit Breaker Patterns concept? Please select the correct answer.
+
     a. Nginx
     b. Hystrix
     c. Spring Boot
@@ -343,14 +958,12 @@ Q09. Which of the following open source projects is based on Mike Nygard's Circu
 
 
 Q10. Which of the following companies created ChatOps? Please select the correct answer.
+
     a. Etsy
     b. Netflix
     c. GitHub
     d. Atlassian
 
-<<<<<<< HEAD
     Ans: c
-=======
-    Ans: 
->>>>>>> doch6
+
 
