@@ -37,6 +37,7 @@ Chapter 6: The Third Way: Accelerate Learning
     + System of Profound Knowledge
         + statistical process control
         + variation - another form of learning
+    + Systems Thinking
 + Deming's 14 Points - Out of the Crisis
     1. Create Consistency of Purpose
         + Deming: AIM - target for every organizatoin
@@ -570,7 +571,143 @@ Chapter 6: The Third Way: Accelerate Learning
 
 # Summary
 ## Notes
-
++ The Third Way - Full Cycle
+    + Learning Organization
+    + Communication
+    + Blameless Culture
++ Dr. Deming's Contributions
+    + Demin Cycle - PDCA
+        + scientific method
+        + learning organization and continuous learning
+        + core concept of improvement kata
+    + System of Profound Knowledge
+        + statistical process control
+        + variation - another form of learning
+    + Systems Thinking
++ Deming's 14 Points - Out of the Crisis
+    1. Create Consistency of Purpose
+    2. Adopt the New Philsoph
+    3. Cease Dependence on Inspection to Achieve Quality
+    4. End the Practice of Awarding Business on the Basics of Price Tag
+    5. Improve Constantly and Forever the System of Production snf Service
+    6. Institute Training on the Job
+    7. Help People, Machines and Gadgets do a Better Job
+    8. Drive Out Fear, So that Everyone May Work Effectively for the Company
+    9. Break Down Barriers Between Departments
+    10. Stop Management by Solgans
+    11. Supervisors Must Change from Sheer Numbers to Quality
+    12. Abolishment of the Annual or Merit Rating and MBOs
+    13. Institute a Vigorous Program of Education and Self-Improvement
+    14. The Transformation is Everydbody's Job
++ Five Disciplines of Leanring Organizations
+    + Systems Thinking
+    + Personal Mastery
+    + Mental Models
+    + Shared Vision
+    + Team Learning
++ Ladder of Influence - Chris Argyris
+    + Action
+    + Believes
+    + Conclusions
+    + Assumptions
+    + Meanings
+    + Select
+    + Observe
++ Levels of Learning Organizations (DLOQ)
+    + Individual level
+    + Team or Group level
+    + Organizatonal levle
+    + Global levle
++ Netflix Nine Behaviors
+    + Judgement
+    + Communication
+    + Impact
+    + Curiosity
+    + Innivation
+    + Courage
+    + Passion
+    + Honesty
+    + Sellessness
++ Communication Feedbacl
+    + Anti-Patterns
+        + I'm right, you are wrong
+        + Assigning blame
+        + Sarcasm
+        + Sugarcoating
+        + Beating around the bush
+        + Passive-aggression
+        + One-way conversations
+    + Patterns
+        + Honesty
+        + Being straightforward
+        + Timely
+    + Receiving Feedback
+        + Good listening
+        + Ask questions to understand
+        + Always reply with thank you
++ SBI - Situation, Behavior, Impact
+    + People need feedback to get better
+    + Often feedback is vague and lead to misunderstanding
++ Types of Feedback - Dan North
+    + Propoise Feedback
+    + Sandwitch Feedback
+    + Atkins Feedback
++ Frameworks of Feedback - Rebecca Miller-Webster
+    + Mirror, Validate, Empathy
+    + Start, Stop, Continue (SSC)
+    + Power Dyanmics
+    + Microaggression
+    + Non Violent Communication
++ Views on Human Error
+    + The Old View
+        + cause of accidents
+        + seek failure to explain
+        + find people's inaccurate assessments, wrong decisions, bad judgements
+    + The New View
+        + sympton of trouble deeper inside a system
+        + not try to find where people went wrong
+        + find how people's assessments and actions made sense at the time, given the circumstances that surrounded them
++ Bad Apple Thepory - Throw Away the Bad Apples
+    + Protect unreliable people (bad apples) from complex systems
+    + Human errors cause accidents: 2/3 of miships
+    + Errors: human loss of situation awareness, complacency, negligence
+    + Errors introduced to the system only through the inheritent in reliability of people
++ Just Culture - Sidney Dekker
+    + A culture of trust, learning and accountability. 
+    + Making effort to balance safety and accountability
++ Blameless Culture
+    > A Blameless curture believes that systems are NOT inherently safe and human do the best they can to keep them running.
++ Formula of Satisfying Apology - 3Rs
+    + Regret: an acknowledge of an impact of the outage and an apology
+    + Reason: a linear outage timeline, from initial incident detection to resolution, include the so-called 'root cause'
+    + Remedy: a list of remediation items to ensure that this particular outage won't repeat
++ Cognitive Biases
+    + Hindsight Bias: knew-it-all-alone, to see the event having been predictable, counterfactuals
+    + Outcome Bias: evaluating the quality of a decision is already known
+    + Availability Bias: preference by decision makers to information and events that are more recent
+    + Fundamental Attribution Error: explain behavior in terms of internal disposition, such as internal personality traits, abilities, motives, etc., as opposed as external situational factors
++ Just Culture at Etsy
+    + encoourage learning: balmeless postmortems
+    + Understand how an accidents happen -> prevent happening in the future
+    + detals from multiple prespectives on failures and NOT punish people for making mistakes
+    + mistakers as experts -> how not make them in the future with the reset of the organizaton
+    + Exist discretionary space where humans can decide to make action or not <- hindsight
+    + Hindsight Bias: cloud assessment of the past events and need to work hard to eliminate
+    + Foundamental Attribution Error: difficult to eliminate -> focus on the environment and circustances people are working in
++ Victor Ops
+    + Postmortem Checklist
+        + Document timeline and log data
+        + Document conversation
+        + Leave room for notes
+        + Meantime to resolution / other time calculations
+        + Level of security
+        + Achieve for historical retrival
+        + Remediation - make it actionable
+    + Awesome Postmortem Framework
+        + Set the context
+        + Build a timeline
+        + Determine and Prioritize the remediation items
+        + Publish the postmortem write-up as widely as possible
 
 ## Video
 [video][vidc]
