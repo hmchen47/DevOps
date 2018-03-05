@@ -77,8 +77,10 @@ Chapter 4: The First Way - Accelerate Flow
 ## The Deployment Pipeline (Part I)
 ### Notes
 + Continuous Delivery Process
+
     ![diagram](https://upload.wikimedia.org/wikipedia/commons/7/74/Continuous_Delivery_process_diagram.png)
 + Service Delivery Platform Design Patterns
+
     ![diagram](http://dev2ops.org/wp-content/uploads/2012/09/Service-Delivery-Platform-Elements2-e1348178561602.png)
     + Build phase
         + source repository
@@ -426,6 +428,7 @@ Chapter 4: The First Way - Accelerate Flow
         + Type 1 Hypervisor
         + Type 2 Hypervisor
         + Linux Container
+        
             ![diagram](https://image.slidesharecdn.com/realizinglinuxcontainerslxc-140311110026-phpapp02/95/realizing-linux-containers-lxc-4-638.jpg?cb=1394535785)
     + Products
         + Docker
