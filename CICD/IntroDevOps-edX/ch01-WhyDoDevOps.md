@@ -32,14 +32,16 @@ By the end of this chapter, you should be able to:
 [vid1]: https://edx-video.net/LINLFS16/LINLFS162016-V000200_DTH.mp4
 
 ## Understanding Improvement (Part II)
-
-[video][vid2]
-
-[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V000300_DTH.mp4
+### Notes
 
 + Culture: consistent response by a group of people to conditions
 + Continuous Improvement (CAMS - Culture, Automation, Measurement, Sharing)
     ![CAMS diagram](https://image.slidesharecdn.com/theartofthepossible-serverlessconf17-171011102208/95/art-of-the-possible-serverless-conference-nyc-2017-17-638.jpg?cb=1507717390)
+
+### Video
+[video][vid2]
+
+[vid2]: https://edx-video.net/LINLFS16/LINLFS162016-V000300_DTH.mp4
 
 ## Understanding Improvement (Part III)
 ### Notes
@@ -112,15 +114,15 @@ By the end of this chapter, you should be able to:
     + [2017](https://puppet.com/blog-tags/2017-state-devops-report)
 + Ron Westrum Model: [How organisations process information](http://qualitysafety.bmj.com/content/13/suppl_2/ii22)
 
-| Pathological | Bureaucratic | Generative |
-|--------------|--------------|------------|
-| Power oriented | Rule oriented | Performance oriented |
-| Low cooperation | Modest cooperation | High cooperation |
-| Messengers shot | Messengers neglected | Messengers trained |
-| Responsibilities shirked | Narrow responsibilities | Risks are shared |
-| Bridging discouraged | Bridging tolerated | Bridging encouraged |
-| Failure→scapegoating | Failure→ justice | Failure→ inquiry |
-| Novelty crushed | Novelty→ problems | Novelty implemented |
+    | Pathological | Bureaucratic | Generative |
+    |--------------|--------------|------------|
+    | Power oriented | Rule oriented | Performance oriented |
+    | Low cooperation | Modest cooperation | High cooperation |
+    | Messengers shot | Messengers neglected | Messengers trained |
+    | Responsibilities shirked | Narrow responsibilities | Risks are shared |
+    | Bridging discouraged | Bridging tolerated | Bridging encouraged |
+    | Failure→scapegoating | Failure→ justice | Failure→ inquiry |
+    | Novelty crushed | Novelty→ problems | Novelty implemented |
 + Wikipedia - [Lean Siftware Development ](https://en.wikipedia.org/wiki/Lean_software_development)
 + [DevOps Enterprise Summit](https://www.youtube.com/results?search_query=DevOps+Enterprise+Summit)
 + [Continuous Delivery](https://continuousdelivery.com/)
