@@ -68,19 +68,19 @@ Chapter 2: Understanding the Value Stream
 # Section 2: The Three Ways of DevOps
 ### Notes
 + The First Way - Accelerate Flow
-    + -->
+    + --> (right to left)
     + system thinking - global/local optimization
     + increased visibility
     + Just in Time (JIT)
     + shorten lead time
 + The Second Way - Amplify Feedback
-    + <--
+    + <-- (left to right)
     + shorten feedback loops
     + learn faster
     + fix defects faster
     + embedded knowledge
 + The Third Way - Continuous Learning
-    + full cycle
+    + full cycle (iterative)
     + continual experiemntation
     + learniung from failure
     + repetition and practice
@@ -394,9 +394,9 @@ Chapter 2: Understanding the Value Stream
     + Visible (Scientific Thinking): Scientific Method -> Depersonalized -> Non-Blameful -> Non Deterministics => Deming Cycle PDCA
 + Toyota Kata
     ![kata](https://kaizeninstituteindia.files.wordpress.com/2014/02/p2.png?w=768)
-    + Improving
+    + Improving Kata
         ![improvment](https://image.slidesharecdn.com/toyotakata-100207234813-phpapp01/95/toyota-kata-11-638.jpg?cb=1374427899)
-    + Coaching
+    + Coaching Kata
         ![coaching](https://kaizeninstituteindia.files.wordpress.com/2014/02/i18.png?w=768)
 
 ### Video
@@ -471,7 +471,7 @@ Chapter 2: Understanding the Value Stream
 ## Video
 [Vido][vidd]
 
-[vicd]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/03573d7b3e074966a56e9651adb1e0c8/00c4c518e74c49bf8eba839822f910cc/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS161x%2B2T2016%2Btype%40sequential%2Bblock%4000c4c518e74c49bf8eba839822f910cc
+[vidd]: https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS161x+2T2016/courseware/03573d7b3e074966a56e9651adb1e0c8/00c4c518e74c49bf8eba839822f910cc/?activate_block_id=block-v1%3ALinuxFoundationX%2BLFS161x%2B2T2016%2Btype%40sequential%2Bblock%4000c4c518e74c49bf8eba839822f910cc
 
 # Knowledge Check
 Q1. Which of the following is considered part of the Cycle Time? 
