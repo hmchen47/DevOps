@@ -45,9 +45,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 6. Accessing Minikube
-## Introduction & Learning Objectives
-## Accessing Minikube
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@815c1eb1ffb24a7b80bbf9df6d6a3267)
+## [Accessing Minikube](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@7b044c7dafae45a7a3c4773195b8f11b)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@sequential+block@9470282349bb43aa906eb4ecafe32904)
+
+## [Contents](./06-AccessMinikube.md)
 
 
 # Chapter 7. Kubernetes Building Blocks
