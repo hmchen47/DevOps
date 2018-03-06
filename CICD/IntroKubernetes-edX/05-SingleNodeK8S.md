@@ -191,7 +191,7 @@ Following are the instructions to install minikube on Windows 10:
 
 # Installing Minikube Demo
 
-[video][vid1]
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)][vid1]
 
 [vid1]: https://youtu.be/5g73AH0TJZU
 
