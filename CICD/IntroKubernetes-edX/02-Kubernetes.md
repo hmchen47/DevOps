@@ -1,12 +1,12 @@
 Kubernetes
 ==========
 
-# Introduction
+## Introduction
 In this chapter, we will explain what __Kubernetes__ is, its features, and the reasons why one should use it. We will explore the evolution of Kubernetes from [Borg](https://research.google.com/pubs/pub43438.html), which is a cluster manager created by Google. 
 
 We will also talk about the __Cloud Native Computing Foundation (CNCF)__, which currently hosts the Kubernetes project, along with other cloud-native projects, like Prometheus, Fluentd, rkt, containerd, etc. 
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter you will be able to:
 
 + Define Kubernetes.
@@ -15,7 +15,7 @@ By the end of this chapter you will be able to:
 + Discuss the evolution of Kubernetes from Borg.
 + Explain what the Cloud Native Computing Foundation does.
 
-# What Is Kubernetes?
+## What Is Kubernetes?
 According to the [Kubernetes website](https://kubernetes.io/),
 
 > "Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications."
@@ -30,7 +30,7 @@ Kubernetes was started by Google and, with its v1.0 release in July 2015, Google
 
 Generally, Kubernetes has new releases every three months. The current stable version is 1.7 (as of June 2017).
 
-# From Borg to Kubernetes
+## From Borg to Kubernetes
 According to the abstract of [Google's Borg](https://research.google.com/pubs/pub43438.html) paper, published in 2015,
 
 > "Google's Borg system is a cluster manager that runs hundreds of thousands of jobs, from many thousands of different applications, across a number of clusters each with up to tens of thousands of machines."
@@ -47,7 +47,7 @@ Some of the initial authors of Kubernetes were Google employees who have used Bo
 
 We will explore all of them, and more, in this course.
 
-# Kubernetes Features
+## Kubernetes Features
 Kubernetes offers a very rich set of features for container orchestration. Some of its fully supported features are:
 
 + __Automatic binpacking__
@@ -84,12 +84,12 @@ Kubernetes offers a very rich set of features for container orchestration. Some 
 
 There are many other features besides the ones we just mentioned, and they are currently in alpha/beta phase. They will add great value to any Kubernetes deployment once they become GA (generally available) features. For example, support for RBAC (Role-based access control) is currently in beta phase with the Kubernetes 1.6 release.
 
-# Why Use Kubernetes?
+## Why Use Kubernetes?
 We just looked at some of the fully-supported Kubernetes features. We should also mention that Kubernetes is very portable and extensible. Kubernetes can be deployed on the environment of our choice, be it VMs, bare-metal, or public/private/hybrid/multi-cloud setups. Also, Kubernetes has a very modular and pluggable architecture. We can write custom APIs or plugins to extend its functionalities.
 
 For a successful open source project, the community is as important as having great code. Kubernetes has a very thriving community across the world. It has more than 1350 contributors, who, over time, have done over 47,000 commits. There are meet-up groups in different cities which meet regularly to discuss about Kubernetes and its ecosystem. There are _Special Interest Groups (SIGs)_, which focus on special interests, such as scaling, bare-metal, networking, etc. We will discuss more about them in our last chapter, _Kubernetes Communities_.
 
-# Kubernetes Users
+## Kubernetes Users
 With just a few years since its debut, many companies are running workloads using Kubernetes. We can find numerous user case studies on the Kubernetes website:
 
 + [Box](https://blog.box.com/blog/kubernetes-box-microservices-maximum-velocity/)
@@ -99,7 +99,7 @@ With just a few years since its debut, many companies are running workloads usin
 + [Wikimedia](https://kubernetes.io/case-studies/wikimedia/)
 + And many more.
 
-# Cloud Native Computing Foundation (CNCF)
+## Cloud Native Computing Foundation (CNCF)
 The Cloud Native Computing Foundation (CNCF) is one of the projects hosted by The Linux Foundation. CNCF aims to accelerate the adoption of containers, microservices, and cloud-native applications.
 
 ![CNCF logo](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/5ed4693d263ae3853fe7f0383b17a8de/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/logo_cncf.png)
@@ -119,7 +119,7 @@ CNCF hosts a set of projects, with more to be added in the future. CNCF provides
 
 As we can see, the current set of CNCF projects can cover the entire lifecycle of an application, from its execution using container runtimes, to its monitoring and logging. This is very important to meet the CNCF goal. 
 
-# CNCF and Kubernetes
+## CNCF and Kubernetes
 For Kubernetes, the Cloud Native Computing Foundation:
 
 + Provides a neutral home for the Kubernetes trademark and enforces proper usage
@@ -132,7 +132,7 @@ For Kubernetes, the Cloud Native Computing Foundation:
 + Supports ad hoc activities, like offering a neutral [k8s AMI](https://lists.cncf.io/mailman/listinfo/cncf-images) in the AWS Marketplace
 + Funds conferences and meetup events.
 
-# Knowledge Check
+## Knowledge Check
 Q1. What is Kubernetes licensed under? Select the correct answer.
 
     A. GPLv2

@@ -1,12 +1,12 @@
 Container Orchestration
 =======================
 
-# Introduction
+## Introduction
 With container images, we confine the application code, its runtime, and all of its dependencies in a pre-defined format. And, with container runtimes like [runC](https://runc.io/), [containerd](https://containerd.io/), or [rkt](https://github.com/rkt/rkt) we can use those pre-packaged images, to create one or more containers. All of these runtimes are good at running containers on a single host. But, in practice, we would like to have a fault-tolerant and scalable solution, which can be achieved by creating a single __controller/management unit__, after connecting multiple nodes together. This controller/management unit is generally referred to as a __Container Orchestrator__. 
 
 In this chapter, we will explore why we should use container orchestrators, different implementations of container orchestrators, and where to deploy them. 
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter you will be able to:
 
 + Define the concept of Container Orchestration.
@@ -14,7 +14,7 @@ By the end of this chapter you will be able to:
 + Discuss different Container Orchestration options.
 + Discuss different Container Orchestration deployment options.
 
-# What Are Containers?
+## What Are Containers?
 Before we dive into Container Orchestration, let's review first what containers are.
 
 Containers are an application-centric way to deliver high-performing, scalable applications on the infrastructure of your choice.
@@ -23,7 +23,7 @@ Containers are an application-centric way to deliver high-performing, scalable a
 
 With a container image, we bundle the application along with its __runtime__ and __dependencies__. We use that image to create an isolated executable environment, also known as __container__. We can deploy containers from a given image on the platform of our choice, such as desktops, VMs, Cloud, etc.
 
-# What Is Container Orchestration?
+## What Is Container Orchestration?
 In Development and Quality Assurance (QA) environments, we can get away with running containers on a single host to develop and test applications. However, when we go to production, we do not have the same liberty, as we need to ensure that our applications:
 
 + Are fault-tolerant
@@ -35,7 +35,7 @@ In Development and Quality Assurance (QA) environments, we can get away with run
 
 Container Orchestrators are the tools which group hosts together to form a cluster, and help us fulfill the requirements mentioned above.
 
-# Container Orchestrators
+## Container Orchestrators
 Nowadays, there are many Container Orchestrators available, such as:
 
 + __Docker Swarm__
@@ -60,7 +60,7 @@ Nowadays, there are many Container Orchestrators available, such as:
 
 We have explored different Container Orchestrators in another edX MOOC, _Introduction to Cloud Infrastructure Technologies (LFS151x)_. We highly recommend that you take _LFS151x_.
 
-# Why Use Container Orchestrators?
+## Why Use Container Orchestrators?
 Though we can argue that containers at scale can be maintained manually, or with the help of some scripts, Container Orchestrators can make things easy for operators.
 
 Container Orchestrators can:
@@ -75,12 +75,12 @@ Container Orchestrators can:
 
 With all these built-in benefits, it makes sense to use Container Orchestrators to manage containers. In this course, we will explore Kubernetes. 
 
-# Where to Deploy Container Orchestrators?
+## Where to Deploy Container Orchestrators?
 Most Container Orchestrators can be deployed on the infrastructure of our choice. We can deploy them on bare-metal, VMs, on-premise, or on a cloud of our choice. For example, Kubernetes can be deployed on our laptop/workstation, inside a company's datacenter, on AWS, on OpenStack, etc. There are even one-click installers available to setup Kubernetes on the Cloud, like Google Container Engine on Google Cloud, or Azure Container Service on Microsoft Azure. Similar solutions are available for other Container Orchestrators, as well.
 
 There are companies who offer managed Container Orchestration as a Service. We will explore them for Kubernetes in one of the later chapters.
 
-# Knowledge Check
+## Knowledge Check
 Q1. What are the benefits of doing Container Orchestration? Select the correct answer.
 
     A. Fault-tolerance

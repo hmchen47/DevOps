@@ -1,17 +1,17 @@
 Setting Up a Single-Node Kubernetes Cluster with Minikube
 =========================================================
 
-# Introduction
+## Introduction
 As we mentioned in the previous chapter, [Minikube](https://github.com/kubernetes/minikube) is the easiest and most recommended way to run an All-in-One Kubernetes cluster locally. In this chapter, we will check out the requirements to install Minikube on our workstation, as well as the installation instructions to set it up on Linux, Mac and Windows. 
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter you will be able to:
 
 + Discuss Minikube.
 + Install Minikube on Linux, Mac, and Windows.
 + Verify the installation.
 
-# Requirements for Running Minikube
+## Requirements for Running Minikube
 Minikube runs as a VM. Therefore, we need to make sure that we have the supported hardware and the hypervisor to create VMs. Next, we outline the requirements to run Minikube on our workstation/laptop:
 
 + [__kubectl__](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
@@ -35,7 +35,7 @@ Minikube runs as a VM. Therefore, we need to make sure that we have the supporte
 
 In the chapter, we will use VirtualBox as hypervisor on all three operating systems - Linux, macOS, and Windows, to create the Minikube VM. 
 
-# Installing Minikube on Linux
+## Installing Minikube on Linux
 Next, we will learn how to install minikube on Linux (Ubuntu 16.04):
 
 + __Install the hypervisor (VirtualBox), if you haven't done so already__
@@ -86,7 +86,7 @@ Next, we will learn how to install minikube on Linux (Ubuntu 16.04):
     Stoppin
     ```
 
-# Installing Minikube on macOS
+## Installing Minikube on macOS
 On macOS, Minikube uses __VirtualBox as the default hypervisor__, which we will use as well. But, if you would like to use the __xhyve__ hypervisor to start Minikube VM, then, while starting, you will need to pass the `--vm-driver=xhyve`
 
 Next, we will learn how to install minikube on macOS
@@ -139,7 +139,7 @@ Next, we will learn how to install minikube on macOS
     Machine stopped.
     ```
 
-# Installing Minikube on Windows
+## Installing Minikube on Windows
 We will be using VirtualBox as the hypervisor to create the minikube VM. Make sure Hyper-V is disabled while running VirtualBox. 
 
 Please note that Windows support is currently in the experimental phase, and you might encounter issues during installation. 
@@ -189,13 +189,13 @@ Following are the instructions to install minikube on Windows 10:
     Machine stopped.
     ```
 
-# Installing Minikube Demo
+## Installing Minikube Demo
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)][vid1]
 
 [vid1]: https://youtu.be/5g73AH0TJZU
 
-# Knowledge Check
+## Knowledge Check
 Q1. What can we do with minikube? Select the correct answer.
 
     A. Set up an All-in-One Kubernetes cluster on our workstation

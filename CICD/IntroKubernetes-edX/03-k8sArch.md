@@ -1,10 +1,10 @@
 Kubernetes Architecture - Overview
 ==================================
 
-# Introduction
+## Introduction
 In this chapter, we will explore the Kubernetes architecture, the different components of the __Master__ and __Worker__ nodes, the cluster state management with __etcd__ and the network setup requirements. We will also talk about the network specification called Container Network Interface (CNI), which is used by Kubernetes. 
 
-# Learning Objectives
+## Learning Objectives
 By the end of this chapter you will be able to:
 
 + Discuss the Kubernetes architecture.
@@ -12,7 +12,7 @@ By the end of this chapter you will be able to:
 + Discuss about cluster state management with __etcd__.
 + Review the Kubernetes network setup requirements.
 
-# Kubernetes Architecture
+## Kubernetes Architecture
 At a very high level, Kubernetes has the following main components:
 
 + One or more Master Nodes
@@ -23,7 +23,7 @@ At a very high level, Kubernetes has the following main components:
 
 Next, we will explore the Kubernetes architecture in more detail.
 
-# Master Node
+## Master Node
 The Master Node is responsible for managing the Kubernetes cluster, and it is the entry point for all administrative tasks. We can communicate to the Master Node via the CLI, the GUI (Dashboard), or via APIs.
 
 ![Kubernetes Master Node](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/691134787511a8f0bb19d33c546fecf0/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/Kubernetes_Master_Node.png)
@@ -32,7 +32,7 @@ For fault tolerance purposes, there can be more than one Master Node in the clus
 
 To manage the cluster state, Kubernetes uses __etcd__, and all Master Nodes connect to it. __etcd__ is a distributed key-value store, which we will discuss in a little bit. The key-value store can be part of the Master Node. It can also be configured externally, in which case, the Master Nodes would connect to it.
 
-## Master Node Components
+### Master Node Components
 A Master Node has the following components:
 
 + __API Server__
@@ -51,14 +51,14 @@ A Master Node has the following components:
 
     As discussed earlier, etcd is a distributed key-value store which is used to store the cluster state. It can be part of the Kubernetes Master, or, it can be configured externally, in which case, Master Nodes would connect to it.
 
-# Worker Node
+## Worker Node
 A Worker Node is a machine (VM, physical server, etc.) which runs the applications using Pods and is controlled by the Master Node. Pods are scheduled on the Worker Nodes, which have the necessary tools to run and connect them. A Pod is the scheduling unit in Kubernetes. It is a logical collection of one or more containers which are always scheduled together. We will explore them further in later chapters.
 
 ![Worker Node](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/45fadf6255251a612457d7baf70c587b/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/Kubernetes_Worker_Node.jpg)
 
 Also, to access the applications from the external world, we connect to Worker Nodes and not to the Master Node/s. We will dive deeper into this in future chapters. 
 
-## Worker Node Components
+### Worker Node Components
 A Worker Node has the following components:
 
 + __Container Runtime__
@@ -79,14 +79,14 @@ A Worker Node has the following components:
 
     __kube-proxy__ is the network proxy which runs on each Worker Node and listens to the API Server for each Service endpoint creation/deletion. For each Service endpoint, kube-proxy sets up the routes so that it can reach to it. We will explore this in more detail in later chapters.
 
-# State Management with etcd
+## State Management with etcd
 As we mentioned earlier, Kubernetes uses __etcd__ to store the cluster state. etcd is a distributed key-value store based on the [Raft Consensus Algorithm](https://web.stanford.edu/~ouster/cgi-bin/papers/raft-atc14). Raft allows a collection of machines to work as a coherent group that can survive the failures of some of its members. At any given time, one of the nodes in the group will be the Master, and the rest of them will be the Followers. Any node can be treated as a Master.
 
 ![Master and Followers](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/24010f6f4fb57dc844242ece997a67c4/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/Master_and_Followers.png)
 
 __etcd__ is written in the Go programming language. In Kubernetes, besides storing the cluster state, etcd is also used to store configuration details such as subnets, ConfigMaps, Secrets, etc. 
 
-# Network Setup Challenges
+## Network Setup Challenges
 To have a fully functional Kubernetes cluster, we need to make sure of the following:
 
 + A unique IP is assigned to each Pod
@@ -96,7 +96,7 @@ To have a fully functional Kubernetes cluster, we need to make sure of the follo
 
 All of the above are networking challenges which must be addressed before deploying the Kubernetes cluster. Next, we will see how we can solve these challenges.
 
-## Assigning a Unique IP Address to Each Pod
+### Assigning a Unique IP Address to Each Pod
 In Kubernetes, each Pod gets a unique IP address. For container networking, there are two primary specifications:
 
 + Container Network Model (CNM), proposed by Docker
@@ -108,12 +108,12 @@ Kubernetes uses CNI to assign the IP address to each Pod.
 
 The Container Runtime offloads the IP assignment to CNI, which connects to the underlying configured plugin, like Bridge or MACvlan, to get the IP address. Once the IP address is given by the respective plugin, CNI forwards it back to the requested Container Runtime.
 
-## Container-to-Container Communication Inside a Pod
+### Container-to-Container Communication Inside a Pod
 With the help of the underlying Host OS, all of the Container Runtimes generally create an isolated network entity for each container that it starts. On Linux, that entity is referred to as a __Network Namespace__. These Network Namespaces can be shared across containers, or with the Host Operating System.
 
 Inside a Pod, containers share the Network Namespaces, so that they can reach to each other via localhost.
 
-## Pod-to-Pod Communication Across Nodes
+### Pod-to-Pod Communication Across Nodes
 In a clustered environment, the Pods can be scheduled on any node. We need to make sure that the Pods can communicate across the nodes, and all the nodes should be able to reach any Pod. Kubernetes also puts a condition that there shouldn't be any Network Address Translation (NAT) while doing the Pod-to-Pod communication across Hosts. We can achieve this via:
 
 + Routable Pods and nodes, using the underlying physical infrastructure, like Google Container Engine
@@ -121,10 +121,10 @@ In a clustered environment, the Pods can be scheduled on any node. We need to ma
 
 For more details, you can take a look at the available [Kubernetes documentation](https://kubernetes.io/docs/concepts/cluster-administration/networking/).
 
-## Communication Between the External World and Pods
+### Communication Between the External World and Pods
 By exposing our services to the external world with __kube-proxy__, we can access our applications from outside the cluster. We will have a complete chapter dedicated to this, so we will dive into this later.
 
-# Knowledge Check
+## Knowledge Check
 Q1. Kubernetes can be configured in a multi-Master Node configuration. True or False?
 
     Ans: true
