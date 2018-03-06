@@ -155,3 +155,31 @@ With the above curl request, we requested all the API endpoints from the API Ser
 
 [vid1]: https://youtu.be/SQ_kTmgiVKQ
 
+## Knowledge Check
+Q1. How can we access the cluster? Select the correct answer.
+
+    A. Via APIs
+    B. Via GUI
+    C. Via CLI
+    D. All of the above
+
+    Ans: D
+
+Q2. While starting minikube, a configuration file, 'config', gets created by default inside what directory on Linux? Select the correct answer.
+
+    A. /tmp
+    B. /home/user/.kube
+    C. /root
+    D. /home/user
+
+    Ans: B
+
+Q3. Which of the following commands do we use to open up a proxy port on localhost for the Kubernetes cluster? Select the correct answer.
+
+    A. kubectl create
+    B. kubectl proxy
+    C. kubectl localhost
+    D. kubectl proxy create
+
+    Ans: B
+
