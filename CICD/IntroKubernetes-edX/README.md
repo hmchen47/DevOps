@@ -57,9 +57,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 8. Services
-## Introduction & Learning Objectives
-## Services
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@8b27f544021a4e2f84da5b988a39500b)
+## [Services](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@ac7a4457c38549378c670deb13fab93d)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@18283a6892094ae5a738129be381ac90)
+
+## [Contents](./08-Services.md)
 
 
 # Chapter 9. Deploying a Stand-Alone Application
