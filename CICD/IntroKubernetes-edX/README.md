@@ -63,9 +63,9 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 9. Deploying a Stand-Alone Application
-## Introduction & Learning Objectives
-## Deploying a Stand-Alone Application
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@c6de8dcabcf84e3bb7fb66f310a78e2e)
+## [Deploying a Stand-Alone Application](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@f7899ecb21954cd891b4245482253317)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@3f8327fb08054264acf9c09c276439fa)
 
 
 # Chapter 10. Kubernetes Volume Management
