@@ -63,17 +63,19 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 9. Deploying a Stand-Alone Application
-## Introduction & Learning Objectives
-## Deploying a Stand-Alone Application
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@c6de8dcabcf84e3bb7fb66f310a78e2e)
+## [Deploying a Stand-Alone Application](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@f7899ecb21954cd891b4245482253317)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@3f8327fb08054264acf9c09c276439fa)
+
+## [Contents](./09-StandAloneApp.md)
 
 
 # Chapter 10. Kubernetes Volume Management
-## Introduction & Learning Objectives
-## Kubernetes Volume Management
-## Knowledge Check
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@26e9c8e5344c438c82a55780826c4add)
+## [Kubernetes Volume Management](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@42c92bb634bd4255bcb9a09d50d6531f)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@84aa5ca7ead24607a05e2b92e3943c55)
 
+## [Contents](./10-VolumeMgmt.md)
 
 # Chapter 11. Deploying a Multi-Tier Application
 ## Introduction & Learning Objectives
