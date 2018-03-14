@@ -76,9 +76,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 11. Deploying a Multi-Tier Application
-## Introduction & Learning Objectives
-## Deploying a Multi-Tier Application
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@9264eded869340bb992835015b7cfc91)
+## [Deploying a Multi-Tier Application](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@ebfaea9500a04bc2a6fd98e7e255e969)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@df5cf3c4d2e641789b3e89ad834afe5e)
+
+## [Contents](./11-MultiTierApp.md)
 
 
 # Chapter 12. ConfigMaps and Secrets
