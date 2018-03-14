@@ -82,10 +82,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 12. ConfigMaps and Secrets
-## Introduction & Learning Objectives
-## ConfigMaps and Secrets
-## Knowledge Check
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@ac76256cd56a4a3596e86403357dec9a)
+## [ConfigMaps and Secrets](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@43c9dea96d6842bc8142ec3bed246195)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@ecee3f1380fa40f79416114741abd2f5)
+
+## [Contents](./12-ConfigMap_Secrete.md)
 
 
 # Chapter 13. Ingress
