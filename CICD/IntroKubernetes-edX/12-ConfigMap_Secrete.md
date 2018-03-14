@@ -15,12 +15,12 @@ While deploying an application, we may need to pass such runtime parameters like
 + From files.
 
 ## Create a ConfigMap from Literal Values and Get Its Details
-A ConfigMap can be created with the kubectl create command, and we can get the values using the kubectl get command.
+A ConfigMap can be created with the `kubectl create` command, and we can get the values using the `kubectl get` command.
 
 ### Create the ConfigMap
 ```bash
 $ kubectl create configmap my-config --from-literal=key1=value1 --from-literal=key2=value2
-configmap "my-config" created 
+configmap "my-config" created
 ```
 
 ### Get the ConfigMap Details for `my-config`
@@ -102,14 +102,14 @@ In situations such as the one we just mentioned, the [Secret](https://kubernetes
 
 It is important to keep in mind that the Secret data is stored as plain text inside __etcd__. Administrators must limit the access to the API Server and __etcd__.
 
-## Create the Secret with the 'kubectl create secret' Command
+## Create the Secret with the `kubectl create secret` Command
 To create a Secret, we can use the `kubectl create secret` command:
 ```bash
 $ kubectl create secret generic my-password --from-literal=password=mysqlpassword
 ```
 The above command would create a secret called `my-password`, which has the value of the `password` key set to `mysqlpassword`.
 
-## 'get' and 'describe' the Secret
+## `get` and `describe` the Secret
 Analyzing the `get` and `describe` examples below, we can see that they do not reveal the content of the Secret. The type is listed as `Opaque`.
 ```bash
 $ kubectl get secret my-password
@@ -179,4 +179,33 @@ We can also mount a Secret as a Volume inside a Pod. A file would be created for
 ## Using ConfigMaps Demo
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/UpPnmvHwsjA)
 
-## 
+## Knowledge Check
+Q1. Which of the following allows us to decouple the configuration details from the container image? Select the correct answer.
+
+    A. ConfigMaps
+    B. Secrets
+    C. Ingress
+    D. Configs
+
+    Ans: a
+
+Q2. How can we create ConfigMaps? Select the correct answer.
+
+    A. From literal values
+    B. From a YAML configuration file
+    C. Both A. and B.
+    D. None of the above
+
+    Ans: c
+
+
+Q3. How can we get Secrets inside a Pod? Select the correct answer.
+
+    A. As environment variables
+    B. From a mounted volume
+    C. Both as environment variables and from a mounted volume
+    D. None of the above
+
+    Ans: c
+
+
