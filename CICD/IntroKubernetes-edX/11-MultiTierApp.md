@@ -21,6 +21,7 @@ We will be using a sample RSVP application. Using this application, users can re
 ![RSVP Application](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/e1a0b4b6b0d9740bee33675a0391fe45/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/rsvpapp.jpg)
 
 The application's code is available [here](https://github.com/cloudyuga/rsvpapp). In the frontend code (`rsvp.py`), we will look for the `MONGODB_HOST` environment variable for the database endpoint, and, if it is set, we will connect to it on port `27017`.
+
 ```python
 MONGODB_HOST=os.environ.get('MONGODB_HOST', 'localhost')
 client = MongoCLient(MONGODB_HOST, 27017)
@@ -97,7 +98,7 @@ web-service   10.0.0.133    <nodes>        80/32636/TCP   1d
 ```
 
 ## Deploy the Python Flask-Based Frontend
-The frontend is created using a [Python Flask-based microframework](http://flask.pocoo.org/). Its source code is available here. We have created a Docker image called [teamcloudyuga/rsvpapp](https://hub.docker.com/r/teamcloudyuga/rsvpapp/), in which we have imported the application's source code. The application's code is executed when a container created from that image runs. The Dockerfile to create the `teamcloudyuga/rsvpapp` image is available [here](https://raw.githubusercontent.com/cloudyuga/rsvpapp/master/Dockerfile).
+The frontend is created using a [Python Flask-based microframework](http://flask.pocoo.org/). Its source code is available [here](https://raw.githubusercontent.com/cloudyuga/rsvpapp/master/rsvp.py). We have created a Docker image called [teamcloudyuga/rsvpapp](https://hub.docker.com/r/teamcloudyuga/rsvpapp/), in which we have imported the application's source code. The application's code is executed when a container created from that image runs. The Dockerfile to create the `teamcloudyuga/rsvpapp` image is available [here](https://raw.githubusercontent.com/cloudyuga/rsvpapp/master/Dockerfile).
 
 Next, we will go through the steps of creating the `rsvp` frontend.
 
@@ -185,6 +186,7 @@ $ minikube ip
 192.168.99.100
 ```
 and open a browser to access the application at http://192.168.99.100:31314. Once opened, fill out the required entries using the frontend, which will be saved in the backend database.
+
 ![Accessing the RSVP application from our workstation](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/3d4911f766e7da1098e302f1e5542de4/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/rsvpapp1.png)
 
 ## Scale the Frontend
@@ -206,4 +208,22 @@ If we go to the browser and refresh the frontend, the `hostname` printed after t
 ## Deploying a Multi-Tier Application Demo
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/0rLAGUPn2iA)
 
-## 
+## Knowledge Check
+Q1. Which sub-command of 'kubectl' we can use to scale an application? Select the correct answer.
+
+    A. expand
+    B. scale
+    C. new
+    D. change
+
+    Ans: b
+
+Q2. While defining the Pod, we cannot give a logical name to a port in a Deployment. True or False?
+
+    Ans: flase
+
+Q3. We can change the port number while forwarding the requests from a Service to the connected Pods. True or False?
+
+    Ans: true
+
+    
