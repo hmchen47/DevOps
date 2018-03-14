@@ -89,9 +89,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 13. Ingress
-## Introduction & Learning Objectives
-## Ingress
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@9c8cc8ca468a44d3b97d9a6814c03239)
+## [Ingress](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@fc044362d6374bddaa7f2ec873fd3d31)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@6a4c8f2c45884a9d8a9533555f028d96)
+
+## [Contents](./13-Ingress.md)
 
 
 # Chapter 14. Advanced Topics - Overview
