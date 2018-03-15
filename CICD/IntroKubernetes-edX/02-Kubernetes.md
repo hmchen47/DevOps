@@ -111,7 +111,7 @@ CNCF hosts a set of projects, with more to be added in the future. CNCF provides
 + [Kubernetes](https://kubernetes.io/) for Container Orchestration
 + [Linkerd](https://linkerd.io/) for Service Mesh
 + [gRPC](http://www.grpc.io/) for Remote Procedure Call
-+ [Container Network Interface (CNI)[(https://github.com/containernetworking/cni)] for Container Networking
++ [Container Network Interface (CNI)](https://github.com/containernetworking/cni) for Container Networking
 + [CoreDNS](https://coredns.io/) for Service Discovery
 + [Prometheus](https://prometheus.io/) for Monitoring
 + [OpenTracing](http://opentracing.io/) for Tracing
