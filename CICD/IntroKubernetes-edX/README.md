@@ -101,9 +101,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 15. Kubernetes Community
-## Introduction & Learning Objectives
-## Kubernetes Community
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@65b214fe67eb47e8a1a6bda0eef3a354)
+## [Kubernetes Community](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@6780b44993484c5e8d15bcc5b009e769)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@c1ce7a2733a243ea86f443c303e459f8)
+
+## [Contents](./15-K8SCommunity.md)
 
 ## Final Exam
 ## Before You Begin
