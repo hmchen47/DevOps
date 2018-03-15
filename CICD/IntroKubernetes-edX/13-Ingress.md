@@ -30,25 +30,25 @@ With Ingress, users don't connect directly to a Service. Users reach the Ingress
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: web-ingress
+    name: web-ingress
 spec:
-  rules:
-  - host: blue.myweb.com
-    http:
-      paths:
-      - backend: 
-          serviceName: blue-service
-          servicePort: 80
-  - host: green.myweb.com
-    http:
-      paths:
-      - backend:
-          serviceName: green-service
-          servicePort: 80
+    rules:
+    - host: blue.myweb.com
+        http:
+            paths:
+            - backend: 
+                serviceName: blue-service
+                servicePort: 80
+    - host: green.myweb.com
+        http:
+            paths:
+            - backend:
+                serviceName: green-service
+                servicePort: 80
 ```
 According to the example we provided, users requests to both `blue.myweb.com` and `green.myweb.com` would go to the same Ingress endpoint, and, from there, they would be forwarded to `blue-service`, and `green-service`, respectively. Here, we have seen an example of a Name-Based Virtual Hosting Ingress rule. 
 
-We can also have Fan Out Ingress rules, in which we send requests like `myweb.com/blue` and `myweb.com/green`, which would be forwarded to blue-service and green-service, respectively.
+We can also have __Fan Out Ingress rules__, in which we send requests like `myweb.com/blue` and `myweb.com/green`, which would be forwarded to blue-service and green-service, respectively.
 
 ![Ingress URL Mapping](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/d80931c9035169af0fdd77ab2cf7df44/asset-v1:LinuxFoundationX+LFS158x+2T2017+type@asset+block/urlmap.jpg)
 
@@ -83,3 +83,14 @@ Once this is done, we can now open `blue.myweb.com` and `green.myweb.com` on the
 ## Using Ingress Rules to Access an Application Demo
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/XKbV-vurBzg)
 
+## Knowledge Check
+Q1. The Ingress Controller creates a Load Balancer, which is based on ____________. Select the correct answer.
+
+    A. Layer 4
+    B. Layer 3
+    C. Layer 7
+    D. None of the above
+
+    Ans: c
+
+Q2. 
