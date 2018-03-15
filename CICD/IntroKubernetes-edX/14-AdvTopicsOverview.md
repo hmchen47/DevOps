@@ -130,3 +130,26 @@ In Kubernetes, we have to collect resource usage data by Pods, Services, nodes, 
 
 Another important aspect for troubleshooting and debugging is Logging, in which we collect the logs from different components of a given system. In Kubernetes, we can collect logs from different cluster components, objects, nodes, etc. The most common way to collect the logs is using [Elasticsearch](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/), which uses [fluentd](http://www.fluentd.org/) with custom configuration as an agent on the nodes. __fluentd__ is an open source data collector, which is also part of CNCF.
 
+## Knowledge Check
+What objects can be restricted with the Object Count Quota? Select all answers that apply.
+
+    A. Pods
+    B. ConfigMaps
+    C. Persistent Volume Claims
+    D. Secrets
+
+    Ans: a, b, c, d
+
+Q2. We cannot roll back a Deployment. True or False?
+
+    Ans: false
+
+Q3. What is Helm? Select the correct answer.
+
+    A. A node selector
+    B. A logging tool
+    C. A package manager for Kubernetes
+    D. None of the above
+
+    Ans: b
+
