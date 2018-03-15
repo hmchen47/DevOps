@@ -95,10 +95,11 @@ Introduction to Kubernetes - LFS158x
 
 
 # Chapter 14. Advanced Topics - Overview
-## Introduction & Learning Objectives
-## Advanced Topics - Overview
-## Knowledge Check
+## [Introduction & Learning Objectives](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@9518e54ed8934e8db25d43f63a822b96)
+## [Advanced Topics - Overview](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@7168ce2b7e254b168b2685b218244b97)
+## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@596e40ea1acc45b080066f516cd250e8)
 
+## [Contents](./14-AdvTopicsOverview.md)
 
 # Chapter 15. Kubernetes Community
 ## Introduction & Learning Objectives
