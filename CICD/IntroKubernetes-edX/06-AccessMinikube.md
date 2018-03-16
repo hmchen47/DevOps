@@ -67,7 +67,7 @@ To install __kubectl__ on macOS using the Homebrew package manager, do:
 ## Installing kubectl on Windows
 To install __kubectl__ on Windows, follow the steps below:
 
-+ Get the latest __kubectl__ release from here
++ Get the latest __kubectl__ release from [here](https://storage.googleapis.com/kubernetes-release/release/stable.txt)
 + Depending on the latest release, download the __kubectl__ binary. In the example below, we are downloading the v1.6.3 release
 
     `$ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.6.3/bin/windows/amd64/kubectl.exe`
@@ -151,9 +151,8 @@ $ curl http://localhost:8001/
 With the above curl request, we requested all the API endpoints from the API Server.
 
 ## Accessing the Kubernetes Cluster Demo
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)][vid1]
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/SQ_kTmgiVKQ)
 
-[vid1]: https://youtu.be/SQ_kTmgiVKQ
 
 ## Knowledge Check
 Q1. How can we access the cluster? Select the correct answer.
