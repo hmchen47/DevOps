@@ -52,13 +52,13 @@ Minikube is the preferred and recommended way to create an all-in-one Kubernetes
 ## On-Premise Installation
 Kubernetes can be installed on-premise on VMs and Bare Metal.
 
-__On-Premise VMs__
+### On-Premise VMs
 
-    Kubernetes can be installed on VMs created via Vagrant, VMware vSphere, KVM, etc. There are different tools available to automate the installation, like Ansible or kubeadm.
+Kubernetes can be installed on VMs created via Vagrant, VMware vSphere, KVM, etc. There are different tools available to automate the installation, like Ansible or kubeadm.
 
-__On-Premise Bare Metal__
+### On-Premise Bare Metal
 
-    Kubernetes can be installed on on-premise Bare Metal, on top of different Operating Systems, like RHEL, CoreOS, CentOS, Fedora, Ubuntu, etc. Most of the tools used to install VMs can be used with Bare Metal as well. 
+Kubernetes can be installed on on-premise Bare Metal, on top of different Operating Systems, like RHEL, CoreOS, CentOS, Fedora, Ubuntu, etc. Most of the tools used to install VMs can be used with Bare Metal as well. 
 
 ## Cloud Installation
 Kubernetes can be installed and managed on almost any Cloud environment.
