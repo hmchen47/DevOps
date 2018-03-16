@@ -18,7 +18,7 @@ Minikube runs as a VM. Therefore, we need to make sure that we have the supporte
 
     __kubectl__ is a binary to access any Kubernetes cluster. Generally, it is installed before starting minikube, but we can install it later, as well. If __kubectl__ is not found while installing minikube, we will get a warning message, which can be safely ignored (just remember that we will have to install __kubectl__ later). We will explore __kubectl__ in future chapters.
 
-+ _On macOS
++ On macOS
 
     [xhyve driver](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#xhyve-driver), [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or [VMware Fusion](http://www.vmware.com/products/fusion.html) hypervisors
 
@@ -92,7 +92,7 @@ On macOS, Minikube uses __VirtualBox as the default hypervisor__, which we will 
 Next, we will learn how to install minikube on macOS
 
 + __Install [VirtualBox](http://download.virtualbox.org/virtualbox/5.1.22/VirtualBox-5.1.22-115126-OSX.dmg) on macOS.__
-+ __Install minikube __
++ __Install minikube__
 
     We can download the latest release from the `minikube release` page. Once downloaded, we need to make it executable and copy it in the `PATH`.
 
@@ -191,9 +191,8 @@ Following are the instructions to install minikube on Windows 10:
 
 ## Installing Minikube Demo
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)][vid1]
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/5g73AH0TJZU)
 
-[vid1]: https://youtu.be/5g73AH0TJZU
 
 ## Knowledge Check
 Q1. What can we do with minikube? Select the correct answer.
