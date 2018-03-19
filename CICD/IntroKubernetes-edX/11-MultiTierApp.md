@@ -113,8 +113,8 @@ spec:
     replicas: 1
     template:
         metadata:
-        labels:
-            app: rsvp
+            labels:
+                app: rsvp
         spec:
             containers:
             - name: rsvp-app
