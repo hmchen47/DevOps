@@ -220,6 +220,69 @@ What is the difference between a ROM chip and a RAM chip? Check all that apply.
         Ans: B, C, D
         UEFI is the new standard for BIOS. It has become the default BIOS on new systems and it has better compatibility with newer hardware.
 
+
+# Accessing Qwiklabs
+1. How long do you have to complete each Qwiklab?
+
+        A. 20 minutes
+        B. 1 hour
+        C. 24 hours
+        D. As long as you need.
+
+        Ans: B
+        You’ll have one hour to complete every lab in this program.
+
+2. 
+True or false: It can take some time for the labs to load once you click “start lab.”
+
+        Ans: True
+        The labs can take some time to load. You can use this time to review the lab instructions.
+
+3. What login should you use to access the Google console?
+
+        A. Any username and password combination you like
+        B. Your personal gmail account
+        C. The username and password under the orange “Open Google Console” button
+
+        Ans: C
+        You’ll need to use the unique username and password listed here each time you want to access the labs.
+
+
+4. True or false: You need to add a recovery phone number or email address to open the Google console.
+
+        Ans: flase
+        You don’t need to add a recovery email or phone number since you’ll use a new gmail username and password to sign in each time you access a lab.
+
+5. Where do you navigate to access the Virtual Machine instances?
+
+        A. Compute Engine >> VM Instances
+        B. App Engine >> Versions
+        C. App Engine >> Instances
+        D. Compute Engine >> Instance Groups
+
+        Ans: A
+        Once you’ve logged into the Google console, use the tab on the left-hand corner and navigate to Compute Engine >> VM Instances. Your virtual machine will appear on this screen.
+
+6.True or false: It can take some time for the working instance of Linux and Windows OS to load.
+
+        Ans: true
+        We’re loading a working instance of the OS for you. Each time you open the OS, we’ll need to download some key software for you, which can take some time.
+
+7. What do you need to do to finish a lab and have your grade posted to Coursera?
+
+        A. Close all lab windows
+        B. Refresh the Coursera course page
+        C. Click the red “End Lab” button
+
+        Ans: C
+        Once you click the red “End Lab” button, your grade will post to Coursera.
+
+8. Are you able to access your work once you click the “End Lab” button?
+
+        Ans: no
+        Once you click “End Lab,”’ you won’t be able to access your work.
+
+
 # Create a File with Windows
 1. Qwiklabs-managed Google Cloud Console accounts are permanent, and can be accessed after a lab ends.
 
@@ -260,6 +323,9 @@ What is the difference between a ROM chip and a RAM chip? Check all that apply.
 
         Ans: A
         In Google Cloud Console, virtual machines for labs are available in the Menu, by selecting the Compute Engine category, then VM instances.
+
+
+
 
 
 # Limitations of the Internet
@@ -663,8 +729,6 @@ Hi Aditya,
 
         Ans: D
         Well done! This lets the user know the next steps and opens the door for further dialogue.
-
-
 
 
 # Troubleshooting Best Practices
