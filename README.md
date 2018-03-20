@@ -27,4 +27,14 @@ Contents:
     + [Technical Support Fundamental - Google, Coursera](./ITSupport/TechnicalSupportFundamentals-Google)
 
 
+NB: keywords for Git Commits
+
+feat        new feature
+fix         a bug fix
+docs        changes to documentation
+style       formating, missing semicolons, etc.; no code chnage
+refactor    refacctoring production code
+test        add tests, refactoring test; no production code change
+chore       updating build tasks, package manager config, etc.; 
+            no production code change
 
