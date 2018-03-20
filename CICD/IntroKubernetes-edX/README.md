@@ -57,7 +57,7 @@ Introduction to Kubernetes - LFS158x
 ## [Kubernetes Building Blocks](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@1aa9353fbb9f4c158f92ae6078c5aded)
 ## [Knowledge Check](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@59d50b7b236745f99454380c8c253692)
 
-## [Contents](./07-K8SBuildingBlocks.md)
+[Contents](./07-K8SBuildingBlocks.md)
 
 
 # Chapter 8. Services
@@ -121,6 +121,7 @@ Introduction to Kubernetes - LFS158x
 
 ## [Contents](./15-K8SCommunity.md)
 
-## Final Exam
-## Before You Begin
-## Final Exam
+# Final Exam
+## [Final Exam](https://courses.edx.org/courses/course-v1:LinuxFoundationX+LFS158x+2T2017/jump_to/block-v1:LinuxFoundationX+LFS158x+2T2017+type@vertical+block@2bd38c4196574a7ba2a8484e09946dce)
+
+
