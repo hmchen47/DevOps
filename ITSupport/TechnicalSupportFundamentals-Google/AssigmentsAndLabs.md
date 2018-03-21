@@ -684,7 +684,7 @@ You've successfully installed Firefox, updated VLC, and uninstalled GIMP on a Li
 
 # Peer-graded Assignment: Writing Effective Documentation
 ## Important Information
-It is especially important to submit this assignment before the deadline, January 21, 11:59 PM PST, because it must be graded by others. If you submit late, there may not be enough classmates around to review your work. This makes it difficult - and in some cases, impossible - to produce a grade. Submit on time to avoid these risks.
+It is especially important to submit this assignment before the deadline, because it must be graded by others. If you submit late, there may not be enough classmates around to review your work. This makes it difficult - and in some cases, impossible - to produce a grade. Submit on time to avoid these risks.
 
 ## Instructions
 Overview: Documentation is an important part of an IT Support Specialist role. It’s vital to document processes and policies not only for yourself but for your teammates that may encounter the same issue. This writing assessment will help you get in the habit of writing good documentation and you’ll also see how documentation may be presented to you by reviewing your peers’ documentation.
@@ -715,6 +715,38 @@ Consider the following questions as you develop your process review:
 + Is the documentation clearly organized and structured?
 + Is the documentation easy to read and understand?
 
+### Submission
 
+Problem: With a series of exercises and labs to familiar with Kubnetes commands, we need to install an All-in-One minikube on local machine
 
+Result: Alternative Could based installation is required to conduct these exercises and labs.  
+
+Solutions:
+1. To minimize the impact on Host Operating System, Windows 10, a Linux version of minikube will install on the Virtual Machine
+    a. Install VirtualBox on existing Unbuntu Linux 17.10
+    b. Download and install kubeclt
+    c. Download and install minikube
+    d. Change mode of kubectl and minikube with execution
+    e. move kubectl and minikube to /usr/local/bin
+    f. Check the execution path $PATH which already includes /usr/local/bin
+    g. Execute `minikube start` to run minikube but fail
+    h. After checking the error message, the system conflicts with Host and Guest OSes both with VirtualBox.
+    i. Try to install KVM on Ubuntu, but not allowed
+2. Install Windows Version of minikube
+    a. Download kubeclt and minikube of Windows version
+    b. Copy kubectl and minikube to c:\Program Files\minikube
+    c. Add c:\Program Files\minikube to environment variable PATH
+    d. Execute `minikube start --vm-driver=virtualbox` but failed
+    e. The system cannot create the a log file $Home\.kube\minikube\Logs\VBox.log
+    g. Manually create the folder $Home\.kube\minikube\Logs\, which should create automatically when exeuting `minikube start` and download minikube VM
+    h. Re-run minikube still fail due to BIOS setting required VT-x
+    i. Check the BIOS setting and Google searching, the Intel Virtualization setting was enabled, which should include VT-x and VT-d
+    j. After browsing Google, glogs, and asking question on forums, no answer so far
+3. To complete the tasks, decide to go for AWS which needs to pay for the usage
+    a. Setup Virtual Machine on AWS with Ubuntu 16.04
+    b. Install VirtualBox on Ubuntu
+    c. Download kubectl adn minikube
+    d. change mode and move them to /usr/local/bin
+    e. Check $PATH with /usr/local/bin
+    f. Execute `minikube start` and create minikube VM successfully
 
