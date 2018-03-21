@@ -165,3 +165,98 @@ Senior Director of Cloud Technologies at Bitnami; Author of 'Docker Cookbook'
 
 ## 1.21 A Word from Tim Serewixz
 [video](https://lms.quickstart.com/custom/858487/media/Course%20Introduction.mp4)
+
+## 1.22 The Linux Foundation
+[The Linux Foundation][lfs]:
++ __Mission__: provide experience and experties to any initiative working to solve complex problem through open source collaboration
++ Providing tools to scale open source project: security, best practice, governance, operations and ecosystem development, training and certification, licensing, and promotion
++ home to creator Linus Torvalds and lead maintainer Greg Kroah-Hartman
++ a netural home where Linux kernel development can be protect and accelerate for years to come
+
+Critical Open-Source Projects:
++ Big data and analytics: [ODPi][odpi], [R Consortium][rcos]
++ Networking: [OpenDaylight][day], [OPNFV][opnfv]
++ Embedded: [Dronecode][drone], [Zephyr][zephyr]
++ Web tools: [JS Foundation][jsfund], [Node.js][nodejs]
++ Cloud computing: [Cloud Foundry][cf], [Cloud Native Computing Foundation][cncf], [Open Container Initiative][oci]
++ Automotive: [Automotive Grade Linus][agl]
++ Security: [The Core Infrastructure Initiative][cii]
++ Blockchain: [Hyperledger][ledger]
++ ...
+
+[lfs]: https://www.linuxfoundation.org/
+[odpi]: https://www.odpi.org/
+[rcos]: https://www.r-consortium.org/
+[day]: https://www.odpi.org/
+[opnfv]: https://www.opnfv.org/
+[drone]: https://www.dronecode.org/
+[zephyr]: https://www.zephyrproject.org/
+[jsfund]: https://js.foundation/
+[nodejs]: https://nodejs.org/en/
+[cf]: https://www.cloudfoundry.org/
+[cncf]: https://www.cncf.io/
+[oci]: https://www.opencontainers.org/
+[agl]: https://www.automotivelinux.org/
+[cii]: https://www.coreinfrastructure.org/
+[ledger]: https://www.hyperledger.org/
+
+## 1.23 The Linux Foundation Events
+see [Introduxtion to The Linux Fundation][intro] in "Introduction to Linux"
+
+[intro]: ~/Projects/DevOps/Linux/Linux-LFS101x.edX/ch01-LinuxFoundation.md
+
+
+# 1.24 Training Venues
+Types of training:
++ Classroom
++ Online
++ On-site
++ Events-based
+
+## 1.25 The Linux Foundation Training Offerings
+Courses offerings:
++ Linux Programming & Development Training
++ Enterprise IT & Linux System Administration Courses
++ Open Source Compliance Courses
+
+[Website][train] for The Linux Foundation Training
+
+[train]: https://training.linuxfoundation.org/?ticket=ST-i8CqVcVZK7
+
+## 1.26 The Linux Foundation Certifications
+Exams for Certification
++ from any computer, anywhere, at any time
++ performance-based
++ distributed =-flexible
++ up-to-date, testing knowledge and skills that actually matter in today's IT environment
+
+Types of certifications:
++ Linux Foundation Certified Sysadmin (LFCS)
++ Linux Foundation Certified Engineer (LFCE)
++ Certified Kubernetes Administrator (CKA)
++ Cloud Foundary Certificated Developer
+
+## 1.27 Training/Certifcation Firewall
++ Two training departments: Course Delivery & Certification
++ Seperation with firewall
++ ensure independent organizations and companies able to develop 3rd party training material, geared toward helping test takers pass thier certification exams
++ no secret tips to success
++ robust set of courses to equip attendees with a broad knowledge of the many areas required to master
+
+## 1.28 Open Source Guides for the Enterprise
+TODO Group devceloped a set of guides laveraging best practices for 
++ running an open source program office, or
++ starting an open source project in an existing organization
+
+[The Open Source Guides For the Enterprise][opg]
+
+[opg]: https://www.linuxfoundation.org/resources/open-source-guides/
+
+## 1.29 Lab 1.1 - Configuraing the System for sudo
+[lab 1.1][lab]
+
+[lab]: https://lms.quickstart.com/custom/858487/LAB_1.1.pdf
+
+## 1.30 Copyright
+Copyright 2017-2018, All rights reserved.
+
