@@ -89,3 +89,15 @@ Solutions other than Kubernetes
 
 ![The Kubernetes Lineage](https://image.slidesharecdn.com/cloudfoundry-theplatformforforgingcloudnativeapplications-151006123238-lva1-app6891/95/cloud-foundry-the-platform-for-forging-cloud-native-applications-24-638.jpg?cb=1444134833)
 
+## 2.9 Kubernetes Architecture
+![K8s Architecture](https://d33wubrfki0l68.cloudfront.net/e298a92e2454520dddefc3b4df28ad68f9b91c6f/70d52/images/docs/pre-ccm-arch.png)
+
+Kubernetes Architecture
++ made of a central manager (aka master) and some worker node
++ Master Node: API Server, scheduler, various controllers, and a storge system to keep the state of the cluster, container settings, and the network configuration
++ K8s exposes and API (via API server):
+    + kubectl: a local client to communicate the API Server
+    + kube-scheduler: find a suitable node to run that container for the requests for running containers coming to the API
+    + kubelet: receive requests to run the containers; manage any necessary resources and watch over them on the local node
+    + kube-proxy: create and manage networking rules to expose the container on the network
+
