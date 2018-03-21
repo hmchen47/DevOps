@@ -719,7 +719,7 @@ Consider the following questions as you develop your process review:
 
 Problem: With a series of exercises and labs to familiar with Kubnetes commands, we need to install an All-in-One minikube on local machine
 
-Result: Alternative Could based installation is required to conduct these exercises and labs.  
+Result: Alternative Could-based installation is required to conduct these exercises and labs.
 
 Solutions:
 1. To minimize the impact on Host Operating System, Windows 10, a Linux version of minikube will install on the Virtual Machine
@@ -731,7 +731,6 @@ Solutions:
     f. Check the execution path $PATH which already includes /usr/local/bin
     g. Execute `minikube start` to run minikube but fail
     h. After checking the error message, the system conflicts with Host and Guest OSes both with VirtualBox.
-    i. Try to install KVM on Ubuntu, but not allowed
 2. Install Windows Version of minikube
     a. Download kubeclt and minikube of Windows version
     b. Copy kubectl and minikube to c:\Program Files\minikube
