@@ -1,5 +1,5 @@
-Technical Support Foundations
-=============================
+Technical Support Fundamentals - Google
+=======================================
 
 # Introduction to IT Support
 ## [Program Introduction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/F3fZT/program-introduction)
