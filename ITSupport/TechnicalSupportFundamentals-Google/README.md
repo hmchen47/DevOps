@@ -15,6 +15,7 @@ Technical Support Foundations
 ## [From Abacus to Analytical Engine](https://www.coursera.org/learn/technical-support-fundamentals/lecture/CbFIp/from-abacus-to-analytical-engine)
 ## [The Path to Modern Computers](https://www.coursera.org/learn/technical-support-fundamentals/lecture/kWVzt/the-path-to-modern-computers)
 ## [Discussion Prompt: Your History of Computing](https://www.coursera.org/learn/technical-support-fundamentals/discussionPrompt/GVVbI/your-history-of-computing)
+## [Kevin Career](https://www.coursera.org/learn/technical-support-fundamentals/lecture/BLZaB/computer-language)
 
 # Digital Logic
 ## [Computer Language](https://www.coursera.org/learn/technical-support-fundamentals/lecture/BLZaB/computer-language)
@@ -30,6 +31,7 @@ For more information about logic gates, check out the link [here](https://simple
 # Computer Architecture Layer
 ## [Abstraction](https://www.coursera.org/learn/technical-support-fundamentals/lecture/10AG6/abstraction)
 ## [Computer Architecture Overview](https://www.coursera.org/learn/technical-support-fundamentals/lecture/Ccxqn/computer-architecture-overview)
+## [Kevin Advice](https://www.coursera.org/learn/technical-support-fundamentals/lecture/UWQTJ/kevin-advice)
 ## [Practice Quiz: Binary Counting & Computer Architecture](https://www.coursera.org/learn/technical-support-fundamentals/quiz/00x5D/binary-counting-computer-architecture)
 
 

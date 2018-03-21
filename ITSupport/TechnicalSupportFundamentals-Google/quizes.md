@@ -1,6 +1,59 @@
 Quizes
 ======
 
+# Binary
+1. Which of these is a valid byte? Check all that apply.
+
+        a. 11011011
+        b. 10022011
+        c. 11100
+        d. 00000000
+
+        Ans: a, d
+        A byte is composed of eight bits of zeros and ones.
+
+2. How many possible values can we have with 8 bits?
+
+        a. 8
+        b. 127
+        c. 256
+        d. 1 byte
+
+        Ans: c
+        Bits use the binary system, which is also known as the base-2 numeral system. So 2^8 allows us 256 values from 0 to 255.
+
+3. Why did UTF-8 replace the ASCII character-encoding standard?
+
+        a. ASCII can store a character in more than one byte.
+        b. ASCII can represent emoji.
+        c. UTF-8 only uses 128 values.
+        d. UTF-8 can store a character in more than one byte.
+
+        Ans: d
+        UTF-8 replaced the ASCII character-encoding standard because it can store a character in more than a single byte. This allowed us to represent a lot more character types, like emoji.
+
+4. What is the highest decimal value we can represent with a byte?
+
+        a. Any number
+        b. 2
+        c. 256
+        d. 255
+
+        Ans: d
+        There are 256 values in a byte, from the decimal number 0 to 255.
+
+5. The binary value of the ASCII letter "c" is 0110 0011. Using the handy chart that we learned in the lesson, convert this number to its decimal value. You'll need to use some math for this question.
+
+        a. 123
+        b. 99
+        c. 45
+        d. 100
+
+        Ans: b
+        The decimal value 99 is same as the binary value 0110 0011. So the numbers that are turned ON are 64, 32, 2, and 1 and added up together. In other words, 64 + 32 + 2 + 1 = 99.
+
+
+
 # Introduction to IT
 1. Which of these is a valid byte? Check all that apply.
 
@@ -60,6 +113,12 @@ Quizes
 7. Write a paragraph on examples of abstraction that you encounter in your day-to-day life. For example, driving a car is an example of abstraction, you don't need to understand how a car works underneath the hood in order to drive one.
 
     What do you think?
+
+# Assemble a Computer
+Q1. You will assemble a computer virtually by drag-and-dropping the components to the corresponding red sections. Please note that for the CPU section of the computer, you will need to place the items in the correct order from bottom to top.
+
+When you're done, click the "Submit" button to check your answers. If you've made a mistake, click the "Reset" button. When you're done, close the quiz and click the "Submit Quiz" button for a grade.
+
 
 
 # The Modern Computer
@@ -161,6 +220,69 @@ What is the difference between a ROM chip and a RAM chip? Check all that apply.
         Ans: B, C, D
         UEFI is the new standard for BIOS. It has become the default BIOS on new systems and it has better compatibility with newer hardware.
 
+
+# Accessing Qwiklabs
+1. How long do you have to complete each Qwiklab?
+
+        A. 20 minutes
+        B. 1 hour
+        C. 24 hours
+        D. As long as you need.
+
+        Ans: B
+        You’ll have one hour to complete every lab in this program.
+
+2. 
+True or false: It can take some time for the labs to load once you click “start lab.”
+
+        Ans: True
+        The labs can take some time to load. You can use this time to review the lab instructions.
+
+3. What login should you use to access the Google console?
+
+        A. Any username and password combination you like
+        B. Your personal gmail account
+        C. The username and password under the orange “Open Google Console” button
+
+        Ans: C
+        You’ll need to use the unique username and password listed here each time you want to access the labs.
+
+
+4. True or false: You need to add a recovery phone number or email address to open the Google console.
+
+        Ans: flase
+        You don’t need to add a recovery email or phone number since you’ll use a new gmail username and password to sign in each time you access a lab.
+
+5. Where do you navigate to access the Virtual Machine instances?
+
+        A. Compute Engine >> VM Instances
+        B. App Engine >> Versions
+        C. App Engine >> Instances
+        D. Compute Engine >> Instance Groups
+
+        Ans: A
+        Once you’ve logged into the Google console, use the tab on the left-hand corner and navigate to Compute Engine >> VM Instances. Your virtual machine will appear on this screen.
+
+6.True or false: It can take some time for the working instance of Linux and Windows OS to load.
+
+        Ans: true
+        We’re loading a working instance of the OS for you. Each time you open the OS, we’ll need to download some key software for you, which can take some time.
+
+7. What do you need to do to finish a lab and have your grade posted to Coursera?
+
+        A. Close all lab windows
+        B. Refresh the Coursera course page
+        C. Click the red “End Lab” button
+
+        Ans: C
+        Once you click the red “End Lab” button, your grade will post to Coursera.
+
+8. Are you able to access your work once you click the “End Lab” button?
+
+        Ans: no
+        Once you click “End Lab,”’ you won’t be able to access your work.
+
+
 # Create a File with Windows
 1. Qwiklabs-managed Google Cloud Console accounts are permanent, and can be accessed after a lab ends.
 
@@ -201,6 +323,9 @@ What is the difference between a ROM chip and a RAM chip? Check all that apply.
 
         Ans: A
         In Google Cloud Console, virtual machines for labs are available in the Menu, by selecting the Compute Engine category, then VM instances.
+
+
+
 
 
 # Limitations of the Internet
@@ -439,6 +564,171 @@ Q. In the Linux distribution Ubuntu, what command would you use to install an ap
 
         Ans: C
         A newer version of VLC was available. It’s important to keep software up-to-date to ensure that you receive security updates and get all the newest features!
+
+# Practice Quiz: Customer Service
+## Executive Talking Over You
+A user calls in and states that they’re a director, and they need some software installed immediately. You explain that this hasn’t been checked for malicious software yet and could infect his computer. While you can perform this check for him, it will take a little time. The users cuts you off, raising his voice and demanding you do it!
+
+1) What would you do?
+
+        A. Talk over the director, since he’ll hear you eventually.
+
+        B. Pause and stay silent about 10 seconds, after he’s done talking, and then respond.
+
+        C. Do what he asks, since he’s a director.
+
+        Ans: B
+        You pause and try again to assure the director that you understand his desire to expedite this request. 
+
+2) You start to explain the need for security, but he talks over you again.  What do you do?
+
+        A. Pause a little longer. When you talk again, you immediately state that the process will take about 20 minutes, and that you can start on it immediately.
+
+        B. Try again to assure him that you understand the urgency of the situation, and quote the internal policy around installing software.
+
+        Ans: A
+        You got it! While it’s good to explain the “why” of a situation, if the user is in a big rush, get to the point. Let them know upfront what you can do to resolve the situation and get the process going.
+
+### Customer Chat 1
+Name: Ali Ababwa
+
+Customer number: 1434216
+
+Issue: I can’t get my photos and files off my computer, HELP!
+
+Machine: Windows 10
+
+Chat log:
+
+Tech: Hi Ali, how are you today? It looks like you’re having issues accessing your photos and data. Can you give me more details?
+
+User: I’m awful ;( I have a presentation in an hour and all of my photos and files are gone! Please transfer them to a new machine ASAP.
+
+Tech: I’m so sorry to hear that! I will do everything I can to help you. When did this happen? What are you trying to do to retrieve them?
+
+User: My computer fell in the pool at my hotel, and now it won’t turn on.
+
+1) What would you do?
+
+        A. Empathize with the user, and kindly let him know that there’s nothing you can do to help him.
+
+        B. Show concern, then ask if he has backups to the cloud setup.
+
+        C. Laugh, and let him know that there’s nothing you can do at this point. His computer is toast.
+
+        Ans: B
+
+Tech:Oh my, that isn’t good! Have you saved your files to another medium, like a hard drive or a USB drive? Or perhaps you used a program that saves things to the cloud?
+
+User: Ugh, no. If I had done these things, do you think I’d be so upset! Can you or can you not retrieve my files? Tech: I understand that you’re upset. I’m looking at all of your options to see what we can do to fix this. The computer is dead if it went into the pool, so we need to see what our other options are.
+
+User: This is ridiculous! Why do I pay for tech support if you can’t support me?
+
+2) What would you do?
+
+        A. Hang up the phone. He’s being rude, and you don’t need to deal with that.
+
+        B. Ask Ali if he emailed the presentation to any of his co-workers, and remind him that you’re here to help.
+
+        Ans: 
+        Excellent! While it’s easy to give up on someone when they’re getting upset, it’s important to remember that they may be under a tremendous amount of stress. By coming up with alternatives, you can let them know that you’re on their side and that you’re not going to give up. This doesn’t mean that you should take verbal abuse. Make sure you’re clear with your manager about what you will and won’t accept from a user
+
+### Customer Chat 2
+Name: Yuki Saitō
+
+Customer number: 674213
+
+Issue: I need more bandwidth
+
+
+Chat log:
+
+Mia: Hi Yuki, how are you today? I see that you are concerned about needing more bandwidth. I’d be happy to help.
+
+Yuki: Thanks, I really need it!
+
+1) What do you do next?
+
+        A. Give the user what they want! Increase their bandwidth and move on to the next call.
+
+        B. Ask why they feel they need the bandwidth.
+
+        C. Tell the user that you have no control over their bandwidth, and politely close the chat.
+
+        D. Ask them what they mean by “bandwidth.”
+
+        Ans: D
+        You nailed it! People sometimes confuse technical terms. Make sure that you’re using the same vocabulary as the user by clarifying what they mean or probing to understand what they’re trying to accomplish.
+
+Mia: Can I ask what you mean by “bandwidth?”
+
+Yuki: I mean that everytime I try to use my computer after lunch, it’s incredibly slow. I think I’m using all the bandwidth in the morning.
+
+2) What do you do next?
+
+        A. Tell the user that they’re crazy, and that bandwidth has nothing to do with their issue.
+
+        B. Ask more questions about what programs they’re using.
+
+        C. Suggest the the user reboot his machine when this happens.
+
+        D. Ask if this happens for the rest of the day, or just a period of the day?
+
+        Ans: D
+        Nice work! While both B and D answer options are correct, this response shows that you were paying attention to the little clues that people leave. The user mentions that this always happens after lunch. Pinpointing the exact time of day and programs used will help you better diagnose the issue faster.
+
+
+### Customer Ticket
+From the user:
+
+My machine is saying I have to reboot, but this is silly. I have a ton of processes running, I don’t want to have to reload everything. This is a waste of time. I’ve included a screenshot of the message. Please advise.
+
+
+-Aditya
+
+
+From the tech:
+
+
+Hi Aditya,
+
+(1) Thanks for contacting support.
+
+(2) Please restart the computer, there are no other options in this case.
+
+(3) Regards,
+
+-Amelia
+
+1) What could Amelia have done better in the intro of this email?
+
+        A. Her response is fine.
+        B. Thanks for contacting support. I see that you’re concerned about rebooting your machine.
+        C. Skip the intro; it’s a waste of time.
+        D. I see that you’re concerned about rebooting your machine.
+
+        Ans: D
+        You got it! Acknowledge the information the user has provided. This allows you to clarify the problem and ensure that you have a common understanding of the issue.
+
+2) What could Amelia have done better in the probing of this email?
+
+        A. I looked into the screenshot you provided, and it appears that the reboot is due to a new program you installed. In order for the program to run, a reboot has to be done.
+        B. Keep the current response.
+        C. Based on the screenshot you provided, it looks like you received the reboot prompt because a new program was installed. In order for the program to start working, you’ll need to reboot your machine. Is it possible to save your commands beforehand, so that you can get to them again?
+        D. When installing programs, you need to reboot your machine.
+
+        Ans: C
+        Nice work. You’re letting the user know that you’ve looked at the information they provided, explained why the reboot is needed, and suggested a possible workaround to their concern.
+
+3) What could Amelia have done better in the closing of this email?
+
+        A. It was a pleasure working with you. Regards,
+        B. Keep the current closing.
+        C. Please let me know if there is anything further that I can help you with. Regards,
+        D. If this doesn’t work, or you have any questions, please let me know. Regards,
+
+        Ans: D
+        Well done! This lets the user know the next steps and opens the door for further dialogue.
 
 
 # Troubleshooting Best Practices
