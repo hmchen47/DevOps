@@ -6,7 +6,7 @@ Basics of Kubernetes
 ## 2.2 Introduction
 [video][vid1]
 
-[vid]: https://lms.quickstart.com/custom/858487/media/Basics%20of%20Kubernetes.mp4
+[vid1]: https://lms.quickstart.com/custom/858487/media/Basics%20of%20Kubernetes.mp4
 
 ## 2.3 Learning Objectives
 + Discussion Kubernetes
@@ -19,8 +19,8 @@ Basics of Kubernetes
     + connecting containers across multiple hosts, scaling them, deploying applications w/o downtime
     + service discovery among several aspects
 + [Kubernetes][k8s]:
-    + a sey of primitives and a powerful open and extensible API
-    + an open-source system for automating deployment, scaling, and management of containerized applications
+    + a set of primitives and a powerful open and extensible API
+    + an open-source system for automating deployment, scaling, and management of containerized application
     + originated from Borg @ Google, 15 yrs experience
     + Helmsman = pilot of the ship
     + the pilot of a ship of containers
@@ -33,15 +33,18 @@ Kuubernets:
 + small web servers = microservices
 + transient server deployment
 + many nginx servers instead of large Apache web server with many `httpd` daemons to responding to page requests
-+ decoupling: 
++ decoupling infrastructure and applications: 
     + Service: tie traffic from one agent to another (e.g. frontend web server to backend DB) and handle new IP or other info
     + API-call driven: communication between components; flexible
 + Communication info stored in __JSON__ format, but mostly written in __YAML__ 
 + K8s agents convert the YAML to JSON prior to presistent to the database
-+ written in __Go Language__, a portable language like a hybridization btw C__, Python, and Java
++ written in __Go Language__, a portable language like a hybridization btw C++, Python, and Java
 
 ## 2.6 Challenges
-+ Containers, and __Docker__ specifically, have empowered developers with ease of building container images, simplicity of sharing images via Docker registries, and providing a powerful user experience to manage containers
++ Advantages: Containers, and __Docker__ specifically, have empowered developers with 
+    + ease of building container images
+    + simplicity of sharing images via Docker registries
+    + providing a powerful user experience to manage containers
 + challenge: managing containers at scale and archetecturing a distributed application based on microservices' principles
     + continuous integration pipeline: build, test and verify container images
     + need a cluster of machines acting as base infrastructure on which to run containers
@@ -66,7 +69,7 @@ Solutions other than Kubernetes
     + Hashicrop, makers of __Vagrant__ and __Consul__
     + Solution for managing containerized applications
     + schedule tasks defined in Jobs
-    + with a Docker driver defined a running containers as a task
+    + Docker driver to define a running containers as a task
 + [Rancher](http://rancher.com/)
     + a container-agnostic system
     + provide a single pane of glass interface to manage applications
@@ -87,14 +90,29 @@ Solutions other than Kubernetes
     + great guidance to build web applications that can scale easily, be deployed in the cloud, and automate builds
     + Borg and Kubernetes address these principles
 
+The 12 Factors - a methodology for building software-as-a-service apps
+1. Codebase: One codebase tracked in revision control, many deploys
+2. Dependencies: Explicitly declare and isolate dependencies
+3. Config: Store config in the environment
+4. Backing services: Treat backing services as attached resources
+5. Build, release, run: Strictly separate build and run stages
+6. Processes: Execute the app as one or more stateless processes
+7. Port binding: Export services via port binding
+8. Concurrency: Scale out via the process model
+9. Disposability: Maximize robustness with fast startup and graceful shutdown
+10. Dev/prod parity: Keep development, staging, and production as similar as possible
+11. Logs: Treat logs as event streams
+12. Admin processes: Run admin/management tasks as one-off processes
+
 ![The Kubernetes Lineage](https://image.slidesharecdn.com/cloudfoundry-theplatformforforgingcloudnativeapplications-151006123238-lva1-app6891/95/cloud-foundry-the-platform-for-forging-cloud-native-applications-24-638.jpg?cb=1444134833)
 
 ## 2.9 Kubernetes Architecture
 ![K8s Architecture](https://d33wubrfki0l68.cloudfront.net/e298a92e2454520dddefc3b4df28ad68f9b91c6f/70d52/images/docs/pre-ccm-arch.png)
 
 Kubernetes Architecture
-+ made of a central manager (aka master) and some worker node
-+ Master Node: API Server, scheduler, various controllers, and a storge system to keep the state of the cluster, container settings, and the network configuration
++ made of a central manager (aka. master) and some worker node
++ Master Node: API Server, scheduler, various controllers, and a storge system
++ etcd: the state of the cluster, container settings, and the network configuration
 + K8s exposes and API (via API server):
     + kubectl: a local client to communicate the API Server
     + kube-scheduler: find a suitable node to run that container for the requests for running containers coming to the API
@@ -102,16 +120,16 @@ Kubernetes Architecture
     + kube-proxy: create and manage networking rules to expose the container on the network
 
 ## 2.10 Terminology
-+ __Pod__: consist of one or more containers which share an IP address, access to storage and namespace
-+ __controller__: orchestration is managed through a series of watched-loops
++ __Pod__: a collection of one or more containers which share an IP address, access to storage and namespace
++ __controllers__: a series of watched-loops to manage orchestration
 + __kube-apiserver__: each controller interrogates the kube-apiserver for a particular object state, modifying the object until the declared state matches the current state
 + __Deploymnet__
     + the default, newest, and feature-filled controller for containers
-    + ensure that resources are available, such as IP address and storage, and then deploys a ReplicaSet
+    + ensure that resources are available, such as IP address and storage, and then deploy a ReplicaSet
 + __ReplicaSet__: 
     + a controller deploys and restarts containers, Docker by default, until the requested number of containers is running
     + ReplicationController: previous object
-+ __Jobs__ and __CronJobs__: handle single or recurring tasks
++ __Jobs__ or __CronJobs__: handle single or recurring tasks
 + __Label__: 
     + arbitrary strings which become part of the object metadata
     + used when checking or changing the state of objects w/o knowing individual names or UIDs
