@@ -136,3 +136,62 @@ K8s in GitHub:
 
 [pokmon]: https://cloudplatform.googleblog.com/2016/09/bringing-Pokemon-GO-to-life-on-Google-Cloud.html
 
+## 2.13 Tools
++ __Minikube__: a very simple tool meant to run inside of VirtualBox
++ __kubeadm__ and __kubectl__: powerful and complex tools
++ __Helm__: an easy tool for using K8s, __charts__, and __Kompose__ to translate Docker Compose files into K8s objects
+
+## 2.14 The Cloud Native Computing Foundation
++ K8s: an open source software w/ Apache license
++ CNCF:
+    + the governing body for open source software that solves specific license faced by cloud native applications
+    + many corporate memebers
+
+## 2.15 Resource Recommendations
++ [Borg paper](https://research.google.com/pubs/pub43438.html)
++ [Talk from John Wilkes about Borg and Kubernetes](https://www.gcppodcast.com/post/episode-46-borg-and-k8s-with-john-wilkes/)
++ Kubernetes [Community Hangout](https://github.com/kubernetes/community)
++ [Slack](http://slack.kubernetes.io/) and go in the #Kubernetes-users channel
++ [Stack Overflow community](https://stackoverflow.com/search?q=kubernetes)
+
+## 2.16 Lab 2.1 - View Online Resources
+[Lab](https://lms.quickstart.com/custom/858487/LAB_2.1.pdf)
+
+## 2.17 Knowledge Check 2.1
+Q1. Which of the following are part of a Pod? Select the correct answer.
+
+    a. One ore more containers
+    b. Shared IP address
+    c. One namespace
+    d. All of the above
+
+    Ans: d
+
+Q2. Which company devloped Borg as an internal project? Select correct answer.
+
+    a. Amazon
+    b. Google
+    c. IBM
+    d. Toyoda
+
+    Ans: b
+
+Q3. In what database are the objects and the state of the cluster stored? Select the correct answer.
+
+    a. ZooKeeper
+    b. MySQL
+    c. etcd
+    d. Couchbase
+
+    Ans: c
+
+Q4. Orchestration is managed through a series of watch-loops or controllers.  Each interrogates the ____________ for a particular object state.  Select the correct answer.
+
+    a. kube-apiserver
+    b. etcd
+    c. kublet
+    d. ntpd
+
+    Ans: a
+
+
