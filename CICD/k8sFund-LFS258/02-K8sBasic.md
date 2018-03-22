@@ -101,3 +101,22 @@ Kubernetes Architecture
     + kubelet: receive requests to run the containers; manage any necessary resources and watch over them on the local node
     + kube-proxy: create and manage networking rules to expose the container on the network
 
+## 2.10 Terminology
++ __Pod__: consist of one or more containers which share an IP address, access to storage and namespace
++ __controller__: orchestration is managed through a series of watched-loops
++ __kube-apiserver__: each controller interrogates the kube-apiserver for a particular object state, modifying the object until the declared state matches the current state
++ __Deploymnet__
+    + the default, newest, and feature-filled controller for containers
+    + ensure that resources are available, such as IP address and storage, and then deploys a ReplicaSet
++ __ReplicaSet__: 
+    + a controller deploys and restarts containers, Docker by default, until the requested number of containers is running
+    + ReplicationController: previous object
++ __Jobs__ and __CronJobs__: handle single or recurring tasks
++ __Label__: 
+    + arbitrary strings which become part of the object metadata
+    + used when checking or changing the state of objects w/o knowing individual names or UIDs
++ __taints__ and __toleration__: nodes can have taints to discourage Pod assignments, unless the Pod has a toleration in its metadata
++ __annotation__: 
+    + space in metadata which remain with the object but cannot be used by K8s cmds
+    + could be used by 3rd party agents or other tools
+
