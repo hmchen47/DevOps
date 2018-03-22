@@ -120,3 +120,19 @@ Kubernetes Architecture
     + space in metadata which remain with the object but cannot be used by K8s cmds
     + could be used by 3rd party agents or other tools
 
+## 2.11 Innovation
+K8s in GitHub:
++ open source since June 2014
++ thousands of contributors
++ more than 37k commits
++ more tha 8k on Slack
++ currently, on a 3 month release cycle
+
+[Infographic](https://apprenda.com/blog/happy-1st-birthday-kubernetes-infographic/) from Apprenda
+
+## 2.12 User Community
++ [case studies](https://kubernetes.io/case-studies/)
++ [Pokemon Go][pokmon]: run on Google Container Engine (GKE), the K8s service from Google Cloud Platform (GCP)
+
+[pokmon]: https://cloudplatform.googleblog.com/2016/09/bringing-Pokemon-GO-to-life-on-Google-Cloud.html
+
