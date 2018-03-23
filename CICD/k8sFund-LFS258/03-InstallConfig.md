@@ -15,8 +15,8 @@ Installation and Configuration
 + Discuss highly-available deployment considerations
 
 ## 3.4 Installation Tools
-Choice of installaltion:
-+ Google Container Engine (GKE): 
+Choice of installation:
++ Google Container Engine (GKE):
     + a cloud service from the Google Cloud Platform
     + allow request a Kubernetes cluster with the latest stable version
 + Minikube:
@@ -34,7 +34,7 @@ Tools:
     + `kubeadm join`: run on Worker Nodes and cluster bootstraps itself
     + allow Kubernetes to be deployed in a number of places, where AWS uses  this method in this course
 + __`kubespray`__ or __`kops`__
-    + another way to create a Kubernrtes cluster on AWS
+    + another way to create a Kubernetes cluster on AWS
     + create `systemd` unit file in a very traditional way
 + __hyperkube__
     + use a container image
@@ -44,12 +44,12 @@ Tools:
 ## 3.5 Installing `kubectl`
 + Configure and Manage cluster: `kubectl`, __RESTful__ calls or __Go__ Language
 + RHEL 7/CentOS 7: `kubectl` in `kubernetes-client` package
-+ download [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl), then compile and install `kubectl` 
++ download [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl), then compile and install `kubectl`
 + configuration file: ~/.kube/config
     + containing all the Kubernetes endpoints that might use
     + including cluster definitions (.i.e. IP endpoints), credentials, and contexts
-+ context:
-    + a combinationof a cluster a d user credentials
++ Context:
+    + a combination of a cluster and user credentials
     + pass these parameters on the command line, or switch the shell between contexts with a command: `$ kubectl config use-context foobar`
 
 ## 3.6 Using Google Kubernetes Engine (GKE)
@@ -57,7 +57,7 @@ Tools:
     + account on [Google Cloud](https://cloud.google.com/)
     + method of payment for the services you will use
     + the `gcloud` command line client
-+ Methods of installation 
++ Methods of installation
     + [document](https://cloud.google.com/sdk/downloads#linux)
     + [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 + To create Kubernetes cluster
@@ -73,4 +73,22 @@ Tools:
     $gcloud container clusters delete linuxfoundation
     ```
 
+## 3.7 Using Minikube
++ an open source project within the GitHub [Kubernetes organization](https://github.com/kubernetes/minikube)
++ Download minikube
+    ```bash
+    $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.22.2/minikube-linux-amd64
+    $ chmod +x minikube
+    $ sudo mv minikube /usr/local/bin
+    ```
++ Starting Kubernetes on local machine
+    ```bash
+    $ minikube start
+    $ kubectl get nodes
+    ```
+    + start a VirtualBox virtual machine that will contain a single node Kubernetes deployment and the Docker engine
+    + run all the components of Kubernetes together
++ The minikube VM also runs Dockers, in order to run containers
+
+ 
 
