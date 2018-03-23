@@ -109,4 +109,34 @@ Tools:
     ```
 + Once these steps completed, a functional multi-node Kubernetes cluster, and able to use `kubectl` to interact with
 
+## 3.9 Installing a Pod Network
+Pod networking choices - varying levels of development and feature set
++ __Calico__ (https://www.projectcalico.org//)
+    + A flat L3 network which communicates w/o IP encapsulation
+    + used in production with software such as __Kubernetes__, __OpenShift__, __Docker__, __Mesos__ and __OpenStack__
+    + Viewed as simple and flexible networking model
+    + Scale well for large environment
+    + Other options: __Canal__ allows for integration with __Flannel__, allowing for implementation of network policies
++ __Flannel__ (https://github.com/coreos/flannel)
+    + A L3 IPv4 network btw the nodes of the a cluster
+    + Developed by __CoreOS__, a long history with Kubernetes
+    + Focused on traffic btw hosts, not how containers configure local networking
+    + Using one of several backend mechanism, such as VXLAN
+    + A flannel agent on each node allocates subnet leases for the host
+    + While it can be configured after deployment, it is much easier prior to any Pods being added.
++ __Kube-router__ (https://github.com/cloudnativelabs/kube-router)
+    + Feature-filled single binary claimed to "do it all"
+    + Project in alpha stage
+    + promise to offer a distributed load balancer, firewall, and reouter purposely built for Kubernetes
++ __Romana__ (https://github.com/romana/romana)
+    + Aimning at network and security automation for cloud native applications
+    + Aiming at large cluster, IPAM-aware topology and integration with __kops__ cluster
++ __Weave Net__ (https://www.weave.works/oss/net/)
+    + used as an add-on for a CNI-enabled Kubernetes
+
+Container Network Interface (CNI)
++ a CNCF project
++ used by several container runtimes
++ a standard to handle deployment management and cleanup of network resources
+
 
