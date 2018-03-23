@@ -90,5 +90,23 @@ Tools:
     + run all the components of Kubernetes together
 + The minikube VM also runs Dockers, in order to run containers
 
- 
+
+## 3.8 Installing with `kubeadm`
++ The most straightforward method to start building a real cluster
++ Appear in Kubernetes v1.4.0 and bootstrap a cluster quickly
++ [Documentation](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) on the Kubernetes website
++ Package repositories available for Ubuntu 16.04 and CentOS 7.1
++ Procedures:
+    + `kubeadm init`: run on the head node and token returned
+    + Create a network for IP-per-Pod criteria:
+        ```bash
+        kubeadm join --token token head-node-IP
+        ```
+    + Alternatively create the network with `kubectl`, by using a resource manifest of the network
++ To use the Weave network
+    ```bash
+    $ kubectl create -f https://git.io/weave-kube
+    ```
++ Once these steps completed, a functional multi-node Kubernetes cluster, and able to use `kubectl` to interact with
+
 
