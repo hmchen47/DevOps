@@ -9,19 +9,19 @@ Installation and Configuration
 [vid]: https://lms.quickstart.com/custom/858487/media/Installation%20and%20Configuration.mp4
 
 ## 3.3 Learning Objectives
-+ Download instalaltion and configuration tools
++ Download installation and configuration tools
 + Install a Kubernetes master and grow a cluster
 + Configure a network solution for secure communications
 + Discuss highly-available deployment considerations
 
 ## 3.4 Installation Tools
-Choice of instalaltion:
+Choice of installaltion:
 + Google Container Engine (GKE): 
     + a cloud service from the Google Cloud Platform
-    + allow reuest a Kubernetes cluster with the latest stable version
-+ Minikube: 
+    + allow request a Kubernetes cluster with the latest stable version
++ Minikube:
     + a single binary to deploy into Oracle VirtualBox
-    + local and single node to provide platfoem for learning, testing, and development
+    + local and single node to provide platform for learning, testing, and development
 
 Tools:
 + __`kubectl`__
