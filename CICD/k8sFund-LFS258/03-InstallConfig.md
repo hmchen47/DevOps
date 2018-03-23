@@ -41,3 +41,36 @@ Tools:
     + contain all the key Kubernetes binaries
     + run a Kubernetes cluster by just starting a few containers on nodes
 
+## 3.5 Installing `kubectl`
++ Configure and Manage cluster: `kubectl`, __RESTful__ calls or __Go__ Language
++ RHEL 7/CentOS 7: `kubectl` in `kubernetes-client` package
++ download [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl), then compile and install `kubectl` 
++ configuration file: ~/.kube/config
+    + containing all the Kubernetes endpoints that might use
+    + including cluster definitions (.i.e. IP endpoints), credentials, and contexts
++ context:
+    + a combinationof a cluster a d user credentials
+    + pass these parameters on the command line, or switch the shell between contexts with a command: `$ kubectl config use-context foobar`
+
+## 3.6 Using Google Kubernetes Engine (GKE)
++ To use GKE
+    + account on [Google Cloud](https://cloud.google.com/)
+    + method of payment for the services you will use
+    + the `gcloud` command line client
++ Methods of installation 
+    + [document](https://cloud.google.com/sdk/downloads#linux)
+    + [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/quickstart)
++ To create Kubernetes cluster
+    ```bash
+    $ gcloud container clusters create linuxfundation
+    $ gcloud container cluster list
+    $ kubectl get nodes
+    ```
+    + by installing `gcloud`, `kubectl` insalled automatically
+    + commands create the cluster, install it, and the, listed the nodes of the cluster with `kubectl`
++ To delete Kubernetes cluster
+    ```bash
+    $gcloud container clusters delete linuxfoundation
+    ```
+
+
