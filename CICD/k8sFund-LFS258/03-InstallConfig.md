@@ -154,4 +154,18 @@ Container Network Interface (CNI)
         + no dependency on DNS
         + running on several OSes
         + using snapshot to capture a cluster and move it
-    
++ Best practice to install Kubernetes: [step-by-step manual commands](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+
+## 3.11 Installation Considerations
++ Start experimenting with a single-mode deployment
+    + Run all the Kubernetes components: API server, controller, scheduler, kubelet, and kube-proxy
+    + e.g. Minikube
++ Consideration to deploy on a cluster of servers (physical or virtual)
+    + Which provider should I use? A public or private cloud? Physical or virtual?
+    + Which operating system should use? Kubernetes runs on most operating systems (e.g. Debian, Ubuntu, CentOS, etc.), plus on container-optimized OSes (e.g. CoreOS, Atomic)
+    + Which networking solution should I use? Do I need an overlay?
+    + Where should I run my `etcd` cluster?
+    + Can I configure Highly Available (HA) head nodes?
++ How to chhose the best option: [Picking the Right Solution](https://kubernetes.io/docs/setup/pick-right-solution/)
++ With `systemd` becoming the dominant `init` system on Linux, Kubernetes components will end up being as _systemd unit files_ in most cases. Or, they will be run via a kubelet running on the head node (i.e. `kubeadm`)
+
