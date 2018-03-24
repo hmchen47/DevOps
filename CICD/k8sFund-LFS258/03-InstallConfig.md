@@ -169,3 +169,29 @@ Container Network Interface (CNI)
 + How to chhose the best option: [Picking the Right Solution](https://kubernetes.io/docs/setup/pick-right-solution/)
 + With `systemd` becoming the dominant `init` system on Linux, Kubernetes components will end up being as _systemd unit files_ in most cases. Or, they will be run via a kubelet running on the head node (i.e. `kubeadm`)
 
+## 3.12 Main Deployment Configurations
++ High level main deployment configurations:
+    + Single-node
+    + Single head node, multiple workers
+    + Multiple head nodes with HA, multiple workers
+    + HA `etcd`, HA head nodes, multiple workers
++ Choice of option: depend on how advanced in Kubernetes journey and golas
++ Single-node deployment:
+    + all components run on the same server
+    + great for testing, learning, and developing around Kubernetes
++ Single head node and multiple workers
+    + a single node `etcd` instance running on the head node with the API, the scheduler, and the controller-manager
++ Multiple head nodes and multiple worker nodes
+    + Head nodes in an HA condifuration
+    + Worker nodes add more durability to the cluster
+    + The API server will be fronted by a load balancer, the scheduler and the controller
+    + Manager elected a leader via flags
+    + `etcd` setup can still be single node
++ HA `etcd`, HA head nodes, and multiple workers
+    + The most advanced and resilient setup
+    + `etcd` runs as a true cluster to provide HA and run on nodes separate from the Kubernetes head nodes
++ Kubernetes Federation
+    + high availability
+    + multiple clusters joined together with a common control panel
+    + allowing movement of resources from one cluster to another administratively or after failure
+
