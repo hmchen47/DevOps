@@ -139,4 +139,19 @@ Container Network Interface (CNI)
 + used by several container runtimes
 + a standard to handle deployment management and cleanup of network resources
 
-
+## 3.10 More Installation Tools
++ Kubernetes installe don a server
++ configuration management systems: Chef, Puppet, Ansible, Terraform
++ Installation tools
+    + __kubespray__
+        + in the Kubernetes incubator
+        + an advanced __Ansible__ playbook to setup a Kubernetes cluster on various OSes and use different providers
+        + known as __kargo__
+    + __kops__: a command line to create a Kubernetes cluster on AWS 
+    + __kube-aws__: a command line making use of the AWS Cloud Formation to provide a Kubernetes cluster on AWS
+    + __kubeicorn__
+        + a tool to leverage the use of Kubeadm to build a cluster
+        + no dependency on DNS
+        + running on several OSes
+        + using snapshot to capture a cluster and move it
+    
