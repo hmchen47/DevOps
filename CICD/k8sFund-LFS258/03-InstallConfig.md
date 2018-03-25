@@ -241,4 +241,18 @@ Container Network Interface (CNI)
     ```
 + Best practice to learn the various configuration flags
 
+## 3.15 Compiling from Source
++ The list of binary releases on [GitHub](https://github.com/kubernetes/kubernetes/releases) - other scenarios to get start with K8s , except for `gcloud`, `minikube`, and `kubeadmin`
++ Compile from source files with Makefile by cloning from GitHub
+    + Build with __Golang__: download Golang from [here](https://golang.org/doc/install)
+        ```bash
+        $ cd $GOPATH
+        $ git clone https://github.com/kubernetes/kubernetes
+        $ cd kubernetes
+        $ make
+        ```    
+    + Build on [Docker host](https://docs.docker.com/install/) containing Golang
+        + clone the repository anywhere and run `make quick-release`
+        + built binary located in `_output/bin` 
+
 
