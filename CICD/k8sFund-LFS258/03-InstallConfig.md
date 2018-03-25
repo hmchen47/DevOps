@@ -255,4 +255,12 @@ Container Network Interface (CNI)
         + clone the repository anywhere and run `make quick-release`
         + built binary located in `_output/bin` 
 
+## 3.16 Lab 3.1 - Install Kubernetes
+[Lab 3.1 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.1.pdf)
+
+## 3.17 Lab 3.2 - Grow the Cluster
+[Vab 3.2 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.2.pdf)
+
+## 3.18 Lab 3.3 - Access from Outside the Cluster
+[Lab 3.3 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.3.pdf)
 
