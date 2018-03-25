@@ -182,10 +182,10 @@ Container Network Interface (CNI)
 + Single head node and multiple workers
     + a single node `etcd` instance running on the head node with the API, the scheduler, and the controller-manager
 + Multiple head nodes and multiple worker nodes
-    + Head nodes in an HA condifuration
+    + Head nodes in an HA configuration
     + Worker nodes add more durability to the cluster
-    + The API server will be fronted by a load balancer, the scheduler and the controller
-    + Manager elected a leader via flags
+    + The API server will be fronted by a load balancer, the scheduler and the controller-manager
+    + Controller-manager elected a leader via flags
     + `etcd` setup can still be single node
 + HA `etcd`, HA head nodes, and multiple workers
     + The most advanced and resilient setup
@@ -194,4 +194,33 @@ Container Network Interface (CNI)
     + high availability
     + multiple clusters joined together with a common control panel
     + allowing movement of resources from one cluster to another administratively or after failure
+
+## 3.13 Systemd Unit File for Kubernetes
++ A simple `systemd` unit file to run the `controller-manager`
+    ```yaml
+    -name: kube-controller-manager.service
+        command: start
+        content:
+            [Unit]
+            Description=Kubernetes Controller Manager
+    Documentation=http://github.com/kubernetes/kubernetes
+        Requires=kube-apiserver.service
+        After=kube-apiserver.service
+        [Service]
+        ExecStartPre=/usr/bin/curl -Lo /opt/bin/kube-controller-manager -z \
+        /opt/bin/kube-controller-manager \
+        https://storage.googleapis.com/kubernetes-release/release/v1.7.6/bin/linux/amd64/kube-controller-manager
+        ExecStartPre=/opt/bin/chmod +x /opt/bin/kube-controller-manager
+        ExecStartPre=/opt/bin/kube-controller-manager \
+        --service-account-private-key-file=/opt/bin/kube-serviceaccount.key \
+        --root-ca-file=/var/run/kubernetes/apiserver.crt \
+        --master=127.0.0.1:8080 \
+        --logtostderr=true
+        Restart=always
+        RestartSec=10
+    ```
+    + Not a perfect unit file.
+    + Download the controller binaryans set a few flags to run
++ Reference Documentation of the API Server: [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/)
+
 
