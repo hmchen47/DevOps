@@ -223,4 +223,22 @@ Container Network Interface (CNI)
     + Download the controller binaryans set a few flags to run
 + Reference Documentation of the API Server: [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/)
 
+## 3.14 Using Hyperkube
++ `kubeadm`: run the API server, the scheduler, and the controller-manger as container while running all the componentsas regular system daemons in unit files
++ `hyperkube`:
+    + a handy all-in-one binary
+    + available as a container image
+    + e.g. gcr.io/google_containers/hyperkube:v1.9.2
++ Installation with `kubelet` under `hyperkube`:
+    + run as a system daemon
+    + config to read in manifests that specify how to run te other components, including the API server, the scheduler, etcd, the controller
+    + monitor and restart if needed
++ Demo: download `hyperkube` image and run a container
+    ```bash
+    $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube apiserver --help
+    $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube scheduler --help
+    $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube controller-manager --help
+    ```
++ Best practice to learn the various configuration flags
+
 
