@@ -4,44 +4,47 @@ Installation and Configuration
 ## 3.1 Installation and Configuration
 
 ## 3.2 Introduction
+
 [Video][vid]
 
 [vid]: https://lms.quickstart.com/custom/858487/media/Installation%20and%20Configuration.mp4
 
 ## 3.3 Learning Objectives
+
 + Download installation and configuration tools
 + Install a Kubernetes master and grow a cluster
 + Configure a network solution for secure communications
 + Discuss highly-available deployment considerations
 
 ## 3.4 Installation Tools
-Choice of installation:
-+ Google Container Engine (GKE):
-    + a cloud service from the Google Cloud Platform
-    + allow request a Kubernetes cluster with the latest stable version
-+ Minikube:
-    + a single binary to deploy into Oracle VirtualBox
-    + local and single node to provide platform for learning, testing, and development
 
-Tools:
-+ __`kubectl`__
-    + the Kubernetes command line interface
-    + run on local machine and target the API server endpoint
-    + create, manage, and delete all Kubernetes resources (e.g. Pods, Deployments, Services)
-+ __`kubeadm`__
-    + a newer tool that makes installing Kubernetes easy and avoids vendor-specific installers
-    + `kubeadm init`: run on Master Node
-    + `kubeadm join`: run on Worker Nodes and cluster bootstraps itself
-    + allow Kubernetes to be deployed in a number of places, where AWS uses  this method in this course
-+ __`kubespray`__ or __`kops`__
-    + another way to create a Kubernetes cluster on AWS
-    + create `systemd` unit file in a very traditional way
-+ __hyperkube__
-    + use a container image
-    + contain all the key Kubernetes binaries
-    + run a Kubernetes cluster by just starting a few containers on nodes
++ Choice of installation:
+    + Google Container Engine (GKE):
+        + a cloud service from the Google Cloud Platform
+        + allow request a Kubernetes cluster with the latest stable version
+    + Minikube:
+        + a single binary to deploy into Oracle VirtualBox
+        + local and single node to provide platform for learning, testing, and development
++ Tools:
+    + __`kubectl`__
+        + the Kubernetes command line interface
+        + run on local machine and target the API server endpoint
+        + create, manage, and delete all Kubernetes resources (e.g. Pods, Deployments, Services)
+    + __`kubeadm`__
+        + a newer tool that makes installing Kubernetes easy and avoids vendor-specific installers
+        + `kubeadm init`: run on Master Node
+        + `kubeadm join`: run on Worker Nodes and cluster bootstraps itself
+        + allow Kubernetes to be deployed in a number of places, where AWS uses  this method in this course
+    + __`kubespray`__ or __`kops`__
+        + another way to create a Kubernetes cluster on AWS
+        + create `systemd` unit file in a very traditional way
+    + __hyperkube__
+        + use a container image
+        + contain all the key Kubernetes binaries
+        + run a Kubernetes cluster by just starting a few containers on nodes
 
 ## 3.5 Installing `kubectl`
+
 + Configure and Manage cluster: `kubectl`, __RESTful__ calls or __Go__ Language
 + RHEL 7/CentOS 7: `kubectl` in `kubernetes-client` package
 + download [here](https://github.com/kubernetes/kubernetes/tree/master/pkg/kubectl), then compile and install `kubectl`
@@ -50,15 +53,19 @@ Tools:
     + including cluster definitions (.i.e. IP endpoints), credentials, and contexts
 + Context:
     + a combination of a cluster and user credentials
-    + pass these parameters on the command line, or switch the shell between contexts with a command: `$ kubectl config use-context foobar`
+    + pass these parameters on the command line, or switch the shell between contexts with a command: 
+        ```bash
+        $ kubectl config use-context foobar
+        ```
 
 ## 3.6 Using Google Kubernetes Engine (GKE)
+
 + To use GKE
     + account on [Google Cloud](https://cloud.google.com/)
     + method of payment for the services you will use
     + the `gcloud` command line client
 + Methods of installation
-    + [document](https://cloud.google.com/sdk/downloads#linux)
+    + [Interactive installer](https://cloud.google.com/sdk/downloads#linux)
     + [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 + To create Kubernetes cluster
     ```bash
@@ -70,10 +77,11 @@ Tools:
     + commands create the cluster, install it, and the, listed the nodes of the cluster with `kubectl`
 + To delete Kubernetes cluster
     ```bash
-    $gcloud container clusters delete linuxfoundation
+    $ gcloud container clusters delete linuxfoundation
     ```
 
 ## 3.7 Using Minikube
+
 + an open source project within the GitHub [Kubernetes organization](https://github.com/kubernetes/minikube)
 + Download minikube
     ```bash
@@ -88,10 +96,10 @@ Tools:
     ```
     + start a VirtualBox virtual machine that will contain a single node Kubernetes deployment and the Docker engine
     + run all the components of Kubernetes together
-+ The minikube VM also runs Dockers, in order to run containers
-
++ The `minikube` VM also runs Dockers, in order to run containers
 
 ## 3.8 Installing with `kubeadm`
+
 + The most straightforward method to start building a real cluster
 + Appear in Kubernetes v1.4.0 and bootstrap a cluster quickly
 + [Documentation](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/) on the Kubernetes website
@@ -110,38 +118,39 @@ Tools:
 + Once these steps completed, a functional multi-node Kubernetes cluster, and able to use `kubectl` to interact with
 
 ## 3.9 Installing a Pod Network
-Pod networking choices - varying levels of development and feature set
-+ __Calico__ (https://www.projectcalico.org//)
-    + A flat L3 network which communicates w/o IP encapsulation
-    + used in production with software such as __Kubernetes__, __OpenShift__, __Docker__, __Mesos__ and __OpenStack__
-    + Viewed as simple and flexible networking model
-    + Scale well for large environment
-    + Other options: __Canal__ allows for integration with __Flannel__, allowing for implementation of network policies
-+ __Flannel__ (https://github.com/coreos/flannel)
-    + A L3 IPv4 network btw the nodes of the a cluster
-    + Developed by __CoreOS__, a long history with Kubernetes
-    + Focused on traffic btw hosts, not how containers configure local networking
-    + Using one of several backend mechanism, such as VXLAN
-    + A flannel agent on each node allocates subnet leases for the host
-    + While it can be configured after deployment, it is much easier prior to any Pods being added.
-+ __Kube-router__ (https://github.com/cloudnativelabs/kube-router)
-    + Feature-filled single binary claimed to "do it all"
-    + Project in alpha stage
-    + promise to offer a distributed load balancer, firewall, and reouter purposely built for Kubernetes
-+ __Romana__ (https://github.com/romana/romana)
-    + Aimning at network and security automation for cloud native applications
-    + Aiming at large cluster, IPAM-aware topology and integration with __kops__ cluster
-+ __Weave Net__ (https://www.weave.works/oss/net/)
-    + used as an add-on for a CNI-enabled Kubernetes
 
-Container Network Interface (CNI)
-+ a CNCF project
-+ used by several container runtimes
-+ a standard to handle deployment management and cleanup of network resources
++ Pod networking choices - varying levels of development and feature set
+    + [__Calico__](https://www.projectcalico.org)
+        + A flat L3 network which communicates w/o IP encapsulation
+        + used in production with software such as __Kubernetes__, __OpenShift__, __Docker__, __Mesos__ and __OpenStack__
+        + Viewed as simple and flexible networking model
+        + Scale well for large environment
+        + Other options: __Canal__ allows for integration with __Flannel__, allowing for implementation of network policies
+    + [__Flannel__](https://github.com/coreos/flannel)
+        + A L3 IPv4 network btw the nodes of the a cluster
+        + Developed by __CoreOS__, a long history with Kubernetes
+        + Focused on traffic btw hosts, not how containers configure local networking
+        + Using one of several backend mechanism, such as VXLAN
+        + A flannel agent on each node allocates subnet leases for the host
+        + While it can be configured after deployment, it is much easier prior to any Pods being added.
+    + [__Kube-router__](https://github.com/cloudnativelabs/kube-router)
+        + Feature-filled single binary claimed to "do it all"
+        + Project in alpha stage
+        + promise to offer a distributed load balancer, firewall, and reouter purposely built for Kubernetes
+    + [__Romana__](https://github.com/romana/romana)
+        + Aimning at network and security automation for cloud native applications
+        + Aiming at large cluster, IPAM-aware topology and integration with __kops__ cluster
+    + [__Weave Net__](https://www.weave.works/oss/net/)
+        + used as an add-on for a CNI-enabled Kubernetes
++ Container Network Interface (CNI)
+    + a CNCF project
+    + used by several container runtimes
+    + a standard to handle deployment management and cleanup of network resources
 
 ## 3.10 More Installation Tools
-+ Kubernetes installe don a server
-+ configuration management systems: Chef, Puppet, Ansible, Terraform
+
++ Kubernetes installed on a server
++ configuration management systems: __Chef__, __Puppet__, __Ansible__, __Terraform__
 + Installation tools
     + __kubespray__
         + in the Kubernetes incubator
@@ -157,6 +166,7 @@ Container Network Interface (CNI)
 + Best practice to install Kubernetes: [step-by-step manual commands](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
 ## 3.11 Installation Considerations
+
 + Start experimenting with a single-mode deployment
     + Run all the Kubernetes components: API server, controller, scheduler, kubelet, and kube-proxy
     + e.g. Minikube
@@ -166,10 +176,11 @@ Container Network Interface (CNI)
     + Which networking solution should I use? Do I need an overlay?
     + Where should I run my `etcd` cluster?
     + Can I configure Highly Available (HA) head nodes?
-+ How to chhose the best option: [Picking the Right Solution](https://kubernetes.io/docs/setup/pick-right-solution/)
++ How to chose the best option: [Picking the Right Solution](https://kubernetes.io/docs/setup/pick-right-solution/)
 + With `systemd` becoming the dominant `init` system on Linux, Kubernetes components will end up being as _systemd unit files_ in most cases. Or, they will be run via a kubelet running on the head node (i.e. `kubeadm`)
 
 ## 3.12 Main Deployment Configurations
+
 + High level main deployment configurations:
     + Single-node
     + Single head node, multiple workers
@@ -196,6 +207,7 @@ Container Network Interface (CNI)
     + allowing movement of resources from one cluster to another administratively or after failure
 
 ## 3.13 Systemd Unit File for Kubernetes
+
 + A simple `systemd` unit file to run the `controller-manager`
     ```yaml
     -name: kube-controller-manager.service
@@ -224,6 +236,7 @@ Container Network Interface (CNI)
 + Reference Documentation of the API Server: [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/)
 
 ## 3.14 Using Hyperkube
+
 + `kubeadm`: run the API server, the scheduler, and the controller-manger as container while running all the componentsas regular system daemons in unit files
 + `hyperkube`:
     + a handy all-in-one binary
@@ -242,6 +255,7 @@ Container Network Interface (CNI)
 + Best practice to learn the various configuration flags
 
 ## 3.15 Compiling from Source
+
 + The list of binary releases on [GitHub](https://github.com/kubernetes/kubernetes/releases) - other scenarios to get start with K8s , except for `gcloud`, `minikube`, and `kubeadmin`
 + Compile from source files with Makefile by cloning from GitHub
     + Build with __Golang__: download Golang from [here](https://golang.org/doc/install)
@@ -250,21 +264,25 @@ Container Network Interface (CNI)
         $ git clone https://github.com/kubernetes/kubernetes
         $ cd kubernetes
         $ make
-        ```    
+        ```
     + Build on [Docker host](https://docs.docker.com/install/) containing Golang
         + clone the repository anywhere and run `make quick-release`
         + built binary located in `_output/bin` 
 
 ## 3.16 Lab 3.1 - Install Kubernetes
+
 [Lab 3.1 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.1.pdf)
 
 ## 3.17 Lab 3.2 - Grow the Cluster
+
 [Vab 3.2 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.2.pdf)
 
 ## 3.18 Lab 3.3 - Access from Outside the Cluster
+
 [Lab 3.3 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.3.pdf)
 
 ## 3.19 Knowledge Check
+
 Q1. What is the `kubeadm` command used for? Select the correct answer.
 
     a. Assign an administrator to the cluster
