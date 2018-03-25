@@ -264,3 +264,40 @@ Container Network Interface (CNI)
 ## 3.18 Lab 3.3 - Access from Outside the Cluster
 [Lab 3.3 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.3.pdf)
 
+## 3.19 Knowledge Check
+Q1. What is the `kubeadm` command used for? Select the correct answer.
+
+    a. Assign an administrator to the cluster
+    b. Start a new Pod
+    c. Create a cluster and add nodes
+    d. All of the above
+
+    Ans: c
+
+Q2. Which of the following is the main binary for working with objects for a Kubernetes cluster? Select the correct answer.
+
+    a. OpenStack
+    b. Make
+    c. adminCreate
+    d. kubectl
+
+    Ans: d
+
+Q3. How many pod networks can you have per cluster? Select the correct answer.
+
+    a. 1
+    b. 2
+    c. 3
+    d. 4
+
+    Ans: a
+
+Q4. The `~/.kube/config` file contains ____. Select teh correct answer.
+
+    a. Endpoints
+    b. SSL keys
+    c. Contexts
+    d. All of the above
+
+    Ans: d
+
