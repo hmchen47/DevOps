@@ -53,6 +53,7 @@
 + Context:
   + a combination of a cluster and user credentials
   + pass these parameters on the command line, or switch the shell between contexts with a command:
+
     ```bash
     $ kubectl config use-context foobar
     ```
@@ -67,14 +68,17 @@
   + [Interactive installer](https://cloud.google.com/sdk/downloads#linux)
   + [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 + To create Kubernetes cluster
+
   ```bash
   $ gcloud container clusters create linuxfoundation
   $ gcloud container cluster list
   $ kubectl get nodes
   ```
+
   + by installing `gcloud`, `kubectl` installed automatically
   + commands create the cluster, install it, and the, listed the nodes of the cluster with `kubectl`
 + To delete Kubernetes cluster
+
   ```bash
   $ gcloud container clusters delete linuxfoundation
   ```
@@ -83,16 +87,20 @@
 
 + an open source project within the GitHub [Kubernetes organization](https://github.com/kubernetes/minikube)
 + Download minikube
+
   ```bash
   $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.22.2/minikube-linux-amd64
   $ chmod +x minikube
   $ sudo mv minikube /usr/local/bin
   ```
+
 + Starting Kubernetes on local machine
+
   ```bash
   $ minikube start
   $ kubectl get nodes
   ```
+
   + start a VirtualBox virtual machine that will contain a single node Kubernetes deployment and the Docker engine
   + run all the components of Kubernetes together
 + The `minikube` VM also runs Dockers, in order to run containers
@@ -111,9 +119,11 @@
     ```
   + Alternatively create the network with `kubectl`, by using a resource manifest of the network
 + To use the Weave network
+
   ```bash
   $ kubectl create -f https://git.io/weave-kube
   ```
+
 + Once these steps completed, a functional multi-node Kubernetes cluster, and able to use `kubectl` to interact with
 
 ## 3.9 Installing a Pod Network
@@ -208,6 +218,7 @@
 ## 3.13 Systemd Unit File for Kubernetes
 
 + A simple `systemd` unit file to run the `controller-manager`
+
   ```yaml
   -name: kube-controller-manager.service
     command: start
@@ -230,6 +241,7 @@
     Restart=always
     RestartSec=10
   ```
+
   + Not a perfect unit file.
   + Download the controller binary and set a few flags to run
 + Reference Documentation of the API Server: [`kube-apiserver`](https://kubernetes.io/docs/reference/generated/kube-apiserver/)
@@ -246,11 +258,13 @@
   + config to read in manifests that specify how to run te other components, including the API server, the scheduler, etcd, the controller
   + monitor and restart if needed
 + Demo: download `hyperkube` image and run a container
+
   ```bash
   $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube apiserver --help
   $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube scheduler --help
   $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube controller-manager --help
   ```
+
 + Best practice to learn the various configuration flags
 
 ## 3.15 Compiling from Source
@@ -258,12 +272,14 @@
 + The list of binary releases on [GitHub](https://github.com/kubernetes/kubernetes/releases) - other scenarios to get start with K8s , except for `gcloud`, `minikube`, and `kubeadmin`
 + Compile from source files with Makefile by cloning from GitHub
   + Build with __Golang__: download Golang from [here](https://golang.org/doc/install)
+
     ```bash
     $ cd $GOPATH
     $ git clone https://github.com/kubernetes/kubernetes
     $ cd kubernetes
     $ make
     ```
+
   + Build on [Docker host](https://docs.docker.com/install/) containing Golang
     + clone the repository anywhere and run `make quick-release`
     + built binary located in `_output/bin`
@@ -283,221 +299,347 @@
 + Exercise files in YAML provided, but encourage to write your own
 + Download YAML files in compress tar file by visiting `https://training.linuxfoundation.org/cm/LFS258/` with user: `LFtraining` and password: `Penguin2014`
 + Alternatively, download and expand the tart file
+
   ```bash
   $ wget \
   https://training.linuxfoundation.org/cm/LFS258/LFS258_V2018-01-16_SOLUTIONS.tar.bz2 \
   --user=LFtraining --password=Penguin2014
   $ tar -xvf LFS258_V2018-01-16_SOLUTIONS.tar.bz2
   ```
+
 ## Install Kubernetes
 
 1. Open a terminal session on your first node. E.g. connect to GCP node with ssh client or Putty.
-    ```bash
-    [student@laptop ~]$ ssh -i LFS458.pem student@35.226.100.87
-    The authenticity of host '54.214.214.156 (35.226.100.87)' can't be established.
-    ECDSA key fingerprint is SHA256:IPvznbkx93/Wc+ACwXrCcDDgvBwmvEXC9vmYhk2Wo1E.
-    ECDSA key fingerprint is MD5:d8:c9:4b:b0:b0:82:d3:95:08:08:4a:74:1b:f6:e1:9f.
-    Are you sure you want to continue connecting (yes/no)? yes
-    Warning: Permanently added '35.226.100.87' (ECDSA) to the list of known hosts.
-    <output_omitted>
-    ```
+
+  ```bash
+  [student@laptop ~]$ ssh -i LFS458.pem student@35.226.100.87
+  The authenticity of host '54.214.214.156 (35.226.100.87)' can't be established.
+  ECDSA key fingerprint is SHA256:IPvznbkx93/Wc+ACwXrCcDDgvBwmvEXC9vmYhk2Wo1E.
+  ECDSA key fingerprint is MD5:d8:c9:4b:b0:b0:82:d3:95:08:08:4a:74:1b:f6:e1:9f.
+  Are you sure you want to continue connecting (yes/no)? yes
+  Warning: Permanently added '35.226.100.87' (ECDSA) to the list of known hosts.
+  <output_omitted>
+  ```
+
 2. Become as `root` and update and upgrade teh system
-    ```bash
-    $ sudo -i
-    # apt-get update && apt-get upgrade -y
-    <output_ommitted>
-    ```
+
+  ```bash
+  $ sudo -i
+  [sudo] password for <username>:
+  # apt-get update && apt-get upgrade -y
+  <output_ommitted>
+  ```
+
 3. __Docker__ and __CoreOS Rocket - rkt__ are main choices for a container environment. __Docker__ is used here while __rkt__ requires a fair amount of extra work to enable for Kubernetes.
-    ```bash
-    $ sudo apt install -y docker.io
-    ```
+
+  ```bash
+  # apt install -y docker.io
+  <output_omitted>
+  ```
+
 4. Add new repo for kubernetes. Create the file and add an entry for the main repo.
-    ```bash
-    # vim /etc/apt/sources.list.d/kubernetes.list
-    deb http://apt.kubernetes.io/ kubernetes-xenial main
-    ```
+
+  ```bash
+  # vim /etc/apt/sources.list.d/kubernetes.list
+  deb http://apt.kubernetes.io/ kubernetes-xenial main
+  ```
+
 5. Add a GCP key for the packages.
-    ```bash
-    # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-    OK
-    ```
+
+  ```bash
+  # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+  OK
+  ```
+
+  OpenGPG might need to install before the above command working. Based on the instruction from [Using PGP](https://nsrc.org/workshops/2014/btnog/raw-attachment/wiki/Track3Agenda/2-1-1.pgp-lab.html)
+
+  ```bash
+  # apt-get install gnupg
+  # apt-get install rng-tools
+  # sed -i -e 's|#HRNGDEVICE=/dev/hwrng|HRNGDEVICE=/dev/urandom|' /etc/default/rng-tools
+  # service rng-tools start
+  ```
+
 6. Update teh new repo.
-    ```bash
-    # apt update
-    <output_ommitted>
+
+  ```bash
+  # apt update
+  <output_omitted>
+  ```
+
+7. Install the software with the newest release.
+
+  ```bash
+  # apt install -y kubeadm kubectl
+  <output_omitted>
+  ```
+
+  Historically, nre version have a lots of change and a chance of bugs. For specific version installation, follow the command
+
+  ```bash
+  # apt install -y kubeadm=1.9.1-00 kubelet=1.9.1-00
+  <output_omitted>
     ```
-7. Install the software with the newest release. 
-    ```bash
-    # apt install -y kubeadm kubectl
-    <output_omitted>
-    ```
-    Historically, nre version have a lots of change and a chance of bugs. For specific version installation, follow the command
-    ```bash
-    # apt install -y kubeadm=1.9.1-00 kubelet=1.9.1-00
-    <output_omitted>
-    ```
+
 8. Network Configuration
 
-    + The expected demands of the cluster will be the main concern for decision on Container Network Interface (CNI) for pod network.
-    + There can be only one pod network per cluster, though the CNI-Genie project is trying to change this.
-    + Types of communications: container-to-container, pod-to-pod, pod-to-service, and external-to-service
-    + Docker uses host-private networking
-        + `docker0` virtual bridge
-        + `vteth` interfaces on that host
-    + __Flannel__ mained by CoreOS, Prohject Calico, OVN, Contrails
-    + Download Flannel and Calico
-    ```bash
-    $ wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-    ```
-9. (Flannel) Review the network settings and configurations.  Decide the network address that Flannel will expect and be used for Master Node.
+  + The expected demands of the cluster will be the main concern for decision on Container Network Interface (CNI) for pod network.
+  + There can be only one pod network per cluster, though the CNI-Genie project is trying to change this.
+  + Types of communications: container-to-container, pod-to-pod, pod-to-service, and external-to-service
+  + Docker uses host-private networking
+    + `docker0` virtual bridge
+    + `vteth` interfaces on that host
+  + __Flannel__ mained by CoreOS, Prohject Calico, OVN, Contrails
+  + Download Flannel and Calico
 
-    ```bash 
-    # less kube-flannel.yml
-    <output_omitted>
-    # grep Network kube-flannel.ym
-        "Network": "10.244.0.0/16",
-        hostNetwork: true
-    ```
+  ```bash
+  $ wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  ```
+
+9. Review the network settings and configurations.  Decide the network address that Flannel will expect and be used for Master Node.
+
+  ```bash 
+  # less kube-flannel.yml
+  <output_omitted>
+  # grep Network kube-flannel.ym
+    "Network": "10.244.0.0/16",
+    hostNetwork: true
+  ```
+
 10. Calico Use Only, Not Flannel
 
-    + Download the [configuration file][calio] for Calico
-    + Check the expected IP range for container (different from Flannel)
+  + Download the [configuration file][calio] for Calico
+  + Check the expected IP range for container (different from Flannel)
 
-    ```bash
-    # wget https://goo.gl/eWLkzb -O calico.yaml
-    # less calico.yaml
-    ...
-        # Configure the IP Pool from which Pod IPs will be chosen.
-          - name: CALICO_IPV4POOL_CIDR
-            value: "192.168.0.0/16"
-    ...
-    ```
+  ```bash
+  # wget https://goo.gl/eWLkzb -O calico.yaml
+  # less calico.yaml
+  ...
+    # Configure the IP Pool from which Pod IPs will be chosen.
+      - name: CALICO_IPV4POOL_CIDR
+        value: "192.168.0.0/16"
+  ...
+  ```
+
 11. Initialize the master
 
-    + Read through the output carefully.
-    + The provided output is in beta, therefore, some differences are expected.
-    + The final portion is the direction to run as a non-root user with token provided.
-    + The token info can be obtained with `kubeadm token list` command.
-    + The output also instruct how to create a pod network to the cluster, see step 12.
-    + The network settings for Flannel also listed.
+  + Read through the output carefully.
+  + The provided output is in beta, therefore, some differences are expected.
+  + The final portion is the direction to run as a non-root user with token provided.
+  + The token info can be obtained with `kubeadm token list` command.
+  + The output also instruct how to create a pod network to the cluster, see step 12.
+  + The network settings for Flannel also listed.
 
-    ```bash
-    $ sudo kubeadm init --pod-network-cidr 10.244.0.0/16
-    [kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
-    [init] Using Kubernetes version: v1.9.1
-    [init] Using Authorization modes: [Node RBAC]
-    [preflight] Running pre-flight checks
+  ```bash
+  # exit
+  logout
+  $ sudo kubeadm init --pod-network-cidr 10.244.0.0/16
+  [kubeadm] WARNING: kubeadm is in beta, please do not use it for production clusters.
+  [init] Using Kubernetes version: v1.9.1
+  [init] Using Authorization modes: [Node RBAC]
+  [preflight] Running pre-flight checks
 
-    <output-omitted>
+  <output-omitted>
 
-    Your Kubernetes master has initialized successfully!
+  Your Kubernetes master has initialized successfully!
 
-    To start using your cluster, you need to run (as a regular user):
-        mkdir -p $HOME/.kube
-        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-        sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  To start using your cluster, you need to run (as a regular user):
+    mkdir -p $HOME/.kube
+    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-    You should now deploy a pod network to the cluster.
-    Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
-        http://kubernetes.io/docs/admin/addons/
+  You should now deploy a pod network to the cluster.
+  Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+    http://kubernetes.io/docs/admin/addons/
 
-    You can now join any number of machines by running the following on each node
-    as root:
-        kubeadm join --token 563c3c.9c978c8c0e5fbbe4 10.128.0.3:6443
-        --discovery-token-ca-cert-hash sha256:726e98586a8d12d428c0ee46
-        cbea90c094b8a78cb272917e2681f7b75abf875f
-    ```
+  You can now join any number of machines by running the following on each node
+  as root:
+    kubeadm join --token 563c3c.9c978c8c0e5fbbe4 10.128.0.3:6443
+    --discovery-token-ca-cert-hash sha256:726e98586a8d12d428c0ee46
+    cbea90c094b8a78cb272917e2681f7b75abf875f
+  ```
+
+Output messages after the command executed
+
+```
+[preflight] Running pre-flight checks.
+  [WARNING FileExisting-crictl]: crictl not found in system path
+[preflight] Some fatal errors occurred:
+  [ERROR Swap]: running with swap on is not supported. Please disable swap
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+```
+
++ Additional software to prevent `[WARNING FileExisting-crictl]` with the [cri-tools](https://github.com/kubernetes-incubator/cri-tools/releases) repo on github
++ Install Go Language and execute `go get github.com/kubernetes-incubator/cri-tools/cmd/crictl` with root/sudo, then copy `crictl` to `/usr/bin`
++ `[ERROR Swap]`: see [ref](https://github.com/kubernetes/kubeadm/issues/610) to turn off swap with `swapoff -a`
+
+```
+[preflight] Some fatal errors occurred:
+	[ERROR CRI]: unable to check if the container runtime at "/var/run/dockershim.sock" is running: exit status 1
+  [preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+```
+
++ Please refer to GibHub [issue ##657](https://github.com/kubernetes/kubeadm/issues/657) with the flag `--ignore-preflight-errors=cri`
+
+```bash
+$ sudo kubeadm init --ignore-preflight-errors=cri --pod-network-cidr 10.244.0.0/16
+[init] Using Kubernetes version: v1.9.6
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks.
+	[WARNING CRI]: unable to check if the container runtime at "/var/run/dockershim.sock" is running: exit status 1
+[certificates] Generated ca certificate and key.
+[certificates] Generated apiserver certificate and key.
+[certificates] apiserver serving cert is signed for DNS names [prj kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.0.2.15]
+[certificates] Generated apiserver-kubelet-client certificate and key.
+[certificates] Generated sa key and public key.
+[certificates] Generated front-proxy-ca certificate and key.
+[certificates] Generated front-proxy-client certificate and key.
+[certificates] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[kubeconfig] Wrote KubeConfig file to disk: "admin.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "kubelet.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "controller-manager.conf"
+[kubeconfig] Wrote KubeConfig file to disk: "scheduler.conf"
+[controlplane] Wrote Static Pod manifest for component kube-apiserver to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-controller-manager to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-scheduler to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Wrote Static Pod manifest for a local etcd instance to "/etc/kubernetes/manifests/etcd.yaml"
+[init] Waiting for the kubelet to boot up the control plane as Static Pods from directory "/etc/kubernetes/manifests".
+[init] This might take a minute or longer if the control plane images have to be pulled.
+[apiclient] All control plane components are healthy after 53.501839 seconds
+[uploadconfig] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[markmaster] Will mark node prj as master by adding a label and a taint
+[markmaster] Master prj tainted and labelled with key/value: node-role.kubernetes.io/master=""
+[bootstraptoken] Using token: ba3edb.1b9344bf6ce19d91
+[bootstraptoken] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstraptoken] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstraptoken] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstraptoken] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: kube-dns
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join --token ba3edb.1b9344bf6ce19d91 10.0.2.15:6443 --discovery-token-ca-cert-hash sha256:34e555e3f502b0b0aa0786ea841fa8b62daa66569863d62adc34f8e72dc3da41
+```
+
 12. Follow the direction to allo a non-root user access to the cluster.
 
-    ```bash
-    # exit
-    logout
-    $ mkdir -p $HOME/.kube
-    $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-    $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
-    $ less .kube/config
-    apiVersion: v1
-    clusters:
-    - cluster:
-    <output_omitted>
-    ```
+  ```bash
+  # exit
+  logout
+  $ mkdir -p $HOME/.kube
+  $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  $ less .kube/config
+  apiVersion: v1
+  clusters:
+  - cluster:
+  <output_omitted>
+  ```
+
 13. Apply the configuration to cluster.
 
-    + Copy the config file to the non-root user directory.
-    + Verify the new flannel interface
-    ```bash
-    $ sudo cp /root/kube-flannel.yml ./
-    $ kubectl apply -f kube-flannel.yml
-    clusterrole "flannel" created
-    clusterrolebinding "flannel" created
-    serviceaccount "flannel" created
-    configmap "kube-flannel-cfg" created
-    daemonset "kube-flannel-ds" created
+  + Copy the config file to the non-root user directory.
+  + Verify the new flannel interface
+  ```bash
+  $ sudo cp /root/kube-flannel.yml ./
+  $ kubectl apply -f kube-flannel.yml
+  clusterrole "flannel" created
+  clusterrolebinding "flannel" created
+  serviceaccount "flannel" created
+  configmap "kube-flannel-cfg" created
+  daemonset "kube-flannel-ds" created
 
-    $ ip a
-    <output_omitted>
-    4: flannel.1: <BROADCAST,MULTICAST> mtu 8951 qdisc noop state DOWN group default
-        link/ether 32:44:47:b7:78:85 brd ff:ff:ff:ff:ff:ff
-    ```
+  $ ip a
+  <output_omitted>
+  4: flannel.1: <BROADCAST,MULTICAST> mtu 8951 qdisc noop state DOWN group default
+      link/ether 32:44:47:b7:78:85 brd ff:ff:ff:ff:ff:ff
+  ```
+
 14. Verify the available nodes of the cluster.
 
-    + It may take 1~2 min to change from NotReady to Ready.
-    + The `NAME` field can be used to check the details.
-    ```bash
-    $ kubectl get node
-    NAME STATUS AGE VERSION
-    lfs458-node-1a0a Ready 1m v1.9.1
-    ```
+  + It may take 1~2 min to change from NotReady to Ready.
+  + The `NAME` field can be used to check the details.
+  ```bash
+  $ kubectl get node
+  NAME              STATUS  AGE VERSION
+  lfs458-node-1a0a  Ready   1m  v1.9.1
+  ```
+
+  Actual output:
+  ```
+  NAME      STATUS    ROLES     AGE       VERSION
+  prj       Ready     master    2h        v1.9.6
+  ```
+
 15. Check the details of the node.
 
-    + Work line by line to check the resource and their current status.
-    + Status `Taints`: The master won't allow pods by default for security reason.
-    + Status `False`: Read through each line to find the error
-    ```bash
-    $ kubectl describe node lfs458-node-1a0a
-    Name: lfs458-node-1a0a
-    Role:
-    Labels: beta.kubernetes.io/arch=amd64
-    beta.kubernetes.io/os=linux
-    kubernetes.io/hostname=lfs458-node-1a0a
-    node-role.kubernetes.io/master=
-    Annotations: node.alpha.kubernetes.io/ttl=0
-    volumes.kubernetes.io/controller-managed-attach-detach=true
-    Taints: node-role.kubernetes.io/master:NoSchedule
-    <output_omitted>
-    ```
+  + Work line by line to check the resource and their current status.
+  + Status `Taints`: The master won't allow pods by default for security reason.
+  + Status `False`: Read through each line to find the error
+
+  ```bash
+  $ kubectl describe node <name>
+  Name: lfs458-node-1a0a
+  Role:
+  Labels: beta.kubernetes.io/arch=amd64
+  beta.kubernetes.io/os=linux
+  kubernetes.io/hostname=lfs458-node-1a0a
+  node-role.kubernetes.io/master=
+  Annotations: node.alpha.kubernetes.io/ttl=0
+  volumes.kubernetes.io/controller-managed-attach-detach=true
+  Taints: node-role.kubernetes.io/master:NoSchedule
+  <output_omitted>
+  ```
+
 16. Determine if the DNS and flannel ready for use. Status shows `Running`, it might take 1~2 min to transitition from `Pending`.
 
-    ```bash
-    $ kubectl get pods --all-namespaces
-    NAMESPACE   NAME                                    READY STATUS  RESTARTS AGE
-    kube-system etcd-lfs458-node-1a0a                   1/1   Running 0        12m
-    kube-system kube-apiserver-lfs458-node-1a0a         1/1   Running 0        12m
-    kube-system kube-controller-manager-lfs458-node-1a0a 1/1  Running 0        12m
-    kube-system kube-dns-2425271678-w80vx               3/3   Running 0        13m
-    kube-system kube-flannel-ds-wj92l                   1/1   Running 0        1m
-    kube-system kube-proxy-5st9z                        1/1   Running 0        13m
-    kube-system kube-scheduler-lfs458-node-1a0a         1/1   Running 0        12m
-    ```
+  ```bash
+  $ kubectl get pods --all-namespaces
+  NAMESPACE   NAME                                      READY STATUS  RESTARTS AGE
+  kube-system etcd-lfs458-node-1a0a                     1/1   Running 0        12m
+  kube-system kube-apiserver-lfs458-node-1a0a           1/1   Running 0        12m
+  kube-system kube-controller-manager-lfs458-node-1a0a  1/1   Running 0        12m
+  kube-system kube-dns-2425271678-w80vx                 3/3   Running 0        13m
+  kube-system kube-flannel-ds-wj92l                     1/1   Running 0        1m
+  kube-system kube-proxy-5st9z                          1/1   Running 0        13m
+  kube-system kube-scheduler-lfs458-node-1a0a           1/1   Running 0        12m
+  ```
+
 17. Allow the master to run other pods.  Note: minus sign `-` is the syntax to remove a taint.
 
-    ```bash
-    $ kubectl taint nodes --all node-role.kubernetes.io/master-
-    node "lfs458-node-1a0a" untainted
-    student@lfs458-node-1a0a:~$ kubectl describe node lfs458-node-1a0a | grep -i taint
-    Taints: <none>
-    ```
+  ```bash
+  $ kubectl taint nodes --all node-role.kubernetes.io/master-
+  node "lfs458-node-1a0a" untainted
+  $ kubectl describe node <name> | grep -i taint
+  Taints: <none>
+  ```
+
 18. Enable `bash` auto-completion for `kubectl` with long node name.
 
-    ```bash
-    $ source <(kubectl completion bash)
-    $ echo "source <(kubectl completion bash)" >> ~/.bashrc
-    ```
+  ```bash
+  $ source <(kubectl completion bash)
+  $ echo "source <(kubectl completion bash)" >> ~/.bashrc
+  ```
+
 19. Verify auto-completion with 3-letter node name.
 
-    ```bash
-    $ kubectl des<Tab> n>Tab><Tab> lfs458-<Tab>
-    ```
+  ```bash
+  $ kubectl des<Tab> n<Tab><Tab> <name>-<Tab>
+  ```
 
 [Lab 3.1 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.1.pdf)
 
