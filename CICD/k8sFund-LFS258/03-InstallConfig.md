@@ -641,13 +641,333 @@
     $ kubectl des<Tab> n<Tab><Tab> <name>-<Tab>
     ```
 
-[Lab 3.1 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.1.pdf)
++ [Lab 3.1 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.1.pdf)
 
 [calio]: https://docs.projectcalico.org/v2.6/getting-started/kubernetes/installation/hosted/kubeadm/1.6/calico.yaml
 
 ## 3.17 Lab 3.2 - Grow the Cluster
 
-[Vab 3.2 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.2.pdf)
+1. (Workers) Connect to second node and setup as master node.
+
+    ```bash
+    $ sudo -i
+    # apt update && apt upgrade -y
+    # apt install -y docker.io
+    # vim /etc/apt/source.list.d/kubernetes.list
+    deb http://apt.kubernetes.ip/ kubernetes-xenial main
+    # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+    # apt update
+    # apt install -y kubeadm kubectl
+    ```
+
+2. (Master) Find the IP address of the master node.  The interface name depends on the where the node is running.  E.g. the primary interface of the node type inside GCP is `ens4`.
+
+    ```bash
+    $ ip addr show ens4
+        inet 10.128.0.3/32 brd 10.128.0.3 scope global ens4
+        inet6 fe80::4001:aff:fe8e:2/64 scope link
+    ```
+
+3. (Master) Find the token on the master node.
+
+    + The token last for 24 hrs by default.
+    + Generate new token with the `sudo kubeadm token create`
+
+    ```bash
+    student@lfs458-node-1a0a:~$ sudo kubeadm token list
+    TOKEN                   TTL EXPIRES     USAGES      DESCRIPTION
+    27eee4.6e66ff60318da929 23h 2017-11-03T13:27:33Z
+    authentication,signing The default bootstrap token generated
+    by 'kubeadm init'....
+    ```
+
+4. (Master) Starting from v1.9, create and use the Discovery Token CA Cert Hash, created from the master to ensue the node joins the cluster in a secure manner. Run this command on the master node to create one.
+
+    ```bash
+    $ openssl x509  -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa \
+                    -pubin -outform der 2>/dev/null | openssl dgst \
+                    -sha256 -hex | sed 's/^.* //'
+    6d541678b05652e1fa5d43908e75e67376e994c3483d6683f2a18673e5d2a1b0
+    ```
+5. (Workers) Join the cluster from the second node.
+
+    + Use the generated token and hash
+    + Use the private IP address of the master node and port `6443`
+    
+    ```bash
+    # kubeadm join \
+        --token 27eee4.6e66ff60318da929 10.128.0.3:6443
+        --discovery-token-ca-cert-hash \
+        sha256:6d541678b05652e1fa5d43908e75e67376e994c3483d6683f2a18673e5d2a1b0
+    [preflight] Running pre-flight checks.
+    [WARNING FileExisting-crictl]: crictl not found in system path
+    [discovery] Trying to connect to API Server "10.142.0.2:6443"
+    [discovery] Created cluster-info discovery client, requesting info from
+    "https://10.142.0.2:6443"
+    [discovery] Requesting info from "https://10.142.0.2:6443" again to
+    validate TLS against the pinned public key
+    [discovery] Cluster info signature and contents are valid and TLS
+    certificate validates against pinned roots, will
+    use API Server "10.142.0.2:6443"
+    [discovery] Successfully established connection with API Server
+    "10.142.0.2:6443"
+    This node has joined the cluster:
+    * Certificate signing request was sent to master and a response
+    was received.
+    * The Kubelet was informed of the new secure connection details.
+    Run 'kubectl get nodes' on the master to see this node join the cluster.
+    ```
+
+6. (Workers) Try to run the `kubectl` command. 
+
+    + Failed
+    + No authentication in local `~/.kube/config` file
+
+    ```bash
+    # exit 
+    $ kubectl get nodes
+    The connection to the server localhost:8080 was refused
+    - did you specify the right host or port?
+
+    $ ls -l ~/.kube
+    ```
+
+7. (Master) Verify the node has joined the cluster. It might take a few minutes to show `Ready` state.
+
+    ```bash
+    $ kubectl get nodes
+    ```
+
+8. (Master) Display the current namespace configured on tyhe cluster.
+
+    ```bash
+    $ kubectl get namespace
+    ```
+
+9. (Master & Worker) Display the network interfaces
+
+    ```bash
+    $ ip a
+    ```
+
+10. (Master) Verify the deployment with the following command.
+
+    ```bash 
+    $ kubectl run nginx --image nginx
+    ```
+
+11. (Master) Display the details of the deployment.
+
+    ```bash
+    $ kubectl describe deployment nginx
+    ```
+
+12. (Master) Display the basic stepsthe cluster took in order to pull and deploy the new application. [About 10 long lines of output]
+
+    ```bash
+    kubectl get events
+    ```
+
+13. (Master) Display the output in YAML format.
+
+    + The output can used to create the deployment or new deployment
+    + Middle of the file shows the status info of the current deployment
+
+    ```bash
+    $ kubectl get deployment nginx -o yaml
+    ```
+
+14. (Master) Revise the YAML file.
+
+    + Run command again and redirect the output to a file
+    + Edit the file 
+        + remove lines with `creationTimestamps`, `resourceVersion`, `selfLink` and `uid`
+        + remove all the lines including and after `status:`
+    
+    ```bash
+    $ kubectl get deployment nginx -o yaml > first.yml
+    $ vim first.yml
+    ```
+
+15. (Master) Delete the existing deployment
+
+    ```bash
+    $ kubectl delete deployment nginx
+    ```
+
+16. (Master) Create deployment with edited file
+
+    ```bash
+    $ kubectl create -f first.yml
+    ```
+
+17. (Master) Compare the current deployment and first deployment.
+
+    + Run the command again and redirect to YAML file
+    + The `time stamp`, `resource version` and `uid` are generated for each resource generated
+    + They will cause conflicts or false information
+    + `status` should not be hard-coded as well
+
+    ```bash
+    $ kubectl get deployment nginx 0o > second.yml
+    $ diff first.yml second.yml
+    ```
+18. (Master) Show the help output to view examples
+
+    + __nginx__ container is a light weight web server
+    + Create a `service` to view the default welcome page
+    + Middle of output provides several examples
+
+    ```bash
+    $ kubectl expose -h
+    ```
+
+19. (Master) Gain access to the web server
+
+    ```bash
+    $ kubectl expose deployment/nginx
+    ```
+
+20. (Master) Explore configuration file
+
+    + Change an existing configuration in a cluster: `kubectl` sub-commands
+        + `apply`: a three-way diff of previous, current, and supplied input to determine modifications to make; changes not mentioned are unaffected
+        + `edit`: perform a get, open an editor, then an apply
+        + `patch`: update API objects in place with JSON patch and merge patch or strategic merge patch functionality
+    + `kubectl replace --force`: disruptive update if configuration w/ resource field not able to update once initialized
+    + Edit the first deployment YAML file with port 80
+
+    ```yaml
+    .
+        spec:
+          containers:
+          - image: nginx
+            imagePullPolicy: Always
+            name: nginx
+            ports:                      # Add these
+            - containerPort: 80         # three
+              protocol: TCP             # lines
+            resources: {}
+    .
+    ```
+
+21. (Master) Apply the changes to the running deployment. Warning message might show.
+
+    ```bash
+    $ kubectl apply -f first.yml
+    ```
+
+22. (Master) View the Pod and Deployment.
+
+    ```bash
+    $ kubectl get deploy pod
+    ```
+
+23. (Master) Try to expose the resource again.
+
+    ```bash
+    $ kubectl expose deployment.nginx
+    ```
+
+24. (Master) Verify the service configuration
+
+    + Check the service info first, then the endpoint info
+    + the Cluster IP != current endpoint
+    + Note down the current endpoint IP, e.g. 10.244.1.99:80 in this example
+
+    ```bash
+    $ kubectl get svc nginx
+    NAME CLUSTER-IP     EXTERNAL-IP PORT(S) AGE
+    nginx 10.100.61.122 <none>      80/TCP  3m
+
+    $ kubectl get ep nginx
+    NAME    ENDPOINTS       AGE
+    nginx   10.244.1.99:80  4m
+    ```
+
+25. (Master & Workers) Determine which node the container running.
+
+    + Log into Worker node nad use `tcpdump` to view traffic on `flannel.1` interface
+    + Leave the command running while `curl` requests
+    + Check the `tcpdump` output, including `HTTP: HTTP/1.1 200 OK` and `ack` response
+
+    ```bash
+    (Master) $ kubectl describe pod nginx-7cbc4b4d9x-d27xw | grep Node:
+    
+    (Worker) $ sudo tcpdump -i flannel.1
+    ```
+
+26. (Master) Verify by accessing to the Cluster IP, port 80.
+
+    + View the generic `nginx` and working page
+    + The address: `ENDPOINT` IP address
+    + If the `curl` command times out, the pod may be running on the other node
+    + Run same command on that node
+
+    ```bash
+    $ curl 10.100.61.122:80
+    ```
+
+27. (Workers & Workers) Verify with different network interfaces
+
+    + Run `tcpdump` on different terminal with different interface
+    
+    ```bash
+    $ sudo tcpdump cni0
+    $ sudo tcpdump vethfa2c0158
+    ```
+
+28. (Master) Scale up the deployment from 1 to 3 erb servers
+
+    ```bash
+    $ kubectl get deployment nginx
+    $ kubectl scale deployment nginx --replicas=3
+    $ kubectl get deployment nginx
+    ```
+
+29. (Master) Verify the current endpoint.
+
+    ```bash
+    $ kubectl get ep nginx
+    ```
+
+30. (Master) Delete the oldest pod of the nginx deployment and delete it.
+
+    + Use the `AGE` field to determine the oldest pod
+    + Observe the terminals with `tcpdump` running
+
+    ```bash
+    $ kubectl get po -o wide
+    $ kubectl delete po nginx-<id>
+    ```
+
+31. (Master) Observer the web server again.
+
+    + List the containers running
+    + One should be newer than the others.
+    + If the `tcpdump` was using `veth` interface of that container, it will error out.
+
+    ```bash
+    $ kubectl gte pod
+    ```
+
+32. (Master) Observe the endpoint again.
+
+    + The original endpoint IP is no longer in use.
+    + Delete any of the pods
+    + The service will forward traffic to the existing backend pods.
+
+    ```bash
+    $ kubectl get ep nginx
+    ```
+
+33. (Master) Verify by accessing the web server again w/ the ClusterIP addr ans any endpoint IP address.
+
+    ```bash
+    $ curl 10.100.61.122:80
+    ```
+
++ [Vab 3.2 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.2.pdf)
 
 ## 3.18 Lab 3.3 - Access from Outside the Cluster
 
