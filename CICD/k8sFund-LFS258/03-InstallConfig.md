@@ -653,8 +653,8 @@
     $ sudo -i
     # apt update && apt upgrade -y
     # apt install -y docker.io
-    # vim /etc/apt/source.list.d/kubernetes.list
-    deb http://apt.kubernetes.ip/ kubernetes-xenial main
+    # vim /etc/apt/sources.list.d/kubernetes.list
+    deb http://apt.kubernetes.io/ kubernetes-xenial main
     # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
     # apt update
     # apt install -y kubeadm kubectl
@@ -696,8 +696,7 @@
     
     ```bash
     # kubeadm join \
-        --token 27eee4.6e66ff60318da929 10.128.0.3:6443
-        --discovery-token-ca-cert-hash \
+        --token 27eee4.6e66ff60318da929 10.128.0.3:6443  --discovery-token-ca-cert-hash \
         sha256:6d541678b05652e1fa5d43908e75e67376e994c3483d6683f2a18673e5d2a1b0
     [preflight] Running pre-flight checks.
     [WARNING FileExisting-crictl]: crictl not found in system path
@@ -716,6 +715,20 @@
     was received.
     * The Kubelet was informed of the new secure connection details.
     Run 'kubectl get nodes' on the master to see this node join the cluster.
+    ```
+
+    Whe doing lab, the command issues instead:
+
+    ```bash
+    # kubeadm join --ignore-preflight-errors=cri --token 44d148.2a750f5fe1f90105 10.0.2.15:6443 \
+        --discovery-token-ca-cert-hash sha256:34e555e3f502b0b0aa0786ea841fa8b62daa66569863d62adc34f8e72dc3da41
+    [preflight] Running pre-flight checks.
+    [WARNING Service-Docker]: docker service is not enabled, please run 'systemctl enable docker.service'
+    [WARNING FileExisting-crictl]: crictl not found in system path
+    [discovery] Trying to connect to API Server "10.0.2.15:6443"
+    [discovery] Created cluster-info discovery client, requesting info from "https://10.0.2.15:6443"
+    [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
+    [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
     ```
 
 6. (Workers) Try to run the `kubectl` command. 
