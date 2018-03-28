@@ -984,7 +984,70 @@
 
 ## 3.18 Lab 3.3 - Access from Outside the Cluster
 
-[Lab 3.3 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.3.pdf)
+1. (Master) Display the list of pods
+
+    ```bash
+    $ kubectl get pod
+    ```
+
+2. (Master) Execute a command with a selected pod from the list
+
+    ```bash
+    $ kubectl exec nginx-<id>
+    ```
+
+3. (Master) Display the list of services
+
+    ```bash
+    $ kubectl get svc
+    ```
+
+4. (Master) Remove the `nginx` service
+
+    ```bash
+    $ kubectl delete svc nginx
+    ```
+
+5. (Master) Create service w/ `LoadBalancer`
+
+    + Observe the status 
+    + Note down the external ports in `PORT(S)` with `EXTERNAL-IP` shown as `<pending>`
+    + AWS and GCE always shows as pending
+
+    ```bash 
+    $ kubectl expose development nginx --type=LoadBalancer
+    $ kubectl get svc
+    ```
+
+6. (Host) Verify with browser
+
+    + Using node's public IP address and port 32753
+    + If remote system used, such as AWS or GCE, the CLUSTER-IP's are internal.
+    + Use the public IP address using for SSH.
+
+7. Scale the deployment to zero replicas. Then test the web page again.
+
+    ```bash
+    $ kubectl scale deployment nginx --replicas=0
+    $ kubectl get po
+    ```
+
+8. Scale the deployment up to two replicas.  The web page should work again.
+
+    ```bash
+    $ kubectl scale deployment nginx --replicas=2
+    $ kubectl get po
+    ```
+
+9. Delete the deployment to recover system resources.
+
+    ```bash
+    $ kubectl delete deployment  nginx
+    $ kubectl delete ep nginx
+    $ kubectl delete svc nginx
+    ```
+
++ [Lab 3.3 - PDF](https://lms.quickstart.com/custom/858487/LAB_3.3.pdf)
 
 ## 3.19 Knowledge Check
 
