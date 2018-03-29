@@ -730,6 +730,11 @@
     [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
     [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
     ```
+    The port 6443 on master nodes does not open for access.  Open the port with the following command
+
+    ```bash
+    $ sudo iptables -A INPUT -p tcp --dport  6443 -j ACCEPT
+    ```
 
 6. (Workers) Try to run the `kubectl` command. 
 
