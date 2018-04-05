@@ -54,7 +54,7 @@
     + a combination of a cluster and user credentials
     + pass these parameters on the command line, or switch the shell between contexts with a command:
 
-        ```bash
+        ```shell
         $ kubectl config use-context foobar
         ```
 
@@ -69,7 +69,7 @@
     + [GKE quickstart guide](https://cloud.google.com/kubernetes-engine/docs/quickstart)
 + To create Kubernetes cluster
 
-    ```bash
+    ```shell
     $ gcloud container clusters create linuxfoundation
     $ gcloud container cluster list
     $ kubectl get nodes
@@ -79,7 +79,7 @@
     + commands create the cluster, install it, and the, listed the nodes of the cluster with `kubectl`
 + To delete Kubernetes cluster
 
-    ```bash
+    ```shell
     $ gcloud container clusters delete linuxfoundation
     ```
 
@@ -88,7 +88,7 @@
 + an open source project within the GitHub [Kubernetes organization](https://github.com/kubernetes/minikube)
 + Download minikube
 
-    ```bash
+    ```shell
     $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.22.2/minikube-linux-amd64
     $ chmod +x minikube
     $ sudo mv minikube /usr/local/bin
@@ -96,7 +96,7 @@
 
 + Starting Kubernetes on local machine
 
-    ```bash
+    ```shell
     $ minikube start
     $ kubectl get nodes
     ```
@@ -114,13 +114,13 @@
 + Procedures:
     + `kubeadm init`: run on the head node and token returned
     + Create a network for IP-per-Pod criteria:
-        ```bash
+        ```shell
         kubeadm join --token token head-node-IP
         ```
     + Alternatively create the network with `kubectl`, by using a resource manifest of the network
 + To use the Weave network
 
-    ```bash
+    ```shell
     $ kubectl create -f https://git.io/weave-kube
     ```
 
@@ -259,7 +259,7 @@
     + monitor and restart if needed
 + Demo: download `hyperkube` image and run a container
 
-    ```bash
+    ```shell
     $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube apiserver --help
     $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube scheduler --help
     $ docker run --rm gcr.io/google_containers/hyperkube:v.1.9.2 /hyperkube controller-manager --help
@@ -273,7 +273,7 @@
 + Compile from source files with Makefile by cloning from GitHub
     + Build with __Golang__: download Golang from [here](https://golang.org/doc/install)
 
-        ```bash
+        ```shell
         $ cd $GOPATH
         $ git clone https://github.com/kubernetes/kubernetes
         $ cd kubernetes
@@ -300,7 +300,7 @@
 + Download YAML files in compress tar file by visiting `https://training.linuxfoundation.org/cm/LFS258/` with user: `LFtraining` and password: `Penguin2014`
 + Alternatively, download and expand the tart file
 
-    ```bash
+    ```shell
     $ wget \
     https://training.linuxfoundation.org/cm/LFS258/LFS258_V2018-01-16_SOLUTIONS.tar.bz2 \
     --user=LFtraining --password=Penguin2014
@@ -311,7 +311,7 @@
 
 1. Open a terminal session on your first node. E.g. connect to GCP node with ssh client or Putty.
 
-    ```bash
+    ```shell
     [student@laptop ~]$ ssh -i LFS458.pem student@35.226.100.87
     The authenticity of host '54.214.214.156 (35.226.100.87)' can't be established.
     ECDSA key fingerprint is SHA256:IPvznbkx93/Wc+ACwXrCcDDgvBwmvEXC9vmYhk2Wo1E.
@@ -323,7 +323,7 @@
 
 2. Become as `root` and update and upgrade teh system
 
-    ```bash
+    ```shell
     $ sudo -i
     [sudo] password for <username>:
     # apt-get update && apt-get upgrade -y
@@ -332,28 +332,28 @@
 
 3. __Docker__ and __CoreOS Rocket - rkt__ are main choices for a container environment. __Docker__ is used here while __rkt__ requires a fair amount of extra work to enable for Kubernetes.
 
-    ```bash
+    ```shell
     # apt install -y docker.io
     <output_omitted>
     ```
 
 4. Add new repo for kubernetes. Create the file and add an entry for the main repo.
 
-    ```bash
+    ```shell
     # vim /etc/apt/sources.list.d/kubernetes.list
     deb http://apt.kubernetes.io/ kubernetes-xenial main
     ```
 
 5. Add a GCP key for the packages.
 
-    ```bash
+    ```shell
     # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
     OK
     ```
 
     OpenGPG might need to install before the above command working. Based on the instruction from [Using PGP](https://nsrc.org/workshops/2014/btnog/raw-attachment/wiki/Track3Agenda/2-1-1.pgp-lab.html)
 
-    ```bash
+    ```shell
     # apt-get install gnupg
     # apt-get install rng-tools
     # sed -i -e 's|#HRNGDEVICE=/dev/hwrng|HRNGDEVICE=/dev/urandom|' /etc/default/rng-tools
@@ -362,21 +362,21 @@
 
 6. Update teh new repo.
 
-    ```bash
+    ```shell
     # apt update
     <output_omitted>
     ```
 
 7. Install the software with the newest release.
 
-    ```bash
+    ```shell
     # apt install -y kubeadm kubectl
     <output_omitted>
     ```
 
     Historically, nre version have a lots of change and a chance of bugs. For specific version installation, follow the command
 
-    ```bash
+    ```shell
     # apt install -y kubeadm=1.9.1-00 kubelet=1.9.1-00
     <output_omitted>
     ```
@@ -392,13 +392,13 @@
     + __Flannel__ mained by CoreOS, Prohject Calico, OVN, Contrails
     + Download Flannel and Calico
 
-    ```bash
+    ```shell
     $ wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
     ```
 
 9. Review the network settings and configurations.  Decide the network address that Flannel will expect and be used for Master Node.
 
-    ```bash 
+    ```shell 
     # less kube-flannel.yml
     <output_omitted>
     # grep Network kube-flannel.ym
@@ -411,7 +411,7 @@
     + Download the [configuration file][calio] for Calico
     + Check the expected IP range for container (different from Flannel)
 
-    ```bash
+    ```shell
     # wget https://goo.gl/eWLkzb -O calico.yaml
     # less calico.yaml
     ...
@@ -430,7 +430,7 @@
     + The output also instruct how to create a pod network to the cluster, see step 12.
     + The network settings for Flannel also listed.
 
-    ```bash
+    ```shell
     # exit
     logout
     $ sudo kubeadm init --pod-network-cidr 10.244.0.0/16
@@ -479,9 +479,10 @@
     [preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
   ```
 
-  + Please refer to GibHub [issue ##657](https://github.com/kubernetes/kubeadm/issues/657) with the flag `--ignore-preflight-errors=cri`
+  + Please refer to GibHub [issue #657](https://github.com/kubernetes/kubeadm/issues/657) with the flag `--ignore-preflight-errors=cri`
 
-  ```bash
+  ```shell
+  $ sudo swapoff -a
   $ sudo kubeadm init --ignore-preflight-errors=cri --pod-network-cidr 10.244.0.0/16
   [init] Using Kubernetes version: v1.9.6
   [init] Using Authorization modes: [Node RBAC]
@@ -537,7 +538,7 @@
 
 12. Follow the direction to allo a non-root user access to the cluster.
 
-    ```bash
+    ```shell
     # exit
     logout
     $ mkdir -p $HOME/.kube
@@ -554,7 +555,7 @@
 
     + Copy the config file to the non-root user directory.
     + Verify the new flannel interface
-    ```bash
+    ```shell
     $ sudo cp /root/kube-flannel.yml ./
     $ kubectl apply -f kube-flannel.yml
     clusterrole "flannel" created
@@ -573,7 +574,7 @@
 
     + It may take 1~2 min to change from NotReady to Ready.
     + The `NAME` field can be used to check the details.
-    ```bash
+    ```shell
     $ kubectl get node
     NAME              STATUS  AGE VERSION
     lfs458-node-1a0a  Ready   1m  v1.9.1
@@ -591,7 +592,7 @@
     + Status `Taints`: The master won't allow pods by default for security reason.
     + Status `False`: Read through each line to find the error
 
-    ```bash
+    ```shell
     $ kubectl describe node <name>
     Name: lfs458-node-1a0a
     Role:
@@ -607,7 +608,7 @@
 
 16. Determine if the DNS and flannel ready for use. Status shows `Running`, it might take 1~2 min to transitition from `Pending`.
 
-    ```bash
+    ```shell
     $ kubectl get pods --all-namespaces
     NAMESPACE   NAME                                      READY STATUS  RESTARTS AGE
     kube-system etcd-lfs458-node-1a0a                     1/1   Running 0        12m
@@ -621,23 +622,23 @@
 
 17. Allow the master to run other pods.  Note: minus sign `-` is the syntax to remove a taint.
 
-    ```bash
+    ```shell
     $ kubectl taint nodes --all node-role.kubernetes.io/master-
     node "lfs458-node-1a0a" untainted
     $ kubectl describe node <name> | grep -i taint
     Taints: <none>
     ```
 
-18. Enable `bash` auto-completion for `kubectl` with long node name.
+18. Enable `shell` auto-completion for `kubectl` with long node name.
 
-    ```bash
-    $ source <(kubectl completion bash)
-    $ echo "source <(kubectl completion bash)" >> ~/.bashrc
+    ```shell
+    $ source <(kubectl completion shell)
+    $ echo "source <(kubectl completion shell)" >> ~/.shellrc
     ```
 
 19. Verify auto-completion with 3-letter node name.
 
-    ```bash
+    ```shell
     $ kubectl des<Tab> n<Tab><Tab> <name>-<Tab>
     ```
 
@@ -649,7 +650,7 @@
 
 1. (Workers) Connect to second node and setup as master node.
 
-    ```bash
+    ```shell
     $ sudo -i
     # apt update && apt upgrade -y
     # apt install -y docker.io
@@ -662,7 +663,7 @@
 
 2. (Master) Find the IP address of the master node.  The interface name depends on the where the node is running.  E.g. the primary interface of the node type inside GCP is `ens4`.
 
-    ```bash
+    ```shell
     $ ip addr show ens4
         inet 10.128.0.3/32 brd 10.128.0.3 scope global ens4
         inet6 fe80::4001:aff:fe8e:2/64 scope link
@@ -673,7 +674,7 @@
     + The token last for 24 hrs by default.
     + Generate new token with the `sudo kubeadm token create`
 
-    ```bash
+    ```shell
     student@lfs458-node-1a0a:~$ sudo kubeadm token list
     TOKEN                   TTL EXPIRES     USAGES      DESCRIPTION
     27eee4.6e66ff60318da929 23h 2017-11-03T13:27:33Z
@@ -683,7 +684,7 @@
 
 4. (Master) Starting from v1.9, create and use the Discovery Token CA Cert Hash, created from the master to ensue the node joins the cluster in a secure manner. Run this command on the master node to create one.
 
-    ```bash
+    ```shell
     $ openssl x509  -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa \
                     -pubin -outform der 2>/dev/null | openssl dgst \
                     -sha256 -hex | sed 's/^.* //'
@@ -694,7 +695,7 @@
     + Use the generated token and hash
     + Use the private IP address of the master node and port `6443`
     
-    ```bash
+    ```shell
     # kubeadm join \
         --token 27eee4.6e66ff60318da929 10.128.0.3:6443  --discovery-token-ca-cert-hash \
         sha256:6d541678b05652e1fa5d43908e75e67376e994c3483d6683f2a18673e5d2a1b0
@@ -719,7 +720,7 @@
 
     Whe doing lab, the command issues instead:
 
-    ```bash
+    ```shell
     # kubeadm join --ignore-preflight-errors=cri --token 44d148.2a750f5fe1f90105 10.0.2.15:6443 \
         --discovery-token-ca-cert-hash sha256:34e555e3f502b0b0aa0786ea841fa8b62daa66569863d62adc34f8e72dc3da41
     [preflight] Running pre-flight checks.
@@ -732,16 +733,55 @@
     ```
     The port 6443 on master nodes does not open for access.  Open the port with the following command
 
-    ```bash
+    ```shell
     $ sudo iptables -A INPUT -p tcp --dport  6443 -j ACCEPT
     ```
+
+    To allow establshed session to receive traffic: (return traffic)
+
+    ```shell
+    $ sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    $ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+    ```
+
+    Verify the port opening with the cmd
+
+    ```shell
+    $ nc -z <host> <port>
+    ```
+
+    After trying, still not working, checking with the `iptables -L` cmd, open the port seemds not necessary
+
+    ```shell
+    $ sudo iptables -L
+    Chain INPUT (policy ACCEPT)
+    target     prot opt source               destination
+
+    Chain FORWARD (policy DROP)
+    target     prot opt source               destination
+    DOCKER-ISOLATION  all  --  anywhere      anywhere
+    DOCKER     all  --  anywhere             anywhere
+    ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+    ACCEPT     all  --  anywhere             anywhere
+    ACCEPT     all  --  anywhere             anywhere
+
+    Chain OUTPUT (policy ACCEPT)
+    target     prot opt source               destination
+
+    Chain DOCKER (1 references)
+    target     prot opt source               destination
+
+    Chain DOCKER-ISOLATION (1 references)
+    target     prot opt source               destination
+    RETURN     all  --  anywhere             anywhere
+```
 
 6. (Workers) Try to run the `kubectl` command. 
 
     + Failed
     + No authentication in local `~/.kube/config` file
 
-    ```bash
+    ```shell
     # exit 
     $ kubectl get nodes
     The connection to the server localhost:8080 was refused
@@ -752,37 +792,37 @@
 
 7. (Master) Verify the node has joined the cluster. It might take a few minutes to show `Ready` state.
 
-    ```bash
+    ```shell
     $ kubectl get nodes
     ```
 
 8. (Master) Display the current namespace configured on tyhe cluster.
 
-    ```bash
+    ```shell
     $ kubectl get namespace
     ```
 
 9. (Master & Worker) Display the network interfaces
 
-    ```bash
+    ```shell
     $ ip a
     ```
 
 10. (Master) Verify the deployment with the following command.
 
-    ```bash 
+    ```shell 
     $ kubectl run nginx --image nginx
     ```
 
 11. (Master) Display the details of the deployment.
 
-    ```bash
+    ```shell
     $ kubectl describe deployment nginx
     ```
 
 12. (Master) Display the basic stepsthe cluster took in order to pull and deploy the new application. [About 10 long lines of output]
 
-    ```bash
+    ```shell
     kubectl get events
     ```
 
@@ -791,7 +831,7 @@
     + The output can used to create the deployment or new deployment
     + Middle of the file shows the status info of the current deployment
 
-    ```bash
+    ```shell
     $ kubectl get deployment nginx -o yaml
     ```
 
@@ -802,20 +842,20 @@
         + remove lines with `creationTimestamps`, `resourceVersion`, `selfLink` and `uid`
         + remove all the lines including and after `status:`
     
-    ```bash
+    ```shell
     $ kubectl get deployment nginx -o yaml > first.yml
     $ vim first.yml
     ```
 
 15. (Master) Delete the existing deployment
 
-    ```bash
+    ```shell
     $ kubectl delete deployment nginx
     ```
 
 16. (Master) Create deployment with edited file
 
-    ```bash
+    ```shell
     $ kubectl create -f first.yml
     ```
 
@@ -826,7 +866,7 @@
     + They will cause conflicts or false information
     + `status` should not be hard-coded as well
 
-    ```bash
+    ```shell
     $ kubectl get deployment nginx 0o > second.yml
     $ diff first.yml second.yml
     ```
@@ -836,13 +876,13 @@
     + Create a `service` to view the default welcome page
     + Middle of output provides several examples
 
-    ```bash
+    ```shell
     $ kubectl expose -h
     ```
 
 19. (Master) Gain access to the web server
 
-    ```bash
+    ```shell
     $ kubectl expose deployment/nginx
     ```
 
@@ -871,19 +911,19 @@
 
 21. (Master) Apply the changes to the running deployment. Warning message might show.
 
-    ```bash
+    ```shell
     $ kubectl apply -f first.yml
     ```
 
 22. (Master) View the Pod and Deployment.
 
-    ```bash
+    ```shell
     $ kubectl get deploy pod
     ```
 
 23. (Master) Try to expose the resource again.
 
-    ```bash
+    ```shell
     $ kubectl expose deployment.nginx
     ```
 
@@ -893,7 +933,7 @@
     + the Cluster IP != current endpoint
     + Note down the current endpoint IP, e.g. 10.244.1.99:80 in this example
 
-    ```bash
+    ```shell
     $ kubectl get svc nginx
     NAME CLUSTER-IP     EXTERNAL-IP PORT(S) AGE
     nginx 10.100.61.122 <none>      80/TCP  3m
@@ -909,7 +949,7 @@
     + Leave the command running while `curl` requests
     + Check the `tcpdump` output, including `HTTP: HTTP/1.1 200 OK` and `ack` response
 
-    ```bash
+    ```shell
     (Master) $ kubectl describe pod nginx-7cbc4b4d9x-d27xw | grep Node:
     
     (Worker) $ sudo tcpdump -i flannel.1
@@ -922,7 +962,7 @@
     + If the `curl` command times out, the pod may be running on the other node
     + Run same command on that node
 
-    ```bash
+    ```shell
     $ curl 10.100.61.122:80
     ```
 
@@ -930,14 +970,14 @@
 
     + Run `tcpdump` on different terminal with different interface
     
-    ```bash
+    ```shell
     $ sudo tcpdump cni0
     $ sudo tcpdump vethfa2c0158
     ```
 
 28. (Master) Scale up the deployment from 1 to 3 erb servers
 
-    ```bash
+    ```shell
     $ kubectl get deployment nginx
     $ kubectl scale deployment nginx --replicas=3
     $ kubectl get deployment nginx
@@ -945,7 +985,7 @@
 
 29. (Master) Verify the current endpoint.
 
-    ```bash
+    ```shell
     $ kubectl get ep nginx
     ```
 
@@ -954,7 +994,7 @@
     + Use the `AGE` field to determine the oldest pod
     + Observe the terminals with `tcpdump` running
 
-    ```bash
+    ```shell
     $ kubectl get po -o wide
     $ kubectl delete po nginx-<id>
     ```
@@ -965,7 +1005,7 @@
     + One should be newer than the others.
     + If the `tcpdump` was using `veth` interface of that container, it will error out.
 
-    ```bash
+    ```shell
     $ kubectl gte pod
     ```
 
@@ -975,13 +1015,13 @@
     + Delete any of the pods
     + The service will forward traffic to the existing backend pods.
 
-    ```bash
+    ```shell
     $ kubectl get ep nginx
     ```
 
 33. (Master) Verify by accessing the web server again w/ the ClusterIP addr ans any endpoint IP address.
 
-    ```bash
+    ```shell
     $ curl 10.100.61.122:80
     ```
 
@@ -991,25 +1031,25 @@
 
 1. (Master) Display the list of pods
 
-    ```bash
+    ```shell
     $ kubectl get pod
     ```
 
 2. (Master) Execute a command with a selected pod from the list
 
-    ```bash
+    ```shell
     $ kubectl exec nginx-<id>
     ```
 
 3. (Master) Display the list of services
 
-    ```bash
+    ```shell
     $ kubectl get svc
     ```
 
 4. (Master) Remove the `nginx` service
 
-    ```bash
+    ```shell
     $ kubectl delete svc nginx
     ```
 
@@ -1019,7 +1059,7 @@
     + Note down the external ports in `PORT(S)` with `EXTERNAL-IP` shown as `<pending>`
     + AWS and GCE always shows as pending
 
-    ```bash 
+    ```shell 
     $ kubectl expose development nginx --type=LoadBalancer
     $ kubectl get svc
     ```
@@ -1032,21 +1072,21 @@
 
 7. Scale the deployment to zero replicas. Then test the web page again.
 
-    ```bash
+    ```shell
     $ kubectl scale deployment nginx --replicas=0
     $ kubectl get po
     ```
 
 8. Scale the deployment up to two replicas.  The web page should work again.
 
-    ```bash
+    ```shell
     $ kubectl scale deployment nginx --replicas=2
     $ kubectl get po
     ```
 
 9. Delete the deployment to recover system resources.
 
-    ```bash
+    ```shell
     $ kubectl delete deployment  nginx
     $ kubectl delete ep nginx
     $ kubectl delete svc nginx
