@@ -722,7 +722,8 @@
 
     ```shell
     # kubeadm join --ignore-preflight-errors=cri --token 44d148.2a750f5fe1f90105 10.0.2.15:6443 \
-        --discovery-token-ca-cert-hash sha256:34e555e3f502b0b0aa0786ea841fa8b62daa66569863d62adc34f8e72dc3da41
+        --discovery-token-ca-cert-hash \
+        sha256:34e555e3f502b0b0aa0786ea841fa8b62daa66569863d62adc34f8e72dc3da41
     [preflight] Running pre-flight checks.
     [WARNING Service-Docker]: docker service is not enabled, please run 'systemctl enable docker.service'
     [WARNING FileExisting-crictl]: crictl not found in system path
@@ -737,7 +738,18 @@
     $ sudo iptables -A INPUT -p tcp --dport  6443 -j ACCEPT
     ```
 
-    To allow establshed session to receive traffic: (return traffic)
+    Verify the result w/ `sudo iptables -L`]
+
+    ```shell
+    sudo iptables -L
+    Chain INPUT (policy ACCEPT)
+    target     prot opt source               destination
+    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:6443
+    <omitted output>
+
+    ```
+
+    To allow established session to receive traffic: (return traffic - mist likely system default setting)
 
     ```shell
     $ sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
@@ -750,31 +762,16 @@
     $ nc -z <host> <port>
     ```
 
-    After trying, still not working, checking with the `iptables -L` cmd, open the port seemds not necessary
+    Procedures to clean the master node: (`sudo -i`)
+    1. remove config files: `rm -r /etc/kubernetes/`
+    2. remove config files: `rm -r /var/lib/etcd`
+    3. clean containers: `docker container ls -a` & `docker rm <cid> ...`
+    4. clean images: `docker images` & `docker rmi <iid>...`
+    5. clean kubelet: `ss -nlp | grep 6443` or `ss -nlp | grep kube` & `kill -9 <pid>`
+    6. stop kubelet service: `systemctl kubelet.service`
 
-    ```shell
-    $ sudo iptables -L
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
+    After cleaning, make sure the port 6443 accepts connection.
 
-    Chain FORWARD (policy DROP)
-    target     prot opt source               destination
-    DOCKER-ISOLATION  all  --  anywhere      anywhere
-    DOCKER     all  --  anywhere             anywhere
-    ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
-    ACCEPT     all  --  anywhere             anywhere
-    ACCEPT     all  --  anywhere             anywhere
-
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination
-
-    Chain DOCKER (1 references)
-    target     prot opt source               destination
-
-    Chain DOCKER-ISOLATION (1 references)
-    target     prot opt source               destination
-    RETURN     all  --  anywhere             anywhere
-```
 
 6. (Workers) Try to run the `kubectl` command. 
 
