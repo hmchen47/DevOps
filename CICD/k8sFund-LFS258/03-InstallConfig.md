@@ -718,7 +718,7 @@
     Run 'kubectl get nodes' on the master to see this node join the cluster.
     ```
 
-    Whe doing lab, the command issues instead:
+    + Whe doing lab, the command issues instead:
 
     ```shell
     # kubeadm join --ignore-preflight-errors=cri --token 44d148.2a750f5fe1f90105 10.0.2.15:6443 \
@@ -732,43 +732,44 @@
     [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
     [discovery] Failed to request cluster info, will try again: [Get https://10.0.2.15:6443/api/v1/namespaces/kube-public/configmaps/cluster-info: dial tcp 10.0.2.15:6443: getsockopt: connection refused]
     ```
-    The port 6443 on master nodes does not open for access.  Open the port with the following command
+    + The port 6443 on master nodes does not open for access.  Open the port with the following command
 
-    ```shell
-    $ sudo iptables -A INPUT -p tcp --dport  6443 -j ACCEPT
-    ```
+        ```shell
+        $ sudo iptables -A INPUT -p tcp --dport  6443 -j ACCEPT
+        ```
 
-    Verify the result w/ `sudo iptables -L`]
+    + Verify the result w/ `sudo iptables -L`
 
-    ```shell
-    sudo iptables -L
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination
-    ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:6443
-    <omitted output>
+        ```shell
+        sudo iptables -L
+        Chain INPUT (policy ACCEPT)
+        target     prot opt source               destination
+        ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:6443
+        <omitted output>
 
-    ```
+        ```
 
-    To allow established session to receive traffic: (return traffic - mist likely system default setting)
+    + To allow established session to receive traffic: (return traffic - mist likely system default setting)
 
-    ```shell
-    $ sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-    $ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-    ```
+        ```shell
+        $ sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+        $ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        ```
 
-    Verify the port opening with the cmd
+    + Verify the port opening with the following cmds
 
-    ```shell
-    $ nc -z <host> <port>
-    ```
+        ```shell
+        $ nc -z <host> <port>
+        $ telnet <host> <port>
+        ```
 
-    Procedures to clean the master node: (`sudo -i`)
-    1. remove config files: `rm -r /etc/kubernetes/`
-    2. remove config files: `rm -r /var/lib/etcd`
-    3. clean containers: `docker container ls -a` & `docker rm <cid> ...`
-    4. clean images: `docker images` & `docker rmi <iid>...`
-    5. clean kubelet: `ss -nlp | grep 6443` or `ss -nlp | grep kube` & `kill -9 <pid>`
-    6. stop kubelet service: `systemctl kubelet.service`
+    + Procedures to clean the master node: (`sudo -i`)
+        1. remove config files: `rm -r /etc/kubernetes/`
+        2. remove config files: `rm -r /var/lib/etcd`
+        3. clean containers: `docker container ls -a` & `docker rm <cid> ...`
+        4. clean images: `docker images` & `docker rmi <iid>...`
+        5. clean kubelet: `ss -nlp | grep 6443` or `ss -nlp | grep kube` & `kill -9 <pid>`
+        6. stop kubelet service: `systemctl kubelet.service`
 
     After cleaning, make sure the port 6443 accepts connection.
 
