@@ -5,6 +5,7 @@ Contents:
     + [Ubuntu config templates](./Linux/Ubuntu_config/)
     + [Linux Command Line Basics - Udacity](./Linux/CLI-Udacity/)
     + [Introduction to Linux - The Linux Foundation & edX](./Linux/Linux-LFS101x.edX/)
+    + [Linux Home Networking - LHN](./Linux/Networking-LHN/README.md)
 
 2. CI/CD - Continuous Integration & Continuous Deployment
     + Docker
