@@ -256,25 +256,67 @@
 
 ## Using `traceroute` to Test Connectivity
 
-+ Sample `traceroute` Output
-
++ `traceroute`: sending UDP pkts w/ incremental TTL
 + Possible `traceroute` Messages
 
-+ `traceroute` Return Code Symbols
-
+    | Symbol | Description |
+    |--------------------|------------|
+    | `***` | Expected 5 second response time exceeded.  |
+    | `!H`, `!N`, or `!P` | Host, network or protocol unreachable |
+    | `!X` or `!A` | Communication administratively prohibited. A router Access Control List (ACL) or firewall is in the way |
+    | `!S` | Source route failed. Source routing attempts to force traceroute to use a certain path.|
+    + Possible cause of `***`:
+        + A router on the path not sending back the ICMP "time exceeded" messages
+        + A router or firewall in the path blocking the ICMP "time exceeded" messages
+        + The target IP address not responding
+    + `!S`: might be due to a router security setting
 + `traceroute` Time Exceeded False Alarms
-
+    + No response within a 5-second timeout interval: `*`
+    + Some devices allow ICMP but not `traceroute` pkts
 + `traceroute` Internet Slowness False Alarm
-
+    ```shell
+    C:\>tracert 80.40.118.227
+    1      1 ms     2 ms     1 ms  66.134.200.97
+    2     43 ms    15 ms    44 ms  172.31.255.253
+    3     15 ms    16 ms     8 ms  192.168.21.65
+    4     26 ms    13 ms    16 ms  64.200.150.193
+    5     38 ms    12 ms    14 ms  64.200.151.229
+    6    239 ms   255 ms   253 ms  64.200.149.14
+    7    254 ms   252 ms   252 ms  64.200.150.110
+    8     24 ms    20 ms    20 ms  192.174.250.34
+    9     91 ms    89 ms    60 ms  192.174.47.6
+    10    17 ms    20 ms    20 ms  80.40.96.12
+    11    30 ms    16 ms    23 ms  80.40.118.227
+    Trace complete.
+    ```
+    + congestion at hops 6 and 7 where the `response time > 200ms`
+    + Internet routing devices w/ very low priority to traceroute pkts
 + `traceroute` Dies At The Router Just Before The Server
-
+    + bad default gateway
+    + firewall blocking
+    + server down, disconnected, or incorrect NIC config
 + Always Get a Bidirectional `traceroute`
-
+    + try both from src to dst and dst to src
+    + return path might not the same as forward path
 + ping and `traceroute` Troubleshooting Example
-
+    + `ping` TTLs timeouts: routing loop
+    + solution: resetting both routing processes at both ends
 + `traceroute` Web sites
-
+    + looking glasses: traceroute servers for ISP subscribers
+    + `traceroute.org` lists looking glasses
 + Possible Reasons For Failed Traceroutes
+    + blocked or rejected by a router in the path
+    + target server not existed
+    + routing tables w/o route to dst network
+    + target IP addr typographical error
+    + routing loop
+    + no proper return path - solution:
+        + logon the last visible router
+        + check routing table for next hop
+        + logon the next hop
+        + execute `traceroute` to dst
+        + success: execute `traceroute` back to src -> identify the bad route in return path
+        + fail: test routing table and hops to dst
 
 ## Using `MTR` To Detect Network Congestion
 
