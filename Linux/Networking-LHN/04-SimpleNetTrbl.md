@@ -458,10 +458,16 @@ mtr 192.168.25.26
 
 ## Using `netcat` to Test Network Bandwidth
 
++ used to create a TCP socket over which to transfer data
++ `netcat` = `nc`
++ signify the program to listen, and not talk
+    + listening on TCP port: `nc -l <port>` and `nc <ip> <port>`
+    + redirection: `nc -l 7777 > FC-6-i386-disc1.iso` and `nc -l 7777 > /dev/null`
+
 ## Determining the Source of an Attack
 
 ## Who Has Used My System?
 
-### The `last` Command
++  The `last` Command
 
-### The `who` Command
++  The `who` Command
