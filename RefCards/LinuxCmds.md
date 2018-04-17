@@ -20,7 +20,7 @@
 | `ss -<opt>` | network connections, routing tables, interface statistics, masquerade connections, and multicast memberships; opt: l=listening, r=resolve, v=verbose, t=tcp, u=udp, p=process, w=RAW socket, s=summary | [Connectivity w/ netstat](../Linux/Networking-LHN/04-SimpleNetTrbl.md#the-netstat-command) |
 | `traceroute <ip>` | route packets trace to network host | [Connectivity w/ traceroute](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-traceroute-to-test-connectivity) |
 | `mtr <ip>` | repeat `traceroute` in real time | [Congestion w/ mtr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-mtr-to-detect-network-congestion) |
-
+| `tcpdump -<opt> [<expr>]` | iewing the flow of packets through NIC; __opt__: c=count, i=interface, w=dump file, C=file size, t=no timestamp, n=no DNS; __expr__: host,icmp, tcp, udp, port | [Packet Flow](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-packet-flows-with-tcpdump) |
 
 
 
