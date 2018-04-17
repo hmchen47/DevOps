@@ -22,6 +22,8 @@
 | `mtr <ip>` | repeat `traceroute` in real time | [Congestion w/ mtr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-mtr-to-detect-network-congestion) |
 | `tcpdump -<opt> [<expr>]` | viewing the flow of packets through NIC; __opt__: c=count, i=interface, w=dump file, C=file size, t=no timestamp, n=no DNS; __expr__: host,icmp, tcp, udp, port | [Packet Flow](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-packet-flows-with-tcpdump) |
 | `tshark -<opt> [<expr>]` | Fedora Linux Wireshark RPM | [Packet Flow](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-packet-flows-with-tshark) |
+| `nslookup <fqdn> | <ip>` | used to get associated IP addr for given domain and vice versa | [DNS](../Linux/Networking-LHN/04-SimpleNetTrbl.md#basic-dns-troubleshooting) |
+| `host <fqdn> | <ip>` | newer cmd used to get associated IP addr for given domain and vice versa | [DNS](../Linux/Networking-LHN/04-SimpleNetTrbl.md#basic-dns-troubleshooting) |
 
 
 
