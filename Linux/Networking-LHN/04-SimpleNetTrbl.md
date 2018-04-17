@@ -388,9 +388,42 @@ mtr 192.168.25.26
 
 ## Viewing Packet Flows with `tshark`
 
-+ Table 4-4 : Possible `tshark` Switches
++ Fedora Linux wireshark RPM
++ used to call `tethereal`
++ mimic `tcpdump` in many ways but `tshark` w/a number of advantages
+    + dumping data to files w/ given size limit
+    + ring buffer: limit the total number of files by overwriting
+    + ore intuitive output but same dump file format
++ Possible `tshark` Switches
 
-+ Table 4-5 : Useful `tshark` Expressions
+    | switch | Description |
+    |--------|-------------|
+    | `-c` | Stop after viewing count packets. |
+    | `-i | Listen on interface. If this is not specified, then the command will use the lowest numbered interface that is UP |
+    | `-w` | Dump the output to a specially formatted TCPdump dump file |
+    | `-C` | Specifies the size the dump file must reach before a new one with a numeric `extension is created. |
+    | `-b` | The size of the ring buffer when the -C switch is selected. |
+
++ Useful `tshark` Expressions
+
+    | Expression | Description |
+    |--------|-------------|
+    | `host <host-address>` | View packets from the IP address host-address
+    | `icmp` | View icmp packets |
+    | `tcp port <port-number>` | View TCP packets with packets with either a source or `destination TCP port of port-number |
+    | `udp port <port-number>` | View UDP packets with either a source or destination UDP port of port-number |
+
++ Example
+
+    ```shell
+    tshark -i eth0 tcp port 80 and host 192.168.1.100
+
+    Capturing on eth0
+    0.000000 192.168.1.102 -> 192.168.1.100 TCP 1442 > http [SYN] Seq=3325831828 Ack=0 Win=5840 Len=0
+    0.000157 192.168.1.100 -> 192.168.1.102 TCP http > 1442 [SYN, ACK] Seq=3291904936 Ack=3325831829 Win=5792 Len=0
+    0.000223 192.168.1.102 -> 192.168.1.100 TCP 1442 > http [ACK] Seq=3325831829 Ack=3291904937 Win=5840 Len=0
+    ...
+    ```
 
 ## Basic DNS Troubleshooting
 
@@ -406,7 +439,7 @@ mtr 192.168.25.26
 
 ## Using `nmap`
 
-+ Table 4-6 Commonly Used NMAP Options
++ Commonly Used NMAP Options
 
 ## Using `netcat` to Test Network Bandwidth
 
