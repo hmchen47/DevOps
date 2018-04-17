@@ -25,6 +25,9 @@
 | `nslookup <fqdn> | <ip>` | used to get associated IP addr for given domain and vice versa | [DNS](../Linux/Networking-LHN/04-SimpleNetTrbl.md#basic-dns-troubleshooting) |
 | `host <fqdn> | <ip>` | newer cmd used to get associated IP addr for given domain and vice versa | [DNS](../Linux/Networking-LHN/04-SimpleNetTrbl.md#basic-dns-troubleshooting) |
 | `nmap <-opt>` | determine all the TCP/IP ports on which a remote server is listening | [Port Scanning](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-nmap) |
+| `nc [-l] [<ip>] [<port>]` | create a TCP socket over which to transfer data | [Bandwidth](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-netcat-to-test-network-bandwidth) |
+
+
 
 
 
