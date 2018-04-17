@@ -8,7 +8,7 @@
 ## [Linux Networking]
 
 
-## [Simple Network Troubleshooting]
+## [Simple Network Troubleshooting](./04-SimpleNetTrbl.md)
 
 
 ## [Troubleshooting Linux with Syslog]
