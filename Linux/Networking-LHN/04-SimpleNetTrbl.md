@@ -244,7 +244,15 @@
 
 ## The Linux `iptables` Firewall
 
-+ How to Configure `iptables` Rules
++ default in Fedora and RedHat
++ General rules:
+    + different Linux distributions use different daemon management systems: sysV and systemd are commond ones
+    + daemon name needs to be known
++ Things to know for daemon
+    + Start your daemons automatically on booting
+    + Stop, start and restart during troubleshooting & modification
++ Don't turn off`iptables` firewall feature
+
 
 ## Using `traceroute` to Test Connectivity
 
