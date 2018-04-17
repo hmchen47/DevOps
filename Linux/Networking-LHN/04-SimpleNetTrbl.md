@@ -466,8 +466,17 @@ mtr 192.168.25.26
 
 ## Determining the Source of an Attack
 
++ DoS type attacks: 
+    + a large numbers of established connections
+    + an excessive number of entries in firewall or Web server logs
++ `whois` w/ IP addr or FQDN to get administrative information
+
 ## Who Has Used My System?
 
 +  The `last` Command
-
+    + determine who has logged into system
+    + e.g., `last -<num>`
 +  The `who` Command
+    + who currently logged in
+    + e.g. `who`
+    
