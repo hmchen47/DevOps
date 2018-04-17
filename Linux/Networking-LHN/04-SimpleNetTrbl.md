@@ -322,15 +322,15 @@
 
 ## Viewing Packet Flows with `tcpdump`
 
-+ Table 4-2 : Possible `tcpdump` Switches
++ Possible `tcpdump` Switches
 
-+ Table 4-3 : Useful `tcpdump` Expressions
++ Useful `tcpdump` Expressions
 
 + Analyzing `tcpdump` files
 
 + Common Problems with `tcpdump`
 
-##Viewing Packet Flows with `tshark`
+## Viewing Packet Flows with `tshark`
 
 + Table 4-4 : Possible `tshark` Switches
 
