@@ -444,7 +444,17 @@ mtr 192.168.25.26
 
 ## Using `nmap`
 
++ determine all the TCP/IP ports on which a remote server is listening
++ a favorite tool of malicious surfers
 + Commonly Used NMAP Options
+
+    | Argument | Description |
+    |----------|-------------|
+    | `-P0` | Nmap first attempts to ping a host before scanning it.  |
+    | `-T` | Defines the timing between the packets set during a port scan.  |
+    | `-O` | try to detect the OS of the remote server based on known responses to various types of packets. |
+    | `-p` | Lists the TCP/IP port range to scan. |
+    | `-s` | Defines a variety of scan methods that use either packets that comply with the TCP/IP standard or are in violation of it. |
 
 ## Using `netcat` to Test Network Bandwidth
 
