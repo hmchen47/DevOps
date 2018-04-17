@@ -428,14 +428,19 @@ mtr 192.168.25.26
 ## Basic DNS Troubleshooting
 
 + Using `nslookup` to Test DNS
-
-+ Using `nslookup` to Check Your Web site Name
-
-+ Using `nslookup` To Check Your IP Address
-
-+ Using `nslookup` to Query a Specific DNS Server
-
-+ Using the host Command to Test DNS
+    + used to get associated IP addr for given domain and vice versa
+    + query sent to DNS server for a response
+    + failure caused by incorrect settings in `/etc/resolv.conf`
++ Using `nslookup` to Check Your Web site Name, eg., `nslookup www.linuxhomenetworking.com`
++ Using `nslookup` To Check Your IP Address, e.g., `nslookup 216.151.193.92`
++ Using `nslookup` to Query a Specific DNS Server, e.g., `nslookup www.linuxhomenetworking.com 68.87.96.3`
++ Using the `host` Command to Test DNS - newer cmd
+    
+    ```shell
+    host 216.151.193.92
+    host www.linuxhomenetworking.com
+    host www.linuxhomenetworking.com 68.87.96.3
+    ```
 
 ## Using `nmap`
 
