@@ -12,6 +12,7 @@
 | `ethtoll -S` | NIC error output - detailed report | [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors) |
 | `netstat -i` | NIC error output - limited report | [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors) |
 | `arp -a` | MAC address of ARP table | [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess) |
-| `ping -c <num> <ip/fqdn>` | limit ping counts | [Connectivity w/ `ping`](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-ping-to-test-network-connectivity) |
+| `ping -c <num> <ip/fqdn>` | limit ping counts | [Connectivity w/ ping](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-ping-to-test-network-connectivity) |
+| `telnet <ip> <port>` | Connectivity test; remote session; default: TCP port 23 | [Connectivy w/ telnet](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-telnet-to-test-network-connectivity) |
 
 
