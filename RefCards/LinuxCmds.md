@@ -14,5 +14,8 @@
 | `arp -a` | MAC address of ARP table | [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess) |
 | `ping -c <num> <ip/fqdn>` | limit ping counts | [Connectivity w/ ping](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-ping-to-test-network-connectivity) |
 | `telnet <ip> <port>` | Connectivity test; remote session; default: TCP port 23 | [Connectivy w/ telnet](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-telnet-to-test-network-connectivity) |
+| `curl -I <fqdn>` | text based web browser; display web page header and status code | [curl & wget](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-web-sites-with-the-curl-and-wget-utilities) |
+| `wget -N <fqdn>` | recursively download web pages w/o timestamps | | [curl & wget](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-web-sites-with-the-curl-and-wget-utilities) |
+
 
 
