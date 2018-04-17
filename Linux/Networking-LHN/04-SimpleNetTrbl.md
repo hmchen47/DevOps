@@ -151,21 +151,27 @@
 
 ## Using `telnet` to Test Network Connectivity
 
++ w/ TCP port 23
++ `telnet <ip> <port>`: other than default port
++ Guidelines to identify problems:
+    + Test connectivity from the remote PC or server
+    + Test connectivity on the server itself - loopback & NIC IP addr
+    + Test connectivity from another server on the same network as the target -> firewall blocking
 + Linux `telnet` Troubleshooting
-
-+ Successful Connection
-
-+ Connection Refused Messages
-
-+ `telnet` Timeout or Hanging
-
+    + Successful Connection: "Connected to" message
+    + Connection Refused Messages
+        + application not enabled
+        + firewall blocking and rejecting
+    + `telnet` Timeout or Hanging
+        +  abort the attempted connection after waiting a predetermined time for a response
+        + Reasons:
+            + server not existed or down
+            + firewall blocking but not rejecting
 + `telnet` Troubleshooting Using Windows
+    + Screen Goes Blank - Successful Connection
+    + "Connect Failed" Messages = Linux Connection refused messages
+    + `telnet` Timeout or Hanging
 
-+ Screen Goes Blank - Successful Connection
-
-+ "Connect Failed" Messages
-
-+ `telnet` Timeout or Hanging
 
 ## Testing Web sites with the `curl` and `wget` Utilities
 
