@@ -320,15 +320,71 @@
 
 ## Using `MTR` To Detect Network Congestion
 
++ Matt's traceroute (MTR): an application to repeat traceroute in real time
++ dynamically show the round-trip time to reach each hop along the traceroute path
++ ont only visual which hop slow but also when they slow
++ good tool to detect intermittent congestion
++ best, worst and average round trip times in msec for the probe packets
++ run `mtr` extensive period of time as a monitor of communication path quality
++ installed in Fedora by default
+
+```shell
+mtr 192.168.25.26
+```
+
 ## Viewing Packet Flows with `tcpdump`
+
++ one of the most popular packages for viewing the flow of packets through NIC
++ default on RedHat/Fedora
++ determine whether you are getting basic two-way communication
++ Reasons for lack of communications:
+    + bad routing
+    + faulty cabling
+    + port not listening - app not running
+    + firewall or ACL blocking
 
 + Possible `tcpdump` Switches
 
+    | switch | Description |
+    |--------|-------------|
+    | `-c` | Stop after viewing count packets. |
+    | `-i` | Listen on interface. If this is not specified, then the command will use the `lowest numbered interface that is UP |
+    | `-w` | Dump the output to a specially formatted TCPdump dump file |
+    | `-C` | Specifies the size the dump file must reach before a new one with a numeric `extension is created. |
+    | `-t` | Don't print a timestamp at the beginning of each line |
+
 + Useful `tcpdump` Expressions
 
+| expression | Description| 
+|-------------|------------|
+| `host <host-address>` | View packets from the IP address host-address|
+| `icmp` | View icmp packets| 
+| `tcp port <port-number>` | View TCP packets with packets with either a source or | `destination TCP port of port-number| 
+| `udp port <port-number>` | View UDP packets with either a source or destination UDP port of port-number| 
+
++ Example: 
+
+    ```shell
+    tcpdump -i wlan0 icmp tcpdump: listening on wlan0
+
+    21:48:58.927091 smallfry > bigboy.my-site.com: icmp: echo request (DF)
+    21:48:58.927510 bigboy.my-site.com > smallfry: icmp: echo reply
+    21:48:58.928257 smallfry > bigboy.my-site.com: icmp: echo request (DF)
+    21:48:58.928365 bigboy.my-site.com > smallfry: icmp: echo reply
+    ...
+    ```
+    + 1st col: timestamp
+    + 2ns col: src and dst IP addr/FQDN
+    + 3rd col: pkt type
+    + 4th col: pkt info
+
 + Analyzing `tcpdump` files
+    + dump Ethernet frame into file: `-w`
+    + analyze dump file with `Wireshark`
 
 + Common Problems with `tcpdump`
+    + auto resolve DNS -> slow
+    + sto DNS resolve: `-n`
 
 ## Viewing Packet Flows with `tshark`
 
