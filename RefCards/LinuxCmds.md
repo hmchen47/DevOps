@@ -1,5 +1,13 @@
 # Linux Command Reference Cards
 
+## General
+
+| Command | Description | Link |
+|---------|-------------|------|
+| `whois [ip | fqdn]` | administrative info | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#determining-the-source-of-an-attack) |
+| `last [-num]` | a listing of last logged in users | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
+| `who` | who currently logged in | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
+
 ## Networking
 
 | Command | Description | Link |
