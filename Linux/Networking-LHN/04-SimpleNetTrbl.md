@@ -158,10 +158,12 @@
     + Test connectivity on the server itself - loopback & NIC IP addr
     + Test connectivity from another server on the same network as the target -> firewall blocking
 + Linux `telnet` Troubleshooting
-    + Successful Connection: "Connected to" message
+    + Successful Connection: 
+        + "Connected to" message; 
+        + `ctrl-]` to break and `quit` to exit
     + Connection Refused Messages
         + application not enabled
-        + firewall blocking and rejecting
+        + firewall blocking and rejecting: `iptables status` to check firewall
     + `telnet` Timeout or Hanging
         +  abort the attempted connection after waiting a predetermined time for a response
         + Reasons:
@@ -188,6 +190,57 @@
     + eg. `wget -N www.linuxhomenetworking.com`
 
 ## The `netstat` Command
+
++ determine whether slowness due to high traffic volume
++ list all TCP ports w/ listening: `netstat -an` (all & numeric)
+
+    | `netstat` Option | Description |
+    |--------|-------------|
+    | `-l`, `–listening` | display listening server sockets |
+    | `-a`, `–all` | display all sockets (default: connected) |
+    | `-r`, `–route` | display routing table |
+    | `–i`, `–interfaces` | display interface table |
+    | `-g`, `–groups` | display multicast group memberships |
+    | `-s`, `–statistics` | display networking statistics (like SNMP) |
+    | `-M`, `–masquerade` | display masqueraded connections |
+    | `-v`, `–verbose` | be verbose |
+    | `-W`, `–wide` | don’t truncate IP addresses |
+    | `-n`, `–numeric` | don’t resolve names |
+    | `-e`, `–extend` | display other/more information |
+    | `-p`, `–programs` | display PID/Program name for sockets |
+    | `-o`, `–timers` | display timers |
+    | `-F`, `–fib` | display Forwarding Information Base (default) |
+    | `-C`, `–cache` | display routing cache instead of FIB |
+
++ `ss`: dump socket statistics, the substitute of the `netstat`; [Ref](https://computingforgeeks.com/netstat-vs-ss-usage-guide-linux/)
+
+    | `ss` Option | Description |
+    |--------|-------------|
+    | `–n`, `–numeric | don’t resolve service names |
+    | `-r`, `–resolve | : resolve host hostnames. |
+    | `-l`, `–listening | display listening sockets |
+    | `-o`, `–options | show timer information |
+    | `-e`, `–extended | show detailed socket information |
+    | `-m`, `–memory | show socket memory usage |
+    | `-p`, `–processes | show process using socket |
+    | `–s`, `–summary | show socket usage summary |
+    | `-N`, `–net | switch to the specified network namespace name |
+    | `-4`, `–ipv4 | display only IP version 4 sockets |
+    | `-6`, `–ipv6 | display only IP version 6 sockets |
+    | `–0`, `–packet | display PACKET sockets |
+    | `-t`, `–tcp | display only TCP sockets |
+    | `-S`, `–sctp | display only SCTP sockets |
+    | `-u`, `–udp | display only UDP sockets |
+    | `-w`, `–raw | display only RAW sockets |
+    | `-x`, `–unix | display only Unix domain sockets |
+    | `-f`, `–family=FAMILY | display sockets of type FAMILY |
++ TCP: mostly permanent connections
++ HTTP: connection shutdown after a pre-defined inactive timeout or `time_wait` period
++ Number of established and time_wait TCP connections on server: 
+    ```shell
+    netstat -an | grep tcp | egrep -i 'established|time_wait' | wc -l
+    ```
+
 
 ## The Linux `iptables` Firewall
 
