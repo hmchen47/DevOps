@@ -126,10 +126,28 @@
     + faulty cabling
     + NIC disable or server down
     + firewall for remote server
-+ Commands for ARP values
-    + 
++ Commands determining ARP values
+    + `fconfig -a` or `ip a`: NIC's MAC address and the associated IP addresses
+    + `arp -a`: MAC addresses in ARP table
 
 ## Using `ping` to Test Network Connectivity
+
++ Send ICMP echo pkts and wait for ICMP echo-reply response
++ Reasons w/o reponse:
+    1. server/IP addr not existed
+    2. server not response
+    3. firewall/router blocking
+    4. incorrect routing
+    5. incorrect IP addr or subnet mask
++ `ping -c <num>`: limit ping counts
++ "Destination Host Unreachable" message
+    + Directly connected host:
+        + client/server down or disconnected
+        + incorrect duplex settings, check with `ethtool`
+        + incorrect cable type
+        + wireless: check SSID or encryption keys
+    + host on remote network: routing issue
+
 
 ## Using `telnet` to Test Network Connectivity
 
