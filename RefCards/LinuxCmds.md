@@ -16,6 +16,7 @@
 | `telnet <ip> <port>` | Connectivity test; remote session; default: TCP port 23 | [Connectivy w/ telnet](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-telnet-to-test-network-connectivity) |
 | `curl -I <fqdn>` | text based web browser; display web page header and status code | [curl & wget](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-web-sites-with-the-curl-and-wget-utilities) |
 | `wget -N <fqdn>` | recursively download web pages w/o timestamps | | [curl & wget](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-web-sites-with-the-curl-and-wget-utilities) |
-
+| `netstat -<opt>` | network connections, routing tables, interface statistics, masquerade connections, and multicast memberships; opt: a=all, l=listening, i=interface, r=route, v=verbose, t=tcp, u=udp, p=pid, n=no resolve name | [netstat]((../Linux/Networking-LHN/04-SimpleNetTrbl.md#the-netstat-command) |
+| `ss -<opt>` | network connections, routing tables, interface statistics, masquerade connections, and multicast memberships; opt: l=listening, r=resolve, v=verbose, t=tcp, u=udp, p=process, w=RAW socket, s=summary | [netstat]((../Linux/Networking-LHN/04-SimpleNetTrbl.md#the-netstat-command) |
 
 
