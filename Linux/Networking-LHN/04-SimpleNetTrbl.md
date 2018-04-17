@@ -175,9 +175,17 @@
 
 ## Testing Web sites with the `curl` and `wget` Utilities
 
-+ Using `curl`
-
++ Web performance test: TCP port80 response time
++ `curl`: text-based web browser
++ `wget`" recursively downloaded text-based web browser
++ Rapid TCP port 80 response time but slow `curl` or `wget` -> misconfig on Web server or applicaitons
++ Using `curl`: 
+    + display header or complete body of HTML code of a Web page
+    + `-I` option: just header and status code
+    + eg. `curl -I www.linuxhomenetworking.com`
 + Using `wget`
+    + `-N` opton: no timestamps
+    + eg. `wget -N www.linuxhomenetworking.com`
 
 ## The `netstat` Command
 
