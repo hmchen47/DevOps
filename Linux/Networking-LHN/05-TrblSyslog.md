@@ -2,9 +2,22 @@
 
 ## syslog
 
++ syslog: a utility for tracking and logging all manner of system messages
++ Descriptive labels of syslog:
+    + 1st: function (facility) of the application
+    + 2nd: degree of severity of the message
++ Syslog Facilities
 
-### Table ## -##  Syslog Facilities
-
+| Severity Level | Keyword | Description |
+|----------------|---------|-------------|
+| 0 | emergencies | System unusable |
+| 1 | alerts | Immediate action required |
+| 2 | critical | Critical condition |
+| 3 | errors | Error conditions |
+| 4 | warnings | Warning conditions |
+| 5 | notifications | Normal but significant conditions |
+| 6 | informational | Informational messages |
+| 7 | debugging | Debugging messages |
 
 ### The /etc/rsyslog.conf File
 
@@ -19,7 +32,6 @@
 
 
 + Configuring the Linux Syslog Server
-
 
 + Configuring the Linux Client
 
