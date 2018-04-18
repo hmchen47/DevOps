@@ -11,7 +11,7 @@
 ## [Simple Network Troubleshooting](./04-SimpleNetTrbl.md)
 
 
-## [Troubleshooting Linux with Syslog]
+## [Troubleshooting Linux with Syslog](./05-TrblSyslog.md)
 
 
 ## [Installing Linux Software]
