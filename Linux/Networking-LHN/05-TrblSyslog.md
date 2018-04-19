@@ -109,6 +109,8 @@
 
 ### Syslog Configuration and Cisco Network Devices
 
++ syslog reserves facilities "local0" through "local7" for log messages received from remote servers and network devices
++ Each network devices w/ its own log files for trbl
 
 ## Logrotate
 
