@@ -340,3 +340,5 @@
 
 ## Simple syslog Security
 
++ syslog server not filtering out messages from undesirable sources
++ Solution: implement the use of TCP wrappers or a firewall to limit the acceptable sources of messages
