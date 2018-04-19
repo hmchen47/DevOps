@@ -21,6 +21,40 @@
 
 ### The /etc/rsyslog.conf File
 
++ config file - defines which file to write the messages: `/etc/rsyslog.conf`
++ Fedora old version: `/etc/syslog.conf`
++ Two column entry:
+    + 1st: the facilities and severities of messages to expect
+    + 2nd: files to which they should be logged
++ Examples
+    + all messages of severity "info" and above are logged, but none from the `mail`, `cron` or authentication facilities/subsystems:  
+    `*.info;mail.none;authpriv.none;cron.none           /var/log/messages`
+    + all debug severity messages; except `auth`, `authpriv`, `news` and `mail`; are logged to the `/var/log/debug` file  
+        ```script
+        *.=debug;\
+            auth,authpriv.none;\
+            news.none;mail.none     -/var/log/debug
+       ```
+    + caching mode to receive only info, notice and warning messages except for the `auth`, `authpriv`, `news` and `mail` facilities; logged to `/var/log/messages`  
+        ```script
+        *.=info;*.=notice;*.=warn;\
+            auth,authpriv.none;\
+            cron,daemon.none;\
+            mail,news.none          -/var/log/messages
+       ```
++ Additionally log for certain application independent of the `syslog.conf` file
+    + Files:
+        ```
+        /var/log/maillog             : Mail
+        /var/log/httpd/access_log    : Apache web server page access logs
+        ```
+    + Directories:
+        ```
+        /var/log
+        /var/log/samba                      : Samba messages
+        /var/log/mrtg                       : MRTG messages
+        /var/log/httpd                      : Apache webserver messages
+        ```
 
 ### Activating Changes to the syslog Configuration File
 
