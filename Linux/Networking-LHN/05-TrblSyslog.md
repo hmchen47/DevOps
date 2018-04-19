@@ -161,30 +161,182 @@
 
 ## syslog-ng
 
-
-### The /etc/syslog-ng/syslog-ng.conf file
-
-
++ `syslog-ng`: combine the features of logrotate and syslog
++ exclusive w/ `syslog`
++ config file: `/etc/syslog-ng/syslog-ng.conf`
 + Simple Server Side Configuration for Remote Clients
+    ```
+    options {
 
+            # Number of syslog lines stored in memory before being written to files
+            sync (0);
 
-+ Figure ## -##  A Sample syslog-ng.conf File
+            # Syslog-ng uses queues
+            log_fifo_size (1000);
 
+            # Create log directories as needed
+            create_dirs (yes);
+
+            # Make the group "logs" own the log files and directories
+            group (logs);
+            dir_group (logs);
+
+            # Set the file and directory permissions
+            perm (0640);
+            dir_perm (0750);
+
+            # Check client hostnames for valid DNS characters
+            check_hostname (yes);
+
+            # Specify whether to trust hostname in the log message.
+            # If "yes", then it is left unchanged, if "no" the server replaces
+            # it with client's DNS lookup value.
+            keep_hostname (yes);
+
+            # Use DNS fully qualified domain names (FQDN) 
+            # for the names of log file folders
+            use_fqdn (yes);
+            use_dns (yes);
+
+            # Cache DNS entries for up to 1000 hosts for 12 hours
+            dns_cache (yes);
+            dns_cache_size (1000);
+            dns_cache_expire (43200);
+
+            };
+
+    # Define all the sources of localhost generated syslog
+    # messages and label it "d_localhost"
+    source s_localhost {
+            pipe ("/proc/kmsg" log_prefix("kernel: "));
+            unix-stream ("/dev/log");
+            internal();
+    };
+    
+    # Define all the sources of network generated syslog
+    # messages and label it "d_network"
+    source s_network {
+            tcp(max-connections(5000));
+            udp();
+    };
+
+    # Define the destination "d_localhost" log directory
+    destination d_localhost {
+            file ("/var/log/syslog-ng/$YEAR.$MONTH.$DAY/localhost/$FACILITY.log");
+    };
+
+    # Define the destination "d_network" log directory
+    destination d_network {
+            file ("/var/log/syslog-ng/$YEAR.$MONTH.$DAY/$HOST/$FACILITY.log");
+    };
+
+    # Any logs that match the "s_localhost" source should be logged
+    # in the "d_localhost" directory
+
+    log { source(s_localhost);
+        destination(d_localhost);
+    };
+
+    # Any logs that match the "s_network" source should be logged
+    # in the "d_network" directory
+    
+    log { source(s_network);
+        destination(d_network);
+    };
+    ```
 
 + Using syslog-ng in Large Data Centers
+    ```
+    options {
 
+            # Number of syslog lines stored in memory before being written to files
+            sync (100);
+    };
 
-+ Figure ## -##  More Specialized syslog-ng.conf Configuration
+    # Define all the sources of network generated syslog
+    # messages and label it "s_network_1"
+    source s_network_1 {
+            udp(ip(192.168.1.201) port(514));
+    };
 
+    # Define all the sources of network generated syslog
+    # messages and label it "s_network_2"
+    source s_network_2 {
+            udp(ip(192.168.1.202) port(514));
+    };
 
-### Installing and Starting syslog-ng
+    # Define the destination "d_network_1" log directory
+    destination d_network_1 {
+            file ("/var/log/syslog-ng/servers/$YEAR.$MONTH.$DAY/$HOST/$FACILITY.log");
+    };
 
+    # Define the destination "d_network_2" log directory
+    destination d_network_2 {
+            file ("/var/log/syslog-ng/network/$YEAR.$MONTH.$DAY/$HOST/$FACILITY.log");
+    };
 
-### Configuring syslog-ng Clients
+    # Define the destination "d_network_2B" log directory
+    destination d_network_2B {
+            file ("/var/log/syslog-ng/network/all/network.log");
+    };
 
+    # Any logs that match the "s_network_1" source should be logged
+    # in the "d_network_1" directory
 
-+ Example ## -##  - Syslog-ng Sample Client Configuration
+    log { source(s_network_1);
+        destination(d_network_1);
+    };
 
+    # Any logs that match the "s_network_2" source should be logged
+    # in the "d_network_2" directory
+
+    log { source(s_network_2);
+        destination(d_network_2);
+    };
+
+    # Any logs that match the "s_network_2" source should be logged
+    # in the "d_network_2B" directory also
+
+    log { source(s_network_2);
+        destination(d_network_2B);
+    };
+    ```
++ Installing and Starting `syslog-ng`
+    1. Uninstall `rsyslog` using the `rpm` command: `rpm -e --nodeps rsyslog`
+    2. Install `syslog-ng` using `yum`: `yum -y install syslog-ng`
+    3. Start the new `syslog-ng` daemon immediately and ensure starting on the next reboot: 
+        + Systems using `sysvinit`: 
+            ```shell
+            chkconfig syslog-ng on
+            service syslog-ng start
+            ```
+        + Systems using `systemd`:
+            ```shell
+            enable syslog-ng.service
+            start syslog-ng.service
+            ```
++ Configuring syslog-ng Clients
+    ```shell
+    source s_sys {
+    file ("/proc/kmsg" log_prefix("kernel: "));
+    unix-stream ("/dev/log");
+    internal();
+    };
+
+    destination loghost { 
+    udp("loghost.linuxhomenetworking.com"); 
+    };
+
+    filter notdebug { 
+    level(info...emerg); 
+    };
+
+    log { 
+    source(local);
+    filter(notdebug);
+    destination(loghost); 
+    };
+    ```
 
 ## Simple syslog Security
 
