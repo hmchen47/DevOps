@@ -72,11 +72,40 @@
 
 ### Logging syslog Messages to a Remote Linux Server
 
-
 + Configuring the Linux Syslog Server
+    + Fedora: Syslog listens for remote messages only if `SYSLOGD`_OPTIONS w/ `-r`
+        ```
+        # Options to syslogd
+        # -m 0 disables 'MARK' messages.
+        # -r enables logging from remote machines
+        # -x disables DNS lookups on messages received with -r
+        # See syslogd(8) for more details
 
+        SYSLOGD_OPTIONS="-m 0 -r"
+        ```
+    + Debian / Ubuntu systems
+        ```
+        # Options for start/restart the daemons
+        #   For remote UDP logging use SYSLOGD="-r"
+        #
+        #SYSLOGD="-u syslog"
+        SYSLOGD="-r"
+        ```
+    + restart `syslog` on the server for the changes
+    + Verify w/ UDP port 514: `netstat -a | grep syslog` or `ss -anlp | grep syslog`
 + Configuring the Linux Client
-
+    + Config procedure
+        1. Determine IP addr or FQDN of remote server
+        2. Add an entry in the `/etc/hosts` file w/ the format:  
+            `IP-address    fully-qualified-domain-name    hostname    "loghost"`
+        3. edit `/etc/rsyslog.conf` file to send the syslog messages to new `loghost` nickname  
+            ```
+            *.debug                           @loghost
+            *.debug                           /var/log/messages
+            ```
+    + Verify w/ restart a daemon, such as `lpd`:
+        + Linux client: `systemctl restart lpd.service`
+        + Linux server: `tail /var/log/messages`
 
 ### Syslog Configuration and Cisco Network Devices
 
