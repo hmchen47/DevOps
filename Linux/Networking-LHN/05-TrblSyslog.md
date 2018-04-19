@@ -114,21 +114,50 @@
 
 ## Logrotate
 
++ The `/etc/logrotate.conf` File
+    + rotation parameter: weekly or daily 
+    + rotate parameter: number of copies of log files
+    + create parameter: creating a new log file after each rotation
++ Sample Contents of /etc/logrotate.conf
+    ```
+    # rotate log files weekly
+    #weekly
 
-### The /etc/logrotate.conf File
+    # rotate log files daily
+    daily
 
+    # keep 4 weeks worth of backlogs
+    #rotate 4
 
-### Sample Contents of /etc/logrotate.conf
+    # keep 7 days worth of backlogs
+    rotate 7
 
-
-### The /etc/logrotate.d Directory
-
-
-### Activating logrotate
-
-
-### Compressing Your Log Files
-
+    # create new (empty) log files after rotating old ones
+    create
+    ```
++ The `/etc/logrotate.d` Directory
+    + Most Linux applications using syslog to put an additional configuration file in this directory
+    + Verify new applications configure properly
+    + e.g.
+        ```
+        /data/backups/*.tgz {
+            daily
+            rotate 30
+            nocompress
+            missingok
+            notifempty
+            create 0600 root root
+        }
+        ```
+    + Debian / Ubuntu: `/etc/cron.daily/sysklogd` script reads the `/etc/rsyslog.conf` file
++ Activating logrotate: `logrotate -f` or `logrotate -f /etc/logrotate.d/syslog`
++ Compressing Your Log Files
+    + activated by editing the `/etc/logrotate.conf` file w/ `compress` option
+    + Example:
+        ```
+        # Activate log compression
+        compress
+        ```
 
 ## syslog-ng
 

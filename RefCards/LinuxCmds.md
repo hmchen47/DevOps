@@ -42,7 +42,7 @@
 | Command | Description | Link |
 |---------|-------------|------|
 | `tail -f <logfile>` | Display new log entries to scroll on the screen; logfile: /var/log/syslog, /var/log/messages | [View New Log Entries](../Linux/Networking-LHN/05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen) |
-
+| `logrotate -f [FILE]` | activate log rotation, no FILE = `/etc/logrotate.conf` | [Logrotate](../Linux/Networking-LHN/05-TrblSyslog.md#logrotate) |
 
 
 
