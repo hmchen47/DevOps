@@ -65,6 +65,10 @@
 
 ### How to View New Log Entries as They Happen
 
++ Get new log entries to scroll on the screen as they occur:  
+    `tail -f /var/log/messages` or `tail -f /var/log/syslog`
++ `grep` search for all occurrences of a string in a log file:  
+    `grep string /var/log/messages | more`
 
 ### Logging syslog Messages to a Remote Linux Server
 
