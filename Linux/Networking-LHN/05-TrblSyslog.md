@@ -58,6 +58,10 @@
 
 ### Activating Changes to the syslog Configuration File
 
++ daemon: `rsyslog`
++ Auto start at booting
++ modification of config file -> restart daemon
+
 
 ### How to View New Log Entries as They Happen
 
