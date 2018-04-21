@@ -107,7 +107,36 @@
 
 ## How to Activate/Shut Down Your NIC
 
-## How to View Your Current Routing Table
++ activate and deactivate a NIC interface: `ifup <if>` & `ifdown <if>`
++ Corresponding `ifcfg` files for the interfaces in `/etc/sysconfig/network-scripts/` to work
+
+## How to View Current Routing Table
+
++ Networks with a gateway of `0.0.0.0` usually directly connected to the interface
++ default gateway: a route with a destination of `0.0.0.0`
++ cmds: `netstat -nr`, `route -n`, `ip route`, or `ip r`
++ Examples
+    + gateway with `255.255.255.255` usually added on DHCP servers
+        ```shell
+        Kernel IP routing table
+        Destination     Gateway     Genmask         Flags MSS Window irtt Iface
+        255.255.255.255 0.0.0.0     255.255.255.255 UH    40  0      0    wlan0 # DNS server
+        192.168.1.0     0.0.0.0     255.255.255.0   U     40  0      0    wlan0
+        127.0.0.0       0.0.0.0     255.0.0.0       U     40  0      0    lo
+        0.0.0.0         192.168.1.1 0.0.0.0         UG    40  0      0    wlan0
+        ```
+    + multiple gateways handling traffic destined or different networks on different interfaces
+        ```shell
+        Kernel IP routing table
+        Destination   Gateway       Genmask         Flags MSS Window irtt Iface
+        ...
+        172.16.69.192 0.0.0.0       255.255.255.192 U     40  0      0    eth1  # gateway for 172.16.69.192/26
+        172.16.67.128 0.0.0.0       255.255.255.128 U     40  0      0    eth0  # gateway for 172.16.67.128/25
+        172.160.0     172.16.67.135 255.255.0.0     UG    40  0      0    eth0  # route for 172.160.0.0/16
+        172.16.0.0    172.16.67.131 255.240.0.0     UG    40  0      0    eth0  # route for 172.16.0.0/12
+        127.0.0.0     0.0.0.0       255.0.0.0       U     40  0      0    lo    # localhost, loopback
+        0.0.0.0       172.16.69.193 0.0.0.0         UG    40  0      0    eth1  # default gateway
+        ```
 
 ## How to Change Your Default Gateway
 
