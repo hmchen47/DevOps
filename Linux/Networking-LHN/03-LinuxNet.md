@@ -39,7 +39,25 @@
 
 ### How DHCP Affects the DNS Server You Use
 
++ DHCP server: IP addr & desired DNS servers
++ `/etc/resolv.conf` commented out servers configuration lines
+
 ### Multiple IP Addresses on a Single NIC
+
++ child interface = IP alias: a virtual sub-interface
++ one of the most common ways of creating multiple IP addresses associated with a single NIC
++ Procedure to create IP alias: subif = `<if>:<#>`
+    + Ensure real interface exists
+    + Verify no same alias name
+    + Create the virtual interface: `ifconfig <subif> <ip> netmask <mask> up` or `ip addr add <ip>/<mask> dev <if> label <subif>`
+    + Create a `/etc/sysconfig/network-scripts/ifcfg-<subif>` for permanent setting
+        ```
+        DEVICE=wlan0:0
+        ONBOOT=yes
+        BOOTPROTO=static
+        IPADDR=192.168.1.99
+        NETMASK=255.255.255.0
+        ```
 
 ### IP Address Assignment for a Direct PPPoE DSL Connection
 
