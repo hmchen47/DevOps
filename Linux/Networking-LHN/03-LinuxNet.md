@@ -176,15 +176,34 @@
 
 ## Changing NIC Speed and Duplex
 
-### Using mii-tool
-
-+ Setting Your NIC's Speed Parameters with mii-tool
-
-### Using ethtool
-
-+ Setting Your NIC's Speed Parameters with ethtool
-
++ Linux automatically negotiating the speed and duplex by default
++ NICs with failed negotiation usually accompanied by many collision type errors being seen on the NIC when using the `ifconfig -a` command and only marginal performance
++ Using `mii-tool`
+    + Many older NICs support only `mii-tool`
+    + Cmd: `mii-tool -v <if>`
++ Setting NIC's Speed Parameters with `mii-tool`
+    + cmd: `mii-tool -F <opt> <if>`
+    + options: 100baseTx-FD, 100baseTx-HD, 10baseT-FD, or 10baseT-HD
++ Display by using `ethtool`: `ethtool <if>`
++ Setting Your NIC's Speed Parameters with `ethtool`
+    + permanently set interface config script w/ `ETHTOOL_OPTS` variable
+        ```script
+        #
+        # File: /etc/sysconfig/network-scripts/ifcfg-eth0
+        #
+        DEVICE=eth0
+        IPADDR=192.168.1.100
+        NETMASK=255.255.255.0
+        BOOTPROTO=static
+        ONBOOT=yes
+        ETHTOOL_OPTS="speed 100 duplex full autoneg off"
+        ```
+    + cmd: `ethtool -s <if> [speed 10|100|1000] [duplex full|half [autoneg on|off]`
 + A Note About Duplex Settings
+    + Fast Link Pulses (FLP): electronic signals to negotiate speed and duplex settings
+    + NIC in auto-negotiation mode but not receiving FLPs
+        + set full-duplex to half-duplex
+        + set speed to the lowest config value
 
 ## How to Convert Your Linux Server into a Simple Router
 

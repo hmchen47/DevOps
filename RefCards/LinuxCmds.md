@@ -26,10 +26,10 @@
 | `ip route add <net>/<mask> via <gwip> dev <if>` | Add route | [Configure Gateways](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
 | `route add -host <ip> gw <ip> <if>` | add a route to an individual server | [Add Routes](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
 | `ip route add <ip> via <gwip> dev <if>` | add a route to an individual server | [Add Routes](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
-| `route del -net <net> netmask <mask> gw <ip> <if>` | [Delete Routes] | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
-| `ip route del <net>/<mask> via <gwip> dev <if>` | [Delete Routes] | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
-
-
+| `route del -net <net> netmask <mask> gw <ip> <if>` | [Delete Routes] | [Delete Route](../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
+| `ip route del <net>/<mask> via <gwip> dev <if>` | [Delete Routes] | [Delete Route](../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
+| `mii-tool -F <opt> <if>` | Configure NIC's Speed Parameters | [NIC Speed & Duplex](../Linux/Networking-LHN/03-LinuxNet.md#changing-nic-speed-and-duplex) |
+| `ethtool -s <if> [speed 10|100|1000] [duplex full|half [autoneg on|off]` | | Configure NIC's Speed Parameters | [NIC Speed & Duplex](../Linux/Networking-LHN/03-LinuxNet.md#changing-nic-speed-and-duplex) |
 
 ### Troubleshooting
 
@@ -37,8 +37,8 @@
 |---------|-------------|------|
 | `ifconfig -a` | list all interfaces; up/down interfaces; NIC errors; MAC & IP addresses | [Testing NIC](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic); [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors); [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess) |
 | `ip addr`; `ip a` | list all interfaces; up/down interfaces; MAC & IP addresses | [Testing NIC](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic); [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess)  |
-| `mii-tool` | Link status output (older version) | [Testing Link Status](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic) |
-| `ethtool` |  Link status output (newer version) | [Testing Link Status](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic) |
+| `mii-tool -v <if>` | Link status output (older version) | [Testing Link Status](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic) |
+| `ethtool <if>` |  Link status output (newer version) | [Testing Link Status](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic) |
 | `ip -s a`; `ip -s link` | NIC error output | [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors) |
 | `ethtoll -S` | NIC error output - detailed report | [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors) |
 | `arp -a` | MAC address of ARP table | [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess) |
