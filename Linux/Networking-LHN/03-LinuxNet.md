@@ -61,11 +61,49 @@
 
 ### IP Address Assignment for a Direct PPPoE DSL Connection
 
-+ Some Important Files Created By adsl-setup
-
++ Static IP addresses: config w/ ISP provided IP, netmask, broadcast address, and gateway
++ DHCP or dynamic IP address assignment
+    1. Retain PPP authentication over Ethernet (PPPoE) username and password from ISP
+    2. Download and install PPPoE RPM
+    3. PPPOE configuration creates `ppp0`, a software-based virtual interface
+    4. Make a backup copy of your `ifcfg-eth0` file: `cd /etc/sysconfig/network-scripts/; cp ifcfg-eth0 DISABLED.ifcfg-eth0`
+    5. Edit `ifcfg-eth0` file to have no IP information and deactivated on boot time
+        ```script
+        DEVICE=eth0
+        ONBOOT=no
+        ```
+    6. Shutdown your eth0 interface: `ifdown wth0`
+    7. Run the `adsl-setup` config script: username, DNS server, password, non-root user, firewall (0-NONE), boot time
++ Some Important Files Created By `adsl-setup`: 
+    + created `ifcfg-ppp0` file
+        ```script
+        USERCTL=yes
+        BOOTPROTO=dialup
+        NAME=DSLppp0
+        DEVICE=ppp0
+        TYPE=xDSL
+        ONBOOT=yes
+        PIDFILE=/var/run/pppoe-adsl.pid
+        FIREWALL=NONE
+        PING=.
+        PPPOE_TIMEOUT=20
+        LCP_FAILURE=3
+        LCP_INTERVAL=80
+        CLAMPMSS=1412
+        CONNECT_POLL=6
+        CONNECT_TIMEOUT=60
+        DEFROUTE=yes 
+        SYNCHRONOUS=no
+        ETH=eth0
+        PROVIDER=DSLppp0
+        USER= bigboy-login@isp
+        PEERDNS=no
+        ```
+    + duplicate `/etc/ppp/pap-secrets` and `/etc/ppp/chap-secrets` files with the username and password
 + Simple Troubleshooting
-
-### IP Address Assignment for a Cable Modem Connection
+    + `adsl-status`: determine the condition of connection
+    + Activate interface: `ifup ppp0`
++ IP Address Assignment for a Cable Modem Connection: use DHCP to get IP addresses
 
 ## How to Activate/Shut Down Your NIC
 
