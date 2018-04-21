@@ -13,6 +13,26 @@
 
 ## Networking
 
+### Configuration
+
+| Command | Description | Link |
+|---------|-------------|------|
+| `ifconfig <if> <ip> netmask <mask> up` | configure IP address of an interface; `<if:x>`=sub-interface=virtual interface | [Configure IP Address](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-your-nics-ip-address) |
+| `ip addr add <ip>/<mask> dev <if>` | configure IP address of an interface; `<if:x>`=sub-interface=virtual interface | [Configure IP Address](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-your-nics-ip-address) |
+| `ipup <if>` & `ipdown <if>` | Activate & deactivate interface | [Configure IP Address](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-your-nics-ip-address) |
+| `route add default gw <ip> <if>` | Config default gateway | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-change-your-default-gateway) |
+| `ip route add default via <ip> <if>` | Config default gateway | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-change-your-default-gateway) |
+| `route add -net <net> netmask <mask> gw <ip> <if>` | Add route | [Configure Gateways](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
+| `ip route add <net>/<mask> via <gwip> dev <if>` | Add route | [Configure Gateways](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
+| `route add -host <ip> gw <ip> <if>` | add a route to an individual server | [Add Routes](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
+| `ip route add <ip> via <gwip> dev <if>` | add a route to an individual server | [Add Routes](../Linux/Networking-LHN/03-LinuxNet.md#how-to-configure-two-gGateways) |
+| `route del -net <net> netmask <mask> gw <ip> <if>` | [Delete Routes] | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
+| `ip route del <net>/<mask> via <gwip> dev <if>` | [Delete Routes] | (../Linux/Networking-LHN/03-LinuxNet.md#how-to-delete-a-route) |
+
+
+
+### Troubleshooting
+
 | Command | Description | Link |
 |---------|-------------|------|
 | `ifconfig -a` | list all interfaces; up/down interfaces; NIC errors; MAC & IP addresses | [Testing NIC](../Linux/Networking-LHN/04-SimpleNetTrbl.md#testing-nic); [NIC Errors](../Linux/Networking-LHN/04-SimpleNetTrbl.md#viewing-nic-errors); [MAC & IP addr](../Linux/Networking-LHN/04-SimpleNetTrbl.md#how-to-see-mac-addressess) |
@@ -36,6 +56,7 @@
 | `host <fqdn> | <ip>` | newer cmd used to get associated IP addr for given domain and vice versa | [DNS](../Linux/Networking-LHN/04-SimpleNetTrbl.md#basic-dns-troubleshooting) |
 | `nmap <-opt>` | determine all the TCP/IP ports on which a remote server is listening | [Port Scanning](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-nmap) |
 | `nc [-l] [<ip>] [<port>]` | create a TCP socket over which to transfer data | [Bandwidth](../Linux/Networking-LHN/04-SimpleNetTrbl.md#using-netcat-to-test-network-bandwidth) |
+| `netstat -nr`, `route -n`, `ip route`, `ip r` | Display current routing table | [Routing Table](../Linux/Networking-LHN/02-LinuxNet.md#how-to-view-current-routing-table) |
 
 ## syslog
 

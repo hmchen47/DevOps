@@ -157,11 +157,22 @@
 
 ## How to Configure Two Gateways
 
-### Adding Temporary Static Routes
-
-### Adding Permanent Static Routes
++ Typical scenarios for multiple router/firewalls:
+    + default gateway: the router providing access to the Internet
+    + the router access corporate network
++ Adding Temporary Static Routes
+    + add new routes to server: `route add -net <net> netmask <mask> gw <ip> <if>` or `ip route add <net>/<mask> via <gwip> dev <if>`
+    + add a route to an individual server: `route add -host <ip> gw <ip> <if>` or `ip route add <ip> via <gwip> dev <if>`
++ Adding Permanent Static Routes
+    + Added on a per interface basis in files located in the `/etc/sysconfig/network-scripts/`
+    + Filename format: `route-ifname`, e.g., `route-wlan0` for interface `wlan0`
+    + Script example: `10.0.0.0/8 via 192.168.1.254`
+    + Verify with `/etc/sysconfig/network-scripts/ifup-routes <if>`
 
 ## How to Delete a Route
+
++ Temporary delete a route: `route del -net <net> netmask <mask> gw <ip> <if>` or `ip route del <net>/<mask> via <gwip> dev <if>`
++ Permanent delete route: delete associated entry from `/etc/sysconfig/network-scripts/route-<if>`
 
 ## Changing NIC Speed and Duplex
 
