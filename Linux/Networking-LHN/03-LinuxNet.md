@@ -2,13 +2,42 @@
 
 ## How to Configure Your NIC's IP Address
 
-### Determining Your IP Address
++ Determining Your IP Address: 
+    + cmd: `ifconfig -a` or `ip addr` or `ip a`
+    + Info on interrupts, or CI bus ID, used by each card except IP and MAC addresses
+    + If NIC card doesn't work because it shares both an interrupt and memory access address with some other device, check /proc/interrupts file to get a listing of all the interrupt IRQs used by the system: `cat /proc/interrupts`
++ Changing Your IP Address
+    + cmd: `ifconfig <if> <ip> netmask <mask> up` or `ip addr add <ip>/<mask> dev <if>`
+    + config file: `/etc/rc.local`
+    + Fedora: `/etc/sysconfig/network-scripts/`
+        + Fixed IP Address
+            ```script
+            #
+            # File: ifcfg-eth0
+            #
+            DEVICE=eth0
+            IPADDR=192.168.1.100
+            NETMASK=255.255.255.0
+            BOOTPROTO=static
+            ONBOOT=yes
+            #
+            # The following settings are optional
+            #
+            BROADCAST=192.168.1.255
+            NETWORK=192.168.1.0
+            ```
+        + Getting the IP Address Using DHCP
+            ```script
+            #
+            # File: ifcfg-eth0
+            #
+            DEVICE=eth0
+            BOOTPROTO=dhcp
+            ONBOOT=yes
+            ```
+    + activate/deactivate: `ipup <if>` & `ipdown <if>`
 
-### Changing Your IP Address
-
-+ Figure 3-1 - File formats for network-scripts
-
-+ How DHCP Affects the DNS Server You Use
+### How DHCP Affects the DNS Server You Use
 
 ### Multiple IP Addresses on a Single NIC
 
