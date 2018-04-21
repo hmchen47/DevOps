@@ -140,13 +140,20 @@
 
 ## How to Change Your Default Gateway
 
-### Temporary Default Gateway Assignment
-
-### Permanent Default Gateway Assignment
-
-+ The /etc/sysconfig/network file
-
-+ The /etc/sysconfig/network-scripts/ifcfg-<interface> file
++ Temporary Default Gateway Assignment: `route add default gw <ip> <if>` or `ip route add default via <ip> <if>`
++ Permanent Default Gateway Assignment
+    + Debian: `/etc/network/interfaces`
+    + Fedora: `/etc/sysconfig/network`
+        ```script
+        NETWORKING=yes
+        HOSTNAME=bigboy
+        GATEWAY=192.168.1.1
+        ```
++ The `/etc/sysconfig/network-scripts/ifcfg-<interface>` file
+    + `DEFROUTE` keyword: a default gateway
+    + multiple NICs -> risk of inadvertently assigning more than one default gateway
+    + Firewalls designed to block packets with irregular sequence numbers and unexpected origins could also obstruct data flow
++ Booting process: `route add` in `/etc/rc.d/rc.local`
 
 ## How to Configure Two Gateways
 
