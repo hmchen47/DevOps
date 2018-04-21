@@ -207,9 +207,28 @@
 
 ## How to Convert Your Linux Server into a Simple Router
 
-### Configuring IP Forwarding
-
-### Configuring Proxy ARP
++ Configuring IP Forwarding
+    + Packet forwarding: enables packets to flow through the Linux box from one network to another
+    + Activate `net.ipv4.ip_forward` in `/etc/sysctl.conf` with value = 1
+    + Enabling packet forwarding only when you reboot at which time Linux will create a file in RAM memory-based /proc filesystem
+    + Activte the feature by read `/etc/sysctl.conf`: `sysctl -p`
++ Configuring Proxy ARP
+    + Proxy Arp: If there is no suitable router on its network, the server will then send out an ARP request for the MAC address of the remote server. Proxy ARP is configured to answer these types of ARP requests for remote networks
+    + Disadvantage: One of the most common problems occurs if two routers are on the network configured for proxy ARP.  Either one will answer the local server's ARP request for the MAC address of the remote server
+    + Generally not a good idea to configure proxy ARP on a router but default gateway
+    + Some bridging mode firewalls need to have proxy ARP enabled to operate properly
+    + Proxy ARP handled by files in the `/proc/sys/net/ipv4/conf/`
+    + Activate or disable proxy ARP w/ `/etc/sysctl.conf`
+        ```shell
+        # File: /etc/sysctl.conf
+        
+        # Enables Proxy ARP on all interfaces
+        net/ipv4/conf/all/proxy_arp   = 1
+        
+        # Enables Proxy ARP on interfaces eth1 and wlan0
+        net/ipv4/conf/eth1/proxy_arp  = 1
+        net/ipv4/conf/wlan0/proxy_arp = 1
+        ```
 
 ## Configuring Your Server as a DNS Client
 
