@@ -232,6 +232,26 @@
 
 ## Configuring Your Server as a DNS Client
 
++ `/etc/resolv.conf` records DNS servers in all Linux distributions
++ DHCP: BOOTPROTO=dhcp directive in the interface configuration file
+```script
+#
+# The /etc/sysconfig/network-scripts/ifcfg-<interface> file
+#
+DEVICE=p6p1
+ONBOOT=yes
+IPADDR=192.168.1.100
+BOOTPROTO=none
+NETMASK=255.255.255.0
+TYPE=Ethernet
+GATEWAY=192.168.1.1
+DNS1=192.168.1.1
+DNS2=192.168.1.5
+IPV6INIT=no
+USERCTL=no
+DEFROUTE=yes
+```
+
 ## Configuring Your /etc/hosts File
 
 ### The loopback Interface's localhost Entry
