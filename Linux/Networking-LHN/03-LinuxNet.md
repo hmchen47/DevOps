@@ -254,7 +254,14 @@ DEFROUTE=yes
 
 ## Configuring Your /etc/hosts File
 
-### The loopback Interface's localhost Entry
++ `/etc/hosts`: list of IP addresses and their corresponding server names
++ Server checking the file before referring DNS
++ limited entries: loopback interface, server's own hostname, and DNS server
++ e.g., `192.168.1.101  smallfry  tiny  littleguy`
++ The loopback Interface's localhost Entry
+    + Usually the first entry
+    + mapped to the name localhost.localdomain and localhost
+    + e.g., `127.0.0.1     bigboy    localhost.localdomain    localhost` or `127.0.0.1     bigboy.my-site.com    localhost.localdomain    localhost`
 
 ## Debian / Ubuntu Network Configuration
 
