@@ -265,18 +265,102 @@ DEFROUTE=yes
 
 ## Debian / Ubuntu Network Configuration
 
-### The /etc/network/interfaces File
++ The /etc/network/interfaces File - divided into stanzas
+    + The auto Stanza: interfaces automatically initialized when the system boots up
+    + The mapping Stanza: 
+        + map configuration parameters for an interface depending on the output of a script
+        + e.g., prompt when booting to ask at home or work with the mapping statement to configure IP addr
+        + Hotplug configurations assigned on interface with a matching logical interface name
+            ```script
+            mapping hotplug
+                script grep
+                map eth0 ether0 # ether0 as logical name
+                map eth1        # logical name as the phy name
+        ```
+    + The iface Stanza
+        + the characteristics of a logical interface
+        + Typically iface in the 1st line, then logical name, protocol, and type of addressing scheme
+        + Protocol: TCP/IP, inet6 for IPv6, ipx, and loopback
+        + Protocol characteristics: addresses, subnet masks, and default gateways
+            ```script
+            # The primary network interface
+            auto eth1
+            iface eth1 inet static
+                    address 216.10.119.240
+                    netmask 255.255.255.224
+                    network 216.10.119.224
+                    broadcast 216.10.119.255
+                    gateway 216.10.119.241
+                    dns-nameservers 216.10.119.241
 
-+ The auto Stanza
-
-+ The mapping Stanza
-
-+ The iface Stanza
-
+            # The secondary network interface
+            auto eth0
+            iface eth0 inet dhcp
+            ``` 
 + Creating Interface Aliases
-
+    + created in the `/etc/network/interfaces`
+    + format: `<if>:<sub-if-#>`
+    ```script
+    auto eth1:1
+    iface eth1:1 inet static
+        address 216.10.119.239
+        netmask 255.255.255.224
+    ```
 + Adding Permanent Static Routes
+    + Appropriate `iface` stanza in `/etc/network/interfaces` w/ `up` option
+    ```script
+    # The primary network interface
+    auto eth1
+    iface eth1 inet static
+            ...
+            ...
+            ...
+            up route add -net 10.0.0.0 netmask 255.0.0.0 gw 216.10.119.225 eth1
+    ```
++ A complete /etc/network/interfaces file
+    ```script
+    # 
+    # Debian / Ubuntu 
+    #
 
-+ A complete /etc/network/interfaces file	
+    #
+    # File: /etc/network/interfaces
+    #
+
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
+
+    # This is a list of hotpluggable network interfaces.
+    # They will be activated automatically by the hotplug subsystem.
+    mapping hotplug
+            script grep
+            map eth0 eth0
+            map eth1 eth1
+
+    # The primary network interface
+    auto eth1
+    iface eth1 inet static
+            address 216.10.119.240
+            netmask 255.255.255.224
+            network 216.10.119.224
+            broadcast 216.10.119.255
+            gateway 216.10.119.241
+            # dns-* options are implemented by the resolvconf package, if installed
+            dns-nameservers 216.10.119.241
+            wireless-key 98d126d5ac
+            wireless-essid schaaffe
+
+            up route add -net 10.0.0.0 netmask 255.0.0.0 gw 216.10.119.225 eth1
+
+    auto eth1:1
+    iface eth1:1 inet static
+            address 216.10.119.239
+            netmask 255.255.255.224
+
+    # The secondary network interface
+    auto eth0
+    iface eth0 inet dhcp
+    ```
 
 
