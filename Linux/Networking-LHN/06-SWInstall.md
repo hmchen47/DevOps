@@ -89,11 +89,22 @@
 
 ### How to Install Source RPMs
 
++ Procedure
+    + Download source RPM, usually w/ `.src.rpm`
+    + Run the following commands as root: `rpmbuild --rebuild filename.src.rpm`
+    + Install the compiled RPMs 
+
 ### RPM Installation Errors
 
 + Failed Dependencies
-
+    + Install w/o dependencies: `--nodeps`
+    + Install required dependencies
 + Signature Keys
+    + Fedora digitally signs all its RPM files
+    + best to import public encryption key beforehand
+    + RPM installation program able to verify the validity of the RPM file
+    + Usually done automatically in newer versions of Fedora: `/usr/share/rhn/RPM-GPG-KEY` & `/usr/share/rhn/RPM-GPG-KEY-fedora`
+
 
 ### How to List Installed RPMs
 

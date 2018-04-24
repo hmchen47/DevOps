@@ -79,7 +79,7 @@
 | Command | Description | Link |
 |---------|-------------|------|
 | `rpm [-Uvh]` | RedHat Package Manager; U=Updating, v=verbose, h=list of hash # characters | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
-
+| `rpmbuild --rebuild <pkg>.src.rpm` | Install source RPM | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
 
 
 
