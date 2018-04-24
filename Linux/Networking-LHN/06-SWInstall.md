@@ -57,10 +57,35 @@
 ### How To Install RPMs Manually
 
 + Using Downloaded Files
-
+    + Download the RPMs
+    + install w/ `rpm -Uvh`
 + Using CD-ROMs or DVDs
-
+    1. Insert the CD-ROM, check the files in the /mnt/cdrom/Fedora/RPMS directory and then install the RPM.
+        ```shell
+        mount /mnt/cdrom
+        cd /mnt/cdrom/Fedora/RPMS
+        ls filename*
+        rpm -Uvh filename.rpm
+        ```
+    2. When finished, eject the CD-ROM
+        ```shell
+        cd /tmp
+        eject cdrom
+        ```
 + Using ISO Files
+    + similar to those used when installing from hard disk
+    1. Downloaded the ISO file to the /tmp directory, mount the file, check the files in the /mnt/Fedora/RPMS directory and then install the RPM
+        ```shell
+        mount -o loop -t iso9660 file.iso /mnt
+        cd /mnt/Fedora/RPMS
+        ls filename*
+        rpm -Uvh filename.rpm
+        ```
+    2. When finished, unmount the ISO file
+        ```shell
+        cd /tmp
+        umount /mnt
+        ```
 
 ### How to Install Source RPMs
 

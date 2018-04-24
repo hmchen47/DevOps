@@ -10,6 +10,14 @@
 | `grep [opt] <str> [file...]` | print lines matching a pattern; option: e=pattern(greexp), f=FILE | [View New Log Entries](../Linux/Networking-LHN/05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen) |
 
 
+## Hardware 
+
+| Command | Description | Link |
+|---------|-------------|------|
+| `mount /mnt/<dev>` | Mount device to /mnt/ | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
+| `eject cdrom` | unmount CDROM | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
+| `umount /mnt` | unmount device | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
+
 
 ## Networking
 
@@ -66,6 +74,11 @@
 | `logrotate -f [FILE]` | activate log rotation, no FILE = `/etc/logrotate.conf` | [Logrotate](../Linux/Networking-LHN/05-TrblSyslog.md#logrotate) |
 
 
+## Software Installation
+
+| Command | Description | Link |
+|---------|-------------|------|
+| `rpm [-Uvh]` | RedHat Package Manager; U=Updating, v=verbose, h=list of hash # characters | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
 
 
 
