@@ -179,13 +179,24 @@
 + Server farms: a more robust system
 + `yum` clients accessing the `yum` server w/ FTP or HTTP requests
 
-### How to Automate yum
+### How to Automate yum Manually
 
-+ Keeping Your System current with Yum
++ Procedure to manually configure:
+    1. Get yum configured to start at boot: `chkconfig yum-updatesd on` & `chkconfig yum on`
+    2. instruct the `/etc/init.d` `yum` script to start/stop yum after booting:
+        ```script
+        service yum-updatesd start
+        service yum-updatesd stop
 
-+ Example of a yum Package Installation
-
+        service yum start
+        service yum stop
+        ```
++ Keeping Your System current with Yum: `yum update`
 + Remember The Following Yum Facts
+    + Updates using TCP port 80 for `http://` update URLs and uses passive FTP for `ftp://` update URLs in `/etc/yum.conf`
+    + Details on configuring yum: `man yum.conf`
+    + Run automatically each day w/ cron file in `/etc/cron.daily/`
+    + Don't limit yourself to the default `yum.conf` URLs --> overloaded
 
 ## Installing Software From DEB Files
 

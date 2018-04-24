@@ -96,6 +96,8 @@
 | `rpm -qf <filename>` | `filename` in which RPM | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `rpm -e <pkg>` | Uninstall PRM package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `yum –y install <pkg>` | Install package | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
-| `yum -y 
+| `yum update` | Update all packages | [Automate `yum` Manually](../Linux/Networking-LHN/06-SWInstall.md#how-to-automate-yum-manually) |
+
+
 
 
