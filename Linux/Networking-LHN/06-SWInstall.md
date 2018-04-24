@@ -170,9 +170,16 @@
         [main]
         do_update = yes
         ```
-+ Creating Your Own yum Server
+### Creating Your Own yum Server
 
-+ How to Automate yum
++ Requriements:
+    + small business: five to six gigabytes of free disk space per distribution
+    + Large enterprise: twenty-five megabytes in size
+    + Network load: minimal on average with an update once or twice a week per server
++ Server farms: a more robust system
++ `yum` clients accessing the `yum` server w/ FTP or HTTP requests
+
+### How to Automate yum
 
 + Keeping Your System current with Yum
 
