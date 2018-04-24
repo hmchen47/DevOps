@@ -241,9 +241,8 @@
     + Listing Files in DEB Files: `dpkg --contents <pkg>`
     + Listing the DEB Package to Which a File Belongs: `dpkg --search <file>`
 
-+ Uninstalling DEBs
-
-### Which DEBs Will Start Up At Boot Time?
++ Uninstalling DEBs: `dpkg --remove <pkg>`
++ Which DEBs Will Start Up At Boot Time?: `update-rc.d`
 
 ### Automatic DEB Updates with apt-get
 
