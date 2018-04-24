@@ -217,15 +217,31 @@
         ```
 + DEB Installation Errors: Failed Dependencies
 
-### Listing Files Associated with DEBs
++ How to List Installed DEBs: `dpkg --list`
 
-+ Listing Files for Previously Installed DEBs
+    | Desired State (Col. 1) | Current State (Col. 2) | Error State (Col. 3) | Description |
+    |------------------------|------------------------|----------------------|-------------|
+    | `u` |  |  | __Unknown__: The package has never been installed |
+    | `i` |  |  | __Installed__: A privileged user has requested the installation of the package |
+    | `r` |  |  | __Remove__: A privileged user has requested the removal of the package. Configuration files for the package most likely remain. |
+    | `p` |  |  | __Purge__: A previously installed package has been removed. Configuration files for the package have probably been removed. |
+    | `h` |  |  | __Hold__: A privileged user has requested that the package remain at its current version with no automatic upgrades. |
+    |  | `n` |  | __Not Installed__: The package is not installed |
+    |  | `i` |  | __Installed__: The package is installed |
+    |  | `c` |  | __Configuration Files Exist__: Package was installed, but the configuration files exist. |
+    |  | `u` |  | __Unpacked__: Files have been unpacked, but not installed |
+    |  | `f` |  | __Failed__: Configuration of the package has failed. |
+    |  | `h` |  | __Halt__: The package installation failed to complete |
+    |  |  | `h` | __Enforced Hold__: Package upgrade is on hold because another dependent package with a user defined hold requires this package to remain not upgraded. |
+    |  |  | `r` | __Reinstallation__: The package is broken and requires a reinstallation. |
+    |  |  | `x` | The package is both broken and on enforced hold. |
 
-+ Listing Files in DEB Files
++ Listing Files Associated with DEBs
+    + Listing Files for Previously Installed DEBs: `dpkg --listfiles <pkg>`
+    + Listing Files in DEB Files: `dpkg --contents <pkg>`
+    + Listing the DEB Package to Which a File Belongs: `dpkg --search <file>`
 
-+ Listing the DEB Package to Which a File Belongs
-
-### Uninstalling DEBs
++ Uninstalling DEBs
 
 ### Which DEBs Will Start Up At Boot Time?
 
