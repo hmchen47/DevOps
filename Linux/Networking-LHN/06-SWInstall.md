@@ -30,6 +30,28 @@
 
 ## How to Download Software
 
++ Getting Software Using Web-Based FTP
++ Getting RPMs Using Command-Line Anonymous FTP
+
+| Command | Description |
+|---------|-------------|
+| `binary` | Copy files in binary mode |
+| `cd` | Change directory on the FTP server |
+| `dir` | List the names of the files in the current remote directory |
+| `exit` | Bye bye |
+| `get` | Get a file from the FTP server |
+| `lcd` | Change the directory on the local machine |
+| `ls` | Same as dir |
+| `mget` | Same as get, but you can use wildcards like "*" |
+| `mput` | Same as put, but you can use wildcards like "*" |
+| `passive` | Make the file transfer passive mode |
+| `put` | Put a file from the local machine onto the FTP server |
+| `pwd` | Give the directory name on the local machine |
+
++ Getting Software Using wget
+    + used to download files quickly w/ know URL
+    + e.g. `wget http://linux.stanford.edu/pub/mirrors/fedora/linux/core/2/i386/os/Fedora/RPMS/dhcp-3.0pl2-6.16.i386.rpm`
+
 ## Installing Software From RPM Files
 
 ### How To Install RPMs Manually
