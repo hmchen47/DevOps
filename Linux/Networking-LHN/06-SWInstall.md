@@ -269,11 +269,24 @@
 
 ## Installing Perl Modules
 
-### Manual Installation of Perl Modules
++ Some of software packages requires `Perl`
++ Manual Installation of `Perl` Modules
+    1. Browse the CPAN website, identify and download the module package: `wget http://www.cpan.org/authors/id/M/MA/MARKOV/MailTools-<ver>.tar.gz`
+    2. Extract the file with `tar`: `tar -xzvf MailTools-<ver>.tar.gz`
+    3. Install the module with the following commands:
+        ```shell
+        perl Makefile.PL
+        make
+        make test
+        ```
++ Automatic Installation of `Perl` Modules
+    1. install the prerequisite `ncftp` and `perl-CPAN` package from CPAN: `yum -y install ncftp perl-CPAN`
+    2. Enter the CPAN utility w/ `perl`: `perl -MCPAN -e shell`
+    3. Answer a number of configuration options and enter `cpan>` shell
+    4. Install `Mail::Audit` module: `install Mail::Audit`
+    5. Terminate with `exit`
 
-### Automatic Installation of Perl Modules
-
-### Updating Your Perl Modules
++ Updating Your Perl Modules: `perl -MCPAN -we 'CPAN::Shell->install(CPAN::Shell->r)'`
 
 ## Managing Daemons
 
