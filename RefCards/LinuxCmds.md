@@ -97,6 +97,11 @@
 | `rpm -e <pkg>` | Uninstall PRM package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `yum –y install <pkg>` | Install package | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `yum update` | Update all packages | [Automate `yum` Manually](../Linux/Networking-LHN/06-SWInstall.md#how-to-automate-yum-manually) |
+| `dpkg --install <pkg>` | Debian/Ubuntu package installation | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --list` | List installed packages | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+
+
+
 
 
 

@@ -70,6 +70,7 @@
     2. When finished, eject the CD-ROM
         ```shell
         cd /tmp
+        umount /mnt/cdrom
         eject cdrom
         ```
 + Using ISO Files
@@ -200,19 +201,21 @@
 
 ## Installing Software From DEB Files
 
-### How To Install DEBs Manually
++ How To Install DEBs Manually
+    + Using Downloaded Files: `dpkg --install <pkg>`
+    + Using CD-ROMs
+        ``` shell
+        # mount & install 
+        mount /media/cdrom -o unhide
+        cd /media/cdrom
+        dpkg --install ndiswrapper-utils_1.8-ubuntu2_i386.deb 
 
-+ Using Downloaded Files
-
-+ Using CD-ROMs
-
-### DEB Installation Errors
-
-+ Failed Dependencies
-
-### How to List Installed DEBs
-
-+ Table ## -##  Column Formatting for the dpkg command
+        # unmount 
+        cd /tmp
+        umount /media/cdrom
+        eject cdrom
+        ```
++ DEB Installation Errors: Failed Dependencies
 
 ### Listing Files Associated with DEBs
 
