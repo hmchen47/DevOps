@@ -246,13 +246,15 @@
 
 ### Automatic DEB Updates with apt-get
 
++ Advanced Package Tool (APT)
 + Configuring APT
-
-+ Keeping Your System current with APT
-
-+ Example of an apt-get Package Installation
-
+    + Use `/etc/apt/sources.list` file where get packages
+    + Updates your system with listings of the most current package versions: `apt-get update` or `apt-get update` 
+    + Only a barebones set of packages installed and the URL entries in the `/etc/apt/sources.list` file commented out
++ Keeping Your System current with APT: `apt-get -y upgrade` or `apt -y upgrade`
 + Remember The Following APT Facts
+    + `sources.list` file primarily lists URLs using TCP port 80 (`http://`) for its updates
+    + More details on configuring `apt-get`: `man sources.list` & `man apt-get` or `man apt`
 
 ## Installing Software Using tar Files
 

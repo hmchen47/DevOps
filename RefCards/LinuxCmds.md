@@ -19,6 +19,7 @@
 | `systemctl {enable|disable} <daemon>.service` | Enable/Disable at boot time w/ `systemd` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `service <daemon> {start|stop}` | Start/Stop a daemon w/ `sysvinit` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `systemctl {start|stop} <daemon>.service` | Start/stop a daemon w/ `systemd` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+| `update-rc.d` | view and configure which DEBs will start at boot time | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
 
 
 
@@ -97,13 +98,13 @@
 | `rpm -e <pkg>` | Uninstall PRM package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `yum –y install <pkg>` | Install package | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `yum update` | Update all packages | [Automate `yum` Manually](../Linux/Networking-LHN/06-SWInstall.md#how-to-automate-yum-manually) |
-| `dpkg --install <pkg>` | Debian/Ubuntu package installation | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
-| `dpkg --list` | List installed packages | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
-| `dpkg --listfiles <pkg>` | List files for previous installed DEBs | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
-| `dpkg --contents <pkg>` | List files in DEB files | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
-| `dpkg --search <file>` | List files the DEB package to which a file belongs | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
-
-
+| `dpkg --install <pkg>` | Debian/Ubuntu package installation | [DEB Installtaion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --list` | List installed packages | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --listfiles <pkg>` | List files for previous installed DEBs | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --contents <pkg>` | List files in DEB files | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --search <file>` | List files the DEB package to which a file belongs | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `dpkg --remove <pkg>` | Uninstall DEB package | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `apt-get {update|upgrade} [-y]` | Update or upgrade DEB packages | [Auto DEBs](../Linux/Networking-LHN/06-SWInstall.md#automatic-deb-udates-with-apt---get) |
 
 
 
