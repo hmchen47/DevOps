@@ -117,12 +117,59 @@
 
 ### Automatic Updates with yum
 
-+ Configuring yum
-
-+ Configuring /etc/yum.repos.d Repository Files
-
-+ How to Automate yum
-
++ `yum` automatic RPM update program comes as a standard feature of Fedora Core
++ Features:
+    + configure the URLs of download sites containing the RPM repositories
+    + multiple attempts to download RPMs
+    + automatically updating and supporting RPMs
++ Configuring `yum`: server URLs are stored in the [main] section of the `/etc/yum.conf` file
++ Configuring `/etc/yum.repos.d` Repository Files
+    + Containing files where to find the latest Linux updates
+        ```script
+        [repositoryid]
+        name=Some name for this repository
+        baseurl=url://path/to/repository/
+        ```
+        +  `[repositoryid]`:` an identifier that is unique to all files in the directory
+        + the `[repositoryid]` in the `.repo` file unique to all other files
+        + [Web site](http://fedora.redhat.com/download/mirrors.html) to get a listing of alternative download sites
+        + `baseurl` points to a URL with a `/repodata` sub-directory containing files nd instructions for `yum` to use in doing its updates
+    + `yum` accepts the use of variables in the configuration file
+        + `$releasever` variable: the current version of Fedora Core running on server
+        + `$basearch` variable maps to the base architecture of the server automatically
+    + Best to select yum update sites that use `HTTP` instead of `FTP`
+        + `FTP` firewall rules are more difficult to implement than `HTTP`
+        + Multiple baseurl statements in each section then yum may act strangely, frequently only selecting the last one in the list
+    + Checksum 
+        + `yum` utility configured to match the downloaded RPMs against checksum files 
+        + achieved by `gpgcheck` variable in the `.repo` files
+        ```script
+        gpgcheck=1
+        gpgkey=http://URL/example.key
+        ```
++ How to Automate `yum`
+    + Older versions
+        + run in the background as a daemon
+        + used a unified `yum.conf` file for all its configuration data
+    + Newer versions
+        + use the `yum-updatesd` daemon
+        + uses the /etc/yum/yum-updatesd.conf configuration file 
+            + update frequency
+            + types of files to be downloaded
+            + whether they should be automatically installed
+    + Procedure:
+        1. Install `yum-updatesd` package: `yum –y install yum-updatesd`
+        2. Get `yum` configured to start at boot: 
+            + Systems using `sysvinit`: `chkconfig yum-updatesd on`
+            + Systems using `systemd`: `systemctl enable yum-updatesd.service`
+        3. instruct the /etc/init.d yum script to start/stop `yum` after booting
+            + Systems using `sysvinit`: `service yum-updatesd start` & `service yum-updatesd stop`
+            + Systems using `systemd`: `systemctl start yum-updatesd.service` & `systemctl stop yum-updatesd.service`
+    + Ensure update w/ `yum-updatesd` daemon in `/etc/yum/yum-updatesd.conf`: 
+        ```script
+        [main]
+        do_update = yes
+        ```
 + Creating Your Own yum Server
 
 + How to Automate yum

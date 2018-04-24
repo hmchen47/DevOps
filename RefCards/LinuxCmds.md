@@ -9,12 +9,18 @@
 | `who` | who currently logged in | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
 | `grep [opt] <str> [file...]` | print lines matching a pattern; option: e=pattern(greexp), f=FILE | [View New Log Entries](../Linux/Networking-LHN/05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen) |
 
-## Systems
+## System
 
 | Command | Description | Link |
 |---------|-------------|------|
 | `chkconfig` | used to activate and deactivate services | [chkconfig](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html) |
 | `chkconfig --list` | Displayed all services and their current start-up status in each run-level configuration | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
+| `chkconfig <pkg> {on|off}` | Enable/disable at boot time w/ `syscinit` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+| `systemctl {enable|disable} <daemon>.service` | Enable/Disable at boot time w/ `systemd` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+| `service <daemon> {start|stop}` | Start/Stop a daemon w/ `sysvinit` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+| `systemctl {start|stop} <daemon>.service` | Start/stop a daemon w/ `systemd` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+
+
 
 ## Hardware 
 
@@ -89,6 +95,7 @@
 | `rpm -q[lp] [<pkg>]` | query/list installed RPM files, q=query, l=associated files, p=package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `rpm -qf <filename>` | `filename` in which RPM | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 | `rpm -e <pkg>` | Uninstall PRM package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
-
+| `yum –y install <pkg>` | Install package | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
+| `yum -y 
 
 
