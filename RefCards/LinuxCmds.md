@@ -8,6 +8,7 @@
 | `last [-num]` | a listing of last logged in users | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
 | `who` | who currently logged in | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
 | `grep [opt] <str> [file...]` | print lines matching a pattern; option: e=pattern(greexp), f=FILE | [View New Log Entries](../Linux/Networking-LHN/05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen) |
+| `tar -[cxvfz] <file>` | archive/extract files; c=create, x=extract, v=verbose, f=filename, z=compress | [tar Files](../Linux/Networking-LHN/06-SWInstall.md#installing-software-using-tar-files) |
 
 ## System
 

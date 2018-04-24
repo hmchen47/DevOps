@@ -258,6 +258,15 @@
 
 ## Installing Software Using tar Files
 
++ `tar` cmd: used to archive files and typically have a .tar file extension in the file name
++ Compressed in the `gzip` format: file extensions with `.tar.gz` or `.tgz`
++ `tar` file installation process:
+    + uncompress and extract the contents of the archive in a local subdirectory
+    + usually contain a file called README or INSTALL, steps to install the software
++ Initial steps to take to install tar-based software:
+    1. Extract the files: `tar -xvzf <pkg>.tar.gz`
+    2. Follow the directions listed in the INSTALL and README files
+
 ## Installing Perl Modules
 
 ### Manual Installation of Perl Modules
