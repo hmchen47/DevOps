@@ -99,7 +99,9 @@
 | `yum update` | Update all packages | [Automate `yum` Manually](../Linux/Networking-LHN/06-SWInstall.md#how-to-automate-yum-manually) |
 | `dpkg --install <pkg>` | Debian/Ubuntu package installation | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
 | `dpkg --list` | List installed packages | [DEB Installtion](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
-
+| `dpkg --listfiles <pkg>` | List files for previous installed DEBs | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
+| `dpkg --contents <pkg>` | List files in DEB files | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
+| `dpkg --search <file>` | List files the DEB package to which a file belongs | [List Installed DEBs](../Linux/Networking-LHN/06-SWInstall.md#listing-files-associated-withdebs) |
 
 
 
