@@ -106,19 +106,14 @@
     + Usually done automatically in newer versions of Fedora: `/usr/share/rhn/RPM-GPG-KEY` & `/usr/share/rhn/RPM-GPG-KEY-fedora`
 
 
-### How to List Installed RPMs
+###  How to List Installed RPMs
 
-### Listing Files Associated with RPMs
-
-+ Listing Files for Already Installed RPMs
-
-+ Listing Files in RPM Files
-
-+ Listing the RPM to Which a File Belongs
-
-+ Uninstalling RPMs
-
-+ Which RPMs Will Start Up At Boot Time?
++ List installed RPMs: `rpm -q [pkg]`
++ List all the files associated with an installed RPM: `rpm -ql <pkg>`
++ list all the files in an RPM archive: `rpm -qpl <pkg>`
++ Listing the RPM to Which a File Belongs: `rpm -qf <filename>`, e.g., `rpm -qf /etc/my.cnf`
++ Uninstalling RPMs: `rpm -e <pkg>`
++ Which RPMs Will Start Up At Boot Time?: `chkconfig --list`
 
 ### Automatic Updates with yum
 

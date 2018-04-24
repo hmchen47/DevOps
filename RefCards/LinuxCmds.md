@@ -9,6 +9,12 @@
 | `who` | who currently logged in | [Identification](../Linux/Networking-LHN/04-SimpleNetTrbl.md#who-has-used-my-system) |
 | `grep [opt] <str> [file...]` | print lines matching a pattern; option: e=pattern(greexp), f=FILE | [View New Log Entries](../Linux/Networking-LHN/05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen) |
 
+## Systems
+
+| Command | Description | Link |
+|---------|-------------|------|
+| `chkconfig` | used to activate and deactivate services | [chkconfig](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html) |
+| `chkconfig --list` | Displayed all services and their current start-up status in each run-level configuration | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 
 ## Hardware 
 
@@ -80,6 +86,9 @@
 |---------|-------------|------|
 | `rpm [-Uvh]` | RedHat Package Manager; U=Updating, v=verbose, h=list of hash # characters | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
 | `rpmbuild --rebuild <pkg>.src.rpm` | Install source RPM | [CD-ROMs or DVDs](../Linux/Networking-LHN/06-SWInstall.md#how-to-install-rpms-manually) |
+| `rpm -q[lp] [<pkg>]` | query/list installed RPM files, q=query, l=associated files, p=package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
+| `rpm -qf <filename>` | `filename` in which RPM | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
+| `rpm -e <pkg>` | Uninstall PRM package | [List RPMs](../Linux/Networking-LHN/06-SWInstall.md#how-to-list-installed-rpms) |
 
 
 
