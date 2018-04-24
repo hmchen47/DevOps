@@ -14,7 +14,7 @@
 ## [Troubleshooting Linux with Syslog](./05-TrblSyslog.md)
 
 
-## [Installing Linux Software]
+## [Installing Linux Software](./06-SWInstall.md)
 
 
 ## [The Linux Boot Process]
