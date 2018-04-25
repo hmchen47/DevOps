@@ -290,19 +290,62 @@
 
 ## Managing Daemons
 
-### Daemon Management Command Summary
++ daemon: a program running unattended even when nobody is logged into system
++ Common examples of Linux server daemons:
+    + `syslog` daemon: receive system error messages and write to a log file
+    + `apache` or `http`d daemon: serve web pages to Internet web browsers
+    + `sendmail` daemon: place email it receives into your inbox
++ Daemon Management Command Summary
+    + Common ways to control daemons
+        + __systemd__: used by more recent versions of Fedora
+        + __sysvinit / init scripts__: used by most Linux distributions
+        + __sysv-rc-conf__: a Debian package that mimics the `sysvinit` service command
+    + Reboot Persistent and Non-Persistent Commands
+        + __Reboot persistent__ commands: define the state of the daemon when system starts
+        + __Non-persistent__ commands: 
+            + govern the state of the daemon after the system started
+            typically run by systems administrators during troubleshooting and when daemons packages are newly installed and need to be activated
+    + Starting Daemons: To reconfigure a daemon you have to edit its configuration file and then restart it.
 
-+ Reboot Persistent and Non-Persistent Commands
+        | Syntax Type | Non-Persistent | Persistent |
+        |--------------|--------|---------|
+        | `systemd` |  # `systemctl start  <pkg>.service` |  # `systemctl enable <pkg>.service` |
+        | `sysvinit` |  # `service  <pkg> start` |  # `chkconfig  <pkg> on` |
+        | Init Script |  # `/etc/init.d/ <pkg> start` |  # `chkconfig  <pkg> on` |
+        | `sysv-rc-conf` |  # `sysv-rc-conf  <pkg> start` |  # `sysv-rc-conf  <pkg> on` |
+        
+        + Verify: `netstat -a | grep <pkg>`
 
-+ Starting Daemons
+    + Stopping Daemons
 
-+ Stopping Daemons
+        | Syntax Type | Non-Persistent | Persistent |
+        |--------------|--------|---------|
+        | `systemd` |  # `systemctl stop  <pkg>.service` |  # `systemctl disable <pkg>.service` |
+        | `sysvinit` |  # `service  <pkg> stop` |  # `chkconfig  <pkg> off` |
+        | Init Script |  # `/etc/init.d/ <pkg> stop` |  # `chkconfig  <pkg> off` |
+        | `sysv-rc-conf` |  # `sysv-rc-conf  <pkg> stop` |  # `sysv-rc-conf  <pkg> off` |
 
-+ Restarting Daemons
+    + Restarting Daemons
 
-+ Daemon Status
+        | Syntax Type | Non-Persistent | Persistent |
+        |--------------|--------|---------|
+        | `systemd` |  # `systemctl restart  <pkg>.service` |  N/A |
+        | `sysvinit` |  # `service  <pkg> restart` |  N/A |
+        | Init Script |  # `/etc/init.d/ <pkg> restart` |  N/A |
+        | `sysv-rc-conf` |  # `sysv-rc-conf  <pkg> restart` |  N/A |
 
-### The chkconfig Command
+    + Daemon Status
+        
+        | Syntax Type | Non-Persistent | Persistent |
+        |--------------|--------|---------|
+        | `systemd` |  # `systemctl status  <pkg>.service` | # `systemctl is-enabled <pkg>.service` or `systemctl list-unit-files --type=service` |
+        | `sysvinit` |  # `service  <pkg> status` | # `chkconfig --list` |
+        | Init Script |  # `/etc/init.d/ <pkg> status` | # `chkconfig --list` |
+        | `sysv-rc-conf` |  # `sysv-rc-conf  <pkg> status` | # `sysv-rc-conf --list` |
+
++ The `chkconfig` Command
+    + Used to adjust which applications start at each runlevel
+    + Get a full listing of packages listed in `/etc/init.d` and their on or off: `chkconfig --list`
 
 + A Simple chkconfig Exercise
 

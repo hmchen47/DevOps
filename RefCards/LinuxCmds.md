@@ -21,6 +21,15 @@
 | `service <daemon> {start|stop}` | Start/Stop a daemon w/ `sysvinit` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `systemctl {start|stop} <daemon>.service` | Start/stop a daemon w/ `systemd` | [Auto `yum`](../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum) |
 | `update-rc.d` | view and configure which DEBs will start at boot time | [DEB Installation](../Linux/Networking-LHN/06-SWInstall.md#installing-software-from-deb-files) |
+| `systemctl {start|stop|restart|status} <pkg>.service` | start/stop/restart/status daemon - Non-persistent w/ `systemd`| [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `service <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysvinit`| [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `/etc/init.d/ <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ Init Script | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `sysv-rc-conf  <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysv-rc-conf` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `systemctl {enable|disable|is-enabled} <pkg>.service` | start/stop/status daemon - Persistent w/ `systemd` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `chkconfig <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `chkconfig --list` | status daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `sysv-rc-conf  <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
+| `sysv-rc-conf --list` | status daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
 
 
 
