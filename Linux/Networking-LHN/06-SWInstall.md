@@ -347,13 +347,33 @@
     + Used to adjust which applications start at each runlevel
     + Get a full listing of packages listed in `/etc/init.d` and their on or off: `chkconfig --list`
 
-+ A Simple chkconfig Exercise
++ A Simple `chkconfig` Exercise
+    + Use `chkconfig` to change runlevels for particular packages
+    + Manipulate the operation of the `sendmail` daemon
+        1. get a listing of `sendmail's` current startup options: `chkconfig --list | grep mail`
+        2. Switch off sendmail starting up in levels 3 and 5: 
+            + Sendmail not to be started when entering runlevels 3 and 5: `chkconfig --level 35 sendmail off`
+            + Make the changes for runlevels 3 and 5 automatically: `chkconfig sendmail off`
+            + Permanently shutdown sendmail permanently: `service sendmail stop`
+        3. Double-check that sendmail will not start up: `chkconfig --list | grep mail`
+        4. Turn on sendmail again and verify: `chkconfig sendmail on` && `chkconfig --list | grep mail`
 
-+ Using chkconfig to Improve Security
++ Using `chkconfig` to Improve Security
+    + default Fedora installation automatically starts a number of daemons -> listening a variety of unexpected TCP/IP ports: `netstat -an`
+    + use the `chkconfig` command and the scripts in the `/etc/init.d` directory to shut these down
+    + `lsof` command: list all open, or actively used, files and given additional options to extend its scope to include the TCP/IP protocol stack; e.g. `lsof -i tcp:111`
+    + applications listening only on the loopback interface (IP address 127.0.0.1) -> the least susceptible to network attack
+    + listening on all interfaces, `0.0.0.0`, -> more vulnerable and their continued operation
+    + Shutting down applications is only a part of server security
+    + Other concerns: firewalls, physical access restrictions, password policies, and patch updates
 
-+ Final Tips on chkconfig
++ Final Tips on `chkconfig`
+    + modify runlevels 3 and 5 simultaneously and with the same values
+    + Don't add/remove anything to other runlevels unless you absolutely know what you are doing.
+    + `chkconfig` doesn't start the programs in the `/etc/init.d/`, it just configures them to be started or ignored when the system boots up.
 
 ### The sysv-rc-conf Command
+
 
 + Installing sysv-rc-conf
 
