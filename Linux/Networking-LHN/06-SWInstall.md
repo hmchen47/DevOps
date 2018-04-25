@@ -374,9 +374,13 @@
 
 ### The sysv-rc-conf Command
 
-
-+ Installing sysv-rc-conf
-
-+ Listing the runlevels for Daemons
-
++ Debian/Ubuntu Linux: the `update-rc.d` replaces `chkconfig` as the default package for modifying `/etc/init.d` script links
++ `sysv-rc-conf` package: almost identical syntax to `chkconfig`, and w/a GUI mode if you run it from the command line without any arguments.
++ Installing sysv-rc-conf: `apt-get install sysv-rc-conf`
++ Listing the runlevels for Daemons: `sysv-rc-conf  --list [<pkg>]`
 + Setting the runlevels for Daemons
+    + Enable a daemon: `sysv-rc-conf <pkg> on`
+    + Disable a daemon: `sysv-rc-conf <pkg> off`
+    + Set a daemon to start only at levels 3 and 5: `sysv-rc-conf --level 35 <pkg> on`
+
+

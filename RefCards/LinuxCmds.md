@@ -30,7 +30,7 @@
 | `chkconfig --list` | status daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
 | `sysv-rc-conf  <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
 | `sysv-rc-conf --list` | status daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons](../Linux/Networking-LHN/06-SWInstall.md#managing-daemons) |
-
+| `sysv-rc-conf --level <#...> <pkg> on` | set a daemon to start only at given number(s) | [`sysv-rc-conf` Cmd](../Linux/Networking-LHN/06-SWInstall.md#the-sysv---rc---conf-command) |
 
 
 ## Hardware 
