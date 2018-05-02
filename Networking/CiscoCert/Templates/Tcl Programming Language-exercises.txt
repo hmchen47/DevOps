@@ -1,0 +1,319 @@
+Introduction to the Tcl Programming Language
+http://www2.lib.uchicago.edu/keith/tcl-course/
+
+Exercises #1
+http://www2.lib.uchicago.edu/keith/tcl-course/exercises/ex1.html
+
+1. Write the identity function (the I combinator), which simply returns its argument (any type of argument) unchanged:
+	# I :: alpha -> alpha
+	proc I {x} {...}
+	Examples:
+	I 12
+	=> 12
+	I foo
+	=> foo
+	I {string length abracadabra}
+	=> {string length abracadabra}
+Why is this a useful function?
+
+2. Write the K combinator, which takes two arguments and always returns its first argument, unchanged:
+	# K :: alpha beta -> alpha
+	proc K {x y} {...}
+	Examples:
+	K 0 456
+	=> 0
+	K foo 1
+	=> foo
+Why is this a useful function?
+
+3. Write the function change, which takes a whole number as it argument and returns a list that represents how to "make change" for that number, taken as a number of cents. You can use quarters, dimes, nickels and pennies to make change, and so the result list should be of length four, sorted from most valuable coin to least valuable. You should make change using as few coins as possible.
+	# change :: num -> [num]
+	proc change {n} {...}
+	change 75
+	=> 3 0 0 0
+	change 23
+	=> 0 2 0 3
+
+4. Write the iota function, which takes a numeric argument n and returns a list of numbers of length n which are the numbers from 0 to n-1.
+	# iota :: num -> [num]
+	proc iota {n} {...}
+	Examples:
+	iota 3
+	=> 0 1 2
+	iota 20
+	=> 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+Does your function work for 0? What should your function do for negative arguments?
+
+5. Write the function incrlist, which takes one argument, a list of numbers, and returns a list of equal length as a result, in which each element is the successor to the corresponding element of the argument list.
+	# incrlist :: [num] -> [num]
+	proc incrlist {L} {...}
+	incrlist {34 987 1 567 -23 8}
+	=> 35 988 2 568 -22 9
+	incrlist [iota 12]
+	=> 1 2 3 4 5 6 7 8 9 10 11 12
+Does your function work for the empty list?
+
+6. Write the function strlenlist, which takes one argument, a list of strings, and returns a list of equal length as a result, in which each element is the string length of the corresponding element of the argument list.
+	# strlenlist :: [str] -> [num]
+	proc strlenlist {L} {...}
+	strlenlist {34 987 1 567 -23 8}
+	=> 2 3 1 3 3 1
+	strlenlist {foo bar antidisestablishmentarianism}
+	=> 3 3 28
+Does your function work for the empty list?
+
+7. Write sumlist, which takes one argument, a list of numbers, and returns, as result, a single number: the sum of the numbers in the argument list.
+	# sumlist :: [num] -> num
+	proc sumlist {L} {...}
+	sumlist [iota 3]
+	=> 3
+	sumlist {34 987 1 567 -23 8}
+	=> 1574
+
+8. Write multlist, which takes one argument, a list of numbers, and returns, as result, a single number: the product of the numbers in the argument list.
+	# multlist :: [num] -> num
+	proc multlist {L} {...}
+	multlist [iota 3]
+	=> 0
+	multlist [incrlist [iota 3]]
+	=> 3
+	multlist {34 987 1 567 -23 8}
+	=> 793928272
+
+9. Write catlist, which takes one argument, a list of strings, and returns, as result, a single string: the concatenation of the strings in the argument list.
+	# catlist :: [str] -> str
+	proc catlist {L} {...}
+	catlist [iota 3]
+	=> 012
+	catlist [incrlist [iota 3]]
+	=> 123
+	list {foo bar antidisestablishmentarianism}
+	=> foobarantidisestablishmentarianism
+
+10. Write factorial, iteratively.
+	# factorial :: num -> num
+	proc fact {num} {...}
+	factorial 3
+	=> 6
+	factorial 6
+	=> 720
+	factorial 12
+	=> 479001600
+
+11. Write factorial, recursively.
+
+12. Write factorial, neither iteratively nor recursively, using only functions that you've written in this set of exercises.
+
+Exercises #2
+http://www2.lib.uchicago.edu/keith/tcl-course/exercises/ex2.html
+
+1. These exercises make use of some of the functions from Exercise #1.
+Rewrite the change function (Exercise 1.3) to work for any set of coins (or notes) for any decimal currency. The coin values should be passed to change as a variable number of arguments which are the coin values in units (e.g., a quarter would be represented as 25) in any order. The first arg is still the number to make change for.
+	# change :: num X num ... -> [num]
+	proc change {n args} {...}
+	change 75 25 10 5 1
+	=> 3 0 0 0
+	change 75 10 25 1 5
+	=> 3 0 0 0
+	change 75 50 25 10 5 1
+	=> 1 1 0 0 0
+
+2. Rewrite the iota function (Exercise 1.4) to take an optional second argument which is an increment to separate the integer values. The default increment is 1. iota always returns a list whose length is equal to its first argument.
+	# iota :: num X num ... -> [num]
+	proc iota {n {inc 1}} {...}
+	iota 10
+	=> 0 1 2 3 4 5 6 7 8 9
+	iota 10 3
+	=> 0 3 6 9 12 15 18 21 24 27
+	megatcl>iota 3 2
+	0 2 4
+	megatcl>iota 3 4
+	0 4 8
+	megatcl>
+
+3. Write map, a function that abstracts incrlist (Exercise 1.5) and strlenlist (Exercise 1.6). map takes two arguments: f, a restricted class of Tcl script; and L, a list. map applies f to each element of L, returning a list of the results. The result list will always be the same length as L.
+The types of L and the result need not match. This means that map is conceptually polymorphic. Of course, since all Tcl values are strings, you could also say that the two lists are always lists of strings, but this is often less useful than thinking about the semantics of the strings.
+
+f needs to be a Tcl script of one argument.
+
+	# map :: (alpha -> beta) X [alpha] -> [beta]
+	proc map {f L} {...}
+	map I [iota 10]
+	=> 0 1 2 3 4 5 6 7 8 9
+	map {K 1} [iota 10]
+	=> 1 1 1 1 1 1 1 1 1 1
+	map {expr 10 +} [iota 10]
+	=> 10 11 12 13 14 15 16 17 18 19
+
+4. Write incrlist and strlenlist in terms of map.
+
+5. Write foldl, a function that abstracts sumlist (Exercise 1.7), multlist (Exercise 1.8) and catlist (Exercise 1.9). foldl takes three arguments:
+	f - A binary function
+	id - The identity element for f
+	L - A list
+foldl applies f pairwise to all the elements of L, left associatively. It's as if f were inserted between each element of L, parenthesized left-associatively:
+	proc + {a b} {expr $a + $b}
+	foldl + 0 [list 1 2 3 4]
+	== (((1+2)+3)+4)
+	=> 10
+Why is the identity element necessary? Consider the case of a list of length one:
+	foldl + 0 [list 1]
+	== (..+1)
+The problem is, we don't have two values for our binary + operator. The identity element gives us a value to use at the left end of the expression; it needs to be the identity for f so that it doesn't otherwise change the result:
+	foldl + 0 [list 1 2 3 4]
+	== ((((0+1)+2)+3)+4)
+	=> 10
+	proc * {a b} {expr $a * $b}
+	foldl * 1 [list 1 2 3 4]
+	== ((((1*1)*2)*3)*4)
+	=> 24
+If L is a list of integers, then f should be a function of two integers; it can return any type of value. If L is a list of strings, then f should be a function of two strings; it can return any type of value. If L is a list of variable names, then f should be a function of two variable names; it can return any type of value.
+
+Another way of describing f is to say that if L is a list of elements of type alpha, then f must be a function of type (alpha X alpha -> beta). We don't care about the type of f's return value except to say that it may (but is not required to be) different from alpha.
+
+	# foldl :: (alpha X alpha -> beta) X beta X [alpha] -> beta
+	proc foldl {f id L} {...}
+Do you understand why foldl needs a parameter for the identity element?
+
+6. Implement sumlist, multlist and catlist in terms of foldl.
+
+7. Write the function zip, which takes three arguments:
+	f - A binary function
+	a - A list
+	b - Another list
+zip applies f pairwise to corresponding elements of a and b, returning a list of the results.
+
+If a is a list of integers, and b is a list of strings, then f should be a function that takes an integer as its first argument and a string as its second argument. It can return any type of value.
+
+	# zip :: (alpha X beta -> gamma) X [alpha] X [beta] -> [gamma]
+	proc zip {f a b} {...}
+	proc + {a b} {expr $a + $b}
+	zip + [iota 10] [iota 10]
+	=> 0 2 4 6 8 10 12 14 16 18
+	zip list [list A B C D] [list 1 2 3 4]
+	=> {A 1} {B 2} {C 3} {D 4}
+
+8. Write the command vardefault, which takes two arguments, the name of a variable, and a default value. If the variable is defined in the calling scope, vardefault returns the variable's value. If it is not defined, vardefault returns the default value.
+	proc vardefault {var default} {...}
+	set x 45
+	vardefault x 0
+	=> 45
+	proc foo {} {
+		vardefault x 0
+	}
+	foo
+	=> 0
+To write this function, you'll need to use upvar to achieve call by name, and you'll need a way to test whether or not a variable is defined (use info exists).
+
+
+Exercises #3
+http://www2.lib.uchicago.edu/keith/tcl-course/exercises/ex3.html
+
+1. Write a procedure to check the spelling of a word:
+	# spell :: filedescriptor X string -> boolean
+	proc spell {fd word} {...}
+It should take a file descriptor, which refers to an opened dictionary file, and a string, which is the word to be checked, and it should return 1 if the word is spelled correctly, or 0 if not.
+We define spelled correctly to mean that the word is listed in the dictionary file. We ignore the issues of plurals, etc: if the exact word is not found in the dictionary, it's misspelled.
+
+We define a dictionary file to be any file that contains words, one per line, which is sorted in ASCII collating order. You may use the file /home/keith/web/tcl-course/words for testing.
+
+Hint: this proc is extremely easy to write. If you disagree, you're approaching it wrong.
+
+2. There is a standard dictionary file included with Unix systems: /usr/dict/words. Why doesn't this file work if you use it with your spell proc? What type of changes would you have to make to your code to be able to use this file as is?
+
+3. Write a spelling checker. This should be an actual complete program, using the spell proc you coded above (and my dictionary). Your program should read a file to be spell checked on standard input, and write to standard output any mispelled words, one per line.
+You can use any rule you like for deciding what makes a word in the input file. I recommend choosing a rule that exploits existing Tcl commands.
+
+To run your program (assuming it's called spell.tcl), you can say, from the Unix shell:
+	megatcl -f spell.tcl
+and then you can type lines of text to be spelled checked; type C-d alone on a line to terminate. You can also spell check a file by saying:
+	megatcl -f spell.tcl < filename
+Don't worry about the problems of uppercase vs lowercase, or punctuation marks. We'll learn how to handle these when we cover string processing.
+
+Hint: this program, not counting comments, whitespace or lines containing closing braces, and not counting the code for your spell proc, should be about six lines long.
+
+4. Modify your spelling checker to output an identifying line number with each mispelled word. Your output for each line should be the line number, a tab, and the mispelled word.
+
+Hint: this should add about two lines to your program.
+
+
+
+Exercises #4
+http://www2.lib.uchicago.edu/keith/tcl-course/exercises/ex4.html
+
+1. Write the function mapping which implements extensionally defined functions. A function by extension is a function which is simply enumerated: the domain and range are fully specified, and the mapping between them indicated. A function defined via a table is defined extensionally; therefore, an array is a kind of extensional function. Consider the function defined by the table:
+	file             -
+	directory        d
+	characterSpecial c
+	blockSpecial     b
+	fifo             p
+	link             l
+	socket           s
+which maps a long string to a one-character abbreviation. This function could be implemented with mapping as follows:
+mapping [list file directory characterSpecial blockSpecial fifo link socket] \e
+        [list - d c b p l s] $x
+where $x is the actual parameter of the function. If $x happened to be directory, then mapping would return d.
+Why use mapping when you could simply define an array? For example, we could define:
+
+	set mapping(file) -
+	set mapping(directory) d
+	set mapping(characterSpecial) c
+	set mapping(blockSpecial) b
+	set mapping(fifo) p
+	set mapping(link) l
+	set mapping(socket) s
+mapping has several nice properties: it doesn't require any state (say, a global array), which is an advantage if the mapping is only used once; it can also be profitably partially applied for use with functionals like map. You can also think of mapping as implementing a linguistic feature that's missing from Tcl (and indeed from most languages): the array literal.
+
+The trade off is that since mapping is implemented with lists, it will be much slower than Tcl's associative arrays (but this will only matter for functions with a large domain).
+
+	# mapping :: [alpha] X [beta] X alpha -> beta
+	proc mapping {domain range parm} {...}
+	mapping [list foo bar baz] [list 12 69 45] baz
+	=> 45
+	map {mapping [list foo bar baz] [list 12 69 45]} [list baz baz foo bar foo]
+	=> 45 45 12 69 12
+
+2. Write the function choose, which takes three parameters: three equal-length lists, the first two of arbitrary values, and the third a list of boolean values (zeros and ones). choose returns a list (also of the same length) where each element is chosen from one of the first two lists, depending on the corresponding boolean value. Elements of the first parameter are chosen for 1's (true), while elements of the second parameter are chosen for 0's (false).
+choose is one of many useful functions that operate on bit vectors.
+
+	# choose :: [alpha] X [beta] X [boolean] -> [alpha U beta]
+	proc choose {trues falses bools} {...}
+	choose [list a b c d] [list A B C D] [list 0 1 1 0]
+	=> A b c D
+
+3. Write the function bits which takes two parameters, both numbers, and returns a binary representation of the first number as a list of bits (each bit is a 0 or a 1), from most significant at the left to least siginifcant at the right. The result list should contain as many bits as specified by the second number, which should be an optional parameter, using leading zero bits if necessary (assume that the bit length requested is long enough to represent the number). If the second parameter isn't specified, use the minimal number of bits (no leading zeros).
+You'll probably want to use the expr command's bit-fiddling operators for this.
+
+	# bits :: num X num -> [boolean]
+	proc bits {howmany num} {...}
+	bits 0777
+	=> 1 1 1 1 1 1 1 1 1
+	bits 0644
+	=> 1 1 0 1 0 0 1 0 0
+	bits 19
+	=> 1 0 0 1 1
+	bits 1 3
+	=> 0 0 1
+
+4. Write the function rwx, which takes a three-bit number -- a Unix user, group, or other file permission vector -- (represented as an ordinary Tcl number, in decimal, octal or hex) and returns a string which is the rwx string representation of that bit vector.
+	# rwx :: num -> string
+	proc rwx {perm} {...}
+	rwx 7
+	=> rwx
+	rwx 6
+	=> rw-
+	rwx 2
+	=> -w-
+	rwx 1
+	=> --x
+Write the function ls-line, which takes a file name as a parameter and returns a string, a single line which is formatted to look like the output of the Unix command ls -lgd.
+You do not have to get the modification date to match the ls output exactly; nor do you have to worry about any of the following (except for extra credit): sticky bit, setuid or setgid bit, major or minor numbers for character or block special files; symbolic links.
+
+	# ls-line :: filename -> string
+	ls-line {file} {...}
+	ls-line .
+	=> drwxr-xr-x 2 keith keith 512 Aug 11 14:22 .
+	ls-line /etc/passwd
+	=> -rw-r--r-- 1 root staff 5234 Aug 04 15:22 /etc/passwd
+	ls-line /home/keith/dev/fifo
+	=> prw-r--r-- 1 keith keith 0 Mar 24 16:29 /home/keith/dev/fifo
