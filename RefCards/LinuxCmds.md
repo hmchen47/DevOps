@@ -38,9 +38,14 @@
 | `sysv-rc-conf --list` | status daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
 | `sysv-rc-conf --level <#...> <pkg> on` | set a daemon to start only at given number(s) | [`sysv-rc-conf` Cmd][sys003] |
 | `runlevel` | 
-| `systemctl {enable\|disable\|isolate} <runlevel>.target` | Set/Change the default target group | [Boot Process][sys005] |
-| `systemctl list-units --type=target` | List all active targets in the active target group | [Boot Process][sys005] |
+| `systemctl {enable\|disable\|isolate} <runlevel>.target` | Set/Change the default target group | [systemd][sys005] |
+| `systemctl list-units --type=target` | List all active targets in the active target group | [systemd][sys005] |
 | `ln -sf /lib/systemd/system/<runlevel>multi-user.target /etc/systemd/system/default.target` | Set the default target group | [Boot Process][sys005] |
+| `init <runlevel>` | systemd system and service manager; 0 - halt/shutdown, 1- single user, 3 - multi-user w/ CLI, 5 - multi-user w/ GUI, 6 - reboot | [Shutdown & Reboot][sys006] |
+| `shutdown -[y\|r\|h] <min>` | Fedora system shutdown or reboot; `h`: halt, `y`: no prompt, `r`: reboot, `<min>`=0: Now | [Shutdown & Reboot][sys006] |
+| `reboot` | Fedora system reboot | [Shutdown & Reboot][sys006] |
+| `exit` | force the system to exit runlevel 1 and revert to the default runlevel | [Shutdown & Reboot][sys006] |
+
 
 
 [sys000]: https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html
@@ -49,6 +54,8 @@
 [sys003]: ../Linux/Networking-LHN/06-SWInstall.md#the-sysv---rc---conf-command
 [sys004]: ../Linux/Networking-LHN/06-SWInstall.md#managing-daemons
 [sys005]: ../Linux/Networking-LHN/07-BootProc.md#systemd
+[sys006]: ../Linux/Networking-LHN/07-BootProc.md#system-shutdown-and-rebooting
+[sys007]: ../Linux/Networking-LHN/07-BootProc.md#
 
 
 ## Hardware 

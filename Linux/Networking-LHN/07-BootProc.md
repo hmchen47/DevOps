@@ -238,12 +238,31 @@
 ## System Shutdown and Rebooting
 
 + Halt/Shut Down The System
+    + SysV cmd: `init 0`
+    + Fedora cmd : `shutdown -hy 0` (0 - Now, # - mins)
 + Reboot The System
+    + SysV cmd: `init 6`
+    + Fedora cmd: `reboot` or `shutdown -ry <min>`
 + Entering Single-user Mode
     + Switching to Single-user Mode
+        + SysV cmd: `init 1`
+        + Entering maintenance mode: `shutdown 1`
     + Entering Single-user Mode At The Grub Splash Screen
+        1. Power on your system. Wait for the "Grub loading" message to appear and, depending on your Linux distribution, get ready to hit either any key or the ESC key to enter the grub boot menu.
+        2. Use the arrow keys to scroll to your desired version of the kernel and then press e for "edit"
+        3. Use the arrow keys to scroll to the "kernel" line and then press e for "edit"
+        4. Use the arrow keys to move to the end of the line and add the word "single" to the end, separated by a space:
+            > grub edit> kernel /vmlinuz-2.6.18-1.2239.fc5smp ro root=LABEL=/  
+            > grub edit> kernel /vmlinuz-2.6.18-1.2239.fc5smp ro root=LABEL=/ single
+        5. Save changes, and then `b` for "boot"
+        6. system  boot w/ root `#` prompt
     + Reverting To Your Default runlevel From Single User Mode
+        + forcing the system to exit runlevel 1 and revert to the default runlevel for the system: `exit`
     + Root Password Recovery
+        1. `Ctrl-Alt-Del`: shut down in an orderly fashion
+        2. Reboot the system and enter single-user mode
+        3. Once at the command prompt, change your password.
+        4. Return to default runlevel w/ `exit` cmd
 
 ## The Linux Console
 
