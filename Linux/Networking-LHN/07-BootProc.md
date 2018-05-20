@@ -267,8 +267,15 @@
 ## The Linux Console
 
 + Getting a GUI Console
+    + manual method: `startx`
+    + Automatic method: `init 5`
 + Get a Basic Text Terminal Without Exiting the GUI
     + Using a GUI Terminal Window
+        + Click on the Fedora logo button in the bottom left hand corner of the screen.
+        + Click on Systems Tools and then Terminal
     + Using Virtual Consoles
-
+        + default: 6 virtual console or TTY sessions
+        + defined by the `mingetty` statements in the `/etc/inittab` file
+        + switch between virtual consoles: `Ctl-Alt-Fn`, where `n`=1~6
+        + GUI login: `CTl-Alt-F7` w/ runlevel 5 or `startx` at CLI
 

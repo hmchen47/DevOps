@@ -45,7 +45,7 @@
 | `shutdown -[y\|r\|h] <min>` | Fedora system shutdown or reboot; `h`: halt, `y`: no prompt, `r`: reboot, `<min>`=0: Now | [Shutdown & Reboot][sys006] |
 | `reboot` | Fedora system reboot | [Shutdown & Reboot][sys006] |
 | `exit` | force the system to exit runlevel 1 and revert to the default runlevel | [Shutdown & Reboot][sys006] |
-
+| `startx` | Run X-window, GUI | [Linuc Console][sys007] |
 
 
 [sys000]: https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html
@@ -55,7 +55,7 @@
 [sys004]: ../Linux/Networking-LHN/06-SWInstall.md#managing-daemons
 [sys005]: ../Linux/Networking-LHN/07-BootProc.md#systemd
 [sys006]: ../Linux/Networking-LHN/07-BootProc.md#system-shutdown-and-rebooting
-[sys007]: ../Linux/Networking-LHN/07-BootProc.md#
+[sys007]: ../Linux/Networking-LHN/07-BootProc.md#the-linux-console
 
 
 ## Hardware 
