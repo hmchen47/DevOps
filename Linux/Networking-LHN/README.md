@@ -17,7 +17,7 @@
 ## [Installing Linux Software](./06-SWInstall.md)
 
 
-## [The Linux Boot Process]
+## [The Linux Boot Process](./07-BootProc.md)
 
 
 ## [Configuring the DHCP Server]
