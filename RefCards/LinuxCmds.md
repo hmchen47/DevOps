@@ -32,7 +32,7 @@
 | `/etc/init.d/ <pkg> {start\|stop\|restart\|status}` | start/stop/restart/status daemon - Non-persistent w/ Init Script | [Managing Daemons][sys004] |
 | `sysv-rc-conf  <pkg> {start\|stop\|restart\|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
 | `systemctl {enable\|disable\|is-enabled} <pkg>.service` | start/stop/status daemon - Persistent w/ `systemd` | [Managing Daemons][sys004] |
-| `chkconfig <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons][sys004] |
+| `chkconfig <pkg> {on\|off}` | start/stop daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons][sys004] |
 | `chkconfig --list` | status daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons][sys004] |
 | `sysv-rc-conf  <pkg> {on\|off}` | start/stop daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
 | `sysv-rc-conf --list` | status daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
@@ -40,7 +40,7 @@
 | `runlevel` | 
 | `systemctl {enable\|disable\|isolate} <runlevel>.target` | Set/Change the default target group | [Boot Process][sys005] |
 | `systemctl list-units --type=target` | List all active targets in the active target group | [Boot Process][sys005] |
-| `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target` | Set the default target group | [Boot Process][sys005] |
+| `ln -sf /lib/systemd/system/<runlevel>multi-user.target /etc/systemd/system/default.target` | Set the default target group | [Boot Process][sys005] |
 
 
 [sys000]: https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html

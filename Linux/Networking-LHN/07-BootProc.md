@@ -186,9 +186,54 @@
         + `ln -sf`: link the `/lib/systemd/system/*.target` file to `/etc/systemd/system/default.target`
             + e.g. `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target` or `ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target`
 
-+ SysV Init
-    + 7-4 Init Runlevel File Locations
++ __SysV Init__
+    + Init Runlevel File Locations
+
+        | Runlevel | Directory |
+        |----------|-----------|
+        | 0 | `/etc/rc.d/rc0.d` |
+        | 1 | `/etc/rc.d/rc1.d` |
+        | 2 | `/etc/rc.d/rc2.d` |
+        | 3 | `/etc/rc.d/rc3.d` |
+        | 4 | `/etc/rc.d/rc4.d` |
+        | 5 | `/etc/rc.d/rc5.d` |
+        | 6 | `/etc/rc.d/rc6.d` |
+    
+    + listing of the scripts in the `/etc/rc.d/rc3.d`
+        ```shell
+        [root@bigboy tmp]# ls /etc/rc.d/rc3.d
+        ...    ...    K75netfs      K96pcmcia    ...    ...
+        ...    ...    K86nfslock    S05kudzu     ...    ...
+        ...    ...    K87portmap    S09wlan      ...    ...
+        ...    ...    K91isdn       S10network   ...    ...
+        ...    ...    K92iptables   S12syslog    ...    ...
+        ...    ...    K95firstboot  S17keytable  ...    ...
+        ```
+        + "S": run at startup
+        + "K": run when shutting down
+        + "number" following "K" or "S": scripts run in ascending order
+        + autogen: Fedora using `chkconfig` while Debian / Ubuntu using `update-rc.d`
+    + Most Linux packages place their startup script in the `/etc/init.d/` and place symbolic links (pointers) to this script in the appropriate subdirectory of `/etc/rc.d/`.
+
     + Determining and Setting the Default Boot runlevel
+        + default boot runlevel set in `/etc/inittab` with `initdefault` variable
+        + Snippet of the file:
+            ```cfg
+            # Default runlevel. The runlevels used by RHS are:
+            # 0 - halt (Do NOT set initdefault to this)
+            # 1 - Single user mode
+            # 2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+            # 3 - Full multiuser mode
+            # 4 - unused
+            # 5 - X11
+            # 6 - reboot (Do NOT set initdefault to this)
+            # 
+            id:3:initdefault:                         # Console Text Mode
+            id:5:initdefault:                         # Console GUI Mode
+            ```
+            + Most home users: GUI (runlevel 5)
+            + Most techies: CLI (runlevel 3)
+            + Changing `initdefault` from 3 to 5, or vice-versa: effect upon next reboot
 
 ## System Shutdown and Rebooting
 
