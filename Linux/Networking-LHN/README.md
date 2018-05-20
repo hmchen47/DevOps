@@ -7,6 +7,18 @@
 
 ## [Linux Networking](./03-LinuxNet.md)
 
++ [How to Configure Your NIC's IP Address](./03-LinuxNet.md#how-to-configure-your-nics-ip-address)
++ [How to Activate/Shut Down Your NIC](./03-LinuxNet.md#how-to-activateshut-down-your-nic)
++ [How to View Your Current Routing Table](./03-LinuxNet.md#how-to-view-current-routing-table)
++ [How to Change Your Default Gateway](./03-LinuxNet.md#how-to-change-your-default-gateway)
++ [How to Configure Two Gateways](./03-LinuxNet.md#how-to-configure-two-gateways)
++ [How to Delete a Route](./03-LinuxNet.md#how-to-delete-a-route)
++ [Changing NIC Speed and Duplex](./03-LinuxNet.md#changing-nic-speed-and-duplex)
++ [How to Convert Your Linux Server into a Simple Router](./03-LinuxNet.md#)
++ [Configuring Your Server as a DNS Client](./03-LinuxNet.md#configuring-your-server-as-a-dns-client)
++ [Configuring Your /etc/hosts File](./03-LinuxNet.md#configuring-your-etchosts-file)
++ [Debian / Ubuntu Network Configuration](./03-LinuxNet.md#debian--ubuntu-network-configuration)
+
 
 ## [Simple Network Troubleshooting](./04-SimpleNetTrbl.md)
 
