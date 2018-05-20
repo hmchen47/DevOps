@@ -91,12 +91,101 @@
 
 ## Boot Runlevels and Targets
 
-+ Table 7-1 Runlevel and Target Descriptions
-+ Systemd
-    + Table 7-2 Systemd Target File Locations
-    + Table 7-3 Important Systemd Boot Related Commands
++ Runlevel and Target Descriptions
+
+    | Runlevel | Target | Description |
+    |----------|--------|-------------|
+    | 0 | runlevel0.target , poweroff.target | Halt |
+    | 1 | runlevel1.target, rescue.target | Single-user mode |
+    | 2 | runlevel2.target | Not used (user-definable) |
+    | 3 | runlevel3.target , multi-user.target | Full multi-user mode (no GUI interface) |
+    | 4 | runlevel4.target | Not used (user-definable) |
+    | 5 | runlevel5.target, graphical.target | Full multiuser mode (with GUI interface) |
+    | 6 | runlevel6.target, reboot.target | Reboot |
+
++ Differences between the `init` and `systemd` systems
+    + `init`: 
+        + The daemon startup scripts in the `/etc/rc.X/` directory are executed, where "X" is the run level
+        + Daemons started sequentially
+        + Daemons tracked by process IDs (PIDs) without constraints on resource usage
+    + `systemd`:
+        + create target directories for daemons in `/etc/systemd/system/`
+        + create custom post boot states
+        + Daemons started in parallel
+        + Daemons tracked by control groups or `cgroups` which limit system resources by class of daemon.
+
++ __Systemd__
+    + Systemd Target File Locations
+
+        | Target | Directory |
+        |-------|-----------|
+        | Default | /etc/systemd/system/default.target.wants |
+        | Multiuser | /etc/systemd/system/multi-user.target.wants |
+        | Network | /etc/systemd/system/network.target.wants |
+        | Sockets | /etc/systemd/system/sockets.target.wants |
+        | Sysinit | /etc/systemd/system/sysinit.target.wants |
+
+    + Fedora RPM daemon packages install their files in the correct locations so that they work correctly at each target level.
+    + Steps of system boots:
+        1. `systemd` reads all the `.target` files in the `/lib/systemd/system/` directory, containing
+            + a list of services that need to be run during the target activation
+            + a list of pre-requisite targets that have to be completed and the target which must be completed immediately beforehand
+            + Example
+                ```cfg
+                #
+                # File: /lib/systemd/system/basic.target
+                #
+                [Unit]
+                Description=Basic System
+                Requires=sysinit.target sockets.target
+                After=sysinit.target sockets.target
+                RefuseManualStart=yes
+                ```
+        2. create a master list of services and start in order; stop after executing the services in the `default.target` file found in the `/etc/systemd/system/`        3. When all this is completed without errors, the system has booted successfully.
+
+    + Important Systemd Boot Related Commands
+
+        | Desired Result | Command |
+        |----------------|---------|
+        | Determine the current default target group | `# ll /etc/systemd/system/default.target` |
+        | Determine the current active target group (Alternative method) | `# runlevel` |
+        | Set the default target group (multi-user) | `# systemctl enable multi-user.target` |
+        | Change the current target group (multi-user) | `# systemctl isolate multi-user.target` / `# systemctl isolate runlevel3.target` |
+        | List all active targets in the active target group | `# systemctl list-units --type=target` |
+
     + Determine the current default target group
-    + Set the default target group
+        + default target: `/etc/systemd/system/default.target`
+        + Verify: `ll /etc/systemd/system/default.target`
+        + Active tagrgets: 
+            ```shell
+            [root@bigboy tmp]# systemctl list-units --type=target 
+            UNIT                LOAD   ACTIVE SUB    JOB DESCRIPTION
+            basic.target        loaded active active     Basic System
+            cryptsetup.target   loaded active active     Encrypted Volumes
+            getty.target        loaded active active     Login Prompts
+            local-fs-pre.target loaded active active     Local File Systems (Pre)
+            local-fs.target     loaded active active     Local File Systems
+            multi-user.target   loaded active active     Multi-User
+            network.target      loaded active active     Network
+            remote-fs.target    loaded active active     Remote File Systems
+            sockets.target      loaded active active     Sockets
+            sound.target        loaded active active     Sound Card
+            swap.target         loaded active active     Swap
+            sysinit.target      loaded active active     System Initialization
+            syslog.target       loaded active active     Syslog
+
+            LOAD   = Reflects whether the unit definition was properly loaded.
+            ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+            SUB    = The low-level unit activation state, values depend on unit type.
+            JOB    = Pending job for the unit.
+            ```
+
+    + Set the default target group - 2 ways
+        + `systemd` cmd: `systemctl enable x.target`
+            + e.g. `systemctl enable multi-user.target` or `systemctl enable graphical.target`
+        + `ln -sf`: link the `/lib/systemd/system/*.target` file to `/etc/systemd/system/default.target`
+            + e.g. `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target` or `ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target`
+
 + SysV Init
     + 7-4 Init Runlevel File Locations
     + Determining and Setting the Default Boot runlevel

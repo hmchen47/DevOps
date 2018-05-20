@@ -24,19 +24,23 @@
 |---------|-------------|------|
 | `chkconfig` | used to activate and deactivate services | [chkconfig][sys000] |
 | `chkconfig --list` | Displayed all services and their current start-up status in each run-level configuration | [List RPMs][sys001] |
-| `systemctl {enable|disable} <daemon>.service` | Enable/Disable at boot time w/ `systemd` | [Auto `yum`][sys[002] |
+| `systemctl {enable\|disable} <daemon>.service` | Enable/Disable at boot time w/ `systemd` | [Auto `yum`][sys002] |
 | `service <daemon> {start|stop}` | Start/Stop a daemon w/ `sysvinit` | [Auto `yum`][sys002] |
-| `systemctl {start|stop} <daemon>.service` | Start/stop a daemon w/ `systemd` | [Auto `yum`][sys002] |
-| `systemctl {start|stop|restart|status} <pkg>.service` | start/stop/restart/status daemon - Non-persistent w/ `systemd`| [Managing Daemons][sys004] |
-| `service <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysvinit`| [Managing Daemons][sys004] |
-| `/etc/init.d/ <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ Init Script | [Managing Daemons][sys004] |
-| `sysv-rc-conf  <pkg> {start|stop|restart|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
-| `systemctl {enable|disable|is-enabled} <pkg>.service` | start/stop/status daemon - Persistent w/ `systemd` | [Managing Daemons][sys004] |
+| `systemctl {start\|stop} <daemon>.service` | Start/stop a daemon w/ `systemd` | [Auto `yum`][sys002] |
+| `systemctl {start\|stop\|restart|status} <pkg>.service` | start/stop/restart/status daemon - Non-persistent w/ `systemd`| [Managing Daemons][sys004] |
+| `service <pkg> {start\|stop\|restart\|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysvinit`| [Managing Daemons][sys004] |
+| `/etc/init.d/ <pkg> {start\|stop\|restart\|status}` | start/stop/restart/status daemon - Non-persistent w/ Init Script | [Managing Daemons][sys004] |
+| `sysv-rc-conf  <pkg> {start\|stop\|restart\|status}` | start/stop/restart/status daemon - Non-persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
+| `systemctl {enable\|disable\|is-enabled} <pkg>.service` | start/stop/status daemon - Persistent w/ `systemd` | [Managing Daemons][sys004] |
 | `chkconfig <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons][sys004] |
 | `chkconfig --list` | status daemon - Persistent w/ `sysvinit` & Init script | [Managing Daemons][sys004] |
-| `sysv-rc-conf  <pkg> {on|off}` | start/stop daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
+| `sysv-rc-conf  <pkg> {on\|off}` | start/stop daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
 | `sysv-rc-conf --list` | status daemon - Persistent w/ `sysv-rc-conf` | [Managing Daemons][sys004] |
 | `sysv-rc-conf --level <#...> <pkg> on` | set a daemon to start only at given number(s) | [`sysv-rc-conf` Cmd][sys003] |
+| `runlevel` | 
+| `systemctl {enable\|disable\|isolate} <runlevel>.target` | Set/Change the default target group | [Boot Process][sys005] |
+| `systemctl list-units --type=target` | List all active targets in the active target group | [Boot Process][sys005] |
+| `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target` | Set the default target group | [Boot Process][sys005] |
 
 
 [sys000]: https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-services-chkconfig.html
@@ -44,6 +48,7 @@
 [sys002]: ../Linux/Networking-LHN/06-SWInstall.md#automatic-updates-with-yum
 [sys003]: ../Linux/Networking-LHN/06-SWInstall.md#the-sysv---rc---conf-command
 [sys004]: ../Linux/Networking-LHN/06-SWInstall.md#managing-daemons
+[sys005]: ../Linux/Networking-LHN/07-BootProc.md#systemd
 
 
 ## Hardware 
