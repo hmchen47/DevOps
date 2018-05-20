@@ -5,7 +5,7 @@
 + Determining Your IP Address: 
     + cmd: `ifconfig -a` or `ip addr` or `ip a`
     + Info on interrupts, or CI bus ID, used by each card except IP and MAC addresses
-    + If NIC card doesn't work because it shares both an interrupt and memory access address with some other device, check /proc/interrupts file to get a listing of all the interrupt IRQs used by the system: `cat /proc/interrupts`
+    + If NIC card doesn't work because it shares both an interrupt and memory access address with some other device, check `/proc/interrupts` file to get a listing of all the interrupt IRQs used by the system: `cat /proc/interrupts`
 + Changing Your IP Address
     + cmd: `ifconfig <if> <ip> netmask <mask> up` or `ip addr add <ip>/<mask> dev <if>`
     + config file: `/etc/rc.local`
