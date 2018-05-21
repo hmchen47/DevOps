@@ -132,3 +132,22 @@ What is the scope of this class?
     + Networking and Security Salaries
         + https://learningnetwork.cisco.com/blogs/certifications/2015/04/03/lets-talk-money-networking-and-security-salaries
 
+## Logical Network Topologies
+
++ Base Network Topology
+
+    <img src="./diagrams/sisas-net0.png" width="600" alt="tBase Network Diagram">
+
++ Network Topology A
+
+    <img src="./diagrams/sisas-net1.png" width="600" alt="Network Diagram A">
+
++ Network Topology B
+
+    <img src="./diagrams/sisas-net2.png" width="600" alt="Network Diagram B">
+
++ Physical Network Diagram
+
+    <img src="./diagrams/sisas-phy.png" width="300" alt="Physical Network Connection">
+
+
