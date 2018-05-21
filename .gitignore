@@ -56,7 +56,6 @@ Thumbs.db
 
 # Exceptions #
 ## ###########
-!./Networking/CiscoCert/300-208.SISAS/diagrams/*.png
-!./Networking/CiscoCert/300-208.SISAS/diagrams/*.pdf
+!./Networking/CiscoCert/300-208.SISAS/diagrams/
 
 
