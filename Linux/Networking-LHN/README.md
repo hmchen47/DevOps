@@ -13,6 +13,16 @@
 
 ## [Troubleshooting Linux with Syslog](./05-TrblSyslog.md)
 
++ [syslog](./05-TrblSyslog.md#syslog)
+    + [The /etc/rsyslog.conf File](./05-TrblSyslog.md#the-etcrsyslogconf-file)
+    + [Activating Changes to the syslog Configuration File](./05-TrblSyslog.md#activating-changes-to-the-syslog-configuration-file)
+    + [How to View New Log Entries as They Happen](./05-TrblSyslog.md#how-to-view-new-log-entries-as-they-happen)
+    + [Logging syslog Messages to a Remote Linux Server](./05-TrblSyslog.md#logging-syslog-messages-to-a-remote-linux-server)
+    + [Syslog Configuration and Cisco Network Devices](./05-TrblSyslog.md#syslog-configuration-and-cisco-network-devices)
++ [Logrotate](./05-TrblSyslog.md#logrotate)
++ [syslog-ng](./05-TrblSyslog.md#syslog-ng)
++ [Simple syslog Security](./05-TrblSyslog.md#simple-syslog-security)
+
 
 ## [Installing Linux Software]
 
