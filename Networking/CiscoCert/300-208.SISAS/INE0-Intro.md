@@ -138,6 +138,14 @@ What is the scope of this class?
 
     <img src="./diagrams/sisas-net0.png" width="600" alt="tBase Network Diagram">
 
+    + SRV-A (INELAB-local): DNS server, AD Domain controller for PC-A
+    + SRV-B: DNS Server for PC-B
+    + ASA3 - FW, SXP: 
+        + Inside interface: Gi0/1.83
+        + Outside interface: Gi0/1.92
+        + DMZ interface: Gi0/1.91
+    + SW3: Security ACL
+
 + Network Topology A
 
     <img src="./diagrams/sisas-net1.png" width="600" alt="Network Diagram A">
@@ -148,6 +156,11 @@ What is the scope of this class?
 
 + Physical Network Diagram
 
-    <img src="./diagrams/sisas-phy.png" width="300" alt="Physical Network Connection">
+    <img src="./diagrams/sisas-phy.png" width="450" alt="Physical Network Connection">
+
++ Software List
+    + ASA 9.1 Software Image w/ ASDM 7.1 - SXP
+    + ISE 1.2 (17) NFR kit
+    + SW: IOS 15.0(2) SE2 or IOS 12.2(37) SE7
 
 
