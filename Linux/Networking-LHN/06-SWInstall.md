@@ -1,4 +1,4 @@
-# Ch06 : Installing Linux Software
+# Ch06 : [Installing Linux Software](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch06_:_Installing_Linux_Software)
 
 ## Introduction
 
@@ -23,8 +23,11 @@
     | Distribution | Location |
     |--------------|----------|
     | Redhat | http://www.redhat.com/; http://www.rpmfind.net/ |
-    | Fedora | ftp://download.fedora.redhat.com/pub/fedora/linux/core/; http://download.fedora.redhat.com/pub/fedora/linux/core/ http://www.rpmfind.net/ |
-    | Debian | http://packages.debian.org; Ubuntu; http://packages.ubuntu.com |
+    | Fedora | ftp://download.fedora.redhat.com/pub/fedora/linux/core/ |
+    | | http://download.fedora.redhat.com/pub/fedora/linux/core/ |
+    | | http://www.rpmfind.net/ |
+    | Debian | http://packages.debian.org |
+    | Ubuntu | http://packages.ubuntu.com |
 
 + Automated Package Download: `yum`, `apt`
 
@@ -32,21 +35,22 @@
 
 + Getting Software Using Web-Based FTP
 + Getting RPMs Using Command-Line Anonymous FTP
++ Typical FTP Commands:
 
-| Command | Description |
-|---------|-------------|
-| `binary` | Copy files in binary mode |
-| `cd` | Change directory on the FTP server |
-| `dir` | List the names of the files in the current remote directory |
-| `exit` | Bye bye |
-| `get` | Get a file from the FTP server |
-| `lcd` | Change the directory on the local machine |
-| `ls` | Same as dir |
-| `mget` | Same as get, but you can use wildcards like "*" |
-| `mput` | Same as put, but you can use wildcards like "*" |
-| `passive` | Make the file transfer passive mode |
-| `put` | Put a file from the local machine onto the FTP server |
-| `pwd` | Give the directory name on the local machine |
+    | Command | Description |
+    |---------|-------------|
+    | `binary` | Copy files in binary mode |
+    | `cd` | Change directory on the FTP server |
+    | `dir` | List the names of the files in the current remote directory |
+    | `exit` | Bye bye |
+    | `get` | Get a file from the FTP server |
+    | `lcd` | Change the directory on the local machine |
+    | `ls` | Same as dir |
+    | `mget` | Same as get, but you can use wildcards like "*" |
+    | `mput` | Same as put, but you can use wildcards like "*" |
+    | `passive` | Make the file transfer passive mode |
+    | `put` | Put a file from the local machine onto the FTP server |
+    | `pwd` | Give the directory name on the local machine |
 
 + Getting Software Using wget
     + used to download files quickly w/ know URL
@@ -60,7 +64,7 @@
     + Download the RPMs
     + install w/ `rpm -Uvh`
 + Using CD-ROMs or DVDs
-    1. Insert the CD-ROM, check the files in the /mnt/cdrom/Fedora/RPMS directory and then install the RPM.
+    1. Insert the CD-ROM, check the files in the `/mnt/cdrom/Fedora/RPMS` directory and then install the RPM.
         ```shell
         mount /mnt/cdrom
         cd /mnt/cdrom/Fedora/RPMS
@@ -75,7 +79,7 @@
         ```
 + Using ISO Files
     + similar to those used when installing from hard disk
-    1. Downloaded the ISO file to the /tmp directory, mount the file, check the files in the /mnt/Fedora/RPMS directory and then install the RPM
+    1. Downloaded the ISO file to the /tmp directory, mount the file, check the files in the `/mnt/Fedora/RPMS` directory and then install the RPM
         ```shell
         mount -o loop -t iso9660 file.iso /mnt
         cd /mnt/Fedora/RPMS
@@ -91,7 +95,7 @@
 ### How to Install Source RPMs
 
 + Procedure
-    + Download source RPM, usually w/ `.src.rpm`
+    + Download source RPM, usually w/ extension: `.src.rpm`
     + Run the following commands as root: `rpmbuild --rebuild filename.src.rpm`
     + Install the compiled RPMs 
 
@@ -104,7 +108,9 @@
     + Fedora digitally signs all its RPM files
     + best to import public encryption key beforehand
     + RPM installation program able to verify the validity of the RPM file
-    + Usually done automatically in newer versions of Fedora: `/usr/share/rhn/RPM-GPG-KEY` & `/usr/share/rhn/RPM-GPG-KEY-fedora`
+    + Usually done automatically in newer versions of Fedora:  
+        `/usr/share/rhn/RPM-GPG-KEY` &  
+        `/usr/share/rhn/RPM-GPG-KEY-fedora`
 
 
 ###  How to List Installed RPMs
@@ -174,8 +180,8 @@
 ### Creating Your Own yum Server
 
 + Requriements:
-    + small business: five to six gigabytes of free disk space per distribution
-    + Large enterprise: twenty-five megabytes in size
+    + small business: 5~6 GB free disk space per distribution
+    + Large enterprise: 25GB in size
     + Network load: minimal on average with an update once or twice a week per server
 + Server farms: a more robust system
 + `yum` clients accessing the `yum` server w/ FTP or HTTP requests
