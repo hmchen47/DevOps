@@ -1,4 +1,4 @@
-# CH04: Simple Network Troubleshooting
+# CH04: [Simple Network Troubleshooting](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch04_:_Simple_Network_Troubleshooting)
 
 ## Introduction
 
@@ -30,11 +30,15 @@
 
 + Viewing Your Activated Interfaces: `ifconfig` or `ip addr`
 + Viewing All Interfaces: `ifconfig -a` or `ip addr` or `ip a`
-    + Shut Down Interface
+    + Shutdowned Interface: w/o IP address and `UP` & `RUNNING`
         ```shell
         wlan0   Link encap:Ethernet  HWaddr 00:06:25:09:6A:D7
                 BROADCAST MULTICAST  MTU:1500  Metric:1
-                ...
+                RX packets:2924 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:2287 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:100
+                RX bytes:180948 (176.7 Kb)  TX bytes:166377 (162.4 Kb)
+                Interrupt:10 Memory:c88b5000-c88b6000
         ```
     + Active Interface
         ```shell
@@ -48,7 +52,7 @@
                 Interrupt:10 Memory:c88b5000-c88b6000
         ```
 + DHCP Considerations
-    + DHCP client auto assign: `192.168.x.x
+    + DHCP client auto assign: `192.168.x.x`
     + check IP addr if failed to communicate w/ DHCP server
 
 ### Testing Link Status from the Command Line
@@ -152,7 +156,7 @@
 ## Using `telnet` to Test Network Connectivity
 
 + w/ TCP port 23
-+ `telnet <ip> <port>`: other than default port
++ Other than default port: `telnet <ip> <port>`
 + Guidelines to identify problems:
     + Test connectivity from the remote PC or server
     + Test connectivity on the server itself - loopback & NIC IP addr
@@ -163,7 +167,7 @@
         + `ctrl-]` to break and `quit` to exit
     + Connection Refused Messages
         + application not enabled
-        + firewall blocking and rejecting: `iptables status` to check firewall
+        + firewall blocking and rejecting: `iptables status`
     + `telnet` Timeout or Hanging
         +  abort the attempted connection after waiting a predetermined time for a response
         + Reasons:
@@ -178,15 +182,15 @@
 ## Testing Web sites with the `curl` and `wget` Utilities
 
 + Web performance test: TCP port80 response time
-+ `curl`: text-based web browser
-+ `wget`" recursively downloaded text-based web browser
-+ Rapid TCP port 80 response time but slow `curl` or `wget` -> misconfig on Web server or applicaitons
++ text-based web browser: `curl`
++ recursively downloaded text-based web browser: `wget`
++ Rapid TCP port 80 response time but slow `curl` or `wget` -> misconfig on Web server or applications
 + Using `curl`: 
     + display header or complete body of HTML code of a Web page
-    + `-I` option: just header and status code
+    + just header and status code: `-I`
     + eg. `curl -I www.linuxhomenetworking.com`
 + Using `wget`
-    + `-N` opton: no timestamps
+    + no timestamps: `-N`
     + eg. `wget -N www.linuxhomenetworking.com`
 
 ## The `netstat` Command
@@ -212,28 +216,28 @@
     | `-F`, `–fib` | display Forwarding Information Base (default) |
     | `-C`, `–cache` | display routing cache instead of FIB |
 
-+ `ss`: dump socket statistics, the substitute of the `netstat`; [Ref](https://computingforgeeks.com/netstat-vs-ss-usage-guide-linux/)
++ `ss`: dump socket statistics, the substitute of the `netstat`; [`netstat` vs. `ss`](https://computingforgeeks.com/netstat-vs-ss-usage-guide-linux/)
 
     | `ss` Option | Description |
     |--------|-------------|
-    | `–n`, `–numeric | don’t resolve service names |
-    | `-r`, `–resolve | : resolve host hostnames. |
-    | `-l`, `–listening | display listening sockets |
-    | `-o`, `–options | show timer information |
-    | `-e`, `–extended | show detailed socket information |
-    | `-m`, `–memory | show socket memory usage |
-    | `-p`, `–processes | show process using socket |
-    | `–s`, `–summary | show socket usage summary |
-    | `-N`, `–net | switch to the specified network namespace name |
-    | `-4`, `–ipv4 | display only IP version 4 sockets |
-    | `-6`, `–ipv6 | display only IP version 6 sockets |
-    | `–0`, `–packet | display PACKET sockets |
-    | `-t`, `–tcp | display only TCP sockets |
-    | `-S`, `–sctp | display only SCTP sockets |
-    | `-u`, `–udp | display only UDP sockets |
-    | `-w`, `–raw | display only RAW sockets |
-    | `-x`, `–unix | display only Unix domain sockets |
-    | `-f`, `–family=FAMILY | display sockets of type FAMILY |
+    | `–n`, `–numeric` | don’t resolve service names |
+    | `-r`, `–resolve` | : resolve host hostnames. |
+    | `-l`, `–listening` | display listening sockets |
+    | `-o`, `–options` | show timer information |
+    | `-e`, `–extended` | show detailed socket information |
+    | `-m`, `–memory` | show socket memory usage |
+    | `-p`, `–processes` | show process using socket |
+    | `–s`, `–summary` | show socket usage summary |
+    | `-N`, `–net` | switch to the specified network namespace name |
+    | `-4`, `–ipv4` | display only IP version 4 sockets |
+    | `-6`, `–ipv6` | display only IP version 6 sockets |
+    | `–0`, `–packet` | display PACKET sockets |
+    | `-t`, `–tcp` | display only TCP sockets |
+    | `-S`, `–sctp` | display only SCTP sockets |
+    | `-u`, ``–udp` | display only UDP sockets |
+    | `-w`, ``–raw` | display only RAW sockets |
+    | `-x`, `–unix` | display only Unix domain sockets |
+    | `-f`, `–family=FAMILY` | display sockets of type FAMILY |
 + TCP: mostly permanent connections
 + HTTP: connection shutdown after a pre-defined inactive timeout or `time_wait` period
 + Number of established and time_wait TCP connections on server: 
@@ -251,7 +255,7 @@
 + Things to know for daemon
     + Start your daemons automatically on booting
     + Stop, start and restart during troubleshooting & modification
-+ Don't turn off`iptables` firewall feature
++ __DO NOT__ turn off `iptables` firewall feature
 
 
 ## Using `traceroute` to Test Connectivity
@@ -320,17 +324,27 @@
 
 ## Using `MTR` To Detect Network Congestion
 
-+ Matt's traceroute (MTR): an application to repeat traceroute in real time
++ __Matt's traceroute (MTR)__: an application to repeat traceroute in real time
 + dynamically show the round-trip time to reach each hop along the traceroute path
-+ ont only visual which hop slow but also when they slow
++ not only visual which hop slow but also when they slow
 + good tool to detect intermittent congestion
 + best, worst and average round trip times in msec for the probe packets
 + run `mtr` extensive period of time as a monitor of communication path quality
 + installed in Fedora by default
 
-```shell
-mtr 192.168.25.26
-```
+    ```shell
+    [root@bigboy tmp]# mtr 192.168.25.26
+                    Matt's traceroute  [v0.52]
+    Bigboy                                            Fri Feb 20 17:19:17 2004
+    Keys:  D - Display mode    R - Restart statistics    Q - Quit
+                                        Packets               Pings
+    Hostname                           %Loss  Rcv  Snt  Last Best  Avg  Worst
+    1. 192.168.1.1                       0%    17   17    32   10   15     32
+    2. 192.168.2.254                     0%    17   17    12   11   18     41
+    3. 192.168.3.15                      0%    17   17    23   14   18     25
+    4. 192.168.18.35                     0%    16   16    24   23   29     42
+    5. 192.168.25.26                     0%    16   16    23   21   26     37
+    ```
 
 ## Viewing Packet Flows with `tcpdump`
 
@@ -355,12 +369,12 @@ mtr 192.168.25.26
 
 + Useful `tcpdump` Expressions
 
-| expression | Description| 
-|-------------|------------|
-| `host <host-address>` | View packets from the IP address host-address|
-| `icmp` | View icmp packets| 
-| `tcp port <port-number>` | View TCP packets with packets with either a source or | `destination TCP port of port-number| 
-| `udp port <port-number>` | View UDP packets with either a source or destination UDP port of port-number| 
+    | expression | Description| 
+    |-------------|------------|
+    | `host <host-address>` | View packets from the IP address host-address|
+    | `icmp` | View icmp packets| 
+    | `tcp port <port-number>` | View TCP packets with packets with either a source or | `destination TCP port of port-number| 
+    | `udp port <port-number>` | View UDP packets with either a source or destination UDP port of port-number| 
 
 + Example: 
 
@@ -384,7 +398,7 @@ mtr 192.168.25.26
 
 + Common Problems with `tcpdump`
     + auto resolve DNS -> slow
-    + sto DNS resolve: `-n`
+    + stop DNS resolve: `-n`
 
 ## Viewing Packet Flows with `tshark`
 
@@ -399,19 +413,19 @@ mtr 192.168.25.26
     | switch | Description |
     |--------|-------------|
     | `-c` | Stop after viewing count packets. |
-    | `-i | Listen on interface. If this is not specified, then the command will use the lowest numbered interface that is UP |
+    | `-i` | Listen on interface. If not specified, use the lowest numbered UP interface |
     | `-w` | Dump the output to a specially formatted TCPdump dump file |
-    | `-C` | Specifies the size the dump file must reach before a new one with a numeric `extension is created. |
-    | `-b` | The size of the ring buffer when the -C switch is selected. |
+    | `-C` | Specifies dump file size to create new w/ numeric extension |
+    | `-b` | Ring buffer size when selecting `-C` |
 
 + Useful `tshark` Expressions
 
     | Expression | Description |
     |--------|-------------|
-    | `host <host-address>` | View packets from the IP address host-address
+    | `host <host-address>` | View packets from the IP address host-address |
     | `icmp` | View icmp packets |
-    | `tcp port <port-number>` | View TCP packets with packets with either a source or `destination TCP port of port-number |
-    | `udp port <port-number>` | View UDP packets with either a source or destination UDP port of port-number |
+    | `tcp port <port-number>` | View TCP packets either a src or dst TCP port |
+    | `udp port <port-number>` | View UDP packets either a src or dst UDP port |
 
 + Example
 
@@ -451,10 +465,10 @@ mtr 192.168.25.26
     | Argument | Description |
     |----------|-------------|
     | `-P0` | Nmap first attempts to ping a host before scanning it.  |
-    | `-T` | Defines the timing between the packets set during a port scan.  |
-    | `-O` | try to detect the OS of the remote server based on known responses to various types of packets. |
+    | `-T` | Defines scanning period  |
+    | `-O` | Detect the OS based on responses |
     | `-p` | Lists the TCP/IP port range to scan. |
-    | `-s` | Defines a variety of scan methods that use either packets that comply with the TCP/IP standard or are in violation of it. |
+    | `-s` | Defines scan methods |
 
 ## Using `netcat` to Test Network Bandwidth
 
@@ -475,7 +489,7 @@ mtr 192.168.25.26
 
 +  The `last` Command
     + determine who has logged into system
-    + e.g., `last -<num>`
+    + e.g., `last [-<num>]`
 +  The `who` Command
     + who currently logged in
     + e.g. `who`

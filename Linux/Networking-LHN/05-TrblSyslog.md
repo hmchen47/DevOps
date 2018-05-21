@@ -1,25 +1,25 @@
-# Ch## ##  : Troubleshooting Linux with syslog
+# Ch05  : [Troubleshooting Linux with syslog](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch05_:_Troubleshooting_Linux_with_syslog)
 
 ## syslog
 
-+ syslog: a utility for tracking and logging all manner of system messages
-+ Descriptive labels of syslog:
++ `syslog`: a utility for tracking and logging all manner of system messages
++ Descriptive labels of `syslog`:
     + 1st: function (facility) of the application
     + 2nd: degree of severity of the message
-+ Syslog Facilities
++ Syslog Facilities [EACE WNID]
 
-| Severity Level | Keyword | Description |
-|----------------|---------|-------------|
-| 0 | emergencies | System unusable |
-| 1 | alerts | Immediate action required |
-| 2 | critical | Critical condition |
-| 3 | errors | Error conditions |
-| 4 | warnings | Warning conditions |
-| 5 | notifications | Normal but significant conditions |
-| 6 | informational | Informational messages |
-| 7 | debugging | Debugging messages |
+    | Severity Level | Keyword | Description |
+    |----------------|---------|-------------|
+    | 0 | emergencies | System unusable |
+    | 1 | alerts | Immediate action required |
+    | 2 | critical | Critical condition |
+    | 3 | errors | Error conditions |
+    | 4 | warnings | Warning conditions |
+    | 5 | notifications | Normal but significant conditions |
+    | 6 | informational | Informational messages |
+    | 7 | debugging | Debugging messages |
 
-### The /etc/rsyslog.conf File
+### The `/etc/rsyslog.conf` File
 
 + config file - defines which file to write the messages: `/etc/rsyslog.conf`
 + Fedora old version: `/etc/syslog.conf`
@@ -44,12 +44,12 @@
        ```
 + Additionally log for certain application independent of the `syslog.conf` file
     + Files:
-        ```
+        ```script
         /var/log/maillog             : Mail
         /var/log/httpd/access_log    : Apache web server page access logs
         ```
     + Directories:
-        ```
+        ```script
         /var/log
         /var/log/samba                      : Samba messages
         /var/log/mrtg                       : MRTG messages
@@ -73,7 +73,7 @@
 ### Logging syslog Messages to a Remote Linux Server
 
 + Configuring the Linux Syslog Server
-    + Fedora: Syslog listens for remote messages only if `SYSLOGD`_OPTIONS w/ `-r`
+    + Fedora: Syslog listens for remote messages only if `SYSLOGD_OPTIONS` w/ __`-r`__
         ```
         # Options to syslogd
         # -m 0 disables 'MARK' messages.
@@ -107,9 +107,9 @@
         + Linux client: `systemctl restart lpd.service`
         + Linux server: `tail /var/log/messages`
 
-### Syslog Configuration and Cisco Network Devices
+### `Syslog` Configuration and Cisco Network Devices
 
-+ syslog reserves facilities "local0" through "local7" for log messages received from remote servers and network devices
++ `syslog` reserves facilities "local0" through "local7" for log messages received from remote servers and network devices
 + Each network devices w/ its own log files for trbl
 
 ## Logrotate
@@ -120,23 +120,19 @@
     + create parameter: creating a new log file after each rotation
 + Sample Contents of /etc/logrotate.conf
     ```
-    # rotate log files weekly
+    # rotate log files weekly / daily
     #weekly
-
-    # rotate log files daily
     daily
 
-    # keep 4 weeks worth of backlogs
+    # keep 4/7 weeks worth of backlogs
     #rotate 4
-
-    # keep 7 days worth of backlogs
     rotate 7
 
     # create new (empty) log files after rotating old ones
     create
     ```
-+ The `/etc/logrotate.d` Directory
-    + Most Linux applications using syslog to put an additional configuration file in this directory
++ The `/etc/logrotate.d/` Directory
+    + Most Linux applications using `syslog` to put an additional configuration file in this directory
     + Verify new applications configure properly
     + e.g.
         ```
@@ -161,7 +157,7 @@
 
 ## syslog-ng
 
-+ `syslog-ng`: combine the features of logrotate and syslog
++ combine the features of logrotate and syslog: `syslog-ng`
 + exclusive w/ `syslog`
 + config file: `/etc/syslog-ng/syslog-ng.conf`
 + Simple Server Side Configuration for Remote Clients
@@ -245,7 +241,7 @@
     };
     ```
 
-+ Using syslog-ng in Large Data Centers
++ Using `syslog-ng` in Large Data Centers
     ```
     options {
 
@@ -338,7 +334,8 @@
     };
     ```
 
-## Simple syslog Security
+## Simple `syslog` Security
 
-+ syslog server not filtering out messages from undesirable sources
++ `syslog` server not filtering out messages from undesirable sources
 + Solution: implement the use of TCP wrappers or a firewall to limit the acceptable sources of messages
+
