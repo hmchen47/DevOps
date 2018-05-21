@@ -110,3 +110,25 @@ What is the scope of this class?
         + SISAS Official Certification Guide
         + AAA Identity Management Security
 
++ Cisco Documentation
+    + Product / Software Documentation
+        + Technology White Papers
+        + Configuration Guides
+        + Command References
+    + Cisco Live Presentations
+        + http://www.ciscolive365.com
+        + Sort by technology and difficulty level
+    + Cisco Validated Designs
+        + http://www.cisco.com/go/cvd
+        + Sort by technology
+
++ Additional Information
+    + CCNP Security Study Group
+        + https://learningnetwork.cisco.com/groups/ccnp-security-studygroup
+    + Sample Exam Questions
+        + https://learningnetwork.cisco.com/community/certifications/ccnpsecurity/sisas/practice
+    + Huge demand for Security experts on the market
+        + Especially Cyber Security Experts
+    + Networking and Security Salaries
+        + https://learningnetwork.cisco.com/blogs/certifications/2015/04/03/lets-talk-money-networking-and-security-salaries
+
