@@ -19,6 +19,13 @@
 
 ## [The Linux Boot Process](./07-BootProc.md)
 
++ [Introduction](./07-BootProc.md#the-linux-boot-sequence)
++ [The Linux Boot Sequence](./07-BootProc.md#grub-configuration-files)
++ [Grub Configuration Files](./07-BootProc.md#boot-runlevels-and-targets)
++ [Boot Runlevels and Targets](./07-BootProc.md#system-shutdown-and-rebooting)
++ [System Shutdown and Rebooting](./07-BootProc.md#system-shutdown-and-rebooting)
++ [The Linux Console](./07-BootProc.md#the-linux-console)
+
 
 ## [Configuring the DHCP Server]
 
