@@ -1,4 +1,4 @@
-# Ch07 : The Linux Boot Process
+# Ch07 : [The Linux Boot Process](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch07_:_The_Linux_Boot_Process)
 
 ## The Linux Boot Sequence
 
@@ -11,10 +11,10 @@
 + Fedora Linux: Grub staged bootloader system
 + Grub Version 1
     + _Stage 1_: run bootloader code (boot.img) from the MBR
-    + _Stage 1.5_: additional code loaded from the 30 kilobytes of hard disk immediately after the , including enough partition and filesystem drivers to allow the Stage 2 to be loaded from a known location in the boot filesystem, usually /boot/grub
+    + _Stage 1.5_: additional code loaded from the 30 kilobytes of hard disk immediately after the , including enough partition and filesystem drivers to allow the Stage 2 to be loaded from a known location in the boot filesystem, usually `/boot/grub`
     + _Stage 2_: load other required drivers and kernel modules before reading the Grub configuration file and displaying the boot menu
 + Grub Version 2
-    +_Stage 1_: read an image file (core.img) in the 30 kilobytes after the MBR
+    + _Stage 1_: read an image file (core.img) in the 30 kilobytes after the MBR
 + Grub After the Boot 
     + GRUB startup menu displayed
     + Select an operating system to boot or to view and edit kernel startup parameters
@@ -94,7 +94,7 @@
 + Runlevel and Target Descriptions
 
     | Runlevel | Target | Description |
-    |----------|--------|-------------|
+    |:----------:|--------|-------------|
     | 0 | runlevel0.target , poweroff.target | Halt |
     | 1 | runlevel1.target, rescue.target | Single-user mode |
     | 2 | runlevel2.target | Not used (user-definable) |
@@ -181,10 +181,12 @@
             ```
 
     + Set the default target group - 2 ways
-        + `systemd` cmd: `systemctl enable x.target`
-            + e.g. `systemctl enable multi-user.target` or `systemctl enable graphical.target`
-        + `ln -sf`: link the `/lib/systemd/system/*.target` file to `/etc/systemd/system/default.target`
-            + e.g. `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target` or `ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target`
+        + `systemd` cmd: `systemctl enable x.target`  
+            > `systemctl enable multi-user.target`  
+            > `systemctl enable graphical.target`
+        + `ln -sf`: link the `/lib/systemd/system/*.target` file to `/etc/systemd/system/default.target`:   
+            > `ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target`   
+            > `ln -sf /lib/systemd/system/graphical.target /etc/systemd/system/default.target`
 
 + __SysV Init__
     + Init Runlevel File Locations
@@ -239,7 +241,7 @@
 
 + Halt/Shut Down The System
     + SysV cmd: `init 0`
-    + Fedora cmd : `shutdown -hy 0` (0 - Now, # - mins)
+    + Fedora cmd : `shutdown -hy 0` (0 = Now, # = mins)
 + Reboot The System
     + SysV cmd: `init 6`
     + Fedora cmd: `reboot` or `shutdown -ry <min>`
