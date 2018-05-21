@@ -1,5 +1,28 @@
 # Course Introduction
 
+
+## CCNP Security Certification Goals
++ Get industry level recognition and knowledge
+    + Knowledge is power
++ Wrong but common approach
+    + Memorize commands and theory
+    + Get certified by any means, read one book, go take exam
+    + Will take you nowhere on the long term
++ Correct but rare approach
+    + Read as many resources as possible
+    + Build knowledge by understanding technologies
+    + Practice as much as possible to enforce knowledge
+    + At CCNP level, configure, verify and troubleshooting
+    + Will pay off in the end, as you’ll become a true expert
+
+## About SISAS
+
++ Current Version is 1.0
++ Exam Topics – Blueprint
+    + Divided into 5 sections
+    + https://learningnetwork.cisco.com/community/certifications/ccnpsecurity/sisas/exam-topics
+    + Additional related topics may show up in the exam, fair game
+
 ## Course Pre-Requisites
 
 Technical Knowledge
@@ -48,4 +71,42 @@ What is the scope of this class?
     + Web Services
     + Profiling and Posture
     + Trustsec
+
+## About CCNP Security Certification
+
++ CCNP Security Exams
+    + 300-208 SISAS (Implementing Cisco Secure Access Solutions)
+    + 300-206 SENSS (Implementing Cisco Edge Network Security Solutions)
+    + 300-209 SIMOS (Implementing Cisco Secure Mobility Solutions)
+    + 300-207 SITCS (Implementing Cisco Threat Control Solutions )
+
+
+## Study Materials
+
++ iNE Materials
+    + CCNA / CCNP Routing and Switching Videos
+    + CCNP Security Technologies Courses
+    + One class for each of the four courses
+    + CCNP Security Bootcamp Course
+    + Available in INE Course Library, focused mostly on examples
+    + CCIE Security Materials
++ Additional Materials
+    + Books
+    + Cisco Documentation
+
++ Recommended Books
+    + General Networking
+        + The TCP/IP Guide
+        + TCP/IP Illustrated, Volume 1: The Protocols
+        + Internetworking with TCP/IP Volume 1
+        + Network Security Fundamentals
+    + CCNA Routing and Switching
+        + CCENT Official Certification Guide
+        + CCNA Official Certification Guide
+    + CCNA Security
+        + CCNA Security Official Certification Guide
+    + CCNP Security SISAS
+        + Cisco ISE for BYOD and Secure Unified Access
+        + SISAS Official Certification Guide
+        + AAA Identity Management Security
 
