@@ -1,4 +1,4 @@
-# Ch03 : Linux Networking
+# Ch03 : [Linux Networking](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch03_:_Linux_Networking)
 
 ## How to Configure Your NIC's IP Address
 
@@ -49,7 +49,9 @@
 + Procedure to create IP alias: subif = `<if>:<#>`
     + Ensure real interface exists
     + Verify no same alias name
-    + Create the virtual interface: `ifconfig <subif> <ip> netmask <mask> up` or `ip addr add <ip>/<mask> dev <if> label <subif>`
+    + Create the virtual interface:  
+        `ifconfig <subif> <ip> netmask <mask> up` or  
+        `ip addr add <ip>/<mask> dev <if> label <subif>`
     + Create a `/etc/sysconfig/network-scripts/ifcfg-<subif>` for permanent setting
         ```
         DEVICE=wlan0:0
@@ -161,8 +163,12 @@
     + default gateway: the router providing access to the Internet
     + the router access corporate network
 + Adding Temporary Static Routes
-    + add new routes to server: `route add -net <net> netmask <mask> gw <ip> <if>` or `ip route add <net>/<mask> via <gwip> dev <if>`
-    + add a route to an individual server: `route add -host <ip> gw <ip> <if>` or `ip route add <ip> via <gwip> dev <if>`
+    + add new routes to server:  
+        `route add -net <net> netmask <mask> gw <ip> <if>` or  
+        `ip route add <net>/<mask> via <gwip> dev <if>`
+    + add a route to an individual server:  
+        `route add -host <ip> gw <ip> <if>` or  
+        `ip route add <ip> via <gwip> dev <if>`
 + Adding Permanent Static Routes
     + Added on a per interface basis in files located in the `/etc/sysconfig/network-scripts/`
     + Filename format: `route-ifname`, e.g., `route-wlan0` for interface `wlan0`
@@ -171,7 +177,9 @@
 
 ## How to Delete a Route
 
-+ Temporary delete a route: `route del -net <net> netmask <mask> gw <ip> <if>` or `ip route del <net>/<mask> via <gwip> dev <if>`
++ Temporary delete a route:  
+    `route del -net <net> netmask <mask> gw <ip> <if>` or  
+    `ip route del <net>/<mask> via <gwip> dev <if>`
 + Permanent delete route: delete associated entry from `/etc/sysconfig/network-scripts/route-<if>`
 
 ## Changing NIC Speed and Duplex
@@ -252,7 +260,7 @@ USERCTL=no
 DEFROUTE=yes
 ```
 
-## Configuring Your /etc/hosts File
+## Configuring Your `/etc/hosts` File
 
 + `/etc/hosts`: list of IP addresses and their corresponding server names
 + Server checking the file before referring DNS
@@ -265,7 +273,7 @@ DEFROUTE=yes
 
 ## Debian / Ubuntu Network Configuration
 
-+ The /etc/network/interfaces File - divided into stanzas
++ The `/etc/network/interfaces` File - divided into stanzas
     + The auto Stanza: interfaces automatically initialized when the system boots up
     + The mapping Stanza: 
         + map configuration parameters for an interface depending on the output of a script
@@ -276,7 +284,7 @@ DEFROUTE=yes
                 script grep
                 map eth0 ether0 # ether0 as logical name
                 map eth1        # logical name as the phy name
-        ```
+            ```
     + The iface Stanza
         + the characteristics of a logical interface
         + Typically iface in the 1st line, then logical name, protocol, and type of addressing scheme
@@ -314,7 +322,6 @@ DEFROUTE=yes
     iface eth1 inet static
             ...
             ...
-            ...
             up route add -net 10.0.0.0 netmask 255.0.0.0 gw 216.10.119.225 eth1
     ```
 + A complete /etc/network/interfaces file
@@ -322,10 +329,7 @@ DEFROUTE=yes
     # 
     # Debian / Ubuntu 
     #
-
-    #
     # File: /etc/network/interfaces
-    #
 
     # The loopback network interface
     auto lo
