@@ -124,4 +124,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source <(kubectl completion bash)
+LS_COLORS=$LS_COLORS:'ow=1;36:' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'ex=0;32:' ; export LS_COLORS
+
+# source <(kubectl completion bash)
