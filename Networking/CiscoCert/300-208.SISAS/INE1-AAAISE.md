@@ -79,7 +79,14 @@
         + Uses separate processes for authentication, authorization and accounting
         + Uses TCP port 49
         + Encrypts entire body of TACACS packet, leaves clear-text header
-    + [RADIUS vs. TACACS](http://www.cisco.com/c/en/us/support/docs/security-vpn/remoteauthentication-dial-user-service-radius/13838-10.html)
+    + [TACACS+ and RADIUS Comparison](https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10.html?dtid=osscdc000283)
+        + TACACS+ Traffic Example
+
+            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-01.gif" alt="TACACS+ Traffic Example" width="400">
+            
+        + RADIUS Traffic Example
+
+            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-02.gif" alt="RADIUS Traffic Example" width="400">
 
 + Cisco’s Authentication Servers
     + Access Control System (ACS)
