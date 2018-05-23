@@ -44,6 +44,9 @@
         + Connected to identity sources: username/password, PKI
         + Can behave like a proxy towards another authentication server
 
+        <br/><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/802.1X_wired_protocols.png" alt="802.1X authentication" width="450">
+
+
 + AAA Protocols
     + Between supplicant and authenticator
         + For device administration
@@ -148,36 +151,33 @@
             + Rules are processed top-down until first match by default
                 + Optionally multiple-rules can be matched with actions being combined
                     + Access-Accept takes precedence over Access-Reject
-    + Authentication policies
-        + Based on configured conditions each request matches a rule
-            + Request is routed over to configured Identity Store or Identity Sequence
-            + Identity is validated
-            + If successful authentication, token is passed over to Authorization policies
-                + Otherwise send Access-Reject or actions configured for authentication failure+ 
+    + Authentication policies <br/>
+        Based on configured conditions each request matches a rule
+        + Request is routed over to configured Identity Store or Identity Sequence
+        + Identity is validated
+        + Actions: 
+            + Success: token passed over to Authorization policies
+            + Failed: send Access-Reject or actions configured
     + Authorization policies
         + Only processed if authentication passed
             + Successful or by the explicit “continue” action
-        + Based on configured conditions each request matches a rule
-            + On match, Access-Accept is issued and optional authorization attributes sent
-                + ACL (dACL, filter-ID ACL, per-user ACL, airespace ACL)
-                + dVLAN and voice VLAN permission
-                + MACsec and URL Redirection (with Redirect-ACL)
+        + Based on configured conditions each request matches a rule: On match, Access-Accept is issued and optional authorization attributes sent
+            + ACL (dACL, filter-ID ACL, per-user ACL, airespace ACL)
+            + dVLAN and voice VLAN permission
+            + MACsec and URL Redirection (with Redirect-ACL)
+
+        <br/><img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="450">
 
 + ISE Authentication Policy: Authentication Policy format
-    + If condition
-        + Identify the RADIUS packet based on RADIUS attributes
-    + Then allowed protocols
-        + Which authentication protocol can be used by the supplicant
-    + And validate credentials
-        + Which identity source can be queried for authentication
+    + If condition: Identify the RADIUS packet based on RADIUS attributes
+    + Then allowed protocols: Which authentication protocol can be used by the supplicant
+    + And validate credentials: Which identity source can be queried for authentication
 
 + ISE Authorization Policy: Authorization Policy format
-    + If condition
-        + Identify the RADIUS session or supplicant by profiling
-    + And optionally if used identity store
-        + Store of user credentials
-    + Then apply authorization profile
-        + User/device authorization
+    + If condition: Identify the RADIUS session or supplicant by profiling
+    + And optionally if used identity store: Store of user credentials
+    + Then apply authorization profile:  User/device authorization
+
 
 
 
