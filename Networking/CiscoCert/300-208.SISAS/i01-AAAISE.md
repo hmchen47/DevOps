@@ -1,8 +1,8 @@
 # AAA and ISE Concepts
 
-## AAA Terminology
+## AAA Model
 
-+ What is AAA ?
++ What is AAA?
     + AAA stands for
         + Authentication
         + Authorization
@@ -61,7 +61,7 @@
         + TACACS+
 
 
-## RADIUS vs. TACACS
+## RADIUS and TACACS+
 
 + RADIUS
     + IETF standard (RFC2865)
@@ -82,28 +82,31 @@
         + Uses separate processes for authentication, authorization and accounting
         + Uses TCP port 49
         + Encrypts entire body of TACACS packet, leaves clear-text header
-    + [TACACS+ and RADIUS Comparison](https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10.html?dtid=osscdc000283)
-        + TACACS+ Traffic Example
 
-            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-01.gif" alt="TACACS+ Traffic Example" width="400">
-            
-        + RADIUS Traffic Example
++ [TACACS+ and RADIUS Comparison](https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10.html?dtid=osscdc000283)
 
-            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-02.gif" alt="RADIUS Traffic Example" width="400">
+    + TACACS+ Traffic Example
 
-+ Cisco’s Authentication Servers
-    + Access Control System (ACS)
-        + Supports both TACACS+ and RADIUS
-        + Mainly used for TACACS+
-    + Identity Services Engine (ISE – NGN RADIUS)
-        + Supports RADIUS with Change of Authorization (CoA)
-        + TACACS+ supported in ISE 2.0
-        + Mainly used for RADIUS
-        + Additional features not supported by ACS
-            + Profiling , posture assessment
-            + Web portal services
+        <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-01.gif" alt="TACACS+ Traffic Example" width="400">
+        
+    + RADIUS Traffic Example
 
-## ISE Fundamentals
+        <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-02.gif" alt="RADIUS Traffic Example" width="400">
+
+## Cisco’s Authentication Servers
+
++ Access Control System (ACS)
+    + Supports both TACACS+ and RADIUS
+    + Mainly used for TACACS+
++ Identity Services Engine (ISE – NGN RADIUS)
+    + Supports RADIUS with Change of Authorization (CoA)
+    + TACACS+ supported in ISE 2.0
+    + Mainly used for RADIUS
+    + Additional features not supported by ACS
+        + Profiling , posture assessment
+        + Web portal services
+
+## ISE Concepts
 
 + What is ISE ?
     + Provides a scalable and unified network access policy platform
