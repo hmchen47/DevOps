@@ -16,6 +16,7 @@
 ### [Layer 2 Authentication - MAB](./i02-MAB.md)
 
 + [802.1X, MAB, and EAP Overview](./i02-MAB.md#)
++ [Extensible Authentication Protocol-Wiki](./i02-MAB.md)
 + [Network Access Authentication](./i02-MAB.md#)
 + [MBA - MAC Authentication Bypass](./i02-MAB.md#)
 + [MAB Configuration Steps on Supplicant](./i02-MAB.md#)
