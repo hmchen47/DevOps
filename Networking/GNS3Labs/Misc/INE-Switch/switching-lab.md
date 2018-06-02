@@ -274,7 +274,7 @@
         + Moving root bridge: 
             + `show spanning-tree vlan <#>` 
                 <pre>
-                ESW2#show spanning-tree vlan 5<br/>
+                ESW2# show spanning-tree vlan 5<br/>
                 VLAN5 is executing the ieee compatible Spanning Tree protocol
                 Bridge Identifier has priority 32768, address c004.2860.0001
                 Configured hello time 2, max age 20, forward delay 15
@@ -282,13 +282,40 @@
                 Topology change flag not set, detected flag not set
                 [output omitted...]
                 </pre>
-            + Not working -> the blocking port moves from ESW-2 to ESW-1 on the same link -> traffic still not flow on the link btw f1/15
+            + `ESW2` is root bridge but Not working -> the blocking port moves from `ESW2` to `ESW1` on the same link -> traffic still not flow on the link btw f1/15
         + Moving root port
             + Solution: bandwidth & cost
-            + Solution 1: reduce cost or port priority on f1/15
+            + Solution 1: reduce cost on non-root bridge w/ f1/15
+                ```cfg
+                ! ESW1 - make the blocking port to forwarding
+                conf t
+                int f1/15
+                  spanning-tree vlan 4 cost 18    ! faster ethernet cost = 19
+                  spanning-tree vlan 5 cost 18
+                exit
+                ```
+            + Verify
                 <pre>
-
+                ESW1(config-if)# do sh spa vlan 4 <br/>
+                 VLAN4 is executing the ieee compatible Spanning Tree protocol
+                   [output omitted...]<br/>
+                 Port 41 (FastEthernet1/0) of VLAN4 is forwarding
+                   [output omitted...]<br/>
+                 Port 50 (FastEthernet1/9) of VLAN4 is <b style="color:darkred">blocking</b>
+                   [output omitted...]<br/>
+                 Port 56 (FastEthernet1/15) of VLAN4 is <b style="color:darkred">forwarding</b>
+                   [output omitted...]<br/>
                 </pre>
-
+            + Solution 2: reduce port priority on root bridge w/ f0/15
+                ```cfg
+                ! ESW2
+                conf t
+                  int f1/15
+                    spanning-tree port-priority 120  
+                    ! the incremental must be 8x, default 128
+                end
+                ```
+            + Verify: ESW1`show spanning-tree vlan 4`
+        
 
 
