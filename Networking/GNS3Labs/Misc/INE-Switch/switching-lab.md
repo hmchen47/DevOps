@@ -134,10 +134,10 @@
         int f0/0.4      ! VLAN 4
             enc dot 4
             ip add 1.2.4.2 255.255.255.0
-        int f0/0.5
+        int f0/0.5      ! VLAN 5
             enc dot 5
             ip add 1.2.5.2 255.255.255.0
-        int f0/0        ! VLAN 5
+        int f0/0
             no shut
         do sh ip int br
         do wr
@@ -145,38 +145,67 @@
         + Verify: R2 & R3 connecctivity
             + VLAN: `show vlan-switch`
 
-    + Config VTP & VLANs on EtherSwitch Routers
+    + Config VTP & VLANs on EtherSwitch Routers - C2691-ADVENTERPRISEK9-M, IOS 12.4(23)
         ```cfg
-        # ESW2
+        # ESW2 - Get VLAN config from ESW-1
         vlan database
             vtp domain INE
             vtp client
-            vlan 4
-            vlan 5
             exit
         conf t
-        int range f1/9, f1/15
-            switchport
+        int range f1/9 , f1/15
             switchport mode trunk
             no sut
         do wr
 
-        # ESW2
+        # ESW1
         vlan database
             vtp domai INE
             vtp server
-            vlan 4-5
+            vlan 4
+            vlan 5
             exit
         conf t
-        int range f1/9, f1/15
-            switchport
+        int range f1/9 , f1/15
             switchport mode trunk
-        vlan 4-5
         do wr
         ```
         + Verify:
             + VTP: `show int trunk`, `show vlan-switch`, `show spanning-tree {brief|int <if>|root|summary|vlan <#>}`
-            + Connectivity: R1 - `ping 2.3.2.3`, `ping `3.2.4.3`
+            <pre>
+            ESW1#show interface trunk<br/>
+            Port      Mode         Encapsulation  Status        Native vlan
+            Fa1/9     on           <b style="color:darkred">802.1q         trunking</b>      1
+            Fa1/15    on           <b style="color:darkred">802.1q         trunking</b>      1<br/>
+            Port      Vlans <b>allowed on trunk</b>
+            Fa1/9     1-1005
+            Fa1/15    1-1005<br/>
+            Port      Vlans allowed and <b>active</b> in management domain
+            <b>Fa1/9     1,4-5</b>
+            <b>Fa1/15    1,4-5</b><br/>
+            Port      Vlans in spanning tree forwarding state and not pruned
+            Fa1/9     1,4-5
+            Fa1/15    none<br/>
+            ESW1#show interfaces f1/9 switchport 
+            Name: Fa1/9
+            Switchport: Enabled
+            Administrative Mode: trunk
+            <b>Operational Mode: trunk</b>
+            Administrative Trunking Encapsulation: dot1q
+            Operational Trunking Encapsulation: dot1q
+            [output ommited...]<br/>
+            ESW1#show vlan-switch 
+            VLAN Name                             Status    Ports
+            ---- -------------------------------- --------- --------------------------
+            1    default                          active    Fa1/0, Fa1/1, Fa1/2, Fa1/3
+                                                            Fa1/4, Fa1/5, Fa1/6, Fa1/7
+                                                            Fa1/8, Fa1/10, Fa1/11, Fa1/12
+                                                            Fa1/13, Fa1/14
+            <b style="color:darkred">4    VLAN0004                         active</b>  <-- ESW-2 learned from ESW-1
+            <b style="color:darkred">5    VLAN0005                         active</b>  <-- ESW-2 learned from ESW-1
+            </pre>
+
+            + Connectivity: R1 - `ping 2.3.2.3`, `ping 3.2.4.3`
     + Troubleshooting:
         + EWS2: `sh run interface f1/0` -> no config
             ```cfg
@@ -187,17 +216,49 @@
             do wr
             ```
             + Connectivity: R1 - `ping 1.2.4.2`
-        + ESW1: `sh run | s interface` --> f0/0 not configured
+        + ESW1: `sh run | s interface` --> 1/0 not configured
             ```cfg
             conf t
-            int f0/0
+            int f1/0
                 switchport mode trunk
                 no shut
             do wr
             ```
             + Verify: `sh spanning-tree int f0/0`: listening->learning->forwarding
-        + R1: `show ip int br`-> ok; `sh ip route`
+                <pre>
+                ESW1#sh spanning-tree int f1/0
+                Port 41 (FastEthernet1/0) of VLAN1 is <b style="color:darkred">forwarding</b>
+                  Port path cost 19, Port priority 128, Port Identifier 128.41.
+                  Designated root has priority 32768, address c004.2860.0000
+                  Designated bridge has priority 32768, address c005.26e0.0000
+                  Designated port id is 128.41, designated path cost 19
+                  Timers: message age 0, forward delay 0, hold 0
+                  Number of transitions to forwarding state: 1
+                  BPDU: sent 742, received 0
+                </pre>
+        + R1: `show ip int br`=> ok; `sh ip route` => ok
         + ESW2: `show int f0/0 switchport`=> ok; `sh int trunk` => ok; `sh span vlan 4` => ok; `sh span vlan 5` => ok
+            <pre>
+            ESW1#show spanning-tree vlan 4<br/>
+            VLAN4 is executing the ieee compatible Spanning Tree protocol
+              Bridge Identifier has priority 32768, address c005.26e0.0001
+              Configured hello time 2, max age 20, forward delay 15
+              Current root has priority 32768, address c004.2860.0001
+              Root port is 50 (FastEthernet1/9), cost of root path is 19
+              Topology change flag not set, detected flag not set
+            [output omitted...]<br/>
+            Port 41 <b style="color:darkred">(FastEthernet1/0) of VLAN4 is forwarding</b>
+            [output omitted...]<br/>
+            Port 50 (FastEthernet1/9) of VLAN4 is <b style="color:darkred">forwarding</b>
+              Port path cost 19, Port priority 128, Port Identifier 128.41.
+              Designated root has priority 32768, address c004.2860.0001
+              Designated bridge has priority 32768, address c005.26e0.0001
+              Designated port id is 128.41, designated path cost 19
+            [output omitted...]<br/>
+              Port 56 (FastEthernet1/15) of VLAN4 is <b style="color:darkred">blocking</b>
+              Port path cost 19, Port priority 128, Port Identifier 128.56.
+            [output omitted...]
+            </pre>
         + ESW1: `sh span vlan 4` => ok; `sh span vlan 5` => ok
         + R2: `sh ip intbr` => f0/0 down; 
             ```cfg
@@ -207,5 +268,27 @@
             do wr
             ```
         + R1: `ping 2.3.2.3`, `ping 3.2.3.3`
-    + 
+    + Modify STP for VLAN 5 w/ higher number ports (`f1/15`)
+        + Situation: traffic between R1 & R2 across f1/9
+        + Requireemnt: VLAN 5 traffic flows btw f1/15
+        + Moving root bridge: 
+            + `show spanning-tree vlan <#>` 
+                <pre>
+                ESW2#show spanning-tree vlan 5<br/>
+                VLAN5 is executing the ieee compatible Spanning Tree protocol
+                Bridge Identifier has priority 32768, address c004.2860.0001
+                Configured hello time 2, max age 20, forward delay 15
+                We are the  <b style="color:darkred">root of the spanning tree</b>
+                Topology change flag not set, detected flag not set
+                [output omitted...]
+                </pre>
+            + Not working -> the blocking port moves from ESW-2 to ESW-1 on the same link -> traffic still not flow on the link btw f1/15
+        + Moving root port
+            + Solution: bandwidth & cost
+            + Solution 1: reduce cost or port priority on f1/15
+                <pre>
+
+                </pre>
+
+
 
