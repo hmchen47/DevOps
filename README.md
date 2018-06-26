@@ -29,6 +29,8 @@ Contents:
     + [Technical Support Fundamental - Google, Coursera](./ITSupport/TechnicalSupportFundamentals-Google)
 
 
+------------------------------------
+
 NB: keywords for Git Commits
 
 | Symbol   | Description |
