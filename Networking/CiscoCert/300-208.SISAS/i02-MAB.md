@@ -335,7 +335,30 @@
         + `show autheentication session int f1/0/2`
     + ISE Verification: Operations > Authentication > Entry details
 
++ Authentication with Frame (Previous Call Check)
+    + ISE-1: Policy > Results > Authentication > MAB: 
+        + enable Allow WAP MD5
+        + disable Allow EAP-MD5 as Host Lookup
+        + Valling Station ID & EAP-MD5 both working
+    + SW1:
+        ```cfg 
+        show authetication sessions     ! get <sid>
+        clear authentication sessions session-id <sid>  ! success but not what we want
+        conf t
+        int f1/0/2
+          mab eap
+        exit
+        do show authentication sessions ! get <sid>
+        do clear authetication sessions session-id <sid>
+        do show mab all     ! mab eap used
+        ```
+    + Verification from ISE-1: 
+        + Operations > Authentications > Entry detail selected: EAP-MD5 (use service type of frame, not service type of call check)
+        + Policy > Authentications: 1st rule - Wired_MAB user Internal Users
+        + Policy > Condiitions > Authentications > Compond Conditions > Wired_802.1x: Service TYpe=Framedl NAS-Port-TYpe=Ethernet
 
+
+         
 
 
 
