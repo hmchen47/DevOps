@@ -317,8 +317,26 @@
         + `show mab all`
     + Verification on ISE-1: Operations > Authentications > Entry (for detail)
 
++ Authentication with Username & Password
+    + ISE-1: using MAC address as username
+        + Administration > Identity Management / Identities > Users > Add: Name=d867d9e0bbc0 (not allowed by default)
+        + Adminstration > Settings > User Password Policy:
+            + disable username & password not the same
+            + disable contain uppercase Alphabetic characters
+    + ISE-1 Policy Results > Authentication > Allowed Protocols > MAB: 
+        + disable Process Host Lookup
+        + enable Allow:PAP/ASCII
+    + SW1: `clear authentication sessions session-id <sid>
+    + ISE-1 Verification: Operations > Authentications - failed entry shown
+    + ISE-1: Policy > Authetication > MAB Entry: use=Internal Users
+    + SW1: 
+        + `show authetication sessions` -> failed
+        + `clear authentication sessions session-id <sid>` -> trigger to re-authenticate
+        + `show autheentication session int f1/0/2`
+    + ISE Verification: Operations > Authentication > Entry details
 
-    
+
+
 
 
 
