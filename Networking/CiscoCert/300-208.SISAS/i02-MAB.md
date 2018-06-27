@@ -1,4 +1,4 @@
-# Layer 2 Authentication - MAB
+# Authentication & Authorization - MAB
 
 ## 802.1X, MAB, and EAP Overview
 
@@ -219,49 +219,7 @@
     + `debug mab all`
     + `debug radius authentication`
 
-## MAB and 802.1x Common Authorizations
-
-+ VLAN
-    + Data VLAN (by name or number)
-    + Optional, it overrides the VLAN locally configured on NAD switch port
-    + Voice VLAN permission
-    + Mandatory for voice domain, allows Phone to join the voice VLAN as configured locally on NAD
-
-## MAB and EAP Common Authorizations
-
-+ Access-Lists
-    + dACL (Cisco Proprietary, uses AV pairs)
-        + Before 12.2(55)SE code, switch port required a pre-auth ACL to be applied
-        + ACL configured on ISE
-    + Filter-ID ACL (IETF standard)
-        + ACL configured on NAD
-    + Per-user ACL (Cisco proprietary, uses AV pairs)
-        + ACL configured on ISE and ACE’s pushed through authorization by ISE
-        + ACL configured on NAD and ACL name pushed through authorization by ISE
-+ ACL Common configuration requirements on NAD
-    + `aaa authorization network default group`
-    + `dACL also needs radius-server vsa send authentication`
-    + `ip device tracking`
-
-## Authorization Verification Troubleshooting
-
-+ Verification
-    + `show ip access-list interface <if_number>`
-    + `show ip interface <if_number>`
-    + `show epm session interface <if_number>`
-    + `show authentication interface <if_number>`
-    + `show authentication session interface <if_number>`
-+ Troubleshooting
-    + `show ip device tracking all`
-    + `show aaa method-lists authorization`
-    + `debug radius authentication`
-    + `debug ip device tracking events`
-
 ## ISE MAB Authentication
-
-<a href="https://youtu.be/nazpNmmU2Ys" alt="CCIE Security v4 ATC : ISE MAB Authentication" target="_blank">
-  <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
-</a>
 
 + MAB Config
     + Enable AAA: `aaa new-model`
@@ -357,9 +315,63 @@
         + Policy > Authentications: 1st rule - Wired_MAB user Internal Users
         + Policy > Condiitions > Authentications > Compond Conditions > Wired_802.1x: Service TYpe=Framedl NAS-Port-TYpe=Ethernet
 
+<a href="https://youtu.be/nazpNmmU2Ys" alt="CCIE Security v4 ATC : ISE MAB Authentication" target="_blank">
+  <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
+</a>
 
-         
 
+
+## MAB and 802.1x Common Authorizations
+
++ VLAN
+    + Data VLAN (by name or number)
+    + Optional, it overrides the VLAN locally configured on NAD switch port
+    + Voice VLAN permission
+    + Mandatory for voice domain, allows Phone to join the voice VLAN as configured locally on NAD
+
+## MAB and EAP Common Authorizations
+
++ Access-Lists
+    + dACL (Cisco Proprietary, uses AV pairs)
+        + Before 12.2(55)SE code, switch port required a pre-auth ACL to be applied
+        + ACL configured on ISE
+    + Filter-ID ACL (IETF standard)
+        + ACL configured on NAD
+    + Per-user ACL (Cisco proprietary, uses AV pairs)
+        + ACL configured on ISE and ACE’s pushed through authorization by ISE
+        + ACL configured on NAD and ACL name pushed through authorization by ISE
++ ACL Common configuration requirements on NAD
+    + `aaa authorization network default group`
+    + `dACL also needs radius-server vsa send authentication`
+    + `ip device tracking`
+
+## Authorization Verification Troubleshooting
+
++ Verification
+    + `show ip access-list interface <if_number>`
+    + `show ip interface <if_number>`
+    + `show epm session interface <if_number>`
+    + `show authentication interface <if_number>`
+    + `show authentication session interface <if_number>`
++ Troubleshooting
+    + `show ip device tracking all`
+    + `show aaa method-lists authorization`
+    + `debug radius authentication`
+    + `debug ip device tracking events`
+
+
+
+## ISE 802.1x & MAB Authorization
+
+
+
+
+
+
+
+<a href="https://www.youtube.com/watch?v=VzBlhdLGWt4" alt="CCIE Security v4 ATC : ISE 802.1x & MAB Authorization" target="_blank">
+  <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
+</a>
 
 
 
