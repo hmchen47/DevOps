@@ -13,7 +13,7 @@
 + [ISE Management](./i01-AAAISE.md#)
 + [ISE Authentication Policies](./i01-AAAISE.md#)
 
-### [Layer 2 Authentication - MAB](./i02-MAB.md)
+### [Authentication & Authorization - MAB](./i02-MAB.md)
 
 + [802.1X, MAB, and EAP Overview](./i02-MAB.md#)
 + [IEEE 802.1X](./i02-MAB.md#)
@@ -24,23 +24,27 @@
 + [MAB Configuration Steps on NAD](./i02-MAB.md#)
 + [MAB Configuration Steps on ISE](./i02-MAB.md#)
 + [MAB Verification and Troubleshooting](./i02-MAB.md#)
++ [ISE MAB Authentication](./i02-MAB.md#ise-mab-authentication)
 + [MAB and 802.1x Common Authorizations](./i02-MAB.md#)
 + [MAB and EAP Common Authorizations](./i02-MAB.md#)
 + [Authorization Verification Troubleshooting](./i02-MAB.md#)
++ [ISE 802.1x & MAB Authorization](./i02-MAB.md#ise-8021x-&-mab-authorization)
 
-### [Layer 2 Authentication - EAP](./i03-EAP.md)
+### [Authentication & Authorization - ACL & EAP](./i03-ACLEAP.md)
 
-### [ISE Identity Sources](./i04-Indentity.md)
 
-### [Phased Deployment](./i05-Deploy.md)
+### [Authentication & Authorization - AD & Policies](./i04-ADPolicy.md)
 
-### [Layer 3 Authentication – HTTP / HTTPS](./i06-HTTP.md)
+### [Authentication & Authorization - TSL & EAP-FAST](./05-TSLFAST.md)
 
-### [EndPoint Profiling](./i07-Profiling.md)
+### [Phased Deployment](./i06-Deploy.md)
 
-### [Posture Assessment](./i08-Posture.md)
+### [Layer 3 Authentication – HTTP / HTTPS](./i07-HTTP.md)
 
-### [Layer 2 Encryption - MACSec](./i09-MACsec.md)
+### [EndPoint Profiling](./i08-Profiling.md)
 
-### [Security Group Tags - SGT](./i10-SGT.md)
+### [Posture Assessment](./i09-Posture.md)
+
+### [TrustSec](./i10-TrustSec.md)
+
 
