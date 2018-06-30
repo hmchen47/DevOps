@@ -403,10 +403,26 @@
     + Per-user ACL (Cisco proprietary, uses AV pairs)
         + ACL configured on ISE and ACE’s pushed through authorization by ISE
         + ACL configured on NAD and ACL name pushed through authorization by ISE
+
 + ACL Common configuration requirements on NAD
     + `aaa authorization network default group`
     + `dACL also needs radius-server vsa send authentication`
     + `ip device tracking`
+
++ Demo: SW3 Config
+    ```ini
+    conf t
+      aaa authorization network default group radius
+      ip device tracking
+      ip device tracing probe interval 30
+    exit
+    show ip device tracking all    ! all msgs
+    ```
++ Message Flow:
+    1. SW3 w/ `ip device tracking`
+    2. ISE config ACL: a) permission; b) source=nay; c) destination=any/specific; e.g., `permit ip ant host 10.10.10.10`
+    3. push ACL to SW3
+
 
 ## Authorization Verification Troubleshooting
 
