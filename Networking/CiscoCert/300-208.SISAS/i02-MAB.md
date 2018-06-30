@@ -686,6 +686,141 @@
 
 ## ACL Authorization: dACL
 
++ Typical Client Authorization Flow
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/360001-370000/361000-362000/361409.tif/_jcr_content/renditions/361409.jpg" alt="https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_0100.html" width="700">
+
++ Demo: Basic Config
+    + Pre-requirement:
+        1. ISE Authorization properly configed
+        2. Switch can apply authorization: `aaa authentication network` properly confied
+    + Push authorization from ISE1 to SW3
+    + SW3 Config Verification:
+        ```cfg
+        show run | i aaa
+        ! aaa new-model
+        ! aaa authentication dot1x default group radius
+        ! aaa authorization network default group radius
+        ! aaa session-id common
+
+        conf t
+        no aaa authentication network default group rasius
+        exit
+        debug radius authentication
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        ```
+        + Debug msgs: 
+            + Tunnel-Medium-Type=01:AALL_802; Tunnel-Type=01:VLAN; Tunnel-Private-Group=01:"90"
+            + Authentication result 'success' from 'mab' for client
+            + Authentication succeeded for client -> misleading: not mean sw able to enforce authorization rx from ISE; not indicate authorization applied to sw or not; only msg rx
+    + SW3 Vertifcation & TRBL:
+        ```cfg
+        show authentication sessions int gi1/0/5
+        ! Authorized BY=Authentication Server; VLAN Policy=N?A
+        show spanning-tree int gi1/0/5  ! VLAN 10
+        conf t
+        aaa authentication network default group radius
+        int gi1/0/5
+            shut
+            no shut
+        exit
+        show authentication sessions int gi1/0/5
+        ! Authorized BY=Autherntication Server; VLAN Policy=90
+        undebug all
+        ```
++ Demo: dACL Config
+    + SW3 Config:
+        ```cfg
+        show run | i aaa
+        conf t
+        ip device tracking
+        ip device tracking probe interval 30
+        radius-server vsa send authentication
+        ```
+    + ISE: 
+        + Action: Policy > Policy Elements > Results > Authentication > downloadable ACK > Add: Name=DACL_DATA_VLAN90; DACL Contents=(permit tcp __any__ any; permit icmp __any__ any) [__any__: must be, otherwise, sw won't work] > enable DACL Syntax > Submit
+        + Condition: Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=DACL_DATA_VLAN90; Common tasks= (DACL NAME=DACL_DATA_VLAN90) > Save
+    + SW1 Verification:
+        ```cfg
+        show authentication sessions int gi1/0/5
+        show run int gi1/0/5
+        ! interface gigabitEthernet1/0/5
+        !   switchport access vlan 10
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   mab
+        !   spanning-tree portfast
+        ! end
+        conf t
+        int gi1/0/5
+          switchport valn 90
+          shut
+          no shut
+        exit
+        ! ...
+        undebug all
+        ```
+        + msgs: send Authentication-Request to 172.16.3.100:164; Access-Accept; Cisco AV Pair=...DACL_DATA...__#ACSACL#-IP__-DACL_DATA_VLAN90-569e75d1 (#ACSACL#-IP: inherit from ACL; 569e75d1: random ID); Send Access-Request to ... (New Access Request); User-Name: #ACSACL#-IP-DACL_DATA_VLAN90-569e75d1; Venddor, Cisco: Cisco AV Pair="aaa: event=acl-downloadble"; Access-Accept; Cisco AVPair="ip:inacl#1=permit icmp any any"
+        + Msg flow: 
+            1. Authentication-Request from SW3 to ISE1
+            2. Access-Accept (DACL) from ISE to SW3
+    + SW3 Verification
+        ```cfg
+        show run | i radius
+        ! aaa authentication dot1x
+        ! aaa authorization network default group radius (apply for dACL content)
+        ! ip radius siurce-interface Loopback0
+        ! radius-server host 172.16.3.100 key radiuskey
+        ! radius vsa send authentication (allow sw to send 2nd authentication request)
+        
+        show authentication sessions    ! Authz Success Gi1/0/5
+        show authentication sessions int gi1/0/5
+        ! VLAN Policy=N/A; ACSACL=xACSACKx-IP-DACL_DATA_VLAN90-569e75d1
+        
+        show ip access-lists Authe-Default-ACL
+        ! Standard ACL
+        !   10 permit udp any range bootps 65347 any range bootpc 65348
+        !   20 permit udp any any range bootps 65347
+        !   30 deny ip any any
+        ! Extended IP Access List xACSACKx-IP-DACL_DATA_VLAN90-569e75d1
+        !   10 permit icmp any any
+        
+        shwo ip access-list int gi1/0/5 ! permit icmp any any
+        show ip int gi1/0/5     ! Auth_Deafult=ACL
+        show epm int gi1/0/5
+        show epm session ip 172.16.20.101       
+        ! ACS ACL=xACSACKx-IP-DACL_DATA_VLAN90-569e75d1
+        ```
+        + msg flow:
+            1. Authen-Request (DACL download)
+            2. Access-Accept (DACL content)
+    + PC-B Verification: `ping 172.16.20.1` - ok; `telnet172.16.20.1` - timeout
+
++ Demo: Disable Radius
+    + SW3 Config & Verification: 
+        ```cfg
+        conf t
+        no radius-server vsa send authentication
+        exit
+        debug radiusauthentication 
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        ! ...
+        undebug all
+        show authentication sessions                ! get <sid>
+        shwo authentication sessions int gi1/0/5
+        ! Authenticated By=Authentication Server
+        show ip access-list                         ! None
+        ```
+        + msgs: Send Access-Request; Calling-Station-ID = MAC; Service-Type=Call check; Access-Accept; Cisco AVPair= "ACS:CiscoSecure-Defined-ACL=xACSACKx-IP-DACL_DATA_VLAN90-569e75d1"; Vendor, Cisco=""; EVENT DOWNLOAD -FAIL
+    + PC-B Verification: `ping 172.16.20.1` - failed
 
 
 ## ACL Authorization: Filter-ID ACL
