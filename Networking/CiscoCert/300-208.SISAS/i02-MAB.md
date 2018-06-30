@@ -183,6 +183,9 @@
 + If “Process Host Lookup” is disabled on RADIUS server
     + Authentication is done based on the RADIUS User-Name and User-Password attributes value
 
++ High-Level MAB Sequence
+    <br/><img src="https://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/config_guide_c17-663759.doc/_jcr_content/renditions/config_guide_c17-663759-02.jpg" alt="https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/config_guide_c17-663759.html" width="600">
+
 ## MAB Configuration Steps on Supplicant
 
 + Not Required, due to
@@ -319,7 +322,11 @@
   <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
 </a>
 
++ Simple Authentication Policy Flow
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/230001-240000/239001-240000/239660.tif/_jcr_content/renditions/239660.jpg" alt="https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010010.html" width="450">
 
++ Rule-Based Authentication Policies
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/230001-240000/239001-240000/239658.tif/_jcr_content/renditions/239658.jpg" alt="https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010010.html" width="600">
 
 ## MAB and 802.1x Common Authorizations
 
@@ -363,6 +370,51 @@
 
 ## ISE 802.1x & MAB Authorization
 
++ Topology: PC A (Supplicant) -- IP Phone -- SW1 (Authenticator/NAD) -- R1 -- ISE-1 (Authentication Server)
++ Demo: Authorize SW1 Data VLAN
+    <br/><img src="diagrams/mab-ccie.png" alt="Network Topology" width="600">
+    + SW1 Config
+        + `show run | b aaa`
+            > aaa new-model <br/>
+            > ! ISE server <br/>
+            > aaa group server radius ISE_RADIUS <br/>
+            >   server-private 172.16.3.100 auth-port 1645 acct-port 1646 key cisco <br/>
+            >   server-private 172.16.1.100 auth-port 1645 acct-port 1646 key cisco ! remove <br/>
+            >   ip radius source-interface Loopback0 <br/>
+            > ! global authentication <br/>
+            > aaa authentication dot1x default group ISE_RADIUS <br/>
+            > aaa session-id common <br/>
+
+            > switch 1 provisioning WS-C3750-24p <br/>
+            > System mtu routing 1500<br/>
+            > vtp file vlan.dat<br/>
+            > ip routing<br/>
+            > no ip domain-lookup<br/>
+            > ip domain-name ine.com<br/>
+
+        + `show run int f1/0/2`
+            > switchport access vlan 29 <br/>
+            > switchport mode access <br/>
+            > authentication port-control auto  ! enable <br/>
+            > mab eap   ! method <br/>
+            > spanning-tree portfast
+        + Change MAB
+            ```cfg
+            conf t
+            int f1/0/2
+            mab
+            do show authetication sessions  ! status
+            ```
+        + Verification: `show spanning-tree int f1/0/2` -> VLAN0029
+
++ Demo: Config ISE-1
+    + Verify: Policy > Authorization > Default entry
+    + Create Action: Policy > Results > Authorization > Authorixation Profiles > Add: 
+        + Name = MAB_WIRED_PROFILE
+        + VLAN Tage/Name = 17
+    + Create Condition: Policy > Authorization > Standard: Insert an entry above `Default.Called`: 
+        + Result Name = MAB_WIRED
+        + Condition = Wired_MAB (within compound)
 
 
 
