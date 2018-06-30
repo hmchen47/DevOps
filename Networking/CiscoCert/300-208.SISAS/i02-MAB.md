@@ -548,6 +548,22 @@
     + R2 Verification: `ping 136.1.29.2` - ok
     + SW1 Verification: `sow ip access-lists VLAN29`
 
++ Demo: Per-User ACL
+    + ISE Config: 
+        + Settings: Policy > Authorization > Advanced Attribute Settings > Dictionaries > Cisco: cisco-av-pair=ip:inacl#1=permit ip any any
+        + Action: Policy > Authorization > Results > Authorization Profiles > MAB_WIRED_PROFILE: enable button field for the configured filter-id
+    + SW1 Config: 
+        ```ini
+        show authentication sessions
+        clear authetication sessions session-id <sid>
+        ! Observe msgs: EPM-6-POLICY_REQ, EPM-6-POLICY_EVENT
+        show ip device tracking     ! enabled
+        show authentication sessions        ! Authz Success
+        show authentication sessions int f1/0/2     ! per-user ACL
+        show epm session ip <ip>        ! per-user ACL
+        ```
+    + R2 Verification: `ping 136.1.29.9` - ok <br/>
+        Through `permit ip any any` not other ip subnet allowed -> get restriction from ISE
 
 
 
