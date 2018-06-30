@@ -495,7 +495,7 @@
         show ip device tracking     ! enabled not None
         ```
     + SW1 Config:
-        ```cfg
+        ```ini
         show run int f1/0/2
         ! interface FastEthernet1/0/2
         !   switchport access vlan 29
@@ -519,7 +519,35 @@
     + R2 Verification: `ping 126.1.29.9` - ok <br/>
         ==> Client needs to config `ip device tracking` for dACL, filter-id ACL, or per-suer ACL
     + ISE Verification: Operations > Authentication: 2 entries w/ DACL: Authentication & Authorization
-    
+
++ Demo: Filter-ID ACL
+    + ISE Config: Policy > Authorization > Results > Authorization Profiles > MAB_WIRED_PROFILE: disable dACL; enable Filter-ID w/ VLAN29.in (in=inbound)
+    + R2 Config: 
+        ```ini
+        conf t
+        ip access-lists extended VALN29
+          permit icmp any any
+          permit tcp any any
+          permit ip any any
+        exit
+        show authetication sessions
+        ```
+    + SW1 Config:
+        ```ini
+        conf t
+        ip access-lists extended VLAN29
+          permit icmp any any
+          permit tcp any any
+          permit ip any any
+        exit
+        show authentication sessions        ! get <sid>
+        clear authetication sessions session-id <sid>
+        ! Observer msgs: EMP-6-POLICY_REQ
+        show ip access-lists int f1/0/2     ! status, filter-id
+        show epm session <ip>   ! Filter-ID
+    + R2 Verification: `ping 136.1.29.2` - ok
+    + SW1 Verification: `sow ip access-lists VLAN29`
+
 
 
 
