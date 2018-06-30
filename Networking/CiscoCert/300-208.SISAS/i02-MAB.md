@@ -217,10 +217,52 @@
     + `show mab all`
     + `show authentication session`
     + `show aaa servers`
+
 + Troubleshooting
     + `show authentication session interface <if>`
     + `debug mab all`
     + `debug radius authentication`
+
++ TRBL Steps:
+    1. MAB NAD Authentication enabled
+    2. Radius config correct
+    3. ISE Config
+
++ TRBL Reference: [Cisco Identity Service Engine Troubleshooting Guide](https://www.cisco.com/c/en/us/support/security/identity-services-engine/products-troubleshooting-guides-list.html)
+
++ Demo: 
+    + Topology:
+        <br/><img src="./diagrams/sisas-net1.png" alt="Authorization MAB" width="600">
+        + Supplicant: PC-B
+        + Authenticator / NAD: SW3
+        + Authentication Server: ISE1
+    + SW3 Config Verification
+        ```ini
+        show tun all | i radius-server attribute
+        show mab all
+        show authentication int gi1/0/5
+        show aaa servers
+        show radius autehtication
+        ```
+    + TRBL Procedure: 
+        1. PC-B <--> SW3: supplicant & NAD - no negotiation: physical port up and running
+        2. Radius config on NAD: NAD properly provisioned w/ authentication server, UDP 1635/1812
+        3. ISE Config: authentication & authorization
+    
+    + Sw3 config:
+        ```ini
+        conf t
+        int gi1/0/5
+          no mab
+          do show mab all
+          mab
+          authentication port-control force-authorized
+          do show authentication sessions int gi1/0/5   ! client list empty
+          do show mac address-table init gi1/0/5
+          auth port-control auto
+          do show aaa server    ! state= current up
+        exit
+        test add group radius <user> <pwd> legency  ! rejected by server
 
 ## ISE MAB Authentication
 
