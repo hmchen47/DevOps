@@ -684,7 +684,15 @@
   <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
 </a>
 
+## ACL Authorization: dACL
 
+
+
+## ACL Authorization: Filter-ID ACL
+
+
+
+## ACL Authorization: Per-User ACL
 
 
 
