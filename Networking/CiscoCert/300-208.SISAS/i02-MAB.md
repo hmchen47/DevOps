@@ -676,10 +676,6 @@
         Through `permit ip any any` not other ip subnet allowed -> get restriction from ISE
 
 
-
-
-
-
 <a href="https://www.youtube.com/watch?v=VzBlhdLGWt4" alt="CCIE Security v4 ATC : ISE 802.1x & MAB Authorization" target="_blank">
   <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
 </a>
@@ -824,6 +820,59 @@
 
 
 ## ACL Authorization: Filter-ID ACL
+
++ Demo
+    + SW3 Config Verification:
+        ```cfg
+        show run | i radius-server|aaa|ip device
+        ! aaa new model
+        ! aaa authentication dot1x default group radius
+        ! aaa authorization network default group radius
+        ! aaa session-id common
+        ! ip device tracking
+        ! radius-server host 172.16.3.100 key radiuskey
+        ! radius-server send authentication  (dACL only)
+
+        conf t
+        no radius-server send authetication
+        int gi1/0/5
+          ip access-list extended FILTER_ID_ACL
+            permit ip any any
+        exit
+    + ISE: 
+        + Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=FILTER_ID_ACL_VLAN90; common task=(FILTER_ID, FILTER_ID_ACL.in)
+        + Policy > Authorization > MAB_DATA_VLAN: edit > Permission > Standard > FILTER_ID_ACL_VLAN90 > Save
+    + SW3 Config:
+        ```cfg
+        conf t
+        radius-server attribute 11 default direction inbound        ! not required
+        do show run all | i radius-server attribute
+        ! radius-server attribute 11 default direction inbound
+        do swbug radius authentication
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        show authentication sessions int gi1/0/5    ! FILTER ID=FILTER_ID_ACL
+        show ip access-list FILTER_ID_ACL           ! 10 permit ip any any
+        show ip access-list int gi1/0/5             ! None
+        show epm session ip 172.16.20.101           ! FILTER-Id=FILTER_ID_ACL
+        show ip int gi1/0/5                         ! Inbound ACL is FILTER_ID_ACL
+        ```
+        + msgs: Send Access-Request; Access-Accept; Filter ID=FILTER_ID_ACL.in
+
+    + PC-B Verifiacation: `ping 172.16.20.1` - ok; `telnet 172.16.20.1` - username=cisco, pwd=Cisco123!
+    + SW3 Verification:
+        ```cfg
+        show run all | i radius-server attribute
+        ! radius-server attribute 77 include-in-acct-req
+        ! radius-server attribute 77 include-in-access-req
+        ! radius-server attribute 11 default direction out
+        ! radius-server attribute nas-port format a
+        ! radius-server attribute 31 mac format default lower-case
+        ```
+
+
 
 
 
