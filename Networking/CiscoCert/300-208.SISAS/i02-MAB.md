@@ -438,6 +438,55 @@
     + `debug radius authentication`
     + `debug ip device tracking events`
 
++ Demo:
+    + SW3 Config
+        ```cfg
+        conf t
+        vlan 10
+        exit
+        int gi1/0/5
+          switchport access vlan 10
+        exit
+        epm logging     ! 1. when sw learn client ip; 2. sw applies ACL on port
+        exit
+        show authentication sessions int gi/1/0/5       ! VLAN policy=N/A
+        show vlan bried     ! 10 ... Gi1/0/5
+        show spanning-tree int gi1/0/5      ! VLAN10
+        ```
+    + ISE Config
+        + Action: Policy > Resul;ts > Authorization > Authorization Profiles > Add: Name=DATA_VLAN_90; VLAN ID/Name=90 (ID = vlan id, Name = user name) > Submit
+        + Rule: Policy > Authorization > Profiled Non-Cisco IP Phones > Edit: Insert New Rule Below: Name=MAB_DATA_VLAN; Condition=Select Existing Condition from Library > Condition Name=Compund conditions > Wired_MAB; Authorization Profile > Standard > Data_VLAN_90
+    + SW3 Verification: 
+        ```cfg
+        debug radius authentication
+        show authentication session     ! get <sid>
+        clear authentication sessions session-id <sid>
+        show debugging
+        show logging
+        conf t
+        int gi/10/5
+          shut
+          no shut
+        ^Z
+        ! ...
+        undebug all
+        ```
+        + Debugging messages: send Access-Request; Service TYpe: call check; Access-Accept; Tunnel Type: 01:VLAN; Tunnel-Private-Group: 01:"90" -> ISE config issue
+        ```cfg
+        show aaa method-lists authorization     ! author queue=AAA_ML_AUTHOR_NET, name=default, valid=TRUE, id=0, state=ALIVE:SERVER_GROUP radius
+        show run    ! gi 1/0/5 VALN 10
+        show spanning-tree gi 1/0/5     ! VLAN 90
+        show authentication sessions int gi1/0/5    ! Authorized By=Authentication Server; VLAN Policy=90
+
+        conf t
+        no ip device tracking 
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        ! Authorization succeeded for client
+        ```
+
 ## ISE 802.1x & MAB Authorization
 
 + Topology: PC A (Supplicant) -- IP Phone -- SW1 (Authenticator/NAD) -- R1 -- ISE-1 (Authentication Server)
