@@ -378,6 +378,20 @@
     + Voice VLAN permission
     + Mandatory for voice domain, allows Phone to join the voice VLAN as configured locally on NAD
 
++ Demo Topology
+    <br/><img src="./diagrams/sisas-net0.png" alt="Entrie Network" width="600">
+
++ Demo: DATA VLAN
+    1. SW3 int gi1/0/5 origin w/ VLAN90
+    2. Auth (Data vLAN 41 from ISE1 to SW3)
+    3. Override VLAN90 by VLAN41 on SW3
+
++ Demo: Voice VLAN
+    + PC-A on Vlan 81 w/ DHCP for 136.1.81.0/24
+    + Phone on VLAN 80 w/ DHCP for 136.1.80.0/24
+    + Get voice domain permission from ISE1 to SW1
+
+
 ## MAB and EAP Common Authorizations
 
 + Access-Lists
@@ -407,8 +421,6 @@
     + `show aaa method-lists authorization`
     + `debug radius authentication`
     + `debug ip device tracking events`
-
-
 
 ## ISE 802.1x & MAB Authorization
 
