@@ -416,6 +416,56 @@
         + Result Name = MAB_WIRED
         + Condition = Wired_MAB (within compound)
 
++ Demo: Config SW1 - 802.1x Network
+    + Coonfig: `conf t; aaa authorization network default group ISE_RADIUS`
+    + Verification:
+        ```cfg
+        no logging console
+        do debug radius authentication
+        clear authentication sessions session-id <sid>
+        ! wait for msgs
+        do undebug radius authen
+
+        show authentication session int f1/0/2  ! VLAN policy: 17
+        show run int f1/0/2     ! VLAN 29
+        ```
+
++ Demo: Change to VLAN 29 w/ ISE
+    + Profile: Action: Policy > Authorization > Results > Authorization > Authorization Profiles 
+        + MAB_WIRED_PROFILE: ID/Name=29
+        + downloadable ACL: Name=WIRED_MAB_DACL, Content= permit ip any any
+    + Apply aACL to Authorization Profile: MAB_WIRED_PROFILE
+        + Access Type = ACCESS_ACCEPT
+        + dACL Name = WIRED_MAB_DACL
+    + Verification: Operations > Authentication: Entry detail of WIRED_MAB_PROFILE
+
++ Demo: debug on SW1
+    + Observe messages:
+        ```cfg
+        conf t
+          logging console debugging
+        exit
+        show authentication sessions session-id <sid>   ! observe displayed msgs
+        ! ...
+        undebug all
+        ```
+        > Authorization Successful: got access message from RADIUS server <br/>
+        > Authorization failed: authorization msg from RADIUS not able to apply switch on the client <br/>
+
+        ==> dACL not working: <br/>
+        sACL works wgen rx dACL name from RADIUS needs to request and download dACL contents -> password required
+    + Config:
+        ```cfg
+        conf t
+          radius-server vsa send authentication     ! observe debugging msgs again
+        exit
+        show authentication sessions int f1/0/2     ! ACS ACL =  xACSACLx-IP-WIRED_MAB_PROFILE-xxxx
+        show ip access-lists xACSACLx-IP-WIRED_MAB_PROFILE-xxxx  ! 10 permit ip any any
+        show ip access-lists int f1/0/2     ! None
+        ! Last two verification: ACL downloaded from ISE, not local config
+        ```
+
+
 
 
 
