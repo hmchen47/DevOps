@@ -465,6 +465,61 @@
         ! Last two verification: ACL downloaded from ISE, not local config
         ```
 
++ Demo: IP Device Tracking - R2 connected w/ VLAN 29 
+    + SW1 Config:
+        ```cfg
+        show run in tvlan 29
+        ! interface val 29 <br/>
+        !  ip address 126.1.29.9 255.255.255.0 <br/>
+        ! end
+        ```
+    + R2: `ping 126.1.29.9` -> no access; switch unable apply access-list to client's
+    + SW1: IP device tracking not enabled on SW
+        + `show ip device tracking` -> None, disabled <br/>
+        + Device tracking used for 1) `dot1x authentication`; 2) `ip source guard`
+        + Switch needs to learn IP address of client, Radius w/ permit IP, TCP, UDP, ICMP, ... -> IP or other protocols andy for src, dst=any or something, but src needs to be IP address of client similar to IP source guard.  Therefore, `ip device tracking` required to learn IP of client
+    + `ip device tracking`utilize ARP
+        ```cfg
+        conf t
+        ip device tracking
+        do show ip device tracking all  ! enabled but none shown , all traffic trop
+        ```
+    + TRBL on SW1:
+        ```cfg
+        show authentication sessions    ! None
+        conf t
+        epm logging     ! apply ACL on port
+        show authentication sessions        ! get <sid>
+        clear authentication sessions session-id <dis>
+        ! msgs: EPM-6-POLICY, EPM-6-IPEVENT
+        show ip device tracking     ! enabled not None
+        ```
+    + SW1 Config:
+        ```cfg
+        show run int f1/0/2
+        ! interface FastEthernet1/0/2
+        !   switchport access vlan 29
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   mab
+        !   spanning-tree portfast
+        ! end
+        conf t
+        int f1/0/2
+          shut
+          no shut
+        exit
+        ! Observe msgs: EPN-6-AAA, EPM-6-IPEVENT, EPM-76-POLICY_APP_SUCCESS
+        show ip device tracking     ! enabled, IP/MAC/VLAN/show
+        show authentication sessions int f1/0/2     ! ACS ACL=downloaded, VLAN=29, status=Authz Success
+        show access-lists int f1/0/2    ! permit ip any any
+        show epm session ip <ip>        ! Success
+        ```
+    + R2 Verification: `ping 126.1.29.9` - ok <br/>
+        ==> Client needs to config `ip device tracking` for dACL, filter-id ACL, or per-suer ACL
+    + ISE Verification: Operations > Authentication: 2 entries w/ DACL: Authentication & Authorization
+    
 
 
 
