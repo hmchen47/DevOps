@@ -157,6 +157,19 @@
     + Local Web Authentication (web portal on the NAD)
     + Central Web Authentication (web portal on the authentication server)
 
++ Authentication Flowchart
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/280001-290000/281001-282000/281594.eps/_jcr_content/renditions/281594.jpg" alt="Authentication Flowchart" width="600">
+
++ Port-Based Authentication Methods - [802.1x Features](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-0_2_EX/security/configuration_guide/b_sec_152ex_2960-x_cg/b_sec_152ex_2960-x_cg_chapter_010000.html)
+
+| 802.1x Features | Single Host | Multiple host | MDA | Multiple Authentication |
+|-----------------|-------------|---------------|-----|-------------------------|
+| 802.1x | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL | VLAN assignment | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL |
+| MAC authentication <br/>bypass | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL | VLAN assignment | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL | VLAN assignment <br/> Per-user ACL <br/> Filter-ID attribute <br/> Downloadable ACL  <br/> Redirect URL |
+| Standalone web<br/> authentication | Proxy ACL <br/> Filter-Id attribute <br/> downloadable ACL |Proxy ACL <br/> Filter-Id attribute <br/> downloadable ACL | Proxy ACL <br/> Filter-Id attribute <br/> downloadable ACL | Proxy ACL <br/> Filter-Id attribute <br/> downloadable ACL |
+| NAC Layer 2 IP<br/> validation | Filter-Id attribute <br/> Downloadable ACL <br/> Redirect URL | Filter-Id attribute <br/> Downloadable ACL <br/> Redirect URL | Filter-Id attribute <br/> Downloadable ACL <br/> Redirect URL | Filter-Id attribute <br/> Downloadable ACL <br/> Redirect URL | 
+| Web authentication<br/> as fallback method | Proxy ACL <br/> Filter-Id attribute <br/> Downloadable ACL | Proxy ACL <br/> Filter-Id attribute <br/> Downloadable ACL | Proxy ACL <br/> Filter-Id attribute <br/> Downloadable ACL | Proxy ACL <br/> Filter-Id attribute <br/> Downloadable ACL |
+
 ## MAB – MAC Authentication Bypass
 
 + MAB (MAC Authentication Bypass) is used to…
@@ -872,12 +885,196 @@
         ! radius-server attribute 31 mac format default lower-case
         ```
 
-
-
-
-
 ## ACL Authorization: Per-User ACL
 
++ Demo
+    + SW3 Config
+        ```cfg
+        show run all | i aaa|ip device
+        ! aaa authorization netwrok default group radius
+        ! ip device tracking
+        ```
+    + ISE:
+        + Action: Plolicy > Policy Elements > Results > Authorization > Authorization Profiles > DACL_DATA_VLAN90
+        + Format: `ip:inacl#1=permit icmp any any`
+        + Action: Plolicy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=PER_USER_ACL; Advanced Attribute Settings=(Cisco:cisco-av-pair=ip:inacl#1 tcp any any; Cisco:cisco-av-pair=ip:inacl#2 permit ip any any) > Submit
+        + Policy > Authorization > Authorization Policy > MAB_DATA_VLAN > edit: permission > Standard > PER_USER_ACL > Save
+    + SW3 Config:
+        ```cfg
+        debug radius authentication
+        cont t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        show authentication sessions int gi1/0/5
+        ! Per_User ACL: permit tcp any any
+        ! Per_User ACL: permit ip any any
+        show ip access-lists int gi1/0/5        ! None
+        show ip int gi1/0/5                     ! Inbound ACL is Gi1/0/5#IP#77158D4
+        show ip access-lists Gi1/0/5#IP#77158D4
+        ! 10 permit tcp any any
+        ! 20 permit ip any any
+        ```
+        + msgs: Send Acceess-Request; Access-Accept; Vendor, Cisco; Cisco AVPair="ip:inacl#1 permit tcp any any"; Cisco AVPair="ip:inacl#2 permit ip any any"
 
+    + PC-B Verification: `ping 172.16.20.1` - failed; 
+
++ Demo: Troubleshooting
+    + SW3 Veification:
+        ```cfg
+        show authentication sessions    ! Authz Success
+        show ip device tracking all     ! IP Addr=169.254.28.55
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+    + ISE:
+        + Policy > Policy Elements > Results > Authorization > Authorization Profiles > PER_USER_ACL: Cisco:cisco-av-pair=ip:inacl#1=permit udp any any
+    + SW3 & PC-B Trigger:
+        ```cfg
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        ```
+        PC-B: Network Adaptor > Disable > Enable
+        PC-B: `ifcoonfig /all`; Back to DHCP Config
+    + SW3 Config:
+        ```cfg
+        conf t
+        authentication port-control force-authorized
+        authentication port-control auto
+        do show authentication sessions ! Authz Success
+        show authentication sessions int gi1/0/5    ! Per-User ACL = permit tcp any any
+    + PC-B Verification: `ping 172.16.20.1` - ok
+    + SW3 Config: 
+        ```cfg
+        show ip access-lists Auth-Default-ACL
+        ! Standard ACL
+        !   10 permit udp any range bootps 65347 any range bootpc 65348
+        !   20 permit udp any any range bootps 65347
+        !   30 deny ip any any
+        ```
+
++ Filter-ID ACL
+    + non-Cisco SW, not support Cisco VSA
+    + general, not-scalable - Don't use
+    + Mandatory if sw not support Cisco radius vsa
+
++ dACL/Per-User ACL preferred
+    + dACL: best practice
+    + differencet supplicants with same dACL on same NAD, dACL downloaded once
+    + differencet supplicants with same per-user ACL on same NAD, per-user ACL downloaded individually, e.g., `show ip int gi1/0/5` -> Inbound ACL is GigabitEthernet1/0/5#IP#77158D, where 77158D is port based
+    + sACL with less memory usage
+
++ Demo: 2 Authorization Ploicies
+    + Policies: 1) DATA VLAN; 2) DACL
+    + PC-B Unable to connect to ISE
+    + SW3 Config Verification
+        ```cfg
+        shwo run | sec ip dhcp
+        ! ip dhcp pool VLAN90-PC-B
+        ! network 172.16.20.0 255.255.255.0
+        ! default-router 136.16.20.1
+        conf t
+        ip dhcp pool VLAN90-PC-B
+        no default-router136.16.20.1
+        default-router 172.16.20.1
+    + ISE Config
+        + Action: Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=DATA_DACL_VLAN; Common Tasks=(DACL Name=DACL_DATA_VLAN90; VLAN-ID/Name=90) > Submit
+        + Condition: Policy > Authorization > MAB_DATA_VLAN > edit: Permission=standard > DACL_DATA_VLAN
+    + SW3 Config:
+        ```cfg
+        conf t
+        int gi1/0/5
+          authentication port-control auto  ! EPM-6-IPEVENT: IP 0.0.0.0
+          do show ip device tracking all    ! no info
+          no ip device tracing 
+          no ip device tracking probe interval 30
+          ip device tracking
+          ip device tracking probe interval 30
+          shut
+          no shut
+        exit
+        ```
+    + ISE Config: Policy > Policy Elements > Results > Authentication > downloadable ACLs > DACL_DATA_VLAN90: Name=DACL_DATA_VLAN90; DACL content=1 permit icmp any any > Save
+    + SW3 Trigger:
+        ``` cfg
+        conf t
+        int gi1/0/5
+          shut 
+          no shut
+        exit
+        ```
+        + debug msgs: EMP-4-POLICY_APP_FAILURE: IP 0.0.0.0 ...; SPANTREE-7-PORTDEL_SUCCESS: gi1/0/5 delete from vlan 90
+    + SW3 TRBL:
+        ```cfg
+         conf t
+         int gi1/0/5
+           authentication port-control force-authorized
+           shut
+           no shut
+        ```
+    + PC-B Veification: `ipconfig` -> IPv4 Addre=172.16.20.101
+    + SW3 TRBL (cont.)
+        ```cfg
+          authentication port-controlo auto
+        exit
+        show ip device tracking all
+        show authentication sessions    
+        ! Authz Failed, cannot apply dACL to port due to waiting request from client
+        conf t
+        ip device tracking probe use-svi
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        show ip access-list
+        ! Standard ACL
+        !   10 permit udp any range bootps 65347 any range bootpc 65348
+        !   20 permit udp any any range bootps 65347
+        !   30 deny any any
+        ! FILTER_ID_ACL
+        !   10 permit ip any any
+        
+        conf t
+        radius-server vsa send authentication
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        show ip access-lists
+        ! Standard ACL
+        !   10 permit udp any range bootps 65347 any range bootpc 65348
+        !   20 permit udp any any range bootps 65347
+        !   30 deny any any
+        ! FILTER_ID_ACL
+        !   10 permit ip any any
+        ! xACSACLx-IP-D_DATA_VLAN90-569e977b
+        !   10 permit ip any any
+        show authentication sessions        ! Authz Success
+        show authentication sessions int gi1/0/5
+        ! ACS ACL-xACSSCLx-IP-DACL_DATA_VLAN90-569e977b
+        clan Policy=90
+    + ISE Config:
+        + Rules: Policy > Authentication > Multiple Matched Rule Applies > Save
+        + e.g., 1) VAD user; 2) AD user; 3) IP Phone; 4) All devices -> NAD User: 1 & 4; AD user: 2 & 4
+        + Policy: Policy > Authorization > MAB_DATA_VLAN > edit: Permission=DATA_VLAN_90
+        + Policy: Policy > Authorization > DACL_DATA_VLAN90 > edit: permission=DACL_DATA_VLAN90
+        ```
+        Rule Name         Condition     Permission
+        MAB_DATA_VLAN     Wired_MAB     DAT_VLAN_90
+        MAB_DATA_VLAN90   Wired_MAB     DACL_DATA_VLAN90
+        ```
+    + SW3 Verification:
+        ```cfg
+        show authentication session     ! Authx Success
+        show authentication sessions int gi1/0/5
+        ! VLAN Policy=90; ACS ACL=xACSACLx-IP-DACL_DATA_VLAN90-569e977b
+    + ISE Verification: Operations < Authentication > Select successful entry w/ Identity=Authentication Profiles=DATA_VLAN_90, DACL_DATA_VLAN90
+        
 
 
