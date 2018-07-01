@@ -1076,5 +1076,243 @@
         ! VLAN Policy=90; ACS ACL=xACSACLx-IP-DACL_DATA_VLAN90-569e977b
     + ISE Verification: Operations < Authentication > Select successful entry w/ Identity=Authentication Profiles=DATA_VLAN_90, DACL_DATA_VLAN90
         
+## [MAC Authentication Bypass Deployment Guide](https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html)
 
+### MAB Overview
+
++ What is MAB?
+    + __MAC Authentication Bypass (MAB)__ uses the MAC address of a device to determine the level of network access to provide.
+    + MAB offers visibility and identity-based access control at the network edge for endpoints that do not support IEEE 802.1X. 
+    + [MAB solution-level uses cases, design, and a phased deployment methodology](http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6638/whitepaper_C11-530469.html)
+    + [MAB step-by-step configuration guidance](http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6638/W hitepaper_c11-532065.html)
+
++ How MAB Works
+    + MAB enables port-based access control using the MAC address of the endpoint.
+    + A MAB-enabled port can be dynamically enabled or disabled based on the MAC address of the device to which it connects.
+    + Default behavior of a MAB-enabled port
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214359.eps/_jcr_content/renditions/214359.jpg" alt="Default Network Access Before and After IEEE 802.1X" width="600">
+    + The switch examines a single packet to learn and authenticate the source MAC address. After MAB succeeds, the identity of the endpoint is known and all traffic from that endpoint is allowed.
+    + The switch performs source MAC address filtering to help ensure that only the MAB-authenticated endpoint is allowed to send traffic.
+    + MAB validates addresses stored on a centralized, and thus more easily managed, repository that can be queried using the standard RADIUS protocol.
+
++ MAB Benefits and Limitations
+    + Advantages:
+        + __Visibility__—MAB provides network visibility because the authentication process provides a way to link the IP address, MAC address, switch, and port of a device.
+        + __Identity-based services__—MAB enables you to dynamically deliver customized services based on the MAC address of an endpoint.
+        + __Access control at the edge__—MAB acts at Layer 2, allowing you to control network access at the access edge.
+        + __Fallback or standalone authentication__—In a network that includes both devices that support and devices that do not support IEEE 802.1X, MAB can be deployed as a fallback, or complementary, mechanism to IEEE 802.1X.
+        + __Device authentication__—MAB can be used to authenticate devices that are not capable of IEEE 802.1X or that do not have a user.
+    + Limitations:
+        + __MAC database__—Must have a pre-existing database of MAC addresses of the devices that are allowed on the network. Creating and maintaining an up-to-date MAC address database is one of the primary challenges of deploying MAB.
+        + __Delay__—When used as a fallback mechanism to IEEE 802.1X, MAB waits for IEEE 802.1X to time out before validating the MAC address. 
+        + __No user authentication__—MAB can be used to authenticate only devices, not users.
+        + __Strength of authentication__—Unlike IEEE 802.1X, MAB is not a strong authentication method. MAB can be defeated by spoofing the MAC address of a valid device.
+
+### MAB Sequence of Operations
+
++ High Level Functional Sequence
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214360.eps/_jcr_content/renditions/214360.jpg" alt="High-Level MAB Sequence" width="450">
+
++ Session Initiation
+    + The switch initiates authentication by sending an Extensible Authentication Protocol (EAP) Request-Identity message to the endpoint. 
+    + No response: retransmit the request at periodic intervals
+    + No response after the maximum number of retries: EEE 802.1X times out and proceeds to MAB.
+
++ MAC Addrerss Learning
+    + The switch begins MAB by opening the port to accept a single packet from which it learns the source MAC address of the endpoint.
+    + By default, the Access-Request message is a Password Authentication Protocol (PAP) authentication request, The request includes the source MAC address in the following three attributes:
+        + Attribute 1 (Username): 12 hexadecimal digits
+        + Attribute 2 (Password): Same as the username but encrypted
+        + Attribute 31 (Calling-Station-Id): 6 groups of 2 hexadecimal digits, all uppercase, and separated by hyphens
+    + MAB using the MAC address as a username and password, make sure that the RADIUS server can differentiate MAB requests from other types of requests for network access.
+
++ Session Authorization
+    + Valid MAC address: the RADIUS server returns a RADIUS `Access-Accept` message.
+    + The RADIUS server may include dynamic network access policy instructions, such as a _dynamic VLAN_ or _access control list (ACL)_ in the Access-Accept message.
+    + Not valid or allowed: the RADIUS server returns a RADIUS Access-Reject message.
+    + If alternative authentication or authorization methods are configured, the switch may attempt IEEE 802.1X or web authentication, or deploy the guest VLAN.
+    + If no fallback authentication or authorization methods are configured, the switch stops the authentication process and the port remains unauthorized.
+
++ Session Accounting
+    + If the switch can successfully apply the authorization policy, the switch can send a RADIUS Accounting-Request message to the RADIUS server with details about the authorized session.
+
++ Session Termination
+    + Sessions must be cleared when the authenticated endpoint disconnects from the network.
+    + Mechanisms:
+        + Line down: single endpoint per port, no IP phone
+        + CDP enhancement for 2nd port disconnect: Cisco phone
+        + Inactivity timer: endpoints connected via hub (physical/bridged Virtual)
+
++ Reauthentication and Absolute Session Timeout
+    + Reauthentication cannot be used to terminate MAB-authenticated endpoints. 
+    + Absolute session timeout should be used only with caution.
+
+
++ RADIUS Change of Authorization (CoA)
+    + Allow a RADIUS server to dynamically instruct the switch to alter an existing session.
+    + Four actions for CoA: reauthenticate, terminate, port shutdown, and port bounce
+        + reauthenticate and terminate: terminate the authenticated session in the same way as the reauthentication and session timeout
+        + port down and port bounce: clear the session immediately, because these actions result in link-down events.
+
+### Design Considerations
+
++ MAC Address Discovery: approaches to collecting the MAC addresses
+    + find preexisting inventories of MAC addresses
+    + use information from the network to discover the MAC addresses that exist in  network today.
+    + use MAC address prefixes or wildcards instead of actual MAC addresses
+
++ MAB Databases and RADIUS Servers
+    + Internal Databases
+        + Some simply enter the MAC addresses in the local user database, setting both the username and password to the MAC address.
+        + Some others more MAB aware, e.g. Cisco Secure Access Control Server (ACS) 5.0
+        + Concerns:
+            + internal hosts database supported?
+            + capacity of RADIUS server?
+            + how to manage MAC addresses?
+    + LDAP Databases
+        + Lightweight Directory Access Protocol (LDAP) server widely used protocol for storing and retrieving information on the network
+        + Concerns:
+            + whether RADIUS server can query an external LDAP database?
+            + availability
+    + Microsoft Active Directory
+        + widely deployed directory service that many organizations use to store user and domain computer identities.
+        + Concerns:
+            + unnecessary attributes and objects to the users group and not work in an Active Directory forest in which a password complexity policy is enabled.
+            + RADIUS server can access account information in Active Directory
+
+### MAB Feature Interaction
+
++ Using MAB in IEEE 802.1X Environments (Non-IEEE 802.1X Endpoints & Failed IEEE Endpoints)
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214362.eps/_jcr_content/renditions/214362.jpg" alt="MAB as Fallback Mechanism for Non-IEEE 802.1X Endpoints" width="300">
+    <img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214363.eps/_jcr_content/renditions/214363.jpg" alt="tMAB as a Failover Mechanism for Failed IEEE Endpointsext" width="350">
+
++ Timers and Variables <br/>
+    $$ \text{Timeout} = \text(max-reauth-req} +1) * \text{tx-period}$$
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214364.eps/_jcr_content/renditions/214364.jpg" alt="Tx-period, max-reauth-req, and Time to Network Access" width="450">
+
++ Using MAB with Web Authentication
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214365.eps/_jcr_content/renditions/214365.jpg" alt="MAB and Web Authentication After IEEE 802.1X Timeout" width="300">
+
++ Guest VLAN
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.fm/_jcr_content/renditions/MAB_Dep_Guide-09.jpg" alt="MAB and Guest VLAN After IEEE 802.1X Timeout" width="300">
+
++ Authentication Failure VLAN
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214367.eps/_jcr_content/renditions/214367.jpg" alt="AuthFail VLAN or MAB after IEEE 802.1X Failure" width="450">
+
++ Dynamic Guest and Authentication Failure VLAN
+    + Dynamic Guest and AuthFail VLANs: rely on the RADIUS server to assign a VLAN when an unknown MAC address attempts to access the port after IEEE 802.1X times out or fails
+    + RADIUS server configured to send an Access-Accept message with a dynamic VLAN assignment for unknown MAC addresses
+
++ Inaccessible RADIUS Server
+    + RADIUS server failed: either through periodic probes or as the result of a previous authentication attempt, a port can be deployed in a configurable VLAN (sometimes called the critical VLAN) as soon as the link comes up
+    + RADIUS server return: the switch can be configured to reinitialize any endpoints in the critical VLAN.
+    + Potential problem after return: If the device is assigned a different VLAN as a result of the reinitialization, it continues to use the old IP address, which is now invalid on the new VLAN.
+    + Ways to work around the reinitialization problem:
+        + disable reinitialization
+        + set the critical VLAN to the data VLAN
+        + setting the DHCP lease time in the critical VLAN scope to a short time
+
++ Dynamic ACL Assignment: MAB is compatible with ACLs that are dynamically assigned by the RADIUS server as the result of successful authentication.
+
++ Dynamic VLAN Assignment: 
+    + MAB is compatible with VLANs that are dynamically assigned by the RADIUS server as the result of successful authentication. 
+    + If a MAB endpoint initially has an IP address in VLAN A and is later assigned to VLAN B without an intervening link-down or link-up event, the unsuspecting MAB endpoint continues to use the IP address from the old VLAN and is thus unable to get access on the new VLAN.
+
++ Wake on LAN (Wol)
+    + WoL: an industry-standard power management feature that allows you to remotely wake up a hibernating endpoint by sending a magic packet over the network
+    + Most WoL endpoints flap the link when going into hibernation or standby mode, thus clearing any existing MAB-authenticated sessions.
+    + To support WoL in a MAB environment, configure a Cisco Catalyst switch to modify the control direction of the port, allowing traffic to the endpoint while still controlling traffic from the endpoint.
+    + After it is awakened, the endpoint can authenticate and gain full access to the network. Control direction works the same with MAB as it does with IEEE 802.1X.
+
++ Open Access
+    + closed mode: (default) the port drops all traffic prior to successful MAB (or IEEE 802.1X) authentication
+    + Best Practice Recommendation—Do not assign dynamic VLANs to MAB endpoints in open access mode.
+    + open access: allow all traffic while still enabling MAB.
+
++ Multiple Endpoints per Port
+    + By default, a MAB-enabled port allows only a single endpoint per port.
+    + Best Practice Recommendation: Use the most restrictive host mode that addresses your use cases. Limiting the number of MAC addresses allowed on the port helps ensure the validity of the authenticated session and discourages casual port piggybacking.
+
+    + Single-Host Mode: 
+        + only a single MAC or IP address can be authenticated by any method on a port. 
+        + different MAC address is detected on the port after a endpoint has authenticated with MAB, a security violation is triggered on the port.
+        + default behavior
+
+    + Multidomain Authentication Host Mode
+        + specifically designed to address the requirements of IP telephony
+        + two endpoints are allowed on the port: one in the voice VLAN and one in the data VLAN.
+        + Either, both, or none of the endpoints can be authenticated with MAB. 
+
+    + Multi-Authentication Host Mode
+        + multiple endpoints can be authenticated in the data VLAN. 
+        + Each new MAC address that appears on the port is separately authenticated.
+        + Multi-auth host mode can be used for bridged virtual environments or to support hubs.
+
+    + Multihost Mode
+        + multihost mode authenticates the first MAC address and then allows an unlimited number of other MAC addresses.
+        + Security choice: multi-auth host mode typically is a better choice than multihost mode.
+
++ [IP Telephony](http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6638/config_guide_c17-605524.html)
+
++ Cisco Catalyst integrated security features with MAB.
+    + Port Security
+    + DHCP Snooping
+    + Dynamic Address Resolution Protocol Inspection
+    + IP Source Guard
+
++ RADIUS Accounting
+    + fully compatible with MAB and should be enabled as a best practice
+    + provides detailed information about the authenticated session and enables you to correlate MAC address, IP address, switch, port, and use statistics
+
+
+### Deployment Scenarios
+
++ Monitor Mode
+    + MAB is fully supported and recommended in monitor mode.
+    + Goal: to enable authentication without imposing any form of access control.
+    + get the highest level of visibility into devices that do not support IEEE 802.1X
+
++ Low Impact Mode
+    + MAB is fully supported in low impact mode.
+    + Based on the ideas of monitor mode, gradually introducing access control in a completely configurable way
+    + Allow to use ACLs to selectively allow traffic before authentication
+    + enable to permit time-sensitive traffic before MAB, enabling these devices to function effectively in an IEEE 802.1X-enabled environment
+
++ High Security Mode
+    + MAB is fully supported in high security mode.
+    + a more traditional deployment model for port-based access control, which denies all access before authentication
+    + Consideration for MAB endpoints: the lack of immediate network access if IEEE 802.1X is also configured
+
++ Deployment Summary for MAB - MAB Deployment Decisions
+
+| Design Consideration | Relevant Section of Guide |
+|----------------------|---------------------------|
+| Evaluate your MAB design as part of a larger deployment scenario | [Deployment Scenarios][001] |
+| Collect MAC addresses of allowed endpoints | [MAC Address Discovery][002] |
+| Store MAC addresses in a database that can be queried by your RADIUS server | [MAB Databases and RADIUS Servers][003] |
+| Modify timers, use low impact mode, or perform MAB before IEEE 802.1X authentication to enable MAB endpoints to get time-critical network access when MAB is used as a fallback to IEEE 802.1X | [Using MAB in IEEE 802.1X Environments][004] |
+| Use an unknown MAC address policy for the dynamic Guest or AuthFail VLAN | [Dynamic Guest and Authentication Failure VLAN][005] |
+| Do not enable reauthentication | [Reauthentication and Absolute Session Timeout][006] |
+| Disable reinitialization on RADIUS server recovery if the static data VLAN is not the same as the critical VLAN | [Inaccessible RADIUS Server][007] |
+| Leave the restart timer disabled | [Session Authorization][008] |
+| Decide how many endpoints per port you must support and configure the most restrictive host mode | [Multiple Endpoints per Port][009] |
+| Eliminate the potential for VLAN changes for MAB endpoints | [Dynamic VLAN Assignment][010] and [Open Access][011] |
+| Identify the session termination method for indirectly connected endpoints: <br/> &nbsp;&nbsp;&nbsp;&nbsp;• Cisco Discovery Protocol enhancement for second-port disconnect (Cisco IP Phones) <br/>&nbsp;&nbsp;&nbsp;&nbsp;• Inactivity timer with IP device tracking (physical or virtual hub and third-party phones) | [Session Termination][012] |
+| Enable RADIUS accounting | [RADIUS Accounting][013] |
+| Disable port security | [Cisco Catalyst Integrated Security Features][014] |
+
+[001]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392716
+[002]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392415
+[003]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392425
+[004]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392522
+[005]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392637
+[006]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392390
+[007]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392640
+[008]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392304
+[009]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392665
+[010]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392649
+[011]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392657
+[012]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392315
+[013]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392713
+[014]: https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392702
 
