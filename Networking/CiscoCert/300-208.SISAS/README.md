@@ -31,22 +31,39 @@
 + [ACL Authorization: dACL](./i02-MAB.md#)
 + [ACL Authorization: Filter-ID ACL](./i02-MAB.md#)
 + [ACL Authorization: Per-User ACL](./i02-MAB.md#)
++ [MAC Authentication Bypass Deployment Guide](./i02-MAB.md#)
 
-### [Authentication & Authorization - ACL & EAP](./i03-ACLEAP.md)
+### [Authentication & Authorization - EAP](./i03-EAP.md)
+
++ [Extensible Authentication Protocol (EAP)](./i03-EAP.md#)
++ [Common EAP Tunneled Methods](./i03-EAP.md#)
++ [Common EAP Non-Tunneled Methods](./i03-EAP.md#)
++ [802.1x Configuration Steps](./i03-EAP.md#)
++ [Deploying EAP](./i03-EAP.md#)
++ [EAP-FASTv1 Implementation](./i03-EAP.md#)
++ [ISE Identity Sources](./i03-EAP.md#)
++ [Authentication Against AD](./i03-EAP.md#)
++ [AD Integration](./i03-EAP.md#)
++ [ISE Application Server](./i03-EAP.md#)
++ [Identity Prefix & Suffix Strip](./i03-EAP.md#)
++ [User & Machine Authorization Policies](./i03-EAP.md#)
++ [Deploying EAP TLS](./i03-EAP.md#)
++ [Issuing Certificates on ISE](./i03-EAP.md#)
++ [Enrolling Users on a Certificate](./i03-EAP.md#)
++ [User Authentication using EAP TLS](./i03-EAP.md#)
++ [Importing CA Certificates](./i03-EAP.md#)
++ [EAP-FASTv2 Chaining](./i03-EAP.md#)
 
 
-### [Authentication & Authorization - AD & Policies](./i04-ADPolicy.md)
 
-### [Authentication & Authorization - TSL & EAP-FAST](./05-TSLFAST.md)
+### [Phased Deployment](./i04-Deploy.md)
 
-### [Phased Deployment](./i06-Deploy.md)
+### [Layer 3 Authentication – HTTP / HTTPS](./i05-HTTP.md)
 
-### [Layer 3 Authentication – HTTP / HTTPS](./i07-HTTP.md)
+### [EndPoint Profiling](./i06-Profiling.md)
 
-### [EndPoint Profiling](./i08-Profiling.md)
+### [Posture Assessment](./i07-Posture.md)
 
-### [Posture Assessment](./i09-Posture.md)
-
-### [TrustSec](./i10-TrustSec.md)
+### [TrustSec](./i08-TrustSec.md)
 
 
