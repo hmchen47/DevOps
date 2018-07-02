@@ -18,6 +18,9 @@
 + <a name="EAP-FASTv1">Tunneled EAP</a>
     <br/><img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" href="https://mrncciew.com/2013/03/03/eap-overview/" width="450">
 
++ 802.1x authentication components
+    <br/><img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig3/AS:279974889181200@1443762623852/8021x-authentication-components.png" alt="802.1x authentication components " href="urhttps://www.researchgate.net/publication/4374057_Designs_of_a_Secure_Wireless_LAN_Access_Technique_and_an_Intrusion_Detection_System_for_Home_Network/figures?lo=1l" width="300">
+
 ## Common EAP Tunneled Methods
 
 + PEAP - Protected EAP (developed by Microsoft, Cisco, RSA)
@@ -75,6 +78,9 @@
         <br/><img src="https://mrncciew.files.wordpress.com/2013/03/eap-tls1.png" alt="the EAP-TLS packet flow" href="https://mrncciew.com/2013/03/03/eap-overview/" width="450">
 
 ## Common EAP Non-Tunneled Methods
+
++ EAP-based authentication procedure flow 
+    <br/><img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig1/AS:279974889181197@1443762623728/EAP-based-authentication-procedure-flow-EAP-MD5-EAP-MD5-is-the-base-security.png" alt="https://www.researchgate.net/publication/4374057_Designs_of_a_Secure_Wireless_LAN_Access_Technique_and_an_Intrusion_Detection_System_for_Home_Network/figures?lo=1" href="EAP-based authentication procedure flow " width="350">
 
 + EAP-MD5 (RFC2284)
     + The only EAP method defined in original EAP RFC
