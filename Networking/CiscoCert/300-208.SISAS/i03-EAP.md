@@ -221,7 +221,29 @@
 
 ## EAP-FASTv1 Implementation
 
++ Config Procedure:
+    1. Supplicant: PC-B
+    2. Authenticator: SW3
+    3. Authentication Server: ISE
 
++ Demo: 
+    + PC-B: 
+        + Network Adaptor > Properties > Authentication > disable IEEE 802.1X Certificate > ok
+        + run `services.msc` > Cisco AnyConnect Network Access Manager > properties > Startup Type=Automatic > Apply
+    + SW3: `show run int gi1/0/5    ! dot1x pae authenticator`
+    + Radius/ISE: 
+        + Condition: Policy > Authentication > Dot1X: Allow protocol=EAP-FAST (MSCHAPv2), use=user/pwd
+        + Action: Policy > Policy Elements > Results > Authentication > Allow Protocols > Default Network Access: Allow EAP-FAST + MSCHAPv2; Allow EAP-TLS, use PACs -> Anonymous(=unauthenticated) & Authentication
+        + Condition: Policy > Authorization > Default: conditions=PermitAccess
+    + PC-B: 
+        + AnyConnect > user/pwd > Trust
+        + `ping 172.163.3.100` - ok; `telnet 172.16.3.100` - ok
+    + SW3 Verification
+        ```cfg
+        show authentication int gi1/0/5     ~ Authz Success
+        show authentication sessions int gi1/0/5
+        ! Status=Authz Success; Authorized By=Authentication Server;  dot1x=Authc Success; username=pacp-user
+    + ISE Verification: Operations > Authentication: Identity=peap-user, Authorization Profiles=PermitAccess > details: Authentication Method=dot1x; Authentication protocol=EAP-FAST (EAP-MSCHAPv2)
 
 ## ISE Identity Sources
 
