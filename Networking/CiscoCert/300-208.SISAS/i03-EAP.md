@@ -140,6 +140,83 @@
 
 ## Deploying EAP
 
++ Demo: PEAP (EAP-MSCHAPv2)
+    + PC-B Config - Supplicant: Network Adaptor > Properties > Authentication:
+        + No Authentication tab: service disabled, to enable by running `services.mcs` > WiredAutoConfig: (stop then) start
+        + Enable IEEE 802.1X authentication
+        + Enable supplicant
+        + Pull down menu: EAP Method
+        + Additional settings > Additional EAP Settings > RAP Method=EAP-TLS & PEAP
+        + Additional mode: specify authentication mode w/ computer authentication, user authentication, or both
+        + Network authentication method settings > validating the certificate: supplicant needs to trust CA that issue the Radius server certificate & Root certificate
+        + Select authentication method= inner method
+    + SW3 - NAD
+        ```cfg
+        show dot1x all  ! Sysauthcontrol Disabled
+        conf t
+        dot1x system-auth-control   ! Enable
+        exit
+        show run int gi1/0/5        ! mab
+        conf t
+        int gi1/0/5
+          no mab
+          dot1x pae authentication
+        exit
+        show run int gi/10/5
+        ! dot1x pae authenticator
+        ! authentication port-control auto
+    + ISE Settings:
+        + Rule: Policy > Authentication: Name=Dot1x; Condition= if wired_802.1x OR wireless_802.1X; Allow Protocols=Default Network Access [PEAP (EAP-MSCHAPv2)] > edit: Use=Internal Users (user/pwd)
+        + Conditions: Policy > Policy Elements > Conditions > Authentication > Compound Conditions > Wired_802.1X > Expression=(Radius:service_type=frame), (Radius:NAS-Port-Type=Ethernet)
+        + Protocol: Policy > Policy Elements > Results > Authentication > Allow Protocols > Default Network Access: Allow PEAP, Allow PEAP-MSCHAPv2 (inner method)
+        + Identity: Administration > Identity Manageemnt > Identity > User > Add: Name=peap-user, pwd=Cisco123! > Submit
+        + Rule: Policy > Authorization > First Matched Rule Applied & Default entry: Condition=PermitAccess
+
++ Demo: EAPOL (PC-B <-- SW3)
+    + PC-B: Network Adaptor Settings > Properties > Authentication > Settings:  
+        + Additional settings = ...
+        + Authentication method=EAP_MSCHAPv2
+        + Network adaptor: disable then enable
+    + SW3: 
+        + msgs for PC-B logon: AUTHMGR-5-SUCCESS: Authorization succeeded for client
+        ```cfg
+        show authentication sessions    ! Gi1/0/5 Authz Success
+        show authentication sessions int gi1/0/5
+        ! IP addr=172.16.20.101; User-Name=peap-user, Authorized By=Authentication Server; dot1x=Authz Success
+    + PC-B Verification: `ping172.16.2.100` - ok, `telent 172.16.20.1` - ok
+    + ISE Verification: <br/> Operations > Authorization Identity=peap-user, Authorization Profiles=PermitAccess > details: Event=5200 Authentication succeeded; Authentication method=dot1X
+    + PC-B Validation: Network Adaptor > Properties > Authentication > Settings > Validate server certificate > ok > disable/enable: user=peap-user, pwd=Cisco123! [Could not validate=Supplicant could not trust CA certificate issued] > terminate connection > disable > enable
+    + SW3: shutdown port switch
+        ```cfg
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        exit
+        ```
+    + PC-B still fail: Network Adaptor > Peroperties > Authentication > disable connect to this server > ok -> user/pwd > Connect
+    + SW3 Config: 
+        ```cfg
+        conf t
+        authentication port-control force-authorized
+        ```
+    + PC-B Verification: 
+        + Network Adaptor > disable > enable
+        + Browser > http://ISE > login prompt
+
++ Demo: Export ISE self-signed Certificate & Import to Supplicant
+    + ISE generate Certificate: Administration > Certificates > Local Certificate > enable self-signed server certificate > Edit: protocols=EAP + HTTP > Export: Certificate only > Save on Desktop as ISE-selfsigned.pem
+    + PC-B: 
+        + run `mmc` > file > Add/Remove snap-in > Add Certificates: my user account > Finish > ok > Certificates-Current User > Trusted Root Certification Authorities > Certificates > Al task (right click) > Import > Next > Browse Desktop w/ ISE-selfsigned.pem > ok
+        + Validate server certificate -> Trust Root Certification Authorities -> ISE-selfsigned.pem > ok
+    + SW3 Config:
+        ```cfg
+        conf t
+        int gi1/0/5
+        authentication port-control auto
+        ```
+    + PC-B: Networ adaptor > disable > enable > user/pwd prompt > ok
+    + SW3 Verification" `show authentication sessions` -> Authz Success
 
 
 ## EAP-FASTv1 Implementation
