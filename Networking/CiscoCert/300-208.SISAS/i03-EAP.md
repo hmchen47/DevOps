@@ -12,6 +12,12 @@
     + Tunneled (protects the supplicant’s identity and credentials)
     + Non-tunneled (does not protect supplicant’s credentials)
 
++ 802.1X w/ EAP
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html" width="450">
+
++ <a name="EAP-FASTv1">Tunneled EAP</a>
+    <br/><img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" href="https://mrncciew.com/2013/03/03/eap-overview/" width="450">
+
 ## Common EAP Tunneled Methods
 
 + PEAP - Protected EAP (developed by Microsoft, Cisco, RSA)
@@ -24,6 +30,8 @@
         + Supplicant is authenticated by certificate (EAP-TLS), username/password (EAPMSCHAPv2), or OTP (EAP-GTC)
         + Requires server certificates, on client is optional
     + Identity protection available only in PEAPv1 and PEAPv2
+    + Data Flow
+        <br/><img src="https://sites.google.com/site/amitsciscozone/_/rsrc/1468881647294/home/switching/peap---protected-eap-protocol/PEAP%20message%20exchange.PNG" alt="PEAP" href="https://sites.google.com/site/amitsciscozone/home/switching/peap---protected-eap-protocol" width="450">
 
 + EAP-FASTv1 (Flexible Authentication via Secure Tunneling)
     + Cisco proprietary, similar with PEAP in scope but very different in functionality
@@ -35,12 +43,25 @@
         + Phase 0 is optional and used to provision the supplicant with a PAC file
         + Phase 1 is used to establish the TLS tunnel based on the PAC file
         + Phase 2 is used to authenticate the supplicant within the TLS tunnel
+    + [Data Flow - Tunneled EAP](#EAP-FASTv1)
 
 + EAP-FASTv2 (EAP Chaining)
     + Ties machine authentication to user authentication
         + Relies on machine PAC and user PAC
         + Performs double authentication within single EAP transaction
     + Will become standard, known as EAP-TEAP (RFC draft)
+    + Data Flow
+        <br/><img src="https://image.slidesharecdn.com/ise2-160329194235/95/ise-20-navy-techday-8-638.jpg?cb=1459281002" alt="Ise 2.0 navy techday" href="https://www.slideshare.net/CiscoPublicSector/ise-20-navy-techday" width="450">
+
++ EAP-TTLS - Tunneled TLS (RFC 5281)
+    + Very similar with PEAP
+        + 2-phase method
+        + requires server side certificate
+    + Major difference as compare to PEAP is that inner method can use any authentication
+        + Non-EAP methods such as PAP and CHAP supported
+    + Not widely implemented: Two versions
+        + EAP-TTLSv0
+        + EAP-TTLSv1
 
 + EAP-TLS (RFC 5216)
     + Single phase protocol
@@ -50,6 +71,8 @@
         + The RFC requires only server side certificates
     + No supplicant identity protection
     + Passed in EAP-Identity and in certificate exchange
+    + Message Flow
+        <br/><img src="https://mrncciew.files.wordpress.com/2013/03/eap-tls1.png" alt="the EAP-TLS packet flow" href="https://mrncciew.com/2013/03/03/eap-overview/" width="450">
 
 ## Common EAP Non-Tunneled Methods
 
