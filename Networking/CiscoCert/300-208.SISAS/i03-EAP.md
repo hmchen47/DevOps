@@ -135,10 +135,8 @@
         + `show aaa servers`
     + Troubleshooting
         + `show authentication session interface <if_number>`
-        + `debug dot1x all`
-        + `debug radius authentication`
-
-
+        + `debug dot1x all` (on the port of Authenticator facing supplicant)
+        + `debug radius authentication` (on the port of Authenticator facing Authentication Server)
 
 ## Deploying EAP
 
