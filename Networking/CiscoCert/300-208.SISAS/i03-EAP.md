@@ -331,7 +331,27 @@
 
 ## AD Integration
 
++ Demo Topology
+    <br/><img src="diagrams/sisas-net1.png" alt="Demo Topology" width="450">
 
++ Demo: ISE & PC-B in inelab.local
+    + PC-B Config: <br/>
+        Computer > Properties > Advanced System Settings > Computer Name > Change: (Retrieved info: DNS server=172.16.20.100) Member of Domain=inelab.local > ok > restart
+    + ISE Config
+        + Main Functions
+            + __Operations__: Monitoring & Troubleshooting
+            + __Policy__: Authentication & Authorization settings, including profiling and posture
+            + __Administration__: External AD integration
+        + Define Store: Admin > Identity Management > External Identity Sources > Active Directory: Domain Name=inelab.local, Identity Store Name=INEAD > Save Configureaiton
+        + Connection Functions
+            + Test Connection (Basic/Detail): verify connectivity btw ISE and DC
+            + Join: join ISE into Domain
+            + Leave: remove ISE from Domain
+            + Refresh: refresh schema, such as changes on AD
+        + : `ISE1-12-inelab.local`: TestConnection > Basic Test: Failed to authenticate use <userName>, Reason: LDAP: "Cannot resolve LDAP Service providers for 'INELAB.LOCAL'" --> check DNS
+
++ Demo: TRBL
+    + 
 
 ## ISE Application Server
 
