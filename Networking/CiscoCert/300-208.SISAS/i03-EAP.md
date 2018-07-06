@@ -350,11 +350,34 @@
             + Refresh: refresh schema, such as changes on AD
         + : `ISE1-12-inelab.local`: TestConnection > Basic Test: Failed to authenticate use <userName>, Reason: LDAP: "Cannot resolve LDAP Service providers for 'INELAB.LOCAL'" --> check DNS
 
-+ Demo: TRBL
-    + 
-
 ## ISE Application Server
 
++ Demo: TRBL
+    + Due to privilege issue, using ISE2 istead
+    + Logon to ICE2 & with CLI
+        ```cfg
+        show run 
+        ! ip domain-name inelab.loca
+        ! ip name-server 172.16.20.100
+        conf t
+        no ip name-server
+        ip name-server 172.16.20.100
+        ! restart ISE
+        ! ...
+        show application status ise
+        ```
+    + Test Connection > Basic Test > user/pwd -> Success
+    + Join: /use/pwd - completed -> close
+    + Advanced settings: pwd change, Machine Authentication (using hostname & ticker from DC, diff from User Authentication), Machine Access Restriction (MAR)
+    + PC-B <-- SW3: Machine & User Authentication - Machine connected & no user logon -> no network access? background tasks? => Machine mus be authenticated
+    + Scenarios
+        + Machine Authentication (MA): Authorization Policy A
+        + User Authentication (UA): Authorization Policy B
+        + MA + UA: Authorization Policy C (MAR), i.e., tie MA to UA for corporate user using corporate device
+    + MAR not useful
+        + Once machine gets authenticated, ISE will keep the status for 6 hrs (default).
+        + The authentication is based on MAC address of the machine - not secure enough
+        + e.g., SW3 will keep PC-B's MAC addr for 6 hrs.  Attacker connects to SW3. It can spoof MAC addr of PC-B.
 
 
 ## Identity Prefix & Suffix Strip
