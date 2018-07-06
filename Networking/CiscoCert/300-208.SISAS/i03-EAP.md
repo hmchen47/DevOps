@@ -529,9 +529,60 @@
 
 ## Deploying EAP TLS
 
++ Scenarios
+    + One KPI/CA Server (SRV-B): PC-B enroll User Certificate w/ SRV-B; ISE enroll Certificates w/ SRV-B
+    + Two KPI/CA Servers (SRV-A & SRV-B): PC-B enrolls w/ SRV-A, ISE enrolls w/ SRV-B, ISE trusts Supplicant's CA, PC-B trusts ISE's CA 
 
++ Supplicant Enrollment:
+    + Manually
+    + Automatically - preferred
+        + client's certificates provisioning not only transfer to users but also create policy
+        + re-enrollment before expired
+
++ EAP-TLS
+    + using certificate
+    + better solution where certificate cannot be spoofed
+
++ Automatic Enrollment
+    + AD Certificate Service (CS) - CA server within Domain
+    + Group Policy (GTP) -> DC: CA installed in DC
+
++ NAD/Authenticator: No chhange required
++ Procedure to Config EAp-TLS: 
+    + Enroll PC-B & ISE w/ SRV-B
+    + Supplicant: change from PEAP(EAP-MSCHAPv2) to PEAP(EAP-TLS)
+    + Authentication server (ISE): change Authentication & Authorization Policies from EAP_MSCHAPv2 specific to EAP-TLS ones
+
++ Demo: Implementing EAP-TLS
+    + Steps to enroll a user/machine to a client's certificate
+        1. install CA certificate - public key of VA
+        2. request a client's cert to identify itself
+
+    + Analogy: passport = certificate, stamp of certificate = CA's signature
+    + AD CS (172.16.20.100) - Generate Certificate
+        + Tasks: Download a CA certificate, certificate chain, or CRL
+        + Encoding method: Base 64
+        + Download certificate > Save As: ca-certificate.cer (on local host)
+    + ISE Import: 
+        + Administration > System - Certificate > Certificate Storec> Import: Certificate File=ca-certificate.cer, Firendly Nmae=INE_PKI_Infrastructure, enable `Trust for client authentication or Secure Syslog service' (using this cert on ISE for any EAPOL authentication required server side cert.)
+        + 'Validation of Certificate Extensions (accept only valid certificate)': (Not Enabled)
+            + Check ISE version, requirements may change in 1.2, 1.3, 1.4, and 2.0
+            + Extension tell certificate for which use case is valid, e.g., passport - global, SIN - within Canada
 
 ## Issuing Certificates on ISE
+
++ Demo: Issuing Certificate on ISE
+    + Message flow:
+        + Config CSR info on ISE
+        + Issue requiest to CA (SRV-B)
+        + CA responses signed CSR w/ CA's private key
+    + ISE:
+        + Administration > System Certificate > Local Certificate > Add (Generate Certificate Signing Request): Certificate subkject=(CN=ISE1-12.inelab.local, OU=ENGINEERING, C=RO), Digest to sign with=SHA 256 > Submit
+        + Administration > System Certificate > Certificate Signing Request: select ISE1-12.inelab.local > Export > Open > copy text
+    + CA - SRV-B:
+        + Request a Certificate > Advanced certificate request > paste to saved request (ensure no space before or after pasted text) > Submit
+        + Certificate Issued > Base 64 encoded > Download certificate > Save as: ise-certificate.cer
+    + ISE: Administration > System Certificate > Local certificates > Add (Bind CA Signed Certificate): Certificate File=ise-certificate.cer, Protocol=(EAP: use certificate for EAP protocol that use SSL/TLS tunneling) > Submit
 
 
 
