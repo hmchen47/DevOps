@@ -261,7 +261,7 @@
 
 + External Authentication Support
     + ISE can authenticate/proxy against several external sources
-        + RADIUS
+        + RADIUS - less likely implemented
         + LDAP
         + Active Directory
         + PKI (ISE CA server support was added in ISE 1.3)
@@ -269,13 +269,14 @@
         + ISE 1.2 supports a single AD integration
             + Multiple AD supports if all within same forest and trust is configured
         + ISE 1.3 supports up to 50 AD domains to be joined
+        + Tree structure: Forest (.local) - Domain (x.local, y.local) - Sub-domain (reno.x.local, bushes.x.local)
     + ISE joins AD just like a regular computer
         + Requires administrative rights just for join process
-        + Afterwards join, it needs READ ALL rights at the top of the AD/forest schema
+        + Afterwards join, it needs _READ ALL_ rights at the top of the AD/forest schema
 
 + Active Directory Integration
-    + ISE and Domain Controller (DC) need to be NTP synchronized
-        + Maximum time skew can be 5 minutes
+    + ISE (main controller) and Domain Controller (DC) need to be NTP synchronized
+        + Maximum time skew can be _5 minutes_
         + In order to validate supplicant certificates
     + Connectivity requirements between ISE and DC
         + Global Catalog ( TCP 3268/3269)
@@ -284,6 +285,7 @@
         + SMB (TCP 445)
         + KDC (TCP 88)
         + KPASS (TCP 466)
+    + ASA - stateful FW: config ACL for ISE -> Domain Controller, but not reversed
 
 
 ## Authentication Against AD
