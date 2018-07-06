@@ -301,19 +301,23 @@
         + By default in EAP-TLS, ISE just checks if certificate is valid
             + Not expired (certificate validity time compared with ISE clock)
             + Not revoked (uses CRL published by the supplicant’s CA issuer)
+    + Example: 
+        + CA sever: SRV-B
+        + CRL = Certificate Revocation List
+        + Msg flow: PC-B -- EAPOL (CERT) --> SW3; SW3 -- RADIUS (CERT) --> ISE1
+        + CA server publishes CRL periodically; ISE download CRL list
 
 + Authorization based on AD
     + Users and computers are objects in the AD schema
         + Identified by their attributes
         + Attributes examples: username, hostname, group membership
-    + ISE can use there attributes in authorization policies
+    + ISE can use there _attributes_ in authorization policies
         + Allows for authorization policy scalability
         + Example: different authorization can be applied for different groups
-    + This is called contextual access
-        + Authorization done based on multiple inputs/conditions
-            + User and computer membership
-            + Type of device (identified via profiling)
-            + Method and time of network access
+    + __Contextual Access__: Authorization done based on multiple inputs/conditions
+        + User and computer membership
+        + Type of device (identified via profiling)
+        + Method and time of network access
 
 + ISE Configuration for AD Integration
     + Synchronize clock between AD DC and ISE
