@@ -382,6 +382,47 @@
 
 ## Identity Prefix & Suffix Strip
 
++ Demo: ISE for Domain Mark up or down
+    + Administration > External Identity Sources > Active Directory > INEAD >
+    + Advanced Settings: User: PC-B@inelab.local - change @ with other character
+    + Groups: Add (Select Group from Dictionary) > Retrieve Groups > enable the application names: e.g., inelab.local/CCIELAB/CCIELAB, inelab.local/FINANCIAL/TECHNICAL, inelab.local/Users Domain Admins, inelab.local/Users, Domain Computers > ok > Save Config
+    + Attributes: Add (select Attributes from Directory): Example Subject = user1 >  Retrieve attributes = sAMAcountName > ok; Example Subject = test-pc-b > Retrieve Attributes = dNAHostName > ok > Save Configuration
+    + SRV-B: run `dsm.msc` >
+        + Users > <username> > Properties: Member of = Domain User
+        + Computers > Test-PC-B > Properties: Member of = Domain Computers
+
++ Config Procedure for Demo
+    + Supplicant: depend on OS and version
+        + both machine and user authentications
+        + protocol: PEAP (EAP-MSCHAPv2)
+    + NAD/Authenticator: port facing supplicant - 802.1x
+    + ISE: 2 types of polices
+        + Machine Authentication -> Author X
+        + User Authentication -> Author Y
+
++ Demo: 
+    + PC-B: Logon with inelab.local\ldapuser
+    + SW3:
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int gi1/0/5
+        authentication port-control force-authorized
+        ```
+    + PC-B: logoff > logon prompt: username=inelab.local\ldapuser
+    + ISE:
+        + Conditions: Policy > Authentication > Dor1X, Wired_802.1X > edit (duplicate above): Name=WIRED_AD_PEAP_AUTH, Conditions=Wired_802.1X, Allowed Protocol=Default, use=INEAD > Save
+        + Define Action: Policy > Policy Elements > Results > Authentication > Allowed Protocols > Add: Name=PEAP_EAP_MSCHAPv2, disable - Process Host Lookup, PAP/ASCII, EAP-MD5, EAP-TLS, EAP-FAST, PEAP-(EAP-TLS) > Save > Submit
+        + Create authentication policy: Policy > Authentication > WIRED_AD_PEAP_AUTH: Allowed Protocols=PEAP_EAP_MSCHAPv2
 
 
 ## User & Machine Authorization Policies
