@@ -427,6 +427,104 @@
 
 ## User & Machine Authorization Policies
 
++ Demo: Authorization Policies
+    + Purpose: 
+        + Machine authentication: TCP traffic only -> required for multi-management AD machine
+        + User authentication: full access
+        + both with dACl
+        
+    + ISE Config:
+        + ACL define: Policy > Policy Elements > Results > Authorization > Downloadable ACLs > 
+            + Add: Name=MMACHINE_DACL, contents=(permit tcp any any)
+            + Add: Name=USER_DACL, Contents=(permit ip any any)
+        + Profile: Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=MACHINE_PROFILE, DACL Name=MACHINE_DACL > submit
+        + Policy: Policy > Authorization > entries (top down in order) > Edit (insert new Rule below MAB_DATA_DACL): Name=PEAP_MACHINE_AUTH, Conditions=(INEAD:ExternalGroups [PC] EQUAL inelab.local/Users/Domain Computers [group of computers in the domain], Network Access:EapAuthentication EQUAL EAP_MSCHAPv2), Permission=MACHINE_PROFILE
+        + Policy: Policy > Authentication > PEAP_MACHINE_AUTH > edit (duplicate below): Name=PEAP_USER_AUTH, Conditions=(INEAD:ExternalGroups EQUAL inelab.local/Users/Domain Admins, Network Access: EapAuthentication EQUAL EAP_MSCHAPv2), Permission=USER_PROFILE
+    + PC-B: 
+        + NIC > Properties > Authentication tab:
+            + enable IEEE 802.1X authentication
+            + method: PEAP
+            + Additional Setting: Authentication mode=User or Computer authentication
+            + PEAP Settings: 
+                + Validate server certificate
+                + Trusted Root Certification Authorities = ?, Browse
+                + Authentication Method=EAP-MSCHAPv2, Configure=Automatically use checked (802.1X will pickup login credentials)
+        + logoff
+    + SW3:
+        ```cfg
+        show run | i aaa
+        ! aaa new-model
+        ! aaa authentication dot1x default group radius
+        ! aaa authorization network default group radius
+        show ip tracking all    ! enabled
+        
+        conf t
+        ip device tracking probe interval 30
+        ip device tracking probe use-svi
+        radius-server vsa send authentication
+        do show run int gi/1/0/5        ! dot1x pae authenticator
+        authentication port-control auto
+        ! msgs: 'fail' from 'dot1x' for client
+    + TRBL:
+        + SW3: `authentication port-control force-authorized`
+        + ISE Provisioning - entry detail: failing to negotiate EAP because EAP-FAST not allowed
+        + PC-B: AnyConnect > Network: wired
+            + disable: run `services.msc` > AnyConnect > Properties > stop > Disable
+            + Logoff
+        + SW3: 
+        ]   ```authentication port-control auto     ! Success 
+            ! AUTHHMGR-7-RSULT: Authentication result 'success' from 'dot1x' for client 
+            ! EPM-6-AAA: POLICY xACSACLx-IP-MACHINE_DACL-56a11fb6
+            ! ... Result SUCCESS
+
+            show authentication int gi1/0/5
+            ! Uer-Name=host/test-pc-b.inelab.local, Status=Authz SUCCESS, 
+            ! Authorized By=Authentication Server, ASC ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6
+            shwo ip access-lists int gi1/0/5        ! permit tcp any any
+            ```
+        + ISE Provisioning: Operations > Authentications: Identity=host/test-pc-b.inelab.local, Authorization Profiles=MACHINE_PROFILE, Endpoint Profile=Linksys-Device, Identity Group=Profiled
+    + Verification:
+        + PC-B: Login (User_Profile)
+        + SW3 messages:
+            ```cfg
+            ! DOT1X-5-SUCCESS: Authentication successful for client
+            ! AUTHMGR-7-RESULT: Authentication result 'Success' issued from 'dot1x' for client
+            ! EPM-6-AAA: POLICY xACSACLx-IP-MACHINE_DACL-56a11fb6
+
+            show authentication session in tgi1/0/5
+            ! User Name=INELAB\ldapuser, Status=Authz Success; Authorized By=Authentication server
+            ! ACS ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6, dot1x=Authc Success
+
+            show epm session ip 172.16.20.101       ! ACS ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6
+            show ip access-lists xACSACLx-IP-MACHINE_DACL-56a11fb6
+            ! 10 permit ip any any
+            show ip access-lists int gi1/0/5    ! permit ip any any
+            ```
+    + Verification - Machine Authentication
+        + PC-B: `ping 172.16.20.1` - ok; `telnet 172.16.20.1` - ok
+        + ISE: Operations > Authentication: Identity=host/test-pc-b.inelab.local, Authentication Profile=MACHINE_PROFILE > details: Username=host/test-pc-b.inelab.local, Authorization Profile=MACHINE_PROFILE, AuthorizationPolicyMatchedRule=PEAP_MACHINE_AUTH, Authorization Protocol=PEAP(EAP-MSCHAPv2)
+    + Verification - User Authentication
+        + PC-B: Logoff > Logon
+        ISE: Operations > Authentication: Identity=INELAB\ldapuser, Authentication Profile=USER_PROFILE > details: Username=inelab\ldapuser, Authorization Profile=USER_PROFILE, AuthorizationPolicyMatchedRule=PEAP_USER_AUTH, Authorization Protocol=PEAP(EAP-MSCHAPv2)
+
++ Demo: MAR
+    + Order of Authentication Rules: 1) Machine Authentication (MA); 2) Machine & User Authentication(MA + UA); 3) User Authentication (UA)
+    + Requirements: MA - TCP; MA + UA - full access; UA - TCP
+    + ISE Config: Policy > Authorization > PEAP_USER_AUTH > edit (duplicate above): Name=PEAP_MACHINE_USER_AUTH, Condition=(INELAB:ExternalGroups EQUAL inelab.local/Users/Domain Admin, Network Access:WasMachineAuthenticated EQUAL True), Permission=PermitAccess
+    + Verification
+        + PC-B: logon
+        + SW3:
+            ```cfg
+            ! Authentication result 'Success', Authorization succeeded -> w/o DACL
+            show authentication sessions int gi1/0/5
+            ! User Name=INELAB\ldapuser, status=Authz Success, Authorized By=Authentication Server
+            ! Vlan Policy=N/A, dot1x=Authc Success
+            show ip access-list int gi1/0/5
+            ! permit ip any any, cmd only show network access for the port but not part of dACL
+            show epm session ip 172.16.20.101   ! Admission feature=dot1x
+            ```
+        + PCB: `ping 172.16.20.1` - ok, `telnet 172.16.20.1` - ok
+        + ISE: Operations > Authorization: Identiyt=INELAB\ldapuser, Authorization Profiles=PermitAccess, AuthorizationPolicyMatchedRule=PEAP_MACHINE_USER_AUTH
 
 
 ## Deploying EAP TLS
