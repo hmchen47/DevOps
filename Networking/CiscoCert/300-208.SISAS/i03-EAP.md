@@ -642,6 +642,9 @@
                 + Console Root > Certificates - Current Users > Trusted Root Certificates > Certificates > remove inelab-CA
                 + Console Root > Certificates - Current users > Personal > Certificates > Christian Matei (entry): the cert cannot be verified up to a trusted cert. authority
 
+
+## Importing CA Certificates
+
 + Demo: Importing CA Certificates
     + SW3: 
         ```cfg
@@ -718,11 +721,7 @@
 
 
 
-## User Authentication using EAP TLS
 
-
-
-## Importing CA Certificates
 
 
 
