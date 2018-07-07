@@ -588,6 +588,134 @@
 
 ## Enrolling Users on a Certificate
 
++ Demo: 
+    + CertSrv: IE (http://172.16.20.100/certsrv)
+        + Tasks: Request a certificate > Web Browser Certificate: Name, Email, company, Department, key strength (no visible) -> Browser not supported ?
+        + Trying IE Compatibility View Settings & Firfox w/ the same issue
+    + SRV-B: Certificate Authority > inelab-CA > Pending Request: (empty)
+
++ Demo RBL:
+    + SRV-B: Windows Desktop Connection (AD) or IE (http://172.16.20.100/certsrv) > Vertificate Server
+        + Event Viewer > Windows Logs > Application: Active Directory Certificate Service Denial request because the request subject name is invalid or too long
+        + Change IE Security Settings: IE > Settings > Internet Options
+            + Advanced tab: Enable Integrated Windows Authentication
+            + Security tab: Trusted sites > Add: http://172.16.20.100, security level of trust site = low
+            + Restart IE
+        + IE: Request a Certificate > Advanced Request Certificate: Name=Chistian Matei, email=cmatei@ine.com, Company=INE, Dept=Instructor, City=Bucharest, Country/Region=RO, Type of certificate need=Client Authentication Certificate > Submit
+        + run `mmc` (MS Management Console) > File > Add/Remove Snap-in > Certificate > Add: My user account > Finish > ok
+        + run `mmc` > Console Root > Certificate - Current User > Personal > Certificates > Christian Matei entry > Certificate: Christian Matei (User cert.)
+    + PC-B: 
+        + run `mmc` > File > Add/Remove Snap-in > Certificates > 
+            + Add: My User account > Finish
+            + Add: Computer account > Finish
+            + 2 certificates shown: Console Root > Certificates - Current User & Certificate (Local Computer)
+        + Console Root > Certificates (Local Computer) > Personal > All Tasks (rc) > Request New Certificate > Certificate Enrollment: Active Directory Enrollment Policy > Next > Certificate Types are not available
+        + NIC > Properties > Authentication > 
+            + PEAP Settings: Authentication Method=smart card or other certificate, valid server certificate Trusted Root Certificate Authority=inelab-CA
+            + Additional setting: authentication mode=User authentication
+    + ISE:
+        + Policy > Policy Elements > Results > Authentication > Allowed Protocols > Add: Name=PEAP_EAP_TLS, only enable PEAP(EAP-TLS) > Submit
+        + Policy > Authentication > WIRED_AD_PEAP_AUTH: (Condition=Wired_802.1X, Allowed Protocol=PEAP_EAP_TLS, use=Certifcate) [inner method]
+        + Administration > Identity Management > External Identity Sources > Certificate Authentication Profile > Add: Name=INE_PKI_STORE, Principle username X509 Attribute=Subject-CommonName > Submit
+        + Perform Binary Certificate Comparison retrieced from LDAP or Active Directory
+            + CA server is also an AD member
+            + Deploy AD cert service -> cert auto deploy to users
+            + CA server stores a copy of client's cert as an attribute to the object of the domain
+            + binary comparison against what stored in AD schema
+        + Policy > Authentication > WIRED_PEAP_AUTH > edit: Allowed Protocol=PEAP_EAP_TLS, use=INE_PKI_STORE
+        + Policy > Authorization > PEAP_USER_AUTH: move to above of PEAP_MACHINE_AUTH > edit: Consitions=(Network Access:EapAuthentication EQUAL EAP_TLS) > Save
+    + SW3: 
+        ```cfg
+        show run int gi1/0/5
+        ! authentication port-control auto
+        ! dot1x pae authenticator
+        ```
+    + Verification:
+        + PC-B: Longoff > Logon
+        + SW3: message = AUTHMGR-5-START: Starting 'dot1x' for client, no further msgs
+        + NIC - failed
+    + TRBL: 
+        + ISE: Operations > Authentications > Identity=Christian Matei > details: Failure Reason: unexpectedly received TLS alert message: treating as a rejection by the client
+        + PC-B: ensure trust
+            + NIC > Prperties > Authentication > Settings: validate server certificate - Root Trust Authority: inelan-CA --> looks ok
+            + run `mmc` > File > Add/Remove Snap-in > Certificates > Add: my user account > Finish > 
+                + Console Root > Certificates - Current Users > Trusted Root Certificates > Certificates > remove inelab-CA
+                + Console Root > Certificates - Current users > Personal > Certificates > Christian Matei (entry): the cert cannot be verified up to a trusted cert. authority
+
++ Demo: Importing CA Certificates
+    + SW3: 
+        ```cfg
+        conf t
+        int gi1/0/5
+          authentication port-control force-authorized
+        end
+        ```
+    + PC-B: IE (http://172.16.20.100/certsrv)
+        + Download a CA Certificate, certificate chain, or CRL > Base 64 > Download CACertificate > Asve As: ca-certificate.cer
+        + Open downloaded ca-certificate.cer > install certificates in the following store: certificate store=(Browse > show phy store) > Trusted Root Certification Authorities > Registry > ok > Next > Finish
+        + Console (`mmc`) > Personal > Certificates: Christian Matei > ok
+        + NIC > Properties > Authentication > Enable IEEE 802.1X authentication 
+            + Additional Settings: authentication mode=User Authentication
+            + Settings: Validate server certificate, Trust Root Certification Authorities=inelab-CA
+    + ISE: Administration > Certificates > Protocol=EAP: ISE1-12.inelab.local#inelab-CA#00001
+    + SW3: 
+        ```cfg
+        authentication port-contro auto
+        shut
+        no shut
+        ! AUTHMGR-7-RESULT: Authentication result 'fail' from 'dot1x' for client
+        ```
+    + ISE: Log message -> TLBR
+        + Operations > Authentication > latest log msg > detail: Event=Endpoint conducted several failed authentications of the same scenario; Failure Reason=Failed to negotiate EAP for inner method becasue EAP-TLS not allowed under PEAP configuration in the Allowed Protocols; AllowedPrtotocolMatchedRule=WIRED_AD_PEAP_AUTH
+        + Policy > Authentication > WIRED_AD_PEAP_AUTH: Allowed Protocol=PEAP_EAP_TLS; use=INE_PKI_STORE > Save
+        + Policy > Authorization > PEAP_USER_AUTH: Conditions=(Network ccess:EapAuthentication EQUAL EAP-TLS), permisssion=USER_PROFILE
+    + SW3:
+        ```cfg
+        shut
+        no shut
+        ! AUTHMGR-5-START: starting 'dot1x' for client
+        ```
+    + PC-B: NIC > disable > enable
+        + The server 'ISE1-12.inelab.local' presented a valid certificate issued by 'inelab-CA', but 'inelab-CA' is not configured as a valid trust anchor for the profile
+        + NIC > Properties > Authentication > Settings > 
+            + Connect to these servers=ISE1-12.inelab.local > failed
+            + disable 'validate server certificate' 
+        + Msg on SW3: AUTHMGR-5-FAIl: Authorization failed or unapplied for client
+    + ISE: Operations > Authentications > Last log msgs > details: Event=Authentication Failed, Failed Reason=Unexpectedly received TLS alert message: treating as a rejection by the cleint
+    + PC-B: NIC > Properties > Authentication > Settings: disable 'connect to these servers', Authentication method=Smart card or other certifcate > Config > Trusted Root Certificate Authority='inelab-CA' > ok
+    + SW3: msgs
+        ```cfg
+        ! AUTHMGR-5-SUCCESS: Authorization Succeeded for client
+        ! EPM-6-IPEVENT: ... | EVENT IP ASSIGNMENT
+        ! EPM-6-POLICY_APP_SUCCESS: ... | POLICY_TYPE Normal ACL | POLICY NAME xACSACLx-IP-USER_DACL-56a11fc
+        ```
+    + Problem Expmaination: PC-B w/ NIC > Properties > Authentication
+        1. Config PEAP
+        2. Additional Settings: Authentication mode=PEAP w/ 2-phase
+        3. Settings fro PEAP
+            + Validate server certificate
+            + Trusted Root Certification Authorties = inelab-CA (PEAP outer method)
+            + Authentication Mode=smart card or other certificate > Configure: Use a certificate on this computer, use simple certificate selection, Validate servercertificate, Trusted Root certification Authorties=inelab-CA
+    + Verifications:
+        + ISE: Operations > Authentications > Authorization Profile=USER_PROFILE, Identity=Christian Matei > details: ...
+        + PC-B: `ping 172.16.20.100` - ok, `telnet 172.16.20.100` - ok
+        + SW3
+            ```cfg
+            show authentication sessions int gi1/0/5
+            ! status=Authz Success, User Name=Christian Matei, Authhorized By=Authentication Server, 
+            ! ACS ACL=xACSACLx-IP-USER-DACL-56a11f6
+            show epm session ip 272.16.200.101      ! ACS ACL=xACSACLx-IP-USER-DACL-56a11f6
+            show ip access-lists ACS ACL=xACSACLx-IP-USER-DACL-56a11f6
+            ! 10 permission tcp any any
+            ```
+        + ISE: Operations > Authentication > details: Event=Endpoint authentication problem was fixed, Authentication Protocol=PEAP(EAP-TLS), Authorization Progfile=USER_PROFILE
+
++ Summary:
+    + Authenticator / NAD: no change
+        + Changes made on supplicant and authentication server
+        + SW only relay query/response
+    + Supplicant & Authentication Server should be with same EAP method
+
 
 
 ## User Authentication using EAP TLS
