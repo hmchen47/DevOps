@@ -50,7 +50,6 @@
 + [Deploying EAP TLS](./i03-EAP.md#)
 + [Issuing Certificates on ISE](./i03-EAP.md#)
 + [Enrolling Users on a Certificate](./i03-EAP.md#)
-+ [User Authentication using EAP TLS](./i03-EAP.md#)
 + [Importing CA Certificates](./i03-EAP.md#)
 + [EAP-FASTv2 Chaining](./i03-EAP.md#)
 
