@@ -721,10 +721,124 @@
 
 
 
-
-
-
-
 ## EAP-FASTv2 Chaining
+
++ EAP-FASTv2 (EAP Chaining)
+    + Ties machine authentication to user authentication
+        + Relies on machine PAC and user PAC
+        + Performs double authentication within single EAP transaction
+    + Will become standard, known as EAP-TEAP (RFC draft)
+        + TEAP = FASTv2 + TTLS + PEAP
+
++ Config Procedure:
+    + Supplicant: EAP-FASTv2 via AnyConnect
+        1. No user login - Machine Authentication
+        2. If user login & supplicant config w/ EAP-Chaining, NAD requests supplicants credentials, then supplicant replies Machine & User Authenticaion in one transaction (chaining Machine & User credentials within one transaction) --> more secure
+    + EAP Chaining: Policies
+        + Machine authentication passed & User authentication passed: corporate devices - full access
+        + Machine authentication failed & User authentication passed: restrict access A
+        + No chaining, i.e., supplicant not support machine + user authenntiocation: restricted access B
+    + Authenticator/NAD: no config required
+    + Supplicant: EAP-FASTv2
+    + Authetication Server (ISE): Authentication & Authorization Policies
+
++ Demo:
+    + SW3 Config:
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int gi1/0/5
+        authentication port-control force-authorized
+        ```
+    + PC-B
+        + NIC > Properties > Authentication > disable IEEE 802.1X authentication > ok
+        + run `services.msc` > Cisco AnyConnect Network Access Manager > Properties > General: Startup Type=Automatic > Apply > Start > ok
+        + AnyConnect: VPN module & NAM module
+        + AnyConnect Profile Editor for full supplicant config: 
+            + Network Access Managaer Profile > 
+            + Client Policy: Service Operation=enable, Media=(WiFi Media with WPA & WPA2, wired), User control=(display client, user group, auto connect)
+            + Networks: Name=EAP_CHAINING, Network Media=wired, Security level=Authenticating Network > 802.1X settings=(authPeriod=30, startPeriod=30, heldPeriod=60, maxStart=3)
+            + Connection Types: Machine connection (Author A), User connection (Author B), User & Machine connection (Author C = A + B)
+            + Profile: Machine Authentication, EAP method=EAP-FAST
+                + EAP-FAST Settings=(Validate server identity, Enable fast reconnect)
+                + Inner Method=(password w/ EAP-MSCHAPv2)
+                + Use PAC
+            + Certificate: Certificate Trusted Server Rules, Certificate Trusted Authority=Trust any Root Certificate Authority (CA) installed on the OS
+            + Machine Credentials
+            + User Auth: EAP-FAST > Settings > inner method=(EAP_MSACHAPv2); if using PACs, allowed authenticated PAC provisioing (only if ISE cert. is not trusted)
+            + Certificates: Trust any Root CA in OS
+            + PAC Files: Add
+            + Credentils: User credential=Sib=ngle Sign On
+            + MUST __SAVE FILE__: cpnfiguration.xml
+        + AnyConnect > Network Repair (ensure configuration.xml used)
+        + AnyConnect > Remove unnecessary entries
+    + ISE:
+        + Policy > Policy Elements > Results > Authentication > Alloed Protocols > Add: Name=EAP-FAST, Allowed Protocols=(EAP-FAST w/ inner method=EAP-MSCHAPv2, EAP-TGC, use PACs, allow anonymous In-Band PAC Provisioning, Allow Authentication In-Band PAV Provisioning, EAp-Chaining) > Save
+        + Policy > Authentication > WIRED_AD_PEAP_AUTH > edit: Name=WIRED_EAP_FAST, Conditions=Wired_802.1X, Allowed Protocl=EAP_FAST, use=INEAD > Save
+        + Policy > Authentication > PEAP_MACHINE_AUTH: Condition=(INEAD:ExternalGroups EQUAL inelab.local/User Domain Computers, Network Access:EapAuthentication EQUAL EAP-MSACHAv2), Permission=MACHINE_PROFILE [not scalable, large set of conditions, but convenit to see what conditions are]
+        + Policy > Policy Elements > Conditions > Authorization > Compound Conditions > 
+            + Add (create a new condition): Name=EAP_FAST_MAP_UAP (Both Machine & User Authentication Passed), Expression=(Network Access:EapTunnel EQUAL EAP-FAST [Outer Method], Network Access:EapAuthentication EQUAL EAP-MSCHAPv2 [Inner Method], Network Access:EapChainingResult EQUAL User and Machine both Succeeded) > Submit
+            + Add (create a new condition): Name=EAP_FAST_MAF_UAP (not corporate device), Expression=(Network Access:EapTunnel EQUAL EAP-FAST [Outer Method], Network Access:EapAuthentication EQUAL EAP-MSCHAPv2 [Inner Method], Network Access:EapChainingResult EQUAL Machine Failed but User Succeeded) > Submit
+            + Add (create a new condition): Name=EAP_FAST_UAP, Expression=(Network Access:EapTunnel EQUAL EAP-FAST [Outer Method], Network Access:EapAuthentication EQUAL EAP-MSCHAPv2 [Inner Method], Network Access:EapChainingResult EQUAL No Chaining) > Submit
+            + Add (create a new condition): Name=EAP_FAST_MAP, Expression=(Network Access:EapTunnel EQUAL EAP-FAST [Outer Method], Network Access:EapAuthentication EQUAL EAP-MSCHAPv2 [Inner Method], Network Access:EapChainingResult EQUAL User Failed and Machine Succeeded) > Submit
+        + Scenarios
+            + Machine Authentication Failed + User Authentication Passed: Author A
+            + Machine Authentication Passed + User Authentication Failed: Author B
+            + Machine Authentication Passed + User Authentication Passed: Author C
+        + Only demo Author C while production environment requires them all
+        + List of entries:
+            + PEAP_USER_AUTH: EAP-TLS
+            + PEAP_MACHINE_AUTH: EAP-MSCHAPv2
+            + PEAP_MACHINE_USER_AUTH: EAP-MSCHAPv2
+        + Policy > Authorization > PEAP_MACHINE_AUTH & PEAP_MACHINE_USER_AUTH > disable
+        + Policy > Authorization > PEAP_MACHINE_USER_AUTH > add (below): Name=EAP_CHAINING, Conditions=(select from library > EAP_FAST_MAP_UAP), Allowed Protocol=PermitAccess > Save
+    + SW3: 
+        ```cfg
+        authentication port-control auto
+        do show run int gi1/0/5
+        int gi1/0/5
+          shut
+          no shut
+        end
+        ! AUTHMGR-5-START: Starting 'dot1x' for client; but no further mesg
+        ```
+    + TRBL:
+        +  PC-B: 
+            + Opern AnyConnect - Acquiring IP address
+            + Ensure `configuration.xml` in proper localtion, `Systems\Progrram Data\Cisco\Cisco AnyConnect Secure Mobility Client\Network Access Manager\NewConfigFiles\`(empty) - not saving properly (actually clearned by runing `Network Repair`)
+            + AnyConnect Progile Editor > Networks > EAP_CHAINING > edit: USER_AUTH:EAP-GTC > Done > File > Save As: `configuration.xml`
+            + AnyConnect > Networks=wired
+            + AnyConnect > Network Repaired (configuration.xml deleted)
+        + SW3: msg=AUTHMGR-7-RESULT: Authentication Result 'no-response' from 'dot1x' for client
+        + PC-B: logoff > logon -> same issue
+            + check AnyConnect version: 3.0.11042
+            + AnyConnect Profile Editor Networks > EAP_CHAINING removed
+    + PC-B: AnyConnect Profile Editor > Networks > wired:
+        + Media Type: in all groups, wired 802.3
+        + Security Level: Authentication networks
+        + Connection Type: Machine & User Connection
+        + Machine Auth: EAP-FAST (activate settings)
+            + EAP-FAST Settings: validate server identity, Fast Reconnect
+            + Inner Method based on Credential Sources: Authentication using a password=(EAP-CHAPv2, EAP-GTC, if using PACs, allow unauthenticated PAC Provisioning), use PACs
+        + Certificates: Trust any Root Certificate Authority (CA) installed on the OS
+        + PAC Files:
+        + Credentials: Use machine credentials
+        + User Auth: EAP-FAST (activate settings)
+            + EAP-FAST Settings: validate server identity, Fast Reconnect
+            + Inner Method based on Credential Sources: Authentication using a password=(EAP-CHAPv2, EAP-GTC, if using PACs, allow unauthenticated PAC Provisioning), use PACs
+        + Certificates: Trust any Root Certificate Authority (CA) installed on the OS
+        + PAC Files:
+        + Credentials: Use Single Sign ON credentials
+    + PC-B: AnyConnect > Network Repair -> still failed
+
 
 
