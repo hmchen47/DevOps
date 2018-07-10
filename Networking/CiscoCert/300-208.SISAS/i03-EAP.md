@@ -357,7 +357,7 @@
     + Logon to ICE2 & with CLI
         ```cfg
         show run 
-        ! ip domain-name inelab.loca
+        ! ip domain-name inelab.local
         ! ip name-server 172.16.20.100
         conf t
         no ip name-server
@@ -840,5 +840,103 @@
         + Credentials: Use Single Sign ON credentials
     + PC-B: AnyConnect > Network Repair -> still failed
 
++ Key Points for the Demo
+    + Underlying Protocols: PC-B <-- 802.1x --> SW3 <-- Radius --> ISE
+    + ISE: Check Authentication (EAp-FAST) & Authorization Policies
+    + EAP Chaining: send (UA + MA) in one transaction over EAPOL to NAD, then NAD relay to Radius server
+    + Scenarios:
+        + UAP + MAP - Full Access
+        + UAP + MAF - Restricted Access A
+        + UAF + MAP - Restricted Access B
+        + UAF + MAF - No Access
+        + UAP only - Restricted Access C
 
++ Demo: New AnyConnect version 
+    + PC-B: Install new version AnyConnect
+    + SW3 Config:
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   mab
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int gi1/0/5
+        authentication port-control force-authorized
+        no mab
+        dot1x pae authenticator
+        ```
+    + PC-B: 
+        + Login: username=inelab.local\ldapuser, pwd=Cisco123!
+        + Network Access Manager Profile Editor > File > Open `configuration.xml` > EAP-CHAINING > Edit:
+            + Media Type: Wired (802.3) Network
+            + Security Level: Authenticating Network
+            + Connection Type: __Machine and User Connection__ (EAP Chaining)
+            + Machine Auth: EAP-FAST, Authenticate Using a Password=EAP-MSCAHPv2, use PACs
+                + Certificates: Trust any Root Certificate uthority (CA) Installed on the OS
+                + PAC Files: None
+                + Credentials: use machine credentials
+            + User Auth: EAP-FAST, EAP-FAST Settings: (Validate Server Identity, Enable Fast Reconnect), Authentication Using a Password=(EAP-MSCHAPv2, EAP-GTC, If using PCAs, allow unauthenticated PAC provisioning)
+                + Certificates: Trust any Root Certificate uthority (CA) Installed on the OS
+                + PAC Files: None
+                + Credentials: use Single Sign ON credentials
+    + ISE Config:
+        + Policy > Authenticaton > WIRED_EAP_FAST_AUTH, Conditions=(Wired_802.1x), Allowed Protocols=EAP-FAST, user=INEAD
+        + Policy > Policy Elements > Conditions > Compound Conditions > EAP_FAST_MAP_UAP: Expression=(Network Access:EapTunnel EQUAL EAP-FAST [Outer Method], Network Access:EapAuthentication EQUAL EAP-MSCHAPv2 [Inner Method], Network Access:EapChainingResult EQUAL __User and Machine both Succeeded__ [key condition for EAP Chaining])
+        + Policy > Authorization > move EAP_CHAINING entry between (Profiled Non Cisco IP Phones, CWA_PHASE2_POLICY): Conditions=(EAP_FAST_MAP_UAP), Permission=PermitAccess
+    + SW3: `conf t; int gi1/0/5; authentication port-control auto`
+    + PC-B: AnyConnect > Networks=EAP_CHAINING -> reconnect to PC-B, but failed
+    + TRBL:
+        + SW3: 
+            ```cfg
+            show authentication sessions    ! Authz Success
+            show authentication sessions int gi1/0/5
+            ! User-Name=ldapuser, No ACL
+            ! method=dot1x, status=Authc Success
+            ```
+        + ISE: Operations > Authentications > Identity=ldapuser, Authorization Profile=PermitAccess > Details:
+            + AuthorizationPolicyMatchedRule=EAP_CHAINING
+            + Username=ldapuser.host/test-pc-b (ldapuser - UA, host/test-pc-b - MA)
+            + Authetication Protocol=EAP-FAST (EAP-MSCHAPv2)
+            + User Case=Eap Chaining
+            + NACRadiusUserName=ldapuser, NACRadiusUserName=host/text-pc-b
+
++ Reasons of Lost Connection to PC-B
+    + By default, AnyConnect NAM module to access network -> takeover the built-in Windows NIC drivers
+    + AnyConnect install low level drivers that controls NICs -> not allow more than one NIC to work simultenously
+    + PC-B w/ 2 NICs, one for internal network, another for Internet which used to display GUI locally -> only one NIC is workign though all settings on NICs still availble
+    + Regaining VM console: [Dual Nic - how to VPN from 1, and use inet on 2?](https://superuser.com/questions/55829/dual-nic-how-to-vpn-from-1-and-use-inet-on-2)
+
++ Demo: Monitor and Low Impact Mode
+    + SW3 Config
+        ```cfg
+        cont f
+        int gi1/0/5
+          authentiation open
+        end
+        ```
+    + ISE: Operations > Diagnostic Tools > Evaluate Configuration Validators: 
+        + Settings: Network Device=10.10.10.01, AAA, Radius, Device Discovery, Logging, 802.1x (Monitor/Low Imact/Closed)=Monitor
+        + Inputs: username=Cisco, pwd=cisco, protocol=Telnet, port=23
+        + Summary:
+            + AAA: Missing
+                ```cfg
+                aaa group server radius <radius-group>
+                  server <ip> auth_port 1812 acct_port 1813
+                ! No required for old version Radius server
+
+                aaa authorization network auth-list group <radius-group>
+
+                aaa accounting dot1x default start-stop group radius 
+                ! for profiling
+                ```
+            + Logging:
+                ```cfg
+                logging origin-id ip    ! useful cmd, had better have for trbl
+                ```
 
