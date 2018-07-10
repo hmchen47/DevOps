@@ -57,7 +57,16 @@
 
 ### [Phased Deployment](./i04-Deploy.md)
 
-### [Layer 3 Authentication – HTTP / HTTPS](./i05-HTTP.md)
+### [Layer 3 Authentication – HTTP / HTTPS](./i05-WebPortal.md)
+
++ [Layer 3 Authentication](./i05-WebPortal.md#)
++ [Phase 1 Configuration](./i05-WebPortal.md#)
++ [Phase 2 Configuratio](./i05-WebPortal.md#)
++ [ISE Guest Service](./i05-WebPortal.md#)
++ [Bring Your Own Device (BYOD](./i05-WebPortal.md#)
++ [Wi-Fi Deployments](./i05-WebPortal.md#)
++ [Portal Policy](./i05-WebPortal.md#)
+
 
 ### [EndPoint Profiling](./i06-Profiling.md)
 
