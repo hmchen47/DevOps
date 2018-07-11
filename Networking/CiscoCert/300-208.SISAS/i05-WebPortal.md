@@ -308,10 +308,45 @@
             + IE (http://172.16.3.101): ok
 
 
-
-
 ## Phase 2 Configuration
 
++ Demo: CWA - Phase 2 Config
+    + ISE Config:
+        + Policy > Policy Elements > Results > Authorization > downloadable ACL > add: Name=CWA_PHASE2_DACL, Content=(permit ip any any) > Submit
+        + Policy > Policy Elements > Results > Authorization Profiles > Add: Name=CWA_PHASE2_PROFILE, DACL Name=CWA_PHASE2_DACL > Submit
+        + Policy > Authorization > CWA_PHASE1_POLICY > edit (Insert New Rule Above ~ __Phase 2 policy must be prior to Phase 1 policy__, otherwise, a loop formed): Name=CWA_PHASE2_POLICY, Condition=(Network Access:UseCase Equals __Guest Flow__), Permission=CWA_PHASE2_PROFILE > Submit
+        + Guest Flow: as soon as user passed web portal authentication, using the Session-ID to pass the authorization of the web portal
+    + SW3: 
+        ```cfg
+        debug aaa coa
+        show authentication sessions int gi1/0/5
+        ! check status, might be timeout
+        ```
+    + PC-B: IE (http://172.16.20.200) > user=peap-user, pwd=Cisco123! > ask for Device Registration
+    + ISE
+        + Administration > Web Portal Management > Settings > Guest > Multi-portal Configuration > DefaultGuestPortal > Operations tab: disable self-provisioning Flow > Save
+        + Administration > Identity Management > Identities > users > Add: Name=cwa-user, pwd=Cisco123!, UserGroups=Guest > Submit
+    + PC-B:  IE (http://172.16.20.200) > user=cwa-user, pwd=Cisco123! - Sign On Successful
+    + SW3 Messages: 
+        + RADIUS: CoA received from id 1 172.16.3.100:60924 cOa rEQUEST
+        + RADIUS: Cisco AVpair="subscriber:command=reauthentication"
+        + RADIUS: Cisco AVpair="subscriber:reauthenticate-type=last"
+        + RADIUS: Cisco AVpair="audit-session-id=88015B07000000CB117A5C91"
+        + RADIUS(00000000): Send CoA Ack Response
+        + RADIUS(000000E6): Send Access-Request
+        + RADIUS: Service-TYpe=Call Check
+        + RADIUS: Cisco AVpair="ACS:CIscoSecure-Defined-ACL=#ACSACL#-IP-CWA_PHASE2_DACL-56a18157"
+    + SW3:
+        ```cfg
+        show authentication sessions int gi1/0/5
+        ! Methpd=dor1x, status=Authz Success,
+        ! ACS ACL=xACSACLx-IP-CWA_PHASE2_DACL-56a18157
+
+        show yp access-lists xACSACLx-IP-CWA_PHASE2_DACL-56a18157
+        ! 10 permit ip any any
+
+        show ops session ip 172.16.20.101   ! xACSACLx-IP-CWA_PHASE2_DACL-56a18157
+    + PC-B: `ping 10.10.10.10` ok; `telnet 10.10.10.10` -ok
 
 
 ## ISE Guest Services
