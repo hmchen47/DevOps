@@ -63,9 +63,7 @@
 + [Phase 1 Configuration](./i05-WebPortal.md#)
 + [Phase 2 Configuratio](./i05-WebPortal.md#)
 + [ISE Guest Service](./i05-WebPortal.md#)
-+ [Bring Your Own Device (BYOD](./i05-WebPortal.md#)
-+ [Wi-Fi Deployments](./i05-WebPortal.md#)
-+ [Portal Policy](./i05-WebPortal.md#)
++ [Web Portal Policy - Demo](./i05-WebPortal.md#)
 
 
 ### [EndPoint Profiling](./i06-Profiling.md)
