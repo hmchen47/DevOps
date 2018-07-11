@@ -351,17 +351,70 @@
 
 ## ISE Guest Services
 
++ ISE Guest Services
+    + Nothing else but what we’ve seen in CWA
+    + ISE supports full lifecycle management for guest access
+        + Admin Portal, used to manage global policies for sponsors and guest users, runs on Admin Persona
+        + Sponsor Portal, used to manage guest user accounts, runs on PSN Persona
+        + Guest Portal, used to authenticate guests, runs on PSN persona
+        + All three portals run by default over TCP 8443, can be changed
+    + Guest Portal scalability
+        + Supports multiple guest portals
+        + Each guest portal is managed by one or multiple sponsors
+        + Each guest portal can be
+
++ Guest Services Configuration Steps
+    + On supplicant and NAD, same as in CWA
+    + On ISE, same as in CWA
+        + Optionally create sponsor accounts and groups
+        + Optionally configure guest account settings
+        + Optionally customize guest portal
+    + On ISE, same as in CWA
+        + Optionally create sponsor accounts and groups
+    + If guest credentials are stored on ISE
+        + Provision user credentials as Guest Account
+        + This default requirement can be changed
+
++ Bring Your Own Device - BYOD
+    + Enterprise assets will perform MAB or 802.1x in general
+        + Supplicant on assets is automatically deployed and configured
+        + Operation is transparent to the user
+    + Many enterprises are opening up for BYOD
+        + Allows you to come to work with your own device
+        + To be considered enterprise, it has to use 802.1x authentication
+        + Challenge is configuration of 802.1x on user’s devices
+    + ISE allows employees to enroll their own devices
+        + Supplicant on devices will be automatically configured for 802.1x and enrolled in PKI
+        + Process achieved through CWA with self-service and device registration being enabled
+        + Once enrolled, user will be assigned to the ActivatedGuest group of users, which can be used as a condition in authorization policies
+
++ BYOD Device Onboarding
+    + Mostly used for mobile assets
+        + Smartphones, tablets, laptops
+    + As mobile assets lack Ethernet card in general
+        + Deployment is done via Wi-Fi
+        + Wired is also supported
+    + Wireless Deployment Options
+        + Single SSID
+        + Dual SSID
+
++ Wi-Fi Deployments
+    + Single SSID
+        + Provisioning and network access through same SSID
+        + Rarely used, because of complications
+            + VLAN change is required after provisioning
+            + Provisioning SSID has to be secured, requires layer 2 authentication
+            + Guest support not recommended, due to layer 2 authentication
+    + Dual SSID
+        + Provisioning happens through one SSID
+            + Deployed with CWA (and AD authentication in general)
+            + Guest support is recommended, as layer 2 authentication is open
+        + Network access happens through second SSID
+            + After successful 802.1x provisioning
+            + Automatic SSID change can be triggered by the provisioning process
 
 
-## Bring Your Own Device (BYOD)
-
-
-
-## Wi-Fi Deployments
-
-
-
-## Portal Policy
+## Web Portal Policy - Demo
 
 
 
