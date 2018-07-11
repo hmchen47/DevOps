@@ -213,6 +213,101 @@
 
 ## Phase 1 Configuration
 
++ Demo: Config CWA - Phase 1
+    + Clear previous config on PC-B: Turn off 802.1x
+        + run `service.msc` > Cisco AnyConnect > Stop
+        + Verification: AnyConnect > Networks=Service Unavailable
+    + SW3: 
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication open
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+        conf t
+        int gi1/0/5
+          no authentication open
+          no dot1x pae wuthenticator
+          mab
+        exit
+
+        ip http server
+        ip http secure-server
+        do show ip device tracking  ! Enabled
+        
+        aaa server radius dynamic-author
+          do show run | i radius
+          ! aaa authentication dot1x default group radius
+          ! aaa authorization network default group radius
+          ! aaa server radius dynamic-author
+          ! ip radius source-interface Loopback0
+          ! radius-server host 172.16.3.100 key radiuskey
+          ! radius-server vsa send authentication
+
+          client 172.16.3.100 server-key radiuskey
+        exit
+        int gi1/0/5
+          shut
+        exit
+        ```
+    + ISE Config:
+        + Remove PC-B MAC addr from Endpoint MAC Store -> was manually added to test MAB w/ PC-B
+        + Administration > Remove Linksys-Device > delete
+        + Policy > Authentication > MAB (default entry): Conditions=(Wired_MAB OR Wireless_MAB), Allowed Protocols=Default Network Access, use=Internal Endpoints (edit: use=Internal Endpoints, If user not found = Contimue) [ behave like authentication is successful, continue inspecting authorization policies)]
+        + Policy > Policy Elements > Results > Authorization > downloadable ACL > Add: Name=CWA_PHASE1_DACL, Content=(permit udp any any eq bootps, permit udp any host 172.16.20.100 eq 53, permit tcp any any eq 80, permit tcp any any eq 443, permit tcp any host 172.16.3.100 eq 8443) [dns=53, http=80, https=443, web portal=172.16.3.100] > Save > Submit
+        + Policy > Authorization > Profiled Non Cisco IP Phone > edit (Insert New Rule Below): Name=CWA_PHASE1_PROFILE, Conditions=(Network Access:AuthenticationStatus Equals UnknownUser), Permission=CWA_PHASE1_PROFILE > Save
+    + Verification:
+        +  SW3: 
+            ```cfg
+            conf t
+            int gi1/0/5
+              shut
+              no shut
+            exit
+            ip access-list extended CWA_REDIRECT_ACL
+              permit tcp any any eq 80
+              permit tcp any any eq 443
+            exit
+            int gi1/0/5
+              shut
+              no shut
+            end
+            
+            show authentication sessions int gi1/0/5
+            ! methpd=mab, status=Authz Success, Status=Authz Success, Authorized By=Authentication Server
+            ! ACS ACL=xACSACLx-IP-CWA_PHASE1_DACL-56a17dd7, URL Redirect=CWA_REDIRECT_ACL, 
+            ! URL Redirect=https://ISE1-12.inelab,local:8443/guestportal/gateway?session-Id=88015B0A000000CB117A5C91&action=cwa
+            
+            show ip access-lists CWA_REDIRECT_ACL
+            ! Extended IP access list xACSACLx-IP-CWA_PHASE1_DACL-56a17dd7
+            !   10 permit tcp any any eq 80
+            !   20 permit tcp any any eq 443
+
+            show ip access-list xACSACLx-IP-CWA_PHASE1_DACL-56a17dd7
+            ! Extended IP access list xACSACLx-IP-CWA_PHASE1_DACL-56a17dd7
+            !   10 permit udp any any eq bootps
+            !   20 permit udp any host 172.16.3.100 eq domain
+            !   30 permit tcp any any eq www
+            !   40 permit tcp any any eq 443
+            !   50 permit tcp any host 172.16.3.100 eq 8443
+
+            show epm session ip 172.16.30,101
+            ! Asmission feature=DOT1X, ACS ACL=xACSACLx-IP-CWA_PHASE1_DACL-56a17dd7
+            ! URL_Redirect_ACL=CWA_REDIRECT_ACL, 
+            ! URL Redirect=https://ISE1-12.inelab,local:8443/guestportal/gateway?session-Id=88015B0A000000CB117A5C91&action=cwa
+            ```
+        + PC-B: 
+            + `nslookup`:- default network unknown
+            + `ipconfig /all`: ip = 172.16.20.101, DNS server=172.16.20.100
+            + `nslookup ise1-12.inelab.local`: addr = 172.16.3.100
+            + IE (http://172.16.3.101): ok
+
+
 
 
 ## Phase 2 Configuration
