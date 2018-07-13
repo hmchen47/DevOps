@@ -14,9 +14,9 @@
     + By default, dynamic profiling is turned off
         + Endpoints are still automatically profiled based on MAC address
         + However, only device vendor can be detected, so it’s not very specific
-    + Demo: ISE - Administration > Idenitity Management > Identities > Endpoints > Add: 
+    + Demo: ISE - Administration > Identity Management > Identities > Endpoints > Add: 
         + MAC Address=48:f8:3b:2e:25:32
-        + Static Assignment (Specific group addigned, but not shown in Authorization policy): Policy Assignment=Apple-iPad, ...
+        + Static Assignment (Specific group added, but not shown in Authorization policy): Policy Assignment=Apple-iPad, ...
         + Static Group Assignment (Able to be used in Authorization Policy): Identity Group Assignment=Cisco-IP-Phone
         + If both selected, device auto detected
 
@@ -54,6 +54,11 @@
         + Not primary tool
     + Netflow samples
         + Detects abnormal traffic (profiled printer making skype calls on the Internet)
+
++ Profiling Flow
+    <a href="https://www.slideshare.net/Cisco_Mobility/wireless-lan-security-policy-and-deployment-best-practices">
+        <br/><img src="https://image.slidesharecdn.com/v1brkewn-2021c2securitypolicybestpractices-111214120915-phpapp02/95/wireless-lan-security-policy-and-deployment-best-practices-23-728.jpg?cb=1324564339" alt="Device Profiling" width="600">
+    </a>
 
 
 ## Profiling Policies
