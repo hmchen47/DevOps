@@ -79,6 +79,18 @@
         + Each rule is a condition matching on collected endpoint attributes
         + Each rule ahs an associated action, most commonly being to increase the Certainty Factor
             + NMAP SCAN is an alternative action
+    + Demo: ISE - Policy > Profiling > Profiling Policies > Apple Device: Name=Apple Device, Minumum Certainty Factor = 10, Exception Action = None
+    + Demo CoA?
+        + Procedure: 1) Creating profile; 2) Implement 802.1x for IP Phone
+        + Conditions: 1) Phone connected to SW; 2) Profiling data sends to ISE
+    + Demo: Rules - Policy > Profiling Policies > Apple-Device: 
+        + Rule=(if Apple-DeviceRule1-SCAN then Take Network Scan Action, if Apple-DeviceRule1Check1 then Certainty Factor Increases 10)
+        + Apple-DeviceRule1Check1: Expression=MAC:OUI CONTAINS Apple
+    + Demo: Rule Child Policy - Policy > Profiling Policies > Apple-Device > Apple-iPhone
+        + Name=Apple-iPhone, Minimum Certainty Factor=20
+        + Ruless=(if Apple-iPhoneRule2Check1 then Certainty Factor Increases 20, if Apple-i{honeRule1Check1 then Certainty Factor Increases 20})
+        + Apple-iPhoneRule2Check1 Expression=DHCP:hostname CONTAINS iPhone
+        + Apple-i{honeRule1Check1 Expression=IP:User-Agent CONTAINS iPhone
 
 + Profiling Result
     + It can happen that the device is authorized by ISE before being accurately profiled
