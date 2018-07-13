@@ -402,10 +402,10 @@
     + Single SSID
         + Provisioning and network access through same SSID
         + Rarely used, because of complications
-            + VLAN change is required after provisioning
+            + VLAN change is required after provisioning - changing VLAN requires disconnect first to gain new IP addr
             + Provisioning SSID has to be secured, requires layer 2 authentication
             + Guest support not recommended, due to layer 2 authentication
-    + Dual SSID
+    + Dual SSID - More Scalable
         + Provisioning happens through one SSID
             + Deployed with CWA (and AD authentication in general)
             + Guest support is recommended, as layer 2 authentication is open
@@ -415,6 +415,48 @@
 
 
 ## Web Portal Policy - Demo
+
++ ISE: 
+    + Guest_Portal_Sequence: Administration > Identity Management > Identity Source Sequence: Guest_Portal_Sequence=(Internal Users, Guest Users)
+    + Sponsor_Portal_Sequence: Administration > Identity Management > Identity Source Sequence > Sponsor Portal Sequence: Search List=(Internal User)
+    + Blacklist: Policy > Authorization > Wireless Blacklist Default: Conditions=(Blacklist, Wireless_Access), Permissions=Blackhole_Wireless_Access
+    + Blackhole: Policy > Policy Elements > Results > Authorization > Authorization Profile > Blackhole_Wireless_Access: Attribute Details=(Access Type=ACCESS_TYPE, cisco-av-pair=url-redirect=https://ip:port/blackhole/blackhole.jsp, cisco-av-pair=url-redirect-aclBLACKHOLE)
+    + Administration > Web Portal Management > Settings >
+        + Guest > Multiple Portal Configurations > DefaultGuest Portal: 
+            + Operations: No self-provision flow (BYOD), Mobile portal (correctly displayed on mobile device), guest users should download, posture client (disabled), guest users should be allowed to do self-service (disable, service=create username/pwd for visitors but not their own)
+            + Customization: language template
+            + Authentication (validate credential against): Identity Store Sequence = Guest_Portal_Sequence, Advanced Search List Setting =Treat as if the user was not found and proceed to the next store in the sequence
+            + Advanced Search List Setting: 
+                + Meaning: select the action to be performed if a selected identity store cannot be accessed for authentication
+                + Option 1: Do not access other stores in the sequence and set the 'Authentication Status' attribute to 'Process Error'
+                + Option 2: Treat as if the user was not found and proceed to the next store in the sequence
+        + Guest > Password Policy
+        + Portal Policy:
+            + Self Registration: Guest Role=Guest
+        + Time Profile=DefaultEightHours
+        + Username Policy:
+        + Detail Policy: fields for uest to filled in (Mandatory/Optional/Unused)
+        + Sponsor > Authentication Source: Identity Store Sequence=Sponsor_Portal_Sequence
+        + General > Ports > 
+            + Web Portal Settings > 
+                + Admin Portal Setting: HTTP=80, HTTPS=443
+                + Blacklist Portal Setting: HTTPS=8443 [ISE records the devices for users and maintain ta list.  If device lost, t can be blocked]
+            + Guest Portal and Client Provisioning Portal Settings: HTTPS=8443
+            + My Device Portal Settings: HTTPS=8443
+            + Sponsor Portal Settings: HTTPS=8443
+
++ PC-B: IE (https://172.16.3.100:8443/sponsorportal) > user=peap-user, pwd -> failed
+
++ Sponsor Portal: 
+    + ISE Creates Users: 
+        + Administration > Identity Management > Settings > Sponsor _Portal_Sequence: Authentication Search List=Internal User
+        + Administration > Identity Management > Identities > Users > Add: Name=sponsor-user, pwd=Cisco123!, UserGroup=SponsorAllAccount > Submit
+    + PC-B: IE (https://172.16.3.100:8443/sponsorportal/) > user=sponsor-user, pwd=Cisco123! > Manage Guest Account: Create Account/Import Accounts/Create Random Accounts
+
++ Device Portal:
+    + ISE creates local user account: Administration > Identity Management > Settings > Identities > Users: Name=Christian-user, pwd=Cisco123!, UserGroup=ActivatedGuest > Submit
+    + PC-B: IE (https://172.16.3.100:8443/mydevices/) > user=christian-user, pwd=Cisco123! > Manage Devices=(Edit/Reinstate/Lost?/Delete/Full Wipe/Corporate Wipe/PIN Lock)
+    
 
 
 
