@@ -122,7 +122,10 @@
         9. After successful Web authentication, the AAA server sends a CoA message to udpate the filter or VLAN assignment applied on the controlled port, allowing the host to access the LAN.
         10. The authenticator responds with a CoA-ACK message and sends a MAC RADIUS authentication request to the AAA server.
         11. The AAA server matches the session ID to the appropriate access policy and sends an Access-Accept message to authenticate the host.
-
+    + Wireless Device Registration Web Authentication Flow
+        <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/2-0/admin_guide/b_ise_admin_guide_20/b_ise_admin_guide_20_chapter_01111.html">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/372001-373000/372887.eps/_jcr_content/renditions/372887.jpg" alt="Wireless Device Registration Web Authentication Flow" width="600">
+        </a>
 
 + RADIUS CoA
     + Per RADIUS RFC
