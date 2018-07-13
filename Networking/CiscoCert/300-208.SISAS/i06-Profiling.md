@@ -217,7 +217,13 @@
         + ISE: Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone > Refresh: IP Addr=138.1.80.102
     + Why not `.101`?: IP Phone sent request w/ old `.101` address to DHCP server and ISE, but get NACK from DHCP Server and got new IP address `.102` eventually,.  However, ISE already got `.101`
 
-+ Demo: Hierarchy Rule and Cetainty Factors
++ Disable Default Rules in Production Environment
+    + Authentication: Policy > Authentication > Default
+    + Authorization: Policy > Authorization > Default: Condition=(PermitAccess)
+    + Default rules allowing any types of Radius traffic
+    + Authorization Default rules used in Monitor/Low Impact Mode, but not Closed Mode
+
++ Demo: Hierarchy Rule and Certainty Factors
     + SW1: `show run | i radius|aaa` - None
     + ISE Config
         + Policy > Profiling > Profiling Policies > Cisco Devices > Cisco-IP-Phone > Cisco-IP-Phone-7960
@@ -232,6 +238,199 @@
         + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone: Create an Identity Group for the Policy = Yes
         + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone > Cisco-IP-Phone-7960: Create an Identity Group for the Policy = Yes (was No) > Save
         + Policy > Authorization > Profiled Cisco IP Phones: Conditions=(Endpoint Identity Groups > Profiled > Cisco-IP-Phone-7960)
+
++ Demo: Authenticate IP Phone
+    + Procedures:
+        1. Config SWS1 to authenticate IP Phone to ISE with MAB
+        2. Ensure Authentication & Authorization policies to authenticate IP Phone
+    + ISE Config
+        + Policy > Authentication > MAB: Conditions=(Wired_MAB OR Wireless_MAB), Allowed Protocols=Default Network Access, use=Internal Endpoints
+        + Policy > Policy Elements > Results > Authentication > Authentication Profile > Cisco_IP_Phone: Common Tasks=(DACL=PERMIT_ALL_TRAFFIC, Voice Domain Permission)
+    + SW1:
+        ```cfg
+        conf t
+        aaa new-model
+        aaa authentication dot1x default group
+        aaa group server radius ISE_RADIUS
+          server-private 172.16.3.100 key sw1radius
+          ip radius source-interface Loopback0
+        exit
+        do show run | b aaa group
+        ! aaa group server radius ISE_RADIUS
+        !   server-private 172.16.3.100 auth-port 1645 acct-port 1646 key sw1radius
+        !   iip radius source-interface loopkback 0
+        ! end
+        aaa authentication dot1x default group ISE_RADIUS
+        aaa authorization network default group ISE_RADIUS
+        radius server vsa send authentication
+        do show run int f1/0/5
+        ! interface FastEthernet 1/0/5
+        !   switchport access vlan 81
+        !   switchport mode access
+        !   switchport voice vlan 80
+        !   logging event spanning-tree
+        !   spanning-tree portfast
+        ! end
+        int f1/05
+          mab
+        ^Z
+        show mac address-table int f1/0/5
+        ! 80 0003.6b3c.35f0 DYNAMIC f1/0/5  - voice
+        ! 81 0003.6b3c.35f0 DYNAMIC f1/0/5  - data: phone
+        ! 81 48f8.b32e.2423 DYNAMIC f1/0/5  - data: PC-A
+
+        conf t
+        int f1/0/5
+          authentication port-control auto
+          shut
+          no shut
+        end
+        do show mac address-table int f1/0/5
+        ! 80 0003.6b3c.35f0 DYNAMIC f1/0/5  - voice
+
+        ! AUTHMGR-7-RESULT: Authentication result 'server dead' from 'amb' for client
+
+    + PC-A: 
+        + NIC > Properties > Authentication > disable IEEE 802.1x authentication
+        + `ifconfig /all` - Mac addr=18:f8:3b:2e:24:23 & lost connection to ISE
+
+    + SW3: `debug radius authentication; conf t; int f1/0/5; shut; no shut; end`
+    + ISE: Administration > Network Resource - Network Device > Add: Name=SW1, IP 10.8.8.8/32, Authentication settings=(shared secret=sw1radius) > Submit
+    + SW1: 
+        ```cfg
+        test aaa group ISE_SERVER peap-user Cisco123! legacy
+        ! RADIUS(00000000): started 5 sec timeout 
+        ! No Radius connectivity
+        
+        ping 172.16.3.100   ! ok
+        show run | b aaa group
+        ! aaa group server radius RADIUS
+        !   server_private 172.16.3.100 auth-port 1645 acct-port 1646 key sw1radius
+        !   ip radius source-interface lo0
+        ! end
+        ! aaa authentication dot1x default group ISE_RADIUS
+        ! aaa authorization network default group ISE_RADIUS
+        ! aaa session-id common
+        ! switch 1 provision ws-c3750-24p
+    + ISE: Operations > Authentication > Last Error Entry > details: Event=Radius Request dropped, Failure Reason=Could not locate Network Device ot AAA client, NAS IP Address=136.1.83.8 (sw1 source ip, not lo0)
+    + SW1:
+        + config ignoring `ip radius source-interface lo0` 
+        ```cfg
+        conf t
+        aaa group server radius ISE_RADIUS
+          ip radius source-interface lo0
+          no server-private 172.16.3.100 auth-port 1645 acct-port 1646 key sw1radius
+          server-private 172.16.3.100 auth-port 1645 acct-port 1646 key sw1radius
+        end
+        test aaa group ISE_RADIUS peap-user Cisco123! legacy        ! timeout
+
+        conf t
+        aaa group server radius ISE_RADIUS
+          no server-private 172.16.3.100 auth-port 1645 acct-port 1646 key sw1radius
+          server 172.16.3.100
+        exit
+        radius-server host 172.16.3.100 key sw1radius
+        ^Z
+
+        test aaa group ISE_RADIUS peap-user Cisco123! legacy        ! timeout
+
+        conf t
+        no aaa group server radius ISE_RADIUS
+        no aaa authentication dot1x default group ISE_RADIUS
+        no aaa authorization network default group ISE_RADIUS
+        aaa group server radius ISE
+          server host 172.16.3.100
+        exit
+        radius-server host 172.16.3.100 key sw1radius
+        ip radius source-interface lo0
+        exit
+
+        test aaa group ISE_RADIUS peap-user Cisco123! legacy
+        ! User was successfully authenticated
+        ```
+    + Reason: bug on Naming, ISE_RADIUS not working
+
++ Demo: Multi-Domain
+    + SW1:
+        ```cfg
+        conf t
+        aaa authentication dot1x default group ISE
+        aaa authorization network default group ISE
+        do debug radius authentication
+        int f1/0/5
+          shut
+          no shut
+        end
+        ! RADIUS: Cisco AVpair="ip:ineacl#2=permit udp any host 172.16.20.100 eq 53"
+        ! RADIUS: Cisco AVpair="ip:ineacl#3=permit tcp any any eq 80"
+        ! RADIUS: Cisco AVpair="ip:ineacl#4=permit tcp any any eq 8443"
+        ! RADIUS: Cisco AVpair="ip:ineacl#5=permit tcp any host 172.16.3.10"
+        ! WRONG ACL
+        ```
+    + ISE: 
+        + Policy > Authorization > Profiled Cisco IP Phone (2nd entry)
+        + Administration > Identity Management > Identities > Endpoints > Cisco IP Phone
+
+    + SW1:
+        ```cfg
+        show authentication sessions
+        ! interface=f1/0/5, MAC=48f8.b32e.2423, method=mab, Domain=DATA, 
+        ! Status=Authz Failed, Session ID=8801530800000002142D1F0C
+        show authentication sessions int f0/1/5
+        ! User-Name=48-F8-B3-2E-24-23, Oper host mode=single-host, method=mab, status=Authc Success
+        ```
+    + Single Host mode not allow any host on voice domain
+    + SW1: 
+        ```cfg
+        conf t
+        int f1/0/5
+          authentication host-mode multi-domain
+          do debug radius authentication 
+        exit
+        ^Z
+        ! ...
+        udebug all
+        ! RADIUS(00000005): Send Access-Request to 172.16.3.100 id 1645/19
+        ! RADIUS: Service Type=Call Check
+        ! RADIUS: Calling-Station-ID="00-03-6B-3C-35-F0"
+        ! RADIUS: Received from ID 1645/19 172.16.3.100:1645 Access-Accept
+        ! RADIUS: Cisco AVpair="device-traffic-class=Voice"
+        ! RADIUS: Cisco AVpair="ACS CiscoSecure-Defined-ACL=#ACSACL#-IP-PERMIT_ALL_TRAFFIC-51ef7db1"
+
+        show authentication sessions
+        ! f1/0/5    48f8.b32e.2423  mab DATA    Authz Failed    880153080000002142D1F0C
+        ! f1/0/5    0003.6b3c.35f0  mab VOICE   Authz Success   88015380000000314301948
+
+        show authentication sessions int f1/0/5
+        ! ignore Data portion
+        ! Domain=Voice, User-Name=00-03-6b-3c-35-f0
+        ! ACS ACL=xACSACLx-IP-PERMIT_ALL_TRAFFIC-51ef7db1
+
+        show ip access-lists int f1/0/5
+        ! access list is Auth-Default-ACL
+        
+        ip device tracking
+        ip device tracking probe interval 30
+        ip device tracking probe use-vsi
+        epm logging 
+        int f1/0/5
+          shut
+          no shut
+        end
+        ! EPM-6-POLICY_REQ: ... | EVENT APPLY
+        ! EPM-6-AUTH_ACL: POLICY AUTH-Default-ACL
+        ! EPM-6-AAA: POLICY xACSACLx-IP-PERMIT_ALL_TRAFFIC-51ef7db1 | EVENT DOWNLOAD-REQUEST
+        ! EPM-6-AAA: POLICY xACSACLx-IP-PERMIT_ALL_TRAFFIC-51ef7db1 | EVENT DOWNLOAD-SUCCESS
+        ! EPM-6-IPEVENT: IP 0.0.0.0 ...
+        ! EPM-6-POLICY_APP_SUCCESS: ...
+
+        show ip device tracking all
+        ! IP=136.1.80.104, MAC=0003.6b3c.35f0, vlan=80, state=ACTIVE
+
+        show ip access-lists int f1/0/5     ! permit ip any any
+        ping 136.1.80.104                   ! ok
+        show authentication sessions
+        ! User-Name=00-03-6b-3c-35-f0, Oper host mode=multi-domain
 
 
 ## Device Sensor Overview
