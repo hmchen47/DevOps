@@ -14,6 +14,11 @@
     + By default, dynamic profiling is turned off
         + Endpoints are still automatically profiled based on MAC address
         + However, only device vendor can be detected, so it’s not very specific
+    + Demo: ISE - Administration > Idenitity Management > Identities > Endpoints > Add: 
+        + MAC Address=48:f8:3b:2e:25:32
+        + Static Assignment (Specific group addigned, but not shown in Authorization policy): Policy Assignment=Apple-iPad, ...
+        + Static Group Assignment (Able to be used in Authorization Policy): Identity Group Assignment=Cisco-IP-Phone
+        + If both selected, device auto detected
 
 + Dynamic Profiling
     + Automatic fingerprinting of the endpoint based on several probes
@@ -46,6 +51,7 @@
     + DNS resolution performed by ISE
         + Reverse DNS query for PTR records to get the FQDN of the endpoint
         + Query initiated only if device profiles through other probes: RADIUS, DHCP, HTTP, SNMP
+        + Not primary tool
     + Netflow samples
         + Detects abnormal traffic (profiled printer making skype calls on the Internet)
 
