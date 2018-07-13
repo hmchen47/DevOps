@@ -68,6 +68,12 @@
 
 ### [EndPoint Profiling](./i06-Profiling.md)
 
++ [EndPoint Profiling](./i06-Profiling.md#)
++ [Profiling Policies](./i06-Profiling.md#)
++ [ISE Authorization Flow with Profiling](./i06-Profiling.md#)
++ [Profiling Configuration](./i06-Profiling.md#)
++ [Device Sensor Overview](./i06-Profiling.md#)
+
 ### [Posture Assessment](./i07-Posture.md)
 
 ### [TrustSec](./i08-TrustSec.md)
