@@ -493,3 +493,161 @@
         + `show aaa method-lists accounting`
         + `debug radius accounting`
 
+
++ Demo:
+    + ISE: enable Radius Accounting
+        Administration > Deployment > ISE1-12 > Profiling Configuration Tab: Radius enable > Save
+    + SW3:
+        ```cfg
+        show run | i aaa
+        ! aaa new-model
+        ! aaa authentication dot1x default group radius
+        ! aaa authorization network default group radius
+        ! aaa accounting dot1x default group fdfd
+        ! aaa server radius dynamic-author
+        ! aaa session-id commom
+
+        conf t
+        no aaa accounting dot1x default group fdfd
+        aaa accounting dot1x default group radius
+        radius-server vsa send accounting
+        aaa accounting update newinfo
+        ^Z
+        show cdp        ! Active
+        show lldp       ! Active
+
+        conf t
+        device-sensor notify all-changes
+
+        ! CDP device sensors
+        device-sensor filter-list cdp CDP_SENSOR
+          tlv name device-name
+          tlv name capabilities-type
+          tlv name platform-type
+        exit
+        device-sensor filter-spec cdp include list CDP_SENSOR
+
+        ! LLCP Device sensors
+        device-sensor filter-list lldp LLDP_SENSOR
+          tlv name port-id
+          tlv name system-name
+          tlv name system-capabilities
+        exit
+        device-sensor filter-spec lldp include list LLDP_SENSOR
+
+        ! DHCP device sensors
+        device-sensor filter-list dhcp DHCP_SENSOR
+          option name hostname
+          option name client-identifier
+          option name client-qfdn
+          option name class-identifier
+        exit
+        device-sensor filter-spec dhcp include list DHCP_SENSOR
+
+        do show run int gi/1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication open
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+
+        do show logging
+        ! console logging: level debugging
+        ! monitor logging: level informational
+        ! Buffer logging: level debugging
+
+        debug radius accounting
+        ```
+    + Verification
+        + SW3:
+            ```cfg
+            conf t
+            int gi1/0/5
+              shut
+              authentication port-control force-authorized
+              no shut
+            exit
+
+            show device-sensor cache all    ! port gi1/0/5
+            ! cdp 1: device-name; cep 4: capabilities-type; cdp 6: platform-type
+
+            show run int vlan90
+            ! interface vlan 90
+            !   ip address 17.16.20.1 255.255.255.0
+
+            show ip dhcp binding    ! 136.1.80.104, 172.16.20.101
+            clear ip dhcp binding 172.16.20.101
+            show ip dhcp binding    ! 136.1.80.104
+            conf t
+            int f1/0/5
+              shut
+              no shut
+            end
+
+            show ip dhcp binding    ! 136.1.80.104 
+            ```
+        + PC-B: NIC -> identifying
+
+    + TRBL
+        + SW3:
+            ```cfg
+            conf t
+            int gi1/0/5
+              no dot1x authenticator
+              no authentication open
+              shut
+              authentication port-control force-authorized
+              no shut
+            end
+            ! restart PC-B, NIC keeps showing identifying
+
+            ! Remove DHCP capability
+            show run | i dhcp
+            ! ip dhcp exclude-address 136.1.80.1 136.1.80.100
+            ! ip dhcp exclude-address 136.1.81.1 136.1.81.100
+            ! ip dhcp exclude-address 172.16.20.1 172.16.20.100
+            ! ip dhcp pool VLAN80-PHONE
+            ! ip dhcp pool VLAN81-PC-A
+            ! ip dhcp pool VLAN90-PC-B
+
+            conf t
+            no device-sensor filter-spec dhcp include list DHCP_SENSOR
+            do show ip dhcp binding     ! 136.1.80.104, 172.16.20.101
+            device-sensor filter-spec dhcp include list DHCP_SENSOR
+              option name hostname
+              option name client-identifier
+              option name client-qfdn
+              option name class-identifier
+            exit
+            
+            show device-sensor cache all
+            ! dhcp 60: class-identifier; dhcp 12: host-name; dhcp 61: client-identifier
+            ! cdp 4: capabilities-type; cdp 6: platform-type; cdp 2: device-name
+        + ISE: Administration > Identity Management > Identities > Endpoints > Not showing
+        + SW3:
+            ```cfg
+            conf t
+            no device-sensor accounting
+            device-sensor accounting
+            no device-sensor notify all-change
+            device-sensor notify all-change
+            aaa accounting update periodic 1
+            end
+        + ISE: Administration > System > Deployment > ISE1-12 > Profiling Configuration Tab: RADIUS, DHCP
+        + SW3: 
+            ```cfg
+            clear ip dhcp binding 172.16.2.101
+            conf t
+            int f1/0/5
+              shut 
+              no shut
+            exit
+            int f1/0/5
+              shut
+              no shut
+            exit
+    + DHCP device sensor: new feature -> bug
