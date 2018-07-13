@@ -153,6 +153,85 @@
 
 ## Profiling Configuration
 
++ Topology
+    <br/><img src="./diagrams/sisas-net0.png" alt="Network with IP Phone" width="600">
+    + SW3: DHCP Server
+    + SW1: Default Gateway for IP Phone & PC-A
+
++ Demo: Profiling
+    + SW1 Config:
+        ```cfg
+        show run int vlan80
+        ! interface VLAN 80
+        !   ip address 136.1.80.8 255.255.255.0
+        !   ip helper-address 10.10.10.10
+        ! end
+
+        conf t
+        int vlan80
+          ip helper-address 172.16.3.100 255.255.255.0
+        end
+        show run int f1/0/5
+        ! interface VLAN 80
+        !   ip address 136.1.80.8 255.255.255.0
+        !   ip helper-address 10.10.10.10       - SW3 
+        !   ip helper-address 172.16.3.100      - ISE -> Profiling
+        ! end
+
+    + ISE Config
+        + Administration > Deployment > ISE1-12 > Persona: Policy Service=(Enable session service, Enable Profiling Service)
+        + Administration > System Setting > Profiling: CoA Type=Reauth > Save
+        + Administration > Deployment > ISE1-12 > Profiling Configuration Tab: DHCP=(Interface=Gi1/0/5) > Save
+
+    + SW1 Verification:
+        ```cfg
+        show run int f1/0/5
+        ! interface FastEthernet1/0/5
+        !   switchport access vlan 81
+        !   switcport mode access
+        !   switchport voice vlan 80
+        !   logging event spanning-tree
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int f1/0/5
+          shut
+        end
+        ! No action taken
+    + SW3 Verification 
+        ```cfg
+        show ip dhcp binding
+        ! 136.1.80.101  0100.036b.3c35.f0   automatic
+        ! 172.16.20.101 0148.f8b3.3e25.32   automatic
+        clear ip dhcp binding 136.1.80.101
+        show ip dhcp binding
+        ! 172.16.20.101 0148.f8b3.3e25.32   automatic
+        ! expect to get IP Phone address back later
+
+    + Verification
+        + SW1: `conf t; int f1/0/5; shut; no shut; ^Z`
+        + SW3: `show ip dhscp inding` - 172.16.20.101, 136.1.80.101
+        + ISE: Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone: IP addr=136.1.80.102 (different from .101) > delete
+        + SW1: `conf t; int f1/0/5; shut; no shut; exit`
+        + ISE: Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone > Refresh: IP Addr=138.1.80.102
+    + Why not `.101`?: IP Phone sent request w/ old `.101` address to DHCP server and ISE, but get NACK from DHCP Server and got new IP address `.102` eventually,.  However, ISE already got `.101`
+
++ Demo: Hierarchy Rule and Cetainty Factors
+    + SW1: `show run | i radius|aaa` - None
+    + ISE Config
+        + Policy > Profiling > Profiling Policies > Cisco Devices > Cisco-IP-Phone > Cisco-IP-Phone-7960
+            + Cisco Devices: Minimum Certainty Facor=10, Rules=(if Cisco-DeviceRule3Check1 then Certainty Factor Increases 10), Expression=MAC:OUI CONTAINS Scientific Atlanta
+            + Cisco-IP-Phone: Minimum Certainty Factor=20, Rules=(if CiscoIPPhoneDHCPClassIdentifier then Certainty Factor Increases 20), Expression=DHCP:dhcp-class-identifier CONTAINS Cisco Systems, Inc. IP Phone
+            + Cisco-IP-Phone-7960: Minimum Certainty Factor=70, Rules=(if CiscoIPPhone7960 then Certainty Factor Increases 70), Expression=CDP:cdpCachePlatform CONTAINS Cisco IP Phone 7960
+        + Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone: EndpointPolicy=Cisco-IP-Phone, EndpointProfilerServer=ISE1-12.inelab.local, EndpointSource=DHCP Probe, Identity Group=Cisco-IP-Phone, MAC Address=00:03:68:3c:35:f0, __dhcp-class-identifier=Cisco Systems, Inc. IP Phone CP-7960__
+        + Policy > Authorization > Profiled Cisco Ip Phone: Condition=Cisco-IP-Phone, Permissions=Cisco_IP_Phones > Edit: Conditions=(Endpoint Identity Group > Profiled > Cisco-IP-Phone)
+            + Cisco-IP-Phone is a general profile than a specific one
+            + ndpoint Identity Group used as a condition
+        + Each profiling policy manually configures ISE to make Authorization Policy visible for that Identity Group
+        + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone: Create an Identity Group for the Policy = Yes
+        + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone > Cisco-IP-Phone-7960: Create an Identity Group for the Policy = Yes (was No) > Save
+        + Policy > Authorization > Profiled Cisco IP Phones: Conditions=(Endpoint Identity Groups > Profiled > Cisco-IP-Phone-7960)
 
 
 ## Device Sensor Overview
