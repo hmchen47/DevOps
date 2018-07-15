@@ -2,7 +2,7 @@
 
 ## INE - CCNP Security - SISAS
 
-### [Course IIntroduction](./i00-Intro.md)
+### [Course Introduction](./i00-Intro.md)
 
 + [CCNP Security Certification Goals](./i00-Intro.md#ccnp-security-certification-goals)
 + [About SISAS](./i00-Intro.md#about-sisas)
@@ -47,24 +47,6 @@
 + [ACL Authorization: Per-User ACL](./i02-MAB.md#acl-authorization-per-user-acl)
 + [MAC Authentication Bypass Deployment Guide](./i02-MAB.md#mac-authentication-bypass-deployment-guide)
 
-
-+ [Extensible Authentication Protocol (EAP)](./i03-EAP.md#extensible-authentication-protocol-eap)
-+ [Common EAP Tunneled Methods](./i03-EAP.md#common-eap-tunneled-methods)
-+ [Common EAP Non-Tunneled Methods](./i03-EAP.md#common-eap-non-tunneled-methods)
-+ [802.1x Configuration Steps](./i03-EAP.md#8021x-configuration-steps)
-+ [Deploying EAP](./i03-EAP.md#deploying-eap)
-+ [EAP-FASTv1 Implementation](./i03-EAP.md#eap-fastv1-implementation)
-+ [ISE Identity Sources](./i03-EAP.md#ise-identity-sources)
-+ [Authentication Against AD](./i03-EAP.md#authentication-against-ad)
-+ [AD Integration](./i03-EAP.md#ad-integration)
-+ [ISE Application Server](./i03-EAP.md#ise-application-server)
-+ [Identity Prefix & Suffix Strip](./i03-EAP.md#identity-prefix--suffix-strip)
-+ [User & Machine Authorization Policies](./i03-EAP.md#user--machine-authorization-policies)
-+ [Deploying EAP TLS](./i03-EAP.md#deploying-eap-tls)
-+ [Issuing Certificates on ISE](./i03-EAP.md#issuing-certificates-on-ise)
-+ [Enrolling Users on a Certificate](./i03-EAP.md#enrolling-users-on-a-certificate)
-+ [Importing CA Certificates](./i03-EAP.md#importing-ca-certificates)
-+ [EAP-FASTv2 Chaining](./i03-EAP.md#eap-fastv2-chaining)
 
 ### [Authentication & Authorization - EAP](./i03-EAP.md)
 
