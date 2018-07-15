@@ -11,27 +11,36 @@
     + Endpoint data collected through
         + NAC Agent
         + AnyConnect Posture module available in AnyConnect 4.0
+    + Wireless counterpart: MDM (Mobile Device Management) --> EEM (Enterprise Mobility Management)
+
++ Posture and Client Provisioning Policies Workflow in Cisco ISE
+    <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ise_admin_guide_24/b_ise_admin_guide_24_new_chapter_010111.html#ID37">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/310001-320000/310001-311000/310142.tif/_jcr_content/renditions/310142.jpg" alt="Posture and Client Provisioning Policies Workflow in Cisco ISE" width="600">
+    </a>
+
++ Requirements for Automatic Remediation
+    1. permanent agent supported
+    2. what the software intended to do, e.g., installing antivirus software, access privileges
 
 + NAC Agent Overview
     + NAC Agent
         + Temporary web agent based on ActiveX or Java (Windows): Limited remediation
-        + Permanent agent (Windows and Mac): Automatic remediation
+        + Permanent agent (Windows and Mac): Automatic remediation - Not always available
     + NAC Agent compliance module (OPSWAT) used for antivirus and antispyware vendor support
     + NAC Permanent Agent deployment options
         + Manual installation, not scalable
-        + Unattended installation, customization available
-        + ISE Client Provisioning Policy
+        + Unattended installation, customization available -> Silent activities
+        + ISE Client Provisioning Policy - ISE Web Service
             + Can also be used to automatically update NAC Agent or compliance module
 
 + NAC Agent Connectivity Requirements
     + NAC Agent communicates directly with ISE
         + Supplicant requires IP connectivity to ISE
         + NAD is completely bypassed, makes sense as it does not understand posture data
-    + TCP 8443 to ISE
-        + Required if NAC Agent is installed through CPP
-    + UDP / TCP 8909 to ISE
-        + Required for NAC Agent wizard installation via CPP
-    + UDP / TCP 8905 to ISE
+        + No need to know the info, eg., vendor, software, version, etc.
+    + TCP 8443 to ISE: Required if NAC Agent is installed through CPP
+    + UDP/TCP 8909 to ISE: Required for NAC Agent wizard installation via CPP
+    + UDP/TCP 8905 to ISE
         + Used by SWISS protocol (report collected data to ISE)
         + Required for ISE discovery and NAC Agent update
     + ISE no longer uses legacy port 8906 for SWISS protocol
