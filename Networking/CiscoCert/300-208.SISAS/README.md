@@ -59,11 +59,11 @@
 
 ### [Layer 3 Authentication – HTTP / HTTPS](./i05-WebPortal.md)
 
-+ [Layer 3 Authentication](./i05-WebPortal.md#)
-+ [Phase 1 Configuration](./i05-WebPortal.md#)
-+ [Phase 2 Configuratio](./i05-WebPortal.md#)
-+ [ISE Guest Service](./i05-WebPortal.md#)
-+ [Web Portal Policy - Demo](./i05-WebPortal.md#)
++ [Layer 3 Authentication](./i05-WebPortal.md#layer-3-authentication)
++ [Phase 1 Configuration](./i05-WebPortal.md#phase-1-configuration)
++ [Phase 2 Configuratio](./i05-WebPortal.md#phase-2-configuration)
++ [ISE Guest Service](./i05-WebPortal.md#ise-guest-services)
++ [Web Portal Policy - Demo](./i05-WebPortal.md#web-portal-policy---demo)
 
 
 ### [EndPoint Profiling](./i06-Profiling.md)
