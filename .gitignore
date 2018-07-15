@@ -54,8 +54,4 @@
 ehthumbs.db
 Thumbs.db
 
-# Exceptions #
-## ###########
-!./Networking/CiscoCert/300-208.SISAS/diagrams/
-
 
