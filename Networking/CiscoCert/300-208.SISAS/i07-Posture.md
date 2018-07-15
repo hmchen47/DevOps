@@ -110,5 +110,61 @@
 
 ## Posture Configuration
 
++ Topology
+    <br/><img src="./diagrams/sisas-net0.png" alt="Network Topology - Complete" width="450">
+
++ Demo: Reset Network Back to Basic Config
+    + Purpose: ensure connectivity and authentication between PC-B & SW3
+    + SW1 Config:
+        ```cfg
+        show run int f1/0/5
+        ! interface FastEnthernet 1/0/5
+        !   switchport access vlan 81
+        !   switchport mode access
+        !   switchport voice vlan 80
+        !   logging event spanning-tree
+        !   authentication host-mode multi-domain
+        !   mab
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+    + PC-B: 
+        + NIC > Properties > Authentication: Enable IEEE 802.1x authentication, Network authentication method=PEAP (outer method)
+        + PEAP Settings (Outer method): Validate server certificate, Trust Root Certificate Authorities=inelab-CA, Authentication Method=smart card or other certificate
+        + Configure (Inner method): user certificate on this computer, use simple certificate selection, validate server certificate, Trust Root Certificate Authorities=inelab-CA
+
+    + SW3 Config:
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int gi1/0/5
+          dot1x pae authenticator
+          authentication port-control auto
+        end
+        ```
+    + ISE Config
+        + Policy > Authentication > MAB > edit (Insert New Rule Below): Name=PEAP_WIRED_AUTH, Conditions=(Wired_802.1x), Allowed Protocols=PEAP_EAP_TLS, Use=INE_PKI_STORE
+        + Policy > Authorization > MAB_DATA_VLAN: Conditions=Wired_MAB, Permissions=DATA_VLAN_90
+    + PC-B" NIC > enable
+
++ Demo: Posture Config
+    + ISE Config:
+        + List of Posture Conditions: Policy > Policy Elements > Conditions > Posture: File Condition/Registry Condition/Application Condition/Service Condition/Compund Condition/AV Compund Condition/AS Compound Condition/Dictionary Simple Condition/Dictionary Compound Condition/
+        + Policy > Policy Elements > Conditions > Posture > Application Conditions > Add: Name=APP_COND_ISO, Process Name=pPoerISO.exe, OS=Windows All > Save > Submit
+        + Policy > Policy Elements > Conditions > Posture > Remediation > Add: Name=APP_REM_ISO, Remediation Type=Automatic, Program Installation Path=v:\Program Files\PoerISO\powerios.exe > Add > Submit
+        + Policy > Policy Elements > Results > Posture > Requirements > default > edit: Name=POSTURE_TEST, OS=Windows All, Conditions=APP_COND_ISO, Remediation Action=APP_REM_ISO
+
++ Demo: Client Provision Policy
+    + SW3 Config
+        ```cfg
+        
+        ```
 
 
