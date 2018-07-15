@@ -168,8 +168,11 @@
             + ACL (dACL, filter-ID ACL, per-user ACL, airespace ACL)
             + dVLAN and voice VLAN permission
             + MACsec and URL Redirection (with Redirect-ACL)
-
-        <br/><img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="450">
+        
+        <img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="410">
+        <a href="https://smbitsolutions.wordpress.com/2012/07/12/cisco-identity-services-engine/">
+            <img src="https://smbitsolutions.files.wordpress.com/2012/07/image010.jpg" alt="text" width="340">
+        </a>
 
 + ISE Authentication Policy: Authentication Policy format
     + If condition: Identify the RADIUS packet based on RADIUS attributes
@@ -180,6 +183,11 @@
     + If condition: Identify the RADIUS session or supplicant by profiling
     + And optionally if used identity store: Store of user credentials
     + Then apply authorization profile:  User/device authorization
+
++ ISE Feature Flow
+    <a href="https://smbitsolutions.wordpress.com/2012/07/12/cisco-identity-services-engine/">
+        <br/><img src="https://smbitsolutions.files.wordpress.com/2012/07/image017.jpg" alt="ISE Feature Flow" width="400">
+    </a>
 
 ## ISE Management 
 

@@ -57,9 +57,23 @@
 
 ### [Phased Deployment](./i04-Deploy.md)
 
-### [Layer 3 Authentication – HTTP / HTTPS](./i05-HTTP.md)
+### [Layer 3 Authentication – HTTP / HTTPS](./i05-WebPortal.md)
+
++ [Layer 3 Authentication](./i05-WebPortal.md#layer-3-authentication)
++ [Phase 1 Configuration](./i05-WebPortal.md#phase-1-configuration)
++ [Phase 2 Configuratio](./i05-WebPortal.md#phase-2-configuration)
++ [ISE Guest Service](./i05-WebPortal.md#ise-guest-services)
++ [Web Portal Policy - Demo](./i05-WebPortal.md#web-portal-policy---demo)
+
 
 ### [EndPoint Profiling](./i06-Profiling.md)
+
++ [EndPoint Profiling](./i06-Profiling.md#endpoint-profiling-1)
++ [Profiling Policies](./i06-Profiling.md#profiling-policies)
++ [ISE Authorization Flow with Profiling](./i06-Profiling.md#ise-authorization-flow-with-profiling)
++ [Profiling Configuration](./i06-Profiling.md#profiling-configuration)
++ [Device Sensor Overview](./i06-Profiling.md#device-sensor-overview)
+
 
 ### [Posture Assessment](./i07-Posture.md)
 

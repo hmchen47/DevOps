@@ -25,8 +25,8 @@
 
 + PEAP - Protected EAP (developed by Microsoft, Cisco, RSA)
     + Two phase method
-        + Phase 1, called outer method, used to authenticate server and form the TLS channel
-        + Phase 2, called inner method, used to authenticate supplicant and protect its EAP identity
+        + Phase 1 (outer method): used to authenticate server and form the TLS channel
+        + Phase 2 (inner method): used to authenticate supplicant and protect its EAP identity
     + Theoretically, inner authentication method can be any EAP type
     + Mutual authentication
         + Server is always authenticated by certificate
@@ -348,7 +348,7 @@
             + Join: join ISE into Domain
             + Leave: remove ISE from Domain
             + Refresh: refresh schema, such as changes on AD
-        + : `ISE1-12-inelab.local`: TestConnection > Basic Test: Failed to authenticate use <userName>, Reason: LDAP: "Cannot resolve LDAP Service providers for 'INELAB.LOCAL'" --> check DNS
+        + `ISE1-12-inelab.local`: TestConnection > Basic Test: Failed to authenticate use <userName>, Reason: LDAP: "Cannot resolve LDAP Service providers for 'INELAB.LOCAL'" --> check DNS
 
 ## ISE Application Server
 
