@@ -160,7 +160,7 @@
         show authentication sessions
         ! int=Gi1/0/5,  Mac Addr=48f8.b32e.2532, Method=dot1x, Domain=Data,
         ! Status=Running, Session-ID=88015B0A000000C7111F68CE
-        
+        ```
 
 + CWA Configuration Steps on Supplicant
     + No config required
