@@ -38,9 +38,9 @@
         + Per-user ACL not supported, instead use proxy-ACL
         + same concept, still uses VSA’s, but different ACL syntax
     + Message Flow: WLC with Local WebAuth Non-Posture Flow
-    <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01110.html">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373351.eps/_jcr_content/renditions/373351.jpg" alt="WLC with Local WebAuth Non-Posture Flow" width="600">
-    </a>
+        <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_01110.html">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373351.eps/_jcr_content/renditions/373351.jpg" alt="WLC with Local WebAuth Non-Posture Flow" width="600">
+        </a>
     + Wired NAD with Local WebAuth Process
         1. Cisco ISE requires a login.html file with the HTML redirect to be uploaded to the NAD. This login.html file is returned to the browser of the guest device for any HTTPS request made.
         2. The browser of the guest device is redirected to the Guest portal where the guest’s login credentials are entered.
