@@ -35,21 +35,50 @@
 
 
 
-### [Authentication & Authorization - ACL & EAP](./i03-ACLEAP.md)
+### [Authentication & Authorization - EAP](./i03-EAP.md)
+
++ [Extensible Authentication Protocol (EAP)](./i03-EAP.md#extensible-authentication-protocol-eap)
++ [Common EAP Tunneled Methods](./i03-EAP.md#common-eap-tunneled-methods)
++ [Common EAP Non-Tunneled Methods](./i03-EAP.md#common-eap-non-tunneled-methods)
++ [802.1x Configuration Steps](./i03-EAP.md#8021x-configuration-steps)
++ [Deploying EAP](./i03-EAP.md#deploying-eap)
++ [EAP-FASTv1 Implementation](./i03-EAP.md#eap-fastv1-implementation)
++ [ISE Identity Sources](./i03-EAP.md#ise-identity-sources)
++ [Authentication Against AD](./i03-EAP.md#authentication-against-ad)
++ [AD Integration](./i03-EAP.md#ad-integration)
++ [ISE Application Server](./i03-EAP.md#ise-application-server)
++ [Identity Prefix & Suffix Strip](./i03-EAP.md#identity-prefix--suffix-strip)
++ [User & Machine Authorization Policies](./i03-EAP.md#user--machine-authorization-policies)
++ [Deploying EAP TLS](./i03-EAP.md#deploying-eap-tls)
++ [Issuing Certificates on ISE](./i03-EAP.md#issuing-certificates-on-ise)
++ [Enrolling Users on a Certificate](./i03-EAP.md#enrolling-users-on-a-certificate)
++ [Importing CA Certificates](./i03-EAP.md#importing-ca-certificates)
++ [EAP-FASTv2 Chaining](./i03-EAP.md#eap-fastv2-chaining)
 
 
-### [Authentication & Authorization - AD & Policies](./i04-ADPolicy.md)
 
-### [Authentication & Authorization - TSL & EAP-FAST](./05-TSLFAST.md)
+### [Phased Deployment](./i04-Deploy.md)
 
-### [Phased Deployment](./i06-Deploy.md)
+### [Layer 3 Authentication – HTTP / HTTPS](./i05-WebPortal.md)
 
-### [Layer 3 Authentication – HTTP / HTTPS](./i07-HTTP.md)
++ [Layer 3 Authentication](./i05-WebPortal.md#layer-3-authentication)
++ [Phase 1 Configuration](./i05-WebPortal.md#phase-1-configuration)
++ [Phase 2 Configuratio](./i05-WebPortal.md#phase-2-configuration)
++ [ISE Guest Service](./i05-WebPortal.md#ise-guest-services)
++ [Web Portal Policy - Demo](./i05-WebPortal.md#web-portal-policy---demo)
 
-### [EndPoint Profiling](./i08-Profiling.md)
 
-### [Posture Assessment](./i09-Posture.md)
+### [EndPoint Profiling](./i06-Profiling.md)
 
-### [TrustSec](./i10-TrustSec.md)
++ [EndPoint Profiling](./i06-Profiling.md#endpoint-profiling-1)
++ [Profiling Policies](./i06-Profiling.md#profiling-policies)
++ [ISE Authorization Flow with Profiling](./i06-Profiling.md#ise-authorization-flow-with-profiling)
++ [Profiling Configuration](./i06-Profiling.md#profiling-configuration)
++ [Device Sensor Overview](./i06-Profiling.md#device-sensor-overview)
+
+
+### [Posture Assessment](./i07-Posture.md)
+
+### [TrustSec](./i08-TrustSec.md)
 
 
