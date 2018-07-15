@@ -92,5 +92,9 @@
 
 ### [Posture Assessment](./i07-Posture.md)
 
++ [Posture Assessment Overview](./i07-Posture.md#)
++ [Posture Services](./i07-Posture.md#)
++ [Posture Configuration](./i07-Posture.md#)
+
 ### [TrustSec](./i08-TrustSec.md)
 
