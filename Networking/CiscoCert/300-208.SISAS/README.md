@@ -98,3 +98,7 @@
 
 ### [TrustSec](./i08-TrustSec.md)
 
++ [Layer 2 Encryption (MACSec)](./i08TrustSec.md#)
++ [Security Group Tags (SGT)](./i08TrustSec.md#)
++ [MACSec Implementation](./i08TrustSec.md#)
+
