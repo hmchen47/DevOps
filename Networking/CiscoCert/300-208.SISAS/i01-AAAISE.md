@@ -4,8 +4,8 @@
 
 + What is AAA?
     + AAA stands for
-        + Authentication
-        + Authorization
+        + Authentication (AuthN)
+        + Authorization (AuthZ)
         + Accounting
     + AAA can be used for multiple purposes
         + Network Device administration
@@ -20,13 +20,12 @@
             + Allowed commands
         + For network access:
             + VLAN
-            + Access-list
-            + Security Group Tag
+            + Access-list (ACL)
+            + Security Group Tag (SGT)
             + Encryption
     + Accounting
         + Provides evidence of what you have done, like auditing
-        + For network administration:
-            + Typed commands for forensics analysis
+        + For network administration: Typed commands for forensics analysis
         + For network access:
             + Session statistics for billing
             + Session identification (MAC address, IP address, username)
@@ -54,8 +53,8 @@
             + Telnet / SSH
             + HTTP / HTTPS
         + For network access
-        + EAPOL
-        + HTTP / HTTPS
+            + EAPOL
+            + HTTP / HTTPS
     + Between authenticator and authentication server
         + RADIUS
         + TACACS+
@@ -75,23 +74,17 @@
         + IETF standard defined
         + Vendor Specific Attributes (VSA’s)
 
-+ TACACS+
-    + Developed by Cisco
-        + Mainly used for device administration
-        + Developed by Cisco from original TACACS protocol (RFC1492)
-        + Uses separate processes for authentication, authorization and accounting
-        + Uses TCP port 49
-        + Encrypts entire body of TACACS packet, leaves clear-text header
++ TACACS+: Developed by Cisco
+    + Mainly used for device administration
+    + Developed by Cisco from original TACACS protocol (RFC1492)
+    + Uses separate processes for authentication, authorization and accounting
+    + Uses TCP port 49
+    + Encrypts entire body of TACACS packet, leaves clear-text header
 
-+ [TACACS+ and RADIUS Comparison](https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10.html?dtid=osscdc000283)
++ [TACACS+ and RADIUS Comparison](https://www.cisco.com/c/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10.html?dtid=osscdc000283): TACACS+ vs RADIUS Traffic
+    <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-01.gif" alt="TACACS+ Traffic Example" width="350"> &nbsp;&nbsp;
+    <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-02.gif" alt="RADIUS Traffic Example" width="350">
 
-    + TACACS+ Traffic Example
-
-        <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-01.gif" alt="TACACS+ Traffic Example" width="400">
-        
-    + RADIUS Traffic Example
-
-        <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/13838-10-02.gif" alt="RADIUS Traffic Example" width="400">
 
 ## Cisco’s Authentication Servers
 
@@ -120,7 +113,7 @@
 
 + ISE Personas
     + It supports both physical and virtual environments
-    + Built of three major roles, named personas
+    + Built of three major roles, named __personas__
         + PSN (Policy Service Node)
             + Responsible for network access request processing
                 + RADIUS, posture, profiling, web redirection, guest portal
@@ -165,28 +158,27 @@
         + Only processed if authentication passed
             + Successful or by the explicit “continue” action
         + Based on configured conditions each request matches a rule: On match, Access-Accept is issued and optional authorization attributes sent
-            + ACL (dACL, filter-ID ACL, per-user ACL, airespace ACL)
-            + dVLAN and voice VLAN permission
-            + MACsec and URL Redirection (with Redirect-ACL)
-        
-        <img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="410">
-        <a href="https://smbitsolutions.wordpress.com/2012/07/12/cisco-identity-services-engine/">
-            <img src="https://smbitsolutions.files.wordpress.com/2012/07/image010.jpg" alt="text" width="340">
-        </a>
+            + ACLs (dACL, filter-ID ACL, per-user ACL, airespace ACL)
+            + ddata VLAN and voice VLAN permission
+            + MACSec and URL Redirection (with Redirect-ACL)
+    + ISE Communication Model
+         <a href="http://thenetworksurgeon.com/cisco-identity-services-engine-part-1-overview/">
+            <br/><img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="450">
+         </a>
 
 + ISE Authentication Policy: Authentication Policy format
-    + If condition: Identify the RADIUS packet based on RADIUS attributes
-    + Then allowed protocols: Which authentication protocol can be used by the supplicant
-    + And validate credentials: Which identity source can be queried for authentication
+    + If _condition_: Identify the RADIUS packet based on RADIUS attributes
+    + Then _allowed protocols_: Which authentication protocol can be used by the supplicant
+    + And _validate credentials_: Which identity source can be queried for authentication
 
 + ISE Authorization Policy: Authorization Policy format
-    + If condition: Identify the RADIUS session or supplicant by profiling
-    + And optionally if used identity store: Store of user credentials
-    + Then apply authorization profile:  User/device authorization
+    + If _condition_: Identify the RADIUS session or supplicant by profiling
+    + And optionally if used _identity store_: Store of user credentials
+    + Then apply _authorization profile_:  User/device authorization
 
 + ISE Feature Flow
     <a href="https://smbitsolutions.wordpress.com/2012/07/12/cisco-identity-services-engine/">
-        <br/><img src="https://smbitsolutions.files.wordpress.com/2012/07/image017.jpg" alt="ISE Feature Flow" width="400">
+        <br/><img src="https://smbitsolutions.files.wordpress.com/2012/07/image017.jpg" alt="ISE Feature Flow" width="600">
     </a>
 
 ## ISE Management 
@@ -194,7 +186,7 @@
 + [Basic Cisco ISE 2.3 VM Installation](https://zigbits.tech/zigbits-cisco-ise-2-3-blog-series-episode-01-basic-cisco-ise-2-3-vm-installation/)
 
 + Sample Screenshot w/ ISE 2.3
-    <br/><img src="https://i2.wp.com/zigbits.tech/wp-content/uploads/2017/11/ZBISE02-2-26.png" alt="Server Certificate" width="600">
+    <br/><img src="https://i2.wp.com/zigbits.tech/wp-content/uploads/2017/11/ZBISE02-2-26.png" alt="Server Certificate" width="800">
 
 
 + General GUI
@@ -203,42 +195,43 @@
         + Alarms
         + Profiler Activity
         + Authentications
-    + Operations: Monitoring & Trbl
+    + Operations: Monitoring & Troubleshooting (MnT)
         + Authentication
         + Reports -> Most shown in Home page
         + Endpoint Protection Services
         + Troubleshooting: Diagnostic Tools & Download Logs
     + Policy: Authentication & Authorization Policies
-        + Authentiocation conditions & results
-        + Authorization ciondition & results
+        + Authentication conditions & results
+        + Authorization conditions & results
         + Posture
         + Profiling
         + Client Provisioning
-        + Security Group Access: Egress  Policy & Network Device Authenticaton
-        + Policy Eelements: Dictionaries, Conditions, Results
+        + Security Group Access: Egress  Policy & Network Device Authentication
+        + Policy Elements: Dictionaries, Conditions, Results
     + Administration
-        + System: Deployment, Licensing, Certificates, Logging, Maintenance, Backup & Restore, Asmin Access, Settings
+        + System: Deployment, Licensing, Certificates, Logging, Maintenance, Backup & Restore, Admin Access, Settings
         + Network Resources: Network Devices, Network Device Groups, External RADIUS Servers, RADIUS Server Sequences, SGA AAA Servers, NAC Managers, MDM
-        + Fee Service: Profiler
-        + Identifty Management: Identities, Groups, External Identity Soiurces, Identity Source Sequences, Settings
-        + Web Portal Management: Sponsor Group Policy, Sponser Groups, Settings
+        + Free Service: Profiler
+        + Identity Management: Identities, Groups, External Identity Sources, Identity Source Sequences, Settings
+        + Web Portal Management: Sponsor Group Policy, Sponsor Groups, Settings
 
 ## ISE Authentication Policies
 
 + Policy > Authentication Policy
-    + default: Rule-based
+    + Default: Rule-based (entry list)
         + MAB policy: 1st
         + Dot1x: 2nd
         + Default Rule (if no match): 3rd
     + Build Authentication Policy - Simple
         + Network Access Service: what protocol supplicant can use
-        + Identity Source: which identify store does ISE validate supplicant credential, eg. local bd, RADIUS, etc.
+        + Identity Source: which identify store does ISE validate supplicant credential, eg. local db, RADIUS, etc.
     + Policy Type
         + Simple: no condition allowed
-        + Rule-based: 
+        + Rule-based fields:
             + Rule name
-            + if condition + allow protocols
-            + Use: result
+            + if condition (Policy > Policy Elements > AuthN: )
+            + then allowed protocols (Policy > Policy Elements > Conditions: )
+            + Use: results (credentials - Identity Store/Identity Sequence)
 
 
 
