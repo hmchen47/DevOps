@@ -110,6 +110,7 @@
     + Implements a flexible policy-based model
         + Rule-based approach for authentication and authorization
         + Rules are composed of conditions and results
+    + [Cisco Identity Services Engine Administrator Guide, Release 2.4](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ise_admin_guide_24.html)
 
 + ISE Personas
     + It supports both physical and virtual environments
@@ -163,7 +164,7 @@
             + MACSec and URL Redirection (with Redirect-ACL)
     + ISE Communication Model
          <a href="http://thenetworksurgeon.com/cisco-identity-services-engine-part-1-overview/">
-            <br/><img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="450">
+            <br/><img src="http://thenetworksurgeon.com/wp-content/uploads/2013/10/ISE_Communication.png" alt="ISE Communication Model" width="600">
          </a>
 
 + ISE Authentication Policy: Authentication Policy format
@@ -176,7 +177,7 @@
     + And optionally if used _identity store_: Store of user credentials
     + Then apply _authorization profile_:  User/device authorization
 
-+ ISE Feature Flow
++ ISE Feature Flow (Posture)
     <a href="https://smbitsolutions.wordpress.com/2012/07/12/cisco-identity-services-engine/">
         <br/><img src="https://smbitsolutions.files.wordpress.com/2012/07/image017.jpg" alt="ISE Feature Flow" width="600">
     </a>
