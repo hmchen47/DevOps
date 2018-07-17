@@ -92,13 +92,18 @@
 
 ### [Posture Assessment](./i07-Posture.md)
 
-+ [Posture Assessment Overview](./i07-Posture.md#)
-+ [Posture Services](./i07-Posture.md#)
-+ [Posture Configuration](./i07-Posture.md#)
++ [Posture Assessment Overview](./i07-Posture.md#posture-assessment-overview)
++ [Posture Services](./i07-Posture.md#posture-services)
++ [Posture Configuration](./i07-Posture.md#posture-configuration)
+
 
 ### [TrustSec](./i08-TrustSec.md)
 
-+ [Layer 2 Encryption (MACSec)](./i08TrustSec.md#)
-+ [Security Group Tags (SGT)](./i08TrustSec.md#)
-+ [MACSec Implementation](./i08TrustSec.md#)
++ [Layer 2 Encryption (MACSec)](./i08TrustSec.md#layer-2-encryption-macsec)
++ [Security Group Tags (SGT)](./i08TrustSec.md#security-group-tags-sgt)
++ [MACSec Implementation](./i08TrustSec.md#macsec-implementation)
+
+
+
+
 
