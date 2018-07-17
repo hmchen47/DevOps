@@ -158,6 +158,150 @@
 
 ## MACSec Implementation
 
++ Topology:
+    <br/><img src="./diagrams/sisas-net1.png" alt="Network Topology w/o Phone" width="450">
+
++ Demo: 
+    + PC-B: EAP-FAST
+    + ISE Config
+        + Policy > Authentication > WIRED_EAP_FAST_AUTH: Condition=Wired_802.1x, Allow Protocol=EAP_FAST, use=INEAD
+        + Policy > Authorization > POST_UNKNOWN > edit (Insert New Rule bove): Name=EAP_MACSEC, Conditions=Wired_802.1x, Permissions=PermitAccess
+    + PC-B: 
+        + run `services.msc` > AnyConnect Network Access Manager > Properties: startup=autiomatic > Apply > Start --> lost connection
+        + NIC (which won't be controlled by AnyConnect) > Properties > disable Cisco AnyConnect Network Access Manager Filter Driver > ok
+        + Restart AnyConnect Network ccess Manager service
+        + Open AnyConnect > Networks=wired > Networks > Add: Media=wired, Name=EAP_MACSec, Security=802.1x, 802.1x Configuration=(Password, EAP-FAST) > ok
+        + AnyConnect > Networks=EAP_MACSEC: user=ldapuser, pwd=Cisco123! -> Authentication Filed
+    + SW3: 
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access vlan 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+
+        show authentication sessions    ! Status=Authz Success
+        ```
+    + ISE Verification: Operations > Authentications: No entry w/ Identity=ldapuser but anonymous
+    + PC-B: 
+        + AnyConnect > Networks=EAP_MACSEC (was wired) -> Not able to connect
+        + logoff > logon
+        + AnyConnect > Networks=EAP_MACSEC 
+    + SW3 Msgs: 
+        + AUTHMGR-5-FAIL: Authentication failed or unapplied for client
+        + AUTHMGR-7-RESULT: Authentication result 'fail' from 'dot1x' for client
+    + PC-B: AnyConnect Profile Editor - Network Access Manager > File > Open: configuration.xml > Networks=EAP_CHAINING:
+        + Media Type: Name=EAP_CHAINING, Wired (802.3) network
+        + Security Level: Authentication network
+        + Connection type: User connection
+        + User Auth: EAP-FAST
+            + Settings: disable validate server identity, enable fast reconnection
+            + Inner Method: Authenticate using a password=(EAP-MSCAHPv2, EAP-GTC)
+            + Use PACs
+        + Credentials: Use Single Sign On Credentials
+        + File > Save As: configuration.xml
+    + PC-B: 
+        + Verifcation: Network Access Manager Profile Editor > File > Open: configuration.xml > Networks=EAP_CHAINING: checking existence and configuration > Cancel
+        + AnyConnect > Networks=EAP_CHAINING --> Fail to connect
+    + ISE: 
+        + Verification: Operations > Authentications: Identity=anonymous (ldapuser expected, authentication failed) > details: Event=Endpoint concluded several failed authentications of the same scenarios, username=anonymous, Failure Reason=Fail to negotiate EAP beacuse EAP-FAST not allowed in the Allowed Protocols
+        + Policy > Authentication > PEAP_EAP_TLE, use=INE_PKI_STORE > move below WIRED_EAP_FAST_AUTH > Save
+        + Authentication Rule PEAP_WIRED_AUTH matched first and WIRED_EAP_FAST_AUTH never hit -> resolved by reorder them
+    + PC-B: AnyConnect > Networks=EAP_CHAINING: user=ldapuser, pwd=Cisco123! -> still Failed
+    + SW3: `conf t; int gi1/0/5; shut; not shut; ^Z` -> Msg still showing authentication failed
+    + ISE: 
+        + Policy > Authentication: correct rule order
+        + Policy > Policy Elements > Results > Authentication > Allowed Protocols > EAP_FAST: Allow EAP-FAST=EAP-FAST (Inner Method: Allow EAP-MSCHAPv2, Allow EAP_TGC, use PACs), Enable EAP Chaining -> everything looks ok
+    + SW3: msg -> still failed
+    + ISE: 
+        + Operations > Authentications > Identity=anonymous > details: AllowProtocolMatchedRule=PEAP_WORED_AUTH -> expect WIRED_EAP_FAST_AUTH
+        + Policy > Authentications > disable PEAP_WIRED_AUTH
+    + PC-B: AnyConnect > Networks=EAP_CHAINING: user=ldapuser, pwd=Cisco123! -> Authentication Failed
+    + ISE: Policy > Authentications: delete PEAP_WIRED_AUTH
+    + PC-B: AnyConnect > Networks=EAP_CHAINING: user=ldapuser, pwd=Cisco123! -> Authentication Failed
+    + ISE: 
+        + Operations > Authentications: Identity=anonymous -> same error message
+        + Restart ISE
+        + Operations > Authentications: Identity=ldapuser > details: AuthorizationPolicyMatchRule=EAP_CHAINING
+    + SW3
+        ```cfg
+        show run int gi1/0/5
+        ! interface GigabitEthernet1/0/5
+        !   switchport access valn 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+
+        conf t
+        int gi1/0/5
+          macsec
+          mka default-policy
+
+        do show authentication sessions int gi1/0/5    
+        ! status=Authz Success, Security Policy=Should Secure (default)
+
+        authentication linksec policy should-secure     ! default setting
+
+        do show run int gi1/0/5 
+        ! interface GigabitEthernet1/0/5
+        !   switchport access valn 90
+        !   switchport mode access
+        !   logging event spanning-tree
+        !   authentication port-control auto
+        !   macsec
+        !   mka default-policy
+        !   dot1x pae authenticator
+        !   spanning-tree portfast
+        ! end
+        ```
+    + ISE:
+        + Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=MACSEC, Access Type=ACCESS_ACCEPT, Common Tasks=(MACSec Policy=must-secure) > Submit
+        + Policy > Authorization > EAP_MACSEC: Permissions=MACSEC > Save
+
+    + PC-B: AnyConnect Profile Editor > Network Access Editor > Open: configure.xml > Networks=EAP_CHAINING > edit: 
+        + Security elvel: Authentication network, key Management=MKA, Encryption=MACSec:AES-GCM-128
+        + Connection Type: User Connection
+        + User Auth: EAP-FAST, EAP-FAST Setting=(Enable Fast Reconnect), Authentication using a password=(EAP-MSCHAPv2, EAP-GTC)
+        + > Done > Save As: configuration.xml
+    + SW3:
+        ```cfg
+        conf t
+        int gi1/0/5
+          shut
+          no shut
+        end
+
+        show authentication sessions int gi1/0/5 
+        ! Security Policy=Must Secure (local config: default = should-secure)
+
+        show macsec intgi1/0/5          ! Decrypt bytes 71595
+        ! PC-B: ping 10.10.10.10
+        show macsec intgi1/0/5          ! Decrypt bytes 96415
+
+        show macsec summary     ! Int=Gi1/0/5, Transmit SG=1, Receive SG=1
+        show mka sessions int gi1/0/5
+        ! Int=Gi1/0/5, Peer-RxSCI=48f8.632e.2532/0000, PolicyNmae=*DEFAULT-POLICY*, Audit-Session-ID: 0A0A0A0A0A0000004103589AFE
+        ! Port-ID=2, Local-TxSCI=4463.ca63.9985/0002, Key-srv=YES, Suatus=Secure, CKN=0264c94858246878DCF66ECE32BD26263
+
+        show mka sessions int gi1/0/5 detail
+        ! # of MACSec Capable Live Peer=1, # of MACSec Capable of Live Peer Responded=1, 
+        ! Status=SECURE - secured MKA Session with MACSec, MACSec Desire=Yes
+        ```
+    + ISE: Operations > Authentication > Identity=ldapuser (last authentication entry) > detail: Event=Authentication Succeeded, Authorization Profile=MACSEC, Result: cisco-av-pair=(linksec-policy=msut-secure), MS-MPP-send-key=de:...:5d, MS-MPPE-Recv-Key=47:...:d8
+
+
+
+
+
+
+
 
 
 
