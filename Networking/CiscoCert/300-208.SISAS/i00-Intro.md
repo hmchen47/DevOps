@@ -65,7 +65,7 @@ What is the scope of this class?
     + Implementing Cisco Secure Access Solutions (300-208)
     + More specifics at http://www.cisco.com/go/ccnpsecurity
 + Course Outline
-    + AA and ISE Concepts
+    + AAA and ISE Concepts
     + Authentication and Authorization
     + Secure Access Deployment Modes
     + Web Services
@@ -78,7 +78,8 @@ What is the scope of this class?
     + 300-208 SISAS (Implementing Cisco Secure Access Solutions)
     + 300-206 SENSS (Implementing Cisco Edge Network Security Solutions)
     + 300-209 SIMOS (Implementing Cisco Secure Mobility Solutions)
-    + 300-207 SITCS (Implementing Cisco Threat Control Solutions )
+    + 300-210 SITCS	(Implementing Cisco Threat Control Solutions)
+    + 300-207 SITCS (Implementing Cisco Threat Control Solutions) - obsolete
 
 
 ## Study Materials
@@ -96,10 +97,10 @@ What is the scope of this class?
 
 + Recommended Books
     + General Networking
-        + The TCP/IP Guide
-        + TCP/IP Illustrated, Volume 1: The Protocols
-        + Internetworking with TCP/IP Volume 1
-        + Network Security Fundamentals
+        + [The TCP/IP Guide](http://www.tcpipguide.com/free/)
+        + [TCP/IP Illustrated, Volume 1: The Protocols](http://www.cs.newpaltz.edu/~pletcha/NET_PY/the-protocols-tcp-ip-illustrated-volume-1.9780201633467.24290.pdf)
+        + [Internetworking with TCP/IP Volume 1](http://dl4.libgen.io/get.php?md5=B994EBC8603E0C53746AE97723B67B97&key=ZZC0IJXQP2LVN05G)
+        + [Network Security Fundamentals](http://b-ok.org/dl/459536/e6c0e6)
     + CCNA Routing and Switching
         + CCENT Official Certification Guide
         + CCNA Official Certification Guide
