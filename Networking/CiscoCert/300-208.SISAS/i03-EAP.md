@@ -93,10 +93,10 @@
     + Identity protection available only in PEAPv1 and PEAPv2
     + <a name="EAP-FASTv1">Tunneled EAP</a>&nbsp;&nbsp; & &nbsp;&nbsp; PEAP Data Flow
         <br/><a href="https://mrncciew.com/2013/03/03/eap-overview/">
-            <img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" width="400">
+            <img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" width="350">
         </a> &nbsp;&nbsp;
         <a href="https://sites.google.com/site/amitsciscozone/home/switching/peap---protected-eap-protocol">
-            <img src="https://sites.google.com/site/amitsciscozone/_/rsrc/1468881647294/home/switching/peap---protected-eap-protocol/PEAP%20message%20exchange.PNG" alt="PEAP packet flow" width="425">
+            <img src="https://sites.google.com/site/amitsciscozone/_/rsrc/1468881647294/home/switching/peap---protected-eap-protocol/PEAP%20message%20exchange.PNG" alt="PEAP packet flow" width="370">
     </a>
 
 
