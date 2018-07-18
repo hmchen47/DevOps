@@ -65,19 +65,18 @@
     + Tunneled (protects the supplicant’s identity and credentials)
     + Non-tunneled (does not protect supplicant’s credentials)
 
-+ 802.1X Frame Format &nbsp;&nbsp; & &nbsp;&nbsp; 802.1X w/ EAP  
++ 802.1X Frame Format &nbsp;&nbsp; & &nbsp;&nbsp; 802.1X with EAP  
     <a href="https://www.slideshare.net/isikalp82/8021x">
-        <img src="https://image.slidesharecdn.com/8021x-12916276847429-phpapp01/95/8021x-9-728.jpg?cb=1324525219" alt="802.1X Packet Format" width="350">
+        <img src="https://image.slidesharecdn.com/8021x-12916276847429-phpapp01/95/8021x-9-728.jpg?cb=1324525219" alt="802.1X Packet Format" width="380">
     </a> &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html">
-        <img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" width="390">
+        <img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" width="423">
     </a> 
 
 + 802.1x authentication components
     <br/><a href="urhttps://www.researchgate.net/publication/4374057_Designs_of_a_Secure_Wireless_LAN_Access_Technique_and_an_Intrusion_Detection_System_for_Home_Network/figures?lo=1l">
-        <img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig3/AS:279974889181200@1443762623852/8021x-authentication-components.png" alt="802.1x authentication components" width="300">
+        <img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig3/AS:279974889181200@1443762623852/8021x-authentication-components.png" alt="802.1x authentication components" width="250">
     </a>
-
 
 ## Common EAP Tunneled Methods
 
@@ -91,7 +90,7 @@
         + Supplicant is authenticated by certificate (EAP-TLS), username/password (EAP-MSCHAPv2), or OTP (EAP-GTC)
         + Requires server certificates, on client is optional
     + Identity protection available only in PEAPv1 and PEAPv2
-    + <a name="EAP-FASTv1">Tunneled EAP</a>&nbsp;&nbsp; & &nbsp;&nbsp; PEAP Data Flow
+    + PEAP Data Flow
         <br/><a href="https://mrncciew.com/2013/03/03/eap-overview/">
             <img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" width="350">
         </a> &nbsp;&nbsp;
@@ -110,7 +109,10 @@
         + Phase 0 is optional and used to provision the supplicant with a PAC file
         + Phase 1 is used to establish the TLS tunnel based on the PAC file
         + Phase 2 is used to authenticate the supplicant within the TLS tunnel
-    + [Data Flow - Tunneled EAP](#EAP-FASTv1)
+    + Data Flow
+        <a href="https://mrncciew.com/2013/03/03/eap-overview/">
+            <br/><img src="https://mrncciew.files.wordpress.com/2013/03/eap-fast-1.png" alt="EAP-FAST Message Flow" width="450">
+        </a>
 
 + EAP-FASTv2 (EAP Chaining)
     + Ties machine authentication to user authentication
@@ -118,7 +120,9 @@
         + Performs double authentication within single EAP transaction
     + Will become standard, known as EAP-TEAP (RFC draft)
     + Data Flow
-        <br/><img src="https://image.slidesharecdn.com/ise2-160329194235/95/ise-20-navy-techday-8-638.jpg?cb=1459281002" alt="Ise 2.0 navy techday" href="https://www.slideshare.net/CiscoPublicSector/ise-20-navy-techday" width="450">
+        <a href="https://www.slideshare.net/CiscoPublicSector/ise-20-navy-techday">
+            <br/><img src="https://image.slidesharecdn.com/ise2-160329194235/95/ise-20-navy-techday-8-638.jpg" alt="Ise 2.0 navy techday" width="450">
+        </a>
 
 + EAP-TTLS - Tunneled TLS (RFC 5281)
     + Very similar with PEAP
