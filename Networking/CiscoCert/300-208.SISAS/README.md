@@ -30,7 +30,6 @@
 ### [Authentication & Authorization - MAB](./i02-MAB.md)
 
 + [802.1X, MAB, and EAP Overview](./i02-MAB.md#8021x-mab-and-eap-overview)
-+ [IEEE 802.1X](./i02-MAB.md#ieee-8021x)
 + [Network Access Authentication](./i02-MAB.md#network-access-authentication)
 + [MBA - MAC Authentication Bypass](./i02-MAB.md#mab--mac-authentication-bypass)
 + [MAB Configuration Steps on Supplicant](./i02-MAB.md#mab-configuration-steps-on-supplicant)
@@ -50,6 +49,7 @@
 
 ### [Authentication & Authorization - EAP](./i03-EAP.md)
 
++ [IEEE 802.1X](./i03-EAP.md#ieee-8021x)
 + [Extensible Authentication Protocol (EAP)](./i03-EAP.md#extensible-authentication-protocol-eap)
 + [Common EAP Tunneled Methods](./i03-EAP.md#common-eap-tunneled-methods)
 + [Common EAP Non-Tunneled Methods](./i03-EAP.md#common-eap-non-tunneled-methods)
