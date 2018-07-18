@@ -1,9 +1,61 @@
 # Authentication & Authorization - EAP
 
+## [IEEE 802.1X](https://en.wikipedia.org/wiki/IEEE_802.1X)
+
+### Introduction
+
++ IEEE Standard for port-based Network Access Control (PNAC)
++ An authentication mechanism to devices wishing to attach to a LAN or WLAN
++ Defines the encapsulation of EAPOL
++ "EAP over LAN" or EAPOL: Extensible Authentication Protocol (EAP) over IEEE 802
+    + Originally designed for IEEE 802.3 Ethernet in 802.1X-2001
+    + Used for other IEEE 802 LAN technologies such as IEEE 802.11 wireless and Fiber Distributed Data Interface (ISO 9314-2)
+    + Modified for use with IEEE 802.1AE (“MACsec”) and IEEE 802.1AR (Secure Device Identity, DevID)
+
+### Overview
+
++ Three parties: a supplicant, an authenticator, and an authentication server.
+    + __supplicant__: a client device (such as a laptop) that wishes to attach to the LAN/WLAN. 
+    + __authenticator__: a network device, such as an Ethernet switch or wireless access point
+    + __authentication server__: typically a host running software supporting the RADIUS and EAP protocols.
+        <br/><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/802.1X_wired_protocols.png" alt="EAP data is first encapsulated in EAPOL frames between the Supplicant and Authenticator, then re-encapsulated between the Authenticator and the Authentication server using RADIUS or Diameter." width="400">
+
++ Protocol operation
+    + Port entities
+        + 802.1X-2001
+            + Two logical port entities for an authenticated port—the "controlled port" and the "uncontrolled port"
+            + __Controlled port__: manipulated by the 802.1X PAE (Port Access Entity) to allow (in the authorized state) or prevent (in the unauthorized state) network traffic ingressing and egressing to/from the controlled port
+            + __Uncontrolled port__: used by the 802.1X PAE to transmit and receive EAPOL frames
+        + 802.1X-2004
+            + Define the equivalent port entities for the supplicant
+            + May prevent higher level protocols being used if it is not content that authentication has successfully completed
+            + Useful when an EAP method providing mutual authentication is used
+    + Typical authentication progression
+        <br/><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/802-1X.png" alt="Sequence diagram of the 802.1X progression" width="400">
+        1. Initialization: 
+            + New supplicant detected, the port on switch (authenticator) enabled and set to "unauthorized" state
+            + Only 802.1X traffic allowed, other pkts dropped
+        2. Initiation:
+            + authenticator periodically transmitting EAP-Request Identity frames to a special Layer 2 address (01:80:C2:00:00:03) on the local network segment
+            + supplicant listens on this address
+            + on receipt of the EAP-Request Identity frame responding with an EAP-Response Identity frame containing an identifier for the supplicant such as a User ID
+            + authenticator encapsulates this Identity response in a RADIUS Access-Request packet and forwards it on to the authentication server
+            + supplicant may also initiate or restart authentication by sending an EAPOL-Start frame to the authenticator, which will then reply with an EAP-Request Identity frame.
+        3. Negotiation (Technically _EAP negotiation_)
+            + authentication server sends a reply (encapsulated in a RADIUS Access-Challenge packet) to the authenticator, containing an EAP Request specifying the EAP Method (The type of EAP based authentication it wishes the supplicant to perform)
+            + authenticator encapsulates the EAP Request in an EAPOL frame and transmits it to the supplicant
+            + supplicant:
+                + Accept: using the requested EAP Method
+                + NAK ("Negative Acknowledgement"): responding with the EAP Methods willing to perform
+        4. Authentication
+            + Once agreed on EAP method, EAP Requests and Responses between the supplicant and the authentication server (translated by the authenticator) until the authentication server responds with either an EAP-Success message (encapsulated in a RADIUS Access-Accept packet), or an EAP-Failure message (encapsulated in a RADIUS Access-Reject packet)
+            + Successful: authenticator sets the port to the "authorized" state
+            + Failed: emails in the "unauthorized" stat
+            + supplicant logoff: send an EAPOL-logoff message to the authenticator & set port as "unauthorized" state
+
 ## Extensible Authentication Protocol (EAP)
 
-+ EAP is an authentication framework
-    + Mainly used in Wi-Fi and wired
++ EAP is an authentication framework: Mainly used in Wi-Fi and wired
 + 802.1x defines the encapsulation of EAP over IEEE 802, namely EAP over LAN (EAPOL)
 + 802.1x is a flexible layer 2 authentication mechanism
     + Makes use of EAP methods, tunneled inside RADIUS packets
@@ -15,7 +67,7 @@
 + EAP Frame Format & EAP Success/Failure Frame
     <a href="http://etutorials.org/Networking/Wireless+lan+security/Chapter+7.+EAP+Authentication+Protocols+for+WLANs/EAP/">
         <br/><img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig02.gif" alt="EAP Frame Format" width="400"> &nbsp;
-        <img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig05.gif" alt="EAP Success/Failure Frame" width="300">
+        <img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig05.gif" alt="EAP Success/Failure Frame" width="265">
     </a>
 
 + 802.1X w/ EAP
