@@ -73,7 +73,7 @@
         + Flow: PC -Supplicant, SW - Authenticator, ISE - Authentication Server
             1. Request: PC - EAP (Machine) -> SW <- RADIUS [EAP (Machine)] -> ISE
             2. Accept: PC <- PAC (Machine) - SW <- RADIUS [EAP (Machine)] -> ISE
-            3. AuthN: PC - EAP (User) [PAC(Machine)) + PAC(User)] <- RADIUS [EAP - [PAC(Machine)) + PAC(User)]] -> ISE
+            3. AuthN: PC - EAP (User) [PAC(Machine) + PAC(User)] <- RADIUS [EAP - [PAC(Machine) + PAC(User)] -> ISE
         + Will become standard, known as EAP-TEAP
     + EAP-TTLS (Tunnel TLS)
         + Very similar with PEAP: two-phases protocol
@@ -90,12 +90,9 @@
         + Modified version of MS-CHAP -> challenge-response based
         + Client authentication based on username/password
 
-
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=HcsVXH9RXZQrl"> alt="069 802 1x, MAB, EAP Overview"
-</iframe>
-
-
+<a href="https://www.youtube.com/watch?v=HcsVXH9RXZQrl" alt="069 802 1x, MAB, EAP Overview" target="_blank">
+  <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/png/64x64/Folders%20&%20OS/My%20Videos.png" alt="Video" width="60px"> 
+</a>
 
 ## Network Access Authentication
 
@@ -548,8 +545,8 @@ src="https://www.youtube.com/watch?v=HcsVXH9RXZQrl"> alt="069 802 1x, MAB, EAP O
         ! ...
         undebug all
         
-        ! Authorization Successful: got access message from RADIUS server <br/>
-        ! Authorization failed: authorization msg from RADIUS not able to apply switch on the client <br/>
+        ! Authorization Successful: got access message from RADIUS server
+        ! Authorization failed: authorization msg from RADIUS not able to apply switch on the client
         ```
         ==> dACL not working: <br/>
         dACL works when rx dACL name from RADIUS needs to request and download dACL contents -> password required
@@ -1043,8 +1040,8 @@ src="https://www.youtube.com/watch?v=HcsVXH9RXZQrl"> alt="069 802 1x, MAB, EAP O
         ! xACSACLx-IP-D_DATA_VLAN90-569e977b
         !   10 permit ip any any
         show authentication sessions                ! Authz Success
-        show authentication sessions int gi1/0/5    ! ACS ACL-xACSSCLx-IP-DACL_DATA_VLAN90-569e977b
-        clan Policy=90
+        show authentication sessions int gi1/0/5    
+        ! ACS ACL-xACSSCLx-IP-DACL_DATA_VLAN90-569e977b; vlan Policy=90
     + ISE Config:
         + Rules: Policy > Authentication > __Multiple Matched Rule Applies__ > Save
         + e.g., 1) VAD user; 2) AD user; 3) IP Phone; 4) All devices -> NAD User: 1 & 4; AD user: 2 & 4
@@ -1169,7 +1166,7 @@ src="https://www.youtube.com/watch?v=HcsVXH9RXZQrl"> alt="069 802 1x, MAB, EAP O
 ### MAB Feature Interaction
 
 + Using MAB in IEEE 802.1X Environments (Non-IEEE 802.1X Endpoints & Failed IEEE Endpoints)
-    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214362.eps/_jcr_content/renditions/214362.jpg" alt="MAB as Fallback Mechanism for Non-IEEE 802.1X Endpoints" width="350"> &nbsp;
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214362.eps/_jcr_content/renditions/214362.jpg" alt="MAB as Fallback Mechanism for Non-IEEE 802.1X Endpoints" width="350"> &nbsp;&nbsp;
     <img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214363.eps/_jcr_content/renditions/214363.jpg" alt="tMAB as a Failover Mechanism for Failed IEEE Endpointsext" width="400">
 
 + Timers and Variables <br/>
@@ -1177,7 +1174,7 @@ src="https://www.youtube.com/watch?v=HcsVXH9RXZQrl"> alt="069 802 1x, MAB, EAP O
     <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214364.eps/_jcr_content/renditions/214364.jpg" alt="Tx-period, max-reauth-req, and Time to Network Access" width="450">
 
 + Using MAB with Web Authentication & Guest VLAN
-    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214365.eps/_jcr_content/renditions/214365.jpg" alt="MAB and Web Authentication After IEEE 802.1X Timeout" width="350"> &nbsp;
+    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214365.eps/_jcr_content/renditions/214365.jpg" alt="MAB and Web Authentication After IEEE 802.1X Timeout" width="350"> &nbsp;&nbsp;
     <img src="https://www.cisco.com/c/dam/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.fm/_jcr_content/renditions/MAB_Dep_Guide-09.jpg" alt="Guest VLAN" width="350">
 
 + Authentication Failure VLAN
