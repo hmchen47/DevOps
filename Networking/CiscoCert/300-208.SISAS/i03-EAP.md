@@ -12,6 +12,11 @@
     + Used for other IEEE 802 LAN technologies such as IEEE 802.11 wireless and Fiber Distributed Data Interface (ISO 9314-2)
     + Modified for use with IEEE 802.1AE (“MACsec”) and IEEE 802.1AR (Secure Device Identity, DevID)
 
++ 802.1X Frame Format
+    <a href="https://www.slideshare.net/isikalp82/8021x">
+        <br/><img src="https://image.slidesharecdn.com/8021x-12916276847429-phpapp01/95/8021x-9-728.jpg?cb=1324525219" alt="802.1X Packet Format" width="600">
+    </a>
+
 ### Overview
 
 + Three parties: a supplicant, an authenticator, and an authentication server.
@@ -50,7 +55,7 @@
         4. Authentication
             + Once agreed on EAP method, EAP Requests and Responses between the supplicant and the authentication server (translated by the authenticator) until the authentication server responds with either an EAP-Success message (encapsulated in a RADIUS Access-Accept packet), or an EAP-Failure message (encapsulated in a RADIUS Access-Reject packet)
             + Successful: authenticator sets the port to the "authorized" state
-            + Failed: emails in the "unauthorized" stat
+            + Failed: emails in the "unauthorized" state
             + supplicant logoff: send an EAPOL-logoff message to the authenticator & set port as "unauthorized" state
 
 ## Extensible Authentication Protocol (EAP)
@@ -64,20 +69,23 @@
     + Tunneled (protects the supplicant’s identity and credentials)
     + Non-tunneled (does not protect supplicant’s credentials)
 
-+ EAP Frame Format & EAP Success/Failure Frame
++ EAP Frame Format &nbsp;&nbsp; & &nbsp;&nbsp; EAP Success/Failure Frame
     <a href="http://etutorials.org/Networking/Wireless+lan+security/Chapter+7.+EAP+Authentication+Protocols+for+WLANs/EAP/">
-        <br/><img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig02.gif" alt="EAP Frame Format" width="400"> &nbsp;
+        <br/><img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig02.gif" alt="EAP Frame Format" width="400"> &nbsp;&nbsp;&nbsp;&nbsp;
         <img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig05.gif" alt="EAP Success/Failure Frame" width="265">
     </a>
 
-+ 802.1X w/ EAP
-    <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html" width="450">
++ 802.1X w/ EAP &nbsp;&nbsp; & &nbsp;&nbsp; <a name="EAP-FASTv1">Tunneled EAP</a>
+    <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" width="350">
+    </a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://mrncciew.com/2013/03/03/eap-overview/">
+        <img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" width="450">
+    </a>
 
-+ <a name="EAP-FASTv1">Tunneled EAP</a>
-    <br/><img src="https://mrncciew.files.wordpress.com/2013/03/peap-1.png" alt="the PEAP packet flow" href="https://mrncciew.com/2013/03/03/eap-overview/" width="450">
 
 + 802.1x authentication components
-    <br/><img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig3/AS:279974889181200@1443762623852/8021x-authentication-components.png" alt="802.1x authentication components " href="urhttps://www.researchgate.net/publication/4374057_Designs_of_a_Secure_Wireless_LAN_Access_Technique_and_an_Intrusion_Detection_System_for_Home_Network/figures?lo=1l" width="300">
+    <br/><img src="https://www.researchgate.net/profile/Choong-Ho_Cho/publication/4374057/figure/fig3/AS:279974889181200@1443762623852/8021x-authentication-components.png" alt="802.1x authentication components " href="urhttps://www.researchgate.net/publication/4374057_Designs_of_a_Secure_Wireless_LAN_Access_Technique_and_an_Intrusion_Detection_System_for_Home_Network/figures?lo=1l" width="400">
 
 ## Common EAP Tunneled Methods
 
@@ -88,7 +96,7 @@
     + Theoretically, inner authentication method can be any EAP type
     + Mutual authentication
         + Server is always authenticated by certificate
-        + Supplicant is authenticated by certificate (EAP-TLS), username/password (EAPMSCHAPv2), or OTP (EAP-GTC)
+        + Supplicant is authenticated by certificate (EAP-TLS), username/password (EAP-MSCHAPv2), or OTP (EAP-GTC)
         + Requires server certificates, on client is optional
     + Identity protection available only in PEAPv1 and PEAPv2
     + Data Flow
