@@ -12,6 +12,12 @@
     + Tunneled (protects the supplicant’s identity and credentials)
     + Non-tunneled (does not protect supplicant’s credentials)
 
++ EAP Frame Format & EAP Success/Failure Frame
+    <a href="http://etutorials.org/Networking/Wireless+lan+security/Chapter+7.+EAP+Authentication+Protocols+for+WLANs/EAP/">
+        <br/><img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig02.gif" alt="EAP Frame Format" width="400"> &nbsp;
+        <img src="http://etutorials.org/shared/images/tutorials/tutorial_57/07fig05.gif" alt="EAP Success/Failure Frame" width="300">
+    </a>
+
 + 802.1X w/ EAP
     <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214087.eps/_jcr_content/renditions/214087.jpg" alt="High-Level 802.1X Sequence" href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html" width="450">
 
