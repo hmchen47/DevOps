@@ -66,7 +66,7 @@
     + Non-tunneled (does not protect supplicant’s credentials)
 
 + 802.1X Frame Format &nbsp;&nbsp; & &nbsp;&nbsp; 802.1X w/ EAP  
-    <br/><a href="https://www.slideshare.net/isikalp82/8021x">
+    <a href="https://www.slideshare.net/isikalp82/8021x">
         <img src="https://image.slidesharecdn.com/8021x-12916276847429-phpapp01/95/8021x-9-728.jpg?cb=1324525219" alt="802.1X Packet Format" width="350">
     </a> &nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/Dot1X_Deployment/Dot1x_Dep_Guide.html">
