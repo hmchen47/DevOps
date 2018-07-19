@@ -1,9 +1,9 @@
 # Phase Deployment
 
 + Default Supplicant Network Access
-    + When authentication is enabled on a switch port facing a supplicant
-        + By default all network access is restricted before authentication
-            + Only EAPOL traffic is allowed
+    + When authentication enabled on a switch port facing a supplicant
+        + By default all network access restricted before authentication
+            + Only EAPOL traffic allowed
         + After authentication network access is granted per the authorization received from ISE
     + Default network access creates implementations issues
         + If something is miss-configured (can easily happen), users loose network access
@@ -16,14 +16,14 @@
         + Minimizes network impact when EAP/802.1x is enabled
         + From users point of view, implementation is transparent
     + Three-phase model
-        + Monitor mode
-        + Low impact mode
-        + Closed mode
+        + __Monitor mode__
+        + __Low impact mode__
+        + __Closed mode__
 
 + Monitor Mode
-    + Scope is to test authentication functionality
-    + Allows for transparent troubleshooting, without affecting users
-    + EAP and MAB is enabled on switch ports facing supplicants
+    + Scope to test authentication functionality
+    + Allow for transparent troubleshooting, without affecting users
+    + EAP and MAB enabled on switch ports facing supplicants
     + Supplicants are granted full network access
         + Before authentication
         + After authentication (requires no authorization received from ISE)
@@ -34,7 +34,7 @@
         2. Config Authentication server
         3. NAD to enforce authentication 
             ```cfg
-            authentication port-control auto}force-authorized
+            authentication port-control [auto|force-authorized]
             mab
             ```
     + Even received Access Reject from ISE, NAD still allow to access network from connected devices
@@ -55,7 +55,7 @@
     + SW3: 
         ```cfg
         show ip access-list
-        ! Extended IP access list Auth_Default_ACL
+        ! Extended IP access list Auth-Default-ACL
         !   10 permit udp any range bootps 65347 any range bootpc 65348
         !   20 permit upd any any range bootps 65347
         !   30 deny ip any any
@@ -82,12 +82,12 @@
 
 + Low Impact Mode
     + Enabled once all users/supplicants have passed authentication
-        + Scope is to test authorization functionality
+        + Scope to test authorization functionality
     + Keep the same configuration as in monitor mode
     + Restrict network access before authentication
         + Apply a static pre-authentication ACL on switch port facing supplicants
         + Optionally can use the default ACL named auth-default-acl
-    + Authorization is received from ISE
+    + Authorization received from ISE
         + ACL in order to override the static pre-configured one
 
 + Closed Mode
