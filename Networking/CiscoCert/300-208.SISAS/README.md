@@ -58,7 +58,7 @@
 + [EAP-FASTv1 Implementation](./i03-EAP.md#eap-fastv1-implementation)
 + [ISE Identity Sources](./i03-EAP.md#ise-identity-sources)
 + [Authentication Against AD](./i03-EAP.md#authentication-against-ad)
-+ [AD Integration](./i03-EAP.md#ad-integration)
++ [Demo: AD Integration](./i03-EAP.md#demo-ad-integration)
 + [ISE Application Server](./i03-EAP.md#ise-application-server)
 + [Identity Prefix & Suffix Strip](./i03-EAP.md#identity-prefix--suffix-strip)
 + [User & Machine Authorization Policies](./i03-EAP.md#user--machine-authorization-policies)
