@@ -4,13 +4,13 @@
 
 + What is Profiling ?
     + Profiling
-        + Allows ISE to learn attributes about network connected endpoints
-        + Based on the profile, it will assign endpoint to appropriate identity groups
+        + Allowing ISE to learn attributes about network connected endpoints
+        + Assigning endpoint to appropriate identity groups base on profile
         + Groups can be used in authorization policy for smarter network access control decisions
         + Especially useful for devices that perform MAB, but not only
     + Two types of profiling
-        + Static profiling, where endpoint is manually assigned to a group
-        + Dynamic profiling, where endpoint attributes are dynamically learned through the use of probes
+        + Static profiling: manually assigned to a group
+        + Dynamic profiling: endpoint attributes are dynamically learned through the use of probes
     + By default, dynamic profiling is turned off
         + Endpoints are still automatically profiled based on MAC address
         + However, only device vendor can be detected, so it’s not very specific
@@ -22,10 +22,10 @@
 
 + Dynamic Profiling
     + Automatic fingerprinting of the endpoint based on several probes
-        + ISE needs to be configured to listen for probes
-        + NAD needs to be configured to send probes
+        + ISE: listen for probes
+        + NAD: send probes
     + RADIUS, highly recommended
-        + Inspects RADIUS attributes from the authentication Request
+        + Inspects RADIUS attributes from the Access Request
         + Inspects RADIUS accounting for IP-MAC binding, required for NMAP scanning or DNS resolution of endpoint
         + Used also for IOS Device sensor feature, supported starting with 15.0(2) on switches and 7.2.110.0 on WLC
 
@@ -33,7 +33,7 @@
     + HTTP
         + ISE interprets HTTP messages from CWA or SPAN
         + Gathers User-Agent from HTTP packet, used to identify the operating system on the device
-            + Crucial for mobile device profiling 
+            + Crucial for mobile device profiling
     + DHCP
         + ISE interprets DHCP messages from DHCP-Relay or SPAN
         + Gathers User-Agent from DHCP packet, used to identify the operating system on the device
@@ -57,7 +57,7 @@
 
 + Profiling Flow
     <a href="https://www.slideshare.net/Cisco_Mobility/wireless-lan-security-policy-and-deployment-best-practices">
-        <br/><img src="https://image.slidesharecdn.com/v1brkewn-2021c2securitypolicybestpractices-111214120915-phpapp02/95/wireless-lan-security-policy-and-deployment-best-practices-23-728.jpg?cb=1324564339" alt="Device Profiling" width="600">
+        <br/><img src="https://image.slidesharecdn.com/v1brkewn-2021c2securitypolicybestpractices-111214120915-phpapp02/95/wireless-lan-security-policy-and-deployment-best-practices-23-728.jpg?cb=1324564339" alt="Device Profiling" width="450">
     </a>
 
 
@@ -82,7 +82,7 @@
         + When endpoint is profiled and assigned to a specific group, do you want CoA to be performed
     + Rules
         + Each rule is a condition matching on collected endpoint attributes
-        + Each rule ahs an associated action, most commonly being to increase the Certainty Factor
+        + Each rule as an associated action, most commonly being to increase the Certainty Factor
             + NMAP SCAN is an alternative action
     + Demo: ISE - Policy > Profiling > Profiling Policies > Apple Device: Name=Apple Device, Minumum Certainty Factor = 10, Exception Action = None
     + Demo CoA?
@@ -123,10 +123,10 @@
         + Order of rules is very important
 
 + Profiling Configuration Steps on NAD
-    + Configure RADIUS accounting to ISE: `aaa accounting dot1x default start-stop group`
-    + Configure NAD to relay endpoint IP address in RADIUS Access- Request message, requires device tracking to be enabled: `radius-server attribute 8 include-in-access-req`
+    + Configure RADIUS accounting to ISE: `aaa accounting dot1x default start-stop group <grp>`
+    + Configure NAD to relay _endpoint IP address_ in RADIUS Access- Request message, requires device tracking to be enabled: `radius-server attribute 8 include-in-access-req`
     + Configure DHCP-Relay: `ip helper-address <ise_ip>`
-    + Configure NAD to relay endpoint DHCP class attribute in RADIUS Access-Request message: `radius-server attribute 25 access-request include`
+    + Configure NAD to relay _endpoint DHCP class attribute_ in RADIUS Access-Request message: `radius-server attribute 25 access-request include`
     + Configure NAD to send Netflow samples and SNMP traps to ISE
 
 + Profiling Configuration Steps on ISE
@@ -184,9 +184,9 @@
         ! end
 
     + ISE Config
-        + Administration > Deployment > ISE1-12 > Persona: Policy Service=(Enable session service, Enable Profiling Service)
-        + Administration > System Setting > Profiling: CoA Type=Reauth > Save
-        + Administration > Deployment > ISE1-12 > Profiling Configuration Tab: DHCP=(Interface=Gi1/0/5) > Save
+        + Persona: Administration > Deployment > ISE1-12 > Persona: Policy Service=(Enable session service, Enable Profiling Service)
+        + CoA: Administration > System Setting > Profiling: CoA Type=Reauth > Save
+        + Profiling: Administration > Deployment > ISE1-12 > Profiling Configuration Tab: DHCP=(Interface=Gi1/0/5) > Save
 
     + SW1 Verification:
         ```cfg
@@ -223,34 +223,34 @@
     + Why not `.101`?: IP Phone sent request w/ old `.101` address to DHCP server and ISE, but get NACK from DHCP Server and got new IP address `.102` eventually,.  However, ISE already got `.101`
 
 + Disable Default Rules in Production Environment
-    + Authentication: Policy > Authentication > Default
-    + Authorization: Policy > Authorization > Default: Condition=(PermitAccess)
+    + AuthN Policy: Policy > Authentication > Default
+    + AuthZ Policy: Policy > Authorization > Default: Condition=(PermitAccess)
     + Default rules allowing any types of Radius traffic
     + Authorization Default rules used in Monitor/Low Impact Mode, but not Closed Mode
 
 + Demo: Hierarchy Rule and Certainty Factors
     + SW1: `show run | i radius|aaa` - None
     + ISE Config
-        + Policy > Profiling > Profiling Policies > Cisco Devices > Cisco-IP-Phone > Cisco-IP-Phone-7960
+        + Profiling: Policy > Profiling > Profiling Policies > Cisco Devices > Cisco-IP-Phone > Cisco-IP-Phone-7960
             + Cisco Devices: Minimum Certainty Facor=10, Rules=(if Cisco-DeviceRule3Check1 then Certainty Factor Increases 10), Expression=MAC:OUI CONTAINS Scientific Atlanta
             + Cisco-IP-Phone: Minimum Certainty Factor=20, Rules=(if CiscoIPPhoneDHCPClassIdentifier then Certainty Factor Increases 20), Expression=DHCP:dhcp-class-identifier CONTAINS Cisco Systems, Inc. IP Phone
             + Cisco-IP-Phone-7960: Minimum Certainty Factor=70, Rules=(if CiscoIPPhone7960 then Certainty Factor Increases 70), Expression=CDP:cdpCachePlatform CONTAINS Cisco IP Phone 7960
-        + Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone: EndpointPolicy=Cisco-IP-Phone, EndpointProfilerServer=ISE1-12.inelab.local, EndpointSource=DHCP Probe, Identity Group=Cisco-IP-Phone, MAC Address=00:03:68:3c:35:f0, __dhcp-class-identifier=Cisco Systems, Inc. IP Phone CP-7960__
-        + Policy > Authorization > Profiled Cisco Ip Phone: Condition=Cisco-IP-Phone, Permissions=Cisco_IP_Phones > Edit: Conditions=(Endpoint Identity Group > Profiled > Cisco-IP-Phone)
+        +Identity:  Administration > Identity Management > Identities > Endpoints > Cisco-IP-Phone: EndpointPolicy=Cisco-IP-Phone, EndpointProfilerServer=ISE1-12.inelab.local, EndpointSource=DHCP Probe, Identity Group=Cisco-IP-Phone, MAC Address=00:03:68:3c:35:f0, __dhcp-class-identifier=Cisco Systems, Inc. IP Phone CP-7960__
+        + AuthZ Policy: Policy > Authorization > Profiled Cisco Ip Phone: Condition=Cisco-IP-Phone, Permissions=Cisco_IP_Phones > Edit: Conditions=(Endpoint Identity Group > Profiled > Cisco-IP-Phone)
             + Cisco-IP-Phone is a general profile than a specific one
-            + ndpoint Identity Group used as a condition
+            + Endpoint Identity Group used as a condition
         + Each profiling policy manually configures ISE to make Authorization Policy visible for that Identity Group
-        + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone: Create an Identity Group for the Policy = Yes
-        + Policy > Profiling > Profiling Policies > Cisco-Ip-Phone > Cisco-IP-Phone-7960: Create an Identity Group for the Policy = Yes (was No) > Save
-        + Policy > Authorization > Profiled Cisco IP Phones: Conditions=(Endpoint Identity Groups > Profiled > Cisco-IP-Phone-7960)
+        + Parent Profiling: Policy > Profiling > Profiling Policies > Cisco-Ip-Phone: Create an Identity Group for the Policy = Yes
+        + Child Profiling: Policy > Profiling > Profiling Policies > Cisco-Ip-Phone > Cisco-IP-Phone-7960: Create an Identity Group for the Policy = Yes (was No) > Save
+        + AuthZ Policy: Policy > Authorization > Profiled Cisco IP Phones: Conditions=(Endpoint Identity Groups > Profiled > Cisco-IP-Phone-7960)
 
 + Demo: Authenticate IP Phone
     + Procedures:
         1. Config SWS1 to authenticate IP Phone to ISE with MAB
         2. Ensure Authentication & Authorization policies to authenticate IP Phone
     + ISE Config
-        + Policy > Authentication > MAB: Conditions=(Wired_MAB OR Wireless_MAB), Allowed Protocols=Default Network Access, use=Internal Endpoints
-        + Policy > Policy Elements > Results > Authentication > Authentication Profile > Cisco_IP_Phone: Common Tasks=(DACL=PERMIT_ALL_TRAFFIC, Voice Domain Permission)
+        + AuthN Policy: Policy > Authentication > MAB: Conditions=(Wired_MAB OR Wireless_MAB), Allowed Protocols=Default Network Access, use=Internal Endpoints
+        + Profile: Policy > Policy Elements > Results > Authentication > Authentication Profile > Cisco_IP_Phone: Common Tasks=(DACL=PERMIT_ALL_TRAFFIC, Voice Domain Permission)
     + SW1:
         ```cfg
         conf t
@@ -413,7 +413,7 @@
 
         show ip access-lists int f1/0/5
         ! access list is Auth-Default-ACL
-        
+
         ip device tracking
         ip device tracking probe interval 30
         ip device tracking probe use-vsi
@@ -500,7 +500,7 @@
 
 
 + Demo:
-    + ISE: enable Radius Accounting
+    + ISE: enable Radius Accounting <br/>
         Administration > Deployment > ISE1-12 > Profiling Configuration Tab: Radius enable > Save
     + SW3:
         ```cfg
@@ -578,7 +578,7 @@
             exit
 
             show device-sensor cache all    ! port gi1/0/5
-            ! cdp 1: device-name; cep 4: capabilities-type; cdp 6: platform-type
+            ! cdp 1: device-name; cdp 4: capabilities-type; cdp 6: platform-type
 
             show run int vlan90
             ! interface vlan 90
@@ -593,7 +593,7 @@
               no shut
             end
 
-            show ip dhcp binding    ! 136.1.80.104 
+            show ip dhcp binding    ! 136.1.80.104
             ```
         + PC-B: NIC -> identifying
 
