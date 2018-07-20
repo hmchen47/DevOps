@@ -498,7 +498,7 @@
         conf t
         int f1/0/2
             mab
-        do show authetication sessions  ! status
+        do show authentication sessions  ! status
         
         show spanning-tree int f1/0/2   ! VLAN0029
         ```
