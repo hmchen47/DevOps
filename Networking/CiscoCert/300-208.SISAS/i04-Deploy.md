@@ -44,7 +44,7 @@
         ```cfg
         show authentication sessions
         ! Int=Gi1/0/5, Mac Addr=48f8.b32e.2532, Method=dot1x, Domain=Data,
-        ! Status=Running, Session-ID=88015B0A000000C7111F68CE
+        ! State=Running, Session-ID=88015B0A000000C7111F68CE
         ! Msg: AUTHMGR-5-FAIL: Authorization failed or unapplied for client
         show ip access-lists int gi1/0/5    ! None
         show ip int gi1/0/5     ! Inbound access list is not set

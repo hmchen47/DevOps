@@ -254,7 +254,7 @@
         show authentication sessions        ! Gi1/0/5 Authz Success
         show authentication sessions int gi1/0/5
         ! IP addr=172.16.20.101, User-Name=peap-user,
-        ! Authorized By=Authentication Server, method=dot1x, status=Authz Success
+        ! Authorized By=Authentication Server, method=dot1x, Satte=Authz Success
     + PC-B Verification: `ping172.16.2.100` - ok, `telent 172.16.20.1` - ok
     + ISE Verification: <br/> Operations > Authorization Identity=peap-user, Authorization Profiles=PermitAccess > details: Event=5200 Authentication succeeded; Authentication method=dot1X
     + PC-B with Certificate
@@ -310,7 +310,7 @@
         show authentication int gi1/0/5     ~ Authz Success
         show authentication sessions int gi1/0/5
         ! Status=Authz Success, Authorized By=Authentication Server,
-        ! method=dot1x, Status=Authc Success, username=peap-user
+        ! method=dot1x, State=Authc Success, username=peap-user
     + ISE Verification: Operations > Authentication: Identity=peap-user, Authorization Profiles=PermitAccess > details: Authentication Method=dot1x; Authentication protocol=EAP-FAST (EAP-MSCHAPv2)
 
 ## ISE Identity Sources
@@ -561,7 +561,7 @@
 
             show authentication session in tgi1/0/5
             ! User Name=INELAB\ldapuser, Status=Authz Success; Authorized By=Authentication server
-            ! ACS ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6, method=dot1x, status=Authc Success
+            ! ACS ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6, method=dot1x, State=Authc Success
 
             show epm session ip 172.16.20.101       ! ACS ACL=xACSACLx-IP-MACHINE_DACL-56a11fb6
             show ip access-lists xACSACLx-IP-MACHINE_DACL-56a11fb6
@@ -586,7 +586,7 @@
             ! Authentication result 'Success', Authorization succeeded -> w/o DACL
             show authentication sessions int gi1/0/5
             ! User Name=INELAB\ldapuser, status=Authz Success, Authorized By=Authentication Server
-            ! Vlan Policy=N/A, method=dot1x, status=Authc Success
+            ! Vlan Policy=N/A, method=dot1x, State=Authc Success
             show ip access-list int gi1/0/5
             ! permit ip any any, cmd only show network access for the port but not part of dACL
             show epm session ip 172.16.20.101           ! Admission feature=dot1x
@@ -964,7 +964,7 @@
             show authentication sessions    ! Authz Success
             show authentication sessions int gi1/0/5
             ! User-Name=ldapuser, No ACL
-            ! method=dot1x, status=Authc Success
+            ! method=dot1x, State=Authc Success
             ```
         + ISE: Operations > Authentications > Identity=ldapuser, Authorization Profile=PermitAccess > Details:
             + AuthorizationPolicyMatchedRule=EAP_CHAINING
