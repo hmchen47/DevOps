@@ -1,6 +1,6 @@
 # Implementing Cisco Secure Access Solutions - 300-208 SISAS
 
-## INE - CCNP Security - SISAS
+## INE Cisco CCNP Security 300-208 SISAS - Christian Matei
 
 ### [Course Introduction](./i00-Intro.md)
 
@@ -104,6 +104,6 @@
 + [MACSec Implementation](./i08TrustSec.md#macsec-implementation)
 
 
-
+## CBT Nuggets Cisco CCNP Security 300-208 SISAS - Keith Barker
 
 
