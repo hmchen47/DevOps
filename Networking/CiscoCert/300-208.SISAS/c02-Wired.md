@@ -4,7 +4,7 @@
     + Extensible Authentication Protocol (EAP) Framework
     + VLAN, ACL, Time-based, TrustSec
     + EAP-TLS, EAP-MSCHAPv2, EAP-FAST, LEAP, PEAP
-    + Modess: Authenticator Port
+    + Modes: Authenticator Port
         + Single-host - single MAC address only
         + Multi-host - Multiple host, authenticate with 1st MAC address
         + Multi-domain (MAD) - Voice + Data, one MAC address per domain
@@ -81,8 +81,8 @@
       ! Recurring authentication
       authentication periodic
 
-      ! let server decide how often to re-authn
-      authentication timer reauthentiation server
+      ! let server decide how often to re-authentication
+      authentication timer reauthentication server
 
       ! Set port access entry to act as authenticator
       dot1x pae authenticator
@@ -111,7 +111,7 @@
         + NIC: enable
     + SW1 Msgs:
         ```cfg
-        ! DOT1X-5-FAIL: Authetication failed for client
+        ! DOT1X-5-FAIL: Authentication failed for client
         ! AUTHMGR-5-FAIL: Authorization failed or unapplied for client
         ```
 
@@ -138,6 +138,6 @@
     show authentication sessions int gi0/7
     ! Oper host mode=multi-auth, IP=192.168.1.121
     ! method=dot1x, status=Authz Success, User-Name=bob
-
+    ```
 
 
