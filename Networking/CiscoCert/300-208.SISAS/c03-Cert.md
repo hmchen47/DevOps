@@ -92,10 +92,6 @@
     + NIC > Properties > Authentication > PEAP Settings: 'enable 'Validate server certificate', Trusted Root Certificate Authorities=SERVER1-CA > Cancel (lab env. not to enable this)
 
 
-    <a href="url">
-        <br/><img src="url" alt="text" width="450">
-    </a>
-
 
 
 
