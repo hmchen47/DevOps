@@ -42,6 +42,13 @@
         + Validation
         + Signature -> CA -> PKI
     + ISE public key including in certificate
+    + Certificate Signing Request (CSR)
+        + A __block of encoded text__ given to a Certificate Authority when applying for an SSL Certificate.
+        + Usually generated on the server where the certificate will be installed
+        + Containing information included in the certificate such as the organization name, common name (domain name), locality, and country. 
+        + Containing the public key that will be included in the certificate. 
+        + A private key usually created at the same time when creating the CSR, making a key pair. 
+        + Generally encoded using ASN.1 according to the PKCS #10 specification.
 
 + Download/Install Root CA Certificate
     + Microsoft AD Certificate Service: IE (http://192.168.1.123/certsrv)
@@ -92,9 +99,6 @@
     + NIC > Properties > Authentication > PEAP Settings: 'enable 'Validate server certificate', Trusted Root Certificate Authorities=SERVER1-CA > Cancel (lab env. not to enable this)
 
 
-    <a href="url">
-        <br/><img src="url" alt="text" width="450">
-    </a>
 
 
 
