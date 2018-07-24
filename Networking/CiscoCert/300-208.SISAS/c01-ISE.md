@@ -27,14 +27,14 @@
 + ISE GUI
     + Administration -> Administration Persona, PAN (Administration Node)
         + Systems: 
-            + Deployment
+            + Deployment - Profiling Configuration: Netflow, DHCP, DHCPSPAN, HTTP, RADIUS, Network Scan (NMAP), DNS, SNMPQUERY, SNMPTRAP
             + Licensing
             + Certificates
             + Logging
             + Maintenance
             + Backup and Restore
             + Admin Access
-            + Settings
+            + Settings: Client Provisioning, Endpoint Protection Service, FIPS Mode, Alarm Settings, _Posture_, _Profiling_, _Protocols_, Proxy, Security Groups Access, _SMTP Server_ , System Time, Policy Set
         + Network Resources
             + Network Device
             + Network Device Groups
@@ -44,15 +44,19 @@
             + NAC Managers
             + MDM (Mobile Device Manager)
         + Identity Management
-            + Identities
+            + Identities: Users, Endpoints, Latest Manual Network Scan Results
             + Groups
-            + External Identity Sources
+            + External Identity Sources: Certificate Authentication Profile, Active Directory, LDAP, RADIUS Token, RSA SecureID
             + Identity Source Sequences
             + Settings
         + Web Portal Management
             + Sponsor Group Policy
             + Sponsor Groups
             + Settings
+                + General: Portal Theme, Ports, Purge
+                + Sponsors: Authentication Source, Language Template
+                + My Devices
+                + Guest: Detail Policy, Guest Role Configurations, Language Template, Multi-portal Configurations, Portal Policy, Password Policy, Time Policy, Username Policy
     + Policy -> Policy Service Persona, PSN (Policy Service Node)
         + Authentication
         + Authorizations
@@ -60,12 +64,19 @@
         + Posture
         + Client Provisioning
         + Security Group Access
-            + Egress Policy
-            + Networ Device Automation
+            + Egress Policy: Source Tree, Destination Tree, Matrix
+            + Network Device Authorization
         + Policy Elements
             + Dictionaries
             + Conditions
             + Results
+                + Authentication
+                + Authorization: Authorization Profiles, Downloadable ACLs, Inline Posture Node Profiles
+                + Profiling: Profiling Policies, Logical Policies
+                + Posture: Remediation Actions (AS, AV, file, launch program, link, Windows server update service, Windows update), Requirements
+                + Client Provisioning - Resource: Cisco Site, Local disk, ISE Posture Agent Profile, Native Supplicant Profile
+                + Security Group Access: Security Group ACLs, Security Groups, Security Group Mappings
+
     + Operations -> Monitoring and Troubleshooting, MnT Persona
         + Authentications
         + Reports
