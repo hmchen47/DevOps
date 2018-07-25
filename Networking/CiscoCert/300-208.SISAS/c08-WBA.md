@@ -72,8 +72,8 @@
       permit tcp any any 443
     exit
 
-    ip access-list extended SAMPL-ACL
-      deny icmp any hosy 8.8.8.8
+    ip access-list extended SAMPLE-ACL
+      deny icmp any host 8.8.8.8
       permit ip any any
     exit
 
@@ -93,7 +93,7 @@
 
 + ISE Web Portal: Administration > Web Portal Management > Settings >
     + General > Portal Theme (color, logs, etc.)
-    + Guest > Multi-Portal Configurations > Default Guest Prtal
+    + Guest > Multi-Portal Configurations > Default Guest Portal
     + Guest > Multi-Portal Configurations > Add: Name=Our_Captive_Portal, Operation Tab=(Guest Portal Policy Config=First login), Authentication Tab=(Identity Store Sequence=Use_AD_the_Local) > Submit
 
 + ISE - Customized ACL
