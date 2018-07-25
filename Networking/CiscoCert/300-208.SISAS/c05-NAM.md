@@ -18,7 +18,7 @@
 + Demo: SW1 Basic Config
     ```cfg
     show authentication sessions int gi0/7
-    ! User-Name=it-bob, Method List=(mab=Not Run, dot1x=Authz Success)
+    ! User-Name=bob, Method List=(mab=Not Run, dot1x=Authz Success)
 
     show run int gi0/7
     ! interface GigabitEthernet0/7
