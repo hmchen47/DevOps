@@ -24,10 +24,10 @@
         ! max-ssh-session 5
         ! service sshd enable
         ```
-    + AD Server: Server Manager > Tools > DNS=DNS Manager > SERVER1-ForwardLookupZones-1.168.192.in-addr=arpa: ise.nuglab.com, server1.nuglab.com, it-bob-pc.nuglab.com
+    + AD Server: Server Manager > Tools > DNS=DNS Manager > SERVER1-ForwardLookupZones-1.168.192.in-addr:arpa: ise.nuglab.com, server1.nuglab.com, it-bob-pc.nuglab.com
     + PC: 
         + AnyConnect NAM Profile=Class Fast: Not editable from Network Details -> Created from Profile Editor
-        + NAM Profile editor > Network > wired > edit: Name=wired, Media=Wired (802.3) Network, Security levle=Open, Connection Type=User > Save As: configuration.xml (auto load into AnyConnect at startup)
+        + NAM Profile editor > Network > wired > edit: Name=wired, Media=Wired (802.3) Network, Security level=Open, Connection Type=User > Save As: configuration.xml (auto load into AnyConnect at startup)
     + SW1: 
         ```cfg
         show authentication sessions            ! all ports with Authentication session
@@ -38,7 +38,7 @@
     Computer (rc) > Properties > Computer name, domain, and networking groups settings > Change Settings > Change: Computer Name-it-bob-pc, Member of Domain=nuglab.com
 
 + Demo: EAP Chaining
-    + SW1: `dot1x reauthentication int gi0/7`
+    + SW1: `dot1x re-authentication int gi0/7`
     + ISE Verification: Operations > Authentications > latest entry > Details: Identity Store=AD1, EAP Chaining result=No Chaining, username=it-bob
     + ISE Config
         + Protocol: Policy > Policy Elements > Results > Authentication > Allowed protocols >Default Network Access: Allowed Protocols=(..., EAP-FAST=(Enable 'Enable EAP Chaining'), ...) > Save
@@ -47,12 +47,12 @@
     + ISE Verification: Operations > Authentications > Refresh > last entry w/ Identity=(it-bob >> host.it-bob-pc) > Details: username=(it-bob,host/it-bob=pc), Use Case=EAP Chaining
 
 + Demo: Authorization based on AD Groups
-    + ISE associating AD Group: Administration > Identity Management - External Identity Sources > Active Directory > AD1 > Groups > Add: (Select Group from Directory): Domain=nuglab.com, Filter=(Retrieve Groups=nuglab.com/Users/Domain Users > ok) [Changes on AD will refect here]
+    + ISE associating AD Group: Administration > Identity Management - External Identity Sources > Active Directory > AD1 > Groups > Add: (Select Group from Directory): Domain=nuglab.com, Filter=(Retrieve Groups=nuglab.com/Users/Domain Users > ok) [Changes on AD will reflect here]
     + AD Server: Server Manager > Tools > AD Users and Computers > nuglab.com - Users (rc) > New > Group: Name=AD-Group-ISE, scope=Global, Type=Security > ok
     + ISE: Administration > Identity Management - External Identity Sources > Active Directory > AD1 > add (select Groups from Directory): nuglab.com/Users/AD-Group-ISE > ok > Save Configuration
     + PC: `ping 8.8.8.8` - ok
 
-+ Demo: ACL to restict ping 8.8.8.8
++ Demo: ACL to restrict ping 8.8.8.8
     + Restrict with ACL for accessing 8.8.8.8 locally but no restriction on ISE authorization
     + SW1 Config:
         ```cfg
