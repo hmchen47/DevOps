@@ -53,6 +53,6 @@
 
 + Demo: Adding CA Certificate
     + `mmc` > File > Add/Remove Snap-in > Certificate > Add > Computer Account > Next > Local Computer > Finish > ok
-    + `mmc` > Console Root > Certificates > Trusted Root Certification Authorities (rc) > All Tasks > Import > Import Wizard > File Nmae=Root-CA-Base64.cer > Certificate Store=Trusted Root Certification Authorities > Next > Finish
+    + `mmc` > Console Root > Certificates > Trusted Root Certification Authorities (rc) > All Tasks > Import > Import Wizard > File Name=Root-CA-Base64.cer > Certificate Store=Trusted Root Certification Authorities > Next > Finish
 
 
