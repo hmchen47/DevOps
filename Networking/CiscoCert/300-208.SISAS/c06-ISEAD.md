@@ -30,7 +30,7 @@
     ```
 
 + Demo: ISE Verification
-    + Operations > Authentications > top entry > Details: Event=Authentication Succeeded, Uername=bob, IP=192.168.1.120, Identity Store=Internal Users (on ISE), Authentication protocol = EAP-FAST(EAP-MSCHAPv2) [outer(innner)], Network Device=Sw1, NSA Port=GigabitEthernet0/7
+    + Operations > Authentications > top entry > Details: Event=Authentication Succeeded, Uername=bob, IP=192.168.1.120, Identity Store=Internal Users (on ISE), Authentication protocol = EAP-FAST(EAP-MSCHAPv2) [outer(inner)], Network Device=Sw1, NSA Port=GigabitEthernet0/7
     + Steps: (Tools for TRBL)
         + 15013 Selected Identity Store - Internal User
         + 24210 Looking up user in Internet User ID Store - bob
