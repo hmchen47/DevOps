@@ -99,4 +99,51 @@
 
 ## Enforcing PostureRequirements
 
++ Enforcing Posture Compliance: Requirements, Remediation and Verification
+    + Posture Requirements
+    + Posture Remediation
+    + Posture Policy
+
++ Posture Requirements:
+    + NAC Agent implemented
+    + AV: remediation for quarantine, VLAN
+
++ Demo: Posture requirements
+    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win: OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=Message  Text Only
+    + Policy > Policy Elements > Results > Posture > Remediation Actions (default: AV, AS, File Launch Program, Link, Windows Server Update Service, Windows Update)
+    + Policy > Policy Elements > Results > Posture > Remediation Actions > File Remediation > Add: Name=Microsoft_Security_Essentials, version=test-v2, File_to_Uplaod=mseinstall.exe
+    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win > edit: Name=Win_Must_Have_AV, OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=(Action=Microsoft+Aecurity_Essentials, message shown to Agent user=This endpoint has failed check for any AV instalaltion, Please install the MSE ...) > Done > Save
+
++ Demo: Posture Policy
+    + Policy > Posture > Rule Name=Windows Must have an AV, OS=Windows All, other conditions=(Create a New Conditions > AD1:ExternalGroup EQUALS nuglab.com/Users/Domain Users), Requirements=Win_MUst_Have_AV > Done > Save
+    + olicy > Authorization > User and PC Authenticated > edit (Duplicate Above): Name=User with non-compliant PC, Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Noncompliant__)
+
++ Demo: Verification & Triggering
+    + ISE: Operations > Authentication > Show Live Sessions > Identity=it-bob, host/nuglab.com > CoA Action (session terminate with port shutdown) -> Terminate teh session
+    + SW1: 
+        ```cfg
+        int gi0/7
+          shut
+          no shut
+          do show authentication sessions int gi0/7
+        ! URL Redirect=REDIRECT, ACS ACL=xACSACLx-IP-ACL-During-Posture-543aebab
+        ! URL Redirect=https://ISE.nuglab.com:8443/gurstportal/gateway?sessionId=0102030400000018006A4FC8&action=cpp
+        ```
+    + PC: Cisco NAC Agent > Temporary Network Access: There is at least one mandatory requirement failing.  You are required to update your system before you can access teh network, Show Details=(Mandatory, Requirement Name=Win_Must_Have_AV) > Repair > Download > Save: mseinstall.exe (Install download file) > Full Network Access > ok
+
++ Demo: Reauthentication
+    + SW3:
+        ```cfg
+        show authentication sessions int gi0/7
+        ! User-name=it-bob, Status=Authz Success
+        ! ACS ACL=xACSACLx-IP-PERMIT_ALL_TRAFFIC-537cb1d6
+        ! dot1x=Authc Success, mab=Not Run, Vlan=1, (No Redirection)
+        ```
+    + PC: Cisco NAC Agent > List of AntiVirus and AntiSpyware Products Detected by the Agent:
+        + Product Name=Microsoft Security Essentials, Product Version=4.6.0305.0, Definition Version=1.185.3127.0, Definition Date=10/13/2014
+        + Product Name=Windows Defender, Product Type=Microsoft AS, Product Version=6.1.7600.16358, Definition Version=1.185.2784.0, Definition Date=10/09/2014
+    + ISE: Operations > Reports > Endpoints and Users > Posture Detail Assessment: Time Range=Last 30 Minutes > Run > Entry > Details: Client OS=Windows 7 Pro 64-bit, Client NAC Agent=Cisco NAC Agent 4.9.3.4, AV Installed=(Microsoft Security Essentials; 4.6.0305.0;;; Microsoft AV), AS Installed=(Windows Defender; 6.1.7600.16385; 1.185.2784.0;10/09/2014; Microsoft AS, Microsoft Security Essentials;4.6.0305;...)
+
+
+
 
