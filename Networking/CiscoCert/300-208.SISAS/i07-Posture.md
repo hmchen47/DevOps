@@ -72,8 +72,8 @@
     + Final authorization is applied if posture status is Compliant
     + Posture flow Pre ISE 2.2 & in ISE 2.2
         <a href="https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and.html">
-            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-00.png" alt="Posture flow Pre ISE 2.2" width="600">
-            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-05.png" alt="Posture flow in ISE 2.2" width="600">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-00.png" alt="Posture flow Pre ISE 2.2" width="800">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-05.png" alt="Posture flow in ISE 2.2" width="800">
         </a>
 
 + Posture Configuration Steps on Supplicant
