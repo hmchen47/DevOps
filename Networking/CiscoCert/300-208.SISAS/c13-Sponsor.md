@@ -39,8 +39,8 @@
         Administration > Web Portal Management > Identity Source Sequences > Use_AD_then_Local: Search List=(AD1, Internal Users, Guest Users)
 
 + Demo: Sponsor Portal 
-    + IE (https://www.google.com) > Sponsor Portal (port 8443) > user=it-bob, pwd=Nugget!23, Create Account: first anme, last name, Guest Role=(Guest/Activated Guest), Account Duriation=DefaultEightHours > Submit
-    + Account List - functions: Edit | Email, Print | Reub=nstate, Suspend | Delete | Change Account Duration
+    + IE (https://www.google.com) > Sponsor Portal (port 8443) > user=it-bob, pwd=Nugget!23, Create Account: first name, last name, Guest Role=(Guest/Activated Guest), Account Duration=DefaultEightHours > Submit
+    + Account List - functions: Edit | Email, Print | Reinstate, Suspend | Delete | Change Account Duration
 
 
 
