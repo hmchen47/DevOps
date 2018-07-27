@@ -17,7 +17,7 @@
     ! aaa authentication dot1x default group radius
     ! aaa authorization network default group radius
     ! aaa accounting dot1x default start-stop group radius
-    ! aaa server radius dynamic-aothor
+    ! aaa server radius dynamic-author
     !   client 192.168.1.117 server-key Nugget!23
     ! ip radius source-interface vlan1
     ! radius-server attribute 6 on-for-login-auth
@@ -50,8 +50,8 @@
         + SNMPTRAP: 
 
 + Demo: ISE:
-    + Endpoint scan results: Administration Identity Management > Identities > Endpoints: HP-Devo=ices (hdDevice Descr=HP LaserJet Professional p1102w), Windows 7 Workstation
-    + Ensure SNMP Settup Correctly: Administration > Network Resources > Network Devices > SW1: Authentication Settings=(Protocol=RADIUS, Shared secret), SNMP Settings=(SNMP Versin=3, ...)
+    + Endpoint scan results: Administration Identity Management > Identities > Endpoints: HP-Device=ices (hdDevice Desc=HP LaserJet Professional p1102w), Windows 7 Workstation
+    + Ensure SNMP Setup Correctly: Administration > Network Resources > Network Devices > SW1: Authentication Settings=(Protocol=RADIUS, Shared secret), SNMP Settings=(SNMP Version=3, ...)
     + Specify what key or string for specifying a SNMP setting: Administration > System - Settings > Profiling:
         + No CoA
         + Port Bounce
@@ -62,12 +62,6 @@
     + Home page: Profiled Endpoints=2
     + Operations > Reports > Endpoints and Users ? Profiled Endpoints Summary (Time Range=Last 7 days) > Run > Summary: Policy=((HP-Device, Windows 7 Workstation) > Details on Windows-Workstation: detailed info
     + Administration > System - Licenses > ISE: License Type=Base-Eval (54 days), Advanced/Plus - Eval (54 days), Base (Active/Allowed)=2/100
-
-
-
-
-
-
 
 
 
