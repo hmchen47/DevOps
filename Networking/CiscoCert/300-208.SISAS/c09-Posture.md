@@ -2,9 +2,9 @@
 
 ## What is Posture?
 
-+ Posture Assessment & Remediation: Checking anfd Enforcing Compliance
++ Posture Assessment & Remediation: Checking and Enforcing Compliance
     + NAC Agents
-    + Cjecks
+    + Checks
     + Status
 
 + Posture Assessment
@@ -21,7 +21,7 @@
     + Posture: compliance, no-compliance, unknown
     + Authorization Profiles w.r.t. Posture
         1. Unknown: Redirect to ISE to download NAC Agent
-        2. Noncompliance: update, quaratine, remediation
+        2. Noncompliance: update, quarantine, remediation
         3. Compliance: right privilege, proper VLAN, etc.
 
 ## Planning and/or Updating NAC Files on the ISE Server
@@ -34,7 +34,7 @@
     1. Deployed Active Directory Groups Policy Objects
     2. Authorization profile to check compliance
 
-+ AV & AS Complance
++ AV & AS Compliance
     + ISE: 
         + Administration > System - Settings > Posture = (General settings, Reassessments, Updates, Acceptable Use Policy)
         + Administration > System - Settings > Posture > Updates: Update feed URL=(https://www.cisco.com/web/secure/pmbu/posture-update.xml), Web
@@ -50,7 +50,7 @@
     + Posture Agent Profiles
     + Authorization Profiles'
 
-+ Provison Policy
++ Provision Policy
     + Types of system
     + Redirect if Agent not existed -> ISE server
 
@@ -68,7 +68,7 @@
     Policy > Client Provisioning > Name=All-Windows, OS=Windows All, Conditions=(AD1:ExternalGroups EQUALS nuglab.com/Users/Domain Users), Results=(Agent=NAC Agent 4.9.4.3, Profile=Nuglab_AgentProfile, Compliant mode=None) > Done > Save
 
 + Demo: Authorization Profile
-    + Policy > Policy Elements > Results > Authentication > Downloadable ACL > Add: Name=ACL-During-Posture, DAACL=(permit ip any any) > Submit
+    + Policy > Policy Elements > Results > Authentication > Downloadable ACL > Add: Name=ACL-During-Posture, DACL=(permit ip any any) > Submit
     + Policy ? Policy Elements > Results > Authorization > Authorization Profile > Add: Name=POSTURE-AUTH-PROFILE, Tasks=(DACL=ACL-During-Posture, Web Redirection (CWA, DRW, MDM, NSP, CPP)=Client Provisioning (Posture)=REDIRECT(ACL)) > Submit
 
 + Demo: Apply Profile
@@ -111,8 +111,8 @@
 + Demo: Posture requirements
     + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win: OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=Message  Text Only
     + Policy > Policy Elements > Results > Posture > Remediation Actions (default: AV, AS, File Launch Program, Link, Windows Server Update Service, Windows Update)
-    + Policy > Policy Elements > Results > Posture > Remediation Actions > File Remediation > Add: Name=Microsoft_Security_Essentials, version=test-v2, File_to_Uplaod=mseinstall.exe
-    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win > edit: Name=Win_Must_Have_AV, OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=(Action=Microsoft+Aecurity_Essentials, message shown to Agent user=This endpoint has failed check for any AV instalaltion, Please install the MSE ...) > Done > Save
+    + Policy > Policy Elements > Results > Posture > Remediation Actions > File Remediation > Add: Name=Microsoft_Security_Essentials, version=test-v2, File_to_Upload=mseinstall.exe
+    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win > edit: Name=Win_Must_Have_AV, OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=(Action=Microsoft_Security_Essentials, message shown to Agent user=This endpoint has failed check for any AV instalaltion, Please install the MSE ...) > Done > Save
 
 + Demo: Posture Policy
     + Policy > Posture > Rule Name=Windows Must have an AV, OS=Windows All, other conditions=(Create a New Conditions > AD1:ExternalGroup EQUALS nuglab.com/Users/Domain Users), Requirements=Win_MUst_Have_AV > Done > Save
