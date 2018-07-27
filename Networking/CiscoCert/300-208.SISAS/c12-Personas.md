@@ -21,7 +21,7 @@
         + fault tolerance
         + load balancing
     + Multiple Monitoring
-        + Primary & secodary - fault tolerance
+        + Primary & secondary - fault tolerance
         + all logs collected by once
     + Inline Posture
         + Network Admission Control
@@ -71,7 +71,7 @@
         The actual data traffic from the endpoint may arrive at the Inline Posture node untrusted side before the Accounting-Start message is received by the Inline Posture node. Upon receiving the RADIUS Accounting-Start message, the Inline Posture node learns the IP address of the endpoint involved in the session and associates the endpoint with the ACL, which is downloaded and installed earlier in the session. The initial profile for this client endpoint could be restrictive, to posture the client before being given full access.
         11.	Assuming the restrictive ACL allows access only to Cisco ISE servers, the endpoint is only allowed actions such as agent downloading and posture assessment over the data plane.
         12.	If the client endpoint is posture compliant (as part of the restricted communication with Cisco ISE services earlier), the Policy Service node initiates a RADIUS (CoA) with the new profile. Therefore, a new ACL is applied at the Inline Posture node for the session. The new ACL is installed immediately and applied to the endpoint traffic.
-        13.	The endpoint is then capable of full access to the enterprise network, as a result of the new profile that was applied to the Inline Posture node.
+        13. The endpoint is then capable of full access to the enterprise network, as a result of the new profile that was applied to the Inline Posture node.
 
 
 
