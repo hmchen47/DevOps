@@ -22,7 +22,7 @@
 
     ! CoA
     aaa server radius dynamic-aothor
-    client 192.168.1.117 server-key Nugget!23
+      client 192.168.1.117 server-key Nugget!23
 
     ip domain name nuglab.com
 
