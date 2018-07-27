@@ -63,6 +63,65 @@
 
 ## Implementing TrustSec
 
++ TrustSec: CCentralized ACLs and Policies
+    + ISE:
+        + SGT password for NAD
+        + SGT Groups
+        + SGACLs (Create & Apply)
+    + NAD:
+        + AAA method list for CTS (Cisco TrustSec)
+        + CTS and PAC credentials for NAD
+        + Enforce Role-based (SGACL)
+
++ Demo: ISE Config
+    + IEEE SGA AAA Server: Administration > Network Resources > SGA AAA > Server > ISE
+    + NAD: Administration > Network Resources > Network Devices > SW2 (3750-x -> Support TrustSec) > Advanced TrustSec Settings: Device Authentication Settings=(use device ID for SGA Identification, pwd=Nugget!23), SGA Notifications and Updates=(Notify this device about SGA config changes), Device Config Deployment=(user=admin, pwd=Nugget!23)
+
++ Demo: Create Security Group with SGTs:
+    + Policy > Policy Elements > Results > Security Group Access > Security Groups: SEC_NADs[2], SEC_SERER[3], SEC_USERS[4], UNKNOWN[0]
+    + Role-Based ACL (RBACL): 
+        + No source and destination in ACL - traffic between 2 SGTs
+        + Policy > Policy Elements > Results > Security Group Access > Security Group ACLs (Deny_All, Deny_ICMP) > Deny_ICMP: Security Group ACL=(deny icmp, permit ip)
+    + Policy > Policy Elements > Results > Security Group Access > Security Group Mappings > SEC_SERVERS: ip addr=8.8.8.8
+
++ Demo - Associate Security Group with SGT: Policy > Authorization > User and PC Authorization: Permissions=(Our_Author_profile, SEC_USERS)
+
++ Demo: NAD Adding for TrustSec - SW2
+    ```cfg
+    conf t
+    radius-server host 192.1683.1.117 pac key Nugget!23
+    aaa authorization network cts-author-list group radius  ! listt name=cts-author-list, serrver=radius
+      cts credentials list cts-author-list 
+    exit
+    
+    cts credential id SW2 password Nugget!23
+
+    do show cts credentials         ! CTS pwd defined in keystore , device id=SW2
+    do show cts password            ! I-ID=SW2, A-ID-Info=Identity Server Engine
+    show cts environment-data
+    ! Security Group Table: 
+    ! 0-00=Unknown, 2-00=SEC_NADs, 3-00=SEC_SERVERS, 4-00=SEC_Users
+
+    int gi1/0/12
+      cts role-based enforcement 
+    end
+
+    cts refresh environment-data    ! update server info
+    show cts environment-data
+    ```
+
++ Demo: Apply SGACL <br/>
+    + ISE: Policy > Security Group Access > Egress Policy > Matrix Tab: click on box with designated source and destination, e.g., src=SEC_USERS, dst=SEC_SERVERS, status=(enable Assigned SGACLs=Deny_ICMP) > Save
+    + SW2: 
+        ```cfg
+        conf t
+        int g1/0/12
+          cts role-based enforcement 
+        end
+        ```
+    + ISE Validation: Policy Authorization > Users and PC Authorization: Permissions=(Our_Auth_Profile , SEC_USERS)
+    + SW2: `show authentication sessions int g1/0/12` - SGT=0004-0
+
 
 
 
