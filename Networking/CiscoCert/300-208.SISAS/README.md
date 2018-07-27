@@ -125,8 +125,8 @@
     + [Implementing TrustSec]((./c11-TrustSec.md#implementing-trustsec)
 + [ISE Personas](./c12-Personas.md)
 + [Sponsor Portal](./c13-Sponsor.md)
-    + [Sponsor Portal with Guest Access](./c13-Sponsor.md#)
-    + [Implementing a Sponsor Portal on ISE](./c13-Sponsor.md#)
+    + [Sponsor Portal with Guest Access](./c13-Sponsor.md#sponsor-portal-with-guest-access)
+    + [Implementing a Sponsor Portal on ISE](./c13-Sponsor.md#implementing-a-sponsor-portal-on-ise)
 + [Bring Your Own Device (BYOD)](./c14-BYOD.md)
 
 
