@@ -100,9 +100,9 @@
         + Per operating system
         + Per group of users
     + Configure authorization policies with posture status as condition
-        + For Unknown status, redirect to client provisioning portal
-        + For Noncompliant status, restrict access for remediation to work
-        + For Compliant status, grant network access as desired
+        + Unknown status: redirect to client provisioning portal
+        + Noncompliant status: restrict access for remediation to work
+        + Compliant status: grant network access as desired
     + Optionally configure client provisioning policies
         + Only when NAC Agent has not been pre-deployed
         + Required downloading of NAC Agent and compliance module to ISE
@@ -129,7 +129,7 @@
         !   spanning-tree portfast
         ! end
     + PC-B: 
-        + NIC > Properties > Authentication: Enable IEEE 802.1x authentication, Network authentication method=PEAP (outer method)
+        + AuthN Method: NIC > Properties > Authentication: Enable IEEE 802.1x authentication, Network authentication method=PEAP (outer method)
         + PEAP Settings (Outer method): Validate server certificate, Trust Root Certificate Authorities=inelab-CA, Authentication Method=smart card or other certificate
         + Configure (Inner method): user certificate on this computer, use simple certificate selection, validate server certificate, Trust Root Certificate Authorities=inelab-CA
 
@@ -150,21 +150,20 @@
         end
         ```
     + ISE Config
-        + Policy > Authentication > MAB > edit (Insert New Rule Below): Name=PEAP_WIRED_AUTH, Conditions=(Wired_802.1x), Allowed Protocols=PEAP_EAP_TLS, Use=INE_PKI_STORE
-        + Policy > Authorization > MAB_DATA_VLAN: Conditions=Wired_MAB, Permissions=DATA_VLAN_90
+        + AuthN Policy: Policy > Authentication > MAB > edit (Insert New Rule Below): Name=PEAP_WIRED_AUTH, Conditions=(Wired_802.1x), Allowed Protocols=PEAP_EAP_TLS, Use=INE_PKI_STORE
+        + AuthZ Ploicy: Policy > Authorization > MAB_DATA_VLAN: Conditions=Wired_MAB, Permissions=DATA_VLAN_90
     + PC-B" NIC > enable
 
-+ Demo: Posture Config
-    + ISE Config:
-        + List of Posture Conditions: Policy > Policy Elements > Conditions > Posture: File Condition/Registry Condition/Application Condition/Service Condition/Compund Condition/AV Compund Condition/AS Compound Condition/Dictionary Simple Condition/Dictionary Compound Condition/
-        + Policy > Policy Elements > Conditions > Posture > Application Conditions > Add: Name=APP_COND_ISO, Process Name=pPoerISO.exe, OS=Windows All > Save > Submit
-        + Policy > Policy Elements > Conditions > Posture > Remediation > Add: Name=APP_REM_ISO, Remediation Type=Automatic, Program Installation Path=v:\Program Files\PoerISO\powerios.exe > Add > Submit
-        + Policy > Policy Elements > Results > Posture > Requirements > default > edit: Name=POSTURE_TEST, OS=Windows All, Conditions=APP_COND_ISO, Remediation Action=APP_REM_ISO
++ Demo: Posture Config - ISE Config:
+    + List of Posture Conditions: Policy > Policy Elements > Conditions > Posture: File Condition/Registry Condition/Application Condition/Service Condition/Compund Condition/AV Compund Condition/AS Compound Condition/Dictionary Simple Condition/Dictionary Compound Condition/
+    + Condition: Policy > Policy Elements > Conditions > Posture > Application Conditions > Add: Name=APP_COND_ISO, Process Name=powerIOS.exe, OS=Windows All > Save > Submit
+    + Remediation:  > Policy Elements > Conditions > Posture > Remediation > Add: Name=APP_REM_ISO, Remediation Type=Automatic, Program Installation Path=c:\Program Files\PoerISO\powerios.exe > Add > Submit
+    + Requirements: Policy > Policy Elements > Results > Posture > Requirements > default > edit: Name=POSTURE_TEST, OS=Windows All, Conditions=APP_COND_ISO, Remediation Action=APP_REM_ISO
 
 + Demo: Client Provision Policy
     + SW3 Config
         ```cfg
-        show run | i aaa|rdius
+        show run | i aaa|radius
         ! aaa new-model
         ! aaa authentication dot1x default group radius
         ! aaa authorization network default group radius
@@ -177,7 +176,7 @@
         ! radius vsa send accounting
         ! radius vsa send authentication
         ```
-    + ISE ACL: Policy > Pilicy Elements > Results > Authorization > Authorization Profile > POST_UNK_PROFILE: Access Type=ACCESS_ACCEPT, DACL Name=POST_UNK_DACL, web redirection=(Client Provisioning (Posture) ACL POST_REDIR_ACL)
+    + DACL: Policy > Policy Elements > Results > Authorization > Authorization Profile > POST_UNK_PROFILE: Access Type=ACCESS_ACCEPT, DACL Name=POST_UNK_DACL, web redirection=(Client Provisioning (Posture) = POST_REDIR_ACL)
     + SW3 conf:
         ```cfg
         conf t
@@ -195,14 +194,15 @@
         end
         show authentication sessions    ! 0A0A0A0A0A00000024028A282C
         clear authentication session 0A0A0A0A0A00000024028A282C
+        ```
     + PC-B: IE (http://172.16.3.100) -> timeout
     + SW3 Verification:
         ```cfg
         show authentication sessions
-        ! URL Redirect ACL=xACSACLx-IP-POST_UNK_DACL_56a2c225
+        ! URL Redirect ACL=xACSACLx-IP-POST_UNK_DACL-56a2c225
 
-        show ip access-lists xACSACLx-IP-POST_UNK_DACL_56a2c225
-        ! Extended IP access list xACSACLx-IP-POST_UNK_DACL_56a2c225 (per user)
+        show ip access-lists xACSACLx-IP-POST_UNK_DACL-56a2c225
+        ! Extended IP access list xACSACLx-IP-POST_UNK_DACL-56a2c225 (per user)
         !   10 permit udp any any eq bootps
         !   20 permit tcp any host 172.16.3.100 eq 8443
         !   30 permit tcp any host 172.16.3.100 eq 8905
@@ -231,33 +231,33 @@
         int gi1/0/5
           shut
           no shut
-        ^Z
+        end
         show authentication sessions                    ! status=Authz Success
-        show authentication sessions int gi1/0/5        ! PSOT_REDIR_ACL
+        show authentication sessions int gi1/0/5        ! URL Redirect ACL=PSOT_REDIR_ACL
         ```
-    + PC-B: chrome (http://172.16.20.100) -> Not displaed; IE (http://172.16.20.100) -> This page can't be displayed.
-    + ISE: 
+    + PC-B: chrome (http://172.16.20.100) -> Not displayed; IE (http://172.16.20.100) -> This page can't be displayed.
+    + ISE Validation: 
         + Policy > Policy Elements > Results > Client Provisioning > Resources: NACAgent 4.9.0.52
         + Client Provision Tab: Rules=Windows, OS=Windows All, Results=NCAgent > Done
-    + PC-B: IE (http://10.10.10.10) -> This page can't be displayed.; Chrome (http://172.16.20.100) -> Cannot be displayed
-    + ISE: Posture Policy: Name=TEST_POLICY, OS=Windows All, Conditions=(), Requirements=POSTURE_TEST
-    + SW3: `conf t, int gi1/0/5, shut, no shut, end` 
-    + PC-B: Chrome (http://10.10.10.10) -> Cannot be displayed
+    + PC-B Triggering: IE (http://10.10.10.10) -> This page can't be displayed.; Chrome (http://172.16.20.100) -> Cannot be displayed
+    + ISE Validation: Posture Policy: Name=TEST_POLICY, OS=Windows All, Conditions=(), Requirements=POSTURE_TEST
+    +  Triggering: `conf t, int gi1/0/5, shut, no shut, end` 
+    + PC-B Triggering: Chrome (http://10.10.10.10) -> Cannot be displayed
     + Conclusion: No idea what happened, maybe ISE bug, Pkts returned w/o payload for GUI
 
 + Demo: CoA Messages
     + PC-B: Cisco NAC Agent > Discover Host=172.16.3.100 > Apply > ... > Full Network Access
     + SW3 Msgs: EPM-6-POLICY-APP-SUCCESS: ... | POLICY_NAME xACSACLx-IP-POST_COMP_DACL-256a2c31c
     + ISE (Create policy again that was not saved): Policy > Posture: Name=APP_POSTURE, OS=Windows All, Requirements=POSTURE_TEST > Save
-    + PC-B: logoff > logon
-    + SW3: expect to see Noncompliant status
+    + PC-B Triggering: logoff > logon
+    + SW3 Verification: expect to see Noncompliant status
         ```cfg
         ! EPM-6-APP_SUCCESS: ... | POLICY_NAME xACSACLx-IP-POST_UNK_DACL-56a2c225
         show authentication sessions int gi1/0/5
         ! ACS ACL=xACSACLx-IP-POST_UNK_DACL-56a2c225, URL Redirect ACL=POST_REDIR_CL
         ! URL Redirect=https://ISE1-12.inelab.local:8443/guestportal/getway?sessionId=0A0A0A0A0A0000003502F663F1&action=cpp
-    + PC-B: ANC Agent > Temporary Network Access > Full Network Access
-    + ISE: Operations > Authentication: Authentication Profiler=POST_COMP_PROFILE > details: Authorization Profile=POST_COMP_PROFILE, AuthorizationPolicyMatchedRule=POST_COMPLAINT, Posture status=Compliant
+    + PC-B Validation: ANC Agent > Temporary Network Access > Full Network Access
+    + ISE Verification: Operations > Authentication: Authentication Profiler=POST_COMP_PROFILE > details: Authorization Profile=POST_COMP_PROFILE, AuthorizationPolicyMatchedRule=POST_COMPLAINT, Posture status=_Compliant_
 
 
 
