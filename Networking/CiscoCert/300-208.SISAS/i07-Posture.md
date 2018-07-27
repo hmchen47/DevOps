@@ -15,7 +15,7 @@
 
 + Posture and Client Provisioning Policies Workflow in Cisco ISE
     <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ise_admin_guide_24/b_ise_admin_guide_24_new_chapter_010111.html#ID37">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/310001-320000/310001-311000/310142.tif/_jcr_content/renditions/310142.jpg" alt="Posture and Client Provisioning Policies Workflow in Cisco ISE" width="600">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/310001-320000/310001-311000/310142.tif/_jcr_content/renditions/310142.jpg" alt="Posture and Client Provisioning Policies Workflow in Cisco ISE" width="450">
     </a>
 
 + Requirements for Automatic Remediation

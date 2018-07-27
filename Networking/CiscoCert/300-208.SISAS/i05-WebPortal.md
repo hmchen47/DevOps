@@ -43,10 +43,10 @@
             <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373351.eps/_jcr_content/renditions/373351.jpg" alt="WLC with Local WebAuth Non-Posture Flow" width="450">
         </a>
     + [Wired NAD with Local WebAuth Process](https://www.cisco.com/c/en/us/td/docs/security/ise/2-0/admin_guide/b_ise_admin_guide_20/b_ise_admin_guide_20_chapter_01111.html#ID1372)
-        1. Cisco ISE requires a login.html file with the HTML redirect to be uploaded to the NAD. This login.html file is returned to the browser of the guest device for any HTTPS request made.
-        2. The browser of the guest device is redirected to the Guest portal where the guest’s login credentials are entered.
-        3. After the Acceptable Use Policy (AUP) and change password are processed, both of which are optional, the Guest portal redirects the browser of the guest device to post the login credentials on the NAD.
-        4. The NAD makes a RADIUS request to the Cisco ISE RADIUS server to authenticate and authorize the guest.
+        1.  Cisco ISE requires a login.html file with the HTML redirect to be uploaded to the NAD. This login.html file is returned to the browser of the guest device for any HTTPS request made.
+        2.  The browser of the guest device is redirected to the Guest portal where the guest’s login credentials are entered.
+        3.  After the Acceptable Use Policy (AUP) and change password are processed, both of which are optional, the Guest portal redirects the browser of the guest device to post the login credentials on the NAD.
+        4.  The NAD makes a RADIUS request to the Cisco ISE RADIUS server to authenticate and authorize the guest.
 
 + LWA Configuration Steps on Supplicant
     + No Configuration Required
@@ -115,15 +115,15 @@
         <a href="https://www.juniper.net/documentation/en_US/junos/topics/concept/central-web-authentication-understanding.html">
         <br/><img src="https://www.juniper.net/techpubs/images/g043340.png" alt="Central Web Authentication Process" width="500">
         </a>
-        1. A host connected to the switch (authenticator) initiates MAC RADIUS authentication.
-        2. MAC RADIUS authentication fails. Instead of sending an Access-Reject message to the switch, the AAA server sends an Access-Accept message that includes a dynamic firewall filter and a CWA redirect URL.
-        3. The host is allowed by the terms of the filter to send DHCP requests.
-        4. The host receives an IP address and DNS information from the DHCP server. The AAA server initiates a new session that has a unique session ID.
-        5. The host opens a Web browser.
-        6. The authenticator sends the CWA redirect URL to the host.
-        7. The host is redirected to the CWA server and is prompted for login  credentials.
-        8. The host provides the username and password.
-        9. After successful Web authentication, the AAA server sends a CoA message to udpate the filter or VLAN assignment applied on the controlled port, allowing the host to access the LAN.
+        1.  A host connected to the switch (authenticator) initiates MAC RADIUS authentication.
+        2.  MAC RADIUS authentication fails. Instead of sending an Access-Reject message to the switch, the AAA server sends an Access-Accept message that includes a dynamic firewall filter and a CWA redirect URL.
+        3.  The host is allowed by the terms of the filter to send DHCP requests.
+        4.  The host receives an IP address and DNS information from the DHCP server. The AAA server initiates a new session that has a unique session ID.
+        5.  The host opens a Web browser.
+        6.  The authenticator sends the CWA redirect URL to the host.
+        7.  The host is redirected to the CWA server and is prompted for login  credentials.
+        8.  The host provides the username and password.
+        9.  After successful Web authentication, the AAA server sends a CoA message to udpate the filter or VLAN assignment applied on the controlled port, allowing the host to access the LAN.
         10. The authenticator responds with a CoA-ACK message and sends a MAC RADIUS authentication request to the AAA server.
         11. The AAA server matches the session ID to the appropriate access policy and sends an Access-Accept message to authenticate the host.
     + Wireless Device Registration Web Authentication Flow
