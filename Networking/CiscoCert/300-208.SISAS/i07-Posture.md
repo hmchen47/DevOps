@@ -19,8 +19,8 @@
     </a>
 
 + Requirements for Automatic Remediation
-    1. permanent agent supported
-    2. what the software intended to do, e.g., installing antivirus software, access privileges
+    1.  permanent agent supported
+    2.  what the software intended to do, e.g., installing antivirus software, access privileges
 
 + NAC Agent Overview
     + NAC Agent
@@ -30,7 +30,7 @@
     + NAC Permanent Agent deployment options
         + Manual installation, not scalable
         + Unattended installation, customization available -> Silent activities
-        + ISE Client Provisioning Policy - ISE Web Service
+        + ISE Client Provisioning Policy (CPP) - ISE Web Service
             + Can also be used to automatically update NAC Agent or compliance module
 
 + NAC Agent Connectivity Requirements
@@ -38,11 +38,11 @@
         + Supplicant requires IP connectivity to ISE
         + NAD is completely bypassed, makes sense as it does not understand posture data
         + No need to know the info, eg., vendor, software, version, etc.
-    + TCP 8443 to ISE: Required if NAC Agent is installed through CPP
-    + UDP/TCP 8909 to ISE: Required for NAC Agent wizard installation via CPP
+    + TCP 8443 to ISE: Required if NAC Agent is installed through _CPP_
+    + UDP/TCP 8909 to ISE: Required for _NAC Agent wizard_ installation via CPP
     + UDP/TCP 8905 to ISE
-        + Used by SWISS protocol (report collected data to ISE)
-        + Required for ISE discovery and NAC Agent update
+        + Used by _SWISS protocol_ (report collected data to ISE)
+        + Required for _ISE discovery_ and _NAC Agent update_
     + ISE no longer uses legacy port 8906 for SWISS protocol
 
 ## Posture Services
@@ -72,8 +72,8 @@
     + Final authorization is applied if posture status is Compliant
     + Posture flow Pre ISE 2.2 & in ISE 2.2
         <a href="https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and.html">
-            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-00.png" alt="Posture flow Pre ISE 2.2" width="350">
-            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-05.png" alt="Posture flow in ISE 2.2" width="350">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-00.png" alt="Posture flow Pre ISE 2.2" width="600">
+            <br/><img src="https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine-22/210523-ISE-posture-style-comparison-for-pre-and-05.png" alt="Posture flow in ISE 2.2" width="600">
         </a>
 
 + Posture Configuration Steps on Supplicant
