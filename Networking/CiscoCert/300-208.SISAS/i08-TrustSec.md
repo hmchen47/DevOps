@@ -7,7 +7,7 @@
         + Consists of 802.1x, SGT and MACSec
         + SGT stands for Security Group Tags
         + MACSec stands for Mac Security (layer 2 encryption)
-    + MACSec offers line-rate layer2 hardware-based encryption on a hop-by-hop basis
+    + MACSec offers line-rate layer2 hardware-based encryption on a __hop-by-hop basis__
         + Host-to-switch
         + Switch-to-switch
     + MACSec is 802.1ae standard
@@ -29,6 +29,11 @@
         + Manual/static configuration
         + Negotiation and key derivation via SAP (Security Association Protocol) - Cisco proprietary based on 802.11i
 
++ MACSec Key Agreement Protocol
+    <a href="http://platinumway.biz/macsec-key-agreement-protocol#">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/deploy_guide_c17-663760.doc/_jcr_content/renditions/deploy_guide_c17-663760-05.jpg" alt="MACSec Key Agreement Protoco" width="450">
+    </a>
+
 + MACsec Policy Enforcement
     + MACsec policy is enforced per port
         + __Must-not-secure__: do not negotiate MACsec
@@ -44,12 +49,6 @@
 + MACsec Configuration Steps Supplicant 
     + Requires AnyConnect
     + Configure EAP-FAST with MacSec support
-
-+ MACSec Key Agreement Protocol
-    <a href="http://platinumway.biz/macsec-key-agreement-protocol#">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/deploy_guide_c17-663760.doc/_jcr_content/renditions/deploy_guide_c17-663760-05.jpg" alt="MACSec Key Agreement Protoco" width="450">
-    </a>
-
 
 + MACsec Configuration Steps on NAD
     + Ensure 802.1x authentication requirements are configured
@@ -96,7 +95,7 @@
     + A tag associated to a user's pkts in the network is identified not only the but also the context of the user.
     + Layer 2 SGT Frame Format
     <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Borderless_Networks/Unified_Access/BYOD_Design_Guide/BYOD_Policy.html">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/290001-300000/293001-294000/293619.eps/_jcr_content/renditions/293619.jpg" alt="Layer 2 SGT Frame Format" width="600">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/290001-300000/293001-294000/293619.eps/_jcr_content/renditions/293619.jpg" alt="Layer 2 SGT Frame Format" width="450">
     </a><br/>
 
 + SGT Building Blocks
@@ -162,17 +161,17 @@
     <br/><img src="./diagrams/sisas-net1.png" alt="Network Topology w/o Phone" width="450">
 
 + Demo: 
-    + PC-B: EAP-FAST
-    + ISE Config
-        + Policy > Authentication > WIRED_EAP_FAST_AUTH: Condition=Wired_802.1x, Allow Protocol=EAP_FAST, use=INEAD
-        + Policy > Authorization > POST_UNKNOWN > edit (Insert New Rule bove): Name=EAP_MACSEC, Conditions=Wired_802.1x, Permissions=PermitAccess
-    + PC-B: 
-        + run `services.msc` > AnyConnect Network Access Manager > Properties: startup=autiomatic > Apply > Start --> lost connection
+    + PC-B Validation: EAP-FAST
+    + ISE Config:
+        + AuthN Policy: Policy > Authentication > WIRED_EAP_FAST_AUTH: Condition=Wired_802.1x, Allow Protocol=EAP_FAST, use=INEAD
+        + AuthZ Policy: Policy > Authorization > POST_UNKNOWN > edit (Insert New Rule bove): Name=EAP_MACSEC, Conditions=Wired_802.1x, Permissions=PermitAccess
+    + PC-B - Service & AnyConnect:
+        + `services.msc` > AnyConnect Network Access Manager > Properties: startup=automatic > Apply > Start --> lost connection
         + NIC (which won't be controlled by AnyConnect) > Properties > disable Cisco AnyConnect Network Access Manager Filter Driver > ok
-        + Restart AnyConnect Network ccess Manager service
+        + Restart AnyConnect Network Access Manager service
         + Open AnyConnect > Networks=wired > Networks > Add: Media=wired, Name=EAP_MACSec, Security=802.1x, 802.1x Configuration=(Password, EAP-FAST) > ok
         + AnyConnect > Networks=EAP_MACSEC: user=ldapuser, pwd=Cisco123! -> Authentication Filed
-    + SW3: 
+    + SW3 Verification:
         ```cfg
         show run int gi1/0/5
         ! interface GigabitEthernet1/0/5
@@ -205,10 +204,10 @@
         + Credentials: Use Single Sign On Credentials
         + File > Save As: configuration.xml
     + PC-B: 
-        + Verifcation: Network Access Manager Profile Editor > File > Open: configuration.xml > Networks=EAP_CHAINING: checking existence and configuration > Cancel
+        + Verification: Network Access Manager Profile Editor > File > Open: configuration.xml > Networks=EAP_CHAINING: checking existence and configuration > Cancel
         + AnyConnect > Networks=EAP_CHAINING --> Fail to connect
     + ISE: 
-        + Verification: Operations > Authentications: Identity=anonymous (ldapuser expected, authentication failed) > details: Event=Endpoint concluded several failed authentications of the same scenarios, username=anonymous, Failure Reason=Fail to negotiate EAP beacuse EAP-FAST not allowed in the Allowed Protocols
+        + Verification: Operations > Authentications: Identity=anonymous (ldapuser expected, authentication failed) > details: Event=Endpoint concluded several failed authentications of the same scenarios, username=anonymous, Failure Reason=Fail to negotiate EAP because EAP-FAST not allowed in the Allowed Protocols
         + Policy > Authentication > PEAP_EAP_TLE, use=INE_PKI_STORE > move below WIRED_EAP_FAST_AUTH > Save
         + Authentication Rule PEAP_WIRED_AUTH matched first and WIRED_EAP_FAST_AUTH never hit -> resolved by reorder them
     + PC-B: AnyConnect > Networks=EAP_CHAINING: user=ldapuser, pwd=Cisco123! -> still Failed
@@ -244,7 +243,7 @@
           macsec
           mka default-policy
 
-        do show authentication sessions int gi1/0/5    
+        do show authentication sessions int gi1/0/5
         ! status=Authz Success, Security Policy=Should Secure (default)
 
         authentication linksec policy should-secure     ! default setting
@@ -262,11 +261,11 @@
         ! end
         ```
     + ISE:
-        + Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=MACSEC, Access Type=ACCESS_ACCEPT, Common Tasks=(MACSec Policy=must-secure) > Submit
-        + Policy > Authorization > EAP_MACSEC: Permissions=MACSEC > Save
+        + Profile: Policy > Policy Elements > Results > Authorization > Authorization Profiles > Add: Name=MACSEC, Access Type=ACCESS_ACCEPT, Common Tasks=(MACSec Policy=must-secure) > Submit
+        + AuthZ Policy: Policy > Authorization > EAP_MACSEC: Permissions=MACSEC > Save
 
     + PC-B: AnyConnect Profile Editor > Network Access Editor > Open: configure.xml > Networks=EAP_CHAINING > edit: 
-        + Security elvel: Authentication network, key Management=MKA, Encryption=MACSec:AES-GCM-128
+        + Security level: Authentication network, key Management=MKA, Encryption=MACSec:AES-GCM-128
         + Connection Type: User Connection
         + User Auth: EAP-FAST, EAP-FAST Setting=(Enable Fast Reconnect), Authentication using a password=(EAP-MSCHAPv2, EAP-GTC)
         + > Done > Save As: configuration.xml
@@ -281,9 +280,9 @@
         show authentication sessions int gi1/0/5 
         ! Security Policy=Must Secure (local config: default = should-secure)
 
-        show macsec intgi1/0/5          ! Decrypt bytes 71595
+        show macsec int gi1/0/5          ! Decrypt bytes 71595
         ! PC-B: ping 10.10.10.10
-        show macsec intgi1/0/5          ! Decrypt bytes 96415
+        show macsec int gi1/0/5          ! Decrypt bytes 96415
 
         show macsec summary     ! Int=Gi1/0/5, Transmit SG=1, Receive SG=1
         show mka sessions int gi1/0/5
