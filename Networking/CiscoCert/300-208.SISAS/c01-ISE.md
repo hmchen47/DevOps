@@ -89,6 +89,7 @@
     <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/1-2/user_guide/ise_user_guide/ise_ui_intro.html">
         <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/300001-310000/303001-304000/303287.tif/_jcr_content/renditions/303287.jpg" alt="Admin portal" width="450">
     </a>
+    
     | Item | Name | Functions |
     |------|------|-----------|
     | 1 | Menu Bar | Access tools for viewing, monitoring, and managing different Cisco ISE options: <br/>  • Home: Access the dashboard, which is a real-time view of all the services running in the Cisco ISE network. <br/> • __Operations__: Access tools for monitoring real-time alarms and live authentications, querying historical data through reports, and troubleshooting network services. <br/> • __Policy__: Access tools for managing network security in the areas of authentication, authorization, profiling, posture, and client provisioning. <br/>       • __Administration__: Access tools for managing Cisco ISE nodes, licenses, certificates, network devices, users, endpoints, and guest services. |
