@@ -1,10 +1,10 @@
 # Using a Certificate Assigning by a CA
 
 + CA Assigned ISE Certificate: Using PKI for ISE Authentication
-    1. Download/Install Root CA Certificate on ISE
-    2. Generate a certificate signing request from ISE
-    3. Submit request to CA
-    4. Install ISE Identity certificate on ISE
+    1.  Download/Install Root CA Certificate on ISE
+    2.  Generate a certificate signing request from ISE
+    3.  Submit request to CA
+    4.  Install ISE Identity certificate on ISE
 
 + Root Certificate
     + Public Key Infrastructure
@@ -12,10 +12,10 @@
         + Certificate Authority (CA) or the Registration Authority: a trusted third-party organization or company that issues digital certificates and signs them with their own Trust Anchor to prove the origin of the certificates. 
         + One of the roles of the Certificate Authority or the Registration Authority in this process is to guarantee that the individual granted the unique certificate is, in fact, who he or she claims to be.
         <a href="https://ldapwiki.com/wiki/Public%20Key%20Infrastructure">
-            <br/><img src="https://ldapwiki.com/attach/Public%20Key%20Infrastructure/PKI%20Infrastructure%20Overview.png" alt="Process to issue Certificate" width="350">
+            <br/><img src="https://ldapwiki.com/attach/Public%20Key%20Infrastructure/PKI%20Infrastructure%20Overview.png" alt="Process to issue Certificate" width="600">
         </a>
         <a href="http://software-engineer-tips-and-tricks.blogspot.com/2012/09/what-is-pki.html">
-            <img src="http://2.bp.blogspot.com/-_fWrkvGJ7iY/UFrZPpFoXLI/AAAAAAACk_4/pV2EiEbXfUk/s640/pki1.gif" alt="PKI Infrastructure" width="350">
+            <br/><img src="http://2.bp.blogspot.com/-_fWrkvGJ7iY/UFrZPpFoXLI/AAAAAAACk_4/pV2EiEbXfUk/s640/pki1.gif" alt="PKI Infrastructure" width="450">
         </a>
     + SSL/TLS and PKI
         + __Symmetric-key algorithms/secret key algorithms__ <br/> That key is used for both encryption of plaintext and decryption of ciphertext, it represents a shared secret between two or more parties that can be used to maintain a private information link.
@@ -50,7 +50,7 @@
         + A private key usually created at the same time when creating the CSR, making a key pair. 
         + Generally encoded using ASN.1 according to the PKCS #10 specification.
 
-+ Download/Install Root CA Certificate
++ Demo: Download/Install Root CA Certificate
     + Microsoft AD Certificate Service: IE (http://192.168.1.123/certsrv)
     + Tasks: Download a CA certificate, certificate chain, or CRL
         + Encoding: _DER_, Base 64
@@ -58,9 +58,9 @@
         + Save; Root-CA-Cert.cer
     + Install on ISE w/ Windows certificate (Root-CA-Cert.cer): Administration > System - Certificates > Certificate Options > Certificate Store > Import: Certificate File=Root-CA-Cert.cer, Friendly Name=Lab CA, enable 'Trust for cleint authentication or Secure Syslog services' > Submit
 
-+ Generate a certificate signing request
++ Demo: Generate a certificate signing request
     <a href="https://asecuritysite.com/encryption/csr">
-        <br/><img src="https://asecuritysite.com/certs.png" alt="Process for generating keys and creating the CSR" width="300">
+        <br/><img src="https://asecuritysite.com/certs.png" alt="Process for generating keys and creating the CSR" width="450">
     </a>
     + Check: Administration > System-Certificates > Certificate Operations > Certificate Signing Request > (None)
     + Creat local certificate: Administration > System-Certificates > Certificate Operations > Local Certificates > Add (Generate Certificate Signing Request): Certificate Subject = (CN=ise.nuglab.com), key length=2048, Digest to sign with=SHA=256 > Submit
@@ -76,21 +76,21 @@
         + Server Manager > Tools > Certificate Authority
         + certsrv [Certification uthority (Local)] > SERVER1-CA > Pending Request > Request ID=3 (rc) > All Tasks > Issue
 
-+ Submit Certificate to CA - AD CS Server
++ Demo: Submit Certificate to CA - AD CS Server
     + Task = View the status of a pending certificate request
     + view = Saved-Request Certificate (...)
     + Certificate Issued:
         + DER encoded
         + Download certificate: ISE AD Cert.cer
 
-+ Download CA Certificate from CA Server to Local Host
++ Demo: Download CA Certificate from CA Server to Local Host
     + Task: Download a CA certificate, certificate chain, or CRL
     + Encoding = DER, Download CA Certificate
     + Save: root-cert.cer
 
-+ Install ISE Identity Certificate on ISE: Administration > System-Certificates > Certificate Operations > Local Certifciate > Add (Bind CA Signed Certificate): Certificate File=ISE ID Cert.cer, Friendly Name=ISE ID Certificate, Protocols=(EAP, HTTPS) > Submit > System Restart
++ Demo: Install ISE Identity Certificate on ISE: Administration > System-Certificates > Certificate Operations > Local Certifciate > Add (Bind CA Signed Certificate): Certificate File=ISE ID Cert.cer, Friendly Name=ISE ID Certificate, Protocols=(EAP, HTTPS) > Submit > System Restart
 
-+ Verification:
++ Demo: Verification:
     + PC: `ping 192.168.1.117` - ok; `ping ise.nuglab.com` - ok
     + IE (https://192.168.1.117) -> page shown problem with security certificate
     + IE (https://ise.nuglab.com) -> page shown problem with security certificate
