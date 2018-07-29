@@ -5,8 +5,8 @@
     + Methods for Discovery
 
 + Purpose of Profile
-    1. handy - exact picture what connecting to network
-    2. Authorization policy - Identity Groups
+    1.  handy - exact picture what connecting to network
+    2.  Authorization policy - Identity Groups
 
 + Demo: NAD Basic Configuration Validation
     ```cfg
@@ -30,7 +30,7 @@
     !   key Nugget!23
     ```
 
-+ Demo: Device connected to Network <br/>
++ Demo: Device Profile <br/>
     Administration > Identity Management > Identities > Endpoints > Windows7Workstation: Identity Group=Workstation, Matched Policy=Windows 7 Workstation, Total Certainty Factor=60, OUI=Dell Inc., MAC=A4:DB:B1:B1:50:13, User-Agent=Mozilla/5.0 (Windows NT 6.1; wow64;Trident 7.0;rv:11.0) like Gecko
 
 + Demo: Create Profile to Identity <br/>
@@ -58,10 +58,10 @@
         + Reauth
     
 + Demo: Policy Profile Validation
-    + Policy > Profiling: select appropriate profile (Filter existed), e.g., Microsoft Workstation: Minimum Certainty Factor=10, Network Scan (SNMP) Action=Common Port and OS scan, Create an identity group for the policy=yes, 
+    + Profiling Validation: Policy > Profiling: select appropriate profile (Filter existed), e.g., Microsoft Workstation: Minimum Certainty Factor=10, Network Scan (SNMP) Action=Common Port and OS scan, Create an identity group for the policy=yes
     + Home page: Profiled Endpoints=2
-    + Operations > Reports > Endpoints and Users ? Profiled Endpoints Summary (Time Range=Last 7 days) > Run > Summary: Policy=((HP-Device, Windows 7 Workstation) > Details on Windows-Workstation: detailed info
-    + Administration > System - Licenses > ISE: License Type=Base-Eval (54 days), Advanced/Plus - Eval (54 days), Base (Active/Allowed)=2/100
+    + Verification: Operations > Reports > Endpoints and Users ? Profiled Endpoints Summary (Time Range=Last 7 days) > Run > Summary: Policy=((HP-Device, Windows 7 Workstation) > Details on Windows-Workstation: detailed info
+    + License: Administration > System - Licenses > ISE: License Type=Base-Eval (54 days), Advanced/Plus - Eval (54 days), Base (Active/Allowed)=2/100
 
 
 
