@@ -69,7 +69,7 @@
     + PC Verification: `ping 8.8.8.8` - timeout, `ping google.com` - ok
     + ISE DACL: 
         + Create DACL: Policy > Policy Elements > Results > Authorization > Downloadable ACLs (default: __DENY_ALL_TRAFFIC__ (deny ip any any), __PERMIT_ALL_TRAFFIC__ (permit ip any any)) > Add: Name=Our_ACL, Contents=(permit icmp any any) > Save
-        + Profile: Policy > Policy Elements > Results > Authorization Profiles (default: __Blackhole_Wireless_Access, Cisco+IP_Phones, DenyAccess, Non_Cisco_IP_Phones, PermitAccess__) > Add: Name=PERMIT_ALL_TRAFFIC, VLAN=(ID/NAME=1) > Submit
+        + Profile: Policy > Policy Elements > Results > Authorization Profiles (default: __Blackhole_Wireless_Access, Cisco_IP_Phones, DenyAccess, Non_Cisco_IP_Phones, PermitAccess__) > Add: Name=PERMIT_ALL_TRAFFIC, VLAN=(ID/NAME=1) > Submit
         + AuthZ Policy: Policy > Authorizations (default: __Wireless Black List Default, Profiled Cisco IP Phones, Profile Non-Cisco IP Phones, Default__) > defalt >  Edit (Insert New Rule Above): Name=User and PC Authorized, Conditions=(Create New Condition > __Network Access:EAPChainingResult EQUALS User and Machine both succeeded__, Add Attribute/Value > __AD1:ExternalGroup EQUALS nuglab.com/Users/AD-GROUP-ISE), Permissions=(Standard > Our_Auth_Profile) > Done > Save
     + PC: `ping 8.8.8.8` - timeout
     + SW1 Config: `dot1x re-authentication int gi0/7` - push down DACL to NAD
