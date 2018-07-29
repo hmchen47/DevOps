@@ -1,8 +1,8 @@
-# TrustSec 
+# TrustSec
 
 ## MACSec and TrustSec
 
-+ Media Access Control Security )MACSec) and TrustSec: IEEE 802.1AE Standard and Cisco
++ Media Access Control Security (MACSec) and TrustSec: IEEE 802.1AE Standard and Cisco
     + Frame Format
     + Confidentiality (AES), Integrity Check Value (ICV)
     + Host to Switch: MACSec Key Agreement (MAK)
@@ -44,7 +44,7 @@
         + hop-by-hop encryption
         + Encryption:
             <a href="https://infocenter.alcatel-lucent.com/public/7750SR150R4A/index.jsp?topic=%2Fcom.sr.interface%2Fhtml%2Finterfaces.html">
-                <br/><img src="https://infocenter.alcatel-lucent.com/public/7750SR150R4A/topic/com.sr.interface/html/graphics/sw0119.gif" alt="802.1 AE LAN/WAN Modes and VLAN Encrypted/Clear" width="300">
+                <br/><img src="https://infocenter.alcatel-lucent.com/public/7750SR150R4A/topic/com.sr.interface/html/graphics/sw0119.gif" alt="802.1 AE LAN/WAN Modes and VLAN Encrypted/Clear" width="450">
             </a>
 
 + TrustSec
@@ -63,7 +63,7 @@
 
 ## Implementing TrustSec
 
-+ TrustSec: CCentralized ACLs and Policies
++ TrustSec: Centralized ACLs and Policies
     + ISE:
         + SGT password for NAD
         + SGT Groups
@@ -75,14 +75,14 @@
 
 + Demo: ISE Config
     + IEEE SGA AAA Server: Administration > Network Resources > SGA AAA > Server > ISE
-    + NAD: Administration > Network Resources > Network Devices > SW2 (3750-x -> Support TrustSec) > Advanced TrustSec Settings: Device Authentication Settings=(use device ID for SGA Identification, pwd=Nugget!23), SGA Notifications and Updates=(Notify this device about SGA config changes), Device Config Deployment=(user=admin, pwd=Nugget!23)
+    + Network Device: Administration > Network Resources > Network Devices > SW2 (3750-x -> Support TrustSec) > Advanced TrustSec Settings: Device Authentication Settings=(use device ID for SGA Identification, pwd=Nugget!23), SGA Notifications and Updates=(Notify this device about SGA config changes), Device Config Deployment=(user=admin, pwd=Nugget!23)
 
 + Demo: Create Security Group with SGTs:
-    + Policy > Policy Elements > Results > Security Group Access > Security Groups: SEC_NADs[2], SEC_SERER[3], SEC_USERS[4], UNKNOWN[0]
+    + Security Group & SGT: Policy > Policy Elements > Results > Security Group Access > Security Groups: SEC_NADs[2], SEC_SERER[3], SEC_USERS[4], UNKNOWN[0]
     + Role-Based ACL (RBACL): 
         + No source and destination in ACL - traffic between 2 SGTs
-        + Policy > Policy Elements > Results > Security Group Access > Security Group ACLs (Deny_All, Deny_ICMP) > Deny_ICMP: Security Group ACL=(deny icmp, permit ip)
-    + Policy > Policy Elements > Results > Security Group Access > Security Group Mappings > SEC_SERVERS: ip addr=8.8.8.8
+        + SGACL: Policy > Policy Elements > Results > Security Group Access > Security Group ACLs (Deny_All, Deny_ICMP) > Deny_ICMP: Security Group ACL=(deny icmp, permit ip)
+    + SG Mapping: Policy > Policy Elements > Results > Security Group Access > Security Group Mappings > SEC_SERVERS: ip addr=8.8.8.8
 
 + Demo - Associate Security Group with SGT: Policy > Authorization > User and PC Authorization: Permissions=(Our_Author_profile, SEC_USERS)
 
@@ -111,7 +111,7 @@
     ```
 
 + Demo: Apply SGACL <br/>
-    + ISE: Policy > Security Group Access > Egress Policy > Matrix Tab: click on box with designated source and destination, e.g., src=SEC_USERS, dst=SEC_SERVERS, status=(enable Assigned SGACLs=Deny_ICMP) > Save
+    + ISE - SGACL w/ Matrix: Policy > Security Group Access > Egress Policy > Matrix Tab: click on box with designated source and destination, e.g., src=SEC_USERS, dst=SEC_SERVERS, status=(enable Assigned SGACLs=Deny_ICMP) > Save
     + SW2: 
         ```cfg
         conf t
