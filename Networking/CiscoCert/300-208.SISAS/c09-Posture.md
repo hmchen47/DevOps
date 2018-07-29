@@ -18,11 +18,10 @@
     + Policies: 
         + Authentication: mab, dot1x, WebAuth
         + Authorization: Customized, Guest Flow, WebAuth
-    + Posture: compliance, no-compliance, unknown
     + Authorization Profiles w.r.t. Posture
-        1. Unknown: Redirect to ISE to download NAC Agent
-        2. Noncompliance: update, quarantine, remediation
-        3. Compliance: right privilege, proper VLAN, etc.
+        1. __Unknown__: Redirect to ISE to download NAC Agent
+        2. __Noncompliance__: update, quarantine, remediation
+        3. __Compliance__: right privilege, proper VLAN, etc.
 
 ## Planning and/or Updating NAC Files on the ISE Server
 
@@ -31,8 +30,8 @@
     + Agent and Software: Windows  & Mac
 
 + NAC Agent Functionality
-    1. Deployed Active Directory Groups Policy Objects
-    2. Authorization profile to check compliance
+    1.  Deployed Active Directory Groups Policy Objects
+    2.  Authorization profile to check compliance
 
 + AV & AS Compliance
     + ISE: 
@@ -61,19 +60,19 @@
 + Posture Agent profile: ISE - Posture to report to
 
 + Demo: Create a Posture Profile
-    + ISE Validation: Operations > Authentication > Show Live Serssions > C0A Action=Session termination with port bounce: Endpoint ID=CB:BC:C8:97:00:5C, Identity=it-bob -> Successfully re-authenticate using existing supplicant
+    + ISE Validation: Operations > Authentication > Show Live Sessions > CoA Action=Session termination with port bounce: Endpoint ID=CB:BC:C8:97:00:5C, Identity=it-bob -> Successfully re-authenticate using existing supplicant
     + Posture Profile: Policy > Policy Elements > Results > Client Provisioning > Resources (same as downloaded software) > Add (ISE Posture Agent Profile): Name=Nuglab_AgentProfile, Discovery host=ise.nuglab.com > Submit
 
 + Demo: Client Provisioning Policy <br/>
     Policy > Client Provisioning > Name=All-Windows, OS=Windows All, Conditions=(AD1:ExternalGroups EQUALS nuglab.com/Users/Domain Users), Results=(Agent=NAC Agent 4.9.4.3, Profile=Nuglab_AgentProfile, Compliant mode=None) > Done > Save
 
 + Demo: Authorization Profile
-    + Policy > Policy Elements > Results > Authentication > Downloadable ACL > Add: Name=ACL-During-Posture, DACL=(permit ip any any) > Submit
-    + Policy ? Policy Elements > Results > Authorization > Authorization Profile > Add: Name=POSTURE-AUTH-PROFILE, Tasks=(DACL=ACL-During-Posture, Web Redirection (CWA, DRW, MDM, NSP, CPP)=Client Provisioning (Posture)=REDIRECT(ACL)) > Submit
+    + DACL: Policy > Policy Elements > Results > Authentication > Downloadable ACL > Add: Name=ACL-During-Posture, DACL=(permit ip any any) > Submit
+    + Profile: Policy Elements > Results > Authorization > Authorization Profile > Add: Name=POSTURE-AUTH-PROFILE, Tasks=(DACL=ACL-During-Posture, Web Redirection (CWA, DRW, MDM, NSP, CPP)=Client Provisioning (Posture)=REDIRECT(ACL)) > Submit
 
 + Demo: Apply Profile
-    + Policy > Authorization > User and PC Authenticated > edit: Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Compliant__) > Done > Save
-    + Policy > Authorization > User and PC Authenticated > edit (Duplicate Below): Name=User with Unknown PC, Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Unknown__), Permissions=__POSTURE-AUTH-PROFILE__
+    + AuthZ Policy - Compliant: Policy > Authorization > User and PC Authenticated > edit: Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Compliant__) > Done > Save
+    + AuthZ Policy - Unknown: Policy > Authorization > User and PC Authenticated > edit (Duplicate Below): Name=User with Unknown PC, Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Unknown__), Permissions=__POSTURE-AUTH-PROFILE__
 
 + Verification:
     + PC - triggering: AnyConnect > Network Profile=Class Fast 
@@ -89,7 +88,7 @@
         ```cfg
         show authentication sessions int gi0/7
         ! User-Name=it-bib, Status=Authz Success, 
-        ! CS ACL=xACSACLx-IP-PERMIT_ALL_TRAFFIC-537cb1d6
+        ! ACS ACL=xACSACLx-IP-PERMIT_ALL_TRAFFIC-537cb1d6
         ! vlan Policy=1 (No Redirection anymore)
         ```
     + ISE Verification: Operations > Authentication > Entries for transaction
@@ -109,14 +108,14 @@
     + AV: remediation for quarantine, VLAN
 
 + Demo: Posture requirements
-    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win: OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=Message  Text Only
-    + Policy > Policy Elements > Results > Posture > Remediation Actions (default: AV, AS, File Launch Program, Link, Windows Server Update Service, Windows Update)
-    + Policy > Policy Elements > Results > Posture > Remediation Actions > File Remediation > Add: Name=Microsoft_Security_Essentials, version=test-v2, File_to_Upload=mseinstall.exe
-    + Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win > edit: Name=Win_Must_Have_AV, OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=(Action=Microsoft_Security_Essentials, message shown to Agent user=This endpoint has failed check for any AV instalaltion, Please install the MSE ...) > Done > Save
+    +  Validation: Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win: OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=Message Text Only
+    + Default Action List: Policy > Policy Elements > Results > Posture > Remediation Actions (default: AV, AS, File Launch Program, Link, Windows Server Update Service, Windows Update)
+    + Remediation: Policy > Policy Elements > Results > Posture > Remediation Actions > File Remediation > Add: Name=Microsoft_Security_Essentials, version=test-v2, File_to_Upload=mseinstall.exe
+    + Requirement: Policy > Policy Elements > Results > Posture > Remediation Actions > Requirements > Any_AV_Installation_Win > edit: Name=Win_Must_Have_AV, OS=Windows All, Conditions=Any_av_win_inst, Remediation Actions=(Action=Microsoft_Security_Essentials, message shown to Agent user=This endpoint has failed check for any AV installation, Please install the MSE ...) > Done > Save
 
 + Demo: Posture Policy
-    + Policy > Posture > Rule Name=Windows Must have an AV, OS=Windows All, other conditions=(Create a New Conditions > AD1:ExternalGroup EQUALS nuglab.com/Users/Domain Users), Requirements=Win_MUst_Have_AV > Done > Save
-    + olicy > Authorization > User and PC Authenticated > edit (Duplicate Above): Name=User with non-compliant PC, Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Noncompliant__)
+    + Posture Policy: Policy > Posture > Rule Name=Windows Must have an AV, OS=Windows All, other conditions=(Create a New Conditions > AD1:ExternalGroup EQUALS nuglab.com/Users/Domain Users), Requirements=Win_MUst_Have_AV > Done > Save
+    + AuthZ Policy: Policy > Authorization > User and PC Authenticated > edit (Duplicate Above): Name=User with non-compliant PC, Conditions=(AD1:ExternalGroups: EQUALS nuglab.com/Users/Domain Users, Network Access:UseCase EQUALS Guest Flow, __Session:PostureStatus EQUALS Noncompliant__)
 
 + Demo: Verification & Triggering
     + ISE: Operations > Authentication > Show Live Sessions > Identity=it-bob, host/nuglab.com > CoA Action (session terminate with port shutdown) -> Terminate teh session
@@ -126,10 +125,10 @@
           shut
           no shut
           do show authentication sessions int gi0/7
-        ! URL Redirect=REDIRECT, ACS ACL=xACSACLx-IP-ACL-During-Posture-543aebab
+        ! URL Redirect ACL=REDIRECT, ACS ACL=xACSACLx-IP-ACL-During-Posture-543aebab
         ! URL Redirect=https://ISE.nuglab.com:8443/gurstportal/gateway?sessionId=0102030400000018006A4FC8&action=cpp
         ```
-    + PC: Cisco NAC Agent > Temporary Network Access: There is at least one mandatory requirement failing.  You are required to update your system before you can access teh network, Show Details=(Mandatory, Requirement Name=Win_Must_Have_AV) > Repair > Download > Save: mseinstall.exe (Install download file) > Full Network Access > ok
+    + PC: Cisco NAC Agent > Temporary Network Access: There is at least one mandatory requirement failing.  You are required to update your system before you can access teh network, Show Details=(Mandatory, Requirement Name=Win_Must_Have_AV) > Repair > Download > Save: mseinstall.exe (Download & Install file) > Full Network Access > ok
 
 + Demo: Reauthentication
     + SW3:
