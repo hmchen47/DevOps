@@ -3,7 +3,7 @@
 + Create a Lab and Practice
     + Windows Server with AD
     + Identity Services Engine (ISE) [version 1.2]
-    + Cisco AnyConnect uite (NAM _ VPN)
+    + Cisco AnyConnect Suite (NAM & VPN)
     + Cisco Switch
     + Client PCs
 
@@ -34,7 +34,7 @@
             + Maintenance
             + Backup and Restore
             + Admin Access
-            + Settings: Client Provisioning, Endpoint Protection Service, FIPS Mode, Alarm Settings, _Posture_, _Profiling_, _Protocols_, Proxy, Security Groups Access, _SMTP Server_ , System Time, Policy Set
+            + Settings: _Client Provisioning_, Endpoint Protection Service, FIPS Mode, Alarm Settings, _Posture_, _Profiling_, _Protocols_, Proxy, _Security Groups Access_, _SMTP Server_ , System Time, Policy Set
         + Network Resources
             + Network Device
             + Network Device Groups
@@ -89,7 +89,7 @@
     <a href="https://www.cisco.com/c/en/us/td/docs/security/ise/1-2/user_guide/ise_user_guide/ise_ui_intro.html">
         <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/300001-400000/300001-310000/303001-304000/303287.tif/_jcr_content/renditions/303287.jpg" alt="Admin portal" width="450">
     </a>
-    
+
     | Item | Name | Functions |
     |------|------|-----------|
     | 1 | Menu Bar | Access tools for viewing, monitoring, and managing different Cisco ISE options: <br/>  • Home: Access the dashboard, which is a real-time view of all the services running in the Cisco ISE network. <br/> • __Operations__: Access tools for monitoring real-time alarms and live authentications, querying historical data through reports, and troubleshooting network services. <br/> • __Policy__: Access tools for managing network security in the areas of authentication, authorization, profiling, posture, and client provisioning. <br/>       • __Administration__: Access tools for managing Cisco ISE nodes, licenses, certificates, network devices, users, endpoints, and guest services. |
@@ -100,8 +100,8 @@
     | 6 | Help | Access the complete Cisco ISE online Help system and the Task Navigator, which provides visual guides for navigating through procedures whose tasks span multiple screens. |
     | 7 | Notifications | Hover the mouse cursor over this option to view a summary of notifications. |
 
-+ Demo: ISE Basic Settings
-    + Create Group: Administration > Network Resources-Network Device Groups > Groups > All Location > Add: Name=Nuglabs-Vegas
++ Demo: ISE Machine & Users
+    + Create Machine Group: Administration > Network Resources-Network Device Groups > Groups > All Location > Add: Name=Nuglabs-Vegas
     + Add Network Device: Administration > Network Resources-Network Device > Add: Name=SW1, IP=192.168.1.121/32, Location=Nugget-Vegas, Authentication Settings=(Shared Secret=Nugget!23) > Submit
     + Create User: Administration > Identity Management > Identities > Users > Add: Name=it-bob, pwd=Nugget!23
 
