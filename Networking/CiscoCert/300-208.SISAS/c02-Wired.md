@@ -69,7 +69,7 @@
       ! interface GigabitEthernet0/7
       !   switchport mode access
       !   shutdown
-      !   spanning=tree portfast
+      !   spanning-tree portfast
       ! end
 
       ! mode: single-host, multi-auth, multi-host, multi-domain
@@ -87,7 +87,7 @@
       ! Set port access entry to act as authenticator
       dot1x pae authenticator
 
-      ! Supplicant retry timeout
+      ! Supplicant retry timeout in sec
       dot1x timeout tx-period 10
 
       ! enable 802.1x control the port
@@ -100,9 +100,9 @@
       ! gi0/7: status=not connected
     end
 
-    show dot1c all
+    show dot1x all
     ! Gi0/7: PAE=authenticator, OuterPeriod=60, SenderTimeout=0
-    ! SuppTimeout=30, ReAuthMax=2, MAxReq=2, TxPeriod=10
+    ! SuppTimeout=30, ReAuthMax=2, MAxReq=2, TxPeriod=10, PAE = Port Access Entity
     ```
 
 + Demo: 
@@ -130,14 +130,11 @@
     ```cfg
     ! RADIUS: User-Name=bob
     ! RADIUS: Framed-IP-Address=192.168.1.121
-    
-    show authentication session int gi0/7
-    ! status=Authz Success, Session ID=0102030400000041011A0DD3
-    ! dot1x=Authz Success, Domain=Data
 
-    show authentication sessions int gi0/7
-    ! Oper host mode=multi-auth, IP=192.168.1.121
-    ! method=dot1x, status=Authz Success, User-Name=bob
+    show authentication session int gi0/7
+    ! status=Authz Success, Session ID=0102030400000041011A0DD3 
+    ! Oper host mode=multi-auth, IP=192.168.1.121, Domain=Data
+    ! dot1x=Authz Success, User-Name=bob
     ```
 
 
