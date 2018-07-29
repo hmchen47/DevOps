@@ -9,7 +9,7 @@
 
 + Authentication Based on MAC Address
     <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392152">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214360.eps/_jcr_content/renditions/214360.jpg" alt="High-Level MAB Sequence" width="350">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214360.eps/_jcr_content/renditions/214360.jpg" alt="High-Level MAB Sequence" width="350"> &nbsp;
     </a>
     <a href="https://colinzhong.blogspot.com/2015/04/cisco-trustsec-ise-part-5-mab-mac.html">
         <img src="https://lh6.googleusercontent.com/avDx3vTt_XrPs-_S9Dw-r2MqP-rxT6simTEPjGOnc0f321EeM1tlokazQ4CwefCLQ8k0f0qWC62Iu4oki5AcZNZ8xd7EZGDxisIKChqx0wyEM9tRV2HnygVIMiJSC1wwjJ9UMrs3GStvOEZd" alt="MAB Authentication Process" width="425">
@@ -21,7 +21,7 @@
 
 + MAB as a Failover Mechanism for Failed Non-IEEE/IEEE Endpoints
     <a href="https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392152">
-        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214362.eps/_jcr_content/renditions/214362.jpg" alt="MAB as Fallback Mechanism for Non-IEEE 802.1X Endpoints" width="350">
+        <br/><img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214362.eps/_jcr_content/renditions/214362.jpg" alt="MAB as Fallback Mechanism for Non-IEEE 802.1X Endpoints" width="350"> &nbsp;
         <img src="https://www.cisco.com/c/dam/en/us/td/i/200001-300000/210001-220000/214001-215000/214363.eps/_jcr_content/renditions/214363.jpg" alt="MAB as a Failover Mechanism for Failed IEEE Endpoints" width="410">
     </a>
 
