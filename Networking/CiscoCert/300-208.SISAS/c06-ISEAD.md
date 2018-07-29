@@ -1,7 +1,7 @@
 # Integrating ISE and AD
 
 + Using External Authentication: Leveraging Active Directory
-    + Verify basic functionality and DNA
+    + Verify basic functionality and DNS
     + Join ISE to AD
     + Create and Use Identity source Sequence
 
@@ -57,8 +57,8 @@
     + ISE Config: 
         + Create Identity store: Administration > Identity Management > External Identity Stores > Active Directory: Domain Name=nuglab.com, Identity Store Name=AD1 > Save
         + Validation: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com: Status=Not Joined to Domain
-        + Test Connectivity: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Test Connection (Basic Test): user=administrator, pwd=Nugget!23 > Status=Success, pwd for user 'administrator' is correct > ok
-        + Test Connectivity: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Test Connection (Detailed Test): user=administrator, pwd=Nugget!23 > Status=Success, Ip=192.168.1.117, Not found in DNS > Close
+        + Test Connectivity - Simple: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Test Connection (Basic Test): user=administrator, pwd=Nugget!23 > Status=Success, pwd for user 'administrator' is correct > ok
+        + Test Connectivity - Detailed: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Test Connection (Detailed Test): user=administrator, pwd=Nugget!23 > Status=Success, Ip=192.168.1.117, Not found in DNS > Close
         + Join Domain: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Join: user=administrator, pwd=Nugget!23 > ok > Status = Successful
         + Refresh: Test Connectivity: Administration > Identity Management > External Identity Stores > Active Directory > ise.nuglab.com (checked) > Refresh > Status=Connected to server1.nuglab.com
     + Windows Server 2012
