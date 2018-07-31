@@ -32,13 +32,12 @@
 + Most Commonly Used Probes
     + HTTP
         + ISE interprets HTTP messages from CWA or SPAN
-        + Gathers User-Agent from HTTP packet, used to identify the operating system on the device
+        + Gathers __User-Agent__ from HTTP packet, used to identify the _operating system_ on the device
             + Crucial for mobile device profiling
     + DHCP
         + ISE interprets DHCP messages from DHCP-Relay or SPAN
-        + Gathers User-Agent from DHCP packet, used to identify the operating system on the device
-        + Gathers DHCP hostname
-            + Important for mobile device profiling
+        + Gathers __User-Agent__ from DHCP packet, used to identify the _operating system_ on the device
+        + Gathers DHCP __hostname__: Important for _mobile device profiling_
         + Useful only in DHCP environments
 
 + Less Commonly Used Probes
