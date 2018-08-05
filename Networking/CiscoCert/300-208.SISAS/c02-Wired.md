@@ -35,6 +35,15 @@
     + Monitor mode - Open
     + Low Impact mode - ACL + Open
     + Close mode - ACL in production
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11101">
+        <br/><img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.07.38%20PM.png" alt="Monitor Mode" width="350">
+    </a>
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11102">
+        <img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.10.39%20PM.png" alt="Low-impact Mode" width="350">
+    </a>
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11103">
+        <br/><img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.13.13%20PM.png" alt="Closed Mode" width="350">
+    </a>
 
 + MAB = Mac Address Authentication Bypass
 
