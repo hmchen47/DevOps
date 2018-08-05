@@ -1252,17 +1252,26 @@
     + MAB is fully supported and recommended in monitor mode.
     + Goal: to enable authentication without imposing any form of access control.
     + get the highest level of visibility into devices that do not support IEEE 802.1X
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11101">
+        <br/><img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.07.38%20PM.png" alt="Monitor Mode" width="450">
+    </a>
 
 + Low Impact Mode
     + MAB is fully supported in low impact mode.
     + Based on the ideas of monitor mode, gradually introducing access control in a completely configurable way
     + Allow to use ACLs to selectively allow traffic before authentication
     + enable to permit time-sensitive traffic before MAB, enabling these devices to function effectively in an IEEE 802.1X-enabled environment
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11102">
+        <br/><img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.10.39%20PM.png" alt="Low-impact Mode" width="450">
+    </a>
 
-+ High Security Mode
++ High Security Mode - Closed Mode
     + MAB is fully supported in high security mode.
     + a more traditional deployment model for port-based access control, which denies all access before authentication
     + Consideration for MAB endpoints: the lack of immediate network access if IEEE 802.1X is also configured
+    <a href="https://guides.co/g/cisco-trustsec-phased-deployment-overview/11103">
+        <br/><img src="https://static.guides.co/uploads/700/images/Screen%20Shot%202013-11-28%20at%201.13.13%20PM.png" alt="Closed Mode" width="450">
+    </a>
 
 + Deployment Summary for MAB - MAB Deployment Decisions
 
