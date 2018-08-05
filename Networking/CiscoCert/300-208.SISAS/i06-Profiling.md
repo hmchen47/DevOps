@@ -67,7 +67,7 @@
         + Can profile many devices out-of-the-box, given that enough data is received from probes
         + Additional policies can be manually configured, or you can edit the built-in ones
         + Logical profile is a container with associated profiling policies
-    + ISE has a built-in hierarchy for device profiling, in the form of parentchild, for example
+    + ISE has a built-in hierarchy for device profiling, in the form of parent-child, for example
         + Parent policy is named Apple-Device
         + Child policy attached to the parent policy can be Apple-iPad or Apple-iPhone
     + Profiling policies are built on a set of conditions for device identification
@@ -83,7 +83,7 @@
         + Each rule is a condition matching on collected endpoint attributes
         + Each rule as an associated action, most commonly being to increase the Certainty Factor
             + NMAP SCAN is an alternative action
-    + Demo: ISE - Policy > Profiling > Profiling Policies > Apple Device: Name=Apple Device, Minumum Certainty Factor = 10, Exception Action = None
+    + Demo: ISE - Policy > Profiling > Profiling Policies > Apple Device: Name=Apple Device, Minimum Certainty Factor = 10, Exception Action = None
     + Demo CoA?
         + Procedure: 1) Creating profile; 2) Implement 802.1x for IP Phone
         + Conditions: 1) Phone connected to SW; 2) Profiling data sends to ISE
