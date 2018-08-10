@@ -1,18 +1,8 @@
-# procedures to mount windows shared folder
-# 1. create shared folder: 
-#    VirtualBox: Settings > Shared Folders > add shared folder with the directory name
-# 2. Guest OS: Devices > Insert Guest Additions CD Image.... (automatically install required files for virtualbox within Ubuntu)
- 
 alias vi='vim'
 alias rm='rm -i'
 alias prj='cd ~/Projects'
-#alias prjm='sudo mount -t vboxsf Projects ~/Projects'
-#alias prjln='ln -s /media/sf_Projects ~/Projects'
 alias gl1='git log --oneline -40'
 alias glg='git log --oneline --graph -40'
-alias anaconda='sudo docker run -i -t --name anaconda continuumio/anaconda3 /bin/bash'
-alias jupyter='docker run -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser"'
 
-alias its='cd /home/hmchen/Projects/DevOps/ITSupport/TechnicalSupportFundamentals-Google'
 alias k8s='cd /home/hmchen/Projects/DevOps/CICD/k8sFund-LFS258'
 
