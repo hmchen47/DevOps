@@ -23,10 +23,10 @@ This repository tracks my learning and personal projects in terms of DevOps topi
 - [642-832 Troubleshooting and Maintaining Cisco IP Networks (TSHOOT)](./Networking/CiscoCert/642-832.TSHOOT/)
 - [640-863 Designing for Cisco Internetwork Solutions (DESGN)](./Networking/CiscoCert/640-863.DESGN/)
 - [300-208 Implementing Cisco Secure Access Solutions (SISAS)](./Networking/CiscoCert/300-208.SISAS/)
-- [350-701 Implememting and Operating Cisco Security Core Technologies](./Networking/CiscoCert/350-701.SCOR/README.md)
-  - [CBT Nugget](./Networking/CiscoCert/350-701.SCOR/CBT/READMEmd)
+- 350-701 Implememting and Operating Cisco Security Core Technologies (SCOR)
+  - [CBT Nugget](./Networking/CiscoCert/350-701.SCOR/CBT/README.md)
   - [LinkedIn](./Networking/CiscoCert/350-701.SCOR/LinkedIn/README.md)
-  - [Offical Guide](./Networking/CiscoCert/350-701.SCOR/Guide)
+  - [Official Guide](./Networking/CiscoCert/350-701.SCOR/Guide)
 
 
 
