@@ -19,7 +19,7 @@ Trainer: Charles Judd
 
 ### 1. Fundamental Security Concepts
 
-- [On-premises threats](11.01-threats.md)
+- [On-premises threats](11.01-premises.md)
 - [Cloud-based threats](11.02-cloud.md)
 - [Software vulnerabilities](11.03-swVuln.md)
 - [SQL injection](11.04-sqlInjet.md)
