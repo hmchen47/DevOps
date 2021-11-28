@@ -2,13 +2,10 @@
 
 Trainer: Charles Judd
 
-[LinkedIn - 1 Security Concepts and Network Security](https://bit.ly/3lAnE75)
-
-[LinkedIn - 2 Cloud and Content Security](https://bit.ly/3nXa7I4)
-
-[LinkedIn - 3 Endpoint Protection and Secure Access](https://bit.ly/3CXByG8)
 
 ## Part 1. Security Concepts and Network Security
+
+[LinkedIn - 1 Security Concepts and Network Security](https://bit.ly/3lAnE75)
 
 
 ### Introduction
@@ -69,6 +66,8 @@ Trainer: Charles Judd
 
 ## Part 2. Cloud and Content Security
 
+[LinkedIn - 2 Cloud and Content Security](https://bit.ly/3nXa7I4)
+
 
 ### Introduction
 
@@ -119,6 +118,9 @@ Trainer: Charles Judd
 
 
 ## Part 3. Endpoint Protection and Secure Access
+
+[LinkedIn - 3 Endpoint Protection and Secure Access](https://bit.ly/3CXByG8)
+
 
 ### Introduction
 
