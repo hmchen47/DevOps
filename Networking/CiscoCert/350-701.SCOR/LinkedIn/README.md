@@ -1,16 +1,23 @@
 # Cisco CCNP SCOR Security (350-701) Cert Prep
 
+Trainer: Charles Judd
 
-## 1. Security Concepts and Network Security
+[Original - Security Concepts and Network Security](https://bit.ly/3lAnE75)
+
+[Original - Cloud and Content Security](https://bit.ly/3nXa7I4)
+
+[Original - Endpoint Protection and Secure Access](https://bit.ly/3CXByG8)
+
+## Part 1. Security Concepts and Network Security
 
 
 ### Introduction
 
-- [Welcome to Cisco CCNP SCOR (350-701) cert prep, part 1](10.00-welcome.md)
+- Welcome to Cisco CCNP SCOR (350-701) cert prep, part 1
 - [Getting hands-on practice](10.01-handson.md)
 
 
-### Part1. Fundamental Security Concepts
+### 1. Fundamental Security Concepts
 
 - [On-premises threats](11.01-threats.md)
 - [Cloud-based threats](11.02-cloud.md)
