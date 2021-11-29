@@ -21,7 +21,7 @@ Trainer: Charles Judd
 - 11.03 [Software vulnerabilities](11.03-swVul.md)
 - 11.04 [SQL injection](11.04-sqlInject.md)
 - 11.05 [Buffer overflow](11.05-buffer.md)
-- 11.06 [Cross-site request forgery](11.06-forgery.md)
+- 11.06 [Cross-site request forgery](11.06-csrf.md)
 - 11.07 [Hashing](11.07-hashing.md)
 - 11.08 [Encryption](11.08-encrypt.md)
 - 11.09 [Public key infrastructure (PKI)](11.09-pki.md)
