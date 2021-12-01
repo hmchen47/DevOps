@@ -16,6 +16,7 @@ Trainer: Charles Judd
 
 ### 1. Fundamental Security Concepts
 
+- 11.00 [Summary](11.00-summary.md)
 - 11.01 [On-premises threats](11.01-premises.md)
 - 11.02 [Cloud-based threats](11.02-cloud.md)
 - 11.03 [Software vulnerabilities](11.03-swVul.md)
