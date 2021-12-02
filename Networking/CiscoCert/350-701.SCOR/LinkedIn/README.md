@@ -41,7 +41,7 @@ Trainer: Charles Judd
 ### 2. Network Security
 
 - 12.01 [IPS and firewall solutions](12.01-ipsfw.md)
-- 12.02 [Deployment models and architectures](12.02-modlearch.md)
+- 12.02 [Deployment models and architectures](12.02-arch.md)
 - 12.03 [Device hardening](12.03-hardening.md)
 - 12.04 [Device management security](12.04-devmgmt.md)
 - 12.05 [NetFlow](12.05-netflow.md)
