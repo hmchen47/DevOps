@@ -46,7 +46,7 @@ Trainer: Charles Judd
 - 12.04 [Device management security](12.04-devmgmt.md)
 - 12.05 [NetFlow](12.05-netflow.md)
 - 12.06 [SNMPv3](12.06-snmpv3.md)
-- 12.07 [Role-based CLI access](12.07-cliaccess.md)
+- 12.07 [Role-based CLI access](12.07-rbaccli.md)
 - 12.08 [NTP with authentication](12.08-ntpauth.md)
 - 12.09 [VLANs](12.09-vlans.md)
 - 12.10 [VRF-lite](12.10-vfrlite.md)
