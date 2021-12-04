@@ -55,7 +55,7 @@ Trainer: Charles Judd
 - 12.13 [Dynamic ARP inspection](12.13-dynaapr.md)
 - 12.14 [Storm control](12.14-stormctrl.md)
 - 12.15 [PVLANs](12.15-pvlans.md)
-- 12.16 [TACACS+ and RADIUS](12.16-tacacsradius.md)
+- 12.16 [TACACS+ and RADIUS](12.16-authsrv.md)
 - 12.17 [Downloadable ACL (dACL)](12.17-dacl.md)
 
 
