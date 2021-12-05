@@ -40,6 +40,7 @@ Trainer: Charles Judd
 
 ### 2. Network Security
 
+- 12.00 [Summary](12.00-summary.md)
 - 12.01 [IPS and firewall solutions](12.01-ipsfw.md)
 - 12.02 [Deployment models and architectures](12.02-arch.md)
 - 12.03 [Device hardening](12.03-hardening.md)
@@ -61,7 +62,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 13.01 [Nest steps](13-01-next.md)
+- 13.01 Next steps
 
 
 ## Part 2. Cloud and Content Security
