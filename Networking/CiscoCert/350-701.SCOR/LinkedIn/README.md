@@ -62,7 +62,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 13.01 [Nest steps](13-01-next.md)
+- 13.01 Next steps
 
 
 ## Part 2. Cloud and Content Security
@@ -73,7 +73,7 @@ Trainer: Charles Judd
 ### Introduction
 
 - 20.01 Welcome to Cisco CCNP SCOR (350-701) cert prep, part 2
-- 20.02 [Getting hands-on practice](20.01-handson.md)
+- 20.02 Getting hands-on practice
 
 
 ### 1. Cloud Security
@@ -115,7 +115,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 23.01 [Next steps](23.01-next.md)
+- 23.01 Next steps
 
 
 ## Part 3. Endpoint Protection and Secure Access
@@ -126,7 +126,7 @@ Trainer: Charles Judd
 ### Introduction
 
 - 30-01 Welcome to Cisco CCNP SCOR (350-701) cert prep, part 3
-- 30-02 [Getting hands-on practice](31.02-handson.md)
+- 30-02 Getting hands-on practice
 
 
 ### 1. Endpoint Protection
@@ -167,7 +167,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 33.01 [Next steps](33.01-next.md)
+- 33.01 Next steps
 
 
 
