@@ -78,6 +78,7 @@ Trainer: Charles Judd
 
 ### 1. Cloud Security
 
+- 21.00 [Summary](21.00-summary.md)
 - 21.01 [Public, private, hybrid, and community clouds](21.01-clouds.md)
 - 21.02 [Cloud service models](21.02-cloudmodel.md)
 - 21.03 [Customer vs. provider responsibility](21.03-response.md)
