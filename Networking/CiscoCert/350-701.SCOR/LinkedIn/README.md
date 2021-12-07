@@ -82,7 +82,7 @@ Trainer: Charles Judd
 - 21.02 [Cloud service models](21.02-cloudmodel.md)
 - 21.03 [Customer vs. provider responsibility](21.03-response.md)
 - 21.04 [Patch management](21.04-patchmgmt.md)
-- 21.05 [Security assessments](21.05-srcassess.md)
+- 21.05 [Security assessments](21.05-secassess.md)
 - 21.06 [Cloud-delivered security solutions](21.06-secsol.md)
 - 21.07 [DevSecOps](21.07-devsecops.md)
 - 21.08 [Application and data security](21.08-appsec.md)
