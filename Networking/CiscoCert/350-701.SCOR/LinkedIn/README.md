@@ -96,7 +96,7 @@ Trainer: Charles Judd
 
 - 22.01 [Secure internet gateway](22.01-gateway.md)
 - 22.02 [Blacklisting and whitelisting](22.02-listings.md)
-- 22.03 [URL filtering and categorization](22.03-url.md)
+- 22.03 [URL filtering and categorization](22.03-urlfilter.md)
 - 22.04 [Malware scanning](22.04-malware.md)
 - 22.05 [Web application filtering](22.05-webfilter.md)
 - 22.06 [TLS decryption](22.06-tlsdescrypt.md)
