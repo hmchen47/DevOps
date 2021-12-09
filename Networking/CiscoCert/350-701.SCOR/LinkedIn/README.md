@@ -53,7 +53,7 @@ Trainer: Charles Judd
 - 12.10 [VRF-lite](12.10-vfrlite.md)
 - 12.11 [Port security](12.11-portsec.md)
 - 12.12 [DHCP snooping](12.12-dhcpsnoop.md)
-- 12.13 [Dynamic ARP inspection](12.13-dynaapr.md)
+- 12.13 [Dynamic ARP inspection](12.13-dai.md)
 - 12.14 [Storm control](12.14-stormctrl.md)
 - 12.15 [PVLANs](12.15-pvlans.md)
 - 12.16 [TACACS+ and RADIUS](12.16-authsrv.md)
