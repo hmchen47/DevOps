@@ -107,11 +107,11 @@ Trainer: Charles Judd
 - 22.11 [Email encryption](22.11-emailencrypt.md)
 - 22.12 [Email blacklisting](22.12-emaillist.md)
 - 22.13 [Antimalware filtering](22.13-antimalware.md)
-- 22.14 [Cisco umbrella overview](22.14-uoverview.md)
-- 22.15 [Cisco umbrella identities](22.15-uidentifty.md)
-- 22.16 [Cisco umbrella URL content settings](22.16-uurl.md)
-- 22.17 [Cisco umbrella destination lists](22.17-udestlist.md)
-- 22.18 [Cisco umbrella reporting](22.18-ureport.md)
+- 22.14 [Cisco umbrella overview](22.14-umbrella.md)
+- 22.15 [Cisco umbrella identities](22.15-identity.md)
+- 22.16 [Cisco umbrella URL content settings](22.16-url.md)
+- 22.17 [Cisco umbrella destination lists](22.17-dstlist.md)
+- 22.18 [Cisco umbrella reporting](22.18-report.md)
 
 
 ### Conclusion
