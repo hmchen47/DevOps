@@ -94,6 +94,7 @@ Trainer: Charles Judd
 
 ### 2. Content Security
 
+- 22.00 [Summary](22.00-summary.md)
 - 22.01 [Secure internet gateway](22.01-gateway.md)
 - 22.02 [Blacklisting and whitelisting](22.02-listings.md)
 - 22.03 [URL filtering and categorization](22.03-urlfilter.md)
