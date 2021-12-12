@@ -133,7 +133,7 @@ Trainer: Charles Judd
 ### 1. Endpoint Protection
 
 - 31.01 [Antimalware](31.01-antimalware.md)
-- 31.02 [Retrospective security](31.02-restrospect.md)
+- 31.02 [Retrospective security](31.02-retrospect.md)
 - 31.03 [Indication of compromise (IOC)](31.03-ioc.md)
 - 31.04 [Antivirus](31.04-antivirus.md)
 - 31.05 [Dynamic file analysis](31.05-dynafile.md)
