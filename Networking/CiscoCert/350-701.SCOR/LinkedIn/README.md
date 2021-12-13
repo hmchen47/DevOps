@@ -150,7 +150,7 @@ Trainer: Charles Judd
 
 - 32.01 [Guest services](32.01-guest.md)
 - 32.02 [Profiling](32.02-profile.md)
-- 32.03 [BYOD policies](32.03-bydo.md)
+- 32.03 [BYOD policies](32.03-byod.md)
 - 32.04 [802.1X](32.04-8021x.md)
 - 32.05 [MAB](32.05-mab.md)
 - 32.06 [WebAuth](32.06-webauth.md)
