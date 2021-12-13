@@ -132,6 +132,7 @@ Trainer: Charles Judd
 
 ### 1. Endpoint Protection
 
+- 31.00 [Summary](31.00-summary.md)
 - 31.01 [Antimalware](31.01-antimalware.md)
 - 31.02 [Retrospective security](31.02-retrospect.md)
 - 31.03 [Indication of compromise (IOC)](31.03-ioc.md)
