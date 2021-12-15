@@ -103,7 +103,7 @@ Trainer: Charles Judd
 - 22.06 [TLS decryption](22.06-tlsdescrypt.md)
 - 22.07 [Traffic redirection](22.07-redirect.md)
 - 22.08 [User authentication](22.08-userauth.md)
-- 22.09 [Spam filtering](22.09-spanfilter.md)
+- 22.09 [Spam filtering](22.09-spamfilter.md)
 - 22.10 [Data loss prevention (DLP)](22.10-dlp.md)
 - 22.11 [Email encryption](22.11-emailencrypt.md)
 - 22.12 [Email blacklisting](22.12-emaillist.md)
