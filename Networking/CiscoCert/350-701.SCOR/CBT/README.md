@@ -5,7 +5,7 @@ Trainers: Knox Hutchinson, Keith Barker, Bart Cstale
 
 Institution: CBY Nugget
 
-[Contents](https://www.cbtnuggets.com/it-training/cisco/scor-350-701)
+[Original Contents](https://www.cbtnuggets.com/it-training/cisco/scor-350-701)
 
 
 - 01\. [Explain Common Threats Against On-premises and Cloud Environments](01-Threats.md)
@@ -55,7 +55,7 @@ Institution: CBY Nugget
   - IPsec Fundamentals Summary
 
 
-- 03\. [Cisco Router Site-To-Site VPNs](05-VPNs.md)
+- 05\. [Cisco Router Site-To-Site VPNs](05-VPNs.md)
   - Introducing Site-To-Site VPNs
   - Planning for IPsec Site-To-Site
   - Designing a Site-To-Site VPN
@@ -277,7 +277,7 @@ Institution: CBY Nugget
   - Summary of Layer 2 Security
 
 - 26\. [EIGRP Neighbor Relationships and Authentication](26-EIGRPAuth.md)
-Introduction to EIGRP Relationships and Authentication
+  - Introduction to EIGRP Relationships and Authentication
   - Neighborship Overview
   - Authentication Overview
   - EIGRP Hands on Lab with Authentication
@@ -285,7 +285,7 @@ Introduction to EIGRP Relationships and Authentication
 
 
 - 27\. [Troubleshoot OSPF Authentication for IPv4](27-OSPFAuthIPv4.md)
-Intro to IPv4 OSPF Authentication and Troubleshooting
+  - Intro to IPv4 OSPF Authentication and Troubleshooting
   - Overview of OSPF Authentication
   - Implement OSPF Authentication
   - Virtual Links and Authentication
@@ -296,7 +296,7 @@ Intro to IPv4 OSPF Authentication and Troubleshooting
 
 
 - 28\. [Troubleshoot OSPF Authentication for IPv6](28-OSPFAuthIPv6.md)
-Intro to IPv6 OSPF Authentication and Troubleshooting
+  - Intro to IPv6 OSPF Authentication and Troubleshooting
   - IPv6 OSPF Authentication Overview
   - Implement and Verify Authentication
   - Troubleshooting OSPF Authentication Lab 01
