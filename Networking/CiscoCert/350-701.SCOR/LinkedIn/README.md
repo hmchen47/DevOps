@@ -148,6 +148,7 @@ Trainer: Charles Judd
 
 ### 2. Secure Access
 
+- 32.00 [Summary](32.00-summary.md)
 - 32.01 [Guest services](32.01-guest.md)
 - 32.02 [Profiling](32.02-profile.md)
 - 32.03 [BYOD policies](32.03-byod.md)
