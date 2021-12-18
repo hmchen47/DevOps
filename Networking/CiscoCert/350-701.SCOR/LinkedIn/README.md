@@ -163,7 +163,7 @@ Trainer: Charles Judd
 - 32.13 [Cisco Stealthwatch](32.13-stealth.md)
 - 32.14 [Cisco Stealthwatch cloud](32.14-stealthcloud.md)
 - 32.15 [Cisco pxGrid](32.15-pxgrid.md)
-- 32.16 [Cisco CTA and ETA](32.16-ctaeta.md)
+- 32.16 [Cisco CTA and ETA](32.16-ctaNeta.md)
 - 32.17 [Cisco AnyConnect Network Visibility Module (NVM)](32.17-nvm.md)
 
 
