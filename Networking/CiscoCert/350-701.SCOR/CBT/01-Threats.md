@@ -92,6 +92,20 @@ Trainer: Knox Hutchinson
 
 ## Spoofing and MitM Attacks
 
+- MitM attacks
+  - exfiltrate info
+
+
+- spoofing attacks
+  - known attacks: DNS, DHCP, MAC
+  - redirect traffic by pretending as a real network service
+  - mitigation: DAI, DHCP snooping
+
+
+- CIA triad
+  - confidentiality
+  - integrity
+  - availability
 
 
 ## Summarizing the Threat Landscape
