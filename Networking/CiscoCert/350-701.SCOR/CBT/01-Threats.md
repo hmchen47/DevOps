@@ -76,6 +76,18 @@ Trainer: Knox Hutchinson
 
 ## DDoS - Attacking Availability
 
+- Denial od service (DoS) attacks
+  - darknet:
+    - internet where non-indexed w/ searching engine
+    - requireing specific software to access
+  - hacker as a service: taking down target website
+  - ways to attack: social engineering, virus, etc.
+  - typical attacks: TCP SYN requests, HTTP requests, Ping of death $\to$ buffer overflow
+
+
+- Distributed Denial of Service (DDoS) attacks
+  - botnet/zombie: infected computers around the world
+  - flood the targets from these computers
 
 
 ## Spoofing and MitM Attacks
