@@ -28,7 +28,12 @@ Trainer: Knox Hutchinson
 
 ## Know Your Vulnerabilities
 
-
+- Vulnerability sources
+  - policy: people training
+  - software: patch, e.g., operating systems
+  - code design, protocol
+  - network access
+  - malware
 
 
 ## Know Your Threats
