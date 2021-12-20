@@ -123,6 +123,34 @@ Trainer: Knox Hutchinson
 
 ## Password Protection
 
+- Password attacks
+  - Infographic: Time it Takes a Hacker to Brute Force Your Password
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+        onclick= "window.open('https://www.hivesystems.io/blog/are-your-passwords-in-the-green')"
+        src    = "img/02-password.png"
+        alt    = "The time it takes for a hacker to brute force your password - Hive Systems"
+        title  = "The time it takes for a hacker to brute force your password - Hive Systems"
+      />
+    </figure>
+
+  - dictionary attacks
+    - dictionaries accessed w/ google search for download
+    - password cheing: [have i been pwned?](https://haveibeenpwned.com/)
+  - brute force attacks: using random number to try
+
+
+- Password mitigation
+  - policy
+    - enforcing minimum number of characters, upper and lower cases, numbers, and symbols
+    - period for password changes
+    - not hard coding username and password
+  - key vault:
+    - apps login key vault
+    - key vault returns password once key vault authenticated
+  - environment variables for username and password
+  - changing default username and password
 
 
 ## Plain-Text Protocols
