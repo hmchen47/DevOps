@@ -38,6 +38,15 @@ Trainer: Knox Hutchinson
 
 ## Know Your Threats
 
+- Categories of threats
+  - internal: people within an institute
+  - external: black hat, white hat, gray hat, suicide hacker, script kiddie, cyber terrorist, state sponsored hacker, hacktivist
+
+
+- Mitigation of threats
+  - policies: stop people doing wrong thing, e.g., training
+  - technical: NGFW, IDS/IPS, Web Content, email security, antivirus
+  - physical: locks, keycard scanners, camera systems
 
 
 ## Virus, Trojan, and Malware.. Oh my!
