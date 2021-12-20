@@ -13,7 +13,7 @@ Institution: CBY Nugget
   - Know Your Assets
   - Know Your Vulnerabilities
   - Know Your Threats
-  - Virus, Trojan, and Malware.. Oh my!
+  - Virus, Worms, Trojan, and Malware
   - Phishing and Social Engineering
   - DDoS - Attacking Availability
   - Spoofing and MitM Attacks
