@@ -109,13 +109,15 @@ Trainer: Knox Hutchinson
   - resource:
     - [Test Your XSS Skills Using Vulnerable Sites](https://bit.ly/3Eh9eix)
     - [Google XSS Game](https://xss-game.appspot.com/)
-  - level 1: [python code](src/02-l1-level.py)
+  - level 1:
     - input field: `<script>alert();</script>`
     - fire JS `alert` function 
+    - related code snippet: [python code](src/02-l1-level.py)
   - level 2:
     - HTML code handling script text to handle script injection
     - input field: `<img src="" onerror="alert();" />`
     - sending JS code w/o `script` tag
+    - related code snippets: [HTML](src/02-l2-index.html), [Python](src/02-l2-level.py), [JS](src/02-l2-post-store.js)
 
 
 
