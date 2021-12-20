@@ -5,6 +5,10 @@ Trainer: Keith Barker
 
 ## Introduction to Components of Cryptography
 
+- Learning goals
+  - suite of cryptography tools
+  - purpose of tools
+  - applying tools to protect data integrity, confidentiality
 
 
 ## Data Integrity
