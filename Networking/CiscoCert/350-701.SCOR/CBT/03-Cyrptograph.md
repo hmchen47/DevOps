@@ -13,7 +13,7 @@ Trainer: Keith Barker
 
 ## Data Integrity
 
-- Hash
+- Hash overview
   - verifying data integrity
   - example: ios image
     - verify downloaded  file in router: `R1# verify /md5 flash0:/vios-adventerprisesek9-m`
@@ -31,7 +31,7 @@ Trainer: Keith Barker
 
 ## Data Privacy
 
-- Encryption
+- Encryption overview
   - locking & unlocking data
   - symmetrical encryption:
     - using the same key to encrypt and decrypt the data
@@ -52,6 +52,16 @@ Trainer: Keith Barker
 
 ## SSL and TLS
 
+- SSl/TLS overview
+  - HTTPS using SSL/TLS
+  - user w/ public key while server w/ private key
+  - public key embedded in digital certificate
+  - certificate from server signed by CA (Certificate Authority)
+  - most likely the request w/ HTTP redirect to HTTPS and starting negotiation to validate the server and authenticate the end user
+
+
+- Demo: HTTPS
+  - 
 
 
 ## Public Key Infrastructure (PKI)
