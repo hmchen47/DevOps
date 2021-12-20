@@ -31,6 +31,23 @@ Trainer: Keith Barker
 
 ## Data Privacy
 
+- Encryption
+  - locking & unlocking data
+  - symmetrical encryption:
+    - using the same key to encrypt and decrypt the data
+    - algorithm current used: AES - 128, 192. 256
+  - asymmetric encryption
+    - key pair existed, mathematically related
+    - encrypted w/ one key and decrypted w/ the other key
+    - generally, private key and public key
+    - provate key never sharing w/ other while public key sharing w/ world
+    - public key sharing w/ digital certificate format
+    - cons: computational intensive
+  - Diffie-Hellman algorithm
+    - one of the most popular symmetric algorithm
+    - pre-shared key in general
+    - typically dynamically generated
+
 
 
 ## SSL and TLS
