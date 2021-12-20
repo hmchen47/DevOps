@@ -65,6 +65,13 @@ Trainer: Knox Hutchinson
 
 ## Phishing and Social Engineering
 
+- Vulnerability of people
+  - phisinging: links in emails redirect to malicious websites
+  - social engineering
+    - research target company: dumpsters, websites, employees, tour company, etc.
+    - choose victim: identify frustrated employees of target company
+    - build relationship: develop relationship w/ target employee
+    - exploit relationship: collect sensitive info and current technologies
 
 
 ## DDoS - Attacking Availability
