@@ -98,6 +98,25 @@ Trainer: Knox Hutchinson
 
 ## Cross-Site Scripting; var doCode{}
 
+- Cross-site scripting
+  - input field of web in 3-tier application w/ JS code, e.g., `<script> alert(); </script>`
+  - JS code exected in web browser immediately
+  - browser holding Cookie or token $\to$ probably sent to a malicious website
+  - other possibilities: JS sending malicious data to server and DB 
+
+
+- Demo: XSS attack
+  - resource:
+    - [Test Your XSS Skills Using Vulnerable Sites](https://bit.ly/3Eh9eix)
+    - [Google XSS Game](https://xss-game.appspot.com/)
+  - level 1: [python code](src/02-l1-level.py)
+    - input field: `<script>alert();</script>`
+    - fire JS `alert` function 
+  - level 2:
+    - HTML code handling script text to handle script injection
+    - input field: `<img src="" onerror="alert();" />`
+    - sending JS code w/o `script` tag
+
 
 
 ## Password Protection
