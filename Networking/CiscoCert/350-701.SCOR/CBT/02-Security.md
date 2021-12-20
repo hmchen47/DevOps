@@ -197,6 +197,16 @@ Trainer: Knox Hutchinson
 
 ## The Buffer Overflow
 
+- Buffer overflow attacks
+  - web apps sending more data than the app server able to handle
+  - embedded overflow data w/ JS/C/Java code to execute
+  - one of the OWASP top 10
+
+
+- Mitigation of buffer overflow
+  - backend code working to prevent the issue
+  - one simply solution by sending back a service denial response w/ buffer overflow message
+
 
 
 ## Summarizing Common Vulnerabilities
