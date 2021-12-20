@@ -211,6 +211,10 @@ Trainer: Knox Hutchinson
 
 ## Summarizing Common Vulnerabilities
 
+- Summary
+  - password change
+  - secure version protocols
+  - code change
 
 
 
