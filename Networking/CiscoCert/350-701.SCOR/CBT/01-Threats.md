@@ -1,4 +1,4 @@
-# 01\. Explain Common Threats Against On-premises and Cloud Environments
+# 01. Explain Common Threats Against On-premises and Cloud Environments
 
 Trainer: Knox Hutchinson
 
