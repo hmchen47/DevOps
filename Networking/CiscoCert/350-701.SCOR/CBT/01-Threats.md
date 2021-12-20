@@ -12,6 +12,18 @@ Trainer: Knox Hutchinson
 
 ## Know Your Assets
 
+- Assets
+  - people: staffs including cybersecurity professionals
+  - data: top security info
+  - physical system
+
+
+- Issues of assets
+  - categories of assets: what types of assets, physical/software
+  - responsibility:
+    - who owns, maintain and use the assets
+    - various names: owner, custodian, operators, administrator, end user, reader
+  - sensitivity level
 
 
 ## Know Your Vulnerabilities
