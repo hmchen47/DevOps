@@ -49,8 +49,18 @@ Trainer: Knox Hutchinson
   - physical: locks, keycard scanners, camera systems
 
 
-## Virus, Trojan, and Malware.. Oh my!
+## Virus, Worms, Trojan, and Malware
 
+- Termonologies
+  - virus
+    - application, e.g., keylogger
+    - replicate itself
+  - worms
+    - similar to virus
+    - no end user to trigger but working on its own
+  - trojans:
+    - presenting itself as one application user needed
+    - example: antivirus software
 
 
 ## Phishing and Social Engineering
