@@ -109,3 +109,12 @@ Trainer: Knox Hutchinson
 
 
 ## Summarizing the Threat Landscape
+
+- Summay
+  - learn different threats
+  - understand threats
+  - mitigation and solutions following
+
+
+
+
