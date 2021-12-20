@@ -1,0 +1,172 @@
+index.htmllevel.pypost-store.js
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+ 
+    <!-- This is our database of messages -->
+    <script src="/static/post-store.js"></script>
+   
+    <script>
+      var defaultMessage = "Welcome!<br><br>This is your <i>personal</i>"
+        + " stream. You can post anything you want here, especially "
+        + "<span style='color: #f00ba7'>madness</span>.";
+ 
+      var DB = new PostDB(defaultMessage);
+ 
+      function displayPosts() {
+        var containerEl = document.getElementById("post-container");
+        containerEl.innerHTML = "";
+ 
+        var posts = DB.getPosts();
+        for (var i=0; i<posts.length; i++) {
+          var html = '<table class="message"> <tr> <td valign=top> '
+            + '<img src="/static/level2_icon.png"> </td> <td valign=top '
+            + ' class="message-container"> <div class="shim"></div>';
+ 
+          html += '<b>You</b>';
+          html += '<span class="date">' + new Date(posts[i].date) + '</span>';
+          html += "<blockquote>" + posts[i].message + "</blockquote";
+          html += "</td></tr></table>"
+          containerEl.innerHTML += html; 
+        }
+      }
+ 
+      window.onload = function() { 
+        document.getElementById('clear-form').onsubmit = function() {
+          DB.clear(function() { displayPosts() });
+          return false;
+        }
+ 
+        document.getElementById('post-form').onsubmit = function() {
+          var message = document.getElementById('post-content').value;
+          DB.save(message, function() { displayPosts() } );
+          document.getElementById('post-content').value = "";
+          return false;
+        }
+ 
+        displayPosts();
+      }
+ 
+    </script>
+ 
+  </head>
+ 
+  <body id="level2">
+    <div id="header">
+      <img src="/static/logos/level2.png" /> 
+      <div>Chatter from across the Web.</div>
+      <form action="?" id="clear-form">
+        <input class="clear" type="submit" value="Clear all posts">
+      </form>
+    </div>
+ 
+    <div id="post-container"></div>
+ 
+    <table class="message">
+      <tr>
+        <td valign="top">
+          <img src="/static/level2_icon.png">
+        </td>
+        <td class="message-container">
+          <div class="shim"></div>
+          <form action="?" id="post-form">
+            <textarea id="post-content" name="content" rows="2"
+              cols="50"></textarea>
+            <input class="share" type="submit" value="Share status!">
+            <input type="hidden" name="action" value="sign">
+          </form>
+        </td>
+      </tr>
+    </table>
+ 
+  </body>
+</html>
+
