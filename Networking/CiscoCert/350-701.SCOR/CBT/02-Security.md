@@ -27,7 +27,7 @@ Trainer: Knox Hutchinson
 
 - 3-tier application architecture
   - tiers: web, app, and db
-  - typical data flow: web or mobile apps / Kiosk (frontend) $\rightleftarrow$ application server (backend) $\rightleftarrow$ SQL database
+  - typical data flow: web or mobile apps / Kiosk (frontend) $\leftrightarrow$ application server (backend) $\leftrightarrow$ SQL database
   - frontend: web browser
   - backend: analytics, customer support, shipping, etc.
   - SQL db: storing cell files w/ SQL
@@ -60,7 +60,10 @@ Trainer: Knox Hutchinson
       ```shell
       Checking supplied authentication details for user@email.com.
       Finding user in database.
-      An error occurred: PG::SyntaxError: ERROR: unterminated quoted string at or near "'password'' limit 1" LINE 1: ...ers where email = 'user@email.com' and password = 'password'... ^ : select * from users where email = 'user@email.com' and password = 'password'' limit 1.
+      An error occurred: PG::SyntaxError: ERROR: unterminated quoted string at or near 
+        "'password'' limit 1" LINE 1: ...ers where email = 'user@email.com' and 
+        password = 'password'... ^ : select * from users where email = 'user@email.com' 
+        and password = 'password'' limit 1.
       Unable to login this user due to unexpected error.
       Rendering login page.
       ```
@@ -127,7 +130,7 @@ Trainer: Knox Hutchinson
   - Infographic: Time it Takes a Hacker to Brute Force Your Password
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
         onclick= "window.open('https://www.hivesystems.io/blog/are-your-passwords-in-the-green')"
         src    = "img/02-password.png"
         alt    = "The time it takes for a hacker to brute force your password - Hive Systems"
@@ -154,6 +157,41 @@ Trainer: Knox Hutchinson
 
 
 ## Plain-Text Protocols
+
+- Demo: telnet as plain-text protocol
+  - task:
+    - telnet to a local router via telnet
+    - wireshark to capture the traffic
+  - topology: Pc <--> (e0/0) R1
+  - launch Wireshark and start capturing traffic on the intf connected to the console
+  - config R1
+
+    ```shell
+    R1$ sh ip int br
+
+    Interface     IP-Address      OK? Method  Status                Protocol
+    Ethernet0/0   10.10.21.153    YES manual  up                    up
+    EThernet0/1   unassigned      YES unset   administratively down down
+    ...
+
+  - start a new session to connect to R1 from PC w/ telnet
+    - Username = cisco, Password = cisco
+  - Wireshark w/ filter = `telnet` 
+    - entry w/ Source and Destination IP = 10.10.21.29
+    - viewing the message with the packet
+    - th username and password exposed
+  - using SSH instead of telnet
+
+
+- Demo: HTTP as plain-text protocol
+  - app not designed to redirect HTTP to HTTPS web site
+  - Azure and other cloud services providing a simple option to redirect the traffic
+
+
+- Protocols to conquer plain-text protocols
+  - telnet $\to$ SSH
+  - SNMP $\to$ SNMPv3, Netconf/SSH, Restconf/HTTPS
+  - HTTP $\to$ HTTPS
 
 
 
