@@ -87,6 +87,19 @@ Trainer: Keith Barker
 
 ## Public Key Infrastructure (PKI)
 
+- Public Key Infrastructure (PKI) overview
+  - TLS workflow: end user (user) and server (srv)
+    - user sending request to access srv w/ HTTPS (port 443)
+    - src responding w/ digital certificate containing validate date, public key, etc.
+    - how user knows the digital certificate a valid certificate? <span style="color: cyan;">signed</span>
+  - signed digital certificate:
+    - signed by a device that the browser of user PC $\to$ TRUST
+    - Trust: user PC able to validate and signed by a Certificate Authority (CA)
+  - how browser of user PC knows the CA? $\to$ preloaded on system
+    - server generating public and private keys and then 
+    - submit to CA to ask for its own digital certificate
+    - once verified, CA issues a signed digital certificate
+
 
 
 ## IPsec
