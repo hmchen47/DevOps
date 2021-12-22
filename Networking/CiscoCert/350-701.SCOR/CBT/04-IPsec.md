@@ -2,9 +2,12 @@
 
 Trainer: Keith Barker
 
-
 ## Introduction to IPsec
 
+- Learning goal
+  - protecting data in motion and at rest
+  - ensuring confidentiality and integrity
+  - IPsec to achieve these goals
 
 
 ## IPsec Overview
