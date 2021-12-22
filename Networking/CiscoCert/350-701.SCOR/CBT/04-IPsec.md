@@ -160,6 +160,20 @@ Trainer: Keith Barker
 
 ## VTI IPsec
 
+- Virtual Tunnel Interface (VTI)
+  - create virtual tunnel on R1: `R1(config)# in tunnel 0`
+  - using intf facing Internet as the source intf of the virtual tunnel : `R1(config-if)# source 15.1.1.1` or `R1(config-if)# source g0/1`
+  - usinging intf facing public network as the destiunation intf: `R1(config-if)# destination 25.2.2.2` or `R1(config-if)# destination g0/2`
+  - default encapsulation as GRE (generic route encapsulation)
+  - use the encapsulation w/ IPsec instead: `R1(config-if)# ipsec ipv4`
+  - apply ipsec profile
+  - build a logic tunnel btw R1 (.1) & R2 (.2) w/ subnet 10.12.12.0/24 for routing purpose: `R1(config-if)# 10.12.12.1 255.255.255.0`
+
+
+- Dynamic VTI
+  - another option of VTI w/ unknown peer
+  - mainly used for mobile user (PC) and headquarter router (R1)
+  - create template w/ IPsec profile, IP address for remote user, 
 
 
 ## DMVPNs
