@@ -139,6 +139,23 @@ Trainer: Keith Barker
 
 ## Crypto Map IPsec
 
+- Crypto map overview
+  - ACL to control interested traffic, e.g., traffic from PC1 subnet 10.1.0.0/24 to PC2 subnet 10.2.0.0/24
+  - IPsec transform set: HAGLE parameters
+  - a container containing
+    - bundled ACL and IPsec transform set
+    - peer info
+  - used to build IPsec tunnel mode
+
+
+- IPsec modes
+  - refer to IPsec packet format
+  - tunnel mode:
+    - adding new IP header w/ two routers as src and dst addresses
+    - default mode for IPsec
+  - transport mode
+    - using the original IP header, i.e. PC1 and PC2 as the src and dst address
+    - using original tunnel w/ minimal manpiplation to form IPsec
 
 
 ## VTI IPsec
