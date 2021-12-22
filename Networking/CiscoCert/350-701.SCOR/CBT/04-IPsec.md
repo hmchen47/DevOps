@@ -178,6 +178,25 @@ Trainer: Keith Barker
 
 ## DMVPNs
 
+- Dynamic Multipoint Virtual Private Network (DMVPN) overview
+  - topology: hub-and-spoke network architecture
+  - issue on building a full connectivity network
+    - create IPsec tunnel btw hub (R1) and spokes (R2, R3, and R4) individually
+    - unable to communicate btw spokes directly $\to$ dual trips
+  - solution: DMVPN resolve the issue
+  - building w/ IPsec
+  - IPsec still using trunnel interface but mGRE (multipoint GRE) instead
+  - through hub, spokes dynamically learned each other w/ NHRP (Next Hub Resolution Protocol)
+
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('page')"
+      src    = "img/04-dmvpn.png"
+      alt    = "text"
+      title  = "text"
+    />
+  </figure>
 
 
 ## FlexVPN
