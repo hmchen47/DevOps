@@ -53,6 +53,7 @@ Trainer: Keith Barker
 ## SSL and TLS
 
 - SSl/TLS overview
+  - TLS: a successor of SSH
   - HTTPS using SSL/TLS
   - user w/ public key while server w/ private key
   - public key embedded in digital certificate
@@ -61,7 +62,27 @@ Trainer: Keith Barker
 
 
 - Demo: HTTPS
-  - 
+  - network topology
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('page')"
+        src    = "img/03-netarch.png"
+        alt    = "Example network topology"
+        title  = "Example network topology"
+      />
+    </figure>
+  
+  - tasks: observe the behavior of HTTP and HTTPS
+  - open web browser on PC1 to connect R2: `http://25.2.2.2` w/ user = admin, password = *** $\to$ browser indicating nor a secure connection
+  - using HTTPS instad: `https://25.2.2.2` w/ username and password $\to$ browser indicating a lock but still not secure due to the trust $\to$ digital certificate missing
+  - observe the packet tracker in Wireshark
+    - entry for HTTP request - src = 10.1.0.50, dst = 25.2.2.2, protocol = TCP $\to$ info readbale
+    - entries for HTTPS transaction
+      - src = 10.1.0.50, dst = 25.2.2.2, protocol = TLSv2, Info = Client Hello  
+      - src = 25.2.2.2, dst = 10.1.0.50, protocol = TLSv2, Info = Server Hello, Certificate $\to$ payload containing certificate
+      - src = 10.1.0.50, dst = 25.2.2.2, protocol = TLSv2, Info = Server Key Exchange, Server Hello Done $\to$ payload encrypted
+
 
 
 ## Public Key Infrastructure (PKI)
