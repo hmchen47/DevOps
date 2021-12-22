@@ -104,6 +104,16 @@ Trainer: Keith Barker
 
 ## IPsec
 
+- IPsec overview
+  - a suite of protocols to build VPN
+  - purpose
+    - privacy: encryption
+    - data integrity: hashing algorithm - HMAC
+  - methods
+    - IKEv1: old version
+    - IKEv2: more modular, more compatible
+  
+
 
 
 ## Authentication
