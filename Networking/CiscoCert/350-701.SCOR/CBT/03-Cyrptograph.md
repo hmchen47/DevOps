@@ -101,7 +101,6 @@ Trainer: Keith Barker
     - once verified, CA issues a signed digital certificate
 
 
-
 ## IPsec
 
 - IPsec overview
@@ -114,9 +113,18 @@ Trainer: Keith Barker
     - IKEv2: more modular, more compatible
   
 
-
-
 ## Authentication
+
+- Authentication overview
+  - two main ways to authenticate peer
+    - pre-shared key
+    - digital certificate
+  - pre-shared key:
+    - both sides w/ same key
+    - integrity (hashing): Hash-based Message Authentication Code (HMAC)
+    - privacy (encryption/decryption): AES 128-256
+  - RAS-signature (digital certificate)
+    - both having its own certificate (possible same)
 
 
 
