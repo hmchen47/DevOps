@@ -209,6 +209,24 @@ Trainer: Keith Barker
 
 ## GET VPN
 
+- Group Encrypted Transfer (GET) VPN concept
+  - cloud as service and reaching all sites (R1~4)
+  - build a full connecting VPN across all sites
+  - introducing IPsec controller, communicating w/ all routers
+  - IPsec controller
+    - communicate all routers
+    - instructing routers w/ given SA and keys, even any change
+    - instructing routers for intresting traffic w/ policy
+    - encrypted packet prefixing an IP header but using original src and dst addresses
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/04-getvpn.png"
+      alt    = "Example network topology for GET VPN"
+      title  = "Example network topology for GET VPN"
+    />
+  </figure>
 
 
 ## NAT Traversal
