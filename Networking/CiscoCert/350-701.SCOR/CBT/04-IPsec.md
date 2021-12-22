@@ -201,6 +201,10 @@ Trainer: Keith Barker
 
 ## FlexVPN
 
+- FlexVPN concept
+  - multiple types of VPNs, such as site2site, remote access, DMVPN, etc.
+  - using IKEv2 to build FlexVPN for all these types of VPNs
+  - many default options $\to$ using or modifying these defaults
 
 
 ## GET VPN
