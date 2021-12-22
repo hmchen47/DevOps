@@ -127,5 +127,11 @@ Trainer: Keith Barker
     - both having its own certificate (possible same)
 
 
-
 ## Components of Cryptography Summary
+
+- Summary
+  - key for cryptography
+  - algorithms for integrity and encryption
+  - IPsec and PKI
+
+
