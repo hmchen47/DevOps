@@ -5,7 +5,9 @@ Trainer: Keith Barker
 
 ## Introducing Site-To-Site VPNs
 
-
+- Learning goal
+  - configure IPsec site-to-site tunnels by using IKEv1 and crypto maps
+  - verify IPsec site-to-site tunnels
 
 
 ## Planning for IPsec Site-To-Site
