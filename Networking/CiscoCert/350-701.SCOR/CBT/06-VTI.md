@@ -5,7 +5,11 @@ Trainer: Keith Barker
 
 ## Introduction to P2P GRE over IPsec VPNs
 
-
+- Learning goal
+  - describe the configuration and verification of Cisco Remote Access VPNs
+  - describe the use of AnyConnect
+  - demo the configuration and verification of Cisco Remote Access VPNs
+  - demo the use of AnyConnect
 
 
 ## Overview of GRE over IPsec VPNs
