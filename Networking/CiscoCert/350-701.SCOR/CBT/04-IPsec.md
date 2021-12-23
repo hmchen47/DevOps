@@ -12,7 +12,7 @@ Trainer: Keith Barker
 
 ## IPsec Overview
 
-- IPsec overview
+- IPsec concept
   - main goals
     - privacy: encryption
     - integrity: hashing
@@ -46,7 +46,7 @@ Trainer: Keith Barker
   </div>
 
 
-- Internet Key Exchange (IKE)
+- Internet Key Exchange (IKE) concept
   - DMVPN: hub-and-spoke network architecture
     - tunnels btw hub and spokes
     - tunnels btw spokes
@@ -139,7 +139,7 @@ Trainer: Keith Barker
 
 ## Crypto Map IPsec
 
-- Crypto map overview
+- Crypto map concept
   - ACL to control interested traffic, e.g., traffic from PC1 subnet 10.1.0.0/24 to PC2 subnet 10.2.0.0/24
   - IPsec transform set: HAGLE parameters
   - a container containing
@@ -160,7 +160,7 @@ Trainer: Keith Barker
 
 ## VTI IPsec
 
-- Virtual Tunnel Interface (VTI)
+- Virtual Tunnel Interface (VTI) concept
   - create virtual tunnel on R1: `R1(config)# in tunnel 0`
   - using intf facing Internet as the source intf of the virtual tunnel : `R1(config-if)# source 15.1.1.1` or `R1(config-if)# source g0/1`
   - usinging intf facing public network as the destiunation intf: `R1(config-if)# destination 25.2.2.2` or `R1(config-if)# destination g0/2`
@@ -170,7 +170,7 @@ Trainer: Keith Barker
   - build a logic tunnel btw R1 (.1) & R2 (.2) w/ subnet 10.12.12.0/24 for routing purpose: `R1(config-if)# 10.12.12.1 255.255.255.0`
 
 
-- Dynamic VTI
+- Dynamic VTI concept
   - another option of VTI w/ unknown peer
   - mainly used for mobile user (PC) and headquarter router (R1)
   - create template w/ IPsec profile, IP address for remote user, 
@@ -178,7 +178,7 @@ Trainer: Keith Barker
 
 ## DMVPNs
 
-- Dynamic Multipoint Virtual Private Network (DMVPN) overview
+- Dynamic Multipoint Virtual Private Network (DMVPN) concept
   - topology: hub-and-spoke network architecture
   - issue on building a full connectivity network
     - create IPsec tunnel btw hub (R1) and spokes (R2, R3, and R4) individually
@@ -190,7 +190,7 @@ Trainer: Keith Barker
 
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/04-dmvpn.png"
       alt    = "text"
@@ -220,7 +220,7 @@ Trainer: Keith Barker
     - encrypted packet prefixing an IP header but using original src and dst addresses
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/04-getvpn.png"
       alt    = "Example network topology for GET VPN"
@@ -231,6 +231,48 @@ Trainer: Keith Barker
 
 ## NAT Traversal
 
+- NAT Traversal concept
+  - a.k.a. NAT transparency
+  - NAT/PAT btw PC1 and PC2
+  - NAT/PAT unable to handle Layer 4 ESP protocol (port 50)
+  - implemented in many IKEv1 and all IKEv2
+  - using hash value on th eIP address, receiver detects NAT/PAT used in btw
+  - using UDP instead of ESP for the tunnel
+    - prefix UDP header than IP header for encrypted packet
+    - prefix an IP header w/ original src and dst addresses
+  - keep alive required to maintain the NAT-T
+
+  <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
+    <a href="https://bit.ly/3muy60h" ismap target="_blank">
+      <img style="margin: 0.1em;" height=180
+        src   = "https://www.netmanias.com/en/?m=attach&no=3563"
+        alt   = "NAT/PAT mapping"
+        title = "NAT/PAT mapping"
+      >
+    </a>
+    <a href="https://support.huawei.com/enterprise/en/doc/EDOC1100055047/9b0b323f/ipsec-nat-traversal" ismap target="_blank">
+      <img style="margin: 0.1em;" height=150
+        src   = "https://download.huawei.com/mdl/image/download?uuid=af9d9d6b414d453eaa39e504156c41ca"
+        alt   = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
+        title = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
+      >
+    </a>
+  </div>
+
+
+- Demo: observing NAT-T w/ wireshark
+  - IPsec negotiation btw 10.5.5.51 (= CLT) & 15.1.1.1 (= SRV)
+  - the process applied for both IKEv1 & IKEv2
+  - pkt: src = CLT, dst = SRV, protocol = ISAKMP, info = IKE SA INIT MID=00 Initiator Request
+    - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
+    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59704, Dst Port: 500</span>
+    - Payload: Internet Security Association and Key Management Protocol
+      - Payload: Notify (41) - NAT_DETECTION_SOURCE_IP
+      - Payload: Notify (41) - NAT_DETECTION_DESTINATION_IP
+  - pkt: src = CLT, dst = SRV, protocol = ESP, Info = ESP (SPI=0xc2a16345) [randomly selected one]
+    - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
+    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
+    - Payload: Encapsulating Security Payload
 
 
 ## IPsec Fundamentals Summary
