@@ -369,7 +369,20 @@ Trainer: Keith Barker
 
 ## Protocol Analysis IPsec
 
-
+- Analyzing IPsec negotiation flow
+  - init traffic from PC1
+    - connectivity: `PC1# ping -c 5 10.2.0.50`
+    - browsing sever: URL = `http://10.2.0.50`
+    - repeat a couple of times by resending ICMP and refreshing browser
+  - open Wireshark to observe traffic
+    - Observation points: R1 g0/3 = O1, R2 g0/3 = O2, Cloud g0/1 = O3
+    - R1 g0/3 = S1 = 10.1.0.50, R1 g0/1 = E1 = 15.1.1.1, R2 g0/1 = E2 = 25.2.2.2, R2 g0/3 = S2 = 10.2.0.50 = S2
+    - O1 pkt: src = S1, dst = S2, Prot = HTTP, Info = GET / HTTP/1.1
+      - L3: Internet Protocol Version 4, Src: S1, Dst: S2 $\to$ Identification: 0xf2b5 (62133)
+    - O3 pkt: src = E1, dst = E2, Pro = ESP, Info = (SPI=0x71d29954)
+      - L3: Internet Protocol Version 4, Src: E1, Dst: E2 $\to$ Protocol: Encap Security Protocol (50)
+      - Payload: Encapsulating Security Payload $\to$ ESP Sequence: 70, encrypted and data unknown
+    - using Identification number to search for the original and encrypted on S1 and E1
 
 
 
