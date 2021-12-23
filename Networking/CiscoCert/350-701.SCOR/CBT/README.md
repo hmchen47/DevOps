@@ -55,7 +55,7 @@ Institution: CBY Nugget
   - IPsec Fundamentals Summary
 
 
-- 05\. [Cisco Router Site-To-Site VPNs](05-VPNs.md)
+- 05\. [Cisco Router Site-To-Site VPNs](05-S2SVPN.md)
   - Introducing Site-To-Site VPNs
   - Planning for IPsec Site-To-Site
   - Designing a Site-To-Site VPN
