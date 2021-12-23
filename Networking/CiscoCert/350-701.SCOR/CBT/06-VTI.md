@@ -75,9 +75,14 @@ Trainer: Keith Barker
   </div>
 
 
-
 ## P2P GRE Tunnel Design
 
+- Designing GRE tunnel
+  - create tunnel btw R1 & R2
+  - tunnel address space: 10.12.12.0/24
+  - use EIGRP as routing protocol
+    - autonomous system: 1
+    - network: 10.0.0.0/8 
 
 
 
