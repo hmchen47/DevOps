@@ -213,7 +213,158 @@ Trainer: Keith Barker
 
 ## Enabling the IPsec Policy
 
+- Verify IKEv1 config on R2
+  - ensure the crypto config same as R1
 
+  ```bash
+  ! verify R2
+  R2# sh crypto isakmp policy
+  Global IKE policy
+  Protection suite of priority 5
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+  
+  R2# sh crypto isakmp key
+  Keyring      Hostname/Address                            Preshared Key
+  default      0.0.0.0        [0.0.0.0        ]            Cisco!23
+
+  R2# show crypto mao
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+  ```
+
+
+- Applying crypto map to egress interface on R2
+
+  ```bash
+  R2(config)# int gig 0/2
+  R2(config-if)# crypto map Demo-MAP
+  R2(config-if)# end
+
+  ! verify applying to intf gig 0/2
+  R2# sh crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/2
+
+  R2# show crypto isakmp sa
+  interface: GigabitEthernet0/2
+      Crypto map tag: Demo-MAP, local addr 25.2.2.2
+    
+    protected vrf: (none)
+    local  ident (addr/mask/prot/port): (10.2.0.0/255.255.0.0/0/0)
+    remote ident (addr/mask/prot/port): (10.1.0.0/255.255.0.0/0/0)
+    current_peer 15.1.1.1 port 500
+      PERMIT, flags = {origin_is_acl,}
+      #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+      #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+      #pkts compressed: 0, #pkts decompressed: 0
+      #pkts not compressed: 0, #pkts compr. failed: 0
+      #pkts errros 0, #recv errors 0
+
+       local crypto endpt.: 25.2.2.2, remote crypto endpt.: 15.1.1.1
+       plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/2
+       current outbound spi: 0x0(0)
+       FPS (Y/N): N, DH group: none
+
+       inbound esp sas:
+  ```
+
+
+- Applying crypto map to egress interface on R1
+
+  ```bash
+  R1(config)# int gig 0/1
+  R1(config-if)# crypto map Demo-MAP
+  R1(config-if)# end
+  R1(config)# end
+  ```
+
+- Verify IKE and IPsec sa
+  - site-to-site IPsec VPN not created when config
+  - IPsec VPN created unless traffic flow btw
+  - enable debug tool on R1 to observe the negotiation
+
+    ```bash
+    R1# show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst       src     state     conn-id status
+    ! no sa created 
+
+    R1# debug crypto isakmp
+    R1# debug crypto ipsec
+    ```
+
+  - init traffic on PC1:
+
+    ```bash
+    PC1# traceroute10.2.0.50
+    traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
+     1  10.1.0.1  (10.1.0.1)    4.028 ms    ...
+     2  25.2.2.2  (25.2.2.2)    24.343 ms   ...
+     3  10.2.0.50 (10.2.0.50)   70.862 ms   ...
+    ```
+
+  - verify sa negotiation on R1
+    - `OM_IDLE`: not build tunnel unless traffic triggered
+
+    ```bash
+    R1# undebug all
+
+    R1# show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst       src       state     conn-id status
+    25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
+
+    R1# show crypto isakmp sa detail
+    IPv4 Crypto ISAKMP SA
+    C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
+    1001  15.1.1.1  25.2.2.2        ACTIVE  aes   sha256  psk   5   01:22:30
+           Engine-id:Conn-id =  SW:1
+
+    R1# show crypto ipsec sa
+    interface: GigabitEthernet0/1
+      Crypto map tag: Demo-MAP, local addr 15.1.1.1
+    
+    protected vrf: (none)
+    local  ident (addr/mask/prot/port): (10.1.0.0/255.255.0.0/0/0)
+    remote ident (addr/mask/prot/port): (10.2.0.0/255.255.0.0/0/0)
+    current_peer 25.2.2.2 port 500
+      PERMIT, flags = {origin_is_acl,}
+      #pkts encaps: 35, #pkts encrypt: 35, #pkts digest: 35
+      #pkts decaps: 10, #pkts decrypt: 10, #pkts verify: 10
+      #pkts compressed: 0, #pkts decompressed: 0
+      #pkts not compressed: 0, #pkts compr. failed: 0
+      #pkts errros 0, #recv errors 0
+
+       local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+       plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+       current outbound spi: 0x71D29954(1929627220)
+       FPS (Y/N): Y, DH group: group15
+
+       inbound esp sas:
+    ```
 
 
 ## Protocol Analysis IPsec
