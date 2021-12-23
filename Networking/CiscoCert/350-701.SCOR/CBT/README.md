@@ -65,7 +65,7 @@ Institution: CBY Nugget
   - Protocol Analysis IPsec
 
 
-- 06\. [Cisco Point-To-Point GRE over IPsec VPNs](06-GRE.mds)
+- 06\. [Cisco Point-To-Point GRE over IPsec VPNs](06-VTI.md)
   - Introduction to P2P GRE over IPsec VPNs
   - Overview of GRE over IPsec VPNs
   - P2P GRE Tunnel Design
