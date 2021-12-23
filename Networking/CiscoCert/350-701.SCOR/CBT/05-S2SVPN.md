@@ -62,6 +62,109 @@ Trainer: Keith Barker
 
 ## Configuring an IKE Phase 1 Policy
 
+- Verify basic info and reachability
+  - ensure the connectivity of public network
+  - R1 interfaces na reachability check
+
+    ```bash
+    R1# sh ip int br
+    Interface           IP-Address  OK? Method  Status                Protocol
+    GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
+    GigabitEthernet0/1  15.1.1.1    YES TFTP    up                    up
+    GigabitEthernet0/2  unassigned  YES TFTP    administratively down down
+    GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
+
+    R1# ping 25.2.2.2
+    Sending 5, 100-byte ICMP Echos to 25.2.2.2, timeout is 2 seconds:
+    !!!!!
+    Success rate is 100 percent (5/5), round-trip min/avg/max = 4/6/11 ms
+    ```
+
+  - R1 & R2 reachability: `` $\to$ `!!!!!`
+  - PC1 basic info and reachability check:
+
+    ```bash
+    PC1# ip addr
+    ...
+    82: eth0@if81: ...
+      ...
+      inet 10.1.0.51/24 scope global eth0
+      ...
+    
+    PC1# route
+    Kernel IP routing table
+    Destination   Gateway   Genmask         Flags Metric  Ref   Use Iface
+    default       10.10.1   0.0.0.0         UG    0       0       0 eth0
+    10.1.0.0      *         255.255.255.0   U     0       0       0 eth0
+    172.17.0.0    *         255.255.0.0     U     0       0       0 eth1
+
+    pc1# traceroute 10.2.0.50
+    traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
+     1  10.1.0.1  (10.1.0.1)    7.607 ms    12.278 ms 18.515 ms
+     2  15.1.1.5  (15.1.1.5)    14.158 ms   21.355 ms 22.545 ms
+     3  25.2.2.2  (25.2.2.2)    24.787 ms   26.037 ms 27.078 ms
+     4  10.2.0.50 (10.2.0.50)   16.516 ms   18.765 ms 19.234 ms
+    ```
+
+    - PC1 interface
+
+- Implementing IKE Phase 1 on R1
+  - isakmp policy number: lower number taking priority
+  - 
+
+  ```bash
+  R1# sh run | section crypto
+
+  R1# sh crypto isakmp policy
+  Global IKE policy
+  Default protection suite
+          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
+          hash algorithm:         Secure Hash Standard
+          authentication method:  Rivest-Shamir-Adleman Signature
+          Diffie-Hellman group:   #1 (768 bit)
+          lifetime:               86400 seconds, no volume limit
+
+  ! config IKEv1 phase 1
+  R1# conf t
+  R1(config)# crypto isakmp policy 5
+  R1(config-isakmp)# authentication pre-share
+  R1(config-isakmp)# hash sha512
+  R1(config-isakmp)# do sh crypto isakmp policy
+  Global IKE policy
+  Protection suite of priority 5
+          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #1 (768 bit)
+          lifetime:               86400 seconds, no volume limit
+  Default protection suite
+          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
+          hash algorithm:         Secure Hash Standard
+          authentication method:  Rivest-Shamir-Adleman Signature
+          Diffie-Hellman group:   #1 (768 bit)
+          lifetime:               86400 seconds, no volume limit
+
+  R1(config-isakmp)# encryption aes 256
+  R1(config-isakmp)# group 5
+  R1(config-isakmp)# lifetime 
+  R1(config-isakmp)# sh crypto isakmp policy
+  Global IKE policy
+  Protection suite of priority 5
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+  ! config pre-shared key
+  R1(config-isakmp)# exit
+  R1(config)# crypto isakmp key Cisco!23 address 25.2.2.2 ! specified iface
+  R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0  ! all ifaces
+  
+  R1# sh crypto isakmp key
+  Keyring      Hostname/Address                            Preshared Key
+  default      0.0.0.0        [0.0.0.0        ]            Cisco!23
+  ```
 
 
 
