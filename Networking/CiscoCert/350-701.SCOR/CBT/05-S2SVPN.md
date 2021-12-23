@@ -110,7 +110,6 @@ Trainer: Keith Barker
 
 - Implementing IKE Phase 1 on R1
   - isakmp policy number: lower number taking priority
-  - 
 
   ```bash
   R1# sh run | section crypto
@@ -166,10 +165,49 @@ Trainer: Keith Barker
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
   ```
 
+  - apply same config on R2
+
 
 
 ## Configuring an IKE Phase 2 (IPsec) Policy
 
+- IMplement IKEv1 Phase 2 on R1
+  - create transfor set for IKEv1 phase 2
+  - crypto map sequence number: used ti identify if multiple crypto maps used for different sites
+  - crypto map not enabled on any interface
+
+  ```bash
+  ! config transform set
+  R1# conf t
+  R1(config)# crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac
+  R1(cfg-crypto-trans)# mode tunnel
+  R1(cfg-crypto-trans)# exit
+
+  ! config crypto ACL
+  R1(config)# ip access-list extended Crypto-ACL
+  R1(config-ext-nacl)# permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+  R1(config-ext-nacl)# exit
+
+  ! config crypto map
+  R1(config)# crypto map Demo-MAP 10 ipsec-isakmp
+  R1(config-crypto-map)# match address Crypto-ACL
+  R1(config-crypto-map)# set peer 25.2.2.2
+  R1(config-crypto-map)# set transform-set Demo-SET
+  R1(config-crypto-map)# set pfs group15
+  R1(config-crypto-map)# exit
+  R1(config)# do sh crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+  ```
 
 
 
