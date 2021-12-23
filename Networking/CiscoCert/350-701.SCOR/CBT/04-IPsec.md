@@ -276,3 +276,10 @@ Trainer: Keith Barker
 
 
 ## IPsec Fundamentals Summary
+
+- Summary
+  - ways to implement IPsec, including crypto map and VTI
+  - VPNs: DMVPN, GET VPN, FlexVPN 
+
+
+
