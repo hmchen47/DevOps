@@ -43,7 +43,21 @@ Trainer: Keith Barker
 
 ## Designing a Site-To-Site VPN
 
+- Designing IKE phase 1 security association
+  - encryption: AES 256
+  - hash: SHA 256
+  - authentication: pre-sharedd key (Cisco!23)
+  - DH group: group 5
+  - lifetime: 5000 (sec)
 
+
+- Designing IKE phase 2 security association (IPsec tunnel)
+  - ACL: traffic btw 10.1.0.0/24 and 10.2.0.0/24
+  - encryption: AES 128
+  - hash: SHA 384, most commonly using HMAC (Hash-based Message Authentication Code)
+  - peer: R1 & R2
+  - mode: tunnel
+  - PFS (optional): group 15
 
 
 ## Configuring an IKE Phase 1 Policy
