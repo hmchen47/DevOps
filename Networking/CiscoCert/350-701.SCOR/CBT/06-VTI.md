@@ -184,6 +184,20 @@ Trainer: Keith Barker
 
 ## P2P GRE Tunnel Verification
 
+- Verifying P2P GRE tunnel
+  - capture packets on A - PC1 (10.1.0.50), B - Cloud, and C - PC2 (10.2.0.50)
+  - PC1 browsing PC2, 10.2.0.50, and reflash a couple of time to generate traffic
+  - pkt on A: src=PC1, dst=PC2, prot=HTTP, info=GET / HTTP/1.1
+    - L3: IPv4 $\to$ Identification: 0x7f18 (32536)
+    - L4: TCP, SrcPort: 36276, Dst Port: 80
+  - pkt on B: src=PC1, dst=PC2, prot=HTTP, info=GET / HTTP/1.1
+    - L3: IPv4, Src: 15.1.1.1, Dst: 25.2.2.2 $\to$ Protocol: Generic Routing Encapsulation (47)
+    - Generic Routing Encapsulation (IP)
+    - L3: IPv4, Src: PC1, Dst=PC2 $\to$ Identification: 0x7f18 (32536)
+    - L4: TCP, SrcPort: 36276, Dst Port: 80
+  - pkt on C: src=PC1, dst=PC2, prot=HTTP, info=GET / HTTP/1.1
+    - L3: IPv4 $\to$ Identification: 0x7f18 (32536)
+    - L4: TCP, SrcPort: 36276, Dst Port: 80
 
 
 
