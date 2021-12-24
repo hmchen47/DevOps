@@ -8,6 +8,20 @@ Institution: CBY Nugget
 [Original Contents](https://www.cbtnuggets.com/it-training/cisco/scor-350-701)
 
 
+- 00\. Summary
+  - [Security Fundamental](00a-SecConcept.md)
+  - [Virtual Private Networks (VPNs)](00b-VPNs.md)
+  - [Security Intelligence](00c-Intelligence.md)
+  - [L2 Security](00d-L2Sec.md)
+  - [Routing Security](00e-RoutingSec.md)
+  - [Application Protocol Security](00f-ProtSec.md)
+  - [Cloud Security](00g-CloudSec.md)
+  - [Web & Email Security](00h-WebMailSec.md)
+  - [Cisco Umbrella](00i-Umbrella.md)
+  - [802.1X](00j-Dot1X.md)
+  - [Data Exfiltration](00k-Exfiltrate.md)
+
+
 - 01\. [Explain Common Threats Against On-premises and Cloud Environments](01-Threats.md)
   - Introducing the Cybersecurity Landscape
   - Know Your Assets
