@@ -220,7 +220,143 @@ Trainer: Keith Barker
 
 ## IPsec Virtual Tunnel Interface Configuration
 
+- Config IKE phase 1 on R1
 
+  ```bash
+  R1# conf t
+  R1(config)#crypto isakmp policy 7
+  R1(config-isakmp)#encryption aes 256
+  R1(config-isakmp)#hash sha256
+  R1(config-isakmp)#authentication pre-share
+  R1(config-isakmp)#group 5
+  R1(config-isakmp)#lifetime 5000
+  R1(config-isakmp)# exit
+
+  R1(config)#do show crypto isakmp policy  
+  Global IKE policy
+  Protection suite of priority 7
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+  ! config pre-shared key
+  R1(config)#crypto isakmp key Cisco!23 address 0.0.0.0
+  R1(config)#do sh crypto isakmp key
+  Keyring      Hostname/Address                            Preshared Key
+  default      0.0.0.0        [0.0.0.0        ]            Cisco!23
+  ```
+  
+
+- Config IKE phase 2 on R1
+  
+  ```bash
+  R1(config)#crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac 
+  R1(cfg-crypto-trans)#mode tunnel 
+  R1(cfg-crypto-trans)#exit
+
+  ! change tunnel encryption GRE to IPsec
+  R1(config)# crypto ipsec profile Demo-IPsec-Profile 
+  R1(ipsec-profile)# set transform-set Demo-SET
+  R1(ipsec-profile)# exit
+  ```
+
+
+- Config IPsec within tunnel interface on R1
+  - tunnel mode ipsec ipv4 = VTI
+
+  ```bash
+  R1(config)# int tunnel 0
+  R1(config-if)#tunnel mode ipsec ipv4 
+  R1(config-if)#tunnel protection ipsec profile Demo-IPsec-Profile
+  R1(config-if)#end
+  ```
+  
+
+- Config IKE phase 1, phase 2 and tunnel interface on R2
+
+  ```bash
+  R2# conf t
+  ! IKE phase 1
+  R2(config)# crypto isakmp policy 7
+  R2(config-isakmp)# encryption aes 256
+  R2(config-isakmp)# hash sha256
+  R2(config-isakmp)# authentication pre-share
+  R2(config-isakmp)# group 5
+  R2(config-isakmp)# lifetime 5000
+  R2(config-isakmp)# exit
+
+  R1(config)#do show crypto isakmp policy  
+  Global IKE policy
+  Protection suite of priority 7
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+  ! config pre-shared key
+  R2(config)# exit
+  R2(config)#crypto isakmp key Cisco!23 address 0.0.0.0
+  R2(config)#do sh crypto isakmp key
+  Keyring      Hostname/Address                            Preshared Key
+  default      0.0.0.0        [0.0.0.0        ]            Cisco!23
+
+  ! IKE phase 2
+  R2(config)# crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac 
+  R2(cfg-crypto-trans)# mode tunnel 
+  R2(cfg-crypto-trans)# exit
+
+  ! change tunnel encryption GRE to IPsec
+  R2(config)# crypto ipsec profile Demo-IPsec-Profile 
+  R2(ipsec-profile)# set transform-set Demo-SET
+  R2(ipsec-profile)# exit
+  ```
+
+
+- Verify connectivity and config
+  - open browser on PC1 w/ URL = '10.2.0.50', refresh a couple time to generate traffic
+  - verify crypto info on R1
+
+    ```bash
+    R1# show crypto engine connections active
+    Crypto Engine Connections
+
+       ID  Type    Algorithm      Encrypt  Decrypt LastSeqN IP-Address
+        5  IPsec   AES+SHA384           0       23       23 15.1.1.1
+        6  IPsec   AES+SHA384          25        0        0 15.1.1.1
+     1001  IKE     SHA256+AES256        0        0        0 15.1.1.1
+     1002  IKE     SHA256+AES256        0        0        0 15.1.1.1
+
+    R1#show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst             src             state          conn-id status
+    25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
+    15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
+
+    R1# show crypto ipsec sa
+    interface: GigabitEthernet0/1
+      Crypto map tag: Demo-MAP, local addr 15.1.1.1
+    
+    protected vrf: (none)
+    local  ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+    remote ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+    current_peer 25.2.2.2 port 500
+      PERMIT, flags = {origin_is_acl,}
+      #pkts encaps: 39, #pkts encrypt: 39, #pkts digest: 39
+      #pkts decaps: 36, #pkts decrypt: 36, #pkts verify: 36
+      #pkts compressed: 0, #pkts decompressed: 0
+      #pkts not compressed: 0, #pkts compr. failed: 0
+      #pkts errros 0, #recv errors 0
+
+       local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+       plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+       current outbound spi: 0xC2A77F2F(3265756975)
+       FPS (Y/N): N, DH group: none
+
+       inbound esp sas:
+    ```
 
 
 ## IPsec Static VTI Verification
