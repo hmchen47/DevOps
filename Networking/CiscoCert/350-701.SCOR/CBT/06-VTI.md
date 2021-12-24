@@ -361,6 +361,20 @@ Trainer: Keith Barker
 
 ## IPsec Static VTI Verification
 
+- Verify VTI
+  - verification points: A - PC1, B - Cloud, C - PC2
+  - PC1 = 10.1.0.50, PC2 = 101.2.0.50, 
+  - pkt on A: src=PC1, dst=PC2, prot=HTTP, info=GET / HTTP/1.1 $\to$ ip.id == 0x4965
+    - L3: IPv4, Src: PC1, dDst: PC2 $\to$ Identification: 0x4965 (18789), Time to live: 64
+    - L4: TCP, Src Port: 38592, Dst Port: 80, Seq: 3381, Ack: 14818, Len: 446
+    - L7: Hypertext Transfer Protocol $\to$ plain text
+  - pkt on B: src=25.2.2.2, dst=15.1.1.1, prot=ESP, info = ESP (SPI=0x...)
+    - L3: IPv4, Src: 25.2.2.2, Dst: 15.1.1.1 $\to$ Protocol: Encap Security Playload (50)
+    - L7: Encapsulating Security Payload $\to$ encrypted text
+    - unable to find ip.id = 0x4965 (encrypted)
+  - pkt on C: src=PC1, dst=PC2, prot=HTTP, info=GET / HTTP/1.1 $\to$ ip.id == 0x4965
+    - same packet as observed on A
+    - L3: IPv4, Src: PC1, dDst: PC2 $\to$ Identification: 0x4965 (18789), Time to live: 62
 
 
 
