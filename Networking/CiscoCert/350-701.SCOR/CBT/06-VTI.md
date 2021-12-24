@@ -88,7 +88,98 @@ Trainer: Keith Barker
 
 ## P2P GRE Tunnel Implementation
 
+- Implementing P2P GRE tunnel on R1
 
+  ```bash
+  ! verify interface config
+  R1# sh ip int br
+  Interface           IP-Address  OK? Method  Status                Protocol
+  GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
+  GigabitEthernet0/1  15.1.1.1    YES TFTP    up                    up
+  GigabitEthernet0/2  unassigned  YES TFTP    administratively down down
+  GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
+
+  ! create tunnel intf 0 w/ Ip addr
+  R1# conf t
+  R1(config)# int tunnel 0
+  R1(config-if)# ip addr 10.12.12.1 255.255.255.0
+  R1(config-if)# tunnel source 15.1.1.1
+  R1(config-if)# tunnel destination 25.2.2.2
+  R1(config-if)# do show run int tun 0
+  Current configuration : 115 bytes
+  ! 
+  interface Tunnel0
+   ip address 10.12.12.1 255.255.255.0
+   tunnel source 15.1.1.1
+   tunnel destination 25.2.2.2
+  end
+  ```
+
+
+- Implementing P2P GRE tunnel on R2
+
+  ```bash
+  R2# conf t
+  R2(config)# int tunnel 0
+  R2(config-if)# ip addr 10.12.12.2 255.255.255.0
+  R2(config-if)# tunnel source 25.2.2.2
+  R2(config-if)# tunnel destination 15.1.1.1
+  R1(config-if)# do show run int tun 0
+  Current configuration : 115 bytes
+  ! 
+  interface Tunnel0
+   ip address 10.12.12.2 255.255.255.0
+   tunnel source 25.2.2.2
+   tunnel destination 15.1.1.1
+  end
+  ```
+
+
+- Config EIGRP on R1 & R2
+
+  ```bash
+  R2# show ip route
+  Gateway of last resort is not set
+
+  s*    0.0.0.0 [1/0] via 25.2.2.5
+        10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  C        10.2.0.0/24 is directly connected, GigabitEthernet0/3
+  L        10.2.0.1/32 is directly connected, GigabitEthernet0/3
+  C        10.12.12.0/24 is directly connected, Tunnel0
+  L        10.12.12.1/32 is directly connected, Tunnel0
+        25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  C        25.2.2.0/24 is directly connected, GigabitEthernet0/2
+  L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
+
+  ! config EIGRP
+  R2# conf t
+  R2(config)# router eigrp 1
+  R2(config-router)# no auto-summary
+  R2(config-router)# net 10.0.0.0 0.255.255.255
+  R2(config-router)# end
+
+  R2#sh ip eigrp interfaces 
+  EIGRP-IPv4 Interfaces for AS(1)
+                          Xmit Queue   Mean   Pacing Time   Multicast    Pending
+  Interface        Peers  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+  Gi0/3              0        0/0         0       0/1            0           0
+  Tu0                0        0/0         0       6/6            0           0
+  ```
+
+  ```bash
+  ! config EIGRP
+  R1# conf t
+  R1(config)# router eigrp 1
+  R1(config-router)# no auto-summary
+  R1(config-router)# net 10.0.0.0 0.255.255.255
+  R1(config-router)# end
+
+  R1# show ip route eigrp
+  Gateway of last resort is not set
+
+        10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  D        10.2.0.0/24 [90/26880256] via 10.12.12.2 00:00:09, Tunnel0
+  ```
 
 
 ## P2P GRE Tunnel Verification
