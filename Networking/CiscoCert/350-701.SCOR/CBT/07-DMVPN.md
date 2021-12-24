@@ -5,8 +5,10 @@ Trainer: Keith Barker
 
 ## Introduction to DMVPN
 
-
-
+- Learning goals
+  - concept of DMVPN
+  - implementing and verifying mGRE
+  - configuring and verifying of DMVPM
 
 ## DMVPN Overview
 
