@@ -203,7 +203,19 @@ Trainer: Keith Barker
 
 ## IPsec Tunnel Protection Design
 
-
+- Planning of IPsec tunnel
+  - IKE phase 1
+    - encryption: aes 256
+    - hashing: SHA 256
+    - authentication: pre-shared key (PSK)
+    - DH group: group 5
+    - lifetime: 5000
+  - IKE phase 2
+    - enccryption: aes 128
+    - hashing: HMAC SHA 384
+  - interesting traffic
+    - crypto map w/ crypto ACL fpr port 47
+    - tunnel protection profile into tunnel interface (recommended)
 
 
 ## IPsec Virtual Tunnel Interface Configuration
