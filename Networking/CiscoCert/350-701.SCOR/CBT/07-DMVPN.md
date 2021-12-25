@@ -108,7 +108,33 @@ Trainer: Keith Barker
 
 ## NHRP Overview and Design
 
+- NHRP overview
+  - only tunnel interface config on R1~3
+  - none knowing what the other side of tunnel suppose to be
+  - NHRP used to
+    - train spokes to check in the hub
+    - dynamically learn the reachable addresses btw themselves
 
+
+- NHRP design
+  - build tunnel btw R1 & R2, R1 & R3
+  - train R2/R3 to know where the hub is
+  - multicast packet on R2/R3 sending to the hub
+  - config the tunnel IP address to associate w/ the public NBMA address
+    - R1: 172.16.123.1 $\leftrightarrow$ 15.1.1.1
+    - R2: 172.16.123.2 $\leftrightarrow$ 25.2.2.2
+    - R3: 172.16.123.3 $\leftrightarrow$ 35.3.3.3
+  - NHRP authentication password: Cisco!23
+  - train R1 to dynamically learn the other end of the tunnels
+  - next hop server (NHS) config on R2 & R3
+    - R2 sending packet to 172.16.123.3
+    - R2 not knowing the R3
+    - specify the next hop server as R1
+    - a request sent to R1 for getting the reachable address of 17216.123.3
+    - R1 returns the details of R3
+    - R2 proceeds to build tunnel w/ R3
+  - goal of DMVPN: dynamically building tunnels btw spokes, in particular, many spokes
+  - R1 redirecting traffic w/ NHRP while R2 & R3 building a NHRP shortcut
 
 
 ## Configuring NHRP for DMVPN
