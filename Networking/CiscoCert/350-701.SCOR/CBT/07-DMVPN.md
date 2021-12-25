@@ -57,7 +57,53 @@ Trainer: Keith Barker
 
 ## mGRE Tunnel Configuration
 
+- Config mGRE on R1
+  - preventing from packet segmentation w/ mtu = 1400
 
+  ```bash
+  ! DMVPN Hub
+  R1#conf t
+  R1(config)# int tunnel 0
+  R1(config-if)# description DMVPN Hub
+  R1(config-if)# ip address 172.16.123.1 255.255.255.0
+  R1(config-if)# ip mtu 1400
+  R1(config-if)# ip tcp adjust-mss 1360
+  R1(config-if)# tunnel source g0/1
+  R1(config-if)# tunnel mode gre multipoint
+  R1(config-if)# tunnel key 6783
+  R1(config-if)# end
+  ```
+
+
+- Config mGRE on R2
+
+  ```bash
+  R2# conf t
+  R2(config)# int tunnel 0
+  R2(config-if)# description DMVPN Spoke site 2
+  R2(config-if)# ip address 172.16.123.1 255.255.255.0
+  R2(config-if)# ip mtu 1400
+  R2(config-if)# ip tcp adjust-mss 1360
+  R2(config-if)# tunnel source g0/2
+  R2(config-if)# tunnel mode gre multipoint
+  R2(config-if)# tunnel key 6783
+  R2(config-if)# end
+  ```
+
+- Config mGRE on R3
+
+  ```bash
+  R3# conf t
+  R3(config)# int tunnel 0
+  R3(config-if)# description DMVPN Spoke site 3
+  R3(config-if)# ip address 172.16.123.3 255.255.255.0
+  R3(config-if)# ip mtu 1400
+  R3(config-if)# ip tcp adjust-mss 1360
+  R3(config-if)# tunnel source g0/3
+  R3(config-if)# tunnel mode gre multipoint
+  R3(config-if)# tunnel key 6783
+  R3(config-if)# end
+  ```
 
 
 ## NHRP Overview and Design
