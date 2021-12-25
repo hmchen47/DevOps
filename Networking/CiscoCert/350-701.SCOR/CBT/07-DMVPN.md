@@ -39,7 +39,20 @@ Trainer: Keith Barker
 
 ## Planning for the mGRE Tunnel
 
-
+- mGRE tunnel design
+  - full mesh of tunnels
+  - tunnel IP addresses: 172.16.123.0/24 w/ R1 = .1, R2 = .2, R3 = .3
+  - tunnel type: mGRE - same tunnel intf for multiple pairing w/ other devices
+  - tunnel source:
+    - R1: 15.1.1.1 (G0/1)
+    - R2: 25.2.2.2 (G0/2)
+    - R3: 35.3.3.3 (G0/3)
+  - tunnel destination: not required, dymanically identify the end of the tunnel
+  - MTU (optional):
+    - recommended: adjust maximum segment size
+    - GRE w/ additional overhead
+    - a little than the default value $\to$ no fragment for the final packets
+  - tunnel key: same for all routers
 
 
 ## mGRE Tunnel Configuration
