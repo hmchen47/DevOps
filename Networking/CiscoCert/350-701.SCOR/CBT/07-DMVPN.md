@@ -139,7 +139,77 @@ Trainer: Keith Barker
 
 ## Configuring NHRP for DMVPN
 
+- Config NHRP on hub
 
+  ```bash
+  R1# conf t
+  R1(config)# int tunnel 0
+  R1(config-if)# authentication Cisco!23
+  R1(config-if)# ip nhrp map multicast dynamic
+  R1(config-if)# ip nhrp network-id 1223
+  R1(config-if)# ip nhrp redirect
+  R1(config-if)# end
+  ```
+
+
+- Config NHRP on spokes (R2 & R3)
+  - NHS using tunnel IP address of hub
+  - mapping tunnel address to public Ip address (T.P.)
+  - tunnel supporting multicast by forwarding to public IP address of hub
+
+  ```bash
+  R2# conf t
+  R2(config)# int tunnel 0
+  R2(config-if)# authentication Cisco!23
+  R2(config-if)# ip nhrp map 172.16.123.1 15.1.1.1
+  R2(config-if)# ip map multicast 15.1.1.1
+  R2(config-if)# ip nhrp network-id 1223
+  R2(config-if)# ip nhs 172.16.123.1
+  R2(config-if)# ip nhrp shortcut
+  R2(config-if)# end
+
+  R2# show run int tun 0
+  Current configuration : 379 bytes
+  !
+  interface Tunnel0
+   description DMVPN spoke site 2
+   ip address 172.16.123.3 255.255.255.0
+   no ip redirects
+   ip mtu 1400
+   ip nhrp authentication Cisco!23
+   ip nhrp map 172.16.123.1 15.1.1.1
+   ip nhrp map multicast 15.1.1.1
+   ip nhrp network-id 123
+   ip nhrp nhs 172.16.123.1
+   ip tcp adjust-mss 1360
+   tunnel source GigbitEthernet0/3
+   tunnel mode gre multipoint
+   tunnel key 123
+  end
+  ```
+
+
+- Verify NHRP settings
+
+  ```bash
+  R1# show ip nhrp
+  172.16.123.2/32 via 172.16.123.2
+     Tunnel0 created 00:01:17, expire 00:08:43
+     Type: dynamic, Flags: registered nhop
+     NBMA address: 25.2.2.2
+  172.16.123.3/32 via 172.16.123.3
+     Tunnel0 created 00:01:08, expire 00:08:52
+     Type: dynamic, Flags: registered nhop
+     NBMA address: 35.3.3.3
+  ```
+
+  ```bash
+  R2# show ip nhrp
+  172.16.123.1/32 via 172.16.123.1
+     Tunnel0 created 00:02:06, never expire
+     Type: static, Flags:
+     NBMA address: 15.1.1.1
+  ```
 
 
 ## Adding Routing to DMVPN
