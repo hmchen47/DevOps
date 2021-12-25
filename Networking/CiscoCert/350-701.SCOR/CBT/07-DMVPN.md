@@ -14,6 +14,7 @@ Trainer: Keith Barker
   - 1\. config mGRE on tunnel intf
   - 2\. config NHRP on those intf and how spokes reaching the hub
   - 3\. config routing protocol
+  - 4\. config IPsec on DMVPN
 
 ## DMVPN Overview
 
@@ -200,7 +201,7 @@ Trainer: Keith Barker
   R1# show ip nhrp
   172.16.123.2/32 via 172.16.123.2
      Tunnel0 created 00:01:17, expire 00:08:43
-     Type: dynamic, Flags: registered nhop
+     Type: dynamic, Flags: registered used nhop
      NBMA address: 25.2.2.2
   172.16.123.3/32 via 172.16.123.3
      Tunnel0 created 00:01:08, expire 00:08:52
@@ -320,6 +321,124 @@ Trainer: Keith Barker
 
 ## Verifying DMVPNs
 
+- Verify DMVPN negotiations
+  - expecting tunnels btw R1 &2, R1 & R3
+  - R2 & R3 regisrtered to R1
+  - EIGRP routing protocol in place to advertise the subnets
+  - Attrb legend of `show dmvpn`: S - Static, D - Dynamic, I - Incomplete, T1 - Routed Installed, T2 - Nexthop-override
+  - verify DMVPN & NHRP settings on R1
+
+    ```bash
+    R1# show dmvpn
+    ...
+    Interface: Runnel0, IPv4 NHRP Details
+    Type: Hub, NHRP Peers:2,
+
+    # Ent  Peer NBMA Addr Peer Tunnel Add State  UpDn Tm Attrb
+    --------------------- --------------- ----- -------- -----
+        1  25.2.2.2          172.16.123.2    UP 01:17:35     D
+        1  35.3.3.3          172.16.123.3    UP 01:17:25     D
+
+    R1# show ip nhrp
+    172.16.123.2/32 via 172.16.123.2
+      Tunnel0 created 01:18:03, expire 00:07:05
+      Type: dynamic, Flags: registered used nhop
+      NBMA address: 25.2.2.2
+    172.16.123.3/32 via 172.16.123.3
+      Tunnel0 created 01:17:53, expire 00:08:46
+      Type: dynamic, Flags: registered nhop
+      NBMA address: 35.3.3.3
+    ```
+
+  - verify DMVPN & NHRP settings on R2
+
+    ```bash
+    R2# show dmvpn
+    ...
+    Interface: Runnel0, IPv4 NHRP Details
+    Type: Spoke, NHRP Peers:1,
+
+    # Ent  Peer NBMA Addr Peer Tunnel Add State  UpDn Tm Attrb
+    --------------------- --------------- ----- -------- -----
+        1  15.1.1.1          172.16.123.1    UP 00:02:28     S
+
+    R2# show ip nhrp
+    172.16.123.1/32 via 172.16.123.1
+      Tunnel0 created 01:18:44, never expire
+      Type: static, Flags: used
+      NBMA address: 15.1.1.1
+    
+    R2# show ip route 10.0.0.0
+    Routing entry for 10.0.0.0/8, 4 known subnets
+      Attached (2 connections)
+      Variably subnetted with 2 masks
+      Redistributing via nhrp, eigrp 1
+    D    10.1.0.0/24 [90/26880256] via 172.16.123.1, 00:03:21, Tunnel0
+    C    10.2.0.0/24 is directly connected, GigabitEthernet0/3
+    L    10.2.0.0/32 is directly connected, GigabitEthernet0/3
+    D    10.3.0.0/24 [90/28160256] via 172.16.123.31, 00:03:21, Tunnel0
+
+    ! before R2 & R3 tunnel built
+    R2# traceroute 10.3.0.50 source 10.2.0.2
+    Tracing the route to 10.3.0.50
+    VRF info: (vrf in name/id, vrf out name/id)
+      1 172.16.123.1 16 msec 8 msec 8 msec
+      2 172.16.123.3 20 msec 9 msec 15 msec
+      3 10.3.0.50 15 msec 8 msec 10 msec
+    
+    ! after R2 & R3 tunnel built
+    R2# traceroute 10.3.0.50 source 10.2.0.2
+    Tracing the route to 10.3.0.50
+    VRF info: (vrf in name/id, vrf out name/id)
+      1 172.16.123.3 10 msec 7 msec 10 msec
+      2 10.3.0.50 7 msec 7 msec 6 msec
+
+    R2# show ip route
+    Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+    S*   0.0.0.0/0 [1/0] via 25.2.2.5
+         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+    D       10.1.0.0/24 [90/26880256] via 172.16.123.1, 00:07:07, Tunnel0
+    C       10.2.0.0/24 is directly connected, GigabitEthernet0/3
+    L       10.2.0.0/32 is directly connected, GigabitEthernet0/3
+    D   %   10.3.0.0/24 [90/28160256] via 172.16.123.1 00:00:07, Tunnel0
+         25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C       25.2.2.0/24 is directly connected, GigabitEthernet0/2
+    L       25.2.2.2/32 is directly connected, GigabitEthernet0/2
+         172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks
+
+    R2# show ip cef 10.3.0.0
+    10.3.0.0/24
+      nexthop 172.16.123.3 Tunnel0
+
+    R2 shoe ip nhrp
+    10.2.0.0/24 via 172.16.123.2
+      Tunnel0 created 00:01:14, expire 00:08:45
+      Type: dynamic, Flags: router unique local
+      NBMA address: 25.2.2.2
+    10.3.0.0/24 via 172.16.123.3
+      Tunnel0 created 00:01:14, 00:08:44
+      Type: dynamic, Flags: router used rib nho
+      NBMA address: 35.3.3.3
+    172.16.123.1/32 via 172.16.123.1
+      Tunnel0 created 01:23:31, never expire
+      Type: static, Flags: used
+      NBMA address: 15.1.1.1
+    172.16.123.3/32 via 172.16.123.3
+      Tunnel0 created 00:01:14, expire00:08:44
+      Type: static, Flags: router nhop rib
+      NBMA address: 35.3.3.3
+
+    R2# show dmvpn
+    ...
+    Interface: Runnel0, IPv4 NHRP Details
+    Type: Spoke, NHRP Peers:2,
+
+    # Ent  Peer NBMA Addr Peer Tunnel Add State  UpDn Tm Attrb
+    --------------------- --------------- ----- -------- -----
+        2  35.3.3.3          172.16.123.3    UP 00:01:22   DT2
+                             172.16.123.3    UP 00:01:22   DT1
+        1  15.1.1.1          172.16.123.1    UP 00:07:43     S
+    ```
 
 
 
