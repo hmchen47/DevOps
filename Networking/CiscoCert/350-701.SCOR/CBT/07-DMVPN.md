@@ -10,6 +10,11 @@ Trainer: Keith Barker
   - implementing and verifying mGRE
   - configuring and verifying of DMVPM
 
+- Procedure to implement DMVPN
+  - 1\. config mGRE on tunnel intf
+  - 2\. config NHRP on those intf and how spokes reaching the hub
+  - 3\. config routing protocol
+
 ## DMVPN Overview
 
 - DMVPN network
@@ -214,7 +219,103 @@ Trainer: Keith Barker
 
 ## Adding Routing to DMVPN
 
+- Applying routing protocol to the mGRE+NHRP network
+  - using tunnel intf to forward traffic
+  - the topology working w/ the routing protocol
+  - subnets connected to R1~3 not known by remote devices
+  - applying EIGRP w/ autonomous system 1 to the network
+    - subnet for each route
+    - tunnel network
 
+
+- Config EIGRP on R1
+
+  ```bash
+  R1# conf t
+  R1(config)# router eigrp 1
+  R1(config-router)# net 10.0.0.0
+  R1(config-router)# net 172.16.123.0 0.0.0.255
+  R1(config-router)# end
+
+  R1# show ip eigrp interfaces
+  EIGRP-IPv4 Interfaces for AS(1)
+                      Xmit Queue    PeerQ         Mean    Pacing Time
+  Interface   Peers   Un/Reliable   Un/Reliable   SRTT    Un/Reliable
+  Gi0/3         0         0/0        0/0            0        0/0
+  Tu0           0         0/0        0/0            0        6/6
+  ```
+
+
+- Config EIGRP on R2
+
+  ```bash
+  R2# conf t
+  R2(config)# router eigrp 1
+  R2(config-router)# net 10.0.0.0
+  R2(config-router)# net 172.16.123.0 0.0.0.255
+  R2(config-router)# end
+  ```
+
+
+- Sanity check for routing
+  - R2 w/o R3 subnet info
+    
+    ```bash
+    R2# show ip route eigrp
+    Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+
+        10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+    D       10.1.0.0/24 [90/26880256] via 172.16.123.1, 00:01:06, Tunnel0
+    ```
+
+  - R1 knowing R3 subnet
+
+    ```bash
+    R1# show ip route 10.0.0.0
+    Routing entry for 10.0.0.0/8, 4 known subnets
+      Attached (2 connections)
+      Variably subnetted with 2 masks
+      Redistributing via eigrp 1
+    C    10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L    10.1.0.0/32 is directly connected, GigabitEthernet0/3
+    D    10.2.0.0/24 [90/26880256] via 172.16.123.2, 00:01:06, Tunnel0
+    D    10.3.0.0/24 [90/26880256] via 172.16.123.3, 00:00:56, Tunnel0
+    ```
+
+  - tunnels btw R1 & R2, R1 & R3 built
+  - R1 learning R3 subnet w/ tunnel intf should not advertise the network to the same intf $\to$ `no split-horizon`
+  - config R1 for EIGRP w/o split horizon
+
+    ```bash
+    R1# conft
+    R1(config)# int tunnel 0
+    R1(config-if)# no ip split-horizon eigrp 1
+    R1(config-if)# end
+    ```
+
+  - verify EIGRP routes on R2 again
+    
+    ```bash
+    R2# show ip route eigrp
+    Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+
+        10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+    D      10.1.0.0/24 [90/26880256] via 172.16.123.1, 00:03:26, Tunnel0
+    D      10.3.0.0/24 [90/26880256] via 172.16.123.1, 00:00:11, Tunnel0
+    ```
+
+  - packets from R3 subnet to R2 subnet
+    - R1 receiving the packets from R3
+    - replacing the source address from R3 to R1 itself before forwarding to R2 (no split horizontal)
+    - and vice vers
+  - options to dealing w/ the default behavior
+    - disable setting the next-hop address on R1 so the hub do not change it to its own IP: `no ip next-hop-self eigrp 1`
+    - config DMVPN phase 3 to establish tunnel btw R2 & R3
+      - R2 subnet sending pkts to R3 subnet
+      - R2 using hub tunnel intf as next hop
+      - R1 replying w/ a redirecting info to indicate tunnel intf of R3 a better selection than replacing the source IP address
+      - R2 requests for the NBMA address of R3
+      - once R2 retrieving R3 NBMA address, R2 & R3 able to communicate to each other
 
 
 ## Verifying DMVPNs
