@@ -81,7 +81,24 @@ Trainer: Keith Barker
 
 ## GET VPN Design
 
-
+- Planning of GET VPN implementation 
+  - pre-shared key btw key sever and group members
+  - IKE phase 1
+    - encryption: AES 128
+    - hash: SHA 256
+    - DH group: 14
+    - authentication: pre-shared key (same as key for key server and members)
+    - lifetime: default
+  - IPsec (IKE phase 2)
+    - transform set
+    - profile, including transform set
+    - lifetime
+  - rekeying: RSA key pair
+  - crypto ACL: limited to subnets of member group
+  - GDOI:
+    - bundling IPsec profile, crypto ACL, etc.
+    - group ID #
+    - key pair for rekeying
 
 
 ## Implementing KS Configuration
