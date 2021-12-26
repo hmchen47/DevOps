@@ -49,7 +49,19 @@ Trainer: Keith Barker
 
 ## GET VPN Key Servers (KS)
 
+- Key sever (KS) of GET VPN overview
+  - unable to be a group member
+  - COOP: fault tolerance, allowing to have multiple key servers to work together
 
+
+- Procedure to config key server
+  - 1\. config IKE phase 1 policy
+  - 2\. config IPsec
+  - 3\. config ACLs for interesting traffic
+  - 4\. config SA
+  - 5\. config rekeying:
+    - TEK: traffic encryption key
+    - KEK: key encryption key (UDP port 848)
 
 
 ## GET VPN Members (GM)
