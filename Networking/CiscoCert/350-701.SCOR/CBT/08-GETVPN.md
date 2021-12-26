@@ -66,7 +66,17 @@ Trainer: Keith Barker
 
 ## GET VPN Members (GM)
 
-
+- Group members of GET VPN overview
+  - communicating w/ key server via ISAKMP phase 1
+  - once tunnel established, using UDP 848 to exchange info btw key server and members
+  - GDOI used to exchange encrypted info
+  - member downloading info from key server including
+    - IPsec info, including policy
+    - crypto ACL
+    - SA info
+  - key server rekeying periodically
+    - unicast: expecting ack, retry until timeout
+    - multicast: more efficient, transport network support
 
 
 ## GET VPN Design
