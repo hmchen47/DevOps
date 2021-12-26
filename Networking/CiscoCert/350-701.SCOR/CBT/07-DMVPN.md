@@ -444,7 +444,206 @@ Trainer: Keith Barker
 
 ## Adding IPsec Protection Profiles
 
+- Config IPsec on DMVPN in R1
+  - using transport mode than tunnel mode
 
+  ```bash
+  ! IKE phase1
+  R1# conf t
+  R1(config)# crypto isakmp policy 1
+  R1(config-isakmp)# encryption aes 256
+  R1(config-isakmp)# hash sha256
+  R1(config-isakmp)# authentication pre-share
+  R1(config-isakmp)# group 16
+  R1(config-isakmp)# exit
+
+  ! IKE key
+  R1(config)# crypto isakmp key cisco!23 address 0.0.0.0
+
+  ! IKE phase 2
+  R1(config)# crypto ipsec transform-set Demo-Set esp-aes 256 esp-sha512-hmac
+  R1(cfg-crypto-trans)# mode transport
+  R1(cfg-crypto-trans)# exit
+
+  ! 
+  R1(config)# int tunnel 0
+  R1(config-if)# tunnel protection ipsec profile Deno-IPsec-Profile
+  R1(config-if)# end
+  ```
+
+  - same config applied to R2 & R3
+
+
+- Verify tunnel on spoke
+
+  ```bash
+  R2# show crypto isakmp sa
+  IPv4 Crypto ISAKMP SA
+  dst             src             state          conn-id status
+  15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
+  25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
+
+  R2# show crypto engine connections active
+    Crypto Engine Connections
+
+       ID  Type    Algorithm      Encrypt  Decrypt LastSeqN IP-Address
+        1  IPsec   AES256+SHA512        0        1        1 25.2.2.2
+        1  IPsec   AES256+SHA512        3        0        0 25.2.2.2
+        3  IPsec   AES256+SHA512        0       20       20 25.2.2.2
+        4  IPsec   AES256+SHA512       17        0        0 25.2.2.2
+     1001  IKE     SHA256+AES256        0        0        0 25.2.2.2
+     1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
+
+  R2(config)# do show crypto map
+  Crypto Map "Tunnel0-head-0" 65536 ipsec-isakmp
+          Profile name: Demo-IPsec-Profile
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-only (Y/N): N
+          PFS (Y/N): N
+          Mixed-mode : Disabled
+          Transform sets={ 
+                  Demo-SET:    { esp-256-aes esp-sha512-hmac  }, 
+          }
+
+
+  Crypto Map "Tunnel0-head-0" 65537 ipsec-isakmp
+          MAP is a PROFILE INSTANCE.
+          Peer = 15.1.1.1
+          Extended IP access list
+              access-list Crypto-ACL permit gre 25.2.2.2 host 15.1.1.1
+          Current peer: 15.1.1.1
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-only (Y/N): N
+          PFS (Y/N): N
+          Mixed-mode : Disabled
+          Transform sets={ 
+                  Demo-SET:    { esp-256-aes esp-sha512-hmac  }, 
+          }
+          Interfaces using crypto map Tunnel0-head-0:
+                  Tunnel0
+
+  R1# show ip route
+  Gateway of last resort is not set
+
+  s*    0.0.0.0 [1/0] via 25.2.2.5
+        10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  D        10.1.0.0/24 [90/26880256] via 172.16.123.1 00:32:35, Tunnel0
+  C        10.2.0.0/24 is directly connected, GigabitEthernet0/3
+  L        10.2.0.1/32 is directly connected, GigabitEthernet0/3
+  D        10.3.0.0/24 [90/28160256] via 172.16.123.1 00:02:24, Tunnel0
+        25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  C        25.2.2.0/24 is directly connected, GigabitEthernet0/2
+  L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
+        172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks
+  C        172.16.123.0/24 is directly connected, Tunnel0
+  L        172.16.123.2/32 is directly connected, Tunnel0
+
+  R2# ping 10.3.0.50 source 10.2.0.2
+  !!!!!
+  R2# ping 10.3.0.50 source 10.2.0.2
+  !!!!!
+
+  R1# show ip route
+  Gateway of last resort is 25.2.2.2 to network 0.0.0.0
+
+  s*    0.0.0.0 [1/0] via 25.2.2.5
+        10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  D        10.1.0.0/24 [90/26880256] via 172.16.123.1 00:32:35, Tunnel0
+  C        10.2.0.0/24 is directly connected, GigabitEthernet0/3
+  L        10.2.0.1/32 is directly connected, GigabitEthernet0/3
+  D   %    10.3.0.0/24 [90/28160256] via 172.16.123.1 00:02:24, Tunnel0
+        25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  C        25.2.2.0/24 is directly connected, GigabitEthernet0/2
+  L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
+        172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks
+  C        172.16.123.0/24 is directly connected, Tunnel0
+  L        172.16.123.2/32 is directly connected, Tunnel0
+  H        172.16.123.3/32 is directly connected, 00:00:06, Tunnel0
+
+  R2# show ip cef 10.3.0.0
+  10.3.0.0/24
+    nexthop 172.16.123.3 Tunnel0
+
+  R2# show crypto engine connections active
+    Crypto Engine Connections
+
+       ID  Type    Algorithm      Encrypt  Decrypt LastSeqN IP-Address
+        1  IPsec   AES256+SHA512        0        1        1 25.2.2.2
+        1  IPsec   AES256+SHA512        3        0        0 25.2.2.2
+        3  IPsec   AES256+SHA512        0       64       64 25.2.2.2
+        4  IPsec   AES256+SHA512       59        0        0 25.2.2.2
+        5  IPsec   AES256+SHA512        0        1        1 25.2.2.2
+        6  IPsec   AES256+SHA512        5        0        0 25.2.2.2
+        7  IPsec   AES256+SHA512        0        5        5 25.2.2.2
+        8  IPsec   AES256+SHA512        1        0        0 25.2.2.2
+     1001  IKE     SHA256+AES256        0        0        0 25.2.2.2
+     1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
+
+  R2# show crypto isakmp sa
+  IPv4 Crypto ISAKMP SA
+  dst             src             state          conn-id status
+  35.3.3.3        25.2.2.2        QM_IDLE           1004 ACTIVE
+  15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
+  25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
+  25.2.2.2        35.3.3.3        QM_IDLE           1003 ACTIVE
+
+  R2 show crypto
+  Number of Crypto Socket connection 2
+     Tu0 Peers (local/remote): 25.2.2.2/15.1.1.1
+         Local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
+         Remote Ident (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
+         IPsec Profile: "Demo-IPsec-Profile"
+         Socket State: Open
+         Client: "TUNNEL SEC" (Client State: Active)
+     Tu0 Peers (local/remote): 25.2.2.2/35.3.3.3
+         Local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
+         Remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
+         IPsec Profile: "Demo-IPsec-Profile"
+         Socket State: Open
+         Client: "TUNNEL SEC" (Client State: Active)
+  Crypto Socket in Listen State:
+  Client: "TUNNEL SEC" Profile: "Demo-IPsec_Profile" Map-name: "Runnel0-head-0"
+
+  R2# show ip sec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
+    remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
+    current-peer 35.3.3.3 port 500
+      PERMIT, flags={origin_is-acl,}
+    #pkts encaps: 6, #pkts encrypt: 6, #pkts digest: 6
+    #pkts decaps: 6, #pkts decrypt: 6, #pkts verify: 6
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts errros 0, #recv errors 0
+
+     local crypto endpt.: 25.2.2.2, remote crypto endpt.: 35.3.3.3
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x71D29954(1929627220)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+
+  R2# pint 10.3.0.50 source 10.2.0.2 repeat 1000
+  !!!!!...!!!!
+  R2# show ip sec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
+    remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
+    current-peer 35.3.3.3 port 500
+      PERMIT, flags={origin_is-acl,}
+    #pkts encaps: 1006, #pkts encrypt: 1006, #pkts digest: 1006
+    #pkts decaps: 1006, #pkts decrypt: 1006, #pkts verify: 1006
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts errros 0, #recv errors 0
+  ...
+  ```
 
 
 ## DMVPN Summary
