@@ -441,8 +441,8 @@ Trainer: Keith Barker
     ```
 
 
-
 ## Adding IPsec Protection Profiles
+
 
 - Config IPsec on DMVPN in R1
   - using transport mode than tunnel mode
@@ -648,6 +648,13 @@ Trainer: Keith Barker
 
 ## DMVPN Summary
 
+- IPsec to protect networks
+  - IPsec fundamental
+  - site-to-site tunel w/ crypto map
+  - GRE ove IPsec
+  - DMVPN
+  - GET VPN
+  - FlexVPN
 
 
 
