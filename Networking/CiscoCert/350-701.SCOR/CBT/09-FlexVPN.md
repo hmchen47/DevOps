@@ -24,6 +24,26 @@ Trainer: keith Barker
 
 ## FlexVPN Components
 
+- IKEv2 components
+  - proposals: a collection of transforms used in the negotiation of IKE SAs as part of IKE_SA_INIT exchange
+  - policy: containing proposals used to negotiate the encryption, integrity, PRF algorithm, and DH group in the IKE_SA_INIT exchange
+  - profile: a repository of non-negotiable parameters of the IKE SA, such as local or remote identities and authentication methods and services that are available to authenticated peers that match the profile
+  - keyrings: a repository of symmetric or asymmetric pre-shared keys
+
+- IPsec profile
+  - transform set
+  - IKEv2 profile (same as IKEv2)
+
+
+- Purpose of crypto maps
+  - created for IPsec to set up SAs for traffic flows that must be encrypted
+  - components
+    - crypto ACL: which traffic should be protected by IPsec
+    - remote peer: where IPsec-protected traffic should be sent
+    - local address: used to send traffic
+    - transform set: which IPsec security type should be applied to this traffic
+    - SAs established manually or via IKE
+    - other parameters probably necessary to define an IPsec SA
 
 
 
