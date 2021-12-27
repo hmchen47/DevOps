@@ -538,5 +538,9 @@ Trainer: Keith Barker
 
 ## GET VPN Summary
 
+- Summary of GET VPN
+  - all devices within a group build IPsec tunnels w/ each other
+  - one policy configured in KS
+  - group member checking in key server to download Ipsec and rel;ated info
 
 
