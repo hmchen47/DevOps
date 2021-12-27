@@ -5,7 +5,10 @@ Trainer: keith Barker
 
 ## Introduction to FlexVPN
 
-
+- Learning goal
+  - FlexVPN concept
+  - IKEv2 to enble the flexibility
+  - Site-to-site Flex VPN config and verification
 
 
 ## FlexVPN Overview
