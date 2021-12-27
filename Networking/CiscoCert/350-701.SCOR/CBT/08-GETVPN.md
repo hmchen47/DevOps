@@ -246,7 +246,114 @@ Trainer: Keith Barker
 
 ## Implementing GM Configuration
 
+- Config GM on R1
+  
+  ```bash
+  R1# conf t
 
+  ! IKE Phase 1 for communication btw key server & members
+  R1(config)# crypto isakmp policy 10
+  R1(config-isakmp)# encryption aes 128
+  R1(config-isakmp)# hash sha256
+  R1(config-isakmp)# group 14
+  R1(config-isakmp)# authentication pre-share
+  R1(config-isakmp)# exit
+
+  ! IKE key for pre-shared key
+  R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0
+
+  ! creating GDOI for GET VPN
+  R1(config)# crypto gdoi group Demo-GETVPN-Group
+  R1(config-gkm-group)# identity number 6783
+  R1(gkm-local-server)# server address ipv4 4.4.4.4
+  R1(gkm-local-server)# exit
+
+  R1(config)# crypto map GM-Map 10 gdoi
+  R1(config-crypto-map)# set group Demo-GETVPN-Group
+
+  ! apply GM MAP to interface
+  R1(config-crypto-map)# interface g0/1
+  R1(config-if)# crypto map GM-Map
+  R1(config-if)# end
+  ```
+
+  - same config apply to R2 (`int g0/2`) & R3 (`int g0/3`)  but interface changes
+
+
+- Verify GM config
+
+  ```bash
+  R1# show crypto gdoi
+  GROUP INFORMATION
+    Group Name                : Demo-GETVPN-Group (Unicast)
+    Group Identity            : 6783
+    Group Type                : GDOI (ISAKMP)
+    Group Path                : ipv4
+    Key Managemnet Path       : ipv4
+    Rekey received            : 0
+    IPsec SA Direction        : Both
+
+     Group server list        : 4.4.4.4.
+
+  Group Member Information For Group Demo-GETVPN-Group:
+    IPsec SA Direction        : Both
+    ACL Received From KS      : gdoi_group_Demo_GETVPN-Group_temp_acl
+
+    Group member              : 15.1.1.1         vrf: None
+      Local addr/port         : 15.1.1.1/848    
+      Remote addr/port        : 4.4.4.4/848
+      fvrf/vrf                :None/None
+      Version                 : 1.0.17
+      Registration status     : Registered
+      Registered with         : 4.4.4.4
+      Re-registered in        : 1670 secs
+      Succeeded registration  : 1
+      Attempted registration  : 1
+      Last rekey from         : 0.0.0.0
+      Last rekey seq num      : 0
+      Unicast rekey received  : 0
+      Rekey ACKs sent         : 0
+      Rekey received          : Never
+      DP Error Monitoring     : OFF
+      IPSEC init reg executed : 0
+      IPsec init reg postponed  : 0
+      active TEK Number       : 1
+      SA Track (OID/status)   : disabled
+
+      allowable rekey cipher  : any
+      allowable rekey hash    : any
+      allowable transformtag  : any ESP
+
+    Rekeys cumulative
+      Total received          : 0
+      After latest register   : 0
+      Rekey Acks sents        : 0
+
+  ACL Downloaded From KS 4.4.4.4
+    access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
+    access-list   deny ip any any
+
+  KEK POLICY:
+    Rekey Transport Type      : unicast
+    Lifetime (secs)           : 1767
+    Encrypt Algorithm         : 3DES
+    Key Size                  : 192
+    Sig Hash Algorithm        : HMAC_AUTH_SHA
+    Sig Key Length (bits)     : 2352
+
+  TEL POLICY for the current KS-Policy ACEs Downloaded:
+    GigabitEThernet0/1:
+      IPsec SA:
+        spi: 0x51111211F(1460077087)
+        KGS: Disabled
+        transform: esp-aes esp-sha-hmac
+        sa timing:remaining key lifetime (sec): (3569)
+        Anti-Replay(Time Based) : 5 sec interval
+        tag method : disabled
+        alg key size : 16 (bytes)
+        sig key size : 20 (butes)
+        encaps: ENCAPS_TUNNEL
+  ```
 
 
 ## GET VPN verification
