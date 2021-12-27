@@ -351,13 +351,188 @@ Trainer: Keith Barker
         Anti-Replay(Time Based) : 5 sec interval
         tag method : disabled
         alg key size : 16 (bytes)
-        sig key size : 20 (butes)
+        sig key size : 20 (bytes)
         encaps: ENCAPS_TUNNEL
   ```
 
 
 ## GET VPN verification
 
+- Verify on KS
+
+  ```bash
+  R4# sho crypto gdoi ks
+  Total group member registered to this box: 3
+
+  Key Server Information For Group Demo-GETVPN-GROUP
+    Group Name                : Demo-GETVPN-Group (Unicast)
+    Re-auth on new CRL        : Disabled
+    Group Identity            : 6783
+    Group Type                : GDOI (ISAKMP)
+    Group Members             : 3
+    Rekey Acknowledgement Cfg : Cisco
+    IPsec SA Direction        : Both
+    IP D3P Windows            : Disabled
+    CKM status                : Disabled
+    ACL Configured:
+        access-list Demo-List
+  ```
+
+
+- Verify on HM
+
+  ```bash
+  R1# sho crypto isakmp sa detail
+  C-id  Local         Remote        I-VRF   Status  Encr  Hash    Auth  DH  Lifetime
+  1001  15.1.1.1      4.4.4.4               ACTIVE  aes   sha256  psk   14  23:47:21
+         Engine-id:Conn-id = SW:1
+
+  R1# show crypto ipsec sa 
+  interface: GigabitEthernet0/1
+      Crypto map tag: TGM-Map, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.0.0.0/255.255.255.255/0/0)
+    remote Ident (addr/mask/port/prot): (10.0.0.0/255.255.255.255/0/0)
+    Group: Demo-GETVPN-Group
+    current-peer 0.0.0.0 port 848
+      PERMIT, flags={}
+    #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+    #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts errros 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 0.0.0.0
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x5111511F(1360077087)
+     FPS (Y/N): N, DH group: none
+  
+  R1# ping 10.2.0.2 source 10.1.0.1
+  !!!!!
+
+  R1# show crypto ipsec sa 
+  interface: GigabitEthernet0/1
+      Crypto map tag: TGM-Map, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.0.0.0/255.255.255.255/0/0)
+    remote Ident (addr/mask/port/prot): (10.0.0.0/255.255.255.255/0/0)
+    Group: Demo-GETVPN-Group
+    current-peer 0.0.0.0 port 848
+      PERMIT, flags={}
+    #pkts encaps: 5, #pkts encrypt: 5, #pkts digest: 5
+    #pkts decaps: 5, #pkts decrypt: 5, #pkts verify: 5
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts errros 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 0.0.0.0
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x5111511F(1360077087)
+     FPS (Y/N): N, DH group: none
+
+  R1# show crypto gdoi
+  GROUP INFORMATION
+    Group Name                : Demo-GETVPN-Group (Unicast)
+    Group Identity            : 6783
+    Group Type                : GDOI (ISAKMP)
+    Group Path                : ipv4
+    Key Managemnet Path       : ipv4
+    Rekey received            : 0
+    IPsec SA Direction        : Both
+
+     Group server list        : 4.4.4.4.
+
+  Group Member Information For Group Demo-GETVPN-Group:
+    IPsec SA Direction        : Both
+    ACL Received From KS      : gdoi_group_Demo_GETVPN-Group_temp_acl
+
+    Group member              : 15.1.1.1         vrf: None
+      Local addr/port         : 15.1.1.1/848    
+      Remote addr/port        : 4.4.4.4/848
+      fvrf/vrf                :None/None
+      Version                 : 1.0.17
+      Registration status     : Registered
+      Registered with         : 4.4.4.4
+      Re-registered in        : 788 secs
+      Succeeded registration  : 1
+      Attempted registration  : 1
+      Last rekey from         : 0.0.0.0
+      Last rekey seq num      : 0
+      Unicast rekey received  : 0
+      Rekey ACKs sent         : 0
+      Rekey received          : Never
+      DP Error Monitoring     : OFF
+      IPSEC init reg executed : 0
+      IPsec init reg postponed  : 0
+      active TEK Number       : 1
+      SA Track (OID/status)   : disabled
+
+      allowable rekey cipher  : any
+      allowable rekey hash    : any
+      allowable transformtag  : any ESP
+
+    Rekeys cumulative
+      Total received          : 0
+      After latest register   : 0
+      Rekey Acks sents        : 0
+
+  ACL Downloaded From KS 4.4.4.4
+    access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
+    access-list   deny ip any any
+
+  KEK POLICY:
+    Rekey Transport Type      : unicast
+    Lifetime (secs)           : 855
+    Encrypt Algorithm         : 3DES
+    Key Size                  : 192
+    Sig Hash Algorithm        : HMAC_AUTH_SHA
+    Sig Key Length (bits)     : 2352
+
+  TEL POLICY for the current KS-Policy ACEs Downloaded:
+    GigabitEThernet0/1:
+      IPsec SA:
+        spi: 0x51111211F(1360077087)
+        KGS: Disabled
+        transform: esp-aes esp-sha-hmac
+        sa timing:remaining key lifetime (sec): (3569)
+        Anti-Replay(Time Based) : 5 sec interval
+        tag method : disabled
+        alg key size : 16 (bytes)
+        sig key size : 20 (bytes)
+        encaps: ENCAPS_TUNNEL
+  ```
+
+
+- Verify w/ Wireshark
+  - CLT (10.2.0.50) sends request to SRV (10.1.0.50)
+  - observation points: A - R2 g0/3 (connect to CLT), B - R2, g0/2 (connect to cloud)
+  - verify CLT (Linux)
+
+    ```bash
+    CLT# ip addr
+    ...
+    576: eth0@if675: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue UP
+    Toup default qlen 1000
+      ...
+      ient 10.2.0.50/24 scope global eth0
+      ...
+
+    CLT# route
+    Destination   Gateway     Genmask   Flags Metrics Ref   Use Iface
+    Default       10.2.0.2    0.0.0.0   UG    0       0       0 eth0
+    10.2.0.0      *           255.255.255.0   U       0       0 eth0
+    172.17.0.0    *           255.255.255.0   U       0       0 eth0
+    ```
+
+  - send traffic from CLT to SRV w/ ping and web browser
+    - ping: `ping 10.1.0.50 -s 1000`
+    - web browser to open URL = '10.1.0.50'
+  - traffic captured
+    - pkt on A: src=SRV, dst=CLT, prot=ICMP. info=Echo (ping) reply id=0x1b84, ...
+      - L4: Internet Control Message Protocol
+    - pkt on B: src=SRV, dst=CLI, port=ESP (50), info=ESP (SPI=0x5111211f)
 
 
 
