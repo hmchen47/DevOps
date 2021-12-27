@@ -25,8 +25,18 @@ Trainer: keith Barker
 ## FlexVPN Components
 
 - IKEv2 components
-  - proposals: a collection of transforms used in the negotiation of IKE SAs as part of IKE_SA_INIT exchange
-  - policy: containing proposals used to negotiate the encryption, integrity, PRF algorithm, and DH group in the IKE_SA_INIT exchange
+  - proposals:
+    - a collection of transforms used in the negotiation of IKE SAs as part of IKE_SA_INIT exchange
+    - tansform types used in the negotiation
+      - encryption algorithm
+      - integrity algorithm
+      - pseudo-ramdom function (PRF) algorithm
+      - Diffie-Hellman (DH) group
+    - default proposal
+  - policy:
+    - containing proposals used to negotiate the encryption, integrity, PRF algorithm, and DH group in the IKE_SA_INIT exchange
+    - able to have match statements used as selection criteria to select a profile during negotiation
+    - default policy
   - profile: a repository of non-negotiable parameters of the IKE SA, such as local or remote identities and authentication methods and services that are available to authenticated peers that match the profile
   - keyrings: a repository of symmetric or asymmetric pre-shared keys
 
