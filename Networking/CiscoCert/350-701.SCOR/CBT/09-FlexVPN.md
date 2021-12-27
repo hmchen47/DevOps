@@ -13,7 +13,13 @@ Trainer: keith Barker
 
 ## FlexVPN Overview
 
-
+- FlexVPN concept
+  - a network allowing w/ multiple VPNs
+    - site-to-site VPM
+    - remote access VPNs
+    - DMVPN - hub-and -spoke VPN
+  - FlexVPN allowing these VPNs coexisted
+  - IKEv2 used to achieve the security goal on mixed VPNs
 
 
 ## FlexVPN Components
