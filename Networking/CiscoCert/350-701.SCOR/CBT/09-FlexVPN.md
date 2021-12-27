@@ -59,7 +59,16 @@ Trainer: keith Barker
 
 ## IKEv2 Flex VPN Site-To-Site Planning
 
-
+- Design of site-to-site FlexVPN
+  - IKEv2 components
+    - proposal: default but DH group 16
+    - policy: deefault
+    - profile: R1 & R2
+    - keyrings: named IOS-Keys, pre-shared key
+  - IPsec profile
+    - transform set: AES 256, HMAC SHA 512
+    - IKEv2 profile same as profile above
+  - using VTI w/ IPsec
 
 
 ## IKEv2 FlexVPN Site-To-Site Configuration
