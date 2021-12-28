@@ -400,5 +400,12 @@ Trainer: keith Barker
 
 ## FlexVPN Summary
 
+- Summay of FlexVPM
+  - using IKEv2
+  - flexible config
+    - site-to-site
+    - remote access
+    - hub-and-spoke
+
 
 
