@@ -73,7 +73,24 @@ Trainer: keith Barker
 
 ## IKEv2 FlexVPN Site-To-Site Configuration
 
+- Config IKEv2 FlexVPN site-to-site on R1
 
+  ```bash
+  ! config loopback 0 and line terminal width
+  R1# conf t
+  R1(config)# int loop 0
+  R1(config-if)# ip address 1.1.1.1 255.255.255.255
+  R1(config-if)# exit
+  R1(config)# line con 0
+  R1(config-line)# width 100
+  R1(config-line)# exit
+
+  R1(config)# do show crypto ikev2 policy
+  IKEv2 policy: default
+      Match fvrf : any
+      Match address local : any
+      Proposal    : default
+  ```
 
 
 ## IKEv2 FlexVPN Verification
