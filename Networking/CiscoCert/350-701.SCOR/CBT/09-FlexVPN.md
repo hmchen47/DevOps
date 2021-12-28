@@ -153,7 +153,167 @@ Trainer: keith Barker
 
 ## IKEv2 FlexVPN Verification
 
+- Verify on R1
 
+  ```bash
+  R1# show crypto ikev2 proposal default
+  IKEv2 proposal: default
+      Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
+      Integrity  : SHA512 SHA 384 SHA256 SHA96 MD596
+      PRF        : SHA512 SHA 384 SHA256 SHA1 MD5
+      DH Group   : DH_GROUP_4096_MODP/Group 16
+
+  R1# show crypto ikev2 sa
+  Tunnel-id Local         Remote        fvrf/ivrf   Status
+  1         15.1.1.1/500  25.2.2.2/500  none/none   READ
+    Encr: AES-CBC, Keysize: 256, PRF: SHA512, Hash: SHA512, DH Grp:16, Auth sign: PSK, Auth verify: PSK
+
+  R1# show crypto ipsec transform-set
+  Transfor set deafult: { esp-aes esp-sha-hmac  }
+      will negotiate = { Transport,  },
+  Transfor set Demo-Set: { esp-256-aes esp-sha512-hmac  }
+      will negotiate = { Tunnel,  },
+
+  R1# sho crypto ipsec profile
+  IPSEC profile Demo-IPsec-Profile
+      IKEv2 Profile: Demo-v2-Profile
+      Security association lifetime; 4608000 kilobytes/3600 seconds
+      Responder-Only (Y/N): N
+      PFS (Y/N): N
+      Mixed-mode : Disabled
+      Transfor set = {
+        Demo-Set: { esp-256-aes esp-sha512-hmac  }
+      }
+      
+  IPSEC profile default
+      IKEv2 Profile: Demo-v2-Profile
+      Security association lifetime; 4608000 kilobytes/3600 seconds
+      Responder-Only (Y/N): N
+      PFS (Y/N): N
+      Mixed-mode : Disabled
+      Transfor set = {
+        Demo-Set: { esp-aes esp-sha-hmac  }
+      }
+
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    current-peer 25.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+    #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0xD6F40E5C(3606318684)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      epi: 0x83A96616(2208917014)
+        transform: esp-256-aes esp-sha512-hmac ,
+        in use settings = {Tunnel, }
+        conn id: 1, flow_id: SW:1, sibling_flag 80000040, crypto mao: Tunnel0-head-0
+        sa timing: remaining key lifetime (k/sec): (4189686/3262)
+        IV size: 16 bytes
+        replay detection support: Y
+        Status: ACTIVE(ACTIVE)
+
+     inbound ah sas:
+
+     inbound pcp sas:
+
+     outbound esp sas:
+      spi: 0xD6F40E5C(3606318684)
+        transform: esp-256-aes esp-sha512-hmac ,
+        in use settings = {Tunnel, }
+        conn id: 2, flow_id: SW:2, sibling_flag 80000040, crypto mao: Tunnel0-head-0
+        sa timing: remaining key lifetime (k/sec): (4189686/3262)
+        IV size: 16 bytes
+        replay detection support: Y
+        Status: ACTIVE(ACTIVE)
+
+     outbound ah sas:
+
+     outbound pcp sas:
+
+  R1# show crypto map
+  Crypto Map: "Tunnel0-head-0" IKEv2 profile: Demo-v2-Profile
+
+  Crypto Map IPv4 "Tunnel0-head-0" 65536 ipsec-isakmp
+    IKEv2 Profile: Demo-v2-Profile
+    Profile name: Demo-IPsec-Profile
+    Security association lifetime; 4608000 kilobytes/3600 seconds
+      Responder-Only (Y/N): N
+      PFS (Y/N): N
+      Mixed-mode : Disabled
+      Transfor set = {
+        Demo-Set: { esp-256-aes esp-sha512-hmac  }
+      }
+
+  Crypto Map IPv4 "Tunnel0-head-0" 65537 ipsec-isakmp
+      Map is a PROFILE INSTANCE
+      peer = 25.2.2.2
+      IKEv2 profile: Demo-v2-Profile
+      Extended IP access list
+            access-list permit ip any any
+      Current peer: 25.2.2.2
+      Security association lifetime; 4608000 kilobytes/3600 seconds
+      Responder-Only (Y/N): N
+      PFS (Y/N): N
+      Mixed-mode : Disabled
+      Transfor set = {
+        Demo-Set: { esp-aes esp-sha-hmac  }
+      }
+      Always create SAs
+      Interfaces using crypto map Tunnel0-head-0
+
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    current-peer 25.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+    #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0xD6F40E5C(3606318684)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      epi: 0x83A96616(2208917014)
+
+  R1# show ip route
+  Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+    S*   0.0.0.0/0 [1/0] via 25.2.2.5
+         1.0.0.0.0/32 is subnetted, 1 subnets
+    C       1.1.1.1 is directly connected, Loopback0
+         10.0.0.0/32 is variably subnetted, 4 subnets, 2 masks
+    C       10.2.0.0/24 is directly connected, GigabitEthernet0/3
+    L       10.2.0.0/32 is directly connected, GigabitEthernet0/3
+    C       10.12.12.0/24 is directly connected, Tunnel0
+    L       10.12.12.0/32 is directly connected, Tunnel0
+         15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C       15.1.1.0/24 is directly connected, GigabitEthernet0/1
+    L       15.1.1.1/32 is directly connected, GigabitEthernet0/1
+  ```
+      
 
 
 ## Adding Routing to FlexVPN
