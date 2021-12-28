@@ -85,11 +85,69 @@ Trainer: keith Barker
   R1(config-line)# width 100
   R1(config-line)# exit
 
+  ! default policy
   R1(config)# do show crypto ikev2 policy
   IKEv2 policy: default
       Match fvrf : any
       Match address local : any
       Proposal    : default
+  
+  ! default proposal
+  R1(config)# do show crypto ikev2 proposal
+  IKEv2 proposal: default
+      Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
+      Integrity  : SHA512 SHA 384 SHA256 SHA96 MD596
+      PRF        : SHA512 SHA 384 SHA256 SHA1 MD5
+      DH Group   : DH_GROUP_1536_MODP/Group 5 DH_GROUP_1024_MODP/Group 2
+
+  R1(config)# crypto ike2 proposal default
+  R1(config-ikev2-proposal)# group 15
+  R1(config-ikev2-proposal)# exit
+
+  R1(config)# do show crypto ikev2 proposal
+  IKEv2 proposal: default
+      Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
+      Integrity  : SHA512 SHA 384 SHA256 SHA96 MD596
+      PRF        : SHA512 SHA 384 SHA256 SHA1 MD5
+      DH Group   : DH_GROUP_4096_MODP/Group 16
+  
+  ! config keyring
+  R1(config)# crypto ikev2 keyring ISO-Keys
+  R1(config-ikev2-keyring)# peer R2
+  R1(config-ikev2-keyring-peer)# address 25.2.2.2
+  R1(config-ikev2-keyring-peer)# pre-shared-key Cisco!23
+  R1(config-ikev2-keyring-peer)# exit
+  R1(config-ikev2-keyring)# exit
+
+  ! config profile
+  R1(config)# crypto ikev2 profile Demo-v2-Profile
+  IKEv2 profile MUST have:
+      1. A local and a remote authentication methods.
+      2. A match identity or a match certificate or match any statement.
+  R1(config-ikev2-profile)# match identity remote access 25.2.2.2 255.255.255.255
+  R1(config-ikev2-profile)# authentication remote pre-share
+  R1(config-ikev2-profile)# authentication local pre-share
+  R1(config-ikev2-profile)# keyring local IOS-Keys
+  R1(config-ikev2-profile)# exit
+
+  ! create transform set
+  R1(config)# crypto ipsec transform-set Demo-Set esp-aes esp-sha512-hmac
+  R1(crypto-crypto-trans)# mode tunnel
+  R1(config-crypto-trans)# exit
+
+  ! create IPsec profile
+  R1(config)# crypto ipsec profile Demo-Ipsec-Profile
+  R1(ipsec-profile)# set transform-set Demo-Set
+  R1(ipsec-profile)# set ikev2-profile Demo-v2-Profile
+  R1(ipsec-profile)# exit
+
+  ! config tunnel intf
+  R1(config)# int tunnel 0
+  R1(config-if)# ip address 10.12.12.0 255.255.255.0
+  R1(config-if)# tunnel source G0/1
+  R1(config-if)# tunnel mode ipsec ipv4
+  R1(config-if)# tunnel protection ipsec profile Demo-v2-Profile
+  R1(config-if)# exit
   ```
 
 
