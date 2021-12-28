@@ -313,12 +313,89 @@ Trainer: keith Barker
     C       15.1.1.0/24 is directly connected, GigabitEthernet0/1
     L       15.1.1.1/32 is directly connected, GigabitEthernet0/1
   ```
-      
 
 
 ## Adding Routing to FlexVPN
 
+- Adding EIGRP for tunnel network on R1
 
+  ```bash
+  R1# config
+  R1(config)# router eigrp 1
+  R1(config-router)# net 10.0.0.0
+  R1(config-router)# end
+
+  R1# show ip eigrp int
+  EIGRP-IPv4 Interfaces for AS(1)
+                      Xmit Queue    PeerQ         Mean    Pacing Time   MTU
+  Interface   Peers   Un/Reliable   Un/Reliable   SRTT    Un/Reliable   Flow
+  Gi0/3         0         0/0        0/0            0        0/0
+  Tu0           0         0/0        0/0            0        6/6
+  ```
+
+
+- Adding EIGRP for tunnel network on R2
+
+  ```bash
+  R2# debug ip routing
+
+  R2# conf t
+  R2(config)# router eigrp 1
+  R2(config-router)# net 10.0.0.0
+  R2(config-router)# end
+
+  %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.12.12.1 (Tunnel0) is up: new adjacency
+
+  R2# show ip route
+
+  Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+  S*   0.0.0.0/0 [1/0] via 25.2.2.5
+       2.0.0.0.0/32 is subnetted, 1 subnets
+  C       2.2.2.2 is directly connected, Loopback0
+       10.0.0.0/32 is variably subnetted, 5 subnets, 2 masks
+  D       10.1.0.0/24 [90/26880256], via 10.12.12.1, 00:00:17, Tunnel0
+  C       10.2.0.0/24 is directly connected, GigabitEthernet0/3
+  L       10.2.0.0/32 is directly connected, GigabitEthernet0/3
+  C       10.12.12.0/24 is directly connected, Tunnel0
+  L       10.12.12.0/32 is directly connected, Tunnel0
+       25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+  C       25.1.1.0/24 is directly connected, GigabitEthernet0/2
+  L       25.1.1.1/32 is directly connected, GigabitEthernet0/2
+
+  R2# ping 10.1.0.50
+  !!!!!
+  R2# traceroute 10.1.0.50
+  Tracing the route to 10.1.0.50
+  VRF info: (vrf in name/id, vrf out name/id)
+    1 10.12.12.1 19 ms 16 ms 14 ms
+    2 10.1.0.50 12 ms 16 ms 10 ms
+
+  R2# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
+    current-peer 15.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 88, #pkts encrypt: 88, #pkts digest: 88
+    #pkts decaps: 94, #pkts decrypt: 94, #pkts verify: 94
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 0, #recv errors 0
+
+     local crypto endpt.: 25.1.1.1, remote crypto endpt.: 15.2.2.2
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x83A96616(2208917014)
+     FPS (Y/N): N, DH group: none
+    ...
+  ```
+
+
+- Verify w/ traffic capture on tunnel
+  - pkt: src=25.2.2.2, dst=15.1.1.1, prot=ESP, info=ESP (SPI=0x83A96616) $\to$ encrypted payload
 
 
 ## FlexVPN Summary
