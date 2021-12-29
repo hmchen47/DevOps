@@ -32,7 +32,20 @@ Trainer:: Keith Barker
 
 ## FlexVPN IPsec RA VPNs
 
-
+- Components of FlexVPN IPsec RA VPNs
+  - IKEv2 sa
+    - encryption
+    - authentication
+    - PRF
+    - encryption
+  - IPsec sa
+    - transform set
+    - profile
+  - AAA method
+    - authentication: local authentication w/ certificate on R1 or Radius server in 10.1.0.0/24
+    - authorization policy
+  - addresses range of users
+  - virtual template: used to provide configuration for dynamically created virtual-access interfces
 
 
 ## FlexVPN RA Design
