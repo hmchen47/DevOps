@@ -14,7 +14,20 @@ Trainer:: Keith Barker
 
 ## RA VPN Overview
 
-
+- RV VPN concept
+  - PC: end user
+  - R1: router for corporate HQ network
+  - security options
+    - IPsec
+    - SSL/TLS
+  - push:
+    - pushing policy from R1 to PC
+    - authentication
+    - routing
+    - firewall
+    - restrictions
+  - split tunneling: corporate traffic route to R1 while other traffic via Internet
+  - Cisco AnyConnect client software
 
 
 ## FlexVPN IPsec RA VPNs
