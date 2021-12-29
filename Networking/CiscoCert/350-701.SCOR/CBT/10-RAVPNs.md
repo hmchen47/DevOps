@@ -3,10 +3,13 @@
 Trainer:: Keith Barker
 
 
-
 ## Introduction to RA VPNs
 
-
+- Learning goals
+  - options for remote access
+  - configurations of Cisco Remote Access VPNs
+  - verifications of Cisco Remote Access VPNs
+  - the use of AnyConnect
 
 
 ## RA VPN Overview
