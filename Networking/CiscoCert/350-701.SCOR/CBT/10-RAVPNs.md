@@ -184,6 +184,67 @@ Trainer:: Keith Barker
 
 ## Configuring FlexVPN RA
 
+- Implementing FlexVPN RA on R1
+  - too complex to memorize
+  - focus on concept
+  
+  ```bash
+  R1# conf t
+  R1(config)# aaa new-model
+
+  R1(config)# aaa authentication login a-eap-auth-local local
+  R1(config)# aaa authorization network a-eap-author-grp local
+
+  R1(config)# username admin privilege 15 secret Cisco!23
+
+  R1(config)# ip local pool ACPOOL 10.67.83.51 10.57.83.100
+
+  R1(config)# ip access-list standard split_tunnel
+  R1(config-std-nacl)# permit 10.0.0.0 0.255.255.255
+
+  R1(configstd-nacl)# crypto ikev2 authorization policy ikev2-auth-policy
+  R1(config-ikev2-author-policy)# pool ACPOOL
+  R1(config-ikev2-author-policy)# route set access-list split_tunnel
+  R1(config-ikev2-author-policy)# dns 10.5.5.5
+  R1(config-ikev2-author-policy)# exit
+
+  R1(config)# crypto ikev2 proposal IKEv2-prop1
+  R1(config-ikev2-proposal)# encryption aes-cbc-256
+  R1(config-ikev2-proposal)# integrity sha256
+  R1(config-ikev2-proposal)# group 14
+
+  R1(config-ikev2-proposal)# crypto ikev2 policy IKEv2-pol
+  R1(config-ikev2-policy)# proposal IKEv2-propl
+  R1(config-ikev2-policy)# exit
+
+  R1(config)# crypto ikev2 profile AnyConnect-EAP
+  R1(config-ikev2-profile)# match identity remote key-id *$AnyConnectClient$*
+  R1(config-ikev2-profile)# authentication local rsa-sig
+  R1(config-ikev2-profile)# authentication remote anyconnect-eap aggregate
+  R1(config-ikev2-profile)# pki trustpoint LOCAL-CA
+  R1(config-ikev2-profile)# aaa authentication anyconnect-eap a-eap-authen-local
+  R1(config-ikev2-profile)# aaa authorization group anyconnect-eap list a-eap-author-grp ikev2-auth-policy
+  R1(config-ikev2-profile)# aaa authorization user anyconnect-eap cached
+  R1(config-ikev2-profile)# virtual-template 100
+
+  R1(config-ikev2-profile)# crypto ipsec transform-set TS esp-aes 256 esp-sha256-hmac
+  R1(cfg-crypto-trans)# mode tunnel
+
+  R1(cfg-crypto-trans)# crypto ipsec profile AnyConnect-EAP
+  R1(ipsec-profile)# set transform-set TS
+  R1(ipsec-profile)# set ikev2-profile AnyConnect-EAP
+
+  R1(ipsec-profile)# interface loopback100
+  R1(config-if)# ip address 11.11.11.11 255.255.255.255
+
+  R1(config-if)# interface Virtual-Template100 type tunnel
+  R1(config-if)# ip unnumbered Loopback100
+  R1(config-if)# ip mtu 1400
+  R1(config-if)# tunnel mode ipsec ipv4
+  R1(config-if)# tunnel protection ipsec profile AnyConnect-EAP
+
+  R1(config-if)# end
+  ```
 
 
 
