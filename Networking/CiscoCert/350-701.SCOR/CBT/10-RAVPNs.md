@@ -50,7 +50,17 @@ Trainer:: Keith Barker
 
 ## FlexVPN RA Design
 
-
+- Design of FlexVPN RA
+  - local certificate authority (CA) on R1
+  - AAA method on R1
+  - IP address range: 10.67.83.51-100
+  - DNS server: 10.5.5.5
+  - virtual template:
+    - create logical interface for client
+    - defined as part of FlexVPN config on R1
+    - example: loopback intf 100 w/ 11.11.11.11/32
+    - tunnel mode: IPsec
+    - IPsec tunnel protection
 
 
 ## Setting CA Services in IOS
