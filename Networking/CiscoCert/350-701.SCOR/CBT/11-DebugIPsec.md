@@ -13,7 +13,19 @@ Trainer: Keith Barker
 
 ## Overview of IPsec Options
 
-
+- Implementing IPsec VPN
+  - methods
+    - IKEv1
+    - IKEv2
+  - scenarios
+    - site-to-site
+    - remote access
+  - site-to-site IPsec VPN
+    - crypto map
+    - crypto ACL
+  - virtual tunnel interfaces (VTI)
+  - DMVPN: NHRP
+  - GET VPN: IKEv1 phase 1 for gms and ks
 
 
 ## Troubleshooting Tips for IPsec
