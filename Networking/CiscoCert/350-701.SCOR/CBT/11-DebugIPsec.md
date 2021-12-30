@@ -136,6 +136,10 @@ Trainer: Keith Barker
             Active SAs: 0, origin: crypto map
     
     R1# debug crypto isakmp
+    R1# show users
+        Line    User    Hosts(s)      Idle      Location
+    * 0 con 0           idle          00:00:00
+  
     R1# show ip int brief
     Interface           IP-Address  OK? Method  Status                Protocol
     GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
@@ -227,6 +231,147 @@ Trainer: Keith Barker
 
 ## IKEv1, Phase 1, Bad Config
 
+- Troubleshooting IKEv1 Phase 1 on R1
+  - issue: IPsec tunnel not working
+  
+  ```bash
+  R1# show run | section crypto
+  crypto isakmp policy 5
+     encr aes 192
+     hash sha256
+     authentication pre-share
+     group 5
+     lieftime 5000
+    crypto isakmp key Cisco!23 address 0.0.0.0
+    crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
+     mode tunnel
+    crypto map Demo-Map 10 ipsec-isakmp
+     set peer 25.2.2.2
+     set transform-set Demo-Set
+     set pfs group15
+     match address Crypto-ACL
+     crypto map Demo-Map
+
+  R1# show ip route
+  Gateway of last resort is 15.1.1.1 to network 0.0.0.0
+
+    s*    0.0.0.0 [1/0] via 15.1.1.5
+          10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L        10.1.0.1/32 is directly connected, GigabitEthernet0/3
+          15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        15.1.1.0/24 is directly connected, GigabitEthernet0/1
+    L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
+  
+  R2# show ip route
+  Gateway of last resort is 15.1.1.1 to network 0.0.0.0
+
+    s*    0.0.0.0 [1/0] via 15.1.1.5
+          10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L        10.1.0.1/32 is directly connected, GigabitEthernet0/3
+          25.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        25.2.2.0/24 is directly connected, GigabitEthernet0/2
+    L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
+
+  R1# ping 25.2.2.2
+  !!!!!
+
+  R1# show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst       src       state     conn-id status
+
+    R1# debug crypto isakmp
+    R2# debug crypto isakmp
+
+    R2# show users
+        Line    User    Hosts(s)      Idle      Location
+    * 0 con 0           idle          00:00:00
+
+    R1# show debugging
+    Cryptographic subsystems:
+      Crypto ISAKMP debugging is on
+
+    R1# ping 10.2.0.2 source 10.1.0.1
+
+    R1# undebug all
+    R2# undebug all
+
+    R2# 
+    ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
+    ...
+    ISAKMP: (0): found peer pre-shared key match 15.1.1.1
+    ...
+    ISAKMP-ERROR: (0): Proposed key length does not match policy
+    ISAKMP-ERROR: (0): attrs are not acceptable. Next payload is 0
+    ISAKMP-ERROR: (0): no offers accepted!
+    ISAKMP-ERROR: (0): phase 1 SA policy not acceptable! (local 25.2.2.2 remote 15.1.1.1)
+
+    R2# show crypto isakmp policy
+    Global IKE policy
+    Protection suite of priority 5
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+  R1# show crypto isakmp policy
+  Global IKE policy
+    Protection suite of priority 5
+          encryption algorithm:   AES - Advanced Encryption Standard (192 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+  R1# conf t
+  R1(config)# crypto isakmp policy 5
+  R1(config-isakmp)# encryption aes 256
+  R1(config-isakmp)# end
+
+  R1# debug crypto isakmp
+  R2# debug crypto isakmp
+
+  R1# show crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Current peer: 25.2.2.2
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/1
+
+  ping 10.2.0.2 source 10.1.0.1
+  !!!!
+  ... ! ni ISAKMP-ERROR shown
+
+  R1# show crypto isakmp sa
+  IPv4 Crypto ISAKMP SA
+    dst       src       state     conn-id status
+    25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
+
+  R1# show crypto isakmp sa detail
+  IPv4 Crypto ISAKMP SA
+  C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
+  1001  15.1.1.1  25.2.2.2        ACTIVE  aes   sha256  psk   5   01:22:12
+         Engine-id:Conn-id =  SW:1
+
+  R1# show crypto engine connection active
+  Crypto Engine Connections
+
+     ID  Type   Algorithm     Encrypt   Decrypt   LasySeqN  IP-Address
+      1  IPsec  AES+SHA384          0         4          4  15.1.1.1
+      2  IPsec  AES+SHA384          4         0          0  15.1.1.1
+   1001  IKE    AHA256+AES256       0         0          0  15.1.1.1
+  ```
 
 
 
