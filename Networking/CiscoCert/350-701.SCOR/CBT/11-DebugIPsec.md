@@ -66,8 +66,164 @@ Trainer: Keith Barker
 
 ## IKEv1, Phase 1, Missing Routes
 
+- Troubleshooting site-to-site IPsec VPN
+  - config info
+    - crypto maps
+    - crypto ACLs
+    - IP address space for subnets
+    - interfaces to build tunnel
+    - endpoints: client and server
+  - issue: no reachability
+  - tshoot
 
+    ```bash
+    R1# show run | section crypto
+    crypto isakmp policy 5
+     encr aes 256
+     hash sha256
+     authentication pre-share
+     group 5
+     lieftime 5000
+    crypto isakmp key Cisco!23 address 0.0.0.0
+    crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
+     mode tunnel
+    crypto map Demo-Map 10 ipsec-isakmp
+     set peer 25.2.2.2
+     set transform-set Demo-Set
+     set pfs group15
+     match address Crypto-ACL
+     crypto map Demo-Map
+    
+    R1# show crypto map
+    Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Current peer: 25.2.2.2
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/1
 
+    R1# show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst     src     state     conn-id status
+
+    R1# show isakmp sa detail
+    IPv4 Crypto ISAKMP Sa
+
+    C-id  Local   Remote    I-VRF   Status  Encr  Hash  aAuth DH Lifetime
+
+    R1# show crypto isakmp policy
+    Global IKE policy
+    Protection suite of priority 5
+          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+          hash algorithm:         Secure Hash Standard 2 (256 bit)
+          authentication method:  Pre-Shared Key
+          Diffie-Hellman group:   #5 (1536 bit)
+          lifetime:               5000 seconds, no volume limit
+
+    R1# show crypto session
+    Interface: GigabitEthernet0/1
+    Session status: DOWN
+    Peer: 25.2.2.2 port 500
+      IPSEC FLOW: permit ip 10.1.0.0/55.255.0.0 10.2.0.0/255.255.0.0
+            Active SAs: 0, origin: crypto map
+    
+    R1# debug crypto isakmp
+    R1# show ip int brief
+    Interface           IP-Address  OK? Method  Status                Protocol
+    GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
+    GigabitEthernet0/1  15.1.1.1    YES TFTP    up                    up
+    GigabitEthernet0/2  unassigned  YES TFTP    administratively down down
+    GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
+
+    R1# ping 10.2.0.2 source 10.1.0.1
+    .....
+    ! no debug msg shown -> checking routing table
+    R1# show ip route
+    Gateway of last resort is not set
+
+          10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L        10.1.0.1/32 is directly connected, GigabitEthernet0/3
+          15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        15.1.1.0/24 is directly connected, GigabitEthernet0/1
+    L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
+
+    ! no 10.2.0.0 and no default route
+    R1# config t
+    R1(config)# ip route 0.0.0.0 0.0.0.0 15.1.1.5
+    R1(config)# end
+    
+    R1# ping 15.1.1.5
+    !!!!!
+    R1# show ip route
+    Gateway of last resort is 15.1.1.1 to network 0.0.0.0
+
+    s*    0.0.0.0 [1/0] via 15.1.1.5
+          10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L        10.1.0.1/32 is directly connected, GigabitEthernet0/3
+          15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        15.1.1.0/24 is directly connected, GigabitEthernet0/1
+    L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
+
+    R1# ping 10.2.0.2 source 10.1.0.1
+    !!!!!
+    ...
+    ISAKMP: (0): Can not start Aggressive mode, trying Main mode.
+    ISAKMP: (0): found peer-shared key matching 25.2.2.2
+    ...
+    ISAKMP: (0): Checking ISAKMP transfor 1 against priority 5 policy
+    ISAKMP: (0):      encryption AES-CBC
+    ISAKMP: (0):      keylength of 256
+    ISAKMP: (0):      hash sha256
+    ISAKMP: (0):      default group 5
+    ISAKMP: (0):      auth pre-share
+    ISAKMP: (0):      life type in seconds
+    ISAKMP: (0):      life duration (basic) of 5000
+    ISAKMP: (0): attrs are acceptable. Next payload is 0
+    ...
+    ISAKMP: (0): Old State = IKE_I_MM2    New State = IKE_I_MM2
+    ISAKMP-PAK: (0): sending packet to 25.2.2.2 my_port 500 peer_port 500 (I) MM_SA
+    ...
+    ISAKMP: (0): Old State = IKE_I_MM2    New State = IKE_I_MM3
+    ...
+    ISAKMP: (0): Old State = IKE_I_MM3    New State = IKE_I_MM4
+    ...
+    ISAKMP: (1001): Old State = IKE_I_MM4    New State = IKE_I_MM5
+    ...
+    ISAKMP: (1001): Old State = IKE_I_MM5    New State = IKE_I_MM6
+    ...
+    ISAKMP: (1001): Old State = IKE_I_MM6    New State = IKE_P1_COMPLETE
+
+    R1# undebug all
+
+    R1# show crypto isakmp sa
+    IPv4 Crypto ISAKMP SA
+    dst       src       state     conn-id status
+    25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
+
+    R1# show crypto isakmp sa detail
+    IPv4 Crypto ISAKMP SA
+    C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
+    1001  15.1.1.1  25.2.2.2        ACTIVE  aes   sha256  psk   5   01:18:30
+           Engine-id:Conn-id =  SW:1
+
+    R1# show crypto session
+    Interface: GigabitEthernet0/1
+    Session status: UP-ACTIVE
+    Peer: 25.2.2.2 port 500
+      IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
+      IPSEC FLOW: permit ip 10.1.0.0/55.255.0.0 10.2.0.0/255.255.0.0
+            Active SAs: 2, origin: crypto map
+    ```
 
 ## IKEv1, Phase 1, Bad Config
 
