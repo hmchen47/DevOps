@@ -45,7 +45,19 @@ Trainer:: Keith Barker
     - authentication: local authentication w/ certificate on R1 or Radius server in 10.1.0.0/24
     - authorization policy
   - addresses range of users
-  - virtual template: used to provide configuration for dynamically created virtual-access interfces
+  - [virtual interface template service](https://bit.ly/3sKSFt3)
+    - a feature providing a generic service used to apply predefined interface configurations in creating and freeing virual access interface dynamically, as needed
+    - used to provide configuration for dynamically created virtual-access interfaces
+    - a logical entity - a configuration for a serial interface but not tied to a physical interface - applied dynamically as needed
+    - one possible source of configuration information for virtual access interface
+    - benefits
+      - easy maintenance
+      - scalability
+      - consistency and configuration ease
+      - efficient device operation
+  - virtual access interface
+    - virtual interfaces created, configured dynamically, used, and then free when no longer needed
+    - able to clone from only one template
 
 
 ## FlexVPN RA Design
@@ -273,7 +285,107 @@ Trainer:: Keith Barker
 
 ## Testing and Verifying the RA VPN
 
+- Testing and Verify FlexVPN RA on PC
+  - srv: 10.1.0.0, user: 10.1.0.50
+  - exec Cisco AnyConnect Secure Mobility Client
+  - select appropriate profile, 7 > 'Connect' button
+  - Cisco AnyConnect | 7 > Username = admin, Password = ***** > 'Gear' icon
+  - AnyConnect Secure Mobility Client > tabs - Preferences, Statistics, Route Details, Firewall, Message History
+  - Statistics tab > Address Information: Client (Ipv4) = 10.67.83.52 (virtual server IP address), Server = 15.1.1.1
+  - Route Details tab > Secure Routes (Ipv4): 10.0.0.0/8, 10.5.5.5/32; Non-Secured Routes (IPv4): 0.0.0.0/0
+  - PC CLI: `route print` $\to$ Network Destination = 10.0.0.0, Netmask = 255.0.0.0, Gateway = On-link, Interface = 10.67.83.52, Metric = 257
+  - PC CLI: `ping 10.1.0.50` $\to$ AnyConnect Secure Mobility Clint > observe the change - Statistics tab > Frames: Sent = 106, Receive = 10 (issue ping again)
+  - PC CLI: `ping 10.2.0.50` $\to$ AnyConnect Secure Mobility Clint > observe the change - Statistics tab > w/o change
 
+
+- Verify on R1
+
+  ```bash
+  R1# show ip in brief
+  Interface           IP-Address  OK? Method  Status                Protocol
+  GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
+  GigabitEthernet0/1  15.1.1.1    YES TFTP    up                    up
+  GigabitEthernet0/2  unassigned  YES TFTP    administratively down down
+  GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
+  Loopback0           1.1.1.1     YES manual  up                    up
+  Loopback100         11.11.11.11 YES manual  up                    up
+  Virtual-Access      11.11.11.11 YES manual  up                    up
+  Virtual-Template100 11.11.11.11 YES manual  up                    down
+
+  R1# show ip route
+  Gateway of last resort is 15.1.1.5 to network 0.0.0.0
+
+    O*    0.0.0.0/0 [1/0] via 15.1.1.5
+          1.0.0.0/32 is subnetted, 1 subnets
+    O        1.1.1.1 is directely connected, Loopback0
+          10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+    C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L        10.1.0.0/32 is directly connected, GigabitEthernet0/3
+    O        10.2.0.0 [110/3] via 15.1.1.5, 01:58:13, GigabitEthernet0/1
+    O        10.3.0.0 [110/2] via 15.1.1.5, 01:58:13, GigabitEthernet0/1
+    S        10.67.83.52/32 is directly connected, Virtual-Access1
+          11.0.0.0/32 is subnetted, 1 subnets
+    C       11.11.11.11 is directely connected, Loopback100
+          15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C        15.1.1.0 is directly connected, GigabitEthernet 0/1
+    L        15.1.1.1 is directly connected, GigabitEthernet 0/1
+          25.0.0.0/24 is subnetted, 1 subnets
+    O        25.2.2.0 [110/2] via 15.1.1.5 00:58:13, GigabitEthernet 0/1
+    O     192.168.1.0/24 [110/2] via 15.1.1.5 00:58:13, GigabitEthernet 0/1
+
+  R1# show crypto ikev2 sa
+  Tunnel-id Local         Remote          fvrf/ivrf   Status
+  1         15.1.1.1/4500 10.5.5.51/54643 none/none   READ
+    Encr: AES-CBC, Keysize: 256, PRF: SHA256, Hash: SHA256, DH Grp:14, Auth sign: PSK, Auth verify: PSK
+    Life/Active Time: 86400/563 sec
+
+  R1# show crypto ikev2 sa detailTunnel-id Local         Remote          fvrf/ivrf   Status
+  1         15.1.1.1/4500 10.5.5.51/54643 none/none   READ
+    Encr: AES-CBC, Keysize: 256, PRF: SHA256, Hash: SHA256, DH Grp:14, Auth sign: PSK, Auth verify: PSK
+    Life/Active Time: 86400/563 sec
+    CE id: 1002, Session-id: 2
+    Status Description: Negotiation done
+    Local spi: 11FEB1839ECFF9F4       Remote spi: 902888ED4634E9EB
+    Local id: 15.1.1.1
+    Remote id: *$AnyConnectClient$*
+    Remote EAP id: admin
+    Local req msg id:   0             Remote req msg id:   26
+    Local next msg id:  0             Remote next msg id:  26
+    Local queue msg id: 0             Remote req queue id: 26
+    Local window:       5             Remote window:       1
+    DPD configured for 0 seconds, entry 0
+    Fragmentation not configured.
+    Dynamic Route Update: disabled
+    Extended Authentication not configured.
+    NAT-T is detected outside
+    Cisco Trust Security SGT is disabled
+    Assigned host addr: 10.67.83.52
+    Initiator of SA : No
+
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (00.0.0.0/0.0.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.76.83.52/255.255.255.255/0/0)
+    current-peer 10.5.5.51 port 54643
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 1, #pkts encrypt: 12, #pkts digest: 12
+    #pkts decaps: 120, #pkts decrypt: 120, #pkts verify: 120
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 10.5.5.51
+     plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0xD6F40E5C(3606318684)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      epi: 0x89ECD594(2213999764)
+  ```    
 
 
 ## Flex VPN RA Summary
