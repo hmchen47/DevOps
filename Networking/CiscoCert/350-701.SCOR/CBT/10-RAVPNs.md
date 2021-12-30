@@ -390,5 +390,9 @@ Trainer:: Keith Barker
 
 ## Flex VPN RA Summary
 
+- Summary
+  - headend VPN server
+  - AnyConnect VPN Client
+
 
 
