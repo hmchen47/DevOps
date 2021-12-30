@@ -250,7 +250,25 @@ Trainer:: Keith Barker
 
 ## AnyConnect Profile Editor
 
+- AnyConnect VPN profile editor
+  - downloaded from Cisco website
+  - AnyConnect Profile Editor - VPN > folders - Preferences (Part 1), Preferences (Part 2), Backup Servers, Certificate Pinning, Certificate Matching, Certificate Enrollment, Mobile Policy, Server List
+  - Preferences (Part 1) - Profile: Untitled > User Controllable = On, Minimize On Connect = On, Auto Reconnect = On, Auto Update = On
+  - Server List - Profile: Untitled > fields - Hostname, Host Address, User Group, Backup Server List, SCEP, Mobile Settings, Certificate Pins > 'Add' button
+    - Server List Entry > tabs - Server, Load Balancing Servers, SCEP, Mobile, Certificate Pinning
+    - Servers > primary Server: Display Name (required) = 'Primary VPN Server', FQDN or IP Address = 15.1.1.1
+    - Servers > Connection Information: Primary Protocols = IPsec, SAS gateway = Off, Auth Methgod During IKE Negotiation = EAP-AnyConnect
+    - 'ok' button > entry - Hostname = Primary VPN Server, Host Address = 15.1.1.1, Backup Server List = -- Inherited --
+  - File > 'Save As...' > '10.xml'
+  - file location: `C:\ProgramData\Cisco\Cisco AnyConnect Secure Mobility Client\Profile\`
+  - Preferences (Part 1): Windows VPN Establishment = AllowRemoteUsers $\gets$ remote users than local users, in particular RTP users
 
+
+- Special setting for BypassDownloader
+  - not supporting SSL $\implies$ BypassDownloader not working
+  - change to  `<BypassDownloader>flase</BypassDownloader>` in `C:\ProgramData\Cisco\Cisco AnyConnect Secure Mobility Client\AnyConnectLocalPolicy.xml`
+  - alternatively, `VPN Local Policy Editor` software
+    - check 'Bypass Downloader' box
 
 
 ## Testing and Verifying the RA VPN
