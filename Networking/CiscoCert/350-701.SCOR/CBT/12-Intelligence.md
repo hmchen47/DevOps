@@ -186,5 +186,12 @@ Trainer: Keith Barker
 
 ## Security Intelligence Summary
 
+- Summary
+  - Talos: collecting data and feed into products
+  - VCSS score and calculation
+  - VCE number
+  - IP & Domain reputation
+  - file reputation
+  - threat categories
 
 
