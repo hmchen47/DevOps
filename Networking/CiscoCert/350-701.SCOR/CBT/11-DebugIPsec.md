@@ -817,5 +817,11 @@ Trainer: Keith Barker
 
 ## Summary Troubleshooting IPsec
 
+- Summary
+  - troubleshooting IPsec VPN
+  - main possible issues
+    - routing w/ tunnel
+    - incompatible IKEv1 phase 1 settings
+    - incompatible IKEv2 phase 2 (Ipsec) setting
 
 
