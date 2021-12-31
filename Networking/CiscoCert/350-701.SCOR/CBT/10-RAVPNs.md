@@ -371,7 +371,7 @@ Trainer:: Keith Barker
     remote Ident (addr/mask/port/prot): (10.76.83.52/255.255.255.255/0/0)
     current-peer 10.5.5.51 port 54643
       PERMIT, flags={origin_is_acl}
-    #pkts encaps: 1, #pkts encrypt: 12, #pkts digest: 12
+    #pkts encaps: 12, #pkts encrypt: 12, #pkts digest: 12
     #pkts decaps: 120, #pkts decrypt: 120, #pkts verify: 120
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
