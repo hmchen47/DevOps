@@ -59,7 +59,25 @@ Trainer: Keith Barker
 
 ## Talos Vulnerability Information
 
-
+- Talos vulnerabilities reports
+  - tabs: zero-day reports, disclosed vulnerability reports
+  - disclosed vulnerability reports: subtabs - report id, title, report date, cve number, cvss score
+  - CVSS score:
+    - [Common Vulnerability Scoring System Calculator](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator)
+    - Basic score metrics: exploitability metrics, impact metrics
+      - exploitability metrics:
+        - attack vector (AV): network, adjacent network, local , physical
+        - attack complexity (AC): low, high
+        - privileges required (PR): none, low, high
+        - user interaction (UI): none, required
+        - scope (S): unchanged, changed
+      - impact metrics
+        - confidentiality impact (C): none. low, high
+        - integrity impact (I): none. low. high
+        - availability impact (A): none, low, high
+  - CVE number
+    - [Common Vulnerabilities and Exposures](https://cve.mitre.org/): a list of public known cybersecurity vulnerabilities
+    - Talos report containing the number 
 
 
 ## Talos Reputation Center
