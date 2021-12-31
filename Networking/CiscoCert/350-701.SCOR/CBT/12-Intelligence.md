@@ -40,7 +40,21 @@ Trainer: Keith Barker
 
 ## Cisco Talos Overview
 
-
+- Talos overview
+  - [Talos website](https://talosintelligence.com/)
+  - homepage legend
+    - blue: legitimated email
+    - orange: spam
+    - green: malware
+  - important tabs: Software, Vulnerability Information, Reputation Center, Library, Incident Response
+  - Software:
+    - Snort: open source intrustion prevention system capable of real-time traffic analysis and packet logging
+    - ClamAV: open source antivirus engine for detection trojans, virus, malware, & other malicious threats
+    - etc.
+  - Vulnerability Information: Vulnerability Reports, Microsoft Advisories
+  - Reputation Center: IP & Domain Reputation, Talos File Reputation, Reputation Support, AMP Threat Naming Conventions, AWBO Exercises, Intelligence Categories
+  - Library: publications, presentations
+  - Incident Response: contract or support agreements
 
 
 ## Talos Vulnerability Information
