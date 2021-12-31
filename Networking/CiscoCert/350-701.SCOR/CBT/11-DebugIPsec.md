@@ -132,7 +132,7 @@ Trainer: Keith Barker
     Interface: GigabitEthernet0/1
     Session status: DOWN
     Peer: 25.2.2.2 port 500
-      IPSEC FLOW: permit ip 10.1.0.0/55.255.0.0 10.2.0.0/255.255.0.0
+      IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
             Active SAs: 0, origin: crypto map
     
     R1# debug crypto isakmp
@@ -225,32 +225,32 @@ Trainer: Keith Barker
     Session status: UP-ACTIVE
     Peer: 25.2.2.2 port 500
       IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
-      IPSEC FLOW: permit ip 10.1.0.0/55.255.0.0 10.2.0.0/255.255.0.0
+      IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
             Active SAs: 2, origin: crypto map
     ```
 
 ## IKEv1, Phase 1, Bad Config
 
-- Troubleshooting IKEv1 Phase 1 on R1
+- Troubleshooting IKEv1 Phase 1
   - issue: IPsec tunnel not working
   
   ```bash
   R1# show run | section crypto
   crypto isakmp policy 5
-     encr aes 192
-     hash sha256
-     authentication pre-share
-     group 5
-     lieftime 5000
-    crypto isakmp key Cisco!23 address 0.0.0.0
-    crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
-     mode tunnel
-    crypto map Demo-Map 10 ipsec-isakmp
-     set peer 25.2.2.2
-     set transform-set Demo-Set
-     set pfs group15
-     match address Crypto-ACL
-     crypto map Demo-Map
+   encr aes 192
+   hash sha256
+   authentication pre-share
+   group 5
+   lieftime 5000
+  crypto isakmp key Cisco!23 address 0.0.0.0
+  crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
+   mode tunnel
+  crypto map Demo-Map 10 ipsec-isakmp
+   set peer 25.2.2.2
+   set transform-set Demo-Set
+   set pfs group15
+   match address Crypto-ACL
+   crypto map Demo-Map
 
   R1# show ip route
   Gateway of last resort is 15.1.1.1 to network 0.0.0.0
@@ -278,43 +278,43 @@ Trainer: Keith Barker
   !!!!!
 
   R1# show crypto isakmp sa
-    IPv4 Crypto ISAKMP SA
-    dst       src       state     conn-id status
+  IPv4 Crypto ISAKMP SA
+  dst       src       state     conn-id status
 
-    R1# debug crypto isakmp
-    R2# debug crypto isakmp
+  R1# debug crypto isakmp
+  R2# debug crypto isakmp
 
-    R2# show users
-        Line    User    Hosts(s)      Idle      Location
-    * 0 con 0           idle          00:00:00
+  R2# show users
+      Line    User    Hosts(s)      Idle      Location
+  * 0 con 0           idle          00:00:00
 
-    R1# show debugging
-    Cryptographic subsystems:
-      Crypto ISAKMP debugging is on
+  R1# show debugging
+  Cryptographic subsystems:
+    Crypto ISAKMP debugging is on
 
-    R1# ping 10.2.0.2 source 10.1.0.1
+  R1# ping 10.2.0.2 source 10.1.0.1
 
-    R1# undebug all
-    R2# undebug all
+  R1# undebug all
+  R2# undebug all
 
-    R2# 
-    ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
-    ...
-    ISAKMP: (0): found peer pre-shared key match 15.1.1.1
-    ...
-    ISAKMP-ERROR: (0): Proposed key length does not match policy
-    ISAKMP-ERROR: (0): attrs are not acceptable. Next payload is 0
-    ISAKMP-ERROR: (0): no offers accepted!
-    ISAKMP-ERROR: (0): phase 1 SA policy not acceptable! (local 25.2.2.2 remote 15.1.1.1)
+  R2# 
+  ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
+  ...
+  ISAKMP: (0): found peer pre-shared key match 15.1.1.1
+  ...
+  ISAKMP-ERROR: (0): Proposed key length does not match policy
+  ISAKMP-ERROR: (0): attrs are not acceptable. Next payload is 0
+  ISAKMP-ERROR: (0): no offers accepted!
+  ISAKMP-ERROR: (0): phase 1 SA policy not acceptable! (local 25.2.2.2 remote 15.1.1.1)
 
-    R2# show crypto isakmp policy
-    Global IKE policy
-    Protection suite of priority 5
-          encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
-          hash algorithm:         Secure Hash Standard 2 (256 bit)
-          authentication method:  Pre-Shared Key
-          Diffie-Hellman group:   #5 (1536 bit)
-          lifetime:               5000 seconds, no volume limit
+  R2# show crypto isakmp policy
+  Global IKE policy
+  Protection suite of priority 5
+        encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
+        hash algorithm:         Secure Hash Standard 2 (256 bit)
+        authentication method:  Pre-Shared Key
+        Diffie-Hellman group:   #5 (1536 bit)
+        lifetime:               5000 seconds, no volume limit
 
   R1# show crypto isakmp policy
   Global IKE policy
@@ -367,7 +367,7 @@ Trainer: Keith Barker
   R1# show crypto engine connection active
   Crypto Engine Connections
 
-     ID  Type   Algorithm     Encrypt   Decrypt   LasySeqN  IP-Address
+     ID  Type   Algorithm     Encrypt   Decrypt   LastSeqN  IP-Address
       1  IPsec  AES+SHA384          0         4          4  15.1.1.1
       2  IPsec  AES+SHA384          4         0          0  15.1.1.1
    1001  IKE    AHA256+AES256       0         0          0  15.1.1.1
@@ -377,7 +377,271 @@ Trainer: Keith Barker
 
 ## IKEv1, Phase 2 Bad Config
 
+- Tshooting Ipsec tunnel
+  - issue: IPsec tunnel not working but others working well
+  - IKEv1
+    - phase 1: working weell
+    - phase 2: Ipsec tunnel not working
+  
+  ```bash
+  R1# shop run | sec crypto
+  R1# show run | section crypto
+  crypto isakmp policy 5
+   encr aes 256
+   hash sha256
+   authentication pre-share
+   group 5
+   lieftime 5000
+  crypto isakmp key Cisco!23 address 0.0.0.0
+  crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
+   mode tunnel
+  crypto map Demo-Map 10 ipsec-isakmp
+   set peer 25.2.2.2
+   set transform-set Demo-Set
+   set pfs group15
+   match address Crypto-ACL
+   crypto map Demo-Map
 
+  R1# show crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Current peer: 25.2.2.2
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/1
+
+  R1# show crypto session
+  Interface: GigabitEthernet0/1
+    Session status: DOWN
+    Peer: 25.2.2.2 port 500
+      IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
+            Active SAs: 0, origin: crypto map
+  
+  R1# pint 10.2.0.2 source 10.1.0.1
+  .....
+  R1# show crypto isakmp sa
+  IPv4 Crypto ISAKMP SA
+    dst       src       state     conn-id status
+    25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
+
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.1.0.0/255.255.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.2.0.0/255.255.255.255/0/0)
+    current-peer 25.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+    #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 5, #recv errors 5
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+     plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x0(0)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      ...
+
+  R1# show crypto engine connections active
+  Crypto Engine Connections
+
+     ID  Type   Algorithm     Encrypt   Decrypt   LastSeqN  IP-Address
+   1001  IKE    AHA256+AES256       0         0          0  15.1.1.1
+
+  ! no IPsec connection present --> IPsec tunnel broken
+  R1# debug crypto ipsec
+  R2# debug crypto ipsec
+
+  R1# ping 10.2.0.2 source 10.1.0.1
+  .....
+
+  IPSEC(sa_request): ,
+    (key eng. msg.) OUTBOUND local= 15.1.1.1:500, remote= 25.2.2.2:500,
+      local_proxy= 10.1.0.0/255.255.0.0/256/0,
+      remote_proxy= 10.2.0.0/255.255.0.0/256/0,
+      protocol= ESP, transform=esp-aes (Tunnel),
+      lifedur= 3600s and 4608000kb,
+      spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
+
+  IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1,
+    (identity) local= 15.1.1.1:0, remote= 10.2.2.2:0,
+      local_proxy= 10.1.0.0/255.255.0.0/256/0,
+      remote_proxy= 10.2.0.0/255.255.0.0/256/0
+  IPSEC(sa_request): ,
+    (key eng. msg.) OUTBOUND local= 15.1.1.1:500, remote= 25.2.2.2:500,
+      local_proxy= 10.1.0.0/255.255.0.0/256/0,
+      ...
+
+  R2#
+  IPSEC(validate_proposal_request): proposal part #1,
+    (key eng. msg) INBOUND local= 25.2.2.2:0, remote= 15.1.1.1:0,
+      local_proxy= 10.2.0.0/255.255.0.0/256/0
+      remote_proxy= 10.1.0.0/255.255.0.0/256/0
+      protocol= ESP, transform=esp-aes (Tunnel),
+      lifedur= 0s and 0kb,
+      spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
+  Crypto mapdb : proxy_match
+          src addr     : 10.2.0.0
+          dst addr     : 10.1.0.0
+          protocol     : 0
+          src port     : 0
+          dst port     : 0
+  IPSEC(ipsec_process_proposal): transforma proposal not supported for idenitty: {esp-aes }
+
+  ! probably not compatible IPsec transform set
+  R1# show crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 25.2.2.2
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+          Current peer: 25.2.2.2
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  B-SET:    { esp-aes  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/1
+
+  R2# show crypto map
+  Crypto Map "Demo-MAP" 10 ipsec-isakmp
+          Peer = 15.1.1.1
+          Extended IP access list Crypto-ACL
+              access-list Crypto-ACL permit ip 10.2.0.0 0.0.255.255 10.1.0.0 0.0.255.255
+          Current peer: 15.1.1.1
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Mixed-mode : Disabled
+          Transform sets={ 
+                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+          }
+          Interfaces using crypto map Demo-MAP:
+                  GigabitEthernet0/2
+
+  R1# undebug all
+  R2# undebug all
+
+  R1# conf t
+  R1(config)# do show run | section crypto
+  crypto isakmp policy 5
+     encr aes 256
+     hash sha256
+     authentication pre-share
+     group 5
+     lieftime 5000
+    crypto isakmp key Cisco!23 address 0.0.0.0
+    crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
+     mode tunnel
+    crypto ipsec transform-set B-Set esp-aes
+     mode tunnel
+    crypto map Demo-Map 10 ipsec-isakmp
+     set peer 25.2.2.2
+     set transform-set B-Set
+     set pfs group15
+     match address Crypto-ACL
+     crypto map Demo-Map
+
+  R1(config)# crypto map Demo-Map 10 ipsec-isakmp
+  R1(config-crypto-map)# set transform-set Demo-Set
+  R1(config-crypto-mao)# int g0/1
+  R1(config-if)# no crypto map Demo-Map
+  R1(config-if)# crypto map Demo-Map
+  R1(config-if)# end
+
+  ! regenerte traffic w/ debug
+  R1# debug crypto ipsec
+  R2# debug crypto ipsec
+
+  R1# ping 10.2.0.2 source 10.1.0.1
+  .!!!!
+
+  IPSEC(sa_request): ,
+    (key eng. msg.) OUTBOUND local= 15.1.1.1:500, remote= 25.2.2.2:500,
+      local_proxy= 10.1.0.0/255.255.0.0/256/0,
+      remote_proxy= 10.2.0.0/255.255.0.0/256/0,
+      protocol= ESP, transform=esp-aes (Tunnel),
+      lifedur= 3600s and 4608000kb,
+      spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
+  IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1
+  IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1,
+    (identity) local= 15.1.1.1:0, remote= 10.2.2.2:0,
+      local_proxy= 10.1.0.0/255.255.0.0/256/0,
+      remote_proxy= 10.2.0.0/255.255.0.0/256/0
+      protocol= ESP, transform=esp-aes esp-sha384-hmac (Tunnel),
+      lifedur= 0s and 0kb,
+      spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
+  ...
+
+  R2#
+  IPSEC(validate_proposal_request): proposal part #1,
+    (key eng. msg) INBOUND local= 25.2.2.2:0, remote= 15.1.1.1:0,
+      local_proxy= 10.2.0.0/255.255.0.0/256/0
+      remote_proxy= 10.1.0.0/255.255.0.0/256/0
+      protocol= ESP, transform=esp-aes esp-sha384-hmac (Tunnel),
+      lifedur= 0s and 0kb,
+      spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
+  Crypto mapdb : proxy_match
+          src addr     : 10.2.0.0
+          dst addr     : 10.1.0.0
+          protocol     : 0
+          src port     : 0
+          dst port     : 0
+  (ipsec_process_proposal)Map Accepted: Demo-Map, 10
+  IPSEC(key-engine): got a queue event with 1 KMI message(s)
+  ...
+
+  R1# undebug all
+  R2# undebug all
+
+  R1# show crypto session
+  Interface: GigabitEthernet0/1
+    Session status: UP-ACTIVE
+    Peer: 25.2.2.2 port 500
+      IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
+      IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
+            Active SAs: 2, origin: crypto map
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (10.1.0.0/255.255.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (10.2.0.0/255.255.255.255/0/0)
+    current-peer 25.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 4, #pkts encrypt: 4, #pkts digest: 4
+    #pkts decaps: 4, #pkts decrypt: 4, #pkts verify: 4
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 5, #recv errors 5
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+     plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x0(0)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      ...
+  ```
 
 
 ## IKEv2 Troubleshooting
