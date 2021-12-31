@@ -618,6 +618,7 @@ Trainer: Keith Barker
       IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
       IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
             Active SAs: 2, origin: crypto map
+
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
@@ -646,6 +647,171 @@ Trainer: Keith Barker
 
 ## IKEv2 Troubleshooting
 
+- Tshooting IKEv2
+  - tunnel interface 0 on both sides w/ IP address space 10.12.12.0/24
+  - encrypting/decrypting traffic btw 10.1.0.0 and 10.2.0.0
+  - IKEv2 SA and children SA $\to$ IPsec SA
+
+  ```bash
+  R1# show ip route
+  Gateway of last resort is 25.2.2.5 to network 0.0.0.0
+    S*   0.0.0.0/0 [1/0] via 25.2.2.5
+         1.0.0.0/32 is subnetted, 1 subnets
+            1.1.1.1 is directly connected, Loopback0
+         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+    C       10.1.0.0/24 is directly connected, GigabitEthernet0/3
+    L       10.1.0.0/32 is directly connected, GigabitEthernet0/3
+    D       10.2.0.0/24 [90/28160256] via 10.12.12.2 00:06:45, Tunnel0
+    C       10.12.12.0/24 is directly connected, Tunnel0
+    L       10.12.12.1/32 is directly connected, Tunnel0
+         15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+    C       15.1.1.0/24 is directly connected, GigabitEthernet0/1
+    L       15.1.1.1/32 is directly connected, GigabitEthernet0/1
+  
+  R1# show run int tun 0
+  Current Configuration : 200 bytes
+  !
+  interface tunnel0
+   ip address 10.12.12.0 255.255.255.0
+   tunnel source GigabitEthernet0/1
+   tunnel mode ipsec ipv4
+   tunnel destination 25.2.2.2
+   tunnel protection ipsec profile Demo-IPsec-Profile
+  end
+
+  R1# show crypto session
+  Interface: Tunnel0
+    Session status: UP-ACTIVE
+    Peer: 25.2.2.2 port 500
+      Session ID: 2
+      IKEv2 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
+      IPSEC FLOW: permit ip 0.0.0.0/0.0.0.0 0.0.0.0/0.0.0.0
+            Active SAs: 2, origin: crypto map
+  
+  ! no crypto map w/ IKEv2
+  R1# show run | include map
+
+  R1# show crypto mao
+  Crypto Map: "Tunnel0-head-0" IKEv2 profile: Demo-v2-Profile
+
+  Crypto Map "Tunnel0-head-0" 65536 ipsec-isakmp
+          IKEv2 Profile: Demo-v2-Profile
+          Profile name: Demo-IPsec-Profile
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          Responder-Only (Y/N): N
+          PFS (Y/N): Y
+          DH group:  group15
+          Transform sets={ 
+                  Demo-SET:    { esp-256-aes esp-sha512-hmac  }, 
+          }
+  
+  Crypto Map "Tunnel0-head-0" 65537 ipsec-isakmp
+          MAP is a PROFILE INSTANCE
+          Peer = 25.2.2.2
+          IKEv2 Profile: Demo-v2-Profile
+          Extended IP access list
+            access-list permit ip any any
+          Current peer: 25.2.2.2
+          Security association lifetime: 4608000 kilobytes/3600 seconds
+          ...
+
+  R1# show crypto ikev2 ?
+    authorization       
+    certificate-cache   Show certificate in ikev2 certificate-cahe
+    client              Show Client status
+    cluster             Show Cluster load
+    diagnose            Shows ikev2 diagnose
+    policy              Show policies
+    profile             Shows ikev2 profiles
+    proposal            Show proposals
+    sa                  Shows ikev2 SAs
+    session             Shows ikev2 active session 
+    stats               Shows ikev2 sa stats
+  
+  R1# show crypto ikev2 sa
+  Tunnel-id Local           Remote          fvrf/ivrf   Status
+  1         15.1.1.1/500    25.2.2.2/500    none/none   READY
+      Encr: AES-CBC, keysize: 256, PRF: SHA512, Hash: SHA512,
+        DH Grp: 16, Auth sign: PSK, Auth verify: PSK
+
+  R1# show crypto ikev2 connections active
+  Crypto Engine Connections
+
+       ID  Type    Algorithm      Encrypt  Decrypt LastSeqN IP-Address
+        5  IPsec   AES256+SHA512      156        0        0 15.1.1.1
+        6  IPsec   AES256+SHA512       25      156      156 15.1.1.1
+     1003  IKEv2   SHA512+AES256        0        0        0 15.1.1.1
+
+  R1# show crypto ipsec sa
+  interface: Tunnel0
+      Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
+
+    protected vrf: (none)
+    local Ident  (addr/mask/port/prot): (0.0.0.0/0.0.0.0/0/0)
+    remote Ident (addr/mask/port/prot): (0.0.0.0/0.0.0.0/0/0)
+    current-peer 25.2.2.2 port 500
+      PERMIT, flags={origin_is_acl}
+    #pkts encaps: 166, #pkts encrypt: 166, #pkts digest: 166
+    #pkts decaps: 166, #pkts decrypt: 166, #pkts verify: 166
+    #pkts compressed: 0, #pkts decompressed: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0
+    #pkts not decompressed: 0, #pkts decompress failed: 0
+    #pkts errors 0, #recv errors 0
+
+     local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
+     plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
+     current outbound spi: 0x87...73(228...39)
+     FPS (Y/N): N, DH group: none
+
+     inbound esp sas:
+      spi: 0xA1A...38(27...48)
+      ...
+      status: ACTIVE(ACTIVE)
+      ...
+    outbound esp sas:
+      spi: 0x87...73(228...39)
+      ...
+      Status: ACTIVE (ACTIVE)
+    
+  ! turn on debug
+  R1# debug crypto ikev2
+  R2# debug crypto ikev2
+
+  R1# conf t
+  R1(config)# int tun 0
+  R1(config-if)# shutdown
+  ...
+  R1(config-if)# end
+
+  R1# show log
+  ...
+  IKEv2:(SESSION ID = 2, SA ID = 1):Verify peer's policy
+  IKEv2:(SESSION ID = 2, SA ID = 1):Peer's policy verified
+  IKEv2:(SESSION ID = 2, SA ID = 1):Get peer's authentication method
+  IKEv2:(SESSION ID = 2, SA ID = 1):Peer's authenticaton method is 'PSK'
+  ...
+
+  R2#
+  ...
+  IKEv2:(SESSION ID = 3, SA = 1): IKEV2 SA created; inserting SA into database.
+  ...
+
+  R1# undebug all
+  R2# undebug all
+
+  R1# show crypto session
+
+
+  R1(config-if)# no shut
+  Interface: Tunnel0
+  Profile: Demo-v2-Profile
+  Session status: UP-ACTIVE
+  Peer: 25.2.2.2 port 500
+    Session ID: 2
+    IKEv2 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
+    IPSEC FLOW: permit ip 0.0.0.0/0.0.0.0 0.0.0./0.0.0.0
+          Active SAs: 2., origin: crypto map
+  ```
 
 
 
