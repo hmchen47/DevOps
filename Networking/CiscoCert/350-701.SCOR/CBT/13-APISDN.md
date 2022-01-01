@@ -44,7 +44,7 @@ Trainer: Knox Hutchinson
     - controller collecting info from all other devices
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/13-netAutoSDN.png"
       alt    = "Example network architecture for Network Automation and SDN"
@@ -66,7 +66,13 @@ Trainer: Knox Hutchinson
 
 ## The Northbound API
 
-
+- The Northbound API overview
+  - interface btw application and controller
+  - business intent
+  - centralized configuration changes
+  - retrieving summarized data out of controller
+  - interacting w/ management plane of the entire network
+  - examples: policy deployment, network topology changes
 
 
 ## The Southbound API
