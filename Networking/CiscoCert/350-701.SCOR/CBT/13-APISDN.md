@@ -84,7 +84,11 @@ Trainer: Knox Hutchinson
 
 ## The Eastbound API
 
-
+- The Eastbound API overview
+  - interface btw controller and other applications
+  - sending data out of a SDN solution to social media or DB
+  - Webhook: push notification/alert system
+  - sending notification on events to an API endpoint specified
 
 
 ## The Westbound API
