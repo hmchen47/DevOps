@@ -109,6 +109,55 @@ Trainer: Knox Hutchinson
 
 ## The Four Workflows of DNA Center
 
+- Workflows of DNA center
+  - Design: geography about IP address space, DHCP server, DNA server, devices, IOS images and versions
+  - Policy: virtual networks, ACLs
+  - Provision: LAN automation, fabric overlay
+  - Assurance: operating and optimizing the network by monitoring and troubleshooting
+
+
+- Cisco Trust Set (CTS)
+  - devices provisioned by
+  - devices used to implement policies
+  - devices able to learn about group users allowed and who able to communicate to
+  - realizing macro-segmentation and micro-segmentation
+  - fabric overlay devices communicating w/ ISE to implement CTS
+
+
+- Example: deign workflow in DNA Center
+  - DESIGN tab: subtabs - Network Hierarchy, Network Settings, Image Repository, Network Profiles, Authentication Template
+  - Network Hierarchy subtab: folders - Global - Illinois, Louisiana - New Orieans ( Nola Main - Main Floor 1, Nola Satellite - Satellite Floor 1)
+  - New Orieans > Network Setting subtab: tabs - Network, Device Credentials, IP Address Pool, SP Profiles, Wireless
+    - Network tab: AAA Server, DHCP Server, DNS Server, SYSLOG Server, SNMP Server, NTP Server, Time Zone, Message of the day
+    - Device Credentials tab: CLI Credentials, SNMP Credentials, HTTP(S) Credentials
+    - IP Address Pools tab: fields - Name, Type, IPv4 Subnet, IPv6 Subnet, Inherited from, Actions
+
+- Example: features of POLICY tab in DNA Center
+  - Virtual Network: Macro-segmentation
+  - Group-Based Access Control: Micro-segmentation
+  - IP Based Access Control: classical traffic control
+  - Application: define QoS
+  - Traffic Copy:
+    - packet capturing or Wiresharking
+    - used to define business intent and build policy
+    - largely from ISE
+
+
+- Example: features of PROVISION tab in DNA Center
+  - subtabs - Devices, Fabric, Services
+  - Devices subtab: folders based on geography > fields - Device Name, IP Address, Support Type, Device Family, Site
+    - able to discover entire network by assigning a seed node
+    - discovering entire network via CDP or LLDP one by one
+    - LAN automation: discovering devices w/ factory default state and assigning IP addresses and create connectivity
+  - Fabric subtab > SD-Acccess Fabrics and Transit/Peer Networks
+    - info DNA center which virtual network w/ the site
+    - users login able to communicate w/ ISE and assign virtual network w/ correct CTS policies
+
+
+- Example: features of ASSURANCE tab in DNA Center
+  - subtabs - Dashboards, Trends And Insights, Manage
+  - Dashboards subtabs > sections w/ charts - network Devices, Wired Clients, Wireless Clients, Top 10 Issue Types
+  - diagnose issues: deep investigation w/ license to identify business-critical applications
 
 
 
