@@ -85,7 +85,7 @@ Trainer: Knox Hutchinson
 ## The Eastbound API
 
 - The Eastbound API overview
-  - interface btw controller and other applications
+  - interface btw controller and other applications, in particular, notification
   - sending data out of a SDN solution to social media or DB
   - Webhook: push notification/alert system
   - sending notification on events to an API endpoint specified
@@ -93,7 +93,10 @@ Trainer: Knox Hutchinson
 
 ## The Westbound API
 
-
+- The Westbound API overview
+  - interface btw controller and other systems or services
+  - binding network system/service and devices into one solution
+  - examples: ISE, AD, IPAM, Netflow, Syslog, etc.
 
 
 ## Summarizing APIs and SDN
