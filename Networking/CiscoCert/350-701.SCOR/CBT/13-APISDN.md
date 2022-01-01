@@ -101,5 +101,13 @@ Trainer: Knox Hutchinson
 
 ## Summarizing APIs and SDN
 
+- Summary
+  - API and SDN
+  - Northbound: user interaction
+  - Southbound: network devices
+  - Eastbound: notification
+  - Westbound: integration w/ other systems/services
+
+
 
 
