@@ -58,6 +58,52 @@ Trainer: Knox Hutchinson
 
 ## What an SD-Access Fabric Does
 
+- SD-access fabric overview
+  - deploying intent, e.g., 
+    - Group A users not allowing to access Group B users (bi-directional)
+    - Group B permits to access servers in Group C
+  - DNA center implements the intent across the entire network
+  - the deployment based on SD-access
+  - macro-segmentation: separting the whole campus based on the virtual networks
+  - micro-segmentation
+    - more granuar segmentation within a virtual network
+    - multiple groups existed within a virtual network
+    - policies existed within a virtual network
+    - example: IT VN containing of Domain Admin, HelpDesk, Payroll servers
+    - HelpDesk unable to access Payroll servers but Domain Admin able to 
+
+
+- Example: 3 buildings
+  - Bldg A, B, and C having 2 floors
+  - Bldg A 1st fl w/ Group A while 2nd fl w/ Group B
+  - Group A users accessing network w/ 802.1x via username and password
+  - ISE handling the access authentication and passing the permission to DNA center
+  - DNA center based on Group A users' privilege and placing them into a virtual network
+  - the virtual network fully functional and completely isolated from other networks
+  - Group B users accessing the network and placing into different virtual network
+  - VRFs used to achieve the purpose
+    - similar to VLAN
+    - a layer 3 routing technology
+    - users in different VRF isolated from each other
+  - Group A members able to migrate or roam to any part of campus but still maintaining the same IP address and participating in the same virtual network $\to$ using LISP and VXLAN
+  - same for Group B members
+
+
+- Example: macro-segmentation w/ DNA center
+  - Cisco DNA center: tabs - DESIGN, POLICY, PROVISION, ASSURE, PLATFORM
+  - POLICY tab > subtabs - Cgroup-Based Access Control, IP Based Access Control, Application, Traffic Copy, Virtual Network
+  - Virtual Network subtab: folders - DEFAULT_VN, INFRA_VN, HR+VN, IT_VN, IoT_VN > HR_VN folder 
+  - Create or Modify Virtual Network by selecting Available Scalable Group > tabs - Available Scalable Groups (able to sync Group Names form ISE), Groups in the Virtual Networks
+
+
+- Example: micro-segmentation w/ DNA center
+  - Group Based Access Control: Policies, Scalable Groups, Access Groups > Policies
+  - Policies: MiniMap - grid cells w/ Source & Destination as vertical and horizontal axes (Groups)
+    - icons: Filter, Deploy, Refresh
+    - actions: Permit, Deny, Custom, Default
+    - hover anc click on a cell > Change Contract
+    - Create Policy: Policy Status = Enabled; Contract = Change Contract > 'Change Contract' link
+    - Change Contract: fields - Name, Description, Policies Referencing > click on the selected entry, e.g., Deny IP, Deny_IP_log, Permit IP, Permit_IP_log, AllowWeb, AllowDHCPDNS, DenyRemoteService
 
 
 
