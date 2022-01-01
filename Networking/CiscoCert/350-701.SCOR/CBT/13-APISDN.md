@@ -77,7 +77,9 @@ Trainer: Knox Hutchinson
 
 ## The Southbound API
 
-
+- The Southbound API overview
+  - interface btw controller and network devices
+  - pushing config down to network devices
 
 
 ## The Eastbound API
