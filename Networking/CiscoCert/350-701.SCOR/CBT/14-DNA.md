@@ -5,7 +5,10 @@ Trainer: Knox Hutchinson
 
 ## Introducing DNA Center
 
-
+- Learning goals
+  - DNA center
+  - Workflows
+  - DNA center API
 
 
 ## What DNA Center Does
