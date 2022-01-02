@@ -49,7 +49,43 @@ Trainer: Knox Hutchinson
 
 ## Getting Authenticated
 
+- Retrieving token from FirePower Sandbox in DevNet
+  - task: login to web to get token
+  - FirePower mgmt center sending back a token if login successfully
+  - web browser using the token to work on proceeding activities
+  - try-except block to handle error, same as try/catch block in other languages
+  - HTTP methods
+    - `requests.post`:
+      - submit a request w/ data
+      - `auth=(user, pw)`: authenticating `user` w/ the password `pw`
+      - `verify=False`: not using self-signed certificate for authentication
+    - `requests.get`: retrieve HTML doc
+  - obtain token from response headers:
+    - extract headers from response:`resp_headers = login_response.headers`
+    - get token from header: `token = resp_headers.get("X-auth-access-token", default=None)`
+    - not token existed $\to$ exit the program
+  - add retrieved token into own headers: `headers["X-auth-access-token"] = token`
 
+
+  ```python
+  try:
+      # POST the login ans password to the login endpoint
+      login_response = requests.post(f"{url}{login_url}", auth=(user, pw), verify=False)
+
+      # Parse out the headers
+      resp_headers = login_response.headers
+
+      # Grab the token from the response headers
+      token = resp_headers.get("X-auth-access-token", default=None)
+      if token == None:
+          print("Failed to get a token. Try again")
+          sys.exit()
+
+      # Set the token in the headers to be used in the next call
+      headers["X-auth-access-token"] = token
+  except Exception as err:
+      print(f"error raised! {err}")
+  ```
 
 
 ## Getting Monitored Applications
