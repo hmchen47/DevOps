@@ -122,4 +122,12 @@ Trainer: Knox Hutchinson
 
 ## Summarizing Interpreting Python Scripts
 
+- Summary
+  - Python fundamental
+  - retrieve token from login return headers
+  - assign token for following activities
+  - [original code](https://bit.ly/3pL8duZ)
+  - [local Python copy](src/)
+
+
 
