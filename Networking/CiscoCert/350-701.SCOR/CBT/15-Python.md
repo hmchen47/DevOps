@@ -5,6 +5,11 @@ Trainer: Knox Hutchinson
 
 ## Introducing Basic Python Security Scripts
 
+- Learning goals
+  - Python scripts
+  - impact on Cisco security platform
+  - authentication w/ Python scripts
+  - monitoring w/ Python scrippts
 
 
 
