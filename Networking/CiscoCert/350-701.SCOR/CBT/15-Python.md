@@ -90,12 +90,36 @@ Trainer: Knox Hutchinson
 
 ## Getting Monitored Applications
 
+- Retrieving monitoring data from FirePower in DevNet Sandbox
+  - utilizing the token retrieved from login
+  - `e276abec-e0f2-11e3-8169-6d9ed49b625f`: get from the FirePower Management Center doc
+  - `requests.get`: retrieve data from specified apps
+    - `headers=headers`: using token within headers for authentication
+    - `.json()`: parsing return data into JSON format
+  - JSON just a formated text string
+  - print JSON in formated output: `print(json.dumps(apps_response, indent=2, sort_keys=True))`
 
+  ```python
+
+  # Get monitored apps
+  apps_url = (
+      "/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/object/applications"
+  )
+
+  try:
+      apps_response = requests.get(
+          f"{url}{apps_url}", headers=headers, verify=False
+      ).json()
+
+      print(json.dumps(apps_response, indent=2, sort_keys=True))
+  except Exception as err:
+      print(f"error raised! {err}")
+  finally:
+      if apps_response:
+          apps_response.close()
+  ```
 
 
 ## Summarizing Interpreting Python Scripts
 
-- Summary
-  - [original code](https://bit.ly/3pL8duZ)
-  - [local Python copy](src/)
 
