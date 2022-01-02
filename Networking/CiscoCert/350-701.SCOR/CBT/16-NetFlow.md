@@ -266,8 +266,30 @@ Trainer: Keith Barker
 
 ## NetFlow Collectors and Analyzers
 
+- Collecting and analyzing record w/ StealthWatch
+  - Flow Collector: FlowCollector for NetFlow VE
+    - available either a physical or a virtual appliance
+    - Flow Collector VE performing the same functions as its physical counterpart but in a VMWare environment
+  - NetFlow analyzer: Cisco StealthWatch
+    - analyzing collected data to make the data useful
+    - StealthWatch Dashboard > Analyze tab > Flow Search: allowing to drill down the data for a particular issue
 
-
+  <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
+    <a href="url" ismap target="_blank">
+      <img style="margin: 0.1em;" height=200
+        src   = "img/16-collector.png"
+        alt   = "Flow Collector for NetFlow VE"
+        title = "Flow Collector for NetFlow VE"
+      >
+    </a>
+    <a href="url" ismap target="_blank">
+      <img style="margin: 0.1em;" height=200
+        src   = "img/16-stealthwatch.png"
+        alt   = "Snapshot of StealthWatch Dashboard"
+        title = "Snapshot of StealthWatch Dashboard"
+      >
+    </a>
+  </div>
 
 ## Troubleshoot NetFlow
 
