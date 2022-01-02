@@ -163,7 +163,67 @@ Trainer: Knox Hutchinson
 
 ## The DNA Center Platform APIs
 
+- APIs of DNA Center
+  - PLATFORM tab: subtabs - Overview, Manage, Developer Toolkit, Runtime Dashboard
+  - Developer Toolkit subtab: tooltabs - APIs, Integration Flows, Data and Reports, Multivendor Support, Events
+  - APIs tooltabs: folders - Authentication (Know Your Network, Site Management, Connectivity, Operational Tasks, Policy), Event Management
+    - Know Your Network subfolder: inventory and how they behaving
+    - Site Management subfolder: Design workflow
+    - Connectivity subfolder: Assurance workflow
+    - Operational Tasks subfolder: fabric provisioning
+    - Policy subfolder: view and implement policies
+  - HTTP RESTful API
+    - `GET`: get request to retrieve info
+    - `POST`: post request to create new data
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/14-dnaapi.png"
+      alt    = "APIs of DNA Center"
+      title  = "APIs of DNA Center"
+    />
+  </figure>
+
+
+- Lab: DNA Center Sandbox in DevNet
+  - [DevNet sandbox](https://devnetsandbox.cisco.com/RM/Topology) for demo and practice
+  - SANDBOX LAB: [Cisco DNA Center AO 1.3.1.4](https://bit.ly/3FGSQcF)
+  - Instruction
+
+    <span style="text-decordation: underline; font-weight: bold;">Overview</span>
+    
+    Cisco Digital Network Architecture (DNA) Center is a centralized management application for the network. Cisco DNA Center provides a single pane of management to design, provision, enable policy, and assure network services with full visibility of user and device identity, operating systems and applications across the entire network fabric. Cisco DNA Center allows you to manage the enterprise network over a centralized dashboard and deploy networks in minutes, not days, using intuitive work flows.The Cisco DNA Center Sandbox provides the developer the ability to design, develop and test utilizing the Cisco DNA Center development platform with a sample Sandbox Lab Topology.
+    
+    <span style="text-decordation: underline; font-weight: bold;">In this sandbox the developer can</span>
+
+    The Cisco DNA Center Sandbox consists of a virtualized Controller and real Hardware sample network topology containg network elements and hosts that developers can utilize so they can develop, debug and test their sample Cisco DNA Center application.
+
+    - Develop/test Cisco DNA Center type applications with the Cisco DNA Center.
+    - Interact with the Cisco DNA Center API calls using a variety of REST clients such as POSTMAN
+
+    <span style="text-decordation: underline; font-weight: bold;">Sandbox Access</span>
+
+    The Cisco DNA Center Sandbox is designed to be accessed via the internet. VPN is not required or provided to connect to the Cisco DNA Center Appliance and sample network. The developer does not have any direct access to the sample network elements and hosts.
+
+    To access the shared environment and integrate with the sample database, please follow these steps:
+    1. Go to https://sandboxdnac2.cisco.com
+    1. Accept the self-signed certificate
+    1. Allow for showing of Browser Notifications
+    1. Login with credentials **[devnetuser/Cisco123!]**
+
+    <span style="text-decordation: underline; font-weight: bold;">Learn More</span>
+
+    [Cisco DNA Center on DevNet](https://developer.cisco.com/site/dna-center/)
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/14-dnasandbox.png"
+      alt    = "Network topology of DevNet Sandbox Lab of DNA Center"
+      title  = "Network topology of DevNet Sandbox Lab of DNA Center"
+    />
+  </figure>
 
 
 ## Summarizing DNA Center
