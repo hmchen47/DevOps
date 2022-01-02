@@ -228,5 +228,11 @@ Trainer: Knox Hutchinson
 
 ## Summarizing DNA Center
 
+- Summary
+  - micro-segmentation and macro-segmentation
+  - assurance platforms:
+    - identify threats or alerts and any anomaly in the network
+    - enable to troubleshoot the issues immediately
+  - integrates w/ ISE and IPAM
 
 
