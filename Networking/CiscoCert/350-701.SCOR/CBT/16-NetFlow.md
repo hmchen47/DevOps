@@ -39,7 +39,29 @@ Trainer: Keith Barker
 
 ## Flavors of NetFlow
 
-
+- Versions of NetFlow
+  - version 1 not used any more
+  - major ones: v5 & v9
+  - version 5
+    - a simple one
+    - device collecting data by specifying
+      - the collector id
+      - traffic types, e.g. UDP port 7683
+    - analyzer analyzeing the collected flow records and generate reports
+  - version 9
+    - very flexible, a.k.a flexible NetFlow
+    - modularized w/ flow records
+    - flow record: an object carrying the actual information about the network traffic which is then used by your NetFlow analyzer tool to generate bandwidth and traffic reports
+    - monitor:
+      - an object specifying what record to be used to collect data
+      - applied to an interface to collect data (inbound/outbound)
+    - exporter: an object specifying where the record to deliver, either collector id or IP address
+  - IPFIX:
+    - stand for 'IP Flow Information eXport'
+    - an IETF standard
+    - spawn from NetFlow v9 and backward compatible with v9 traffic
+    - a.k.a. NetFlow v10
+ 
 
 
 ## NetFlow v5
