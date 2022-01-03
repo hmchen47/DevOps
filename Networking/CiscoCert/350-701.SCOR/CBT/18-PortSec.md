@@ -485,7 +485,23 @@ Trainer: Keith Barker
 
 ## Review of Configure and Verify Cisco Port Security
 
+- Quest 1
 
+  How does Port Security prevent unwanted devices from connecting to a single port?
+
+  Ans: Yes<br>
+  Explanation: port security contolling the quantity of different Mac address able to be seen the inbound L2 source frames
+
+
+- Question 2
+
+  What are the defaults for Port Security for number of addresses and violation action?
+
+  Ans: deafult max number = 1, default action = shutdown
+  Explanation:
+  - set max allowable mac addresses: `switchport port-security maxiumum #`
+  - options of violation action: shutdown, restrict, protect
+  - cmd to set action: `switchport port-security violation shutdown|protect|restrict`
 
 
 ## Cisco CCNA (200-301) Assessment Lab: Security
