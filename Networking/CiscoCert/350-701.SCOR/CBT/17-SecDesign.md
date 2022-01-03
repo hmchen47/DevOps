@@ -79,7 +79,16 @@ Trainer: Keith Barker
 
 ## Next Generation Firewalls and IPS
 
-
+- Next generation firewalls (NGFW)
+  - more advanced than stateful filtering
+  - stateful filtering: firewall recording the state of outgoing traffic and used it to judge the incoming traffic
+  - NGFW able to inspect the payload to find the confidential info within
+  - capability
+    - deep inspection
+    - content analysis
+    - decision making
+    - cloud intelligence, such as reputation, IP addresses
+    - intrusion prevention
 
 
 
