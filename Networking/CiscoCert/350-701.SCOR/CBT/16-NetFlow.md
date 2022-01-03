@@ -328,6 +328,16 @@ Trainer: Keith Barker
     <span style="font-weight: bold; text_decoration: underline;">Additional Information:</span>
     - [Sandbox Support](https://communities.cisco.com/community/developer/sandbox)
 
+    <span style="font-weight: bold; text_decoration: underline;">Network Topology</span>
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        onclick= "window.open('page')"
+        src    = "img/16-labtopo.png"
+        alt    = "StealthWatch and NetFlow"
+        title  = "StealthWatch and NetFlow"
+      />
+    </figure>
 
   - instruction: start traffic
 
@@ -341,7 +351,7 @@ Trainer: Keith Barker
     - Scroll down on the main page to the interfaces. Note the MAC address of the Eth0 interface.
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
         onclick= "window.open('https://bit.ly/3mSrAjU')"
         src    = "img/16-UDP_MAC.png"
         alt    = "Network Interface"
