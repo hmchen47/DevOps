@@ -67,7 +67,13 @@ Trainer: Keith Barker
 
 ## End Point Security
 
-
+- Securing end points
+  - minimum privilege principle
+  - Advanced Malware Protection (AMP):
+    - keeping the endpoint safe
+    - a piece of software on endpoint devices
+    - a system to track malware
+  - AMP integrating w/ cloud intelligence, web security firewalls, email security firewalls, etc.
 
 
 
