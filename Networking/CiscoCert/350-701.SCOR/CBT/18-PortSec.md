@@ -78,9 +78,9 @@ Trainer: Keith Barker
 
 ## Port Security Defaults
 
-- Switch port mode
+- Switch port mode for port security
   - access mode: `switchport mode access`
-    - assign the port to a particular Vlan: 1switchport access vlan 10`
+    - assign the port to a particular Vlan: `switchport access vlan 10`
   - host mode: `switchport host`
     - config as access mode
     - enable portfast
@@ -99,6 +99,63 @@ Trainer: Keith Barker
 
 ## Implementing Port Security on Layer 2 Interface
 
+- Demo: config port security
+  - plan: port g0/0 connected to a PC w/ Vlan 10
+
+  ```bash
+  SW# conf t
+  SW(config)# int g0/0
+  SW(config-if)# switchport mode access
+  SW(config-if)# switchport access vlan 10
+  SW(config-if)# switchport host
+
+  SW(config-if)# do show vlan brief
+  ...
+  SW(config-if)# do show mac address-table vlan 10
+  ...
+  SW(config-if)# do show port-security int g0/0
+  Port Security              : Disabled
+  Port Status                : Secure-down
+  Violation Mode             : Shutdown
+  Aging Time                 : 0 mins
+  Aging Type                 : Absolute
+  SecureStatic Address Aging : Disabled
+  Maximum Mac Addresses      : 1
+  Total Mac Addresses        : 0
+  Configured Mac Addresses   : 0
+  Sticky Mac Addresses       : 0
+  Last Source Addresses:Vlan : 0000.0000.0000:0
+  Security Violation Count   : 0
+
+  SW(config-if)# do sh port-security
+  Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
+                   (Count)         (Count)           (Count)
+  -------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  Total Addresses in System (excluding one mac per port)     : 0
+  Max Addresses limit in System (excluding one mac per port) : 4096
+
+  SW(config-if)# switchport port-security
+  SW(config-if)# end
+
+  SW# show port security
+  Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
+                   (Count)         (Count)           (Count)
+  -------------------------------------------------------------------------------
+        Gi0/0               1             0                   0          Shutdown
+  -------------------------------------------------------------------------------
+  Total Addresses in System (excluding one mac per port)     : 0
+  Max Addresses limit in System (excluding one mac per port) : 4096
+
+  ! generate traffic in Kali Linux
+  Kali# ping 10.16.0.1
+  ...
+  6 packets transmitted, 0 received, 100% packet loss, time 5140ms
+
+  SW# show int status err-disabled
+  Port  Name  Status        Reason            Err-disabled Vlans
+  Gi0/0       err-disabled  psecure-violation
+  ```
 
 
 
