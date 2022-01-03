@@ -78,14 +78,23 @@ Trainer: Keith Barker
 
 ## Port Security Defaults
 
-
 - Switch port mode
   - access mode: `switchport mode access`
+    - assign the port to a particular Vlan: 1switchport access vlan 10`
   - host mode: `switchport host`
     - config as access mode
     - enable portfast
     - disable EtherChannel
-  - 
+
+
+- Port security config
+  - dynamic L2 port:
+    - a port automatically negotiate w/ peer
+    - not allowing port security
+  - specify a port w/ port security: `switchport port-security`
+  - specify maximum allowable number of MAC addresses
+  - violation: more Mac adddress attached to the port than maximum allowable Mac addresses
+  - action w/ violation: shutdown
 
 
 ## Implementing Port Security on Layer 2 Interface
