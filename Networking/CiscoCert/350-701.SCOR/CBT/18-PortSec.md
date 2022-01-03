@@ -268,6 +268,99 @@ Trainer: Keith Barker
 
 ## Configuring Auto Errdisable Recovery
 
+- Demo: config auto recovery for port security violation
+
+  ```bash
+  SW# show port-security
+  Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
+                   (Count)         (Count)           (Count)
+  -------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  Total Addresses in System (excluding one mac per port)     : 0
+  Max Addresses limit in System (excluding one mac per port) : 4096
+
+  SW# conf t
+  SW(config)# int g0/0
+  SW(config-if)# switchport host
+  SW(config-if)# switchport port-security maximum 5
+  SW(config-if)# switchport port-security
+  
+  SW(config-if)# do show port-security int g0/0
+  Port Security              : Enabled
+  Port Status                : Secure-up
+  Violation Mode             : Shutdown
+  Aging Time                 : 0 mins
+  Aging Type                 : Absolute
+  SecureStatic Address Aging : Disabled
+  Maximum Mac Addresses      : 5
+  Total Mac Addresses        : 1
+  Configured Mac Addresses   : 0
+  Sticky Mac Addresses       : 0
+  Last Source Addresses:Vlan : 0015.5d44.5566:10
+  Security Violation Count   : 0
+
+  ! trigger violation in Kali Linux
+  Kali# macof -i eth0 -n 10
+
+  SW(config-if)# do show int status err-disabled
+  Port  Name  Status        Reason            Err-disabled Vlans
+  Gi0/0       err-disabled  psecure-violation
+
+  SW(config-if)# end
+  SW# show errdisable recovery
+  ErrDisable Reason       Timer Status
+  -----------------       ------------
+  arp-inspection          Disabled
+  ...
+  psecure-violation       Disabled
+  ...
+
+  ! port security violation auto recovery in 30 secs
+  SW# conf t
+  SW(config)# errdisable recovery cause psecure-violation
+  SW(config)# errdisable recovery interval 30
+  SW(config)# end
+
+  SW(config-if)# end
+  
+  SW# show errdisable recovery
+  ErrDisable Reason       Timer Status
+  -----------------       ------------
+  arp-inspection          Disabled
+  ...
+  psecure-violation       Enable
+  ...
+
+  Timer interval: 30 seconds
+
+  Interfaces that will be enabled at the next timeout:
+  Interface   Errdisabled reason    Time left (sec)
+  ---------   ------------------    ---------------
+  Gi0/0       psecure-violation       281
+
+  SW# conf t
+  SW(config)# int g0/0
+  SW(config-if)# shutdown
+  SW(config-if)# no shutdown
+  SW(config-if)# end
+
+  SW# show errdisable recovery
+  ErrDisable Reason       Timer Status
+  -----------------       ------------
+  arp-inspection          Disabled
+  ...
+  psecure-violation       Enable
+  ...
+
+  Timer interval: 30 seconds
+
+  Interfaces that will be enabled at the next timeout:
+  Interface   Errdisabled reason    Time left (sec)
+  ---------   ------------------    ---------------
+  Gi0/0       psecure-violation       20
+  ```
+
+
 
 
 
