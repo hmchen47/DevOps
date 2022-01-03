@@ -506,5 +506,5 @@ Trainer: Keith Barker
 
 ## Cisco CCNA (200-301) Assessment Lab: Security
 
-
+- Ref: [New Training: Cisco CCNA (200-301) Assessment Lab: Security](https://www.cbtnuggets.com/blog/new-skills/new-training-cisco-ccna-200-301-assessment-lab-security)
 
