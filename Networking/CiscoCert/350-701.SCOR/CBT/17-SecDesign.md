@@ -94,6 +94,25 @@ Trainer: Keith Barker
 
 ## TrustSec and MACsec
 
+- TrustSec overview
+  - protecting traffic in motion
+  - TrustSec compliant and capable devices following the ACL defined btw groups
+  - ISE > tabs - Home, Context Visibility, Operations, Policy, Administration, Work Centers
+  - Work Center tab > subtabs - Network Access, Guest Access, TrustSec, BYOD, Profiler, Posture, Device Management, PassiveID
+  - TrustSec subtab > subtabs - Overview, Components, TrustSec Policy, Policy Set, SXP, Troubleshoot, Reports, Settings
+  - Components subtabs > folders - Security Groups, IP SGT Static Mapping, Security Group ACLs, Network Devices, TrustSec AAA Servers > Security Groups
+  - Security Groups: fields - Icon, Name, SGT (Dec/Hex), Description, Learned from; icons - Edit, Add, Import, Export, Trash, Push, Verify Deploy
+  - SGT = Security Group Tag
+  - Security Group ACLs subtab
+    - create to deny or permit certain type of traffic
+    - specify what to do btw these groups
+  - TrustSec Policy subtab > folder - Egress Policy (Matrices List, Matrix, Source Tree, Destination Type), Network Device Authorization > Matrix - a grid table w/ groups in vertical and horizontal axes > each cell applying an ACL to permit or deny the traffic
+
+
+- MACsec overview
+  - encrypting traffic btw end node and switches
+  - downlink MACsec: traffic btw end node and switch
+  - uplink MACsec: traffic btw switches
 
 
 
