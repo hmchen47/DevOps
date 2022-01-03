@@ -127,7 +127,7 @@ Trainer: Keith Barker
   Last Source Addresses:Vlan : 0000.0000.0000:0
   Security Violation Count   : 0
 
-  SW(config-if)# do sh port-security
+  SW(config-if)# do show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
   -------------------------------------------------------------------------------
@@ -161,7 +161,109 @@ Trainer: Keith Barker
 
 ## Customizing Port Security
 
+- Demo: customizing port security
+  - `maximum`: set maximum mac address allowed on the port
+  - `mac-address ...`: hard coded mac address
+  - `sticky`: learn mac address dynamically on the port
+  - `violation`: violation actions:
+    - shutdown: default, shutdown the port
+    - protect: drop packets w/ unknown mac addresses
+    - restrict: same as protect but generate log message
+  - all port security settings not in function until port security enabled
+  - resume shutdowned interface by executing `shutdown` and `no shutdown` on the interface
 
+  ```bash
+  SW# conf t
+  SW(config)# int g0/0
+  SW(config-if)# switchport mode access
+  SW(config-if)# switchport access vlan 10
+  SW(config-if)# switchport host
+  SW(config-if)# switchport port-security maximum 5
+  SW(config-if)# switchport port-security mac-address 0011.2233.4455
+  SW(config-if)# switchport port-security mac-address sticky
+  SW(config-if)# switchport port-security violation restrict|protect|shutdown
+
+  SW(config-if)# do show port-security
+  Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
+                   (Count)         (Count)           (Count)
+  -------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+  Total Addresses in System (excluding one mac per port)     : 0
+  Max Addresses limit in System (excluding one mac per port) : 4096
+
+  SW(config-if)# switchport port-security
+
+  SW(config-if)# do show port security
+  Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
+                   (Count)         (Count)           (Count)
+  -------------------------------------------------------------------------------
+        Gi0/0               5             1                   0          Shutdown
+  -------------------------------------------------------------------------------
+  Total Addresses in System (excluding one mac per port)     : 0
+  Max Addresses limit in System (excluding one mac per port) : 4096
+
+  SW(config-if)# do show port-security int g0/0
+  Port Security              : Enabled
+  Port Status                : Secure-up
+  Violation Mode             : Shutdown
+  Aging Time                 : 0 mins
+  Aging Type                 : Absolute
+  SecureStatic Address Aging : Disabled
+  Maximum Mac Addresses      : 5
+  Total Mac Addresses        : 2
+  Configured Mac Addresses   : 1
+  Sticky Mac Addresses       : 1
+  Last Source Addresses:Vlan : 0015.5d44.5566:10
+  Security Violation Count   : 0
+
+  SW(config-if)# end
+  SW# show mac address-table int g0/0
+          Mac Address Table
+  Vlan  Mac Address     Type    Ports
+  ----  -----------     ------  -----
+    10  0015.5d44.5566  STATIC  Gi0/0
+    10  0015.5d67.8322  DYNAMIC Gi0/0
+    10  0011.2233.4455  STATIC  Gi0/0
+  Total Mac Addresses for this criterion: 3
+
+  ! check connectivity from Kali
+  Kali# ping 10.16.0.1
+  ! successful
+  Kali# ping 10.16.0.2
+  ! successful
+
+  SW(config-if)# end
+  SW# show mac address-table int g0/0
+          Mac Address Table
+  Vlan  Mac Address     Type    Ports
+  ----  -----------     ------  -----
+    10  0015.5d44.5566  STATIC  Gi0/0
+    10  0015.5d67.8322  DYNAMIC Gi0/0
+    10  0015.5d70.7701  DYNAMIC Gi0/0
+    10  0011.2233.4455  STATIC  Gi0/0
+  Total Mac Addresses for this criterion: 4
+
+  ! generate traffic w/ different mac address
+  Kali# macof -i  eth0 -n 10
+
+  SW#
+  %PORT_SECURITY-2-PSECURE_CIOLATION: Security violation occurred, 
+    caused by MAC address b49f.a376.e018 on port GigabitEthernet0/0
+  
+  SW# show intterfaces status err-disabled
+  Port  Name  Status        Reason            Err-disabled Vlans
+  Gi0/0       err-disabled  psecure-violation
+
+  ! resume the interface
+  SW# conf t
+  SW(config)# int g0/0
+  SW(config-if)# shutdown
+  SW(config-if)# no shutdown
+  SW(config-if)# end
+
+  SW# show int status err-disbaled
+  Port  Name  Status        Reason            Err-disabled Vlans
+  ```
 
 
 ## Configuring Auto Errdisable Recovery
