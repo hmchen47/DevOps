@@ -5,8 +5,13 @@ Trainer: Keith Barker
 
 ## Intro to components of Network Security Design
 
-
-
+- Learning goals
+  - concept of network security design
+  - components of network security design
+  - network access control
+  - end point security
+  - firewalls and IPS
+  - TrustSec and MACsec
 
 
 ## Network Access Control
