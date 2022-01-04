@@ -183,6 +183,144 @@ Trainer: Keith Barker
 
 ## Applying DHCP Snooping in Production
 
+- Demo: DHCP snooping in production
+  - tasks:
+    - R3-FL (R3) as DHCP server for VLAN 30
+    - FL-Switch (SW) w/ dhcp snooping for Vlan 30
+    - disable option 82 insertion for DHCP snooping or config g3/3 on SW as trusted port
+    - verify from FL-PC (PC1)
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/19-dhcpprod.png"
+      alt    = "Network topology of DHCP snooping in Production"
+      title  = "Network topology of DHCP snooping in Production"
+    />
+  </figure>
+
+  ```bash
+  ! always verify basic info before conducting any config
+  R3# show ip int brief
+  Interface              IP-Address     OK? Method Status                Protocol
+  Ethernet0/0            unassigned     YES NVRAM  administratively down down
+  GigabitEthernet0/0     10.16.7.7      YES VNARM  up                    up
+  GigabitEthernet1/0     10.16.16.7     YES VNARM  up                    up
+  GigabitEthernet1/0.30  10.16.20.7     YES VNARM  up                    up
+  GigabitEthernet1/0.40  10.16.22.7     YES VNARM  up                    up
+  GigabitEthernet2/0     unassigned     YES NVRAM  administratively down down
+  ...
+  Loopback0              3.3.3.3        YES VNARM  up                    up
+
+  R3# conf t
+  R3(config)# ip dhcp pool DEMOPOOL
+  R3(dhcp-config)# default-router 10.16.20.7
+  R3(dhcp-config)# dns-server 8.8.8.8
+  R3(dhcp-config)# exit
+  R3(config)# ip dhcp excluded-address 10.16.20.1 10.16.20.10
+  R3(config)# end
+
+  R3# show ip dhcp pool
+  Pool DEMOPOOL:
+   Utilization mark (high/low)    : 100 / 0
+   Subnet size (first/next)       : 0 / 0
+   Total addresses                : 254
+   Leased addresses               : 0
+   Pending event                  : none
+   1 subnets are currently in the pool :
+   Current index        IP address range           Leased/Exclude/Total
+   10.16.20.1           10.16.20.1 - 10.16.20.254  0     / 10    / 254
+   
+  
+  ! config switch
+  SW# show ip dhcp snooping
+  DHCP snooping is configured on the following VLANs:
+  none
+  DHCP snooping is operational on the following VLANs:
+  none
+  DHCP snooping is configured on the following L3 Interfaces:
+
+  Insertion of option 82 is disabled
+    circuit-id default format: vlan-mod-port
+    remote-id: 00dc.d2b2.ff00 (MAC)
+  Option 82 on untrusted port is not allowed
+  Verification of hwaddr field is enabled
+  Verification of giaddr field is enabled
+  DHCP snooping trust/rate is configured on the following Interfaces:
+
+  Interface           Trusted   Allow option    Rate Limited (pps)
+  ------------------  -------   ------------    ------------------
+
+  SW# conf t
+  SW(config)# ip dhcp snooping
+  SW(config)# ip dhcp snooping vlan 30
+
+  SW(config)# do show ip dhcp snooping
+  Switch DHCP snooping is enabled
+  Switch DHCP gleaning is disabled
+  DHCP snooping is configured on the following VLANs:
+  30
+  DHCP snooping is operational on the following VLANs:
+  30
+  ...
+
+  SW(config)# no ip dhcp snooping infomation option
+  ...
+  Insertion of option 82 is disabled
+  ...
+
+  ! verify the interface connect to R3
+  SW(config)# do show cdp neighbor
+  Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+  R3               Gig 3/3           163               R    7206VXR   Gig 1/0
+
+  ! config g3/3 as trusted port
+  SW(config)# int g3/3
+  SW(config-if)# ip dhcp snooping trust
+  SW(config-if)# end
+
+  SW# ip dhcp snooping
+  Switch DHCP snooping is enabled
+  Switch DHCP gleaning is disabled
+  DHCP snooping is configured on the following VLANs:
+  30
+  DHCP snooping is operational on the following VLANs:
+  30
+  DHCP snooping is configured on the following L3 Interfaces:
+
+  Insertion of option 82 is disabled
+    circuit-id default format: vlan-mod-port
+    remote-id: 00dc.d2b2.ff00 (MAC)
+  Option 82 on untrusted port is not allowed
+  Verification of hwaddr field is enabled
+  Verification of giaddr field is enabled
+  DHCP snooping trust/rate is configured on the following Interfaces:
+
+  Interface           Trusted   Allow option    Rate Limited (pps)
+  ------------------  -------   ------------    ------------------
+  GigabitEthernet3/3  yes       yes             unlimited
+
+  ! verify PC1 and issue DHCP request
+  PC1> show ip
+  NAME        : PC1
+  IP/MASK     : 10.16.20.30/24
+  GATEWAY     : 10.16.20.7
+  DNS         : 
+  MAC         : 00:50:79:66:68:04
+  LPORT       : 10222
+  RHOST:RPORT : 127.0.0.1:10223
+  MTU         : 1500
+
+  PC1> ip dhcp
+  DDORA IP 10.16.20.11/24 GW 10.16.20.7
+
+  ! verify on SW
+  SW# show ip dhcp binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79:66:68:04    10.16.20.11  86376      dhcp-snooping   30     GigabitEThernet0/1
+  Total number of binding: 0
+  ```
 
 
 
