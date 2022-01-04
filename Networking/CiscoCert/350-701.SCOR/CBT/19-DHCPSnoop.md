@@ -50,7 +50,7 @@ Trainer: Keith Barker
 - Demo: config DHCP snooping
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/19-dhcpdemo.png"
       alt    = "Demo network topology for DHCP snooping"
@@ -117,10 +117,10 @@ Trainer: Keith Barker
 
   ```bash
   SW# show ip dhcp binding
-  MacAddress          IpAddress     Lease (sec)   Type
-  ----------          ------------  -----------   -------
-  00:D0:FF:B1:3D:16   10.16.20.2    86400         dhcp-snooping
-  00:DC:CF:61:E3:90   10.16.20.3    86400         dhcp-snooping
+  MacAddress          IpAddress     Lease (sec)   Type            VLAN  Interface
+  -----------------   ------------  -----------   -------------   ----  ---------------
+  00:D0:FF:B1:3D:16   10.16.20.2    86400         dhcp-snooping   1     FastEthernet0/1
+  00:DC:CF:61:E3:90   10.16.20.3    86400         dhcp-snooping   1     FastEthernet0/2
   Total number of bindings: 2
   ```
 
@@ -128,7 +128,57 @@ Trainer: Keith Barker
 
 ## Adding Source Guard to a Switch
 
+- Source guard overview
+  - a per-interface traffic filter
+  - permitting IP traffic only if IP and/or MAC addresses of each packet matched
+  - enable source guard: `SW(config-if)# ip verify source port-security`
+    - `port-security`: verify both IP and MAC addresses
 
+
+- Demo: config source guard
+
+  ```bash
+  SW# show ip dhcp snooping
+  DHCP snooping is configured on the following VLANs:
+  30
+  DHCP snooping is operational on the following VLANs:
+  30
+  DHCP snooping is configured on the following L3 Interfaces:
+
+  Insertion of option 82 is disabled
+    circuit-id default format: vlan-mod-port
+    remote-id: 00dc.d2b2.ff00 (MAC)
+  Option 82 on untrusted port is not allowed
+  Verification of hwaddr field is enabled
+  Verification of giaddr field is enabled
+  DHCP snooping trust/rate is configured on the following Interfaces:
+
+  Interface           Trusted   Allow option    Rate Limited (pps)
+  ------------------  -------   ------------    ------------------
+  GigabitEthernet0/1   yes       yes             unlimited
+
+  SW# show ip dhcp snooping binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79?:66:68:04   10.16.20.101 85538      dhcp-snooping   30     GigabitEThernet0/1
+  Total number of binding: 1
+
+  SW# conf t
+  SW(config)# int g0/1
+  SW(config-if)# ip verify source port-security
+  SW(config-if)# end
+
+  SW# show ip source binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79?:66:68:04   10.16.20.101 85448      dhcp-snooping   30     GigabitEThernet0/1
+  Total number of binding: 1
+
+  SW# show ip verify source
+  Interface  Filter-type  Filter-mode  IP-address       Mac-address        Vlan
+  ---------  -----------  -----------  ---------------  -----------------  ----------
+  Gi0/1      ip-mac       active       10.16.20.101     permit-all         30
+  ```
 
 
 ## Applying DHCP Snooping in Production
