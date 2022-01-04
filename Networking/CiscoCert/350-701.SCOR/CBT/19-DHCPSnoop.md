@@ -318,7 +318,7 @@ Trainer: Keith Barker
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.11  86376      dhcp-snooping   30     GigabitEThernet0/1
-  Total number of binding: 0
+  Total number of binding: 1
   ```
 
 
