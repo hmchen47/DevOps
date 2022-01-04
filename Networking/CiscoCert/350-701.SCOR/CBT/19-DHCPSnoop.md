@@ -55,25 +55,17 @@ Trainer: Keith Barker
 
 ## The Recipe for DHCP Snooping
 
-- Config DHCP snooping
-  - option 82 not allowed w/ `no ip dhcp snooping info option`
-  
-  ```bash
-  SW# conf t
-  SW(config)# ip dhcp snooping
-  SW(config)# ip dhcp snooping vlan 30
-  SW(config)# int g0/1
-  SW(config-if)# ip dhcp snoop trust
-
-  SW(config)# no ip dhcp snooping info option
-  ```
-
+- Commands for DHCP snooping
+  - enable DHCP snooping: `SW(config)# ip dhcp snooping`
+  - enable DHCP snooping on a particular VLAN: `SW(config)# ip dhcp snooping vlan 20`
+  - confing a trusted port: `SW(config-if)# ip dhcp snoop trust`
+  - option 82 not allowed w/ `SW(config)# no ip dhcp snooping info option`
 
 
 
 ## Building and Implementing DHCP Snooping in PT
 
-
+- config DHCP snooping
 
 
 ## Adding Source Guard to a Switch
