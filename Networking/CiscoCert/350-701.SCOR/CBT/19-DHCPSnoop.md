@@ -326,8 +326,40 @@ Trainer: Keith Barker
 
 ## Review of Configure and Verify Cisco DHCP Snooping
 
+- Question 1
+
+  How does DHCP Snooping protect the network?
+
+  A. Switch denies inbound DHCP server message, on half-duple ports.<br>
+  B. Switch denies frames, if the maximum MAC address count is exceeded.<br>
+  C. Switch denies frames, if the the user hasn't been authenticated.<br>
+  D. Switch denies inbound DHCP server messages,, on untrusted DHCP ports.<br>
+
+  Ans: D
 
 
+- Question 2
+
+  Which feature can leverage the information learned via DHCP snooping, and prevent IP address snooping?
+
+  A. Dynamic ARP Inspection (DAI)<br>
+  B. Source guard<br>
+  C. Destination guard<br>
+  D. Port Security<br>
+
+  Ans: B
+
+
+- Question 3
+
+  What is the default for a port, when DHCP snooping is applied?
+
+  A. Trusted<br>
+  B. Untrusted<br>
+  C. Err-disabled<br>
+  D. Full-duplex<br>
+
+  Ans: B
 
 ## Configure and Verify Cisco DHCP Snooping
 
