@@ -5,8 +5,10 @@ Trainer: Keith Barker
 
 ## Introducing DHCP Snooping
 
-
-
+- Learning goals
+  - benefits of DHCP snooping
+  - trusted and untrusted ports
+  - enable switch to verify IP and MAC addresses before receiving frames
 
 ## Why is DHCP Snooping Needed
 
