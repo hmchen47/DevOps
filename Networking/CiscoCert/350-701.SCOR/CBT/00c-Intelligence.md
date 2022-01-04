@@ -29,7 +29,7 @@
     - ThreatGrid
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 33vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
       onclick= "window.open('page')"
       src    = "img/12-secintelligence.png"
       alt    = "Security Intelligence"
@@ -240,7 +240,7 @@
     - controller collecting info from all other devices
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/13-netAutoSDN.png"
       alt    = "Example network architecture for Network Automation and SDN"
@@ -484,7 +484,7 @@
     - `POST`: post request to create new data
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 300px;"
       onclick= "window.open('page')"
       src    = "img/14-dnaapi.png"
       alt    = "APIs of DNA Center"
@@ -524,7 +524,7 @@
     [Cisco DNA Center on DevNet](https://developer.cisco.com/site/dna-center/)
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
       onclick= "window.open('page')"
       src    = "img/14-dnasandbox.png"
       alt    = "Network topology of DevNet Sandbox Lab of DNA Center"
@@ -696,7 +696,7 @@
     - 3\. analyze collected flow records
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
       onclick= "window.open('page')"
       src    = "img/16-netflow.png"
       alt    = "Example network topology for NetFlow"
@@ -803,12 +803,10 @@
   FastEthernet4/0     10.2.68.8   YES NVRAM   up                    up
   Loopback0           8.8.8.8     YES NVRAM   up                    up
 
-
   R7# telnet 10.2.68.8
   Trying 10.2.68.8 ... Open
 
   R8# show run
-
 
   R1# show ip cache flow
   IP packet size distribution (0 total packets):
@@ -1005,7 +1003,7 @@
     <span style="font-weight: bold; text_decoration: underline;">Network Topology</span>
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
         onclick= "window.open('page')"
         src    = "img/16-labtopo.png"
         alt    = "StealthWatch and NetFlow"
@@ -1025,7 +1023,7 @@
     - Scroll down on the main page to the interfaces. Note the MAC address of the Eth0 interface.
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
         onclick= "window.open('https://bit.ly/3mSrAjU')"
         src    = "img/16-UDP_MAC.png"
         alt    = "Network Interface"
@@ -1137,9 +1135,9 @@
   - 802.1x applied for wired and wireless connections
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
       onclick= "window.open('page')"
-      src    = "img/17-nettopo.png"
+      src    = "img/12-secIntelligence.png"
       alt    = "Components of network security design"
       title  = "Components of network security design"
     />
