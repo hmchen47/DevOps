@@ -5,7 +5,11 @@ Trainer: keith Barker
 
 ## Introducing Dynamic ARP Inspection (DAI)
 
-
+- Learning goals
+  - Dynamic ARP Inspection (DAI)
+  - implement DAI
+  - ARP ACL
+  - DAI options and features
 
 
 ## Why is DAI Needed
