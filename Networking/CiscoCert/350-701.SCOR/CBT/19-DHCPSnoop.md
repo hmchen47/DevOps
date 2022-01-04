@@ -231,7 +231,6 @@ Trainer: Keith Barker
    Current index        IP address range           Leased/Exclude/Total
    10.16.20.1           10.16.20.1 - 10.16.20.254  0     / 10    / 254
    
-  
   ! config switch
   SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
