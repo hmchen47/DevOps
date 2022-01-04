@@ -26,7 +26,7 @@ Trainer: keith Barker
   - Solution: Dynamic ARP Inspection (DAI)
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/20-arp.png"
       alt    = "APR process and issue"
@@ -209,7 +209,83 @@ Trainer: keith Barker
 
 ## Additional DAI Options and Features
 
+- Config DAO parameters
 
+  ```bash
+  SW# show ip arp inspection interfaces
+  Interface       Trust State Rate (pps)  Burst Interval
+  --------------- ----------- ----------  --------------
+  Gi0/0           Untrusted           15               1
+  Gi0/0           Untrusted           15               1
+  ...
+  Gi3/3           Trusted           None             N/A
+
+  ! config DAI on g3/3 w/ rate limit = 100 pkts/sec
+  SW# conf t
+  SW(config)# int g3/3
+  SW(config-if)# ip arp inspection limit rate 100
+  SW(config-if)# end
+
+  SW# show ip arp inspection interfaces
+  Interface       Trust State Rate (pps)  Burst Interval
+  --------------- ----------- ----------  --------------
+  Gi0/0           Untrusted           15               1
+  Gi0/0           Untrusted          100               1
+  ...
+  Gi3/3           Trusted           None             N/A
+
+  ! verify w/ nmap to scan IP addr space w/o port scan
+  Kali# nmap -sn 10.16.20.0/24
+
+  SW#
+  %SW_DA-4-PACKET_RATE_EXCEEDED: 103 packets received in 630 milliseconds on Gi0/1
+  %PM-4-ERR_DISABLED: arp-inspection error detected on Gi0/1, putting Gi0/1 in err-disable state
+  %LINEPORTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+  %LINK-3-UPDOWN: Interface GigabitEThernet0/1, change state to down
+
+  SW# show int status err-disabled
+  Port      Name      Status       Reason          Err-disabled Vlans
+  Gi0/1               err-disabled arp-inspection
+
+  ! re-activate shutdown interface
+  SW# conf t
+  SW(config)# int g0/1
+  SW(config-if)# shutdown
+  SW(config-if)# no shutdown
+  SW(config-if)# end
+
+  ! ARP spoofing
+  ! verify w/ arpspoof to perform ARP spoofing from Kali Linux
+  ! sending broadcast arp responses to clean L2 address of 10.16.20.7 w/
+  ! L2 address of eth0
+  Kali# arpspoof -i eth0 10.16.20.7 
+  0:15:5d:77:77:1 ff:ff:ff:ff:ff:ff 0896 42: arp reply 10.16.20.7 
+    is-at 0:15:5d:77:77:1
+  ...
+
+  SW#
+  %SW_DAI-4-DHCP_SNOOPING_DENY: 1 INvalid ARPs (Res) on Gi0/1, Vlan 30
+    ([0015.5d77.7701/10.16.20.7/ffff.ffff.ffff/0.0.0.0/00:36:14 UTC ...])
+  ...
+
+  ! disable src/dst MAC & IP addresses validation by default
+  SW# show ip arp inspection vlan 30
+  Source Mac Validation       : Disabled
+  Destination Mac Validation  : Disabled
+  IP Address Validation       : Disabled
+  ...
+
+  ! enable src/dst MAC & IP addresses validation
+  SW# conf t
+  SW(config)# ip arp inspection validate dst-mac src-mac ip
+  SW(config)# end
+
+  SW# show ip arp inspection vlan 30
+  Source Mac Validation       : Enabled
+  Destination Mac Validation  : Enabled
+  IP Address Validation       : Enabled
+  ...
+  ```
 
 
 ## Applying DAI to the Production Network
