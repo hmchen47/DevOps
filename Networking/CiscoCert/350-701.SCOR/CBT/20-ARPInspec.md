@@ -51,7 +51,75 @@ Trainer: keith Barker
 
 ## Implementing DAI
 
+- Config DAI
+  - topology:
+    - R3 connected to Switch (SW) on port g3/3
+    - PC2 connected to SW on port g0/2
+    - another switch (subnet 10.1.0.0/24) connected to SW on port g0/1
+  - task: implement DAI for SW
+  
+  ```bash
+  ! verify DHCP snooping enabled
+  SW# show ip dhcp snooping binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79:66:68:04    10.16.20.101 85604      dhcp-snooping   40     GigabitEThernet0/2
+  00:15:5D:77:77:01    10.16.20.102 85689      dhcp-snooping   30     GigabitEthernet0/1
+  Total number of binding: 2
 
+  SW# shop ip arp inspection vlan 30
+  Source Mac Validation       : Disabled
+  Destination Mac Validation  : Disabled
+  IP Address Validation       : Disabled
+  
+  Vlan Configuration Operation ACL Match Static ACL
+  ---- ------------- --------- --------- ----------
+    30 Disabled      Inactive
+  
+  Vlan ACL Logging DHCP Logging Probe Logging
+  ---- ----------- ------------ -------------
+    30 Deny        Deny         Off
+  
+  ! config interface trust first
+  SW# conf t
+  SW(config)# int g3/3
+  
+  SW(config-if)# do show cdp neighbor
+  Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+  R3               Gig 3/3           154               R    7206VXR   Gig 1/0
+
+  SW(config-if)# ip arp inspection trust
+  SW(config-if)# exit
+
+  ! enable DAI
+  SW(config)# ip arp inspection vlan 30
+  SW(config)# end
+
+  ! verify DAI
+  SW# show ip arp inspection vlan 30
+  Source Mac Validation       : Disabled
+  Destination Mac Validation  : Disabled
+  IP Address Validation       : Disabled
+  
+  Vlan Configuration Operation ACL Match Static ACL
+  ---- ------------- --------- --------- ----------
+    30 Enabled       Active
+  
+  Vlan ACL Logging DHCP Logging Probe Logging
+  ---- ----------- ------------ -------------
+    30 Deny        Deny         Off
+
+  ! ARp deny msgs
+  SW#
+  ...
+  %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
+    ([0015.5d67.8322/10.1.0.111/0000.0000.0000/10.1.0.1/00:29:59 UTC ...])
+  %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
+    ([0015.5d44.5566/10.1.0.120/0000.0000.0000/10.1.0.1/00:30:00 UTC ...])
+  ...
+
+  ! another switch connected to SW w/o (IP, MAC) mapping for its end devices
+  ```
 
 
 ## ARP Access Lists for Non-DHCP Devices
