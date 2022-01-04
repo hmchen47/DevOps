@@ -109,7 +109,7 @@ Trainer: keith Barker
   ---- ----------- ------------ -------------
     30 Deny        Deny         Off
 
-  ! ARp deny msgs
+  ! ARP deny msgs
   SW#
   ...
   %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
@@ -118,13 +118,93 @@ Trainer: keith Barker
     ([0015.5d44.5566/10.1.0.120/0000.0000.0000/10.1.0.1/00:30:00 UTC ...])
   ...
 
-  ! another switch connected to SW w/o (IP, MAC) mapping for its end devices
+  ! another switch connected to SW  w/ untrusted port
+  ! DHCP messages dropped amd no (IP, MAC) mapping generated
   ```
 
 
 ## ARP Access Lists for Non-DHCP Devices
 
+- Troubleshooting dropped ARP msgs from untrusted port connected to a switch
+  - dropped DHCP messages allowed by permitted ACL
+  
+  ```bash
+  SW# show ip dhcp snooping binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79:66:68:04    10.16.20.101 85604      dhcp-snooping   40     GigabitEThernet0/2
+  00:15:5D:77:77:01    10.16.20.102 85689      dhcp-snooping   30     GigabitEthernet0/1
+  Total number of binding: 2
 
+  ! config interface trust first
+  SW# conf t
+  SW(config)# int g3/3
+  SW(config-if)# ip arp inspection trust
+  SW(config-if)# exit
+
+  SW(config)# ip arp inspection vlan 30
+
+  SW(config)# arp access-list DEMO-LIST
+  SW(config-arp-nacl)# permit ip host 10.1.0.111 mac host 0015.5d67.8322
+  SW(config-arp-nacl)# permit ip host 10.1.0.120 mac host 0015.5d44.5566
+  SW(config-arp-nacl)# exit
+
+  SW(config)# ip arp inspection filter DEMO-LIST vlan 30
+  SW(config)# end
+
+  SW# show arp access-list
+  ARP access list DEMO-LIST
+      permit ip host 10.1.0.111 mac host 0015.5d67.8322
+      permit ip host 10.1.0.120 mac host 0015.5d44.5566
+
+  SW# show arp inspection vlan 30
+  Source Mac Validation       : Disabled
+  Destination Mac Validation  : Disabled
+  IP Address Validation       : Disabled
+  
+  Vlan Configuration Operation ACL Match Static ACL
+  ---- ------------- --------- --------- ----------
+    30 Enabled       Active    DEMO-LIST No
+  
+  Vlan ACL Logging DHCP Logging Probe Logging
+  ---- ----------- ------------ -------------
+    30 Deny        Deny         Off
+
+  SW# show ip arp inspection statistics
+  Vlan Forwarded Dropped DHCP Drops ACL Drops
+  ---- --------- ------- ---------- ----------
+    30        46      46         46          0
+  
+  Vlan DHCP Permits ACL Permits Probe Permit  Source MAC Failures
+  ---- ------------ ----------- ------------  -------------------
+    30            0          46            0                    0
+  
+  Vlan Dest MAC Failures IP Validation Failures Invalid Protocol Data
+  ---- ----------------- ---------------------- ---------------------
+    30                 0                      0                     0
+
+  ! generate traffic from Kali Linux
+  Kali# ifconfig
+  eth0: flags=4163 ...
+      inet 10.16.20.102 ...
+
+  Kali# ping 10.16.20.7
+  ....
+
+  ! statistics increased
+  SW# show ip arp inspection statistics
+  Vlan Forwarded Dropped DHCP Drops ACL Drops
+  ---- --------- ------- ---------- ----------
+    30        101     46         46          0
+  
+  Vlan DHCP Permits ACL Permits Probe Permit  Source MAC Failures
+  ---- ------------ ----------- ------------  -------------------
+    30            1          99            0                    0
+  
+  Vlan Dest MAC Failures IP Validation Failures Invalid Protocol Data
+  ---- ----------------- ---------------------- ---------------------
+    30                 0                      0                     0
+  ```
 
 
 ## Additional DAI Options and Features
