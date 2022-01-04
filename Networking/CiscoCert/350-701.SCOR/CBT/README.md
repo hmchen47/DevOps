@@ -23,7 +23,7 @@ Institution: CBY Nugget
 - [Data Exfiltration](00k-Exfiltrate.md)
 
 
-## Security Funbdamental
+## Security Fundamental
 
 ### 01\. [Explain Common Threats Against On-premises and Cloud Environments](01-Threats.md)
 
