@@ -36,10 +36,17 @@ Trainer: keith Barker
 
 
 
-
 ## The Recipe and Commands for DAI
 
-
+- DAI overview
+  - DHCP snooping used to map IP and MAC addresses
+  - commands
+    - enable DAI on vlan: `ip arp inspecton clan 30`
+    - enable intf as DAI trusted port: `if) ip arp inspect trust`
+    - verify DAI: `show ip arp inspect vlan 30`
+  - router a DHCP client $\to$ not offering DHCP snooping
+    - manually config static L2 & L3 mapping
+    - config the port on switch connected to router as a trusted port
 
 
 ## Implementing DAI
