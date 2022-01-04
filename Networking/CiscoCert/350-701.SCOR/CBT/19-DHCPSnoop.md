@@ -363,5 +363,5 @@ Trainer: Keith Barker
 
 ## Configure and Verify Cisco DHCP Snooping
 
-
+- [CCNA Lab Assessment Online Training](https://www.cbtnuggets.com/it-training/cisco/assessment-labs)
 
