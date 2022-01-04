@@ -524,7 +524,7 @@
     [Cisco DNA Center on DevNet](https://developer.cisco.com/site/dna-center/)
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 330px;"
       onclick= "window.open('page')"
       src    = "img/14-dnasandbox.png"
       alt    = "Network topology of DevNet Sandbox Lab of DNA Center"
@@ -787,7 +787,9 @@
   ---------   Flows    /Sec     /Secc  /Pkt      /Sec     /Flow       /Flow
 
   SrcIf     SrcIPaddress    DstIf     DstIPaddress    Pr  SrcP  DstP  Pkts
+  ```
 
+  ```bash
   ! generate traffic
   R8# show ip int brief
   Interface           IP-Address  OK? Method  Status                Protocol
@@ -884,7 +886,9 @@
    ip flow monitor SW_MON input
    ip flow monitor EFMonitor input
    ...
+  ```
 
+  ```bash
   R1# show run | sec flow export
   flow expoter EFExport
    destination 172.20.30.155 vrf Internal
@@ -900,7 +904,7 @@
    export-protocol ipfix
    template data timeout 30
    option application-table timeout 10
-
+  
   R1# show ru | sec flow record
   ...
   flow record SW_RECORD
@@ -948,14 +952,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=200
+      <img style="margin: 0.1em;" height=180
         src   = "img/16-collector.png"
         alt   = "Flow Collector for NetFlow VE"
         title = "Flow Collector for NetFlow VE"
       >
     </a>
     <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=200
+      <img style="margin: 0.1em;" height=180
         src   = "img/16-stealthwatch.png"
         alt   = "Snapshot of StealthWatch Dashboard"
         title = "Snapshot of StealthWatch Dashboard"
