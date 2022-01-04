@@ -116,7 +116,7 @@ Trainer: keith Barker
     ([0015.5d67.8322/10.1.0.111/0000.0000.0000/10.1.0.1/00:29:59 UTC ...])
   %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
     ([0015.5d44.5566/10.1.0.120/0000.0000.0000/10.1.0.1/00:30:00 UTC ...])
-  ...
+  ...TRUNCATED...
 
   ! another switch connected to SW  w/ untrusted port
   ! DHCP messages dropped amd no (IP, MAC) mapping generated
@@ -185,11 +185,11 @@ Trainer: keith Barker
 
   ! generate traffic from Kali Linux
   Kali# ifconfig
-  eth0: flags=4163 ...
-      inet 10.16.20.102 ...
+  eth0: flags=4163 ...TRUNCATED...
+      inet 10.16.20.102 ...TRUNCATED...
 
   Kali# ping 10.16.20.7
-  ....
+  ...TRUNCATED...
 
   ! statistics increased
   SW# show ip arp inspection statistics
@@ -209,7 +209,7 @@ Trainer: keith Barker
 
 ## Additional DAI Options and Features
 
-- Config DAO parameters
+- Demo: config DAI parameters
 
   ```bash
   SW# show ip arp inspection interfaces
@@ -217,7 +217,7 @@ Trainer: keith Barker
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
   Gi0/0           Untrusted           15               1
-  ...
+  ...TRUNCATED...
   Gi3/3           Trusted           None             N/A
 
   ! config DAI on g3/3 w/ rate limit = 100 pkts/sec
@@ -231,7 +231,7 @@ Trainer: keith Barker
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
   Gi0/0           Untrusted          100               1
-  ...
+  ...TRUNCATED...
   Gi3/3           Trusted           None             N/A
 
   ! verify w/ nmap to scan IP addr space w/o port scan
@@ -261,7 +261,7 @@ Trainer: keith Barker
   Kali# arpspoof -i eth0 10.16.20.7 
   0:15:5d:77:77:1 ff:ff:ff:ff:ff:ff 0896 42: arp reply 10.16.20.7 
     is-at 0:15:5d:77:77:1
-  ...
+  ...TRUNCATED...
 
   SW#
   %SW_DAI-4-DHCP_SNOOPING_DENY: 1 INvalid ARPs (Res) on Gi0/1, Vlan 30
@@ -284,12 +284,119 @@ Trainer: keith Barker
   Source Mac Validation       : Enabled
   Destination Mac Validation  : Enabled
   IP Address Validation       : Enabled
-  ...
+  ...TRUNCATED...
   ```
 
 
 ## Applying DAI to the Production Network
 
+- Demo: config DAI in production network
+  - topology
+    - SW = FL-Switch
+    - R3 = R3-FL
+    - PC2 = FL-PC2
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        onclick= "window.open('page')"
+        src    = "img/19-dhcpprod.png"
+        alt    = "An example production network"
+        title  = "An example production network"
+      />
+    </figure>
+
+  - tasks: 
+    - setup DAI on vlan 40
+    - trust port g3/3 $\gets$ g1/0 on R3 not assigned via DHCP
+    - verify DAI working correctly
+  
+  ```bash
+  ! verify basic info
+  SW# show vlan brief
+  VLAN Name                             Status    Ports
+  ---- -------------------------------- --------- -------------------------------
+  1    default                          active    Gi0/0, Gi0/3, Gi0/1, Gi1/1,
+                                                  ...
+  30   Engineering                      active    Gi0/1
+  40   Sales                            active    Gi0/2
+  ...TRUNCATED...
+
+  SW# show cdp neighbor
+  Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+  R3               Gig 3/3           177               R    7206VXR   Gig 1/0
+
+  SW# conf t
+  SW(config)# int g3/3
+  SW(config-if)# ip arp inspection trust
+  SW(config-if)# exit
+  SW(config)# ip arp inspection vlan 40
+  SW(config)# end
+
+  SW# show ip arp inspection vlan 40
+
+  Source Mac Validation       : Disabled
+  Destination Mac Validation  : Disabled
+  IP Address Validation       : Disabled
+  
+  Vlan Configuration Operation ACL Match Static ACL
+  ---- ------------- --------- --------- ----------
+    40 Enabled       Active
+  
+  Vlan ACL Logging DHCP Logging Probe Logging
+  ---- ----------- ------------ -------------
+    40 Deny        Deny         Off
+
+  SW# show ip dhp snooping binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79:66:68:04    10.16.20.101 85681      dhcp-snooping   40     GigabitEThernet0/2
+  00:15:5D:77:77:01    10.16.20.102 85766      dhcp-snooping   30     GigabitEthernet0/1
+  Total number of binding: 2
+
+  ! PC2 > show ip
+  NAME        : FL-PC2[1]
+  IP/MASK     : 10.16.22.101/24
+  GATEWAY     : 10.16.22.7
+  DNS         : 
+  DHCP SERVER : 10.16.22.7
+  DHCP LEASE  : 85105, 86400/43200/75600
+  MAC         : 00:50:79:66:68:00
+  LPORT       : 10008
+  RHOST:RPORT : 127.0.0.1:10009
+  MTU         : 1500
+
+  PC1> ping 10.16.22.7
+  ...successful...
+
+  ! PC2 w/ static IP address -> no (IP, MAC) mapping on SW
+  ! ARP msg from PC2 unable to be verified --> pkt dropped
+  PC2> ip 10.16.22.200
+  PC2: 10.16.22.200 255.255.255.0
+
+  PC2> ping 10.16.22.7
+  ..UNSUCCESS...
+
+  SW#
+  %SW_DAI-4-DHCP_SNOOPING_DENY: 1 Invalid ARPs (Eeq) on Gi0/2, vlan 40
+    ([0050.7966.6800/10.16.22.200/ffff.ffff.ffff/10.16.22.200/00:27:36 UTC ...])
+  ...TRUNCATED...
+
+  ! PC2 changes back to dynamic IP address
+  PC2> ip dhcp
+  DORA IP 10.16.22.101/24 GW 10.16.22.7
+
+  ! verify the change
+  SW# show ip dhcp snooping binding
+  MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
+  -------------------  ----------   ---------  -------------  ----    -------------------
+  00:50:79:66:68:04    10.16.20.101 85681      dhcp-snooping   40     GigabitEThernet0/2
+  00:15:5D:77:77:01    10.16.20.102 85766      dhcp-snooping   30     GigabitEthernet0/1
+  Total number of binding: 2
+
+  ! verify connectivity on PC2
+  PC2> pint 10.16.22.7
+  ...SUCCESS...
+  ```
 
 
 
