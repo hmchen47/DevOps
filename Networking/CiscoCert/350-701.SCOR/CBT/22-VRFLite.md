@@ -48,14 +48,14 @@ Trainer: Keith Barker
   - analogy: VLAN on L2 switches
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
-      src    = "img/22-vrflite.png"
-      alt    = "VRF-lit for seperated VPNs"
-      title  = "VRF-lit for seperated VPNs"
+      src   = "img/22-vrflite.png"
+      alt   = "VRF-lit for seperated VPNs"
+      title = "VRF-lit for seperated VPNs"
     />
-    <figcaption> Fig. 1: ... </figcaption>
   </figure>
+
 
 
 ## VRF-lite Configuration Basics
@@ -70,7 +70,26 @@ Trainer: Keith Barker
 
 ## VRF-lite Design
 
+- Plan for VRF-lite
+  - cust1 w/ 2 subnets: 10.101.0.0/24 & 10.12.0.0/24
+  - cust2 w/ 2 subnets: 10.201.0.0/24 & 10.12.0.0./24
+  - not L3 router but switches
+  - using VLANs to map for each subnets
+    - vlan 101: 10.101.0.0/24
+    - vlan 102: 10.12.0.0/24
+    - vlan 201: 10.201.0.0/24
+    - vlan 202: 10.12.0.0./24
+  - create SVI for each vlan
+  - vlan 102 & 202 w/ the same IP address space
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src   = "img/22-vrfdemo.png"
+      alt   = "Example network for VRF-lite"
+      title = "Example network for VRF-lite"
+    />
+  </figure>
 
 
 ## VRF-lite Implementation
