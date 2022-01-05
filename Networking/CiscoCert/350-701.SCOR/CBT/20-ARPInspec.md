@@ -402,6 +402,42 @@ Trainer: keith Barker
 
 ## Review of Configure and Verify Cisco Dynamic ARP Inspection
 
+- Question 1
+
+  How does DAI dynamically know about which IP/MAC address mapping are correct?
+
+  A. IGMP Snooping<br>
+  B. DHCP Snooping<br>
+  C. IP Verify<br>
+  D. Source Guard<br>
+  E. BPDU Guard<br>
+
+  Ans: B
+
+
+- Question 2
+
+  Which methods would allow a device which is NOT in the DHCP snooping binding table, to still be allowed to send ARP messages into the network? (choose 2)
+
+  A. Port Security<br>
+  B. DAI trusted port<br>
+  C. Extended Access-list<br>
+  D. ARP Access-list<br>
+  E. Source Guard<br>
+
+  Ans: BD
+
+
+- Question 3
+
+  Which is the command to implement DAI on a CLAN?
+
+  A. arp inspection vlan 40<br>
+  B. ip ar inspection vlan 40<br>
+  C. arp ip inspction vlan 40<br>
+  D. inspection ip arp vlan 40<br>
+
+  Ans: B
 
 
 
