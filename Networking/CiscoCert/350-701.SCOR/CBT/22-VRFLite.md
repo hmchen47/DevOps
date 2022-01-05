@@ -60,7 +60,16 @@ Trainer: Keith Barker
 
 ## VRF-lite Configuration Basics
 
-
+- Commands for VRF-lites
+  - procedure
+    - create VRF
+    - assign L2 interfaces to the VRF
+  - creating VRF
+    - IPv4 only: `ip vrf VRF_NAME`
+    - IPv4 and/or IPv6:
+      - enable VRF: `vrf definition VRF_NAME`
+      - specify address space: `address-family ipv6|ipv6`
+  - config each interface: `if) vrf forwarding VRF_NAME`
 
 
 ## VRFs on a Multi-Layer Switch
