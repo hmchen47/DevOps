@@ -39,7 +39,16 @@ Trainer: Keith Barker
 
 ## Promiscuous Ports
 
-
+- Promiscuous ports overview
+  - ports w/o any restriction in a primary vlan
+  - acting as a default gateway in L3 routing
+  - example:
+    - primary vlan = 100, community vlan = 200, community vlan = 300, isolated vlan = 400
+    - IP address space of vlan 100: 10.100.0.0/24
+  - promiscuous ports
+    - associated w/ primary vlan, not any secondary vlan
+    - able to communicate w/ any port in the primary vlan
+    - ports connected to other switches as trunk
 
 
 ## PVLAN Design
