@@ -241,7 +241,50 @@ Trainer: Keith Barker
 
 ## VRF-lite Adding Routing
 
+- Demo: config routing per VRF
+  - Cust1: OSPF routinng
+  - Cust2: EIGRP routing
+  - same commands for both switches
 
+  ```bash
+  SW1# conf t
+  SW1(config)# router ospf 1 vrf Cust1
+  SW1(config-router)# network 0.0.0.0 255.255.255.255 area 1
+  SW1(config-router)# exit
+
+  SW1(config)# router eigrp Cust2-EIGRP
+  SW1(config-router)# address-family ipv4 vrf Cust2 autonomous-system 1
+  SW1(config-router-af)# network 0.0.0.0
+  SW1(config-router-af)# end
+
+  SW1# show ip ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Address     Interface
+  10.101.0.2        1    FULL/DR    00:00:33     10.12.0.2   Vlan102
+  10.101.0.2        1    FULL/DR    00:00:35     10.101.0.2  Vlan101
+
+  SW1# show eigrp address-family ipv4 vrf Cust2 interfaces
+  EIGRP-IPv4 VR(Cust2-EIGRP) Address-Family Interfaces for AS(1)
+             VRF(Cust2)
+                      Xmit Queue   PeerQ       Mean  Pacing Time     Multicast    Pending 
+  Interface    Peers  Un/Reliable  Un/Reliable SRTT  Un/Reliable     Flow Timer   Services
+  Vl201          1        0/0        0/0        14      0/0          127           0 
+  Vl202          1        0/0        0/0         0      0/0          127           0
+
+  SW1# show ip eigrp vrf Cust2 neighbors
+  EIGRP-IPv4 VR(Cust2-EIGRP) Address-Family Neighbors for AS(1)
+             VRF(Cust2)
+  H   Address     Interfaces    Hold  Uptime   SRTT    RTO   Q
+                                (sec)          (ms)         Cnt
+  1   10.12.0.2   Vl202           12  00:03:22    1   4500   0
+  0   10.201.0.2  Vl201           13  00:03:22   14    100   0
+
+  ! verify connectivity
+  SW1# ping 10.12.0.2
+  .....
+
+  SW1# ping vrf Cust1 10.12.0.2
+  !!!!!
+  ```
 
 
 ## VRF-lite Routing Verification
