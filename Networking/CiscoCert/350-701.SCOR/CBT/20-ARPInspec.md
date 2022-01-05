@@ -443,5 +443,6 @@ Trainer: keith Barker
 
 ## Configure and Verify Cisco Dynamic ARP Inspection
 
+- [CCNA Lab Assessment Online Training](https://www.cbtnuggets.com/it-training/cisco/assessment-labs)
 
 
