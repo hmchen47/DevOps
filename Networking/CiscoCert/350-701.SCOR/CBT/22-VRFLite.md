@@ -5,7 +5,12 @@ Trainer: Keith Barker
 
 ## Introduction to VRF-lite
 
-
+- Learning goals
+  - VRF-lite
+  - config VRF-lite
+  - VRF-lite on multi-layer switch
+  - VRF-lite w/ routing
+  - DHCP VRF services
 
 
 ## VRF-lite Overview
