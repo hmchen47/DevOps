@@ -74,7 +74,12 @@ Trainer: Keith Barker
 
 ## VRFs on a Multi-Layer Switch
 
-
+- VRFs and Multi-layer switches
+  - procedure
+    - create VRF
+    - allocate L3 interfaces
+  - create SVI: `int vlan #`
+  - associate SVI to designed VRF
 
 
 ## VRF-lite Design
