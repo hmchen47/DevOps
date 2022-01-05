@@ -48,7 +48,7 @@ Trainer: Keith Barker
   - promiscuous ports
     - associated w/ primary vlan, not any secondary vlan
     - able to communicate w/ any port in the primary vlan
-    - ports connected to other switches as trunk
+  - ports connected to other switches as trunk w/ associated community vlan
 
 
 ## PVLAN Design
@@ -238,8 +238,77 @@ Trainer: Keith Barker
 
 ## Trunking and PVLANs
 
+- Trunking & PVLAN
+  - broadcast frames on any port of a community vlan, communicate to
+    - any port within the same community vlan
+    - any promiscuous port on primary vlan
+    - trunking port associated to the community vlan
+  - broadcast frames and received by a trunk port associated w/ the same community vlan
+    - 802.1Q encapsulation applied
+    - trunk port tagging the community vlan id
+    - trunking port on the other end forwarding the frame to ports w/ the same community vlan
 
 
+- Demo: config trunk port for PVLAN
+  - tasks:
+    - Roamer as a member of community vlan 300
+    - config to allow Roamer to access PC 300-1 & 300-2
+    - verify the reachability from Roamer
+
+  ```bash
+  SW2# show vlan private-vlan
+  Primary Secondary Type              Ports
+  ------- --------- ----------------- -------------------------
+  100     200       community         Gi0/1, Gi0/2   
+  100     300       community         Gi1/1, Gi1/2
+  100     400       isolated          Gi2/1, Gi2/2
+
+  SW2# show int trunk
+  Port    Mode  Encapsulation Status    Native vlan
+  Gi0/0   on    802.1q        trunking  1
+
+  Port    Vlans allowed on trunk
+  Gi0/0   1-4094
+
+  Port    Vlans allowed and active in management domain
+  Gi0/0   1,100,200,300,400
+
+  Port    Vlans in spanning tree forwarding state and not pruned
+  Gi0/0   1,100,200,300,400
+
+  ! access DHCp service
+  Roamer> ip dhcp
+  DDORA IP 10.100.0.57/24
+
+  ! turn on packet capture on SW2 g0/0 and request DHCP service again
+  Roamer> ip dhcp
+  DORA IP 10.100.0.57/24
+
+  ! verify reachability to PC:300-1
+  Roamer> ping 10.100.0.53
+  <---REACHABLE-->
+
+  ! verify reachability to PC:200-1
+  Roamer> ping 10.100.0.51
+  <---NOT REACHABLE-->
+  ```
+
+- Demo: observing trunking frames
+  - packet captured on g0/0 of SW1
+  - traffic for DHCP service
+    - pkt: src=0.0.0.0 , sdt=255.255.255.255, prot=DHCP, info=DHCP Discovery - Transaction ID 0x7a692329
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
+    - pkt: src=10.100.0.1, dst=10.100.0.57, prot=DHCP, info=Offer - Transaction ID 0x7a692329
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:100
+    - pkt: src=0.0.0.0 , sdt=255.255.255.255, prot=DHCP, info=DHCP Request - Transaction ID 0x7a692329
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
+    - pkt: src=0.0.0.0 , sdt=255.255.255.255, prot=DHCP, info=DHCP ACK - Transaction ID 0x7a692329
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:100
+  - ICMP traffic
+    - pkt: src=10.100.0.57, dst=10.100.0.53, prot=ICMP, info=Echo (ping) request id=0x7f88, seq=1/256, ttl=64 (reply in 113)
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
+    - pkt: src=10.100.0.53, dst=10.100.0.57, prot=ICMP, info=Echo (ping) reply id=0x7f88, seq=1/256, ttl=64 (reply in 112)
+      - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
 
 ## PVLAN Summary
 
