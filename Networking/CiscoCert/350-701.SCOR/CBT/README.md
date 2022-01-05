@@ -265,7 +265,7 @@ Institution: CBY Nugget
 - Configure and Verify Cisco Dynamic ARP Inspection
 
 
-### 21\. [Private VLANS](21-PrivVLANs.md)
+### 21\. [Private VLANS](21-PVLANs.md)
 
 - Introduction to Private VLANs
 - PVLANs Overview
