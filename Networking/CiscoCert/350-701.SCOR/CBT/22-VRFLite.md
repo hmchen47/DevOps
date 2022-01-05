@@ -108,7 +108,135 @@ Trainer: Keith Barker
 
 ## VRF-lite Implementation
 
+- Demo: config VRF-lite on SW1
 
+  ```bash
+  SW1# conf t
+  SW1(config)# vrf definition Cust1
+  SW1(config-vrf)# description Routing for Cust1
+  SW1(config-vrf)# address-family ipv4
+  SW1(config-vrf-af)# exit
+  SW1(config-vrf)# exit
+
+  SW1(config)# vrf definition Cust2
+  SW1(config-vrf)# description Routing for Cust2
+  SW1(config-vrf)# address-family ipv4
+  SW1(config-vrf-af)# exit
+  SW1(config-vrf)# exit
+
+  SW1(config)# vlan 101
+  SW1(config-vlan)# name Cust10VLAN-101
+  SW1(config-vlan)# vlan 102
+  SW1(config-vlan)# name Cust10VLAN-102
+  SW1(config-vlan)# vlan 201
+  SW1(config-vlan)# name Cust10VLAN-201
+  SW1(config-vlan)# vlan 202
+  SW1(config-vlan)# name Cust10VLAN-202
+
+  SW1(config)# int g0/0
+  SW1(config-if)# switchport trunk encapsulation dot1q
+  SW1(config-if)# switchport mode trunk
+  SW1(config-if)# exit
+
+  SW1(config)# int vlan 101
+  SW1(config-if)# vrf forwarding Cust1
+  SW1(config-if)# ip address 10.101.0.1 255.255.255.0
+  SW1(config-if)# no shutdown
+  SW1(config-if)# exit
+
+  SW1(config)# int vlan 102
+  SW1(config-if)# vrf forwarding Cust1
+  SW1(config-if)# ip address 10.12.0.1 255.255.255.0
+  SW1(config-if)# no shutdown
+  SW1(config-if)# exit
+
+  SW1(config)# int vlan 201
+  SW1(config-if)# vrf forwarding Cust2
+  SW1(config-if)# ip address 10.201.0.1 255.255.255.0
+  SW1(config-if)# no shutdown
+  SW1(config-if)# exit
+
+  SW1(config)# int vlan 202
+  SW1(config-if)# vrf forwarding Cust2
+  SW1(config-if)# ip address 10.12.0.1 255.255.255.0
+  SW1(config-if)# no shutdown
+  SW1(config-if)# exit
+  SW1(config)# end
+
+  SW1# show vrf
+  Name    Default RD    Protocols   Interfaces
+  Cust1   <not set>     ipv4        Vl101
+                                    VL102
+  Cust2   <not set>     ipv4        Vl201
+                                    VL202
+
+  SW1# show ip route
+  Gateway of last resort is not set.
+
+  SW1# show ip route vrf Cust1
+  Gateway of last resort is not set.
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  C    10.12.0.0/24 is directly connected, Vlan102
+  L    10.12.0.1/32 is directly connected, Vlan102
+  C    10.101.0.0/24 is directly connected, Vlan101
+  L    10.101.0.1/32 is directly connected, Vlan101
+
+  SW1# show ip route vrf Cust2
+  Gateway of last resort is not set.
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  C    10.12.0.0/24 is directly connected, Vlan202
+  L    10.12.0.1/32 is directly connected, Vlan202
+  C    10.201.0.0/24 is directly connected, Vlan201
+  L    10.201.0.1/32 is directly connected, Vlan201
+  ```
+
+- Demo: config VRF-lite on SW2
+  - same config as SW1 but SVi Ip addresses
+
+  ```bash
+  SW2(config)# int vlan 101
+  SW2(config-if)# vrf forwarding Cust1
+  SW2(config-if)# ip address 10.101.0.2 255.255.255.0
+  ...TRUNCATED...
+  SW2(config)# int vlan 102
+  SW2(config-if)# vrf forwarding Cust1
+  SW2(config-if)# ip address 10.12.0.2 255.255.255.0
+  ...TRUNCATED...
+  SW2(config)# int vlan 201
+  SW2(config-if)# vrf forwarding Cust2
+  SW2(config-if)# ip address 10.201.0.2 255.255.255.0
+  ...TRUNCATED...
+  SW2(config)# int vlan 202
+  SW2(config-if)# vrf forwarding Cust2
+  SW2(config-if)# ip address 10.12.0.2 255.255.255.0
+  ...TRUNCATED...
+
+  SW2# show vrf
+  Name    Default RD    Protocols   Interfaces
+  Cust1   <not set>     ipv4        Vl101
+                                    VL102
+  Cust2   <not set>     ipv4        Vl201
+                                    VL202
+
+  SW2# show ip route vrf Cust1
+  Gateway of last resort is not set.
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  C    10.12.0.0/24 is directly connected, Vlan102
+  L    10.12.0.2/32 is directly connected, Vlan102
+  C    10.101.0.0/24 is directly connected, Vlan101
+  L    10.101.0.2/32 is directly connected, Vlan101
+
+  SW2# show ip route vrf Cust2
+  Gateway of last resort is not set.
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  C    10.12.0.0/24 is directly connected, Vlan202
+  L    10.12.0.2/32 is directly connected, Vlan202
+  C    10.201.0.0/24 is directly connected, Vlan201
+  L    10.201.0.2/32 is directly connected, Vlan201
+
+  SW1# show ip route
+  Gateway of last resort is not set.
+  ```
 
 
 ## VRF-lite Adding Routing
