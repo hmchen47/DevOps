@@ -53,7 +53,12 @@ Trainer: Keith Barker
 
 ## PVLAN Design
 
-
+- Planning PVLAN
+  - primary vlan: 100
+  - IP address space: 10.100.0.0/24
+  - community vlan: 200 w/ port 0/1-2
+  - community vlan: 300 w/ port 1/1-2
+  - isolated vlan: 400 w/ port 2/1-2
 
 
 ## Implement PVLANs
