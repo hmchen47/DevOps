@@ -110,7 +110,7 @@ Trainer: Keith Barker
 
 - Demo: config VRF-lite on SW1
 
-  ```bash
+  ```text
   SW1# conf t
   SW1(config)# vrf definition Cust1
   SW1(config-vrf)# description Routing for Cust1
@@ -193,7 +193,7 @@ Trainer: Keith Barker
 - Demo: config VRF-lite on SW2
   - same config as SW1 but SVi Ip addresses
 
-  ```bash
+  ```text
   SW2(config)# int vlan 101
   SW2(config-if)# vrf forwarding Cust1
   SW2(config-if)# ip address 10.101.0.2 255.255.255.0
@@ -246,10 +246,10 @@ Trainer: Keith Barker
   - Cust2: EIGRP routing
   - same commands for both switches
 
-  ```bash
+  ```text
   SW1# conf t
   SW1(config)# router ospf 1 vrf Cust1
-  SW1(config-router)# network 0.0.0.0 255.255.255.255 area 1
+  SW1(config-router)# network 0.0.0.0 255.255.255.255 area 0
   SW1(config-router)# exit
 
   SW1(config)# router eigrp Cust2-EIGRP
@@ -289,7 +289,127 @@ Trainer: Keith Barker
 
 ## VRF-lite Routing Verification
 
+- Demo: verify VRF-lite
 
+  ```text
+  SW1# show vrf
+  Name    Default RD    Protocols   Interfaces
+  Cust1   <not set>     ipv4        Vl101
+                                    VL102
+  Cust2   <not set>     ipv4        Vl201
+                                    VL202
+  
+  SW1# show ip protocols vrf Cust1
+  *** IP Routing is NSF aware ***
+  Routing Protocol is "ospf 1"
+    Outgoing update filter list for all interfaces is not set
+    Incoming update filter list for all interfaces is not set
+    Router ID 10.101.0.1
+    It is an area border souter
+    Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+    Maximum path: 4
+    Routing for Networks:
+      0.0.0.0 255.255.255.255 area 0
+    Routing Information Sources:
+      Gateway   Distance    Last Update
+    Distance: (default is 110)
+
+  ! create loopback interface
+  SW1# conf t
+  SW1(config)# int loop 0
+  SW1(config-if)# vrf forwarding Cust1
+  SW1(config-if)# ip addr 1.1.1.1 255.255.255.255
+  SW1(config-if)# end
+
+  SW2# show ip route
+  Gateway of last resort is not set.
+      1.0.0.0/32 is subnetted, 1 subnets
+  O    1.1.1.1 [110/2] via 10.101.0.1, 00:00:20, Vlan101
+               [110/2] via 10.12.0.1, 00:00:20, Vlan102
+      10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  ...TRUNCATED...
+
+  SW2# ping 1.1.1.1
+  .....
+
+  SW2# ping vrf Cust1 1.1.1.1
+  !!!!!
+
+  SW2# show ip route vrf Cust1
+
+  SW1# conf t
+  SW1(config)# router ospf 1 vrf Cust1
+  SW1(config-router)# default-information originate always
+  SW1(config-router)# end
+
+  SW2# show ip route
+  Gateway of last resort is not set.
+  O*E2  0.0.0.0/0 [110/2] via 10.101.0.1, 00:00:20, Vlan101
+                  [110/2] via 10.12.0.1, 00:00:20, Vlan102
+        1.0.0.0/32 is subnetted, 1 subnets
+  O      1.1.1.1 [110/2] via 10.101.0.1, 00:00:20, Vlan101
+                 [110/2] via 10.12.0.1, 00:00:20, Vlan102
+        10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  ...TRUNCATED...
+
+  SW2# conf t
+  SW2(config)# int loop 0
+  SW2(config-if)# vrf forwarding Cust2
+  SW2(config-if)# ip addr 2.2.2.2 255.255.255.255
+  SW2(config-if)# end
+
+  SW2# show ip protocols vrf Cust2
+  *** IP Routing is NSF aware ***
+  Routing Protocol is "ospf 1"
+    Outgoing update filter list for all interfaces is not set
+    Incoming update filter list for all interfaces is not set
+    Deafult networks flagged in outgoing updates
+    Default networks accepted from incoming updates
+    EIGRP-IPv4 VR(Cust2-EIGRP) Address-Family Protocol for AS(1) VRF(Cust2)
+      Metric weight K1=1, K2=0, K3=1, K4=0, K5=0, K6=0
+      Metric rib-scale 128
+      Metric version 64bit
+      Soft SIA disabled
+      NSF-aware route hold timer is 240
+      Router-ID: 10.201.0.2
+      Topology : 0 (base)
+        Active timer: 3 min
+        Distance: internal 90 external 170
+        Maximum path: 4
+        Maximum hopcount 100
+        Maximum metric variance 1
+        Total Prefix Count: 3
+        Total Redist Count: 0
+    
+    Automatic summarization: disabled
+    Maximum path: 4
+    Routing for Networks:
+      0.0.0.0
+    Routing Information Sources:
+      Gateway     Distance    last Update
+      10.12.0.1         90    00:10:53
+      10.201.0.1        90    00:10:59
+    Distance: internal 90 external 170
+
+  SW2# show vrf
+  Name    Default RD    Protocols   Interfaces
+  Cust1   <not set>     ipv4        Vl101
+                                    VL102
+  Cust2   <not set>     ipv4        Vl201
+                                    VL202
+                                    Lo0
+
+  SW1# show ip route vrf Cust2
+  Gateway of last resort is not set.
+        2.0.0.0/32 is subnetted, 1 subnets
+  D      2.2.2.2 [90/10880] via 10.201.0.1, 00:00:43, Vlan201
+                 [90/10880] via 10.12.0.1, 00:00:43, Vlan202
+        10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+  ...TRUNCATED...
+
+  SW1# ping vrf Cust2 2.2.2.2
+  !!!!!
+  ```
 
 
 ## DHCP VRF Services
