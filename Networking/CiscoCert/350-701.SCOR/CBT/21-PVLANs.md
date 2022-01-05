@@ -312,5 +312,12 @@ Trainer: Keith Barker
 
 ## PVLAN Summary
 
+- Summary
+  - logically dividing a L2 network into sub-vlans w/ PVLAN
+  - primary VLAN associated w/ second vlans
+  - types of secondary vlans: community and isolated 
+  - promicusous port:
+    - associate w/ primary vlan
+    - acting as default gateway in L3
 
 
