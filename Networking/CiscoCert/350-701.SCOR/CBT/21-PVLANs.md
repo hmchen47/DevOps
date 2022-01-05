@@ -63,8 +63,67 @@ Trainer: Keith Barker
 
 ## Implement PVLANs
 
+- Config PVLAN
 
+  ```bash
+  SW1# conf t
 
+  ! reset existed config
+  SW1(config)# no vlan 2-1000
+  SW1(config)# deafult int range g0/0-3
+  SW1(config)# default int range 1/0-3
+  SW1(config)# default int range 2/0-3
+
+  SW1(config)# spanning mode rapid
+
+  SW1(config)# vtp mode ransport
+
+  ! create secondary vlan
+  SW1(config)# vlan 200
+  SW1(config-vlan)# name Community A
+  SW1(config-vlan)# private-vlan community
+  SW1(config-vlan)# exit
+  
+  SW1(config)# vlan 300
+  SW1(config-vlan)# name Community B
+  SW1(config-vlan)# private-vlan community
+  SW1(config-vlan)# exit
+  
+  SW1(config)# vlan 400
+  SW1(config-vlan)# name Isolated VLAN
+  SW1(config-vlan)# private-vlan isolated
+  SW1(config-vlan)# exit
+  
+  ! create primary vlan
+  SW1(config)# vlan 100
+  SW1(config-vlan)# name Primary VLAN
+  SW1(config-vlan)# private-vlan primary
+  SW1(config-vlan)# private-vlan association 200, 300, 400
+  SW1(config-vlan)# exit
+
+  ! associate ports w/ pvlan
+  SW1(config)# interface range GigabitEthernet0/1-2
+  SW1(config-if)# switchport private-vlan host-association 100 200
+  SW1(config-if)# switchport mode private-vlan host
+  SW1(config-if)# exit
+
+  SW1(config)# interface range GigabitEthernet1/1-2
+  SW1(config-if)# switchport private-vlan host-association 100 300
+  SW1(config-if)# switchport mode private-vlan host
+  SW1(config-if)# exit
+
+  SW1(config)# interface range GigabitEthernet2/1-2
+  SW1(config-if)# switchport private-vlan host-association 100 400
+  SW1(config-if)# switchport mode private-vlan host
+  SW1(config-if)# exit
+
+  ! switch virtual interface w/ vlan 100
+  SW1(config)# interfac vlan 100
+  SW1(config-if)# no shutdown
+  SW1(config-if)# private-vlan mapping add 200,300,400
+  SW1(config-if)# ip addr 10.100.0.1 255.255.255.0
+  SW1(config-if)# end
+  ```
 
 ## Verify PVLANs
 
