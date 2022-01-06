@@ -59,13 +59,19 @@ Trainer: Keith Barker
     - entry: Name = Auditors, SGT = 9
     - entry: Name = BYOD, SGT = 15
   - 'Add' icon > Security Groups List > New Security Group: Name = ISE_Admin, SGT = 16 > 'Submit' button
-  - 'Add' icon > Security Groups List > New Security Group: Name = ISE_Ops, ST = 17 > 'Submit' button
-  - 'Add' icon > Security Groups List > New Security Group: Name = PCB_PCs, ST = 18 > 'Submit' button
+  - 'Add' icon > Security Groups List > New Security Group: Name = ISE_Ops, SGT = 17 > 'Submit' button
+  - 'Add' icon > Security Groups List > New Security Group: Name = PCB_PCs, SGT = 18 > 'Submit' button
 
 
 ## Security Group ACLs
 
-
+- Demo: create security group policies on ISE
+  - Work Centers tab > TrustSec > Components subtab > Security Group ACLs
+  - Security Group ACLs: fields - Name, Description, IP Version; Icons - Edit, Add, Duplicate, Push, Verify Deploy
+  - 'Add' icon > Security Group ACLs: Name = NO_ICMP, IP Version = IPv4, Security Group ACL content = 'deny icmp' + 'permit ip' > 'Submit' button
+  - Security Group ACLs: new entry - Name = NO_ICMP, IP Version = IPv4
+  - 'Add' icon > Security Group ACLs: Name = No_Telnet, IP Version = IPv4, Security Group ACL content = 'deny tcp dst eq 23' + 'permit ip' > 'Submit' button
+  - Security Group ACLs: new entry - Name = No_Telnet, IP Version = IPv4
 
 
 ## TrustSec Policies
