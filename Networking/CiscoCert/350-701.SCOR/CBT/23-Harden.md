@@ -220,7 +220,50 @@ Trainer: keith Barker
 
 ## Data Plane Hardening
 
+- General Data Plane Hardening
+  - IP Options Selective Drop
+  - Disable IP Source Routing
+  - Disable ICMP Redirects
+  - Disable or Limit IP Directed Broadcasts
 
+
+- Filter Transit Traffic with Transit ACLs
+  - ICMP Packet Filtering
+  - Filter IP Fragments
+  - ACL Support for Filtering IP Options
+
+
+- Anti-Spoofing Protections (*)
+  - Unicast RPF
+  - IP Source Guard
+  - Port Security
+  - Dynamic ARP Inspection
+  - Anti-Spoofing ACLs
+
+
+- Limit CPU Impact of Data Plane Traffic
+  - Features and Traffic Types that Impact the CPU
+  - Filter on TTL Value
+  - Filter on the Presence of IP Options
+  - Control Plane Protection
+
+
+- Traffic Identification and Traceback
+  - NetFlow (*)
+  - Classification ACLs
+
+
+- Access Control with VLAN Maps and Port Access Control Lists
+  - Access Control with VLAN Maps
+  - Access Control with PACLs
+  - Access Control with MAC
+
+
+- Private VLAN Use
+  - Isolated VLANs
+  - Community VLANs
+  - Promiscuous Ports
+  - VRF-lite
 
 
 ## Device Hardening Checklist
