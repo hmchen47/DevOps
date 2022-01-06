@@ -153,7 +153,16 @@ Trainer: Keith Barker
 
 ## ISE and NAD TrustSec Integration
 
-
+- Demo: integrating ISE and NAD TrustSec
+  - Work Centers > TrustSec > Components subtab > Network Devices folder
+  - Network Devices: fields - Name, IP/Mask, Profile Name, Location, Type, Description > entry - Name = SW2-3750x-136, IP/Mask = 192.168.1.136 > 'SW2-3750x-136' link
+  - Network Devices: Name = SW2-3750x-136, Description = 'Sw2 at .136', IP Address = 192.168.1.136/32, Device Profile = Cisco, RADIUS Authentication Settings, Advanced TrustSec Settings
+  - Advanced TrustSec Settings: sections - Device Authentication Settings, HTTP REST API Settings, TrustSec Notification and Updates, Device Configuration Deployment, Out of Bound (OOB) TrustSec PAC > Advanced TrustSec Settings = On
+    - Device Authentication: Use Device ID for TrustSec Identification = On, Device Id = SW2-3750x-136
+    - TrustSec Notification and Updates: Send Configuration changes to device = On Using CoA = On (Change of Authorization), Send to = ISE-02 > 'Test Connection' button > green checked
+    - Device Configuration Deployment: Include this device when deploying Security Group Tag Mapping Updates = On, EXEC Mode Username = admin, EXEC Mode Password = `****`, Enable Mode Password = `****`
+    - Out of Bound (OOB) TrustSec PAC > 'Generate PAC' button
+    - Generate Pac: Identity = SW2-3750x-136, Encryption Key = `****`, PAC Time to Live = 1 week > 'Generate' button
 
 
 ## Verify TrustSec
