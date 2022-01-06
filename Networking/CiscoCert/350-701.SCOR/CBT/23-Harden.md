@@ -40,7 +40,137 @@ Trainer: keith Barker
     - not every solution perfect for every network
     - testing every plan before deploying
 
+
 ## Management Plane Hardening
+
+- General Management Plane Hardening
+  - password mgmt: TACACS+ + local user account
+    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secrete, type 9 password
+    - `secrete`: using type 5 password
+  - enhanced password security
+  - login password retry lockout
+  - no Service Password-Recovery
+  - disable Unused Services (*)
+  - EXEC Timeout: timeout connection
+  - keepalives for TCP Sessions
+  - management Interface Use: create loopback intf w/ IP address
+  - Memory Threshold Notifications
+  - CPU Thresholding Notification (*)
+  - Reserve Memory for Console Access
+  - Memory Leak Detector
+  - Buffer Overflow: Detection and Correction of Redzone Corruption
+  - Enhanced Crashinfo File Collection
+  - Network Time Protocol: authentication always
+  - Disable Smart Install
+
+  ```text
+  ! local user account
+  R1(config)# username admin1 privilege 15 password Cisco!23
+  R1(config)# username admin1 privilege 15 secrete Cisco!23
+  R1(config)# username admin1 privilege 15 algorithm-type scrypt secrete Cisco!23
+
+  ! disable unused services
+  R1# show control-plane host open-ports
+  Active internet connections (servers and established)
+  Prot        Local Address      Foreign Address             Service    State
+   tcp                 *:23                  *:0              Telnet   LISTEN
+
+  R1(config)# line vty 0 4
+  R1(config-line)# transport input ssh
+  R1(config-line)# exit
+  R1(config)# ip http secure-server
+  R1(config)# end
+
+  R1# show control-plane host open-ports
+  Active internet connections (servers and established)
+  Prot        Local Address      Foreign Address             Service    State
+   tcp                 *:22                  *:0          SSH-Server   LISTEN
+   tcp                 *:23                  *:0              Telnet   LISTEN
+   tcp                *:443                  *:0        HTTPS-Server   LISTEN
+   tcp                *:443                  *:0           HTTP CORE ESTABLIS
+  ```
+
+
+- Limit Access to the Network with Infrastructure ACLs
+  - infrastructure ACL:
+    - on edge routers
+    - only allowing from certain admin computers to access management plane
+    - specifying connections from hosts or networks that need to be allowed to network devices
+    - all other traffic to the infrastructure is explicitly denied
+  - ICMP Packet Filtering
+  - Filter IP Fragments
+  - ACL Support for Filtering IP Options
+  - ACL Support to Filter on TTL Value
+
+
+- Secure Interactive Management Sessions
+  - Management Plane Protection
+  - Control Plane Protection
+  - Encrypt Management Sessions
+  - SSHv2 (*)
+  - SSHv2 Enhancements for RSA Keys
+  - Console and AUX Ports
+  - Control vty and tty Lines
+  - Control Transport for vty and tty Lines
+  - Warning Banners
+
+
+- Authentication, Authorization, and Accounting
+  - TACACS+ Authentication
+  - Authentication Fallback
+  - Use of Type 7 Passwords: even type 9
+  - TACACS+ Command Authorization
+  - TACACS+ Command Accounting
+  - Redundant AAA Servers
+
+
+- Fortify the Simple Network Management Protocol
+  - SNMP Community Strings
+  - SNMP Community Strings with ACLs
+  - Infrastructure ACLs
+  - SNMP Views
+  - SNMP Version 3: preferred
+  - Management Plane Protection
+
+
+- Logging Best Practices
+  - Send Logs to a Central Location
+  - Logging Level
+  - Do Not Log to Console or Monitor Sessions
+  - Use Buffered Logging (*)
+  - Configure Logging Source Interface
+  - Configure Logging Timestamps
+
+
+- Cisco IOS Software Configuration Management
+  - Configuration Replace and Configuration Rollback
+  - Exclusive Configuration Change Access
+  - Cisco IOS Software Resilient Configuration
+  - Digitally Signed Cisco Software
+  - Configuration Change Notification and Logging
+
+  ```text
+  R1# dir
+  ! get the iso file name
+
+  R1# show software authenticity file flash0:vios-adventerprisek9-m
+
+  ! configuration rollback
+  R1(config)# archive
+  R1(config-archive)# path flash0:KB-Backup.cfg
+  R1(config-archive)# maximum 10
+  R1(config-archive)# time-period 2
+  R1(config-archive)# write-memory
+  R1(config-archive)# log config
+  R1(config-archive-log-cfg)# end
+
+  R1# dir 
+  ! a copy of curren running config
+  R1# write
+  ! generate a startup config but also a copy of backup
+  R1# configure replace flash0:KB-Backup.cfg-....
+  ! replace current running config w/ the backup config
+  ```
 
 
 
