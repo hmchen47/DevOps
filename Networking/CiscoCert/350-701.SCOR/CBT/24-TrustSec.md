@@ -76,7 +76,18 @@ Trainer: Keith Barker
 
 ## TrustSec Policies
 
+- Plan for TrustSec policies btw groups
+  - deny telnet: ISE-Ops $\to$ PCB-PCs
+  - deny telnet: ISE Admin $\to$ PCB-PCs
+  - deny peer FTP: PCB-PCs $\leftrightarrow$ PCB-PCs
 
+
+- Demo: create TrustSec policies on ISE
+  - Work Centers tab > TrustSec > TrustSec Policy subtab > folders - Egress Policy (Metrices List, Matrix, Source Tree, Destination Tree), Network Device Authorization
+  - Matrix: Vertical = Source, Horizontal = Destination; Icons - Edit, Add, Clear, Deploy, Verify Deploy, Monitor All -Off, Import, Export, View
+  - View: Condensed with SGACL names, Condensed without SGACL names, Full with SGACL names, Full without SGACL names
+  - 'Add' icon > Create Security Group ACL Mapping ... > Source Security Group = ISE_Admin; Destination Security Group = PCB_PCs; Assigned Security Group ACLs = No_Telnet > 'Save' button
+  - 'Add' icon > Create Security Group ACL Mapping ... > Source Security Group = ISE_Ops; Destination Security Group = PCB_PCs; Assigned Security Group ACLs = No_Telnet > 'Save' button
 
 
 ## Configure Network Devices for TrustSec
