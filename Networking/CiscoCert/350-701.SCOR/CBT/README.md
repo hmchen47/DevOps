@@ -76,6 +76,19 @@ Institution: CBY Nugget
 - IPsec Fundamentals Summary
 
 
+### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
+
+- Introduction to Device Hardening
+- Device Hardening Overview
+- Cisco Guide to Harden IOS Devices
+- Management Plane Hardening
+- Control Plane Hardening
+- Data Plane Hardening
+- Device Hardening Checklist
+- Hardening Review
+
+
+
 ## Virtual Private Networks (VPNs)
 
 ### 05\. [Cisco Router Site-To-Site VPNs](05-S2SVPN.md)
@@ -290,17 +303,6 @@ Institution: CBY Nugget
 - DHCP VRF Services
 - VRF-lite Summary
 
-
-### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
-
-- Introduction to Device Hardening
-- Device Hardening Overview
-- Cisco Guide to Harden IOS Devices
-- Management Plane Hardening
-- Control Plane Hardening
-- Data Plane Hardening
-- Device Hardening Checklist
-- Hardening Review
 
 
 ### 24\. [Configure Cisco TrustSec](24-TrustSec.md)
