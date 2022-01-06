@@ -358,5 +358,11 @@ Trainer: keith Barker
 
 ## Hardening Review
 
+- Summary
+  - management plane
+  - control plane
+  - data plane
+  - checklist
+
 
 
