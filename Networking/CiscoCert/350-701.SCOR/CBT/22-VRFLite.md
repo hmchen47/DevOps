@@ -321,6 +321,7 @@ Trainer: Keith Barker
   SW1(config-if)# ip addr 1.1.1.1 255.255.255.255
   SW1(config-if)# end
 
+  ! verify reachability
   SW2# show ip route
   Gateway of last resort is not set.
       1.0.0.0/32 is subnetted, 1 subnets
@@ -358,6 +359,7 @@ Trainer: Keith Barker
   SW2(config-if)# ip addr 2.2.2.2 255.255.255.255
   SW2(config-if)# end
 
+  ! verify Cust2 routing settings
   SW2# show ip protocols vrf Cust2
   *** IP Routing is NSF aware ***
   Routing Protocol is "ospf 1"
@@ -414,7 +416,105 @@ Trainer: Keith Barker
 
 ## DHCP VRF Services
 
+- Demo: verify reachability w/ DHCP and VRF-lite
 
+  ```text
+  SW2# conf t
+
+  ! config DHCP pool for different VRFs
+  SW2(config)# ip dhcp pool 101-subnet
+  SW2(dhcp-config)# network 10.101.0.0 /24
+  SW2(dhcp-config)# default-router 10.101.0.2
+  SW2(dhcp-config)# vef Cust1
+  Any Active bindings and leased subnets will be released from this pool.
+  Continue? [no]: yes
+  SW2(dhcp-config)# yes
+  SW2(dhcp-config)# exit
+
+  SW2(config)# ip dhcp pool 12-subnet-Cust1
+  SW2(dhcp-config)# network 10.12.0.0/24
+  SW2(dhcp-config)# default-router 10.12.0.2
+  SW2(dhcp-config)# vrf Cust1
+  Any Active bindings and leased subnets will be released from this pool.
+  Continue? [no]: yes
+  SW2(dhcp-config)# yes
+  SW2(dhcp-config)# exit
+
+  SW2(config)# ip dhcp pool 201-subnet
+  SW2(dhcp-config)# network 10.201.0.0 /24
+  SW2(dhcp-config)# default-router 10.201.0.2
+  SW2(dhcp-config)# vef Cust2
+  Any Active bindings and leased subnets will be released from this pool.
+  Continue? [no]: yes
+  SW2(dhcp-config)# yes
+  SW2(dhcp-config)# exit
+
+  SW2(config)# ip dhcp pool 12-subnet-Cust2
+  SW2(dhcp-config)# network 10.12.0.0/24
+  SW2(dhcp-config)# default-router 10.12.0.2
+  SW2(dhcp-config)# vrf Cust2
+  Any Active bindings and leased subnets will be released from this pool.
+  Continue? [no]: yes
+  SW2(dhcp-config)# yes
+  SW2(dhcp-config)# exit
+
+  SW2(config)# end
+
+  ! verify config
+  SW2# show run | sec dhcp
+  ip dhcp pool 101-subnet
+    vrf Cust1
+    network 10.101.0.0 255.255.255.0
+    default-router 10.101.0.2
+  ip dhcp pool 12-subnet
+    vrf Cust1
+    network 10.12.0.0 255.255.255.0
+    default-router 10.12.0.2
+  ip dhcp pool 201-subnet
+    vrf Cust2
+    network 10.201.0.0 255.255.255.0
+    default-router 10.201.0.2
+  ip dhcp pool 101-subnet
+    vrf Cust2
+    network 10.12.0.0 255.255.255.0
+    default-router 10.12.0.2
+
+  ! associate interface w/ different VRFs
+  SW2# conf t
+
+  SW2(config)# int g1/0
+  SW2(config-if)# switchport host
+  SW2(config-if)# switchport access vlan 101
+  SW2(config-if)# exit
+
+  SW2(config)# int g1/1
+  SW2(config-if)# switchport host
+  SW2(config-if)# switchport access vlan 101
+  SW2(config-if)# exit
+  
+  SW2(config)# int g1/2
+  SW2(config-if)# switchport host
+  SW2(config-if)# switchport access vlan 201
+  SW2(config-if)# exit
+
+  SW2(config)# int g1/3
+  SW2(config-if)# switchport host
+  SW2(config-if)# switchport access vlan 202
+  SW2(config-if)# exit
+
+  ! verify 
+  SW2# show int status
+  Port      Name      Status        VLan    Duplex  Speed Type
+  Gi0/0               connected     trunk   a-full  auto  RJ45
+  Gi0/1               not connected 1       a-full  auto  RJ45
+  ...TRUNCATED...
+  Gi1/0               connected     101     a-full  auto  RJ45
+  Gi1/1               connected     102     a-full  auto  RJ45
+  Gi1/2               connected     201     a-full  auto  RJ45
+  Gi1/3               connected     202     a-full  auto  RJ45
+
+  ! verify reachability from PCs
+  ```
 
 
 ## VRF-lite Summary
