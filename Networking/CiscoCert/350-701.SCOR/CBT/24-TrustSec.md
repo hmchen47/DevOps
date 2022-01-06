@@ -52,7 +52,15 @@ Trainer: Keith Barker
 
 ## TrustSec Security Groups
 
-
+- Demo: create TrustSec security groups on ISE
+  - Work Centers tab > TrustSec: subtabs - Overview, Components, TrustSec Policy, Policy Sets, SXP, Troubleshoot, Reports, Settings
+  - Components subtab > folders - Security Groups, IP SGT Static Mapping, Security Group ACLs, Network Devices, TrustSec Servers > Security Groups
+  - Security Groups: fields - Icon, Name, SGT (Dec/Hex), Description; Icons - Edit, Add, Import, Export, Trash, Push, Verify Deploy
+    - entry: Name = Auditors, SGT = 9
+    - entry: Name = BYOD, SGT = 15
+  - 'Add' icon > Security Groups List > New Security Group: Name = ISE_Admin, SGT = 16 > 'Submit' button
+  - 'Add' icon > Security Groups List > New Security Group: Name = ISE_Ops, ST = 17 > 'Submit' button
+  - 'Add' icon > Security Groups List > New Security Group: Name = PCB_PCs, ST = 18 > 'Submit' button
 
 
 ## Security Group ACLs
