@@ -5,6 +5,13 @@ Trainer: Keith Barker
 
 ## Introduction to TrustSec
 
+- Learning goals
+  - TrustSec
+  - group ACLs
+  - TrustSec policies
+  - config TrustSec
+  - verify TrustSec
+  - SGT eXchange protocol (SXP)
 
 
 
