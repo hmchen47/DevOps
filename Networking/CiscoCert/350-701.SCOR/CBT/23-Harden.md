@@ -33,8 +33,12 @@ Trainer: keith Barker
 
 ## Cisco Guide to Harden IOS Devices
 
-
-
+- Cisco device hardening guideline
+  - [Cisco Guide to Harden Cisco IOS Devices](https://www.cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html)
+  - Document ID: 13608
+  - considerations for the document
+    - not every solution perfect for every network
+    - testing every plan before deploying
 
 ## Management Plane Hardening
 
