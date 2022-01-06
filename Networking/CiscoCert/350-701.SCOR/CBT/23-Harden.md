@@ -105,7 +105,7 @@ Trainer: keith Barker
 
 - Secure Interactive Management Sessions
   - Management Plane Protection
-  - Control Plane Protection
+  - Control Plane Protection: very granularity to protect CPU, queue, threshold, etc.; control plane policing - less granularity to protect CPU
   - Encrypt Management Sessions
   - SSHv2 (*)
   - SSHv2 Enhancements for RSA Keys
@@ -268,6 +268,91 @@ Trainer: keith Barker
 
 ## Device Hardening Checklist
 
+- Management Plane
+  - Passwords
+    - Enable MD5 hashing (secret option) for enable and local user passwords
+    - Configure the password retry lockout
+    - Disable password recovery (consider risk)
+  - Disable unused services
+  - Configure TCP keepalives for management sessions
+  - Set memory and CPU threshold notifications
+  - Configure
+    - Memory and CPU threshold notifications
+    - Reserve memory for console access
+    - Memory leak detector
+    - Buffer overflow detection
+    - Enhanced crashinfo collection
+  - Use iACLs to restrict management access
+  - Filter (consider risk)
+    - ICMP packets
+    - IP fragments
+    - IP options
+    - TTL value in packets
+  - Control Plane Protection
+    - Configure port filtering
+    - Configure queue thresholds
+  - Management access
+    - Use Management Plane Protection to restrict management interfaces
+    - Set exec timeout
+    - Use an encrypted transport protocol (such as SSH) for CLI access
+    - Control transport for vty and tty lines (access class option)
+    - Warn using banners
+  - AAA
+    - Use AAA for authentication and fallback
+    - Use AAA (TACACS+) for command authorization
+    - Use AAA for accounting
+    - Use redundant AAA servers
+  - SNMP
+    - Configure SNMPv2 communities and apply ACLs
+    - Configure SNMPv3
+  - Logging
+    - Configure centralized logging
+    - Set logging levels for all relevant components
+    - Set logging source-interface
+    - Configure logging timestamp granularity
+  - Configuration Management
+    - Replace and rollback
+    - Exclusive Configuration Change Access
+    - Software resilience configuration
+    - Configuration change notifications
+
+
+- Control Plane
+  - Disable (consider risk)
+    - ICMP redirects
+    - ICMP unreachables
+    - Proxy ARP
+  - Configure NTP authentication if NTP is being used
+  - Configure Control Plane Policing/Protection (port filtering, queue thresholds)
+  - Secure routing protocols
+    - BGP (TTL, MD5, maximum prefixes, prefix lists, system path ACLs)
+    - IGP (MD5, passive interface, route filtering, resource consumption)
+  - Configure hardware rate limiters
+  - Secure First Hop Redundancy Protocols (GLBP, HSRP, VRRP)
+
+
+- Data Plane
+  - Configure IP Options Selective Drop
+  - Disable (consider risk)
+    - IP source routing
+    - IP Directed Broadcasts
+    - ICMP redirects
+  - Limit IP Directed Broadcasts
+  - Configure tACLs (consider risk)
+    - Filter ICMP
+    - Filter IP fragments
+    - Filter IP options
+    - Filter TTL values
+  - Configure required anti-spoofing protections
+    - ACLs
+    - IP Source Guard
+    - Dynamic ARP Inspection
+    - Unicast RPF
+    - Port security
+  - Control Plane Protection (control-plane cef-exception)
+  - Configure NetFlow and classification ACLs for traffic identification
+  - Configure required access control ACLs (VLAN maps, PACLs, MAC)
+  - Configure Private VLANs
 
 
 
