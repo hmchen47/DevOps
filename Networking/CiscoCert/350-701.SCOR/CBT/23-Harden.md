@@ -177,7 +177,45 @@ Trainer: keith Barker
 
 ## Control Plane Hardening
 
+- Primary considerations of control plane
+  - routing protocols
+  - authentication
 
+
+- General Control Plane Hardening
+  - consider to turn of the features
+  - IP ICMP Redirects: suggesting better routes
+  - ICMP Unreachables: hacker flooding to explore existence of subnets
+  - Proxy ARP
+
+
+- Limit CPU Impact of Control Plane Traffi
+  - Understand Control Plane Traffic: drop pkts before impact CPU
+  - Infrastructure ACLs (*)
+  - Receive ACLs (*)
+  - CoPP
+  - Control Plane Protection
+  - Hardware Rate Limiters
+
+
+- Secure BGP
+  - TTL-based Security Protections (*)
+  - BGP Peer Authentication with MD5
+  - Configure Maximum Prefixes
+  - Filter BGP Prefixes with Prefix Lists (*)
+  - Filter BGP Prefixes with Autonomous System Path Access Lists 
+
+
+- Secure Interior Gateway Protocols
+  - Routing Protocol Authentication and Verification with Message Digest 5
+  - Passive-Interface Commands
+  - Route Filtering
+  - Routing Process Resource Consumption
+
+
+- Secure First Hop Redundancy Protocols (FHRP)
+  - including: HSRP, VRRP, GLBP
+  - no authentication by default
 
 
 ## Data Plane Hardening
