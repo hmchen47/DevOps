@@ -5,6 +5,13 @@ Trainer: keith Barker
 
 ## Introduction to Device Hardening
 
+- Learning goals
+  - securing network infrastructure
+  - best pratices to protect
+    - management plane
+    - control plane
+    - data plane
+  - routers and switches hardening
 
 
 
