@@ -92,7 +92,63 @@ Trainer: Keith Barker
 
 ## Configure Network Devices for TrustSec
 
+- Demo: config network devices for TrustSec
+  - SW-A = SW2-3750x
+    - a Catalyst 3750 box w/ console access
+    - 3 devices connected to SW2: 2 windows, 1 raspberry pie
+  - `cts` = Cisco TrustSec
+  - `cts logging verbose`: debugging purpose; terminal monitored, otherwise, vty w/ ssh occupies the bandwidth
+  - `pac` = protected access credential
+  - `cts credentials id SW2-3750x-136 password Cisco!23`: config on privilege mode
+  - `cts refresh`: ensure ISE updated
 
+  ```text
+  SW2# conf t
+  SW2(config)# cts authorization list DemoSGList
+  SW2(config)# aaa authorization network DemoSGList group Demo-Group
+  SW2(config)# cts logging verbose
+  SW2(config)# cts role-based enforcement
+  SW2(config)# cts role-based enforcement vlan-list all
+  SW2(config)# radius-server vsa send authentication
+  SW2(config)# dot1x system-auth-control
+
+  SW2(config)# radius server Demo_ISE
+  SW2(config)# pac key Cisco!23
+  SW2(config)# exit
+
+  SW2# cts credentials id SW2-3750x-136 password Cisco!23
+  SW2# show cts pacs
+  AID: CE01...56FE
+  PAC-Info:
+    PAC-type = Cisco TrustSec
+    AID = CE01...56FE
+    I-ID: SW2-3750x-136
+    A-ID_Info: Identity Service Engine
+    Credential Lifetime: 22:44:34 UTC ...
+  PAC-Opaque: 0002...6DE9
+  Refresh timer is set for 14y42w
+
+  SW2# cts refresh environment-data
+  Environment data download in progress
+  SW2# cts refresh policy
+  Policy refresh in progress
+
+  SW2# show cts environment-data
+  CTS Environment Data
+  ====================
+  Current state = COMPLETE
+  Last status = successful
+  Local Device SGT:
+    SGT tag = 2-04:TrustSec_Devices
+  Server List Info:
+  <...TRUNCATED...>
+  Security Group Name Table:
+    <...TRUNCATED...>
+    16-c3:ISE_Admins
+    17-c3:ISE_Ops
+    18-c3:PCB_PCs
+  <...TRUNCATED...>
+  ```
 
 
 ## ISE and NAD TrustSec Integration
