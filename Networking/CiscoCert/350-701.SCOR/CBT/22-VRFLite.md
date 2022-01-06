@@ -519,5 +519,11 @@ Trainer: Keith Barker
 
 ## VRF-lite Summary
 
+- Summary
+  - VRF-lite: separating subnets into VPNs
+  - creating VRFs
+  - assigning VRFs to intrfaces
+  - adding routing for VRFs
+  - DHCP service for VRFs
 
 
