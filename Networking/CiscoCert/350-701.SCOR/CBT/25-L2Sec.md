@@ -158,7 +158,92 @@ Trainer: Keith Barker
 
 ## Root Guard
 
+- Root Guard overview
+  - STP on 2 switched network (shown as above)
+    - SW1 as root bridge on vlan 1
+    - f0/3 & f0/4: designated ports
+    - f0/3 on Sw2 & f0/4 on SW3: root ports
+    - f0/5 on SW3: designated port
+    - f0/5 on SW2: blocked port
+  - STP switchport states
+    - disabled: disable the port
+    - blocking: first entering state when connected
+    - listening: listening and sending BPDUs
+    - learning: receiving a superior BPDU, stop sending BPDU and relay superior BPDU
+    - forwarding: forwarding traffic
+  - root guard:
+    - protectING the STP topology attack of replacing the original Root Bridge with a rogue Root Bridge
+    - putting the port in the root-inconsistent STP state if receiving a superior BPDU from a rogue switch
 
+
+- Demo: config root guard
+  
+  ```text
+  SW1/2/3# show spanning-tree vlan 1
+  VLAN0001
+    Spanning tree enabled protocol rstp
+    Root ID   Priority  24577
+              Address   a418.75a2.7880
+              This bridge is the root
+    <...TRUNCATED...>
+
+  SW2# show spanning-tree vlan 1
+  <...TRUNCATED... >
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/3            Root FWD 19        128.4    P2p
+  Fa0/5            Altn BLK 19        128.6    P2p
+
+  SW3# show spanning-tree vlan 1
+  <...TRUNCATED...>
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/4            Root FWD 19        128.5    P2p
+  Fa0/5            Desg FWD 19        128.6    P2p
+
+  ! config root guard on f0/5 of Sw3, never being a root port
+  ! putting the port into root-inconsistent state
+  SW3# conf t
+  SW3(config)# int f0/5
+  SW3(config-if)# spanning-tree guard root
+  SW3(config)# end
+
+  ! verify by putting SW2 as root
+  SW2# conf t
+  SW2(config)# spanning-tree clan 1 root primary 
+  SW2(config)# end
+
+  SW2(config)# show spanning-tree vlan 1
+  VLAN0001
+    Spanning tree enabled protocol rstp
+    Root ID   Priority  24577
+              Address   a418.75a2.7880
+              This bridge is the root
+    <...TRUNCATED...>
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/3            Root FWD 19        128.4    P2p
+  Fa0/5            Desg BLK 19        128.6    P2p
+
+  SW3# show log
+  <...TRUNCATED...>
+  %SPANTREE-2-ROOTGUARD_CONFIG_CHANGE: Root guard enabled on port FastEthernet0/5 on VLAN 1
+  %SPANTREE-2-ROOTGUARD_BLOCK: Root guard blocking port FastEthernet0/5 on VLAN 1
+
+  SW3# show spanning-tree vlan 1
+  <...TRUNCATED...>
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- ---------------
+  Fa0/4            Root FWD 19        128.5    P2p
+  Fa0/5            Desg FWD 19        128.6    P2p %RoOOT_Inc
+
+  SW3# show spanning-tree inconsistentports
+  Name        Interface       Inconsistency
+  ----------- --------------- -------------------
+  VLAN00001   FastEthernet0/5 Root Inconsistent
+
+  Number of inconsistent ports (segments) in the system: 1
+  ```
 
 
 ## BPDU Guard
