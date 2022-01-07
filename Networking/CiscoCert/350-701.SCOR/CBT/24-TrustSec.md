@@ -309,5 +309,103 @@ Trainer: Keith Barker
 
 ## SGT eXchange Protocol (SXP)
 
+- SXP overview
+  - not all devices w/ Cisco
+  - a.k.a. Scalable Group Tag (SGT) eXchange protocol (SXP)
+  - SGTs assigned to endpoints connecting to the network w/ common network policies
+  - SXP:
+    - a control-plane mechanism used to transport an endpoint's SGT w/ the IP address from one SGT-aware network device to another
+    - a control protocol for propagating IP-to-SGT binding informationacross network devices w/o capability to tag packets
+  - TrustSec filtering packets at egress interface
+
+
+- Demo: config SXP
+  - config on switches connecting the endpoints
+
+    ```text
+    SW2# conf t
+    SW2(config)# cts sxp enable
+    SW2(config)# cts sxp deafult password Cisco!23
+    SW2(config)# cts sxp connection peer 192.168.1.105 password default mode peer speaker hold-time 0 0
+    SW2(config)# end
+
+    SW2# show cts security-groups
+    Security Group Table:
+    =====================
+      <...TRUNCATED...>
+      16:ISE_Admins
+      17:ISE_Ops
+      18:PCB_PCs
+
+    SW2# show cts role-based sgt-map all
+    IP Address        SGT         Source
+    ============================================
+    10.30.0.1         2           INTERNAL
+    10.80.0.1         2           INTERNAL
+    10.80.0.11        17          LOCAL
+    10.80.0.12        18          LOCAL
+    10.80.0.13        16          LOCAL
+    192.168.1.136     2           INTERNAL
+
+    IP-SGT Active Bindings Summary
+    ============================================
+    Total number of LOCAL    bindings = 3
+    Total number of INTERNAL bindings = 3
+    Total number of active   bindings = 6
+
+    SW2# show authentication sessions
+    Interface MAC Address     Method  Domain  Status  Fg  Session ID
+    Gi2/0/3   dca6.3296.92a8  mab     DATA    Auth        Success 0A1E...461B
+    Gi2/0/2   8cae.4cfd.b87f  dot1x   DATA    Auth        Success 0A1E...3EF6
+    Gi2/0/1   5882.a899.5c81  dot1x   DATA    Auth        Success 0A1E...3F85
+    Session count = 3
+
+    SW2# show authentication sessions mac 5882.a899.5c81 details
+              Interface:  GigabitEthernet2/0/1
+              MAC Address:  5882.a899.5c81
+               IP Address:  10.80.0.13
+                User-Name:  Luis
+                   Status:  Authzorized
+                   Domain:  DATA
+           Oper host mode:  multi-auth
+         Oper control dir:  both
+          Session timeout:  N/A
+          Restart timeout:  N/A
+    Periodic Acct timeout:  N/A
+        Common Session ID:  Success 0A1E...3F85
+          Acct Session ID:  0x00000054
+                   Handle:  0x79000026
+           Current Policy:  POLICY_Gi2/0/1
+
+    Local Policy:
+       Service Template: DEFAULT_LINKSEC_POLICY_SHOULD_SECURE (priority 150)
+          Security Policy: Should Secure
+          Security Status: Link unsecure
+    Server Policy:
+               Vlan Group:  Vlan: 80
+                SGT Value:  16
+      Methods status list:
+              Method        State
+              dot1x         Authc Success
+    ```
+
+  - verify ISE on ISe
+    - Work Center tab > TrustSec > SXP subtab: folders - SXP Devices, All SXP Mappings
+    - SXP Devices: fields - Name, IPAddress, Status, Peer Role, Password, Negotiation, SXP, Connected To, Duration, SXP Domain
+    - entry - Name = SW2, IP Address = 172.16.1.136 Status = On, Peer Role = LISTENER > 'Edit' icon
+    - Work Centers tab > TrustSec > SXP: folders - SXP Devices, ALL SXP Mappings
+      - entry: IP Address = 10.80.0.11/32, SGT = ISE_OPs (17/0011), Learned From = 192.1691.105, 192.168.01.136, Learned By = session, SXP Domain = default, PSNs Involved = ISE_02
+      - entry: IP Address = 10.80.0.12/32, SGT = ISE_OPs (18/0011), Learned From = 192.1691.105, 192.168.01.136, Learned By = session, SXP Domain = default, PSNs Involved = ISE_02
+      - entry: IP Address = 10.80.0.13/32, SGT = ISE_OPs (16/0011), Learned From = 192.1691.105, 192.168.01.136, Learned By = session, SXP Domain = default, PSNs Involved = ISE_02
+    - Administration tab > System > Deployment: folders - Deployment, PAN Failover > Deployment
+    - Deployment Nodes List > ISE-02 > End Node: subtabs - General Settings, Profiling Configuration > General Settings
+      - End Node: Hostname = ISE-02, FQDN = ISE-02.ogit.com, Node Type = Identity Service Engine (ISE), Role = Primary, Policy Service = On, Enable SXP Service = On, pxGrid = On > 'Save' button
+  - verify commands
+
+    ```text
+    SW2# show ip device tracking all
+    SW2# show cts roll-based sgt-map all
+    SW# show role-based permissions
+    ```
 
 
