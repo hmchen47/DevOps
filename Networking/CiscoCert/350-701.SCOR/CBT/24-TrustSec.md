@@ -167,6 +167,143 @@ Trainer: Keith Barker
 
 ## Verify TrustSec
 
+- Demo: verify TrustSec config
+  - topology
+    - SW2 @ .133
+    - Bob connected to SW2 w/ g2/0/1, SG = ISE_Ops
+    - Luis connected to SW2 on g2/0/2, SG = ISE_ADmins
+    - PCB-PC connected to SW2 w/ MAB on g2/0/2
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('page')"
+        src    = "img/24-trustsecnet.png"
+        alt    = "Example network for TrustSec"
+        title  = "Example network for TrustSec"
+      />
+    </figure>
+
+  - bring up SW interfaces
+  
+    ```text
+    SW2(config)# int range g2/0/1-3
+    SW2(config-if-range)# no shutdown
+    SW2(config-if-range)# end
+
+    ! TrustSec SXP
+    SW2# term mon
+    %CTS-6-SXP_TIMER_STOP: Connection <192.168.1.136> hold timer stopped
+    %CTS-6-SXP_TIMER_START: Connection <192.168.1.136> hold timer started
+    ```
+
+  - verify interface status on ISE
+    - Operatoins tab > RADIUS subtab > Live Logs: fields - Time, Status, Details, Repeat, Identity, Endpoint D, Endpoint P, Authentication, Authorization
+    - entries - Identity = DC:A6:32:96:92:A8; Identity = Bob; Identity = Luis > Identity = DC:A6:32:96:92:A8 > 'Details' icon
+    - Authentication: section - Overview, Authentication Details, Steps
+  - policy for TrustSec (Matrix): Work Centers tab > TrustSec > TrustSec Policy subtab
+  - modify authentication/authorization policy
+    - Policy tab > Policy Sets subtab: fields - Status, Policy Set Name, Description, Conditions, Allowed Protocols / Server Sequence, Hits, Actions, View
+    - entry - Policy Set Name = Our-Site1-Switch-Policy-Set; Conditions = 'Device-Location EQUALS All Locations#site1' AND 'DEVICE-Device Type EQUALS ALL Device TYpes#switch' > 'View' icon
+    - Policy Sets -> Out-Site1-Switch-Policy-Set: sections - Authentication, Authorization Policy - Local Exceptions, Authorization Policy - Global Exceptions, Authorization Policy
+      - Authentication Policy: entries - Rule Name = Our-Authen-dot1x, Our-Authen-MAB, Default
+      - Authorization Policy: entry - Rule Name = ISE-OPS, Results = ISE_Operations
+      - Authorization Policy: entry - Rule Name = Admins, Results = Ise-admins
+      - Authorization Policy: Rule Name = MAB-Author-Rule, Results = PCB-PC Author Profile
+  - verify authentication & authorization
+    - Operations tab > RADIUS subtab > Live Logs 
+      - entry - Identity = bob, Status = session icon > 'Details' icon > Overview: Authorization Result = ISE-OPerations
+      - entry - Identity = Luis, Status = session icon > 'Details' icon > Overview: Authorization Result = ise-admins
+      - entry - Identity = DC:A6:32:96:92:A8, Status = session icon > 'Details' icon > Overview: Authorization Result = PCB-PC 
+  - add TrustSec policy to Authorization policy
+    - Policy tab > Policy Sets subtab > Authorization Policy
+      - entry - Rule Name = ISE-OPS, Condition = Our-DC ExternalGroup EQUALS ogit.com/ISE-Operations, Results = (Profiles = ISE_Operations) + (Security Groups = ISE_Ops)
+      - entry - Rule Name = Admins, Condition = Our-DC ExternalGroup EQUALS ogit.com/ISE-Admins, Results = (Profiles = ise-admins) + (Security Groups = ISE_Admins)
+      - entry - Rule Name = MAB-Author-Rule, Condition = Network_Access_Authentication_Passed, Results = (Profiles = ISE_Operations) + (Security Groups = PCB_PCs)
+      - 'Save' button > circle w/ 1 on top banner (beside Work Center tab) -> 'Completed sending 1 TrustSec CoA notificatona to releveant network devices.' > 'OK' button
+  - verify pushing TrustSec policy on SW2
+  
+    ```text
+    SW2# cts refresh environment-data
+    SW2# cts refresh policy
+    SW2# show cts security groups
+    Security Group Table:
+    =====================
+      <...TRUNCATED...>
+      16:ISE_Admins
+      17:ISE_Ops
+      18:PCB_PCs
+
+    SW2# show authentication sessions
+    Interface MAC Address     Method  Domain  Status  Fg  Session ID
+    Gi2/0/3   dca6.3296.92a8  mab     DATA    Auth        Success 0A1E...6B15
+    Gi2/0/2   8cae.4cfd.b87f  dot1x   DATA    Auth        Success 0A1E...6362
+    Gi2/0/1   5882.a899.5c81  dot1x   DATA    Auth        Success 0A1E...6594
+    Session count = 3
+
+    SW2# show cts role-based sgt-map all
+    IP Address        SGT         Source
+    ============================================
+    10.30.0.1         2           INTERNAL
+    10.80.0.1         2           INTERNAL
+    192.168.1.136     2           INTERNAL
+
+    IP-SGT Active Bindings Summary
+    ============================================
+    Total number of INTERNAL bindings = 3
+    Total number of active   bindings = 3
+    ! SGT not 16, 17  & 18
+
+    SW2# conf t
+    SW2(config)# int range g2/0/1-3
+    SW2(config-if-range)# shutdown
+    SW2(config-if-range)# no shutdown
+    SW2(config-if-range)# end
+
+    SW2# show cts role-based sgt-map all
+    IP Address        SGT         Source
+    ============================================
+    10.30.0.1         2           INTERNAL
+    10.80.0.1         2           INTERNAL
+    10.80.0.11        17          LOCAL
+    10.80.0.12        18          LOCAL
+    10.80.0.13        16          LOCAL
+    192.168.1.136     2           INTERNAL
+
+    IP-SGT Active Bindings Summary
+    ============================================
+    Total number of LOCAL    bindings = 3
+    Total number of INTERNAL bindings = 3
+    Total number of active   bindings = 6
+    
+    SW2# show cts role-based permissions
+    IPv4 Role-based permissions default:
+        Permit IP-00
+    IPv4 Role-based permissions from group 16: ISE_Admins to group 18: PCB_PCs:
+        No_Telnet-20
+    IPv4 Role-based permissions from group 17: ISE_OPs to group 18: PCB_PCs:
+        No_Telnet-20
+    RBACL Monitor All for Dynamic Policies : FALSE
+    RBACL Monitor All for Configured Policies : FALSE
+
+    ! verify telnet    from ISE_Admins to PCB_PCs
+    Admin> ping 10.80.0.12
+    !!!!!
+
+    Raspberrypi# ip addr
+    <...TRUNCATED...>
+    2: eth0: ...
+      inet 10.80.1.12/24 ...
+    
+    ! testing terminal emulator to telnet 10.80.10.12 (no allowed)
+    SW2# show cts role-based counters
+    Role-based counters
+    From To SW-Denied HW-Denied SW-Permitted HW_Permitted
+    *    *  0         0         8233         5726
+    16   18 0         5         0            16
+    17   18 0         -         0            -
+    ```
+
+  - recommendation: test protocols before pulling SG ACLs
 
 
 
