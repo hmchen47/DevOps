@@ -412,6 +412,8 @@ Trainer: Keith Barker
 
 ## EIGRP Neighbor Relationships and Authentication
 
+- Practice the above lab
+
 
 
 
