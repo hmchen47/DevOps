@@ -6,7 +6,11 @@ Trainer: Keith Barker
 
 ## Introduction to EIGRP Relationships and Authentication
 
-
+- Learning goals
+  - EIGRP
+  - EIGRP neighbors
+  - EIGRP authentication
+  - config EIGRP neighbor and authentication
 
 
 
