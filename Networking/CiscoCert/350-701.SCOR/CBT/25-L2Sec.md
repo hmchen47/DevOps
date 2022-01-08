@@ -248,7 +248,81 @@ Trainer: Keith Barker
 
 ## BPDU Guard
 
+- BPDU guard
+  - a feature to protect the port from receiving STP BPDUs
+  - preventing from accidental connection of switching devices to portfast-enable ports
+  - action: shutdown the port 
 
+
+- BPDU filter
+  - a feature used to filter sending or receiving BPDUs on a switchport
+  - extremely useful on ports configured as portfast ports where not receiving and sending any BPDU messages
+  - configured globally or under the interface level
+  - action: drop BPDU
+
+
+- Demo: config BPDU guard
+  - topology: same as Root Guard
+  - enable BPDU guard on f0/3 on SW2
+
+  ```text
+  SW2# show spanning-tree vlan 1
+  <...TRUNCATED... >
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/3            Root FWD 19        128.4    P2p
+  Fa0/5            Altn BLK 19        128.6    P2p
+  
+  SW2# conf t
+  SW2(config)# int f0/3
+  SW2(config-if)# shutdown
+  SW2(config-if)# do show spanning-tree vlan 1
+  VLAN0001
+    spanning tree enabled protocol rstp
+  <...TRUNCATED... >
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/5            Root FWD 19        128.6    P2p
+
+  SW2(config-if)# spanning-tree bpduguard enable
+  SW2(config-if)# no shutdown
+  SW2(config-if)# end
+
+  SW2# show int status
+  Port      Name      Status        VLan    Duplex  Speed  Type
+  FA0/1               notconnected  1       auto    auto   10/100BaseT
+  FA0/2               notconnected  1       auto    auto   10/100BaseT
+  FA0/3               err-disabled  1       auto    auto   10/100BaseT
+  FA0/4               notconnected  1       auto    auto   10/100BaseT
+  ...TRUNCATED... 
+  Gi0/1               connected     routed  a-full  a-1000 10/100/1000BaseT
+
+  SW2# show int status err-disabled
+  Port    Name      Status         Reason         Err-disabled Vlans
+  Fa0/3             err-disabled   bpduguard  
+
+  ! recover
+  SW2# show int f0/3
+  interface FastEthernet0/3
+   switchport trunk encapsulation dot1q
+   switchport mode trunk
+   spanning-tree bpduguard enable
+  end
+
+  SW2# conf t
+  SW2(config)# int f0/3
+  SW2(config-if)# no spanning-tree bpduguard enable
+  SW2(config-if)# shutdown
+  SW2(config-if)# no shutdown
+  SW2(config-if)# end
+
+  SW2# show spanning-tree vlan 1
+  <...TRUNCATED... >
+  Interface        Role Sts Cost      Prio.Nbr Status
+  ---------------- ---- --- --------- -------- --------
+  Fa0/3            Root FWD 19        128.4    P2p
+  Fa0/5            Altn BLK 19        128.6    P2p
+  ```
 
 
 ## Summary of Layer 2 Security
