@@ -327,5 +327,10 @@ Trainer: Keith Barker
 
 ## Summary of Layer 2 Security
 
+- Summar
+  - storm control
+  - root guard
+  - bpdu guard
+
 
 
