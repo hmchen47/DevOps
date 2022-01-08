@@ -1,16 +1,5 @@
 # 18. Configure and Verify Cisco Port Security
 
-Trainer: Keith Barker
-
-
-## Introducing Port Security
-
-- Learning goals
-  - configure and verify port security on a Cisco switch port
-  - how to change the default settings of port security
-  - how to use errdisable recovery
-  - how to apply port security to multilayer switch trunk interfaces
-
 
 ## Understanding Port Security and Why we Need It
 
@@ -508,9 +497,10 @@ Trainer: Keith Barker
 
 - Ref: [New Training: Cisco CCNA (200-301) Assessment Lab: Security](https://www.cbtnuggets.com/blog/new-skills/new-training-cisco-ccna-200-301-assessment-lab-security)
 
-# 19. Configure and Verify Cisco DHCP Snooping
 
-Trainer: Keith Barker
+
+
+# 19. Configure and Verify Cisco DHCP Snooping
 
 
 ## Introducing DHCP Snooping
@@ -875,8 +865,6 @@ Trainer: Keith Barker
 - [CCNA Lab Assessment Online Training](https://www.cbtnuggets.com/it-training/cisco/assessment-labs)
 
 # 20. Configure and Verify Cisco Dynamic ARP Inspection
-
-Trainer: keith Barker
 
 
 ## Introducing Dynamic ARP Inspection (DAI)
@@ -1324,17 +1312,6 @@ Trainer: keith Barker
 
 # 21. Private VLANS
 
-Trainer: Keith Barker
-
-
-## Introduction to Private VLANs
-
-- Learning goals
-  - PVLANs modes
-  - config PVLANs
-  - Verify PVLANs
-  - trunkking w/ PVLANs
-
 
 ## PVLANs Overview
 
@@ -1634,30 +1611,9 @@ Trainer: Keith Barker
     - pkt: src=10.100.0.53, dst=10.100.0.57, prot=ICMP, info=Echo (ping) reply id=0x7f88, seq=1/256, ttl=64 (reply in 112)
       - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
 
-## PVLAN Summary
-
-- Summary
-  - logically dividing a L2 network into sub-vlans w/ PVLAN
-  - primary VLAN associated w/ second vlans
-  - types of secondary vlans: community and isolated 
-  - promicusous port:
-    - associate w/ primary vlan
-    - acting as default gateway in L3
 
 
 # 22. VRF-lite
-
-Trainer: Keith Barker
-
-
-## Introduction to VRF-lite
-
-- Learning goals
-  - VRF-lite
-  - config VRF-lite
-  - VRF-lite on multi-layer switch
-  - VRF-lite w/ routing
-  - DHCP VRF services
 
 
 ## VRF-lite Overview
@@ -2164,32 +2120,9 @@ Trainer: Keith Barker
   ```
 
 
-## VRF-lite Summary
-
-- Summary
-  - VRF-lite: separating subnets into VPNs
-  - creating VRFs
-  - assigning VRFs to intrfaces
-  - adding routing for VRFs
-  - DHCP service for VRFs
 
 
 # 23. Network Infrastructure Device Hardening
-
-Trainer: keith Barker
-
-
-## Introduction to Device Hardening
-
-- Learning goals
-  - securing network infrastructure
-  - best pratices to protect
-    - management plane
-    - control plane
-    - data plane
-  - routers and switches hardening
-
-
 
 ## Device Hardening Overview
 
@@ -2532,30 +2465,10 @@ Trainer: keith Barker
 
 
 
-## Hardening Review
-
-- Summary
-  - management plane
-  - control plane
-  - data plane
-  - checklist
 
 
 
 # 24. Configure Cisco TrustSec
-
-Trainer: Keith Barker
-
-
-## Introduction to TrustSec
-
-- Learning goals
-  - TrustSec
-  - group ACLs
-  - TrustSec policies
-  - config TrustSec
-  - verify TrustSec
-  - SGT eXchange protocol (SXP)
 
 
 ## TrustSec Overview
@@ -2955,17 +2868,6 @@ Trainer: Keith Barker
 
 # 25. Additional Layer 2 Security
 
-Trainer: Keith Barker
-
-
-## Introduction to Additional Layer 2 Security Options
-
-- Learning goals
-  - L2 security tools
-  - storm control
-  - root guard
-  - BPDU guard
-
 
 ## Layer 2 Security Overview
 
@@ -3280,12 +3182,6 @@ Trainer: Keith Barker
   ```
 
 
-## Summary of Layer 2 Security
-
-- Summar
-  - storm control
-  - root guard
-  - bpdu guard
 
 
 
