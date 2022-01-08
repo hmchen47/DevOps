@@ -14,8 +14,8 @@
 
 - Demo: CAM table overflow
 
-  ```bash
-  SW## show vlan brief
+  ```text
+  SW# show vlan brief
   VLAN Name           Status    Ports
   ---- -------------- --------- -----------------------------
   1    default        active    Gi0/3, Gi1/1, Gi1/2, Gi1/3
@@ -26,7 +26,7 @@
   40   VLAN0040       active
   ...
 
-  SW## show mac address-table vlan 10
+  SW# show mac address-table vlan 10
           Mac Address Table
   Vlan  Mac Address     Type    Ports
   ----  -----------     ------  -----
@@ -36,7 +36,7 @@
     10  0015.d259.800a  DYNAMIC Gi0/1
   Total Mac Addresses for this criterion: 4
 
-  SW## show mac address-table int g0/0 vlan 10
+  SW# show mac address-table int g0/0 vlan 10
           Mac Address Table
   Vlan  Mac Address     Type    Ports
   ----  -----------     ------  -----
@@ -45,7 +45,7 @@
   Total Mac Addresses for this criterion: 2
 
   ! connect a Kali Linux box to g0/0
-  SW## show mac address-table int g0/0 vlan 10
+  SW# show mac address-table int g0/0 vlan 10
           Mac Address Table
   Vlan  Mac Address     Type    Ports
   ----  -----------     ------  -----
@@ -56,7 +56,7 @@
 
   Kali## macof -i eth0 -n 50
 
-  SW## show mac address-table count vlan 10
+  SW# show mac address-table count vlan 10
   Mac Entries for Vlan 10:
   --------------------------
   Dynamic Address Count : 53
@@ -95,8 +95,8 @@
 - Demo: config port security
   - plan: port g0/0 connected to a PC w/ Vlan 10
 
-  ```bash
-  SW## conf t
+  ```text
+  SW# conf t
   SW(config)## int g0/0
   SW(config-if)## switchport mode access
   SW(config-if)## switchport access vlan 10
@@ -131,7 +131,7 @@
   SW(config-if)## switchport port-security
   SW(config-if)## end
 
-  SW## show port security
+  SW# show port security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
   -------------------------------------------------------------------------------
@@ -145,7 +145,7 @@
   ...
   6 packets transmitted, 0 received, 100% packet loss, time 5140ms
 
-  SW## show int status err-disabled
+  SW# show int status err-disabled
   Port  Name  Status        Reason            Err-disabled Vlans
   Gi0/0       err-disabled  psecure-violation
   ```
@@ -165,8 +165,8 @@
   - all port security settings not in function until port security enabled
   - resume shutdowned interface by executing `shutdown` and `no shutdown` on the interface
 
-  ```bash
-  SW## conf t
+  ```text
+  SW# conf t
   SW(config)## int g0/0
   SW(config-if)## switchport mode access
   SW(config-if)## switchport access vlan 10
@@ -210,7 +210,7 @@
   Security Violation Count   : 0
 
   SW(config-if)## end
-  SW## show mac address-table int g0/0
+  SW# show mac address-table int g0/0
           Mac Address Table
   Vlan  Mac Address     Type    Ports
   ----  -----------     ------  -----
@@ -226,7 +226,7 @@
   ! successful
 
   SW(config-if)## end
-  SW## show mac address-table int g0/0
+  SW# show mac address-table int g0/0
           Mac Address Table
   Vlan  Mac Address     Type    Ports
   ----  -----------     ------  -----
@@ -243,18 +243,18 @@
   %PORT_SECURITY-2-PSECURE_CIOLATION: Security violation occurred, 
     caused by MAC address b49f.a376.e018 on port GigabitEthernet0/0
   
-  SW## show intterfaces status err-disabled
+  SW# show intterfaces status err-disabled
   Port  Name  Status        Reason            Err-disabled Vlans
   Gi0/0       err-disabled  psecure-violation
 
   ! resume the interface
-  SW## conf t
+  SW# conf t
   SW(config)## int g0/0
   SW(config-if)## shutdown
   SW(config-if)## no shutdown
   SW(config-if)## end
 
-  SW## show int status err-disbaled
+  SW# show int status err-disbaled
   Port  Name  Status        Reason            Err-disabled Vlans
   ```
 
@@ -263,8 +263,8 @@
 
 - Demo: config auto recovery for port security violation
 
-  ```bash
-  SW## show port-security
+  ```text
+  SW# show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
   -------------------------------------------------------------------------------
@@ -272,7 +272,7 @@
   Total Addresses in System (excluding one mac per port)     : 0
   Max Addresses limit in System (excluding one mac per port) : 4096
 
-  SW## conf t
+  SW# conf t
   SW(config)## int g0/0
   SW(config-if)## switchport host
   SW(config-if)## switchport port-security maximum 5
@@ -300,7 +300,7 @@
   Gi0/0       err-disabled  psecure-violation
 
   SW(config-if)## end
-  SW## show errdisable recovery
+  SW# show errdisable recovery
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
@@ -309,14 +309,14 @@
   ...
 
   ! port security violation auto recovery in 30 secs
-  SW## conf t
+  SW# conf t
   SW(config)## errdisable recovery cause psecure-violation
   SW(config)## errdisable recovery interval 30
   SW(config)## end
 
   SW(config-if)## end
   
-  SW## show errdisable recovery
+  SW# show errdisable recovery
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
@@ -331,13 +331,13 @@
   ---------   ------------------    ---------------
   Gi0/0       psecure-violation       281
 
-  SW## conf t
+  SW# conf t
   SW(config)## int g0/0
   SW(config-if)## shutdown
   SW(config-if)## no shutdown
   SW(config-if)## end
 
-  SW## show errdisable recovery
+  SW# show errdisable recovery
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
@@ -378,7 +378,7 @@
       - max mac addresses: 2000
       - violation action: protect
 
-  ```bash
+  ```text
   ! config Core1
   Core1## show cdp neighbor
   Device ID   Local Interface   Holdtime  Capability  Platform  Port ID
@@ -562,11 +562,11 @@
     />
   </figure>
 
-  ```bash
-  SW## show vlan brief
+  ```text
+  SW# show vlan brief
   ! all ports on native vlan
 
-  SW## conf t
+  SW# conf t
   SW(config)## ip dhcp snooping
   
   SW(config)## do show ip dhcp snooping
@@ -619,8 +619,8 @@
   - bootup PC1 and observe interfaces connected to DHCP Good and DHCP Bad
   - check IP address of PC1 & PC2 $\gets$ both from DHCP Good server
 
-  ```bash
-  SW## show ip dhcp binding
+  ```text
+  SW# show ip dhcp binding
   MacAddress          IpAddress     Lease (sec)   Type            VLAN  Interface
   -----------------   ------------  -----------   -------------   ----  ---------------
   00:D0:FF:B1:3D:16   10.16.20.2    86400         dhcp-snooping   1     FastEthernet0/1
@@ -641,8 +641,8 @@
 
 - Demo: config source guard
 
-  ```bash
-  SW## show ip dhcp snooping
+  ```text
+  SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
   30
   DHCP snooping is operational on the following VLANs:
@@ -661,24 +661,24 @@
   ------------------  -------   ------------    ------------------
   GigabitEthernet0/1   yes       yes             unlimited
 
-  SW## show ip dhcp snooping binding
+  SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79?:66:68:04   10.16.20.101 85538      dhcp-snooping   30     GigabitEThernet0/1
   Total number of binding: 1
 
-  SW## conf t
+  SW# conf t
   SW(config)## int g0/1
   SW(config-if)## ip verify source port-security
   SW(config-if)## end
 
-  SW## show ip source binding
+  SW# show ip source binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79?:66:68:04   10.16.20.101 85448      dhcp-snooping   30     GigabitEThernet0/1
   Total number of binding: 1
 
-  SW## show ip verify source
+  SW# show ip verify source
   Interface  Filter-type  Filter-mode  IP-address       Mac-address        Vlan
   ---------  -----------  -----------  ---------------  -----------------  ----------
   Gi0/1      ip-mac       active       10.16.20.101     permit-all         30
@@ -703,7 +703,7 @@
     />
   </figure>
 
-  ```bash
+  ```text
   ! always verify basic info before conducting any config
   R3## show ip int brief
   Interface              IP-Address     OK? Method Status                Protocol
@@ -736,7 +736,7 @@
    10.16.20.1           10.16.20.1 - 10.16.20.254  0     / 10    / 254
    
   ! config switch
-  SW## show ip dhcp snooping
+  SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
   none
   DHCP snooping is operational on the following VLANs:
@@ -754,7 +754,7 @@
   Interface           Trusted   Allow option    Rate Limited (pps)
   ------------------  -------   ------------    ------------------
 
-  SW## conf t
+  SW# conf t
   SW(config)## ip dhcp snooping
   SW(config)## ip dhcp snooping vlan 30
 
@@ -782,7 +782,7 @@
   SW(config-if)## ip dhcp snooping trust
   SW(config-if)## end
 
-  SW## ip dhcp snooping
+  SW# ip dhcp snooping
   Switch DHCP snooping is enabled
   Switch DHCP gleaning is disabled
   DHCP snooping is configured on the following VLANs:
@@ -818,7 +818,7 @@
   DDORA IP 10.16.20.11/24 GW 10.16.20.7
 
   ! verify on SW
-  SW## show ip dhcp binding
+  SW# show ip dhcp binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.11  86376      dhcp-snooping   30     GigabitEThernet0/1
@@ -926,16 +926,16 @@
     - another switch (subnet 10.1.0.0/24) connected to SW on port g0/1
   - task: implement DAI for SW
   
-  ```bash
+  ```text
   ! verify DHCP snooping enabled
-  SW## show ip dhcp snooping binding
+  SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.101 85604      dhcp-snooping   40     GigabitEThernet0/2
   00:15:5D:77:77:01    10.16.20.102 85689      dhcp-snooping   30     GigabitEthernet0/1
   Total number of binding: 2
 
-  SW## shop ip arp inspection vlan 30
+  SW# shop ip arp inspection vlan 30
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
   IP Address Validation       : Disabled
@@ -949,7 +949,7 @@
     30 Deny        Deny         Off
   
   ! config interface trust first
-  SW## conf t
+  SW# conf t
   SW(config)## int g3/3
   
   SW(config-if)## do show cdp neighbor
@@ -964,7 +964,7 @@
   SW(config)## end
 
   ! verify DAI
-  SW## show ip arp inspection vlan 30
+  SW# show ip arp inspection vlan 30
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
   IP Address Validation       : Disabled
@@ -996,8 +996,8 @@
 - Troubleshooting dropped ARP msgs from untrusted port connected to a switch
   - dropped DHCP messages allowed by permitted ACL
   
-  ```bash
-  SW## show ip dhcp snooping binding
+  ```text
+  SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.101 85604      dhcp-snooping   40     GigabitEThernet0/2
@@ -1005,7 +1005,7 @@
   Total number of binding: 2
 
   ! config interface trust first
-  SW## conf t
+  SW# conf t
   SW(config)## int g3/3
   SW(config-if)## ip arp inspection trust
   SW(config-if)## exit
@@ -1020,12 +1020,12 @@
   SW(config)## ip arp inspection filter DEMO-LIST vlan 30
   SW(config)## end
 
-  SW## show arp access-list
+  SW# show arp access-list
   ARP access list DEMO-LIST
       permit ip host 10.1.0.111 mac host 0015.5d67.8322
       permit ip host 10.1.0.120 mac host 0015.5d44.5566
 
-  SW## show arp inspection vlan 30
+  SW# show arp inspection vlan 30
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
   IP Address Validation       : Disabled
@@ -1038,7 +1038,7 @@
   ---- ----------- ------------ -------------
     30 Deny        Deny         Off
 
-  SW## show ip arp inspection statistics
+  SW# show ip arp inspection statistics
   Vlan Forwarded Dropped DHCP Drops ACL Drops
   ---- --------- ------- ---------- ----------
     30        46      46         46          0
@@ -1060,7 +1060,7 @@
   ...TRUNCATED...
 
   ! statistics increased
-  SW## show ip arp inspection statistics
+  SW# show ip arp inspection statistics
   Vlan Forwarded Dropped DHCP Drops ACL Drops
   ---- --------- ------- ---------- ----------
     30        101     46         46          0
@@ -1079,8 +1079,8 @@
 
 - Demo: config DAI parameters
 
-  ```bash
-  SW## show ip arp inspection interfaces
+  ```text
+  SW# show ip arp inspection interfaces
   Interface       Trust State Rate (pps)  Burst Interval
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
@@ -1089,12 +1089,12 @@
   Gi3/3           Trusted           None             N/A
 
   ! config DAI on g3/3 w/ rate limit = 100 pkts/sec
-  SW## conf t
+  SW# conf t
   SW(config)## int g3/3
   SW(config-if)## ip arp inspection limit rate 100
   SW(config-if)## end
 
-  SW## show ip arp inspection interfaces
+  SW# show ip arp inspection interfaces
   Interface       Trust State Rate (pps)  Burst Interval
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
@@ -1111,12 +1111,12 @@
   %LINEPORTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
   %LINK-3-UPDOWN: Interface GigabitEThernet0/1, change state to down
 
-  SW## show int status err-disabled
+  SW# show int status err-disabled
   Port      Name      Status       Reason          Err-disabled Vlans
   Gi0/1               err-disabled arp-inspection
 
   ! re-activate shutdown interface
-  SW## conf t
+  SW# conf t
   SW(config)## int g0/1
   SW(config-if)## shutdown
   SW(config-if)## no shutdown
@@ -1137,18 +1137,18 @@
   ...
 
   ! disable src/dst MAC & IP addresses validation by default
-  SW## show ip arp inspection vlan 30
+  SW# show ip arp inspection vlan 30
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
   IP Address Validation       : Disabled
   ...
 
   ! enable src/dst MAC & IP addresses validation
-  SW## conf t
+  SW# conf t
   SW(config)## ip arp inspection validate dst-mac src-mac ip
   SW(config)## end
 
-  SW## show ip arp inspection vlan 30
+  SW# show ip arp inspection vlan 30
   Source Mac Validation       : Enabled
   Destination Mac Validation  : Enabled
   IP Address Validation       : Enabled
@@ -1178,9 +1178,9 @@
     - trust port g3/3 $\gets$ g1/0 on R3 not assigned via DHCP
     - verify DAI working correctly
   
-  ```bash
+  ```text
   ! verify basic info
-  SW## show vlan brief
+  SW# show vlan brief
   VLAN Name                             Status    Ports
   ---- -------------------------------- --------- -------------------------------
   1    default                          active    Gi0/0, Gi0/3, Gi0/1, Gi1/1,
@@ -1189,18 +1189,18 @@
   40   Sales                            active    Gi0/2
   ...TRUNCATED...
 
-  SW## show cdp neighbor
+  SW# show cdp neighbor
   Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
   R3               Gig 3/3           177               R    7206VXR   Gig 1/0
 
-  SW## conf t
+  SW# conf t
   SW(config)## int g3/3
   SW(config-if)## ip arp inspection trust
   SW(config-if)## exit
   SW(config)## ip arp inspection vlan 40
   SW(config)## end
 
-  SW## show ip arp inspection vlan 40
+  SW# show ip arp inspection vlan 40
 
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
@@ -1214,7 +1214,7 @@
   ---- ----------- ------------ -------------
     40 Deny        Deny         Off
 
-  SW## show ip dhp snooping binding
+  SW# show ip dhp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.101 85681      dhcp-snooping   40     GigabitEThernet0/2
@@ -1254,7 +1254,7 @@
   DORA IP 10.16.22.101/24 GW 10.16.22.7
 
   ! verify the change
-  SW## show ip dhcp snooping binding
+  SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
   00:50:79:66:68:04    10.16.20.101 85681      dhcp-snooping   40     GigabitEThernet0/2
@@ -1384,8 +1384,8 @@
 
 - Demo: config PVLAN
 
-  ```bash
-  SW## conf t
+  ```text
+  SW# conf t
 
   ! reset existed config
   SW1(config)## no vlan 2-1000
@@ -1448,8 +1448,8 @@
 
 - Demo: verify PVLAN
 
-  ```bash
-  SW1## show int brief
+  ```text
+  SW1# show int brief
   Port      Name     Status       Vlan       Duplex  Speed Type
   Gi0/0              connect      1          a-full  auto  RJ45
   Gi0/1              connect      100,200    a-full  auto  RJ45
@@ -1464,14 +1464,14 @@
   Gi1/2              connect      100,400    a-full  auto  RJ45
   Gi1/3              notconnect   1          a-full  auto  RJ45
 
-  SW1## show vlan private-vlan
+  SW1# show vlan private-vlan
   Primary Secondary Type              Ports
   ------- --------- ----------------- -------------------------
   100     200       community         Gi0/1, Gi0/2   
   100     300       community         Gi1/1, Gi1/2
   100     400       isolated          Gi2/1, Gi2/2
 
-  SW1## show vlan private-vlan type
+  SW1# show vlan private-vlan type
   Vlan Type
   ---- -----------------
   100  primary
@@ -1479,7 +1479,7 @@
   300  community
   400  isolated
 
-  SW1## show int gig 0/1 switchport
+  SW1# show int gig 0/1 switchport
   Name: Gi0/1
   Switchport: Enable
   Administrative Mode: private-vlan host
@@ -1488,20 +1488,20 @@
   Administrative private-vlan host-association: 100 (Primary VLAN) 200 (Community A)
   ...TRUNCATED...
 
-  SW1## show int gig 1/1 switchport
+  SW1# show int gig 1/1 switchport
   Name: Gi1/1
   ...TRUNCATED...
   Administrative private-vlan host-association: 100 (Primary VLAN) 300 (Community B)
   ...TRUNCATED...
 
-  SW1## show int gig 2/1 switchport
+  SW1# show int gig 2/1 switchport
   Name: Gi2/1
   ...TRUNCATED...
   Administrative private-vlan host-association: 100 (Primary VLAN) 400 (Isolated VLAN)
   ...TRUNCATED...
 
   ! config dhcp pool for DHCP service
-  SW1## conf t
+  SW1# conf t
   SW1(config)## ip dhcp pool DemoPool
   SW1(dhcp-config)## network 10.100.10.0 /24
   SW1(dhcp-config)## exit
@@ -1560,15 +1560,15 @@
     - config to allow Roamer to access PC 300-1 & 300-2
     - verify the reachability from Roamer
 
-  ```bash
-  SW2## show vlan private-vlan
+  ```text
+  SW2# show vlan private-vlan
   Primary Secondary Type              Ports
   ------- --------- ----------------- -------------------------
   100     200       community         Gi0/1, Gi0/2   
   100     300       community         Gi1/1, Gi1/2
   100     400       isolated          Gi2/1, Gi2/2
 
-  SW2## show int trunk
+  SW2# show int trunk
   Port    Mode  Encapsulation Status    Native vlan
   Gi0/0   on    802.1q        trunking  1
 
@@ -1718,7 +1718,7 @@
 - Demo: config VRF-lite on SW1
 
   ```text
-  SW1## conf t
+  SW1# conf t
   SW1(config)## vrf definition Cust1
   SW1(config-vrf)## description Routing for Cust1
   SW1(config-vrf)## address-family ipv4
@@ -1770,17 +1770,17 @@
   SW1(config-if)## exit
   SW1(config)## end
 
-  SW1## show vrf
+  SW1# show vrf
   Name    Default RD    Protocols   Interfaces
   Cust1   <not set>     ipv4        Vl101
                                     VL102
   Cust2   <not set>     ipv4        Vl201
                                     VL202
 
-  SW1## show ip route
+  SW1# show ip route
   Gateway of last resort is not set.
 
-  SW1## show ip route vrf Cust1
+  SW1# show ip route vrf Cust1
   Gateway of last resort is not set.
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   C    10.12.0.0/24 is directly connected, Vlan102
@@ -1788,7 +1788,7 @@
   C    10.101.0.0/24 is directly connected, Vlan101
   L    10.101.0.1/32 is directly connected, Vlan101
 
-  SW1## show ip route vrf Cust2
+  SW1# show ip route vrf Cust2
   Gateway of last resort is not set.
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   C    10.12.0.0/24 is directly connected, Vlan202
@@ -1818,14 +1818,14 @@
   SW2(config-if)## ip address 10.12.0.2 255.255.255.0
   ...TRUNCATED...
 
-  SW2## show vrf
+  SW2# show vrf
   Name    Default RD    Protocols   Interfaces
   Cust1   <not set>     ipv4        Vl101
                                     VL102
   Cust2   <not set>     ipv4        Vl201
                                     VL202
 
-  SW2## show ip route vrf Cust1
+  SW2# show ip route vrf Cust1
   Gateway of last resort is not set.
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   C    10.12.0.0/24 is directly connected, Vlan102
@@ -1833,7 +1833,7 @@
   C    10.101.0.0/24 is directly connected, Vlan101
   L    10.101.0.2/32 is directly connected, Vlan101
 
-  SW2## show ip route vrf Cust2
+  SW2# show ip route vrf Cust2
   Gateway of last resort is not set.
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   C    10.12.0.0/24 is directly connected, Vlan202
@@ -1841,7 +1841,7 @@
   C    10.201.0.0/24 is directly connected, Vlan201
   L    10.201.0.2/32 is directly connected, Vlan201
 
-  SW1## show ip route
+  SW1# show ip route
   Gateway of last resort is not set.
   ```
 
@@ -1854,7 +1854,7 @@
   - same commands for both switches
 
   ```text
-  SW1## conf t
+  SW1# conf t
   SW1(config)## router ospf 1 vrf Cust1
   SW1(config-router)## network 0.0.0.0 255.255.255.255 area 0
   SW1(config-router)## exit
@@ -1864,12 +1864,12 @@
   SW1(config-router-af)## network 0.0.0.0
   SW1(config-router-af)## end
 
-  SW1## show ip ospf neighbor
+  SW1# show ip ospf neighbor
   Neighbor ID     Pri    State      Dead Time    Address     Interface
   10.101.0.2        1    FULL/DR    00:00:33     10.12.0.2   Vlan102
   10.101.0.2        1    FULL/DR    00:00:35     10.101.0.2  Vlan101
 
-  SW1## show eigrp address-family ipv4 vrf Cust2 interfaces
+  SW1# show eigrp address-family ipv4 vrf Cust2 interfaces
   EIGRP-IPv4 VR(Cust2-EIGRP) Address-Family Interfaces for AS(1)
              VRF(Cust2)
                       Xmit Queue   PeerQ       Mean  Pacing Time     Multicast    Pending 
@@ -1877,7 +1877,7 @@
   Vl201          1        0/0        0/0        14      0/0          127           0 
   Vl202          1        0/0        0/0         0      0/0          127           0
 
-  SW1## show ip eigrp vrf Cust2 neighbors
+  SW1# show ip eigrp vrf Cust2 neighbors
   EIGRP-IPv4 VR(Cust2-EIGRP) Address-Family Neighbors for AS(1)
              VRF(Cust2)
   H   Address     Interfaces    Hold  Uptime   SRTT    RTO   Q
@@ -1886,10 +1886,10 @@
   0   10.201.0.2  Vl201           13  00:03:22   14    100   0
 
   ! verify connectivity
-  SW1## ping 10.12.0.2
+  SW1# ping 10.12.0.2
   .....
 
-  SW1## ping vrf Cust1 10.12.0.2
+  SW1# ping vrf Cust1 10.12.0.2
   !!!!!
   ```
 
@@ -1899,14 +1899,14 @@
 - Demo: verify VRF-lite
 
   ```text
-  SW1## show vrf
+  SW1# show vrf
   Name    Default RD    Protocols   Interfaces
   Cust1   <not set>     ipv4        Vl101
                                     VL102
   Cust2   <not set>     ipv4        Vl201
                                     VL202
   
-  SW1## show ip protocols vrf Cust1
+  SW1# show ip protocols vrf Cust1
   *** IP Routing is NSF aware ***
   Routing Protocol is "ospf 1"
     Outgoing update filter list for all interfaces is not set
@@ -1922,14 +1922,14 @@
     Distance: (default is 110)
 
   ! create loopback interface
-  SW1## conf t
+  SW1# conf t
   SW1(config)## int loop 0
   SW1(config-if)## vrf forwarding Cust1
   SW1(config-if)## ip addr 1.1.1.1 255.255.255.255
   SW1(config-if)## end
 
   ! verify reachability
-  SW2## show ip route
+  SW2# show ip route
   Gateway of last resort is not set.
       1.0.0.0/32 is subnetted, 1 subnets
   O    1.1.1.1 [110/2] via 10.101.0.1, 00:00:20, Vlan101
@@ -1937,20 +1937,20 @@
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   ...TRUNCATED...
 
-  SW2## ping 1.1.1.1
+  SW2# ping 1.1.1.1
   .....
 
-  SW2## ping vrf Cust1 1.1.1.1
+  SW2# ping vrf Cust1 1.1.1.1
   !!!!!
 
-  SW2## show ip route vrf Cust1
+  SW2# show ip route vrf Cust1
 
-  SW1## conf t
+  SW1# conf t
   SW1(config)## router ospf 1 vrf Cust1
   SW1(config-router)## default-information originate always
   SW1(config-router)## end
 
-  SW2## show ip route
+  SW2# show ip route
   Gateway of last resort is not set.
   O*E2  0.0.0.0/0 [110/2] via 10.101.0.1, 00:00:20, Vlan101
                   [110/2] via 10.12.0.1, 00:00:20, Vlan102
@@ -1960,14 +1960,14 @@
         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   ...TRUNCATED...
 
-  SW2## conf t
+  SW2# conf t
   SW2(config)## int loop 0
   SW2(config-if)## vrf forwarding Cust2
   SW2(config-if)## ip addr 2.2.2.2 255.255.255.255
   SW2(config-if)## end
 
   ! verify Cust2 routing settings
-  SW2## show ip protocols vrf Cust2
+  SW2# show ip protocols vrf Cust2
   *** IP Routing is NSF aware ***
   Routing Protocol is "ospf 1"
     Outgoing update filter list for all interfaces is not set
@@ -2000,7 +2000,7 @@
       10.201.0.1        90    00:10:59
     Distance: internal 90 external 170
 
-  SW2## show vrf
+  SW2# show vrf
   Name    Default RD    Protocols   Interfaces
   Cust1   <not set>     ipv4        Vl101
                                     VL102
@@ -2008,7 +2008,7 @@
                                     VL202
                                     Lo0
 
-  SW1## show ip route vrf Cust2
+  SW1# show ip route vrf Cust2
   Gateway of last resort is not set.
         2.0.0.0/32 is subnetted, 1 subnets
   D      2.2.2.2 [90/10880] via 10.201.0.1, 00:00:43, Vlan201
@@ -2016,7 +2016,7 @@
         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
   ...TRUNCATED...
 
-  SW1## ping vrf Cust2 2.2.2.2
+  SW1# ping vrf Cust2 2.2.2.2
   !!!!!
   ```
 
@@ -2026,7 +2026,7 @@
 - Demo: verify reachability w/ DHCP and VRF-lite
 
   ```text
-  SW2## conf t
+  SW2# conf t
 
   ! config DHCP pool for different VRFs
   SW2(config)## ip dhcp pool 101-subnet
@@ -2068,7 +2068,7 @@
   SW2(config)## end
 
   ! verify config
-  SW2## show run | sec dhcp
+  SW2# show run | sec dhcp
   ip dhcp pool 101-subnet
     vrf Cust1
     network 10.101.0.0 255.255.255.0
@@ -2087,7 +2087,7 @@
     default-router 10.12.0.2
 
   ! associate interface w/ different VRFs
-  SW2## conf t
+  SW2# conf t
 
   SW2(config)## int g1/0
   SW2(config-if)## switchport host
@@ -2110,7 +2110,7 @@
   SW2(config-if)## exit
 
   ! verify 
-  SW2## show int status
+  SW2# show int status
   Port      Name      Status        VLan    Duplex  Speed Type
   Gi0/0               connected     trunk   a-full  auto  RJ45
   Gi0/1               not connected 1       a-full  auto  RJ45
@@ -2564,7 +2564,7 @@
   - `cts refresh`: ensure ISE updated
 
   ```text
-  SW2## conf t
+  SW2# conf t
   SW2(config)## cts authorization list DemoSGList
   SW2(config)## aaa authorization network DemoSGList group Demo-Group
   SW2(config)## cts logging verbose
@@ -2577,8 +2577,8 @@
   SW2(config)## pac key Cisco!23
   SW2(config)## exit
 
-  SW2## cts credentials id SW2-3750x-136 password Cisco!23
-  SW2## show cts pacs
+  SW2# cts credentials id SW2-3750x-136 password Cisco!23
+  SW2# show cts pacs
   AID: CE01...56FE
   PAC-Info:
     PAC-type = Cisco TrustSec
@@ -2589,12 +2589,12 @@
   PAC-Opaque: 0002...6DE9
   Refresh timer is set for 14y42w
 
-  SW2## cts refresh environment-data
+  SW2# cts refresh environment-data
   Environment data download in progress
-  SW2## cts refresh policy
+  SW2# cts refresh policy
   Policy refresh in progress
 
-  SW2## show cts environment-data
+  SW2# show cts environment-data
   CTS Environment Data
   ====================
   Current state = COMPLETE
@@ -2652,7 +2652,7 @@
     SW2(config-if-range)## end
 
     ! TrustSec SXP
-    SW2## term mon
+    SW2# term mon
     %CTS-6-SXP_TIMER_STOP: Connection <192.168.1.136> hold timer stopped
     %CTS-6-SXP_TIMER_START: Connection <192.168.1.136> hold timer started
     ```
@@ -2684,9 +2684,9 @@
   - verify pushing TrustSec policy on SW2
   
     ```text
-    SW2## cts refresh environment-data
-    SW2## cts refresh policy
-    SW2## show cts security groups
+    SW2# cts refresh environment-data
+    SW2# cts refresh policy
+    SW2# show cts security groups
     Security Group Table:
     =====================
       <...TRUNCATED...>
@@ -2694,14 +2694,14 @@
       17:ISE_Ops
       18:PCB_PCs
 
-    SW2## show authentication sessions
+    SW2# show authentication sessions
     Interface MAC Address     Method  Domain  Status  Fg  Session ID
     Gi2/0/3   dca6.3296.92a8  mab     DATA    Auth        Success 0A1E...6B15
     Gi2/0/2   8cae.4cfd.b87f  dot1x   DATA    Auth        Success 0A1E...6362
     Gi2/0/1   5882.a899.5c81  dot1x   DATA    Auth        Success 0A1E...6594
     Session count = 3
 
-    SW2## show cts role-based sgt-map all
+    SW2# show cts role-based sgt-map all
     IP Address        SGT         Source
     ============================================
     10.30.0.1         2           INTERNAL
@@ -2714,13 +2714,13 @@
     Total number of active   bindings = 3
     ! SGT not 16, 17  & 18
 
-    SW2## conf t
+    SW2# conf t
     SW2(config)## int range g2/0/1-3
     SW2(config-if-range)## shutdown
     SW2(config-if-range)## no shutdown
     SW2(config-if-range)## end
 
-    SW2## show cts role-based sgt-map all
+    SW2# show cts role-based sgt-map all
     IP Address        SGT         Source
     ============================================
     10.30.0.1         2           INTERNAL
@@ -2736,7 +2736,7 @@
     Total number of INTERNAL bindings = 3
     Total number of active   bindings = 6
     
-    SW2## show cts role-based permissions
+    SW2# show cts role-based permissions
     IPv4 Role-based permissions default:
         Permit IP-00
     IPv4 Role-based permissions from group 16: ISE_Admins to group 18: PCB_PCs:
@@ -2756,7 +2756,7 @@
       inet 10.80.1.12/24 ...
     
     ! testing terminal emulator to telnet 10.80.10.12 (no allowed)
-    SW2## show cts role-based counters
+    SW2# show cts role-based counters
     Role-based counters
     From To SW-Denied HW-Denied SW-Permitted HW_Permitted
     *    *  0         0         8233         5726
@@ -2784,13 +2784,13 @@
   - config on switches connecting the endpoints
 
     ```text
-    SW2## conf t
+    SW2# conf t
     SW2(config)## cts sxp enable
     SW2(config)## cts sxp deafult password Cisco!23
     SW2(config)## cts sxp connection peer 192.168.1.105 password default mode peer speaker hold-time 0 0
     SW2(config)## end
 
-    SW2## show cts security-groups
+    SW2# show cts security-groups
     Security Group Table:
     =====================
       <...TRUNCATED...>
@@ -2798,7 +2798,7 @@
       17:ISE_Ops
       18:PCB_PCs
 
-    SW2## show cts role-based sgt-map all
+    SW2# show cts role-based sgt-map all
     IP Address        SGT         Source
     ============================================
     10.30.0.1         2           INTERNAL
@@ -2814,14 +2814,14 @@
     Total number of INTERNAL bindings = 3
     Total number of active   bindings = 6
 
-    SW2## show authentication sessions
+    SW2# show authentication sessions
     Interface MAC Address     Method  Domain  Status  Fg  Session ID
     Gi2/0/3   dca6.3296.92a8  mab     DATA    Auth        Success 0A1E...461B
     Gi2/0/2   8cae.4cfd.b87f  dot1x   DATA    Auth        Success 0A1E...3EF6
     Gi2/0/1   5882.a899.5c81  dot1x   DATA    Auth        Success 0A1E...3F85
     Session count = 3
 
-    SW2## show authentication sessions mac 5882.a899.5c81 details
+    SW2# show authentication sessions mac 5882.a899.5c81 details
               Interface:  GigabitEthernet2/0/1
               MAC Address:  5882.a899.5c81
                IP Address:  10.80.0.13
@@ -2864,9 +2864,9 @@
   - verify commands
 
     ```text
-    SW2## show ip device tracking all
-    SW2## show cts roll-based sgt-map all
-    SW## show role-based permissions
+    SW2# show ip device tracking all
+    SW2# show cts roll-based sgt-map all
+    SW# show role-based permissions
     ```
 
 
@@ -2915,26 +2915,26 @@
   </figure>
 
   ```text
-  SW2## show cdp neighbor
+  SW2# show cdp neighbor
   Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
   SW1.ogit.com     Fas 0/3           169           R S I    WS-C3560- Fas 0/3
   SW2.ogit.com     Fas 0/5           179           R S I    WS-C3560- Fas 0/5
 
-  SW1## show spanning-tree vlan 1
+  SW1# show spanning-tree vlan 1
   ...TRUNCATED... 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Desg FWD 19        128.4    P2p
   Fa0/4            Desg FWD 19        128.5    P2p
 
-  SW2## show spanning-tree vlan 1
+  SW2# show spanning-tree vlan 1
   ...TRUNCATED... 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Altn BLK 19        128.6    P2p
 
-  SW3## show spanning-tree vlan 1
+  SW3# show spanning-tree vlan 1
   ...TRUNCATED... 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
@@ -2945,12 +2945,12 @@
   SW1/2/3(config)## no spanning-tree vlan 1
   SW1/2/3(config)## end
 
-  SW1## conf t
+  SW1# conf t
   SW1(config)## int vlan 1
   SW1(config-if)## ip address 1.1.1.1 255.255.255.0
   SW1(config-if)## end
 
-  SW1## show ip int brief
+  SW1# show ip int brief
   Interface           IP-Address    OK? Method  Status                Protocol
   Vlan1               1.1.1.1       YES manual  up                    up
   FastEthernet0/1     unassigned    YES NVRAM   administratively down down
@@ -2959,17 +2959,17 @@
   ...TRUNCATED... 
   GigabitEthernet0/1  192.168.1.201 YES NVRAM   up                    up
 
-  SW1## ping 1.1.1.88
+  SW1# ping 1.1.1.88
   .....
 
   ! broadcast storm happening
-  SW1## show int f0/3 | inc Received
+  SW1# show int f0/3 | inc Received
     Received 47233 broadcasts (149 multicasts)
 
-  SW1## show int f0/3 | inc Received
+  SW1# show int f0/3 | inc Received
     Received 58713 broadcasts (150 multicasts)
 
-  SW1## show int status
+  SW1# show int status
   Port      Name      Status        VLan    Duplex  Speed  Type
   FA0/1               not connected 1       a-full  auto   10/100BaseT
   FA0/2               not connected 1       a-full  auto   10/100BaseT
@@ -2978,7 +2978,7 @@
   ...TRUNCATED... 
   Gi0/1               connected     routed  a-full  a-1000 10/100/1000BaseT
 
-  SW1## conf t
+  SW1# conf t
   SW1(config)## int range f0/3-4
   SW1(config-if-range)## storm-control broadcast level 10 5
   SW1(config-if-range)## storm-control multicast level bps 10k 5k
@@ -2986,25 +2986,25 @@
   SW1(config-if-range)## storm-control action [shutdown | trap]
   SW1(config-if-range)## end
 
-  SW1## show storm-control
+  SW1# show storm-control
   Interface  Filter State    Upper        Lower        Current
   ---------  -------------  -----------  -----------  ----------
   Fa0/3      Forwarding     10.00%          5.00%        0.51%
   Fa0/4      Forwarding     10.00%          5.00%        0.51%
 
-  SW1## show storm-control broadcast
+  SW1# show storm-control broadcast
   Interface  Filter State    Upper        Lower        Current
   ---------  -------------  -----------  -----------  ----------
   Fa0/3      Forwarding     10.00%          5.00%        0.51%
   Fa0/4      Forwarding     10.00%          5.00%        0.51%
 
-  SW1## show storm-control unicast
+  SW1# show storm-control unicast
   Interface  Filter State    Upper        Lower        Current
   ---------  -------------  -----------  -----------  ----------
   Fa0/3      Forwarding       85.00%        80.00%        0.00%
   Fa0/4      Forwarding       85.00%        80.00%        0.00%
 
-  SW1## show storm-control multicast
+  SW1# show storm-control multicast
   Interface  Filter State    Upper        Lower        Current
   ---------  -------------  -----------  -----------  ----------
   Fa0/3      Forwarding         10k bps       5k bps       0 bps
@@ -3048,14 +3048,14 @@
               This bridge is the root
     <...TRUNCATED...>
 
-  SW2## show spanning-tree vlan 1
+  SW2# show spanning-tree vlan 1
   <...TRUNCATED... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Altn BLK 19        128.6    P2p
 
-  SW3## show spanning-tree vlan 1
+  SW3# show spanning-tree vlan 1
   <...TRUNCATED...>
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
@@ -3064,13 +3064,13 @@
 
   ! config root guard on f0/5 of Sw3, never being a root port
   ! putting the port into root-inconsistent state
-  SW3## conf t
+  SW3# conf t
   SW3(config)## int f0/5
   SW3(config-if)## spanning-tree guard root
   SW3(config)## end
 
   ! verify by putting SW2 as root
-  SW2## conf t
+  SW2# conf t
   SW2(config)## spanning-tree clan 1 root primary 
   SW2(config)## end
 
@@ -3086,19 +3086,19 @@
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Desg BLK 19        128.6    P2p
 
-  SW3## show log
+  SW3# show log
   <...TRUNCATED...>
   %SPANTREE-2-ROOTGUARD_CONFIG_CHANGE: Root guard enabled on port FastEthernet0/5 on VLAN 1
   %SPANTREE-2-ROOTGUARD_BLOCK: Root guard blocking port FastEthernet0/5 on VLAN 1
 
-  SW3## show spanning-tree vlan 1
+  SW3# show spanning-tree vlan 1
   <...TRUNCATED...>
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- ---------------
   Fa0/4            Root FWD 19        128.5    P2p
   Fa0/5            Desg FWD 19        128.6    P2p %RoOOT_Inc
 
-  SW3## show spanning-tree inconsistentports
+  SW3# show spanning-tree inconsistentports
   Name        Interface       Inconsistency
   ----------- --------------- -------------------
   VLAN00001   FastEthernet0/5 Root Inconsistent
@@ -3127,14 +3127,14 @@
   - enable BPDU guard on f0/3 on SW2
 
   ```text
-  SW2## show spanning-tree vlan 1
+  SW2# show spanning-tree vlan 1
   <...TRUNCATED... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Altn BLK 19        128.6    P2p
   
-  SW2## conf t
+  SW2# conf t
   SW2(config)## int f0/3
   SW2(config-if)## shutdown
   SW2(config-if)## do show spanning-tree vlan 1
@@ -3149,7 +3149,7 @@
   SW2(config-if)## no shutdown
   SW2(config-if)## end
 
-  SW2## show int status
+  SW2# show int status
   Port      Name      Status        VLan    Duplex  Speed  Type
   FA0/1               notconnected  1       auto    auto   10/100BaseT
   FA0/2               notconnected  1       auto    auto   10/100BaseT
@@ -3158,26 +3158,26 @@
   ...TRUNCATED... 
   Gi0/1               connected     routed  a-full  a-1000 10/100/1000BaseT
 
-  SW2## show int status err-disabled
+  SW2# show int status err-disabled
   Port    Name      Status         Reason         Err-disabled Vlans
   Fa0/3             err-disabled   bpduguard  
 
   ! recover
-  SW2## show int f0/3
+  SW2# show int f0/3
   interface FastEthernet0/3
    switchport trunk encapsulation dot1q
    switchport mode trunk
    spanning-tree bpduguard enable
   end
 
-  SW2## conf t
+  SW2# conf t
   SW2(config)## int f0/3
   SW2(config-if)## no spanning-tree bpduguard enable
   SW2(config-if)## shutdown
   SW2(config-if)## no shutdown
   SW2(config-if)## end
 
-  SW2## show spanning-tree vlan 1
+  SW2# show spanning-tree vlan 1
   <...TRUNCATED... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
