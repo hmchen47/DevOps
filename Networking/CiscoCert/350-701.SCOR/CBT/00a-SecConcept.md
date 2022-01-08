@@ -238,7 +238,7 @@ Trainer: Knox Hutchinson
   - Infographic: Time it Takes a Hacker to Brute Force Your Password
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
         onclick= "window.open('https://www.hivesystems.io/blog/are-your-passwords-in-the-green')"
         src    = "img/02-password.png"
         alt    = "The time it takes for a hacker to brute force your password - Hive Systems"
@@ -538,7 +538,7 @@ Trainer: Knox Hutchinson
 
 - IKEv1 and IKev2 comparisons
 
-  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 50vw;" cellspacing=0 cellpadding=5 border=1 align="center">
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 700px;" cellspacing=0 cellpadding=5 border=1 align="center">
     <caption style="font-size: 1.5em; margin: 0.2em;"><a href="http://rockhoppervpn.sourceforge.net/techdoc_ikev1vsikev2.html">Differences between IKEv1 and IKEv2</a></caption>
     <colgroup>
       <col style="width: 200%">
@@ -624,7 +624,7 @@ Trainer: Knox Hutchinson
 
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
       onclick= "window.open('page')"
       src    = "img/04-dmvpn.png"
       alt    = "text"
@@ -654,7 +654,7 @@ Trainer: Knox Hutchinson
     - encrypted packet prefixing an IP header but using original src and dst addresses
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
       onclick= "window.open('page')"
       src    = "img/04-getvpn.png"
       alt    = "Example network topology for GET VPN"
@@ -678,14 +678,14 @@ Trainer: Knox Hutchinson
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://bit.ly/3muy60h" ismap target="_blank">
-      <img style="margin: 0.1em;" height=180
+      <img style="margin: 0.1em;" height=160
         src   = "https://www.netmanias.com/en/?m=attach&no=3563"
         alt   = "NAT/PAT mapping"
         title = "NAT/PAT mapping"
       >
     </a>
     <a href="https://support.huawei.com/enterprise/en/doc/EDOC1100055047/9b0b323f/ipsec-nat-traversal" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
+      <img style="margin: 0.1em;" height=140
         src   = "https://download.huawei.com/mdl/image/download?uuid=af9d9d6b414d453eaa39e504156c41ca"
         alt   = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
         title = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
@@ -781,7 +781,9 @@ Trainer: Knox Hutchinson
   R1(config-line)# exit
   R1(config)# ip http secure-server
   R1(config)# end
+  ```
 
+  ```text
   R1# show control-plane host open-ports
   Active internet connections (servers and established)
   Prot        Local Address      Foreign Address             Service    State
