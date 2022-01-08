@@ -23,7 +23,7 @@ Institution: CBY Nugget
 - [Data Exfiltration](00k-Exfiltrate.md)
 
 
-## Security Funbdamental
+## Security Fundamental
 
 ### 01\. [Explain Common Threats Against On-premises and Cloud Environments](01-Threats.md)
 
@@ -74,6 +74,19 @@ Institution: CBY Nugget
 - GET VPN
 - NAT Traversal
 - IPsec Fundamentals Summary
+
+
+### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
+
+- Introduction to Device Hardening
+- Device Hardening Overview
+- Cisco Guide to Harden IOS Devices
+- Management Plane Hardening
+- Control Plane Hardening
+- Data Plane Hardening
+- Device Hardening Checklist
+- Hardening Review
+
 
 
 ## Virtual Private Networks (VPNs)
@@ -160,6 +173,8 @@ Institution: CBY Nugget
 - IKEv1, Phase 2 Bad Config
 - IKEv2 Troubleshooting
 - Summary Troubleshooting IPsec
+
+
 
 ## Security Intelligence
 
@@ -265,7 +280,7 @@ Institution: CBY Nugget
 - Configure and Verify Cisco Dynamic ARP Inspection
 
 
-### 21\. [Private VLANS](21-PrivVLANs.md)
+### 21\. [Private VLANS](21-PVLANs.md)
 
 - Introduction to Private VLANs
 - PVLANs Overview
@@ -290,17 +305,6 @@ Institution: CBY Nugget
 - DHCP VRF Services
 - VRF-lite Summary
 
-
-### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
-
-- Introduction to Device Hardening
-- Device Hardening Overview
-- Cisco Guide to Harden IOS Devices
-- Management Plane Hardening
-- Control Plane Hardening
-- Data Plane Hardening
-- Device Hardening Checklist
-- Hardening Review
 
 
 ### 24\. [Configure Cisco TrustSec](24-TrustSec.md)
