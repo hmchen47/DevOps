@@ -5,7 +5,11 @@ Trainer: Keith Barker
 
 ## Intro to IPv4 OSPF Authentication and Troubleshooting
 
-
+- Learning goals
+  - OSPF authentication
+  - config OSPF authentication
+  - virtual links authentication
+  - troubleshooting OSPF authentication
 
 
 ## Overview of OSPF Authentication
