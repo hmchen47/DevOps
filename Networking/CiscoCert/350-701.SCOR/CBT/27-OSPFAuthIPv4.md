@@ -178,6 +178,128 @@ Trainer: Keith Barker
 
 ## Implement OSPF Authentication
 
+- Demo: config OSPF authentication
+  - tasks
+    - Area 0 w/ MD5 authentication
+    - password: Cisco!23
+    - R1 & R2 MD5 pw
+    - R3 & R4 simple pw
+    - R2 & R4 no auth
+  - general config for R1 ~ R4
+    
+    ```cfg
+    conf t
+    router ospf 1
+    area 0 authentication message-digest
+    end
+    ```
+
+  - config R1 & R2 w/ MD5 pwd
+
+    ```text
+    R1# show cdp neighbors
+    Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+    Core1         Gig 1/0         119           R S I    IOSv      Gig 1/0
+    R3            Gig 2/0         155             R      7206VXR   Gig 1/0
+
+    R1# conf t
+    R1(config)# int g1/0
+    R1(config-if)# ip ospf message-digest-key 1 md5 cisco123
+    R1(config-if)# end
+
+    R2# show cdp neighbors
+    Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+    Core1         Gig 2/0         138           R S I    IOSv      Gig 2/0
+    R4            Gig 1/0         173             R      7206VXR   Gig 2/0
+
+    R2# conf t
+    R2(config)# int g1/0
+    R2(config-if)# ip ospf message-digest-key 1 md5 cisco123
+    R2(config-if)# end
+    ```
+
+  - config R1 & R3 w/ simple pwd
+
+    ```text
+    ! verify R3 interface
+    R3# show cdp neighbors
+    Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+    R1            Gig 1/0         138             R      7206VXR   Gig 2/0
+    R4            Gig 4/0         160             R      7206VXR   Fas 4/1
+    R5            Gig 4/1         168             R      7206VXR   Fas 4/0
+    R8            Gig 3/2         157             R      7206VXR   Ser 3/1
+
+    R3# show ip ospf int f4/0
+    FastEthernet4/0 is up, line protocol is up
+      <...truncated...>
+      Message digest authentication enabled
+        No key configured, using default key 0
+
+    ! config f4/0 on R3 w/ simple password 
+    R3# conf t
+    R3(config)# int f4/0
+    R3(config-if)# ip ospf authentication
+    R3(config-if)# do show ip ospf int f4/0
+    FastEthernet4/0 is up, line protocol is up
+      <...truncated...>
+      Simple password authentication enabled
+
+    R3(config-if)# ip ospf authentication-key cisco123
+
+    ! config f4/1 on R4 w/ simple password
+    R4(config)# int f4/1
+    R4(config-if)# do debug ip ospf adjacency
+    OSPF-1 ADJ  Fa4/1: Rcv pkt from 10.0.34.3 : Mismatched Authentication type. Input packet specified type 1, ...
+    R4(config-if)# ip ospf authentication-key cisco1233
+    R4(config-if)# end
+    %OSPF-5=ADJCHG: Process 1, Nbr 3.3.3.3 on FastEthernet4/1 from LOADING to FULL, Loading Done
+
+    R4# undebug all
+    R4# show ip ospf neighbors
+    Neighbor ID     Pri State     Dead Time Address     Interface
+    3.3.3.3         1   FULL/BDR  00:00:36  10.0.34.3   FastEthernet4/1
+    2.2.2.2         1   FULL/BDR  00:00:35  10.0.24.2   GigabitEthernet2/0
+    6.6.6.6         1   FULL/BDR  00:00:35  10.0.46.2   Serial3/1
+    ```
+
+  - config R2 & R4 w/o authentication
+
+    ```text
+    R2# show cdp neighbors
+    Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+    Core1         Gig 2/0         138           R S I    IOSv      Gig 2/0
+    R4            Gig 1/0         173             R      7206VXR   Gig 2/0
+
+    R2# conf t
+    R2(config)# int g1/0
+    R2(config-if)# ip ospf authentication null
+
+    R4# show cdp neighbors
+    Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+    R2            Gig 2/0         158             R      7206VXR   Gig 1/0
+    R3            Fas 4/1         158             R      7206VXR   Gig 4/0
+    R6            Ser 3/1         137             R      7206VXR   Ser 3/2
+
+    R4# conf t
+    R4(config)# int g2/0
+    R4(config-if)# ip ospf authentication null
+    R4(config-if)# end
+    ```
+
+- Demo: verify reachability
+
+  ```text
+  R7# traceroute 192.168.1.8
+  Tracing the route to 192.168.1.8
+  VRF info: (vrf in name/id, vrf out name/id)
+    1 10.1.57.5 100 ms ...
+    2 10.1.35.3 64 ms ...
+    3 10.0.13.1 96 ms ...
+    4 10.0.12.2 88 ms ...
+    5 10.0.24.4 276 ms ...
+    6 10.2.46.6 176 ms ...
+    7 10.2.68.8 148 ms ...
+  ```
 
 
 
