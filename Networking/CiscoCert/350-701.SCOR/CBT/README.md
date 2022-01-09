@@ -350,7 +350,6 @@ Institution: CBY Nugget
 - Virtual Links and Authentication
 - Troubleshooting OSPF Authentication Lab 01
 - Troubleshooting OSPF Authentication Lab 02
-- Troubleshoot OSPF Authentication for IPv4
 - Virtual lab: Troubleshoot OSPF Authentication for IPv4
 
 
@@ -361,7 +360,6 @@ Institution: CBY Nugget
 - Implement and Verify Authentication
 - Troubleshooting OSPF Authentication Lab 01
 - Troubleshooting OSPF Authentication Lab 02
-- Troubleshoot Router Security Features
 - Virtual lab: Troubleshoot OSPF Authentication for IPv6
 
 
