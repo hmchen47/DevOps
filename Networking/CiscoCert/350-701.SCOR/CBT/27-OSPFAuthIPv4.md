@@ -249,7 +249,8 @@ Trainer: Keith Barker
     ! config f4/1 on R4 w/ simple password
     R4(config)# int f4/1
     R4(config-if)# do debug ip ospf adjacency
-    OSPF-1 ADJ  Fa4/1: Rcv pkt from 10.0.34.3 : Mismatched Authentication type. Input packet specified type 1, ...
+    OSPF-1 ADJ  Fa4/1: Rcv pkt from 10.0.34.3 : Mismatched Authentication type. 
+      Input packet specified type 1, ...
     R4(config-if)# ip ospf authentication-key cisco1233
     R4(config-if)# end
     %OSPF-5=ADJCHG: Process 1, Nbr 3.3.3.3 on FastEthernet4/1 from LOADING to FULL, Loading Done
@@ -477,7 +478,8 @@ Trainer: Keith Barker
   ! no neighborship w/ R8
 
   R6# debug ip ospf adjacency
-  OSPF-1 ADJ Fa4/0: Rcv pkt from 10.2.68.8 : Mismatched Authentication type. Input packet specified type 2, we use type 0
+  OSPF-1 ADJ Fa4/0: Rcv pkt from 10.2.68.8 : Mismatched Authentication type. 
+    Input packet specified type 2, we use type 0
 
   R6# show ip ospf
   <...truncated...>
