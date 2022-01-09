@@ -305,7 +305,22 @@ Trainer: Keith Barker
 
 ## Virtual Links and Authentication
 
-
+- Virtual links of OSPF routing
+  - all areas of OSPF physically connected to the backbone area (Area 0)
+  - some cases making it impossible, e.g., an area connect to R8 w/ its own Area, said Area 50 and IP addr space 10.50.50.0/24
+  - solution: virtual link
+    - connecting to the backbone through a non-backbone area
+    - transit area: the area configured the virtual link
+    - transit area must have full routing info
+    - a stub area not allowed
+    - e.g., a virtual link config through Area 2 to link R4 and R8
+  - recommendations
+    - not a preferred solution
+    - often just a temporary solution
+  - authentication scenario
+    - Area 0 w/ MD5 authentication
+    - R8 connected to Area 0 via R4
+    - R8 config to Area 0 w/ DM5 authentication
 
 
 ## Troubleshooting OSPF Authentication Lab 01
