@@ -520,11 +520,257 @@ Trainer: Keith Barker
 
 ## Troubleshooting OSPF Authentication Lab 02
 
+- Demo: troubleshooting OSPF authentication w/ virtual link
+  - topology:
+    - a subnet 10.50.50.0/24 connected to R8
+    - the subnet w/ OSPF Area 50
+    - a loopback interface (Lo50) w/ 10.50.50.50/24 used to represent a use
+    - PC7 w/ subnet 10.1.7.0/24 connected to R7
+  - task: PC7 able to reach Lo50
 
+  ```text
+  R7# show ip route ospf
+  Gateway of last resort is not set
+        1.0.0.0/32 is subnetted, 1 subnets
+  O IA    1.1.1.1 [110/13] via 10.1.57.5, 00:26:12, GigbitEThernet2/0
+  <...truncated...>
+  O       10.1.35.0/24 [110/11] via 10.1.57.5, 00:00:20, GigabitEThernet2/0
+  O IA    10.2.46.0/24 [110/661] via 10.1.57.5, 00:00:20, GigabitEThernet2/0
+  ! no 10.50.50.50 subnet
 
+  R4# show ip route ospf
+  Gateway of last resort is not set
+        1.0.0.0/32 is subnetted, 1 subnets
+  O IA    1.1.1.1 [110/13] via 10.0.24.2, 00:25:05, GigbitEThernet2/0
+  <...truncated...>
+  O IA    10.1.5.0/24 [110/14] via 10.0.24.2, 00:25:05, GigabitEThernet2/0
+  O IA    10.1.7.0/24 [110/15] via 10.0.24.2, 00:25:05, GigabitEThernet2/0
+  O IA    10.1.35.0/24 [110/14] via 10.0.24.2, 00:25:05, GigabitEThernet2/0
+  O IA    10.1.57.0/24 [110/14] via 10.0.24.2, 00:25:05, GigabitEThernet2/0
+  ! no 10.50.50.50 subnet
 
-## Troubleshoot OSPF Authentication for IPv4
+  R8# show ip route connected
+  Gateway of last resort is not set
+        8.0.0.0/32 is subnetted, 1 subnets
+  C      8.8.8.8 is directly connected, Loopback0
+        10.0.0.0/32 is subnetted, 11 subnets, 2 masks
+  <...truncated...>
+  C     10.50.50.50/32 is directly connected, Loopback50
+  <...truncated...>
 
+  R8# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  VL0         1   0     0.0.0.0/0       65535 DOWN  0/0
+  Lo0         1   2     8.8.8.8/32      1     LOOP  0/0
+  Gi0/0       1   2     192.168.1.0/24  1     DR    0/0
+  Fa4/1       1   2     10.2.68.8/24    10    DR    1/1
+  Lo50        1   50    10.50.50.50/32  1     LOOP  0/0
+
+  ! virtual link required for Area 0 to connected to Area 0
+  ! VL0 existed in R8 for virtual link
+  R8# show ip ospf virtual-links
+  Virtual Link OSPF VL0 to router 4.4.4.4 is down
+    Run as demand circuit
+    DoNotAge LSA allowed,
+    Transit area 2
+  Topology-MTID   Cost  Disabled    Shutdown   Topology Name
+          0       65535   no           no         Base
+    Transmit Delay is 1 sec, Satate DOWN,
+    Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+
+  R4# show ip ospf neighbors
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  3.3.3.3           1 FULL/BDR  00:00:34  10.0.34.4   FastEthernet4/1
+  2.2.2.2           1 FULL/BDR  00:00:34  10.0.34.4   GigabitEthernet2/0
+
+  R4# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  VL0         1   0     0.0.0.0/0       65535 DOWN  0/0
+  Lo0         1   0     4.4.4.4/32      1     LOOP  0/0
+  Fa4/1       1   0     10.0.34.4/24    10    BDR   1/1
+  Gi2/0       1   0     10.0.24.4/24    1     DR    1/1
+  Gi0/0       1   0     10.0.4.4/24     1     DR    0/0
+  Se3/1       1   2     10.0.46.4/24    647   P2P   0/0
+
+  R4# show ip ospf virtual-links
+  Virtual Link OSPF VL0 to router 8.8.8.8 is down
+    Run as demand circuit
+    DoNotAge LSA allowed,
+    Transit area 2
+  Topology-MTID   Cost  Disabled    Shutdown   Topology Name
+          0       65535   no           no         Base
+    Transmit Delay is 1 sec, Satate DOWN,
+    Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+
+  R4# debug ip ospf adjacency
+  <...no required msh shown...>
+
+  R4# show ip ospf
+  Routing Process "ospf 1" with ID 4.4.4.4
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 5 (1 loopback)
+      Area has message digest authentication
+      <...truncated...>
+    Area 2
+      Number of interface in this area is 1
+      Area has no authentication
+      <...truncated...>
+
+  R8# show ip ospf
+  Routing Process "ospf 1" with ID 8.8.8.8
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 5 (1 loopback)
+      Area has no authentication
+      <...truncated...>
+    Area 2
+      Number of interface in this area is 1
+      Area has no authentication
+      <...truncated...>
+  ! Area 0 should be MD5
+
+  ! fix area 0 authentication w/ MD5
+  R8# conf t
+  R8(config)# router ospf
+  R8(config-router)# area 0 authentication message-digest
+  R8(config-router)# end
+  ! no adjacency w/ R4 shown
+
+  R4# undebug all
+  R4# show ip ospf
+  Routing Process "ospf 1" with ID 4.4.4.4
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 5 (1 loopback)
+      Area has message digest authentication
+      <...truncated...>
+    Area 2
+      Number of interface in this area is 1
+      Area has no authentication
+      <...truncated...>
+
+  R8# show ip ospf
+  Routing Process "ospf 1" with ID 4.4.4.4
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 5 (1 loopback)
+      Area has message digest authentication
+      <...truncated...>
+    Area 2
+      Number of interface in this area is 1
+      Area has no authentication
+      <...truncated...>
+
+  R8# show ip ospf virtual-links
+  Virtual Link OSPF VL0 to router 4.4.4.4 is down
+  <...truncated...>
+
+  R8# show ip ospf neighbor
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  6.6.6.6           1 FULL/BDR  00:00:36  10.2.68.6   FastEthernet4/1
+  
+  R8# show ip route ospf
+  Gateway of last resort is not set
+        6.0.0.0/32 is subnetted, 1 subnets
+  O       6.6.6.6 [110/11] via 10.2.68.6, 00:19:38, FastEthernet4/1
+        10.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+  O       10.2.6.0/24 [110/11] via 10.2.68.6, 00:19:38, FastEthernet4/1
+  O       10.2.46.0/24 [110/657] via 10.2.68.6, 00:19:38, FastEthernet4/1
+
+  R6# shoe ip ospf neighbors
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  8.8.8.8           1 FULL/BDR  00:00:33  10.2.68.8   FastEthernet4/0
+  ! no neighborship w/ R4
+
+  R6# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  Lo0         1   2     6.6.6.6/32      1     LOOP  0/0
+  Fa4/0       1   2     10.2.68.6/24    10    BDR   1/1
+  Se3/2       1   2     10.2.46.6/24    647   P2P   0/0
+  Gi0/0       1   0     10.0.6.6/24     1     DR    0/0
+  ! Se3/2 w/ Nbrs F/C = 0/0
+
+  R6# show ip ospf int s3/2
+  Serial3/2 is up, line protocol is up
+    <...truncated...>
+    Neighbor count is 0, Adjacency neighbor count is 0
+    Suppress hello for 0 neighbor(s)
+  ! expect to be neighbor of R4
+
+  R6# show cdp neighbors
+  Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+  R4            Ser 3/2         155             R      7206VXR   Ser 3/1
+  R8            Fas 4/0         126             R      7206VXR   Fas 4/1
+
+  R4# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  VL0         1   0     0.0.0.0/0       65535 DOWN  0/0
+  <...truncated...>
+  Se3/1       1   2     10.0.46.4/24    647   P2P   0/0
+
+  R4# show ip ospf int s3/1
+  Serial3/1 is up, line protocol is up
+    <...truncated...>
+    Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+      oob-resync timeout 40
+      No Hellos (Passive interface)
+    <...truncated...>
+  ! Passive inertface: interface including in OSPF but nor bother to form
+  ! neighborship
+
+  R4# conf t
+  R4(config)# router ospf 1
+  R4(config-router)# no passive-interface ser 3/1
+  R4(config-router)# end
+  %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on Serial3/1 from LOADING to FULL, Loading Done
+
+  ! verify from R7 again
+  R7# show ip route ospf
+  Gateway of last resort is not set
+        1.0.0.0/32 is subnetted, 1 subnets
+  O IA    1.1.1.1 [110/13] via 10.1.57.5, 00:00:12, GigbitEThernet2/0
+  <...truncated...>
+  O IA    10.2.46.0/24 [110/661] via 10.1.57.5, 00:00:13, GigabitEThernet2/0
+  O IA  192.168.1.0/24 [110/672] via 10.1.57.5, 00:00:13, GigabitEThernet2/0
+  ! no 10.50.50.50 subnet
+
+  R4# show ip route ospf
+  Gateway of last resort is not set
+  <...truncated...>
+  O IA    10.50.50.50/32 [110/658] via 10.2.46.6, 00:00:11, Serial3/1
+  O     192.168.1.0/24 [110/658] via 10.2.46.6, 00:00:31, Serial3/1
+  ! 10.50.50.50/32 shown
+
+  R3# show ip route ospf
+  Gateway of last resort is not set
+  <...truncated...>
+  O IA    10.50.50.50/32 [110/661] via 10.0.13.1, 00:00:16, GigabitEthernet1/0
+  O     192.168.1.0/24 [110/661] via 10.0.13.1, 00:00:16, GigabitEthernet1/0
+  ! 10.50.50.50/32 shown
+
+  R7# show ip route ospf
+  Gateway of last resort is not set
+  <...truncated...>
+  O IA    10.50.50.50/32 [110/672] via 10.1.57.5, 00:00:25, GigabitEthernet2/0
+  O     192.168.1.0/24 [110/672] via 10.1.57.5, 00:00:55, GigabitEthernet2/0
+  ! require time to converge
+
+  R7# trace 10.50.50.50 source 10.1.7.7
+   1  10.1.57.5 12 msec ...
+   2  10.1.35.3 232 msec ...
+   3  10.0.13.1 120 msec ...
+   4  10.0.12.2 252 msec ...
+   5  10.0.24.4 252 msec ...
+   6  10.2.46.6 160 msec ...
+   7  10.2.68.8 192 msec ...
+
+  PC7> trace 10.50.50.50 -P 1
+   1  10.1.7.7 16.933 ms ...
+   2  10.1.57.5 26.023 ms ...
+   <...truncated...>
+   8  10.2.68.8 192.892 ms ...
+  ```
 
 
 
