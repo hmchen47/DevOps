@@ -325,6 +325,196 @@ Trainer: Keith Barker
 
 ## Troubleshooting OSPF Authentication Lab 01
 
+- Demo: troubleshooting OSPF authentication
+  - topology
+    - PC7 connected to 10.1.7.0/24 subnet
+    - PC8 connect to 192.168.1.0/24 subnet
+  - task: PC7 abel to ping PC8
+
+  ```text
+  PC7> show ip
+  NAME      : PV-7[1]
+  IP/MASK   : 10.1.7.10/24
+  GATEWAY   : 10.1.7.7
+  <...truncated...>
+
+  R7# show ip route ospf
+  Gateway of last resort is not set
+    5.0.0.0/323 is subnetted, 1 subnets
+  O     5.5.5.5 [110/2] via 10.1.57.5, 00:22:56, GigbitEThernet2/0
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+  O     10.1.5.0/24 [110/2] via 10.1.57.5, 00:22:56, GigabitEThernet2/0
+  O     10.1.35.0/24 [110/11] via 10.1.57.5, 00:22:56, GigabitEthernet2/0
+
+  R8# show ip int brief
+  Interface           IP-Address    OK? Method  Status                Protocol
+  GigabitEthernet0/0  192.168.1.8   YES NVRAM   up                    up
+  <..truncated...>
+
+  R7# traceroute 192.168.1.8
+  <...truncated...>
+    1  * 
+
+  R7# show ip route
+  Gateway of last resort is not set
+      5.0.0.0/323 is subnetted, 1 subnets
+  O     5.5.5.5 [110/2] via 10.1.57.5, 00:22:56, GigbitEThernet2/0
+      7.0.0.0/32 is subnetted, 1 subnets
+  C     7.7.7.7 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 9 subnets, 2 masks
+  O     10.1.5.0/24 [110/2] via 10.1.57.5, 00:22:56, GigabitEThernet2/0
+  C     10.1.7.0/24 is directly connected, GigabitEThernet0/0
+  L     10.1.7.7/32 is directly connected, GigabitEThernet0/0
+  O     10.1.35.0/24 [110/11] via 10.1.57.5, 00:22:56, GigabitEthernet2/0
+  C     10.1.57.0/24 is directly connected, GigabitEThernet2/0
+  L     10.1.57.7/32 is directly connected, GigabitEThernet2/0
+  C     10.1.78.0/24 is directly connected, Searial3/1
+  L     10.1.78.7/32 is directly connected, Searial3/1
+  C     10.1.78.8/32 is directly connected, Searial3/1
+  ! no 192.168.1.0/24 subnet
+
+  R7# show ip ospf neighbors
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  5.5.5.5           1 FULL/BDR  00:00:36  10.1.57.5   GigabitEthernet2/0
+
+  R5# show ip ospf neighbors
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  7.7.7.7           1 FULL/BDR  00:00:30  10.1.57.7   GigabitEthernet1/0
+
+  R5# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  Lo0         1   1     5.5.5.5         1     LOOP  0/0
+  Fa4/0       1   1     10.1.35.5/24    10    DR    0/0
+  Gi1/0       1   1     10.1.57.5/24    1     BDR   1/1
+  Gi0/0       1   1     10.1.5.5/24     1     DR    0/0
+
+  R5# show cdp neighbors
+  Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+  R3            Fas 4/0         160             R      7206VXR   Fas 4/1
+  R7            Gig 1/0         174             R      7206VXR   Gig 2/0
+
+  R5# debug ip ospf adjacency
+  R5# ping 10.1.35.3
+  !!!!!
+  
+  R3# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  Lo0         1   0     3.3.3.3         1     LOOP  0/0
+  Fa4/0       1   0     10.1.34.5/24    10    DR    1/1
+  Gi1/0       1   0     10.1.13.5/24    1     DR    1/1
+  Gi0/0       1   0     10.1.3.3/24     1     DR    0/0
+  Fa4/1       1   1     10.1.35.3/24    10    DR    0/0
+
+  R3# sho cdp neighbors
+  Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
+  R1            Gig 1/0         169             R      7206VXR   Gig 2/0
+  R4            Fas 4/0         172             R      7206VXR   Fas 4/1
+  R5            Fas 4/1         155             R      7206VXR   Fas 4/0
+  R8            Ser 3/2         160             R      7206VXR   Ser 3/1
+
+  R5# show ip ospf int f4/0
+  FastEthernet4/0 is up, line protocol is up
+      <...truncated...>
+      Suppress hello for 0 neighbor(s)
+  
+  R3# show ip ospf int f4/1
+  FastEthernet4/1 is up, line protocol is up
+      <...truncated...>
+      Timer intervals configured, Hello 11, Dead 44, Wait 44, Retransmit 5
+      <...truncated...>
+      Suppress hello for 0 neighbor(s)
+
+  R3# conf
+  R3(config)# int f4/1
+  R3(config-if)# no ip ospf hello-interval
+  R3(config-if)# end
+  %OSPF-5-ADJCHG: Process 1. Nbr 5.5.5.5 on FastEthernet4/1 from LOADING to FULL, Loading Done
+  R3(config-if)# end
+
+  R3# show ip ospf neighbors
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  4.4.4.4           1 FULL/BDR  00:00:34  10.0.34.4   FastEthernet4/0
+  1.1.1.1           1 FULL/BDR  00:00:32  10.0.13.1   GigabitEthernet1/0
+  5.5.5.5           1 FULL/BDR  00:00:32  10.0.35.5   FastEthernet4/1
+
+  R7# show ip route ospf
+  Gateway of last resort is not set
+        1.0.0.0/32 is subnetted, 1 subnets
+  O IA    1.1.1.1 [110/13] via 10.1.57.5, 00:00:20, GigbitEThernet2/0
+  <...truncated...>
+  O IA    10.2.6.0/24 [110/662] via 10.1.57.5, 00:00:20, GigabitEThernet2/0
+  O IA    10.2.46.0/24 [110/661] via 10.1.57.5, 00:00:20, GigabitEThernet2/0
+  O IA    10.2.68.0/24 [110/671] via 10.1.57.5, 00:00:20, GigabitEThernet2/0
+  ! no 192.16.1.0 subnet
+
+  R8# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  Lo0         1   2     8.8.8.8         1     LOOP  0/0
+  Gi0/0       1   2     192.16.1.8/24   1     DR    0/0
+  Fa4/1       1   2     10.2.68.8/24    10    DR    0/0
+  ! 192.16.1.8 enabled
+
+  R4# show ip route ospf
+  Gateway of last resort is not set
+        1.0.0.0/32 is subnetted, 1 subnets
+  O       1.1.1.1 [110/3] via 10.1.24.2, 00:27:55, GigbitEThernet2/0
+        2.0.0.0/32 is subnetted, 1 subnets
+  <...truncated...>
+  O       10.2.6.0/24 [110/648] via 10.2.46.6, 00:29:06, Serial3/1
+  O       10.2.68.0/24 [110/648] via 10.2.46.6, 00:14:46, Serial3/1
+  ! no 192.168.1.0/24 subnet
+
+  R6# show ip ospf int brief
+  Interface   PID Area  IP Address/Mask Cost  State Nbrs F/C
+  Lo0         1   2     6.6.6.6         1     LOOP  0/0
+  Fa4/0       1   2     10.2.68.6/24    10    DR    0/0
+  Se3/2       1   2     10.2.46.6/24    647   P2P   1/1
+  Gi0/0       1   2     10.2.6.6/24     1     DR    0/0
+
+  R6# show ip ospf neighbor
+  Neighbor ID     Pri State     Dead Time Address     Interface
+  4.4.4.4           0 FULL/     00:00:39  10.2.46.4   Serial3/
+  ! no neighborship w/ R8
+
+  R6# debug ip ospf adjacency
+  OSPF-1 ADJ Fa4/0: Rcv pkt from 10.2.68.8 : Mismatched Authentication type. Input packet specified type 2, we use type 0
+
+  R6# show ip ospf
+  <...truncated...>
+    Area 2
+      Number of interfaces in this area is 4 (1 loopback)
+      Area has no authentication
+  <...truncated...>
+
+
+  R8# show ip ospf int f4/1
+  <...truncated...>
+    Message digest authentication enabled
+      No key configured, using default key id 0
+
+  R8# conf t
+  R8(config)# int f4/1
+  R8(config-if)# no ip ospf authentication
+  R8(config-id)# end
+
+  R7# show ip route ospf
+  Gateway of last resort is not set
+      1.0.0.0/323 is subnetted, 1 subnets
+  O     1.1.1.1 [110/13] via 10.1.57.5, 00:5:33, GigbitEThernet2/0
+  <...truncated...>
+  O IA 192.168.1.0/24 [110/672] via 10.1.57.5, 00:00:38, GigabitEthernet2/0
+
+  PC7> trace 192.168.1.8 -P 1
+  trace to 192.168.1.8, 8 hops max (ICMP), press Ctrl-C to stop
+   1  10.1.7.7    130.970 ms ...
+   2  10.1.57.5   24.365 ms ...
+   3  10.1.35.3   45.998 ms ...
+   4  10.0.13.1   51.991 ms ...
+   5  10.0.12.2   87.006 ms ...
+   6  10.0.24.4   1104.008 ms ...
+   7  10.2.46.6   119.999 ms ...
+   8  192.168.1.8 170.896 ms ...
+  ```
 
 
 
