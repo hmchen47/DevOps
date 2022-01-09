@@ -5,7 +5,9 @@ Trainer: Keith Barker
 
 ## Intro to IPv6 OSPF Authentication and Troubleshooting
 
-
+- Learning goals
+  - IPv6 OSPF authentication
+  - config and verify IPv6 OSPF authentication
 
 
 ## IPv6 OSPF Authentication Overview
@@ -24,11 +26,6 @@ Trainer: Keith Barker
 
 
 ## Troubleshooting OSPF Authentication Lab 02
-
-
-
-
-## Troubleshoot Router Security Features
 
 
 
