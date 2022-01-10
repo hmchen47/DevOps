@@ -176,6 +176,59 @@ Trainer: Keith Barker
 
 ## Implement and Verify Authentication
 
+- Plan for OSPFv3 authentication
+  - Area 1: area level authentication
+  - Area 0 w/o OSPFv3 authentication
+  - link btw R2 and R4 w/ interface level authentication
+
+
+- Demo: config OSPFv3 area authentication
+
+  ```text
+  R3/5/7# conf t
+  R3/5/7(config)# ipv6 router ospf 1
+  R3/5/7(config-rtr)# area 1 authentication ipsec spi 1000 sha1 
+    0123456789012345678901234567890123456789
+  R3/5/7(config-rtr)# end
+
+  R7# show crypto ipsec policy
+  Crypto IPsec client security policy data
+
+  Policy name:      OSPFv3-1000
+  Policy refcount:  2
+  Inbound  AH SPI:  1000 (0x3E8)
+  Outbound AH SPI:  1000 (0x3E8)
+  Inbound  AH Key:  0123456789012345678901234567890123456789
+  Outbound AH Key:  0123456789012345678901234567890123456789
+  Transform set:    ah-sha-hmac
+  ```
+
+
+- Demo: config OSPFv3 interface authentication 
+
+  ```text
+  R2# conf t
+  R2# show cdp neighbors
+  Device ID   Local Interface   Holdtime  Capability  Platform  Port ID
+  Core1       Gig 2/0           150            R S I  ISOv      Gig 2/0
+  R4          Gig 1/0           143              R    7206VXR   Gig 2/0
+
+  R2(config)# int g1/0
+  R2(config-if)# ipv6 ospf authentication ipsec spi 1000 sha1 
+    0123456789012345678901234567890123456789
+  R2(config-if)# end
+
+  R4(config)# int g2/0
+  R4(config-if)# ipv6 ospf authentication ipsec spi 1000 sha1 
+    0123456789012345678901234567890123456789
+  R4(config-if)# end
+
+  R4# show crypto engine connections active
+  Crypto Engine Connections
+       ID  Type    Algorithm      Encrypt  Decrypt LastSeqN IP-Address
+        1  IPsec   SHA                  0        8        0 FE02::5
+        2  IPsec   SHA                  8        0        0 FE80::C804:18FF:FE50:38
+  ```
 
 
 
