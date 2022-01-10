@@ -57,6 +57,17 @@ Trainer: Keith Barker
 
 ## Access Control Policy Rule Actions Concepts
 
+- Actions of access control policy rule
+  - 4 options
+    - allow: ready for further inspection
+    - trust: no further analysis required, e.g., backup service, VoIP
+    - monitor: logging, handy for testing or troubleshooting
+    - block (options):
+      - block w/ reset - TCP traffic w/ TCP reset
+      - block w/ interactivity - interactive w/ customer web page
+  - example: ICMP echo request (inside zone) to 8.8.8.8 (outside zone) w/ action = block
+    - just drop packets
+    - no further analysis required
 
 
 
