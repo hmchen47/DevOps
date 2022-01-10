@@ -20,7 +20,7 @@ Institution: CBY Nugget
 - [Software Defined Network](00g-SDN.md)
 - [Security for User Interaction](00h-UserSec.md)
 - [Cisco Umbrella](00i-Umbrella.md)
-- [802.1X](00j-Dot1X.md)
+- [Endpoint Security with 802.1X](00j-Dot1X.md)
 - [Data Exfiltration](00k-Exfiltrate.md)
 
 
@@ -315,7 +315,7 @@ Institution: CBY Nugget
 
 
 
-## Routing Security
+## Routing Authentication
 
 ### 26\. [EIGRP Neighbor Relationships and Authentication](26-EIGRPAuth.md)
 
@@ -346,7 +346,7 @@ Institution: CBY Nugget
 
 
 
-## Application Protocol Security
+## Management Plane Security
 
 ### 29\. [Firepower Access Control Policies](29-Firepower.md)
 
@@ -385,7 +385,7 @@ Institution: CBY Nugget
 
 
 
-## Cloud Security
+## Software Define Network
 
 ### 33\. [Cloud Service and Deployment Models](33-CloudModel.md)
 
@@ -442,7 +442,7 @@ Institution: CBY Nugget
 
 
 
-## Web & Email Security
+## Security for User Interaction
 
 ### 38\. [Capture and Redirection Methods](38-Redirect.md)
 
@@ -543,7 +543,7 @@ Institution: CBY Nugget
 
 
 
-## 802.1X
+## Endpoint Security with 802.1X
 
 ### 46\. [802.1X Fundamentals](46-8021xFund.md)
 
