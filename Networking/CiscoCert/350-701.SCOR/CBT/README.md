@@ -23,6 +23,7 @@ Institution: CBY Nugget
 - [Data Exfiltration](00k-Exfiltrate.md)
 
 
+
 ## Security Fundamental
 
 ### 01\. [Explain Common Threats Against On-premises and Cloud Environments](01-Threats.md)
@@ -37,7 +38,6 @@ Institution: CBY Nugget
 - Spoofing and MitM Attacks
 - Summarizing the Threat Landscape
 
-
 ### 02\. [Compare Common Security Vulnerabilities](02-Security.md)
 
 - Introducing Common Attack Vectors
@@ -49,7 +49,6 @@ Institution: CBY Nugget
 - The Buffer Overflow
 - Summarizing Common Vulnerabilities
 
-
 ### 03\. [Components of Cryptography](03-Cyrptograph.md)
 
 - Introduction to Components of Cryptography
@@ -60,7 +59,6 @@ Institution: CBY Nugget
 - IPsec
 - Authentication
 - Components of Cryptography Summary
-
 
 ### 04\. [IPsec Fundamentals](04-IPsec.md)
 
@@ -74,7 +72,6 @@ Institution: CBY Nugget
 - GET VPN
 - NAT Traversal
 - IPsec Fundamentals Summary
-
 
 ### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
 
@@ -101,7 +98,6 @@ Institution: CBY Nugget
 - Enabling the IPsec Policy
 - Protocol Analysis IPsec
 
-
 ### 06\. [Cisco Point-To-Point GRE over IPsec VPNs](06-VTI.md)
 
 - Introduction to P2P GRE over IPsec VPNs
@@ -112,7 +108,6 @@ Institution: CBY Nugget
 - IPsec Tunnel Protection Design
 - IPsec Virtual Tunnel Interface Configuration
 - IPsec Static VTI Verification
-
 
 ### 07\. [Cisco DMVPN](07-DMVPN.md)
 
@@ -126,7 +121,6 @@ Institution: CBY Nugget
 - Verifying DMVPNs
 - Adding IPsec Protection Profiles
 - DMVPN Summary
-
 
 ### 08\. [Cisco GET VPN](08-GETVPN.md)
 
@@ -178,7 +172,6 @@ Institution: CBY Nugget
 
 ## Security Intelligence
 
-
 ### 12\. [Security Intelligence](12-Intelligence.md)
 
 - Introduction to Security Intelligence
@@ -187,7 +180,6 @@ Institution: CBY Nugget
 - Talos Vulnerability Information
 - Talos Reputation Center
 - Security Intelligence Summary
-
 
 ### 13\. [Explain APIs in the SDN Architecture](13-APISDN.md)
 
@@ -199,7 +191,6 @@ Institution: CBY Nugget
 - The Westbound API
 - Summarizing APIs and SDN
 
-
 ### 14\. [DNA Center Foundations](14-DNA.md)
 
 - Introducing DNA Center
@@ -209,7 +200,6 @@ Institution: CBY Nugget
 - The DNA Center Platform APIs
 - Summarizing DNA Center
 
-
 ### 15\. [Interpret Basic Python Scripts used with Cisco Security](15-Python.md)
 
 - Introducing Basic Python Security Scripts
@@ -217,7 +207,6 @@ Institution: CBY Nugget
 - Getting Authenticated
 - Getting Monitored Applications
 - Summarizing Interpreting Python Scripts
-
 
 ### 16\. [Troubleshoot NetFlow](16-NetFlow.md)
 
@@ -229,7 +218,6 @@ Institution: CBY Nugget
 - NetFlow Collectors and Analyzers
 - Troubleshoot NetFlow
 
-
 ### 17\. [The Components of Network Security Design](17-SecDesign.md)
 
 - Intro to components of Network Security Design
@@ -239,8 +227,9 @@ Institution: CBY Nugget
 - TrustSec and MACsec
 
 
-## L2 Security
 
+
+## L2 Security
 
 ### 18\. [Configure and Verify Cisco Port Security](18-PortSec.md)
 
@@ -254,7 +243,6 @@ Institution: CBY Nugget
 - Review of Configure and Verify Cisco Port Security
 - Cisco CCNA (200-301) Assessment Lab: Security
 
-
 ### 19\. [Configure and Verify Cisco DHCP Snooping](19-DHCPSnoop.md)
 
 - Introducing DHCP Snooping
@@ -265,7 +253,6 @@ Institution: CBY Nugget
 - Applying DHCP Snooping in Production
 - Review of Configure and Verify Cisco DHCP Snooping
 - Configure and Verify Cisco DHCP Snooping
-
 
 ### 20\. [Configure and Verify Cisco Dynamic ARP Inspection](20-ARPInspec.md)
 
@@ -279,7 +266,6 @@ Institution: CBY Nugget
 - Review of Configure and Verify Cisco Dynamic ARP Inspection
 - Configure and Verify Cisco Dynamic ARP Inspection
 
-
 ### 21\. [Private VLANS](21-PVLANs.md)
 
 - Introduction to Private VLANs
@@ -290,7 +276,6 @@ Institution: CBY Nugget
 - Verify PVLANs
 - Trunking and PVLANs
 - PVLAN Summary
-
 
 ### 22\. [VRF-lite](22-VRFLite.md)
 
@@ -305,8 +290,6 @@ Institution: CBY Nugget
 - DHCP VRF Services
 - VRF-lite Summary
 
-
-
 ### 24\. [Configure Cisco TrustSec](24-TrustSec.md)
 
 - Introduction to TrustSec
@@ -319,7 +302,6 @@ Institution: CBY Nugget
 - Verify TrustSec
 - SGT eXchange Protocol (SXP)
 
-
 ### 25\. [Additional Layer 2 Security](25-L2Sec.md)
 
 - Introduction to Additional Layer 2 Security Options
@@ -330,8 +312,9 @@ Institution: CBY Nugget
 - Summary of Layer 2 Security
 
 
-## Routing Security
 
+
+## Routing Security
 
 ### 26\. [EIGRP Neighbor Relationships and Authentication](26-EIGRPAuth.md)
 
@@ -340,7 +323,6 @@ Institution: CBY Nugget
 - Authentication Overview
 - EIGRP Hands on Lab with Authentication
 - EIGRP Neighbor Relationships and Authentication
-
 
 ### 27\. [Troubleshoot OSPF Authentication for IPv4](27-OSPFAuthIPv4.md)
 
@@ -352,7 +334,6 @@ Institution: CBY Nugget
 - Troubleshooting OSPF Authentication Lab 02
 - Virtual lab: Troubleshoot OSPF Authentication for IPv4
 
-
 ### 28\. [Troubleshoot OSPF Authentication for IPv6](28-OSPFAuthIPv6.md)
 
 - Intro to IPv6 OSPF Authentication and Troubleshooting
@@ -363,8 +344,8 @@ Institution: CBY Nugget
 - Virtual lab: Troubleshoot OSPF Authentication for IPv6
 
 
-## Application Protocol Security
 
+## Application Protocol Security
 
 ### 29\. [Firepower Access Control Policies](29-Firepower.md)
 
@@ -376,7 +357,6 @@ Institution: CBY Nugget
 - SSL/TLS Decryption
 - IPS Inspection
 
-
 ### 30\. [Management Options to Improve Security](30-OptImprove.md)
 
 - Introduction to Secure Network Management
@@ -384,7 +364,6 @@ Institution: CBY Nugget
 - Syslog Overview
 - NTP with Authentication
 - Change Control
-
 
 ### 31\. [Troubleshoot SNMP](31-SNMPTshoot.md)
 
@@ -395,7 +374,6 @@ Institution: CBY Nugget
 - SNMPv3 Server Configuration
 - Troubleshooting SNMP
 
-
 ### 32\. [Troubleshoot Network Problems using Logging](32-LoggingTshoot.md)
 
 - Introduction to Troubleshooting using Logging
@@ -405,8 +383,8 @@ Institution: CBY Nugget
 - Troubleshoot Network Problems using Logging
 
 
-## Cloud Security
 
+## Cloud Security
 
 ### 33\. [Cloud Service and Deployment Models](33-CloudModel.md)
 
@@ -415,7 +393,6 @@ Institution: CBY Nugget
 - Plan for Platform As A Service
 - Plan for Software As A Service
 - Plan for Cloud Deployment Models
-
 
 ### 34\. [Planning for Software Development Methodologies](34-SWDevelop.md)
 
@@ -428,7 +405,6 @@ Institution: CBY Nugget
 - Plan for DevOps
 - Plan for DevSecOps
 
-
 ### 35\. [Planning for and Securing Cloud Software-as-a-Service](35-SaaSSec.md)
 
 - Planning for Software-as-a-Service Security
@@ -437,7 +413,6 @@ Institution: CBY Nugget
 - Cisco Cloudlock Access Security Broker
 - Securing DNS with Cisco Umbrella and OpenDNS
 - Securing Communications with Cisco Email Security
-
 
 ### 36\. [Planning for and Securing Cloud Infrastructure-as-a-Service](36-IaaSSec.md)
 
@@ -450,7 +425,6 @@ Institution: CBY Nugget
 - Monitor and Analyze with Stealthwatch
 - Understand the Tenets of Zero Trust Security
 - Zero Trust Token Auth Demo
-
 
 ### 37\. [Planning for and Securing Cloud Platform-as-a-Service](37-PaaSSec.md)
 
@@ -465,8 +439,9 @@ Institution: CBY Nugget
 - Visibility with Cisco AppDynamics
 
 
-## Web & Email Security
 
+
+## Web & Email Security
 
 ### 38\. [Capture and Redirection Methods](38-Redirect.md)
 
@@ -479,7 +454,6 @@ Institution: CBY Nugget
 - IOS Configuration for WCCP
 - Testing WCCP
 - Traffic Redirection Summary
-
 
 ### 39\. [Cisco Web Security](39-WebSec.md)
 
@@ -494,7 +468,6 @@ Institution: CBY Nugget
 - WSA Decryption Policy
 - WSA Additional Security Features
 
-
 ### 40\. [Cisco Email Security](40-EmailSec.md)
 
 - Introduction to Cisco Email Security
@@ -506,6 +479,8 @@ Institution: CBY Nugget
 - Email Anti-Virus
 - DLP
 - Encryption
+
+
 
 
 ## Cisco Umbrella
@@ -535,7 +510,6 @@ Institution: CBY Nugget
 - Understand Groups and Policies
 - Summarizing Endpoint Security
 
-
 ### 43\. [Explain Various Types of Endpoint Defenses](43-EndptTypes.md)
 
 - Introducing Endpoint Defense Mechanisms
@@ -545,7 +519,6 @@ Institution: CBY Nugget
 - Dynamic File Analysis
 - Summarizing Endpoint Protection Mechanisms
 
-
 ### 44\. [Endpoint Security](44-EndptSec.md)
 
 - Introduction to Endpoint Security
@@ -554,7 +527,6 @@ Institution: CBY Nugget
 - Using Multi-Factor Authentication
 - Posture Assessment for Endpoint Security
 - Patching Endpoints
-
 
 ### 45\. [Describe Controls for End Users' Network Access](45-NetAccess.md)
 
@@ -568,8 +540,9 @@ Institution: CBY Nugget
 - Summarizing Network Access Controls for Endpoints
 
 
-## 802.1X
 
+
+## 802.1X
 
 ### 46\. [802.1X Fundamentals](46-8021xFund.md)
 
@@ -577,7 +550,6 @@ Institution: CBY Nugget
 - Network Authentication and Authorization
 - Options for Authentication
 - Options after Authentication
-
 
 ### 47\. [Configure ISE for 802.1X](47-ISE8021x.md)
 
@@ -589,7 +561,6 @@ Institution: CBY Nugget
 - Creating a Policy Set
 - Authorization Policies
 - Summary
-
 
 ### 48\. [Configure a Switch for 802.1X](48-Sw8021x.md)
 
@@ -603,7 +574,6 @@ Institution: CBY Nugget
 
 ## Data Exfiltration
 
-
 ### 49\. [Explain Exfiltration Techniques](49-Exfiltration.md)
 
 - Introducing Attacker Exfiltration Techniques
@@ -613,7 +583,6 @@ Institution: CBY Nugget
 - Text-Based Protocols
 - Recapping Exfiltration Techniques
 
-
 ### 50\. [Explaining the Benefits of Streaming Telemetry](50-Streaming.md)
 
 - Introducing Streaming Telemetry
@@ -621,7 +590,6 @@ Institution: CBY Nugget
 - Network Telemetry
 - Endpoint Telemetry
 - Summarizing Telemetry
-
 
 ### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer,md)
 
