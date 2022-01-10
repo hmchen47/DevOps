@@ -18,7 +18,7 @@
     - still able to form EIGRP neighbor
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
       onclick= "window.open('page')"
       src    = "img/26-eigrp.png"
       alt    = "Example network for EIGRP neighbors"
@@ -427,7 +427,7 @@
   - area 2: md5 authentication
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/27-ospf.png"
       alt    = "Example OPSF network w/ 3 areas"
@@ -1204,7 +1204,7 @@
     - interface level authentication taking precedence 
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/28-ospfv3.png"
       alt    = "Example IPv6 OPSF network w/ 3 areas"
