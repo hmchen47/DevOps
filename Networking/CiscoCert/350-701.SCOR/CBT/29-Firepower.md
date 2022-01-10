@@ -163,6 +163,32 @@ Trainer: Keith Barker
 
 ## Malware and File Inspections
 
+- Demo: creating malware policy w/ FMC
+  - FMC > Policies tab > Access Control subtab > Malware & File > Empty by default > 'New File Policy' button
+  - create policy:
+    - New File Policy: Name = Malware-n-File_Policy > 'Save' button
+    - Malware-n-File Policy > tabs - Rules, Advanced; fields - File Types, Application Protocol, Direction, Action > Rules tab > 'Add' Rule
+    - View Rule: Application Protocol = Any; Direction of Transfer = Any; Action = Block Files; File Type Categories = PDF Files; <span style="color: cyan;">Selected File Categories and Types = Category: PDF files</span> > 'Save' button
+  - add the policy into ACL
+    - FMC > Policies tab > Access Control > Access Control subtab > Access Control Policy = Starter Policy > 'Edit' icon
+    - Starter Policy > entries w/ 'Files' icon gray out (no File policy included)
+      - either add the File policy to existing rules or create new
+      - both entries: action = block
+      - expect to allow the PDF files
+    - entry # = 2 > right click > Insert new rules
+    - Add rule: Insert = below value 2; Name = Looking for PDFs; Action = Allow
+      - Networks tab: Source Networks = IPv4-Private-10.0.0.0-8
+      - Inspection tab: Intrusion Policy = None; File Policy = Malware-n-File_Policy
+      - Logging tab: Log at Beginning of Connection = On
+      - 'Add' button
+    - entry - # = 3, Name = Looking for PDFs, File icon = On > 'Save' button
+  - verify the file policy before deploying
+    - browse a PDF file and download it > success
+  - deploy the policy: FMC > 'Deploy' link > Deploy Policies: FTD-1 = On > 'Deploy' button
+  - verify the file policy:
+    - clear cache from browser in Kali Linux
+    - browse the PDF document again > 'The connection was reset' message shown (PDF file allowed only from IPv4-Private-10.0.0.0-8)
+    - browse a PDF file w/ HTTPS > ok
 
 
 
