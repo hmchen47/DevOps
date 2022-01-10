@@ -389,7 +389,124 @@ Trainer: Keith Barker
 
 ## Troubleshooting OSPF Authentication Lab 02
 
+- Demo: Troubleshooting OSPF Authentication
+  - topology:
+    - a loopback interface 55 (Lo55) on R5 w/ 2001:DB8:6783:5555::5
+    - PC8 connect to the subnet on R8
+  - task: PC8 unable tp reach Lo55
 
+  ```text
+  R5# show ipv6 int brief
+  Ethernet0/0                [administratively down/down]
+      unassigned
+  GigabitEthernet0/0         [up/up]
+      FE80::C805:16FF:FE70:8
+      2001:DB8:6783:5::5
+  <...truncated...>
+  Loopback55                 [administratively down/down]
+      FE80::C805:16FF:FE70:6
+      2001:DB8:6783:5555::5
+  ! interface Lo55 down
+
+  R5# conf t
+  R5(config)# int lo55
+  R5(config-if)# no shutdown
+  R5(config-if)# end
+
+  R5# shoe ipv6 ospf int brief
+  Interface   PID Area  Intf ID   Cost  State Nbrs F/C
+  VL0         1   0     15        10    P2P   1/1
+  Fa4/0       1   1     10        10    DR    1/1
+  Gi1/0       1   1     4         1     BDR   0/0
+  Lo55        1   5555  14        1     LOOP  0/0
+  ! Lo55 w/ Area 5555 and VL0 existed for virtual link
+
+  R5# show ipv6 ospf virtual-links
+  Virtual Link OSPFv3 VL0 to router 3.3.3.3 is up
+  <...truncated...>
+
+  R5# show ipv6 ospf
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this interface is 1
+      <...truncated...>
+  ! virtual link existed
+
+  R3# show ipv6 route ospf
+  IPv6 Routing Table - 15 entries
+  <...truncated...>
+  O   2001:DB8:6783:7::/64 [110/12]
+       via FE80::C803:16FF:FE70:70, FastEthernet4/1
+  O   2001:DB8:6783:23::5/128 [110/10]
+       via FE80::C803:16FF:FE70:70, FastEthernet4/1
+  O   2001:DB8:6783:57::/64 [110/11]
+       via FE80::C803:16FF:FE70:70, FastEthernet4/1
+  OI  2001:DB8:6783:5555::5/128 [110/10]
+       via FE80::C803:16FF:FE70:70, FastEthernet4/1
+  ! Lo55 route exists, but missig many routes for backbone
+
+  R3# ping 2001:DB8:6783:5555::5
+  !!!!!
+
+  R3# show ipv6 ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
+  5.5.5.5           0    FULL/  -     -          15               OSPFv3_VL0
+  5.5.5.5           1    FULL/DR    00:00:32     10               FastEthernet4/1
+
+  R3# show ipv6 ospf
+  <...truncated...>
+    Area BACKBONE(0)
+      <...truncated...>
+    Area 1
+      <...truncated...>
+  ! Area 0 & 1 no authentication
+
+  R1# show ipv6 ospf
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 3
+      SHA-1 Authentication, SPI 1000
+      <...truncated...>
+  ! Area 0 w/ Sha1 authentication
+
+  R1# show ipv6 ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
+  2.2.2.2           1    FULL/DR    00:00:33     5                GigabitEthernet1/0
+
+  R1# show crypto ipsec policy
+  Crypto IPsec client security policy data
+
+  Policy name:      OSPFv3-1000
+  Policy refcount:  3
+  Inbound  AH SPI:  1000 (0x3E8)
+  Outbound AH SPI:  1000 (0x3E8)
+  Inbound  AH Key:  1234567894563214569870369998741014444
+  Outbound AH Key:  1234567894563214569870369998741014444
+  Transform set:    ah-md5-hmac
+
+  ! config R3 on OSPFv3 Area 0 w/ authentication
+  R3# conf t
+  R3(config)# ipv6 router ospf 1
+  R3(config-rtr)# area 0 authentication ipsec spi 1000 sha1
+    1234567894563214569870369998741014444
+  R3(config-rtr)# end
+
+  R3# show ipv6 ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
+  5.5.5.5           0    FULL/ -      -          15               OSPFv3_VL0
+  4.4.4.4           1    FULL/DR    00:00:36     11               FastEthernet4/0
+  1.1.1.1           1    FULL/BDR   00:00:32     5                GigabitEthernet1/0
+  5.5.5.5           1    FULL/DR    00:00:38     10               FastEthernet4/1
+
+  R8# show ip route ospf
+  IPv6 Routing Table - 22 entries
+  <...truncated...>
+  OI  2001:DB8:6783:5555::5/128 [1106700]
+       via FE80::C803:16FF:FE70:70, FastEthernet4/1
+
+  R8# ping 2001:DB8:6783:5555::5
+  !!!!!
+  ```
 
 
 ## Virtual lab: Troubleshoot OSPF Authentication for IPv6
