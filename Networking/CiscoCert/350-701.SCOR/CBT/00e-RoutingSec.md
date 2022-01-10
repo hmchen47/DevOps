@@ -56,6 +56,9 @@
   R1(config-if)# ipv6 eigrp 6
   R1(config-if)# int gig 1/0
   R1(config-if)# ipv6 eigrp 6
+  ```
+
+  ```text
   R1(config-if)# int gig 2/0
   R1(config-if)# ipv6 eigrp 6
   R1(config-if)# int gig 4/0
@@ -172,7 +175,9 @@
   R2(config-router-af-interface)# authentication mode md5
   R2(config-router-af-interface)# authentication key-chain Demo-Chain
   R2(config-router-af-interface)# end
+  ```
 
+  ```text
   R2# show ipv6 eigrp neighbors
   EIGRP-IPv4 VR(Demo-Named_EIGRP) Address-Family Neighbors for AS(4)
   H   Address         Interface       Hold Uptime   SRTT   RTO  Q  Seq
@@ -474,7 +479,9 @@
       Neighbor Count is 0, Adjacent neighbor count is 0
       Suppresses hello for 0 neighbor(0)
     ! nothing about authentication due to area 0
+    ```
 
+    ```text
     R5# show ip ospf
       Routing Process "ospf 1" with ID 1.1.1.1 
       <...truncated...>
@@ -538,7 +545,9 @@
             Number of interfaces in this area is 0
             Area has message digest authentication
       <...truncated...>
+    ```
 
+    ```text
     R6# show cdp neighbor
     Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
     R4            Fas 3/2         133           R        7206VXR   Ser 3/1
@@ -602,7 +611,9 @@
     R1(config)# int g1/0
     R1(config-if)# ip ospf message-digest-key 1 md5 cisco123
     R1(config-if)# end
+    ```
 
+    ```text
     R2# show cdp neighbors
     Device ID     Local Intrfce   Holdtme    Capability  Platform  Port ID
     Core1         Gig 2/0         138           R S I    IOSv      Gig 2/0
@@ -963,7 +974,9 @@
   Gi0/0       1   2     192.168.1.0/24  1     DR    0/0
   Fa4/1       1   2     10.2.68.8/24    10    DR    1/1
   Lo50        1   50    10.50.50.50/32  1     LOOP  0/0
+  ```
 
+  ```text
   ! virtual link required for Area 0 to connected to Area 0
   ! VL0 existed in R8 for virtual link
   R8# show ip ospf virtual-links
@@ -975,7 +988,7 @@
           0       65535   no           no         Base
     Transmit Delay is 1 sec, Satate DOWN,
     Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
-
+  
   R4# show ip ospf neighbors
   Neighbor ID     Pri State     Dead Time Address     Interface
   3.3.3.3           1 FULL/BDR  00:00:34  10.0.34.4   FastEthernet4/1
@@ -1253,7 +1266,9 @@
   R2(config-rtr)# area 1 authentication ipsec spi 1000 sha1 0 
     1234567890123456789012345678901234567890
   R2(config-rtr)# end
+  ```
 
+  ```text
   R2# show ipv6 ospf int g2/0
   GigabitEThernet2/0 is up, line protocol is up
     Link Local Address FE80::C802:17FF:FED4:38, Interface ID 5
@@ -1386,7 +1401,9 @@
   R2(config-if)# ipv6 ospf authentication ipsec spi 1000 sha1 
     0123456789012345678901234567890123456789
   R2(config-if)# end
+  ```
 
+  ```text
   R4(config)# int g2/0
   R4(config-if)# ipv6 ospf authentication ipsec spi 1000 sha1 
     0123456789012345678901234567890123456789
@@ -1432,7 +1449,9 @@
   PC1> ping 2001:db8:6783:8:2050:79ff:fe66:6807
   *2001:db8:6783:1::1 icmp6 seq=1 ttl=64 ... (ICMP type:1, code:6, Reject route to destination)
   ! 2001:db8:6783:1::1 -> R1
+  ```
 
+  ```text
   R1# show ipv6 route
   IPv6 Routing Table - 9 entries
   Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
@@ -1616,7 +1635,9 @@
 
   R3# ping 2001:DB8:6783:5555::5
   !!!!!
+  ```
 
+  ```text
   R3# show ipv6 ospf neighbor
   Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
   5.5.5.5           0    FULL/  -     -          15               OSPFv3_VL0
