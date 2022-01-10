@@ -131,6 +131,33 @@ Trainer: Keith Barker
 
 ## URL Filtering
 
+- URL filtering overview
+  - probably company policy to block certain types of web sites
+  - user signing agreement to agree banning these web sites
+  - ACL to block these web sites
+
+
+- Demo: blocking sports web site w/ FMC
+  - verify w/ Kali Linus
+    - open web browser to browse 'Top 15 Most Popular Sports Website'
+    - click on the links to the websites to verify the connectivity
+  - FMC > Overview tab > Dashboards subtab > Summary Dashboard: tabs - Network, Threats, Intrustion Events, Status, Geolocation, QoS > Network tab
+    - Network tab: charts - Unique Application over Time, Top Web Applications Seen, Top Client Applications Seen
+    - Top Web Applications Seen (in tod-down order): Yahoo!, Google, CBS, Akamai, ...
+  - config policy to block sports web sites: FMC > Policies tab > Access Control subtab > Access Control Policy = Starter Policy > 'Edit' icon
+    - Starter Policy > Rule tab > Mandatory - Starter Policy > entry - # = 1, Name = No Ping to 8.8.8.8 > right click - Insert new rule
+    - Add Rule: Insert = below rule 1; Name = No Sports; Action = Block with reset; Enabled = on
+      - Zones tab: Source Zones = inside_zone; Destination Zones = outside_zone
+      - Network tab: Source Networks = IPv4-Private-10.0.0.0-8; Destination Networks = (empty)
+      - URLs tab: Reputations = Any; Selected URLs = Sports (Any Reputation)
+      - Logging tab: Log at Beginning of Connection = On
+      - 'Add' button
+    - entry: # = 2, Name = No Sports, Source Zones = inside_zone, Dest Zone = outside_zone
+    - 'Save' button > 'Deploy' link on top banner > FTD-1 = On > 'Deploy' button
+    - green circle icon to check the status of deployment
+  - Verify w/ Kali Linux
+    - browse sports web site: 'The connection was reset' message on page
+    - browse other web sites: ok
 
 
 
