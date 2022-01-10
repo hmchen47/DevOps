@@ -511,5 +511,9 @@ Trainer: Keith Barker
 
 ## Virtual lab: Troubleshoot OSPF Authentication for IPv6
 
+- Virtual labs
+  - Troubleshooting OSPF Authentication Lab 01
+  - Troubleshooting OSPF Authentication Lab 02
+
 
 
