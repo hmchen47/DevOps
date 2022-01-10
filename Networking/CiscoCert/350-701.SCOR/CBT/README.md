@@ -14,7 +14,7 @@ Institution: CBY Nugget
 - [Virtual Private Networks (VPNs)](00b-VPNs.md)
 - [Security Intelligence](00c-Intelligence.md)
 - [L2 Security](00d-L2Sec.md)
-- [Routing Security](00e-RoutingSec.md)
+- [Routing Authentication](00e-RoutingSec.md)
 - [Application Protocol Security](00f-ProtSec.md)
 - [Cloud Security](00g-CloudSec.md)
 - [Web & Email Security](00h-WebMailSec.md)
