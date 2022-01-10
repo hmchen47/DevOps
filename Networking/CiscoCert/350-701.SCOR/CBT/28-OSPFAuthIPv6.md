@@ -234,6 +234,156 @@ Trainer: Keith Barker
 
 ## Troubleshooting OSPF Authentication Lab 01
 
+- Demo: troubleshooting OSPFv3 authentication
+  - topology:
+    - PC1 on the subnet connected to g0/0 on R1
+    - PC8 on the subnet connected to g0/0 on R8
+  - tasks:
+    - PC1 able to reach R8
+    - best path: PC1 -> R1 -> Core1 -> R2 -> R4 -> R6 -> R8 -> PC8
+
+  ```text
+  PC8> show ipv6
+  NAME              : PC-8[1]
+  LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6807/64
+  GLOBAL SCOPE      : 2001:db8:6783:8:2050:79ff:fe66:6807/64
+  ROUTER LINK-LAYER : ca:08:12:c0:00:08
+  MAC               : 00:50:79:66:68:02
+  LPORT             : 10118
+  RHOST:PORT        : 1.0.0.1:10119
+  MTU               : 1500
+
+  PC1> show ipv6
+  NAME              : PC-1[1]
+  LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6800/64
+  GLOBAL SCOPE      : 2001:db8:6783:1:2050:79ff:fe66:6800/64
+  ROUTER LINK-LAYER : ca:08:12:10:00:08
+  <..truncated...>
+
+  PC1> ping 2001:db8:6783:8:2050:79ff:fe66:6807
+  *2001:db8:6783:1::1 icmp6 seq=1 ttl=64 ... (ICMP type:1, code:6, Reject route to destination)
+  ! 2001:db8:6783:1::1 -> R1
+
+  R1# show ipv6 route
+  IPv6 Routing Table - 9 entries
+  Codes: C - Connected, L - Local, S - Static, R - RIP, B - BGP
+         I1 - ISIS L1, I2 - ISIS L2, IA - IIS interarea
+  C   2001:DB8:6783:1::1/64 [0/0]
+       via GigabitEthernet0/0, directly connected
+  L   2201:DB8:6783:1::1/128, [0/0]
+       via GigabitEthernet0/0, receive
+  O   2201:DB8:6783:4::/64 [110/12]
+       via FE80::C803:18FF:FE64:1C, GigabitEthernet2/0
+  OI  2201:DB8:6783:7::/64 [110/13]
+       via FE80::C803:18FF:FE64:1C, GigabitEthernet2/0
+  OI  2201:DB8:6783:8::/64 [110/669]
+       via FE80::C803:18FF:FE64:1C, GigabitEthernet2/0
+  S   2201:DB8:6783:8::/65 [1/0]
+       via Null0, directly connected
+  <..truncated...>
+  ! static route takes precedence
+
+  R1# conf t
+  R1(config)# no ipv6 route 2201:DB8:6783:8::/65
+  R1(config)# end
+
+  R1# ping 2001:db8:6783:8:2050:79ff:fe66:6807
+  2001:db8:6783:8:2050:79ff:fe66:6807 icmp6, seq=1 ttl=54 time=188.647 ms
+  <...truncated...>
+
+  ! verify optimal route
+  PC1> trace 2001:db8:6783:8:2050:79ff:fe66:6807
+   1  2001:db8:6783:1::1 ...
+   2  2001:db8:6783:13::3 ...
+   3  2001:db8:6783:34::4 ...
+   4  2001:db8:6783:46::6 ...
+   5  2001:db8:6783:68::8 ...
+   6  2001:db8:6783:8:2050:79ff:fe66:6807 ...
+  ! PC1 -> R1 -> R3 -> R4 -> R6 -> R8 -> PC8 (not the best route)
+
+  R1# show ipv6 ospf
+  Routing process "ospfv3 1" with ID 1.1.1.
+  <...truncated...>
+  Reference bandwidth unit is 1000 mbps
+  <...truncated...>
+
+  R1# show ipv6 ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
+  3.3.3.3           1    FULL/DR    00:00:32     4                GigabitEthernet2/0
+  ! not forming neighborship w/ R2
+
+  R1# show ipv6 ospf int brief
+  Interface   PID Area  Intf ID   Cost  State Nbrs F/C
+  Gi2/0       1   0     5         1     DR    1/1
+  Gi1/0       1   0     4         1     DR    0/0
+  Gi0/0       1   0     3         1     DR    0/0
+  ! Gi1/0 Nbr F/C = 0/0 -> no full adjacency
+
+  ! verify R2 interface enable
+  R2# show ipv6 int brief
+  Interface   PID Area  Intf ID   Cost  State Nbrs F/C
+  Gi2/0       1   0     5         1     DR    0/0
+  Gi1/0       1   0     4         1     BDR   1/1
+
+  R2# debug ipv6 ospf adj
+  R2# show ipv6 ospf int g2/0
+  GigabitEThernet2/0 is up, line protocol is up
+    <...truncated...>
+    MD5 authentication SPI 256, secure socket UP (errors: 0)
+    <...truncated...>
+
+  R1# show ipv6 ospf int g2/0
+  GigabitEThernet1/0 is up, line protocol is up
+    <...truncated...>
+    Area 0, Process ID 1, Instance ID 0, Router ID 1.1.1.1
+    <...truncated...>
+
+  R1# show ipv6 ospf
+  Routing process "ospfv3 1" with ID 1.1.1.
+  <...truncated...>
+    Area BACKBONE(0)
+      Number of interfaces in this area is 3
+      SPF algorithm executed 7 times
+      Number of LSA 25. Checksum sum 0x0A8889
+      Number of DCbitless LSA 0
+      Number of indication LSA 0
+      Number of DoNotAge LSA 0
+      Flood list length 0
+  ! no authentication set on Area 0
+
+  ! remove authentication on R2 or add MD5 on R1
+  R2# show crypto ipsec policy
+  Crypto IPsec client security policy data
+
+  Policy name:      OSPFv3-256
+  Policy refcount:  1
+  Inbound  AH SPI:  256 (0x100)
+  Outbound AH SPI:  256 (0x100)
+  Inbound  AH Key:  12345678912345678912369852152AB
+  Outbound AH Key:  12345678912345678912369852152AB
+  Transform set:    ah-md5-hmac
+
+  R2# conf t
+  R2(config)# int g2/0
+  R2(config-if)# no ipv6 ospf authentication ipsec spi 256
+  R2(config-if)# end
+
+  R2# undebug all
+  R2# show ipv6 ospf neighbor
+  Neighbor ID     Pri    State      Dead Time    Interface ID     Interface
+  1.1.1.1           1    FULL/BDR   00:00:32     4                GigabitEthernet2/0
+  4.4.4.4           1    FULL/BDR   00:00:33     5                GigabitEthernet1/0
+
+  ! verify the route
+  PC1> trace 2001:db8:6783:8:2050:79ff:fe66:6807
+   1  2001:db8:6783:1::1 ...
+   2  2001:db8:6783:12::2 ...
+   3  2001:db8:6783:34::4 ...
+   4  2001:db8:6783:46::6 ...
+   5  2001:db8:6783:68::8 ...
+   6  2001:db8:6783:8:2050:79ff:fe66:6807 ...
+  ! PC1 -> R1 -> R2 -> R4 -> R6 -> R8 -> PC8
+  ```
 
 
 
