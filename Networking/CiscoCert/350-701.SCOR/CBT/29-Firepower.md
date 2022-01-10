@@ -23,7 +23,21 @@ Trainer: Keith Barker
   - 8\. forward traffic
 
 
-- Demo: access control policy of FirePower
+- Cisco Secure Firewall Management Center (FMC):
+  - an administrative service to manage Cisco security products running on multiple platforms
+  - a.k.a. Firepower Management Center
+  - providing extensive intelligence about the users, applications, devices, threats and vulnerabilities that exist in your network
+  - using this information to analyze your network’s vulnerabilities
+  - providing tailored recommendations regarding security policies to implement, plus prioritization of security events to investigate
+  - the centralized event and policy manager for
+    - Firewall Threat Defence (FTD) OS
+    - ASA w/ FirePower SDervice
+    - Secure IPS (Firepower Next-Gen IPS / NGIPS)
+    - FirePOWER Threat Defence for ISR
+    - Malware Defence (AMP)
+
+
+- Demo: access control policy of FMC
   - FirePower > tabs - Overview, Analysis, Policies, Devices, Objects, AMP, Intelligence
   - Policies > subtabs - Access Control , network Discovery, Application Detectors, Correlation, Actions
   - Access Control subtab > Starter Policy: tabs - Rules, Security Intelligence, HTTP Response, Advanced
@@ -31,6 +45,7 @@ Trainer: Keith Barker
     - top-down fashion
     - Pre-filter Policy = Default Prefilter Policy; SSL Policy = None; Identity Policy = None
     - Deafult Action: Access Control: Block All | Access Control: Trust All Traffic | Network Discovery Only (default) | Instrusion Prevention: Maximum Detection | Instrusion Prevention: Connectivity Over Security | Instrusion Prevention: Balanced Security and Connectivity | Instrusion Prevention: Security Over Connectivity
+    - main categories - Mandatory - Starter Policy, Default - Starter Policy
     - Loggin icon: disabled
     - icons after fields - shield icon = intrusion policy; files icon = file policy
   - Starter Policy > Security Intelligence
@@ -73,7 +88,45 @@ Trainer: Keith Barker
 
 ## Access Control Policy Rule Actions Demonstration
 
+- Demo: actions of access control policy rules w/ FMC
+  - verify Linux reachability
+    
+    ```text
+    Sbox# ifconfig
+    eth0: flags-4163<UP,BROADCAST, RUNNING,MULTICAST> mtu 1500
+      inet 10.1.0.103   netmask 255.255.255.0   broadcast 10.1.0.255
+      <...truncated...>
 
+    SBox# ping 8.8.8.8
+    <...success...>
+
+    SBox# ping www.cisco.com
+    <...success...>
+    ```
+
+  - config policy on FMC
+    - FirePower > Policies tab > Access Control subtab > field - Access Control Policy, Status, Last Modified
+    - entry: Access Control Policy = Starter Policy > 'Edit' icon
+    - Starter Policy > Rules tab > Mandatory - Starter Policy > 'Add Rule' link
+    - Add Rule > Name = No Ping 8.8.8.8; Enable = On; Action = Allow; Insert = into Mandatory; tabs - Zones, Networks, VLAN Tags, Users, Applications, Ports, URLs, SGT/ISE Attributes, Inspection, Logging, Comments
+      - Zones tab > Source Zones = inside_zone, Destination Zones = outside_zone
+      - Networks tab > Source Networks = (empty), Destination Networks = Google_8.8.8.8; none existed $\implies$ 1+1 icond on Availabe Networks
+      - Ports tab > Available Ports > '+' icon > New Port Objects: Name = ICMP_Request_IPv4; Protocol = ICMP; Type = 8 (Echo Request); Code = Any > 'Save' button
+      - Ports tab > Selected Source Ports = (empty); Selected Destination Ports = ICMP_Request_IPv4; Action = Block; Logging tab -> Log at the Beginning  of Connection = On > 'Add' button
+    - Mandatory procedure to make the policy effect: Starter Policy > <span style="color: cyan;">'Save' button</span> > <span style="color: cyan;">'Deploy' link</span> on top banner > Deploy Policies > FTD-1 = On > `Deploy` button
+  - Verify w/ SBox
+
+    ```text
+    SBox# ping 8.8.8.8
+    <...fail...>
+    SBox# ping www.cisco.com
+    <...success...>
+    ```
+
+  - verify w/ FMC
+    - Anslysis tab > Connections subtab > Events > Connection Events: fields - Firest Pacjet, Last Packet, Action, Reason, Initiator IP, Responder IP, Responder Country, Ingress Security Zone, Egress Security Zone, Source Port / ICMP Type, Destination ICMP Code
+    - entry: Initiator IP = 10.1.0.103, Action = Block, Responder IP = 8.8.8.8, Source Port / ICMP Type = 8 (Echo Request) / icmp
+    - entries before the ICP request packet all allowed for DNS lookup
 
 
 ## URL Filtering
