@@ -5,6 +5,7 @@ Trainers: Knox Hutchinson, Keith Barker, Bart Cstale
 
 Institution: CBY Nugget
 
+
 [Original Contents](https://www.cbtnuggets.com/it-training/cisco/scor-350-701)
 
 
@@ -15,9 +16,9 @@ Institution: CBY Nugget
 - [Security Intelligence](00c-Intelligence.md)
 - [L2 Security](00d-L2Sec.md)
 - [Routing Authentication](00e-RoutingSec.md)
-- [Application Protocol Security](00f-ProtSec.md)
-- [Cloud Security](00g-CloudSec.md)
-- [Web & Email Security](00h-WebMailSec.md)
+- [Management Plane Security](00f-MgmtSec.md)
+- [Software Defined Network](00g-SDN.md)
+- [Security for User Interaction](00h-UserSec.md)
 - [Cisco Umbrella](00i-Umbrella.md)
 - [802.1X](00j-Dot1X.md)
 - [Data Exfiltration](00k-Exfiltrate.md)
