@@ -5,8 +5,11 @@ Trainer: Keith Barker
 
 ## Introduction to Secure Network Management
 
-
-
+- Learning goals
+  - secure management
+  - syslog
+  - NTP authentication
+  - patch management
 
 
 ## Overview of Secure Management
