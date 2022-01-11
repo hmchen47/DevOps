@@ -163,5 +163,10 @@ Trainer: Keith Barker
 
 ## Troubleshooting SNMP
 
+- Recommended points to troubleshoot SNMP
+  - IP connectivity w/ UDP:161/162
+  - SNMP version 
+  - correct MIB
+  - device persistence in case hardware change
 
 
