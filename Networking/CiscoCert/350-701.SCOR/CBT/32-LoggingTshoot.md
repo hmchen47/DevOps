@@ -5,6 +5,11 @@ Trainer: Keith Barker
 
 ## Introduction to Troubleshooting using Logging
 
+- Learning goal
+  - logging
+  - logging config
+  - debugging
+  - troubleshoot w/ logging
 
 
 
