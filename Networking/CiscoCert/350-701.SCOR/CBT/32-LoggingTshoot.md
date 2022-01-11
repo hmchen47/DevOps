@@ -202,7 +202,136 @@ Trainer: Keith Barker
 
 ## Conditional Debugging
 
+- Conditional debug overview
+  - able to apply to specific interface(s)
+  - able to apply to specific IP address space
+  - able to aggregate several conditional debugs into a group
+  - issue:
+    - not applied to all devices
+    - not all devices accepting all conditionals for debugging
+  - solution: test every single conditional debug before using it on a certain device
 
+
+- Demo: config conditional debugging
+  - topology
+    - severity levles: buffer (7), conscole (6)
+    - debug on specific topics, e.g., OSPF
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/32-conddebug.png"
+      alt    = "Example network topology for conditional debugging"
+      title  = "Example network topology for conditional debugging"
+    />
+  </figure>
+
+  - task:
+    - debug Hello only on intf g0/6 on R2
+    - no debug info on intf g0/1 on R2
+  - verify R2 settings
+    
+    ```text
+    R2# show ip protocol
+    *** IP Routing is NSF aware ***
+    Routing Protocol is "ospf 1"
+      Outgoing update filter list for all interfaces is not set
+      Incoming update filter list for all interfaces is not set
+      Router ID 2.2.2.2
+      Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+      Maximum path: 4
+      Routing for Networks:
+        0.0.0.0 255.255.255.255 area 0
+      Passive Interface(s):
+        Ethernet0/0
+        Serial3/0
+        <...truncated...>
+      Routing Information Source:
+        Gateway     Distance    Last Update
+        11.11.11         110    00:11:21
+        172.16.23.3      110    00:12:59
+      Distance: (default is 110)
+    Routing Protocol is "bgp 100"
+      Outgoing update filter list for all interfaces is not set
+      Incoming update filter list for all interfaces is not set
+      Router reflector for address family IPv4 Unicast, 1 client
+      IGP synchronization is disabled
+      Automatic route summarization is disabled
+      Neighbor(s):
+        Address       FiltIn FiltOut DistIn DistOut Weight RouteMap
+        100.100.24.4
+        172.16.12.1
+        172.16.23.3
+        172.16.211.11
+      Maximum path: 1
+      Routing Information Sources
+        Gateway       Distance    Last Update
+        100.100.24.4        20    00:10:19
+        172.16.12.1        200    00:12:29
+      Distance: external 20 internal 200 local 200
+
+    R2# show ip ospf neighbor
+    Neighbor ID     Pri State     Dead Time   Address         Interface
+    11.11.11.11       1   FULL/BDR  00:00:35  172.16.211.11   GigabitEthernet2/0
+    172.16.23.3       1   FULL/DR   00:00:32  172.16.23.3     GigabitEthernet1/0
+    1.1.1.4           1   FULL/BDR  00:00:31  172.16.12.1     GigabitEthernet0/0
+
+    R2# debug ip osph hello
+    OSPF-1 HELLO Gi2/0: Send hello to 224.0.0.5 area 0 from 172.16.211.2
+    OSPF-1 HELLO Gi1/0: Send hello to 224.0.0.5 area 0 from 172.16.23.2
+    OSPF-1 HELLO Gi0/0: Send hello to 224.0.0.5 area 0 from 172.16.12.2
+    OSPF-1 HELLO Gi1/0: Rcv hello to 172.16.23.3 area 0 from 172.16.23.3
+    OSPF-1 HELLO Gi0/0: Rcv hello to 172.16.12.1 area 0 from 172.16.12.1
+    OSPF-1 HELLO Gi2/0: Rcv hello to 11.11.11.11 area 0 from 172.16.211.11
+
+    R2# show logging
+    <...truncated...>
+          Console logging: level debugging, 38 messages logged, xml disabled,
+                          filtering disabled
+          Monitor logging: level debugging, 0 messages logged, xml disabled,
+                          filtering disabled
+          Buffer logging:  level debugging, 42 messages logged, xml disabled,
+                          filtering disabled
+    <...truncated>
+
+    R2# show users
+        Line      User  Host(s)   Idle        Location 
+    *  0 con 0          idle      00:00:00
+
+    R2# undebug all
+    ```
+
+  - config conditional debug
+
+    ```text
+    ! config debug 
+    R2# debug condition interface g0/0
+    R2# debug condition interface g1/0
+    R2# show debug condition
+    Condition 1: interface Gi0/0 (1 flags triggered)
+            Flags: Gi0/0
+    Condition 2: interface Gi1/0 (1 flags triggered)
+            Flags: Gi1/0
+    
+    RT2# debug ip ospf hello
+    OSPF-1 HELLO Gi1/0: Send hello to 224.0.0.5 area 0 from 172.16.23.2
+    OSPF-1 HELLO Gi0/0: Send hello to 224.0.0.5 area 0 from 172.16.12.2
+    OSPF-1 HELLO Gi1/0: Rcv hello to 172.16.23.3 area 0 from 172.16.23.3
+    OSPF-1 HELLO Gi0/0: Rcv hello to 172.16.12.1 area 0 from 172.16.12.1
+
+    R2# no debug condition 2
+    OSPF-1 HELLO Gi0/0: Send hello to 224.0.0.5 area 0 from 172.16.12.2
+    OSPF-1 HELLO Gi0/0: Rcv hello to 172.16.12.1 area 0 from 172.16.12.1
+
+    R2# undebug all
+    R2# show debug condition
+    Condition 1: interface Gi0/0 (1 flags triggered)
+            Flags: Gi0/0
+
+    R2# no debug condition 1
+    ! warning message for the last debug condition
+    Proceed with removal? [yes/no]: yes
+    ```
 
 
 ## Troubleshoot Network Problems using Logging
