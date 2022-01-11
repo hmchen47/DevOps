@@ -152,6 +152,16 @@ Trainer: Keith Barker
 
 ## Change Control
 
+- Benefits of change management
+  - second set of eyes
+  - documentation:
+    - window to implement change
+    - change itself
+    - tested and who did
+    - roll-back process
+  - inventory
+    - devices and network connections
+    - version of software
 
 
 
