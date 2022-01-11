@@ -51,14 +51,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=140
+      <img style="margin: 0.1em;" height=120
         src   = "img/29-firepower.png"
         alt   = "Snapshot of FirePower: Starter Policy - Rule"
         title = "Snapshot of FirePower: Starter Policy - Rule"
       >
     </a>
     <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=140
+      <img style="margin: 0.1em;" height=120
         src   = "img/29-fpintelligence.png"
         alt   = "Snapshot of FirePower: Starter Policy - Security Intelligence"
         title = "Snapshot of FirePower: Starter Policy - Security Intelligence"
@@ -304,7 +304,7 @@
     Exception logging: size (8192 bytes)
     Count and timestamp logging messages: disabled
     Persistent logging: disabled
-  
+
   R1# conf t
   ! config syslog server
   R1(config)# logging host 2.2.2.2
@@ -355,7 +355,9 @@
   ntp source Loopback0
   ntp update-calendar
   ntp server 2.2.2.2
+  ```
 
+  ```text
   ! access control list to control NTP access
   R2# show access-list
   Standard IP access list 1
@@ -669,7 +671,9 @@
   R1(config-line)# no login
   R1(config-line)# privilege level 15
   R1(config-line)# end
+  ```
 
+  ```text
   ! telnet from R2  to R1
   R2# telnet 1.1.1.1
   Trying 1.1.1.1 ... Open
@@ -785,47 +789,18 @@
     R2# show ip protocol
     *** IP Routing is NSF aware ***
     Routing Protocol is "ospf 1"
-      Outgoing update filter list for all interfaces is not set
-      Incoming update filter list for all interfaces is not set
-      Router ID 2.2.2.2
-      Number of areas in this router is 1. 1 normal 0 stub 0 nssa
-      Maximum path: 4
-      Routing for Networks:
-        0.0.0.0 255.255.255.255 area 0
-      Passive Interface(s):
-        Ethernet0/0
-        Serial3/0
-        <...truncated...>
-      Routing Information Source:
-        Gateway     Distance    Last Update
-        11.11.11         110    00:11:21
-        172.16.23.3      110    00:12:59
-      Distance: (default is 110)
+      <...truncated...>
     Routing Protocol is "bgp 100"
-      Outgoing update filter list for all interfaces is not set
-      Incoming update filter list for all interfaces is not set
-      Router reflector for address family IPv4 Unicast, 1 client
-      IGP synchronization is disabled
-      Automatic route summarization is disabled
-      Neighbor(s):
-        Address       FiltIn FiltOut DistIn DistOut Weight RouteMap
-        100.100.24.4
-        172.16.12.1
-        172.16.23.3
-        172.16.211.11
-      Maximum path: 1
-      Routing Information Sources
-        Gateway       Distance    Last Update
-        100.100.24.4        20    00:10:19
-        172.16.12.1        200    00:12:29
-      Distance: external 20 internal 200 local 200
+      <...truncated...>
 
     R2# show ip ospf neighbor
     Neighbor ID     Pri State     Dead Time   Address         Interface
     11.11.11.11       1   FULL/BDR  00:00:35  172.16.211.11   GigabitEthernet2/0
     172.16.23.3       1   FULL/DR   00:00:32  172.16.23.3     GigabitEthernet1/0
     1.1.1.4           1   FULL/BDR  00:00:31  172.16.12.1     GigabitEthernet0/0
+    ```
 
+    ```text
     R2# debug ip osph hello
     OSPF-1 HELLO Gi2/0: Send hello to 224.0.0.5 area 0 from 172.16.211.2
     OSPF-1 HELLO Gi1/0: Send hello to 224.0.0.5 area 0 from 172.16.23.2
