@@ -149,7 +149,15 @@ Trainer: Keith Barker
 
 ## SNMPv3 Server Configuration
 
-
+- Demo: SNMPv3 server w/ Observium
+  - SNMP settings
+    - basic config: Protocol Version = v3; Transport = UDP; Port = 161
+    - SNMP v3 authentication: Auth Level = authPriv; Auth Username = `****`; Auth Password = `****`; Auth Algorithm = SHA; Crypto Password = `****`; Crypto Algorithm = AES
+    - Auth Level = noAuthNoPriv | authNoPriv | AuthPriv
+  - Overview:
+    - tabs: Graphs, System, Processor, Memory, Storage, Netstats, Authentication, Poller
+    - poll all details of the device
+    - every 10 mins update
 
 
 
