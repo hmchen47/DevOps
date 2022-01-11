@@ -223,5 +223,21 @@ Trainer: Keith Barker
 
 ## IPS Inspection
 
+- Demo: adding IPS policy to access control
+  - create intrusion policy
+    - Policies tab > Access Control > Intrusion subtab > empty by default > 'Create Policy' button
+    - Create Intrusion Policy: Name = Our-IPS-Policy; Drop when Inline = On; Base Policy = Balanced Security and Connectivity > 'Create and Edit Policy' button
+    - Create Policy: Our-IPS-Policy > folders - Policy Information (Rules, Firepower Recommendations), Advanced Settings, Policy Layers > Policy Information
+    - Policy Information: Name = Our-IPS-Policy > 'Commit Changes' button
+    - entry - Intrusion Policy = Our-IPS-Policy, Drop wne Inline = Yes, Status = No access control policies use this policy 
+  - apply intrusion policy to access control policy
+    - Policies tab > Access Control > Access Control subtab > entry - Access Control Policy = Starter Policy > 'Edit' icon
+    - Starter Policy > Mandatory - Starter Policy
+      - 3 entries w/ greyout shield icons - no Intrustion policy applied
+      - nay policy w/ action = Block resulting packet drop and w/o further investigation, i.e., # = 1 & 2 not applicable
+      - entry - # = 3, Name = Looking for PDFs, the only entry applicable > 'Edit' icon
+      - Editing Rule - Looking for PDFs > Inspection subtab: Intrusion Policy = Our-IPS-Policy > 'Save' button
+      - 'Save' button > 'Deploy' link > Deploy Policies: FTD-1 = On > 'Deploy' button
+    - alternative, Default Action = Intrusion Prevention: Our-IPS-Policy
 
 
