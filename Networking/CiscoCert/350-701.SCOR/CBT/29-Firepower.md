@@ -194,7 +194,31 @@ Trainer: Keith Barker
 
 ## SSL/TLS Decryption
 
+- Inspecting traffic w/ SSL/TLS descryption
+  - policy blocking some L7 applications and/or web sites
+  - encrypted payload and header probably not able to be inspected, in particular, HTTPS
+  - solution:
+    - making firewall as man-in-the-middle device to inspect the packets
+    - two sessions requested: inside session and outside sessions
+    - firewall resigning the packets
+  - scenario for inbound traffic:
+    - user in branch office accessing the corporate service
+    - servers in corperate servers w/ private keys
+    - user's computer using know public key
+    - some traffic not allowed to decrypt, such as financial and mediacal info
+  - decryption and encryption intensively resource consuming
 
+
+- Demo: decryption SSL/TLS in FMC
+  - assume that the certificate and key are ready for use
+  - FMC > Policies tab > Access Control > SSL subtab > entry - SSL Policy > 'Edit' icon
+  - create rule for SSL policy: SSL Policy: tabs - Rules, Trusted CA certificates, Undecryptable Actions
+    - Rules tab: 'Add' Rule > Add Rule: Insert = into Category Standard Rules; Name = xxx
+  - apply the rule into access control policy: Policy tab > Access Control > Access Control subtab
+    - entry - Starter Policy > 'Edit' icon
+    - Starter Policy > SSL Policy = None > 'None' link
+    - SSL Policy to use for inspecting encrypted connections = SSL Policy > 'OK' button
+    - 'Save' button > 'Deploy' link > Deploy 
 
 
 ## IPS Inspection
