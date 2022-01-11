@@ -336,5 +336,8 @@ Trainer: Keith Barker
 
 ## Troubleshoot Network Problems using Logging
 
+- Virtual Lab: practice above demos
+
+
 
 
