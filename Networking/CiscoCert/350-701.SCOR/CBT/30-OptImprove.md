@@ -93,11 +93,61 @@ Trainer: Keith Barker
 
 
 
-
 ## NTP with Authentication
 
+- NTP authentication
+  - NTP w/ UDP port 123
+  - NTP server on Internet w/ atomic clcok as stratum 1
+  - local router referring to the NTP server as stratum 2
+  - manually config to access the NTP server
+  - NTP probably taking a long time to sync the time
 
 
+- Demo: config to sync NTP server
+  - provide server and access queries: `ntp access-group serve 1`
+  - preventing from DoS w/ ACL
+
+  ```text
+  R1# show ntp status
+  Clock is synchronized, stratum 2, reference is 2.2.2.2
+  <...truncated...>
+
+  R1# show ntp association
+  address     ref clock    st  when    poll   reach   delay   offset    disp 
+  *~2.2.2.2   .LOCL.       1     13     128     377  17.230  194.938   2.646
+
+  R1# show run | include ntp|clock
+  clock timezone PST -8 0
+  clock summer-time PDT recurring
+  ntp authentication-key 6783 md5 072C285F4D06585744 7
+  ntp authentication
+  ntp trusted-key 6783
+  ntp source Loopback0
+  ntp update-calendar
+  ntp server 2.2.2.2
+
+  ! access control list to control NTP access
+  R2# show access-list
+  Standard IP access list 1
+    10 permit 1.1.1.1 (70 matches)
+
+  R2# show run | include ntp
+  ntp authentication-key 6783 md5 1531021F07256A767B 7
+  ntp authentication
+  ntp trusted-key 6783
+  ntp source Loopback0
+  ntp access-group serve 1
+  ntp master 1
+  ntp update-calendar
+  ntp server 2.2.2.2
+
+  R2# show control-plane host open-ports
+  Prot  Local Address   Foreign Address 
+   tcp           *:23               *:0
+   udp          *:123               *:0
+   udp         *:4500               *:0
+   udp          *:500               *:0
+  ```
 
 
 ## Change Control
