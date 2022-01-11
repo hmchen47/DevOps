@@ -48,6 +48,24 @@ Trainer: Keith Barker
 
 ## SNMPv2 Configuration
 
+- Demo: config SNMPv2c on R1
+  - topology
+    - R1 as SNMP agent
+    - SNMP server connected to cloud
+  
+  - verify current SNMP config
+
+    ```text
+    R1# show run | inc snmp
+    snmp-server community Cisco!23 RW
+    <...truncated...>
+    ```
+
+  - verify SNMP manager settings
+    - OBSERVIUM: an free SNMP manager
+    - basic config: protocol version = v2c; transport = UDP; port = 161
+    - SNMP v1/v2c authentication: SNMP community = Cisco!23
+    - info about the connected device: graphs tab > subtabs - Graphs, System, Processor, Memory, Storage, Netstats, Firewall, Authentication, OSPF, Poller
 
 
 
