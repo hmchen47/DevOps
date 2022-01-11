@@ -38,9 +38,11 @@ Trainer: Keith Barker
   - SNMPv3
     - 'views' as scope of MIBs
     - 'groups' as the privilege of corresponding views
+    - 'users' as the members of groups
+    - rarely used due to complexity
     - example:
       - Group A able to do read only on View 1
-      - Group B able to read/write on View 1
+      - Group B able to read/write permisssion on View 1
 
 
 
