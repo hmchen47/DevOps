@@ -42,9 +42,54 @@ Trainer: Keith Barker
     - backup of configurations on devices
 
 
-
 ## Syslog Overview
 
+- Syslog overview
+  - what able to be logged
+    - events on devices
+    - what going on
+    - what happending
+    - logged locally or sent to server
+  - commands
+    - able to track all commands used w/ AAA
+    - track w/ syslog as well
+  - where the msgs to go and store
+    - read only message stored on server besides syslog server
+
+
+- Demo: config syslog on router
+  - config syslog server: `logging host 2.2.2.2`
+  - config the interface that the router uses to send syslog packets: `logging source-interface loop 0`
+  - config the timestamp format for log msgs: `service timestamps log`
+
+  ```text
+  R1# show logging
+  <...truncated...>
+    Console logging: level debugging, 3800 messages logged, xml disabled,
+                     filtering disbaled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disbaled
+    Buffer logging: level debugging, 3800 messages logged, xml disabled,
+                     filtering disbaled
+    Exception logging: size (8192 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+  
+  R1# conf t
+  ! config syslog server
+  R1(config)# logging host 2.2.2.2
+  %SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 2.2.2.2 port 514 started ...
+
+  R1(config)# logging source-interface loop 0
+  R1(config)# service timestamps log datetime show-timezone localtime year msec
+  R1(config)# service timestamps debug datetime show-timezone localtime year msec
+  R1(config)# end
+
+  R1# show ntp status
+  Clock is synchronized, stratum 2, reference is 2.2.2.2
+  <...truncated...>
+  Nov 20 2020 1651:59.981 PST: %SYS-6-LOGGINGHOST_STARTSTOP: ...
+  ```
 
 
 
