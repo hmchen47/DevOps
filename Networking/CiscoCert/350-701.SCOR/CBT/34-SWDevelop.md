@@ -6,7 +6,12 @@ Trainer: Bart Castle
 
 ## Software and App Development Methodologies
 
-
+- Software development methodologies
+  - waterfall
+  - agile
+  - CI/CD
+  - DevOps
+  - DevSecOps
 
 
 ## Plan for Waterfall Method
