@@ -156,6 +156,26 @@ Trainer: Bart Castle
 
 ## Securing DNS with Cisco Umbrella and OpenDNS
 
+- DNS security
+  - most likely config w/ opendns.com or umbrella as DNS server
+  - able to filter and/or log URLs
+  - utilizing Talos to recognizing the bad reputation URLs
+  - network architecture w/ Umbrella
+    - standalone Umbrella
+    - cloud-based Umbrella
+  - [Cisco Umbrella Global Network](https://umbrella.cisco.com/why-umbrella/global-network-and-traffic)
+    - list of global data centers: offering DNS service
+    - anycast: allowing the nearest server to response
+
+
+- Demo: DNS service
+  - [OpenDNS](https://www.opendns.com/)
+  - Home tab: personal network
+  - Setting tab > folders - Web Content Filtering, Security, Customization, Stats and Logs, Advanced Settings
+    - entry - IP = 75.120.207.108 > '75.120.207.108' link
+    - Web Content Filtering: choosing your filtering level = Moderate
+  - Stats tab > folders - Total Requests, Total Unique Domains, Unique IPs, Domains, Blocked Domains, Request Types
+    - Block Domains: search for a period of dates > entries of blocked URLs
 
 
 
