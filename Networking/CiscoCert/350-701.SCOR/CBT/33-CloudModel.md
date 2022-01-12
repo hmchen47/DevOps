@@ -83,10 +83,17 @@ Trainer: Bart Castle
     - principles of web services, micro services, or container
 
 
-
 ## Plan for Software As A Service
 
-
+- Software model
+  - cloud service provider
+    - provider: physical network, servers / storage, hypervisor, virtual network, operating system, runtime / middleware, applications
+    - customer: data, people 
+  - recommendation: starting w/ SaaS
+  - security concerns
+    - data: encryption
+    - people: identity and access management
+  - providers offerring high degree of isolation and separation btw different components and customers
 
 
 ## Plan for Cloud Deployment Models
