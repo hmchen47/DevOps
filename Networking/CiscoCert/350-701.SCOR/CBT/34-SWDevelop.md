@@ -188,10 +188,23 @@ Trainer: Bart Castle
     - after validation > 'Merge pull request' button > confirm merge
 
 
-
 ## Plan for DevOps
 
-
+- DevOps overview
+  - traditional:
+    - silos: business, developer, operations teams
+    - developer -> operations -> business -> developer -> ...
+    - gaps btw languages, tools, culture, etc.
+  - DevOps
+    - culture
+      - developer adopting changes
+      - operations providing stability
+      - breaking down silos
+      - business team pulling inputs into the collaboration team
+    - process
+    - tools
+    - feedback
+  - principle: automation on development and control
 
 
 ## Plan for DevSecOps
