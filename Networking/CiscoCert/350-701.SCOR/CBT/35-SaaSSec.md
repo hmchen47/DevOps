@@ -134,6 +134,23 @@ Trainer: Bart Castle
 
 ## Cisco Cloudlock Access Security Broker
 
+- Cloud Access Security Broker (CASB)
+  - Cisco solution: Cloudlock
+  - providing visibility and control over data and threats in the cloud to meet enterprise security requirements
+  - a control point to secure cloud services
+  - typically unifying a number of security measures used across the cloud to make detection, management, and enforcement much easier to deploy and control
+  - security concerns for people and data
+    - clients: mobile app & browser
+    - APIs to provide the common interfaces
+    - CASB sending queries to API of clients
+  - <span style="color: cyan;">layers of control</span>
+    - behavior: user activities on data focused operations
+    - data loss prevention (DLP): what, when and who to share data
+    - OAuth:
+      - potential exploit
+      - sharing w/ other organization's account
+      - able to catch what has been shared
+  - [Cisco Cloudlock: Secure Cloud Data](https://learn-umbrella.cisco.com/i/785943-cisco-cloudlock-secure-cloud-data)
 
 
 
