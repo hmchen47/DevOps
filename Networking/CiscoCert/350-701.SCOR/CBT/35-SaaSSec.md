@@ -97,7 +97,39 @@ Trainer: Bart Castle
 
 ## Cisco Zero-Trust for the Workforce
 
+- Zero-trust security overview
+  - offering a comprehensive solution to secure all access across your applications and environment
+  - a strategic approach to security that centers on the concept of eliminating trust from an organization's network architecture
+  - traditional, trust anything within corporate network
+  - layers
+    - workplace security:
+      - Cisco SD-Access
+      - protecting general ingress, egress points or endpoints
+    - workload security
+      - Cisco Tetration
+      - tools to control what happen in managing and rasing visibility of workload
+      - examples: virtual machines, physical devices or containers
+    - workforce
+      - Cisco Duo & AnyConnect
+      - Duo working w/ other identity system
+      - authenticating users using existing on-premises or cloud-based directory credentials
+      - AnyConnect + Duo to provide zero-trust
 
+
+- Duo authentication options
+  - multifactor authentication (MFA)
+  - single-sign-on service (SSO): hosted - Cisco cloud env.
+  - dual access gateway (DAG): on-premise, able to work w/ IDP, SAML, OAuth
+  - network access gateway (NAG)
+
+
+- Demo: Stealthwatch cloud w/ Duo
+  - login Stealthwatch
+  - redirect to `sign-on.security.cisco.com`
+  - login page shown
+    - SecureX username
+    - OAuth w/ Cisco or MS account
+  - using MS account > Duo Security: MFA
 
 
 ## Cisco Cloudlock Access Security Broker
