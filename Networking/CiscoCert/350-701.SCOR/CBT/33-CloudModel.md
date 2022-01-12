@@ -45,10 +45,6 @@ Trainer: Bart Castle
   </figure>
 
 
-- References
-  - [The NIST Definition of Cloud Computing](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf)
-
-
 
 ## Plan for Infrastructure As A Service
 
@@ -58,7 +54,6 @@ Trainer: Bart Castle
   - cloud service model
     - provider: physical, servers / storage, hypervisor
     - customer: virtual network, operating system, runtime / middleware, applications, data and people
-
 
 
 
@@ -97,6 +92,47 @@ Trainer: Bart Castle
 
 
 ## Plan for Cloud Deployment Models
+
+- Deployment models
+  - [The NIST Definition of Cloud Computing](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf), NIST 800-145
+  - private cloud
+    - exclusive use by <span style="color: cyan; font-wight: bold;">a single organization</span>
+    - owned, managed, and operated by the organization, a 3rd party, or some combination of them
+    - existing on or off premises
+  - community cloud
+    - exclusive use by a specific community of consumers from organizations that have <span style="color: cyan; font-wight: bold;">shared concerns</span>, including mission, security requirements, policy, and compliance considerations
+    - owned, managed, and operated by one of more of the organizations in the community, a 3rd party, or some combination of them
+    - existing on or off premises
+  - public cloud
+    - open use by <span style="color: cyan; font-wight: bold;">the general public,/span>
+    - owned, managed, and operated by a business, academic, or government organization, or some combination of them
+    - existing <span style="color: cyan; font-wight: bold;">on the premises</span> of the cloud provider
+  - hybrid cloud
+    - a.k.a. multicloud, mixed cloud
+    - a composition of two or more distinct cloud infrastructure (private, community, or public)
+    - remaining unique entities but bound together by standardized or propriety technology that enables data and application portability
+  
+- Security of cloud service
+  - security concerns
+    - isolation
+    - asset ownership
+    - exclusively control
+  - highest level of security w/ private cloud
+    - better exclusively control
+    - better granularity
+    - higher QoS
+  - tradoff: more customer control
+    - more exclusivity
+    - less resource sharing
+    - less value proposition improved
+  - level of security
+    - private cloud: maximum control and exclusivity
+    - public cloud: general public availability, hosted by a service provider
+    - community cloud: shared or commion set of interest
+    - hybrid cloud: multiple locations to deploy infrastructure
+  - value:
+    - SaaS > PaaS > IaaS
+    - public & community > hybrid > private
 
 
 
