@@ -64,6 +64,23 @@ Trainer: Bart Castle
 
 ## Plan for Platform As A Service
 
+- Platform model
+  - cloud service provider
+    - provider: physical network, servers / storage, hypervisor, virtual network, operating system, runtime / middleware
+    - customer: applications, data and people
+  - focusing on what the applications do
+  - container:
+    - data and application
+    - docker, kubernetes, etc.
+    - key concerns: platform diagnostic, portability, encapsulation
+  - protability considerations
+    - how to make libraries portable
+    - how to make application portable w/ libraries
+    - how to make interfaces working w/ service providers in terms of management perspective
+  - reusable components
+    - building blocks
+    - APIs interacting w/ different layers offered by service provider
+    - principles of web services, micro services, or container
 
 
 
