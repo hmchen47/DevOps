@@ -143,6 +143,49 @@ Trainer: Bart Castle
 
 ## Understand CICD Pipelines in Action
 
+- CI/CD demo w/ AWS
+  - Cloudformation
+    - Infrastructure-as-a-Code
+    - model, provision, and manage AWS and third-party resources
+    - users creating a template that describes all the AWS resources that you want
+    - CloudFormation taking care of provisioning and configuring those resources for you
+  - Cloudformation template
+    - [original](https://s3.us-west-2.amazonaws.com/cloudformation-templates-us-west-2/AutoScalingMultiAZWithNotifications.template)
+    - [local version](src/34-AutoScalingMultiAZWithNotifications.templat)
+
+    ```json
+    {
+      "AWSTemplateFormatVersion" : "2010-09-09",
+
+      "Description" : "AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web Serever. The application is configured to span all Availability Zones in the region and is Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to the operator email address on scaling events. The instances are load balanced with a simple health check against the default web page. **WARNING** This template creates one or more Amazon EC2 instances and an Application Load Balancer. You will be billed for the AWS resources used if you create a stack from this template.",
+
+      "Parameters" : {
+
+        "VpcId" : { 
+          "Type" : "AWS::EC2::VPC::Id",
+          "Description" : "VpcId of your existing Virtual Private Cloud (VPC)",
+          "ConstraintDescription" : "must be the VPC Id of an existing Virtual Private Cloud."
+        },
+
+        "Subnets" : {
+          "Type" : "List<AWS::EC2::Subnet::Id>",
+          "Description" : "The list of SubnetIds in your Virtual Private Cloud (VPC)",
+          "ConstraintDescription" : "must be a list of at least two existing subnets associated with at least two different availability zones. They should be residing in the selected Virtual Private Cloud."
+        },
+      ...
+    }
+    ```
+
+  - change code and validate w/ `cfn-lint`
+    - `cfn-lint`: [AWS CloudFormation Linter](https://github.com/aws-cloudformation/cfn-lint)
+    - correct code and validate again
+  - source control w/ GitHub
+    - commit code to repository: `git commit -a`
+    - push to repository: `git push --set-upstream origin demoBranch`
+    - 'compare and pull request' in repository > comments about the change > 'Create Pull Request' button
+  - test and deploy
+    - validaton integrating w/ GitHub
+    - after validation > 'Merge pull request' button > confirm merge
 
 
 
