@@ -99,6 +99,22 @@ Trainer: Bart Castle
 
 ## Plan for Kanban and Scrum Teams
 
+- Kanban and Scrum overview
+  - reslation:
+    - lean: business level
+    - agile: IT level
+    - kanban & scrum: team level
+    - extreme programming: developer level
+  - kanban - visualization
+    - dynamic
+    - timeline flex
+    - no roles
+  - scrum
+    - sprint: a week in general but depend on nature of project
+    - plan: ready to action
+    - implement
+    - deliver
+  - extreme programming
 
 
 
