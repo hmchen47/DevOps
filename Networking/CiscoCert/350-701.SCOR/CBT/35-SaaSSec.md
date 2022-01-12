@@ -31,6 +31,67 @@ Trainer: Bart Castle
 
 ## Federating Identities with SAML, OAuth, and OpenID
 
+- Identity management
+  - people and data: authn & authz
+  - federating identity: sharing identity w/ different systems
+  - directory:
+    - old fashion used in organization
+    - a collection of identities and permission properties
+    - example: MS AD
+  - other solutions
+    - Secure Assertion Markup Language (SAML)
+    - OAuth
+    - OpenID
+
+
+- Secure Assertion Markup Language (SAML)
+  - an umbrella standard covering federation, identity management and single sign-on (SSO)
+  - providing single-sign-on (SSO) service
+  - typically used for domain-based computer
+  - roles
+    - service provider
+    - users (client= browser)
+    - identity provider (IDP)
+  - SAML workflow
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://www.mandsconsulting.com/federated-sso-a-primer-saml-oauth-2-0-openid-connect/')"
+        src    = "https://www.mandsconsulting.com/wp-content/uploads/Mutually-Human-SAML-2.0-Flow.jpg"
+        alt    = "Federated single sign-on (or SSO) is a modern way to solve the problem of having multiple logins between different services and applications"
+        title  = "Federated single sign-on (or SSO) is a modern way to solve the problem of having multiple logins between different services and applications"
+      />
+    </figure>
+  
+  - advantage: feature-rich mechanism, not only authn & authz
+  - disadvantage: complexity
+
+
+- Open Authorization (OAuth)
+  - an authentication protocol allowing to approve one application interacting with another on your behalf without giving away your password
+  - an open standard for access delegation, commonly used as a way for Internet users to grant websites or applications access to their information on other websites but without giving them the passwords
+  - delegation permission, in particular, authorization
+  - roles
+    - client (mobile / web app)
+    - resource owner
+    - authorization server
+    - resource server
+  - response from authorization server most likely including identity property
+  - OAuth workflow
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://bit.ly/338ccJR')"
+        src    = "https://bit.ly/3GmB4f2"
+        alt    = "Interaction between the four roles of the OAuth protocol flow"
+        title  = "Interaction between the four roles of the OAuth protocol flow"
+      />
+    </figure>
+
+  - example: twitter using facebook account to login
+  - OPenID:
+    - providing an identity assertion
+    - an open standard that organizations use to authenticate users
 
 
 
