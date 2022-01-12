@@ -120,7 +120,25 @@ Trainer: Bart Castle
 
 ## Continuous Integration, Deployment, and Delivery
 
-
+- CI/CD overview
+  - major components: source control, build, test, and deploy
+  - source control
+    - commit: saving source code
+    - versioning: history
+    - branch: variation
+    - merge: combination back to original flow
+    - pull request: validation & review
+  - build
+    - components of applications: general shared library, application code itself, 3rd party components
+    - compile: generate executable
+    - package: bundle required components together, container
+  - test
+    - interacting w/ other system, e.g., web client
+    - test agents: automatic as much as possible
+  - deploy:
+    - deliverable: deliver the component to production environment
+    - probably part of the larger components as input of anther test and deploy
+  - combining different software components probably forming another thread of test and deploy
 
 
 ## Understand CICD Pipelines in Action
