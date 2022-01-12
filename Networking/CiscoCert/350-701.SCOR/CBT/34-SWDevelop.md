@@ -209,5 +209,23 @@ Trainer: Bart Castle
 
 ## Plan for DevSecOps
 
+- DevSecOps overview
+  - applying security control, principle, and expection to the highly automatic system
+  - principles: IaaC, control, testing
+  - Infrastructure as a Code:
+    - template to computer resources
+    - management
+    - source code
+      - admin user account
+      - policy
+      - firewall rules, e.g. control only SSH
+    - how to translate the source code into actions
+  - control
+    - notification, mitigation
+    - automic the process
+  - fuzzing testing
+    - randomizing the testing
+    - injecting possible bad data to realize what happen to system 
+
 
 
