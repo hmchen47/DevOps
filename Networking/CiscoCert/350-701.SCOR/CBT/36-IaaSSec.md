@@ -6,7 +6,15 @@ Trainer: Bart Castle
 
 ## Planning for Cloud Infrastructure Security
 
-
+- IaaS security
+  - accessing providers
+  - network isolation
+  - security appliances
+  - hardening VMs
+  - infrastructure as a code
+  - Cisco Stealthwatch
+  - zero-trust basics
+  - token authentication demo
 
 
 ## Assessing Cloud Service Providers
