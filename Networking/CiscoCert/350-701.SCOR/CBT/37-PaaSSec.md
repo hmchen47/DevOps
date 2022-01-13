@@ -127,11 +127,50 @@ Trainer: Bart Castle
 
 ## Open Web Application Security Project Controls
 
-
-
-
-## OWASP Protective Controls Continued
-
+- OWASP proactive controls - 2018
+  - define security requirement
+    - documentation
+    - risk sensitivity = asset + threats + vulnerabilities
+    - use cases = stories
+  - security frameworks and libraries
+    - library inventory, e.g., AWS SDKs
+    - monitoring, e.g., OpenID/SAML
+  - secure database access
+    - data in transit
+    - input: what to send and how well validated
+    - credentials and/or connector
+  - encode and escape data
+    - sending data to the next component or DB
+    - syntax: structure of the data, e.g., CSV, XML, JSON, SQL
+    - control characters: interpret correctly, e.g., `/`, `\`, etc.
+  - validate all inputs
+    - looking for 'good' patterns
+    - looking for 'bad' patterns
+  - implement digital identity
+    - authn/authz
+    - 1\. password
+    - 2\. MFA
+    - 3\. token
+  - enforce access control
+    - permissions
+    - data implication: RW, RO
+    - force validation
+    - deny by default
+    - no hard coding
+    - log everything" logging for avilability
+  - protect data everywhere
+    - in-use
+    - in-transit: SSH, SSL, TLS
+    - at-rest: encryption key management
+  - security logging and monitoring
+    - visibility
+    - log processsing: SIEM
+    - monitoring:
+      - KPI, KHI
+      - agent: push to API
+  - handle all errors and exceptions
+    - expect failure
+    - example: boolean value (true/false) $\neq$ 0
 
 
 
