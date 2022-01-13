@@ -177,6 +177,7 @@ Trainer: Bart Castle
 ## Cisco Zero-Trust Architecture Overview
 
 - Zero-trust architecture
+  - key components: user/application authentication, device authentication, and trust
   - principles: establish trust, enforce zero-trust, verify through environment
   - establishing trust
     - endpoint trust
@@ -189,15 +190,15 @@ Trainer: Bart Castle
     - all devices in the network
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
-    <a href="https://bit.ly/3K9M95G" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
-        src   = "https://imgs.developpaper.com/imgs/3872460986-5e002da4aaeaf_articlex.png"
-        alt   = "Zero-trust model"
-        title = "Zero-trust model"
+    <a href="https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/" ismap target="_blank">
+      <img style="margin: 0.1em;" height=200
+        src   = "https://www.crowdstrike.com/wp-content/uploads/2020/04/nist-zero-trust-framework-1536x720.png"
+        alt   = "NIST Zero-trust framework"
+        title = "NIST Zero-trust framework"
       >
     </a>
     <a href="https://www.cisco.com/c/en_hk/products/security/zero-trust.html" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
+      <img style="margin: 0.1em;" height=180
         src   = "https://bit.ly/3I2wpzj"
         alt   = "Cisco Zero Trust Security"
         title = "Cisco Zero Trust Security"
@@ -206,6 +207,9 @@ Trainer: Bart Castle
   </div>
 
 - Cisco zero-trust architecture
+  - a shift of network defenses toward a more comprehensive IT security model
+  - allowing organizations to restrict access controls to networks, applications, and environment without sacrificing performance and user experience
+  - trusting no one
   - workplace
     - SD-Access & SD-WAN components
     - enterprise networking tools
@@ -223,6 +227,35 @@ Trainer: Bart Castle
 
 ## Securing Workloads with Cisco Tetration
 
+- Micro-segmentation
+  - a network security technique enabling security architects to logically divide the data center into distinct security segments down to the individual workload level
+  - defining security controls and deliver services for each unique segment
+  - perimeter containing VM, server, host (containers)
+  - perimeter as macro-segmentation
+  - VM as micro-segmentation
+  - preventing attackers or threats from spreading or moving laterally in data centers, clouds, or campus networks
+
+
+- Workload security on Tetration
+  - agent/sensor
+    - monitoring: system utilization, applications
+    - enforcing rules
+    - Stealthwatch monitoring only on traffic but not deep inspection while Tetration does
+  - Tetration
+    - context of the traffic
+    - integrated w/ ISE & ASA
+    - machine learning
+
+
+- Demo: Tetration
+  - folders - VISIBILITY, SEGMENTATION, SECURITY, PERFORMANCE, DATA PLATFORM, ALERTS, MAINTENANCE
+  - segmentation: tabs - Conversations, Clusters, Policies, Provided Services, App View
+    - workplace
+    - complication of system, traffic, identity
+    - application dependency mapping
+  - security: folders - dashboard, Vulnerabilities, Forensics Analysis, Lookout Annotiation
+    - Dashboard: scope security score
+    - Vulnerabilities: high profile problems
 
 
 
