@@ -98,6 +98,20 @@ Trainer: Bart Castle
 
 ## Planning for Infrastructure-as-Code
 
+- Infrastructure as a Code (IaaC)
+  - template: DSL (domain specific language) document
+  - specifying what resources required and actions to react the state
+  - script: JSON, YAML
+  - Azure: ARM (Azure Resource Template)
+  - AWS: CloudFormation
+  - Demo: Azure template
+
+
+- State management
+  - resource in a known good state
+  - desire state: SSH 4.x.x.x
+  - system in other state: HTTP 0.0.0.0/0
+  - rule decided what action to take
 
 
 
