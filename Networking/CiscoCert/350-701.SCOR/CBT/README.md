@@ -434,7 +434,6 @@ Institution: CBY Nugget
 - Secure Container Images and Registries
 - Orchestrating Containers
 - Open Web Application Security Project Controls
-- OWASP Protective Controls Continued
 - Cisco Zero-Trust Architecture Overview
 - Securing Workloads with Cisco Tetration
 - Visibility with Cisco AppDynamics
