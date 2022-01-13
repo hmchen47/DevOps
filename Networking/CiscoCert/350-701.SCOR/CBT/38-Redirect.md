@@ -5,6 +5,10 @@ Trainer: Keith Barker
 
 ## Introduction to Capture and Redirection Methods
 
+- Learning goals
+  - capture and redirect web traffic
+  - policy based routing
+  - WSA and WCCP
 
 
 
