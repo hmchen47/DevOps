@@ -293,30 +293,31 @@
     ```json
     {
       "AWSTemplateFormatVersion" : "2010-09-09",
-
       "Description" : "AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: 
-      Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web 
-      Serever. The application is configured to span all Availability Zones in the region and is 
-      Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to 
-      the operator email address on scaling events. The instances are load balanced with a simple 
-      health check against the default web page. **WARNING** This template creates one or more 
-      Amazon EC2 instances and an Application Load Balancer. You will be billed for the AWS 
-      resources used if you create a stack from this template.",
+      Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache 
+      Web Serever. The application is configured to span all Availability Zones in the region 
+      and is Auto-Scaled based on the CPU utilization of the web servers. Notifications will 
+      be sent to the operator email address on scaling events. The instances are load 
+      balanced with a simple health check against the default web page. 
+      **WARNING** This template creates one or more Amazon EC2 instances and an Application 
+      Load Balancer. You will be billed for the AWS resources used if you create a stack from 
+      this template.",
 
       "Parameters" : {
-
         "VpcId" : { 
           "Type" : "AWS::EC2::VPC::Id",
           "Description" : "VpcId of your existing Virtual Private Cloud (VPC)",
           "ConstraintDescription" : "must be the VPC Id of an existing Virtual Private Cloud."
         },
-
+    ```
+    
+    ```json
         "Subnets" : {
           "Type" : "List<AWS::EC2::Subnet::Id>",
           "Description" : "The list of SubnetIds in your Virtual Private Cloud (VPC)",
-          "ConstraintDescription" : "must be a list of at least two existing subnets associated 
-          with at least two different availability zones. They should be residing in the selected 
-          Virtual Private Cloud."
+          "ConstraintDescription" : "must be a list of at least two existing subnets 
+          associated with at least two different availability zones. They should be residing 
+          in the selected Virtual Private Cloud."
         },
       ...
     }
@@ -929,14 +930,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/" ismap target="_blank">
-      <img style="margin: 0.1em;" height=200
+      <img style="margin: 0.1em;" height=180
         src   = "https://www.crowdstrike.com/wp-content/uploads/2020/04/nist-zero-trust-framework-1536x720.png"
         alt   = "NIST Zero-trust framework"
         title = "NIST Zero-trust framework"
       >
     </a>
     <a href="https://www.cisco.com/c/en_hk/products/security/zero-trust.html" ismap target="_blank">
-      <img style="margin: 0.1em;" height=180
+      <img style="margin: 0.1em;" height=150
         src   = "https://bit.ly/3I2wpzj"
         alt   = "Cisco Zero Trust Security"
         title = "Cisco Zero Trust Security"
