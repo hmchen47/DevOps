@@ -86,7 +86,43 @@ Trainer: Bart Castle
 
 ## Orchestrating Containers
 
+- Orchestrating containers
+  - microservice: large apps abel to break into small components
+  - different containsers running different tasks
+  - scaleing up certain task w/ more same function containers
+  - level of scaling
+    - container
+    - host
+  - tools to corordinating these containers: docker swam, apache mesos, kubernets
+  - components of Kubernetes: a cluster
+    - master node (control plane)
+      - admin
+      - APIs
+      - receiving calls
+    - node:
+      - a worker or a minor
+      - a machine where containers (workloads) deployed
+      - running a container `runtime` (runtime system - implementing portions of an execution mode)
+      - below-mentioned components for communication w/ the primary for network config of these containers
+    - pod
+      - the basic scheduling unit
+      - consisting of one or more containers
+      - co-located on the same node
+      - assigning a unique IP address
 
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://en.wikipedia.org/wiki/Kubernetes')"
+        src    = "https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png"
+        alt    = "Kubernetes architecture"
+        title  = "Kubernetes architecture"
+      />
+    </figure>
+
+  - AWS Fargate
+    - a complete managed container orchestrating environment
+    - AWS handling all nodes, pods, etc.
+    - developers only focusing on code
 
 
 ## Open Web Application Security Project Controls
