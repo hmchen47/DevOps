@@ -261,5 +261,20 @@ Trainer: Bart Castle
 
 ## Visibility with Cisco AppDynamics
 
+- Application Performance Monitoring (APM)
+  - libraries
+  - servers
+  - containers
+  - real user monitoring (RUM)
+
+
+- Demo: AppDynamics visualization
+  - Cisco solution for AMP
+  - agents required in monitored apps or machines
+  - list of [supported platforms](https://www.appdynamics.com/product/infrastructure-monitoring/cloud-monitoring)
+  - tabs - Home, Applications, User Experience, Databases, Servers, Dashboard & Reports, Alert & Respond
+  - Home tab: subtabs - Overview, Unified Monitoring, Getting Started, Cloud Platform
+  - Home tab > Unified Monitoring > User Experience: icons - Browser Apps, Mobile Apps, Applications, Databases, Servers
+
 
 
