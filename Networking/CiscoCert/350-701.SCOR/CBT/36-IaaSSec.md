@@ -19,7 +19,9 @@ Trainer: Bart Castle
 
 ## Assessing Cloud Service Providers
 
-
+- Cloud service provider assessment
+  - CSA, [Security Guidance for Critical Areas of Focus in Cloud Computing v4.0](https://cloudsecurityalliance.org/download/artifacts/security-guidance-v4/), 2017
+  - [Consensus Assessments Initiative Questionnaire (CAIQ)](https://cloudsecurityalliance.org/group/consensus-assessments/#_overview)
 
 
 ## Isolating and Segmenting Cloud Networks
