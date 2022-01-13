@@ -56,10 +56,18 @@ Trainer: Bart Castle
   </figure>
 
 
+- Framework of cloud virtual network
+  - account
+  - container - virtual machine
+  - subnets
+  - VPN to other container
+
 
 ## Leveraging Virtual Appliances
 
-
+- Virtual appliances
+  - cloud service provider providing capability to embedded virtual appliances in the virtual network
+  - Cisco providing different virtual appliance to plug into the cloud virtual network 
 
 
 ## Hardening, Protecting, and Maintaining Cloud VMs
