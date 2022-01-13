@@ -127,5 +127,11 @@ Trainer: Bart Castle
 
 ## Zero Trust Token Auth Demo
 
+- Demo: zer-trust token authentication
+  - API required authn and authz
+  - token generated as passing original request
+  - using token to call API and process intend actions
+
+
 
 
