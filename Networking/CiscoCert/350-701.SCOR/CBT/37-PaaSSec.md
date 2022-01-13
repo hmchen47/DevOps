@@ -127,7 +127,7 @@ Trainer: Bart Castle
 
 ## Open Web Application Security Project Controls
 
-- OWASP proactive controls - 2018
+- [OWASP proactive controls - 2018](https://owasp.org/www-project-proactive-controls/)
   - define security requirement
     - documentation
     - risk sensitivity = asset + threats + vulnerabilities
@@ -176,7 +176,49 @@ Trainer: Bart Castle
 
 ## Cisco Zero-Trust Architecture Overview
 
+- Zero-trust architecture
+  - principles: establish trust, enforce zero-trust, verify through environment
+  - establishing trust
+    - endpoint trust
+    - security devices to built trust
+  - enforcing zero-trust architecture
+    - enterprise security policy
+    - reactive control
+  - verifying everywhere
+    - enforcing all individual sessions
+    - all devices in the network
 
+  <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
+    <a href="https://bit.ly/3K9M95G" ismap target="_blank">
+      <img style="margin: 0.1em;" height=150
+        src   = "https://imgs.developpaper.com/imgs/3872460986-5e002da4aaeaf_articlex.png"
+        alt   = "Zero-trust model"
+        title = "Zero-trust model"
+      >
+    </a>
+    <a href="https://www.cisco.com/c/en_hk/products/security/zero-trust.html" ismap target="_blank">
+      <img style="margin: 0.1em;" height=150
+        src   = "https://bit.ly/3I2wpzj"
+        alt   = "Cisco Zero Trust Security"
+        title = "Cisco Zero Trust Security"
+      >
+    </a>
+  </div>
+
+- Cisco zero-trust architecture
+  - workplace
+    - SD-Access & SD-WAN components
+    - enterprise networking tools
+    - appliances interacting w/ cloud-based VMs
+    - purpose: establishing trusts
+  - workload
+    - Tetration: analytic engine for detection and enforcement
+    - detection (dependencies): agent/sensor installed in VMs, not only VMs but also processes and firewall in VMs
+    - enforcement: policy and rules, container
+  - workforce
+    - Duo and AnyConnect
+    - Duo: authn & authz
+    - AnyConnect: encpoints
 
 
 ## Securing Workloads with Cisco Tetration
