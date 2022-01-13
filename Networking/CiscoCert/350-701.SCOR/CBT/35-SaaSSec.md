@@ -55,7 +55,7 @@ Trainer: Bart Castle
   - SAML workflow
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
         onclick= "window.open('https://www.mandsconsulting.com/federated-sso-a-primer-saml-oauth-2-0-openid-connect/')"
         src    = "https://www.mandsconsulting.com/wp-content/uploads/Mutually-Human-SAML-2.0-Flow.jpg"
         alt    = "Federated single sign-on (or SSO) is a modern way to solve the problem of having multiple logins between different services and applications"
@@ -80,7 +80,7 @@ Trainer: Bart Castle
   - OAuth workflow
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
         onclick= "window.open('https://bit.ly/338ccJR')"
         src    = "https://bit.ly/3GmB4f2"
         alt    = "Interaction between the four roles of the OAuth protocol flow"
@@ -181,5 +181,51 @@ Trainer: Bart Castle
 
 ## Securing Communications with Cisco Email Security
 
+- Email security
+  - spam mails: different flavors
+  - Talos providing a intelligent service for email security
+  - [where to deploy](https://bit.ly/3FgJhjG)
+    - cloud
+    - virtual
+    - on-premises
+    - hybrid
+  - email flow:
+    - 1\. Look up the authoritative Name Server for `sudotoolbox.com` from the root DNS servers.
+    - 2\. Query the `sudotoolbox.com` Name Servers for the MX records (Mail Exchanger, a type of DNS record).
+    - 3\. Look up the “A” record (IP address) for the MX value in NS to get the IP address.
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+        onclick= "window.open('https://sudotoolbox.com/understanding-email-what-is-mx-record-and-how-it-works/')"
+        src    = "http://sudotoolbox.com/wp-content/uploads/2017/03/MS-query-visual.png"
+        alt    = "Email message flow"
+        title  = "Email message flow"
+      />
+    </figure>
+
+  - cisco email security
+    - a man-in-the-middle fashion
+    - mail send to email security box before sending to mail server for inspection
+    - inspection including risk, AMP and Talos
+    - integrated w/ secureX platform
+  - encrypting message
+    - recipient connecting to email security device to setup an encryption key
+    - subcribing the recipeint to use public and private key sharing model
+    - receiving secure email via secure email device
+  - email security mechanisms
+    - FED: Forged Email Detection
+    - S/MIME: Secure/Multipurpose Internet Mail Extensions
+    - authentication
+      - SPF: Sender Policy Framework
+      - DKIM: Domain Keys Identified Mail
+      - DMARC: Domain-based Message Authentication Reporting and Conformance
+
+
+- Summary
+  - federated identities
+  - workforce zero-trust
+  - cloud access brokers
+  - umbrella DNS security
+  - cloud email security
 
 
