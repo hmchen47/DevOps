@@ -26,6 +26,34 @@ Trainer: Bart Castle
 
 ## Isolating and Segmenting Cloud Networks
 
+- Isolating cloud networks
+  - IP
+  - subnets
+  - path/routing
+  - gateways
+
+
+- Demo: isolated subnets in AWS
+  - VPC: virtual private cloud
+    - a logical router
+    - a container
+  - two different subnets: private subnet, public subnet
+  - a routing table: Public Routing
+  - internet gateway: WAN uplink
+  - block arrow line:
+    - relationship of two blocks
+    - source block availabele to destination block
+    - Public routing available to Public subnet
+  - private subnet no path to the Internet
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/36-aws.png"
+      alt    = "Example cloud network of AWS"
+      title  = "Example cloud network of AWS"
+    />
+  </figure>
 
 
 
