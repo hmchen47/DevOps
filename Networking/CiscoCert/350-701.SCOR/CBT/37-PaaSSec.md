@@ -5,7 +5,13 @@ Trainer: Bart Castle
 
 ## Securing Cloud Platform-as-a-Service
 
-- 
+- PaaS security
+  - container
+  - orchestrating containers
+  - OWASP
+  - micros-segmentation
+  - Tetration
+  - AppDynamic
 
 
 
