@@ -72,7 +72,28 @@ Trainer: Bart Castle
 
 ## Hardening, Protecting, and Maintaining Cloud VMs
 
-
+- Cloud VM security
+  - operating system disk image
+    - AWS: amazon machine image (AMI)
+    - Azure: image
+  - virtual machine
+    - naming convention
+      - AWS: instance
+      - Azure: VM
+    - CPU, RAM, storage, network
+    - cost
+  - hardening
+    - snapshot of VM image, data, etc.
+      - data snapshot: new volume
+      - os snapshot: new image
+    - patch management
+      - tools: yum, apt, or wsus (Windows Update Service)
+      - agent: out of the OS
+      - remote server (e.g., Chef, Ansible) instructing agent to install or run scripts
+      - cloud-init
+  - Cisco solution
+    - Stealthwatch
+    - zero-trust
 
 
 ## Planning for Infrastructure-as-Code
