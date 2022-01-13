@@ -17,7 +17,18 @@ Trainer: Bart Castle
 
 ## Plan for Containers
 
-
+- Container overview
+  - efficiency, sharing resources, and abstraction
+  - software parts of virtual machines: OS and Apps
+  - hardware parts of virtual machines: computing resources, including CPU, memory, storage, and network
+  - focused on software parts, in particular, Apps
+  - abstraction layer providing shared libraries
+  - only focusing on Apps
+  - components in container environment
+    - container (image), e.g., docker
+    - registry: a safe structured place to store images
+    - orchestration
+  - cloud service provider offering all 3 components
 
 
 ## Secure Container Images and Registries
