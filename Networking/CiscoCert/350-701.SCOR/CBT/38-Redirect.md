@@ -11,10 +11,19 @@ Trainer: Keith Barker
   - WSA and WCCP
 
 
-
 ## Capture and Redirection Overview
 
-
+- Capturing and redirecting web traffic
+  - web security appliance (WAS) connected in inside zone to examine the web traffic
+  - explicit forwarding
+    - computer configured to forward web traffic to WSA
+    - configured manually 
+    - automatic: proxy auto-config file (PAC), group policy object (GPO)
+  - capture and redirect web traffic
+    - network devices in the path of network to capture and redirect the web traffic
+    - options
+      - PBR: policy base routing
+      - WCCP: web cache communication protocol
 
 
 ## Policy Based Routing (PBR) Overview
