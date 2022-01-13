@@ -36,7 +36,7 @@
   - right level of documentation required to comply w/ the auditorial requirement and government expectation
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 150px;"
       onclick= "window.open('page')"
       src    = "img/33-cloudsrv.png"
       alt    = "Cloud service model"
@@ -204,14 +204,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://www.helpsystems.com/solutions/optimization/itil-version-3" ismap target="_blank">
-      <img style="margin: 0.1em;" height=250
+      <img style="margin: 0.1em;" height=200
         src   = "img/34-itilv1.png"
         alt   = "ITIL Lifecycle v1"
         title = "ITIL Lifecycle v1"
       >
     </a>&nbsp;&nbsp;
     <a href="https://pdca.edchen.org/itil-v3-0-framework-illustrated/" ismap target="_blank">
-      <img style="margin: 0.1em;" height=250
+      <img style="margin: 0.1em;" height=200
         src   = "img/34-itilv3.png"
         alt   = "ITIL Lifecycle v3"
         title = "ITIL Lifecycle v3"
@@ -294,7 +294,14 @@
     {
       "AWSTemplateFormatVersion" : "2010-09-09",
 
-      "Description" : "AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web Serever. The application is configured to span all Availability Zones in the region and is Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to the operator email address on scaling events. The instances are load balanced with a simple health check against the default web page. **WARNING** This template creates one or more Amazon EC2 instances and an Application Load Balancer. You will be billed for the AWS resources used if you create a stack from this template.",
+      "Description" : "AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: 
+      Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web 
+      Serever. The application is configured to span all Availability Zones in the region and is 
+      Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to 
+      the operator email address on scaling events. The instances are load balanced with a simple 
+      health check against the default web page. **WARNING** This template creates one or more 
+      Amazon EC2 instances and an Application Load Balancer. You will be billed for the AWS 
+      resources used if you create a stack from this template.",
 
       "Parameters" : {
 
@@ -307,7 +314,9 @@
         "Subnets" : {
           "Type" : "List<AWS::EC2::Subnet::Id>",
           "Description" : "The list of SubnetIds in your Virtual Private Cloud (VPC)",
-          "ConstraintDescription" : "must be a list of at least two existing subnets associated with at least two different availability zones. They should be residing in the selected Virtual Private Cloud."
+          "ConstraintDescription" : "must be a list of at least two existing subnets associated 
+          with at least two different availability zones. They should be residing in the selected 
+          Virtual Private Cloud."
         },
       ...
     }
@@ -421,7 +430,7 @@
   - SAML workflow
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
         onclick= "window.open('https://www.mandsconsulting.com/federated-sso-a-primer-saml-oauth-2-0-openid-connect/')"
         src    = "https://www.mandsconsulting.com/wp-content/uploads/Mutually-Human-SAML-2.0-Flow.jpg"
         alt    = "Federated single sign-on (or SSO) is a modern way to solve the problem of having multiple logins between different services and applications"
@@ -446,7 +455,7 @@
   - OAuth workflow
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
         onclick= "window.open('https://bit.ly/338ccJR')"
         src    = "https://bit.ly/3GmB4f2"
         alt    = "Interaction between the four roles of the OAuth protocol flow"
@@ -561,7 +570,7 @@
     - 3\. Look up the “A” record (IP address) for the MX value in NS to get the IP address.
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 300px;"
         onclick= "window.open('https://sudotoolbox.com/understanding-email-what-is-mx-record-and-how-it-works/')"
         src    = "http://sudotoolbox.com/wp-content/uploads/2017/03/MS-query-visual.png"
         alt    = "Email message flow"
@@ -641,7 +650,7 @@
   - private subnet no path to the Internet
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 300px;"
       onclick= "window.open('page')"
       src    = "img/36-aws.png"
       alt    = "Example cloud network of AWS"
@@ -840,7 +849,7 @@
       - assigning a unique IP address
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
         onclick= "window.open('https://en.wikipedia.org/wiki/Kubernetes')"
         src    = "https://upload.wikimedia.org/wikipedia/commons/b/be/Kubernetes.png"
         alt    = "Kubernetes architecture"
