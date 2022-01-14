@@ -184,10 +184,16 @@ Trainer: Keith Barker
   ```
 
 
-
 ## Testing WCCP
 
-
+- Demo: verify WCCP redirecting web traffic
+  - NB: clear browser cache before testing
+  - PC IP addr: 182.168.1.116
+  - verify PC auto and manual proxy setting: both off
+  - verify PC reachability to the Internet: `ping 8.8.8.8`
+  - open web browser w/ google search 'alcohol'
+  - open any website w/ search result 
+  - page asking for sign in w/ username and password via http://esa.ogit.com
 
 
 ## Traffic Redirection Summary
