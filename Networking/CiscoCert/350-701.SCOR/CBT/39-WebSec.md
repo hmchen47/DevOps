@@ -32,7 +32,7 @@ Trainer: Keith Barker
   - web reputation based on Talos
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('page')"
       src    = "img/39-wsadash.png"
       alt    = "Snapshot of WSA Dashboard"
