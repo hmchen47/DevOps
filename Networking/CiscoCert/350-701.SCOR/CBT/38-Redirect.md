@@ -92,7 +92,11 @@ Trainer: Keith Barker
 
 ## WCCP Overview and Planning
 
-
+- Plan for web traffic redirect w/ WCCP
+  - redirect TCP:80 and TCP:443 traffic to WSA
+  - ACL to match and redirect traffic
+  - config WCCP to adopt the ACLs
+  - router w/ IP 192.168.1.136
 
 
 ## WSA Configuration for WCCP
