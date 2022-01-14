@@ -49,7 +49,19 @@ Trainer: Keith Barker
 
 ## WSA Identification Profiles
 
-
+- Demo: WAS identity profile
+  - assumption: web proxy set via either on local machine or WCCP/PBR redirect
+  - Web Security Manager tab > Identification Profiles
+  - Client / user Identification Profiles: fields - Order, Transaction Criteria, Authentication / Identification Decision, End-User Acknowledgement, Delete > 'Add Identification Profile...' button
+  - Identification Profiles: Add Profile > sections - Client / User Identification Profile Settings, User Identification Method, Membership Definition
+    - Client / User Identification Profile Settings: Enable Identification Profile = on, Name = OurProfileOne, Insert above = 1 (Global Profile)
+    - User Identification Method: Identification and Authentication = Authenticate Users; Authentication Realm: Select a Realm or Sequence = ADServer, Select a Scheme = Use Basic (in production - Use Kerberos or NTLMSSP); Authentication Surrogates = IP Address
+    - Membership Definition: Define Members by Protocol = HTTP/HTTPS
+    - 'Submit' button > Identification Profiles: Warning - The policy group "OurProfileOne" was added
+    - entry - Order = 1, Transaction Criteria = OurProfileOne, Authentication/Identification Decision = Realm: ADServer (Scheme: Basic), End-User Acknowledgement = (global profile)
+    - 'Commit Changes' button > Uncommitted Changes: Comments (optional) = added identity profile > 'Commit Changes' button
+  - verify w/ PC browser to open a alcohol website and a sign in page shown
+  - verify on WSA: Reporting tab > URL Categories: URL Categories Matched > entry - URL Category = Alcohol, ...
 
 
 ## WSA Access Policies
