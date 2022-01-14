@@ -18,7 +18,18 @@ Trainer: Keith Barker
 
 ## Web Security Appliance Overview
 
-
+- Web security appliance overview
+  - either physical or virtual machine
+  - WSA as a proxy or just redirect to send web requests
+  - proxy w/ many policies
+    - subnets
+    - AD user/group
+    - port
+    - URL filtering
+    - apps
+    - DLP
+    - malware
+  - web reputation based on Talos
 
 
 ## WSA and AD Integration
