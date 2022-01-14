@@ -198,5 +198,9 @@ Trainer: Keith Barker
 
 ## Traffic Redirection Summary
 
+- Summary
+  - PBR and WCCP to redirect web traffic for inspection
+  - WSA to inspect web traffic
+
 
 
