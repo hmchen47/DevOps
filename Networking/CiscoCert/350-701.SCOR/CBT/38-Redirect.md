@@ -120,6 +120,68 @@ Trainer: Keith Barker
 
 ## IOS Configuration for WCCP
 
+- Demo: config Router for WCCP
+  - PC w/ 192.168.1.116
+  - `web-cache`: standard web caching serverice, i.e., port 80
+
+  ```text
+  SW# conf t
+  ! config extended ACLs for web traffic 
+  SW(config)# ip wccp source-interface vlan1
+  SW(config)# ip access-list extended HTTP
+  SW(config-ext-nacl)# permit tcp host 192.168.1.116 any eq 80
+  SW(config-ext-nacl)# exit
+  SW(config)# ip access-list extended HTTPS
+  SW(config-ex-nacl)# permit ip tcp host 192.168.1.116 any eq 443
+  SW(config-ex-nacl)# exit
+
+  ! config standard ACL to redirect traffic
+  SW(config)# ip access-list standard WSA
+  SW(config-std-nacl)# permit host 192.168.1.155
+  SW(config-std-nacl)# exit
+
+  ! config WCCP
+  SW(config)# ip wccp web-cache redirect-list HTTP group-list WSA password Cisco!23
+  SW(config)# ip wccp 90 redirect-list HTTP group-list WSA password Cisco!23
+  SW(config)# end
+
+  SW# debug ip wccp packets
+  WCCP-PKT:IPv4:S0: Sending ISY to 192.168.1.155, rcv_id:8
+  WCCP-PKT:IPv4:S0: Sending 708 bytes rom 192.168.1.136 to 192.168.1.155
+  WCCP-PKT:IPv4:D90: Sending ISY to 192.168.1.155, rcv_id:6
+  WCCP-PKT:IPv4:D90: Sending 708 bytes rom 192.168.1.136 to 192.168.1.155
+  SW# undebug all
+
+  ! apply WCCP to interface
+  SW# conf t
+  SW(config)# int vlan 1
+  SW(config-if)# ip wccp web-cache redirect in
+  SW(config-if)# ip wccp 90 redirect in
+  SW(config-if)# end
+
+  ! verify config
+  SW# show ip wccp
+  Global WCCP information:
+   Router information:
+       Router Identifier:                   192.168.1.136
+       Configured source-interface:         Vlan1
+
+   Service Identifier: web-cache
+       <...truncated...>
+       Redirect access-list:                HTTP
+       Total Packets Denied Redirect:       0
+       Total Packets Unassigned:            0
+       Group access-list:                   WSA
+       <...truncated...>
+
+   Service Identifier: 90
+       <...truncated...>
+       Redirect access-list:                HTTPS
+       Total Packets Denied Redirect:       0
+       Total Packets Unassigned:            0
+       Group access-list:                   WSA
+       <...truncated...>
+  ```
 
 
 
