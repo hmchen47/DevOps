@@ -154,7 +154,38 @@ Trainer: Keith Barker
 
 ## WSA Decryption Policy
 
+- Demo: config decryption policy on WSA
+  - task: restrict the decryption on certain categories of web sites only
+  - Web Security Manager tab > Decryption Policies
+  - Policies: fields - Order, Group, URL Filtering, Web Reputation, Default Action > 'Add Policy...' button
+    - default entry - Group = Global Policy, URL Filtering = 'Monitor: 86', Web Reputation = Enabled, Default Action = Decrypt
+  - Decryption Policy: Add Group: sections - Policy Settings, Policy Member Definition
+    - Policy Settings: Enable Policy = On; Policy Name = Descryption Policy one, Insert Above Policy = 1 (Global Policy)
+    - Policy Member Definition: Authorized Users and Groups = Selected Groups and Users, Groups = No Groups entered, Users = No user entered; Add Identification Profile = > 'No users entered' link > Authorized Users = bob > 'Done' button
+    - Policy Member Definition: Identification Profiles and Users = Select One or More Identification Profiles; Identification Profile = OurProfileOne; Authorized Users and Groups = Selected Groups and Users, Groups = No Groups entered, Users = bob > 'Submit' button
+  - Decryption Policy: Policies > new entry - Order = 1, Group = Decryption Policy one, URL Filtering = Web Reputation = Default Action = (global Policy) > `(global Policy)' link under URL Filtering
+    - Descryption Policies: URL Filtering > Decryption Policy one > Predefind URL Category Filtering: Override Global Settings - Pass Through, Monitor, Decrypt, Drop, Quota-Based, Time-Based
+    - default: Decrypt
+    - entry - Category = Auction, Override Global Setting = Pass Through
+    - entry - Category = Finance, Override Global Setting = Pass Through
+    - 'Submit' button > Decryption Policies > new entry - Order = 1, Group = Decryption Policy one, URL Filtering = 'Pass Through: 2, Monitor: 84' > 'Commit Changes' button > 'Commit Changes' button
 
+
+- Demo: verify decryption policy
+  - identify TLS descryption:
+    - looking for the lock or unlock icon on the URL bar line before the URL
+    - click on the lock icon, the msg shown the status of current connection, certificate, cookie and site settings
+  - PC opens incognito Chrome w/ google.com > Sign in w/ bob's account > OK
+    - Connection is Secure, Certificate (valid), Cookies (4 in use), Site Settings > 'Certificate' icon
+    - Certificate > Issued to: www.google.com; Issued by: wsa.ogit.com
+      - certificate issued from wsa.ogit.com
+      - part of the enterprise root certificate (wsa.ogit.com)
+      - client config to trust the CA and subordinate CA
+  - search for an auction web site and browse its web site
+    - Certificate > Issued to: www.ha.com; Issued by: DigiCert SHA2 Extended Validation Server CA
+    - issued by a PKI and no decryption
+  - visit paypal.com
+    - Certificate > Issued to: www.paypal.com; Issued by: DigiCert SHA2 Extended Validation Server CA
 
 
 ## WSA Additional Security Features
