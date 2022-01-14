@@ -105,7 +105,22 @@ Trainer: Keith Barker
 
 ## WSA TLS Decryption Overview
 
-
+- WSA TLS decryption overview
+  - verify WSA setting: Google Translate blocked
+    - Access Policies: Appplications Visibility and Control: SorryBob > Applications Settings
+    - entry - Applications = Google Translate, Settings = Block
+  - verify from PC
+    - open Chrome in incognito mode w/ 'translate.google.com'
+    - sign in: Username = bob, Password = `****`
+    - Page shown 'his Page Cannot Be Displayed'
+  - verify from PC w/ Google search engine
+    - incognit mode open 'google.com' ans search for 'translate'
+    - access Google Translate from searching result
+    - Google Translate working
+  - issue: WSA no idea about application layer so far, i.e., the payload of packets
+  - solution: TLS decryption
+    - 2 HTTPS sessions: 1) btw PC and WSA; 2) btw WSA and web server
+    - WSA able to see the dst of original request and establish the 2nd HTTPS session w/ web server
 
 
 ## WSA Certificate Management
