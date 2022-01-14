@@ -63,7 +63,21 @@ Trainer: Keith Barker
 
 ## Blocking Incoming Email
 
+- Talos, [IP and Domain Reputation Center](https://talosintelligence.com/reputation_center)
 
+
+- Demo: ESA 
+  - Mail Policies tab > Host Access Table (HAT) > HAT Overview
+  - HTA Overview > Sender Groups (listener: IncomingMail 10.1.1.1:25): fields - Order, Sender Groups, SenderBase Reputation Score, External Threat Feed Sources Applied, Mail Flow Policy
+  - entries - Sender Group = RELAYLIST, WHITELIST, BLACKLIST, SUSPECTLIST, UNKNOWNLIST
+  - SenderBase Reputation Score (SBRS): block = (-10, -3), throttle = (-3, -1), accept = (-1, 10)
+  - 'BLACKLIST' link > Sender Group: BLACKLIST - IncomingMail 10.1.1.1:25 > sections - Send Group Settings, Find Senders, Send List: Display All Items in List
+  - Send List: Display All Items in List > 'Add Sender...' button
+  - Add Sender to BLACKLIST: Sender Type = IP Addresses | (*)Geolocation; Ad Country: Country Name = Aruba > 'Submit' button > 'Commit Changes' button on the top-right corner > 'Commit Changes' button
+  - modify mail flow policy on block
+    - Mail Policy Host Access Table (HAT) > HAT Overview > Mail Flow Policy = BLOCKED > 'BLOCKED' link
+    - Mail Policy Host Access Table (HAT) > Mail Flow Policy > Policy Name = BLOCKED > 'BLOCKED' link
+    - Network tab > Listeners > Listener Name = IncomingMail, HOST Access Table = HAT > 'HAT' link HAT Overview > Mail Flow Policy = BLOCKED > 'BLOCKED' link
 
 
 ## ESA Outbound Mail Overview
