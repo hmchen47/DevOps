@@ -5,7 +5,15 @@ Trainer: Keith Barker
 
 ## Introduction to Cisco Web Security
 
-
+- Learning goals
+  - web security appliance (WSA)
+  - WSA integrating w/ AD
+  - WSA features
+    - identification profile
+    - access and decryption policies
+    - filtering
+    - TLS decryption
+    - digital certification management
 
 
 ## Web Security Appliance Overview
