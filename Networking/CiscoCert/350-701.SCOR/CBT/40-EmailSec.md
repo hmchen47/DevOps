@@ -11,8 +11,9 @@ Trainer: Keith Barker
   - incoming mail security
   - outgoing emil security
   - spam filtering
-  - virus
+  - anti-virus
   - DLP
+  - encryption emails
 
 
 ## Cisco Email Security Overview
