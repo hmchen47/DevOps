@@ -101,7 +101,21 @@ Trainer: Keith Barker
 
 ## WSA Configuration for WCCP
 
-
+- Demo: config WSA to redirect web traffic
+  - topology
+    - R1 w/ 192.168.1.136
+    - WSA w/ 192.168.1.155
+  - task: config WCCP to redirect web traffic to WSA
+  - Web Security Virtual Appliance (WSA)
+    - tabs - Reporting, Web Secure Manager, Security Services, Network, System Administration
+    - Network tab > Transparent Redirection > Transparent Redirection Device: Type = L4 switch or No Device > 'Edit Device' button
+    - Transparent Redirection > Transparent Redirection Device: Type = WCCP v2 Router; WCCP v2 Service > 'Add Service' button
+    - Add WCCP v2 Service: Service Profile Name = JUST-HTTP; Service: standard Service ID: 0 web-cache (destination port 80) = On; Router IP address = 192.168.1.136; Router Security: Enable Security Service = On, Passphrase = `****` > 'Submit' button
+    - Transparent Redirection > Transparent Redirection Device: Type = WCCP v2 Router; WCCP v2 Service: fields - Service Profile Name, Service ID, Router IP adddresses, Ports, Delete
+    - entry - Service Progfile Name = Just-HTTP, Service ID = 0, Router IP addresses = 192.168.1.136, Ports = 80 > 'Add Service' button
+    - Add WCCP v2 Service > Service Profile Name = HTTPS; Service: Dynamic Service ID = 90, Port numbers = 443, Router IP address = 192.168.1.136; Router Security: Enable Security fir Service = On, Passphrase = `****` > 'Submit' button
+    - entry - Service Progfile Name = HTTPS, Service ID = 90, Router IP addresses = 192.168.1.136, Ports = 443
+    - Transparent Redirection > 'Commit Changes' button on top right corner > Uncommit Changes > 'Commit Changes' button
 
 
 ## IOS Configuration for WCCP
