@@ -125,6 +125,30 @@ Trainer: Keith Barker
 
 ## WSA Certificate Management
 
+- Demo: add trusted root certificate on WSA
+  - Network tab > Certificate Management > Certificate Management: sections - Appliance Certificates, Certificate Lists (Updates, Certificate Management)
+  - Certificate List > Certificate Management: Trust Root Certificates = 250 certificates in Cisco trusted root certificate list > 'Manage Trusted Root Certificates ...' button
+  - Manage Trusted Root Certificates: sessions - Custom Trusted Root Certificates, Cisco Trusted Root Certificate List
+    - fields - Certificate, Expiration Date, Override Trust
+    - MS Active Directory Certificate Service > 'Download a Certificate, certificate chain, or CRL' link > Encoding method = Base 64 > 'Download CA certificate chain' link > save 'CA-Cert.cer' file
+    - Custom Trusted Root Certificates > 'Import...' button > Import > 'Choose File' button > select 'CA-Cert.cer' file > 'Submit' button
+    - Manage Trusted Root Certificates > Custom Trusted Root Certificates > new entry - Certificate = SRV-CA > 'Submit' button
+    - Certificate Management > 'Commit Changes' button > Uncommitted Changes > 'Commit Changes' button
+  - Certificate List > Certificate Management: Trust Root Certificates = 250 certificates in Cisco trusted root certificate list, 1 custom certificates added to trusted root certificate list
+
+
+- Demo: add identity certificate signed by CA on WSA
+  - Security Services tab > HTTPS Proxy > HTTPS Proxy Settings > 'Enable and Edit Settings...' button
+  - Edit HTTPS Proxy Settings: setions - HTTPS Proxy Settings, Decryption Options, Invalid Certificate Options, Online Certificate Status Protocol Options
+    - HTTPS Proxy Settings: Enable HTTPS Proxy = On; HTTPS Ports ro Proxy = 443; Root Certificate for Signing: Use Generated Certificate and Key = On > 'Generate New Certificate and Key' button
+    - Generate Certificate and Key: Common Name = wsa.ogit.com, Organization = ogit, Organization Unit = IT, Country = US, Duration before expiration: 10 months > 'Generate' button
+    - Edit HTTPS Proxy Settings:Success - Certificate and Key Successfully generated.
+    - HTTPS Proxy Settings > Root Certificate for Signing: Use Generated Certificate and Key > 'Download Certificated Signing Request...' link > Save as 'WSA-CSR2.pem' > Copy the contents in 'WSA-CSR2.pem'
+    - MS Active Directory Certificate Service > 'Request a certificate' link > 'Advanced certificate request' link > Saved Request = copied contents in 'WSA-CSR2.pem' > 'Submit' button > Certificate Issued: Base 64 encoded = On > 'Download certificate' button > save as 'WSA-ID-cert2.cer'
+    - HTTPS Proxy Settings > Root Certificate for Signing: Signed Certificate > 'Choose File' button > Certificate = 'WSA-ID-cert2.cer'
+    - Descryption Options: Enable decryption for authentication = On, Enable descryption for display of end-user notification pages = On, Enable descryption for display of the end-user acknowledgement page = On, Enable descryption for enhanced application visibility and control = On
+    - Online Certificate Status Protocol Options: if applicable
+    - 'Submit' button > 'Continue' button > HTTPS Proxy: 'Commit Changes' button on top-right
 
 
 
