@@ -86,7 +86,21 @@ Trainer: Keith Barker
 
 ## WSA Application Filtering
 
-
+- Demo WSA application filtering
+  - task: forbit Bob to browse facebook.com
+  - Verify from PC for Google Translate -> OK
+  - Web Security Manager tab > Access Policies > entry - Group = NoDrinkForBob, Application = (global policy) > 'NoDrinkForBob' link
+    - Access Policy: NoDrinkForBob > Policy Settings: Policy Name = SorryBob > 'Submit' button
+    - entry - Group = SorryBob, Application = (global policy) > 'NoDrinkForBob' link
+    - Access Policies: Application Visibility and Control: SorryBob > sections - Edit Application Settings, Application Settings
+    - Application Settings: entry - Applications = Internet Utilities - Google Translate = Used Global (Monitor) > 'Used Global (Monitor)' link
+    - Set action for application Google Translate = Block > 'Apply' button > 'Submit' button
+    - modified entry: Order = 1, Group = SorryBob, Protocols and User Agent = (global policy), URL FIltering = 'Block: 1, Monitor: 85', Application = 'Block: 1, Monitor: 344', Objects = Anti-Malware and Reputation = (global policy)
+    - 'Commit Changes' button > Uncommitted Changes > 'Commit Changes' button
+  - verify from PC for Google Translate w/ Bob account -> blocked
+  - failed scenario:
+    - payload was encrypted and application filtering not working
+    - TLS decryption to deep inspect on the traffic
 
 
 ## WSA TLS Decryption Overview
