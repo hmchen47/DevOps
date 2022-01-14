@@ -36,7 +36,58 @@ Trainer: Keith Barker
 
 ## PBR Configuration and Testing
 
+- Demo: config PBR
+  - topology
+    - PC not explicitly config to forward traffic to WSA
+    - SW connecting PC, WSA, AD, R1 and other network devices
+    - WAS w/ .155 IP address
+    - AD w/ .100 IP address
+    - R1 as the default gateway
+  - task: redirect web traffic to WAS for inspection before browse the Internet
+  - verify PV Windows proxy setting: Proxy Settings > Manual proxy setup > Use a proxy server = Off
 
+  ```text
+  PC> ip config /all
+  <...truncated...>
+  IPv4 Address      : 192.168.1.116
+  Subnet Mask       : 255.255.255.0
+  Deafult Gateway   : 192.168.1.136
+  <...truncated...>
+
+  ! open web browser to access a web site
+  SW# show ip int brief | exclude una
+  Interface     IP-Address      OK? Method  Status        Protocol
+  Vlan1         192.168.1.136   YES VNARM   up            up
+
+  SW# terminal monitor
+  SW# who
+      Line      User  Host(s)   Idle        Location 
+     0 con 0          idle      00:00:34
+  *  2 vty 1          idle      00:00:00  192.168.1.151
+
+  ! config ACL
+  SW# conf t
+  SW(config)# ip access-list extended ACL-ForPBR
+  SW(config-ext-nacl)# permit tcp host 192.168.1.116 any eq 443
+  SW(config-ext-nacl)# exit
+  SW(config)# route-map Redirect-Policy permit 10
+  SW(config-route-map)# match ip address ACL-ForPBR
+  SW(config-route-map)# set ip next-hop 192.168.1.155
+  SW(config-route-map)# exit
+
+  ! apply to interface
+  SW(config)# int vlan1
+  SW(config-if)# ip policy route-map Redirect-Policy
+  SW(config-if)# end
+
+  ! verify config
+  SW# show ip policy
+  Interface       Route map
+  Vlan1           Redirect-Policy
+
+  ! verify from PC w/ browser open fireballwhisky.com
+  ! the web page unable to be displayed
+  ```
 
 
 ## WCCP Overview and Planning
