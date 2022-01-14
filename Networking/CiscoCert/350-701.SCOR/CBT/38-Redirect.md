@@ -28,7 +28,10 @@ Trainer: Keith Barker
 
 ## Policy Based Routing (PBR) Overview
 
-
+- Policy based routing overview
+  - via access control list (ACL)
+  - route map: if TCP:443 then forward to WSA
+  - applied to interfaces in default gateway
 
 
 ## PBR Configuration and Testing
