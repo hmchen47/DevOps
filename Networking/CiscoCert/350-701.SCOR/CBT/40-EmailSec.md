@@ -82,6 +82,22 @@ Trainer: Keith Barker
 
 ## ESA Outbound Mail Overview
 
+- Demo: config and verify outgong mail settings
+  - Network tab > Listeners > Listeners: sections - Listerners. Global Settings
+  - Listerners: fields - Listener Name, Interface, Port, Host Access Table, Recipient Table
+  - Listeners > default entries - Listener Name = IncomingMail, Host Access Table = HAT, Recipient Access Table = RAT; Listener Name = OutgoingMail, Host Access Table = HAT, Recipient Access Table = N/A
+  - 'OutgoingMail' link > Edit Listener: Name = PrivateListener > 'Submit' button > 'Commit Changes' button > 'Commit Changes' button
+  - 'RAT' link > Recipient Access Table Overview > Overview for Listener: fields - Order, Recipient Address, Default Action
+    - entries - Recipient Address = 'admin@ogit.com, keith@ogit.com', Default Action = Accept (Bypass LDAP); Recipient Address = ogit.com, Default aCtion = Accept; Recipient Name = All Other Recipients, Default Action = Reject
+  - Listeners > Listener Name = PrivateListener, Host Access Table = HAT > 'HAT' link
+  - HAT Overview > Sender Groups > Sender Group = RELAYLIST, MAil Flow Policy = RELAYED > 'RELAYLIST' link
+  - Sender Group: REPLAYLIST - PrivateListener 10.2.2.1:25 > Sender List: Display All Items in List: Sender = 192.168.1.100 (email server)
+
+
+- Demo: policies for outbound mails
+  - Mail Policies tab > Outgoing Mail Policies: fields - Policy Name, <span style="color: cyan;">Anti-Spam, Anti-Virus, Advanced Malware Protection, Greymail, Content Filters, Outbreak Filters, DLP</span>
+  - default entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Delivery, Suspected: Delivery', Anti-Virus = 'Sophos, Encrypted = Deliver, Unscannable: Deliver, Virus Positive: Drop', Advanced Malware Protection = Greymail = Not Available, Content Filters = 'Sample-OutBound-Filter, HighSecEncrypt', Outbreak Filters = 'Retention Time: Virus: 1 day', DLP = 'PCI-DSS (Payment Card Industry), Canada PIPEDA (Personal Information), Contact Information (US)
+
 
 
 
