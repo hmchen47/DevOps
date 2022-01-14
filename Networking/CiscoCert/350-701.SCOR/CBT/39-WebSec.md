@@ -190,5 +190,16 @@ Trainer: Keith Barker
 
 ## WSA Additional Security Features
 
+- Demo: WSA features
+  - System Adminstration tab > Feature keys: list of keys available on this appliance
+  - Security Services tab > Policy Services > Acceptable Use Controls: capability of WSA
+    - Acceptable Use Control: sections - Acceptable Use Control Settings, Acceptable Use Controls Engine Updates, Inspectable Archives Settings
+    - Acceptable Use Controls Settings: Acceptable Use Controls Service Status = Enabled, Application Visibility and Control = Enabled, Dynamic Content Analysis Engine = Enabled, Multiple URL Categories = Enabled, Default action for Unreachable Service = Enabled, YouTube VCategorization = Disabled
+    - Acceptable Use Controls Engine Updates: status of the updates
+  - Security Services tab > Policy Services > Anti-Malware and Reputation
+    - sections - Anti-Malware and Reputation Settings, Appliance Grouping for File Analysis Cloud Reporting, Anti-Malware Engine and Web Reputation Rules Updates,
+    - Anti-Malware and Reputation Settings: list of current version and last update > 'Update Now' button
+  - Reporting tab > Security: Anti-Malware, Advanced Malware Protection, File Analysis, AMP Verdict Updates, Client Malware Risk, Web Reputation Filters, L4 Traffic Monitor
+  - working w/ Talos
 
 
