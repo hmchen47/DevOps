@@ -153,5 +153,26 @@ Trainer: Keith Barker
 
 ## Encryption
 
+- Demo: email encryption on ESA
+  - create a profile for encryption
+    - Security Services tab > Cisco IronPort Email Encryption
+    - Email Encryption Global Settings: Cisco IronPort Email Encryption = Enable (or 'Edit Settings' button to enable)
+    - Email Encryption Profiles > 'Add Encryption Profile...' button
+    - Add Encryption Envelope Profile: sections - Encryption Profile Settings, Key Server Settings, Envelope Settings, Notification Settings
+      - Encryption Profile Settings: Profile Name = Test
+      - Key Server Settings: Key Service Type = Cisco Registered Envelope Service
+      - Envelope Settings: Envelope Message Security = High Security; Logo Link = No Link; Read Receipts = Enable Read Receipts
+      - 'Submit' button
+    - Email Encryption Profiles: new entry - Profile = Test, Key Service = Cisco Registered Envelope Service, Provision Status = Not provisioned > 'Commit Changes' button > 'Commit Changes' button
+  - apply the creates profile to filter
+    - Mail Policies tab > Outgoing Content Filters > Filters: fields - Order, Filter Name, Description | Rules | Policies
+    - entry - Order = 2, Filter Name = HighSecEncrypt > 'HighSecEncrypt' link
+    - Edit Outgoing Content Filter: sections - Content Filter Settings, Conditions, Actions
+      - Content Filter Settings: Name = HighSecEncrypt
+      - Confitions: Condition = Subject Header, Rule = 'subject == "\\[send secure]\\"' > 'Subject Header' link
+      - Edit Condition > ATtachment Content: Contains text = supersecrete > 'Ok' button
+      - Actions: Action = Encrypt on Delivery, Rule = 'encrypt-deferred("HighSecurity", "$subject", 0)'
+  - apply the filter to policy
+    - Mail Policies tab > Email Security Manager > Outgoing Content Filters > Policies > entry - Policy Name = Default Policy, Content Filters = 'Sample-OutBound-Filter, HighSecEncrypt' > 'Sample-OutBound-Filter, HighSecEncrypt' link
 
 
