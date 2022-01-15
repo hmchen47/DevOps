@@ -72,7 +72,16 @@ Trainer: Keith Barker
 
 ## Policy Overview
 
-
+- Policy overview
+  - analogy: shopping cart w/ many different items
+  - possible components
+    - destinations
+    - content categories
+    - apps
+    - TLS decryption (optional)
+    - security settings: malware sites
+    - feedback (block page)
+    - 3rd party features
 
 
 ## Policy Components
