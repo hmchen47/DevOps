@@ -18,9 +18,9 @@ Institution: CBY Nugget
 - [Routing Authentication](00e-RoutingSec.md)
 - [Management Plane Security](00f-MgmtSec.md)
 - [Security for Cloud Service](00g-CloudSec.md)
-- [Security for User Interaction](00h-UserSec.md)
-- [Endpoint Security](00j-EndptSec.md)
-- [Data Exfiltration](00k-Exfiltrate.md)
+- [Application Layer Security](00h-AppLSec.md)
+- [Endpoint Security](00i-EndptSec.md)
+- [Data Exfiltration](00j-Exfiltrate.md)
 
 
 
@@ -440,7 +440,7 @@ Institution: CBY Nugget
 
 
 
-## Security for User Interaction
+## Application Layer Security
 
 ### 38\. [Capture and Redirection Methods](38-Redirect.md)
 
