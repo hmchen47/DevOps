@@ -117,7 +117,18 @@ Trainer: Keith Barker
 
 ## Email Anti-Virus
 
-
+- Demo: comfig anti-virtual on ESA
+  - Mail Policies tab > Incoming Mail Policies > Policies
+  - default entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Quarantine, Suspected: Quarantine', Anti-Virus = 'Sophos, Encrypted: Deliver, Unscannable: Deliver, Virus Positive: Drop', Advanced Malware Protection = Greymail = Advanced Phising Protection = Not Available, Content Filters = SampleFilter, Outbreak Filters = 'Retention Time: Virus: 1 day' > 'Sophos, Encrypted: Deliver, Unscannable: Deliver, Virus Positive: Drop' link (license required to enable)
+  - license: System Administration tab > Feature Key Settings > Feature Keys: list of available license keys
+  - add Anti-Virus license: Security Services > Anti-Virus (Sophos, McAfee) > 'Sophos > Sophos Anti-Virus: sections - Sophos Anti-Virus Overview, Current Sophos Anti-Virus files
+    - Sophos Anti-Virus Overview: Anti-Virus Scanning by Sophos Anti-Virus = Enabled
+    - Current Sophos Anti-Virus files > 'Update Now' button to check for updates
+  - Mail Policies: Anti-Virus: sections - Anti-Virus Settings, Message Scanning, Required Messages, Encrypted Messages,  Unscannable Messages, Virus Infected Messags
+    - Anti-Virus Settings: Enable Anti-Virus Scanning for This Policy = Yes, Use Sophos Anti-Virus = On
+    - Message Scanning: Scan for Viruses only
+    - 'Submit' button > 'Commit Changes' button > 'Commit Changes' button
+  - default entry - Policy Name = Default Policy, Anti-Virus = 'Sophos, Encrypted: Drop, Unscannable: Deliver, Virus Positive: Drop'
 
 
 ## DLP
