@@ -5,7 +5,12 @@ Trainer: Keith Barker
 
 ## Introduction to Cisco Umbrella
 
-
+- Learning goals
+  - Cisco Umbrella
+  - policy
+  - identity
+  - digital certificates
+  - VA
 
 
 ## Cisco Umbrella Overview
