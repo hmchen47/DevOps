@@ -96,7 +96,7 @@ Trainer: Keith Barker
 
 - Demo: policies for outbound mails
   - Mail Policies tab > Outgoing Mail Policies: fields - Policy Name, <span style="color: cyan;">Anti-Spam, Anti-Virus, Advanced Malware Protection, Greymail, Content Filters, Outbreak Filters, DLP</span>
-  - default entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Delivery, Suspected: Delivery', Anti-Virus = 'Sophos, Encrypted = Deliver, Unscannable: Deliver, Virus Positive: Drop', Advanced Malware Protection = Greymail = Not Available, Content Filters = 'Sample-OutBound-Filter, HighSecEncrypt', Outbreak Filters = 'Retention Time: Virus: 1 day', DLP = 'PCI-DSS (Payment Card Industry), Canada PIPEDA (Personal Information), Contact Information (US)
+  - default entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Delivery, Suspected: Delivery', Anti-Virus = 'Sophos, Encrypted = Deliver, Unscannable: Deliver, Virus Positive: Drop', Advanced Malware Protection = Greymail = Not Available, Content Filters = 'Sample-OutBound-Filter, HighSecEncrypt', Outbreak Filters = 'Retention Time: Virus: 1 day', DLP = 'PCI-DSS (Payment Card Industry Data Security Standard), Canada PIPEDA (Personal Information Protection and Electronic Act), Contact Information (US)'
 
 
 
@@ -133,7 +133,22 @@ Trainer: Keith Barker
 
 ## DLP
 
-
+- Demo: config DLP on ESA
+  - DLP for outgoing mails only
+  - Mail Policies tab > Email Security Manager > Outgoing Mail Policies > Policies
+  - default entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Delivery, Suspected: Delivery', Anti-Virus = 'Sophos, Encrypted = Deliver, Unscannable: Deliver, Virus Positive: Drop', Advanced Malware Protection = Greymail = Not Available, Content Filters = 'Sample-OutBound-Filter, HighSecEncrypt', Outbreak Filters = 'Retention Time: Virus: 1 day', DLP = 'PCI-DSS (Payment Card Industry Data Security Standard), Canada PIPEDA (Personal Information Protection and Electronic Act), Contact Information (US)'
+  - DLP Policies:
+    - PCI-DSS (Payment Card Industry Data Security Standard) = Enable
+    - Canada PIPEDA (Personal Information Protection asnd Electronic Act) = Enable
+    - Contact Information (US) = Enable
+  - add new default DLP policy:
+    - Mail Policies tab > Data Loss Prevention (DLP) > DLP Policy Manager > Active DLP Policies for Outgoing Mail: fields - Order, DLP Policy > 'Add DLP Policy...' button
+    - DLP Policy Manager > Add DLP Policy from Template > Acceptable Use > Add Contact Information > 'Add' link
+    - Policy: Contact Information > DLP Policy Name = Test DLP
+    - Severity Settings: Critical Severity Incident = Default Action; High/Medium/Low Severity Incident = Inherit Action from Critical Severity Incident
+    - 'Submit' button > 'Commit Changes' button > 'Commit Changes' button
+  - Mail Policies tab > Email Security Manager > Outgoing Mail Policies > Policies > entry - Policy Name = Default Policy, DLP = 'PCI-DSS (Payment Card Industry Data Security Standard), Canada PIPEDA (Personal Information Protection asnd Electronic Act), Contact Information (US)' > 'PCI-DSS (Payment Card Industry Data Security Standard), Canada PIPEDA (Personal Information Protection and Electronic Act), Contact Information (US)' link
+  - Mail Policies: DLP > DLP Policies > Test DLP = Enable > 'Submit' button > 'Commit Changes' button > 'Commit Change' button 
 
 
 ## Encryption
