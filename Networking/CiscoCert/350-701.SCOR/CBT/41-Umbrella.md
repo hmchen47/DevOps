@@ -86,6 +86,25 @@ Trainer: Keith Barker
 
 ## Policy Components
 
+- Demo: create a customized policy on Umbrella
+  - log on Umbrella
+  - left panel folders - Overview, Deployment, Policies, Reporting, Investigate, Admin
+  - Policy folder > Management > All Policies
+  - Default Policy: Policy Name = Default Policy, Applied to All Identities, 2 Destination Listed Enforces, Security Setting Applied: Default Settting, Content Setting Applied: Default Settings, Filer Analysis Nor Enabled, Customer Block Page Applied, No Application Setting Applied
+  - Policy folder > Management > Policy Components: Destination Lists, Content Categories, Application Settings, Security Settings, Block Page Appearance, Integration
+  - Policy folder > Management > Policy Components > Destination Lists > 'Add' icon on top right corner
+  - New Destination List: List Name = Our Custom Destination List; Destination in this list should be = Blocked, input field = www.acme.com > 'Add' button > 'Save' button
+    - Destination Lists: new entry - Our Custom Destination List, Type = Blocked, Domains = 1, IPs = 0, URLs = 0
+  - Policy folder > Management > Policy Components > Content Categories > 'Add' icon
+    - Add New Content Setting: Seting Name = Our Custom Content Filtering; Copy From Existing = High; Categories to Block = Alcohol, Adware, Adult Themes, Chat, ... (inherited from High and modify from the setting) > 'Save' button
+  - Policy folder > Management > Policy Components > Application Settings > 'Add' icon
+    - Add New Application Setting: Give Your Setting a Name = Our Custom App Setting; Application to Control = Google Drive, IDrive, InCloudDrive, ... > 'Save' button
+  - Policy folder > Management > Policy Components > Security Settings > 'Default Settings' link
+    - Default Settings: Setting Name = Default Settings; checked items = Malware, Command and Control Callbacks, Phising Attacks > 'Add' icon
+    - Setting Name = Our Custom Security Setting; checked items = Malware, Newly Seen Domains, Command and Control Callbacks, Phising Attacks, Dynamic DNS, Potentially Harmful Domains, DNS Tunneling VPN, Cryptomining > 'Save' button
+    - new entry - Our Custom Security Setting, Setting Enabled = 8, Integrations = 0
+  - Policy folder > Management > Policy Components > Block Page Appearance > 'Add' icon
+    - Add New Block Page Appearance: Block Page Appearance Name = Custom Block Page; Blocked erequests should be treated: The Same = On, Show a Block page with a custom message = (*)Show on a block page with the default message | (type in whatever to show on blocked page) | Redirect users to this URL = (enter a URL); Allow blocked users to contact an admin from the block page = admin@ogit.com > 'Save' button
 
 
 
