@@ -100,10 +100,19 @@ Trainer: Keith Barker
 
 
 
-
 ## SPAM Filtering
 
-
+- Demo: config Spam filtering on ESA
+  - Security Services tab > Anti-Spam > IronPort Anti-Spam: sections - IronPort Anti-Spam Overview, Rule Updates
+    - IronPort Anti-Spam Overview > 'Edit Global Settings...' button > Enable IronPort Anti-Spam Scanning = On > 'Submit' button
+    - Rule Updates: entries
+  - System Adminstration tab > Feature Keys: what keys on the system
+  - Mail Policies > Email Security Policies > Incoming Mail Policies > entry - Policy Name = Default Policy, Anti-Spam = 'IronPort Anti-Spam, Positive: Quarantine, Suspected: Quarantine' > 'IronPort Anti-Spam, Positive: Quarantine, Suspected: Quarantine' link to modify existing policy
+  - Mail Policies: Anti-Spam: sections - Anti-Spam Settings, Positive-Identified SPam Settings, Suspected Spam Settings
+    - Anti-Spam Settings: Enable nti-Spam Scanning for this Policy = use IronPort Anti-Spam service
+    - Positive-Identified SPam Settings: Apply this Action to Message = Deliver | (*)Drop | Spam Quatantine | Bounce
+    - Suspected Spam Settings: Enable Suspected Spam Scanning = Yes, Apply This Action to Message = Span Quarantine
+    - Spam Threshold: IronPort Anti-Spam = Use the Default Thresholds (default: suspected = 50~90, spam > 90)
 
 
 ## Email Anti-Virus
