@@ -16,14 +16,15 @@ Trainer: Keith Barker
 ## Cisco Umbrella Overview
 
 - Cisco Umbrella overview
-  - security issues on DNS
-    - bad/incorrect info returned
+  - security issues of DNS
+    - bad/incorrect info
     - malicious web site
-    - tunneling
+    - tunneling by attackers
   - Umbrella
     - Talos providing intelligence
+    - a could solution
     - DNS as part of Umbrella service
-    - DNS request forwarding to Umbrella
+    - DNS requests forwarding to Umbrella
 
 
 ## Umbrella Components
