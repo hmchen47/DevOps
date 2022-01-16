@@ -5,7 +5,11 @@ Trainer: Knox Hutchinson
 
 ## Introducing Endpoint Security
 
-
+- Learning goals
+  - endpoint protection
+  - advanced malware protection (AMP)
+  - outbreak control
+  - groups and policies
 
 
 
