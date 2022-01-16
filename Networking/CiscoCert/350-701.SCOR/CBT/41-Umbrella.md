@@ -86,7 +86,7 @@ Trainer: Keith Barker
 
 ## Policy Components
 
-- Demo: create a customized policy on Umbrella
+- Demo: create customized policy components on Umbrella
   - log on Umbrella
   - left panel folders - Overview, Deployment, Policies, Reporting, Investigate, Admin
   - Policy folder > Management > All Policies
@@ -110,7 +110,30 @@ Trainer: Keith Barker
 
 ## Policy Creation
 
-
+- Demo: create a policy on Umbrella
+  - aggregate policy components into a policy
+  - Policies folder > Management > All Policies > 'Add' icon or modify Default Policy
+  - Wizard fashion ('Previous' or 'Next' button to advance or backward)
+    - What would you like to protect?: Select Identities = (empty for further assocaition)
+    - What should this policy do?
+      - Enforce Security at the DNS Layer = Inspect Files = Limit Content Access = Apply Destination List = On
+      - Advanced Settings: Enable Intelligent Proxy = On; SAFESEARCH: Enforce SafeSearch = Off; Logging: Log All Requests = On
+      - Intelligent Proxy: license required; features - SSL Decryption, IP-Layer enforcement; 
+        - SSL Decryption: allowing intelligent proxy to inspect traffic over HTTPS and block custom URLS in destination lists
+        - IP-Layer enforcement: gain visibility into threats that bypass DNS lookups by tunneling suspect IP connections
+        - Umbrella built TLS btw client and Umbrella to inspect the traffic and another TLS btw Umbrella and destination
+      - SafeSearch: queries sent to supported search engines
+    - Categories to Block (associated to Security Settings): Select Setting = Our Custom Security Setting
+    - Limit Content Access (Content Categories): Custom = On; Custom Setting = Our Custom Content Filtering
+    - Control Applications (Application Settings): Application Settings = Our Custom App Setting
+    - Apply Destination Lists (Destination Lists): All Destination Lists - Our Custom Destination List = On
+    - File Analysis: File Inspection = On
+    - Set Block Page Settings (Block Page Appearance): Use a Custom Appearance = Custom Block Page
+    - Policy Summary: Policy Name = Our Custom Policy; Advanced Settings (check and modify if required for Intelligent Proxy) > 'Save' button
+  - All Policies > 2 entries
+    - Order = 1,  Policy Name = Our Custom Policy, Applyied to = 0 identities (not set yet)
+    - Order = 2, Policy Name = Default Policy, Applyied to = All identities
+    - execution in order (top-down fashion)
 
 
 ## Core Identities
