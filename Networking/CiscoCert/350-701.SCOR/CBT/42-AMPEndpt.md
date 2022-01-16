@@ -115,8 +115,4 @@ Trainer: Knox Hutchinson
 
 
 
-## Summarizing Endpoint Security
-
-
-
 
