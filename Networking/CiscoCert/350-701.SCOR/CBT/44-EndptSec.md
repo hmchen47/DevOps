@@ -35,7 +35,23 @@ Trainer: Keith Barker
 
 ## The Value of Mobile Device Management
 
-
+- Mobile device management (MDM)
+  - devices: laptops w/ WiFi, mobile phones
+  - locations: local or remote
+  - on-board: brining on a mobile device into mobile device management system
+  - inventory: the devices in MDM system
+  - advantages
+    - application protection: allowing to run on devices
+    - data protection: enforcing encryption
+    - malware/virus protection
+    - identity management
+    - provisioning: automatic and routine
+    - templates: consistent policies
+  - [MDM Solutions](https://www.trustradius.com/mobile-device-management-mdm) (some popular ones)
+    - Microsoft Endpoint Manager (Microsoft Intune + SCCM)
+    - Workspace ONE Unified Endpoint Management (UEM) Powered by AirWatch
+    - IBM MaaS360 with Watson
+    - Cisco Meraki SM
 
 
 ## Using Multi-Factor Authentication
