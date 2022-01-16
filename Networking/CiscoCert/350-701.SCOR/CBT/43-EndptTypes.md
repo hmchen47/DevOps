@@ -14,7 +14,17 @@ Trainer: Knox Hutchinson
 
 ## Anti-Virus and Anti-Malware
 
-
+- Anti-virus & Anti-Malware overview
+  - used to be different but getting merged
+  - EPP
+    - point-in-time
+    - comapring hash value: patterns
+    - scanning signature: creator, date, etc.
+    - performing actions
+  - actions: quarantine, delete, remediate
+  - anti-malware
+    - generic term for bad software not to enter computers
+    - including anti-virus (self-duplicated)
 
 
 
