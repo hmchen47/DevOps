@@ -3,7 +3,7 @@
 Trainer: Keith Barker
 
 
-# Introduction to Endpoint Security
+## Introduction to Endpoint Security
 
 - Learning goals
   - endpoint protection
@@ -13,27 +13,27 @@ Trainer: Keith Barker
   - patch management
 
 
-# Why Endpoint Protection is Critical
+## Why Endpoint Protection is Critical
+
+- 
+
+
+## The Value of Mobile Device Management
 
 
 
 
-# The Value of Mobile Device Management
+## Using Multi-Factor Authentication
 
 
 
 
-# Using Multi-Factor Authentication
+## Posture Assessment for Endpoint Security
 
 
 
 
-# Posture Assessment for Endpoint Security
-
-
-
-
-# Patching Endpoints
+## Patching Endpoints
 
 
 
