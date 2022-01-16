@@ -56,7 +56,20 @@ Trainer: Keith Barker
 
 ## Using Multi-Factor Authentication
 
-
+- Multi-factor authentication (MFA) overview
+  - authentication methods
+    - password
+    - 802.1x
+      - wireless mostly
+      - supplicant: AnyConnect
+      - authenticator: switch or MLC
+      - authentication server: AAA, Radius, ISE
+    - local/central web authentication: redirect to server or ISE to login 
+  - factors - categories of authentication
+    - knowledge: user knows, e.g., password, SIN, security questions
+    - possession: user has, e.g., token generator
+    - inherence: user is/does, e.g., biometrics, fingerprint, iris, face
+  - MFA: authenticating user from 2 of 3 factors
 
 
 ## Posture Assessment for Endpoint Security
