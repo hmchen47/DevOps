@@ -34,8 +34,21 @@ Trainer: Knox Hutchinson
 
 ## Introducing Advanced Malware Protection (AMP) for Endpoints
 
-
-
+- Advanced Malware Protection (AMP)
+  - AMP existed in network solutions, e.g., firewall, ESA, etc.
+  - scanning file entering the system
+  - endpoint solution
+    - prevention: 
+      - constantly updated
+      - sanboxing: quarantine files
+      - ML & AI 
+    - detection
+      - continuously monitoring
+      - anomalous behavior
+      - entering point and trajectory
+    - response
+      - contain/quarantine
+      - telemetry: dashboard on threat overview on the whole network
 
 
 ## Configuring Simple Outbreak Controls in AMP
