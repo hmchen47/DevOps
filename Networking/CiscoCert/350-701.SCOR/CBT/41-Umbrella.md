@@ -138,6 +138,32 @@ Trainer: Keith Barker
 
 ## Core Identities
 
+- Demo: core identities on Umbrella
+  - identify free and paid users
+  - add identities
+    - Deployments folder > Core Identities: Networks, Network devices, Roaming Computers, Mobile Devices, Chromebook Users
+    - Networks: 'Add' button to add new
+    - Roaming Computers: agent software installation required; 'Romaing Client' icon to download software
+  - apply policy to identity
+    - Policies folder > Management > All Policies > Policy Name = Our Custom Policy, Applied to = 0 identities > 'Our Custom Policy' link
+    - Our Custom Policy > Policy Name = Our Custom Policy: 0 identities Affected Enable > 'Enable' link
+    - What Would You like to protect?: All Identities - ..., Networks, Roaming Computers, Sites, ...; Select Identities = Roaming Computers > 'Set and Return' button
+    - Our Custom Policy > 'Save' button
+  - verify w/ PC: 
+  
+    ```text
+    PC> ipconfig -flushdns
+    PC> ipconfig -all
+    <...truncated...>
+    DNS Server        : 127.0.0.1
+    <....truncated...>
+    ! Umbrella client installed, DNS request handled by it
+    ```
+
+    - open browser w/ google.com -> 'Your connection is not private' w/ 'NET::ERR_CERT_AUTHORITY_INVALID'
+    - icon before URL bar: 'Your connection to this site is not secure'; Certificate (invalid) > 'Certificate' link
+    - Certificate: Issue by = Cisco umbrella Secondary SubCA lax-SG
+
 
 
 
