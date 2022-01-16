@@ -166,10 +166,21 @@ Trainer: Keith Barker
 
 
 
-
 ## Umbrella CA Certificates
 
-
+- Demo: install Umbrella certificate
+  - retrieve certificate from Umbrella
+    - Networks folder > Configurations > Root Certificate > Get Started > 'DOWNLOAD CERTIFICATE' button
+    - Save as 'Cisco_Umbrella_Root_CA.cer'
+  - install certificate on PC
+    - 'Manage user certificates' or 'Manage computer certificate'
+    - click on 'Cisco_Umbrella_Root_CA.cer' > Certificate > 'Install Certificate...' button
+    - Welcome to the Certificate Import Wizard: Store location = Current User > 'Next' button
+    - Certificate Store: Place all certificate in the following store = Trusted Root Certification Authorities > 'Ok' button > 'Next' button
+    - Completing the Certificate Import Wizard: Certificate Store Selected by User > 'Finish' button > 'Ok' button
+  - verify w/ browser on PC 
+    - google.com, ebay.com, facebook.com -> OK, icon - Certificate (Valid)
+    - liquor.com, missionliquor.com, www.acme.com -> blocked
 
 
 ## Reporting and Investigation
