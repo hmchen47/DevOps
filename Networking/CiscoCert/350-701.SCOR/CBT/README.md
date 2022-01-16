@@ -507,7 +507,6 @@ Institution: CBY Nugget
 - Configuring Simple Outbreak Controls in AMP
 - Explore Other Outbreak Controls
 - Understand Groups and Policies
-- Summarizing Endpoint Security
 
 ### 43\. [Explain Various Types of Endpoint Defenses](43-EndptTypes.md)
 
