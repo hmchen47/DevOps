@@ -83,6 +83,15 @@ Trainer: Keith Barker
     - feedback (block page)
     - 3rd party features
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
+      onclick= "window.open('page')"
+      src    = "img/41-umbrella.png"
+      alt    = "Snapshot of Umbrella Default Policy"
+      title  = "Snapshot of Umbrella Default Policy"
+    />
+  </figure>
+
 
 ## Policy Components
 
