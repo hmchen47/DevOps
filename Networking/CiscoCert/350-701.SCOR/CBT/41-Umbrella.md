@@ -185,7 +185,17 @@ Trainer: Keith Barker
 
 ## Reporting and Investigation
 
-
+- Demo: report and investigation in Umbrella
+  - verify the use of Umbrella: browser open welcome.umbrella.com & welcome.opendns.com 
+  - verify the block of malicious web sites: www.internetbadguys.com, www.examplemalwaredomain.com, www.examplebotnetdomain.com, www.exampleadultsite.com, ihaveabadreputation.com
+  - different paged shown representing different policy components applied
+  - Investigate folder
+    - Search filed = ihabebadreputation.com > 'INVESTIGATE' button > Summary: High Risk; Malware Block List; Security Indicator
+    - Search filed = cbtnuggets.com > 'INVESTIGATE' button > Summary: Low Risk; Security Categories = -; Content Categories = Educational Institutions
+  - Reporting folder
+    - Core Reports: Security Overview, Security Activity, Activity Search, App Discovery, Threats
+    - Additional Reports: Total Requests, Activity Volume, Top Destinations, Top Categories, Top Identity 
+  - Admin folder > Log Management: sections - Data Store (where to store), Amazon S3
 
 
 ## Umbrella VA
