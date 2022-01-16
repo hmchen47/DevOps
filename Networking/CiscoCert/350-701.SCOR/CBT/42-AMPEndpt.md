@@ -80,10 +80,17 @@ Trainer: Knox Hutchinson
   </figure>
 
 
-
 ## Explore Other Outbreak Controls
 
-
+- Demo: config other outbreak controls
+  - Outbreak Control tab > APPLICATION CONTROL > Blocked Applications > Applications Control - Blocked Applications: entries - Blocked Applications (4 files), putty (1 file), appblocktest (2 files), etc.
+    - entry - putty (1 file) > 'Edit' button > Upload File tab: File Included = 567efd7a...8a31 > click on 'down arrow' icon > Filename = putty.exe; File Analysis, File Trajectory; Simple Detection, Blocked Applications, Allowed Applications; Threat Grid, Umbrella
+    - File Analysis, File Trajectory: analyze the file and trace its trajectory
+    - Simple Detection, Blocked Applications, Allowed Applications: associate the item to item of different outbreak controls
+    - Threat Grid, Umbrella: view or browse the ite does from the global aspect
+  - Outbreak Control tab > NETWORK > IP Block & Allow Lists > entries - IP blacklist, IP Whitelist, ABC - Example IP Black List, etc.
+    - entry - IP blacklist > 'down arrow' icon > IP blacklist: IPs and CIDR Blocks = 20.20.20.20; Used in Groups = None; Used in Policies = Adult mode, Domain Controller Policy 
+    - entry - IP Whitlist > 'down arrow' icon > IP Whitelist: IPs and CIDR Blocks = 10.10.10.0/24, 184.94.241.96/31, 184.94.241.98, 208.67.220.220, 208.67.222.222; Used in Groups = None; Used in Policies = Adult mode, Domain Controller Policy 
 
 
 
