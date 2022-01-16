@@ -200,7 +200,36 @@ Trainer: Keith Barker
 
 ## Umbrella VA
 
+- Umbrella and multiple internal subnets
+  - two subnets in an organization
+    - two IP subnets & two VLANs
+    - unable to distinguish them w/ PAT
+  - solution: virtual appliance
+    - a server installed for all internal users
+    - the server redirect request to internal or external DNS servers
+    - different policies able to apply to each subnets
 
+- Demo: install virtual appliance (VA)
+  - verify topology
+    - Deployment folder > Core Identities > Networks: one network w/ Name = Keith-Lab_Network
+    - Deployment folder > Configurations > Domain Management: one domain w/ Domain Name = ogit.com
+    - Deployment folder > Configurations > Sites and Active Directory: one site w/ Name = 192.168.1.41
+  - download VA
+    - Deployment folder > Configurations > Sites and Active Directory > 'Download' icon on top-right corner
+    - Download Components: Active Directory Components, Virtual Appliance Components
+    - 'Download' button on the appropriate selection: VMWare ESX > 'Download' button
+  - install VA
+    - VMWare ESXi > Host (right click - Create/Register VM) > Deploy a virtual machine from an OVF or OVA file > 'Next' button
+    - Cisco Umbrella VA:
+      - login w/ password = Umbrella+SerialNumber, Serial Number shown in URL
+      - Name = 192.168.1.41, IP = 192.168.1.41, Local DNS = 192.168.1.100, Gateway = 192.168.1.1; Connectivity: DNS Server = Local DNS = Umbrella DNS servers = ok
+  - user requests redirect to 192.168.1.41 -> redirect to local or Umbrella DNS servers
+  - config PC for VA: Network Adapter Properties > Preferred DNS server = 192.168.1.41
+  - verify w/ PC: open w/ google.com & liquor.co -> OK
+  - verify on Umbrella Policy setting -> Identities was removed > add back
+  - verify w/ PC again: open 
+    - google.com -> OK
+    - www.acme.com & www.liquor.com  -> blocked
 
 
 ## Umbrella Summary
