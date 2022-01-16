@@ -48,7 +48,6 @@ Trainer: Knox Hutchinson
       - web server log
 
 
-
 ## Retrospective Analysis
 
 - Retrospective security overview
@@ -70,6 +69,10 @@ Trainer: Knox Hutchinson
 
 ## Summarizing Endpoint Protection Mechanisms
 
-
+- Summary
+  - anti-virus & anti-malware
+  - IoC
+  - retrospective security
+  - dynamic file analysis
 
 
