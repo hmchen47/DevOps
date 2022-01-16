@@ -96,7 +96,22 @@ Trainer: Knox Hutchinson
 
 ## Understand Groups and Policies
 
-
+- Demo: config groups and polices
+  - Management tab > subtabs - Computers, Groups, Exclusives, Download Connector, Deploy Clarity for iOS, Deployment Summary, AV Definition Summary
+  - Computers subtab: entries for various OSes for policies to push down to
+    - entry - Demo_AMP in group Triage: Hostname = Demo_AMP, Group = Triage, OS = Windows 10, Policy = Triage Policy, Connector Version = 7.2.5.11663, Internal IP = 222.83.73.197, Install Date = 2020-04-09, External IP = 51.180.107.196, Connector GUID = a90f...60ce, Last Seen = 202-04-11, Processor ID = f978...20a3
+  - Groups subtab: grouping users
+    - entry - Company ABC End Users (7 Child Groups) > subentries - DMZ, Triage, Server, Domain Controller, Management Users, Engineer Users, Marketing Users > 'Marking Users' link
+    - Marketing Users: Create by = Caleb O.; Windows Policy = info-policy, applied from Company ABC End Users; Android Policy = Default FireAMP Android, Applied from Company ABC End Users; Mac Policy = Linux Policy = Adult Policy for Fire, applied from Company ABC End Users; Network Policy = ESA; iOS Policy = test-1; Computers = Demo_Oakbot_3, Demo_Ramnit, Demo_TeslaCrypt
+    - Computers: 3 computers belong Marketing Users, policies applied to the group pushing down to these computers
+  - Policies subtab: ('down arrow' icon) fields - Modes and Engines, Exclusions, Proxy, Groups > entry - info-policy; Ourbreak Control - Customer Detections - Simple, Custom Detections - Advanced, Application Control, Network
+    - Groups: Management Users (11), Company ABD End Users (10), Marketing Users (3), Engineering Users (2)
+    - Customer Detections - Simple: Quarantine List
+    - Custom Detections - Advance: ADV_Custom_Detection
+    - Application Control: putty = Blocked, ABC Corp Whitelist = Allowed
+    - Network: BC - Example IP Block List = cucm = IP Block List, SecureIP = IP Allow List
+    - 'Edit' button > Edit Policy: Name = info-policy; Outbreak Control - Custom Detection - Simple = cbtdemo > 'Save' button
+    - Customer Detections - Simple: cbtdemo
 
 
 
