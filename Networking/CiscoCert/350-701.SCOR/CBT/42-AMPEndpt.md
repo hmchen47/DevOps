@@ -53,7 +53,31 @@ Trainer: Knox Hutchinson
 
 ## Configuring Simple Outbreak Controls in AMP
 
+- Demo: config outbreak control in AMP
+  - AMP - Secure Endpoint: tabs: Dashboard, Analysis, Outbreak Control, Management, Accounts
+  - Dashboard tab: subtabs - Dashboard, Inbox, Overview, Events, IOS Clarity
+  - Dashboard subtab: charts for Compromises, Quarantined Detections, Vulnerabilities; event list for Significant Compromise Artifacts, Compromise Event Types
+  - Outbreak Control tab > CUSTOM DETECTION, APPLICATION CONTROL, NETWORK, ENDPOINT IOC
+    - CUSTOM DETECTION (mostly commonly used): Simple, Advanced, Android
+    - Application  CONTROL: Blocked Applications, Allowed Applications
+    - NETWORK: IP Block and Allow Lists
+    - ENDPOINT IOC: Scan Summary
+    - CUSTOM DETECTION: using hash signature of a file to identify malicious file
+  - Outbreak Control tab > CUSTOM DETECTION > Simple > 'Create' button > Name = cbtdemo > 'Save' button
+    - entry - cbtdemo > 'Edit' button > tabs - Add SHA-256, Upload File, Upload Set of SHA-256s
+    - Upload File > File = nuclearvirus.xlsx, Note = CBT Knox stop nuke 
+    - entry - cbtdemo: 1 file, Not associated with any policy or group
+    - action: Bob created the file and report hash that time, then we detect malicious now and report to AMP. AMP checks db and find Bob report it. AMP infos Bob to quarantine the file.
+  - [dCloud Demo](https://dcloud2-sjc.cisco.com/content/instantdemo/amp-demonow-instant)
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('page')"
+      src    = "img/42-ampdash.png"
+      alt    = "Snapshot of AMP Dashboard"
+      title  = "Snapshot of AMP Dashboard"
+    />
+  </figure>
 
 
 
