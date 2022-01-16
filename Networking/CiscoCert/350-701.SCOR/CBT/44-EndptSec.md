@@ -1,11 +1,16 @@
 # 44. Endpoint Security
 
-Trainer: Knox Hutchinson
+Trainer: Keith Barker
 
 
 # Introduction to Endpoint Security
 
-
+- Learning goals
+  - endpoint protection
+  - mobile device management
+  - MFA
+  - posture assessment
+  - patch management
 
 
 # Why Endpoint Protection is Critical
