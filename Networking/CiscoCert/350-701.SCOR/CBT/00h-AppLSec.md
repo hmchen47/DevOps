@@ -57,7 +57,9 @@
       Line      User  Host(s)   Idle        Location 
      0 con 0          idle      00:00:34
   *  2 vty 1          idle      00:00:00  192.168.1.151
+  ```
 
+  ```text
   ! config ACL
   SW# conf t
   SW(config)# ip access-list extended ACL-ForPBR
