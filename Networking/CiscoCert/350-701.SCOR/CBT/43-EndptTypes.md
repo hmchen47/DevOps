@@ -62,9 +62,11 @@ Trainer: Knox Hutchinson
 
 ## Dynamic File Analysis
 
-
-
-
+- Dynamic file analysis overview
+  - able to scan files w/o being detected
+  - polymorphic file: changing nature of file to pass EPP. e.g., file extention
+  - EDR able to detect the changes and send to AMP on cloud
+  - EPP then downloading the changes to detect the incoming files
 
 ## Summarizing Endpoint Protection Mechanisms
 
