@@ -26,6 +26,14 @@ Trainer: Knox Hutchinson
     - generic term for bad software not to enter computers
     - including anti-virus (self-duplicated)
 
+- [Point-in-time](https://imaginenext.ingrammicro.com/security/comparison-point-in-time-vs-retrospective-security)
+  - security measures serve as gatekeepers to a network
+  - a piece of code passes certain tests $\timplies$ granted access
+  - technologies
+    - signatures
+    - sandboxing
+    - fuzzy fingerprinting
+    - machine learning
 
 ## Indicators of Compromise (IoC)
 
@@ -43,8 +51,13 @@ Trainer: Knox Hutchinson
 
 ## Retrospective Analysis
 
-
-
+- Retrospective security overview
+  - part of EDR
+  - a protection system that covers the entire attack continuum
+  - before an attack happens and includes continuous analysis and advanced analytics during and after the event
+  - able to view any point in the past
+  - tools: retrospection, attack chain correlation, behavioral indications of compromise (IOCs), trajectory and breach hunting
+  - able to monitoring the environmental changes
 
 
 ## Dynamic File Analysis
