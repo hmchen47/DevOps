@@ -234,5 +234,13 @@ Trainer: Keith Barker
 
 ## Umbrella Summary
 
+- Summary
+  - Umbrella & DNS
+  - Umbrella policy
+  - policy components
+  - identities
+  - virtual appliance
+
+
 
 
