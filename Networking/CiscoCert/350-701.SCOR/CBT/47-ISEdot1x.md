@@ -40,10 +40,23 @@ Trainer: Keith Barker
     - 2 new entries - Name = ogit.vom/ISE-Admin, SID = S1-5-21-6813...4-1107; Name = ogit.com/ISE-Operations, SID = S1-5-21-6813...4-1108
     - Select Directory Groups: Domain = ogit.com, Name Filter = domain* > 'Retrieve Groups' > Name = ogit.com/Users/Domain Admins, ogit.com/Users/Domain Users = On > 'Ok' button
     - 2 new entries - Name = ogit.vom/Users/Domain Admins, SID = S1-5-21-6813...4-512; Name = ogit.com/Users/Domain Users, SID = S1-5-21-6813...4-513
+    - 'Save' button
 
 
 ## Adding Network Devices to ISE
 
+- Demo: add network device on ISE
+  - Work Centers tab > Network Access > Network Resources: folders - Network Devices, Device Groups, Default Device, External RADIUS Servers, RADIUS Server Sequences, External MDM Servers
+  - Network Devices: fields - Name, IP/Mask, Profile Name, Location, Type > 'Add' icon
+  - Network Devices: Name = switch1, IP Address = 192.168.1.133; RADIUS Authentication Settings = On -> RADIUS UDP Settings: Protocol = RADIUS, Shared Secret = `****` (same as switch1) > 'Submit' button
+    - new entry - Name = switch1, IP/Mask = 192.168.1.133. Profile Name = Cisco, Local = All Locations, Type = All Device Types
+  - Device Groups > Network Device Group: fields - Name, No. of Network Devices > 3 entries > 'Add' icon
+    - Add Group: Name = site 1, Parent Group = All Locations > 'Save' button
+    - same prodcure to create switch and router w/ 'All Device TTypes' and 'site 2' w/ 'All Locations'
+    - Name = All Device Types: 2 subentries - Name = switch, router
+    - Name = All Locations: 2 subentries - Name = site1, site 2 
+  - Network Devices: entry - Name = switch1 > Network Devices > network Device Group: Location = site 1, Device Type = switch
+    - new entry - Name = switch1, IP/Mask = 192.168.1.133. Profile Name = Cisco, Local = site 1, Type = switch
 
 
 
