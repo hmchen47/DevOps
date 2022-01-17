@@ -110,6 +110,20 @@ Trainer: Knox Hutchinson
 
 ## Change of Authorization (CoA)
 
+- Change of authorization
+  - detecting vulnerabilities occurred $\to$ change status of the network access and actions allowed
+  - using profiling and authentication to stop spreading of malware
+  - leveraging a feature of Radius protocol to change authorization
+    - AMP for endpoint working w/ ISE to gain user authentication
+    - able to access servers
+    - AMP detected attacks and advised ISE
+    - ISE using UDP:3799 CoA request to authenticator
+    - authenticator becomes a dynamic authorization server according to CoA request
+      - quarantine VLAN
+      - shutdown port to disconnect
+    - authorization returns CoA-Ack once change implemented, otherwise, CoA-NAK
+  - similar procedure applied to remote access w/ VPN on firewall
+    - once posture complied, supplicant info ISE to send CoA to authorize
 
 
 
