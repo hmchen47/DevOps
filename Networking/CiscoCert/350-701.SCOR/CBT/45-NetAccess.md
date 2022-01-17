@@ -43,7 +43,15 @@ Trainer: Knox Hutchinson
 
 ## Identity-Based Authentication
 
-
+- Identity-based authentication overview
+  - username and password: a almost must part of the authentication
+  - using 802.1x to force users typing in their username and password
+    - supplicant: endpoint devices
+    - authenticator: switch or WLC
+    - authentication server: ISE, ACS, NAP, integrateing w/ AD
+  - Remote access w/ VPN
+  - BYOD: enterprise, guest
+  - profiling
 
 
 ## Authenticating with AnyConnect
