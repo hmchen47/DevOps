@@ -535,7 +535,6 @@ Institution: CBY Nugget
 - Posture Assessment
 - Cisco TrustSec and Security Group Tags (SGTs)
 - Change of Authorization (CoA)
-- Summarizing Network Access Controls for Endpoints
 
 
 ### 46\. [802.1X Fundamentals](46-8021xFund.md)
