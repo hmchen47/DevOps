@@ -5,7 +5,13 @@ Trainer: Knox Hutchinson
 
 ## Introducing Network Access Control for Endpoints
 
-
+- Learning goals
+  - profiling
+  - authentication
+  - authentication w/ AnyConnect
+  - posture assessment
+  - TrustSec and SGTs
+  - change of authorization
 
 
 ## Endpoint Profiling
