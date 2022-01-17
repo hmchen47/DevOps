@@ -127,7 +127,3 @@ Trainer: Knox Hutchinson
 
 
 
-## Summarizing Network Access Controls for Endpoints
-
-
-
