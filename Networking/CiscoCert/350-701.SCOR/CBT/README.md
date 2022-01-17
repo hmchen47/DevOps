@@ -544,7 +544,7 @@ Institution: CBY Nugget
 - Options for Authentication
 - Options after Authentication
 
-### 47\. [Configure ISE for 802.1X](47-ISE8021x.md)
+### 47\. [Configure ISE for 802.1X](47-ISEdot1x.md)
 
 - Introduction to Configuring ISE
 - Identity Stores
