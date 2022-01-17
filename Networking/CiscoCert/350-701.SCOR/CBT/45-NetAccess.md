@@ -73,12 +73,39 @@ Trainer: Knox Hutchinson
 
 ## Posture Assessment
 
-
+- Demo: posture assessment w/ AnyConnect
+  - download profile from server to check the compliance of posture
+  - AnyConnect capable of checking
+    - OS
+    - AMP installed & installation
+    - firewall
+    - encryption
+  - Web Security: leveraging Umbrella to identify category of web site accessed
+  - System Scan: enforcing system scanning about config of firewall, AV, encryption
+  - Roaming Security: content security w/ Umbrella
+  - AMP enabler: installing AMP
 
 
 ## Cisco TrustSec and Security Group Tags (SGTs)
 
-
+- Cisco TrustSec and Security Group Tags
+  - DNA center
+  - identify person than IP address and VLANs
+  - control access resources from one to another based on identity
+  - major component of SD-Access
+  - TrustSec architecture
+    - building a secure networks by establishing domains of trusted network devices
+    - device authenticated by its peer
+    - components
+      - authenticated networking infrastructure
+      - secure group-based access control
+      - secure communication
+  - Security Group Tag (SGT)
+    - the security group number of the device in L2 frame
+    - specify the privileges of a traffic source within a trusted network
+    - secure group access automatically generated
+    - classify users into groups, e.g., IT, HR, Engineering, Consultant, etc.
+    - classify devices into groups, e.g. IT servers, HR servers, Printers, IoT devices, windows servers, etc.
 
 
 ## Change of Authorization (CoA)
