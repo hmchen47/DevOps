@@ -67,6 +67,7 @@ Trainer: Knox Hutchinson
   - EDR able to detect the changes and send to AMP on cloud
   - EPP then downloading the changes to detect the incoming files
 
+
 ## Summarizing Endpoint Protection Mechanisms
 
 - Summary
