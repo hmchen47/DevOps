@@ -30,7 +30,7 @@ Trainer: Knox Hutchinson
 - Demo: ISE sandbox
   - [DevNet Sandbox](https://developer.cisco.com/sandbox.html)
   - reservation required
-  - Identity Service Engine Lab
+  - Identity Service Engine w/ MUD Lab
   - access ISE w/ browser
   - Work Centers tab > Profiler > Overview: procedures - 1) Prepare; 2) Define; 3) Go Live & Monitor
   - Work Centers tab > Profiler > Network Devices > entry - Name = Centos, Profile Name = Cisco ->
@@ -48,7 +48,7 @@ Trainer: Knox Hutchinson
   - using 802.1x to force users typing in their username and password
     - supplicant: endpoint devices
     - authenticator: switch or WLC
-    - authentication server: ISE, ACS, NAP, integrateing w/ AD
+    - authentication server: identity data store - ISE, ACS, NAP, integrateing w/ AD
   - Remote access w/ VPN
   - BYOD: enterprise, guest
   - profiling
@@ -56,7 +56,19 @@ Trainer: Knox Hutchinson
 
 ## Authenticating with AnyConnect
 
-
+- AnyConnect authentication
+  - a powerful agent w/ many modules
+  - firewall
+    - Firepower Threat Defence (FTD) w/ Firepower Management Center (FMC) - optional or ASA
+    - pool of IP addresses
+  - AnyConnect features
+    - VPN: prompt to enter username and password
+    - Network
+    - Web Security
+    - System Scan
+    - Roaming Security
+    - AMP Enabler
+  - gear icon on bottom - settings and statistics of AnyConnect Secure Mobility Client
 
 
 ## Posture Assessment
