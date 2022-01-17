@@ -101,5 +101,17 @@ Trainer: Keith Barker
 
 ## Patching Endpoints
 
+- Patch management for endpoints
+  - [Talos - Vulnerability Information](https://talosintelligence.com/vulnerability_info)
+    - zero-day vulnerabilities
+    - disclosed vulnerabilities
+  - [Talos > Vulnerability Information > Microsoft Advisories](https://talosintelligence.com/ms_advisory_archive/ms-2022)
+    - list of vulnerabilities
+    - redirect to MSRC to review the impact and details
+  - procedure for change management
+    - test the update first to find negative impacts
+    - communicate w/ end users to implement the update
+
+
 
 
