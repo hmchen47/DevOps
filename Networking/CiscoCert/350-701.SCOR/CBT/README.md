@@ -538,10 +538,6 @@ Institution: CBY Nugget
 - Summarizing Network Access Controls for Endpoints
 
 
-
-
-## Endpoint Security with 802.1X
-
 ### 46\. [802.1X Fundamentals](46-8021xFund.md)
 
 - Introduction to 802.1x Fundamentals
