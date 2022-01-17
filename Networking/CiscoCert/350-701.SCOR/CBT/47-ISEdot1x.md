@@ -6,7 +6,12 @@ Trainer: Keith Barker
 
 ## Introduction to Configuring ISE
 
-
+- Learning goals
+  - identity stores
+  - integrateing w/ AD
+  - network devices
+  - policy sets
+  - authz policies
 
 
 ## Identity Stores
