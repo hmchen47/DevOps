@@ -62,7 +62,61 @@ Trainer: Keith Barker
 
 ## Policy Set Overview
 
+- Policy set overview
+  - topology
+    - switch as authenticator
+    - client as supplicant
+    - ISE as authentication server
+  - switch request sent to ISe regarding to client's connection
+  - two policies involved once request received on authn server
+    - authentication: the resources able to access
+    - authorization: fully or partially access resources
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/47-dot1xnet.png"
+      alt    = "Example network for 802.1X authentication"
+      title  = "Example network for 802.1X authentication"
+    />
+  </figure>
+
+
+- Demo: config policies on ISE
+  - Policy tab: subtabs - Policy Sets, Posture, Policy Elements (Dictionaries, Conditions, Results), Profiling, Client Provisioning
+  - Policy Sets: fields - Status, Policy Set Name, Conditions, Allowed Protocols / Server Sequence, Hits, Actions, View
+    - alternatives: Work Centers tab > TrustSec > Policy Sets, Work Centers tab > Network Access > Policy Sets, Work Centers tab > Guest Access > Policy Sets, Work Centers tab > BYOD > Policy Sets, or Work Centers tab > Posture > Policy Sets
+    - entry - Name = Default policy set, Conditions = (empty), Allowed Protocols / Server Sequence = Default Network Access *, Hits = 15, Actions = gear icon, View = right arrow (`>`) icon
+      - Conditions = (empty): wide open, not specific to any groups
+      - Allowed Protocols / Server Sequence = Default Network Access *: all EAP methods enabled
+      - `>` icon: viewing details
+        - fields - Status, Rule Name, Conditins, Use, Hits, Actions (gear icon)
+        - entries - Authentication Policy (3), Authorization Policy - Local Exceptions, Authorization Policy - Global Expectations, Authorization Policy (12)
+      - Authentication Policy (3): Rule Name = Dot1X, MAB , Default (top-down order)
+        - Dot1X: Conditions = Wired_802.1X OR Wireless_802.1X, Use = ALL_User_ID_Store
+        - MAB: Conditions = Wired_MAB OR Wireless_MAB, Use = ALL_User_ID_Store
+        - Default: Conditions = (empty), Use = ALL_User_ID_Store
+      - Authorization Policy (12): Wireless Black List Default, Profiled Cisco IP Phones, Profile Non Cisco Phones, Unknown_Compliance_Redirect, ..., Base_Authenticated_Access, Default (top-down order)
+        - not configured items just using 'Base_Authenticated_Access'
+  - two main components in policy sets
+    - authentication policy
+    - authorization ploicy
+
+
+- Demo: verify policy sets on ISE
+  - client on windows
+    - Network adapter > disable and enable again > Status = Authentication Failed > Properties
+    - Ethernet 2 Properties > Authentication tab: Network authentication method = PEAP
+      - 'Settings' button > Protected EAP Properties: Verify the server's security by validating the certificate = On, Trusted Root Certification Authorities = ISE-02.ogit.com; Select Authentication Method = EAP-MSCHAPv2 > 'OK' button
+      - 'Advanced Settings' button > Specify authentication mode = User Authentication > 'Save credentials' button > Windows Security: username = bob & passoword = `****` > 'Ok' button
+    - Network adapter > Status = Unidentified network
+  - verify on ISE
+    - Operations tab > RADIUS > Live Logs > entry - Identity = bob > 'detail' icon
+      - Overview: Authentication Policy = Default >> Dot1X, Authorization Policy = Default > Basic_Authenticated_Access
+    - Policy tab > Policy Sets > entry - Policy Set Name = Defult > '>' icon on view
+      - Authentication Policy: entry - Rule Name = Dot1X
+      - Authorization Policy: entry - Rule Name = Basic_Authenticated_Access
+    - log each single events: Work Centers tab > Network Access > Settings > Protocol folder > RADIUS > Suppression & Report tab: Suppress Repeated Failed Clients = Supress repeated successful authentications = Off
 
 
 ## Creating a Policy Set
