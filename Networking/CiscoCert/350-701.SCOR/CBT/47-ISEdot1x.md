@@ -199,7 +199,7 @@ Trainer: Keith Barker
     20   VLAN0020       active
     30   VLAN0030       active
     80   VLAN0040       active    Fa0/1
-    999  VLAN0999       active    Fa0/2. ...
+    999  VLAN0999       active    Fa0/2, ..., Fa0/8
     <...truncated...>
 
     SW# show run int f0/1
