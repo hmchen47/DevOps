@@ -163,7 +163,100 @@ Trainer: Keith Barker
 
 ## Authorization Policies
 
+- Demo: config authorization policies
+  - Work Centers > Network Access > Policy Elements: folders - Conditions, Results
+  - Results: subfolders - Allowed Protocols, Authorization Profiles, Downloadable ACL
+  - create new DACL: Downloadable ACL > 'Add' icon 
+    - Downloadable ACL: Name = NoICMP-Telnet; IP version = IPv4; DACL Content = 'deny icmp any any; deny tcp any any eq 23'
+    - validate w/ 'Check DACL Syntax' button -> DACL is valid
+    - 'Submit' button
+  - Authorization Profiles > Standard Authorization Profiles > 'Add' icon
+    - Authorization Profile: Name = ise-admins, Access Type = ACCESS_ACCEPT; Common Tasks: VLAN = On, Edit Tag ID/Name = 30 > 'Submit' button
+    - Authorization Profile: Name = ISE-Operations, Access Type = ACCESS_ACCEPT; Common Tasks: DACL = NiICMP-Telnet, VLAN = On, Edit Tag ID/Name = 80 > 'Submit' button
+    - Standard Authorization Profiles: 2 new entry - Name = ise-admins, Profile = Cisco; Name = ISE-Operations, Profile = Cisco
+  - Policy tab > Policy Sets > entry - Policy Set Name = Our-Site1-Switch-Policy-Set > '>' icon under Vew
+    - Authorization Policy > entry - Rule Name = if-You-Authenticated-good-enough > 'gear' icon under Actions > 'Delete' label
+    - '+' icon > new entry - Rule Name = admins > '+' button under Conditions
+    - Consitions Studio: Select attribute for condition > Dictionaries = Our-DC, Attribute = ExternalGroups > Our-DC ExternalGroups = ogit.com/ISE-Admins > 'Use' icon
+    - new entry - Rule Name =  Admins, Conditions = Our-DC ExternalGroups Equals ogit.com/ISE-Admins, Results - Profiles = ise-admins
+    - new entry - Rule Name = ISE-OPS, Conditions = Our-DC ExternalGroups Equals ogit.com/ISE-Operations, Results - Profiles = ISE-Operations
+    - 'Save' button
 
+
+- Demo: verify authorization policies
+  - verify w/ bob on PC
+    - Client > Network Adapter > Properties > Authentication tab > 'Advanced Settings' button > Replace Credentials: usernam e= bob, password = `****` > 'OK' button
+    - Network adapter > Status = Unidentified network
+    - ping from PC w/ 10.30.0.1 -> -> failed
+  - verify switch
+
+    ```text
+    SW# show vlan brief
+    VLAN Name           Status    Ports
+    ---- -------------- --------- -----------------------------
+    1    default        active    
+    10   VLAN0010       active    
+    20   VLAN0020       active
+    30   VLAN0030       active
+    80   VLAN0040       active    Fa0/1
+    999  VLAN0999       active    Fa0/2. ...
+    <...truncated...>
+
+    SW# show run int f0/1
+    interface FastEthernet0/1
+      switchport access vlan 999
+      <...truncated...>
+
+    SW# show access-lists
+    Extended IP access list Auth-Default-ACL-OPEN
+        10 permit ip any any (80 matches)
+    Extended IP access list xACSACLx-IP-NOICMP-TELNET-5f152814 (per-user)
+        10 deny icmp any any
+        20 deny tcp any any eq telnet
+
+    SW# show authentication sessions interface f0/1
+                Interface:  FastEthernet0/1
+              MAC Address:  5882.a899.5c81
+               IP Address:  10.80.0.12
+                User-Name:  bob
+                   Status:  Authz Success
+                   Domain:  DATA
+          Security Policy:  Should Secure
+          Security Status:  Unsecure
+           Oper host mode:  multi-domain
+         Oper control dir:  both
+            Authorized By:  Authentication Server
+              Vlan Policy:  80
+                  ACS ACL:  xACSACLx-IP-NOICMP-TELNET-5f152814
+          Session timeout:  N/A
+             Idle timeout:  N/A
+        Common Session ID:  C0A8...A84B
+          Acct Session ID:  0x0000008E
+                   Handle:  0x2F000064
+        
+    Runnable method list:
+            Method    State
+            dot1x     Authc Success
+            mab       Not run
+    ```
+
+  - verify w/ Luis on PC
+    - Client > Network Adapter > Properties > Authentication tab > 'Advanced Settings' button > Replace Credentials: usernam e= luis, password = `****` > 'OK' button
+    - Network adapter > Status = Unidentified network
+    - ping from PC w/ 10.30.0.1 -> succeed
+  - verify switch
+
+    ```text
+    %LINEPROTO-5-UPDOWN: Line protocol on interface Vlan 80 change status to down
+    %LINEPROTO-5-UPDOWN: Line protocol on interface Vlan 30 change status to up
+    %AUTHMGR-5-SUCCESS: Authorization succeeded for client (5882.a899.5c81) on 
+      Interface Fa0/1 AuditSessionID C0A8...A84B
+
+    SW# show int status
+    Port      Name      Status        VLan    Duplex  Speed  Type
+    FA0/1               connected     30      a-full  a-100  10/100BaseT
+    <...truncated...>
+    ```
 
 
 ## Summary
