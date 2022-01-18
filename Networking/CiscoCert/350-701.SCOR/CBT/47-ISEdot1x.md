@@ -259,7 +259,5 @@ Trainer: Keith Barker
     ```
 
 
-## Summary
-
 
 

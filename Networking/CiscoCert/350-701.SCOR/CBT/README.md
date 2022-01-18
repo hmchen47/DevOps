@@ -553,7 +553,6 @@ Institution: CBY Nugget
 - Policy Set Overview
 - Creating a Policy Set
 - Authorization Policies
-- Summary
 
 ### 48\. [Configure a Switch for 802.1X](48-Sw8021x.md)
 
