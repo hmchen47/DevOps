@@ -28,7 +28,7 @@ Trainer: Knox Hutchinson
 
 - [Point-in-time](https://imaginenext.ingrammicro.com/security/comparison-point-in-time-vs-retrospective-security)
   - security measures serve as gatekeepers to a network
-  - a piece of code passes certain tests $\timplies$ granted access
+  - a piece of code passes certain tests $\implies$ granted access
   - technologies
     - signatures
     - sandboxing
