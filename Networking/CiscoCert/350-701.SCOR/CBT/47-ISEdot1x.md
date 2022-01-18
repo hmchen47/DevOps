@@ -121,6 +121,43 @@ Trainer: Keith Barker
 
 ## Creating a Policy Set
 
+- Plan for authentication policy
+  - site 1
+  - switch
+  - use AD
+
+
+- Demo: config a new policy set on ISE
+  - verify network devices
+    - WorkCenters > Network Resources > Network Devices > entry - Name = switch1 > 'switch1' link
+      - Network Devices: Name = switch1, Location = site 1, Device Type = switch
+    - WorkCenters > Network Access > Active Directory - Our-DC
+      - Groups tab: 4 entries - ogit.com/ISE-Admins, ogit.com/ISE-Operations, ogit.com/Users/Domain Admins, ogit.com/Users/Domain Users
+  - create a policy
+    - Policy tab > Policy Sets > '+' icon
+      - new entry - Rule Name = Our-Site1-Switch-Policy-Set > '+' icon under Conditions
+      - Conditions Studio:
+        - Select attribute for condition: Dictionary = DEVICE Location = All Locations#site 1 > 'New' button
+        - Select attribute for condition: Dictionary = DEVICE Device Type = ALL Device Types#switch > 'AND' label for both > 'Use' button
+      - new entry - Name = Our-Site1-Switch-Policy-Set, Conditions = DEVICE Location = ... AND DEVICE Device Type = ... > 'Save' button
+      - '>' under view to review the details
+    - Authentication Policy > '+' icon
+      - new entry - Rule Name = Our-authn-dot1x > '+' icon under Conditions
+      - Conditions Studio: drag Wired_801.1X from template > 'Use' button
+      - new entry - Use = Our-DC
+    - Authorization Policy  > '+' icon
+      - new -entry - New Rule = If-You-Authenticated-good-enough > '+' icon under Conditions
+      - Conditions Studio: drag Network_Access_Authentication_Passed > 'Use' button
+      - new entry - Profiles = PermitAccess > 'Save' button
+
+
+- Demo: verify new policy set
+  - Wired Network Adapter > Disable * Enable again > Enabled
+  - ISE log: Operations tab > RADIUS > Live Logs > top entry - Identity = bob, Status = 'Session' icon > 'detail' icon
+    - Overview: Authentication Policy = Default>>Dot1X, Authorization Policy = Default>>Basic_Authenticated_Access, Authorization Result = permitAccess -> not using created policy set
+  - verify the created policy set and retry
+  - ISE log: Operations tab > RADIUS > Live Logs > top entry - Identity = bob, Status = 'Session' icon > 'detail' icon
+    - Overview: Authentication Policy = Our-Site1-Switch-Policy-Set>>Our-authen-dot1x, Authorization Policy = Our-Site1-Switch-Policy-Set>>if-You-Authenticated-good-enough, Authorization Result = permitAccess -> as expected, last time action too quick and the log not refreshed
 
 
 
