@@ -234,6 +234,10 @@ Trainer: Keith Barker
 
 ## Switch Configuration Summary
 
+- Summary
+  - config AAA
+  - config port
+
 
 
 
