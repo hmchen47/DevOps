@@ -554,7 +554,7 @@ Institution: CBY Nugget
 - Creating a Policy Set
 - Authorization Policies
 
-### 48\. [Configure a Switch for 802.1X](48-Sw8021x.md)
+### 48\. [Configure a Switch for 802.1X](48-SwDot1x.md)
 
 - Introduction to Switch Configuration for 802.1X
 - Configure Global AAA Parameters
