@@ -321,7 +321,7 @@
       >
     </a>
     <a href="https://en.wikipedia.org/wiki/IEEE_802.1X" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
+      <img style="margin: 0.1em;" height=200
         src   = "https://upload.wikimedia.org/wikipedia/commons/1/1f/802.1X_wired_protocols.png"
         alt   = "EAP data is first encapsulated in EAPOL frames between the Supplicant and Authenticator, then re-encapsulated between the Authenticator and the Authentication server using RADIUS or Diameter."
         title = "EAP data is first encapsulated in EAPOL frames between the Supplicant and Authenticator, then re-encapsulated between the Authenticator and the Authentication server using RADIUS or Diameter."
@@ -474,7 +474,7 @@
     - authorization: fully or partially access resources
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/47-dot1xnet.png"
       alt    = "Example network for 802.1X authentication"
@@ -713,7 +713,9 @@
   SW(config)# aaa group server radius Demo-Group
   SW(config-sg-radius)# server name Demo-ISE
   SW(config-sg-radius)# exit
+  ```
 
+  ```text
   ! retrial limit
   SW(config)# radius-server dead-criteria time 3 tries 3
   SW(config)# radius-server deadtime 15
@@ -774,7 +776,9 @@
     SW(config-if-range)# authentication host-mode multi-domain
     SW(config-if-range)# authentication violation restrict
     SW(config-if-range)# authentication open
+    ```
 
+    ```text
     ! MAB config
     SW(config-if-range)# mab
     SW(config-if-range)# dot1x pae authenticator
@@ -841,7 +845,7 @@
     %AUTHMGR-5-VLANASSIGN: VLAN 80 to Interface Fa0/1 ...
     %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan80,change state to up
     %AUTHMGR-5-SUCCESS: Authorizarion succeeded for client ...
-
+    
     SW# authentication session interface f0/1
                 Interface:  FastEthernet0/1
               MAC Address:  5882.a899.5c81
