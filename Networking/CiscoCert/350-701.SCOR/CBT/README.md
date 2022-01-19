@@ -582,7 +582,7 @@ Institution: CBY Nugget
 - Network Telemetry
 - Endpoint Telemetry
 
-### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer,md)
+### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer.md)
 
 - Introducing Cisco Security Platforms
 - Stealthwatch
