@@ -575,7 +575,7 @@ Institution: CBY Nugget
 - Text-Based Protocols
 - Recapping Exfiltration Techniques
 
-### 50\. [Explaining the Benefits of Streaming Telemetry](50-Streaming.md)
+### 50\. [Explaining the Benefits of Streaming Telemetry](50-Telemetry.md)
 
 - Introducing Streaming Telemetry
 - What is Telemetry?
