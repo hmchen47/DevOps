@@ -20,7 +20,7 @@ Institution: CBY Nugget
 - [Security for Cloud Service](00g-CloudSec.md)
 - [Application Layer Security](00h-AppLSec.md)
 - [Endpoint Security](00i-EndptSec.md)
-- [Miscellaneous](00j-Misc.md)
+- [Security Miscellaneous](00j-SecMisc.md)
 
 
 
@@ -564,7 +564,7 @@ Institution: CBY Nugget
 
 
 
-## Miscellaneous
+## Security Miscellaneous
 
 ### 49\. [Explain Exfiltration Techniques](49-Exfiltration.md)
 
