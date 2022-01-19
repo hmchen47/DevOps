@@ -151,6 +151,120 @@ Trainer: Knox Hutchinson
 
 ## pXGrid
 
+- pXGrid overview
+  - an API-based solution to allow identity service engine or other threat response platforms to understand the status of the whole network environment
+  - used in DNA Center to integrated w/ ISE
+  - DevNet Sandbox Lab - [PxGrid 2.0 on ISE 3.0](https://bit.ly/3nAPiSj)
+    - Overview
+
+      <span style="font-weight=bold; text-decoration: underline">Cisco Platform Exchange Grid 2.0</span>
+
+      The Cisco Platform Exchange Grid (pxGrid) allows you to integrate your application into the pxGrid, a multivendor, cross-platform network system that pulls together different parts of an IT infrastructure such as security monitoring and detection systems, network policy platforms, asset and configuration management, identity and access management platforms, to name a few.
+
+      Cisco Platform Exchange Grid (pxGrid) 2.0 no longer uses the C or Java SDK as in pxGrid 1.0. Instead pxGrid 2.0 uses WebSocket and REST API over the STOMP messaging protocol for querying and subscribing to topics.
+
+      This Sandbox focuses on seeing what context is available on ISE via pxGrid subscribing to the Session Directory and RADIUS failure topics.
+
+      <span style="font-weight=bold; text-decoration: underline">UPDATE!!!!</span>
+
+      This sandbox has been upgraded to include ISE 3.0 and a new CentOS 7 server hosting the "Pez" Radius simulator. More informtion on this software can be found in the "Simulator" tab.
+
+      This sandbox contains the following:
+      - Identity Services Engine 3.0 (10.10.20.70)
+      - Radius Simulator (10.10.20.32)
+      - Cent OS 7 DevBox (10.10.20.50)
+      - Windows 2012 DNS Server (10.10.20.100)
+
+      <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+        <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+          onclick= "window.open('https://bit.ly/3nAPiSj')"
+          src    = "img/51-pxgrid.png"
+          alt    = "DevNet Sandbox Lab - PxGrid 2.0 on ISE 3.0 Network Topology"
+          title  = "DevNet Sandbox Lab - PxGrid 2.0 on ISE 3.0 Network Topology"
+        />
+      </figure>
+
+      <span style="font-weight=bold; text-decoration: underline">Server Access Credentails</span>
+
+      - Identity Services Engine 3.0 (admin/C1sco12345!)
+      - Radius Simulator (developer/C1sco12345)
+      - Cent OS DevBox (developer/C1sco12345)
+      - Windows 2012 (ABC\developer - sandbox12345!)
+
+      The attributes tab of each resource also shows credential information. Resources can also be opened using the Gwac interface. Connect to the VPN, hover over the resource and select the connection type.
+
+      <span style="font-weight=bold; text-decoration: underline">More information:</span>
+      - [pxGrid 2.0 on DevNet](https://developer.cisco.com/site/pxgrid/)
+      - [pxGrid 2.0 Overview](https://developer.cisco.com/docs/pxgrid/#!learning-pxgrid/welcome-to-learning-cisco-platform-exchange-grid-pxgrid)
+
+      <span style="font-weight=bold; text-decoration: underline">Additional Information:</span>
+      - [Sandbox Support](https://communities.cisco.com/community/developer/sandbox)
+
+    - Documentation
+
+      <span style="font-weight=bold; text-decoration: underline">Using this Sandbox</span>
+
+      This document is for users accessing the Cisco Platform Exchange Grid (pxGrid) 2.0 sandbox environment. Eclipse is used in this document as the development platform and uses the pxGrid 2.0 java coding examples from [here](https://developer.cisco.com/site/pxgrid/).
+
+      This sandbox focuses on seeing what context is available on ISE via pxGrid subscribing to the Session Directory and RADIUS failure topics. Topics such as Adaptive Network Control (ANC) mitigation actions, and pxGrid Context-In, dynamic topics, and subscription to other TrustSec topics is not available in this release. To learn more about these topics please visit [here](https://developer.cisco.com/site/pxgrid/) to learn more information on these topics. These topics will be added in a later release.
+
+      Security solutions that are going down the pxgrid certification path, they still would need to download the ISE 3.0 code and use RADIUS Simulator if there is no Cisco Catalyst Switch that supporting IEEE-802.1X and Change of Authorization (CoA) for ANC mitigation actions. First, you must register and login to Cisco Devnet
+
+      To start using this sandbox and exploring pxGrid, see the [Sandbox User Guide](https://devnetsandbox.cisco.com/sandbox-instructions/PxGrid_Revn/pxgrid_sandbox20_updated2.pdf)
+
+    - Simulator
+
+      Radius Simulator Overview
+
+      The pxGrid Sandbox has been updated to include a radius simulator running on a dedicated Cent OS7 server. This python software uses various configuration files to generate radius authentication against the internal ISE server
+
+      In the following examples, sandbox has provided four configuration files for PAP and PEAP authentication. Please follow the instructions below to access the simulator and run the code.
+
+      - SSH to the Radius Simulator VM. Access details on the Overview tab)
+      - Goto `/home/developer/Downloads/Pez`
+      - Set the below environmental variables at the command prompt
+
+        ```bash
+        export PYTHONPATH=./lib:$PYTHONPATH
+        export LD_LIBRARY_PATH=./lib:$LD_LIBRARY_PATH
+        export LD_PRELOAD=./lib/libssl.so.10:./lib/libcrypto.so.10
+        ```
+
+      - The below commands run various authentication methods
+
+        ```bash
+        python pez.py -c ./cfg/final_cfg/pap-pavan.cfg --host 10.10.20.70
+        (simulating PAP ascii 4 RADIUS sessions)
+        python pez.py -c ./cfg/final_cfg/pap-pavan-vpn.cfg --host 10.10.20.70
+        (for simulating PAP ascii 4 RADIUS vpn sessions)
+        python pez.py -c ./cfg/final_cfg/pap-pavan-vpn.cfg --host 10.10.20.70
+        (for simulating peap(MS-CHAPv2) 4 radius sessions)
+        python pez.py-c ./cfg/final_cfg/peap_ms_chap_pavan_vpn.cfg --host 10.10.20.70
+        (for simulating peap(MS_CHAPv2) 4 vpn radius Session)
+        ```
+
+      - Login to the ISE server (details on the Overview Tab)
+      - Goto Operations - Live Sessions. The authentications will be listed here
+
+    - DevBox
+
+      <span style="font-weight=bold; text-decoration: underline">DevBox Overview:</span>
+
+      The sandbox also comes with an Cent OS 7 server, named devbox, that comes with a ready-to-use Node.js development environment, including: the Node.js v6+ runtime and npm package, a git client, and the ngrok tunnelling client. This can be handy to use if you are willing to experiment with the jsxapi and do not have a Node.js environment on your laptop.
+
+      <span style="font-weight=bold; text-decoration: underline">DevBox Credentials</span>
+
+      - IP Address: 10.10.20.50
+      - Username: developer
+      - Password: C1sco12345
+
+  - Demo: pxGrid on Lab
+    - login ISE
+      - Administration > pxGrid Service: entries listing devices allowed to access ISE programmatically - automation capability
+      - entry w/ Status = Online (XMPP):
+        - older way to connect to ISE
+        - Extensible Messageing and Presence Protocol (XMPP) used to exchange info btw ISE and network devices, e.g., Stealthwatch, NMS, asset mgmt, etc.
+      - currently using REST API instead
 
 
 
