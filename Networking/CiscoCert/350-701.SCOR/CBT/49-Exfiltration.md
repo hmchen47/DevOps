@@ -5,7 +5,11 @@ Trainer: Knox Hutchinson
 
 ## Introducing Attacker Exfiltration Techniques
 
-
+- Learning goals
+  - DNS tunneling exfiltration
+  - HTTP exfiltration
+  - file transfer
+  - text-based protocols
 
 
 ## DNS Tunneling Exfiltration
