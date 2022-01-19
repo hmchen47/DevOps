@@ -81,5 +81,12 @@ Trainer: Knox Hutchinson
 
 ## Recapping Exfiltration Techniques
 
+- Symmary
+  - malware sending sensitive data to attackers
+  - types of exfiltration
+    - DNS tunneling
+    - HTTP(S) POST
+    - file transfer via FTP or emails
+    - plain-text protocols
 
 
