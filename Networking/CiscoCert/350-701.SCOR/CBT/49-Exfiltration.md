@@ -71,7 +71,12 @@ Trainer: Knox Hutchinson
 
 ## Text-Based Protocols
 
-
+- Text-based protocol overview
+  - examples: ICMP, NTP, etc.
+  - embedded sensitivity data in payload of protocol exchange
+  - example script:
+    - [ICMPExfil](https://github.com/martinoj2009/ICMPExfil)
+    - sending w/ ICMP one character a time
 
 
 ## Recapping Exfiltration Techniques
