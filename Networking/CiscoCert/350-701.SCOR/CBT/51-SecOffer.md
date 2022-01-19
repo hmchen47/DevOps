@@ -5,8 +5,12 @@ Trainer: Knox Hutchinson
 
 ## Introducing Cisco Security Platforms
 
-
-
+- Learning goals
+  - StealthWatch
+  - pxGrid
+  - Umbrella
+  - threat analytics
+  - AnyConnect
 
 ## Stealthwatch
 
