@@ -176,7 +176,7 @@ Trainer: Knox Hutchinson
       - Windows 2012 DNS Server (10.10.20.100)
 
       <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-        <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+        <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
           onclick= "window.open('https://bit.ly/3nAPiSj')"
           src    = "img/51-pxgrid.png"
           alt    = "DevNet Sandbox Lab - PxGrid 2.0 on ISE 3.0 Network Topology"
@@ -305,9 +305,11 @@ Trainer: Knox Hutchinson
     - Splunk: a Cisco partner
     - CESA solution created in collaboration w/ Cisco
   - topology
+    - AnyConnect NVM accessing internetwork via firewall
+    - a copy of packets sent to Collector and/o Splunk Enterprise
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
         onclick= "window.open('https://bit.ly/3tI41yD')"
         src    = "https://bit.ly/3fHAexI"
         alt    = "Network topology of remote access w/ AnyConnect"
