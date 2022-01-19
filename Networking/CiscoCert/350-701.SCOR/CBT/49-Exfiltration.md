@@ -25,9 +25,9 @@ Trainer: Knox Hutchinson
         - pagead46.l.doubleclick.net: type A, class IN, addr 64.233.185.154
         - pagead46.l.doubleclick.net: type A, class IN, addr 64.233.185.155
         - ...
-  - possible attackers
+  - attacker
     - MitM attacks
-    - malware in client
+    - malware in client to inset and send sensitive info
   - possible info exflitrated: username, password, file-shared locations, GPOs
 
 
@@ -41,6 +41,19 @@ Trainer: Knox Hutchinson
 
 ## HTTP(S) Exfiltration
 
+- HTTP(S) exfiltration overview
+  - client able to access SQL DB
+  - extract sensitive info from SQL DB, e.g., SELECT queries
+  - convert the sensitive info into plan text, e.g., JSON, XML, etc.
+  - using HTTP POST request to post the sensitive info to malicious web site
+  - sign of data exfiltration: high volume of I/O, CPU utilization, or outbound data transmission
+
+
+- Demo: HTTPS exfiltration
+  - sensitive info embedded in encrypted payload
+  - pkt: src=108.177.122.94, dst=10.10.21.16, prot=TLSv1.3, info=Application Data
+    - L7: Transport Layer Security - TLSv1.3 Record Layer: Application Data PProtocol: http-over-tls
+  - sign of exflitration: high volume of traffic w/ same src and dst
 
 
 
