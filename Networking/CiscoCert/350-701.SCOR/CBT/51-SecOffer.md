@@ -317,7 +317,4 @@ Trainer: Knox Hutchinson
 
 
 
-## Summarizing Cisco Security Platforms
-
-
 

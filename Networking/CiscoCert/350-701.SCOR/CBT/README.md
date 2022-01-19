@@ -590,6 +590,5 @@ Institution: CBY Nugget
 - Umbrella Investigate
 - Cognitive Threat Analytics
 - AnyConnect Network Visibility Module
-- Summarizing Cisco Security Platforms
 
 
