@@ -53,6 +53,28 @@ Trainer: Knox Hutchinson
 
 ## Endpoint Telemetry
 
+- Advanced Malware Protection (AMP)
+  - firepower threat defence
+  - scanning files entering or existing the devices
+  - leveraging Talos database w/ constantly updating
+
+
+- Endpoint telemetry
+  - Firepower Management Center (FMC): tabs - Overview, Analysis, Policies, Devices, Objects, AMP, Intelligence
+  - AMP for Endpoints
+    - agent installed in endpoints
+    - accessing data from HQ via VPN
+    - constantly monitoring and sending to NMS
+    - integrated into AnyConnect or ISE
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('page')"
+        src    = "img/50-amp4endpt.png"
+        alt    = "Snapshot of AMP for Endpoints Dashboard"
+        title  = "Snapshot of AMP for Endpoints Dashboard"
+      />
+    </figure>
 
 
 
