@@ -292,6 +292,28 @@ Trainer: Knox Hutchinson
 
 ## AnyConnect Network Visibility Module
 
+- AnyConnect NVM overview
+  - [Configuration of AnyConnect NVM and Splunk for CESA](https://bit.ly/3tEsepp)
+  - AnyConnect
+    - a unified agent that delivers multiple security services to protect the enterprise
+    - most commonly used as an enterprise VPN client
+    - also supporting additional modules that cater to different aspects of enterprise security
+    - modules including posture assessment, web security, malware protection, network visibility, and more
+  - Splunk Enterprise
+    - a powerful tool that collects and analyses diagnostic data to give useful information about the IT infrastructure
+    - providing a one-stop location for administrators to collect data
+    - Splunk: a Cisco partner
+    - CESA solution created in collaboration w/ Cisco
+  - topology
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+        onclick= "window.open('https://bit.ly/3tI41yD')"
+        src    = "https://bit.ly/3fHAexI"
+        alt    = "Network topology of remote access w/ AnyConnect"
+        title  = "Network topology of remote access w/ AnyConnect"
+      />
+    </figure>
 
 
 
