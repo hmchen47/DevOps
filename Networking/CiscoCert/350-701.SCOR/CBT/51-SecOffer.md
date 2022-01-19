@@ -284,7 +284,10 @@ Trainer: Knox Hutchinson
 
 ## Cognitive Threat Analytics
 
-
+- Cognitive threat analytics
+  - [cognitive threat analytics](https://cognitive.cisco.com)
+  - ML/AI way to detect threats
+  - analysis on various threats and their trajectory
 
 
 ## AnyConnect Network Visibility Module
