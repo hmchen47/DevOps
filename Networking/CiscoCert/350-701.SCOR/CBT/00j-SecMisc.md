@@ -122,7 +122,7 @@
       - CDS (10.10.20.64) - root/lan1cope
 
       <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-        <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
           onclick= "window.open('https://bit.ly/3mSrAjU')"
           src    = "img/51-Stealthwatch.png"
           alt    = "DevNet Sandbox Lab - SwtealthWatch Network Topology"
@@ -154,7 +154,7 @@
       - Scroll down on the main page to the interfaces. Note the MAC address of the Eth0 interface.
 
       <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-        <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
           onclick= "window.open('https://bit.ly/3mSrAjU')"
           src    = "img/51-StealthWatch-UDP_MAC.png"
           alt    = "DevNet Sandbox Lab - SwtealthWatch Network Interfaces"
@@ -240,7 +240,7 @@
       - Windows 2012 DNS Server (10.10.20.100)
 
       <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-        <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
           onclick= "window.open('https://bit.ly/3nAPiSj')"
           src    = "img/51-pxgrid.png"
           alt    = "DevNet Sandbox Lab - PxGrid 2.0 on ISE 3.0 Network Topology"
@@ -373,7 +373,7 @@
     - a copy of packets sent to Collector and/o Splunk Enterprise
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
         onclick= "window.open('https://bit.ly/3tI41yD')"
         src    = "https://bit.ly/3fHAexI"
         alt    = "Network topology of remote access w/ AnyConnect"
