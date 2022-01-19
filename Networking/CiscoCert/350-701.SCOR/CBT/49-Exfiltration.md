@@ -59,7 +59,14 @@ Trainer: Knox Hutchinson
 
 ## Outbound File Transfers
 
-
+- Outbound file transfer overview
+  - email, ftp, etc. used to exfiltrate data
+  - easiest way: sending data in nature
+  - usually accessing shared files and database
+  - malware in client
+    - sending file to FTP, FTPS or SFTP servers
+    - attaching file in emails
+  - solution: AMP for endpoints, abnormal at NGFW
 
 
 ## Text-Based Protocols
