@@ -270,7 +270,16 @@ Trainer: Knox Hutchinson
 
 ## Umbrella Investigate
 
-
+- Demo: Umbrella investigate
+  - [Umbrella Live Instant Demo](https://bit.ly/3fBdmjD)
+  - Umbrella > Overview page > Messages: Cryptomining > 'View Details' link
+    - viewing the threats blocked in the last 24 hours
+    - same as Reporting > Core Reports > Activity Search
+    - fields - Identity (where the threat stop), Destination, Identity Used by Policy/Rule
+    - entry - Identity = DESKTOP-SKIA82K, Destination = minegate.com, Policy/Rule = DESKTOP-SKIA82K
+  - investigate 'minegate.com': Umbrella > Investigate > Search = 'minegate.com'
+    - sections - Summary, Timeline, DNS Resolution, WHOIS Record Data, Associated Samples
+    - Associated Samples: threats other than the current one happened the site
 
 
 ## Cognitive Threat Analytics
