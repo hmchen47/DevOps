@@ -78,7 +78,5 @@ Trainer: Knox Hutchinson
 
 
 
-## Summarizing Telemetry
-
 
 

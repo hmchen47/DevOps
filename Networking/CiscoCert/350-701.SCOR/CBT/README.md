@@ -581,7 +581,6 @@ Institution: CBY Nugget
 - What is Telemetry?
 - Network Telemetry
 - Endpoint Telemetry
-- Summarizing Telemetry
 
 ### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer,md)
 
