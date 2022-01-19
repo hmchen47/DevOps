@@ -5,7 +5,10 @@ Trainer: Knox Hutchinson
 
 ## Introducing Streaming Telemetry
 
-
+- Learning goals
+  - telemetry
+  - network telemetry
+  - endpoint telemetry
 
 
 ## What is Telemetry?
