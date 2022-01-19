@@ -116,7 +116,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 23.01 [Next steps](23.01-next.md)
+- 23.01 Next steps
 
 
 ## Part 3. Endpoint Protection and Secure Access
@@ -170,7 +170,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 33.01 [Next steps](33.01-next.md)
+- 33.01 Next steps
 
 
 
