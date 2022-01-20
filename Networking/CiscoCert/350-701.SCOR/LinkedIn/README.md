@@ -94,29 +94,30 @@ Trainer: Charles Judd
 
 ### 2. Content Security
 
+- 22.00 [Summary](22.00-summary.md)
 - 22.01 [Secure internet gateway](22.01-gateway.md)
 - 22.02 [Blacklisting and whitelisting](22.02-listings.md)
-- 22.03 [URL filtering and categorization](22.03-url.md)
+- 22.03 [URL filtering and categorization](22.03-urlfilter.md)
 - 22.04 [Malware scanning](22.04-malware.md)
 - 22.05 [Web application filtering](22.05-webfilter.md)
 - 22.06 [TLS decryption](22.06-tlsdescrypt.md)
 - 22.07 [Traffic redirection](22.07-redirect.md)
 - 22.08 [User authentication](22.08-userauth.md)
-- 22.09 [Spam filtering](22.09-spanfilter.md)
+- 22.09 [Spam filtering](22.09-spamfilter.md)
 - 22.10 [Data loss prevention (DLP)](22.10-dlp.md)
 - 22.11 [Email encryption](22.11-emailencrypt.md)
 - 22.12 [Email blacklisting](22.12-emaillist.md)
 - 22.13 [Antimalware filtering](22.13-antimalware.md)
-- 22.14 [Cisco umbrella overview](22.14-uoverview.md)
-- 22.15 [Cisco umbrella identities](22.15-uidentifty.md)
-- 22.16 [Cisco umbrella URL content settings](22.16-uurl.md)
-- 22.17 [Cisco umbrella destination lists](22.17-udestlist.md)
-- 22.18 [Cisco umbrella reporting](22.18-ureport.md)
+- 22.14 [Cisco umbrella overview](22.14-umbrella.md)
+- 22.15 [Cisco umbrella identities](22.15-identity.md)
+- 22.16 [Cisco umbrella URL content settings](22.16-url.md)
+- 22.17 [Cisco umbrella destination lists](22.17-dstlist.md)
+- 22.18 [Cisco umbrella reporting](22.18-report.md)
 
 
 ### Conclusion
 
-- 23.01 [Next steps](23.01-next.md)
+- 23.01 Next steps
 
 
 ## Part 3. Endpoint Protection and Secure Access
@@ -132,8 +133,9 @@ Trainer: Charles Judd
 
 ### 1. Endpoint Protection
 
+- 31.00 [Summary](31.00-summary.md)
 - 31.01 [Antimalware](31.01-antimalware.md)
-- 31.02 [Retrospective security](31.02-restrospect.md)
+- 31.02 [Retrospective security](31.02-retrospect.md)
 - 31.03 [Indication of compromise (IOC)](31.03-ioc.md)
 - 31.04 [Antivirus](31.04-antivirus.md)
 - 31.05 [Dynamic file analysis](31.05-dynafile.md)
@@ -147,9 +149,10 @@ Trainer: Charles Judd
 
 ### 2. Secure Access
 
+- 32.00 [Summary](32.00-summary.md)
 - 32.01 [Guest services](32.01-guest.md)
 - 32.02 [Profiling](32.02-profile.md)
-- 32.03 [BYOD policies](32.03-bydo.md)
+- 32.03 [BYOD policies](32.03-byod.md)
 - 32.04 [802.1X](32.04-8021x.md)
 - 32.05 [MAB](32.05-mab.md)
 - 32.06 [WebAuth](32.06-webauth.md)
@@ -162,13 +165,13 @@ Trainer: Charles Judd
 - 32.13 [Cisco Stealthwatch](32.13-stealth.md)
 - 32.14 [Cisco Stealthwatch cloud](32.14-stealthcloud.md)
 - 32.15 [Cisco pxGrid](32.15-pxgrid.md)
-- 32.16 [Cisco CTA and ETA](32.16-ctaeta.md)
+- 32.16 [Cisco CTA and ETA](32.16-ctaNeta.md)
 - 32.17 [Cisco AnyConnect Network Visibility Module (NVM)](32.17-nvm.md)
 
 
 ### Conclusion
 
-- 33.01 [Next steps](33.01-next.md)
+- 33.01 Next steps
 
 
 
