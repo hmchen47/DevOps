@@ -41,22 +41,23 @@ Trainer: Charles Judd
 
 ### 2. Network Security
 
+- 12.00 [Summary](12.00-summary.md)
 - 12.01 [IPS and firewall solutions](12.01-ipsfw.md)
-- 12.02 [Deployment models and architectures](12.02-modlearch.md)
+- 12.02 [Deployment models and architectures](12.02-arch.md)
 - 12.03 [Device hardening](12.03-hardening.md)
 - 12.04 [Device management security](12.04-devmgmt.md)
 - 12.05 [NetFlow](12.05-netflow.md)
 - 12.06 [SNMPv3](12.06-snmpv3.md)
-- 12.07 [Role-based CLI access](12.07-cliaccess.md)
+- 12.07 [Role-based CLI access](12.07-rbaccli.md)
 - 12.08 [NTP with authentication](12.08-ntpauth.md)
 - 12.09 [VLANs](12.09-vlans.md)
 - 12.10 [VRF-lite](12.10-vfrlite.md)
 - 12.11 [Port security](12.11-portsec.md)
 - 12.12 [DHCP snooping](12.12-dhcpsnoop.md)
-- 12.13 [Dynamic ARP inspection](12.13-dynaapr.md)
+- 12.13 [Dynamic ARP inspection](12.13-dai.md)
 - 12.14 [Storm control](12.14-stormctrl.md)
 - 12.15 [PVLANs](12.15-pvlans.md)
-- 12.16 [TACACS+ and RADIUS](12.16-tacacsradius.md)
+- 12.16 [TACACS+ and RADIUS](12.16-authsrv.md)
 - 12.17 [Downloadable ACL (dACL)](12.17-dacl.md)
 
 
@@ -78,11 +79,12 @@ Trainer: Charles Judd
 
 ### 1. Cloud Security
 
+- 21.00 [Summary](21.00-summary.md)
 - 21.01 [Public, private, hybrid, and community clouds](21.01-clouds.md)
 - 21.02 [Cloud service models](21.02-cloudmodel.md)
 - 21.03 [Customer vs. provider responsibility](21.03-response.md)
 - 21.04 [Patch management](21.04-patchmgmt.md)
-- 21.05 [Security assessments](21.05-srcassess.md)
+- 21.05 [Security assessments](21.05-secassess.md)
 - 21.06 [Cloud-delivered security solutions](21.06-secsol.md)
 - 21.07 [DevSecOps](21.07-devsecops.md)
 - 21.08 [Application and data security](21.08-appsec.md)
@@ -93,24 +95,25 @@ Trainer: Charles Judd
 
 ### 2. Content Security
 
+- 22.00 [Summary](22.00-summary.md)
 - 22.01 [Secure internet gateway](22.01-gateway.md)
 - 22.02 [Blacklisting and whitelisting](22.02-listings.md)
-- 22.03 [URL filtering and categorization](22.03-url.md)
+- 22.03 [URL filtering and categorization](22.03-urlfilter.md)
 - 22.04 [Malware scanning](22.04-malware.md)
 - 22.05 [Web application filtering](22.05-webfilter.md)
 - 22.06 [TLS decryption](22.06-tlsdescrypt.md)
 - 22.07 [Traffic redirection](22.07-redirect.md)
 - 22.08 [User authentication](22.08-userauth.md)
-- 22.09 [Spam filtering](22.09-spanfilter.md)
+- 22.09 [Spam filtering](22.09-spamfilter.md)
 - 22.10 [Data loss prevention (DLP)](22.10-dlp.md)
 - 22.11 [Email encryption](22.11-emailencrypt.md)
 - 22.12 [Email blacklisting](22.12-emaillist.md)
 - 22.13 [Antimalware filtering](22.13-antimalware.md)
-- 22.14 [Cisco umbrella overview](22.14-uoverview.md)
-- 22.15 [Cisco umbrella identities](22.15-uidentifty.md)
-- 22.16 [Cisco umbrella URL content settings](22.16-uurl.md)
-- 22.17 [Cisco umbrella destination lists](22.17-udestlist.md)
-- 22.18 [Cisco umbrella reporting](22.18-ureport.md)
+- 22.14 [Cisco umbrella overview](22.14-umbrella.md)
+- 22.15 [Cisco umbrella identities](22.15-identity.md)
+- 22.16 [Cisco umbrella URL content settings](22.16-url.md)
+- 22.17 [Cisco umbrella destination lists](22.17-dstlist.md)
+- 22.18 [Cisco umbrella reporting](22.18-report.md)
 
 
 ### Conclusion
@@ -131,8 +134,9 @@ Trainer: Charles Judd
 
 ### 1. Endpoint Protection
 
+- 31.00 [Summary](31.00-summary.md)
 - 31.01 [Antimalware](31.01-antimalware.md)
-- 31.02 [Retrospective security](31.02-restrospect.md)
+- 31.02 [Retrospective security](31.02-retrospect.md)
 - 31.03 [Indication of compromise (IOC)](31.03-ioc.md)
 - 31.04 [Antivirus](31.04-antivirus.md)
 - 31.05 [Dynamic file analysis](31.05-dynafile.md)
@@ -146,9 +150,10 @@ Trainer: Charles Judd
 
 ### 2. Secure Access
 
+- 32.00 [Summary](32.00-summary.md)
 - 32.01 [Guest services](32.01-guest.md)
 - 32.02 [Profiling](32.02-profile.md)
-- 32.03 [BYOD policies](32.03-bydo.md)
+- 32.03 [BYOD policies](32.03-byod.md)
 - 32.04 [802.1X](32.04-8021x.md)
 - 32.05 [MAB](32.05-mab.md)
 - 32.06 [WebAuth](32.06-webauth.md)
@@ -161,7 +166,7 @@ Trainer: Charles Judd
 - 32.13 [Cisco Stealthwatch](32.13-stealth.md)
 - 32.14 [Cisco Stealthwatch cloud](32.14-stealthcloud.md)
 - 32.15 [Cisco pxGrid](32.15-pxgrid.md)
-- 32.16 [Cisco CTA and ETA](32.16-ctaeta.md)
+- 32.16 [Cisco CTA and ETA](32.16-ctaNeta.md)
 - 32.17 [Cisco AnyConnect Network Visibility Module (NVM)](32.17-nvm.md)
 
 
