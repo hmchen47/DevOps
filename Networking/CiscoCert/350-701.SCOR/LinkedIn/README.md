@@ -117,7 +117,7 @@ Trainer: Charles Judd
 
 ### Conclusion
 
-- 23.01 [Next steps](23.01-next.md)
+- 23.01 Next steps
 
 
 ## Part 3. Endpoint Protection and Secure Access
@@ -133,8 +133,9 @@ Trainer: Charles Judd
 
 ### 1. Endpoint Protection
 
+- 31.00 [Summary](31.00-summary.md)
 - 31.01 [Antimalware](31.01-antimalware.md)
-- 31.02 [Retrospective security](31.02-restrospect.md)
+- 31.02 [Retrospective security](31.02-retrospect.md)
 - 31.03 [Indication of compromise (IOC)](31.03-ioc.md)
 - 31.04 [Antivirus](31.04-antivirus.md)
 - 31.05 [Dynamic file analysis](31.05-dynafile.md)
@@ -148,9 +149,10 @@ Trainer: Charles Judd
 
 ### 2. Secure Access
 
+- 32.00 [Summary](32.00-summary.md)
 - 32.01 [Guest services](32.01-guest.md)
 - 32.02 [Profiling](32.02-profile.md)
-- 32.03 [BYOD policies](32.03-bydo.md)
+- 32.03 [BYOD policies](32.03-byod.md)
 - 32.04 [802.1X](32.04-8021x.md)
 - 32.05 [MAB](32.05-mab.md)
 - 32.06 [WebAuth](32.06-webauth.md)
@@ -163,13 +165,13 @@ Trainer: Charles Judd
 - 32.13 [Cisco Stealthwatch](32.13-stealth.md)
 - 32.14 [Cisco Stealthwatch cloud](32.14-stealthcloud.md)
 - 32.15 [Cisco pxGrid](32.15-pxgrid.md)
-- 32.16 [Cisco CTA and ETA](32.16-ctaeta.md)
+- 32.16 [Cisco CTA and ETA](32.16-ctaNeta.md)
 - 32.17 [Cisco AnyConnect Network Visibility Module (NVM)](32.17-nvm.md)
 
 
 ### Conclusion
 
-- 33.01 [Next steps](33.01-next.md)
+- 33.01 Next steps
 
 
 
