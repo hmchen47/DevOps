@@ -52,8 +52,8 @@ Trainer: Keith Barker
 
 ## SSL and TLS
 
-- SSl/TLS overview
-  - TLS: a successor of SSH
+- SSL/TLS overview
+  - TLS: a successor of SSL
   - HTTPS using SSL/TLS
   - user w/ public key while server w/ private key
   - public key embedded in digital certificate
@@ -74,7 +74,7 @@ Trainer: Keith Barker
     </figure>
   
   - tasks: observe the behavior of HTTP and HTTPS
-  - open web browser on PC1 to connect R2: `http://25.2.2.2` w/ user = admin, password = *** $\to$ browser indicating nor a secure connection
+  - open web browser on PC1 to connect R2: `http://25.2.2.2` w/ user = admin, password = *** $\to$ browser indicating not a secure connection
   - using HTTPS instad: `https://25.2.2.2` w/ username and password $\to$ browser indicating a lock but still not secure due to the trust $\to$ digital certificate missing
   - observe the packet tracker in Wireshark
     - entry for HTTP request - src = 10.1.0.50, dst = 25.2.2.2, protocol = TCP $\to$ info readbale
@@ -90,7 +90,7 @@ Trainer: Keith Barker
 - Public Key Infrastructure (PKI) overview
   - TLS workflow: end user (user) and server (srv)
     - user sending request to access srv w/ HTTPS (port 443)
-    - src responding w/ digital certificate containing validate date, public key, etc.
+    - srv responding w/ digital certificate containing validate date, public key, etc.
     - how user knows the digital certificate a valid certificate? <span style="color: cyan;">signed</span>
   - signed digital certificate:
     - signed by a device that the browser of user PC $\to$ TRUST
