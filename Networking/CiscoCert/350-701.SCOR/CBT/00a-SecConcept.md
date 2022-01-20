@@ -104,8 +104,6 @@
 
 
 
-
-
 ## 02. Compare Common Security Vulnerabilities
 
 

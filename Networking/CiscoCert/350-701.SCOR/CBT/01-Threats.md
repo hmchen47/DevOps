@@ -102,7 +102,7 @@ Trainer: Knox Hutchinson
   - mitigation: DAI, DHCP snooping
 
 
-- CIA triad
+- CIA triad: principles of security infrastructure
   - confidentiality
   - integrity
   - availability
