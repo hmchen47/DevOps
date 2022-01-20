@@ -96,7 +96,7 @@
   - mitigation: DAI, DHCP snooping
 
 
-- CIA triad
+- CIA triad: principles of security infrastructure
   - confidentiality
   - integrity
   - availability
@@ -151,7 +151,7 @@
     ```
 
   - web input: email = `user@email.com` password = `password'` $\to$ An unexpected error occurred.
-    - logs: The logs show a SQL syntax error. This indicates that athe quote characterr messed somthing up in an unexpeccted way.
+    - logs: The logs show a SQL syntax error. This indicates that the quote characterr messed somthing up in an unexpeccted way.
 
       ```shell
       Checking supplied authentication details for user@email.com.
