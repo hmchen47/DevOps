@@ -60,9 +60,9 @@
 
   What is the result of this Python script of the Cisco DNA Center API?
 
-  A. adds authentication to a switch
-  B. adds a switch to Cisco DNA Center
-  C. receives information about a switch
+  A. adds authentication to a switch<br>
+  B. adds a switch to Cisco DNA Center<br>
+  C. receives information about a switch<br>
 
   Answer: B
 
@@ -82,10 +82,10 @@
 
   What does the API do when connected to a Cisco security appliance?
 
-  A. get the process and PID information from the computers in the network
-  B. create an SNMP pull mechanism for managing AMP
-  C. gather network telemetry information from AMP for endpoints
-  D. gather the network interface information about the computers AMP sees
+  A. get the process and PID information from the computers in the network<br>
+  B. create an SNMP pull mechanism for managing AMP<br>
+  C. gather network telemetry information from AMP for endpoints<br>
+  D. gather the network interface information about the computers AMP sees<br>
 
   Answer: D
 

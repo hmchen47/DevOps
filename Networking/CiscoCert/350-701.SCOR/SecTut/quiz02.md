@@ -33,7 +33,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
       src    = "img/0503-Python_script_DNA_Center_API.jpg"
       alt    = "Python Script w/ DNA Center API"
@@ -43,9 +43,9 @@
 
   What is the result of this Python script of the Cisco DNA Center API?
 
-  A. adds authentication to a switch
-  B. adds a switch to Cisco DNA Center
-  C. receives information about a switch
+  A. adds authentication to a switch<br>
+  B. adds a switch to Cisco DNA Center<br>
+  C. receives information about a switch<br>
 
   Answer: 
 
@@ -55,7 +55,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
       src    = "img/0504-Cisco_security_appliance_API.jpg"
       alt    = "Python Script w/ Security Appliance API"
@@ -65,10 +65,10 @@
 
   What does the API do when connected to a Cisco security appliance?
 
-  A. get the process and PID information from the computers in the network
-  B. create an SNMP pull mechanism for managing AMP
-  C. gather network telemetry information from AMP for endpoints
-  D. gather the network interface information about the computers AMP sees
+  A. get the process and PID information from the computers in the network<br>
+  B. create an SNMP pull mechanism for managing AMP<br>
+  C. gather network telemetry information from AMP for endpoints<br>
+  D. gather the network interface information about the computers AMP sees<br>
 
   Answer: 
 
