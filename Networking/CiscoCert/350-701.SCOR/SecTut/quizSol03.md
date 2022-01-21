@@ -79,6 +79,134 @@
 
 ## 10. Layer 2 Security
 
+- <span style="color: blue; font-weight: bold;">Question 1</span>
+
+  Which IPS engine detects ARP spoofing?
+
+  A. Atomic ARP Engine<br>
+  B. Service Generic Engine<br>
+  C. ARP Inspection Engine<br>
+  D. AIC Engine<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  What is a characteristic of Dynamic ARP Inspection?
+
+  A. DAI determines the validity of an ARP packet based on valid IP to MAC address bindings from the DHCP snooping binding database.<br>
+  B. In a typical network, make all ports as trusted except for the ports connecting to switches, which are untrusted<br>
+  C. DAI associates a trust state with each switch.<br>
+  D. DAI intercepts all ARP requests and responses on trusted ports only.<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  What is a characteristic of traffic storm control behavior?
+
+  A. Traffic storm control drops all broadcast and multicast traffic if the combined traffic exceeds the level within the interval.<br>
+  B. Traffic storm control cannot determine if the packet is unicast or broadcast.<br>
+  C. Traffic storm control monitors incoming traffic levels over a 10-second traffic storm control interval.<br>
+  D. Traffic storm control uses the Individual/Group bit in the packet source address to determine if the packet is unicast or broadcast.<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  A malicious user gained network access by spoofing printer connections that were authorized using MAB on four different switch ports at the same time. What two catalyst switch security features will prevent further violations? (Choose two)
+
+  A. DHCP Snooping<br>
+  B. 802.1AE MacSec<br>
+  C. Port security<br>
+  D. IP Device track<br>
+  E. Dynamic ARP inspection<br>
+  F. Private VLANs<br>
+
+  Answer: A E
+
+
+- <span style="color: blue; font-weight: bold;">Question 5</span>
+
+  Which command enables 802.1X globally on a Cisco switch?
+
+  A. dot1x system-auth-control<br>
+  B. dot1x pae authenticator<br>
+  C. authentication port-control aut<br>
+  D. aaa new-model<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 6</span>
+
+  Which RADIUS attribute can you use to filter MAB requests in an 802.1 x deployment?
+
+  A. 1<br>
+  B. 2<br>
+  C. 6<br>
+  D. 31<br>
+
+  Answer: C
+
+  Explanation
+
+  Because MAB uses the MAC address as a username and password, you should make sure that the RADIUS server can differentiate MAB requests from other types of requests for network access. This precaution will prevent other clients from attempting to use a MAC address as a valid credential. Cisco switches uniquely identify MAB requests by setting Attribute 6 (Service-Type) to 10 (Call-Check) in a MAB Access-Request message. Therefore, you can use Attribute 6 to filter MAB requests at the RADIUS server.
+
+  Reference: https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/config_guide_c17-663759.html
+
+
+- <span style="color: blue; font-weight: bold;">Question 7</span>
+
+  A network administrator configures Dynamic ARP Inspection on a switch. After Dynamic ARP Inspection is applied, all users on that switch are unable to communicate with any destination. The network administrator checks the interface status of all interfaces, and there is no err-disabled interface. What is causing this problem?
+
+  A. DHCP snooping has not been enabled on all VLANs.<br>
+  B. The ip arp inspection limit command is applied on all interfaces and is blocking the traffic of all users.<br>
+  C. Dynamic ARP Inspection has not been enabled on all VLANs<br>
+  D. The no ip arp inspection trust command is applied on all user host interfaces<br>
+
+  Answer: A
+
+  Explanation
+
+  Dynamic ARP inspection (DAI) is a security feature that validates ARP packets in a network. It intercepts, logs, and discards ARP packets with invalid IP-to-MAC address bindings. This capability protects the network from certain man-in-the-middle attacks. After enabling DAI, all ports become untrusted ports.
+
+  DHCP snooping is enabled on a per-VLAN basis. By default, the feature is inactive on all VLANs. You can enable the feature on a single VLAN or a range of VLANs.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/snoodhcp.html
+
+  For example, in order to activate DHCP snooping on VLAN 2, we use the following command:
+
+  ```texy
+  SW1(config)#ip dhcp snooping vlan 2
+  ```
+
+
+- <span style="color: blue; font-weight: bold;">Question 8</span>
+
+    Refer to the exhibit.
+
+    ```text
+    SwitchA(config)#interface gigabitethernet1/0/1
+    SwitchA(config-if)#dot1x host-mode multi-host
+    SwitchA(config-if)#dot1x timeout quiet-period 3
+    SwitchA(config-if)#dot1x timeout tx-period 15
+    SwitchA(config-if)#authentication port-control auto
+    SwitchA(config-if)#switchport mode access
+    SwitchA(config-if)#switchport access vlan 12
+    ```
+
+    An engineer configured wired 802.1x on the network and is unable to get a laptop to authenticate. Which port configuration is missing?
+
+    A. authentication open<br>
+    B. dotlx reauthentication<br>
+    C. cisp enable<br>
+    D. dot1x pae authenticator<br>
+
+    Answer: D
 
 
 
