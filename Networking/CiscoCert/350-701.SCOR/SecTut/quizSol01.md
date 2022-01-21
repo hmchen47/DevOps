@@ -394,3 +394,185 @@ completely secret.
   Explanation
 
   Compared to RSA, the prevalent public-key cryptography of the Internet today, Elliptic Curve Cryptography (ECC) offers smaller key sizes, faster computation,as well as memory, energy and bandwidth savings and is thus better suited forsmall devices.
+
+## 03. VPNs
+
+<span style="color: cyan; font-weight: bold;">Quick summary</span>
+
+**DMVPN** provides full meshes connectivity with simple configuration of hub and spoke. DMVPN forms IPsec tunnel over dynamically/statically addresses spokes.
+
+**GETVPN** (Group Encrypted Transport VPN) is a tunnel-less VPN technology meant for private networks like MPLS VPN or Private WAN where we use a single SA (Security Association) for all routers in a group. It is scalable for any-to-any connectivity and encryption.
+
+**FlexVPN** uses a new key management protocol – IKEv2
+
+DMVPN, FlexVPN and GETVPN comparison:
+
+<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    onclick= "window.open('page')"
+    src    = "300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
+    alt    = "Comparisons of DMVPN, FlexVPN, and GETVPN"
+    title  = "Comparisons of DMVPN, FlexVPN, and GETVPN"
+  />
+</figure>
+
+- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+
+  What is the result of running the `crypto isakmp key ciscXXXXXXXX address 172.16.0.0` command?
+
+  A. authenticates the IKEv2 peers in the 172.16.0.0/16 range by using the key ciscXXXXXXXX<br>
+  B. authenticates the IP address of the 172.16.0.0/32 peer by using the key ciscXXXXXXXX<br>
+  C. authenticates the IKEv1 peers in the 172.16.0.0/16 range by using the key ciscXXXXXXXX<br>
+  D. secures all the certificates in the IKE exchange by using the key ciscXXXXXXXX<br>
+
+  Answer: B
+
+  Explanation
+
+  The syntax of above command is:
+
+  `crypto isakmp key enc-type-digit keystring {address peer-address [mask] | ipv6 ipv6-address/ ipv6-prefix | hostname hostname} [no-xauth]`
+
+  The peer-address argument specifies the IP or IPv6 address of the remote peer.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp6039879000
+
+- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+
+Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
+
+A. DMVPN<br>
+B. FlexVPN<br>
+C. IPsec DVTI<br>
+D. GET VPN<br>
+
+Answer: D
+
+Explanation
+
+Cisco‘s Group Encrypted Transport VPN (GETVPN) introduces the concept of a trusted group to eliminate point-to-point tunnels and their associated overlay routing. All group members (GMs) share a common security association (SA), also known as a group SA. This enables GMs to decrypt traffic that was encrypted by any other GM.
+
+GETVPN provides instantaneous large-scale any-to-any IP connectivity using a group IPsec security paradigm.
+
+Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf
+
+- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+
+  Which two conditions are prerequisites for stateful failover for IPsec? (Choose two)
+
+  A. Only the IKE configuration that is set up on the active device must be duplicated on the standby device; the IPsec configuration is copied automatically<br>
+  B. The active and standby devices can run different versions of the Cisco IOS software but must be the same type of device.<br>
+  C. The IPsec configuration that is set up on the active device must be duplicated on the standby device<br>
+  D. Only the IPsec configuration that is set up on the active device must be duplicated on the standby device; the IKE configuration is copied automatically.<br>
+  E. The active and standby devices must run the same version of the Cisco IOS software and must be the same type of device.<br>
+
+  Answer: C E
+
+  Explanation
+
+  Stateful failover for IP Security (IPsec) enables a router to continue processing and forwarding IPsec packets after a planned or unplanned outage occurs. Customers employ a backup (secondary) router that automatically takes over the tasks of the active (primary) router if the active router loses connectivity for any reason. This failover process is transparent to users and does not require adjustment or reconfiguration of any remote peer.
+
+  Stateful failover for IPsec requires that your network contains two identical routers that are available to be either the primary or secondary device. Both routers should be the same type of device, have the same CPU and memory, and have either no encryption accelerator or identical encryption accelerators.
+
+  Prerequisites for Stateful Failover for IPsec
+
+  Complete, Duplicate IPsec and IKE Configuration on the Active and Standby Devices
+
+  This document assumes that you have a complete IKE and IPsec configuration.
+
+  The IKE and IPsec configuration that is set up on the active device must be duplicated on the standby device. That is, the crypto configuration must be identical with respect to Internet Security Association and Key Management Protocol (ISAKMP) policy, ISAKMP keys (preshared), IPsec profiles, IPsec transform sets, all crypto map sets that are used for stateful failover, all access control lists (ACLs) that are used in match address statements on crypto map sets, all AAA configurations used for crypto, client configuration groups, IP local pools used for crypto, and ISAKMP profiles.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_vpnav/configuration/15-mt/sec-vpn-availability-15-mt-book/sec-state-fail-ipsec.html
+
+  Although the prerequisites only stated that “Both routers should be the same type of device” but in the “Restrictions for Stateful Failover for IPsec” section of the link above, it requires “Both the active and standby devices must run the identical version of the Cisco IOS software” so answer E is better than answer B.
+
+- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+
+  Which VPN technology can support a multivendor environment and secure traffic between sites?
+
+  A. SSL VPN<br>
+  B. GET VPN<br>
+  C. FlexVPN<br>
+  D. DMVPN<br>
+
+  Answer: C
+
+  Explanation
+
+  FlexVPN is an IKEv2-based VPN technology that provides several benefits beyond traditional site-to-site VPN implementations. FlexVPN is a standards-based solution that can interoperate with non-Cisco IKEv2 implementations. Therefore FlexVPN can support a multivendor environment. All of the three VPN technologies support traffic between sites (site-to-site or spoke-to-spoke).
+
+- <span style="color: lightblue; font-weight: bold;">Question 5</span>
+
+A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
+
+A. Change isakmp to ikev2 in the command on hostA.
+B. Enter the command with a different password on hostB.
+C. Enter the same command on hostB.
+D. Change the password on hostA to the default password.
+
+Answer: C
+
+- <span style="color: lightblue; font-weight: bold;">Question 6</span>
+
+  Refer to the exhibit.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('page')"
+      src    = "img/306-site_to_site_VPN_isakmp.jpg"
+      alt    = "Log messages of Site-to-Site CPN"
+      title  = "Log messages of Site-to-Site CPN"
+    />
+  </figure>
+
+  A network administrator configured a site-to-site VPN tunnel between two Cisco IOS routers, and hosts are unable to communicate between two sites of VPN. The network administrator runs the debug crypto isakmp sa command to track VPN status. What is the problem according to this command output?
+
+  A. hashing algorithm mismatch
+  B. encryption algorithm mismatch
+  C. authentication key mismatch
+  D. interesting traffic was not applied
+
+  Answer: C
+
+- <span style="color: lightblue; font-weight: bold;">Question 7
+
+What is a difference between FlexVPN and DMVPN?
+
+A. DMVPN uses IKEv1 or IKEv2, FlexVPN only uses IKEv1<br>
+B. DMVPN uses only IKEv1 FlexVPN uses only IKEv2<br>
+C. FlexVPN uses IKEv2, DMVPN uses IKEv1 or IKEv2<br>
+D. FlexVPN uses IKEv1 or IKEv2, DMVPN uses only IKEv2<br>
+
+Answer: C
+
+- <span style="color: lightblue; font-weight: bold;">Question 8</span>
+
+  Which protocol provides the strongest throughput performance when using Cisco AnyConnect VPN?
+
+  A. TLSv1.2<br>
+  B. TLSv1.1<br>
+  C. BJTLSv1<br>
+  D. DTLSv1<br>
+
+  Answer: D
+
+  Explanation
+
+  DTLS is used for delay sensitive applications (voice and video) as its UDP based while TLS is TCP based. Therefore DTLS offers strongest throughput performance. The throughput of DTLS at the time of AnyConnect connection can be expected to have processing performance close to VPN throughput.
+
+- <span style="color: lightblue; font-weight: bold;">Question 9</span>
+
+  What is a commonality between DMVPN and FlexVPN technologies?
+
+  A. FlexVPN and DMVPN use IS-IS routing protocol to communicate with spokes<br>
+  B. FlexVPN and DMVPN use the new key management protocol<br>
+  C. FlexVPN and DMVPN use the same hashing algorithms<br>
+  D. IOS routers run the same NHRP code for DMVPN and FlexVPN<br>
+
+  Answer: D
+
+  Explanation
+
+  In its essence, FlexVPN is the same as DMVPN. Connections between devices are still point-to-point GRE tunnels, spoke-to-spoke connectivity is still achieved with NHRP redirect message, IOS routers even run the same NHRP code for both DMVPN and FlexVPN, which also means that both are Cisco’s proprietary technologies.
+
+  Reference: https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/
