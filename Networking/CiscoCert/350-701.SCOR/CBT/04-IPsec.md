@@ -28,19 +28,26 @@ Trainer: Keith Barker
   - prefix ESP header: port 50
   - prefix new IP header: src = R1, dst = R2
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/03-netarch.png"
+      alt    = "Example network topology"
+      title  = "Example network topology"
+    />
+  </figure>
+
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
-    <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
-        src   = "img/03-netarch.png"
-        alt   = "Example network topology"
-        title = "Example network topology"
+    <a href="https://www.ciscopress.com/articles/article.asp?p=25477" ismap target="_blank">
+      <img style="margin: 0.1em;" height=170
+        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig2.gif"
+        alt   = "AH tunnel versus transport mode."
+        title = "AH tunnel versus transport mode."
       >
-    </a>
-    <a href="http://www.sharetechnote.com/html/IP_Network_IPSec_ESP.html" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
-        src   = "http://www.sharetechnote.com/image/IP_Security_IPSec_ESP_01.png"
-        alt   = "IPsec packet format"
-        title = "IPsec packet format"
+      <img style="margin: 0.1em;" height=170
+        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig3.gif"
+        alt   = "ESP tunnel versus transport mode"
+        title = "ESP tunnel versus transport mode"
       >
     </a>
   </div>
@@ -60,7 +67,7 @@ Trainer: Keith Barker
     - old fashion and not flexible
   - virtual tunnel interface (VTI)
     - using GRE on virtual tunnel
-    - applying crypto on the traffic abd sending via the virtual tunnel
+    - applying crypto on the traffic and sending via the virtual tunnel
 
 
 ## IKEv1 and IKEv2
@@ -122,13 +129,13 @@ Trainer: Keith Barker
       <tr><td>Exchanged messages to establish VPN.<br> <ul> <li>Main mode: 9 messages    </li> <li>Aggressive mode: 6 messages    </li> </ul></td> <td>Only 4 messages.</td></tr>
       <tr> <td>Authentication methods ( 4 methods ):  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> <li>Public Key Encryption    </li> <li>Revised Mode of Public key Encryption    </li> </ul></td> <td>Only 2 methods:  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> </ul></td></tr>
       <tr> <td>Both peers must use the same authentication  method.</td> <td> <br>  Each peer can use a different authentication method (Asymmetrical authentication).<br>(e.g. Initiator: PSK and Responder: RSA-Sig)  <br> <br> </td></tr>
-      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selectorbetween peers is required.</li> </ul></td> <td> <br> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
+      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selector between peers is required.</li> </ul></td> <td> <br> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
       <tr> <td>Lifetime for SAs:  <br>  &nbsp; Agreement between peers is required.</td> <td> <br>  NOT negotiated. Each peer can  delete&nbsp;SAs anytime by exchanging DELETE payloads.<br> <br> </td></tr>
       <tr> <td>Multi-hosting:  <br>  &nbsp; Basically, NOT supported.</td> <td> <br>  Supported by using multiple IDs on  a single  IP address and port pair.<br> <br> </td></tr>
       <tr> <td>Rekeying:  <br>  &nbsp; NOT defined.</td> <td>Defined.</td></tr>
       <tr> <td>NAT Traversal:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
       <tr> <td>Dead Peer Detection / Keep-alive for SAs:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
-      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td> <br>  Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated withIKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
+      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td> <br>  Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated with IKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
       <tr> <td>Multi-homing:<br>&nbsp; Basically, NOT supported.</td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
       <tr> <td>Mobile Clients:<br>  &nbsp; Basically, NOT supported. </td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
       <tr> <td>DoS protections:  <br>  &nbsp; Basically, NOT supported. </td> <td> <br> <ul> <li>Anti-replay function is supported.</li> <li>'Cookies' is supported for mitigating flooding attacks.</li> <li>Many vulnerabilities in IKEv1 were fixed.</li> </ul></td></tr>
