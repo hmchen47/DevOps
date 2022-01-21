@@ -13,7 +13,7 @@
   - 08\. Cloud Security
 - [Quiz set 3](quiz03.md) & [Sol](quizSol03.md)
   - 09\. Identity Services Engine
-  - 10\. Layer 2 Securit
+  - 10\. Layer 2 Security
   - 11\. Secure Network Access
   - 12\. Exfiltration Techniques
 - [Quiz Set 4](quiz04.md) & [Sol](quizSol04.md)
