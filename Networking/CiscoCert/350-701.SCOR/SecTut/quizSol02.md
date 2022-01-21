@@ -544,7 +544,248 @@
 
 ## 07. Email & Web
 
+<span style="color: blue; font-weight: bold;">Quick summary</span>
 
+Cisco Email Security includes advanced threat protection capabilities to detect, block, and remediate threats faster; prevent data loss; and secure important information in transit with end-to-end encryption.
+
+With Cisco Email Security customers can:
+- Detect and block more threats with superior threat intelligence from Talos.
+- Combat ransomware hidden in attachments that evade initial detection with Cisco Advanced Malware Protection (AMP) and Cisco Threat Grid.
+- Drop emails with risky links automatically or block access to newly infected sites with real-time URL analysis to protect against phishing and BEC.
+- Prevent brand abuse and sophisticated identity-based email attacks with Cisco Domain Protection (CDP) and Cisco Advanced Phishing Protection (CAPP) services.
+- Protect sensitive content in outgoing emails with Data Loss Prevention (DLP) and easy-to-use email encryption, all in one solution.
+- Provide user behavior training with Cisco Security Awareness to help users work smarter and safer.
+- Gain maximum deployment flexibility with a cloud, virtual, on-premises, or hybrid deployment or move to the cloud in phases.
+
+
+
+- <span style="color: blue; font-weight: bold;">Question 1</span>
+
+  Which two features of Cisco Email Security can protect your organization against email threats? (Choose two)
+
+  A. Time-based one-time passwords<br>
+  B. Data loss prevention<br>
+  C. Heuristic-based filtering<br>
+  D. Geolocation-based filtering<br>
+  E. NetFlow<br>
+
+  Answer: B D
+
+  Explanation
+
+  Protect sensitive content in outgoing emails with Data Loss Prevention (DLP) and easy-to-use email encryption, all in one solution.
+
+  Cisco Email Security appliance can now handle incoming mail connections and incoming messages from specific geolocations and perform appropriate actions on them, for example:
+  – Prevent email threats coming from specific geographic regions.
+  – Allow or disallow emails coming from specific geographic regions.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa11-0/user_guide_fs/b_ESA_Admin_Guide_11_0/b_ESA_Admin_Guide_chapter_00.html
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Why would a user choose an on-premises ESA versus the CES solution?
+
+  A. Sensitive data must remain onsite.>br>
+  B. Demand is unpredictable.>br>
+  C. The server team wants to outsource this service.>br>
+  D. ESA is deployed inline.>br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  Which two features are used to configure Cisco ESA with a multilayer approach to fight viruses and malware? (Choose two)
+
+  A. Sophos engine<br>
+  B. white list<br>
+  C. RAT<br>
+  D. outbreak filters<br>
+  E. DLP<br>
+
+  Answer: A D
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  What is the purpose of the Decrypt for Application Detection feature within the WSA Decryption options?
+
+  A. It decrypts HTTPS application traffic for unauthenticated users.<br>
+  B. It alerts users when the WSA decrypts their traffic.<br>
+  C. It decrypts HTTPS application traffic for authenticated users.<br>
+  D. It provides enhanced HTTPS application detection for AsyncOS.<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 5</span>
+
+  Which two statements about a Cisco WSA configured in Transparent mode are true? (Choose two)
+
+  A. It can handle explicit HTTP requests.<br>
+  B. It requires a PAC file for the client web browser.<br>
+  C. It requires a proxy for the client web browser.<br>
+  D. WCCP v2-enabled devices can automatically redirect traffic destined to port 80.<br>
+  E. Layer 4 switches can automatically redirect traffic destined to port 80.<br>
+
+  Answer: D E
+
+
+- <span style="color: blue; font-weight: bold;">Question 6</span>
+
+  Which action controls the amount of URI text that is stored in Cisco WSA logs files?
+
+  A. Configure the datasecurityconfig command<br>
+  B. Configure the advancedproxyconfig command with the HTTPS subcommand<br>
+  C. Configure a small log-entry size.<br>
+  D. Configure a maximum packet size.<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: bold;">Question 7</span>
+
+  An engineer is configuring a Cisco ESA and wants to control whether to accept or reject email messages to a recipient address. Which list contains the allowed recipient addresses?
+
+  A. SAT<br>
+  B. BAT<br>
+  C. HAT<br>
+  D. RAT<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 8</span>
+
+  Which two services must remain as on-premises equipment when a hybrid email solution is deployed? (Choose two)
+
+  A. DDoS<br>
+  B. antispam<br>
+  C. antivirus<br>
+  D. encryption<br>
+  E. DLP<br>
+
+  Answer: D E
+
+  Explanation
+
+  Cisco Hybrid Email Security is a unique service offering that combines a cloud-based email security deployment with an appliance-based email security deployment (on premises) to provide maximum choice and control for your organization. The cloud-based infrastructure is typically used for inbound email cleansing, while the on-premises appliances provide granular control – protecting sensitive information with data loss prevention (DLP) and encryption technologies.
+
+  Reference: https://www.cisco.com/c/dam/en/us/td/docs/security/ces/overview_guide/Cisco_Cloud_Hybrid_Email_Security_Overview_Guide.pdf
+
+
+- <span style="color: blue; font-weight: bold;">Question 9</span>
+
+  Which Talos reputation center allows you to track the reputation of IP addresses for email and web traffic?
+
+  A. IP Blacklist Center<br>
+  B. File Reputation Center<br>
+  C. AMP Reputation Center<br>
+  D. IP and Domain Reputation Center<br>
+
+  Answer: D
+
+  Explanation
+
+  Talos’ IP and Domain Data Center is the world’s most comprehensive real-time threat detection network. The data is made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances. Talos detects and correlates threats in real time using the largest threat detection network in the world spanning web requests, emails, malware samples, open-source data sets, endpoint intelligence, and network intrusions. The Email and Web Traffic Reputation Center is able to transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture.
+
+
+- <span style="color: blue; font-weight: bold;">Question 10</span>
+
+  Which proxy mode must be used on Cisco WSA to redirect TCP traffic with WCCP?
+
+  A. transparent<br>
+  B. redirection<br>
+  C. forward<br>
+  D. proxy gateway<br>
+
+  Answer: A
+
+  Explanation
+
+  There are two possible methods to accomplish the redirection of traffic to Cisco WSA: transparent proxy mode and explicit proxy mode.
+
+  In a transparent proxy deployment, a WCCP v2-capable network device redirects all TCP traffic with a destination of port 80 or 443 to Cisco WSA, without any configuration on the client. The transparent proxy deployment is used in this design, and the Cisco ASA firewall is used to redirect traffic to the appliance because all of the outbound web traffic passes through the device and is generally managed by the same operations staff who manage Cisco WSA.
+
+  Reference: https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Aug2013/CVD-WebSecurityUsingCiscoWSADesignGuide-AUG13.pdf
+
+
+- <span style="color: blue; font-weight: bold;">Question 11</span>
+
+  After deploying a Cisco ESA on your network, you notice that some messages fail to reach their destinations. Which task can you perform to determine where each message was lost?
+
+  A. Configure the trackingconfig command to enable message tracking.<br>
+  B. Generate a system report.<br>
+  C. Review the log files.<br>
+  D. Perform a trace.<br>
+
+  Answer: A
+
+  Explanation
+
+  Message tracking helps resolve help desk calls by giving a detailed view of message flow. For example, if a message was not delivered as expected, you can determine if it was found to contain a virus or placed in a spam quarantine — or if it is located somewhere else in the mail stream.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_12_0_chapter_011110.html
+
+
+- <span style="color: blue; font-weight: bold;">Question 12</span>
+
+  What is the primary benefit of deploying an ESA in hybrid mode?
+
+  A. You can fine-tune its settings to provide the optimum balance between security and performance for your environment<br>
+  B. It provides the lowest total cost of ownership by reducing the need for physical appliances<br>
+  C. It provides maximum protection and control of outbound messages<br>
+  D. It provides email security while supporting the transition to the cloud<br>
+
+  Answer: D
+
+  Explanation
+
+  Cisco Hybrid Email Security is a unique service offering that facilitates the deployment of your email security infrastructure both on premises and in the cloud. You can change the number of on-premises versus cloud users at any time throughout the term of your contract, assuming the total number of users does not change. This allows for deployment flexibility as your organization’s needs change.
+
+
+- <span style="color: blue; font-weight: bold;">Question 13</span>
+
+  What is the primary role of the Cisco Email Security Appliance?
+
+  A. Mail Submission Agent<br>
+  B. Mail Transfer Agent<br>
+  C. Mail Delivery Agent<br>
+  D. Mail User Agent<br>
+
+  Answer: B
+
+  Explanation
+
+  Cisco Email Security Appliance (ESA) protects the email infrastructure and employees who use email at work by filtering unsolicited and malicious email before it reaches the user. Cisco ESA easily integrates into existing email infrastructures with a high degree of flexibility. It does this by acting as a Mail Transfer Agent (MTA) within the email-delivery chain. Another name for an MTA is a mail relay.
+
+  Reference: https://www.cisco.com/c/dam/en/us/td/docs/solutions/SBA/February2013/Cisco_SBA_BN_EmailSecurityUsingCiscoESADeploymentGuide-Feb2013.pdf
+
+
+- <span style="color: blue; font-weight: bold;">Question 14</span>
+
+  Which technology is used to improve web traffic performance by proxy caching?
+
+  A. WSA<br>
+  B. Firepower<br>
+  C. FireSIGHT<br>
+  D. ASA<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 15</span>
+
+  In which two ways does a system administrator send web traffic transparently to the Web Security Appliance? (Choose two)
+
+  A. configure Active Directory Group Policies to push proxy settings<br>
+  B. configure policy-based routing on the network infrastructure<br>
+  C. reference a Proxy Auto Config file<br>
+  D. configure the proxy IP address in the web-browser settings<br>
+  E. use Web Cache Communication Protocol<br>
+
+  Answer: B E
 
 
 ## 08. Cloud Security
