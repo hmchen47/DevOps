@@ -29,17 +29,18 @@
 
   Explanation
 
-  The ASA REST API gives you programmatic access to managing individual ASAs through a Representational State Transfer (REST) API. The API allows external clients to perform CRUD (Create, Read, Update, Delete) operations on ASA resources; it is based on the HTTPS protocol and REST methodology.
+  The ASA REST API gives you programmatic access to managing individual ASAs through a Representational State Transfer (REST) API. The API allows external clients to perform **CRUD** (Create, Read, Update, Delete) operations on ASA resources; it is based on the HTTPS protocol and REST methodology.
+  
   All API requests are sent over HTTPS to the ASA, and a response is returned.
 
   Request Structure
 
   Available request methods are:
-  GET – Retrieves data from the specified object.
-  PUT – Adds the supplied information to the specified object; returns a 404 Resource Not Found error if the object does not exist.
-  POST – Creates the object with the supplied information.
-  DELETE – Deletes the specified object.
-  PATCH – Applies partial modifications to the specified object.
+  - `GET` – Retrieves data from the specified object.
+  - `PUT` – Adds the supplied information to the specified object; returns a 404 Resource Not Found error if the object does not exist.
+  - `POST` – Creates the object with the supplied information.
+  - `DELETE` – Deletes the specified object.
+  - `PATCH` – Applies partial modifications to the specified object.
 
   Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/api/qsg-asa-api.html
 
