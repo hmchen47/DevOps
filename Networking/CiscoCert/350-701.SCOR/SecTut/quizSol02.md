@@ -51,7 +51,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
-      src    = "img/503-Python_script_DNA_Center_API.jpg"
+      src    = "img/0503-Python_script_DNA_Center_API.jpg"
       alt    = "Python Script w/ DNA Center API"
       title  = "Python Script w/ DNA Center API"
     />
@@ -73,7 +73,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
-      src    = "img/504-Cisco_security_appliance_API.jpg"
+      src    = "img/0504-Cisco_security_appliance_API.jpg"
       alt    = "Python Script w/ Security Appliance API"
       title  = "Python Script w/ Security Appliance API"
     />
@@ -364,7 +364,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
-      src    = "img/619-ACL_DMZ.jpg"
+      src    = "img/0619-ACL_DMZ.jpg"
       alt    = "text"
       title  = "text"
     />
@@ -790,7 +790,164 @@ With Cisco Email Security customers can:
 
 ## 08. Cloud Security
 
+<span style="color: blue; font-weight: bold;">Cloud Quick Summary</span>
 
+<span style="color: blue;">Types of clouds</span>
+
+There are 4 types of cloud:
+
+- Private Cloud: cloud that is dedicated solely to one organization. Advantages of Private Clouds are high security, Regulatory compliance, Flexibility to respond to changing needs. Drawbacks of private cloud are cost, mobile difficulty,
+- Public Cloud: cloud that is delivered via the Internet and shared across organizations. Examples of public clouds are Amazon Web Services, Microsoft Azure, and Google Cloud Platform. Advantages of public cloud are lower costs, Freedom from maintenance. Drawbacks of public cloud are Lack of security, minimal technical control
+- Hyrid Cloud: any environment that uses both public and private clouds. Confidential operations like financial reporting, for example, can be run on a private cloud. High-volume, less sensitive workloads like web-based email – or even temporary workloads such as development and test – can run on a public cloud.
+- Community Cloud: a recent variation on the private cloud model that can be only accessible by group of organizations. It shares the infrastructure between several organizations from a specific community. It may be managed internally by organizations or by the third-party.
+
+<span style="color: blue;">Cloud services</span>
+
+There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
+
+- SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a third-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can be run directly from a web browser without any downloads or installations required, although some require plugins.
+- PaaS (Platform as a Service): are used for applications, and other development, while providing cloud components to software. What developers gain with PaaS is a framework they can build upon to develop or customize applications. PaaS makes the development, testing, and deployment of applications quick, simple, and cost-effective. With this technology, enterprise operations, or a third-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS software itself. Developers, however, manage the applications. PaaS provides everything except applications.
+- IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
+
+<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
+    src    = "img/0800-Cloud_Computing_SaaS_PaaS_IaaS.jpg"
+    alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
+    title  = "Cloud Computing: SaaS, PaaS, & IaaS"
+  />
+</figure>
+
+
+- <span style="color: blue; font-weight: bold;">Question 1</span>
+
+  Which technology reduces data loss by identifying sensitive information stored in public computing environments?
+
+  A. Cisco SDA<br>
+  B. Cisco Firepower<br>
+  C. Cisco HyperFlex<br>
+  D. Cisco Cloudlock<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Which deployment model is the most secure when considering risks to cloud adoption?
+
+  A. Public Cloud<br>
+  B. Hybrid Cloud<br>
+  C. Community Cloud<br>
+  D. Private Cloud<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  In which cloud services model is the tenant responsible for virtual machine OS patching?
+
+  A. IaaS<br>
+  B. UCaaS<br>
+  C. PaaS<br>
+  D. SaaS<br>
+
+  Answer: A
+
+  Explanation
+
+  Only in On-site (on-premises) and IaaS we (tenant) manage O/S (Operating System).
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
+      src    = "img/0803-iaas_paas-saas-compare.png"
+      alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
+      title  = "Cloud Computing: SaaS, PaaS, & IaaS"
+    />
+  </figure>
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  Which cloud service model offers an environment for cloud consumers to develop and deploy applications without needing to manage or maintain the underlying cloud infrastructure?
+
+  A. PaaS<br>
+  B. XaaS<br>
+  C. IaaS<br>
+  D. SaaS<br>
+
+  Answer: A
+
+  Explanation
+
+  Cloud computing can be broken into the following three basic models:
+
+  - Infrastructure as a Service (IaaS): IaaS describes a cloud solution where you are renting infrastructure. You purchase virtual power to execute your software as needed. This is much like running a virtual server on your own equipment, except you are now running a virtual server on a virtual disk. This model is similar to a utility company model because you pay for what you use.
+  - Platform as a Service (PaaS): PaaS provides everything except applications. Services provided by this model include all phases of the system development life cycle (SDLC) and can use application programming interfaces (APIs), website portals, or gateway software. These solutions tend to be proprietary, which can cause problems if the customer moves away from the provider’s platform.
+  - Software as a Service (SaaS): SaaS is designed to provide a complete packaged solution. The software is rented out to the user. The service is usually provided through some type of front end or web portal. While the end user is free to use the service from anywhere, the company pays a peruse fee.
+
+  Reference: CCNP and CCIE Security Core SCOR 350-701 Official Cert Guide
+
+
+- <span style="color: blue; font-weight: bold;">Question 5</span>
+
+  What does the Cloudlock Apps Firewall do to mitigate security concerns from an application perspective?
+
+  A. It allows the administrator to quarantine malicious files so that the application can function, just not maliciously.<br>
+  B. It discovers and controls cloud apps that are connected to a company’s corporate environment.<br>
+  C. It deletes any application that does not belong in the network.<br>
+  D. It sends the application information to an administrator to act on.<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: bold;">Question 6</span>
+
+  Which solution protects hybrid cloud deployment workloads with application visibility and segmentation?
+
+  A. Nexus<br>
+  B. Stealthwatch<br>
+  C. Firepower<br>
+  D. Tetration<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 7</span>
+
+  In a PaaS model, which layer is the tenant responsible for maintaining and patching?
+
+  A. hypervisor<br>
+  B. virtual machine<br>
+  C. network<br>
+  D. application<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 8</span>
+
+  On which part of the IT environment does DevSecOps focus?
+
+  A. application development<br>
+  B. wireless network<br>
+  C. data center<br>
+  D. perimeter network<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 9</span>
+
+  What is the function of Cisco Cloudlock for data security?
+
+  A. data loss prevention<br>
+  B. controls malicious cloud apps<br>
+  C. detects anomalies<br>
+  D. user and entity behavior analytics<br>
+
+  Answer: A
 
 
 
