@@ -413,5 +413,80 @@
 
 ## 12. Exfiltration Techniques
 
+- <span style="color: blue; font-weight: bold;">Question 1</span>
+
+  How is ICMP used an exfiltration technique?
+
+  A. by flooding the destination host with unreachable packets<br>
+  B. by sending large numbers of ICMP packets with a targeted hosts source IP address using an IP broadcast address<br>
+  C. by encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host<br>
+  D. by overwhelming a targeted host with ICMP echo-request packets<br>
+
+  Answer: C
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Which exfiltration method does an attacker use to hide and encode data inside DNS requests and queries?
+
+  A. DNS tunneling<br>
+  B. DNSCrypt<br>
+  C. DNS security<br>
+  D. DNSSEC<br>
+
+  Answer: A
+
+  Explanation
+
+  DNS Tunneling is a method of cyber attack that encodes the data of other programs or protocols in DNS queries and responses. DNS tunneling often includes data payloads that can be added to an attacked DNS server and used to control a remote server and applications.
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  How is DNS tunneling used to exfiltrate data out of a corporate network?
+
+  A. It corrupts DNS servers by replacing the actual IP address with a rogue address to collect information or start other attacks.<br>
+  B. It encodes the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data.<br>
+  C. It redirects DNS requests to a malicious server used to steal user credentials, which allows further damage and theft on the network.<br>
+  D. It leverages the DNS server by permitting recursive lookups to spread the attack to other DNS servers.<br>
+
+  Answer: B
+
+  Explanation
+
+  Domain name system (DNS) is the protocol that translates human-friendly URLs, such as securitytut.com, into IP addresses, such as 183.33.24.13. Because DNS messages are only used as the beginning of each communication and they are not intended for data transfer, many organizations do not monitor their DNS traffic for malicious activity. As a result, DNS-based attacks can be effective if launched against their networks. DNS tunneling is one such attack.
+
+  An example of DNS Tunneling is shown below:
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('page')"
+      src    = "img/1203-DNS_Tunneling.jpg"
+      alt    = "DNS Tunneling"
+      title  = "DNS Tunneling"
+    />
+  </figure>
+
+  - 1\. The attacker incorporates one of many open-source DNS tunneling kits into an authoritative DNS nameserver (NS) and malicious payload.
+  - 2\. An IP address (e.g. 1.2.3.4) is allocated from the attacker’s infrastructure and a domain name (e.g. attackerdomain.com) is registered or reused. The registrar informs the top-level domain (.com) nameservers to refer requests for attackerdomain.com to ns.attackerdomain.com, which has a DNS record mapped to 1.2.3.4
+  - 3\. The attacker compromises a system with the malicious payload. Once the desired data is obtained, the payload encodes the data as a series of 32 characters (0-9, A-Z) broken into short strings (3KJ242AIE9, P028X977W,…).
+  - 4\. The payload initiates thousands of unique DNS record requests to the attacker’s domain with each string as a part of the domain name (e.g. 3KJ242AIE9.attackerdomain.com). Depending on the attacker’s patience and stealth, requests can be spaced out over days or months to avoid suspicious network activity.
+  - 5\. The requests are forwarded to a recursive DNS resolver. During resolution, the requests are sent to the attacker’s authoritative DNS nameserver,
+  - 6\. The tunneling kit parses the encoded strings and rebuilds the exfiltrated data.
+
+  Reference: https://learn-umbrella.cisco.com/i/775902-dns-tunneling/0
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  Which two characteristics of messenger protocols make data exfiltration difficult to detect and prevent? (Choose two)
+
+  A. Outgoing traffic is allowed so users can communicate with outside organizations.<br>
+  B. Malware infects the messenger application on the user endpoint to send company data.<br>
+  C. Traffic is encrypted, which prevents visibility on firewalls and IPS systems.<br>
+  D. An exposed API for the messaging platform is used to send large amounts of data.<br>
+  E. Messenger applications cannot be segmented with standard network controls.<br>
+
+  Answer: C E
 
 
