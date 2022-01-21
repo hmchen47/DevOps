@@ -57,7 +57,6 @@
     />
   </figure>
 
-
   What is the result of this Python script of the Cisco DNA Center API?
 
   A. adds authentication to a switch
@@ -80,7 +79,6 @@
     />
   </figure>
 
-
   What does the API do when connected to a Cisco security appliance?
 
   A. get the process and PID information from the computers in the network
@@ -98,10 +96,138 @@
 
 
 
-
 ## 06. Firewall & Intrusion Prevention
 
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
+  Which feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System?
+
+  A. Security Intelligence<br>
+  B. Impact Flags<br>
+  C. Health Monitoring<br>
+  D. URL Filtering<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Which two deployment model configurations are supported for Cisco FTDv in AWS? (Choose two)
+
+  A. Cisco FTDv configured in routed mode and managed by an FMCv installed in AWS<br>
+  B. Cisco FTDv with one management interface and two traffic interfaces configured<br>
+  C. Cisco FTDv configured in routed mode and managed by a physical FMC appliance on premises<br>
+  D. Cisco FTDv with two management interfaces and one traffic interface configured<br>
+  E. Cisco FTDv configured in routed mode and IPv6 configured<br>
+
+  Answer: A C
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  Which option is the main function of Cisco Firepower impact flags?
+
+  A. They alert administrators when critical events occur.<br>
+  B. They highlight known and suspected malicious IP addresses in reports.<br>
+  C. They correlate data about intrusions and vulnerability.<br>
+  D. They identify data that the ASA sends to the Firepower module.<br>
+
+  Answer: C
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  On Cisco Firepower Management Center, which policy is used to collect health modules alerts from managed devices?
+
+  A. health policy<br>
+  B. system policy<br>
+  C. correlation policy<br>
+  D. access control policy<br>
+  E. health awareness policy<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: bold;">Question 5</span>
+
+  Which license is required for Cisco Security Intelligence to work on the Cisco Next Generation Intrusion Prevention System?
+
+  A. control<br>
+  B. malware<br>
+  C. URL filtering<br>
+  D. protect<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 6</span>
+
+  Which two are valid suppression types on a Cisco Next Generation Intrusion Prevention System? (Choose two)
+
+  A. Port<br>
+  B. Rule<br>
+  C. Source<br>
+  D. Application<br>
+  E. Protocol<br>
+
+  Answer: B C
+
+
+- <span style="color: blue; font-weight: bold;">Question 7</span>
+
+  Which feature is configured for managed devices in the device platform settings of the Firepower Management Center?
+
+  A. quality of service<br>
+  B. time synchronization<br>
+  C. network address translations<br>
+  D. intrusion policy<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: bold;">Question 8</span>
+
+  Which information is required when adding a device to Firepower Management Center?
+
+  A. username and password<br>
+  B. encryption method<br>
+  C. device serial number<br>
+  D. registration key<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 9</span>
+
+  Which two deployment modes does the Cisco ASA FirePower module support? (Choose two)
+
+  A. transparent mode<br>
+  B. routed mode<br>
+  C. inline mode<br>
+  D. active mode<br>
+  E. passive monitor-only mode<br>
+
+  Answer: C E
+
+  Explanation
+
+    You can configure your ASA FirePOWER module using one of the following deployment models:
+
+    You can configure your ASA FirePOWER module in either an inline or a monitor-only (inline tap or passive) deployment.
+
+    Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/asdm72/firewall/asa-firewall-asdm/modules-sfr.html
+
+
+- <span style="color: blue; font-weight: bold;">Question 10</span>
+
+  The Cisco ASA must support TLS proxy for encrypted Cisco Unified Communications traffic. Where must the ASA be added on the Cisco UC Manager platform?
+
+  A. Certificate Trust List<br>
+  B. Endpoint Trust List<br>
+  C. Enterprise Proxy Service<br>
+  D. Secured Collaboration Proxy<br>
+
+  Answer: A
 
 
 ## 07. Email & Web
