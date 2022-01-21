@@ -212,7 +212,203 @@
 
 ## 11. Secure Network Access
 
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
+  Which SNMPv3 configuration must be used to support the strongest security possible?
+
+    A.
+    ```text
+    asa-host(config)#snmp-server group myv3 v3 priv
+    asa-host(config)#snmp-server user andy myv3 auth sha cisco priv des ciscXXXXXXXX
+    asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
+    ```
+
+    B.
+    ```text
+    asa-host(config)#snmp-server group myv3 v3 noauth
+    asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
+    asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
+    ```
+
+    C.
+    ```text
+    asa-host(config)#snmpserver group myv3 v3 noauth
+    asa-host(config)#snmp-server user andy myv3 auth sha cisco priv 3des ciscXXXXXXXX
+    asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
+    ```
+
+    D.
+    ```text
+    asa-host(config)#snmp-server group myv3 v3 priv
+    asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
+    asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
+    ```
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Refer to the exhibit. Which command was used to generate this output and to show which ports are authenticating with dot1x or mab?
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/1102-show_authentication_sessions.jpg"
+      alt    = "Outout of show authentication sessions"
+      title  = "Outout of show authentication sessions"
+    />
+  </figure>
+    
+
+  A. show authentication registrations<br>
+  B. show authentication method<br>
+  C. show dot1x all<br>
+  D. show authentication sessions<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  What Cisco command shows you the status of an 802.1X connection on interface gi0/1?
+  A. `show authorization status`<br>
+  B. `show authen sess int gi0/1`<br>
+  C. `show connection status gi0/1`<br>
+  D. `show ver gi0/1`<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  Refer to the exhibit. What does the number 15 represent in this configuration?
+
+  ```text
+  snmp-server group SNMP v3 auth access 15
+  ```
+
+  A. privilege level for an authorized user to this router<br>
+  B. access list that identifies the SNMP devices that can access the router<br>
+  C. interval in seconds between SNMPv3 authentication attempts<br>
+  D. number of possible failed attempts until the SNMPv3 user is locked out<br>
+
+  Answer: B
+
+  Explanation
+
+  The syntax of this command is shown below:
+
+  ```cfg
+  snmp-server group [group-name {v1 | v2c | v3 [auth | noauth | priv]}]
+    [read read-view] [write write-view] [notify notify-view] [access access-list]
+  ```
+
+  The command above restricts which IP source addresses are allowed to access SNMP functions on the router. You could restrict SNMP access by simply applying an interface ACL to block incoming SNMP packets that don’t come from trusted servers. However, this would not be as effective as using the global SNMP commands shown in this recipe. Because you can apply this method once for the whole router, it is much simpler than applying ACLs to block SNMP on all interfaces separately. Also, using interface ACLs would block not only SNMP packets intended for this router, but also may stop SNMP packets that just happened to be passing through on their way to some other destination device.
+
+
+- <span style="color: blue; font-weight: bold;">Question 5
+
+  Under which two circumstances is a CoA issued? (Choose two)
+
+  A. A new authentication rule was added to the policy on the Policy Service node.<br>
+  B. An endpoint is deleted on the Identity Service Engine server.<br>
+  C. A new Identity Source Sequence is created and referenced in the authentication policy.<br>
+  D. An endpoint is profiled for the first time.<br>
+  E. A new Identity Service Engine server is added to the deployment with the Administration persona<br>
+
+  Answer: B D
+
+  Explanation
+
+  The profiling service issues the change of authorization in the following cases:
+  - Endpoint deleted—When an endpoint is deleted from the Endpoints page and the endpoint is disconnected or removed from the network.
+  An exception action is configured—If you have an exception action configured per profile that leads to an unusual or an unacceptable event from that endpoint. The profiling service moves the endpoint to the corresponding static profile by issuing a CoA.
+  - An endpoint is profiled for the first time—When an endpoint is not statically assigned and profiled for the first time; for example, the profile changes from an unknown to a known profile.
+  - An endpoint identity group has changed—When an endpoint is added or removed from an endpoint identity group that is used by an authorization policy.
+
+    The profiling service issues a CoA when there is any change in an endpoint identity group, and the endpoint identity group is used in the authorization policy for the following:
+    - The endpoint identity group changes for endpoints when they are dynamically profiled  
+    - The endpoint identity group changes when the static assignment flag is set to true for a dynamic endpoint 
+  - An endpoint profiling policy has changed and the policy is used in an authorization policy—When an endpoint profiling policy changes, and the policy is included in a logical profile that is used in an authorization policy. The endpoint profiling policy may change due to the profiling policy match or when an endpoint is statically assigned to an endpoint profiling policy, which is associated to a logical profile. In both the cases, the profiling service issues a CoA, only when the endpoint profiling policy is used in an authorization policy.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010100.html
+
+
+- <span style="color: blue; font-weight: bold;">Question 6</span>
+
+  Refer to the exhibit.
+
+  ```text
+  HQ_Router(config)#username admin5 privilege 5
+  HQ_Router(config)#privilege interface level 5 shutdown
+  HQ_Router(config)#privilege interface level 5 ip
+  HQ_Router(config)#privilege interface level 5 description
+  ```
+
+  A network administrator configures command authorization for the admin5 user. What is the admin5 user able to do on HQ_Router after this configuration?
+
+  A. set the IP address of an interface<br>
+  B. complete no configurations<br>
+  C. complete all configurations<br>
+  D. add subinterfaces<br>
+
+  Answer: B
+
+  Explanation
+
+  The user “admin5” was configured with privilege level 5. In order to allow configuration (enter global configuration mode), we must type this command:
+
+  ```text
+  (config)#privilege exec level 5 configure terminal
+  ```
+
+  Without this command, this user cannot do any configuration.
+
+  Note: Cisco IOS supports privilege levels from 0 to 15, but the privilege levels which are used by default are privilege level 1 (user EXEC) and level privilege 15 (privilege EXEC).
+
+
+- <span style="color: blue; font-weight: bold;">Question 7
+
+  A network engineer has entered the snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941 command and needs to send SNMP information to a host at 10.255.254.1. Which command achieves this goal?
+
+  A. `snmp-server host inside 10.255.254.1 version 3 andy`<br>
+  B. `snmp-server host inside 10.255.254.1 version 3 myv3`<br>
+  C. `snmp-server host inside 10.255.254.1 snmpv3 andy`<br>
+  D. `snmp-server host inside 10.255.254.1 snmpv3 myv3`<br>
+
+  Answer: A
+
+  Explanation
+
+  The command “`snmp-server user user-name group-name [remote ip-address [udp-port port]] {v1 | v2c | v3 [encrypted] [auth {md5 | sha} auth-password]} [access access-list]`” adds a new user (in this case “andy”) to an SNMPv3 group (in this case group name “myv3”) and configures a password for the user.
+
+  In the “`snmp-server host`” command, we need to:
+  - Specify the SNMP version with key word “version {1 | 2 | 3}”
+  - Specify the username (“andy”), not group name (“myv3”).
+
+  Note: In “`snmp-server host inside …`” command, “inside” is the interface name of the ASA interface through which the NMS (located at 10.255.254.1) can be reached.
+
+
+- <span style="color: blue; font-weight: bold;">Question 8
+
+  Which telemetry data captures variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length?
+
+  A. interpacket variation<br>
+  B. software package variation<br>
+  C. flow insight variation<br>
+  D. process details variation<br>
+
+  Answer: A
+
+  Explanation
+
+  The telemetry information consists of three types of data:
+  - Flow information: This information contains details about endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
+  - Interpacket variation: This information captures any interpacket variations within the flow. Examples include variation in Time To Live (TTL), IP and TCP flags, payload length, etc
+  - Context details: Context information is derived outside the packet header. It includes details about variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
+
+  Reference: https://www.cisco.com/c/dam/global/en_uk/products/switches/cisco_nexus_9300_ex_platform_switches_white_paper_uki.pdf
 
 
 ## 12. Exfiltration Techniques
