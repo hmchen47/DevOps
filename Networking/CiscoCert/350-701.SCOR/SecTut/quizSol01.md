@@ -576,3 +576,95 @@ Answer: C
   In its essence, FlexVPN is the same as DMVPN. Connections between devices are still point-to-point GRE tunnels, spoke-to-spoke connectivity is still achieved with NHRP redirect message, IOS routers even run the same NHRP code for both DMVPN and FlexVPN, which also means that both are Cisco’s proprietary technologies.
 
   Reference: https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/
+
+## 04. Software Defined Network (SDN)
+
+<span style="color: lightblue; font-weight: bold;">SDN Quick Summary</span>
+
+Most traditional devices use a distributed architecture, in which each control plane is resided in a networking device. Therefore they need to communicate with each other via messages to work correctly.
+
+In contrast to distributed architecture, centralized (or controller-based) architectures centralizes the control of networking devices into one device, called SDN controller. The SDN controller has a global view of the network, and it uses common management protocols to monitor and configure the network devices. An example of SDN is Cisco ACI.
+
+As we took the control planes off networking devices but not data planes so we need a way to communicate with them. So we put a southbound interface (SBI) at the bottom of SDN controller for this task. An SBI communicates with the devices via an application programming interface (API).
+
+<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
+    src    = "400-SDN_controller_based_architecture.jpg"
+    alt    = "Architecture of SDN Controller"
+    title  = "Architecture of SDN Controller"
+  />
+</figure>
+
+Now, in turn, the networking administrators and SDN applications want to control the controller! So the controller need a **northbound interface** (NBI) to communicate with us. The NBI applications included various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control.
+
+<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
+    src    = "400-Southbound_Northbound_APIs.jpg"
+    alt    = "API - Southbound and Northbound"
+    title  = "API - Southbound and Northbound"
+  />
+</figure>
+
+SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.
+
+- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+
+  The main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network?
+
+  A. SDN controller and the cloud<br>
+  B. management console and the SDN controller<br>
+  C. management console and the cloud<br>
+  D. SDN controller and the management solution<br>
+
+  Answer: D
+
+- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+
+  Which two features of Cisco DNA Center are used in a Software Defined Network solution? (Choose two)
+
+  A. accounting<br>
+  B. assurance<br>
+  C. automation<br>
+  D. authentication<br>
+  E. encryption<br>
+
+  Answer: B C
+
+  Explanation
+
+  What Cisco DNA Center enables you to do
+
+  Automate: Save time by using a single dashboard to manage and automate your network. Quickly scale your business with intuitive workflows and reusable templates. Configure and provision thousands of network devices across your enterprise in minutes, not hours.
+
+  Secure policy: Deploy group-based secure access and network segmentation based on business needs. With Cisco DNA Center, you apply policy to users and applications instead of to your network devices. Automation reduces manual operations and the costs associated with human errors, resulting in more uptime and improved security. Assurance then assesses the network and uses context to turn data into intelligence, making sure that changes in the network device policies achieve your intent.
+
+  Assurance: Monitor, identify, and react in real time to changing network and wireless conditions. Cisco DNA Center uses your network’s wired and wireless devices to create sensors everywhere, providing real-time feedback based on actual network conditions. The Cisco DNA Assurance engine correlates network sensor insights with streaming telemetry and compares this with the current context of these data sources. With a quick check of the health scores on the Cisco DNA Center dashboard, you can see where there is a performance issue and identify the most likely cause in minutes.
+
+  Extend ecosystem: With the new Cisco DNA Center platform, IT can now integrate Cisco® solutions and third-party technologies into a single network operation for streamlining IT workflows and increasing business value and innovation. Cisco DNA Center allows you to run the network with open interfaces with IT and business applications, integrates across IT operations and technology domains, and can manage heterogeneous network devices.
+
+  Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-cisco-dna-center-aag-cte-en.html
+
+- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+
+  Which functions of an SDN architecture require southbound APIs to enable communication?
+  A. SDN controller and the network elements
+  B. management console and the SDN controller
+  C. management console and the cloud
+  D. SDN controller and the cloud
+
+  Answer: A
+
+  Explanation
+
+  The Southbound API is used to communicate between Controllers and network devices.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
+      src    = "403-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound and Northbound"
+      title  = "API - Southbound and Northbound"
+    />
+  </figure>
