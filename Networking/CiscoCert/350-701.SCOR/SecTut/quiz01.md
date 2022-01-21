@@ -270,7 +270,7 @@ completely secret.
 DMVPN, FlexVPN and GETVPN comparison:
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
     onclick= "window.open('page')"
     src    = "img/300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
     alt    = "Comparisons of DMVPN, FlexVPN, and GETVPN"
@@ -339,7 +339,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
       onclick= "window.open('page')"
       src    = "img/306-site_to_site_VPN_isakmp.jpg"
       alt    = "Log messages of Site-to-Site CPN"
@@ -400,7 +400,7 @@ In contrast to distributed architecture, centralized (or controller-based) archi
 As we took the control planes off networking devices but not data planes so we need a way to communicate with them. So we put a southbound interface (SBI) at the bottom of SDN controller for this task. An SBI communicates with the devices via an application programming interface (API).
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 300px;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
     src    = "img/400-SDN_controller_based_architecture.jpg"
     alt    = "Architecture of SDN Controller"
@@ -411,7 +411,7 @@ As we took the control planes off networking devices but not data planes so we n
 Now, in turn, the networking administrators and SDN applications want to control the controller! So the controller need a **northbound interface** (NBI) to communicate with us. The NBI applications included various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control.
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 150px;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
     src    = "img/403-Southbound_Northbound_APIs.jpg"
     alt    = "API - Southbound and Northbound"
