@@ -410,7 +410,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
     onclick= "window.open('page')"
-    src    = "300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
+    src    = "img/300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
     alt    = "Comparisons of DMVPN, FlexVPN, and GETVPN"
     title  = "Comparisons of DMVPN, FlexVPN, and GETVPN"
   />
@@ -439,22 +439,22 @@ DMVPN, FlexVPN and GETVPN comparison:
 
 - <span style="color: lightblue; font-weight: bold;">Question 2</span>
 
-Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
+  Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
 
-A. DMVPN<br>
-B. FlexVPN<br>
-C. IPsec DVTI<br>
-D. GET VPN<br>
+  A. DMVPN<br>
+  B. FlexVPN<br>
+  C. IPsec DVTI<br>
+  D. GET VPN<br>
 
-Answer: D
+  Answer: D
 
-Explanation
+  Explanation
 
-Cisco‘s Group Encrypted Transport VPN (GETVPN) introduces the concept of a trusted group to eliminate point-to-point tunnels and their associated overlay routing. All group members (GMs) share a common security association (SA), also known as a group SA. This enables GMs to decrypt traffic that was encrypted by any other GM.
+  Cisco‘s Group Encrypted Transport VPN (GETVPN) introduces the concept of a trusted group to eliminate point-to-point tunnels and their associated overlay routing. All group members (GMs) share a common security association (SA), also known as a group SA. This enables GMs to decrypt traffic that was encrypted by any other GM.
 
-GETVPN provides instantaneous large-scale any-to-any IP connectivity using a group IPsec security paradigm.
+  GETVPN provides instantaneous large-scale any-to-any IP connectivity using a group IPsec security paradigm.
 
-Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf
+  Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf
 
 - <span style="color: lightblue; font-weight: bold;">Question 3</span>
 
@@ -503,14 +503,14 @@ Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-
 
 - <span style="color: lightblue; font-weight: bold;">Question 5</span>
 
-A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
+  A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
 
-A. Change isakmp to ikev2 in the command on hostA.
-B. Enter the command with a different password on hostB.
-C. Enter the same command on hostB.
-D. Change the password on hostA to the default password.
+  A. Change isakmp to ikev2 in the command on hostA.
+  B. Enter the command with a different password on hostB.
+  C. Enter the same command on hostB.
+  D. Change the password on hostA to the default password.
 
-Answer: C
+  Answer: C
 
 - <span style="color: lightblue; font-weight: bold;">Question 6</span>
 
@@ -536,14 +536,14 @@ Answer: C
 
 - <span style="color: lightblue; font-weight: bold;">Question 7
 
-What is a difference between FlexVPN and DMVPN?
+  What is a difference between FlexVPN and DMVPN?
 
-A. DMVPN uses IKEv1 or IKEv2, FlexVPN only uses IKEv1<br>
-B. DMVPN uses only IKEv1 FlexVPN uses only IKEv2<br>
-C. FlexVPN uses IKEv2, DMVPN uses IKEv1 or IKEv2<br>
-D. FlexVPN uses IKEv1 or IKEv2, DMVPN uses only IKEv2<br>
+  A. DMVPN uses IKEv1 or IKEv2, FlexVPN only uses IKEv1<br>
+  B. DMVPN uses only IKEv1 FlexVPN uses only IKEv2<br>
+  C. FlexVPN uses IKEv2, DMVPN uses IKEv1 or IKEv2<br>
+  D. FlexVPN uses IKEv1 or IKEv2, DMVPN uses only IKEv2<br>
 
-Answer: C
+  Answer: C
 
 - <span style="color: lightblue; font-weight: bold;">Question 8</span>
 
@@ -590,7 +590,7 @@ As we took the control planes off networking devices but not data planes so we n
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "400-SDN_controller_based_architecture.jpg"
+    src    = "img/400-SDN_controller_based_architecture.jpg"
     alt    = "Architecture of SDN Controller"
     title  = "Architecture of SDN Controller"
   />
@@ -599,9 +599,9 @@ As we took the control planes off networking devices but not data planes so we n
 Now, in turn, the networking administrators and SDN applications want to control the controller! So the controller need a **northbound interface** (NBI) to communicate with us. The NBI applications included various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control.
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "400-Southbound_Northbound_APIs.jpg"
+    src    = "img/403-Southbound_Northbound_APIs.jpg"
     alt    = "API - Southbound and Northbound"
     title  = "API - Southbound and Northbound"
   />
@@ -661,9 +661,9 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
   The Southbound API is used to communicate between Controllers and network devices.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
       onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-      src    = "403-Southbound_Northbound_APIs.jpg"
+      src    = "img/403-Southbound_Northbound_APIs.jpg"
       alt    = "API - Southbound and Northbound"
       title  = "API - Southbound and Northbound"
     />
