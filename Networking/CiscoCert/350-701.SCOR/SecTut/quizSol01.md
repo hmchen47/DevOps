@@ -94,7 +94,7 @@
 
   Phishing attacks are the practice of sending fraudulent communications that appear to come from a reputable source. It is usually done through email. The goal is to steal sensitive data like credit card and login information, or to install malware on the victim’s machine.
 
-- <span style="color: blue; font-weight: bold;">Question 5\*\*
+- <span style="color: blue; font-weight: bold;">Question 5</span>
 
   Which two mechanisms are used to control phishing attacks? (Choose two)
 
@@ -106,7 +106,7 @@
 
   Answer: A E
 
-- <span style="color: blue; font-weight: bold;">Question 6\*\*
+- <span style="color: blue; font-weight: bold;">Question 6</span>
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
 
