@@ -298,6 +298,7 @@
   Which SNMPv3 configuration must be used to support the strongest security possible?
 
     A.
+
     ```text
     asa-host(config)#snmp-server group myv3 v3 priv
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv des ciscXXXXXXXX
@@ -305,6 +306,7 @@
     ```
 
     B.
+
     ```text
     asa-host(config)#snmp-server group myv3 v3 noauth
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
@@ -312,6 +314,7 @@
     ```
 
     C.
+
     ```text
     asa-host(config)#snmpserver group myv3 v3 noauth
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv 3des ciscXXXXXXXX
@@ -319,6 +322,7 @@
     ```
 
     D.
+    
     ```text
     asa-host(config)#snmp-server group myv3 v3 priv
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
