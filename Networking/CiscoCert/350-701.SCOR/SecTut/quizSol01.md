@@ -2,7 +2,7 @@
 
 ## 01. Security Concepts
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   In which form of attack is alternate encoding, such as hexadecimal representation, most often observed?
 
@@ -37,7 +37,7 @@
 
   Note: In the format “&#xhhhh“, hhhh is the code point in hexadecimal form.
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which flaw does an attacker leverage when exploiting SQL injection vulnerabilities?
 
@@ -66,7 +66,7 @@
 
   The SQL above is valid and will return ALL rows from the “Users” table, since OR 1=1 is always TRUE. A hacker might get access to all the user names and passwords in this database.
 
-- <span style="color: lightblue; font-weight: bold;">Question 3<span style="color: lightblue; font-weight: bold;">
+- <span style="color: blue; font-weight: bold;">Question 3<span style="color: blue; font-weight: bold;">
 
   Which two prevention techniques are used to mitigate SQL injection attacks? (Choose two)
 
@@ -78,7 +78,7 @@
 
   Answer: A B
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Which two endpoint measures are used to minimize the chances of falling victim to phishing and social engineering attacks? (Choose two)
 
@@ -94,7 +94,7 @@
 
   Phishing attacks are the practice of sending fraudulent communications that appear to come from a reputable source. It is usually done through email. The goal is to steal sensitive data like credit card and login information, or to install malware on the victim’s machine.
 
-- <span style="color: lightblue; font-weight: bold;">Question 5\*\*
+- <span style="color: blue; font-weight: bold;">Question 5\*\*
 
   Which two mechanisms are used to control phishing attacks? (Choose two)
 
@@ -106,7 +106,7 @@
 
   Answer: A E
 
-- <span style="color: lightblue; font-weight: bold;">Question 6\*\*
+- <span style="color: blue; font-weight: bold;">Question 6\*\*
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
 
@@ -126,7 +126,7 @@
 
   Like other large but well-formed packets, a ping of death is fragmented into groups of 8 octets before transmission. However, when the target computer reassembles the malformed packet, a buffer overflow can occur, causing a system crash and potentially allowing the injection of malicious code.
 
-- <span style="color: lightblue; font-weight: bold;">Question 7</span>
+- <span style="color: blue; font-weight: bold;">Question 7</span>
 
   Which two preventive measures are used to control cross-site scripting? (Choose two)
 
@@ -138,7 +138,7 @@
 
   Answer: A B
 
-- <span style="color: lightblue; font-weight: bold;">Question 8</span>
+- <span style="color: blue; font-weight: bold;">Question 8</span>
 
   What is the difference between deceptive phishing and spear phishing?
 
@@ -155,7 +155,7 @@
 
   Spear phishing is carefully designed to get a single recipient to respond. Criminals select an individual target within an organization, using social media and other public information – and craft a fake email tailored for that person.
 
-- <span style="color: lightblue; font-weight: bold;">Question 9</span>
+- <span style="color: blue; font-weight: bold;">Question 9</span>
 
   Which attack is commonly associated with C and C++ programming languages?
 
@@ -172,7 +172,7 @@
 
   Buffer overflow is a vulnerability in low level codes of C and C++. An attacker can cause the program to crash, make data corrupt, steal some private information or run his/her own code. It basically means to access any buffer outside of it’s alloted memory space. This happens quite frequently in the case of arrays.
 
-- <span style="color: lightblue; font-weight: bold;">Question 10</span>
+- <span style="color: blue; font-weight: bold;">Question 10</span>
 
   What is a language format designed to exchange threat intelligence that can be transported over the TAXII protocol?
 
@@ -189,7 +189,7 @@
 
   STIX (Structured Threat Information eXpression) is a standardized language which has been developed in a collaborative way in order to represent structured information about cyber threats. It has been developed so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation and human assisted analysis.
 
-- <span style="color: lightblue; font-weight: bold;">Question 11</span>
+- <span style="color: blue; font-weight: bold;">Question 11</span>
 
   Which two capabilities does TAXII support? (Choose two)
 
@@ -211,7 +211,7 @@
 
   Reference: https://docs.oasis-open.org/cti/taxii/v1.1.1/taxii-v1.1.1-part1-overview.html
 
-- <span style="color: lightblue; font-weight: bold;">Question 12</span>
+- <span style="color: blue; font-weight: bold;">Question 12</span>
 
   Which two risks is a company vulnerable to if it does not have a well-established patching solution for endpoints? (Choose two)
 
@@ -237,7 +237,7 @@
 
   Exploits and malware are two risks for endpoints that are not up to date. ARP spoofing and eavesdropping are attacks against the network while denial-of-service attack is based on the flooding of IP packets.
 
-- <span style="color: lightblue; font-weight: bold;">Question 13</span>
+- <span style="color: blue; font-weight: bold;">Question 13</span>
 
   Which PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server?
 
@@ -258,7 +258,7 @@
 
   Reference: https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/211333-IOS-PKI-Deployment-Guide-Initial-Design.html
 
-- <span style="color: lightblue; font-weight: bold;">Question 15</span>
+- <span style="color: blue; font-weight: bold;">Question 15</span>
 
   What are two rootkit types? (Choose two)
 
@@ -276,7 +276,7 @@
 
   There are four main types of rootkits: Kernel rootkits, User mode rootkits, Bootloader rootkits, Memory rootkits
 
-- <span style="color: lightblue; font-weight: bold;">Question 16</span>
+- <span style="color: blue; font-weight: bold;">Question 16</span>
 
   Which form of attack is launched using botnets?
 
@@ -291,7 +291,7 @@
 
   A botnet is a collection of internet-connected devices infected by malware that allow hackers to control them. Cyber criminals use botnets to instigate botnet attacks, which include malicious activities such as credentials leaks, unauthorized access, data theft and DDoS attacks.
 
-- <span style="color: lightblue; font-weight: bold;">Question 17</span>
+- <span style="color: blue; font-weight: bold;">Question 17</span>
 
   Which threat involves software being used to gain unauthorized access to a computer system?
 
@@ -302,7 +302,7 @@
 
   Answer: A
 
-- <span style="color: lightblue; font-weight: bold;">Question 18</span>
+- <span style="color: blue; font-weight: bold;">Question 18</span>
 
   Which type of attack is social engineering?
 
@@ -332,7 +332,7 @@ Triple DES (3DES) – also known as Triple Data Encryption Algorithm (TDEA) – 
 Asymmetric cryptography (or “public key cryptography”) is a cryptographic system that uses keypairs (a private key and a public key). The public key is shared widely, while the private key must be kept
 completely secret.
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   Which two key and block sizes are valid for AES? (Choose two)
 
@@ -348,7 +348,7 @@ completely secret.
 
   The AES encryption algorithm encrypts and decrypts data in blocks of 128 bits (block size). It can do this using 128-bit, 192-bit, or 256-bit keys
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which two descriptions of AES encryption are true? (Choose two)
 
@@ -360,7 +360,7 @@ completely secret.
 
   Answer: B D
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which algorithm provides encryption and authentication for data plane communication?
 
@@ -381,7 +381,7 @@ completely secret.
 
   Reference: https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/security/vedge/security-book/security-overview.html
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Elliptic curve cryptography is a stronger more efficient cryptography method meant to replace which current encryption technology?
 
@@ -417,7 +417,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   />
 </figure>
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   What is the result of running the `crypto isakmp key ciscXXXXXXXX address 172.16.0.0` command?
 
@@ -438,7 +438,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp6039879000
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
 
@@ -457,7 +457,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which two conditions are prerequisites for stateful failover for IPsec? (Choose two)
 
@@ -487,7 +487,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Although the prerequisites only stated that “Both routers should be the same type of device” but in the “Restrictions for Stateful Failover for IPsec” section of the link above, it requires “Both the active and standby devices must run the identical version of the Cisco IOS software” so answer E is better than answer B.
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Which VPN technology can support a multivendor environment and secure traffic between sites?
 
@@ -502,7 +502,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   FlexVPN is an IKEv2-based VPN technology that provides several benefits beyond traditional site-to-site VPN implementations. FlexVPN is a standards-based solution that can interoperate with non-Cisco IKEv2 implementations. Therefore FlexVPN can support a multivendor environment. All of the three VPN technologies support traffic between sites (site-to-site or spoke-to-spoke).
 
-- <span style="color: lightblue; font-weight: bold;">Question 5</span>
+- <span style="color: blue; font-weight: bold;">Question 5</span>
 
   A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
 
@@ -513,7 +513,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer: C
 
-- <span style="color: lightblue; font-weight: bold;">Question 6</span>
+- <span style="color: blue; font-weight: bold;">Question 6</span>
 
   Refer to the exhibit.
 
@@ -535,7 +535,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer: C
 
-- <span style="color: lightblue; font-weight: bold;">Question 7</span>
+- <span style="color: blue; font-weight: bold;">Question 7</span>
 
   What is a difference between FlexVPN and DMVPN?
 
@@ -546,7 +546,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer: C
 
-- <span style="color: lightblue; font-weight: bold;">Question 8</span>
+- <span style="color: blue; font-weight: bold;">Question 8</span>
 
   Which protocol provides the strongest throughput performance when using Cisco AnyConnect VPN?
 
@@ -561,7 +561,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   DTLS is used for delay sensitive applications (voice and video) as its UDP based while TLS is TCP based. Therefore DTLS offers strongest throughput performance. The throughput of DTLS at the time of AnyConnect connection can be expected to have processing performance close to VPN throughput.
 
-- <span style="color: lightblue; font-weight: bold;">Question 9</span>
+- <span style="color: blue; font-weight: bold;">Question 9</span>
 
   What is a commonality between DMVPN and FlexVPN technologies?
 
@@ -580,7 +580,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
 ## 04. Software Defined Network (SDN)
 
-<span style="color: lightblue; font-weight: bold;">SDN Quick Summary</span>
+<span style="color: blue; font-weight: bold;">SDN Quick Summary</span>
 
 Most traditional devices use a distributed architecture, in which each control plane is resided in a networking device. Therefore they need to communicate with each other via messages to work correctly.
 
@@ -610,7 +610,7 @@ Now, in turn, the networking administrators and SDN applications want to control
 
 SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   The main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network?
 
@@ -621,7 +621,7 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Answer: D
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which two features of Cisco DNA Center are used in a Software Defined Network solution? (Choose two)
 
@@ -647,7 +647,7 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-cisco-dna-center-aag-cte-en.html
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which functions of an SDN architecture require southbound APIs to enable communication?
 
