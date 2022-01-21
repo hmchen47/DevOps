@@ -110,11 +110,11 @@
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
 
-  A. The attack is fragmented into groups of 16 octets before transmission.>br>
-  B. The attack is fragmented into groups of 8 octets before transmission.>br>
-  C. Short synchronized bursts of traffic are used to disrupt TCP connections.>br>
-  D. Malformed packets are used to crash systems.>br>
-  E. Publicly accessible DNS servers are typically used to execute the attack.>br>
+  A. The attack is fragmented into groups of 16 octets before transmission.<br>
+  B. The attack is fragmented into groups of 8 octets before transmission.<br>
+  C. Short synchronized bursts of traffic are used to disrupt TCP connections.<br>
+  D. Malformed packets are used to crash systems.<br>
+  E. Publicly accessible DNS servers are typically used to execute the attack.<br>
 
   Answer: B D
 
@@ -126,7 +126,7 @@
 
   Like other large but well-formed packets, a ping of death is fragmented into groups of 8 octets before transmission. However, when the target computer reassembles the malformed packet, a buffer overflow can occur, causing a system crash and potentially allowing the injection of malicious code.
 
-- <span style="color: lightblue; font-weight: bold;">Question 7\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 7</span>
 
   Which two preventive measures are used to control cross-site scripting? (Choose two)
 
@@ -138,7 +138,7 @@
 
   Answer: A B
 
-- <span style="color: lightblue; font-weight: bold;">Question 8\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 8</span>
 
   What is the difference between deceptive phishing and spear phishing?
 
@@ -155,13 +155,14 @@
 
   Spear phishing is carefully designed to get a single recipient to respond. Criminals select an individual target within an organization, using social media and other public information – and craft a fake email tailored for that person.
 
-- <span style="color: lightblue; font-weight: bold;">Question 9\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 9</span>
 
   Which attack is commonly associated with C and C++ programming languages?
-  A. cross-site scripting
-  B. water holing
-  C. DDoS
-  D. buffer overflow
+
+  A. cross-site scripting<br>
+  B. water holing<br>
+  C. DDoS<br>
+  D. buffer overflow<br>
 
   Answer: D
 
@@ -171,7 +172,7 @@
 
   Buffer overflow is a vulnerability in low level codes of C and C++. An attacker can cause the program to crash, make data corrupt, steal some private information or run his/her own code. It basically means to access any buffer outside of it’s alloted memory space. This happens quite frequently in the case of arrays.
 
-- <span style="color: lightblue; font-weight: bold;">Question 10\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 10</span>
 
   What is a language format designed to exchange threat intelligence that can be transported over the TAXII protocol?
 
@@ -188,7 +189,7 @@
 
   STIX (Structured Threat Information eXpression) is a standardized language which has been developed in a collaborative way in order to represent structured information about cyber threats. It has been developed so it can be shared, stored, and otherwise used in a consistent manner that facilitates automation and human assisted analysis.
 
-- <span style="color: lightblue; font-weight: bold;">Question 11\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 11</span>
 
   Which two capabilities does TAXII support? (Choose two)
 
@@ -210,7 +211,7 @@
 
   Reference: https://docs.oasis-open.org/cti/taxii/v1.1.1/taxii-v1.1.1-part1-overview.html
 
-- <span style="color: lightblue; font-weight: bold;">Question 12\*\*
+- <span style="color: lightblue; font-weight: bold;">Question 12</span>
 
   Which two risks is a company vulnerable to if it does not have a well-established patching solution for endpoints? (Choose two)
 
@@ -290,7 +291,7 @@
 
   A botnet is a collection of internet-connected devices infected by malware that allow hackers to control them. Cyber criminals use botnets to instigate botnet attacks, which include malicious activities such as credentials leaks, unauthorized access, data theft and DDoS attacks.
 
-- <span style="color: lightblue; font-weight: bold;">Question 17<span style="color: lightblue; font-weight: bold;">
+- <span style="color: lightblue; font-weight: bold;">Question 17</span>
 
   Which threat involves software being used to gain unauthorized access to a computer system?
 
@@ -505,10 +506,10 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
 
-  A. Change isakmp to ikev2 in the command on hostA.
-  B. Enter the command with a different password on hostB.
-  C. Enter the same command on hostB.
-  D. Change the password on hostA to the default password.
+  A. Change isakmp to ikev2 in the command on hostA.<br>
+  B. Enter the command with a different password on hostB.<br>
+  C. Enter the same command on hostB.<br>
+  D. Change the password on hostA to the default password.<br>
 
   Answer: C
 
@@ -527,14 +528,14 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   A network administrator configured a site-to-site VPN tunnel between two Cisco IOS routers, and hosts are unable to communicate between two sites of VPN. The network administrator runs the debug crypto isakmp sa command to track VPN status. What is the problem according to this command output?
 
-  A. hashing algorithm mismatch
-  B. encryption algorithm mismatch
-  C. authentication key mismatch
-  D. interesting traffic was not applied
+  A. hashing algorithm mismatch<br>
+  B. encryption algorithm mismatch<br>
+  C. authentication key mismatch<br>
+  D. interesting traffic was not applied<br>
 
   Answer: C
 
-- <span style="color: lightblue; font-weight: bold;">Question 7
+- <span style="color: lightblue; font-weight: bold;">Question 7</span>
 
   What is a difference between FlexVPN and DMVPN?
 
@@ -649,10 +650,11 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 - <span style="color: lightblue; font-weight: bold;">Question 3</span>
 
   Which functions of an SDN architecture require southbound APIs to enable communication?
-  A. SDN controller and the network elements
-  B. management console and the SDN controller
-  C. management console and the cloud
-  D. SDN controller and the cloud
+
+  A. SDN controller and the network elements<br>
+  B. management console and the SDN controller<br>
+  C. management console and the cloud<br>
+  D. SDN controller and the cloud<br>
 
   Answer: A
 
