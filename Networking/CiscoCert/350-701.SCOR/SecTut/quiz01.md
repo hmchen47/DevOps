@@ -97,11 +97,11 @@
 
 - <span style="color: blue; font-weight: bold;">Question 9</span>
 
-  Which attack is commonly associated with C and C++ programming languages?
-  A. cross-site scripting
-  B. water holing
-  C. DDoS
-  D. buffer overflow
+  Which attack is commonly associated with C and C++ programming languages?<br>
+  A. cross-site scripting<br>
+  B. water holing<br>
+  C. DDoS<br>
+  D. buffer overflow<br>
 
   Answer:
 
