@@ -33,7 +33,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
       src    = "img/0503-Python_script_DNA_Center_API.jpg"
       alt    = "Python Script w/ DNA Center API"
@@ -301,7 +301,7 @@
   Refer to the exhibit. What is a result of the configuration?
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
       onclick= "window.open('page')"
       src    = "img/0619-ACL_DMZ.jpg"
       alt    = "text"
@@ -626,7 +626,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
 - IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
     onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
     src    = "img/0800-Cloud_Computing_SaaS_PaaS_IaaS.jpg"
     alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
