@@ -2,7 +2,7 @@
 
 ## 01. Security Concepts
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   In which form of attack is alternate encoding, such as hexadecimal representation, most often observed?
 
@@ -13,7 +13,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which flaw does an attacker leverage when exploiting SQL injection vulnerabilities?
 
@@ -24,7 +24,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which two prevention techniques are used to mitigate SQL injection attacks? (Choose two)
 
@@ -36,7 +36,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Which two endpoint measures are used to minimize the chances of falling victim to phishing and social engineering attacks? (Choose two)
 
@@ -48,7 +48,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 5</span>
+- <span style="color: blue; font-weight: bold;">Question 5</span>
 
   Which two mechanisms are used to control phishing attacks? (Choose two)
 
@@ -60,19 +60,19 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 6</span>
+- <span style="color: blue; font-weight: bold;">Question 6</span>
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
 
-  A. The attack is fragmented into groups of 16 octets before transmission.>br>
-  B. The attack is fragmented into groups of 8 octets before transmission.>br>
-  C. Short synchronized bursts of traffic are used to disrupt TCP connections.>br>
-  D. Malformed packets are used to crash systems.>br>
-  E. Publicly accessible DNS servers are typically used to execute the attack.>br>
+  A. The attack is fragmented into groups of 16 octets before transmission.<br>
+  B. The attack is fragmented into groups of 8 octets before transmission.<br>
+  C. Short synchronized bursts of traffic are used to disrupt TCP connections.<br>
+  D. Malformed packets are used to crash systems.<br>
+  E. Publicly accessible DNS servers are typically used to execute the attack.<br>
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 7</span>
+- <span style="color: blue; font-weight: bold;">Question 7</span>
 
   Which two preventive measures are used to control cross-site scripting? (Choose two)
 
@@ -84,7 +84,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 8</span>
+- <span style="color: blue; font-weight: bold;">Question 8</span>
 
   What is the difference between deceptive phishing and spear phishing?
 
@@ -95,7 +95,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 9</span>
+- <span style="color: blue; font-weight: bold;">Question 9</span>
 
   Which attack is commonly associated with C and C++ programming languages?
   A. cross-site scripting
@@ -105,7 +105,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 10</span>
+- <span style="color: blue; font-weight: bold;">Question 10</span>
 
   What is a language format designed to exchange threat intelligence that can be transported over the TAXII protocol?
 
@@ -116,7 +116,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 11</span>
+- <span style="color: blue; font-weight: bold;">Question 11</span>
 
   Which two capabilities does TAXII support? (Choose two)
 
@@ -128,7 +128,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 12</span>
+- <span style="color: blue; font-weight: bold;">Question 12</span>
 
   Which two risks is a company vulnerable to if it does not have a well-established patching solution for endpoints? (Choose two)
 
@@ -140,7 +140,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 13</span>
+- <span style="color: blue; font-weight: bold;">Question 13</span>
 
   Which PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server?
 
@@ -151,7 +151,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 15</span>
+- <span style="color: blue; font-weight: bold;">Question 15</span>
 
   What are two rootkit types? (Choose two)
 
@@ -163,7 +163,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 16</span>
+- <span style="color: blue; font-weight: bold;">Question 16</span>
 
   Which form of attack is launched using botnets?
 
@@ -174,7 +174,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 17<span style="color: lightblue; font-weight: bold;">
+- <span style="color: blue; font-weight: bold;">Question 17<span style="color: blue; font-weight: bold;">
 
   Which threat involves software being used to gain unauthorized access to a computer system?
 
@@ -185,7 +185,7 @@
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 18</span>
+- <span style="color: blue; font-weight: bold;">Question 18</span>
 
   Which type of attack is social engineering?
 
@@ -211,7 +211,7 @@ Triple DES (3DES) – also known as Triple Data Encryption Algorithm (TDEA) – 
 Asymmetric cryptography (or “public key cryptography”) is a cryptographic system that uses keypairs (a private key and a public key). The public key is shared widely, while the private key must be kept
 completely secret.
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   Which two key and block sizes are valid for AES? (Choose two)
 
@@ -223,7 +223,7 @@ completely secret.
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which two descriptions of AES encryption are true? (Choose two)
 
@@ -235,7 +235,7 @@ completely secret.
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which algorithm provides encryption and authentication for data plane communication?
 
@@ -246,7 +246,7 @@ completely secret.
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Elliptic curve cryptography is a stronger more efficient cryptography method meant to replace which current encryption technology?
 
@@ -278,7 +278,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   />
 </figure>
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   What is the result of running the `crypto isakmp key ciscXXXXXXXX address 172.16.0.0` command?
 
@@ -289,7 +289,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
 
@@ -300,7 +300,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which two conditions are prerequisites for stateful failover for IPsec? (Choose two)
 
@@ -312,7 +312,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 4</span>
+- <span style="color: blue; font-weight: bold;">Question 4</span>
 
   Which VPN technology can support a multivendor environment and secure traffic between sites?
 
@@ -323,7 +323,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 5</span>
+- <span style="color: blue; font-weight: bold;">Question 5</span>
 
   A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
 
@@ -334,7 +334,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 6</span>
+- <span style="color: blue; font-weight: bold;">Question 6</span>
 
   Refer to the exhibit.
 
@@ -356,7 +356,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 7</span>
+- <span style="color: blue; font-weight: bold;">Question 7</span>
 
   What is a difference between FlexVPN and DMVPN?
 
@@ -367,7 +367,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 8</span>
+- <span style="color: blue; font-weight: bold;">Question 8</span>
 
   Which protocol provides the strongest throughput performance when using Cisco AnyConnect VPN?
 
@@ -378,7 +378,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 9</span>
+- <span style="color: blue; font-weight: bold;">Question 9</span>
 
   What is a commonality between DMVPN and FlexVPN technologies?
 
@@ -391,7 +391,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
 ## 04. Software Defined Network (SDN)
 
-<span style="color: lightblue; font-weight: bold;">SDN Quick Summary</span>
+<span style="color: blue; font-weight: bold;">SDN Quick Summary</span>
 
 Most traditional devices use a distributed architecture, in which each control plane is resided in a networking device. Therefore they need to communicate with each other via messages to work correctly.
 
@@ -421,7 +421,7 @@ Now, in turn, the networking administrators and SDN applications want to control
 
 SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.
 
-- <span style="color: lightblue; font-weight: bold;">Question 1</span>
+- <span style="color: blue; font-weight: bold;">Question 1</span>
 
   The main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network?
 
@@ -432,7 +432,7 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 2</span>
+- <span style="color: blue; font-weight: bold;">Question 2</span>
 
   Which two features of Cisco DNA Center are used in a Software Defined Network solution? (Choose two)
 
@@ -444,7 +444,7 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Answer:
 
-- <span style="color: lightblue; font-weight: bold;">Question 3</span>
+- <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which functions of an SDN architecture require southbound APIs to enable communication?
   A. SDN controller and the network elements
