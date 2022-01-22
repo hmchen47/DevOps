@@ -500,14 +500,13 @@
   Prot        Local Address      Foreign Address             Service    State
    tcp                 *:23                  *:0              Telnet   LISTEN
 
+  ! enable ssh & https
   R1(config)# line vty 0 4
   R1(config-line)# transport input ssh
   R1(config-line)# exit
   R1(config)# ip http secure-server
   R1(config)# end
-  ```
-
-  ```text
+  
   R1# show control-plane host open-ports
   Active internet connections (servers and established)
   Prot        Local Address      Foreign Address             Service    State

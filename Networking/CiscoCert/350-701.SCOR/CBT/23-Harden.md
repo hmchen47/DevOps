@@ -82,6 +82,7 @@ Trainer: keith Barker
   Prot        Local Address      Foreign Address             Service    State
    tcp                 *:23                  *:0              Telnet   LISTEN
 
+  ! enable ssh & https
   R1(config)# line vty 0 4
   R1(config-line)# transport input ssh
   R1(config-line)# exit
@@ -171,6 +172,7 @@ Trainer: keith Barker
   R1(config-archive)# log config
   R1(config-archive-log-cfg)# end
 
+  ! verify rollback
   R1# dir 
   ! a copy of curren running config
   R1# write
@@ -196,7 +198,14 @@ Trainer: keith Barker
   - Proxy ARP
 
 
-- Limit CPU Impact of Control Plane Traffi
+- General Control Plane Hardening
+  - consider to turn off the features
+  - IP ICMP Redirects: suggesting better routes
+  - ICMP Unreachables: hacker flooding to explore existence of subnets
+  - Proxy ARP
+
+
+- Limit CPU Impact of Control Plane Traffic
   - Understand Control Plane Traffic: drop pkts before impact CPU
   - Infrastructure ACLs (*)
   - Receive ACLs (*)
@@ -215,7 +224,7 @@ Trainer: keith Barker
 
 - Secure Interior Gateway Protocols
   - Routing Protocol Authentication and Verification with Message Digest 5
-  - Passive-Interface Commands
+  - Passive-Interface Commands: stop sending routing updates
   - Route Filtering
   - Routing Process Resource Consumption
 
