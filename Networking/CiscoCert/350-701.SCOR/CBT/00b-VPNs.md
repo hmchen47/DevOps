@@ -232,6 +232,77 @@
   </figure>
 
 
+- Comparison of DMVPN, FlexVPN and GETVPN
+
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 60vw;" cellspacing=0 cellpadding=5 border=1 align="center">
+    <caption style="font-size: 1.2em; margin: 0.2em;"><a href="https://bit.ly/33ThaKm">GETVPN Solution Comparison</a></caption>
+    <colgroup>
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+    </colgroup>
+    <thead>
+    <tr style="font-size: 1.0em; vertical-align:middle;">
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Solution</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">DMVPN</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">FlexVPN</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">GETVPN</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Infrastructure Network</td>
+      <td style="text-align: center;">Public Internet Transport</td>
+      <td style="text-align: center;">Public Internet Transport</td>
+      <td style="text-align: center;">Private IP Transport </td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Network Style</td>
+      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Site-to-Site)</td>
+      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Client-to-Site and Site-to-Site)</td>
+      <td style="text-align: center;">Any-to-Any; (Site-to-Site)</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Routing</td>
+      <td style="text-align: center;">Dynamic routing on tunnels</td>
+      <td style="text-align: center;">Dynamic routing on tunnels or IKEv2 routing or IKEv2 Dynamic routing</td>
+      <td style="text-align: center;">Dynamic routing on IP WAN</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Failover Redundancy</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Encryption Style </td>
+      <td style="text-align: center;">Peer-to-Peer Protection</td>
+      <td style="text-align: center;">Peer-to-Peer Protection</td>
+      <td style="text-align: center;">Group Protection</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">IP Multicast</td>
+      <td style="text-align: center;">Multicast replication at hub</td>
+      <td style="text-align: center;">Multicast replication at hub</td>
+      <td style="text-align: center;">Multicast replication in IP WAN network </td>
+    </tr>
+    </tbody>
+  </table><br/>
+
+
+- Tunnel comparison
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+      onclick= "window.open('https://bit.ly/3IqQQWR')"
+      src    = "img/04-tunnel_comparison.jpeg"
+      alt    = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
+      title  = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
+    />
+  </figure>
+
+
 ### NAT Traversal
 
 - NAT Traversal concept
