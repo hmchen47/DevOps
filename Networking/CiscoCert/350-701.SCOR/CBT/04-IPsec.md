@@ -235,6 +235,7 @@ Trainer: Keith Barker
     />
   </figure>
 
+
 - Comparison of DMVPN, FlexVPN and GETVPN
 
   <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 60vw;" cellspacing=0 cellpadding=5 border=1 align="center">
@@ -313,7 +314,7 @@ Trainer: Keith Barker
   - NAT/PAT btw PC1 and PC2
   - NAT/PAT unable to handle Layer 4 ESP protocol (port 50)
   - implemented in many IKEv1 and all IKEv2
-  - using hash value on th eIP address, receiver detects NAT/PAT used in btw
+  - using hash value on the IP address, receiver detects NAT/PAT used in btw
   - using UDP instead of ESP for the tunnel
     - prefix UDP header than IP header for encrypted packet
     - prefix an IP header w/ original src and dst addresses

@@ -22,7 +22,7 @@ Trainer: Keith Barker
 
 - Demo: CAM table overflow
 
-  ```bash
+  ```text
   SW# show vlan brief
   VLAN Name           Status    Ports
   ---- -------------- --------- -----------------------------
@@ -103,7 +103,7 @@ Trainer: Keith Barker
 - Demo: config port security
   - plan: port g0/0 connected to a PC w/ Vlan 10
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -173,7 +173,7 @@ Trainer: Keith Barker
   - all port security settings not in function until port security enabled
   - resume shutdowned interface by executing `shutdown` and `no shutdown` on the interface
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -271,7 +271,7 @@ Trainer: Keith Barker
 
 - Demo: config auto recovery for port security violation
 
-  ```bash
+  ```text
   SW# show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
@@ -385,7 +385,7 @@ Trainer: Keith Barker
       - max mac addresses: 2000
       - violation action: protect
 
-  ```bash
+  ```text
   ! config Core1
   Core1# show cdp neighbor
   Device ID   Local Interface   Holdtime  Capability  Platform  Port ID

@@ -90,7 +90,7 @@ Trainer: Keith Barker
 
 - Implementing P2P GRE tunnel on R1
 
-  ```bash
+  ```text
   ! verify interface config
   R1# sh ip int br
   Interface           IP-Address  OK? Method  Status                Protocol
@@ -118,7 +118,7 @@ Trainer: Keith Barker
 
 - Implementing P2P GRE tunnel on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# ip addr 10.12.12.2 255.255.255.0
@@ -137,7 +137,7 @@ Trainer: Keith Barker
 
 - Config EIGRP on R1 & R2
 
-  ```bash
+  ```text
   R2# show ip route
   Gateway of last resort is not set
 
@@ -166,7 +166,7 @@ Trainer: Keith Barker
   Tu0                0        0/0         0       6/6            0           0
   ```
 
-  ```bash
+  ```text
   ! config EIGRP
   R1# conf t
   R1(config)# router eigrp 1
@@ -222,7 +222,7 @@ Trainer: Keith Barker
 
 - Config IKE phase 1 on R1
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)#crypto isakmp policy 7
   R1(config-isakmp)#encryption aes 256
@@ -251,7 +251,7 @@ Trainer: Keith Barker
 
 - Config IKE phase 2 on R1
   
-  ```bash
+  ```text
   R1(config)#crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac 
   R1(cfg-crypto-trans)#mode tunnel 
   R1(cfg-crypto-trans)#exit
@@ -266,7 +266,7 @@ Trainer: Keith Barker
 - Config IPsec within tunnel interface on R1
   - tunnel mode ipsec ipv4 = VTI
 
-  ```bash
+  ```text
   R1(config)# int tunnel 0
   R1(config-if)#tunnel mode ipsec ipv4 
   R1(config-if)#tunnel protection ipsec profile Demo-IPsec-Profile
@@ -276,7 +276,7 @@ Trainer: Keith Barker
 
 - Config IKE phase 1, phase 2 and tunnel interface on R2
 
-  ```bash
+  ```text
   R2# conf t
   ! IKE phase 1
   R2(config)# crypto isakmp policy 7
@@ -319,7 +319,7 @@ Trainer: Keith Barker
   - open browser on PC1 w/ URL = '10.2.0.50', refresh a couple time to generate traffic
   - verify crypto info on R1
 
-    ```bash
+    ```text
     R1# show crypto engine connections active
     Crypto Engine Connections
 

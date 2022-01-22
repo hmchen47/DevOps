@@ -58,7 +58,7 @@ Trainer: keith Barker
     - another switch (subnet 10.1.0.0/24) connected to SW on port g0/1
   - task: implement DAI for SW
   
-  ```bash
+  ```text
   ! verify DHCP snooping enabled
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
@@ -128,7 +128,7 @@ Trainer: keith Barker
 - Troubleshooting dropped ARP msgs from untrusted port connected to a switch
   - dropped DHCP messages allowed by permitted ACL
   
-  ```bash
+  ```text
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
@@ -211,7 +211,7 @@ Trainer: keith Barker
 
 - Demo: config DAI parameters
 
-  ```bash
+  ```text
   SW# show ip arp inspection interfaces
   Interface       Trust State Rate (pps)  Burst Interval
   --------------- ----------- ----------  --------------
@@ -310,7 +310,7 @@ Trainer: keith Barker
     - trust port g3/3 $\gets$ g1/0 on R3 not assigned via DHCP
     - verify DAI working correctly
   
-  ```bash
+  ```text
   ! verify basic info
   SW# show vlan brief
   VLAN Name                             Status    Ports

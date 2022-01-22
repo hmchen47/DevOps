@@ -35,12 +35,12 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://www.ciscopress.com/articles/article.asp?p=25477" ismap target="_blank">
-      <img style="margin: 0.1em;" height=170
+      <img style="margin: 0.1em;" height=150
         src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig2.gif"
         alt   = "AH tunnel versus transport mode."
         title = "AH tunnel versus transport mode."
       >
-      <img style="margin: 0.1em;" height=170
+      <img style="margin: 0.1em;" height=150
         src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig3.gif"
         alt   = "ESP tunnel versus transport mode"
         title = "ESP tunnel versus transport mode"
@@ -234,7 +234,7 @@
 
 - Comparison of DMVPN, FlexVPN and GETVPN
 
-  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 60vw;" cellspacing=0 cellpadding=5 border=1 align="center">
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 700px;" cellspacing=0 cellpadding=5 border=1 align="center">
     <caption style="font-size: 1.2em; margin: 0.2em;"><a href="https://bit.ly/33ThaKm">GETVPN Solution Comparison</a></caption>
     <colgroup>
       <col style="width: 20%">
@@ -310,7 +310,7 @@
   - NAT/PAT btw PC1 and PC2
   - NAT/PAT unable to handle Layer 4 ESP protocol (port 50)
   - implemented in many IKEv1 and all IKEv2
-  - using hash value on th eIP address, receiver detects NAT/PAT used in btw
+  - using hash value on the IP address, receiver detects NAT/PAT used in btw
   - using UDP instead of ESP for the tunnel
     - prefix UDP header than IP header for encrypted packet
     - prefix an IP header w/ original src and dst addresses
@@ -318,14 +318,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://bit.ly/3muy60h" ismap target="_blank">
-      <img style="margin: 0.1em;" height=160
+      <img style="margin: 0.1em;" height=250
         src   = "https://www.netmanias.com/en/?m=attach&no=3563"
         alt   = "NAT/PAT mapping"
         title = "NAT/PAT mapping"
       >
     </a>
     <a href="https://support.huawei.com/enterprise/en/doc/EDOC1100055047/9b0b323f/ipsec-nat-traversal" ismap target="_blank">
-      <img style="margin: 0.1em;" height=140
+      <img style="margin: 0.1em;" height=200
         src   = "https://download.huawei.com/mdl/image/download?uuid=af9d9d6b414d453eaa39e504156c41ca"
         alt   = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
         title = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
@@ -417,7 +417,7 @@
   - ensure the connectivity of public network
   - R1 interfaces na reachability check
 
-    ```bash
+    ```text
     R1# sh ip int br
     Interface           IP-Address  OK? Method  Status                Protocol
     GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
@@ -434,7 +434,7 @@
   - R1 & R2 reachability: `` $\to$ `!!!!!`
   - PC1 basic info and reachability check:
 
-    ```bash
+    ```text
     PC1# ip addr
     ...
     82: eth0@if81: ...
@@ -443,7 +443,7 @@
       ...
     ```
 
-    ```bash
+    ```text
     PC1# route
     Kernel IP routing table
     Destination   Gateway   Genmask         Flags Metric  Ref   Use Iface
@@ -452,7 +452,7 @@
     172.17.0.0    *         255.255.0.0     U     0       0       0 eth1
     ```
 
-    ```bash
+    ```text
     pc1# traceroute 10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
      1  10.1.0.1  (10.1.0.1)    7.607 ms    12.278 ms 18.515 ms
@@ -466,11 +466,11 @@
 - Implementing IKE Phase 1 on R1
   - isakmp policy number: lower number taking priority
 
-  ```bash
+  ```text
   R1# sh run | section crypto
   ```
 
-  ```bash
+  ```text
   R1# sh crypto isakmp policy
   Global IKE policy
   Default protection suite
@@ -481,7 +481,7 @@
           lifetime:               86400 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   ! config IKEv1 phase 1
   R1# conf t
   R1(config)# crypto isakmp policy 5
@@ -503,7 +503,7 @@
           lifetime:               86400 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   R1(config-isakmp)# encryption aes 256
   R1(config-isakmp)# group 5
   R1(config-isakmp)# lifetime 
@@ -517,14 +517,14 @@
           lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   ! config pre-shared key
   R1(config-isakmp)# exit
   R1(config)# crypto isakmp key Cisco!23 address 25.2.2.2 ! specified iface
   R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0  ! all ifaces
   ```
 
-  ```bash
+  ```text
   R1# sh crypto isakmp key
   Keyring      Hostname/Address                            Preshared Key
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
@@ -541,7 +541,7 @@
   - crypto map sequence number: used ti identify if multiple crypto maps used for different sites
   - crypto map not enabled on any interface
 
-  ```bash
+  ```text
   ! config transform set
   R1# conf t
   R1(config)# crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac
@@ -549,14 +549,14 @@
   R1(cfg-crypto-trans)# exit
   ```
 
-  ```bash
+  ```text
   ! config crypto ACL
   R1(config)# ip access-list extended Crypto-ACL
   R1(config-ext-nacl)# permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
   R1(config-ext-nacl)# exit
   ```
 
-  ```bash
+  ```text
   ! config crypto map
   R1(config)# crypto map Demo-MAP 10 ipsec-isakmp
   R1(config-crypto-map)# match address Crypto-ACL
@@ -585,7 +585,7 @@
 - Verify IKEv1 config on R2
   - ensure the crypto config same as R1
 
-  ```bash
+  ```text
   ! verify R2
   R2# sh crypto isakmp policy
   Global IKE policy
@@ -597,13 +597,13 @@
           lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   R2# sh crypto isakmp key
   Keyring      Hostname/Address                            Preshared Key
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
   ```
 
-  ```bash
+  ```text
   R2# show crypto mao
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
           Peer = 25.2.2.2
@@ -621,13 +621,13 @@
 
 - Applying crypto map to egress interface on R2
 
-  ```bash
+  ```text
   R2(config)# int gig 0/2
   R2(config-if)# crypto map Demo-MAP
   R2(config-if)# end
   ```
 
-  ```bash
+  ```text
   ! verify applying to intf gig 0/2
   R2# sh crypto map
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
@@ -644,7 +644,7 @@
                   GigabitEthernet0/2
   ```
 
-  ```bash
+  ```text
   R2# show crypto isakmp sa
   interface: GigabitEthernet0/2
       Crypto map tag: Demo-MAP, local addr 25.2.2.2
@@ -671,7 +671,7 @@
 
 - Applying crypto map to egress interface on R1
 
-  ```bash
+  ```text
   R1(config)# int gig 0/1
   R1(config-if)# crypto map Demo-MAP
   R1(config-if)# end
@@ -683,7 +683,7 @@
   - IPsec VPN created unless traffic flow btw
   - enable debug tool on R1 to observe the negotiation
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst       src     state     conn-id status
@@ -695,7 +695,7 @@
 
   - init traffic on PC1:
 
-    ```bash
+    ```text
     PC1# traceroute10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
      1  10.1.0.1  (10.1.0.1)    4.028 ms    ...
@@ -706,7 +706,7 @@
   - verify sa negotiation on R1
     - `OM_IDLE`: not build tunnel unless traffic triggered
 
-    ```bash
+    ```text
     R1# undebug all
 
     R1# show crypto isakmp sa
@@ -715,7 +715,7 @@
     25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
     ```
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa detail
     IPv4 Crypto ISAKMP SA
     C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
@@ -723,7 +723,7 @@
            Engine-id:Conn-id =  SW:1
     ```
 
-    ```bash
+    ```text
     R1# show crypto ipsec sa
     interface: GigabitEthernet0/1
       Crypto map tag: Demo-MAP, local addr 15.1.1.1
@@ -857,7 +857,7 @@
 
 - Implementing P2P GRE tunnel on R1
 
-  ```bash
+  ```text
   ! verify interface config
   R1# sh ip int br
   Interface           IP-Address  OK? Method  Status                Protocol
@@ -867,7 +867,7 @@
   GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
   ```
 
-  ```bash
+  ```text
   ! create tunnel intf 0 w/ Ip addr
   R1# conf t
   R1(config)# int tunnel 0
@@ -887,7 +887,7 @@
 
 - Implementing P2P GRE tunnel on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# ip addr 10.12.12.2 255.255.255.0
@@ -895,7 +895,7 @@
   R2(config-if)# tunnel destination 15.1.1.1
   ```
 
-  ```bash
+  ```text
   R1(config-if)# do show run int tun 0
   Current configuration : 115 bytes
   ! 
@@ -909,7 +909,7 @@
 
 - Config EIGRP on R1 & R2
 
-  ```bash
+  ```text
   R2# show ip route
   Gateway of last resort is not set
 
@@ -924,7 +924,7 @@
   L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
   ```
 
-  ```bash
+  ```text
   ! config EIGRP
   R2# conf t
   R2(config)# router eigrp 1
@@ -933,7 +933,7 @@
   R2(config-router)# end
   ```
 
-  ```bash
+  ```text
   R2#sh ip eigrp interfaces 
   EIGRP-IPv4 Interfaces for AS(1)
                           Xmit Queue   Mean   Pacing Time   Multicast    Pending
@@ -942,7 +942,7 @@
   Tu0                0        0/0         0       6/6            0           0
   ```
 
-  ```bash
+  ```text
   ! config EIGRP
   R1# conf t
   R1(config)# router eigrp 1
@@ -951,7 +951,7 @@
   R1(config-router)# end
   ```
 
-  ```bash
+  ```text
   R1# show ip route eigrp
   Gateway of last resort is not set
 
@@ -1000,7 +1000,7 @@
 
 - Config IKE phase 1 on R1
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)#crypto isakmp policy 7
   R1(config-isakmp)#encryption aes 256
@@ -1011,13 +1011,13 @@
   R1(config-isakmp)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)#do show crypto isakmp policy  
   Global IKE policy
   Protection suite of priority 7
   ```
 
-  ```bash
+  ```text
           encryption algorithm:   AES - Advanced Encryption Standard (256 bit keys).
           hash algorithm:         Secure Hash Standard 2 (256 bit)
           authentication method:  Pre-Shared Key
@@ -1025,7 +1025,7 @@
           lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   ! config pre-shared key
   R1(config)#crypto isakmp key Cisco!23 address 0.0.0.0
   R1(config)#do sh crypto isakmp key
@@ -1036,13 +1036,13 @@
 
 - Config IKE phase 2 on R1
   
-  ```bash
+  ```text
   R1(config)#crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac 
   R1(cfg-crypto-trans)#mode tunnel 
   R1(cfg-crypto-trans)#exit
   ```
 
-  ```bash
+  ```text
   ! change tunnel encryption GRE to IPsec
   R1(config)# crypto ipsec profile Demo-IPsec-Profile 
   R1(ipsec-profile)# set transform-set Demo-SET
@@ -1053,7 +1053,7 @@
 - Config IPsec within tunnel interface on R1
   - tunnel mode ipsec ipv4 = VTI
 
-  ```bash
+  ```text
   R1(config)# int tunnel 0
   R1(config-if)#tunnel mode ipsec ipv4 
   R1(config-if)#tunnel protection ipsec profile Demo-IPsec-Profile
@@ -1063,7 +1063,7 @@
 
 - Config IKE phase 1, phase 2 and tunnel interface on R2
 
-  ```bash
+  ```text
   R2# conf t
   ! IKE phase 1
   R2(config)# crypto isakmp policy 7
@@ -1075,7 +1075,7 @@
   R2(config-isakmp)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)#do show crypto isakmp policy  
   Global IKE policy
   Protection suite of priority 7
@@ -1086,7 +1086,7 @@
           lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   ! config pre-shared key
   R2(config)# exit
   R2(config)#crypto isakmp key Cisco!23 address 0.0.0.0
@@ -1095,14 +1095,14 @@
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
   ```
 
-  ```bash
+  ```text
   ! IKE phase 2
   R2(config)# crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac 
   R2(cfg-crypto-trans)# mode tunnel 
   R2(cfg-crypto-trans)# exit
   ```
 
-  ```bash
+  ```text
   ! change tunnel encryption GRE to IPsec
   R2(config)# crypto ipsec profile Demo-IPsec-Profile 
   R2(ipsec-profile)# set transform-set Demo-SET
@@ -1114,7 +1114,7 @@
   - open browser on PC1 w/ URL = '10.2.0.50', refresh a couple time to generate traffic
   - verify crypto info on R1
 
-    ```bash
+    ```text
     R1# show crypto engine connections active
     Crypto Engine Connections
 
@@ -1125,7 +1125,7 @@
      1002  IKE     SHA256+AES256        0        0        0 15.1.1.1
     ```
 
-    ```bash
+    ```text
     R1#show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst             src             state          conn-id status
@@ -1133,7 +1133,7 @@
     15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
     ```
 
-    ```bash
+    ```text
     R1# show crypto ipsec sa
     interface: GigabitEthernet0/1
       Crypto map tag: Demo-MAP, local addr 15.1.1.1
@@ -1150,7 +1150,7 @@
       #pkts errros 0, #recv errors 0
     ```
 
-    ```bash
+    ```text
        local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
        plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
        current outbound spi: 0xC2A77F2F(3265756975)
@@ -1246,7 +1246,7 @@
 - Config mGRE on R1
   - preventing from packet segmentation w/ mtu = 1400
 
-  ```bash
+  ```text
   ! DMVPN Hub
   R1#conf t
   R1(config)# int tunnel 0
@@ -1263,7 +1263,7 @@
 
 - Config mGRE on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# description DMVPN Spoke site 2
@@ -1278,7 +1278,7 @@
 
 - Config mGRE on R3
 
-  ```bash
+  ```text
   R3# conf t
   R3(config)# int tunnel 0
   R3(config-if)# description DMVPN Spoke site 3
@@ -1327,7 +1327,7 @@
 
 - Config NHRP on hub
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# int tunnel 0
   R1(config-if)# authentication Cisco!23
@@ -1343,7 +1343,7 @@
   - mapping tunnel address to public Ip address (T.P.)
   - tunnel supporting multicast by forwarding to public IP address of hub
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# authentication Cisco!23
@@ -1355,7 +1355,7 @@
   R2(config-if)# end
   ```
 
-  ```bash
+  ```text
   R2# show run int tun 0
   Current configuration : 379 bytes
   !
@@ -1379,7 +1379,7 @@
 
 - Verify NHRP settings
 
-  ```bash
+  ```text
   R1# show ip nhrp
   172.16.123.2/32 via 172.16.123.2
      Tunnel0 created 00:01:17, expire 00:08:43
@@ -1391,7 +1391,7 @@
      NBMA address: 35.3.3.3
   ```
 
-  ```bash
+  ```text
   R2# show ip nhrp
   172.16.123.1/32 via 172.16.123.1
      Tunnel0 created 00:02:06, never expire
@@ -1413,7 +1413,7 @@
 
 - Config EIGRP on R1
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# router eigrp 1
   R1(config-router)# net 10.0.0.0
@@ -1421,7 +1421,7 @@
   R1(config-router)# end
   ```
 
-  ```bash
+  ```text
   R1# show ip eigrp interfaces
   EIGRP-IPv4 Interfaces for AS(1)
                       Xmit Queue    PeerQ         Mean    Pacing Time
@@ -1433,7 +1433,7 @@
 
 - Config EIGRP on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# router eigrp 1
   R2(config-router)# net 10.0.0.0
@@ -1445,7 +1445,7 @@
 - Sanity check for routing
   - R2 w/o R3 subnet info
     
-    ```bash
+    ```text
     R2# show ip route eigrp
     Gateway of last resort is 25.2.2.5 to network 0.0.0.0
 
@@ -1455,7 +1455,7 @@
 
   - R1 knowing R3 subnet
 
-    ```bash
+    ```text
     R1# show ip route 10.0.0.0
     Routing entry for 10.0.0.0/8, 4 known subnets
       Attached (2 connections)
@@ -1471,7 +1471,7 @@
   - R1 learning R3 subnet w/ tunnel intf should not advertise the network to the same intf $\to$ `no split-horizon`
   - config R1 for EIGRP w/o split horizon
 
-    ```bash
+    ```text
     R1# conft
     R1(config)# int tunnel 0
     R1(config-if)# no ip split-horizon eigrp 1
@@ -1480,7 +1480,7 @@
 
   - verify EIGRP routes on R2 again
     
-    ```bash
+    ```text
     R2# show ip route eigrp
     Gateway of last resort is 25.2.2.5 to network 0.0.0.0
 
@@ -1512,7 +1512,7 @@
   - Attrb legend of `show dmvpn`: S - Static, D - Dynamic, I - Incomplete, T1 - Routed Installed, T2 - Nexthop-override
   - verify DMVPN & NHRP settings on R1
 
-    ```bash
+    ```text
     R1# show dmvpn
     ...
     Interface: Runnel0, IPv4 NHRP Details
@@ -1524,7 +1524,7 @@
         1  35.3.3.3          172.16.123.3    UP 01:17:25     D
     ```
 
-    ```bash
+    ```text
     R1# show ip nhrp
     172.16.123.2/32 via 172.16.123.2
       Tunnel0 created 01:18:03, expire 00:07:05
@@ -1532,7 +1532,7 @@
       NBMA address: 25.2.2.2
     ```
 
-    ```bash
+    ```text
     172.16.123.3/32 via 172.16.123.3
       Tunnel0 created 01:17:53, expire 00:08:46
       Type: dynamic, Flags: registered nhop
@@ -1541,7 +1541,7 @@
 
   - verify DMVPN & NHRP settings on R2
 
-    ```bash
+    ```text
     R2# show dmvpn
     ...
     Interface: Runnel0, IPv4 NHRP Details
@@ -1552,7 +1552,7 @@
         1  15.1.1.1          172.16.123.1    UP 00:02:28     S
     ```
 
-    ```bash
+    ```text
     R2# show ip nhrp
     172.16.123.1/32 via 172.16.123.1
       Tunnel0 created 01:18:44, never expire
@@ -1560,7 +1560,7 @@
       NBMA address: 15.1.1.1
     ```
 
-    ```bash
+    ```text
     R2# show ip route 10.0.0.0
     Routing entry for 10.0.0.0/8, 4 known subnets
       Attached (2 connections)
@@ -1572,7 +1572,7 @@
     D    10.3.0.0/24 [90/28160256] via 172.16.123.31, 00:03:21, Tunnel0
     ```
 
-    ```bash
+    ```text
     ! before R2 & R3 tunnel built
     R2# traceroute 10.3.0.50 source 10.2.0.2
     Tracing the route to 10.3.0.50
@@ -1589,7 +1589,7 @@
       2 10.3.0.50 7 msec 7 msec 6 msec
     ```
 
-    ```bash
+    ```text
     R2# show ip route
     Gateway of last resort is 25.2.2.5 to network 0.0.0.0
     S*   0.0.0.0/0 [1/0] via 25.2.2.5
@@ -1604,13 +1604,13 @@
          172.16.0.0/16 is variably subnetted, 3 subnets, 2 masks
     ```
 
-    ```bash
+    ```text
     R2# show ip cef 10.3.0.0
     10.3.0.0/24
       nexthop 172.16.123.3 Tunnel0
     ```
 
-    ```bash
+    ```text
     R2 shoe ip nhrp
     10.2.0.0/24 via 172.16.123.2
       Tunnel0 created 00:01:14, expire 00:08:45
@@ -1618,7 +1618,7 @@
       NBMA address: 25.2.2.2
     ```
 
-    ```bash
+    ```text
     10.3.0.0/24 via 172.16.123.3
       Tunnel0 created 00:01:14, 00:08:44
       Type: dynamic, Flags: router used rib nho
@@ -1633,7 +1633,7 @@
       NBMA address: 35.3.3.3
     ```
 
-    ```bash
+    ```text
     R2# show dmvpn
     ...
     Interface: Runnel0, IPv4 NHRP Details
@@ -1653,7 +1653,7 @@
 - Config IPsec on DMVPN in R1
   - using transport mode than tunnel mode
 
-  ```bash
+  ```text
   ! IKE phase1
   R1# conf t
   R1(config)# crypto isakmp policy 1
@@ -1664,19 +1664,19 @@
   R1(config-isakmp)# exit
   ```
 
-  ```bash
+  ```text
   ! IKE key
   R1(config)# crypto isakmp key cisco!23 address 0.0.0.0
   ```
 
-  ```bash
+  ```text
   ! IKE phase 2
   R1(config)# crypto ipsec transform-set Demo-Set esp-aes 256 esp-sha512-hmac
   R1(cfg-crypto-trans)# mode transport
   R1(cfg-crypto-trans)# exit
   ```
 
-  ```bash
+  ```text
   ! 
   R1(config)# int tunnel 0
   R1(config-if)# tunnel protection ipsec profile Deno-IPsec-Profile
@@ -1688,7 +1688,7 @@
 
 - Verify tunnel on spoke
 
-  ```bash
+  ```text
   R2# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
   dst             src             state          conn-id status
@@ -1696,7 +1696,7 @@
   25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
   ```
 
-  ```bash
+  ```text
   R2# show crypto engine connections active
     Crypto Engine Connections
 
@@ -1709,7 +1709,7 @@
      1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
   ```
 
-  ```bash
+  ```text
   R2(config)# do show crypto map
   Crypto Map "Tunnel0-head-0" 65536 ipsec-isakmp
           Profile name: Demo-IPsec-Profile
@@ -1722,7 +1722,7 @@
           }
   ```
 
-  ```bash
+  ```text
   Crypto Map "Tunnel0-head-0" 65537 ipsec-isakmp
           MAP is a PROFILE INSTANCE.
           Peer = 15.1.1.1
@@ -1740,7 +1740,7 @@
                   Tunnel0
   ```
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is not set
 
@@ -1758,14 +1758,14 @@
   L        172.16.123.2/32 is directly connected, Tunnel0
   ```
 
-  ```bash
+  ```text
   R2# ping 10.3.0.50 source 10.2.0.2
   !!!!!
   R2# ping 10.3.0.50 source 10.2.0.2
   !!!!!
   ```
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 25.2.2.2 to network 0.0.0.0
 
@@ -1784,13 +1784,13 @@
   H        172.16.123.3/32 is directly connected, 00:00:06, Tunnel0
   ```
 
-  ```bash
+  ```text
   R2# show ip cef 10.3.0.0
   10.3.0.0/24
     nexthop 172.16.123.3 Tunnel0
   ```
 
-  ```bash
+  ```text
   R2# show crypto engine connections active
     Crypto Engine Connections
 
@@ -1807,7 +1807,7 @@
      1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
   ```
 
-  ```bash
+  ```text
   R2# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
   dst             src             state          conn-id status
@@ -1817,7 +1817,7 @@
   25.2.2.2        35.3.3.3        QM_IDLE           1003 ACTIVE
   ```
 
-  ```bash
+  ```text
   R2# show crypto
   Number of Crypto Socket connection 2
      Tu0 Peers (local/remote): 25.2.2.2/15.1.1.1
@@ -1828,7 +1828,7 @@
          Client: "TUNNEL SEC" (Client State: Active
   ```
 
-  ```bash
+  ```text
      Tu0 Peers (local/remote): 25.2.2.2/35.3.3.3
          Local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
          Remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
@@ -1839,7 +1839,7 @@
   Client: "TUNNEL SEC" Profile: "Demo-IPsec_Profile" Map-name: "Runnel0-head-0"
   ```
 
-  ```bash
+  ```text
   R2# show ip sec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
@@ -1851,7 +1851,7 @@
       PERMIT, flags={origin_is-acl,}
   ```
 
-  ```bash
+  ```text
     #pkts encaps: 6, #pkts encrypt: 6, #pkts digest: 6
     #pkts decaps: 6, #pkts decrypt: 6, #pkts verify: 6
     #pkts compressed: 0, #pkts decompressed: 0
@@ -1859,7 +1859,7 @@
     #pkts errros 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 25.2.2.2, remote crypto endpt.: 35.3.3.3
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x71D29954(1929627220)
@@ -1868,7 +1868,7 @@
      inbound esp sas:
   ```
 
-  ```bash
+  ```text
   R2# pint 10.3.0.50 source 10.2.0.2 repeat 1000
   !!!!!...!!!!
   R2# show ip sec sa
@@ -1876,7 +1876,7 @@
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
   ```
 
-  ```bash
+  ```text
     protected vrf: (none)
     local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
     remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
@@ -1884,7 +1884,7 @@
       PERMIT, flags={origin_is-acl,}
   ```
 
-  ```bash
+  ```text
     #pkts encaps: 1006, #pkts encrypt: 1006, #pkts digest: 1006
     #pkts decaps: 1006, #pkts decrypt: 1006, #pkts verify: 1006
     #pkts compressed: 0, #pkts decompressed: 0
@@ -2012,7 +2012,7 @@
 - Sanity check for reachability of all routers
   - Key server: R4
 
-    ```bash
+    ```text
     R4# show ip route
     Gateway of last resort is 45.4.4.5 to network 0.0.0.0
 
@@ -2027,7 +2027,7 @@
     C        4.4.4.4 [110/3] directly connected, Loopback0
     ```
 
-    ```bash
+    ```text
           5.0.0.0/32 is subnetted, 1 subnets
     O        5.5.5.5 [110/3] via 45.4.4.5, 0.1:03:43, GigabitEThernet0/0
           10.1.1.1/24 is subnetted, 3 subnets
@@ -2045,7 +2045,7 @@
     L        45.4.4.4/32 is directly connected, GigabitEthernet0/0
     ```
 
-    ```bash
+    ```text
     R4# show ip route 10.0.0.0
     Routing entry for 10.0.0.0/24, 3 known subnets
     O        10.1.0.0 [110/3] via 45.4.4.5, 00:03:43, GigabitEthernet0/0
@@ -2053,7 +2053,7 @@
     O        10.3.0.0 [110/3] via 45.4.4.5, 00:03:53, GigabitEthernet0/0
     ```
 
-    ```bash
+    ```text
     R4# ping 10.1.0.1
     !!!!!
     R4# ping 10.2.0.2
@@ -2065,7 +2065,7 @@
   - group member: R1
 
 
-    ```bash
+    ```text
     R1# ping 10.2.0.2
     !!!!!
     ```
@@ -2073,7 +2073,7 @@
 
 - config key server
 
-  ```bash
+  ```text
   R4# conf t
   ! conf terminal w/ 200 in width for reading
   R4(config)# line con 0
@@ -2081,7 +2081,7 @@
   R4(config-line)# exit
   ```
 
-  ```bash
+  ```text
   ! IKE Phase 1 for communication btw key server & members
   R4(config)# crypto isakmp policy 10
   R4(config-isakmp)# encryption aes 128
@@ -2091,12 +2091,12 @@
   R4(config-isakmp)# exit
   ```
 
-  ```bash
+  ```text
   ! IKE key for pre-shared key
   R4(config)# crypto isakmp key Cisco!23 address 0.0.0.0
   ```
 
-  ```bash
+  ```text
   ! config transform set and profile
   R4(config)# crypto ipsec transform-set Demo-Transform-Set esp-aes esp-sha-hmac
   R4(cfg-crypto-trans)# crypto ipsec profile Demo-IPsec-Profile
@@ -2105,12 +2105,12 @@
   R4(ipsec-profile)# exit
   ```
 
-  ```bash
+  ```text
   ! KS key-pair generation
   R4(config)# crypto key generate rsa general-keys label KS-Keys mode 2048 exportable
   ```
 
-  ```bash
+  ```text
   ! specifying crypto ACL for interesting traffic
   R4(config)# ip access-list extended Demo-List
   R4(config-ext-nacl)# permit ip 10.0.0.0 255.255.255.0 10.0.0.0 0.255.255.255
@@ -2118,13 +2118,13 @@
   R4(config-ext-nacl)# exit
   ```
 
-  ```bash
+  ```text
   ! creating GDOI for GET VPN
   R4(config)# crypto gdoi group Demo-GETVPN-Group
   R4(config-gkm-group)# identity number 6783
   ```
 
-  ```bash
+  ```text
   R4(config-gkm-group)# server local
   R4(gkm-local-server)# address ipv4 4.4.4.4
   R4(gkm-local-server)# rekey lifetime seconds 1800
@@ -2134,7 +2134,7 @@
   R4(gkm-local-server)# sa ipsec 777
   ```
 
-  ```bash
+  ```text
   R4(gkm-sa-ipsec)# profile Demo-IPsec-Profile
   R4(gkm-sa-ipsec)# match address ipv4 Demo-List
   R4(gkm-sa-ipsec)# replay time window-size 5
@@ -2144,7 +2144,7 @@
 
 - Verify key server config
   
-  ```bash
+  ```text
   R4# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -2162,7 +2162,7 @@
     Rekey Retransmit Attempts : 2
   ```
 
-  ```bash
+  ```text
       IPsec SA Number         : 777
       IPsec SA Rekey Lifetime : 3600 secs
       Profile Name            : Demo-IPsec-Profile
@@ -2179,7 +2179,7 @@
 
 - Config GM on R1
   
-  ```bash
+  ```text
   R1# conf t
 
   ! IKE Phase 1 for communication btw key server & members
@@ -2191,12 +2191,12 @@
   R1(config-isakmp)# exit
   ```
 
-  ```bash
+  ```text
   ! IKE key for pre-shared key
   R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0
   ```
 
-  ```bash
+  ```text
   ! creating GDOI for GET VPN
   R1(config)# crypto gdoi group Demo-GETVPN-Group
   R1(config-gkm-group)# identity number 6783
@@ -2204,12 +2204,12 @@
   R1(gkm-local-server)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)# crypto map GM-Map 10 gdoi
   R1(config-crypto-map)# set group Demo-GETVPN-Group
   ```
 
-  ```bash
+  ```text
   ! apply GM MAP to interface
   R1(config-crypto-map)# interface g0/1
   R1(config-if)# crypto map GM-Map
@@ -2221,7 +2221,7 @@
 
 - Verify GM config
 
-  ```bash
+  ```text
   R1# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -2233,7 +2233,7 @@
     IPsec SA Direction        : Both
   ```
 
-  ```bash
+  ```text
      Group server list        : 4.4.4.4.
 
   Group Member Information For Group Demo-GETVPN-Group:
@@ -2241,7 +2241,7 @@
     ACL Received From KS      : gdoi_group_Demo_GETVPN-Group_temp_acl
   ```
 
-  ```bash
+  ```text
     Group member              : 15.1.1.1         vrf: None
       Local addr/port         : 15.1.1.1/848    
       Remote addr/port        : 4.4.4.4/848
@@ -2264,26 +2264,26 @@
       SA Track (OID/status)   : disabled
   ```
 
-  ```bash
+  ```text
       allowable rekey cipher  : any
       allowable rekey hash    : any
       allowable transformtag  : any ESP
   ```
 
-  ```bash
+  ```text
     Rekeys cumulative
       Total received          : 0
       After latest register   : 0
       Rekey Acks sents        : 0
   ```
 
-  ```bash
+  ```text
   ACL Downloaded From KS 4.4.4.4
     access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
     access-list   deny ip any any
   ```
 
-  ```bash
+  ```text
   KEK POLICY:
     Rekey Transport Type      : unicast
     Lifetime (secs)           : 1767
@@ -2293,7 +2293,7 @@
     Sig Key Length (bits)     : 2352
   ```
 
-  ```bash
+  ```text
   TEL POLICY for the current KS-Policy ACEs Downloaded:
     GigabitEThernet0/1:
       IPsec SA:
@@ -2313,7 +2313,7 @@
 
 - Verify on KS
 
-  ```bash
+  ```text
   R4# sho crypto gdoi ks
   Total group member registered to this box: 3
 
@@ -2334,14 +2334,14 @@
 
 - Verify on HM
 
-  ```bash
+  ```text
   R1# sho crypto isakmp sa detail
   C-id  Local         Remote        I-VRF   Status  Encr  Hash    Auth  DH  Lifetime
   1001  15.1.1.1      4.4.4.4               ACTIVE  aes   sha256  psk   14  23:47:21
          Engine-id:Conn-id = SW:1
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa 
   interface: GigabitEthernet0/1
       Crypto map tag: TGM-Map, local addr 15.1.1.1
@@ -2365,12 +2365,12 @@
      FPS (Y/N): N, DH group: none
   ```
 
-  ```bash
+  ```text
   R1# ping 10.2.0.2 source 10.1.0.1
   !!!!!
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa 
   interface: GigabitEthernet0/1
       Crypto map tag: TGM-Map, local addr 15.1.1.1
@@ -2393,7 +2393,7 @@
      FPS (Y/N): N, DH group: none
   ```
 
-  ```bash
+  ```text
   R1# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -2407,13 +2407,13 @@
      Group server list        : 4.4.4.4.
   ```
 
-  ```bash
+  ```text
   Group Member Information For Group Demo-GETVPN-Group:
     IPsec SA Direction        : Both
     ACL Received From KS      : gdoi_group_Demo_GETVPN-Group_temp_acl
   ```
 
-  ```bash
+  ```text
     Group member              : 15.1.1.1         vrf: None
       Local addr/port         : 15.1.1.1/848    
       Remote addr/port        : 4.4.4.4/848
@@ -2436,26 +2436,26 @@
       SA Track (OID/status)   : disabled
   ```
 
-  ```bash
+  ```text
       allowable rekey cipher  : any
       allowable rekey hash    : any
       allowable transformtag  : any ESP
   ```
 
-  ```bash
+  ```text
     Rekeys cumulative
       Total received          : 0
       After latest register   : 0
       Rekey Acks sents        : 0
   ```
 
-  ```bash
+  ```text
   ACL Downloaded From KS 4.4.4.4
     access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
     access-list   deny ip any any
   ```
 
-  ```bash
+  ```text
   KEK POLICY:
     Rekey Transport Type      : unicast
     Lifetime (secs)           : 855
@@ -2465,7 +2465,7 @@
     Sig Key Length (bits)     : 2352
   ```
 
-  ```bash
+  ```text
   TEL POLICY for the current KS-Policy ACEs Downloaded:
     GigabitEThernet0/1:
       IPsec SA:
@@ -2486,7 +2486,7 @@
   - observation points: A - R2 g0/3 (connect to CLT), B - R2, g0/2 (connect to cloud)
   - verify CLT (Linux)
 
-    ```bash
+    ```text
     CLT# ip addr
     ...
     576: eth0@if675: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue UP
@@ -2496,7 +2496,7 @@
       ...
     ```
 
-    ```bash
+    ```text
     CLT# route
     Destination   Gateway     Genmask   Flags Metrics Ref   Use Iface
     Default       10.2.0.2    0.0.0.0   UG    0       0       0 eth0
@@ -2597,7 +2597,7 @@
 
 - Config IKEv2 FlexVPN site-to-site on R1
 
-  ```bash
+  ```text
   ! config loopback 0 and line terminal width
   R1# conf t
   R1(config)# int loop 0
@@ -2608,7 +2608,7 @@
   R1(config-line)# exit
   ```
 
-  ```bash
+  ```text
   ! default policy
   R1(config)# do show crypto ikev2 policy
   IKEv2 policy: default
@@ -2617,7 +2617,7 @@
       Proposal    : default
   ```
 
-  ```bash
+  ```text
   ! default proposal
   R1(config)# do show crypto ikev2 proposal
   IKEv2 proposal: default
@@ -2627,13 +2627,13 @@
       DH Group   : DH_GROUP_1536_MODP/Group 5 DH_GROUP_1024_MODP/Group 2
   ```
 
-  ```bash
+  ```text
   R1(config)# crypto ike2 proposal default
   R1(config-ikev2-proposal)# group 15
   R1(config-ikev2-proposal)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)# do show crypto ikev2 proposal
   IKEv2 proposal: default
       Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
@@ -2642,7 +2642,7 @@
       DH Group   : DH_GROUP_4096_MODP/Group 16
   ```
 
-  ```bash
+  ```text
   ! config keyring
   R1(config)# crypto ikev2 keyring ISO-Keys
   R1(config-ikev2-keyring)# peer R2
@@ -2652,7 +2652,7 @@
   R1(config-ikev2-keyring)# exit
   ```
 
-  ```bash
+  ```text
   ! config profile
   R1(config)# crypto ikev2 profile Demo-v2-Profile
   IKEv2 profile MUST have:
@@ -2665,14 +2665,14 @@
   R1(config-ikev2-profile)# exit
   ```
 
-  ```bash
+  ```text
   ! create transform set
   R1(config)# crypto ipsec transform-set Demo-Set esp-aes esp-sha512-hmac
   R1(crypto-crypto-trans)# mode tunnel
   R1(config-crypto-trans)# exit
   ```
 
-  ```bash
+  ```text
   ! create IPsec profile
   R1(config)# crypto ipsec profile Demo-Ipsec-Profile
   R1(ipsec-profile)# set transform-set Demo-Set
@@ -2680,7 +2680,7 @@
   R1(ipsec-profile)# exit
   ```
 
-  ```bash
+  ```text
   ! config tunnel intf
   R1(config)# int tunnel 0
   R1(config-if)# ip address 10.12.12.0 255.255.255.0
@@ -2695,7 +2695,7 @@
 
 - Verify on R1
 
-  ```bash
+  ```text
   R1# show crypto ikev2 proposal default
   IKEv2 proposal: default
       Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
@@ -2704,14 +2704,14 @@
       DH Group   : DH_GROUP_4096_MODP/Group 16
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 sa
   Tunnel-id Local         Remote        fvrf/ivrf   Status
   1         15.1.1.1/500  25.2.2.2/500  none/none   READ
     Encr: AES-CBC, Keysize: 256, PRF: SHA512, Hash: SHA512, DH Grp:16, Auth sign: PSK, Auth verify: PSK
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec transform-set
   Transfor set deafult: { esp-aes esp-sha-hmac  }
       will negotiate = { Transport,  },
@@ -2719,7 +2719,7 @@
       will negotiate = { Tunnel,  },
   ```
 
-  ```bash
+  ```text
   R1# sho crypto ipsec profile
   IPSEC profile Demo-IPsec-Profile
       IKEv2 Profile: Demo-v2-Profile
@@ -2732,7 +2732,7 @@
       }
   ```
 
-  ```bash
+  ```text
   IPSEC profile default
       IKEv2 Profile: Demo-v2-Profile
       Security association lifetime; 4608000 kilobytes/3600 seconds
@@ -2744,7 +2744,7 @@
       }
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
@@ -2756,7 +2756,7 @@
       PERMIT, flags={origin_is_acl}
   ```
 
-  ```bash
+  ```text
     #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
     #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
     #pkts compressed: 0, #pkts decompressed: 0
@@ -2765,14 +2765,14 @@
     #pkts errors 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0xD6F40E5C(3606318684)
      FPS (Y/N): N, DH group: none
   ```
 
-  ```bash
+  ```text
      inbound esp sas:
       epi: 0x83A96616(2208917014)
         transform: esp-256-aes esp-sha512-hmac ,
@@ -2784,13 +2784,13 @@
         Status: ACTIVE(ACTIVE)
   ```
 
-  ```bash
+  ```text
      inbound ah sas:
 
      inbound pcp sas:
   ```
 
-  ```bash
+  ```text
      outbound esp sas:
       spi: 0xD6F40E5C(3606318684)
         transform: esp-256-aes esp-sha512-hmac ,
@@ -2802,13 +2802,13 @@
         Status: ACTIVE(ACTIVE)
   ```
 
-  ```bash
+  ```text
      outbound ah sas:
 
      outbound pcp sas:
   ```
 
-  ```bash
+  ```text
   R1# show crypto map
   Crypto Map: "Tunnel0-head-0" IKEv2 profile: Demo-v2-Profile
 
@@ -2818,7 +2818,7 @@
     Security association lifetime; 4608000 kilobytes/3600 seconds
   ```
 
-  ```bash
+  ```text
       Responder-Only (Y/N): N
       PFS (Y/N): N
       Mixed-mode : Disabled
@@ -2827,7 +2827,7 @@
       }
   ```
 
-  ```bash
+  ```text
   Crypto Map IPv4 "Tunnel0-head-0" 65537 ipsec-isakmp
       Map is a PROFILE INSTANCE
       peer = 25.2.2.2
@@ -2846,7 +2846,7 @@
       Interfaces using crypto map Tunnel0-head-0
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
@@ -2864,7 +2864,7 @@
     #pkts errors 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0xD6F40E5C(3606318684)
@@ -2874,7 +2874,7 @@
       epi: 0x83A96616(2208917014)
   ```
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 25.2.2.5 to network 0.0.0.0
     S*   0.0.0.0/0 [1/0] via 25.2.2.5
@@ -2895,14 +2895,14 @@
 
 - Adding EIGRP for tunnel network on R1
 
-  ```bash
+  ```text
   R1# config
   R1(config)# router eigrp 1
   R1(config-router)# net 10.0.0.0
   R1(config-router)# end
   ```
 
-  ```bash
+  ```text
   R1# show ip eigrp int
   EIGRP-IPv4 Interfaces for AS(1)
                       Xmit Queue    PeerQ         Mean    Pacing Time   MTU
@@ -2914,7 +2914,7 @@
 
 - Adding EIGRP for tunnel network on R2
 
-  ```bash
+  ```text
   R2# debug ip routing
 
   R2# conf t
@@ -2925,7 +2925,7 @@
   %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.12.12.1 (Tunnel0) is up: new adjacency
   ```
 
-  ```bash
+  ```text
   R2# show ip route
 
   Gateway of last resort is 25.2.2.5 to network 0.0.0.0
@@ -2943,7 +2943,7 @@
   L       25.1.1.1/32 is directly connected, GigabitEthernet0/2
   ```
 
-  ```bash
+  ```text
   R2# ping 10.1.0.50
   !!!!!
   R2# traceroute 10.1.0.50
@@ -2953,13 +2953,13 @@
     2 10.1.0.50 12 ms 16 ms 10 ms
   ```
 
-  ```bash
+  ```text
   R2# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
   ```
 
-  ```bash
+  ```text
     protected vrf: (none)
     local Ident  (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
     remote Ident (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
@@ -2973,7 +2973,7 @@
     #pkts errors 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 25.1.1.1, remote crypto endpt.: 15.2.2.2
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x83A96616(2208917014)
@@ -3076,13 +3076,13 @@
 
 - Config CA on R1
 
-  ```bash
+  ```text
   ! config domain name
   R1# conf t
   R1(config)# ip domain name ogit.online
   ```
 
-  ```bash
+  ```text
   ! create RAS key
   R1(config)# crypto key generate rsa general-keys modulus 2048
   The name for th ekeys will be: R1.ogit.online
@@ -3091,7 +3091,7 @@
   %SSH-5-ENABLE: SSH 1.99 has been enabled
   ```
 
-  ```bash
+  ```text
   ! issue certificate
   R1(config)# ip http server
   R1(config)# crypto pki server CA
@@ -3100,7 +3100,7 @@
   %PKI-6-CS_GRANT_AUTO: All enrollment requests will ne automatically granted.
   ```
 
-  ```bash
+  ```text
   R1(ca-server)# no shutdown
   Password: *****
   Re-enter password: *****
@@ -3109,7 +3109,7 @@
   %PKI-6-CA_ENABLED: Certificate server now available
   ```
 
-  ```bash
+  ```text
   ! config to trust point w/ the CA
   R1(ca-server)# exit
   R1(config)# crypto pki trustpoint LOCAL-CA
@@ -3123,12 +3123,12 @@
   Loopback0             1.1.1.1       YES manual  up                    up
   ```
 
-  ```bash
+  ```text
   R1(ca-trustpoint)# revocation-check none
   R1(ca-trustpoint)# exit
   ```
 
-  ```bash
+  ```text
   ! config to create certificate w/ the CA
   R1(config)# crypto pki authenticate LOCAL-CA
   Certificate has the following attributes:
@@ -3139,7 +3139,7 @@
   Trustpoint CA certificate accepted.
   ```
 
-  ```bash
+  ```text
   ! verify
   R1(config)# do show crypto pki cert
   CA Certificate
@@ -3155,12 +3155,12 @@
       end   date: 21:56:28 UTC Sep 27 2023
   ```
 
-  ```bash
+  ```text
   ! enroll self to use the certificate
   R1(config)# crypto pki enroll LOCAL-CA
   ```
 
-  ```bash
+  ```text
   % Start certificate enrollment ...
   % Create a challenge password. You will need to verbally provide this
     password to tge CA administrator in order to revoke your certificate.
@@ -3180,7 +3180,7 @@
   % The 'show crypto pki certificate verbose LOCAL-CA' command will show the fingerprints.
   ```
 
-  ```bash
+  ```text
   R1# shoe crypto pki cert
   Certificate
     Status: Available
@@ -3204,7 +3204,7 @@
     Certificate Usage: Signature
   ```
 
-  ```bash
+  ```text
     Issuer:
       cn=ca.ogit.online O=Training C=CBT
     Subject: 
@@ -3222,7 +3222,7 @@
   - too complex to memorize
   - focus on concept
   
-  ```bash
+  ```text
   R1# conf t
   R1(config)# aaa new-model
 
@@ -3230,18 +3230,18 @@
   R1(config)# aaa authorization network a-eap-author-grp local
   ```
 
-  ```bash
+  ```text
   R1(config)# username admin privilege 15 secret Cisco!23
 
   R1(config)# ip local pool ACPOOL 10.67.83.51 10.57.83.100
   ```
 
-  ```bash
+  ```text
   R1(config)# ip access-list standard split_tunnel
   R1(config-std-nacl)# permit 10.0.0.0 0.255.255.255
   ```
 
-  ```bash
+  ```text
   R1(configstd-nacl)# crypto ikev2 authorization policy ikev2-auth-policy
   R1(config-ikev2-author-policy)# pool ACPOOL
   R1(config-ikev2-author-policy)# route set access-list split_tunnel
@@ -3249,20 +3249,20 @@
   R1(config-ikev2-author-policy)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)# crypto ikev2 proposal IKEv2-prop1
   R1(config-ikev2-proposal)# encryption aes-cbc-256
   R1(config-ikev2-proposal)# integrity sha256
   R1(config-ikev2-proposal)# group 14
   ```
 
-  ```bash
+  ```text
   R1(config-ikev2-proposal)# crypto ikev2 policy IKEv2-pol
   R1(config-ikev2-policy)# proposal IKEv2-propl
   R1(config-ikev2-policy)# exit
   ```
 
-  ```bash
+  ```text
   R1(config)# crypto ikev2 profile AnyConnect-EAP
   R1(config-ikev2-profile)# match identity remote key-id *$AnyConnectClient$*
   R1(config-ikev2-profile)# authentication local rsa-sig
@@ -3274,23 +3274,23 @@
   R1(config-ikev2-profile)# virtual-template 100
   ```
 
-  ```bash
+  ```text
   R1(config-ikev2-profile)# crypto ipsec transform-set TS esp-aes 256 esp-sha256-hmac
   R1(cfg-crypto-trans)# mode tunnel
   ```
 
-  ```bash
+  ```text
   R1(cfg-crypto-trans)# crypto ipsec profile AnyConnect-EAP
   R1(ipsec-profile)# set transform-set TS
   R1(ipsec-profile)# set ikev2-profile AnyConnect-EAP
   ```
 
-  ```bash
+  ```text
   R1(ipsec-profile)# interface loopback100
   R1(config-if)# ip address 11.11.11.11 255.255.255.255
   ```
 
-  ```bash
+  ```text
   R1(config-if)# interface Virtual-Template100 type tunnel
   R1(config-if)# ip unnumbered Loopback100
   R1(config-if)# ip mtu 1400
@@ -3342,7 +3342,7 @@
 
 - Verify on R1
 
-  ```bash
+  ```text
   R1# show ip in brief
   Interface           IP-Address  OK? Method  Status                Protocol
   GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
@@ -3355,7 +3355,7 @@
   Virtual-Template100 11.11.11.11 YES manual  up                    down
   ```
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 15.1.1.5 to network 0.0.0.0
 
@@ -3369,7 +3369,7 @@
     O        10.3.0.0 [110/2] via 15.1.1.5, 01:58:13, GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
     S        10.67.83.52/32 is directly connected, Virtual-Access1
           11.0.0.0/32 is subnetted, 1 subnets
     C       11.11.11.11 is directely connected, Loopback100
@@ -3381,7 +3381,7 @@
     O     192.168.1.0/24 [110/2] via 15.1.1.5 00:58:13, GigabitEthernet 0/1
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 sa
   Tunnel-id Local         Remote          fvrf/ivrf   Status
   1         15.1.1.1/4500 10.5.5.51/54643 none/none   READ
@@ -3389,7 +3389,7 @@
     Life/Active Time: 86400/563 sec
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 sa detailTunnel-id Local         Remote          fvrf/ivrf   Status
   1         15.1.1.1/4500 10.5.5.51/54643 none/none   READ
     Encr: AES-CBC, Keysize: 256, PRF: SHA256, Hash: SHA256, DH Grp:14, Auth sign: PSK, Auth verify: PSK
@@ -3414,7 +3414,7 @@
     Initiator of SA : No
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
@@ -3432,7 +3432,7 @@
     #pkts errors 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 10.5.5.51
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0xD6F40E5C(3606318684)
@@ -3498,7 +3498,7 @@
   - verify routes on R1
     - no explicit route for 10.2.0.0 
 
-    ```bash
+    ```text
     R1# show ip route
     Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -3527,7 +3527,7 @@
   - issue: no reachability
   - tshoot
 
-    ```bash
+    ```text
     R1# show run | section crypto
     crypto isakmp policy 5
      encr aes 256
@@ -3544,9 +3544,7 @@
      set pfs group15
      match address Crypto-ACL
      crypto map Demo-Map
-    ```
-
-    ```bash
+    
     R1# show crypto map
     Crypto Map "Demo-MAP" 10 ipsec-isakmp
       Peer = 25.2.2.2
@@ -3554,9 +3552,7 @@
         access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
       Current peer: 25.2.2.2
       Security association lifetime: 4608000 kilobytes/3600 seconds
-    ```
-
-    ```bash
+      
       Responder-Only (Y/N): N
       PFS (Y/N): Y
       DH group:  group15
@@ -3567,20 +3563,20 @@
         GigabitEthernet0/1
     ```
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst     src     state     conn-id status
     ```
 
-    ```bash
+    ```text
     R1# show isakmp sa detail
     IPv4 Crypto ISAKMP Sa
 
     C-id  Local   Remote    I-VRF   Status  Encr  Hash  aAuth DH Lifetime
     ```
 
-    ```bash
+    ```text
     R1# show crypto isakmp policy
     Global IKE policy
     Protection suite of priority 5
@@ -3591,7 +3587,7 @@
           lifetime:               5000 seconds, no volume limit
     ```
 
-    ```bash
+    ```text
     R1# show crypto session
     Interface: GigabitEthernet0/1
     Session status: DOWN
@@ -3600,14 +3596,14 @@
             Active SAs: 0, origin: crypto map
     ```
 
-    ```bash
+    ```text
     R1# debug crypto isakmp
     R1# show users
         Line    User    Hosts(s)      Idle      Location
     * 0 con 0           idle          00:00:00
     ```
 
-    ```bash
+    ```text
     R1# show ip int brief
     Interface           IP-Address  OK? Method  Status                Protocol
     GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
@@ -3616,7 +3612,7 @@
     GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
     ```
 
-    ```bash
+    ```text
     R1# ping 10.2.0.2 source 10.1.0.1
     .....
     ! no debug msg shown -> checking routing table
@@ -3624,7 +3620,7 @@
     Gateway of last resort is not set
     ```
 
-    ```bash
+    ```text
           10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
     C        10.1.0.0/24 is directly connected, GigabitEthernet0/3
     L        10.1.0.1/32 is directly connected, GigabitEthernet0/3
@@ -3633,14 +3629,14 @@
     L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
     ```
 
-    ```bash
+    ```text
     ! no 10.2.0.0 and no default route
     R1# config t
     R1(config)# ip route 0.0.0.0 0.0.0.0 15.1.1.5
     R1(config)# end
     ```
 
-    ```bash
+    ```text
     R1# ping 15.1.1.5
     !!!!!
     R1# show ip route
@@ -3681,7 +3677,7 @@
     ...
     ```
 
-    ```bash
+    ```text
     ISAKMP: (1001): Old State = IKE_I_MM5    New State = IKE_I_MM6
     ...
     ISAKMP: (1001): Old State = IKE_I_MM6    New State = IKE_P1_COMPLETE
@@ -3689,14 +3685,14 @@
     R1# undebug all
     ```
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst       src       state     conn-id status
     25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
     ```
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa detail
     IPv4 Crypto ISAKMP SA
     C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
@@ -3704,7 +3700,7 @@
            Engine-id:Conn-id =  SW:1
     ```
 
-    ```bash
+    ```text
     R1# show crypto session
     Interface: GigabitEthernet0/1
     Session status: UP-ACTIVE
@@ -3719,7 +3715,7 @@
 - Troubleshooting IKEv1 Phase 1
   - issue: IPsec tunnel not working
   
-  ```bash
+  ```text
   R1# show run | section crypto
   crypto isakmp policy 5
    encr aes 192
@@ -3732,7 +3728,7 @@
    mode tunnel
   ```
 
-  ```bash
+  ```text
   crypto map Demo-Map 10 ipsec-isakmp
    set peer 25.2.2.2
    set transform-set Demo-Set
@@ -3741,7 +3737,7 @@
    crypto map Demo-Map
   ```
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -3754,7 +3750,7 @@
     L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
     ```
 
-  ```bash
+  ```text
   R2# show ip route
   Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -3767,12 +3763,12 @@
     L        25.2.2.2/32 is directly connected, GigabitEthernet0/2
   ```
 
-  ```bash
+  ```text
   R1# ping 25.2.2.2
   !!!!!
   ```
 
-  ```bash
+  ```text
   R1# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
   dst       src       state     conn-id status
@@ -3781,26 +3777,26 @@
   R2# debug crypto isakmp
   ```
 
-  ```bash
+  ```text
   R2# show users
       Line    User    Hosts(s)      Idle      Location
   * 0 con 0           idle          00:00:00
   ```
 
-  ```bash
+  ```text
   R1# show debugging
   Cryptographic subsystems:
     Crypto ISAKMP debugging is on
   ```
 
-  ```bash
+  ```text
   R1# ping 10.2.0.2 source 10.1.0.1
 
   R1# undebug all
   R2# undebug all
   ```
 
-  ```bash
+  ```text
   R2# 
   ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
   ...
@@ -3812,7 +3808,7 @@
   ISAKMP-ERROR: (0): phase 1 SA policy not acceptable! (local 25.2.2.2 remote 15.1.1.1)
   ```
 
-  ```bash
+  ```text
   R2# show crypto isakmp policy
   Global IKE policy
   Protection suite of priority 5
@@ -3823,7 +3819,7 @@
         lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   R1# show crypto isakmp policy
   Global IKE policy
     Protection suite of priority 5
@@ -3834,7 +3830,7 @@
           lifetime:               5000 seconds, no volume limit
   ```
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# crypto isakmp policy 5
   R1(config-isakmp)# encryption aes 256
@@ -3854,7 +3850,7 @@
     PFS (Y/N): Y
   ```
 
-  ```bash
+  ```text
     DH group:  group15
     Transform sets={ 
       Demo-SET:    { esp-aes esp-sha384-hmac  }, 
@@ -3863,20 +3859,20 @@
       GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
   R1# ping 10.2.0.2 source 10.1.0.1
   !!!!
   ... ! ni ISAKMP-ERROR shown
   ```
 
-  ```bash
+  ```text
   R1# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
     dst       src       state     conn-id status
     25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
   ```
 
-  ```bash
+  ```text
   R1# show crypto isakmp sa detail
   IPv4 Crypto ISAKMP SA
   C-id  Local     Remote    I-VRF Status  Encr  Hash    Auth  DH  Lifetime
@@ -3884,7 +3880,7 @@
          Engine-id:Conn-id =  SW:1
   ```
 
-  ```bash
+  ```text
   R1# show crypto engine connection active
   Crypto Engine Connections
 
@@ -3904,7 +3900,7 @@
     - phase 1: working weell
     - phase 2: Ipsec tunnel not working
   
-  ```bash
+  ```text
   R1# show run | section crypto
   crypto isakmp policy 5
    encr aes 256
@@ -3917,7 +3913,7 @@
    mode tunnel
   ```
 
-  ```bash
+  ```text
   crypto map Demo-Map 10 ipsec-isakmp
    set peer 25.2.2.2
    set transform-set Demo-Set
@@ -3926,7 +3922,7 @@
    crypto map Demo-Map
   ```
 
-  ```bash
+  ```text
   R1# show crypto map
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
     Peer = 25.2.2.2
@@ -3944,7 +3940,7 @@
       GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
   R1# show crypto session
   Interface: GigabitEthernet0/1
     Session status: DOWN
@@ -3953,7 +3949,7 @@
             Active SAs: 0, origin: crypto map
   ```
 
-  ```bash
+  ```text
   R1# pint 10.2.0.2 source 10.1.0.1
   .....
   R1# show crypto isakmp sa
@@ -3962,13 +3958,13 @@
     25.2.2.2  15.1.1.1  OM_IDLE      1001 ACTIVE
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
   ```
 
-  ```bash
+  ```text
     protected vrf: (none)
     local Ident  (addr/mask/port/prot): (10.1.0.0/255.255.0.0/0/0)
     remote Ident (addr/mask/port/prot): (10.2.0.0/255.255.255.255/0/0)
@@ -3976,7 +3972,7 @@
       PERMIT, flags={origin_is_acl}
   ```
 
-  ```bash
+  ```text
     #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
     #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
     #pkts compressed: 0, #pkts decompressed: 0
@@ -3993,7 +3989,7 @@
       ...
   ```
 
-  ```bash
+  ```text
   R1# show crypto engine connections active
   Crypto Engine Connections
 
@@ -4001,13 +3997,13 @@
    1001  IKE    AHA256+AES256       0         0          0  15.1.1.1
   ```
 
-  ```bash
+  ```text
   ! no IPsec connection present --> IPsec tunnel broken
   R1# debug crypto ipsec
   R2# debug crypto ipsec
   ```
 
-  ```bash
+  ```text
   R1# ping 10.2.0.2 source 10.1.0.1
   .....
 
@@ -4028,7 +4024,7 @@
       ...
   ```
 
-  ```bash
+  ```text
   R2#
   IPSEC(validate_proposal_request): proposal part #1,
     (key eng. msg) INBOUND local= 25.2.2.2:0, remote= 15.1.1.1:0,
@@ -4046,7 +4042,7 @@
   IPSEC(ipsec_process_proposal): transforma proposal not supported for idenitty: {esp-aes }
   ```
 
-  ```bash
+  ```text
   ! probably not compatible IPsec transform set
   R1# show crypto map
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
@@ -4065,7 +4061,7 @@
       GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
   R2# show crypto map
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
     Peer = 15.1.1.1
@@ -4084,7 +4080,7 @@
       GigabitEthernet0/2
   ```
 
-  ```bash
+  ```text
   R1# undebug all
   R2# undebug all
 
@@ -4109,7 +4105,7 @@
      crypto map Demo-Map
   ```
 
-  ```bash
+  ```text
   R1(config)# crypto map Demo-Map 10 ipsec-isakmp
   R1(config-crypto-map)# set transform-set Demo-Set
   R1(config-crypto-mao)# int g0/1
@@ -4118,13 +4114,13 @@
   R1(config-if)# end
   ```
 
-  ```bash
+  ```text
   ! regenerte traffic w/ debug
   R1# debug crypto ipsec
   R2# debug crypto ipsec
   ```
 
-  ```bash
+  ```text
   R1# ping 10.2.0.2 source 10.1.0.1
   .!!!!
 
@@ -4137,7 +4133,7 @@
       spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
   ```
 
-  ```bash
+  ```text
   IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1
   IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1,
     (identity) local= 15.1.1.1:0, remote= 10.2.2.2:0,
@@ -4173,7 +4169,7 @@
   Interface: GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
     Session status: UP-ACTIVE
     Peer: 25.2.2.2 port 500
       IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
@@ -4181,7 +4177,7 @@
             Active SAs: 2, origin: crypto map
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
@@ -4193,7 +4189,7 @@
       PERMIT, flags={origin_is_acl}
   ```
 
-  ```bash
+  ```text
     #pkts encaps: 4, #pkts encrypt: 4, #pkts digest: 4
     #pkts decaps: 4, #pkts decrypt: 4, #pkts verify: 4
     #pkts compressed: 0, #pkts decompressed: 0
@@ -4218,7 +4214,7 @@
   - encrypting/decrypting traffic btw 10.1.0.0 and 10.2.0.0
   - IKEv2 SA and children SA $\to$ IPsec SA
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 25.2.2.5 to network 0.0.0.0
     S*   0.0.0.0/0 [1/0] via 25.2.2.5
@@ -4235,7 +4231,7 @@
     L       15.1.1.1/32 is directly connected, GigabitEthernet0/1
   ```
 
-  ```bash
+  ```text
   R1# show run int tun 0
   Current Configuration : 200 bytes
   !
@@ -4248,7 +4244,7 @@
   end
   ```
 
-  ```bash
+  ```text
   R1# show crypto session
   Interface: Tunnel0
     Session status: UP-ACTIVE
@@ -4259,12 +4255,12 @@
             Active SAs: 2, origin: crypto map
   ```
 
-  ```bash
+  ```text
   ! no crypto map w/ IKEv2
   R1# show run | include map
   ```
 
-  ```bash
+  ```text
   R1# show crypto mao
   Crypto Map: "Tunnel0-head-0" IKEv2 profile: Demo-v2-Profile
 
@@ -4280,7 +4276,7 @@
           }
   ```
 
-  ```bash
+  ```text
   Crypto Map "Tunnel0-head-0" 65537 ipsec-isakmp
           MAP is a PROFILE INSTANCE
           Peer = 25.2.2.2
@@ -4292,7 +4288,7 @@
           ...
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 ?
     authorization       
     certificate-cache   Show certificate in ikev2 certificate-cahe
@@ -4307,7 +4303,7 @@
     stats               Shows ikev2 sa stats
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 sa
   Tunnel-id Local           Remote          fvrf/ivrf   Status
   1         15.1.1.1/500    25.2.2.2/500    none/none   READY
@@ -4315,7 +4311,7 @@
         DH Grp: 16, Auth sign: PSK, Auth verify: PSK
   ```
 
-  ```bash
+  ```text
   R1# show crypto ikev2 connections active
   Crypto Engine Connections
 
@@ -4325,7 +4321,7 @@
      1003  IKEv2   SHA512+AES256        0        0        0 15.1.1.1
   ```
 
-  ```bash
+  ```text
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
@@ -4343,7 +4339,7 @@
     #pkts errors 0, #recv errors 0
   ```
 
-  ```bash
+  ```text
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
      plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x87...73(228...39)
@@ -4360,13 +4356,13 @@
       Status: ACTIVE (ACTIVE)
   ```
 
-  ```bash
+  ```text
   ! turn on debug
   R1# debug crypto ikev2
   R2# debug crypto ikev2
   ```
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# int tun 0
   R1(config-if)# shutdown
@@ -4382,7 +4378,7 @@
   ...
   ```
 
-  ```bash
+  ```text
   R2#
   ...
   IKEv2:(SESSION ID = 3, SA = 1): IKEV2 SA created; inserting SA into database.
@@ -4392,7 +4388,7 @@
   R2# undebug all
   ```
 
-  ```bash
+  ```text
   R1# show crypto session
 
   R1(config-if)# no shut

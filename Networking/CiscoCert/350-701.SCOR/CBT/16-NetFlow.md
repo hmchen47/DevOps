@@ -71,7 +71,7 @@ Trainer: Keith Barker
   - observe inbound and outbound traffic on R1 g/0
   - expotor: IP addr = 1.2.3.4/32, traffic type = UDP:6783
 
-  ```bash
+  ```text
   R1# show ip int brief
   Interface           IP-Address  OK? Method  Status                Protocol
   Ethernet0/0         unassigned  YES NVRAM   administratively down down
@@ -180,7 +180,7 @@ Trainer: Keith Barker
     - protocol to export: IPFIX
   - `flow record SW_RECORD` specify what to pay attention and what to collect
 
-  ```bash
+  ```text
   RA# show run int g0/3
   !
   interface GigabitEthernet0/3
