@@ -18,7 +18,13 @@ Trainer: keith Barker
 ## Device Hardening Overview
 
 - Device hardening overview
-  - the process to eliminate a means of attack by patching vulnerabilities, turning off non-essential services and configuring system with security controls such as password management, file permissions and disabling unused network ports
+  - the process to eliminate a means of attack by 
+    - patching vulnerabilities
+    - turning off non-essential services and 
+    - configuring system with security controls
+      - password management
+      - file permissions and 
+      - disabling unused network ports
   - improving security possibly broken 
     - management plane
     - control plane
