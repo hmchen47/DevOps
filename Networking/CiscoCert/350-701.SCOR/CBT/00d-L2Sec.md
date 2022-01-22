@@ -22,7 +22,7 @@ Trainer: Keith Barker
 
 - Demo: CAM table overflow
 
-  ```bash
+  ```text
   SW# show vlan brief
   VLAN Name           Status    Ports
   ---- -------------- --------- -----------------------------
@@ -103,7 +103,7 @@ Trainer: Keith Barker
 - Demo: config port security
   - plan: port g0/0 connected to a PC w/ Vlan 10
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -173,7 +173,7 @@ Trainer: Keith Barker
   - all port security settings not in function until port security enabled
   - resume shutdowned interface by executing `shutdown` and `no shutdown` on the interface
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -271,7 +271,7 @@ Trainer: Keith Barker
 
 - Demo: config auto recovery for port security violation
 
-  ```bash
+  ```text
   SW# show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
@@ -385,7 +385,7 @@ Trainer: Keith Barker
       - max mac addresses: 2000
       - violation action: protect
 
-  ```bash
+  ```text
   ! config Core1
   Core1# show cdp neighbor
   Device ID   Local Interface   Holdtime  Capability  Platform  Port ID
@@ -568,7 +568,7 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   SW# show vlan brief
   ! all ports on native vlan
 
@@ -625,7 +625,7 @@ Trainer: Keith Barker
   - bootup PC1 and observe interfaces connected to DHCP Good and DHCP Bad
   - check IP address of PC1 & PC2 $\gets$ both from DHCP Good server
 
-  ```bash
+  ```text
   SW# show ip dhcp binding
   MacAddress          IpAddress     Lease (sec)   Type            VLAN  Interface
   -----------------   ------------  -----------   -------------   ----  ---------------
@@ -647,7 +647,7 @@ Trainer: Keith Barker
 
 - Demo: config source guard
 
-  ```bash
+  ```text
   SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
   30
@@ -709,7 +709,7 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   ! always verify basic info before conducting any config
   R3# show ip int brief
   Interface              IP-Address     OK? Method Status                Protocol
@@ -934,7 +934,7 @@ Trainer: keith Barker
     - another switch (subnet 10.1.0.0/24) connected to SW on port g0/1
   - task: implement DAI for SW
   
-  ```bash
+  ```text
   ! verify DHCP snooping enabled
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
@@ -1004,7 +1004,7 @@ Trainer: keith Barker
 - Troubleshooting dropped ARP msgs from untrusted port connected to a switch
   - dropped DHCP messages allowed by permitted ACL
   
-  ```bash
+  ```text
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
@@ -1087,7 +1087,7 @@ Trainer: keith Barker
 
 - Demo: config DAI parameters
 
-  ```bash
+  ```text
   SW# show ip arp inspection interfaces
   Interface       Trust State Rate (pps)  Burst Interval
   --------------- ----------- ----------  --------------
@@ -1186,7 +1186,7 @@ Trainer: keith Barker
     - trust port g3/3 $\gets$ g1/0 on R3 not assigned via DHCP
     - verify DAI working correctly
   
-  ```bash
+  ```text
   ! verify basic info
   SW# show vlan brief
   VLAN Name                             Status    Ports
@@ -1403,7 +1403,7 @@ Trainer: Keith Barker
 
 - Demo: config PVLAN
 
-  ```bash
+  ```text
   SW# conf t
 
   ! reset existed config
@@ -1467,7 +1467,7 @@ Trainer: Keith Barker
 
 - Demo: verify PVLAN
 
-  ```bash
+  ```text
   SW1# show int brief
   Port      Name     Status       Vlan       Duplex  Speed Type
   Gi0/0              connect      1          a-full  auto  RJ45
@@ -1579,7 +1579,7 @@ Trainer: Keith Barker
     - config to allow Roamer to access PC 300-1 & 300-2
     - verify the reachability from Roamer
 
-  ```bash
+  ```text
   SW2# show vlan private-vlan
   Primary Secondary Type              Ports
   ------- --------- ----------------- -------------------------

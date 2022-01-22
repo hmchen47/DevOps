@@ -47,7 +47,7 @@ Trainer: Keith Barker
   - verify routes on R1
     - no explicit route for 10.2.0.0 
 
-    ```bash
+    ```text
     R1# show ip route
     Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -76,7 +76,7 @@ Trainer: Keith Barker
   - issue: no reachability
   - tshoot
 
-    ```bash
+    ```text
     R1# show run | section crypto
     crypto isakmp policy 5
      encr aes 256
@@ -234,7 +234,7 @@ Trainer: Keith Barker
 - Troubleshooting IKEv1 Phase 1
   - issue: IPsec tunnel not working
   
-  ```bash
+  ```text
   R1# show run | section crypto
   crypto isakmp policy 5
    encr aes 192
@@ -383,7 +383,7 @@ Trainer: Keith Barker
     - phase 1: working weell
     - phase 2: Ipsec tunnel not working
   
-  ```bash
+  ```text
   R1# shop run | sec crypto
   R1# show run | section crypto
   crypto isakmp policy 5
@@ -652,7 +652,7 @@ Trainer: Keith Barker
   - encrypting/decrypting traffic btw 10.1.0.0 and 10.2.0.0
   - IKEv2 SA and children SA $\to$ IPsec SA
 
-  ```bash
+  ```text
   R1# show ip route
   Gateway of last resort is 25.2.2.5 to network 0.0.0.0
     S*   0.0.0.0/0 [1/0] via 25.2.2.5

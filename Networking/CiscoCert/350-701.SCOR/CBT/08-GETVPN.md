@@ -106,7 +106,7 @@ Trainer: Keith Barker
 - Sanity check for reachability of all routers
   - Key server: R4
 
-    ```bash
+    ```text
     R4# show ip route
     Gateway of last resort is 45.4.4.5 to network 0.0.0.0
 
@@ -152,7 +152,7 @@ Trainer: Keith Barker
   - group member: R1
 
 
-    ```bash
+    ```text
     R1# ping 10.2.0.2
     !!!!!
     ```
@@ -160,7 +160,7 @@ Trainer: Keith Barker
 
 - config key server
 
-  ```bash
+  ```text
   R4# conf t
   ! conf terminal w/ 200 in width for reading
   R4(config)# line con 0
@@ -215,7 +215,7 @@ Trainer: Keith Barker
 
 - Verify key server config
   
-  ```bash
+  ```text
   R4# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -248,7 +248,7 @@ Trainer: Keith Barker
 
 - Config GM on R1
   
-  ```bash
+  ```text
   R1# conf t
 
   ! IKE Phase 1 for communication btw key server & members
@@ -282,7 +282,7 @@ Trainer: Keith Barker
 
 - Verify GM config
 
-  ```bash
+  ```text
   R1# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -360,7 +360,7 @@ Trainer: Keith Barker
 
 - Verify on KS
 
-  ```bash
+  ```text
   R4# sho crypto gdoi ks
   Total group member registered to this box: 3
 
@@ -381,7 +381,7 @@ Trainer: Keith Barker
 
 - Verify on HM
 
-  ```bash
+  ```text
   R1# sho crypto isakmp sa detail
   C-id  Local         Remote        I-VRF   Status  Encr  Hash    Auth  DH  Lifetime
   1001  15.1.1.1      4.4.4.4               ACTIVE  aes   sha256  psk   14  23:47:21
@@ -511,7 +511,7 @@ Trainer: Keith Barker
   - observation points: A - R2 g0/3 (connect to CLT), B - R2, g0/2 (connect to cloud)
   - verify CLT (Linux)
 
-    ```bash
+    ```text
     CLT# ip addr
     ...
     576: eth0@if675: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue UP

@@ -75,7 +75,7 @@ Trainer: keith Barker
 
 - Config IKEv2 FlexVPN site-to-site on R1
 
-  ```bash
+  ```text
   ! config loopback 0 and line terminal width
   R1# conf t
   R1(config)# int loop 0
@@ -155,7 +155,7 @@ Trainer: keith Barker
 
 - Verify on R1
 
-  ```bash
+  ```text
   R1# show crypto ikev2 proposal default
   IKEv2 proposal: default
       Encryption : AES-CBC-256 AES-CBC-192 AES-CBC-128
@@ -319,7 +319,7 @@ Trainer: keith Barker
 
 - Adding EIGRP for tunnel network on R1
 
-  ```bash
+  ```text
   R1# config
   R1(config)# router eigrp 1
   R1(config-router)# net 10.0.0.0
@@ -336,7 +336,7 @@ Trainer: keith Barker
 
 - Adding EIGRP for tunnel network on R2
 
-  ```bash
+  ```text
   R2# debug ip routing
 
   R2# conf t

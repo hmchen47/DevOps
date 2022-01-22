@@ -79,7 +79,7 @@ Trainer:: Keith Barker
 
 - Config CA on R1
 
-  ```bash
+  ```text
   ! config domain name
   R1# conf t
   R1(config)# ip domain name ogit.online
@@ -200,7 +200,7 @@ Trainer:: Keith Barker
   - too complex to memorize
   - focus on concept
   
-  ```bash
+  ```text
   R1# conf t
   R1(config)# aaa new-model
 
@@ -300,7 +300,7 @@ Trainer:: Keith Barker
 
 - Verify on R1
 
-  ```bash
+  ```text
   R1# show ip in brief
   Interface           IP-Address  OK? Method  Status                Protocol
   GigabitEthernet0/0  unassigned  YES TFTP    administratively down down

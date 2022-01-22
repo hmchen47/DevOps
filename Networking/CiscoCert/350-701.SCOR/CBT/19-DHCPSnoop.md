@@ -58,7 +58,7 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   SW# show vlan brief
   ! all ports on native vlan
 
@@ -115,7 +115,7 @@ Trainer: Keith Barker
   - bootup PC1 and observe interfaces connected to DHCP Good and DHCP Bad
   - check IP address of PC1 & PC2 $\gets$ both from DHCP Good server
 
-  ```bash
+  ```text
   SW# show ip dhcp binding
   MacAddress          IpAddress     Lease (sec)   Type            VLAN  Interface
   -----------------   ------------  -----------   -------------   ----  ---------------
@@ -137,7 +137,7 @@ Trainer: Keith Barker
 
 - Demo: config source guard
 
-  ```bash
+  ```text
   SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
   30
@@ -199,7 +199,7 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   ! always verify basic info before conducting any config
   R3# show ip int brief
   Interface              IP-Address     OK? Method Status                Protocol

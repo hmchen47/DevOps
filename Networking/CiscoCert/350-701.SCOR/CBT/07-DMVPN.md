@@ -66,7 +66,7 @@ Trainer: Keith Barker
 - Config mGRE on R1
   - preventing from packet segmentation w/ mtu = 1400
 
-  ```bash
+  ```text
   ! DMVPN Hub
   R1#conf t
   R1(config)# int tunnel 0
@@ -83,7 +83,7 @@ Trainer: Keith Barker
 
 - Config mGRE on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# description DMVPN Spoke site 2
@@ -98,7 +98,7 @@ Trainer: Keith Barker
 
 - Config mGRE on R3
 
-  ```bash
+  ```text
   R3# conf t
   R3(config)# int tunnel 0
   R3(config-if)# description DMVPN Spoke site 3
@@ -147,7 +147,7 @@ Trainer: Keith Barker
 
 - Config NHRP on hub
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# int tunnel 0
   R1(config-if)# authentication Cisco!23
@@ -163,7 +163,7 @@ Trainer: Keith Barker
   - mapping tunnel address to public Ip address (T.P.)
   - tunnel supporting multicast by forwarding to public IP address of hub
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# int tunnel 0
   R2(config-if)# authentication Cisco!23
@@ -197,7 +197,7 @@ Trainer: Keith Barker
 
 - Verify NHRP settings
 
-  ```bash
+  ```text
   R1# show ip nhrp
   172.16.123.2/32 via 172.16.123.2
      Tunnel0 created 00:01:17, expire 00:08:43
@@ -209,7 +209,7 @@ Trainer: Keith Barker
      NBMA address: 35.3.3.3
   ```
 
-  ```bash
+  ```text
   R2# show ip nhrp
   172.16.123.1/32 via 172.16.123.1
      Tunnel0 created 00:02:06, never expire
@@ -231,7 +231,7 @@ Trainer: Keith Barker
 
 - Config EIGRP on R1
 
-  ```bash
+  ```text
   R1# conf t
   R1(config)# router eigrp 1
   R1(config-router)# net 10.0.0.0
@@ -249,7 +249,7 @@ Trainer: Keith Barker
 
 - Config EIGRP on R2
 
-  ```bash
+  ```text
   R2# conf t
   R2(config)# router eigrp 1
   R2(config-router)# net 10.0.0.0
@@ -261,7 +261,7 @@ Trainer: Keith Barker
 - Sanity check for routing
   - R2 w/o R3 subnet info
     
-    ```bash
+    ```text
     R2# show ip route eigrp
     Gateway of last resort is 25.2.2.5 to network 0.0.0.0
 
@@ -271,7 +271,7 @@ Trainer: Keith Barker
 
   - R1 knowing R3 subnet
 
-    ```bash
+    ```text
     R1# show ip route 10.0.0.0
     Routing entry for 10.0.0.0/8, 4 known subnets
       Attached (2 connections)
@@ -287,7 +287,7 @@ Trainer: Keith Barker
   - R1 learning R3 subnet w/ tunnel intf should not advertise the network to the same intf $\to$ `no split-horizon`
   - config R1 for EIGRP w/o split horizon
 
-    ```bash
+    ```text
     R1# conft
     R1(config)# int tunnel 0
     R1(config-if)# no ip split-horizon eigrp 1
@@ -296,7 +296,7 @@ Trainer: Keith Barker
 
   - verify EIGRP routes on R2 again
     
-    ```bash
+    ```text
     R2# show ip route eigrp
     Gateway of last resort is 25.2.2.5 to network 0.0.0.0
 
@@ -328,7 +328,7 @@ Trainer: Keith Barker
   - Attrb legend of `show dmvpn`: S - Static, D - Dynamic, I - Incomplete, T1 - Routed Installed, T2 - Nexthop-override
   - verify DMVPN & NHRP settings on R1
 
-    ```bash
+    ```text
     R1# show dmvpn
     ...
     Interface: Runnel0, IPv4 NHRP Details
@@ -352,7 +352,7 @@ Trainer: Keith Barker
 
   - verify DMVPN & NHRP settings on R2
 
-    ```bash
+    ```text
     R2# show dmvpn
     ...
     Interface: Runnel0, IPv4 NHRP Details
@@ -447,7 +447,7 @@ Trainer: Keith Barker
 - Config IPsec on DMVPN in R1
   - using transport mode than tunnel mode
 
-  ```bash
+  ```text
   ! IKE phase1
   R1# conf t
   R1(config)# crypto isakmp policy 1
@@ -476,7 +476,7 @@ Trainer: Keith Barker
 
 - Verify tunnel on spoke
 
-  ```bash
+  ```text
   R2# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
   dst             src             state          conn-id status
