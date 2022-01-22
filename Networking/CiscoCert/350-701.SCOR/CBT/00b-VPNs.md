@@ -294,7 +294,7 @@
 - Tunnel comparison
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 700px;"
       onclick= "window.open('https://bit.ly/3IqQQWR')"
       src    = "img/04-tunnel_comparison.jpeg"
       alt    = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
@@ -436,11 +436,11 @@
 
     ```text
     PC1# ip addr
-    ...
+    <...truncated...>
     82: eth0@if81: ...
-      ...
+      <...truncated...>
       inet 10.1.0.51/24 scope global eth0
-      ...
+      <...truncated...>
     
     PC1# route
     Kernel IP routing table
