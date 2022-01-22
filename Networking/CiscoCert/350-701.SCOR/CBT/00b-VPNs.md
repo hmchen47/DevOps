@@ -80,11 +80,11 @@
 
     ```text
     PC1# ip addr
-    <...truncated...>
+    <..truncated..>
     82: eth0@if81: ...
-      <...truncated...>
+      <..truncated..>
       inet 10.1.0.51/24 scope global eth0
-      <...truncated...>
+      <..truncated..>
     
     PC1# route
     Kernel IP routing table
@@ -310,9 +310,9 @@
     ```text
     PC1# traceroute10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
-     1  10.1.0.1  (10.1.0.1)    4.028 ms    <...truncated...>
-     2  25.2.2.2  (25.2.2.2)    24.343 ms   <...truncated...>
-     3  10.2.0.50 (10.2.0.50)   70.862 ms   <...truncated...>
+     1  10.1.0.1  (10.1.0.1)    4.028 ms    <..truncated..>
+     2  25.2.2.2  (25.2.2.2)    24.343 ms   <..truncated..>
+     3  10.2.0.50 (10.2.0.50)   70.862 ms   <..truncated..>
     ```
 
   - verify sa negotiation on R1
@@ -1067,7 +1067,7 @@
 
     ```text
     R1# show dmvpn
-    <...truncated...>
+    <..truncated..>
     Interface: Runnel0, IPv4 NHRP Details
     Type: Hub, NHRP Peers:2,
 
@@ -1092,7 +1092,7 @@
 
     ```text
     R2# show dmvpn
-    <...truncated...>
+    <..truncated..>
     Interface: Runnel0, IPv4 NHRP Details
     Type: Spoke, NHRP Peers:1,
 
@@ -1168,7 +1168,7 @@
       NBMA address: 35.3.3.3
       
     R2# show dmvpn
-    <...truncated...>
+    <..truncated..>
     Interface: Runnel0, IPv4 NHRP Details
     Type: Spoke, NHRP Peers:2,
 
@@ -1367,7 +1367,7 @@
      inbound esp sas:
      
   R2# pint 10.3.0.50 source 10.2.0.2 repeat 1000
-  !!!!!...!!!!
+  !!!!!<..truncated..>!!!! ()
   R2# show ip sec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
@@ -1383,7 +1383,7 @@
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
     #pkts errros 0, #recv errors 0
-  <...truncated...>
+  <..truncated..>
   ```
 
 
@@ -1903,12 +1903,12 @@
 
     ```text
     CLT# ip addr
-    <...truncated...>
+    <..truncated..>
     576: eth0@if675: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue UP
     Toup default qlen 1000
-      <...truncated...>
+      <..truncated..>
       ient 10.2.0.50/24 scope global eth0
-      <...truncated...>
+      <..truncated..>
       
     CLT# route
     Destination   Gateway     Genmask   Flags Metrics Ref   Use Iface
@@ -2329,7 +2329,7 @@
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x83A96616(2208917014)
      FPS (Y/N): N, DH group: none
-    ...
+    <..truncated..>
   ```
 
 
@@ -2436,7 +2436,7 @@
   R1(config)# crypto key generate rsa general-keys modulus 2048
   The name for th ekeys will be: R1.ogit.online
   % The key modulus size is 2048 bits
-  % Generating 2048 bit RSA keys, keys will be non-exportable...
+  % Generating 2048 bit RSA keys, keys will be non-exportable<..truncated..>
   %SSH-5-ENABLE: SSH 1.99 has been enabled
   
   ! issue certificate
@@ -2494,7 +2494,7 @@
   ! enroll self to use the certificate
   R1(config)# crypto pki enroll LOCAL-CA
   
-  % Start certificate enrollment ...
+  % Start certificate enrollment <..truncated..>
   % Create a challenge password. You will need to verbally provide this
     password to tge CA administrator in order to revoke your certificate.
     For security reason your password will not be saved in the configuration.
@@ -2928,10 +2928,10 @@
 
     R1# ping 10.2.0.2 source 10.1.0.1
     !!!!!
-    ...
+    <..truncated..>
     ISAKMP: (0): Can not start Aggressive mode, trying Main mode.
     ISAKMP: (0): found peer-shared key matching 25.2.2.2
-    ...
+    <..truncated..>
     ISAKMP: (0): Checking ISAKMP transfor 1 against priority 5 policy
     ISAKMP: (0):      encryption AES-CBC
     ISAKMP: (0):      keylength of 256
@@ -3042,9 +3042,9 @@
   
   R2# 
   ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
-  ...
+  <..truncated..>
   ISAKMP: (0): found peer pre-shared key match 15.1.1.1
-  ...
+  <..truncated..>
   ISAKMP-ERROR: (0): Proposed key length does not match policy
   ISAKMP-ERROR: (0): attrs are not acceptable. Next payload is 0
   ISAKMP-ERROR: (0): no offers accepted!
@@ -3095,7 +3095,7 @@
       
   R1# ping 10.2.0.2 source 10.1.0.1
   !!!!
-  ... ! ni ISAKMP-ERROR shown
+  <..truncated..> ! ni ISAKMP-ERROR shown
   
   R1# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
@@ -3199,7 +3199,7 @@
      FPS (Y/N): N, DH group: none
 
      inbound esp sas:
-      ...
+      <..truncated..>
       
   R1# show crypto engine connections active
   Crypto Engine Connections
@@ -3228,7 +3228,7 @@
   IPSEC(sa_request): ,
     (key eng. msg.) OUTBOUND local= 15.1.1.1:500, remote= 25.2.2.2:500,
       local_proxy= 10.1.0.0/255.255.0.0/256/0,
-      ...
+      <..truncated..>
       
   R2#
   IPSEC(validate_proposal_request): proposal part #1,
@@ -3349,7 +3349,7 @@
           dst port     : 0
   (ipsec_process_proposal)Map Accepted: Demo-Map, 10
   IPSEC(key-engine): got a queue event with 1 KMI message(s)
-  ...
+  <..truncated..>
 
   R1# undebug all
   R2# undebug all
@@ -3386,7 +3386,7 @@
      FPS (Y/N): N, DH group: none
 
      inbound esp sas:
-      ...
+      <..truncated..>
   ```
 
 
@@ -3458,7 +3458,7 @@
             access-list permit ip any any
           Current peer: 25.2.2.2
           Security association lifetime: 4608000 kilobytes/3600 seconds
-          ...
+          <..truncated..>
           
   R1# show crypto ikev2 ?
     authorization       
@@ -3510,12 +3510,12 @@
 
      inbound esp sas:
       spi: 0xA1A...38(27...48)
-      ...
+      <..truncated..>
       status: ACTIVE(ACTIVE)
-      ...
+      <..truncated..>
     outbound esp sas:
       spi: 0x87...73(228...39)
-      ...
+      <..truncated..>
       Status: ACTIVE (ACTIVE)
       
   ! turn on debug
@@ -3529,17 +3529,17 @@
   R1(config-if)# end
 
   R1# show log
-  ...
+  <..truncated..>
   IKEv2:(SESSION ID = 2, SA ID = 1):Verify peer's policy
   IKEv2:(SESSION ID = 2, SA ID = 1):Peer's policy verified
   IKEv2:(SESSION ID = 2, SA ID = 1):Get peer's authentication method
   IKEv2:(SESSION ID = 2, SA ID = 1):Peer's authenticaton method is 'PSK'
-  ...
+  <..truncated..>
 
   R2#
-  ...
+  <..truncated..>
   IKEv2:(SESSION ID = 3, SA = 1): IKEV2 SA created; inserting SA into database.
-  ...
+  <..truncated..>
 
   R1# undebug all
   R2# undebug all
