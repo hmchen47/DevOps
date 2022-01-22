@@ -2221,7 +2221,7 @@ Trainer: keith Barker
 
 - General Management Plane Hardening
   - password mgmt: TACACS+ + local user account
-    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secrete, type 9 password
+    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secret, type 9 password
     - `secrete`: using type 5 password
   - enhanced password security
   - login password retry lockout

@@ -24,7 +24,7 @@ Trainer: Keith Barker
     - any change of text $\to$ the hash changed
   - [HMAC Generator / Tester Tool](https://freeformatter.com/hmac-generator.html)
     - paste text into input field
-    - secrete key: the element making the hash only calculateable by the devices both having the key
+    - secret key: the element making the hash only calculateable by the devices both having the key
     - select a message digest algorithm = SHA512 > 'COMPUTE HMAC' button
 
 

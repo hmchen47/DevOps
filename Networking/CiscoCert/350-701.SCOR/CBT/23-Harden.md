@@ -52,8 +52,8 @@ Trainer: keith Barker
 
 - General Management Plane Hardening
   - password mgmt: TACACS+ + local user account
-    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secrete, type 9 password
-    - `secrete`: using type 5 password
+    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plaintext secret, type 9 password
+    - `secret`: using type 5 password
   - enhanced password security
   - login password retry lockout
   - no Service Password-Recovery
@@ -73,8 +73,8 @@ Trainer: keith Barker
   ```text
   ! local user account
   R1(config)# username admin1 privilege 15 password Cisco!23
-  R1(config)# username admin1 privilege 15 secrete Cisco!23
-  R1(config)# username admin1 privilege 15 algorithm-type scrypt secrete Cisco!23
+  R1(config)# username admin1 privilege 15 secret Cisco!23
+  R1(config)# username admin1 privilege 15 algorithm-type scrypt secret Cisco!23
 
   ! disable unused services
   R1# show control-plane host open-ports
