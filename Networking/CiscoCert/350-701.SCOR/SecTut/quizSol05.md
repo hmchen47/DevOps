@@ -256,7 +256,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
 
 
-## 18. Drag Drop
+## 18. 18. Drag Drop
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
