@@ -128,6 +128,86 @@
 ## 14. AAA
 
 
+- <span style="color: blue; font-weight: blue;">Question 1</span>
+
+  When wired 802.1X authentication is implemented, which two components are required? (Choose two)
+
+  A. authentication server: Cisco Identity Service Engine<br>
+  B. supplicant: Cisco AnyConnect ISE Posture module<br>
+  C. authenticator: Cisco Catalyst switch<br>
+  D. authenticator: Cisco Identity Services Engine<br>
+  E. authentication server: Cisco Prime Infrastructure<br>
+
+  Answer: A C
+
+
+- <span style="color: blue; font-weight: blue;">Question 2</span>
+
+  Refer to the exhibit. Which command was used to display this output?
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/1402-show_dot1x_all.jpg"
+      alt    = "Output of show dot1x all"
+      title  = "Output of show dot1x all"
+    />
+  </figure>
+
+  A. show dot1x all<br>
+  B. show dot1x<br>
+  C. show dot1x all summary<br>
+  D. show dot1x interface gi1/0/12<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: blue;">Question 3</span>
+
+  Refer to the exhibit. Which statement about the authentication protocol used in the configuration is true?
+
+  ```text
+  aaa new-model
+  radius-server host 10.0.0.12 key secret12
+  ```
+
+  A. The authentication request contains only a password<br>
+  B. The authentication request contains only a username<br>
+  C. The authentication and authorization requests are grouped in a single packet<br>
+  D. There are separate authentication and authorization request packets<br>
+
+  Answer: C
+
+  Explanation
+
+  This command uses RADIUS which combines authentication and authorization in one function (packet).
+
+
+- <span style="color: blue; font-weight: blue;">Question 4
+
+  An engineer needs a solution for TACACS+ authentication and authorization for device administration.
+
+  The engineer also wants to enhance wired and wireless network security by requiring users and endpoints to use 802.1X, MAB, or WebAuth. Which product meets all of these requirements?
+
+  A. Cisco Prime Infrastructure<br>
+  B. Cisco Identity Services Engine<br>
+  C. Cisco Stealthwatch<br>
+  D. Cisco AMP for Endpoints<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: blue;">Question 5
+
+  Which Cisco command enables authentication, authorization, and accounting globally so that CoA is supported on the device?
+
+  A. aaa server radius dynamic-author<br>
+  B. aaa new-model<br>
+  C. auth-type all<br>
+  D. ip device-tracking<br>
+
+  Answer: B
+
 
 
 ## 15. Endpoint Protection & Detection
