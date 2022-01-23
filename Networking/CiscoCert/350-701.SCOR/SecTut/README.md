@@ -25,8 +25,10 @@
   - 17\. Security Products & Solutions
   - 18\. Drag Drop
 - [Quiz Set 6](quiz06.md) & [Sol](quizSol06.md)
-  - 19\. New SCOR Questions - Part 1
-  - 20\. New SCOR Questions - Part 2
-  - 21\. New SCOR Questions - Part 3
+  - 19\. New Questions - Part 1
+- [Quiz Set 7](quiz07.md) & [Sol](quizSol07.md)
+  - 20\. New Questions - Part 2
+- [Quiz Set 8](quiz08.md) & [Sol](quizSol08.md)
+  - 21\. New Questions - Part 3
 
 
