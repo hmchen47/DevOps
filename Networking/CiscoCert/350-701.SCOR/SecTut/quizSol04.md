@@ -127,7 +127,6 @@
 
 ## 14. AAA
 
-
 - <span style="color: blue; font-weight: blue;">Question 1</span>
 
   When wired 802.1X authentication is implemented, which two components are required? (Choose two)
@@ -211,6 +210,150 @@
 
 
 ## 15. Endpoint Protection & Detection
+
+
+- <span style="color: blue; font-weight: blue;">Question 1</span>
+
+  An MDM provides which two advantages to an organization with regards to device management? (Choose two)
+
+  A. asset inventory management<br>
+  B. allowed application management<br>
+  C. Active Directory group policy management<br>
+  D. network device management<br>
+  E. critical device management<br>
+
+  Answer: A B
+
+
+- <span style="color: blue; font-weight: blue;">Question 2</span>
+
+  Which Cisco product provides proactive endpoint protection and allows administrators to centrally manage the deployment?
+
+  A. NGFW<br>
+  B. AMP<br>
+  C. WSA<br>
+  D. ESA<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: blue;">Question 3</span>
+
+  Which benefit does endpoint security provide the overall security posture of an organization?
+
+  A. It streamlines the incident response process to automatically perform digital forensics on the endpoint.<br>
+  B. It allows the organization to mitigate web-based attacks as long as the user is active in the domain.<br>
+  C. It allows the organization to detect and respond to threats at the edge of the network.<br>
+  D. It allows the organization to detect and mitigate threats that the perimeter security devices do not detect.<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: blue;">Question 4</span>
+
+  What are the two most commonly used authentication factors in multifactor authentication? (Choose two)
+
+  A. biometric factor<br>
+  B. time factor<br>
+  C. confidentiality factor<br>
+  D. knowledge factor<br>
+  E. encryption factor<br>
+
+  Answer: A D
+
+  Explanation
+
+  Multi-factor Authentication (MFA) is an authentication method that requires the user to provide two or more verification factors to gain access to a resource. MFA requires means of verification that unauthorized users won’t have.
+
+  Proper multi-factor authentication uses factors from at least two different categories.
+
+  MFA methods:
+  - Knowledge – usually a password – is the most commonly used tool in MFA solutions. However, despite their simplicity, passwords have become a security problem and slow down productivity.
+  - Physical factors – also called possession factors–use tokens, such as a USB dongle or a portable device, that generate a temporary QR (quick response) code. Mobile phones are commonly used, as they have the advantage of being readily available in most situations.
+  - Inherent – This category includes biometrics like fingerprint, face, and retina scans. As technology advances, it may also include voice ID or other behavioral inputs like keystroke metrics. Because inherent factors are reliably unique, always present, and secure, this category shows promise.
+  - Location-based and time-based – Authentication systems can use GPS coordinates, network parameters, and metadata for the network in use, and device recognition for MFA. Adaptive authentication combines these data points with historical or contextual user data.
+
+  A time factor in conjunction with a location factor could detect an attacker attempting to authenticate in Europe when the user was last authenticated in California an hour prior, for example.
+
+  - Time-based one-time password (TOTP) – This is generally used in 2FA but could apply to any MFA method where a second step is introduced dynamically at login upon completing a first step. The wait for a second step–in which temporary passcodes are sent by SMS or email–is usually brief, and the process is easy to use for a wide range of users and devices. This method is currently widely used.
+  - Social media – In this case a user grants permission for a website to use their social media username and password for login. This provide an easy login process, and one generally available to all users.
+  - Risk-based authentication – Sometimes called adaptive multi-factor authentication, this method combines adaptive authentication and algorithms that calculate risk and observe the context of specific login requests. The goal of this method is to reduce redundant logins and provide a more user-friendly workflow.
+  - Push-based 2FA – Push-based 2FA improves on SMS and TOTP 2FA by adding additional layers of security while improving ease of use. It confirms a user’s identity with multiple factors of authentication that other methods cannot. Because push-based 2FA sends notifications through data networks like cellular or Wi-Fi, users must have data access on their mobile devices to use the 2FA functionality.
+
+  Reference: https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html
+
+  The two most popular authentication factors are knowledge and inherent (including biometrics like fingerprint, face, and retina scans. Biometrics is used commonly in mobile devices).
+
+
+- <span style="color: blue; font-weight: blue;">Question 5</span>
+
+  Which two kinds of attacks are prevented by multifactor authentication? (Choose two)
+
+  A. phishing<br>
+  B. brute force<br>
+  C. man-in-the-middle<br>
+  D. DDOS<br>
+  E. teardrop<br>
+
+  Answer: B C
+
+
+- <span style="color: blue; font-weight: blue;">Question 6</span>
+
+  What is the primary difference between an Endpoint Protection Platform and an Endpoint Detection and Response?
+
+  A. EPP focuses on prevention, and EDR focuses on advanced threats that evade perimeter defenses.<br>
+  B. EDR focuses on prevention, and EPP focuses on advanced threats that evade perimeter defenses.<br>
+  C. EPP focuses on network security, and EDR focuses on device security.<br>
+  D. EDR focuses on network security, and EPP focuses on device security.<br>
+
+  Answer: A
+
+
+- <span style="color: blue; font-weight: blue;">Question 7</span>
+
+  An engineer wants to automatically assign endpoints that have a specific OUI into a new endpoint group. Which probe must be enabled for this type of profiling to work?
+
+  A. NetFlow<br>
+  B. NMAP<br>
+  C. SNMP<br>
+  D. DHCP<br>
+
+  Answer: B
+
+  Explanation
+
+  Cisco ISE can determine the type of device or endpoint connecting to the network by performing “profiling.” Profiling is done by using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the device fingerprint.
+
+  NMAP (“Network Mapper”) is a popular network scanner which provides a lot of features. One of them is the OUI (Organizationally Unique Identifier) information. OUI is the first 24 bit or 6 hexadecimal value of the MAC address.
+
+  Note: DHCP probe cannot collect OUIs of endpoints. NMAP scan probe can collect these endpoint attributes:
+  - EndPointPolicy
+  - LastNmapScanCount
+  - NmapScanCount
+  - OUI
+  - Operating-system
+
+  Reference: http://www.network-node.com/blog/2016/1/2/ise-20-profiling
+
+
+- <span style="color: blue; font-weight: blue;">Question 8</span>
+
+  What are two reasons for implementing a multifactor authentication solution such as Duo Security provide to an organization? (Choose two)
+
+  A. flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications<br>
+  B. single sign-on access to on-premises and cloud applications<br>
+  C. integration with 802.1x security using native Microsoft Windows supplicant<br>
+  D. secure access to on-premises and cloud applications<br>
+  E. identification and correction of application vulnerabilities before allowing access to resources<br>
+
+  Answer: A D
+
+  Explanation
+
+  Two-factor authentication adds a second layer of security to your online accounts. Verifying your identity using a second factor (like your phone or other mobile device) prevents anyone but you from logging in, even if they know your password.
+
+  Note: Single sign-on (SSO) is a property of identity and access management that enables users to securely authenticate with multiple applications and websites by logging in only once with just one set of credentials (username and password). With SSO, the application or website that the user is trying to access relies on a trusted third party to verify that users are who they say they are.
 
 
 
