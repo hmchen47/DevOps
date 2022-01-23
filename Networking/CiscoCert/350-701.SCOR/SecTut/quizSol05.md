@@ -26,7 +26,7 @@ Stealthwatch components include:
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-    onclick= "window.open('page')"
+    onclick= "window.open('https://www.securitytut.com/scor/security-products-solutions')"
     src    = "img/1700-SteathWatch_Components.jpg"
     alt    = "StealthWatch Components"
     title  = "StealthWatch Components"
@@ -43,7 +43,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-    onclick= "window.open('page')"
+    onclick= "window.open('https://www.securitytut.com/scor/security-products-solutions')"
     src    = "img/1700-Cognitive-Threat-Analytics-Health-Status.jpg"
     alt    = "Cognitive Threat Analytics Health Status"
     title  = "Cognitive Threat Analytics Health Status"
@@ -258,5 +258,86 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
 ## 18. Drag Drop
 
+- <span style="color: blue; font-weight: bold;">Question 1</span>
+
+  Drag and drop the Firepower Next Generation Intrusion Prevention System detectors from the left onto the correct definitions on the right.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
+      src    = "img/1801-Firepower_detectors.jpg"
+      alt    = "Firepower Detector"
+      title  = "Firepower Detector"
+    />
+  </figure>
+
+  Answer:
+  - PortScan Detection: one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports
+  - Port Sweep: one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts
+  - Decoy PortScan: one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address
+  - Distributed PortScan: many-to-one PortScan in which multiple hosts query a single host for open ports
+
+
+- <span style="color: blue; font-weight: bold;">Question 2</span>
+
+  Drag and drop the capabilities from the left onto the correct technologies on the right.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
+      src    = "img/1802-Security_Applications.jpg"
+      alt    = "Security Applications"
+      title  = "Security Applications"
+    />
+  </figure>
+
+  Answer:
+  - Next Generation Intrusion Prevention System: superior threat prevention and mitigation for known and unknown threats
+  - Application control and URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
+  - Cisco Web Security Appliance: combined integrated solution of strong defense and web protection, visibility, and controling solutions
+  - Advanced Malware Protection: detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks
+
+
+- <span style="color: blue; font-weight: bold;">Question 3</span>
+
+  Drag and drop the descriptions from the left onto the correct protocol versions on the right.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
+      src    = "img/1803-IKE_protocol_versions.jpg"
+      alt    = "Security Applications"
+      title  = "Security Applications"
+    />
+  </figure>
+
+  Answer:
+  - IKEv1:
+    - uses six packets in main mode to establish phase 1
+    - uses three packets in aggressive mode to establish phase
+  - IKEv2:
+  - standard includes NAT-T
+  - uses four packets to establish phase 1 and phase 2
+  - uses EAP for authenticating remote access clients
+
+
+- <span style="color: blue; font-weight: bold;">Question 4</span>
+
+  Drag and drop the steps from the left into the correct order on the right to enable AppDynamics to monitor an EC2 instance in Amazon Web Services.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
+      src    = "img/1804-AppDynamics_monitor_EC2.jpg"
+      alt    = "AppDynamics Monitor EC2"
+      title  = "AppDynamics Monitor EC2"
+    />
+  </figure>
+
+  Answer:
+  - Step 1: Configure a Machine Agent or SIM Agent
+  - Step 2: Install monitoring extension for AWS EC2
+  - Step 3: Update config.yaml
+  - Step 4: Restart the Machine Agent
 
 
