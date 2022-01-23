@@ -90,19 +90,24 @@
 
   Drag and drop the capabilities of Cisco Firepower versus Cisco AMP from the left into the appropriate category on the right.
 
-  FirePower_AMP.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1905-FirePower_AMP.jpg"
+      alt    = "FirePower AMP"
+      title  = "FirePower AMP"
+    />
+  </figure>
 
   Answer:
-
-  Cisco FirePower
-  - provides the ability to perform network discovery
-  - provides intrusion prevention before malware comprises the host
-  - provides superior threat prevention and mitigation for known and unknown threats
-
-  Cisco AMP
-  - provides detection, blocking, tracking, analyse and remediation to protect against targeted persistent malware attacks
-  - provides the root cause of a threat based on the indicators of compromise seen 
-  - provides outbreak control through custom detections
+  - Cisco FirePower
+    - provides the ability to perform network discovery
+    - provides intrusion prevention before malware comprises the host
+    - provides superior threat prevention and mitigation for known and unknown threats
+  - Cisco AMP
+    - provides detection, blocking, tracking, analyse and remediation to protect against targeted persistent malware attacks
+    - provides the root cause of a threat based on the indicators of compromise seen 
+    - provides outbreak control through custom detections
 
   Explanation
 
@@ -246,11 +251,27 @@
 
   We choose “Chat and Instant Messaging” category in “URL Category”:
 
-  URL_Category.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1913-URL_Category.jpg"
+      alt    = "URL Categories"
+      title  = "URL Categories"
+    />
+  </figure>
+  
 
   To block certain URLs we need to choose URL Reputation from 6 to 10.
 
-  URL_Reputation.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1913-URL_Reputation.jpg"
+      alt    = "URL Reputation"
+      title  = "URL Reputation"
+    />
+  </figure>
+  
 
 
 - <span style="color: blue; font-weight: bold;">Question 14</span>
@@ -324,7 +345,14 @@
 
   Refer to the exhibit.
 
-  Mail_authentication.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1917-Mail_authentication.jpg"
+      alt    = "MailA Authentication"
+      title  = "MailA Authentication"
+    />
+  </figure>  
 
   Which type of authentication is in use?
 
@@ -394,7 +422,14 @@
 
   In explicit forward mode, the client is configured to explicitly use the proxy, subsequently sending all web traffic to the proxy. Because the client knows there is a proxy and sends all traffic to the proxy in explicit forward mode, the client does not perform a DNS lookup of the domain before requesting the URL. The Cisco WSA is responsible for DNS resolution, as well.
 
-  WSA_explicit_mode.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1920-WSA_explicit_mode.jpg"
+      alt    = "WSA Explicit Mode"
+      title  = "WSA Explicit Mode"
+    />
+  </figure>
 
   When you configure the Cisco WSA in explicit mode, you do not need to configure any other network infrastructure devices to redirect client requests to the Cisco WSA. However, you must configure each client to send traffic to the Cisco WSA.
 
@@ -410,7 +445,14 @@
 
   In transparent mode, the client is unaware its traffic is being sent to a proxy (Cisco WSA) and, as a result, the client uses DNS to resolve the domain name in the URL and send the web request destined for the web server (not the proxy). When you configure the Cisco WSA in transparent mode, you need to identify a network choke point with a redirection device (a Cisco ASA) to redirect traffic to the proxy.
 
-  WSA_transparent_mode.jpgWSA in Transparent mode
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1920-WSA_transparent_mode.jpg"
+      alt    = "WSA Transparent Mode"
+      title  = "WSA Transparent Mode"
+    />
+  </figure>
 
   Reference: CCNP And CCIE Security Core SCOR 350-701 Official Cert Guide
 
@@ -462,7 +504,14 @@
 
   Reference: https://www.ciscopress.com/articles/article.asp?p=3004581&seqNum=2
 
-  Southbound_Northbound_APIs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1922-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound & Northbound"
+      title  = "API - Southbound & Northbound"
+    />
+  </figure>
 
   Note: Southbound APIs helps us communicate with data plane (not control plane) applications.
 
@@ -471,7 +520,14 @@
 
   Refer to the exhibit.
 
-  VPN_site_to_site.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1923-VPN_site_to_site.jpg"
+      alt    = "Site-ti-site VPN"
+      title  = "Site-ti-site VPN"
+    />
+  </figure>
 
   Traffic is not passing through IPsec site-to-site VPN on the Firepower Threat Defense appliance. What is causing this issue?
 
@@ -544,7 +600,14 @@
 
   In this example, we are going to use the predefined file check to ensure that our Windows 10 clients have the critical security patch installed to prevent the Wanna Cry malware; and we can also configure ISE to update the client with this patch.
 
-  ISE_Win10_patch.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1926-ISE_Win10_patch.png"
+      alt    = "ISE Windows 10 Patch"
+      title  = "ISE Windows 10 Patch"
+    />
+  </figure>
 
 
 - <span style="color: blue; font-weight: bold;">Question 27</span>
@@ -749,10 +812,16 @@
 
   Drag and drop the suspicious patterns for the Cisco Tetration platform from the left onto the correct definitions on the right.
 
-  Cisco_Tetration.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1937-Cisco_Tetration.jpg"
+      alt    = "Cisco Tetration"
+      title  = "Cisco Tetration"
+    />
+  </figure>
 
   Answer:
-
   - Cisco Tetration platform can be armed to look at sensitive files: interesting file access
   - Watches for privilege changes in the process lineage tree: privilege escalation
   - Cisco Tetration platform watches user login failures and user login methods: user login suspicious behavior
@@ -821,7 +890,14 @@
 
   To understand DHCP snooping we need to learn about DHCP spoofing attack first.
 
-  DHCP_Spoofing_Attack.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1939-DHCP_Spoofing_Attack.jpg"
+      alt    = "DHCP Spoofing Attack"
+      title  = "DHCP Spoofing Attack"
+    />
+  </figure>
 
   DHCP spoofing is a type of attack in that the attacker listens for DHCP Requests from clients and answers them with fake DHCP Response before the authorized DHCP Response comes to the clients. The fake DHCP Response often gives its IP address as the client default gateway -> all the traffic sent from the client will go through the attacker computer, the attacker becomes a “man-in-the-middle”.
 
@@ -829,7 +905,14 @@
 
   DHCP snooping can prevent DHCP spoofing attacks. DHCP snooping is a Cisco Catalyst feature that determines which switch ports can respond to DHCP requests. Ports are identified as trusted and untrusted.
 
-  DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg"
+      alt    = "DHCP Spoofing Attacks w/ Trusted and Untrusted Ports"
+      title  = "DHCP Spoofing Attacks w/ Trusted and Untrusted Ports"
+    />
+  </figure>
 
   Only ports that connect to an authorized DHCP server are trusted, and allowed to send all types of DHCP messages. All other ports on the switch are untrusted and can send only DHCP requests. If a DHCP response is seen on an untrusted port, the port is shut down.
 
@@ -837,7 +920,14 @@
 
   In this question, we need to configure the uplink to “trust” (under interface Gi1/0/1) as shown below.
 
-  DHCP_Spoofing_Attack_Trust_Untrust_Ports_trunk.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports_trunk.jpg"
+      alt    = "DHCP Spoofing Attacks w/ Trust and Untrusted Trunk Ports"
+      title  = "DHCP Spoofing Attacks w/ Trust and Untrusted Trunk Ports"
+    />
+  </figure>
 
 
 - <span style="color: blue; font-weight: bold;">Question 40</span>
@@ -988,7 +1078,15 @@
 
   Customers must manage applications and data in PaaS.
 
-  iaas_paas-saas-compare.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1947-iaas_paas-saas-compare.png"
+      alt    = "Comaprisons of IaaS, PaaS, SaaS"
+      title  = "Comaprisons of IaaS, PaaS, SaaS"
+    />
+  </figure>
+  
 
 
 - <span style="color: blue; font-weight: bold;">Question 48</span>
@@ -1055,17 +1153,22 @@
 
   Drag and drop the descriptions from the left onto the encryption algorithms on the right.
 
-  Asymmetric_Symmetric_Encryption.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1951-Asymmetric_Symmetric_Encryption.jpg"
+      alt    = "Asymmetric & Symmetric Encryption"
+      title  = "Asymmetric & Symmetric Encryption"
+    />
+  </figure>
 
   Answer:
-
-  Asymmetric:
-  - requires more time
-  - Diffie-Hellman exchange
-
-  Symmetric:
-  - requires secret keys
-  - 3DES
+  - Asymmetric:
+    - requires more time
+    - Diffie-Hellman exchange
+  - Symmetric:
+    - requires secret keys
+    - 3DES
 
   Explanation
 
@@ -1140,10 +1243,16 @@
 
   Drag and drop the threats from the left onto examples of that threat on the right.
 
-  Threats.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1956-Threats.jpg"
+      alt    = "Threats"
+      title  = "Threats"
+    />
+  </figure>
 
   Answer:
-
   - A stolen customer database that contained social security numbers and was published online: data breach
   - A phishing site appearing to be a legitimate login page captures user login information: compromised credentials
   - An application attack using botnets from multiple remote locations that flood a web application causing a degraded performance or a complete outage: DoS/DDoS
@@ -1295,7 +1404,14 @@
 
   Southbound APIs enable SDN controllers to dynamically make changes based on real-time demands and scalability needs.
 
-  Southbound_Northbound_APIs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1922-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound & Northbound"
+      title  = "API - Southbound & Northbound"
+    />
+  </figure>
 
 
 - <span style="color: blue; font-weight: bold;">Question 66</span>
@@ -1332,10 +1448,16 @@
 
   Drag and drop the VPN functions from the left onto the description on the right.
 
-  VPN_functions.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1968-VPN_functions.jpg"
+      alt    = "VPN Functions"
+      title  = "VPN Functions"
+    />
+  </figure>
 
   Answer:
-
   - ensures data confidentiality: AES
   - defines IKE SAs: ISAKMP
   - ensures data integrity: SHA-1
