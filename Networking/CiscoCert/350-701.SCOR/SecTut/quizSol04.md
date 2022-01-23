@@ -356,9 +356,148 @@
   Note: Single sign-on (SSO) is a property of identity and access management that enables users to securely authenticate with multiple applications and websites by logging in only once with just one set of credentials (username and password). With SSO, the application or website that the user is trying to access relies on a trusted third party to verify that users are who they say they are.
 
 
-
-
 ## 16. Cisco Umbrella
 
+<span style="color: blue; font-weight: blue;">Cisco Umbrella Quick Summary</span>
+
+Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
+
+When Umbrella receives a DNS request, it uses intelligence to determine if the request is safe, malicious or risky — meaning the domain contains both malicious and legitimate content. Safe and malicious requests are routed as usual or blocked, respectively. Risky requests are routed to our cloud-based proxy for deeper inspection. The Umbrella proxy uses Cisco Talos web reputation and other third-party feeds to determine if a URL is malicious.
+
+Cisco Umbrella roaming protects your employees even when they are off the VPN.
+
+
+- <span style="color: blue; font-weight: blue;">Question 1</span>
+
+  An engineer configured a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network. Which action tests the routing?
+
+  A. Ensure that the client computers are pointing to the on-premises DNS servers.<br>
+  B. Enable the Intelligent Proxy to validate that traffic is being routed correctly.<br>
+  C. Add the public IP address that the client computers are behind to a Core Identity.<br>
+  D. Browse to http://welcome.umbrella.com/ to validate that the new identity is working.<br>
+
+  Answer: D
+
+
+- <span style="color: blue; font-weight: blue;">Question 2</span>
+
+  Which feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic?
+
+  A. File Analysis<br>
+  B. SafeSearch<br>
+  C. SSL Decryption<br>
+  D. Destination Lists<br>
+
+  Answer: C
+
+  Explanation
+
+  SSL Decryption is an important part of the Umbrella Intelligent Proxy. he feature allows the Intelligent Proxy to go beyond simply inspecting normal URLs and actually proxy and inspect traffic that’s sent over HTTPS. The SSL Decryption feature does require the root certificate be installed.
+
+  Reference: https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy
+
+
+- <span style="color: blue; font-weight: blue;">Question 3</span>
+
+  How is Cisco Umbrella configured to log only security events?
+
+  A. per policy<br>
+  B. in the Reporting settings<br>
+  C. in the Security Settings section<br>
+  D. per network in the Deployments section<br>
+
+  Answer: A
+
+  Explanation
+
+  The logging of your identities’ activities is set per-policy when you first create a policy. By default, logging is on and set to log all requests an identity makes to reach destinations. At any time after you create a policy, you can change what level of identity activity Umbrella logs.
+  From the Policy wizard, log settings are:
+
+  Log All Requests—For full logging, whether for content, security or otherwise
+  Log Only Security Events—For security logging only, which gives your users more privacy—a good setting for people with the roaming client installed on personal devices
+  Don’t Log Any Requests—Disables all logging. If you select this option, most reporting for identities with this policy will not be helpful as nothing is logged to report on.
+
+  Reference: https://docs.umbrella.com/deployment-umbrella/docs/log-management
+
+
+- <span style="color: blue; font-weight: blue;">Question 4</span>
+
+  How does Cisco Umbrella archive logs to an enterprise owned storage?
+
+  A. by using the Application Programming Interface to fetch the logs<br>
+  B. by sending logs via syslog to an on-premises or cloud-based syslog server<br>
+  C. by the system administrator downloading the logs from the Cisco Umbrella web portal<br>
+  D. by being configured to send logs to a self-managed AWS S3 bucket<br>
+
+  Answer: D
+
+  Explanation
+
+  The Cisco Umbrella Multi-Org console has the ability to upload, store, and archive traffic activity logs from your organizations’ Umbrella dashboards to the cloud through Amazon S3. CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes so that there’s a minimum of delay between traffic from the organization’s Umbrella dashboard being logged and then being available to download from an S3 bucket.
+  By having your organizations’ logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage.
+
+  Reference: https://docs.umbrella.com/deployment-umbrella/docs/manage-logs
+
+
+- <span style="color: blue; font-weight: blue;">Question 5</span>
+
+  When web policies are configured in Cisco Umbrella, what provides the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats?
+
+  A. Application Control<br>
+  B. Security Category Blocking<br>
+  C. Content Category Blocking<br>
+  D. File Analysis<br>
+
+  Answer: B
+
+
+- <span style="color: blue; font-weight: blue;">Question 6</span>
+
+  Which Cisco solution does Cisco Umbrella integrate with to determine if a URL is malicious?
+
+  A. AMP<br>
+  B. AnyConnect<br>
+  C. DynDNS<br>
+  D. Talos<br>
+
+  Answer: D
+
+  Explanation
+
+  When Umbrella receives a DNS request, it uses intelligence to determine if the request is safe, malicious or risky — meaning the domain contains both malicious and legitimate content. Safe and malicious requests are routed as usual or blocked, respectively. Risky requests are routed to our cloud-based proxy for deeper inspection. The Umbrella proxy uses Cisco Talos web reputation and other third-party feeds to determine if a URL is malicious.
+
+
+- <span style="color: blue; font-weight: blue;">Question 7</span>
+
+  Where are individual sites specified to be blacklisted in Cisco Umbrella?
+
+  A. application settings<br>
+  B. content categories<br>
+  C. security settings<br>
+  D. destination lists<br>
+
+  Answer: D
+
+  Explanation
+
+  A destination list is a list of internet destinations that can be blocked or allowed based on the administrative preferences for the policies applied to the identities within your organization. A destination is an IP address (IPv4), URL, or fully qualified domain name. You can add a destination list to Umbrella at any time; however, a destination list does not come into use until it is added to a policy.
+
+  Reference: https://docs.umbrella.com/deployment-umbrella/docs/working-with-destination-lists
+
+
+- <span style="color: blue; font-weight: blue;">Question 8</span>
+
+  Which Cisco security solution protects remote users against phishing attacks when they are not connected to the VPN?
+
+  A. Cisco Stealthwatch<br>
+  B. Cisco Umbrella<br>
+  C. Cisco Firepower<br>
+  D. NGIPS<br>
+
+  Answer: B
+
+  Explanation
+
+  Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent. Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
 
