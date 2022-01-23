@@ -202,7 +202,14 @@
 
   Drag and drop the NetFlow export formats from the left onto the descriptions on the right.
 
-  NetFlow_Export_Formats.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2010-NetFlow_Export_Formats.jpg"
+      alt    = "Netflow Export Formats"
+      title  = "Netflow Export Formats"
+    />
+  </figure>
 
   Answer:
   - appropriate only for the main cache: Version 5
@@ -252,7 +259,14 @@
 
   Explanation
 
-  Southbound_Northbound_APIs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "1922-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound & Northbound"
+      title  = "API - Southbound & Northbound"
+    />
+  </figure>
 
   The Southbound API is used to communicate between Controllers and network devices.
 
@@ -381,7 +395,14 @@
   (Optional) If the event is not present in the RADIUS Live Logs, go to Operations > Reports > Reports > Endpoints and Users > RADIUS Authentications
   Check for Any Failed Authentication Attempts in the Log
 
-  RADIUS_Live_Logs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2018-RADIUS_Live_Logs.jpg"
+      alt    = "Radius Live Log"
+      title  = "Radius Live Log"
+    />
+  </figure>
 
   Reference: https://community.cisco.com/t5/security-documents/how-to-troubleshoot-ise-failed-authentications-amp/ta-p/3630960
 
@@ -480,7 +501,14 @@
 
   It also lists policies and connector statuses as well. The figure below shows partial output of this script:
 
-  Python_script_get_computer_list.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2022-Python_script_get_computer_list.jpg"
+      alt    = "Python Script - get computer list"
+      title  = "Python Script - get computer list"
+    />
+  </figure>
 
 
 - <span style="color: bluel; font-weight: bold;">Question 23</span>
@@ -646,7 +674,14 @@
 
   To understand DHCP snooping we need to learn about DHCP spoofing attack first.
 
-  DHCP_Spoofing_Attack.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "1939-DHCP_Spoofing_Attack.jpg"
+      alt    = "DHCP Spoofing Attack"
+      title  = "DHCP Spoofing Attack"
+    />
+  </figure>
 
   DHCP spoofing is a type of attack in that the attacker listens for DHCP Requests from clients and answers them with fake DHCP Response before the authorized DHCP Response comes to the clients. The fake DHCP Response often gives its IP address as the client default gateway -> all the traffic sent from the client will go through the attacker computer, the attacker becomes a “man-in-the-middle”.
 
@@ -654,7 +689,14 @@
 
   DHCP snooping can prevent DHCP spoofing attacks. DHCP snooping is a Cisco Catalyst feature that determines which switch ports can respond to DHCP requests. Ports are identified as trusted and untrusted.
 
-  DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg"
+      alt    = "DHCP Spoofing Attack w/ Trust & Untrust Ports"
+      title  = "DHCP Spoofing Attack w/ Trust & Untrust Ports"
+    />
+  </figure>
 
   Only ports that connect to an authorized DHCP server are trusted, and allowed to send all types of DHCP messages. All other ports on the switch are untrusted and can send only DHCP requests. If a DHCP response is seen on an untrusted port, the port is shut down.
 
@@ -690,7 +732,14 @@
 
   Refer to the exhibit.
 
-  remote_access_VPN.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2034-remote_access_VPN.jpg"
+      alt    = "Remote Access"
+      title  = "Remote Access"
+    />
+  </figure>
 
   When configuring a remote access VPN solution terminating on the Cisco ASA, an administrator would like to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates. Which configuration item must be modified to allow this?
 
@@ -766,10 +815,16 @@
 
   Drag and drop the solutions from the left onto the solution’s benefits on the right.
 
-  Security_Solutions.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2038-Security_Solutions.jpg"
+      alt    = "Security Solutions"
+      title  = "Security Solutions"
+    />
+  </figure>
 
   Answer:
-
   - software-defined segmentation that uses SGTs and allows administrators to quickly scale and enforce policies across the network: Cisco TrustSec
   - rapidly collects and analyzes NetFlow and telemetry data to deliver in-depth visibility and understanding of network traffic: Cisco Stealthwatch
   - secure Internet gateway in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS: Cisco Umbrella
@@ -873,7 +928,14 @@
 
   Drag and drop the common security threats from left onto the definitions on the right.
 
-  Common_Security_Threats.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2044-Common_Security_Threats.jpg"
+      alt    = "Commom Security Threats"
+      title  = "Commom Security Threats"
+    />
+  </figure>
 
   Answer:
   - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse: botnet
@@ -886,7 +948,14 @@
 
   Refer to the exhibit.
 
-  new_FTD_to_FMG.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
+      src    = "2045-new_FTD_to_FMG.jpg"
+      alt    = "New FTD to FMG"
+      title  = "New FTD to FMG"
+    />
+  </figure>
 
   An administrator is adding a new Cisco FTD device to their network and wants to manage it with Cisco FMC. The Cisco FTD is not behind a NAT device. Which command is needed to enable this on the Cisco FTD?
 
@@ -910,15 +979,17 @@
   According to this Cisco reference:
   – If the FMC is behind a NAT device, enter a unique NAT ID along with the registration key, and specify DONTRESOLVE instead of the hostname, for example:
 
+    ```text
     Example:
-
     > configure manager add DONTRESOLVE regk3y78 natid90
+    ```
 
   – If the FTD is behind a NAT device, enter a unique NAT ID along with the FMC IP address or hostname, for example:
 
+    ```text
     Example:
-
     > configure manager add 10.70.45.5 regk3y78 natid56
+    ```
 
   Now return to our question. In the exhibit we see a value of 16 in the “Unique NAT ID” and the question stated that “FTD is not behind a NAT device” so we can only suppose FMC is behind a NAT device. So the correct solution should be “configure manager add DONTRESOLVE <registration key> 16” but there is no such answer. Therefore we have to suppose there are no NAT device between FMC and FTD.
 
