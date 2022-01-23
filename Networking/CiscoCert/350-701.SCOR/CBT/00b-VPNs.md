@@ -259,13 +259,13 @@
   - the process applied for both IKEv1 & IKEv2
   - pkt: src = CLT, dst = SRV, protocol = ISAKMP, info = IKE SA INIT MID=00 Initiator Request
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59704, Dst Port: 500</span>
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59704, Dst Port: 500</span>
     - Payload: Internet Security Association and Key Management Protocol
       - Payload: Notify (41) - NAT_DETECTION_SOURCE_IP
       - Payload: Notify (41) - NAT_DETECTION_DESTINATION_IP
   - pkt: src = CLT, dst = SRV, protocol = ESP, Info = ESP (SPI=0xc2a16345) [randomly selected one]
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
     - Payload: Encapsulating Security Payload
 
 
