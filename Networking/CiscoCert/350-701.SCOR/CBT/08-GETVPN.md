@@ -426,7 +426,7 @@ Trainer: Keith Barker
     #pkts decaps: 5, #pkts decrypt: 5, #pkts verify: 5
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
+    #pkts errors 0, #recv errors 0
 
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 0.0.0.0
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
