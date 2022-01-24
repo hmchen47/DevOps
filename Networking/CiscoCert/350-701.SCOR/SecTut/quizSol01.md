@@ -396,6 +396,7 @@ Asymmetric cryptography (or “public key cryptography”) is a cryptographic sy
 
   Compared to RSA, the prevalent public-key cryptography of the Internet today, Elliptic Curve Cryptography (ECC) offers smaller key sizes, faster computation,as well as memory, energy and bandwidth savings and is thus better suited forsmall devices.
 
+
 ## 03. VPNs
 
 <span style="color: blue; font-weight: bold;">Quick summary</span>
@@ -578,6 +579,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   In its essence, FlexVPN is the same as DMVPN. Connections between devices are still point-to-point GRE tunnels, spoke-to-spoke connectivity is still achieved with NHRP redirect message, IOS routers even run the same NHRP code for both DMVPN and FlexVPN, which also means that both are Cisco’s proprietary technologies.
 
   Reference: https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/
+
 
 ## 04. Software Defined Network (SDN)
 
