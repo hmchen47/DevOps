@@ -2288,7 +2288,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/21111-Security_Products.jpg"
+      src    = "img/21112-Security_Products.jpg"
       alt    = "Secuity Products"
       title  = "Secuity Products"
     />
