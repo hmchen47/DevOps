@@ -507,7 +507,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
-      src    = "img/1922-Southbound_Northbound_APIs.jpg"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
       alt    = "API - Southbound & Northbound"
       title  = "API - Southbound & Northbound"
     />
@@ -1407,7 +1407,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
-      src    = "img/1922-Southbound_Northbound_APIs.jpg"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
       alt    = "API - Southbound & Northbound"
       title  = "API - Southbound & Northbound"
     />
