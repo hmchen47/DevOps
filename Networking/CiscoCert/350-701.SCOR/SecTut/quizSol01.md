@@ -411,7 +411,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
     onclick= "window.open('page')"
-    src    = "img/300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
+    src    = "img/0300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
     alt    = "Comparisons of DMVPN, FlexVPN, and GETVPN"
     title  = "Comparisons of DMVPN, FlexVPN, and GETVPN"
   />
@@ -520,7 +520,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('page')"
-      src    = "img/306-site_to_site_VPN_isakmp.jpg"
+      src    = "img/0306-site_to_site_VPN_isakmp.jpg"
       alt    = "Log messages of Site-to-Site CPN"
       title  = "Log messages of Site-to-Site CPN"
     />
@@ -591,7 +591,7 @@ As we took the control planes off networking devices but not data planes so we n
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "img/400-SDN_controller_based_architecture.jpg"
+    src    = "img/0400-SDN_controller_based_architecture.jpg"
     alt    = "Architecture of SDN Controller"
     title  = "Architecture of SDN Controller"
   />
@@ -602,7 +602,7 @@ Now, in turn, the networking administrators and SDN applications want to control
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "img/403-Southbound_Northbound_APIs.jpg"
+    src    = "img/0403-Southbound_Northbound_APIs.jpg"
     alt    = "API - Southbound and Northbound"
     title  = "API - Southbound and Northbound"
   />
@@ -665,8 +665,11 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
       onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-      src    = "img/403-Southbound_Northbound_APIs.jpg"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
       alt    = "API - Southbound and Northbound"
       title  = "API - Southbound and Northbound"
     />
   </figure>
+
+
+
