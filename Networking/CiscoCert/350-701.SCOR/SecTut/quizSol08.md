@@ -563,7 +563,14 @@
 
   VAs act as conditional DNS forwarders in your network, intelligently forwarding public DNS queries to Cisco Umbrella’s global network, and local DNS queries to your existing local DNS servers and forwarders. Every public DNS query sent to Umbrella is encrypted, authenticated, and includes the client’s internal IP address.
 
-  umbrella_internal_network.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2130-umbrella_internal_network.jpg"
+      alt    = "Umbrella internal network"
+      title  = "Umbrella internal network"
+    />
+  </figure>
 
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/1-introduction
 
@@ -572,12 +579,26 @@
   Without Virtual Appliances
   Security and DNS traffic-related investigations cannot be traced back to an individual computer or IP address.
 
-  withoutVA.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2130-withoutVA.png"
+      alt    = "Umbrella internal network w/o VA"
+      title  = "Umbrella internal network w/o VA"
+    />
+  </figure>
 
   With Virtual Appliances
   VAs record the internal IP address of every DNS request. Security and DNS traffic-related investigations allow you to associate traffic to an individual, internal IP address.
 
-  withVA.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2130-withVA.png"
+      alt    = "Umbrella internal network w/ VA"
+      title  = "Umbrella internal network w/ VA"
+    />
+  </figure
 
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/1-introduction
 
@@ -924,7 +945,14 @@
 
   Drag and drop the cloud security assessment components from the left onto the definitions on the right.
 
-  Cloud_security_assessment.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2150-Cloud_security_assessment.jpg"
+      alt    = "Cloud Security Assessment"
+      title  = "Cloud Security Assessment"
+    />
+  </figure>  
 
   Answer:
   - cloud data protection assessment: understand the security posture of the data or activity taking place in public cloud deployments
@@ -949,7 +977,14 @@
 
   Refer to the exhibit.
 
-  Python_SSL_Connection.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2151-Python_SSL_Connection.jpg"
+      alt    = "Python SSL Connection"
+      title  = "Python SSL Connection"
+    />
+  </figure>
 
   What does this python script accomplish?
 
@@ -1005,7 +1040,14 @@
 
   Refer to the exhibit.
 
-  Umbrella_traffic_risky_domains.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2153-Umbrella_traffic_risky_domains.jpg"
+      alt    = "Umbrella Traffic Risky Domains"
+      title  = "Umbrella Traffic Risky Domains"
+    />
+  </figure>
 
   How does Cisco Umbrella manage traffic that is directed toward risky domains?
 
@@ -1024,7 +1066,14 @@
 
   In order to enable intelligent proxy, we need to use “Advanced Settings”:
 
-  Umbrella_risky_domains.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2153-Umbrella_risky_domains.jpg"
+      alt    = "Umbrella Risky Domains"
+      title  = "Umbrella Risky Domains"
+    />
+  </figure>
 
   But in this question the “Advanced Settings” (located at the bottom of the figure) was not used -> Answer D is not correct.
 
@@ -1036,7 +1085,14 @@
 
   - The security settings categories are, at a minimum, the ones listed below:
 
-  Umbrella_Security_Setting.jpg
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+        onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+        src    = "img/2153-Umbrella_Security_Setting.jpg"
+        alt    = "Umbrella Security Setting"
+        title  = "Umbrella Security Setting"
+      />
+    </figure>
 
   - “Potentially Harmful Domains” are domains that exhibit suspicious behavior and may be part of an attack. This category has a higher risk of unwanted detections.
 
@@ -1242,7 +1298,14 @@
 
   Refer to the exhibit.
 
-  dot1x_MAB.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2166-dot1x_MAB.jpg"
+      alt    = "802.1X & MAB"
+      title  = "802.1X & MAB"
+    />
+  </figure>
 
   What will occur when this device tries to connect to the port?
 
@@ -1404,11 +1467,25 @@
   - 10\. Authentication proxy informs ISE of a successful Authentication
   - 11\. ISE Authorizes the admin user
 
-  ISE_DuO_process.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2172-ISE_DuO_process.jpg"
+      alt    = "ISE Duo process"
+      title  = "ISE Duo process"
+    />
+  </figure>
 
   Also according to this Cisco link, we need to configure “Identity Source Sequenc” in Cisco ISE:
 
-  ISE_DuO_Identity_Source_Sequence.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2172-ISE_DuO_Identity_Source_Sequence.png"
+      alt    = "ISE Duo Identity Source Sequence"
+      title  = "ISE Duo Identity Source Sequence"
+    />
+  </figure>
 
   Therefore answer B is the best choice.
 
@@ -1428,7 +1505,14 @@
 
   We don’t want to manage the OS so we should choose PaaS or SaaS. But this question only wants to compare between PaaS and IaaS so we must choose PaaS.
 
-  iaas_paas-saas-compare.png
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/0803-iaas_paas-saas-compare.png"
+      alt    = "Comparisons of IaaS, PaaS, SaaS"
+      title  = "Comparisons of IaaS, PaaS, SaaS"
+    />
+  </figure>
 
 
 - <span style="color: blue; font-weight: bold;">Question 74</span>
@@ -1526,7 +1610,14 @@
 
   In fact, according to figure 6-5 (which is posted below) of this link https://www.ciscopress.com/articles/article.asp?p=2963461&seqNum=2,
 
-  integrate_FMC_ISE_pxGrid.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2179-integrate_FMC_ISE_pxGrid.jpg"
+      alt    = "Integration of FMC and ISE w/ pxGrid"
+      title  = "Integration of FMC and ISE w/ pxGrid"
+    />
+  </figure>
 
   FMC is a subscriber but we have no such option so the best answer here is “publisher”.
 
@@ -1669,7 +1760,14 @@
 
   Northbound APIs are used to define how SDN controllers integrate with applications -> Answer A is not correct.
 
-  Southbound_Northbound_APIs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound & Northbound"
+      title  = "API - Southbound & Northbound"
+    />
+  </figure>
 
   OpenFlow and OpFlex are Southbound APIs -> Answer B is not correct.
 
@@ -1726,9 +1824,22 @@
 
   In order to route inbound email to Cisco CES addresses we must change the MX record.
 
-  Office_365_without_CES.jpg
-
-  Office_365_with_CES.jpgReference: https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKSEC-3433.pdf
+  <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
+    <a href="https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2" ismap target="_blank">
+      <img style="margin: 0.1em;" height=150
+        src   = "img/2189-Office_365_without_CES.jpg"
+        alt   = "Office 365 w/o CES"
+        title = "Office 365 w/o CES"
+      >
+      <img style="margin: 0.1em;" height=150
+        src   = "img/2189-Office_365_with_CES.jpg"
+        alt   = "Office 365 w/ CES"
+        title = "Office 365 w/ CES"
+      >
+    </a>
+  </div>
+  
+  Reference: https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKSEC-3433.pdf
 
   At this point, you are ready to cut over the domain through a Mail Exchange (MX) record change. Work with your DNS administrator to resolve your MX records to the IP addresses for your Cisco Secure Email Cloud instance as provided in your Cisco Secure Email welcome letter.
 
@@ -1802,7 +1913,14 @@
 
   Refer to the exhibit.
 
-  AAA_ISE.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2194-AAA_ISE.jpg"
+      alt    = "AAA in ISE"
+      title  = "AAA in ISE"
+    />
+  </figure>
 
   Which configuration item makes it possible to have the AAA session on the network?
 
@@ -1826,7 +1944,14 @@
 
   Refer to the exhibit.
 
-  ASA_Rest_API_snippet.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2195-ASA_Rest_API_snippet.jpg"
+      alt    = "Snippet of ASA REST API"
+      title  = "Snippet of ASA REST API"
+    />
+  </figure>
 
   What is the function of the Python script code snippet for the Cisco ASA REST API?
 
@@ -1846,7 +1971,14 @@
 
   Refer to the exhibit.
 
-  FirePower_Rule_Action.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2196-FirePower_Rule_Action.jpg"
+      alt    = "FirePower Rule Action"
+      title  = "FirePower Rule Action"
+    />
+  </figure>
 
   When creating an access rule for URL filtering, a network engineer adds certain categories and individual URLs to block. What is the result of the configuration?
 
@@ -1882,7 +2014,14 @@
 
   Northbound APIs usually use RESTful APIs to communicate with applications -> Answer C is not correct.
 
-  Southbound_Northbound_APIs.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
+      alt    = "API - Southbound & Northbound"
+      title  = "API - Southbound & Northbound"
+    />
+  </figure>
 
   Southbound APIs form the interface between the SDN controller and the network switches or routers -> Answer D is not correct.
   OpenFlow and NETCONF are Southbound APIs used for most SDN implementations -> Answer E is not correct.
@@ -2023,7 +2162,14 @@
 
   In order to enable intelligent proxy, we need to use “Advanced Settings”:
 
-  Umbrella_risky_domains.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2153-Umbrella_risky_domains.jpg"
+      alt    = "Umbrella Risky Domains"
+      title  = "Umbrella Risky Domains"
+    />
+  </figure>
 
 
 - <span style="color: blue; font-weight: bold;">Question 106</span>
@@ -2139,7 +2285,14 @@
 
   Drag and drop the descriptions from the right onto the correct positions on the left.
 
-  Security_Products.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/21111-Security_Products.jpg"
+      alt    = "Secuity Products"
+      title  = "Secuity Products"
+    />
+  </figure>
 
   Answer:
   - threat prevention and mitigation for known and unknown threats: NGIPS
@@ -2156,7 +2309,14 @@
 
   Refer to the exhibit.
 
-  Private_VLAN_promiscuous_port.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/21113-Private_VLAN_promiscuous_port.jpg"
+      alt    = "Private VLAN promiscuous port"
+      title  = "Private VLAN promiscuous port"
+    />
+  </figure>
 
   All servers are in the same VLAN/Subnet. DNS Server-1 and DNS Server-2 must communicate with each other, and all servers must communicate with default gateway multilayer switch. Which type of private VLAN ports should be configured to prevent communication between DNS servers and the file server?
 
@@ -2165,7 +2325,6 @@
   C. Configure GigabitEthernet0/1 as promiscuous port, Gigabithernet0/2 as community port and GigabitEthernet0/3 and GigabitEthernet0/4 as isolated ports.<br>
   D. Configure GigabitEthernet0/1 as community port, GigabitEthernet0/2 as isolated port, and GigabitEthernet0/3 and GigabitEthernet0/4 as promiscuous ports.<br>
 
-
   Answer: A
 
   Explanation
@@ -2173,7 +2332,15 @@
   - Promiscuous: can communicate with all other ports. The default gateway is usually connected to this port so that all devices in PVLAN can go outside.
   - Community: can communicate with other members of that community and promiscuous ports but cannot communicate with other communities. There can be multiple community VLANs per PVLAN.
 
-  PVLAN_Promiscuous_Community_Isolated.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/21113-PVLAN_Promiscuous_Community_Isolated.jpg"
+      alt    = "PVLAN Promiscuous Community Isolated"
+      title  = "PVLAN Promiscuous Community Isolated"
+    />
+  </figure>
+  
 
 
 
