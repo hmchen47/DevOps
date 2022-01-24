@@ -12,7 +12,7 @@
   C. OpenVuln API<br>
   D. AsyncOS API<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -25,7 +25,7 @@
   D. push<br>
   E. connect<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -79,7 +79,7 @@
   B. adds a switch to Cisco DNA Center<br>
   C. receives information about a switch<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -124,7 +124,7 @@
   C. gather network telemetry information from AMP for endpoints<br>
   D. gather the network interface information about the computers AMP sees<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 
@@ -139,7 +139,7 @@
   C. Health Monitoring<br>
   D. URL Filtering<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -152,7 +152,7 @@
   D. Cisco FTDv with two management interfaces and one traffic interface configured<br>
   E. Cisco FTDv configured in routed mode and IPv6 configured<br>
 
-  Answer: A C
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -164,7 +164,7 @@
   C. They correlate data about intrusions and vulnerability.<br>
   D. They identify data that the ASA sends to the Firepower module.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -177,7 +177,7 @@
   D. access control policy<br>
   E. health awareness policy<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -189,7 +189,7 @@
   C. URL filtering<br>
   D. protect<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -202,7 +202,7 @@
   D. Application<br>
   E. Protocol<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -214,7 +214,7 @@
   C. network address translations<br>
   D. intrusion policy<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -226,7 +226,7 @@
   C. device serial number<br>
   D. registration key<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -239,7 +239,7 @@
   D. active mode<br>
   E. passive monitor-only mode<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -251,7 +251,7 @@
   C. Enterprise Proxy Service<br>
   D. Secured Collaboration Proxy<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -263,7 +263,7 @@
   C. NSEL can be used without a collector configured.<br>
   D. A flow-export event type must be defined under a policy.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -275,7 +275,7 @@
   C. IPv6<br>
   D. clustering<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -287,7 +287,7 @@
   C. It inspects hosts that meet the profile with more intrusion rules.<br>
   D. It blocks traffic if it does not meet the profile.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
@@ -299,7 +299,7 @@
   C. An interface can be assigned to multiple zones.<br>
   D. An interface can be assigned only to one zone.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -311,7 +311,7 @@
   C. It tracks the flow continuously and provides updates every 10 seconds.<br>
   D. Its events match all traffic classes in parallel.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -323,7 +323,7 @@
   C. configure manager delete<br>
   D. configure manager add `<host><key>`<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -335,7 +335,7 @@
   C. Access Control<br>
   D. Network Discovery<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -347,7 +347,7 @@
   C. multiple context mode<br>
   D. routed mode<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 19</span>
@@ -368,7 +368,7 @@
   C. All TCP traffic is redirected<br>
   D. Traffic from the inside and DMZ networks is redirected<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -380,7 +380,7 @@
   C. Device Management Policy<br>
   D. Platform Service Policy<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>
@@ -393,7 +393,7 @@
   D. Create a class map to match interesting traffic.<br>
   E. Define a NetFlow collector by using the flow-export command.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -405,7 +405,7 @@
   C. multiple context mode<br>
   D. multiple zone mode<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 23</span>
@@ -417,7 +417,7 @@
   C. It is out-of-band from traffic.<br>
   D. It must have inline interface pairs configured.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -429,7 +429,7 @@
   C. `ip flow-export destination 1.1.1.1 2055`<br>
   D. `flow exporter`<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -441,7 +441,7 @@
   C. up to 8<br>
   D. up to 16<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
@@ -454,7 +454,7 @@
   D. inline normalization<br>
   E. SSL<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 ## 07. Email & Web
@@ -472,7 +472,7 @@
   D. Geolocation-based filtering<br>
   E. NetFlow<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -484,7 +484,7 @@
   C. The server team wants to outsource this service.>br>
   D. ESA is deployed inline.>br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -497,7 +497,7 @@
   D. outbreak filters<br>
   E. DLP<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -509,7 +509,7 @@
   C. It decrypts HTTPS application traffic for authenticated users.<br>
   D. It provides enhanced HTTPS application detection for AsyncOS.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -522,7 +522,7 @@
   D. WCCP v2-enabled devices can automatically redirect traffic destined to port 80.<br>
   E. Layer 4 switches can automatically redirect traffic destined to port 80.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -534,7 +534,7 @@
   C. Configure a small log-entry size.<br>
   D. Configure a maximum packet size.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -546,7 +546,7 @@
   C. HAT<br>
   D. RAT<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -559,7 +559,7 @@
   D. encryption<br>
   E. DLP<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -571,7 +571,7 @@
   C. AMP Reputation Center<br>
   D. IP and Domain Reputation Center<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -583,7 +583,7 @@
   C. forward<br>
   D. proxy gateway<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -595,7 +595,7 @@
   C. Review the log files.<br>
   D. Perform a trace.<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -607,7 +607,7 @@
   C. It provides maximum protection and control of outbound messages<br>
   D. It provides email security while supporting the transition to the cloud<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -619,7 +619,7 @@
   C. Mail Delivery Agent<br>
   D. Mail User Agent<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
@@ -631,7 +631,7 @@
   C. FireSIGHT<br>
   D. ASA<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -644,7 +644,7 @@
   D. configure the proxy IP address in the web-browser settings<br>
   E. use Web Cache Communication Protocol<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 ## 08. Cloud Security
@@ -661,7 +661,7 @@
   C. Cisco HyperFlex<br>
   D. Cisco Cloudlock<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -673,7 +673,7 @@
   C. Community Cloud<br>
   D. Private Cloud<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -685,7 +685,7 @@
   C. PaaS<br>
   D. SaaS<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -697,7 +697,7 @@
   C. IaaS<br>
   D. SaaS<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -708,7 +708,7 @@
   C. It deletes any application that does not belong in the network.<br>
   D. It sends the application information to an administrator to act on.<br>
 
-  Answer: B
+  Answer:<br><br> B
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -720,7 +720,7 @@
   C. Firepower<br>
   D. Tetration<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -732,7 +732,7 @@
   C. network<br>
   D. application<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -744,7 +744,7 @@
   C. data center<br>
   D. perimeter network<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -756,7 +756,7 @@
   C. detects anomalies<br>
   D. user and entity behavior analytics<br>
 
-  Answer: 
+  Answer:<br><br> 
 
 
 
