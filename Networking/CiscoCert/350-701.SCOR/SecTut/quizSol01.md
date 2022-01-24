@@ -319,7 +319,7 @@
 
 ## 02. Encryption
 
-<span style="color: cyan; font-weight: bold;">Quick summary</span>
+<span style="color: blue; font-weight: bold;">Quick summary</span>
 
 Advanced Encryption Standard (AES) is a symmetric key cipher. This means the same secret key is used for both encryption and decryption, and both the sender and receiver of the data need a copy of the key. Symmetric keys are better suited to internal encryption. The advantage of symmetric systems like AES is their speed. Because a symmetric key algorithm requires less computational power than an asymmetric one, it’s faster and more efficient to run.
 
