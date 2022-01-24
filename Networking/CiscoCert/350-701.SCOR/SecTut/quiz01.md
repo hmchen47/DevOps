@@ -11,7 +11,7 @@
   C. cross-site scripting<br>
   D. rootkit exploit<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -22,7 +22,7 @@
   C. database<br>
   D. web page images<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -34,7 +34,7 @@
   D. Write SQL code instead of using object-relational mapping libraries.<br>
   E. Block SQL code execution in the web application database login.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -46,7 +46,7 @@
   D. Install a spam and virus email filter.<br>
   E. Protect systems with an up-to-date antimalware program.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -58,7 +58,7 @@
   D. Use antispyware software.<br>
   E. Implement email filtering techniques.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
@@ -70,7 +70,7 @@
   D. Malformed packets are used to crash systems.<br>
   E. Publicly accessible DNS servers are typically used to execute the attack.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
@@ -82,7 +82,7 @@
   D. Run untrusted HTML input through an HTML sanitization engine.<br>
   E. Same Site cookie attribute should not be used.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
@@ -93,7 +93,7 @@
   C. Spear phishing is when the attack is aimed at the C-level executives of an organization.<br>
   D. Deceptive phishing hijacks and manipulates the DNS server of the victim and redirects the user to a false webpage.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
@@ -103,7 +103,7 @@
   C. DDoS<br>
   D. buffer overflow<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
 
@@ -114,7 +114,7 @@
   C. pxGrid<br>
   D. SMTP<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
 
@@ -126,7 +126,7 @@
   D. Correlation<br>
   E. Mitigating<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
 
@@ -138,7 +138,7 @@
   D. malware<br>
   E. eavesdropping<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
 
@@ -149,7 +149,7 @@
   C. profile<br>
   D. selfsigned<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
 
@@ -161,7 +161,7 @@
   D. user mode<br>
   E. buffer mode<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
 
@@ -172,7 +172,7 @@
   C. DDOS<br>
   D. TCP flood<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 17<span style="color: #008888; font-weight: bold;">
 
@@ -183,7 +183,7 @@
   C. ping of death<br>
   D. HTTP flood<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
 
@@ -194,7 +194,7 @@
   C. malware<br>
   D. MITM<br>
 
-  Answer:
+  Answer:<br><br>
 
 ## 02. Encryption
 
@@ -211,7 +211,7 @@
   D. 128-bit block size, 256-bit key length<br>
   E. 192-bit block size, 256-bit key length<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -223,7 +223,7 @@
   D. AES can use a 256-bit key for encryption.<br>
   E. AES encrypts and decrypts a key three times in sequence.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -234,7 +234,7 @@
   C. AES-256<br>
   D. SHA-384<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -245,7 +245,7 @@
   C. DES<br>
   D. AES<br>
 
-  Answer:
+  Answer:<br><br>
 
 ## 03. VPNs
 
@@ -261,7 +261,7 @@
   C. authenticates the IKEv1 peers in the 172.16.0.0/16 range by using the key ciscXXXXXXXX<br>
   D. secures all the certificates in the IKE exchange by using the key ciscXXXXXXXX<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -272,7 +272,7 @@
   C. IPsec DVTI<br>
   D. GET VPN<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -284,7 +284,7 @@
   D. Only the IPsec configuration that is set up on the active device must be duplicated on the standby device; the IKE configuration is copied automatically.<br>
   E. The active and standby devices must run the same version of the Cisco IOS software and must be the same type of device.<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -295,7 +295,7 @@
   C. FlexVPN<br>
   D. DMVPN<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -306,7 +306,7 @@
   C. Enter the same command on hostB.
   D. Change the password on hostA to the default password.
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
@@ -328,7 +328,7 @@
   C. authentication key mismatch<br>
   D. interesting traffic was not applied<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
@@ -339,7 +339,7 @@
   C. FlexVPN uses IKEv2, DMVPN uses IKEv1 or IKEv2<br>
   D. FlexVPN uses IKEv1 or IKEv2, DMVPN uses only IKEv2<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
@@ -350,7 +350,7 @@
   C. BJTLSv1<br>
   D. DTLSv1<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
@@ -361,7 +361,7 @@
   C. FlexVPN and DMVPN use the same hashing algorithms<br>
   D. IOS routers run the same NHRP code for DMVPN and FlexVPN<br>
 
-  Answer:
+  Answer:<br><br>
 
 ## 04. Software Defined Network (SDN)
 
@@ -377,7 +377,7 @@
   C. management console and the cloud<br>
   D. SDN controller and the management solution<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -389,7 +389,7 @@
   D. authentication<br>
   E. encryption<br>
 
-  Answer:
+  Answer:<br><br>
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -400,4 +400,4 @@
   C. management console and the cloud<br>
   D. SDN controller and the cloud<br>
 
-  Answer:
+  Answer:<br><br>
