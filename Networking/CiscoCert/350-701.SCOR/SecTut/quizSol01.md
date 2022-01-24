@@ -417,6 +417,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   />
 </figure>
 
+
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
   What is the result of running the `crypto isakmp key ciscXXXXXXXX address 172.16.0.0` command?
@@ -589,7 +590,7 @@ In contrast to distributed architecture, centralized (or controller-based) archi
 As we took the control planes off networking devices but not data planes so we need a way to communicate with them. So we put a southbound interface (SBI) at the bottom of SDN controller for this task. An SBI communicates with the devices via an application programming interface (API).
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+  <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
     onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
     src    = "img/0400-SDN_controller_based_architecture.jpg"
     alt    = "Architecture of SDN Controller"
@@ -609,6 +610,7 @@ Now, in turn, the networking administrators and SDN applications want to control
 </figure>
 
 SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.
+
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
