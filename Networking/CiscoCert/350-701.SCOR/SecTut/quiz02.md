@@ -32,6 +32,38 @@
 
   Refer to the exhibit.
 
+  ```python
+  def add_device_to_dnac(dnac_ip, device_ip, snmp_version, 
+      snmp_ro_community, snmp_rw_community, snmpretry, 
+      snmptimeout, cli_transport, username, password, 
+      enable_password):
+    device_object = {
+      "ipAddress": [device_ip],
+      "type": "NETWORK_DEVICE",
+      "ComputeDevice": False,
+      "snmpVersion": snmp_version,
+      "snmpROCommunity": snm-_ro_community,
+      "snmpRWCommunity": snmp_rw_community,
+      "snmpRetyr": snmpretry,
+      "snmpTimeout": snmptimeout,
+      "cliTransport": cli_transport,
+      "userName": username,
+      "password": password,
+      "enablePassword": enable_password
+    }
+    response = requests.post(
+      "https://{}/dna/intent/api/v1/network-device".format(dnac_ip),
+      data = json.dump(device_object),
+      headers = {
+        "X-Auth-Token": "{}".format(token),
+        "Content-Type": 'application.json'
+      },
+      verify=Flase
+    )
+    return response.json
+  ```
+
+<!--   
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
@@ -39,7 +71,7 @@
       alt    = "Python Script w/ DNA Center API"
       title  = "Python Script w/ DNA Center API"
     />
-  </figure>
+  </figure> -->
 
   What is the result of this Python script of the Cisco DNA Center API?
 
@@ -54,14 +86,36 @@
 
   Refer to the exhibit.
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+  ```python
+  import requests
+
+  client_id = 'a1b2c3d4e5f6g7h8i9j0'
+
+  api_key = 'a1b2c3d4-e5f6-g7h8-k1l2m3n4o5q6i9j0'
+
+  url = "https://api.amp.cisco.com/v1/computers"
+
+  response = requests.get(url, auth=(client_id, api_key))
+
+  response_json = response.json()
+
+  for computer in response_json(['data]):
+    network_address = computer['network_address']
+    for network_interface in network_address:
+      mac = network_interface.get('mac')
+      ip = network_interface('ip')
+      ipv6 = network_interface('ipv6')
+      print(mac, ip , ipv6)
+  ```
+
+  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/scor/python-api')"
       src    = "img/0504-Cisco_security_appliance_API.jpg"
       alt    = "Python Script w/ Security Appliance API"
       title  = "Python Script w/ Security Appliance API"
     />
-  </figure>
+  </figure> -->
 
   What does the API do when connected to a Cisco security appliance?
 
