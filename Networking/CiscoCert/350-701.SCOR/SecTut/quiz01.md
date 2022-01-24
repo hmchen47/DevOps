@@ -198,18 +198,8 @@
 
 ## 02. Encryption
 
-<span style="color: cyan; font-weight: bold;">Quick summary</span>
+[<span style="color: cyan; font-weight: bold;">Quick summary</span>](quizSol01.md#02-encryption)
 
-Advanced Encryption Standard (AES) is a symmetric key cipher. This means the same secret key is used for both encryption and decryption, and both the sender and receiver of the data need a copy of the key. Symmetric keys are better suited to internal encryption. The advantage of symmetric systems like AES is their speed. Because a symmetric key algorithm requires less computational power than an asymmetric one, it’s faster and more efficient to run.
-
-AES is also characterized as a block cipher. In this type of cipher, the information to be encrypted (known as plaintext) is divided into sections called blocks. The AES encryption algorithm encrypts and decrypts data in blocks of 128 bits (block size). It can do this using 128-bit, 192-bit, or 256-bit keys. AES using 128-bit keys is often referred to as AES-128, and so on.
-
-AES is the successor of Data Encryption Standard (DES), which uses a block size of 64 bits and key size of 56 bits. Nowadays, AES is still considered secured if implemented properly.
-
-Triple DES (3DES) – also known as Triple Data Encryption Algorithm (TDEA) – is a way of using DES encryption three times. But even Triple DES was proven ineffective against brute force attacks. AES was introduced in 2001 to replace 3DES.
-
-Asymmetric cryptography (or “public key cryptography”) is a cryptographic system that uses keypairs (a private key and a public key). The public key is shared widely, while the private key must be kept
-completely secret.
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
@@ -259,24 +249,8 @@ completely secret.
 
 ## 03. VPNs
 
-<span style="color: cyan; font-weight: bold;">Quick summary</span>
+[<span style="color: cyan; font-weight: bold;">Quick summary</span>](quizSol01.md#03-vpns)
 
-**DMVPN** provides full meshes connectivity with simple configuration of hub and spoke. DMVPN forms IPsec tunnel over dynamically/statically addresses spokes.
-
-**GETVPN** (Group Encrypted Transport VPN) is a tunnel-less VPN technology meant for private networks like MPLS VPN or Private WAN where we use a single SA (Security Association) for all routers in a group. It is scalable for any-to-any connectivity and encryption.
-
-**FlexVPN** uses a new key management protocol – IKEv2
-
-DMVPN, FlexVPN and GETVPN comparison:
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
-    onclick= "window.open('page')"
-    src    = "img/300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
-    alt    = "Comparisons of DMVPN, FlexVPN, and GETVPN"
-    title  = "Comparisons of DMVPN, FlexVPN, and GETVPN"
-  />
-</figure>
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
@@ -391,35 +365,8 @@ DMVPN, FlexVPN and GETVPN comparison:
 
 ## 04. Software Defined Network (SDN)
 
-<span style="color: blue; font-weight: bold;">SDN Quick Summary</span>
+[<span style="color: blue; font-weight: bold;">SDN Quick Summary</span>](quizSol01.md#04-software-defined-network-sdn)
 
-Most traditional devices use a distributed architecture, in which each control plane is resided in a networking device. Therefore they need to communicate with each other via messages to work correctly.
-
-In contrast to distributed architecture, centralized (or controller-based) architectures centralizes the control of networking devices into one device, called SDN controller. The SDN controller has a global view of the network, and it uses common management protocols to monitor and configure the network devices. An example of SDN is Cisco ACI.
-
-As we took the control planes off networking devices but not data planes so we need a way to communicate with them. So we put a southbound interface (SBI) at the bottom of SDN controller for this task. An SBI communicates with the devices via an application programming interface (API).
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 300px;"
-    onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "img/400-SDN_controller_based_architecture.jpg"
-    alt    = "Architecture of SDN Controller"
-    title  = "Architecture of SDN Controller"
-  />
-</figure>
-
-Now, in turn, the networking administrators and SDN applications want to control the controller! So the controller need a **northbound interface** (NBI) to communicate with us. The NBI applications included various network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control.
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 150px;"
-    onclick= "window.open('https://www.securitytut.com/scor/software-defined-network-sdn')"
-    src    = "img/403-Southbound_Northbound_APIs.jpg"
-    alt    = "API - Southbound and Northbound"
-    title  = "API - Southbound and Northbound"
-  />
-</figure>
-
-SDN northbound APIs are usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network. OpenFlow and NETCONF are Southbound APIs used for most SDN implementations.
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 

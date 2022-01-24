@@ -329,8 +329,8 @@ AES is the successor of Data Encryption Standard (DES), which uses a block size 
 
 Triple DES (3DES) – also known as Triple Data Encryption Algorithm (TDEA) – is a way of using DES encryption three times. But even Triple DES was proven ineffective against brute force attacks. AES was introduced in 2001 to replace 3DES.
 
-Asymmetric cryptography (or “public key cryptography”) is a cryptographic system that uses keypairs (a private key and a public key). The public key is shared widely, while the private key must be kept
-completely secret.
+Asymmetric cryptography (or “public key cryptography”) is a cryptographic system that uses keypairs (a private key and a public key). The public key is shared widely, while the private key must be kept completely secret.
+
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
