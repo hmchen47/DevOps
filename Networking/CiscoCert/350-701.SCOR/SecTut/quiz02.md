@@ -3,7 +3,7 @@
 
 ## 05. Python & API
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which API is used for Content Security?
 
@@ -15,7 +15,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which two request of REST API are valid on the Cisco ASA Platform? (Choose two)
 
@@ -28,7 +28,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Refer to the exhibit.
 
@@ -82,7 +82,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Refer to the exhibit.
 
@@ -130,7 +130,7 @@
 
 ## 06. Firewall & Intrusion Prevention
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System?
 
@@ -142,7 +142,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which two deployment model configurations are supported for Cisco FTDv in AWS? (Choose two)
 
@@ -155,7 +155,7 @@
   Answer: A C
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which option is the main function of Cisco Firepower impact flags?
 
@@ -167,7 +167,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   On Cisco Firepower Management Center, which policy is used to collect health modules alerts from managed devices?
 
@@ -180,7 +180,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which license is required for Cisco Security Intelligence to work on the Cisco Next Generation Intrusion Prevention System?
 
@@ -192,7 +192,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which two are valid suppression types on a Cisco Next Generation Intrusion Prevention System? (Choose two)
 
@@ -205,7 +205,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   Which feature is configured for managed devices in the device platform settings of the Firepower Management Center?
 
@@ -217,7 +217,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which information is required when adding a device to Firepower Management Center?
 
@@ -229,7 +229,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   Which two deployment modes does the Cisco ASA FirePower module support? (Choose two)
 
@@ -242,7 +242,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   The Cisco ASA must support TLS proxy for encrypted Cisco Unified Communications traffic. Where must the ASA be added on the Cisco UC Manager platform?
 
@@ -254,7 +254,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 11</span>
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   Which statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging is true?
 
@@ -266,7 +266,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 12</span>
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
 
   Which feature is supported when deploying Cisco ASAv within AWS public cloud?
 
@@ -278,7 +278,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 13</span>
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   Which statement describes a traffic profile on a Cisco Next Generation Intrusion Prevention System?
 
@@ -290,7 +290,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 14</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   Which statement about IOS zone-based firewalls is true?
 
@@ -302,7 +302,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   What is a characteristic of Cisco ASA Netflow v9 Secure Event Logging?
 
@@ -314,7 +314,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 16</span>
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   Which CLI command is used to register a Cisco FirePower sensor to Firepower Management Center?
 
@@ -326,7 +326,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 17</span>
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
 
   Which policy is used to capture host information on the Cisco Firepower Next Generation Intrusion Prevention System?
 
@@ -338,7 +338,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 18</span>
+- <span style="color: #008888; font-weight: bold;">Question 18</span>
 
   Which ASA deployment mode can provide separation of management on a shared appliance?
 
@@ -350,7 +350,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 19</span>
+- <span style="color: #008888; font-weight: bold;">Question 19</span>
 
   Refer to the exhibit. What is a result of the configuration?
 
@@ -371,7 +371,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 20</span>
+- <span style="color: #008888; font-weight: bold;">Question 20</span>
 
   Which policy represents a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment?
 
@@ -383,7 +383,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 21</span>
+- <span style="color: #008888; font-weight: bold;">Question 21</span>
 
   Which two tasks allow NetFlow on a Cisco ASA 5500 Series firewall? (Choose two)
 
@@ -396,7 +396,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 22</span>
+- <span style="color: #008888; font-weight: bold;">Question 22</span>
 
   A mall provides security services to customers with a shared appliance. The mall wants separation of management on the shared appliance. Which ASA deployment mode meets these needs?
 
@@ -408,7 +408,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 23</span>
+- <span style="color: #008888; font-weight: bold;">Question 23</span>
 
   What is a characteristic of Firepower NGIPS inline deployment mode?
 
@@ -420,7 +420,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 24</span>
+- <span style="color: #008888; font-weight: bold;">Question 24</span>
 
   An engineer wants to generate NetFlow records on traffic traversing the Cisco ASA. Which Cisco ASA command must be used?
 
@@ -432,7 +432,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 25</span>
+- <span style="color: #008888; font-weight: bold;">Question 25</span>
 
   How many interfaces per bridge group does an ASA bridge group deployment support?
 
@@ -444,7 +444,7 @@
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 26</span>
+- <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   Which two application layer preprocessors are used by Firepower Next Generation Intrusion Prevention System? (Choose two)
 
@@ -459,21 +459,10 @@
 
 ## 07. Email & Web
 
-<span style="color: blue; font-weight: bold;">Quick summary</span>
-
-Cisco Email Security includes advanced threat protection capabilities to detect, block, and remediate threats faster; prevent data loss; and secure important information in transit with end-to-end encryption.
-
-With Cisco Email Security customers can:
-- Detect and block more threats with superior threat intelligence from Talos.
-- Combat ransomware hidden in attachments that evade initial detection with Cisco Advanced Malware Protection (AMP) and Cisco Threat Grid.
-- Drop emails with risky links automatically or block access to newly infected sites with real-time URL analysis to protect against phishing and BEC.
-- Prevent brand abuse and sophisticated identity-based email attacks with Cisco Domain Protection (CDP) and Cisco Advanced Phishing Protection (CAPP) services.
-- Protect sensitive content in outgoing emails with Data Loss Prevention (DLP) and easy-to-use email encryption, all in one solution.
-- Provide user behavior training with Cisco Security Awareness to help users work smarter and safer.
-- Gain maximum deployment flexibility with a cloud, virtual, on-premises, or hybrid deployment or move to the cloud in phases.
+[**Quick summary**](quizSol02.md#07-email--web)
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which two features of Cisco Email Security can protect your organization against email threats? (Choose two)
 
@@ -486,7 +475,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Why would a user choose an on-premises ESA versus the CES solution?
 
@@ -498,7 +487,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which two features are used to configure Cisco ESA with a multilayer approach to fight viruses and malware? (Choose two)
 
@@ -511,7 +500,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   What is the purpose of the Decrypt for Application Detection feature within the WSA Decryption options?
 
@@ -523,7 +512,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which two statements about a Cisco WSA configured in Transparent mode are true? (Choose two)
 
@@ -536,7 +525,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which action controls the amount of URI text that is stored in Cisco WSA logs files?
 
@@ -548,7 +537,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   An engineer is configuring a Cisco ESA and wants to control whether to accept or reject email messages to a recipient address. Which list contains the allowed recipient addresses?
 
@@ -560,7 +549,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which two services must remain as on-premises equipment when a hybrid email solution is deployed? (Choose two)
 
@@ -573,7 +562,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   Which Talos reputation center allows you to track the reputation of IP addresses for email and web traffic?
 
@@ -585,7 +574,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   Which proxy mode must be used on Cisco WSA to redirect TCP traffic with WCCP?
 
@@ -597,7 +586,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 11</span>
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   After deploying a Cisco ESA on your network, you notice that some messages fail to reach their destinations. Which task can you perform to determine where each message was lost?
 
@@ -609,7 +598,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 12</span>
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
 
   What is the primary benefit of deploying an ESA in hybrid mode?
 
@@ -621,7 +610,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 13</span>
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   What is the primary role of the Cisco Email Security Appliance?
 
@@ -633,7 +622,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 14</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   Which technology is used to improve web traffic performance by proxy caching?
 
@@ -645,7 +634,7 @@ With Cisco Email Security customers can:
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   In which two ways does a system administrator send web traffic transparently to the Web Security Appliance? (Choose two)
 
@@ -660,36 +649,10 @@ With Cisco Email Security customers can:
 
 ## 08. Cloud Security
 
-<span style="color: blue; font-weight: bold;">Cloud Quick Summary</span>
-
-<span style="color: blue;">Types of clouds</span>
-
-There are 4 types of cloud:
-
-- Private Cloud: cloud that is dedicated solely to one organization. Advantages of Private Clouds are high security, Regulatory compliance, Flexibility to respond to changing needs. Drawbacks of private cloud are cost, mobile difficulty,
-- Public Cloud: cloud that is delivered via the Internet and shared across organizations. Examples of public clouds are Amazon Web Services, Microsoft Azure, and Google Cloud Platform. Advantages of public cloud are lower costs, Freedom from maintenance. Drawbacks of public cloud are Lack of security, minimal technical control
-- Hyrid Cloud: any environment that uses both public and private clouds. Confidential operations like financial reporting, for example, can be run on a private cloud. High-volume, less sensitive workloads like web-based email – or even temporary workloads such as development and test – can run on a public cloud.
-- Community Cloud: a recent variation on the private cloud model that can be only accessible by group of organizations. It shares the infrastructure between several organizations from a specific community. It may be managed internally by organizations or by the third-party.
-
-<span style="color: blue;">Cloud services</span>
-
-There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
-
-- SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a third-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can be run directly from a web browser without any downloads or installations required, although some require plugins.
-- PaaS (Platform as a Service): are used for applications, and other development, while providing cloud components to software. What developers gain with PaaS is a framework they can build upon to develop or customize applications. PaaS makes the development, testing, and deployment of applications quick, simple, and cost-effective. With this technology, enterprise operations, or a third-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS software itself. Developers, however, manage the applications. PaaS provides everything except applications.
-- IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
-    onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
-    src    = "img/0800-Cloud_Computing_SaaS_PaaS_IaaS.jpg"
-    alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
-    title  = "Cloud Computing: SaaS, PaaS, & IaaS"
-  />
-</figure>
+[**Cloud Quick Summary**](quizSol02.md#08-cloud-security)
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which technology reduces data loss by identifying sensitive information stored in public computing environments?
 
@@ -701,7 +664,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which deployment model is the most secure when considering risks to cloud adoption?
 
@@ -713,7 +676,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   In which cloud services model is the tenant responsible for virtual machine OS patching?
 
@@ -725,7 +688,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which cloud service model offers an environment for cloud consumers to develop and deploy applications without needing to manage or maintain the underlying cloud infrastructure?
 
@@ -736,7 +699,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
 
   Answer: 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   What does the Cloudlock Apps Firewall do to mitigate security concerns from an application perspective?
 
@@ -748,7 +711,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which solution protects hybrid cloud deployment workloads with application visibility and segmentation?
 
@@ -760,7 +723,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   In a PaaS model, which layer is the tenant responsible for maintaining and patching?
 
@@ -772,7 +735,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   On which part of the IT environment does DevSecOps focus?
 
@@ -784,7 +747,7 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   Answer: 
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   What is the function of Cisco Cloudlock for data security?
 
