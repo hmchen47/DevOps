@@ -394,9 +394,10 @@
 - <span style="color: blue; font-weight: bold;">Question 3</span>
 
   Which functions of an SDN architecture require southbound APIs to enable communication?
-  A. SDN controller and the network elements
-  B. management console and the SDN controller
-  C. management console and the cloud
-  D. SDN controller and the cloud
+
+  A. SDN controller and the network elements<br>
+  B. management console and the SDN controller<br>
+  C. management console and the cloud<br>
+  D. SDN controller and the cloud<br>
 
   Answer:
