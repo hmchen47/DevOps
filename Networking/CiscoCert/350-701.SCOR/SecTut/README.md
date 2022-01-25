@@ -16,12 +16,11 @@
   - 10\. Layer 2 Security
   - 11\. Secure Network Access
   - 12\. Exfiltration Techniques
-- [Quiz Set 4](quiz04.md) & [Sol](quizSol04.md)
+- [Quiz Set 4 - 5](quiz04-5.md) & [Sol](quizSol04-5.md)
   - 13\. Malware Protection & AMP
   - 14\. AAA
   - 15\. Endpoint Protection & Detection
   - 16\. Cisco Umbrella
-- [Quiz Set 5](quiz05.md) & [Sol](quizSol05.md)
   - 17\. Security Products & Solutions
   - 18\. Drag Drop
 - [Quiz Set 6](quiz06.md) & [Sol](quizSol06.md)
