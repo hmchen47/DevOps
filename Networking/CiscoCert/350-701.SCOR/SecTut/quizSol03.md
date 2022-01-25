@@ -579,7 +579,7 @@
   - 5\. The requests are forwarded to a recursive DNS resolver. During resolution, the requests are sent to the attacker’s authoritative DNS nameserver,
   - 6\. The tunneling kit parses the encoded strings and rebuilds the exfiltrated data.
 
-  Reference: https://learn-umbrella.cisco.com/i/775902-dns-tunneling/0
+  Reference: [Introducing Improvements in DNS Tunneling & DNS Exfiltration Detection](https://umbrella.cisco.com/blog/improvements-dns-tunneling-dns-exfiltration-detection)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
