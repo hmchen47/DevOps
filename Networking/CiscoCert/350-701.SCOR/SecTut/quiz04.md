@@ -7,10 +7,10 @@
 
   Which Cisco AMP file disposition valid?
 
-  A. pristine>br>
-  B. malware>br>
-  C. dirty>br>
-  D. non malicious>br>
+  A. pristine<br>
+  B. malware<br>
+  C. dirty<br>
+  D. non malicious<br>
 
   Answer: 
 

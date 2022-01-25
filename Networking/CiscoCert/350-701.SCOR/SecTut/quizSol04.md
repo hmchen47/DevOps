@@ -3,19 +3,19 @@
 
 ## 13. Malware Protection & AMP
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which Cisco AMP file disposition valid?
 
-  A. pristine>br>
-  B. malware>br>
-  C. dirty>br>
-  D. non malicious>br>
+  A. pristine<br>
+  B. malware<br>
+  C. dirty<br>
+  D. non malicious<br>
 
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   When using Cisco AMP for Networks which feature copies a file to the Cisco AMP cloud for analysis?
 
@@ -41,7 +41,7 @@
   There is no sandbox analysis feature, it is just a method of dynamic analysis that runs suspicious files in a virtual machine.
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which Cisco Advanced Malware protection for Endpoints deployment architecture is designed to keep data within a network perimeter?
 
@@ -53,7 +53,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which capability is exclusive to a Cisco AMP public cloud instance as compared to a private cloud instance?
 
@@ -65,7 +65,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   An engineer is configuring AMP for endpoints and wants to block certain files from executing. Which outbreak control method is used to accomplish this task?
 
@@ -77,7 +77,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which function is the primary function of Cisco AMP threat Grid?
 
@@ -89,7 +89,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   What are two list types within AMP for Endpoints Outbreak Control? (Choose two)
 
@@ -112,7 +112,7 @@
   Reference: https://docs.amp.cisco.com/AMP%20for%20Endpoints%20User%20Guide.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What is a required prerequisite to enable malware file scanning for the Secure Internet Gateway?
 
@@ -127,7 +127,7 @@
 
 ## 14. AAA
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   When wired 802.1X authentication is implemented, which two components are required? (Choose two)
 
@@ -140,7 +140,7 @@
   Answer: A C
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Refer to the exhibit. Which command was used to display this output?
 
@@ -161,7 +161,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Refer to the exhibit. Which statement about the authentication protocol used in the configuration is true?
 
@@ -182,7 +182,7 @@
   This command uses RADIUS which combines authentication and authorization in one function (packet).
 
 
-- <span style="color: blue; font-weight: bold;">Question 4
+- <span style="color: #008888; font-weight: bold;">Question 4
 
   An engineer needs a solution for TACACS+ authentication and authorization for device administration.
 
@@ -196,7 +196,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 5
+- <span style="color: #008888; font-weight: bold;">Question 5
 
   Which Cisco command enables authentication, authorization, and accounting globally so that CoA is supported on the device?
 
@@ -212,7 +212,7 @@
 ## 15. Endpoint Protection & Detection
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   An MDM provides which two advantages to an organization with regards to device management? (Choose two)
 
@@ -225,7 +225,7 @@
   Answer: A B
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which Cisco product provides proactive endpoint protection and allows administrators to centrally manage the deployment?
 
@@ -237,7 +237,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which benefit does endpoint security provide the overall security posture of an organization?
 
@@ -249,7 +249,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   What are the two most commonly used authentication factors in multifactor authentication? (Choose two)
 
@@ -285,7 +285,7 @@
   The two most popular authentication factors are knowledge and inherent (including biometrics like fingerprint, face, and retina scans. Biometrics is used commonly in mobile devices).
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which two kinds of attacks are prevented by multifactor authentication? (Choose two)
 
@@ -298,7 +298,7 @@
   Answer: B C
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   What is the primary difference between an Endpoint Protection Platform and an Endpoint Detection and Response?
 
@@ -310,7 +310,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   An engineer wants to automatically assign endpoints that have a specific OUI into a new endpoint group. Which probe must be enabled for this type of profiling to work?
 
@@ -337,7 +337,7 @@
   Reference: http://www.network-node.com/blog/2016/1/2/ise-20-profiling
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What are two reasons for implementing a multifactor authentication solution such as Duo Security provide to an organization? (Choose two)
 
@@ -358,7 +358,7 @@
 
 ## 16. Cisco Umbrella
 
-<span style="color: blue; font-weight: blue;">Cisco Umbrella Quick Summary</span>
+<span style="color: #008888; font-weight: #008888;">Cisco Umbrella Quick Summary</span>
 
 Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
 
@@ -367,7 +367,7 @@ When Umbrella receives a DNS request, it uses intelligence to determine if the r
 Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   An engineer configured a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network. Which action tests the routing?
 
@@ -379,7 +379,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic?
 
@@ -397,7 +397,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Reference: https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   How is Cisco Umbrella configured to log only security events?
 
@@ -420,7 +420,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/log-management
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   How does Cisco Umbrella archive logs to an enterprise owned storage?
 
@@ -439,7 +439,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/manage-logs
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   When web policies are configured in Cisco Umbrella, what provides the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats?
 
@@ -451,7 +451,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which Cisco solution does Cisco Umbrella integrate with to determine if a URL is malicious?
 
@@ -467,7 +467,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   When Umbrella receives a DNS request, it uses intelligence to determine if the request is safe, malicious or risky — meaning the domain contains both malicious and legitimate content. Safe and malicious requests are routed as usual or blocked, respectively. Risky requests are routed to our cloud-based proxy for deeper inspection. The Umbrella proxy uses Cisco Talos web reputation and other third-party feeds to determine if a URL is malicious.
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   Where are individual sites specified to be blacklisted in Cisco Umbrella?
 
@@ -485,7 +485,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/working-with-destination-lists
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which Cisco security solution protects remote users against phishing attacks when they are not connected to the VPN?
 
