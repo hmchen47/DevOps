@@ -14,6 +14,17 @@
 
   Answer: B
 
+  Explanantion
+
+  A file's disposition is a categorization from the AMP cloud that determines what actions are taken on the file download.
+
+  There are three file dispositions:
+  - Clean - The file is known to be good.
+  - Malicious - The file is known to be harmful.
+  - Unknown - There is insufficient data to classify the file as clean or malicious.
+
+  Reference: [Advanced Malware Protection (AMP) - Meraki](https://bit.ly/3qYrBFp)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -28,17 +39,162 @@
 
   Explanation
 
-  Spero analysis examines structural characteristics such as metadata and header information in executable files. After generating a Spero signature based on this information, if the file is an eligible executable file, the device submits it to the Spero heuristic engine in the AMP cloud. Based on the Spero signature, the Spero engine determines whether the file is malware.
+  The Firepower system applies several methods of file inspection and analysis to determine whether a file contains malware.
 
-  Reference: [Firepower Management Center Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Reference_a_wrapper_Chapter_topic_here.html)
+  Depending on the options you enable in a file rule, the system inspects files using the following tools, in order:
+  - Spero Analysis and AMP Cloud Lookup
+  - Local Malware Analysis
+  - Dynamic Analysis
+
+  For a comparison of these tools, see Comparison of Malware Protection Methods.
+
+  (You can also, if you choose, block all files based on their file type. For more information, see [Block All Files by Type](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Reference_a_wrapper_Chapter_topic_here.html#ID-2193-0000011a).)
+
+  See also information about Cisco's AMP for Endpoints product at (Optional) Malware Protection with AMP for Endpoints and subtopics.
+  - Spero Analysis
+  - Local Malware Analysis
+  - Dynamic Analysis
+  - Block All Files by Type
+  <br><br>
+
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 60vw;" cellspacing=0 cellpadding=5 border=1 align="center">
+    <caption style="font-size: 1.3em; margin: 0.2em;"><a href="https://bit.ly/32xbzZZ">Comparison of Malware Protection Methods</a></caption>
+    <colgroup>
+      <col style="width: 10%">
+      <col style="width: 15%">
+      <col style="width: 15%">
+      <col style="width: 20%">
+    </colgroup>
+    <thead class="thead">
+    <tr>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Analysis Type</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Benefit </th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Limitations</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Malware Identification</th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+    <tr>
+      <td>Spero analysis </td>
+      <td> Structural analysis of executable files, submits Spero signature to the AMP Cloud for analysis  </td>
+      <td> Less thorough than local malware analysis or dynamic analysis, only for executable files  </td>
+      <td> Disposition changes from Unknown to Malware only on positive identification of malware.  </td>
+    </tr>
+    <tr>
+      <td> 
+        Local malware analysis  
+      </td>
+      <td> 
+        Consumes fewer resources than dynamic analysis, and returns results more quickly, especially if the detected malware is common  
+      </td>
+      <td> 
+        Less thorough results than dynamic analysis  
+      </td>
+      <td> 
+        Disposition changes from Unknown to Malware only on positive identification of malware. 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Dynamic analysis  
+      </td>
+      <td>
+        Thorough analysis of unknown files using Cisco Threat Grid
+      </td>
+      <td> 
+        Eligible files are uploaded to the public cloud or an on-premises appliance.  It takes some time to complete analysis 
+      </td>
+      <td> 
+        Threat score determines maliciousness of a file.  Disposition is based on the threat score threshold configured in the file policy. 
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        Spero analysis and local malware analysis  
+      </td>
+      <td> 
+        Consumes fewer resources than configuring local malware analysis and dynamic analysis, while still using AMP cloud resources to identify malware  
+      </td>
+      <td> 
+        Less thorough than dynamic analysis, Spero analysis only for executable files  
+      </td>
+      <td> 
+        Disposition changes from Unknown to Malware only on positive identification of malware.   
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        Spero analysis and dynamic analysis  
+      </td>
+      <td> 
+        Uses full capabilities of AMP cloud in submitting files and Spero signatures  
+      </td>
+      <td> 
+        Results obtained less quickly than if using local malware analysis  
+      </td>
+      <td> 
+        Threat score changes based on dynamic analysis results for files preclassified as possible malware. Disposition changes based on configured threat score threshold in the file policy, and from Unknown to Malware if the Spero analysis identifies malware.  
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Local malware analysis and dynamic analysis  
+      </td>
+      <td> 
+         Thorough results in using both types of file analysis  
+      </td>
+      <td>
+        Consumes more resources than either alone  
+      </td>
+      <td> 
+        Threat score changes based on dynamic analysis results for files preclassified as possible malware. Disposition changes from Unknown to Malware if local malware analysis identifies malware, or based on configured threat score threshold in the file policy.  
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        Spero analysis, local malware analysis and dynamic analysis  
+      </td>
+      <td> 
+        Most thorough results  
+      </td>
+      <td> 
+        Consumes most resources in running all three types of file analysis  
+      </td>
+      <td> 
+        Threat score changes based on dynamic analysis results for files preclassified as possible malware. Disposition changes from Unknown to Malware if Spero analysis or local malware analysis identifies malware, or based on configured threat score threshold in the file policy.  
+      </td>
+    </tr>
+    <tr>
+      <td>
+        (Block transmission of all files of a specified file type)
+      </td>
+      <td>
+        Does not require a Malware license
+        (This option is not technically a malware protection option.)
+      </td>
+      <td>
+        Legitimate files will also be blocked
+      </td>
+      <td>
+        (No analysis is performed.)
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  Spero analysis examines structural characteristics such as metadata and header information in executable files. After generating a Spero signature based on this information, if the file is an eligible executable file, the device submits it to the Spero heuristic engine in the AMP cloud. Based on the Spero signature, the Spero engine determines whether the file is malware.
 
   -> Spero analysis only uploads the signature of the (executable) files to the AMP cloud. It does not upload the whole file. Dynamic analysis sends files to AMP ThreatGrid.
 
   Dynamic Analysis submits (the whole) files to Cisco Threat Grid (formerly AMP Threat Grid). Cisco Threat Grid runs the file in a sandbox environment, analyzes the file’s behavior to determine whether the file is malicious, and returns a threat score that indicates the likelihood that a file contains malware. From the threat score, you can view a dynamic analysis summary report with the reasons for the assigned threat score. You can also look in Cisco Threat Grid to view detailed reports for files that your organization submitted, as well as scrubbed reports with limited data for files that your organization did not submit.
 
-  Local malware analysis allows a managed device to locally inspect executables, PDFs, office documents, and other types of files for the most common types of malware, using a detection rule set provided by the Cisco Talos Security Intelligence and Research Group (Talos). Because local analysis does not query the AMP cloud, and does not run the file, local malware analysis saves time and system resources. -> Malware analysis does not upload files to anywhere, it only checks the files locally.
+  Local malware analysis allows a managed device to locally inspect executables, PDFs, office documents, and other types of files for the most common types of malware, using a detection rule set provided by the Cisco Talos Security Intelligence and Research Group (Talos). Because local analysis does not query the AMP cloud, and does not run the file, local malware analysis saves time and system resources. 
+  
+  -> Malware analysis does not upload files to anywhere, it only checks the files locally.
 
   There is no sandbox analysis feature, it is just a method of dynamic analysis that runs suspicious files in a virtual machine.
+
+  Reference: [Firepower Management Center Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Reference_a_wrapper_Chapter_topic_here.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -64,6 +220,18 @@
 
   Answer: B
 
+  Explanation
+
+  Cloud detection engines
+  - One-to-one signature engine
+  - Generic signature engine (ETHOS)
+  - Machine learning engine (SPERO)
+  - Advanced analytics engine
+
+  Reference:
+  - [Threat Prevention with AMP](https://www.cisco.com/web/KR/events/CiscoConnect/2014/downloads/Day2_Track5-1.pdf)
+  - [Advnaced Malware Protection](https://www.cisco.com/c/dam/m/hr_hr/training-events/2017/cisco-connect/pdf/ConnectCRO_AMP_scsordas.pdf)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -77,6 +245,7 @@
   Answer: C
 
 
+
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which function is the primary function of Cisco AMP threat Grid?
@@ -88,6 +257,15 @@
 
   Answer: C
 
+  Explanation
+
+  Secure Malware Analytics (formerly Threat Grid) combines advanced sandboxing with threat intelligence into one unified solution to protect organizations from malware.
+
+  Threat Grid is Cisco's unified malware analysis and threat intelligence platform. It performs automated static and dynamic analysis, producing human readable behavior indicators for each file submitted.
+
+  Reference: 
+  - [Threat Grid & AMP](https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2019/pdf/BRKSEC-2890.pdf)
+  - [Cisco Secure Malware Analytics](https://www.cisco.com/c/en/us/support/security/amp-threat-grid-appliances/series.html)
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
@@ -103,7 +281,7 @@
 
   Explanation
 
-  Advanced Malware Protection (AMP) for Endpoints offers a variety of lists, referred to as Outbreak Control, that allow you to customize it to your needs. The main lists are: Simple Custom Detections, Blocked Applications, Allowed Applications, Advanced Custom Detections, and IP Blocked and Allowed Lists.
+  Advanced Malware Protection (AMP) for Endpoints offers a variety of lists, referred to as Outbreak Control, that allow you to customize it to your needs. The main lists are: <span style="color: #bb6600;">Simple Custom Detections, Blocked Applications, Allowed Applications, Advanced Custom Detections, and IP Blocked and Allowed Lists</span>.
 
   A Simple Custom Detection list is similar to a blocked list. These are files that you want to detect and quarantine.
 
