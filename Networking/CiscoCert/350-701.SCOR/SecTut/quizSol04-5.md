@@ -479,6 +479,8 @@
   - <span style="color: #bb6600;">Risk-based authentication</span> – Sometimes called adaptive multi-factor authentication, this method combines adaptive authentication and algorithms that calculate risk and observe the context of specific login requests. The goal of this method is to reduce redundant logins and provide a more user-friendly workflow.
   - <span style="color: #bb6600;">Push-based 2FA</span> – Push-based 2FA improves on SMS and TOTP 2FA by adding additional layers of security while improving ease of use. It confirms a user’s identity with multiple factors of authentication that other methods cannot. Because push-based 2FA sends notifications through data networks like cellular or Wi-Fi, users must have data access on their mobile devices to use the 2FA functionality.
 
+  SSO authenticates users with MFA and then, using software tokens, shares the authentication with multiple applications.
+
   Reference: [What Is Multi-Factor Authentication?](https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html)
 
   The two most popular authentication factors are knowledge and inherent (including biometrics like fingerprint, face, and retina scans. Biometrics is used commonly in mobile devices).
@@ -557,7 +559,7 @@
 
 ## 16. Cisco Umbrella
 
-<span style="color: #008888; font-weight: #008888;">Cisco Umbrella Quick Summary</span>
+<span style="color: blue; font-weight: bold;">Cisco Umbrella Quick Summary</span>
 
 Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
 
@@ -573,7 +575,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   A. Ensure that the client computers are pointing to the on-premises DNS servers.<br>
   B. Enable the Intelligent Proxy to validate that traffic is being routed correctly.<br>
   C. Add the public IP address that the client computers are behind to a Core Identity.<br>
-  D. Browse to http://welcome.umbrella.com/ to validate that the new identity is working.<br>
+  D. Browse to `http://welcome.umbrella.com/` to validate that the new identity is working.<br>
 
   Answer: D
 
@@ -593,7 +595,11 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
   SSL Decryption is an important part of the Umbrella Intelligent Proxy. he feature allows the Intelligent Proxy to go beyond simply inspecting normal URLs and actually proxy and inspect traffic that’s sent over HTTPS. The SSL Decryption feature does require the root certificate be installed.
 
-  Reference: [SSL Decryption in the Intelligent Proxy](https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy)
+  SafeSearch is an automated filter of pornography and other offensive content that’s built into search engines.
+
+  Reference:
+  - [SSL Decryption in the Intelligent Proxy](https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy)
+  - [What is SafeSearch](https://docs.umbrella.com/deployment-umbrella/docs/what-is-safesearch)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -611,10 +617,9 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
   The logging of your identities’ activities is set per-policy when you first create a policy. By default, logging is on and set to log all requests an identity makes to reach destinations. At any time after you create a policy, you can change what level of identity activity Umbrella logs.
   From the Policy wizard, log settings are:
-
-  Log All Requests—For full logging, whether for content, security or otherwise
-  Log Only Security Events—For security logging only, which gives your users more privacy—a good setting for people with the roaming client installed on personal devices
-  Don’t Log Any Requests—Disables all logging. If you select this option, most reporting for identities with this policy will not be helpful as nothing is logged to report on.
+  - Log All Requests—For full logging, whether for content, security or otherwise
+  - Log Only Security Events—For security logging only, which gives your users more privacy—a good setting for people with the roaming client installed on personal devices
+  - Don’t Log Any Requests—Disables all logging. If you select this option, most reporting for identities with this policy will not be helpful as nothing is logged to report on.
 
   Reference: [Cisco Umbrella - Manage Your Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-management)
 
@@ -648,6 +653,27 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   D. File Analysis<br>
 
   Answer: B
+
+  Explanation
+
+  Policies are the heart of Umbrella and define how security and access controls are applied to identities. 
+
+  The Policy wizard includes many and varied access control and security-related components for you to consider when defining policies for your identities.
+  - Security Settings:
+    - Allows you to select which security threat categories Umbrella blocks. For example, malware. 
+    - Security Categories: Malware, Newly Seen Domain, Command Control Callbacks, Phishing Attacks, Dynamic DNS, Potentially Harmful Domains, DNS Tunneling VPN, Cryptomining
+  - Content Categories:
+    - Allows you to block access to categories of websites—groupings of sites with similarly themed content.
+    - Content Category Settings: High, Moderate, Low, Custom
+  - Application Settings: Allows you to block access to specific applications. For example, Netflix, Facebook, or Amazon. 
+  - Destination Lists: Allows you to create a unique list of destinations (for example, domain name or URL) to which you can block or allow access.
+  - Block Pages: Allows you to configure the web page users see when an attempt is made to reach a blocked destination.
+  - File Inspection: Scan and inspect files for malicious content hosted on risky domains before those files are downloaded.
+
+  Reference:
+  - [Manage Policies](https://docs.umbrella.com/deployment-umbrella/docs/customize-your-policies-1)
+  - [Manage Content Categories](https://docs.umbrella.com/deployment-umbrella/docs/content-categories)
+  - [Security Categories](https://docs.umbrella.com/deployment-umbrella/docs/dns-security-categories)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -715,7 +741,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 - Firepower Threat Defense (FTD): provides a comprehensive suite of security features such as firewall capabilities, monitoring, alerts, Intrusion Detection System (IDS) and Intrusion Prevention System (IPS).
 - Cisco Cloudlock: Secure your cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform. Cisco Cloudlock provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware like ransomware.
 
-**Cisco SteathWatch**
+<span style="color: blue; font-weight: bold;">Cisco SteathWatch</span>
 
 Stealthwatch is the visibility and security analytics solution that collects and analyzes network data from the existing network infrastructure. Stealthwatch analyzes industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices to detect advanced and persistent security threats such as internally spreading malware, data leakage, botnet command and control traffic and network reconnaissance.
 

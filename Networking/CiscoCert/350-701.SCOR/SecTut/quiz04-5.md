@@ -286,13 +286,7 @@
 
 ## 16. Cisco Umbrella
 
-<span style="color: #008888; font-weight: #008888;">Cisco Umbrella Quick Summary</span>
-
-Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
-
-When Umbrella receives a DNS request, it uses intelligence to determine if the request is safe, malicious or risky — meaning the domain contains both malicious and legitimate content. Safe and malicious requests are routed as usual or blocked, respectively. Risky requests are routed to our cloud-based proxy for deeper inspection. The Umbrella proxy uses Cisco Talos web reputation and other third-party feeds to determine if a URL is malicious.
-
-Cisco Umbrella roaming protects your employees even when they are off the VPN.
+[<span style="font-weight: #008888;">Cisco Umbrella Quick Summary</span>](quizSol04-5.md#16-cisco-umbrella)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 1</span>
@@ -302,7 +296,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   A. Ensure that the client computers are pointing to the on-premises DNS servers.<br>
   B. Enable the Intelligent Proxy to validate that traffic is being routed correctly.<br>
   C. Add the public IP address that the client computers are behind to a Core Identity.<br>
-  D. Browse to http://welcome.umbrella.com/ to validate that the new identity is working.<br>
+  D. Browse to `http://welcome.umbrella.com/` to validate that the new identity is working.<br>
 
   Answer: <br><br>
 
