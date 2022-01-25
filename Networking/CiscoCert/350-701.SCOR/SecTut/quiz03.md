@@ -183,10 +183,10 @@
 
   Which command enables 802.1X globally on a Cisco switch?
 
-  A. dot1x system-auth-control<br>
-  B. dot1x pae authenticator<br>
-  C. authentication port-control aut<br>
-  D. aaa new-model<br>
+  A. `dot1x system-auth-control`<br>
+  B. `dot1x pae authenticator`<br>
+  C. `authentication port-control aut`<br>
+  D. `aaa new-model`<br>
 
   Answer:<br><br> 
 
@@ -231,10 +231,10 @@
 
     An engineer configured wired 802.1x on the network and is unable to get a laptop to authenticate. Which port configuration is missing?
 
-    A. authentication open<br>
-    B. dotlx reauthentication<br>
-    C. cisp enable<br>
-    D. dot1x pae authenticator<br>
+    A. `authentication open`<br>
+    B. `dotlx reauthentication`<br>
+    C. `cisp enable`<br>
+    D. `dot1x pae authenticator`<br>
 
     Answer:<br><br> 
 

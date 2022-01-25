@@ -207,6 +207,14 @@
 
   Answer: A
 
+  Explanation
+
+  A broadcast storm occurs when huge amount of broadcast, multicast, or unknown unicast packets flood the LAN, creating excessive traffic and degrading network performance. Errors in the protocol-stack implementation or in the network configuration can also cause a storm. The mechanism to prevent and control such events is known as <span style="color: #bb6600;">storm control</span> or <span style="color: #bb6600;">broadcast suppression</span>.
+
+  Broadcast and Multicast Suppression monitors incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured. The traffic storm control threshold level is a percentage of the total available bandwidth of the port. Each port has different storm control levels for broadcast, multicast, and unicast type of traffic.
+
+  Reference: [Configuring Storm Control](https://www.cisco.com/c/dam/en/us/td/docs/ios-xml/ios/sec_data_acl/configuration/xe-3s/asr903/sec-storm-control-xe-3s-asr903-book.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -226,10 +234,10 @@
 
   Which command enables 802.1X globally on a Cisco switch?
 
-  A. dot1x system-auth-control<br>
-  B. dot1x pae authenticator<br>
-  C. authentication port-control aut<br>
-  D. aaa new-model<br>
+  A. `dot1x system-auth-control`<br>
+  B. `dot1x pae authenticator`<br>
+  C. `authentication port-control aut`<br>
+  D. `aaa new-model`<br>
 
   Answer: A
 
@@ -249,7 +257,7 @@
 
   Because MAB uses the MAC address as a username and password, you should make sure that the RADIUS server can differentiate MAB requests from other types of requests for network access. This precaution will prevent other clients from attempting to use a MAC address as a valid credential. Cisco switches uniquely identify MAB requests by setting Attribute 6 (Service-Type) to 10 (Call-Check) in a MAB Access-Request message. Therefore, you can use Attribute 6 to filter MAB requests at the RADIUS server.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/config_guide_c17-663759.html
+  Reference: [MAC Authentication Bypass Deployment Guide](https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Security/TrustSec_1-99/MAB/MAB_Dep_Guide.html#wp392245)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -269,7 +277,9 @@
 
   DHCP snooping is enabled on a per-VLAN basis. By default, the feature is inactive on all VLANs. You can enable the feature on a single VLAN or a range of VLANs.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/snoodhcp.html
+  References: 
+  - [Catalyst 6500 Release 12.2SX Software Configuration Guide](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst6500/ios/12-2SX/configuration/guide/book/snoodhcp.html)
+  - [Configuring DHCP Snooping](https://www.cisco.com/en/US/docs/general/Test/dwerblo/broken_guide/snoodhcp.html)
 
   For example, in order to activate DHCP snooping on VLAN 2, we use the following command:
 
@@ -294,10 +304,10 @@
 
     An engineer configured wired 802.1x on the network and is unable to get a laptop to authenticate. Which port configuration is missing?
 
-    A. authentication open<br>
-    B. dotlx reauthentication<br>
-    C. cisp enable<br>
-    D. dot1x pae authenticator<br>
+    A. `authentication open`<br>
+    B. `dotlx reauthentication`<br>
+    C. `cisp enable`<br>
+    D. `dot1x pae authenticator`<br>
 
     Answer: D
 
