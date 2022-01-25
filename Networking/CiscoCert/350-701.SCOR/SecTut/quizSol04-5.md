@@ -410,6 +410,19 @@
 
   Answer: A B
 
+  Explanation
+
+  Mobile Device Management (MDM) servers secure, monitor, manage, and support mobile devices that are deployed across mobile operators, service providers, and enterprises.
+
+  Cisco ISE performs the following functions with external MDM servers:
+  - Manages device registration
+  - Handles device remediation
+  - Augments endpoint data
+
+  Reference:
+  - [Mobile Device Manager Interoperability with Cisco ISE](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ISE_admin_guide_24/m_ise_interoperability_mdm.html)
+  - [Integrate Intune MDM with Identity Services Engine](https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/217290-integrate-intune-mdm-with-identity-servi.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -454,17 +467,17 @@
   Proper multi-factor authentication uses factors from at least two different categories.
 
   MFA methods:
-  - Knowledge – usually a password – is the most commonly used tool in MFA solutions. However, despite their simplicity, passwords have become a security problem and slow down productivity.
-  - Physical factors – also called possession factors–use tokens, such as a USB dongle or a portable device, that generate a temporary QR (quick response) code. Mobile phones are commonly used, as they have the advantage of being readily available in most situations.
-  - Inherent – This category includes biometrics like fingerprint, face, and retina scans. As technology advances, it may also include voice ID or other behavioral inputs like keystroke metrics. Because inherent factors are reliably unique, always present, and secure, this category shows promise.
-  - Location-based and time-based – Authentication systems can use GPS coordinates, network parameters, and metadata for the network in use, and device recognition for MFA. Adaptive authentication combines these data points with historical or contextual user data.
+  - <span style="color: #bb6600;">Knowledge</span> – usually a password – is the most commonly used tool in MFA solutions. However, despite their simplicity, passwords have become a security problem and slow down productivity.
+  - <span style="color: #bb6600;">Physical factors</span> – also called possession factors–use tokens, such as a USB dongle or a portable device, that generate a temporary QR (quick response) code. Mobile phones are commonly used, as they have the advantage of being readily available in most situations.
+  - <span style="color: #bb6600;">Inherent</span> – This category includes biometrics like fingerprint, face, and retina scans. As technology advances, it may also include voice ID or other behavioral inputs like keystroke metrics. Because inherent factors are reliably unique, always present, and secure, this category shows promise.
+  - <span style="color: #bb6600;">Location-based and time-based</span> – Authentication systems can use GPS coordinates, network parameters, and metadata for the network in use, and device recognition for MFA. Adaptive authentication combines these data points with historical or contextual user data.
 
   A time factor in conjunction with a location factor could detect an attacker attempting to authenticate in Europe when the user was last authenticated in California an hour prior, for example.
 
-  - Time-based one-time password (TOTP) – This is generally used in 2FA but could apply to any MFA method where a second step is introduced dynamically at login upon completing a first step. The wait for a second step–in which temporary passcodes are sent by SMS or email–is usually brief, and the process is easy to use for a wide range of users and devices. This method is currently widely used.
-  - Social media – In this case a user grants permission for a website to use their social media username and password for login. This provide an easy login process, and one generally available to all users.
-  - Risk-based authentication – Sometimes called adaptive multi-factor authentication, this method combines adaptive authentication and algorithms that calculate risk and observe the context of specific login requests. The goal of this method is to reduce redundant logins and provide a more user-friendly workflow.
-  - Push-based 2FA – Push-based 2FA improves on SMS and TOTP 2FA by adding additional layers of security while improving ease of use. It confirms a user’s identity with multiple factors of authentication that other methods cannot. Because push-based 2FA sends notifications through data networks like cellular or Wi-Fi, users must have data access on their mobile devices to use the 2FA functionality.
+  - <span style="color: #bb6600;">Time-based one-time password (TOTP)</span> – This is generally used in 2FA but could apply to any MFA method where a second step is introduced dynamically at login upon completing a first step. The wait for a second step–in which temporary passcodes are sent by SMS or email–is usually brief, and the process is easy to use for a wide range of users and devices. This method is currently widely used.
+  - <span style="color: #bb6600;">Social media</span> – In this case a user grants permission for a website to use their social media username and password for login. This provide an easy login process, and one generally available to all users.
+  - <span style="color: #bb6600;">Risk-based authentication</span> – Sometimes called adaptive multi-factor authentication, this method combines adaptive authentication and algorithms that calculate risk and observe the context of specific login requests. The goal of this method is to reduce redundant logins and provide a more user-friendly workflow.
+  - <span style="color: #bb6600;">Push-based 2FA</span> – Push-based 2FA improves on SMS and TOTP 2FA by adding additional layers of security while improving ease of use. It confirms a user’s identity with multiple factors of authentication that other methods cannot. Because push-based 2FA sends notifications through data networks like cellular or Wi-Fi, users must have data access on their mobile devices to use the 2FA functionality.
 
   Reference: [What Is Multi-Factor Authentication?](https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html)
 

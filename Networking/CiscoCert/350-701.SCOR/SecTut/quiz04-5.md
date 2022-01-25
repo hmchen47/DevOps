@@ -244,7 +244,7 @@
   D. DDOS<br>
   E. teardrop<br>
 
-  Answer: <br><br>B C
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
