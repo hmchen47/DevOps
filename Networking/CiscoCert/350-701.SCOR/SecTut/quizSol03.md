@@ -51,6 +51,18 @@
   
   Answer: C
 
+  Explanation
+
+  Configuring AD user as ISE GUI admin
+  - Step1 Create admin user
+  - Step:2 Check External check box make it a shadow user.
+  - Step 3 Create user in AD
+  - Step 4 Verify user shows up in MnT Admin Group.
+  - Step 5 Login to ISE using AD as identity source.
+  - Step 6 Access permission for Operations tab.
+
+  Reference: [ISE Admin user authentication from AD](https://community.cisco.com/t5/security-documents/ise-admin-user-authentication-from-ad/ta-p/3159662)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
   
@@ -66,7 +78,7 @@
   
   Explanation
   
-  A posture policy is a collection of posture requirements, which are associated with one or more identity groups, and operating systems. We can configure ISE to check for the Windows patch at Work Centers > Posture > Posture Elements > Conditions > File. 
+  A <span style="color: #bb6600;">posture policy</span> is a collection of posture requirements, which are associated with one or more identity groups, and operating systems. We can configure ISE to check for the Windows patch at Work Centers > Posture > Posture Elements > Conditions > File. 
   
   In this example, we are going to use the predefined file check to ensure that our Windows 10 clients have the critical security patch installed to prevent the Wanna Cry malware. 
   
@@ -79,7 +91,7 @@
     />
   </figure>
   
-  Reference: https://community.cisco.com/t5/security-documents/ise-posture-prescriptive-deployment-guide/ta-p/3680273
+  Reference: [ISE Posture Prescriptive Deployment Guide](https://community.cisco.com/t5/security-documents/ise-posture-prescriptive-deployment-guide/ta-p/3680273)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -143,7 +155,7 @@
 
   This question did not clearly specify the type of posture policy requirement (mandatory or optional) is not met so the user can be in Non-compliant or compliant state. But “noncompliant” is the best answer here.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_010111.html
+  Reference: [Cisco Identity Services Engine Administrator Guide, Release 2.2](https://www.cisco.com/c/en/us/td/docs/security/ise/2-2/admin_guide/b_ise_admin_guide_22/b_ise_admin_guide_22_chapter_010111.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
