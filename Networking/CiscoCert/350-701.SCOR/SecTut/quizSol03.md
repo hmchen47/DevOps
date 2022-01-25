@@ -359,19 +359,18 @@
   Refer to the exhibit. Which command was used to generate this output and to show which ports are authenticating with dot1x or mab?
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('page')"
       src    = "img/1102-show_authentication_sessions.jpg"
       alt    = "Outout of show authentication sessions"
       title  = "Outout of show authentication sessions"
     />
   </figure>
-    
 
-  A. show authentication registrations<br>
-  B. show authentication method<br>
-  C. show dot1x all<br>
-  D. show authentication sessions<br>
+  A. `show authentication registrations`<br>
+  B. `show authentication method`<br>
+  C. `show dot1x all`<br>
+  D. `show authentication sessions`<br>
 
   Answer: D
 
@@ -379,6 +378,7 @@
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   What Cisco command shows you the status of an 802.1X connection on interface gi0/1?
+
   A. `show authorization status`<br>
   B. `show authen sess int gi0/1`<br>
   C. `show connection status gi0/1`<br>
@@ -428,18 +428,15 @@
 
   Explanation
 
-  The profiling service issues the change of authorization in the following cases:
-  - Endpoint deleted—When an endpoint is deleted from the Endpoints page and the endpoint is disconnected or removed from the network.
-  An exception action is configured—If you have an exception action configured per profile that leads to an unusual or an unacceptable event from that endpoint. The profiling service moves the endpoint to the corresponding static profile by issuing a CoA.
-  - An endpoint is profiled for the first time—When an endpoint is not statically assigned and profiled for the first time; for example, the profile changes from an unknown to a known profile.
-  - An endpoint identity group has changed—When an endpoint is added or removed from an endpoint identity group that is used by an authorization policy.
+  Cisco ISE allows a global configuration to issue a Change of Authorization (CoA) for endpoints that are already authenticated to enter your network. The global configuration of CoA in Cisco ISE enables the profiler service with more control over endpoints.
 
-    The profiling service issues a CoA when there is any change in an endpoint identity group, and the endpoint identity group is used in the authorization policy for the following:
-    - The endpoint identity group changes for endpoints when they are dynamically profiled  
-    - The endpoint identity group changes when the static assignment flag is set to true for a dynamic endpoint 
-  - An endpoint profiling policy has changed and the policy is used in an authorization policy—When an endpoint profiling policy changes, and the policy is included in a logical profile that is used in an authorization policy. The endpoint profiling policy may change due to the profiling policy match or when an endpoint is statically assigned to an endpoint profiling policy, which is associated to a logical profile. In both the cases, the profiling service issues a CoA, only when the endpoint profiling policy is used in an authorization policy.
+  The profiler service implements the CoA in the following cases:
+  - Static assignment of an endpoint
+  - An exception action is configured
+  - An endpoint is profiled for the first time
+  - Endpoint deleted
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010100.html
+  Reference: [Configuring Profiler Policies](https://www.cisco.com/en/US/docs/security/ise/1.0/user_guide/ise10_prof_pol.html#wp1340649)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -477,7 +474,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
-  A network engineer has entered the snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941 command and needs to send SNMP information to a host at 10.255.254.1. Which command achieves this goal?
+  A network engineer has entered the `snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941` command and needs to send SNMP information to a host at 10.255.254.1. Which command achieves this goal?
 
   A. `snmp-server host inside 10.255.254.1 version 3 andy`<br>
   B. `snmp-server host inside 10.255.254.1 version 3 myv3`<br>
@@ -515,7 +512,7 @@
   - Interpacket variation: This information captures any interpacket variations within the flow. Examples include variation in Time To Live (TTL), IP and TCP flags, payload length, etc
   - Context details: Context information is derived outside the packet header. It includes details about variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
 
-  Reference: https://www.cisco.com/c/dam/global/en_uk/products/switches/cisco_nexus_9300_ex_platform_switches_white_paper_uki.pdf
+  Reference: [Cisco Nexus 9300EX Platform Switches Architecture](https://www.cisco.com/c/dam/global/en_uk/products/switches/cisco_nexus_9300_ex_platform_switches_white_paper_uki.pdf)
 
 
 

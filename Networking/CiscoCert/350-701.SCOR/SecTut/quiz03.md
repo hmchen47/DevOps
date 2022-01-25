@@ -286,19 +286,18 @@
   Refer to the exhibit. Which command was used to generate this output and to show which ports are authenticating with dot1x or mab?
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('page')"
       src    = "img/1102-show_authentication_sessions.jpg"
       alt    = "Outout of show authentication sessions"
       title  = "Outout of show authentication sessions"
     />
   </figure>
-    
 
-  A. show authentication registrations<br>
-  B. show authentication method<br>
-  C. show dot1x all<br>
-  D. show authentication sessions<br>
+  A. `show authentication registrations`<br>
+  B. `show authentication method`<br>
+  C. `show dot1x all`<br>
+  D. `show authentication sessions`<br>
 
   Answer:<br><br> 
 
@@ -306,6 +305,7 @@
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   What Cisco command shows you the status of an 802.1X connection on interface gi0/1?
+
   A. `show authorization status`<br>
   B. `show authen sess int gi0/1`<br>
   C. `show connection status gi0/1`<br>
