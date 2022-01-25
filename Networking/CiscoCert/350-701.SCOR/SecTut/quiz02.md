@@ -529,8 +529,8 @@
 
   Which action controls the amount of URI text that is stored in Cisco WSA logs files?
 
-  A. Configure the datasecurityconfig command<br>
-  B. Configure the advancedproxyconfig command with the HTTPS subcommand<br>
+  A. Configure the `datasecurityconfig` command<br>
+  B. Configure the `advancedproxyconfig` command with the HTTPS subcommand<br>
   C. Configure a small log-entry size.<br>
   D. Configure a maximum packet size.<br>
 

@@ -635,8 +635,8 @@ With Cisco Email Security customers can:
   Protect sensitive content in outgoing emails with Data Loss Prevention (DLP) and easy-to-use email encryption, all in one solution.
 
   Cisco Email Security appliance can now handle incoming mail connections and incoming messages from specific geolocations and perform appropriate actions on them, for example:
-  – Prevent email threats coming from specific geographic regions.
-  – Allow or disallow emails coming from specific geographic regions.
+  - Prevent email threats coming from specific geographic regions.
+  - Allow or disallow emails coming from specific geographic regions.
 
   Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa11-0/user_guide_fs/b_ESA_Admin_Guide_11_0/b_ESA_Admin_Guide_chapter_00.html
 
@@ -690,13 +690,19 @@ With Cisco Email Security customers can:
 
   Answer: D E
 
+  Explanation
+
+  The WSA can be configured for "**transparent**" or "**forward proxy**" mode. 
+  - transport mode: the WSA will respond to both transparent and explicit HTTP requests (explicit - ONLY responds to explicit HTTP requests)
+  - forward proxy mode: WSA, as a web proxy, will have two sets of TCP sockets per client request
+
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which action controls the amount of URI text that is stored in Cisco WSA logs files?
 
-  A. Configure the datasecurityconfig command<br>
-  B. Configure the advancedproxyconfig command with the HTTPS subcommand<br>
+  A. Configure the `datasecurityconfig` command<br>
+  B. Configure the `advancedproxyconfig` command with the HTTPS subcommand<br>
   C. Configure a small log-entry size.<br>
   D. Configure a maximum packet size.<br>
 
@@ -713,6 +719,12 @@ With Cisco Email Security customers can:
   D. RAT<br>
 
   Answer: D
+
+  Explanation
+
+  Each and every listener associated w/ two tables
+  - HAT (Host Access Table)
+  - RAT (Remote Access Table)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -747,7 +759,7 @@ With Cisco Email Security customers can:
 
   Explanation
 
-  Talos’ IP and Domain Data Center is the world’s most comprehensive real-time threat detection network. The data is made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances. Talos detects and correlates threats in real time using the largest threat detection network in the world spanning web requests, emails, malware samples, open-source data sets, endpoint intelligence, and network intrusions. The Email and Web Traffic Reputation Center is able to transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture.
+  Talos’ <span style="color: #bb6600;">IP and Domain Data Center</span> is the world’s most comprehensive real-time threat detection network. The data is made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances. Talos detects and correlates threats in real time using the largest threat detection network in the world spanning web requests, emails, malware samples, open-source data sets, endpoint intelligence, and network intrusions. The <span style="color: #bb6600;">Email and Web Traffic Reputation Center</span> is able to transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -763,18 +775,20 @@ With Cisco Email Security customers can:
 
   Explanation
 
-  There are two possible methods to accomplish the redirection of traffic to Cisco WSA: transparent proxy mode and explicit proxy mode.
+  There are two possible methods to accomplish the redirection of traffic to Cisco WSA: <span style="color: #bb6600;">transparent proxy mode</span> and <span style="color: #bb6600;">explicit proxy mode</span>.
 
-  In a transparent proxy deployment, a WCCP v2-capable network device redirects all TCP traffic with a destination of port 80 or 443 to Cisco WSA, without any configuration on the client. The transparent proxy deployment is used in this design, and the Cisco ASA firewall is used to redirect traffic to the appliance because all of the outbound web traffic passes through the device and is generally managed by the same operations staff who manage Cisco WSA.
+  In a <span style="color: #bb6600;">transparent proxy</span> deployment, a WCCP v2-capable network device redirects all TCP traffic with a destination of port 80 or 443 to Cisco WSA, without any configuration on the client. The transparent proxy deployment is used in this design, and the Cisco ASA firewall is used to redirect traffic to the appliance because all of the outbound web traffic passes through the device and is generally managed by the same operations staff who manage Cisco WSA.
 
-  Reference: https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Aug2013/CVD-WebSecurityUsingCiscoWSADesignGuide-AUG13.pdf
+  In an <span style="color: #bb6600;">explicit proxy</span> deployment, a client application, such as a web browser, is configured to use an HTTP proxy, such as Cisco WSA. 
+
+  Reference: [Web Security Using Cisco WSA - Technology Design Guide](https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Aug2013/CVD-WebSecurityUsingCiscoWSADesignGuide-AUG13.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   After deploying a Cisco ESA on your network, you notice that some messages fail to reach their destinations. Which task can you perform to determine where each message was lost?
 
-  A. Configure the trackingconfig command to enable message tracking.<br>
+  A. Configure the `trackingconfig` command to enable message tracking.<br>
   B. Generate a system report.<br>
   C. Review the log files.<br>
   D. Perform a trace.<br>
@@ -785,7 +799,7 @@ With Cisco Email Security customers can:
 
   Message tracking helps resolve help desk calls by giving a detailed view of message flow. For example, if a message was not delivered as expected, you can determine if it was found to contain a virus or placed in a spam quarantine — or if it is located somewhere else in the mail stream.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_12_0_chapter_011110.html
+  Reference: [User Guide for AsyncOS 12.0 for Cisco Email Security Appliances - GD (General Deployment)](https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_12_0_chapter_011110.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -819,7 +833,7 @@ With Cisco Email Security customers can:
 
   Cisco Email Security Appliance (ESA) protects the email infrastructure and employees who use email at work by filtering unsolicited and malicious email before it reaches the user. Cisco ESA easily integrates into existing email infrastructures with a high degree of flexibility. It does this by acting as a Mail Transfer Agent (MTA) within the email-delivery chain. Another name for an MTA is a mail relay.
 
-  Reference: https://www.cisco.com/c/dam/en/us/td/docs/solutions/SBA/February2013/Cisco_SBA_BN_EmailSecurityUsingCiscoESADeploymentGuide-Feb2013.pdf
+  Reference: [Email Security Using Cisco ESA Deployment Guide](https://www.cisco.com/c/dam/en/us/td/docs/solutions/SBA/February2013/Cisco_SBA_BN_EmailSecurityUsingCiscoESADeploymentGuide-Feb2013.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
