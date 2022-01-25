@@ -3,7 +3,7 @@
 
 ## 13. Malware Protection & AMP
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which Cisco AMP file disposition valid?
 
@@ -12,10 +12,10 @@
   C. dirty<br>
   D. non malicious<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   When using Cisco AMP for Networks which feature copies a file to the Cisco AMP cloud for analysis?
 
@@ -24,10 +24,10 @@
   C. sandbox analysis<br>
   D. malware analysis<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which Cisco Advanced Malware protection for Endpoints deployment architecture is designed to keep data within a network perimeter?
 
@@ -36,10 +36,10 @@
   C. private cloud<br>
   D. public cloud<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which capability is exclusive to a Cisco AMP public cloud instance as compared to a private cloud instance?
 
@@ -48,10 +48,10 @@
   C. SPERO detection engine<br>
   D. TETRA detection engine<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   An engineer is configuring AMP for endpoints and wants to block certain files from executing. Which outbreak control method is used to accomplish this task?
 
@@ -60,10 +60,10 @@
   C. application blocking list<br>
   D. advanced custom detections<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which function is the primary function of Cisco AMP threat Grid?
 
@@ -72,10 +72,10 @@
   C. automated malware analysis<br>
   D. monitoring network traffic<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   What are two list types within AMP for Endpoints Outbreak Control? (Choose two)
 
@@ -85,10 +85,10 @@
   D. allowed applications<br>
   E. URL<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What is a required prerequisite to enable malware file scanning for the Secure Internet Gateway?
 
@@ -97,13 +97,13 @@
   C. Activate SSL decryption.<br>
   D. Enable Intelligent Proxy.<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
 
 ## 14. AAA
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   When wired 802.1X authentication is implemented, which two components are required? (Choose two)
 
@@ -113,10 +113,10 @@
   D. authenticator: Cisco Identity Services Engine<br>
   E. authentication server: Cisco Prime Infrastructure<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Refer to the exhibit. Which command was used to display this output?
 
@@ -134,10 +134,10 @@
   C. show dot1x all summary<br>
   D. show dot1x interface gi1/0/12<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Refer to the exhibit. Which statement about the authentication protocol used in the configuration is true?
 
@@ -151,10 +151,10 @@
   C. The authentication and authorization requests are grouped in a single packet<br>
   D. There are separate authentication and authorization request packets<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 4
+- <span style="color: #008888; font-weight: bold;">Question 4
 
   An engineer needs a solution for TACACS+ authentication and authorization for device administration.
 
@@ -165,10 +165,10 @@
   C. Cisco Stealthwatch<br>
   D. Cisco AMP for Endpoints<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 5
+- <span style="color: #008888; font-weight: bold;">Question 5
 
   Which Cisco command enables authentication, authorization, and accounting globally so that CoA is supported on the device?
 
@@ -177,14 +177,14 @@
   C. auth-type all<br>
   D. ip device-tracking<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
 
 ## 15. Endpoint Protection & Detection
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   An MDM provides which two advantages to an organization with regards to device management? (Choose two)
 
@@ -194,10 +194,10 @@
   D. network device management<br>
   E. critical device management<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which Cisco product provides proactive endpoint protection and allows administrators to centrally manage the deployment?
 
@@ -206,10 +206,10 @@
   C. WSA<br>
   D. ESA<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which benefit does endpoint security provide the overall security posture of an organization?
 
@@ -218,10 +218,10 @@
   C. It allows the organization to detect and respond to threats at the edge of the network.<br>
   D. It allows the organization to detect and mitigate threats that the perimeter security devices do not detect.<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   What are the two most commonly used authentication factors in multifactor authentication? (Choose two)
 
@@ -231,10 +231,10 @@
   D. knowledge factor<br>
   E. encryption factor<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which two kinds of attacks are prevented by multifactor authentication? (Choose two)
 
@@ -244,10 +244,10 @@
   D. DDOS<br>
   E. teardrop<br>
 
-  Answer: B C
+  Answer: <br><br>B C
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   What is the primary difference between an Endpoint Protection Platform and an Endpoint Detection and Response?
 
@@ -256,10 +256,10 @@
   C. EPP focuses on network security, and EDR focuses on device security.<br>
   D. EDR focuses on network security, and EPP focuses on device security.<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   An engineer wants to automatically assign endpoints that have a specific OUI into a new endpoint group. Which probe must be enabled for this type of profiling to work?
 
@@ -268,10 +268,10 @@
   C. SNMP<br>
   D. DHCP<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What are two reasons for implementing a multifactor authentication solution such as Duo Security provide to an organization? (Choose two)
 
@@ -281,12 +281,12 @@
   D. secure access to on-premises and cloud applications<br>
   E. identification and correction of application vulnerabilities before allowing access to resources<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
 ## 16. Cisco Umbrella
 
-<span style="color: blue; font-weight: blue;">Cisco Umbrella Quick Summary</span>
+<span style="color: #008888; font-weight: #008888;">Cisco Umbrella Quick Summary</span>
 
 Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
 
@@ -295,7 +295,7 @@ When Umbrella receives a DNS request, it uses intelligence to determine if the r
 Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   An engineer configured a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network. Which action tests the routing?
 
@@ -304,10 +304,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. Add the public IP address that the client computers are behind to a Core Identity.<br>
   D. Browse to http://welcome.umbrella.com/ to validate that the new identity is working.<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic?
 
@@ -316,10 +316,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. SSL Decryption<br>
   D. Destination Lists<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   How is Cisco Umbrella configured to log only security events?
 
@@ -328,10 +328,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. in the Security Settings section<br>
   D. per network in the Deployments section<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   How does Cisco Umbrella archive logs to an enterprise owned storage?
 
@@ -340,10 +340,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. by the system administrator downloading the logs from the Cisco Umbrella web portal<br>
   D. by being configured to send logs to a self-managed AWS S3 bucket<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   When web policies are configured in Cisco Umbrella, what provides the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats?
 
@@ -352,10 +352,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. Content Category Blocking<br>
   D. File Analysis<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which Cisco solution does Cisco Umbrella integrate with to determine if a URL is malicious?
 
@@ -364,10 +364,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. DynDNS<br>
   D. Talos<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   Where are individual sites specified to be blacklisted in Cisco Umbrella?
 
@@ -376,10 +376,10 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. security settings<br>
   D. destination lists<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which Cisco security solution protects remote users against phishing attacks when they are not connected to the VPN?
 
@@ -388,7 +388,8 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   C. Cisco Firepower<br>
   D. NGIPS<br>
 
-  Answer: 
+  Answer: <br><br>
+
 
 
 # Quiz Set 5
@@ -396,7 +397,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
 ## 17. Security Products & Solutions
 
-<span style="color: blue; font-weight: bold;">Quick summary</span>
+<span style="color: #008888; font-weight: bold;">Quick summary</span>
 
 - StealWatch: performs security analytics by collecting network flows via NetFlow
 - ESA: email security solution which protects against email threats like ransomware, business email compromise, phishing, whaling, and many other email-driven attacks
@@ -444,7 +445,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 </figure>
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   How does Cisco Stealthwatch Cloud provide security for cloud environments?
 
@@ -453,10 +454,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. It assigns Internet-based DNS protection for clients and servers.<br>
   D. It facilitates secure connectivity between public and private networks.<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   What are two Detection and Analytics Engines of Cognitive Threat Analytics? (Choose two)
 
@@ -466,10 +467,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   D. snort<br>
   E. URL categorization<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which network monitoring solution uses streams and pushes operational data to provide a near real-time view of activity?
 
@@ -478,10 +479,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. syslog<br>
   D. model-driven telemetry<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   What provides visibility and awareness into what is currently occurring on the network?
 
@@ -490,10 +491,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. Prime Infrastructure<br>
   D. Telemetry<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   What can be integrated with Cisco Threat Intelligence Director to provide information about security threats, which allows the SOC to proactively automate responses to those threats?
 
@@ -502,10 +503,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. Cisco Threat Grid<br>
   D. Cisco Stealthwatch<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which solution combines Cisco IOS and IOS XE components to enable administrators to recognize applications, collect and send network metrics to Cisco Prime and other third-party management tools, and prioritize application traffic?
 
@@ -514,10 +515,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. Cisco Model Driven Telemetry<br>
   D. Cisco DNA Center<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   Which two activities can be done using Cisco DNA Center? (Choose two)
 
@@ -527,10 +528,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   D. DNS<br>
   E. Provision<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What must be used to share data between multiple security products?
 
@@ -539,10 +540,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. Cisco Advanced Malware Protection<br>
   D. Cisco Stealthwatch Cloud<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   Which Cisco product is open, scalable, and built on IETF standards to allow multiple security products from Cisco and other vendors to share data and interoperate with each other?
 
@@ -551,10 +552,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. Multifactor Platform Integration<br>
   D. Firepower Threat Defense<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   What is a feature of the open platform capabilities of Cisco DNA Center?
 
@@ -563,10 +564,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. domain integration<br>
   D. application adapters<br>
 
-  Answer: 
+  Answer: <br><br>
 
 
-- <span style="color: blue; font-weight: bold;">Question 11</span>
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   What is the function of the Context Directory Agent?
 
@@ -575,13 +576,13 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   C. reads the Active Directory logs to map IP addresses to usernames<br>
   D. accepts user authentication requests on behalf of Web Security Appliance for user identification<br>
 
-  Answer: 
+  Answer: <br><br>
   
 
 
-## 18. 18. Drag Drop
+## 18. Drag Drop
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Drag and drop the Firepower Next Generation Intrusion Prevention System detectors from the left onto the correct definitions on the right.
 
@@ -597,7 +598,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   Answer:
   
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Drag and drop the capabilities from the left onto the correct technologies on the right.
 
@@ -613,7 +614,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   Answer:
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Drag and drop the descriptions from the left onto the correct protocol versions on the right.
 
@@ -629,7 +630,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   Answer:
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Drag and drop the steps from the left into the correct order on the right to enable AppDynamics to monitor an EC2 instance in Amazon Web Services.
 

@@ -30,7 +30,7 @@
 
   Spero analysis examines structural characteristics such as metadata and header information in executable files. After generating a Spero signature based on this information, if the file is an eligible executable file, the device submits it to the Spero heuristic engine in the AMP cloud. Based on the Spero signature, the Spero engine determines whether the file is malware.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Reference_a_wrapper_Chapter_topic_here.html
+  Reference: [Firepower Management Center Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Reference_a_wrapper_Chapter_topic_here.html)
 
   -> Spero analysis only uploads the signature of the (executable) files to the AMP cloud. It does not upload the whole file. Dynamic analysis sends files to AMP ThreatGrid.
 
@@ -109,7 +109,7 @@
 
   Allowed applications lists are for files you never want to convict. Some examples are a custom application that is detected by a generic engine or a standard image that you use throughout the company
 
-  Reference: https://docs.amp.cisco.com/AMP%20for%20Endpoints%20User%20Guide.pdf
+  Reference: [AMP Endpoint Security Guid](https://docs.amp.cisco.com/AMP%20for%20Endpoints%20User%20Guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -280,7 +280,7 @@
   - Risk-based authentication – Sometimes called adaptive multi-factor authentication, this method combines adaptive authentication and algorithms that calculate risk and observe the context of specific login requests. The goal of this method is to reduce redundant logins and provide a more user-friendly workflow.
   - Push-based 2FA – Push-based 2FA improves on SMS and TOTP 2FA by adding additional layers of security while improving ease of use. It confirms a user’s identity with multiple factors of authentication that other methods cannot. Because push-based 2FA sends notifications through data networks like cellular or Wi-Fi, users must have data access on their mobile devices to use the 2FA functionality.
 
-  Reference: https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html
+  Reference: [What Is Multi-Factor Authentication?](https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html)
 
   The two most popular authentication factors are knowledge and inherent (including biometrics like fingerprint, face, and retina scans. Biometrics is used commonly in mobile devices).
 
@@ -334,7 +334,7 @@
   - OUI
   - Operating-system
 
-  Reference: http://www.network-node.com/blog/2016/1/2/ise-20-profiling
+  Reference: [ISE 2.0 - Profiling](http://www.network-node.com/blog/2016/1/2/ise-20-profiling)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -394,7 +394,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
   SSL Decryption is an important part of the Umbrella Intelligent Proxy. he feature allows the Intelligent Proxy to go beyond simply inspecting normal URLs and actually proxy and inspect traffic that’s sent over HTTPS. The SSL Decryption feature does require the root certificate be installed.
 
-  Reference: https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy
+  Reference: [SSL Decryption in the Intelligent Proxy](https://support.umbrella.com/hc/en-us/articles/115004564126-SSL-Decryption-in-the-Intelligent-Proxy)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -417,7 +417,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Log Only Security Events—For security logging only, which gives your users more privacy—a good setting for people with the roaming client installed on personal devices
   Don’t Log Any Requests—Disables all logging. If you select this option, most reporting for identities with this policy will not be helpful as nothing is logged to report on.
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/log-management
+  Reference: [Cisco Umbrella - Manage Your Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-management)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -436,7 +436,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   The Cisco Umbrella Multi-Org console has the ability to upload, store, and archive traffic activity logs from your organizations’ Umbrella dashboards to the cloud through Amazon S3. CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes so that there’s a minimum of delay between traffic from the organization’s Umbrella dashboard being logged and then being available to download from an S3 bucket.
   By having your organizations’ logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage.
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/manage-logs
+  Reference: [Cisco Umbrella - Manage Logs](https://docs.umbrella.com/deployment-umbrella/docs/manage-logs)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -482,7 +482,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
 
   A destination list is a list of internet destinations that can be blocked or allowed based on the administrative preferences for the policies applied to the identities within your organization. A destination is an IP address (IPv4), URL, or fully qualified domain name. You can add a destination list to Umbrella at any time; however, a destination list does not come into use until it is added to a policy.
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/working-with-destination-lists
+  Reference: [Cisco Umbrella - Manage Destination Lists](https://docs.umbrella.com/deployment-umbrella/docs/working-with-destination-lists)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -499,6 +499,7 @@ Cisco Umbrella roaming protects your employees even when they are off the VPN.
   Explanation
 
   Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent. Cisco Umbrella roaming protects your employees even when they are off the VPN.
+
 
 
 # Quiz Set 5
@@ -591,7 +592,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   - Command-and-control (C2) communication: Cognitive Threat Analytics combines a wide range of data, ranging from statistics collected on an Internet-wide level to host-specific local anomaly scores. Combining these indicators inside the statistical detection algorithms allows us to distinguish C2 communication from benign traffic and from other malicious activities. Cognitive Threat Analytics recognizes C2 even in HTTPS-encoded or anonymous traffic, including Tor, without any need to decrypt transferred content, detecting a broad range of threats
   …
 
-  Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/cognitive-threat-analytics/at-a-glance-c45-736555.pdf
+  Reference: [Cisco Cognitive Threat Analytics](https://www.cisco.com/c/dam/en/us/products/collateral/security/cognitive-threat-analytics/at-a-glance-c45-736555.pdf)
 
 
 - <span style="color: blue; font-weight: bold;">Question 3</span>
@@ -611,7 +612,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Model-Driven Telemetry is a new approach for network monitoring in which data is streamed from network devices continuously using a push model and provides near real-time access to operational statistics. Applications can subscribe to specific data items they need, by using standard-based YANG data models over NETCONF-YANG. Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
 
-  Reference: https://developer.cisco.com/docs/ios-xe/#!streaming-telemetry-quick-start-guide
+  Reference: [Streaming Telemetry](https://developer.cisco.com/docs/ios-xe/#!streaming-telemetry-quick-start-guide)
 
 
 - <span style="color: blue; font-weight: bold;">Question 4</span>
@@ -629,7 +630,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Telemetry – Information and/or data that provides awareness and visibility into what is occurring on the network at any given time from networking devices, appliances, applications or servers in which the core function of the device is not to generate security alerts designed to detect unwanted or malicious activity from computer networks.
 
-  Reference: https://www.cisco.com/c/dam/en_us/about/doing_business/legal/service_descriptions/docs/active-threat-analytics-premier.pdf
+  Reference: [Service Description: Cisco Active Threat Analytics – Premier](https://www.cisco.com/c/dam/en_us/about/doing_business/legal/service_descriptions/docs/active-threat-analytics-premier.pdf)
 
 
 - <span style="color: blue; font-weight: bold;">Question 5</span>
@@ -647,7 +648,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Cisco Threat Intelligence Director (CTID) can be integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc) deployed by your organization to ingest threat intelligence automatically.
 
-  Reference: https://blogs.cisco.com/developer/automate-threat-intelligence-using-cisco-threat-intelligence-director
+  Reference: [Automate Threat Intelligence Using Cisco Threat Intelligence Director](https://blogs.cisco.com/developer/automate-threat-intelligence-using-cisco-threat-intelligence-director)
 
   Note: ThreatQ, AlienVault, Infoblox etc are external Threat Intelligence Platforms
 
@@ -667,7 +668,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   The Cisco Application Visibility and Control (AVC) solution leverages multiple technologies to recognize, analyze, and control over 1000 applications, including voice and video, email, file sharing, gaming, peer-to-peer (P2P), and cloud-based applications. AVC combines several Cisco IOS/IOS XE components, as well as communicating with external tools, to integrate the following functions into a powerful solution…
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/avc/guide/avc-user-guide/avc_tech_overview.html
+  Reference: [Cisco Application Visibility and Control User Guide](https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/avc/guide/avc-user-guide/avc_tech_overview.html)
 
 
 
@@ -695,7 +696,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Assurance: Cisco DNA Assurance, using AI/ML, enables every point on the network to become a sensor, sending continuous streaming telemetry on application performance and user connectivity in real time. The clean and simple dashboard shows detailed network health and flags issues. Then, guided remediation automates resolution to keep your network performing at its optimal with less mundane troubleshooting work. The outcome is a consistent experience and proactive optimization of your network, with less time spent on troubleshooting tasks.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html
+  Reference: [Cisco DNA Center Solution Overview](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html)
 
 
 - <span style="color: blue; font-weight: bold;">Question 8</span>
@@ -755,11 +756,11 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   CDA runs on a Cisco Linux machine; monitors in real time a collection of Active Directory domain controller (DC) machines for authentication-related events that generally indicate user logins; learns, analyzes, and caches mappings of IP Addresses and user identities in its database; and makes the latest mappings available to its consumer devices.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ibf/cda_10/Install_Config_guide/cda10/cda_oveviw.html
+  Reference: [Installation and Configuration Guide for Context Directory Agent, Release 1.0](https://www.cisco.com/c/en/us/td/docs/security/ibf/cda_10/Install_Config_guide/cda10/cda_oveviw.html)
 
 
 
-## 18. 18. Drag Drop
+## 18. Drag Drop
 
 - <span style="color: blue; font-weight: bold;">Question 1</span>
 
