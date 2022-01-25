@@ -3,7 +3,7 @@
 
 ## 09. Identity Services Engine
 
-- <span style="color: blue; font-weight: bold;">Question 1</span> 
+- <span style="color: #008888; font-weight: bold;">Question 1</span> 
   
   An administrator wants to ensure that all endpoints are compliant before users are allowed access on the corporate network. The endpoints must have the corporate antivirus application installed and be running the latest build of Windows 10. What must the administrator implement to ensure that all devices are compliant before they are allowed on the network? 
   
@@ -15,7 +15,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
   
   An engineer must force an endpoint to re-authenticate an already authenticated session without disrupting the endpoint to apply a new or updated policy from ISE. Which CoA type achieves this goal? 
   
@@ -27,7 +27,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
   
   Which two probes are configured to gather attributes of connected endpoints using Cisco Identity Services Engine? (Choose two)
   
@@ -40,7 +40,7 @@
   Answer: A C
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
   
   Which ID store requires that a shadow user be created on Cisco ISE for the admin login to work?
   
@@ -52,7 +52,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
   
   An engineer used a posture check on a Microsoft Windows endpoint and discovered that the MS17-010 patch was not installed, which left the endpoint vulnerable to WannaCry ransomware. Which two solutions mitigate the risk of this ransom ware infection? (Choose two)
   
@@ -82,7 +82,7 @@
   Reference: https://community.cisco.com/t5/security-documents/ise-posture-prescriptive-deployment-guide/ta-p/3680273
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
   
   Which feature of Cisco ASA allows VPN users to be postured against Cisco ISE without requiring an inline posture node?
   
@@ -94,7 +94,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
   
   What two mechanisms are used to redirect users to a web portal to authenticate to ISE for guest services? (Choose two)
   
@@ -107,7 +107,7 @@
   Answer: B D
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
   
   For which two conditions can an endpoint be checked using ISE posture assessment? (Choose two)
   
@@ -120,7 +120,7 @@
   Answer: A D
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   Which compliance status is shown when a configured posture policy requirement is not met?
   
@@ -146,7 +146,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_010111.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
   
   Which benefit is provided by ensuring that an endpoint is compliant with a posture policy configured in Cisco ISE?
   
@@ -160,7 +160,7 @@
 
 ## 10. Layer 2 Security
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which IPS engine detects ARP spoofing?
 
@@ -172,7 +172,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   What is a characteristic of Dynamic ARP Inspection?
 
@@ -184,7 +184,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   What is a characteristic of traffic storm control behavior?
 
@@ -196,7 +196,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   A malicious user gained network access by spoofing printer connections that were authorized using MAB on four different switch ports at the same time. What two catalyst switch security features will prevent further violations? (Choose two)
 
@@ -210,7 +210,7 @@
   Answer: A E
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which command enables 802.1X globally on a Cisco switch?
 
@@ -222,7 +222,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which RADIUS attribute can you use to filter MAB requests in an 802.1 x deployment?
 
@@ -240,7 +240,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/config_guide_c17-663759.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   A network administrator configures Dynamic ARP Inspection on a switch. After Dynamic ARP Inspection is applied, all users on that switch are unable to communicate with any destination. The network administrator checks the interface status of all interfaces, and there is no err-disabled interface. What is causing this problem?
 
@@ -266,7 +266,7 @@
   ```
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
     Refer to the exhibit.
 
@@ -293,7 +293,7 @@
 
 ## 11. Secure Network Access
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   Which SNMPv3 configuration must be used to support the strongest security possible?
 
@@ -332,7 +332,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Refer to the exhibit. Which command was used to generate this output and to show which ports are authenticating with dot1x or mab?
 
@@ -354,7 +354,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   What Cisco command shows you the status of an 802.1X connection on interface gi0/1?
   A. `show authorization status`<br>
@@ -365,7 +365,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Refer to the exhibit. What does the number 15 represent in this configuration?
 
@@ -392,7 +392,7 @@
   The command above restricts which IP source addresses are allowed to access SNMP functions on the router. You could restrict SNMP access by simply applying an interface ACL to block incoming SNMP packets that don’t come from trusted servers. However, this would not be as effective as using the global SNMP commands shown in this recipe. Because you can apply this method once for the whole router, it is much simpler than applying ACLs to block SNMP on all interfaces separately. Also, using interface ACLs would block not only SNMP packets intended for this router, but also may stop SNMP packets that just happened to be passing through on their way to some other destination device.
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Under which two circumstances is a CoA issued? (Choose two)
 
@@ -420,7 +420,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010100.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Refer to the exhibit.
 
@@ -453,7 +453,7 @@
   Note: Cisco IOS supports privilege levels from 0 to 15, but the privilege levels which are used by default are privilege level 1 (user EXEC) and level privilege 15 (privilege EXEC).
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   A network engineer has entered the snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941 command and needs to send SNMP information to a host at 10.255.254.1. Which command achieves this goal?
 
@@ -475,7 +475,7 @@
   Note: In “`snmp-server host inside …`” command, “inside” is the interface name of the ASA interface through which the NMS (located at 10.255.254.1) can be reached.
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which telemetry data captures variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length?
 
@@ -499,7 +499,7 @@
 
 ## 12. Exfiltration Techniques
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   How is ICMP used an exfiltration technique?
 
@@ -511,7 +511,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which exfiltration method does an attacker use to hide and encode data inside DNS requests and queries?
 
@@ -527,7 +527,7 @@
   DNS Tunneling is a method of cyber attack that encodes the data of other programs or protocols in DNS queries and responses. DNS tunneling often includes data payloads that can be added to an attacked DNS server and used to control a remote server and applications.
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   How is DNS tunneling used to exfiltrate data out of a corporate network?
 
@@ -563,7 +563,7 @@
   Reference: https://learn-umbrella.cisco.com/i/775902-dns-tunneling/0
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which two characteristics of messenger protocols make data exfiltration difficult to detect and prevent? (Choose two)
 
