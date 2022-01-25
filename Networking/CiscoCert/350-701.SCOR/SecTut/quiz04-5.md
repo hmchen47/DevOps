@@ -121,7 +121,7 @@
   Refer to the exhibit. Which command was used to display this output?
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('page')"
       src    = "img/1402-show_dot1x_all.jpg"
       alt    = "Output of show dot1x all"
@@ -172,10 +172,10 @@
 
   Which Cisco command enables authentication, authorization, and accounting globally so that CoA is supported on the device?
 
-  A. aaa server radius dynamic-author<br>
-  B. aaa new-model<br>
-  C. auth-type all<br>
-  D. ip device-tracking<br>
+  A. `aaa server radius dynamic-author`<br>
+  B. `aaa new-model`<br>
+  C. `auth-type all`<br>
+  D. `ip device-tracking`<br>
 
   Answer: <br><br>
 

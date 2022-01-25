@@ -331,10 +331,10 @@
     />
   </figure>
 
-  A. show dot1x all<br>
-  B. show dot1x<br>
-  C. show dot1x all summary<br>
-  D. show dot1x interface gi1/0/12<br>
+  A. `show dot1x all`<br>
+  B. `show dot1x`<br>
+  C. `show dot1x all summary`<br>
+  D. `show dot1x interface gi1/0/12`<br>
 
   Answer: A
 
@@ -359,6 +359,14 @@
 
   This command uses RADIUS which combines authentication and authorization in one function (packet).
 
+  Syntax: `radius-server host {hostname | ip-address} [auth-port port-number] [acct-port port-number] [timeout seconds] [retransmit retries] [key string] [alias{hostname | ip-address}]`
+  - `key`:
+    - (Optional) Specifies the authentication and encryption key used between the router and the RADIUS daemon running on this RADIUS server.
+    - The key is a text string that must match the encryption key used on the RADIUS server. Always configure the key as the last item in the `radius-server host` command syntax. This is because the leading spaces are ignored, but spaces within and at the end of the key are used. If you use spaces in the key, do not enclose the key in quotation marks unless the quotation marks themselves are part of the key.
+  - `string`: (Optional) Specifies the authentication and encryption key for all RADIUS communications between the router and the RADIUS server. This key must match the encryption used on the RADIUS daemon.
+
+  Reference: [RADIUS Commands](https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfrad.html#wp1017661)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4
 
@@ -378,10 +386,10 @@
 
   Which Cisco command enables authentication, authorization, and accounting globally so that CoA is supported on the device?
 
-  A. aaa server radius dynamic-author<br>
-  B. aaa new-model<br>
-  C. auth-type all<br>
-  D. ip device-tracking<br>
+  A. `aaa server radius dynamic-author`<br>
+  B. `aaa new-model`<br>
+  C. `auth-type all`<br>
+  D. `ip device-tracking`<br>
 
   Answer: B
 
