@@ -479,10 +479,10 @@
 
   Why would a user choose an on-premises ESA versus the CES solution?
 
-  A. Sensitive data must remain onsite.>br>
-  B. Demand is unpredictable.>br>
-  C. The server team wants to outsource this service.>br>
-  D. ESA is deployed inline.>br>
+  A. Sensitive data must remain onsite.<br>
+  B. Demand is unpredictable.<br>
+  C. The server team wants to outsource this service.<br>
+  D. ESA is deployed inline.<br>
 
   Answer:<br><br> 
 

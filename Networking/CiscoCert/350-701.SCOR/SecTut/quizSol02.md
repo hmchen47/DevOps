@@ -267,9 +267,11 @@
 
   You can configure your ASA FirePOWER module using one of the following deployment models:
 
-  You can configure your ASA FirePOWER module in either an inline or a monitor-only (inline tap or passive) deployment.
+  You can configure your ASA FirePOWER module in either an **inline** or a **monitor-only** (inline tap or passive) deployment.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/asdm72/firewall/asa-firewall-asdm/modules-sfr.html
+  Reference:
+  - https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/asdm72/firewall/asa-firewall-asdm/modules-sfr.html
+  - https://www.cisco.com/c/en/us/td/docs/security/asa/quick_start/sfr/firepower-qsg.html
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -480,17 +482,21 @@
 
   In order to configure NetFlow on Cisco ASA 5500 Series firewall, we need the following minimum steps:
 
-  - 1\. Configuring NSEL Collectors:
-    flow-export destination interface-name ipv4-address | hostname udp-port
-    For example: hostname (config)# flow-export destination inside 209.165.200.225 2002
+  - 1\. Configuring NSEL <span style="color: #bb6600;">Collectors</span>:
+    `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    For example: `hostname (config)# flow-export destination inside 209.165.200.225 2002`
 
-    The destination keyword indicates that a NSEL collector is being configured. The interface-name argument is the name of the ASA and ASA Services Module interface through which the collector is reached. The ipv4-address argument is the IP address of the machine running the collector application. The hostname argument is the destination IP address or name of the collector. The udp-port argument is the UDP port number to which NetFlow packets are sent.
+    - The `destination` keyword indicates that a NSEL collector is being configured. 
+    - The `interface-name argument` is the name of the ASA and ASA Services Module interface through which the collector is reached. 
+    - The `ipv4-address` argument is the IP address of the machine running the collector application. 
+    - The `hostname` argument is the destination IP address or name of the collector. 
+    - The `udp-port` argument is the UDP port number to which NetFlow packets are sent.
 
     (-> Therefore we only need to let the firewall know the IP address that the NetFlow “Collector” will be running on. We don’t need to apply the NetFlow Exporter to any interface -> Answer C is not correct)
 
-  - 2\. Defines the class map that identifies traffic for which NSEL events need to be exported.
-  - 3\. Defines the policy map to apply flow-export actions to the defined classes.
-  - 4\. Adds or edits the service policy globally.
+  - 2\. Defines the <span style="color: #bb6600;">class map</span> that identifies **traffic** for which NSEL events need to be exported.
+  - 3\. Defines the <span style="color: #bb6600;">policy map</span> to apply **flow-export actions** to the defined classes.
+  - 4\. Adds or edits the <span style="color: #bb6600;">service policy</span> globally.
 
   An example of configuring NetFlow is shown below (using minimum configuration):
 
@@ -541,14 +547,13 @@
 
   Explanation
 
-  The syntax of this command is: flow-export destination interface-name ipv4-address | hostname udp-port
+  The syntax of this command is: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
 
-  This command is used on Cisco ASA to configure Network Secure Event Logging (NSEL) collector to which NetFlow packets are sent. The destination keyword indicates that a NSEL collector is being configured.
-
-  - The interface-name argument is the name of the ASA and ASA Services Module interface through which the collector is reached.
-  - The ipv4-address argument is the IP address of the machine running the collector application.
-  - The hostname argument is the destination IP address or name of the collector.
-  - The udp-port argument is the UDP port number to which NetFlow packets are sent.
+  This command is used on Cisco ASA to configure <span style="color: #bb6600;">Network Secure Event Logging (NSEL) collector</span> to which NetFlow packets are sent. The destination keyword indicates that a NSEL collector is being configured.
+  - The `interface-name` argument is the name of the ASA and ASA Services Module interface through which the collector is reached.
+  - The `ipv4-address` argument is the IP address of the machine running the collector application.
+  - The `hostname` argument is the destination IP address or name of the collector.
+  - The `udp-port` argument is the UDP port number to which NetFlow packets are sent.
 
   You can configure a maximum of five collectors. After a collector is configured, template records are automatically sent to all configured NSEL collectors.
 
@@ -640,10 +645,10 @@ With Cisco Email Security customers can:
 
   Why would a user choose an on-premises ESA versus the CES solution?
 
-  A. Sensitive data must remain onsite.>br>
-  B. Demand is unpredictable.>br>
-  C. The server team wants to outsource this service.>br>
-  D. ESA is deployed inline.>br>
+  A. Sensitive data must remain onsite.<br>
+  B. Demand is unpredictable.<br>
+  C. The server team wants to outsource this service.<br>
+  D. ESA is deployed inline.<br>
 
   Answer: A
 
