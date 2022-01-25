@@ -868,19 +868,17 @@ With Cisco Email Security customers can:
 <span style="color: blue;">Types of clouds</span>
 
 There are 4 types of cloud:
-
-- Private Cloud: cloud that is dedicated solely to one organization. Advantages of Private Clouds are high security, Regulatory compliance, Flexibility to respond to changing needs. Drawbacks of private cloud are cost, mobile difficulty,
-- Public Cloud: cloud that is delivered via the Internet and shared across organizations. Examples of public clouds are Amazon Web Services, Microsoft Azure, and Google Cloud Platform. Advantages of public cloud are lower costs, Freedom from maintenance. Drawbacks of public cloud are Lack of security, minimal technical control
-- Hyrid Cloud: any environment that uses both public and private clouds. Confidential operations like financial reporting, for example, can be run on a private cloud. High-volume, less sensitive workloads like web-based email – or even temporary workloads such as development and test – can run on a public cloud.
-- Community Cloud: a recent variation on the private cloud model that can be only accessible by group of organizations. It shares the infrastructure between several organizations from a specific community. It may be managed internally by organizations or by the third-party.
+- <span style="color: #bb6600">Private Cloud</span>: cloud that is dedicated solely to one organization. Advantages of Private Clouds are high security, Regulatory compliance, Flexibility to respond to changing needs. Drawbacks of private cloud are cost, mobile difficulty,
+- <span style="color: #bb6600">Public Cloud</span>: cloud that is delivered via the Internet and shared across organizations. Examples of public clouds are Amazon Web Services, Microsoft Azure, and Google Cloud Platform. Advantages of public cloud are lower costs, Freedom from maintenance. Drawbacks of public cloud are Lack of security, minimal technical control
+- <span style="color: #bb6600">Hyrid Cloud</span>: any environment that uses both public and private clouds. Confidential operations like financial reporting, for example, can be run on a private cloud. High-volume, less sensitive workloads like web-based email – or even temporary workloads such as development and test – can run on a public cloud.
+- <span style="color: #bb6600">Community Cloud</span>: a recent variation on the private cloud model that can be only accessible by group of organizations. It shares the infrastructure between several organizations from a specific community. It may be managed internally by organizations or by the third-party.
 
 <span style="color: blue;">Cloud services</span>
 
 There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
-
-- SaaS (Software as a Service): SaaS uses the web to deliver applications that are managed by a third-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can be run directly from a web browser without any downloads or installations required, although some require plugins.
-- PaaS (Platform as a Service): are used for applications, and other development, while providing cloud components to software. What developers gain with PaaS is a framework they can build upon to develop or customize applications. PaaS makes the development, testing, and deployment of applications quick, simple, and cost-effective. With this technology, enterprise operations, or a third-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS software itself. Developers, however, manage the applications. PaaS provides everything except applications.
-- IaaS (Infrastructure as a Service): self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
+- <span style="color: #bb6600;">SaaS (Software as a Service)</span>: SaaS uses the web to deliver applications that are managed by a third-party vendor and whose interface is accessed on the clients’ side. Most SaaS applications can be run directly from a web browser without any downloads or installations required, although some require plugins.
+- <span style="color: #bb6600;">PaaS (Platform as a Service)</span>: are used for applications, and other development, while providing cloud components to software. What developers gain with PaaS is a framework they can build upon to develop or customize applications. PaaS makes the development, testing, and deployment of applications quick, simple, and cost-effective. With this technology, enterprise operations, or a third-party provider, can manage OSes, virtualization, servers, storage, networking, and the PaaS software itself. Developers, however, manage the applications. PaaS provides everything except applications.
+- <span style="color: #bb6600;">IaaS (Infrastructure as a Service)</span>: self-service models for accessing, monitoring, and managing remote datacenter infrastructures, such as compute (virtualized or bare metal), storage, networking, and networking services (e.g. firewalls). Instead of having to purchase hardware outright, users can purchase IaaS based on consumption, similar to electricity or other utility billing.
 
 <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
   <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
@@ -902,6 +900,18 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   D. Cisco Cloudlock<br>
 
   Answer: D
+
+  Explanation
+
+  Cisco Cloudlock is a cloud-based Cloud Access Security Broker (CASB) and cloud cybersecurity platform that helps organizations securely leverage use of applications in the cloud.  Cisco Cloudlock delivers visibility and control for  cloud application environments across users, data, and applications.  Depending upon the applicable Cisco Cloudlock subscription, customers may be afforded the right on an opt-in basis to access and use Cisco Umbrella features as part of  their Cisco Cloudlock subscription, including by way of example, DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware.
+
+  The core functionality of Cisco Cloudlock covers the following four use cases:
+  - Data Loss Prevention (DLP)
+  - User and Entity Behavior Analytics (UEBA)
+  - Apps Firewall (Apps Firewall)
+  - App Discovery (App Discovery)
+
+  Reference: [Offer Description: Cisco Cloudlock](https://www.cisco.com/c/dam/en_us/about/doing_business/legal/OfferDescriptions/cisco-cloudlock-offer-description.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -985,6 +995,12 @@ There are 3 main types of as-a-Service solutions: SaaS, PaaS and IaaS
   D. Tetration<br>
 
   Answer: D
+
+  Explanation
+
+  Cisco Tetration offers holistic workload protection for multicloud data centers by enabling a zero-trust model using segmentation. This approach allows you to identify security incidents faster, contain lateral movement, and reduce your attack surface.
+
+  Reference: [Hybrid Cloud Workload Protecction](https://www.cisco.com/c/en_sg/products/data-center-analytics/tetration-analytics/index.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>

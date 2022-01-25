@@ -708,7 +708,7 @@
   C. It deletes any application that does not belong in the network.<br>
   D. It sends the application information to an administrator to act on.<br>
 
-  Answer:<br><br> B
+  Answer:<br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
