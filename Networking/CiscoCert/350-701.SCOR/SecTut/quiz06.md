@@ -13,7 +13,7 @@
   C. It allows ARP traffic with a single access rule<br>
   D. It has an IP address on its BVI interface and is used for management traffic<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -25,7 +25,7 @@
   C. Common Exploits and Vulnerabilities<br>
   D. Common Vulnerabilities, Exploits and Threats<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -38,7 +38,7 @@
   D. destination port<br>
   E. output logical interface<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -48,9 +48,9 @@
   A. NetFlow<br>
   B. desktop client<br>
   C. ASDM<br>
-  D. A<br>
+  D. API<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -66,7 +66,7 @@
     />
   </figure>
 
-  Answer:
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -78,7 +78,7 @@
   C. overflowing the buffer’s memory<br>
   D. inserting malicious commands into the database<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -90,7 +90,7 @@
   C. ISE<br>
   D. AMP<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -102,7 +102,7 @@
   C. Web Security Appliance<br>
   D. Cisco ISE<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -114,7 +114,7 @@
   C. Configure the port using the ip ssh port 22 command.<br>
   D. Generate the RSA key using the crypto key generate rsa command.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -126,7 +126,7 @@
   C. The file upload is abandoned.<br>
   D. The ESA immediately makes another attempt to upload the file.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -138,7 +138,7 @@
   C. MD5<br>
   D. SHA<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -150,7 +150,7 @@
   C. external identity source<br>
   D. SNMP probe<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -162,7 +162,7 @@
   C. 5<br>
   D. 10<br>
 
-  Answer:   
+  Answer: <br><br>   
 
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
@@ -174,7 +174,7 @@
   C. CSIRT<br>
   D. DEVNET<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -187,7 +187,7 @@
   D. User managed<br>
   E. Enterprise managed<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -200,7 +200,7 @@
   D. volume-based<br>
   E. screen-based<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -223,7 +223,7 @@
   C. SMTP relay server authentication<br>
   D. external user and relay mail authentication<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -235,7 +235,7 @@
   C. Configure the Cisco WSA to receive real-time updates from Talos<br>
   D. Configure the Cisco ESA to modify policies based on the traffic seen<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 19</span>
@@ -247,7 +247,7 @@
   C. Cognitive Threat Analytics<br>
   D. Cisco Talos Intelligence<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -260,7 +260,7 @@
   D. The Cisco WSA uses a Layer 3 device to redirect traffic only if it is running in transparent mode.<br>
   E. The Cisco WSA responds with its own IP address only if it is running in transparent mode.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>
@@ -272,7 +272,7 @@
   C. Modify outbound malware scanning policies<br>
   D. Modify web proxy settings<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -284,7 +284,7 @@
   C. to enable the controller to use REST<br>
   D. to allow for the static configuration of control plane applications<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 23</span>
@@ -307,7 +307,7 @@
   C. Site-to-site VPN peers are using different encryption algorithms.<br>
   D. Site-to-site VPN preshared keys are mismatched.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -319,7 +319,7 @@
   C. software bugs on applications<br>
   D. improper file security<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -332,7 +332,7 @@
   D. MAC addresses<br>
   E. port numbers<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
@@ -345,7 +345,7 @@
   D. Cisco Prime Infrastructure<br>
 
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
@@ -358,7 +358,7 @@
   D. They converge multiple accounting technologies into one accounting mechanism<br>
   E. They provide monitoring of a wider range of IP packet information from Layer 2 to 4<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 28</span>
@@ -370,7 +370,7 @@
   C. An attacker uses a non-standard DNS port to gain access to the organization’s DNS servers in order to poison the resolutions.<br>
   D. An attacker sends an email to the target with hidden DNS resolvers in it to redirect them to a malicious domain.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 29</span>
@@ -382,7 +382,7 @@
   C. pharming<br>
   D. SYN flood<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -394,7 +394,7 @@
   C. Configure policies to stop and reject communication<br>
   D. Configure the Cisco ESA to reset the TCP connection<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
@@ -407,7 +407,7 @@
   D. allow<br>
   E. monitor<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -419,7 +419,7 @@
   C. NetFlow<br>
   D. VPC flow logs<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -431,7 +431,7 @@
   C. Configure Directory Harvest Attack Prevention<br>
   D. Bypass LDAP access queries in the recipient access table<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 34</span>
@@ -443,7 +443,7 @@
   C. Secure NetFlow connections are optimized for Cisco Prime Infrastructure<br>
   D. Flow-create events are delayed<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 35</span>
@@ -455,7 +455,7 @@
   C. TCP 49<br>
   D. UDP 1812<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 36</span>
@@ -467,7 +467,7 @@
   C. VMware ESXi<br>
   D. Amazon Web Services<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 37</span>
@@ -483,7 +483,7 @@
     />
   </figure>
 
-  Answer:
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 38</span>
@@ -495,7 +495,7 @@
   C. to provision userless and agentless systems<br>
   D. to manage and deploy antivirus definitions and patches on systems owned by the end user<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 39</span>
@@ -520,7 +520,7 @@
   C. ip dhcp snooping vlan 41<br>
   D. ip dhcp snooping trust<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 40</span>
@@ -532,7 +532,7 @@
   C. It provides the certificate client information so the server can authenticate against it when installing<br>
   D. It is the certificate that will be loaded onto the server<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 41</span>
@@ -544,7 +544,7 @@
   C. Cisco AMP<br>
   D. Cisco App Dynamics<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 42</span>
@@ -556,7 +556,7 @@
   C. ASA<br>
   D. ESA<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -568,7 +568,7 @@
   C. It utilizes sensors that send messages securely.<br>
   D. It uses machine learning and real-time behavior analytics.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 44</span>
@@ -580,7 +580,7 @@
   C. Cisco FMC supports pushing configurations to devices while Cisco ASDM does not.<br>
   D. Cisco FMC supports all firewall products whereas Cisco ASDM only supports Cisco ASA devices<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 45</span>
@@ -592,7 +592,7 @@
   C. Cisco Firepower natively provides intrusion prevention capabilities while Cisco ASA does not.<br>
   D. Cisco ASA provides SSL inspection while Cisco Firepower does not.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 46</span>
@@ -604,7 +604,7 @@
   C. Client computers do not have an SSL certificate deployed from an internal CA server.<br>
   D. Intelligent proxy and SSL decryption is disabled in the policy.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 47</span>
@@ -617,7 +617,7 @@
   D. applications<br>
   E. data<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 48</span>
@@ -629,7 +629,7 @@
   C. development security<br>
   D. isolated security team<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 49</span>
@@ -641,7 +641,7 @@
   C. storm control<br>
   D. access control lists<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 50</span>
@@ -654,7 +654,7 @@
   D. Triple AMC-CBC<br>
   E. AES-CBC<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 51</span>
@@ -670,7 +670,7 @@
     />
   </figure>
 
-  Answer:
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 52</span>
@@ -682,7 +682,7 @@
   C. cross-site s<br>cripting
   D. insecure API<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 
@@ -698,7 +698,7 @@
   C. teardrop<br>
   D. LAND<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 54</span>
@@ -710,7 +710,7 @@
   C. to expose the endpoint to more threats<br>
   D. because human error or insider threats will still exist<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 55</span>
@@ -722,7 +722,7 @@
   C. northbound API<br>
   D. eastbound API<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 56</span>
@@ -738,7 +738,7 @@
     />
   </figure>
 
-  Answer:
+  Answer: <br><br>
   
 
 - <span style="color: #008888; font-weight: bold;">Question 57</span>
@@ -750,7 +750,7 @@
   C. Floating static routes are required.<br>
   D. HSRP is used for fallover.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 58</span>
@@ -762,7 +762,7 @@
   C. RSA<br>
   D. 3DES<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 59</span>
@@ -775,7 +775,7 @@
   D. provides the capability to only know the key on one side<br>
   E. utilization of less memory<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 60</span>
@@ -788,7 +788,7 @@
   D. SCP<br>
   E. HTTP<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 61</span>
@@ -800,7 +800,7 @@
   C. MAC spoofing<br>
   D. IP spoofing<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 62</span>
@@ -812,7 +812,7 @@
   C. DMVPN supports static tunnel establishment, whereas sVTI does not.<br>
   D. DMVPN provides interoperability with other vendors, whereas sVTI does not.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 63</span>
@@ -824,7 +824,7 @@
   C. Cisco FTDv runs on AWS while ASAv does not<br>
   D. Cisco FTDv supports URL filtering while ASAv does not<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 64</span>
@@ -836,7 +836,7 @@
   C. when there is no firewall on the network<br>
   D. when there is a need to have more advanced detection capabilities<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 65</span>
@@ -848,7 +848,7 @@
   C. northbound API<br>
   D. eastbound API<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 66</span>
@@ -860,7 +860,7 @@
   C. missing encryption<br>
   D. lack of file permission<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 67</span>
@@ -872,7 +872,7 @@
   C. It defines the format of data records.<br>
   D. It serves as a unique identification number to distinguish individual data records<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 68</span>
@@ -888,7 +888,7 @@
     />
   </figure>
 
-  Answer:
+  Answer: <br><br>
   
 
 - <span style="color: #008888; font-weight: bold;">Question 69</span>
@@ -900,7 +900,7 @@
   C. encryption<br>
   D. authentication<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 70</span>
@@ -912,7 +912,7 @@
   C. preserved with both stateful and stateless failover
   D. need to be reestablished with both stateful and stateless failover
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 71</span>
@@ -924,7 +924,7 @@
   C. NGE<br>
   D. nonexportable<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 
