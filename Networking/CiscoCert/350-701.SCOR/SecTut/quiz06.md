@@ -496,6 +496,18 @@
     />
   </figure>
 
+  Group 1:<br>
+  A. interesting file access<br>
+  B. file access from a different user<br>
+  C. user login suspicious behavior<br>
+  D. privilege escalation<br>
+
+  Group 2: <br>
+  1\. Cisco Tetration platform can be armed to look at sensitive files<br>
+  2\. Watches for privilege changes in the process lineage tree<br>
+  3\. Cisco Tetration platform watches user login failures and user login methods<br>
+  4\. Cisco Tetration platform learns the normal behavior of which file is accessed by which user<br>
+
   Answer: <br><br>
 
 
@@ -528,10 +540,10 @@
 
   An organization is using DHCP Snooping within their network. A user on VLAN 41 on a new switch is complaining that an IP address is not being obtained. Which command should be configured on the switch interface in order to provide the user with network connectivity?
 
-  A. ip dhcp snooping verify mac-address<br>
-  B. ip dhcp snooping limit 41<br>
-  C. ip dhcp snooping vlan 41<br>
-  D. ip dhcp snooping trust<br>
+  A. `ip dhcp snooping verify mac-address`<br>
+  B. `ip dhcp snooping limit 41`<br>
+  C. `ip dhcp snooping vlan 41`<br>
+  D. `ip dhcp snooping trust`<br>
 
   Answer: <br><br> 
 

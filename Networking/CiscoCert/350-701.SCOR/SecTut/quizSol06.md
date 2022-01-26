@@ -636,6 +636,8 @@
 
   Explanation
 
+  <span style="color: #bb6600;">Flexible NetFlow</span> is the next-generation in flow technology allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability.
+
   Key Advantages to using Flexible NetFlow:
   - Flexibility, scalability of flow data beyond traditional NetFlow
   - The ability to monitor a wider range of packet information producing new information about network behavior not available today
@@ -644,9 +646,13 @@
   - Convergence of multiple accounting technologies into one accounting mechanism (-> Therefore answer D is correct)
   Flexible NetFlow is integral part of Cisco IOS Software that collects and measures data allowing all routers or switches in the network to become a source of telemetry and a monitoring device. Flexible NetFlow allows extremely granular and accurate traffic measurements and high-level aggregated traffic collection. Because it is part of Cisco IOS Software, Flexible NetFlow enables Cisco product-based networks to perform traffic flow analysis without purchasing external probes–making traffic analysis economical on large IP networks.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/flexible-netflow/product_data_sheet0900aecd804b590b.html
+  Reference: [Cisco IOS Flexible NetFlow](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/flexible-netflow/product_data_sheet0900aecd804b590b.html)
 
   Note: Although answer C seems to be correct, but it is the benefit of traditional NetFlow:
+
+  <span style="color: #bb6600;">NetFlow</span> is a Cisco IOS technology that provides statistics on packets flowing through the router. NetFlow is the standard for acquiring IP operational data from IP networks.
+
+  Flexible NetFlow improves on original NetFlow by adding the capability to customize the traffic analysis parameters for your specific requirements. 
 
   NetFlow is typically used for several key customer applications, including the following:
 
@@ -654,7 +660,7 @@
 
   Billing and accounting. NetFlow data provides fine-grained metering (for instance, flow data includes details such as IP addresses, packet and byte counts, time stamps, type of service (ToS), and application ports) for highly flexible and detailed resource utilization accounting. Service providers may use the information for billing based on time of day, bandwidth usage, application usage, quality of service, and so on. Enterprise customers may use the information for departmental charge back or cost allocation for resource utilization.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fnetflow/configuration/15-mt/fnf-15-mt-book/fnf-fnetflow.html
+  Reference: [Flexible Netflow Overview](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/fnetflow/configuration/15-mt/fnf-15-mt-book/fnf-fnetflow.html)
 
   Note: Traditional NetFlow allows us to monitor from Layer 2 to 4 but Flexible NetFlow goes beyond these layers.
 
@@ -696,10 +702,11 @@
 
   Explanation
 
-  Each Mail Flow Policy has an access rule, such as ACCEPT, REJECT, RELAY, CONTINUE, and TCPREFUSE. A host that attempts to establish a connection to your ESA and matches a Sender Group using a TCPREFUSE access rule is not allowed to connect to your ESA. From the standpoint of the sending server, it will appear as if your server is unavailable. Most Mail Transfer Agents (MTAs) will retry frequently in this case, which will create more traffic then answering once with a clear hard bounce, for example, REJECT.
-  A host that attempts to establish a connection to your ESA and encounters a REJECT will receive a 554 SMTP error (hard bounce).
+  Each Mail Flow Policy has an access rule, such as `ACCEPT`, `REJECT`, `RELAY`, `CONTINUE`, and `TCPREFUSE`. A host that attempts to establish a connection to your ESA and matches a Sender Group using a `TCPREFUSE` access rule is not allowed to connect to your ESA. From the standpoint of the sending server, it will appear as if your server is unavailable. Most Mail Transfer Agents (MTAs) will retry frequently in this case, which will create more traffic then answering once with a clear hard bounce, for example, `REJECT`.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118007-configure-esa-00.html
+  A host that attempts to establish a connection to your ESA and encounters a `REJECT` will receive a 554 SMTP error (hard bounce).
+
+  Reference: [On the ESA, What is the Difference between REJECT and TCPREFUSE?](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118007-configure-esa-00.html)
 
   Note: Answer A is not correct because ESA can only drop the malicious emails after receiving them, not during the initial TCP communication.
 
@@ -722,6 +729,15 @@
 
   Note: With action “trust”, Firepower does not do any more inspection on the traffic. There will be no intrusion protection and also no file-policy on this traffic.
 
+  Traffic is evaluated as follows:
+  - Rule 1: <span style="color: #bb6600;">Monitor</span> evaluates traffic first. Monitor rules track and log network traffic. The system continues to match traffic against additional rules to determine <span style="text-decoration: underline;">whether to permit or deny it</span>. (However, see an important exception and caveat at Access Control Rule Monitor Action.) -> Answer E is not correct.
+  - Rule 2: <span style="color: #bb6600;">Trust</span> evaluates traffic next. Matching traffic is allowed to pass to its destination <span style="text-decoration: underline;">without further inspection</span>, though it is still subject to identity requirements and rate limiting. Traffic that does not match continues to the next rule. -> Answer B is correct.
+  - Rule 3: <span style="color: #bb6600;">Block</span> evaluates traffic third. Matching traffic is blocked without further inspection. Traffic that does not match continues to the final rule.
+  - Rule 4: <span style="color: #bb6600;">Allow</span> is the final rule. For this rule, matching traffic is allowed; however, prohibited files, malware, intrusions, and exploits within that traffic are detected and blocked. Remaining non-prohibited, non-malicious traffic is allowed to its destination, though it is still subject to identity requirements and rate limiting. You can configure Allow rules that perform <span style="text-decoration: underline;">only file inspection, or only intrusion inspection, or neither</span>. -> depending on configuration, might be nor inspection -> Answer D is correct
+  - <span style="color: #bb6600;">Default Action</span> handles all traffic that does not match any of the rules. In this scenario, the default action performs intrusion prevention before allowing non-malicious traffic to pass. In a different deployment, you might have a default action that trusts or blocks all traffic, without further inspection. (You cannot perform file or malware inspection on traffic handled by the default action.)
+
+  Reference: [Firepower Management Center Configuration Guide, Version 6.1](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
 
@@ -740,7 +756,7 @@
 
   Now there’s a new option for Amazon Web Services (AWS) customers who operate virtual private cloud (VPC) networks. AWS recently introduced VPC Flow Logs, which facilitate logging of all the IP traffic to, from, and across your network. These logs are stored as records in special Amazon CloudWatch log groups and provide the same kind of information as NetFlow data.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/stealthwatch-cloud/at-a-glance-c45-739851.html
+  Reference: [Network Monitoring in AWS Virtual Private Cloud Environments At-a-Glance](https://www.cisco.com/c/en/us/products/collateral/security/stealthwatch-cloud/at-a-glance-c45-739851.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -775,10 +791,15 @@
   Explanation
 
   The ASA and ASASM implementations of NetFlow Secure Event Logging (NSEL) provide the following major functions:
-  …
-  – Delays the export of flow-create events.
+  - Tracks flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records. 
+  - Triggers flow-update events and generates appropriate NSEL data  records.
+  - Defines and exports  templates that describe the progression of a flow. Templates  describe the format of  the  data  records  that  are exported through NetFlow.  Each event has several record  formats or templates associated with  it.
+  - Tracks configured NSEL collectors and delivers templates and data records to these configured NSEL collectors through NetFlow over UDP only.
+  - Sends template information periodically to NSEL collectors.  Collectors receive template definitions, normally before receiving flow records.
+  - Filters NSEL events based on the traffic and event type through Modular Policy Framework, then sends records to different collectors. Traffic is matched based on the order in which  classes are configured.
+  - Delays the export of flow-create events. -> Answer D is correct.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/configuration/general/asa-general-cli/monitor-nsel.pdf
+  Reference: [NetFlow Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/configuration/general/asa-general-cli/monitor-nsel.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 35</span>
@@ -817,7 +838,7 @@
   In passive mode, NGFWv inspects packets like an Intrusion Detection System (IDS) appliance, but no action can be taken on the packet.
   In routed mode NGFWv acts as a next hop for workloads. It can inspect packets and also take action on the packet based on rule and policy definitions.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/adaptive-security-virtual-appliance-asav/white-paper-c11-740505.html
+  Reference: [Introduction to the Cisco ASAv](https://www.cisco.com/c/en/us/td/docs/security/asa/asa916/asav/getting-started/asav-916-gsg/asav_intro.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 37</span>
@@ -834,26 +855,26 @@
   </figure>
 
   Answer:
-  - Cisco Tetration platform can be armed to look at sensitive files: interesting file access
-  - Watches for privilege changes in the process lineage tree: privilege escalation
-  - Cisco Tetration platform watches user login failures and user login methods: user login suspicious behavior
-  - Cisco Tetration platform learns the normal behavior of which file is accessed by which user: file access from a different user
+  - Cisco Tetration platform can be armed to look at sensitive files: (A) interesting file access
+  - Watches for privilege changes in the process lineage tree: (D) privilege escalation
+  - Cisco Tetration platform watches user login failures and user login methods: (C) user login suspicious behavior
+  - Cisco Tetration platform learns the normal behavior of which file is accessed by which user: (B) file access from a different user
 
   Explanation
 
   Cisco Tetration platform studies the behavior of the various processes and applications in the workload, measuring them against known bad behavior sequences. It also factors in the process hashes it collects. By studying various sets of malwares, the Tetration Analytics engineering team deconstructed it back into its basic building blocks. Therefore, the platform understands clear and crisp definitions of these building blocks and watches for them.
 
   The various suspicious patterns for which the Cisco Tetration platform looks in the current release are:
-  - Shell code execution: Looks for the patterns used by shell code.
-  - Privilege escalation: Watches for privilege changes from a lower privilege to a higher privilege in the process lineage tree.
-  - Side channel attacks: Cisco Tetration platform watches for cache-timing attacks and page table fault bursts. Using these, it can detect Meltdown, Spectre, and other cache-timing attacks.
-  - Raw socket creation: Creation of a raw socket by a nonstandard process (for example, ping).
-  - User login suspicious behavior: Cisco Tetration platform watches user login failures and user login methods.
-  - Interesting file access: Cisco Tetration platform can be armed to look at sensitive files.
-  - File access from a different user: Cisco Tetration platform learns the normal behavior of which file is accessed by which user.
-  - Unseen command: Cisco Tetration platform learns the behavior and set of commands as well as the lineage of each command over time. Any new command or command with a different lineage triggers the interest of the Tetration Analytics platform.
+  - <span style="color: #bb6600;">Shell code execution</span>: Looks for the patterns used by shell code.
+  - <span style="color: #bb6600;">Privilege escalation</span>: Watches for privilege changes from a lower privilege to a higher privilege in the process lineage tree.
+  - <span style="color: #bb6600;">Side channel attacks</span>: Cisco Tetration platform watches for cache-timing attacks and page table fault bursts. Using these, it can detect Meltdown, Spectre, and other cache-timing attacks.
+  - <span style="color: #bb6600;">Raw socket creation</span>: Creation of a raw socket by a nonstandard process (for example, ping).
+  - <span style="color: #bb6600;">User login suspicious </span>: Cisco Tetration platform watches user login failures and user login methods.
+  - <span style="color: #bb6600;">Interesting file access</span>: Cisco Tetration platform can be armed to look at sensitive files.
+  - <span style="color: #bb6600;">File access from a different user</span>: Cisco Tetration platform learns the normal behavior of which file is accessed by which user.
+  - <span style="color: #bb6600;">Unseen command</span>: Cisco Tetration platform learns the behavior and set of commands as well as the lineage of each command over time. Any new command or command with a different lineage triggers the interest of the Tetration Analytics platform.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/white-paper-c11-740380.html
+  Reference: [The Goldilocks Zone: Cloud Workload Protection White Paper](https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/white-paper-c11-740380.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 38</span>
@@ -871,7 +892,7 @@
 
   Depending on your company policy, you might be able to use your mobile phones, tablets, printers, Internet radios, and other network devices on your company’s network. You can use the My Devices portal to register and manage these devices on your company’s network.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/mydevices/b_mydevices_2x.html
+  Reference: [My Devices Portal FAQs, Release 2.x](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/mydevices/b_mydevices_2x.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 39</span>
@@ -891,10 +912,10 @@
 
   An organization is using DHCP Snooping within their network. A user on VLAN 41 on a new switch is complaining that an IP address is not being obtained. Which command should be configured on the switch interface in order to provide the user with network connectivity?
 
-  A. ip dhcp snooping verify mac-address<br>
-  B. ip dhcp snooping limit 41<br>
-  C. ip dhcp snooping vlan 41<br>
-  D. ip dhcp snooping trust<br>
+  A. `ip dhcp snooping verify mac-address`<br>
+  B. `ip dhcp snooping limit 41`<br>
+  C. `ip dhcp snooping vlan 41`<br>
+  D. `ip dhcp snooping trust`<br>
 
   Answer: D
 
@@ -928,7 +949,7 @@
 
   Only ports that connect to an authorized DHCP server are trusted, and allowed to send all types of DHCP messages. All other ports on the switch are untrusted and can send only DHCP requests. If a DHCP response is seen on an untrusted port, the port is shut down.
 
-  The port connected to a DHCP server should be configured as trusted port with the “ip dhcp snooping trust” command. Other ports connecting to hosts are untrusted ports by default.
+  The port connected to a DHCP server should be configured as trusted port with the “`ip dhcp snooping trust`” command. Other ports connecting to hosts are untrusted ports by default.
 
   In this question, we need to configure the uplink to “trust” (under interface Gi1/0/1) as shown below.
 
@@ -973,6 +994,8 @@
 
   Cisco Cloudlock is a cloud-native cloud access security broker (CASB) that helps you move to the cloud safely. It protects your cloud users, data, and apps. Cisco Cloudlock provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware like ransomware.
 
+  Cisco AppDynamics is an Application Performance Management (APM) solution that can help your organization make critical, strategic decisions. AppDynamics uses artificial intelligence (AI) to solve application problems and prevent them from occurring in the future, as well as enhancing the visibility into your IT architecture.
+
 
 - <span style="color: #008888; font-weight: bold;">Question 42</span>
 
@@ -992,7 +1015,7 @@
   – Cisco intrusion prevention systems 4200 and 4500 Series Sensors
   – Cisco AnyConnect Secure Mobility Client
 
-  Reference: https://www.cisco.com/c/en/us/products/security/security-manager/index.html
+  Reference: [Cisco Security Manager](https://www.cisco.com/c/en/us/products/security/security-manager/index.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -1010,7 +1033,7 @@
 
   Cisco Advanced Phishing Protection provides sender authentication and BEC detection capabilities. It uses advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats.
 
-  Reference: https://docs.ces.cisco.com/docs/advanced-phishing-protection
+  Reference: [Cisco Secure Email Phishing Defense](https://docs.ces.cisco.com/docs/advanced-phishing-protection)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 44</span>
@@ -1027,15 +1050,18 @@
   Explanation
 
   Cisco FTD devices, Cisco Firepower devices, and the Cisco ASA FirePOWER modules can be managed by the Firepower Management Center (FMC), formerly known as the FireSIGHT Management Center -> Answer D is not correct
+
   Reference: CCNP And CCIE Security Core SCOR 350-701 Official Cert Guide
+
   Note: The ASA FirePOWER module runs on the separately upgraded ASA operating system
 
   “You cannot use an FMC to manage ASA firewall functions.”
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/compatibility/firepower-compatibility.html
+
+  Reference: [Cisco Firepower Compatibility Guide](https://www.cisco.com/c/en/us/td/docs/security/firepower/compatibility/firepower-compatibility.html)
 
   The Cisco Secure Firewall Threat Defense Manager (Firepower Management Center) increases the effectiveness of your Cisco network security solutions by providing centralized, integrated, and streamlined management.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/firesight-management-center/datasheet-c78-736775.html
+  Reference: [Cisco Secure Firewall Management Center (formerly Firepower Management Center) Data Sheet](https://www.cisco.com/c/en/us/products/collateral/security/firesight-management-center/datasheet-c78-736775.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 45</span>
@@ -1069,9 +1095,9 @@
   …
 
   Umbrella’s Block Page and Block Page Bypass features present an SSL certificate to browsers that make connections to HTTPS sites. This SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA). If the CA is not trusted by your browser, an error page may be displayed. Typical errors include “The security certificate presented by this website was not issued by a trusted certificate authority” (Internet Explorer), “The site’s security certificate is not trusted!” (Google Chrome) or “This Connection is Untrusted” (Mozilla Firefox). Although the error page is expected, the message displayed can be confusing and you may wish to prevent it from appearing.
-  To avoid these error pages, install the Cisco Umbrella root certificate into your browser or the browsers of your users—if you’re a network admin.
+  To avoid these error pages, install the Cisco Umbrella root certificate into your browser or the browsers of your users — if you’re a network admin.
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/rebrand-cisco-certificate-import-information
+  Reference: [Manage the Cisco Umbrella Root Certificate](https://docs.umbrella.com/deployment-umbrella/docs/rebrand-cisco-certificate-import-information)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 47</span>
@@ -1137,7 +1163,7 @@
 
   Storm control prevents traffic on a LAN from being disrupted by a broadcast, multicast, or unicast storm on one of the physical interfaces. A LAN storm occurs when packets flood the LAN, creating excessive traffic and degrading network performance. Errors in the protocol-stack implementation, mistakes in network configurations, or users issuing a denial-of-service attack can cause a storm.
 
-  By using the “storm-control broadcast level [falling-threshold]” we can limit the broadcast traffic on the switch.
+  By using the “`storm-control broadcast level [falling-threshold]`” we can limit the broadcast traffic on the switch.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 50</span>
