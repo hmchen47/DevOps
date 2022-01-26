@@ -696,6 +696,15 @@
     />
   </figure>
 
+  Group 1:<br>
+  A. requires more time<br>
+  B. requires secret keys<br>
+  C. 3DES<br>
+  D. Diffie-Hellman exchange<br>
+
+  Group 2:<br>
+  1\. Asymmetric<br>
+  2\. Symmetric<br>
 
   Answer: <br><br>
 
@@ -704,9 +713,9 @@
 
   In which type of attack does the attacker insert their machine between two hosts that are communicating with each other?
 
-  A. LDAP injecti<br>on
-  B. man-in-the-m<br>iddle
-  C. cross-site s<br>cripting
+  A. LDAP injection<br>
+  B. man-in-the-middle<br>
+  C. cross-site scripting<br>
   D. insecure API<br>
 
   Answer: <br><br> 
@@ -764,6 +773,18 @@
       title  = "Threats"
     />
   </figure>
+
+  Group 1:<br>
+  A. DoS/DDoS<br>
+  B. Insecure APIs<br>
+  C. data breach<br>
+  D. compromised credentials<br>
+
+  Group 2:<br>
+  1\. A stolen customer database that contained social security numbers and was published online<br>
+  2\. A phishing site appearing to be legmitmate login page captures user login information<br>
+  3\. An application attack using botnet from multiple remote locations that flood a web application causing a degred performance  or a complete outage<br>
+  4\. A malicious user gained access to an organization's database from a cloud-based application programming interface that lacked strong authentication control<br>
 
   Answer: <br><br>
   
@@ -934,10 +955,10 @@
 
   A network engineer is deciding whether to use stateful or stateless failover when configuring two ASAs for high availability. What is the connection status in both cases?
 
-  A. need to be reestablished with stateful failover and preserved with stateless failover
-  B. preserved with stateful failover and need to be reestablished with stateless failover
-  C. preserved with both stateful and stateless failover
-  D. need to be reestablished with both stateful and stateless failover
+  A. need to be reestablished with stateful failover and preserved with stateless failover<br>
+  B. preserved with stateful failover and need to be reestablished with stateless failover<br>
+  C. preserved with both stateful and stateless failover<br>
+  D. need to be reestablished with both stateful and stateless failover<br>
 
   Answer: <br><br> 
 

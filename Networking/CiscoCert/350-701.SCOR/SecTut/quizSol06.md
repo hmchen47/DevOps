@@ -1202,11 +1202,11 @@
 
   Answer:
   - Asymmetric:
-    - requires more time
-    - Diffie-Hellman exchange
+    - (A) requires more time
+    - (D) Diffie-Hellman exchange
   - Symmetric:
-    - requires secret keys
-    - 3DES
+    - (B) requires secret keys
+    - (C) 3DES
 
   Explanation
 
@@ -1225,16 +1225,16 @@
 
   In which type of attack does the attacker insert their machine between two hosts that are communicating with each other?
 
-  A. LDAP injecti<br>on
-  B. man-in-the-m<br>iddle
-  C. cross-site s<br>cripting
+  A. LDAP injection<br>
+  B. man-in-the-middle<br>
+  C. cross-site scripting<br>
   D. insecure API<br>
 
   Answer: B
 
 
 
-========================= New Questions (added on 2nd-Jan-2021) ==============================
+<!-- ========================= New Questions (added on 2nd-Jan-2021) ============================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 53</span>
@@ -1534,10 +1534,10 @@
 
   A network engineer is deciding whether to use stateful or stateless failover when configuring two ASAs for high availability. What is the connection status in both cases?
 
-  A. need to be reestablished with stateful failover and preserved with stateless failover
-  B. preserved with stateful failover and need to be reestablished with stateless failover
-  C. preserved with both stateful and stateless failover
-  D. need to be reestablished with both stateful and stateless failover
+  A. need to be reestablished with stateful failover and preserved with stateless failover<br>
+  B. preserved with stateful failover and need to be reestablished with stateless failover<br>
+  C. preserved with both stateful and stateless failover<br>
+  D. need to be reestablished with both stateful and stateless failover<br>
 
   Answer: B
 
