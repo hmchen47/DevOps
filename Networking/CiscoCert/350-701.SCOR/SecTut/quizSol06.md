@@ -17,13 +17,13 @@
 
   Explanation
 
-  A bridge group is a group of interfaces that the ASA bridges instead of routes. Bridge groups are only supported in Transparent Firewall Mode. Like any other firewall interfaces, access control between interfaces is controlled, and all of the usual firewall checks are in place.
+  A <span style="color: #bb6600;">bridge group</span> is a group of interfaces that the ASA bridges instead of routes. Bridge groups are only supported in Transparent Firewall Mode. Like any other firewall interfaces, access control between interfaces is controlled, and all of the usual firewall checks are in place.
 
   Each bridge group includes a Bridge Virtual Interface (BVI). The ASA uses the BVI IP address as the source address for packets originating from the bridge group. The BVI IP address must be on the same subnet as the bridge group member interfaces. The BVI does not support traffic on secondary networks; only traffic on the same network as the BVI IP address is supported.
 
   You can include multiple interfaces per bridge group. If you use more than 2 interfaces per bridge group, you can control communication between multiple segments on the same network, and not just between inside and outside. For example, if you have three inside segments that you do not want to communicate with each other, you can put each segment on a separate interface, and only allow them to communicate with the outside interface. Or you can customize the access rules between interfaces to allow only as much access as desired.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa95/configuration/general/asa-95-general-config/intro-fw.html
+  Reference: [Cisco ASA Series General Operations CLI Configuration Guide, 9.7](https://www.cisco.com/c/en/us/td/docs/security/asa/asa97/configuration/general/asa-97-general-config/intro-fw.html#id_37129)
 
   Note: BVI interface is not used for management purpose. But we can add a separate Management slot/port interface that is not part of any bridge group, and that allows only management traffic to the ASA.
 
@@ -101,13 +101,13 @@
 
   Answer:
   - Cisco FirePower
-    - provides the ability to perform network discovery
-    - provides intrusion prevention before malware comprises the host
-    - provides superior threat prevention and mitigation for known and unknown threats
+    - (A) provides the ability to perform network discovery
+    - (C) provides intrusion prevention before malware comprises the host
+    - (D) provides superior threat prevention and mitigation for known and unknown threats
   - Cisco AMP
-    - provides detection, blocking, tracking, analyse and remediation to protect against targeted persistent malware attacks
-    - provides the root cause of a threat based on the indicators of compromise seen 
-    - provides outbreak control through custom detections
+    - (B) provides detection, blocking, tracking, analyse and remediation to protect against targeted persistent malware attacks
+    - (E) provides the root cause of a threat based on the indicators of compromise seen 
+    - (F) provides outbreak control through custom detections
 
   Explanation
 
@@ -121,7 +121,7 @@
 
   Detecting targeted, persistent malware attacks is a bigger problem than a single point-in-time control or product can effectively address on its own. Advanced malware protection requires an integrated set of controls and a continuous process to detect, confirm, track, analyze, and remediate these threats – before, during, and after an attack.
 
-  Reference: https://www.cisco.com/c/dam/global/shared/assets/pdf/sc/sec_amp_guide_cte_env_etmg_en.pdf
+  Reference: [Buyer’s Criteria for Advanced Malware Protection](https://www.cisco.com/c/dam/global/shared/assets/pdf/sc/sec_amp_guide_cte_env_etmg_en.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -172,16 +172,16 @@
 
   An engineer is trying to securely connect to a router and wants to prevent insecure algorithms from being used. However, the connection is failing. Which action should be taken to accomplish this goal?
 
-  A. Disable telnet using the no ip telnet command.<br>
-  B. Enable the SSH server using the ip ssh server command.<br>
-  C. Configure the port using the ip ssh port 22 command.<br>
-  D. Generate the RSA key using the crypto key generate rsa command.<br>
+  A. Disable telnet using the `no ip telnet` command.<br>
+  B. Enable the SSH server using the `ip ssh server` command.<br>
+  C. Configure the port using the `ip ssh port 22` command.<br>
+  D. Generate the RSA key using the `crypto key generate rsa` command.<br>
 
   Answer: D
 
   Explanation
 
-  In this question, the engineer was trying to secure the connection so maybe he was trying to allow SSH to the device. But maybe something went wrong so the connection was failing (the connection used to be good). So maybe he was missing the “crypto key generate rsa” command.
+  In this question, the engineer was trying to secure the connection so maybe he was trying to allow SSH to the device. But maybe something went wrong so the connection was failing (the connection used to be good). So maybe he was missing the “`crypto key generate rsa`” command.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -199,7 +199,7 @@
 
   The appliance will try once to upload the file; if upload is not successful, for example because of connectivity problems, the file may not be uploaded. If the failure was because the file analysis server was overloaded, the upload will be attempted once more.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118796-technote-esa-00.html
+  Reference: [Verifying File Analysis Uploads on ESA](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118796-technote-esa-00.html)
 
   In this question, it stated “the network is congested” (not the file analysis server was overloaded) so the appliance will not try to upload the file again.
 
@@ -233,7 +233,7 @@
 
   One of the settings to configure the CoA type is “Reauth”. This option is used to enforce reauthentication of an already authenticated endpoint when it is profiled.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_010101.html
+  Reference: [Configuring Profiler Policies](https://www.cisco.com/en/US/docs/security/ise/1.0/user_guide/ise10_prof_pol.html#wp1340649)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -289,7 +289,7 @@
 
   Talos Threat Source is a regular intelligence update from Cisco Talos, highlighting the biggest threats each week and other security news.
 
-  Reference: https://talosintelligence.com/newsletters
+  Reference: [Talos Newletters](https://talosintelligence.com/newsletters)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -308,15 +308,15 @@
 
   Many enterprises prefer to deploy development workloads in the public cloud, primarily for convenience and faster deployment. This approach can cause concern for IT administrators, who must control the flow of IT traffic and spending and help ensure the security of data and intellectual property. Without the proper controls, data and intellectual property can escape this oversight. The Cisco Intercloud Fabric solution helps control this shadow IT, discovering resources deployed in the public cloud outside IT control and placing these resources under Cisco Intercloud Fabric control.
 
-  Cisco Intercloud Fabric addresses the cloud deployment requirements appropriate for two hybrid cloud deployment models: Enterprise Managed (an enterprise manages its own cloud environments) and Service Provider Managed (the service provider administers and controls all cloud resources).
+  Cisco Intercloud Fabric addresses the cloud deployment requirements appropriate for two hybrid cloud deployment models: <span style="color: #bb6600;">Enterprise Managed</span> (an enterprise manages its own cloud environments) and <span style="color: #bb6600;">Service Provider Managed</span> (the service provider administers and controls all cloud resources).
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/solutions/Hybrid_Cloud/Intercloud/Intercloud_Fabric.pdf
+  Reference: [Cisco Intercloud Fabric: Hybrid Cloud with Choice, Consistency, Control and Compliance](https://www.cisco.com/c/en/us/td/docs/solutions/Hybrid_Cloud/Intercloud/Intercloud_Fabric.pdf)
 
   The Cisco Intercloud Fabric architecture provides two product configurations to address the following two consumption models:
   - Cisco Intercloud Fabric for Business
   - Cisco Intercloud Fabric for Providers
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/solutions/Hybrid_Cloud/Intercloud/Intercloud_Fabric/Intercloud_Fabric_2.html
+  Reference: [Cisco Intercloud Fabric: Hybrid Cloud with Choice, Consistency, Control and Compliance](https://www.cisco.com/c/en/us/td/docs/solutions/Hybrid_Cloud/Intercloud/Intercloud_Fabric/Intercloud_Fabric_2.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -334,11 +334,11 @@
   Explanation
 
   While DDoS offer a less complicated attack mode than other forms of cyberattacks, they are growing stronger and more sophisticated. There are three basic categories of attack:
-  - volume-based attacks, which use high traffic to inundate the network bandwidth
-  - protocol attacks, which focus on exploiting server resources
-  - application attacks, which focus on web applications and are considered the most sophisticated and serious type of attacks
+  - <span style="color: #bb6600;">volume-based attacks</span>, which use high traffic to inundate the network bandwidth
+  - <span style="color: #bb6600;">protocol attacks</span>, which focus on exploiting server resources
+  - <span style="color: #bb6600;">application attacks</span>, which focus on web applications and are considered the most sophisticated and serious type of attacks
 
-  Reference: https://www.esecurityplanet.com/networks/types-of-ddos-attacks/
+  Reference: [What are the Most Common Types of DDoS Attacks?](https://www.esecurityplanet.com/networks/types-of-ddos-attacks/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -367,7 +367,7 @@
 
   The TLS connections are recorded in the mail logs, along with other significant actions that are related to messages, such as filter actions, anti-virus and anti-spam verdicts, and delivery attempts. If there is a successful TLS connection, there will be a TLS success entry in the mail logs. Likewise, a failed TLS connection produces a TLS failed entry. If a message does not have an associated TLS entry in the log file, that message was not delivered over a TLS connection.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118844-technote-esa-00.html
+  Reference: [Comprehensive Setup Guide for TLS on ESA](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118844-technote-esa-00.html)
 
   The exhibit in this question shows a successful TLS connection from the remote host (reception) in the mail log.
 
@@ -399,6 +399,12 @@
 
   Answer: B
 
+  Explanation
+
+  The Threat Intelligence Director operationalizes threat intelligence data, helping you aggregate intelligence data, configure defensive actions, and analyze threats in your environment. This feature is intended to supplement other Firepower functionality, offering an additional line of defense against threats.
+
+  Reference: [Firepower Management Center Configuration Guide, Version 6.2.3](https://www.cisco.com/c/en/us/td/docs/security/firepower/623/configuration/guide/fpmc-config-guide-v623/cisco_threat_intelligence_director__tid_.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
 
@@ -417,8 +423,8 @@
   The Cisco Web Security Appliance (WSA) includes a web proxy, a threat analytics engine, antimalware engine, policy management, and reporting in a single physical or virtual appliance. The main use of the Cisco WSA is to protect users from accessing malicious websites and being infected by malware.
 
   You can deploy the Cisco WSA in two different modes:
-  – Explicit forward mode
-  – Transparent mode
+  - Explicit forward mode
+  - Transparent mode
 
   In explicit forward mode, the client is configured to explicitly use the proxy, subsequently sending all web traffic to the proxy. Because the client knows there is a proxy and sends all traffic to the proxy in explicit forward mode, the client does not perform a DNS lookup of the domain before requesting the URL. The Cisco WSA is responsible for DNS resolution, as well.
 
@@ -433,13 +439,13 @@
 
   When you configure the Cisco WSA in explicit mode, you do not need to configure any other network infrastructure devices to redirect client requests to the Cisco WSA. However, you must configure each client to send traffic to the Cisco WSA.
 
-  -> Therefore in explicit mode, WSA only checks the traffic between client & web server. WSA does not use its own IP address to request -> Answer B is not correct.
+  -> <span style="text-decoration: line-through;">Therefore in explicit mode, WSA only checks the traffic between client & web server. WSA does not use its own IP address to request</span> -> <span style="text-decoration: line-through;">Answer B is not correct</span>.
 
   When the Cisco WSA is in transparent mode, clients do not know there is a proxy deployed. Network infrastructure devices are configured to forward traffic to the Cisco WSA. In transparent mode deployments, network infrastructure devices redirect web traffic to the proxy. Web traffic redirection can be done using policy-based routing (PBR)—available on many routers —or using Cisco’s Web Cache Communication Protocol (WCCP) on Cisco ASA, Cisco routers, or switches.
 
   The Web Cache Communication Protocol (WCCP), developed by Cisco Systems, specifies interactions between one or more routers (or Layer 3 switches) and one or more web-caches. The purpose of the interaction is to establish and maintain the transparent redirection of selected types of traffic flowing through a group of routers.
 
-  Reference: https://www.cisco.com/c/en/us/tech/content-networking/web-cache-communications-protocol-wccp/index.html
+  Reference: [Web Cache Communications Protocol (WCCP)](https://www.cisco.com/c/en/us/tech/content-networking/web-cache-communications-protocol-wccp/index.html)
 
   ->Therefore answer D is correct as redirection can be done on Layer 3 device only.
 
@@ -458,11 +464,14 @@
 
   When requests are being redirected to the WSA transparently, the WSA must pretend to be the OCS (origin content server), since the client is unaware of the existence of a proxy. On the contrary, if a request is explicitly sent to the WSA, the WSA will respond with it’s own IP information.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/117940-qa-wsa-00.html
+  -> Answer B is correct
+
+  Reference: [Difference between Transparent and Forward proxy mode](https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/117940-qa-wsa-00.html)
 
   Answer C is surely not correct as WSA cannot be configured in a web browser in either mode.
 
   Answer A seems to be correct but it is not. This answer is correct if it states “When the Cisco WSA is running in transparent mode, it uses the WSA’s own IP address as the HTTP request source” (not destination).
+
 
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>
@@ -478,13 +487,13 @@
 
   Explanation
 
-  URL conditions in access control rules allow you to limit the websites that users on your network can access. This feature is called URL filtering. There are two ways you can use access control to specify URLs you want to block (or, conversely, allow):
-  – With any license, you can manually specify individual URLs, groups of URLs, and URL lists and feeds to achieve granular, custom control over web traffic.
-  – With a URL Filtering license, you can also control access to websites based on the URL’s general classification, or category, and risk level, or reputation. The system displays this category and reputation data in connection logs, intrusion events, and application details.
+  URL conditions in access control rules allow you to limit the websites that users on your network can access. This feature is called <span style="color: #bb6600">URL filtering</span>. There are two ways you can use access control to specify URLs you want to block (or, conversely, allow):
+  - With any license, you can manually specify individual URLs, groups of URLs, and URL lists and feeds to achieve granular, custom control over web traffic.
+  - With a URL Filtering license, you can also control access to websites based on the URL’s general classification, or category, and risk level, or reputation. The system displays this category and reputation data in connection logs, intrusion events, and application details.
 
   Using category and reputation data also simplifies policy creation and administration. It grants you assurance that the system will control web traffic as expected. Finally, because Cisco’s threat intelligence is continually updated with new URLs, as well as new categories and risks for existing URLs, you can ensure that the system uses up-to-date information to filter requested URLs. Malicious sites that represent security threats such as malware, spam, botnets, and phishing may appear and disappear faster than you can update and deploy new policies.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Access_Control_Rules__URL_Filtering.html
+  Reference: [Firepower Management Center Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Access_Control_Rules__URL_Filtering.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -502,7 +511,7 @@
 
   Southbound APIs enable SDN controllers to dynamically make changes based on real-time demands and scalability needs.
 
-  Reference: https://www.ciscopress.com/articles/article.asp?p=3004581&seqNum=2
+  Reference: [Software-Defined Networking Security and Network Programmability](https://www.ciscopress.com/articles/article.asp?p=3004581&seqNum=2)
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
@@ -542,7 +551,7 @@
 
   If sysopt permit-vpn is not enabled then an access control policy must be created to allow the VPN traffic through the FTD device. If sysopt permit-vpn is enabled skip creating an access control policy.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/215470-site-to-site-vpn-configuration-on-ftd-ma.html
+  Reference: [Site to Site VPN Configuration on FTD Managed by FMC](https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/215470-site-to-site-vpn-configuration-on-ftd-ma.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -575,13 +584,16 @@
 
   …
 
-  Custom Block lists or feeds (or objects or groups)
-  Block specific IP addresses, URLs, or domain names using a manually-created list or feed (for IP addresses, you can also use network objects or groups.)
-  For example, if you become aware of malicious sites or addresses that are not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
+  - Custom Block lists or feeds (or objects or groups)
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/623/configuration/guide/fpmc-config-guide-v623/security_intelligence_blacklisting.html
+    Block specific IP addresses, URLs, or domain names using a manually-created list or feed (for IP addresses, you can also use network objects or groups.)
+
+    For example, if you become aware of malicious sites or addresses that are not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
+
+  Reference: [Firepower Management Center Configuration Guide, Version 6.2.3](https://www.cisco.com/c/en/us/td/docs/security/firepower/623/configuration/guide/fpmc-config-guide-v623/security_intelligence_blacklisting.html)
 
 
+<hr>
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   Which Cisco platform ensures that machines that connect to organizational networks have the recommended antivirus definitions and patches to help prevent an organizational malware outbreak?

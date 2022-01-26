@@ -66,6 +66,18 @@
     />
   </figure>
 
+  Group 1:<br>
+  A. provides the ability to perform network discovery<br>
+  B. provides detection, blocking, tracking, analyse and remediation to protect against targeted persistent malware attacks<br>
+  C. provides intrusion prevention before malware compromises the host<br>
+  D. provides superior threat prevention and mitigation for know and unknow threats<br>
+  E. provides the root cause of a threat based on the indicators of compromise seen<br>
+  F. provides outbreak control through custom detections<br>
+
+  Group 2:<br>
+  1\. Cisco Firepower (3)<br>
+  2\. Cisco AMP (3)<br>
+
   Answer: <br><br>
 
 
@@ -109,10 +121,10 @@
 
   An engineer is trying to securely connect to a router and wants to prevent insecure algorithms from being used. However, the connection is failing. Which action should be taken to accomplish this goal?
 
-  A. Disable telnet using the no ip telnet command.<br>
-  B. Enable the SSH server using the ip ssh server command.<br>
-  C. Configure the port using the ip ssh port 22 command.<br>
-  D. Generate the RSA key using the crypto key generate rsa command.<br>
+  A. Disable telnet using the `no ip telnet` command.<br>
+  B. Enable the SSH server using the `ip ssh server` command.<br>
+  C. Configure the port using the `ip ssh port 22` command.<br>
+  D. Generate the RSA key using the `crypto key generate rsa` command.<br>
 
   Answer: <br><br> 
   
@@ -208,7 +220,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
       src    = "img/1917-Mail_authentication.jpg"
       alt    = "MailA Authentication"
@@ -335,6 +347,7 @@
   Answer: <br><br> 
 
 
+<hr>
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   Which Cisco platform ensures that machines that connect to organizational networks have the recommended antivirus definitions and patches to help prevent an organizational malware outbreak?
@@ -657,6 +670,7 @@
   Answer: <br><br> 
   
 
+<hr>
 - <span style="color: #008888; font-weight: bold;">Question 51</span>
 
   Drag and drop the descriptions from the left onto the encryption algorithms on the right.
@@ -669,6 +683,7 @@
       title  = "Asymmetric & Symmetric Encryption"
     />
   </figure>
+
 
   Answer: <br><br>
 
@@ -686,7 +701,7 @@
 
 
 
-========================= New Questions (added on 2nd-Jan-2021) ==============================
+<!-- ========================= New Questions (added on 2nd-Jan-2021) ============================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 53</span>
