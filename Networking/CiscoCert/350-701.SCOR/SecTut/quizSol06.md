@@ -4,7 +4,7 @@
 ## 19. New Questions - Part 1
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   What is a characteristic of a bridge group in ASA Firewall transparent mode?
 
@@ -28,7 +28,7 @@
   Note: BVI interface is not used for management purpose. But we can add a separate Management slot/port interface that is not part of any bridge group, and that allows only management traffic to the ASA.
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   When Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities, which name is used?
 
@@ -48,7 +48,7 @@
   Reference: CCNP And CCIE Security Core SCOR 350-701 Official Cert Guide
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which two fields are defined in the NetFlow flow? (Choose two)
 
@@ -74,7 +74,7 @@
   Note: A flow is a unidirectional series of packets between a given source and destination.
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   What provides the ability to program and monitor networks from somewhere other than the DNAC GUI?
 
@@ -86,7 +86,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Drag and drop the capabilities of Cisco Firepower versus Cisco AMP from the left into the appropriate category on the right.
 
@@ -124,7 +124,7 @@
   Reference: https://www.cisco.com/c/dam/global/shared/assets/pdf/sc/sec_amp_guide_cte_env_etmg_en.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   An organization has two machines hosting web applications. Machine 1 is vulnerable to SQL injection while machine 2 is vulnerable to buffer overflows. What action would allow the attacker to gain access to machine 1 but not machine 2?
 
@@ -136,7 +136,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   An organization is trying to improve their Defense in Depth by blocking malicious destinations prior to a connection being established. The solution must be able to block certain applications from being used within the network. Which product should be used to accomplish this goal?
 
@@ -152,7 +152,7 @@
   Cisco Umbrella protects users from accessing malicious domains by proactively analyzing and blocking unsafe destinations – before a connection is ever made. Thus it can protect from phishing attacks by blocking suspicious domains when users click on the given links that an attacker sent.
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   A company is experiencing exfiltration of credit card numbers that are not being stored on-premise. The company needs to be able to protect sensitive data throughout the full environment. Which tool should be used to accomplish this goal?
 
@@ -168,7 +168,7 @@
   Cisco Cloudlock is a cloud-native cloud access security broker (CASB) that helps you move to the cloud safely. It protects your cloud users, data, and apps. Cisco Cloudlock provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware like ransomware.
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   An engineer is trying to securely connect to a router and wants to prevent insecure algorithms from being used. However, the connection is failing. Which action should be taken to accomplish this goal?
 
@@ -184,7 +184,7 @@
   In this question, the engineer was trying to secure the connection so maybe he was trying to allow SSH to the device. But maybe something went wrong so the connection was failing (the connection used to be good). So maybe he was missing the “crypto key generate rsa” command.
 
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   A network administrator is using the Cisco ESA with AMP to upload files to the cloud for analysis. The network is congested and is affecting communication. How will the Cisco ESA handle any files which need analysis?
 
@@ -204,7 +204,7 @@
   In this question, it stated “the network is congested” (not the file analysis server was overloaded) so the appliance will not try to upload the file again.
 
 
-- <span style="color: blue; font-weight: bold;">Question 11</span>
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   Which type of algorithm provides the highest level of protection against brute-force attacks?
 
@@ -216,7 +216,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 12</span>
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
 
   What must be configured in Cisco ISE to enforce reauthentication of an endpoint session when an endpoint is deleted from an identity group?
 
@@ -236,7 +236,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_010101.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 13</span>
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   A network administrator is configuring a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category. Which reputation score should be selected to accomplish this goal?
 
@@ -274,7 +274,7 @@
   
 
 
-- <span style="color: blue; font-weight: bold;">Question 14</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   Which group within Cisco writes and publishes a weekly newsletter to help cybersecurity professionals remain aware of the ongoing and most prevalent threats?
 
@@ -292,7 +292,7 @@
   Reference: https://talosintelligence.com/newsletters
 
 
-- <span style="color: blue; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   What are the two types of managed Intercloud Fabric deployment models? (Choose two)
 
@@ -319,7 +319,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/solutions/Hybrid_Cloud/Intercloud/Intercloud_Fabric/Intercloud_Fabric_2.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 16</span>
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   What are two DDoS attack categories? (Choose two)
 
@@ -341,7 +341,7 @@
   Reference: https://www.esecurityplanet.com/networks/types-of-ddos-attacks/
 
 
-- <span style="color: blue; font-weight: bold;">Question 17</span>
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
 
   Refer to the exhibit.
 
@@ -372,7 +372,7 @@
   The exhibit in this question shows a successful TLS connection from the remote host (reception) in the mail log.
 
 
-- <span style="color: blue; font-weight: bold;">Question 18</span>
+- <span style="color: #008888; font-weight: bold;">Question 18</span>
 
   An organization received a large amount of SPAM messages over a short time period. In order to take action on the messages, it must be determined how harmful the messages are and this needs to happen dynamically. What must be configured to accomplish this?
 
@@ -388,7 +388,7 @@
   In order to fight spams dynamically, the best way is to configure ESA to receive real-time updates from Talos.
 
 
-- <span style="color: blue; font-weight: bold;">Question 19</span>
+- <span style="color: #008888; font-weight: bold;">Question 19</span>
 
   Which product allows Cisco FMC to push security intelligence observable to its sensors from other products?
 
@@ -400,7 +400,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 20</span>
+- <span style="color: #008888; font-weight: bold;">Question 20</span>
 
   What are two differences between a Cisco WSA that is running in transparent mode and one running in explicit mode? (Choose two)
 
@@ -465,7 +465,7 @@
   Answer A seems to be correct but it is not. This answer is correct if it states “When the Cisco WSA is running in transparent mode, it uses the WSA’s own IP address as the HTTP request source” (not destination).
 
 
-- <span style="color: blue; font-weight: bold;">Question 21</span>
+- <span style="color: #008888; font-weight: bold;">Question 21</span>
 
   After a recent breach, an organization determined that phishing was used to gain initial access to the network before regaining persistence. The information gained from the phishing attack was a result of users visiting known malicious websites. What must be done in order to prevent this from happening in the future?
 
@@ -487,7 +487,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Access_Control_Rules__URL_Filtering.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 22</span>
+- <span style="color: #008888; font-weight: bold;">Question 22</span>
 
   What is the function of SDN southbound API protocols?
 
@@ -516,7 +516,7 @@
   Note: Southbound APIs helps us communicate with data plane (not control plane) applications.
 
 
-- <span style="color: blue; font-weight: bold;">Question 23</span>
+- <span style="color: #008888; font-weight: bold;">Question 23</span>
 
   Refer to the exhibit.
 
@@ -545,7 +545,7 @@
   Reference: https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/215470-site-to-site-vpn-configuration-on-ftd-ma.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 24</span>
+- <span style="color: #008888; font-weight: bold;">Question 24</span>
 
   An attacker needs to perform reconnaissance on a target system to help gain access to it. The system has weak passwords, no encryption on the VPN links, and software bugs on the system’s applications. Which vulnerability allows the attacker to see the passwords being transmitted in clear text?
 
@@ -557,7 +557,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 25</span>
+- <span style="color: #008888; font-weight: bold;">Question 25</span>
 
   Using Cisco Firepower’s Security Intelligence policies, upon which two criteria is Firepower block based? (Choose two)
 
@@ -582,7 +582,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/623/configuration/guide/fpmc-config-guide-v623/security_intelligence_blacklisting.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 26</span>
+- <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   Which Cisco platform ensures that machines that connect to organizational networks have the recommended antivirus definitions and patches to help prevent an organizational malware outbreak?
 
@@ -610,7 +610,7 @@
   </figure>
 
 
-- <span style="color: blue; font-weight: bold;">Question 27</span>
+- <span style="color: #008888; font-weight: bold;">Question 27</span>
 
   What are two benefits of Flexible NetFlow records? (Choose two)
 
@@ -647,7 +647,7 @@
   Note: Traditional NetFlow allows us to monitor from Layer 2 to 4 but Flexible NetFlow goes beyond these layers.
 
 
-- <span style="color: blue; font-weight: bold;">Question 28</span>
+- <span style="color: #008888; font-weight: bold;">Question 28</span>
 
   How does DNS Tunneling exfiltrate data?
 
@@ -659,7 +659,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 29</span>
+- <span style="color: #008888; font-weight: bold;">Question 29</span>
 
   A user has a device in the network that is receiving too many connection requests from multiple machines. Which type of attack is the device undergoing?
 
@@ -671,7 +671,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 30</span>
+- <span style="color: #008888; font-weight: bold;">Question 30</span>
 
   An organization is receiving SPAM emails from a known malicious domain. What must be configured in order to prevent the session during the initial TCP communication?
 
@@ -692,7 +692,7 @@
   Note: Answer A is not correct because ESA can only drop the malicious emails after receiving them, not during the initial TCP communication.
 
 
-- <span style="color: blue; font-weight: bold;">Question 31</span>
+- <span style="color: #008888; font-weight: bold;">Question 31</span>
 
   A Cisco Firepower administrator needs to configure a rule to allow a new application that has never been seen on the network. Which two actions should be selected to allow the traffic to pass without inspection? (Choose two)
 
@@ -711,7 +711,7 @@
   Note: With action “trust”, Firepower does not do any more inspection on the traffic. There will be no intrusion protection and also no file-policy on this traffic.
 
 
-- <span style="color: blue; font-weight: bold;">Question 32</span>
+- <span style="color: #008888; font-weight: bold;">Question 32</span>
 
   An engineer needs behavioral analysis to detect malicious activity on the hosts, and is configuring the organization’s public cloud to send telemetry using the cloud provider’s mechanisms to a security device. Which mechanism should the engineer configure to accomplish this goal?
 
@@ -731,7 +731,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/security/stealthwatch-cloud/at-a-glance-c45-739851.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 33</span>
+- <span style="color: #008888; font-weight: bold;">Question 33</span>
 
   An engineer has enabled LDAP accept queries on a listener. Malicious actors must be prevented from quickly identifying all valid recipients. What must be done on the Cisco ESA to accomplish this goal?
 
@@ -749,7 +749,7 @@
   Note: Lightweight Directory Access Protocol (LDAP) is an Internet protocol that email programs use to look up contact information from a server, such as ClickMail Central Directory. For example, here’s an LDAP search translated into plain English: “Search for all people located in Chicago who’s name contains “Fred” that have an email address. Please return their full name, email, title, and description.”
 
 
-- <span style="color: blue; font-weight: bold;">Question 34</span>
+- <span style="color: #008888; font-weight: bold;">Question 34</span>
 
   What is a feature of Cisco NetFlow Secure Event Logging for Cisco ASAs?
 
@@ -769,7 +769,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/configuration/general/asa-general-cli/monitor-nsel.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 35</span>
+- <span style="color: #008888; font-weight: bold;">Question 35</span>
 
   An engineer is configuring 802.1X authentication on Cisco switches in the network and is using CoA as a mechanism. Which port on the firewall must be opened to allow the CoA traffic to traverse the network?
 
@@ -785,7 +785,7 @@
   CoA Messages are sent on two different udp ports depending on the platform. Cisco standardizes on UDP port 1700, while the actual RFC calls out using UDP port 3799.
 
 
-- <span style="color: blue; font-weight: bold;">Question 36</span>
+- <span style="color: #008888; font-weight: bold;">Question 36</span>
 
   Which public cloud provider supports the Cisco Next Generation Firewall Virtual?
 
@@ -808,7 +808,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/security/adaptive-security-virtual-appliance-asav/white-paper-c11-740505.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 37</span>
+- <span style="color: #008888; font-weight: bold;">Question 37</span>
 
   Drag and drop the suspicious patterns for the Cisco Tetration platform from the left onto the correct definitions on the right.
 
@@ -844,7 +844,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/white-paper-c11-740380.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 38</span>
+- <span style="color: #008888; font-weight: bold;">Question 38</span>
 
   What is the purpose of the My Devices Portal in a Cisco ISE environment?
 
@@ -862,7 +862,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/mydevices/b_mydevices_2x.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 39</span>
+- <span style="color: #008888; font-weight: bold;">Question 39</span>
 
   Refer to the exhibit.
 
@@ -930,7 +930,7 @@
   </figure>
 
 
-- <span style="color: blue; font-weight: bold;">Question 40</span>
+- <span style="color: #008888; font-weight: bold;">Question 40</span>
 
   What is the purpose of the certificate signing request when adding a new certificate for a server?
 
@@ -946,7 +946,7 @@
   A certificate signing request (CSR) is one of the first steps towards getting your own SSL Certificate. Generated on the same server you plan to install the certificate on, the CSR contains information (e.g. common name, organization, country) that the Certificate Authority (CA) will use to create your certificate. It also contains the public key that will be included in your certificate and is signed with the corresponding private key.
 
 
-- <span style="color: blue; font-weight: bold;">Question 41</span>
+- <span style="color: #008888; font-weight: bold;">Question 41</span>
 
   What is the Cisco API-based broker that helps reduce compromises, application risks, and data breaches in an environment that is not on-premise?
 
@@ -962,7 +962,7 @@
   Cisco Cloudlock is a cloud-native cloud access security broker (CASB) that helps you move to the cloud safely. It protects your cloud users, data, and apps. Cisco Cloudlock provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware like ransomware.
 
 
-- <span style="color: blue; font-weight: bold;">Question 42</span>
+- <span style="color: #008888; font-weight: bold;">Question 42</span>
 
   What is managed by Cisco Security Manager?
 
@@ -983,7 +983,7 @@
   Reference: https://www.cisco.com/c/en/us/products/security/security-manager/index.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 43</span>
+- <span style="color: #008888; font-weight: bold;">Question 43</span>
 
   How does Cisco Advanced Phishing Protection protect users?
 
@@ -1001,7 +1001,7 @@
   Reference: https://docs.ces.cisco.com/docs/advanced-phishing-protection
 
 
-- <span style="color: blue; font-weight: bold;">Question 44</span>
+- <span style="color: #008888; font-weight: bold;">Question 44</span>
 
   What is a benefit of using Cisco FMC over Cisco ASDM?
 
@@ -1026,7 +1026,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/security/firesight-management-center/datasheet-c78-736775.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 45</span>
+- <span style="color: #008888; font-weight: bold;">Question 45</span>
 
   What is a key difference between Cisco Firepower and Cisco ASA?
 
@@ -1038,7 +1038,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 46</span>
+- <span style="color: #008888; font-weight: bold;">Question 46</span>
 
   An organization is implementing URL blocking using Cisco Umbrella. The users are able to go to some sites but other sites are not accessible due to an error. Why is the error occurring?
 
@@ -1062,7 +1062,7 @@
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/rebrand-cisco-certificate-import-information
 
 
-- <span style="color: blue; font-weight: bold;">Question 47</span>
+- <span style="color: #008888; font-weight: bold;">Question 47</span>
 
   Which two aspects of the cloud PaaS model are managed by the customer but not the provider?  (Choose two)
 
@@ -1089,7 +1089,7 @@
   
 
 
-- <span style="color: blue; font-weight: bold;">Question 48</span>
+- <span style="color: #008888; font-weight: bold;">Question 48</span>
 
   What is an attribute of the DevSecOps process?
 
@@ -1110,7 +1110,7 @@
   - Fixing those issues stays within the development team.
 
 
-- <span style="color: blue; font-weight: bold;">Question 49</span>
+- <span style="color: #008888; font-weight: bold;">Question 49</span>
 
   An engineer notices traffic interruption on the network. Upon further investigation, it is learned that broadcast packets have been flooding the network. What must be configured, based on a predefined threshold, to address this issue?
 
@@ -1128,7 +1128,7 @@
   By using the “storm-control broadcast level [falling-threshold]” we can limit the broadcast traffic on the switch.
 
 
-- <span style="color: blue; font-weight: bold;">Question 50</span>
+- <span style="color: #008888; font-weight: bold;">Question 50</span>
 
   Which two cryptographic algorithms are used with IPsec? (Choose two)
 
@@ -1149,7 +1149,7 @@
   - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently.
 
 
-- <span style="color: blue; font-weight: bold;">Question 51</span>
+- <span style="color: #008888; font-weight: bold;">Question 51</span>
 
   Drag and drop the descriptions from the left onto the encryption algorithms on the right.
 
@@ -1183,7 +1183,7 @@
   Note: Although “requires secret keys” option in this question is a bit unclear but it can only be assigned to Symmetric algorithm.
 
 
-- <span style="color: blue; font-weight: bold;">Question 52</span>
+- <span style="color: #008888; font-weight: bold;">Question 52</span>
 
   In which type of attack does the attacker insert their machine between two hosts that are communicating with each other?
 
@@ -1199,7 +1199,7 @@
 ========================= New Questions (added on 2nd-Jan-2021) ==============================
 
 
-- <span style="color: blue; font-weight: bold;">Question 53</span>
+- <span style="color: #008888; font-weight: bold;">Question 53</span>
 
   Which Dos attack uses fragmented packets to crash a target machine?
 
@@ -1215,7 +1215,7 @@
   A teardrop attack is a denial-of-service (DoS) attack that involves sending fragmented packets to a target machine. Since the machine receiving such packets cannot reassemble them due to a bug in TCP/IP fragmentation reassembly, the packets overlap one another, crashing the target network device. This generally happens on older operating systems such as Windows 3.1x, Windows 95, Windows NT and versions of the Linux kernel prior to 2.1.63.
 
 
-- <span style="color: blue; font-weight: bold;">Question 54</span>
+- <span style="color: #008888; font-weight: bold;">Question 54</span>
 
   Why is it important to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them?
 
@@ -1227,7 +1227,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 55</span>
+- <span style="color: #008888; font-weight: bold;">Question 55</span>
 
   Which type of API is being used when a security application notifies a controller within a software-defined network architecture about a specific security threat? (Choose two)
 
@@ -1239,7 +1239,7 @@
   Answer: B C
 
 
-- <span style="color: blue; font-weight: bold;">Question 56</span>
+- <span style="color: #008888; font-weight: bold;">Question 56</span>
 
   Drag and drop the threats from the left onto examples of that threat on the right.
 
@@ -1265,7 +1265,7 @@
   When your credentials have been compromised, it means someone other than you may be in possession of your account information, such as your username and/or password.
 
 
-- <span style="color: blue; font-weight: bold;">Question 57</span>
+- <span style="color: #008888; font-weight: bold;">Question 57</span>
 
   When planning a VPN deployment, for which reason does an engineer opt for an active/active FlexVPN configuration as opposed to DMVPN?
 
@@ -1277,7 +1277,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 58</span>
+- <span style="color: #008888; font-weight: bold;">Question 58</span>
 
   Which algorithm provides asymmetric encryption?
 
@@ -1289,7 +1289,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 59</span>
+- <span style="color: #008888; font-weight: bold;">Question 59</span>
 
   What are two functions of secret key cryptography? (Choose two)
 
@@ -1302,7 +1302,7 @@
   Answer: B D
 
 
-- <span style="color: blue; font-weight: bold;">Question 60</span>
+- <span style="color: #008888; font-weight: bold;">Question 60</span>
 
   For Cisco IOS PKI, which two types of Servers are used as a distribution point for CRLs? (Choose two)
 
@@ -1325,12 +1325,12 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_pki/configuration/15-mt/sec-pki-15-mt-book/sec-pki-overview.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 61</span>
+- <span style="color: #008888; font-weight: bold;">Question 61</span>
 
   Which attack type attempts to shut down a machine or network so that users are not able to access it?
 
   A. smurf<br>
-  B. bluesnarfing<br>
+  B. #008888snarfing<br>
   C. MAC spoofing<br>
   D. IP spoofing<br>
 
@@ -1343,7 +1343,7 @@
   The Smurf attack is a DDoS attack in which large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim’s spoofed source IP are broadcast to a computer network using an IP broadcast address.
 
 
-- <span style="color: blue; font-weight: bold;">Question 62</span>
+- <span style="color: #008888; font-weight: bold;">Question 62</span>
 
   What is a difference between DMVPN and sVTI?
 
@@ -1355,7 +1355,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 63</span>
+- <span style="color: #008888; font-weight: bold;">Question 63</span>
 
   What features does Cisco FTDv provide over ASAv?
 
@@ -1367,7 +1367,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 64</span>
+- <span style="color: #008888; font-weight: bold;">Question 64</span>
 
   In which situation should an Endpoint Detection and Response solution be chosen versus an Endpoint Protection Platform?
 
@@ -1389,7 +1389,7 @@
   Effective endpoint defense requires a solution that integrates the capabilities of both EDR and EPP to provide protection against cyber threats without overwhelming an organization’s security team.
 
 
-- <span style="color: blue; font-weight: bold;">Question 65</span>
+- <span style="color: #008888; font-weight: bold;">Question 65</span>
 
   Which type of API is being used when a controller within a software-defined network architecture dynamically makes configuration changes on switches within the network?
 
@@ -1414,7 +1414,7 @@
   </figure>
 
 
-- <span style="color: blue; font-weight: bold;">Question 66</span>
+- <span style="color: #008888; font-weight: bold;">Question 66</span>
 
   An organization has two systems in their DMZ that have an unencrypted link between them for communication. The organization does not have a defined password policy and uses several default accounts on the systems. The application used on those systems also have not gone through stringent code reviews. Which vulnerability would help an attacker brute force their way into the systems?
 
@@ -1426,7 +1426,7 @@
   Answer: A
 
 
-- <span style="color: blue; font-weight: bold;">Question 67</span>
+- <span style="color: #008888; font-weight: bold;">Question 67</span>
 
   What is the purpose of a Netflow version 9 template record?
 
@@ -1444,7 +1444,7 @@
   Reference: https://tools.ietf.org/html/rfc3954
 
 
-- <span style="color: blue; font-weight: bold;">Question 68</span>
+- <span style="color: #008888; font-weight: bold;">Question 68</span>
 
   Drag and drop the VPN functions from the left onto the description on the right.
 
@@ -1474,7 +1474,7 @@
   IKE SAs describe the security parameters between two IKE devices, the first stage in establishing IPSec.
 
 
-- <span style="color: blue; font-weight: bold;">Question 69</span>
+- <span style="color: #008888; font-weight: bold;">Question 69</span>
 
   What is provided by the Secure Hash Algorithm in a VPN?
 
@@ -1492,7 +1492,7 @@
   Reference: https://www.ciscopress.com/articles/article.asp?p=24833&seqNum=4
 
 
-- <span style="color: blue; font-weight: bold;">Question 70</span>
+- <span style="color: #008888; font-weight: bold;">Question 70</span>
 
   A network engineer is deciding whether to use stateful or stateless failover when configuring two ASAs for high availability. What is the connection status in both cases?
 
@@ -1504,7 +1504,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 71</span>
+- <span style="color: #008888; font-weight: bold;">Question 71</span>
 
   Which type of protection encrypts RSA keys when they are exported and imported?
 
