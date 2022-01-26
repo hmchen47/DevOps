@@ -844,7 +844,7 @@
   Which attack type attempts to shut down a machine or network so that users are not able to access it?
 
   A. smurf<br>
-  B. #008888snarfing<br>
+  B. bluesnarfing<br>
   C. MAC spoofing<br>
   D. IP spoofing<br>
 

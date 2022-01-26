@@ -1202,11 +1202,11 @@
 
   Answer:
   - Asymmetric:
-    - (A) requires more time
-    - (D) Diffie-Hellman exchange
+    - requires more time (A)
+    - Diffie-Hellman exchange (D)
   - Symmetric:
-    - (B) requires secret keys
-    - (C) 3DES
+    - requires secret keys (B)
+    - 3DES (C)
 
   Explanation
 
@@ -1252,6 +1252,8 @@
 
   A teardrop attack is a denial-of-service (DoS) attack that involves sending fragmented packets to a target machine. Since the machine receiving such packets cannot reassemble them due to a bug in TCP/IP fragmentation reassembly, the packets overlap one another, crashing the target network device. This generally happens on older operating systems such as Windows 3.1x, Windows 95, Windows NT and versions of the Linux kernel prior to 2.1.63.
 
+  A Smurf attack is a form of a distributed denial of service (DDoS) attack that renders computer networks inoperable. The Smurf program accomplishes this by exploiting vulnerabilities of the Internet Protocol (IP) and Internet Control Message Protocols (ICMP).
+
 
 - <span style="color: #008888; font-weight: bold;">Question 54</span>
 
@@ -1291,10 +1293,10 @@
   </figure>
 
   Answer:
-  - A stolen customer database that contained social security numbers and was published online: data breach
-  - A phishing site appearing to be a legitimate login page captures user login information: compromised credentials
-  - An application attack using botnets from multiple remote locations that flood a web application causing a degraded performance or a complete outage: DoS/DDoS
-  - A malicious user gained access to an organization’s database from a cloud-based application programming interface that lacked strong authentication controls: Insecure APIs
+  - A stolen customer database that contained social security numbers and was published online: data breach (C)
+  - A phishing site appearing to be a legitimate login page captures user login information: compromised credentials (D)
+  - An application attack using botnets from multiple remote locations that flood a web application causing a degraded performance or a complete outage: DoS/DDoS (A)
+  - A malicious user gained access to an organization’s database from a cloud-based application programming interface that lacked strong authentication controls: Insecure APIs (B)
 
   Explanation
 
@@ -1313,6 +1315,22 @@
   D. HSRP is used for fallover.<br>
 
   Answer: B
+
+  Explanation
+
+  Major differences:
+  - P2P GRE tunnels are now either static (spoke-to-hub) or virtual access (hub-to-spoke and spoke-to-spoke) interfaces. As opposed to mGRE, which was just a syntactic sugar for a collection of P2P GRE tunnels, Virtual Access interfaces allow us to view exactly what the configuration of a particular P2P tunnel is (with a special command show derived-config interface Virtual-Access X).
+  - While with traditional DMVPN “crypto” config was just an option, FlexVPN is now strongly tied into IPSec configuration. This, however, allows to dramatically simplify the use of NHRP, since it’s no longer needed to perform Spoke registrations on the Hub.
+  - FlexVPN uses a new key management protocol – IKEv2, while most traditional DMVPN networks use IKEv1.
+  - IKEv2 allows granular configuration of QoS, ZBF and VRF settings without having to rely on other protocols, like it was with NHRP and DMVPN per-tunnel QoS.
+  - With FlexVPN there’s only one standard way of NHRP and routing protocols operations as opposed to 3 phases of DMVPN.
+
+  Dual WAN link HA – active/standby vs active/active
+  - Active/Standby – the easiest way to achieve active/standby failover for both Hub and Spoke is to use the “client configuration block” mentioned earlier. It allows you to tie tracking objects to both tunnel source and destination address and make their choice dynamic. If Hub has the dual WAN links in this mode, both links should reside in the same FVRF and additional tracking should be tied to the static default routes.
+  - Active/Active – the only way to achieve traffic load-sharing is to have two separate routers (or slice the existing router into multiple VRFs), establish routing adjacencies over both links and steer the traffic using the means made available by the routing protocol. By default, traffic distribution between the two links will be static, however dynamic behaviour can be introduced with technologies like Performance Routing (PfR).
+
+  Reference: [Cisco FlexVPN DMVPN, Part 1 – Overview and Design](https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/)
+
 
 
 - <span style="color: #008888; font-weight: bold;">Question 58</span>
@@ -1357,10 +1375,13 @@
   Cisco IOS public key infrastructure (PKI) provides certificate management to support security protocols such as IP Security (IPSec), secure shell (SSH), and secure socket layer (SSL). This module identifies and describes concepts that are needed to understand, plan for, and implement a PKI.
 
   A PKI is composed of the following entities:
-  …
-  – A distribution mechanism (such as Lightweight Directory Access Protocol [LDAP] or HTTP) for certificate revocation lists (CRLs)
+  - Peers communicating on a secure network
+  - At least one certification authority (CA) that grants and maintains certificates
+  - Digital certificates, which contain information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
+  - An optional registration authority (RA) to offload the CA by processing enrollment requests
+  - A <span style="text-decoration: underline;">distribution mechanism</span> (such as Lightweight Directory Access Protocol [LDAP] or HTTP) for certificate revocation lists (CRLs) -> Answers B, E are correct
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_pki/configuration/15-mt/sec-pki-15-mt-book/sec-pki-overview.html
+  Reference: [Cisco IOS PKI Overview Understanding and Planning a PKI](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_pki/configuration/15-mt/sec-pki-15-mt-book/sec-pki-overview.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 61</span>
@@ -1368,7 +1389,7 @@
   Which attack type attempts to shut down a machine or network so that users are not able to access it?
 
   A. smurf<br>
-  B. #008888snarfing<br>
+  B. bluesnarfing<br>
   C. MAC spoofing<br>
   D. IP spoofing<br>
 
@@ -1479,7 +1500,7 @@
 
   The version 9 export format uses templates to provide access to observations of IP packet flows in a flexible and extensible manner. A template defines a collection of fields, with corresponding descriptions of structure and semantics.
 
-  Reference: https://tools.ietf.org/html/rfc3954
+  Reference: [Cisco Systems NetFlow Services Export Version 9](https://tools.ietf.org/html/rfc3954)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 68</span>
@@ -1496,10 +1517,10 @@
   </figure>
 
   Answer:
-  - ensures data confidentiality: AES
-  - defines IKE SAs: ISAKMP
-  - ensures data integrity: SHA-1
-  - provides authentication: RSA
+  - ensures data confidentiality: AES (C)
+  - defines IKE SAs: ISAKMP (D)
+  - ensures data integrity: SHA-1 (A)
+  - provides authentication: RSA (B)
 
   Explanation
 
@@ -1527,7 +1548,7 @@
 
   The HMAC-SHA-1-96 (also known as HMAC-SHA-1) encryption technique is used by IPSec to ensure that a message has not been altered. (-> Therefore answer “integrity” is the best choice). HMAC-SHA-1 uses the SHA-1 specified in FIPS-190-1, combined with HMAC (as per RFC 2104), and is described in RFC 2404.
 
-  Reference: https://www.ciscopress.com/articles/article.asp?p=24833&seqNum=4
+  Reference: [VPNs and VPN Technologies](https://www.ciscopress.com/articles/article.asp?p=24833&seqNum=4)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 70</span>
