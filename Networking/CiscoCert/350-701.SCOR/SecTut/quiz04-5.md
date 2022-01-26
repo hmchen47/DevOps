@@ -538,7 +538,7 @@
   Drag and drop the Firepower Next Generation Intrusion Prevention System detectors from the left onto the correct definitions on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 60vw;"
       onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
       src    = "img/1801-Firepower_detectors.jpg"
       alt    = "Firepower Detector"
@@ -554,7 +554,7 @@
   Drag and drop the capabilities from the left onto the correct technologies on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 60vw;"
       onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
       src    = "img/1802-Security_Applications.jpg"
       alt    = "Security Applications"
@@ -570,7 +570,7 @@
   Drag and drop the descriptions from the left onto the correct protocol versions on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 60vw;"
       onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
       src    = "img/1803-IKE_protocol_versions.jpg"
       alt    = "Security Applications"
@@ -586,7 +586,7 @@
   Drag and drop the steps from the left into the correct order on the right to enable AppDynamics to monitor an EC2 instance in Amazon Web Services.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 60vw;"
       onclick= "window.open('https://www.securitytut.com/scor/drag-drop-questions')"
       src    = "img/1804-AppDynamics_monitor_EC2.jpg"
       alt    = "AppDynamics Monitor EC2"
