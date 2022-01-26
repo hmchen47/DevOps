@@ -391,52 +391,9 @@
 
 ## 17. Security Products & Solutions
 
-<span style="color: #008888; font-weight: bold;">Quick summary</span>
+[<span style="font-weight: bold;">Quick summary</span>](quizSol04-5.md#17-security-products--solutions)
 
-- StealWatch: performs security analytics by collecting network flows via NetFlow
-- ESA: email security solution which protects against email threats like ransomware, business email compromise, phishing, whaling, and many other email-driven attacks
-- AMP for Endpoints (AMP4E): provides malware protection on endpoints
-- Umbrella: provides DNS protection by blocking malicious destinations using DNS
-- Firepower Threat Defense (FTD): provides a comprehensive suite of security features such as firewall capabilities, monitoring, alerts, Intrusion Detection System (IDS) and Intrusion Prevention System (IPS).
-- Cisco Cloudlock: Secure your cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform. Cisco Cloudlock provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware like ransomware.
-
-**Cisco SteathWatch**
-
-Stealthwatch is the visibility and security analytics solution that collects and analyzes network data from the existing network infrastructure. Stealthwatch analyzes industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices to detect advanced and persistent security threats such as internally spreading malware, data leakage, botnet command and control traffic and network reconnaissance.
-
-The Cisco Identity Services Engine (ISE) solution supplements Stealthwatch NetFlowbased behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture. Together Stealthwatch and Cisco ISE present network security analysts with a view integrating NetFlow data and contextual information enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner.
-
-Stealthwatch components include:
-- Stealthwatch Management Console: security management system that allows network administrators to define, configure, and monitor multiple distributed Stealthwatch Flow Collectors from a single location. It uses graphical representations of network traffic, identity information, customized summary reports, and integrated security and network intelligence for comprehensive analysis.
-- Flow Collector: leverages enterprise telemetry such as NetFlow, IPFIX (Internet Protocol Flow Information Export), and other types of flow data from existing infrastructure such as routers, switches, firewalls, endpoints, and other network infrastructure devices. The Flow Collector can also receive and collect telemetry from proxy data sources, which can be analyzed by the cloud-based, multilayered machine learning engine, Cognitive Intelligence, for deep visibility into both web and network traffic.
-- Flow Sensor (optional): produces telemetry for segments of the switching and routing infrastructure that can’t generate NetFlow natively. It also provides visibility into the application layer data and provides additional security context to enhance the Stealthwatch security analytics. It can analyze encrypted traffic.
-- UDP Director: simplifies the collection and distribution of network and security data across the enterprise. It helps reduce the processing power on network routers and switches by receiving essential network and security information from multiple locations and then forwarding it to a single data stream to one or more destinations.
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-    onclick= "window.open('https://www.securitytut.com/scor/security-products-solutions')"
-    src    = "img/1700-SteathWatch_Components.jpg"
-    alt    = "StealthWatch Components"
-    title  = "StealthWatch Components"
-  />
-</figure>
-
-Stealthwatch offers different deployment models:
-- On-premises as a hardware appliance or a virtual machine called Stealthwatch Enterprise
-- Cloud-delivered as a software-as-a-service (SaaS) solution called Stealthwatch Cloud.
-
-Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibility and threat detection within public cloud infrastructures such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
-
-**Cisco Cognitive Threat Analytics** helps you quickly detect and respond to sophisticated, clandestine attacks that are already under way or are attempting to establish a presence within your environment. The solution automatically identifies and investigates suspicious or malicious web-based traffic. It identifies both potential and confirmed threats, allowing you to quickly remediate the infection and reduce the scope and damage of an attack, whether it’s a known threat campaign that has spread across multiple organizations or a unique threat you’ve never seen before.
-
-<figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-  <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-    onclick= "window.open('https://www.securitytut.com/scor/security-products-solutions')"
-    src    = "img/1700-Cognitive-Threat-Analytics-Health-Status.jpg"
-    alt    = "Cognitive Threat Analytics Health Status"
-    title  = "Cognitive Threat Analytics Health Status"
-  />
-</figure>
+[<span style="font-weight: bold;">Cisco SteathWatch</span>](quizSol04-5.md#17-security-products--solutions)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 1</span>
