@@ -91,7 +91,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
-  An engineer is implementing NTP authentication within their network and has configured both the client and server devices with the command ntp authentication-key 1 md5 Cisc392368270. The server at 1.1.1.1 is attempting to authenticate to the client at 1.1.1.2, however it is unable to do so. Which command is required to enable the client to accept the server’s authentication key?
+  An engineer is implementing NTP authentication within their network and has configured both the client and server devices with the command `ntp authentication-key 1 md5 Cisc392368270`. The server at 1.1.1.1 is attempting to authenticate to the client at 1.1.1.2, however it is unable to do so. Which command is required to enable the client to accept the server’s authentication key?
 
   A. `ntp peer 1.1.1.1 key 1`<br>
   B. `ntp server 1.1.1.1 key 1`<br>
@@ -125,6 +125,14 @@
       title  = "Netflow Export Formats"
     />
   </figure>
+
+  Group 1: Version 1, 5, 8, 9
+
+  Group 2:<br>
+  A. appropriate only for the main cache<br>
+  B. introduced support for aggregation caches<br>
+  C. appropriate only for legacy systems<br>
+  D. introduced extensibility<br>
 
   Answer: <br><br>
 
@@ -167,7 +175,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
 
-  When configuring ISAKMP for IKEv1 Phase1 on a Cisco IOS router, an administrator needs to input the command crypto isakmp key cisco address 0.0.0.0. The administrator is not sure what the IP addressing in this command issued for. What would be the effect of changing the IP address from 0.0.0.0 to 1.2.3.4?
+  When configuring ISAKMP for IKEv1 Phase1 on a Cisco IOS router, an administrator needs to input the command `crypto isakmp key cisco address 0.0.0.0`. The administrator is not sure what the IP addressing in this command issued for. What would be the effect of changing the IP address from 0.0.0.0 to 1.2.3.4?
 
   A. The key server that is managing the keys for the connection will be at 1.2.3.4<br>
   B. The remote connection will only be allowed from 1.2.3.4<br>
