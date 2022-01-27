@@ -220,13 +220,24 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
       src    = "img/1917-Mail_authentication.jpg"
       alt    = "MailA Authentication"
       title  = "MailA Authentication"
     />
-  </figure>  
+  </figure>
+
+  ```text
+  Info: New SMTP ICID 30 Interface Management (192.168.0.100)
+    address 10.128.128.200 reverse dns host unknown verified no
+  Info: ICID 30 ACCEPT SG SUSPECTLIST match sbrs[none] SBRS None
+  Info: ICID 30 TLS success protocol TLSv1 cipher DHE-RSA-AES256-SHA
+  Info: SMTP Auth: (ICID 30) succeeded for user: cisco using
+    AUTH mechanism: LOGIN with profile: ldap_smpt
+  Info: MID 80 matched all recipients for per-recipient policy
+    DEFAULT in the outbound table
+  ```
 
   Which type of authentication is in use?
 
@@ -311,6 +322,38 @@
       title  = "Site-ti-site VPN"
     />
   </figure>
+
+  ```text
+  > show crypto ipsec sa
+  interface: Outside
+    crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
+
+    access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0
+      255.255.255.0 10.0.10.0 255.255.255.0
+    local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
+    remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
+    current peer: 209.165.202.129
+
+    #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+    #pkts decaps: 17, #pkts decrypt: 17, #pkts verify 17
+    #pkts compressed: 0, #pkts decompress: 0
+    #pkts not compressed: 0, #pkts compr. failed: 0, 
+      #pkts decompress failed: 0
+    #pre-frag successes: 0, #pre-frag failure: 0, 
+      #fragments created: 0
+    #PMTUs sent: 0, PMTUs rcvd: 0, 
+      #decapsulated frgs needing reassembly: 0
+    #TFC rsvd: 0, #TFC sent: 0
+    #Valid ICMP Errors rcvd: 0, Invalid ICMP Errors rcvd: 0
+    #send errors: 0, #recv errors: 0
+
+    local crypto endpt.: 209.165.200.225/500,
+      remote crypto endpt.: 209.165.200.129/500
+    path mtu 1500, ipsec overhead 55(36), media mtu 1500
+    PMTU time remaining (sec): 0, DF policy: copy-df
+    current outbound spi: B6F5EA53
+    curren tinbound spi: 84348DEE
+  ```
 
   Traffic is not passing through IPsec site-to-site VPN on the Firepower Threat Defense appliance. What is causing this issue?
 
