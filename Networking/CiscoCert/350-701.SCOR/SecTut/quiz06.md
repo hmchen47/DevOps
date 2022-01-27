@@ -391,6 +391,7 @@
 
 
 <hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   Which Cisco platform ensures that machines that connect to organizational networks have the recommended antivirus definitions and patches to help prevent an organizational malware outbreak?
@@ -726,6 +727,7 @@
   
 
 <hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 51</span>
 
   Drag and drop the descriptions from the left onto the encryption algorithms on the right.

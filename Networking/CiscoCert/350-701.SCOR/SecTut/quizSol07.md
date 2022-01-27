@@ -4,7 +4,7 @@
 ## 20. New Questions - Part 2
 
 
-- <span style="color: blue; font-weight: bold;">Question 1</span>
+- <span style="color: #008888; font-weight: bold;">Question 1</span>
 
   A Cisco ESA network administrator has been tasked to use a newly installed service to help create policy based on the reputation verdict. During testing, it is discovered that the Cisco ESA is not dropping files that have an undetermined verdict. What is causing this issue?
 
@@ -24,7 +24,7 @@
   From the reference we can deduce that the file reputation score is below the threshold so ESA is not dropping it.
 
 
-- <span style="color: blue; font-weight: bold;">Question 2</span>
+- <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   An administrator is trying to determine which applications are being used in the network but does not want the network devices to send metadata to Cisco Firepower. Which feature should be used to accomplish this?
 
@@ -42,7 +42,7 @@
   Reference: https://www.cisco.com/c/en/us/solutions/collateral/enterprise-networks/enterprise-network-security/white-paper-c11-736595.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 3</span>
+- <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which attack is preventable by Cisco ESA but not by the Cisco WSA?
 
@@ -65,7 +65,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa13-5/user_guide/b_ESA_Admin_Guide_13-5/m_advanced_phishing_protection.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 4</span>
+- <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   A Cisco ESA administrator has been tasked with configuring the Cisco ESA to ensure there are no viruses before quarantined emails are delivered. In addition, delivery of mail from known bad mail servers must be prevented. Which two actions must be taken in order to meet these requirements? (Choose two)
 
@@ -93,7 +93,7 @@
   Note: The recipient access table (RAT), not to be confused with remote-access Trojan (also RAT), is a Cisco ESA term that defines which recipients are accepted by a public listener.
 
 
-- <span style="color: blue; font-weight: bold;">Question 5</span>
+- <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   Which type of dashboard does Cisco DNA Center provide for complete control of the network?
 
@@ -111,7 +111,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-faq-cte-en.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 6</span>
+- <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   In an IaaS cloud services model, which security function is the provider responsible for managing?
 
@@ -129,7 +129,7 @@
   Note: Cloud access security broker (CASB) provides visibility and compliance checks, protects data against misuse and exfiltration, and provides threat protections against malware such as ransomware.
 
 
-- <span style="color: blue; font-weight: bold;">Question 7</span>
+- <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   A network engineer has been tasked with adding a new medical device to the network. Cisco ISE is being used as the NAC server, and the new device does not have a supplicant available. What must be done in order to securely connect this device to the network?
 
@@ -153,7 +153,7 @@
   Reference: https://community.cisco.com/t5/security-documents/ise-profiling-design-guide/ta-p/3739456
 
 
-- <span style="color: blue; font-weight: bold;">Question 8</span>
+- <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   An engineer is implementing NTP authentication within their network and has configured both the client and server devices with the command ntp authentication-key 1 md5 Cisc392368270. The server at 1.1.1.1 is attempting to authenticate to the client at 1.1.1.2, however it is unable to do so. Which command is required to enable the client to accept the server’s authentication key?
 
@@ -186,7 +186,7 @@
   Note: To configure a Cisco device as a NTP client, use the command ntp server <IP address>. For example: Router(config)#ntp server 10.10.10.1. This command will instruct the router to query 10.10.10.1 for the time.
 
 
-- <span style="color: blue; font-weight: bold;">Question 9</span>
+- <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   What is the role of an endpoint in protecting a user from a phishing attack?
 
@@ -198,7 +198,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 10</span>
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   Drag and drop the NetFlow export formats from the left onto the descriptions on the right.
 
@@ -226,7 +226,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/cfg-nflow-data-expt.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 11</span>
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
 
   An organization has noticed an increase in malicious content downloads and wants to use Cisco Umbrella to prevent this activity for suspicious domains while allowing normal web traffic. Which action will accomplish this task?
 
@@ -246,7 +246,7 @@
   Reference: https://docs.umbrella.com/deployment-umbrella/docs/what-is-the-intelligent-proxy
 
 
-- <span style="color: blue; font-weight: bold;">Question 12</span>
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
 
   With which components does a southbound API within a software-defined network architecture communicate?
 
@@ -271,7 +271,7 @@
   The Southbound API is used to communicate between Controllers and network devices.
 
 
-- <span style="color: blue; font-weight: bold;">Question 13</span>
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   A network administrator needs to find out what assets currently exist on the network. Third-party systems need to be able to feed host data into Cisco Firepower. What must be configured to accomplish this?
 
@@ -291,7 +291,7 @@
   A network analysis policy governs how traffic is decoded and preprocessed so it can be further evaluated, especially for anomalous traffic that might signal an intrusion attempt -> Answer D is not correct.
 
 
-- <span style="color: blue; font-weight: bold;">Question 14</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   When configuring ISAKMP for IKEv1 Phase1 on a Cisco IOS router, an administrator needs to input the command crypto isakmp key cisco address 0.0.0.0. The administrator is not sure what the IP addressing in this command issued for. What would be the effect of changing the IP address from 0.0.0.0 to 1.2.3.4?
 
@@ -307,7 +307,7 @@
   The command crypto isakmp key cisco address 1.2.3.4 authenticates the IP address of the 1.2.3.4 peer by using the key cisco. The address of “0.0.0.0” will authenticate any address with this key.
 
 
-- <span style="color: blue; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   Which suspicious pattern enables the Cisco Tetration platform to learn the normal behavior of users?
 
@@ -333,7 +333,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/white-paper-c11-740380.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 16</span>
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   Due to a traffic storm on the network, two interfaces were error-disabled, and both interfaces sent SNMP traps. Which two actions must be taken to ensure that interfaces are put back into service? (Choose two)
 
@@ -352,7 +352,7 @@
   - The “errdisable recovery cause …” global configuration command enables the timer to automatically recover error-disabled state, and the “errdisable recovery interval interval” global configuration command specifies the time to recover error-disabled state.
 
 
-- <span style="color: blue; font-weight: bold;">Question 17</span>
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
 
   What is the difference between Cross-site Scripting and SQL Injection attacks?
 
@@ -374,7 +374,7 @@
   Note: The main difference between a SQL and XSS injection attack is that SQL injection attacks are used to steal information from databases whereas XSS attacks are used to redirect users to websites where attackers can steal data from them.
 
 
-- <span style="color: blue; font-weight: bold;">Question 18</span>
+- <span style="color: #008888; font-weight: bold;">Question 18</span>
 
   A network administrator is configuring a switch to use Cisco ISE for 802.1X. An endpoint is failing authentication and is unable to access the network. Where should the administrator begin troubleshooting to verify the authentication details?
 
@@ -407,7 +407,7 @@
   Reference: https://community.cisco.com/t5/security-documents/how-to-troubleshoot-ise-failed-authentications-amp/ta-p/3630960
 
 
-- <span style="color: blue; font-weight: bold;">Question 19</span>
+- <span style="color: #008888; font-weight: bold;">Question 19</span>
 
   What is a prerequisite when integrating a Cisco ISE server and an AD domain?
 
@@ -429,7 +429,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-0/ise_active_directory_integration/b_ISE_AD_integration_2x.html#reference_8DC463597A644A5C9CF5D582B77BB24F
 
 
-- <span style="color: blue; font-weight: bold;">Question 20</span>
+- <span style="color: #008888; font-weight: bold;">Question 20</span>
 
   An organization recently installed a Cisco WSA and would like to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity. After enabling the AVC engine, what must be done to implement this?
 
@@ -445,7 +445,7 @@
   The Application Visibility and Control (AVC) engine lets you create policies to control application activity on the network without having to fully understand the underlying technology of each application. You can configure application control settings in Access Policy groups. You can block or allow applications individually or according to application type. You can also apply controls to particular application types.
 
 
-- <span style="color: blue; font-weight: bold;">Question 21</span>
+- <span style="color: #008888; font-weight: bold;">Question 21</span>
 
   Which method is used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources?
 
@@ -467,7 +467,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ISE_admin_guide_24/m_ise_devices_byod.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 22</span>
+- <span style="color: #008888; font-weight: bold;">Question 22</span>
 
   Refer to the exhibit.
 
@@ -511,7 +511,7 @@
   </figure>
 
 
-- <span style="color: blue; font-weight: bold;">Question 23</span>
+- <span style="color: #008888; font-weight: bold;">Question 23</span>
 
   An organization is trying to implement micro-segmentation on the network and wants to be able to gain visibility on the applications within the network. The solution must be able to maintain and force compliance. Which product should be used to meet these requirements?
 
@@ -533,7 +533,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/solution-overview-c22-739268.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 24</span>
+- <span style="color: #008888; font-weight: bold;">Question 24</span>
 
   Which factor must be considered when choosing the on-premise solution over the cloud-based one?
 
@@ -545,7 +545,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 25</span>
+- <span style="color: #008888; font-weight: bold;">Question 25</span>
 
   Which term describes when the Cisco Firepower downloads threat intelligence updates from Cisco Talos?
 
@@ -563,7 +563,7 @@
   Reference: https://blogs.cisco.com/developer/automate-threat-intelligence-using-cisco-threat-intelligence-director
 
 
-- <span style="color: blue; font-weight: bold;">Question 26</span>
+- <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   An organization has a Cisco Stealthwatch Cloud deployment in their environment. Cloud logging is working as expected, but logs are not being received from the on-premise network, what action will resolve this issue?
 
@@ -581,7 +581,7 @@
   Reference: CCNP And CCIE Security Core SCOR 350-701 Official Cert Guide
 
 
-- <span style="color: blue; font-weight: bold;">Question 27</span>
+- <span style="color: #008888; font-weight: bold;">Question 27</span>
 
   What does Cisco AMP for Endpoints use to help an organization detect different families of malware?
 
@@ -603,7 +603,7 @@
   Reference: https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2016/pdf/BRKSEC-2139.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 28</span>
+- <span style="color: #008888; font-weight: bold;">Question 28</span>
 
   What are two characteristics of Cisco DNA Center APIs? (Choose two)
 
@@ -616,7 +616,7 @@
   Answer: D E
 
 
-- <span style="color: blue; font-weight: bold;">Question 29
+- <span style="color: #008888; font-weight: bold;">Question 29
 
   What is a benefit of conducting device compliance checks?
 
@@ -628,7 +628,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 30</span>
+- <span style="color: #008888; font-weight: bold;">Question 30</span>
 
   In which two ways does Easy Connect help control network access when used with Cisco TrustSec? (Choose two)
 
@@ -647,7 +647,7 @@
   Reference: https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/trustsec/trustsec-with-easy-connect-configuration-guide.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 31</span>
+- <span style="color: #008888; font-weight: bold;">Question 31</span>
 
   What is the benefit of installing Cisco AMP for Endpoints on a network?
 
@@ -659,7 +659,7 @@
   Answer: D
 
 
-- <span style="color: blue; font-weight: bold;">Question 32</span>
+- <span style="color: #008888; font-weight: bold;">Question 32</span>
 
   An administrator is configuring a DHCP server to better secure their environment. They need to be able to rate-limit the traffic and ensure that legitimate requests are not dropped. How would this be accomplished?
 
@@ -701,7 +701,7 @@
   Only ports that connect to an authorized DHCP server are trusted, and allowed to send all types of DHCP messages. All other ports on the switch are untrusted and can send only DHCP requests. If a DHCP response is seen on an untrusted port, the port is shut down.
 
 
-- <span style="color: blue; font-weight: bold;">Question 33</span>
+- <span style="color: #008888; font-weight: bold;">Question 33</span>
 
   Refer to the exhibit.
 
@@ -728,7 +728,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 34</span>
+- <span style="color: #008888; font-weight: bold;">Question 34</span>
 
   Refer to the exhibit.
 
@@ -755,7 +755,7 @@
   In order to use AAA along with an external token authentication mechanism, set the “Method” as “Both” in the Authentication.
 
 
-- <span style="color: blue; font-weight: bold;">Question 35</span>
+- <span style="color: #008888; font-weight: bold;">Question 35</span>
 
   An engineer has been tasked with implementing a solution that can be leveraged for securing the cloud users, data, and applications. There is a requirement to use the Cisco cloud native CASB and cloud cybersecurity platform. What should be used to meet these requirements?
 
@@ -773,7 +773,7 @@
   Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/cloud-web-security/at-a-glance-c45-738565.pdf
 
 
-- <span style="color: blue; font-weight: bold;">Question 36</span>
+- <span style="color: #008888; font-weight: bold;">Question 36</span>
 
   An engineer needs a cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API. Which solution should be used to accomplish this goal?
 
@@ -799,7 +799,7 @@
   - An incident is a record of the triggering of an alerting policy. Cloud Monitoring opens an incident when a condition of an alerting policy has been met.
 
 
-- <span style="color: blue; font-weight: bold;">Question 37</span>
+- <span style="color: #008888; font-weight: bold;">Question 37</span>
 
   Why is it important to implement MFA inside of an organization?
 
@@ -811,7 +811,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 38</span>
+- <span style="color: #008888; font-weight: bold;">Question 38</span>
 
   Drag and drop the solutions from the left onto the solution’s benefits on the right.
 
@@ -831,7 +831,7 @@
   - obtains contextual identity and profiles for all the users and devices connected on a network: Cisco ISE
 
 
-- <span style="color: blue; font-weight: bold;">Question 39</span>
+- <span style="color: #008888; font-weight: bold;">Question 39</span>
 
   A network administrator is configuring SNMPv3 on a new router. The users have already been created; however, an additional configuration is needed to facilitate access to the SNMP views. What must the administrator do to accomplish this?
 
@@ -843,7 +843,7 @@
   Answer: B
 
 
-- <span style="color: blue; font-weight: bold;">Question 40</span>
+- <span style="color: #008888; font-weight: bold;">Question 40</span>
 
   An organization is using Cisco Firepower and Cisco Meraki MX for network security and needs to centrally manage cloud policies across these platforms. Which software should be used to accomplish this goal?
 
@@ -865,7 +865,7 @@
   Reference: https://www.cisco.com/c/en/us/products/collateral/security/defense-orchestrator/datasheet-c78-736847.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 41</span>
+- <span style="color: #008888; font-weight: bold;">Question 41</span>
 
   What is a function of 3DES in reference to cryptography?
 
@@ -877,7 +877,7 @@
   Answer: C
 
 
-- <span style="color: blue; font-weight: bold;">Question 42</span>
+- <span style="color: #008888; font-weight: bold;">Question 42</span>
 
   Which risk is created when using an Internet browser to access cloud-based service?
 
@@ -893,7 +893,7 @@
   =========================== New Questions (added on 1st-Apr-2021) ===========================
 
 
-- <span style="color: blue; font-weight: bold;">Question 43</span>
+- <span style="color: #008888; font-weight: bold;">Question 43</span>
 
   An organization has a Cisco ESA set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation. Which actions must be performed in order to provide this capability?
 
@@ -924,7 +924,7 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_010001.html
 
 
-- <span style="color: blue; font-weight: bold;">Question 44</span>
+- <span style="color: #008888; font-weight: bold;">Question 44</span>
 
   Drag and drop the common security threats from left onto the definitions on the right.
 
@@ -944,7 +944,7 @@
   - unwanted messages in an email inbox: spam
 
 
-- <span style="color: blue; font-weight: bold;">Question 45</span>
+- <span style="color: #008888; font-weight: bold;">Question 45</span>
 
   Refer to the exhibit.
 
@@ -994,7 +994,7 @@
   Now return to our question. In the exhibit we see a value of 16 in the “Unique NAT ID” and the question stated that “FTD is not behind a NAT device” so we can only suppose FMC is behind a NAT device. So the correct solution should be “configure manager add DONTRESOLVE <registration key> 16” but there is no such answer. Therefore we have to suppose there are no NAT device between FMC and FTD.
 
 
-- <span style="color: blue; font-weight: bold;">Question 46</span>
+- <span style="color: #008888; font-weight: bold;">Question 46</span>
 
   A switch with Dynamic ARP Inspection enabled has received a spoofed ARP response on a trusted interface. How does the switch behave in this situation?
 
