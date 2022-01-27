@@ -453,7 +453,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 33vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
       src    = "img/2034-remote_access_VPN.jpg"
       alt    = "Remote Access"
@@ -632,7 +632,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 35vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
       src    = "img/2045-new_FTD_to_FMG.jpg"
       alt    = "New FTD to FMG"
@@ -642,10 +642,10 @@
 
   An administrator is adding a new Cisco FTD device to their network and wants to manage it with Cisco FMC. The Cisco FTD is not behind a NAT device. Which command is needed to enable this on the Cisco FTD?
 
-  A. configure manager add `DONTRESOLVE <registration key>`<br>
-  B. configure manager add `<FMC IP address> <registration key> 16`<br>
-  C. configure manager add `DONTRESOLVE <registration key> FTD123`<br>
-  D. configure manager add `<FMC IP address> <registration key>`<br>
+  A. `configure manager add DONTRESOLVE <registration key>`<br>
+  B. `configure manager add <FMC IP address> <registration key> 16`<br>
+  C. `configure manager add DONTRESOLVE <registration key> FTD123`<br>
+  D. `configure manager add <FMC IP address> <registration key>`<br>
 
   Answer: <br><br> 
   
