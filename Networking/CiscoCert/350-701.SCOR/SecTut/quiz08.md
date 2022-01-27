@@ -609,7 +609,19 @@
       alt    = "Cloud Security Assessment"
       title  = "Cloud Security Assessment"
     />
-  </figure>  
+  </figure> 
+
+  Group 1:<br>
+  A. cloud data protection assessment<br>
+  B. cloud security strategy workshop<br>
+  C. cloud security architecture assessment<br>
+  D. user entity behavior assessment<br>
+
+  Group 2:<br>
+  1\. identify strengths and areas for improvement in the current security architecture during onboarding<br>
+  2\. develop a cloud security strategy and roadmap aligned to business priorities<br>
+  3\. detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application<br>
+  4\. understand the security posture of the data or activity taking place in public cloud deployments<br>
 
   Answer:
   
@@ -620,6 +632,7 @@
 
   Refer to the exhibit.
 
+<!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
@@ -627,7 +640,42 @@
       alt    = "Python SSL Connection"
       title  = "Python SSL Connection"
     />
-  </figure>
+  </figure> 
+-->
+
+  ```python
+  import http.client
+  import base64
+  import ssl
+  import sys
+
+  host = sys.argv[1]      # "10.10.10.240"
+  user = sys.argv[2]      # "ersad"
+  password = sys.argv[3]  # "password1"
+
+  conn= http.client.HTTPSConnection(
+    "{}:9060".format(host), 
+    context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    )
+
+  creds = str.encoder(';'.join(user, password))
+  encodedAuth = bytes.decode(base64.b64encode(creds))
+
+  headers = {
+    'accept': "application.json",
+    'authorization': " ".join("basic", encodedAuth)
+    'cache-control': "no-cache"
+  }
+
+  conn.request("GET", "/ers/config/internaluser/", headers=headers)
+
+  res = conn.getresponse()
+  data = res.read()
+
+  print("Status: {}".format(res.status))
+  print("Header:\n".fromat(res.headers))
+  print("Body:\n".format(data.encoded("utf-8")))
+  ```
 
   What does this python script accomplish?
 
@@ -681,7 +729,7 @@
   Answer: 
   
 
-  ======================== New Questions (added on 27th-Sep-2021) ========================
+  <!-- ======================== New Questions (added on 27th-Sep-2021) ======================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 54</span>
@@ -1049,7 +1097,7 @@
   Answer: 
   
 
-  ======================== New questions (added on 18th-Dec-2021) ===========================
+  <!-- ======================== New questions (added on 18th-Dec-2021) =========================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 81</span>
@@ -1244,15 +1292,71 @@
 
   Refer to the exhibit.
 
+<!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2195-ASA_Rest_API_snippet.jpg"
       alt    = "Snippet of ASA REST API"
       title  = "Snippet of ASA REST API"
     />
-  </figure>
+  </figure> -->
 
+  ```python
+  ...#{code snippet}
+  ...
+  api+path = "/api/access/global/rules"
+  url = server + api_path
+  f = None
+
+  post_data = {
+    "sourceService": {
+      "kind": serviceKind,
+      "value": sourceServiceValue
+    },
+    "destinationAddress": {
+      "kind": destinationAddressKind,
+      "value": destinationAddress
+    },
+    "remarks": [],
+    "destinationService": {
+      "kind": serviceKind,
+      "value": destinationServiceValue
+    },
+    "permit": trueOrfalse,
+    "active": "true",
+    "position": "1",
+    "sourceAddress": {
+      "kind": sourceAddressKind,
+      "value": sourceAddress
+    }
+  }
+
+  req = urllib2.Request(url, json.dumps(post_data), headers)
+  base64string = base64.encodestring(
+    "%s: %s" % (username, password)).replace("\n', ")
+  req.add_header("Authorization", "basic %s" % base64string)
+  try:
+    f = urllib2.urlopen(req)
+    status_code = f.getcode()
+
+    print "Status code is " + str(status_code)
+    if status == 201:
+    print "Operation successful"
+  except urllib2.HTTPError, err:
+    print "Error received from server. HTTP Status code : "
+     + str(err.coe)
+
+  try:
+    json_error = json.loads(err.read())
+    if json_error:
+      print json.dumps(json_error, sort_key=True, 
+        indent=4, separators=(',', ': '))
+  except ValueError:
+    pass
+  finally:
+    if f: f.close()
+  ```
   What is the function of the Python script code snippet for the Cisco ASA REST API?
 
   A. deletes a global rule from policies<br>
@@ -1475,18 +1579,30 @@
   Drag and drop the descriptions from the right onto the correct positions on the left.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 0vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21112-Security_Products.jpg"
-      alt    = "Secuity Products"
-      title  = "Secuity Products"
+      alt    = "Security Products"
+      title  = "Security Products"
     />
   </figure>
+
+  Group 1:<br>
+  A. Collective Security Intelligence<br>
+  B. NGIPS<br>
+  C. Full Context Awareness<br>
+  D. AMP<br>
+
+  Group 2:<br>
+  1\. threat prevention and mitigation for known and unknown threats<br>
+  2\. real-time threat intelligence and security protection<br>
+  3\. detection, blocking and remediation to protect the enterprise against targeted malware attacks<br>
+  4\. policy enforcement based on complete visibility of users and communication between virtual machines<br>
 
   Answer:
 
 
-  ============================ New Questions (added on 8th-Jan-2022) ============================
+  <!-- ============================ New Questions (added on 8th-Jan-2022) ============================ -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 113</span>
@@ -1494,7 +1610,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21113-Private_VLAN_promiscuous_port.jpg"
       alt    = "Private VLAN promiscuous port"

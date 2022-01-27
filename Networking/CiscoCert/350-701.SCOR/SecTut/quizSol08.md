@@ -1101,7 +1101,7 @@
   - “Potentially Harmful Domains” are domains that exhibit suspicious behavior and may be part of an attack. This category has a higher risk of unwanted detections.
 
 
-  ======================== New Questions (added on 27th-Sep-2021) ========================
+  <!-- ======================== New Questions (added on 27th-Sep-2021) ======================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 54</span>
@@ -1950,6 +1950,7 @@
 
   Refer to the exhibit.
 
+<!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
@@ -1957,7 +1958,63 @@
       alt    = "Snippet of ASA REST API"
       title  = "Snippet of ASA REST API"
     />
-  </figure>
+  </figure> -->
+
+  ```python
+  ...#{code snippet}
+  ...
+  api+path = "/api/access/global/rules"
+  url = server + api_path
+  f = None
+
+  post_data = {
+    "sourceService": {
+      "kind": serviceKind,
+      "value": sourceServiceValue
+    },
+    "destinationAddress": {
+      "kind": destinationAddressKind,
+      "value": destinationAddress
+    },
+    "remarks": [],
+    "destinationService": {
+      "kind": serviceKind,
+      "value": destinationServiceValue
+    },
+    "permit": trueOrfalse,
+    "active": "true",
+    "position": "1",
+    "sourceAddress": {
+      "kind": sourceAddressKind,
+      "value": sourceAddress
+    }
+  }
+
+  req = urllib2.Request(url, json.dumps(post_data), headers)
+  base64string = base64.encodestring(
+    "%s: %s" % (username, password)).replace("\n', ")
+  req.add_header("Authorization", "basic %s" % base64string)
+  try:
+    f = urllib2.urlopen(req)
+    status_code = f.getcode()
+
+    print "Status code is " + str(status_code)
+    if status == 201:
+    print "Operation successful"
+  except urllib2.HTTPError, err:
+    print "Error received from server. HTTP Status code : "
+     + str(err.coe)
+
+  try:
+    json_error = json.loads(err.read())
+    if json_error:
+      print json.dumps(json_error, sort_key=True, 
+        indent=4, separators=(',', ': '))
+  except ValueError:
+    pass
+  finally:
+    if f: f.close()
+  ```
 
   What is the function of the Python script code snippet for the Cisco ASA REST API?
 
