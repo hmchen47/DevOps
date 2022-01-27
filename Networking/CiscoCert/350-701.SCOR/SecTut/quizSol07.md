@@ -645,11 +645,26 @@
 
   ETHOS is the Cisco file grouping engine. It allows us to group families of files together so if we see variants of a malware, we mark the ETHOS hash as malicious and whole families of malware are instantly detected.
 
-  Reference: https://docs.amp.cisco.com/AMP%20for%20Endpoints%20User%20Guide.pdf
+  SPERO is the Cisco machine-based learning system.  We use hundreds of features of a file, which we call a SPERO fingerprint. This is sent to the cloud and SPERO trees determine whether a file is malicious.
+
+  Windows, Mac, and Linux connectors have the option of enabling offline detection engines (TETRA for Windows and ClamAV for Mac and Linux) to protect the endpoint from malware without connecting to the Cisco Cloud to query each file.
+
+  Reference: 
+  - [Secure Endpoint User Guide](https://docs.amp.cisco.com/en/SecureEndpoint/Secure%20Endpoint%20User%20Guide.pdf)
+  - [AMP Endpoint Documents](https://docs.amp.cisco.com/AMP%20for%20Endpoints%20User%20Guide.pdf)
 
   ETHOS = Fuzzy Fingerprinting using static/passive heuristics
 
-  Reference: https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2016/pdf/BRKSEC-2139.pdf
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 60vw;"
+      onclick= "window.open('https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2020/pdf/DGTL-BRKSEC-3446.pdf')"
+      src    = "img/2027-AMP_Connector_Summary.png"
+      alt    = "AMP COnnector Engine Summary"
+      title  = "AMP COnnector Engine Summary"
+    />
+  </figure>
+
+  Reference: [Endpoint Security](https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2020/pdf/DGTL-BRKSEC-3446.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 28</span>
@@ -663,6 +678,29 @@
   E. They view the overall health of the network<br>
 
   Answer: D E
+
+  Explanation
+
+  Cisco DNA Center is at the heart of Cisco’s intent-based network architecture.
+  
+  Cisco DNA Center supports the expression of business intent for network use cases, such as base automation capabilities in the enterprise network.
+
+  From the main menu, Cisco DNA Center has four general sections aligned to IT workflows:
+  - <span style="color: #bb6600; font-weight: bold;">Design</span>: Design your network for consistent configurations by device and by site.
+  - <span style="color: #bb6600; font-weight: bold;">Policy</span>: Translate business intent into network policies and apply those policies, such as access control, traffic routing, and quality of service, consistently over the entire wired and wireless infrastructure. (SD-Access) solution built from Cisco DNA Center and Cisco Identity Services Engine (ISE).
+  - <span style="color: #bb6600; font-weight: bold;">Provision</span>: Once you have created policies in Cisco DNA Center, provisioning is a simple drag-and-drop task.
+  - <span style="color: #bb6600; font-weight: bold;">Assurance</span>: Cisco DNA Assurance, using AI/ML, enables every point on the network to become a sensor, sending continuous streaming telemetry on application performance and user connectivity in real time.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://bit.ly/32Bzk2T')"
+      src    = "https://bit.ly/3mJ1KPd"
+      alt    = "Cisco DNA Center"
+      title  = "Cisco DNA Center"
+    />
+  </figure>
+
+  Reference: [Cisco DNA Center Solution Overview](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 29
@@ -693,7 +731,7 @@
 
   Easy Connect simplifies network access control and segmentation by allowing the assignment of Security Group Tags to endpoints without requiring 802.1X on those endpoints, whether using wired or wireless connectivity.
 
-  Reference: https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/trustsec/trustsec-with-easy-connect-configuration-guide.pdf
+  Reference: [TrustSecConfigurationGuide](https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/trustsec/trustsec-with-easy-connect-configuration-guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
@@ -724,7 +762,7 @@
   To understand DHCP snooping we need to learn about DHCP spoofing attack first.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
       src    = "img/1939-DHCP_Spoofing_Attack.jpg"
       alt    = "DHCP Spoofing Attack"
@@ -739,7 +777,7 @@
   DHCP snooping can prevent DHCP spoofing attacks. DHCP snooping is a Cisco Catalyst feature that determines which switch ports can respond to DHCP requests. Ports are identified as trusted and untrusted.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
       src    = "img/1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg"
       alt    = "DHCP Spoofing Attack w/ Trust & Untrust Ports"
@@ -782,7 +820,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
       src    = "img/2034-remote_access_VPN.jpg"
       alt    = "Remote Access"
@@ -817,9 +855,14 @@
 
   Explanation
 
-  Cisco Cloudlock: Secure your cloud users, data, and applications with the cloud-native Cloud Access Security Broker (CASB) and cloud cybersecurity platform.
+  Cisco Cloud Security Portfolio
+  - Cisco <span style="color: #bb6600;">Umbrella</span>: Set up the first line of defense against threats on the Internet wherever users go
+  - Cisco <span style="color: #bb6600;">Cloudlock</span>:  Secure your cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform -> Answer D is correct
+  - Cisco <span style="color: #bb6600;">Cloud Email Security</span>: Defend against advanced email threats
+  - Cisco <span style="color: #bb6600;">Stealthwatch Cloud</span>: Extend network visibility, threat detection, and analytics to your public cloud environments
+  - Cisco <span style="color: #bb6600;">Next-Generation Firewall</span>: Protect critical infrastructure in the cloud with the Cisco Firepower Next-Generation Firewall
 
-  Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/cloud-web-security/at-a-glance-c45-738565.pdf
+  Reference: [Cisco Cloud Security](https://www.cisco.com/c/dam/en/us/products/collateral/security/cloud-web-security/at-a-glance-c45-738565.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 36</span>
@@ -835,16 +878,17 @@
 
   Explanation
 
+  - Cisco Cloudlock utilizes various techniques to surface potential threats from various categories which focus on Locations, IPs and Users Login Activity.
   - Cisco Cloudlock continuously monitors cloud environments with a cloud Data Loss Prevention (DLP) engine to identify sensitive information stored in cloud environments in violation of policy.
   - Cloudlock is API-based.
   - Incidents are a key resource in the Cisco Cloudlock application. They are triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file).
 
-  Reference: https://docs.umbrella.com/cloudlock-documentation/docs/endpoints
+  Reference:
+  - [Threat Detection Technical Overview](https://docs.umbrella.com/cloudlock-documentation/docs/threat-detection-technical-overview)
+  - [Incidents Endpoint](https://docs.umbrella.com/cloudlock-documentation/docs/endpoints)
 
   Note:
-
   - Security information and event management (SIEM) platforms collect log and event data from security systems, networks and computers, and turn it into actionable security insights.
-
   - An incident is a record of the triggering of an alerting policy. Cloud Monitoring opens an incident when a condition of an alerting policy has been met.
 
 
@@ -874,10 +918,10 @@
   </figure>
 
   Answer:
-  - software-defined segmentation that uses SGTs and allows administrators to quickly scale and enforce policies across the network: Cisco TrustSec
-  - rapidly collects and analyzes NetFlow and telemetry data to deliver in-depth visibility and understanding of network traffic: Cisco Stealthwatch
-  - secure Internet gateway in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS: Cisco Umbrella
-  - obtains contextual identity and profiles for all the users and devices connected on a network: Cisco ISE
+  - software-defined segmentation that uses SGTs and allows administrators to quickly scale and enforce policies across the network: Cisco TrustSec (C)
+  - rapidly collects and analyzes NetFlow and telemetry data to deliver in-depth visibility and understanding of network traffic: Cisco Stealthwatch (A)
+  - secure Internet gateway in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS: Cisco Umbrella (D)
+  - obtains contextual identity and profiles for all the users and devices connected on a network: Cisco ISE (B)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 39</span>
@@ -908,10 +952,16 @@
   Cisco Defense Orchestrator is a cloud-based management solution that allows you to manage security policies and device configurations with ease across multiple Cisco and cloud-native security platforms.
 
   Cisco Defense Orchestrator features:
-  ….
-  Management of hybrid environments: Managing a mix of firewalls running the ASA, FTD, and Meraki MX software is now easy, with the ability to share policy elements across platforms.
+  - Templates for consistent policy design
+  - Optimize your existing platforms
+  - CLI in Bulk
+  - Audit of changes with change-log
+  - ASA to FTD Transition
+  - Management of hybrid environments: Managing a mix of firewalls running the ASA, FTD, and Meraki MX software is now easy, with the ability to share policy elements across platforms. -> Answer A is correct
+  - Management of AWS security groups: Orchestrate security groups across several VPCs and even AWS accounts, identify problems with objects and rules, and standardize policies between your AWS environment and existing premises-based ASA, FTD, and Meraki MX deployments. You can even visualize VPN tunnels between VPCs and Cisco equipment.
+  - RAVPN Monitoring and Management
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/defense-orchestrator/datasheet-c78-736847.html
+  Reference: [Cisco Defense Orchestrator Data Sheet](https://www.cisco.com/c/en/us/products/collateral/security/defense-orchestrator/datasheet-c78-736847.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 41</span>
@@ -939,7 +989,7 @@
 
 
 
-  =========================== New Questions (added on 1st-Apr-2021) ===========================
+  <!-- =========================== New Questions (added on 1st-Apr-2021) =========================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -955,22 +1005,24 @@
 
   Explanation
 
+  Message Actions
+
   You specify primary and secondary actions that the appliance will take when it detects a possible DLP violation in an outgoing message. Different actions can be assigned for different violation types and severities.
   Primary actions include:
-  – Deliver
-  – Drop
-  – Quarantine
+  - Deliver
+  - Drop
+  - Quarantine
 
   Secondary actions include:
-  – Sending a copy to a policy quarantine if you choose to deliver the message. The copy is a perfect clone of the original, including the Message ID. Quarantining a copy allows you to test the DLP system before deployment in addition to providing another way to monitor DLP violations. When you release the copy from the quarantine, the appliance delivers the copy to the recipient, who will have already received the original message.
-  – Encrypting messages. The appliance only encrypts the message body. It does not encrypt the message headers.
-  – Altering the subject header of messages containing a DLP violation.
-  – Adding disclaimer text to messages.
-  – Sending messages to an alternate destination mailhost.
-  – Sending copies (bcc) of messages to other recipients. (For example, you could copy messages with critical DLP violations to a compliance officer’s mailbox for examination.)
-  – Sending a DLP violation notification message to the sender or other contacts, such as a manager or DLP compliance officer.
+  - Sending a copy to a policy quarantine if you choose to <span style="text-decoration: underline;">deliver</span> the message. The copy is a perfect clone of the original, including the Message ID. Quarantining a copy allows you to test the DLP system before deployment in addition to providing another way to monitor DLP violations. When you release the copy from the quarantine, the appliance delivers the copy to the recipient, who will have already received the original message.
+  - Encrypting messages. The appliance only encrypts the message body. It does not encrypt the message headers.
+  - Altering the subject header of messages containing a DLP violation.
+  - Adding disclaimer text to messages. -> Answer D is correct
+  - Sending messages to an alternate destination mailhost.
+  - Sending copies (bcc) of messages to other recipients. (For example, you could copy messages with critical DLP violations to a compliance officer’s mailbox for examination.)
+  - Sending a DLP violation notification message to the sender or other contacts, such as a manager or DLP compliance officer.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_010001.html
+  Reference: [Data Loss Prevention](https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_010001.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 44</span>
@@ -987,10 +1039,10 @@
   </figure>
 
   Answer:
-  - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse: botnet
-  - a software program that copies itself from one computer to another, without human interaction: worm
-  - fraudulent attempts by cyber criminals to obtain private information: phishing
-  - unwanted messages in an email inbox: spam
+  - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse: botnet (A)
+  - a software program that copies itself from one computer to another, without human interaction: worm (B)
+  - fraudulent attempts by cyber criminals to obtain private information: phishing (C)
+  - unwanted messages in an email inbox: spam (D)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 45</span>
@@ -1008,39 +1060,28 @@
 
   An administrator is adding a new Cisco FTD device to their network and wants to manage it with Cisco FMC. The Cisco FTD is not behind a NAT device. Which command is needed to enable this on the Cisco FTD?
 
-  A. configure manager add `DONTRESOLVE <registration key>`<br>
-  B. configure manager add `<FMC IP address> <registration key> 16`<br>
-  C. configure manager add `DONTRESOLVE <registration key> FTD123`<br>
-  D. configure manager add `<FMC IP address> <registration key>`<br>
+  A. `configure manager add DONTRESOLVE <registration key>`<br>
+  B. `configure manager add <FMC IP address> <registration key> 16`<br>
+  C. `configure manager add DONTRESOLVE <registration key> FTD123`<br>
+  D. `configure manager add <FMC IP address> <registration key>`<br>
 
   Answer: D
 
   Explanation
 
-  The “Add device” dialog above is from the FMC when we want to add a new FTD. To let FMC manages FTD, first we need to add manager from the FTD and assign a register key of your choice with the command configure manager add 1.1.1.1 the_registration_key_you_want, (suppose 1.1.1.1 is the IP address of the FMC). You need to use the same registration key in FMC when adding this FTD as a managed device.
+  The “Add device” dialog above is from the FMC when we want to add a new FTD. To let FMC manages FTD, first we need to add manager from the FTD and assign a register key of your choice with the command `configure manager add 1.1.1.1 the_registration_key_you_want`, (suppose 1.1.1.1 is the IP address of the FMC). You need to use the same registration key in FMC when adding this FTD as a managed device.
 
-  Reference: https://cyruslab.net/2019/09/03/ciscocisco-firepower-lab-setup/
+  Reference: [Cisco Firepower lab setup](https://cyruslab.net/2019/09/03/ciscocisco-firepower-lab-setup/)
 
   In fact this is an unclear question, please read the note below:
 
   Note:
 
   According to this Cisco reference:
-  – If the FMC is behind a NAT device, enter a unique NAT ID along with the registration key, and specify DONTRESOLVE instead of the hostname, for example:
+  - If the FMC is behind a NAT device, enter a unique NAT ID along with the registration key, and specify `DONTRESOLVE` instead of the hostname, for example: `configure manager add DONTRESOLVE regk3y78 natid90`
+  - If the FTD is behind a NAT device, enter a unique NAT ID along with the FMC IP address or hostname, for example: `configure manager add 10.70.45.5 regk3y78 natid56`
 
-    ```text
-    Example:
-    > configure manager add DONTRESOLVE regk3y78 natid90
-    ```
-
-  – If the FTD is behind a NAT device, enter a unique NAT ID along with the FMC IP address or hostname, for example:
-
-    ```text
-    Example:
-    > configure manager add 10.70.45.5 regk3y78 natid56
-    ```
-
-  Now return to our question. In the exhibit we see a value of 16 in the “Unique NAT ID” and the question stated that “FTD is not behind a NAT device” so we can only suppose FMC is behind a NAT device. So the correct solution should be “configure manager add DONTRESOLVE <registration key> 16” but there is no such answer. Therefore we have to suppose there are no NAT device between FMC and FTD.
+  Now return to our question. In the exhibit we see a value of 16 in the “Unique NAT ID” and the question stated that “FTD is not behind a NAT device” so we can only suppose FMC is behind a NAT device. So the correct solution should be “`configure manager add DONTRESOLVE <registration key> 16`” but there is no such answer. Therefore we have to suppose there are no NAT device between FMC and FTD.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 46</span>
