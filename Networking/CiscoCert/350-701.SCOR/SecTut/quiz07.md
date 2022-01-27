@@ -126,13 +126,13 @@
     />
   </figure>
 
-  Group 1: Version 1, 5, 8, 9
+  Group 1: Version 1, 5, 8, 9 (A, B, C, D)
 
   Group 2:<br>
-  A. appropriate only for the main cache<br>
-  B. introduced support for aggregation caches<br>
-  C. appropriate only for legacy systems<br>
-  D. introduced extensibility<br>
+  1\. appropriate only for the main cache<br>
+  2\. introduced support for aggregation caches<br>
+  3\. appropriate only for legacy systems<br>
+  4\. introduced extensibility<br>
 
   Answer: <br><br>
 
@@ -520,6 +520,18 @@
     />
   </figure>
 
+  Group 1:<br>
+  A. Cisco Stealthwatch<br>
+  B. Cisco ISE<br>
+  C. Cisco TrustSec<br>
+  D. Cisco Umbrella<br>
+
+  Group 2:<br>
+  1\. software-defined segmentation that uses SGTs and allows administrators to quickly scale and enforce policies across the network<br>
+  2\. rapidly collects and analyzes NetFlow and telemetry data to deliver in-depth visibility and understanding of network traffic<br>
+  3\. secure Internet gateway in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS<br>
+  4\. obtains contextual identity and profiles for all the users and devices connected on a network<br>
+
   Answer: <br><br>
   
 
@@ -572,7 +584,7 @@
 
 
 
-  =========================== New Questions (added on 1st-Apr-2021) ===========================
+  <!-- =========================== New Questions (added on 1st-Apr-2021) =========================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -599,6 +611,18 @@
       title  = "Commom Security Threats"
     />
   </figure>
+
+  Group 1:<br>
+  A. botnet<br>
+  B. worm<br>
+  C. phising<br>
+  D. spam<br>
+
+  Group 2:<br>
+  1\. group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse<br>
+  2\. a software program that copies itself from one computer to another, without human interaction<br>
+  3\. fraudulent attempts by cyber criminals to obtain private information<br>
+  4\. unwanted messages in an email inbox<br>
 
   Answer: <br><br>
   
