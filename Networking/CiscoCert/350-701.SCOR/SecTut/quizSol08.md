@@ -475,6 +475,8 @@
   Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_aaa/configuration/15-sy/sec-usr-aaa-15-sy-book/sec-rad-coa.html
 
 
+<hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   With Cisco AMP for Endpoints, which option shows a list of all files that have been executed in your environment?
@@ -972,6 +974,8 @@
 
   Reference: https://www.cisco.com/c/dam/en/us/products/security/security-strategy-advisory-aag.pdf
 
+
+<hr>
 
 - <span style="color: #008888; font-weight: bold;">Question 51</span>
 
@@ -1539,6 +1543,8 @@
   Answer: D
 
 
+<hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 76</span>
 
   What is the difference between a vulnerability and an exploit?
@@ -2070,6 +2076,8 @@
 
   Answer: A
 
+
+<hr>
 
 - <span style="color: #008888; font-weight: bold;">Question 101</span>
 

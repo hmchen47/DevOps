@@ -305,6 +305,8 @@
   Answer: 
   
 
+<hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   With Cisco AMP for Endpoints, which option shows a list of all files that have been executed in your environment?
@@ -611,6 +613,8 @@
 
   Answer:
   
+
+<hr>
 
 - <span style="color: #008888; font-weight: bold;">Question 51</span>
 
@@ -979,6 +983,8 @@
   Answer: 
 
 
+<hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 76</span>
 
   What is the difference between a vulnerability and an exploit?
@@ -1328,6 +1334,8 @@
 
   Answer: 
 
+
+<hr>
 
 - <span style="color: #008888; font-weight: bold;">Question 101</span>
 
