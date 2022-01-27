@@ -1650,7 +1650,7 @@
   Therefore we should modify the policy to allow HTTPS request.
 
 
-  ======================== New questions (added on 18th-Dec-2021) ===========================
+  <!-- ======================== New questions (added on 18th-Dec-2021) =========================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 81</span>
@@ -2310,7 +2310,7 @@
 
 
 
-  ============================ New Questions (added on 8th-Jan-2022) ============================
+  <!-- ============================ New Questions (added on 8th-Jan-2022) ============================ -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 113</span>
