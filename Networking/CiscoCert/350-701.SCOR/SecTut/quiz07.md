@@ -118,9 +118,9 @@
   Drag and drop the NetFlow export formats from the left onto the descriptions on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2010-NetFlow_Export_Formats.jpg"
+      src    = "img/2010-NetFlow_Export_Formats.jpg"
       alt    = "Netflow Export Formats"
       title  = "Netflow Export Formats"
     />
@@ -325,6 +325,8 @@
   Answer: <br><br> 
   
 
+<hr>
+
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
   An organization has a Cisco Stealthwatch Cloud deployment in their environment. Cloud logging is working as expected, but logs are not being received from the on-premise network, what action will resolve this issue?
@@ -443,9 +445,9 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2034-remote_access_VPN.jpg"
+      src    = "img/2034-remote_access_VPN.jpg"
       alt    = "Remote Access"
       title  = "Remote Access"
     />
@@ -502,9 +504,9 @@
   Drag and drop the solutions from the left onto the solution’s benefits on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2038-Security_Solutions.jpg"
+      src    = "img/2038-Security_Solutions.jpg"
       alt    = "Security Solutions"
       title  = "Security Solutions"
     />
@@ -582,9 +584,9 @@
   Drag and drop the common security threats from left onto the definitions on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2044-Common_Security_Threats.jpg"
+      src    = "img/2044-Common_Security_Threats.jpg"
       alt    = "Commom Security Threats"
       title  = "Commom Security Threats"
     />
@@ -598,9 +600,9 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2045-new_FTD_to_FMG.jpg"
+      src    = "img/2045-new_FTD_to_FMG.jpg"
       alt    = "New FTD to FMG"
       title  = "New FTD to FMG"
     />

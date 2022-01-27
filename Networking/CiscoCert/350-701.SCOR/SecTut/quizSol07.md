@@ -205,7 +205,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2010-NetFlow_Export_Formats.jpg"
+      src    = "img/2010-NetFlow_Export_Formats.jpg"
       alt    = "Netflow Export Formats"
       title  = "Netflow Export Formats"
     />
@@ -262,7 +262,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "0403-Southbound_Northbound_APIs.jpg"
+      src    = "img/0403-Southbound_Northbound_APIs.jpg"
       alt    = "API - Southbound & Northbound"
       title  = "API - Southbound & Northbound"
     />
@@ -398,7 +398,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2018-RADIUS_Live_Logs.jpg"
+      src    = "img/2018-RADIUS_Live_Logs.jpg"
       alt    = "Radius Live Log"
       title  = "Radius Live Log"
     />
@@ -504,7 +504,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2022-Python_script_get_computer_list.jpg"
+      src    = "img/2022-Python_script_get_computer_list.jpg"
       alt    = "Python Script - get computer list"
       title  = "Python Script - get computer list"
     />
@@ -562,6 +562,8 @@
 
   Reference: https://blogs.cisco.com/developer/automate-threat-intelligence-using-cisco-threat-intelligence-director
 
+
+<hr>
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
 
@@ -677,7 +679,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "1939-DHCP_Spoofing_Attack.jpg"
+      src    = "img/1939-DHCP_Spoofing_Attack.jpg"
       alt    = "DHCP Spoofing Attack"
       title  = "DHCP Spoofing Attack"
     />
@@ -692,7 +694,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg"
+      src    = "img/1939-DHCP_Spoofing_Attack_Trust_Untrust_Ports.jpg"
       alt    = "DHCP Spoofing Attack w/ Trust & Untrust Ports"
       title  = "DHCP Spoofing Attack w/ Trust & Untrust Ports"
     />
@@ -735,7 +737,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2034-remote_access_VPN.jpg"
+      src    = "img/2034-remote_access_VPN.jpg"
       alt    = "Remote Access"
       title  = "Remote Access"
     />
@@ -818,7 +820,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2038-Security_Solutions.jpg"
+      src    = "img/2038-Security_Solutions.jpg"
       alt    = "Security Solutions"
       title  = "Security Solutions"
     />
@@ -931,7 +933,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2044-Common_Security_Threats.jpg"
+      src    = "img/2044-Common_Security_Threats.jpg"
       alt    = "Commom Security Threats"
       title  = "Commom Security Threats"
     />
@@ -951,7 +953,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-2-2')"
-      src    = "2045-new_FTD_to_FMG.jpg"
+      src    = "img/2045-new_FTD_to_FMG.jpg"
       alt    = "New FTD to FMG"
       title  = "New FTD to FMG"
     />
