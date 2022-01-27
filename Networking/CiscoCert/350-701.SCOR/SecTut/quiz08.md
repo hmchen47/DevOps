@@ -603,7 +603,7 @@
   Drag and drop the cloud security assessment components from the left onto the definitions on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2150-Cloud_security_assessment.jpg"
       alt    = "Cloud Security Assessment"
@@ -621,7 +621,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2151-Python_SSL_Connection.jpg"
       alt    = "Python SSL Connection"
@@ -663,7 +663,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2153-Umbrella_traffic_risky_domains.jpg"
       alt    = "Umbrella Traffic Risky Domains"
@@ -838,7 +838,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2166-dot1x_MAB.jpg"
       alt    = "802.1X & MAB"
@@ -1222,7 +1222,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2194-AAA_ISE.jpg"
       alt    = "AAA in ISE"
@@ -1245,7 +1245,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2195-ASA_Rest_API_snippet.jpg"
       alt    = "Snippet of ASA REST API"
@@ -1268,7 +1268,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2196-FirePower_Rule_Action.jpg"
       alt    = "FirePower Rule Action"
@@ -1475,7 +1475,7 @@
   Drag and drop the descriptions from the right onto the correct positions on the left.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 0vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21112-Security_Products.jpg"
       alt    = "Secuity Products"
@@ -1494,7 +1494,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21113-Private_VLAN_promiscuous_port.jpg"
       alt    = "Private VLAN promiscuous port"
