@@ -542,7 +542,7 @@
 
   Note: Threat Root Cause shows how malware is getting onto your computers.
 
-  Reference: [https://docs.amp.cisco.com/en/A4E/AMP%20for%20Endpoints%20User%20Guide.pdf
+  Reference: [Cisco Secure Endpoint User Guide](https://docs.amp.cisco.com/en/SecureEndpoint/Secure%20Endpoint%20User%20Guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
@@ -571,7 +571,9 @@
   Explanation
 
   FlexVPN supports IKEv2 -> Answer A is not correct.
+
   DMVPN supports both IKEv1 & IKEv2 -> Answer B is not correct.
+
   FlexVPN support multiple SAs -> Answer D is not correct.
 
   Therefore answer C is the best choice left.
@@ -592,7 +594,11 @@
 
   Cisco Workload Optimization Manager provides specific real-time actions that ensure workloads get the resources they need when they need them, enabling continuous placement, resizing, and capacity decisions that can be automated, driving continuous health in the environment. You can automate the software’s decisions according to your level of comfort: recommend (view only), manual (select and apply), or automated (executed in real time by software).
 
-  Reference: https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/one-enterprise-suite/solution-overview-c22-739078.pdf
+  Reference: [Cisco Workload  Optimization Manager](https://cdw-prod.adobecqms.net/content/dam/cdw/on-domain-ca/brand/cisco/solution-overview-c22-739078.pdf)
+
+  Workload Optimization Manager continuously analyzes workload consumption, costs, and compliance constraints and automatically allocates resources in real time.  It helps ensure performance by giving workloads the resources they need when they need them.
+
+  Reference: [Cisco Workload Optimization Manager: Setup and Use Cases ](https://www.cisco.com/c/dam/en/us/solutions/collateral/data-center-virtualization/unified-computing/cwom-setup.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -621,15 +627,14 @@
     />
   </figure>
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/1-introduction
-
   If you’re already pointing DNS to Umbrella, or plan to, all the DNS traffic visible in your Umbrella reports come from a single Network identity. The VAs provide internal IP visibility, allowing you to track down malicious or inappropriate traffic within your network to a specific IP address.
 
   Without Virtual Appliances
+
   Security and DNS traffic-related investigations cannot be traced back to an individual computer or IP address.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2130-withoutVA.png"
       alt    = "Umbrella internal network w/o VA"
@@ -638,10 +643,11 @@
   </figure>
 
   With Virtual Appliances
+
   VAs record the internal IP address of every DNS request. Security and DNS traffic-related investigations allow you to associate traffic to an individual, internal IP address.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2130-withVA.png"
       alt    = "Umbrella internal network w/ VA"
@@ -649,7 +655,7 @@
     />
   </figure
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/1-introduction
+  Reference: [What are Umbrella Virtual Appliances? - Introduction](https://docs.umbrella.com/deployment-umbrella/docs/1-introduction)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
@@ -678,17 +684,19 @@
 
   Explanation
 
-  Integration API (Westbound)
+  **Integration API (Westbound)**
+
   Integration capabilities are part of Westbound interfaces. To meet the need to scale and accelerate operations in modern data centers, IT operators require intelligent, end-to-end work flows built with open APIs. The Cisco DNA Center platform provides mechanisms for integrating Cisco DNA Assurance workflows and data with third-party IT Service Management (ITSM) solutions.
 
-  Reference: https://developer.cisco.com/docs/dna-center/#!cisco-dna-center-platform-overview/events-and-notifications-eastbound
+  Reference: [Integration API (Westbound)](https://developer.cisco.com/docs/dna-center/#!cisco-dna-center-platform-overview/integration-api-westbound)
 
   -> Therefore answer D is correct.
 
-  Westbound—Integration APIs
+  **Westbound — Integration APIs**
+
   Cisco DNA Center platform can power end-to-end IT processes across the value chain by integrating various domains such as ITSM, IPAM, and reporting. By leveraging the REST-based Integration Adapter APIs, bi-directional interfaces can be built to allow the exchange of contextual information between Cisco DNA Center and the external, third-party IT systems. The westbound APIs provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems.
 
-  Reference: https://blogs.cisco.com/networking/with-apis-cisco-dna-center-can-improve-your-competitive-advantage
+  Reference: [With APIs, Cisco DNA Center Can Improve Your Competitive Advantage](https://blogs.cisco.com/networking/with-apis-cisco-dna-center-can-improve-your-competitive-advantage)
 
   Therefore the most suitable choice is Integration APIs can monitor for power utilization of devices and IoT sensors -> Answer C is correct.
 
@@ -706,13 +714,13 @@
 
   Explanation
 
-  Northbound-Intent APIs
+  Northbound - Intent APIs
 
   Intent APIs enable developers to access Cisco DNA Center Automation and Assurance workflows. Through this access, you can simplify the process of creating workflows that consolidate multiple network actions.
 
   Say, for instance, you’re configuring an SSID on a wireless network. Using Cisco DNA Center and the intent APIs, you can offload the process of setting WLAN and security settings. This saves time and provides greater consistency. You can do the same for QoS policies, software images running on the network devices, and application health.
 
-  Reference: https://www.publicnow.com/view/3057F243685FA76A88EFC1651CAAFD66B5B849FE?1603802892
+  Reference: [With APIs, Cisco DNA Center Can Improve Your Competitive Advantage](https://blogs.cisco.com/networking/with-apis-cisco-dna-center-can-improve-your-competitive-advantage)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 34</span>
@@ -730,7 +738,7 @@
 
   A trusted CA is the only entity that can issue trusted digital certificates. This is extremely important because while PKI manages more of the encryption side of these certificates, authentication is vital to understanding which entities own what keys. Without a trusted CA, anyone can issue their own keys, authentication goes out the window and chaos ensues.
 
-  Reference: https://cheapsslsecurity.com/blog/understanding-the-role-of-certificate-authorities-in-pki/
+  Reference: [PKI: The Role of Certificate Authorities in PKI Certificate](https://cheapsslsecurity.com/blog/understanding-the-role-of-certificate-authorities-in-pki/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 35</span>
@@ -748,7 +756,7 @@
 
   Unlike the traditional software life cycle, the CI/CD implementation process gives a weekly or daily update instead of monthly or quarterly. The fun part is customers won’t even realize the update is in their applications, as they happen on the fly.
 
-  Reference: https://devops.com/how-to-implement-an-effective-ci-cd-pipeline/
+  Reference: [How to Implement an Effective CI/CD Pipeline](https://devops.com/how-to-implement-an-effective-ci-cd-pipeline/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 36</span>
@@ -827,15 +835,14 @@
 
   Explanation
 
-  Malware installation: This may be done by hijacking DNS queries and responding with malicious IP addresses.
+  Types of DNS attacks
+  - Malware installation: This may be done by hijacking DNS queries and responding with malicious IP addresses.
+  - Credential theft: An adversary may create a malicious domain name that resembles a legitimate domain name and use it in phishing campaigns to steal credentials.
+  - Command & Control communication: As part of lateral movement, after an initial compromise, DNS communications is abused to communicate with a C2 server. This typically involves making periodic DNS queries from a computer in the target network for a domain controlled by the adversary. The responses contain encoded messages that may be used to perform unauthorized actions in the target network.
+  - Network footprinting: Adversaries use DNS queries to build a map of the network. Attackers live off the terrain so developing a map is important to them.
+  - Data theft (exfiltration): Abuse of DNS to transfer data; this may be performed by tunneling other protocols like FTP, SSH through DNS queries and responses. Attackers make multiple DNS queries from a compromised computer to a domain owned by the adversary. DNS tunneling can also be used for executing commands and transferring malware into the target network.
 
-  Command & Control communication: As part of lateral movement, after an initial compromise, DNS communications is abused to communicate with a C2 server. This typically involves making periodic DNS queries from a computer in the target network for a domain controlled by the adversary. The responses contain encoded messages that may be used to perform unauthorized actions in the target network.
-
-  Network footprinting: Adversaries use DNS queries to build a map of the network. Attackers live off the terrain so developing a map is important to them.
-
-  Data theft (exfiltration): Abuse of DNS to transfer data; this may be performed by tunneling other protocols like FTP, SSH through DNS queries and responses. Attackers make multiple DNS queries from a compromised computer to a domain owned by the adversary. DNS tunneling can also be used for executing commands and transferring malware into the target network.
-
-  Reference: https://www.netsurion.com/articles/5-types-of-dns-attacks-and-how-to-detect-them
+  Reference: [5 types of DNS attacks and how to detect them](https://www.netsurion.com/articles/5-types-of-dns-attacks-and-how-to-detect-them)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 41</span>
@@ -872,11 +879,14 @@
   Explanation
 
   SNMP polling can often be in the order of 5-10 minutes, CLIs are unstructured and prone to change which can often break scripts.
+
   The traditional use of the pull model, where the client requests data from the network does not scale when what you want is near real-time data.
+
   Moreover, in some use cases, there is the need to be notified only when some data changes, like interfaces status, protocol neighbors change etc.
+
   Model-Driven Telemetry is a new approach for network monitoring in which data is streamed from network devices continuously using a push model and provides near real-time access to operational statistics.
 
-  Referfence: https://developer.cisco.com/docs/ios-xe/#!streaming-telemetry-quick-start-guide/streaming-telemetry
+  Referfence: [Streaming Telemetry](https://developer.cisco.com/docs/ios-xe/#!streaming-telemetry-quick-start-guide/streaming-telemetry)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -907,8 +917,8 @@
 
   An administrator configures new authorization policies within Cisco ISE and has difficulty profiling the devices. Attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not. What should the administrator do to address this issue?
 
-  A. Configure the ip dhcp snooping trust command on the DHCP interfaces to get the information to Cisco ISE<br>
-  B. Configure the authentication port-control auto feature within Cisco ISE to identify the devices that are trying to connect<br>
+  A. Configure the `ip dhcp snooping trust` command on the DHCP interfaces to get the information to Cisco ISE<br>
+  B. Configure the `authentication port-control auto` feature within Cisco ISE to identify the devices that are trying to connect<br>
   C. Configure a service template within the switch to standardize the port configurations so that the correct information is sent to Cisco ISE<br>
   D. Configure the device sensor feature within the switch to send the appropriate protocol information<br>
 
@@ -916,12 +926,16 @@
 
   Explanation
 
-  Device sensor is a feature of access devices. It allows to collect information about connected endpoints. Mostly, information collected by Device Sensor can come from the following protocols:
+  <span style="color: #bb6600">Device sensor</span> is a feature of access devices. It allows to collect information about connected endpoints. Mostly, information collected by Device Sensor can come from the following protocols:
   - Cisco Discovery Protocol (CDP)
   - Link Layer Discovery Protocol (LLDP)
   - Dynamic Host Configuration Protocol (DHCP)
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/200292-Configure-Device-Sensor-for-ISE-Profilin.html
+  Reference: [Configure Device Sensor for ISE Profiling](https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/200292-Configure-Device-Sensor-for-ISE-Profilin.html)
+
+  `ip dhcp snooping trust`: configures the interface as trusted
+
+  `authentication port-control auto`: enable authentication on a port
 
 
 - <span style="color: #008888; font-weight: bold;">Question 46</span>
@@ -937,9 +951,9 @@
 
   Explanation
 
-  The Stealthwatch Cloud Private Network Monitoring (PNM) Sensor is an extremely flexible piece of technology, capable of being utilized in a number of different deployment scenarios. It can be deployed as a complete Ubuntu based virtual appliance on different hypervisors (e.g. –VMware, VirtualBox). It can be deployed on hardware running a number of different Linux-based operating systems.
+  The Stealthwatch Cloud Private Network Monitoring (PNM) Sensor is an extremely flexible piece of technology, capable of being utilized in a number of different deployment scenarios. It can be deployed as a complete Ubuntu based virtual appliance on different hypervisors (e.g. VMware, VirtualBox). It can be deployed on hardware running a number of different Linux-based operating systems.
 
-  Reference: https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2019/pdf/5eU6DfQV/LTRSEC-2240-LG2.pdf
+  Reference: [Cisco Stealthwatch Cloud OnPremise Sensor Deployment Lab](https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2019/pdf/5eU6DfQV/LTRSEC-2240-LG2.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 47</span>
@@ -959,7 +973,7 @@
 
   Cisco strongly recommends that you keep the default settings for the remote management port, but if the management port conflicts with other communications on your network, you can choose a different port. If you change the management port, you must change it for all devices in your deployment that need to communicate with each other.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/misc/fmc-ftd-mgmt-nw/fmc-ftd-mgmt-nw.html
+  Reference: [FMC and FTD Management Network Administration](https://www.cisco.com/c/en/us/td/docs/security/firepower/misc/fmc-ftd-mgmt-nw/fmc-ftd-mgmt-nw.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 48</span>
@@ -1004,10 +1018,10 @@
   </figure>  
 
   Answer:
-  - cloud data protection assessment: understand the security posture of the data or activity taking place in public cloud deployments
-  - cloud security strategy workshop: develop a cloud security strategy and roadmap aligned to business priorities
-  - cloud security architecture assessment: identify strengths and areas for improvement in the current security architecture during onboarding
-  - user entity behavior assessment: detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application
+  - cloud data protection assessment: understand the security posture of the data or activity taking place in public cloud deployments (4)
+  - cloud security strategy workshop: develop a cloud security strategy and roadmap aligned to business priorities (2)
+  - cloud security architecture assessment: identify strengths and areas for improvement in the current security architecture during onboarding (1)
+  - user entity behavior assessment: detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application (3)
 
   Explanation
 
@@ -1019,7 +1033,7 @@
 
   Cloud Security Strategy: Our experts educate your team on cloud security as related to current and future states, as well as business priorities
 
-  Reference: https://www.cisco.com/c/dam/en/us/products/security/security-strategy-advisory-aag.pdf
+  Reference: [Cisco Security Advisory Services: Security Strategy](https://www.cisco.com/c/dam/en/us/products/security/security-strategy-advisory-aag.pdf)
 
 
 <hr>
