@@ -712,7 +712,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2153-Umbrella_traffic_risky_domains.jpg"
+      src    = "img/2153-Umbrella_traffic_risky_domains_default.jpg"
       alt    = "Umbrella Traffic Risky Domains"
       title  = "Umbrella Traffic Risky Domains"
     />

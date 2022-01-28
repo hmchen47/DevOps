@@ -1098,7 +1098,7 @@
 
   Explanation
 
-  In order to enable NTP, we need an additional command “ntp authenticate”.
+  In order to enable NTP, we need an additional command “`ntp authenticate`”.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 53</span>
@@ -1108,7 +1108,7 @@
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2153-Umbrella_traffic_risky_domains.jpg"
+      src    = "img/2153-Umbrella_traffic_risky_domains_default.jpg"
       alt    = "Umbrella Traffic Risky Domains"
       title  = "Umbrella Traffic Risky Domains"
     />
@@ -1125,18 +1125,18 @@
 
   Explanation
 
-  The ‘greylist’ of risky domains is compromised of domains that host both malicious and safe content—we consider these “risky” domains. These sites often allow users to upload and share content—making them difficult to police, even for the admins of the site.
+  The ‘greylist’ of risky domains is compromised of domains that host both malicious and safe content — we consider these “risky” domains. These sites often allow users to upload and share content — making them difficult to police, even for the admins of the site.
 
-  Reference: https://docs.umbrella.com/deployment-msp/docs/what-is-the-intelligent-proxy
+  Reference: [What is the Intelligent Proxy?](https://docs.umbrella.com/deployment-msp/docs/what-is-the-intelligent-proxy)
 
   In order to enable intelligent proxy, we need to use “Advanced Settings”:
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2153-Umbrella_risky_domains.jpg"
-      alt    = "Umbrella Risky Domains"
-      title  = "Umbrella Risky Domains"
+      onclick= "window.open('https://docs.umbrella.com/umbrella-user-guide/docs/enable-the-intelligent-proxy')"
+      src    = "https://files.readme.io/b238efe-advanced_settings_summary.jpg"
+      alt    = "Umbrella Advanced Settings - Intelligent Proxy"
+      title  = "Umbrella Advanced Settings - Intelligent Proxy"
     />
   </figure>
 
@@ -1151,9 +1151,9 @@
   - The security settings categories are, at a minimum, the ones listed below:
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
-        onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-        src    = "img/2153-Umbrella_Security_Setting.jpg"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://docs.umbrella.com/deployment-umbrella/docs/configure-security-settings')"
+        src    = "https://files.readme.io/7dde4a1-security_settings.jpg"
         alt    = "Umbrella Security Setting"
         title  = "Umbrella Security Setting"
       />
@@ -1176,6 +1176,35 @@
 
   Answer: B
 
+  Explanation
+
+  Cisco ISE deployment scenarios:
+  - Service: A service is a specific feature that a persona provides, such as network access, profiler, posture, security group access, monitoring and troubleshooting, and so on.
+  - Node: A node is an individual instance that runs the Cisco ISE software. Cisco ISE is available as an appliance and also as a software that can be run on VMware. Each instance (appliance or VMware) that runs the Cisco ISE software is called a node.
+  - Persona: The persona of a node determines the services provided by the node. A Cisco ISE node can assume any of the following personas-Administration, Policy Service, Monitoring, and pxGrid. The menu options that are available through the Admin portal are dependent on the role and personas that a Cisco ISE node assumes.
+  - Deployment Model: Determines if your deployment is distributed, standalone, or high availability in standalone, which is a basic two-node deployment.
+
+  Combination of nodes in the network:
+  - Primary Policy Administration Node (primary PAN) and secondary Policy Administration Node (secondary PAN) for high availability
+  - Primary Monitoring Node (primary MnT node) and Secondary Monitoring Node (secondary MnT node) for high availability
+  - A pair of health check nodes or a single health check node for the primary PAN automatic failover
+  - One or more Policy Service Nodes (PSNs) for the session failover
+
+  Reference: [Cisco ISE Deployment Terminology](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ISE_admin_guide_24/m_setup_cisco_ise.html)
+
+  Cisco ISE Features
+  - Device Administration
+  - Guest and Secure Wireless
+  - Bring Your Own Device (BYOD)
+  - Asset Visibility
+  - Secure Wired Access
+  - Segmentation
+  - Posture or Compliance
+  - Threat Containment
+  - Security Ecosystem Integrations
+
+  Reference: [Cisco ISE Overview](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ISE_admin_guide_24/m_introduction.html#concept_lgp_3nb_1kb)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 55</span>
 
@@ -1194,6 +1223,14 @@
   D. The OU of the IKEv2 peer certificate is set to MANGLER<br>
 
   Answer: A
+
+  Explanation
+
+  `crypto ikev2 name-mangler <mangler-name>`: define a name mangler and enter IKEv2 name mangler configuration mode.
+
+  `dn {common-name | country | domain | locality | organization | organization-unit | state}`: derive the name from any of the fields in the remote identity of type DN (distinguished name).
+
+  Reference: [Configuring the FlexVPN Server](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_ike2vpn/configuration/xe-16-10/sec-flex-vpn-xe-16-10-book/sec-cfg-flex-serv.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 56</span>
@@ -1245,7 +1282,7 @@
 
   Explanation
 
-  Threat intelligence is referred to as the knowledge about an existing or emerging threat to assets, including networks and systems. Threat intelligence includes context, mechanisms, indicators of compromise (IoCs), implications, and actionable advice. Threat intelligence is referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks.
+  <span style="color: #bb6600;">Threat intelligence</span> is referred to as the knowledge about an existing or emerging threat to assets, including networks and systems. Threat intelligence includes context, mechanisms, indicators of compromise (IoCs), implications, and actionable advice. Threat intelligence is referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks.
 
   Reference: CCNP and CCIE Security Core SCOR 350-701 Official Cert Guide.
 
@@ -1264,12 +1301,17 @@
   Explanation
 
   What use cases are supported by the Cisco Secure Workload platform (formerly Tetration)?
-  A. The platform supports the following use cases:
-  …
-  - Process behavior baseline and deviation: Collect the complete process inventory along with the process hash information, baseline the behavior, and identify deviations.
-  - Software inventory and vulnerability detection: Identify all the software packages and versions installed on the servers. Using the Common Vulnerabilities and Exposures (CVE) database and additional data feeds, detect if there are any associated vulnerabilities or exposures and take action to protect against active exploit.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/q-and-a-c67-737402.html
+  The platform supports the following use cases:
+  - Application behavior insight
+  - Automated microsegmentation policy generation
+  - Automated policy enforcement
+  - Policy compliance
+  - <span style="text-decoration: underline;">Process behavior baseline and deviation</span>
+  - Software inventory and vulnerability detection
+  - Forensic analysis
+
+  Reference: [Cisco Secure Workload (formerly Tetration) FAQ](https://www.cisco.com/c/en/us/products/collateral/data-center-analytics/tetration-analytics/q-and-a-c67-737402.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 61</span>
@@ -1301,14 +1343,14 @@
 
   The Cisco CWS solution, previously known as Cisco Scan Safe, enforces secure communication to and from the Internet. It uses the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco.
 
-  Reference: https://www.cisco.com/c/dam/en_us/about/ciscoitatwork/borderless_networks/docs/Cloud_Web_Security_IT_Methods.pdf
+  Reference: [Cisco Cloud Web Security](https://www.cisco.com/c/dam/en_us/about/ciscoitatwork/borderless_networks/docs/Cloud_Web_Security_IT_Methods.pdf)
 
   Cisco ISR with Cloud Web Security Connector:
 
   …
   Eliminates the need to backhaul Internet traffic from branch offices, so offices can access the web directly, without losing control of or visibility into web usage.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/router-security/data_sheet_c78-655324.pdf
+  Reference: [Cisco Cloud Web Security - Retirement](https://www.cisco.com/c/en/us/products/collateral/security/router-security/data_sheet_c78-655324.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 63</span>
@@ -1330,11 +1372,11 @@
 
   Cisco WSA detects and correlates threats in real time by tapping into the largest threat-detection network in the world, Cisco Talos. To discover where threats are hiding, Cisco Talos pulls massive quantities of information across multiple vectors – firewall, IPS, web, email, and VPN. Cisco Talos constantly refreshes information every 3 to 5 minutes – adding intelligence to and receiving intelligence from Cisco WSA and other network security devices. This enables Cisco WSA to deliver industry-leading defense hours and even days ahead of competitors.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/web-security-appliance/solution-overview-c22-732948.html
+  Reference: [Cisco Web Security Appliance Solution Overview](https://www.cisco.com/c/en/us/products/collateral/security/web-security-appliance/solution-overview-c22-732948.html)
 
   Talos’ threat intelligence supports a two-way flow of telemetry and protection across market-leading security solutions including Next-Generation Intrusion Prevention System (NGIPS), Next-Generation Firewall (NGFW), Advanced Malware Protection (AMP), Email Security Appliance (ESA), Cloud Email Security (CES), Cloud Web Security (CWS), Web Security Appliance (WSA), Umbrella, and ThreatGrid, as well as numerous open-source and commercial threat protection systems.
 
-  Reference: https://www.talosintelligence.com/docs/Talos_WhitePaper.pdf
+  Reference: [Talos Intelligence: Cisco Security's Threat Intelligence Organization](https://www.talosintelligence.com/docs/Talos_WhitePaper.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 64</span>
@@ -1392,29 +1434,29 @@
   C. 802.1X will work and the device will be allowed on the network<br>
   D. 802.1X and MAB will both be used and ISE can use policy to determine the access level<br>
 
-  Answer: 
+  Answer: C
 
   Explanation
 
   In this question we don’t see “mab” command so MAC Authentication Bypass (MAB) is not enabled on the interface -> Answer A and answer D are not correct.
 
   In order to enable 802.1X on a port, we need two commands:
-  - access-session port-control auto: enables 802.1X port-based authentication on the interface
-  - dot1x pae {supplicant | authenticator | both}: sets the Port Access Entity (PAE) type. In this case “authenticator” keyword was chosen so the interface acts only as an authenticator and does not respond to any messages meant for a supplicant.+ authentication periodic: enables re-authentication on the interface
+  - `access-session port-control auto`: enables 802.1X port-based authentication on the interface
+  - `dot1x pae {supplicant | authenticator | both}`: sets the Port Access Entity (PAE) type. In this case “authenticator” keyword was chosen so the interface acts only as an authenticator and does not respond to any messages meant for a supplicant.+ authentication periodic: enables re-authentication on the interface
 
   We had both of these commands so 802.1X will work on the interface.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_8021x/configuration/xe-3se/3850/sec-user-8021x-xe-3se-3850-book/config-ieee-802x-pba.html
+  Reference: [Configuring IEEE 802.1X Port-Based Authentication](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_8021x/configuration/xe-3se/3850/sec-user-8021x-xe-3se-3850-book/config-ieee-802x-pba.html)
 
   Other commands are explained below:
 
-  - authentication host-mode multi-auth: allows voice and multiple endpoints on the same physical access port
-  - dot1x timeout tx-period 10: sets the retransmit period to 10 seconds
-  - device-tracking attach-policy {policy-name}: applies the IP device tracking (IPDT) policy to switchport. The main task is to keep track of connected hosts (association of MAC and IP address)
+  - `authentication host-mode multi-auth`: allows voice and multiple endpoints on the same physical access port
+  - `dot1x timeout tx-period 10`: sets the retransmit period to 10 seconds
+  - `device-tracking attach-policy {policy-name}`: applies the IP device tracking (IPDT) policy to switchport. The main task is to keep track of connected hosts (association of MAC and IP address)
 
   These commands enable the SNMP trap for added and removed MACs on the interface:
-  - snmp trap mac-notification change added
-  - snmp trap mac-notification change removed
+  - `snmp trap mac-notification change added`
+  - `snmp trap mac-notification change removed`
 
 <!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -1440,11 +1482,15 @@
 
   Explanation
 
-  The “transport udp …” command can only be used under flow exporter. The “cache timeout active …” command can only be used under flow monitor.
+  The “`transport udp …`” command can only be used under <span style="text-decoration: underline;">flow exporter</span>. 
+  
+  The “`cache timeout active …`” command can only be used under <span style="text-decoration: underline;">flow monitor</span>.
 
-  Under flow record, we cannot type “destination 1.1.1.1”. This command can only be used under flow exporter. We can only use the “match ipv4 ttl” command under flow record in this question.
+  Under flow record, we cannot type “`destination 1.1.1.1`”. This command can only be used under <span style="text-decoration: underline;">flow exporter</span>. 
+  
+  We can only use the “`match ipv4 ttl`” command under <span style="text-decoration: underline;">flow record</span> in this question.
 
-  Good reference: https://www.cisco.com/c/dam/en/us/td/docs/security/stealthwatch/netflow/config-trouble-netflow-stealth.pdf
+  Good reference: [Configuring and Troubleshooting NetFlow for Cisco Stealthwatch](https://www.cisco.com/c/dam/en/us/td/docs/security/stealthwatch/netflow/config-trouble-netflow-stealth.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 68</span>
@@ -1461,7 +1507,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 69</span>
 
-  An administrator is adding a new switch onto the network and has configured AAA for network access control. When testing the configuration, the RADIUS authenticates to Cisco ISE but is being rejected. Why is the ip radius source-interface command needed for this configuration?
+  An administrator is adding a new switch onto the network and has configured AAA for network access control. When testing the configuration, the RADIUS authenticates to Cisco ISE but is being rejected. Why is the `ip radius source-interface` command needed for this configuration?
 
   A. Only requests that originate from a configured NAS IP are accepted by a RADIUS server<br>
   B. The RADIUS authentication key is transmitted only from the defined RADIUS source interface<br>
@@ -1474,7 +1520,7 @@
 
   The source IP address of the RADIUS packets must match the NAS IP address configured on the RADIUS server. A mismatch leads to RADIUS packet timeout and the server gets marked “DEAD”.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/whitepaper_C11-731907.html
+  Reference: [Identity Based Networking Services](https://www.cisco.com/c/en/us/products/collateral/ios-nx-os-software/identity-based-networking-services/whitepaper_C11-731907.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 70</span>
@@ -1539,7 +1585,7 @@
 
   Explanation
 
-  Duo MFA Integration with ISE for TACACS+ Device Administration with Local/Internal (ISE) Users
+  [Duo MFA Integration with ISE for TACACS+ Device Administration with Local/Internal (ISE) Users](https://community.cisco.com/t5/security-documents/duo-mfa-integration-with-ise-for-tacacs-device-administration/ta-p/3882063)
 
   In this setup, ISE will forward the TACACS+ authentication requests to the Duo Authentication proxy. The proxy will then punt the requests back to ISE for local user authentication. This can be a little bit confusing but it is necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc. If the authentication is successful, the end user/admin will be send a “DUO Push.” If the local ISE authentication fails, then the process will stop and no “Duo Push” will occur.
 
@@ -1576,6 +1622,8 @@
   </figure>
 
   Therefore answer B is the best choice.
+
+  Reference: [Duo MFA Integration with ISE for TACACS+ Device Administration with Local/Internal (ISE) Users]
 
 
 - <span style="color: #008888; font-weight: bold;">Question 73</span>
@@ -2305,7 +2353,7 @@
 
   Explanation
 
-  The ‘greylist’ of risky domains is compromised of domains that host both malicious and safe content—we consider these “risky” domains. These sites often allow users to upload and share content—making them difficult to police, even for the admins of the site.
+  The ‘greylist’ of risky domains is compromised of domains that host both malicious and safe content — we consider these “risky” domains. These sites often allow users to upload and share content—making them difficult to police, even for the admins of the site.
 
   Reference: https://docs.umbrella.com/deployment-msp/docs/what-is-the-intelligent-proxy
 
