@@ -111,7 +111,7 @@
 
   Answer: 
   
-
+  
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   What is the benefit of integrating Cisco ISE with a MDM solution?
@@ -128,10 +128,10 @@
 
   An administrator configures a new destination list in Cisco Umbrella so that the organization can block specific domains for its devices. What should be done to ensure that all subdomains of domain.com are blocked?
 
-  A. Configure the *.com address in the block list.<br>
-  B. Configure the *.domain.com address in the block list<br>
-  C. Configure the www.domain.com address in the block list<br>
-  D. Configure the domain.com address in the block list<br>
+  A. Configure the `*.com` address in the block list.<br>
+  B. Configure the `*.domain.com` address in the block list<br>
+  C. Configure the `www.domain.com` address in the block list<br>
+  D. Configure the `domain.com` address in the block list<br>
 
   Answer: 
 
@@ -249,10 +249,10 @@
 
   An administrator is establishing a new site-to-site VPN connection on a Cisco IOS router. The organization needs to ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24. Which command on the hub will allow the administrator to accomplish this?
 
-  A. crypto ca identity 172.19.20.24<br>
-  B. crypto isakmp key Cisco0123456789 172.19.20.24<br>
-  C. crypto enrollment peer address 172.19.20.24<br>
-  D. crypto isakmp identity address 172.19.20.24<br>
+  A. `crypto ca identity 172.19.20.24`<br>
+  B. `crypto isakmp key Cisco0123456789 172.19.20.24`<br>
+  C. `crypto enrollment peer address 172.19.20.24`<br>
+  D. `crypto isakmp identity address 172.19.20.24`<br>
 
   Answer: 
   

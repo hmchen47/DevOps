@@ -24,7 +24,7 @@
 
   The ASA denies all traffic by default, while the IOS router starts out by allowing all traffic, even on your untrusted interfaces.
 
-  Reference: https://www.plixer.com/blog/cisco-zone-based-firewall-reporting/
+  Reference: [Cisco Zone-Based Firewall Reporting](https://www.plixer.com/blog/cisco-zone-based-firewall-reporting/)
 
   So maybe this question wanted to say Cisco IOS router allows all traffic by default (before implementing Zone-Based Policy Firewall).
 
@@ -67,6 +67,18 @@
   D. IKEv2<br>
 
   Answer: C
+  
+  Explanation
+
+  The AH protocol provides a mechanism for authentication only. AH provides data integrity, data origin authentication, and an optional replay protection service. -> Answer B is incorrect
+
+  The ESP protocol provides data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection). ESP can be used with confidentiality only, authentication only, or both confidentiality and authentication. -> Answer C is correct
+
+  Reference: [AH and ESP protocols](https://www.ibm.com/docs/en/zos/2.2.0?topic=ipsec-ah-esp-protocols)
+
+  Internet Key Exchange (IKE) is the standard used for remote host, network access, and virtual private network (VPN) access. IKE enables two parties on the Internet to communicate securely. Specifically it is a key management protocol used to set up a security association (SA) using Internet Protocol Security (IPsec). -> Answer A, & D are incorrect
+
+  Reference: [Internet Key Exchange](https://www.hypr.com/internet-key-exchange/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -84,7 +96,7 @@
 
   Cisco Cloudlock: Secure your cloud users, data, and applications with the cloud-native Cloud Access Security Broker (CASB) and cloud cybersecurity platform.
 
-  Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/cloud-web-security/at-a-glance-c45-738565.pdf
+  Reference: [Cisco Cloud Security](https://www.cisco.com/c/dam/en/us/products/collateral/security/cloud-web-security/at-a-glance-c45-738565.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -98,6 +110,18 @@
   E. sync<br>
 
   Answer: B D
+
+  Explanation
+
+  All front-door attacks require the actions of the user to allow the virus to infect the system.
+
+  A back-door virus is any form of program that grants unauthorised access to an entire system via a software or network vulnerability.
+
+  Reference: [Front vs Back-Door Viruses: Which Should I Be Locking First?](https://www.silverbug.it/blog/front-vs-back-door-viruses-which-should-i-be-locking-first)
+
+  rootkit: a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him persistent remote access to the computer
+
+  smurf: a form of a distributed denial of service (DDoS) attack that renders computer networks inoperable
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -127,6 +151,18 @@
 
   Answer: A
 
+  Explanation
+
+  The ASA and ASASM implementations of NSEL provide the following major functions:
+  - Tracks flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records.
+  - Triggers flow-update events and generates appropriate NSEL data records.
+  - Defines and exports templates that describe the progression of a flow. Templates describe the format of the data records  that are exported through NetFlow.  Each event has several record formats or templates associated with it.
+  - Tracks configured NSEL collectors and delivers templates and data records to these configured NSEL collectors through NetFlow over UDP only.
+  - Sends template information periodically to NSEL collectors.  Collectors receive template definitions, normally  before  receiving flow records.
+  - Filters NSEL events based on the traffic and event type through Modular Policy Framework, then sends records to different collectors. Traffic is matched based on the order in which classes are configured. After a match is found, no other classes are checked. The supported event types are flow-create, flow-denied, flow-teardown, flow-update, and all. Records can be sent to different collectors.
+
+  Reference: [Configuring NetFlow Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa91/asdm71/general/asdm_71_general_config/monitor_nsel.pdf)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
@@ -141,7 +177,7 @@
 
   Explanation
 
-  Cisco Umbrella Uses Anycast IP routing in order to provide reliability of the recursive DNS service.
+  Cisco Umbrella uses Anycast IP (208.67.222.222 & 208.67.220.220) routing in order to provide reliability of the recursive DNS service.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -160,15 +196,15 @@
   Mobile Device Management (MDM) software secures, monitors, manages and supports mobile devices deployed across mobile operators, service providers and enterprises. A typical MDM product consists of a policy server, a mobile device client and an optional inline enforcement point that controls the use of some applications on a mobile device (like email) in the deployed environment. However the network is the only entity that can provide granular access to endpoints (based on ACL’s, TrustSec SGT’s etc). It is envisaged that Cisco Identity Services Engine (ISE) would be an additional network based enforcement point while the MDM policy server would serve as the policy decision point. ISE expects specific data from MDM servers to provide a complete solution
 
   The following are the high level use cases in this solution.
-  - Device registration- Non registered endpoints accessing the network on-premises will be redirected to registration page on MDM server for registration based on user role, device type, etc
-  - Remediation- Non compliant endpoints will be given restricted access based on compliance state
-  - Periodic compliance check – Periodically check with MDM server for compliance
-  - Ability for ISE administrators to issue remote actions on the device through the MDM server (e.g.: remote wiping of the managed device)
+  - Device registration - Non registered endpoints accessing the network on-premises will be redirected to registration page on MDM server for registration based on user role, device type, etc -> registration not adminsitration
+  - Remediation - Non compliant endpoints will be given restricted access based on compliance state
+  - Periodic compliance check - Periodically check with MDM server for compliance -> Answer A is correct
+  - Ability for ISE administrators to issue remote actions on the device through the MDM server (e.g.: remote wiping of the managed device) -> not adding application but clean/protect some sensitiv info
   - Ability for end user to leverage the ISE My Devices Portal to manage personal devices, e.g. Full Wipe, Corporate Wipe and PIN Lock.
 
-  Reference: https://community.cisco.com/t5/security-documents/cisco-ise-integration-with-mobile-device-management-mdm/ta-p/3784691
+  Reference: [Cisco ISE Integration with Mobile Device Management (MDM)](https://community.cisco.com/t5/security-documents/cisco-ise-integration-with-mobile-device-management-mdm/ta-p/3784691)
 
-  Also in the attached PDF of above link:
+  Also in the attached [PDF](https://community.cisco.com/t5/security-documents/cisco-ise-integration-with-mobile-device-management-mdm/ta-p/3784691?attachment-id=165248) of above link:
 
   If the user device is not in compliant to the posture (compliance) policies configured on MDM, they will be notified that the device is out of compliance, reason for non-compliance and the need to be in compliance to access network resources.
 
@@ -177,24 +213,26 @@
 
   An administrator configures a new destination list in Cisco Umbrella so that the organization can block specific domains for its devices. What should be done to ensure that all subdomains of domain.com are blocked?
 
-  A. Configure the *.com address in the block list.<br>
-  B. Configure the *.domain.com address in the block list<br>
-  C. Configure the www.domain.com address in the block list<br>
-  D. Configure the domain.com address in the block list<br>
+  A. Configure the `*.com` address in the block list.<br>
+  B. Configure the `*.domain.com` address in the block list<br>
+  C. Configure the `www.domain.com` address in the block list<br>
+  D. Configure the `domain.com` address in the block list<br>
 
   Answer: D
 
   Explanation
 
   It is not possible to use an asterisk to wildcard a different part of the domain. The following will not work:
-  - *.domain.com
-  - subdomain.*.com
-  - sub*.com
-  - domain.*
+  - `*.domain.com`
+  - `subdomain.*.com`
+  - `sub*.com`
+  - `domain.*`
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/wild-cards
+  Note: Asterisks (*) are not supported.
 
-  By configuring domain.com address in the block list, we implied to block *.domain.com/* (all subdomains would be blocked too).
+  Reference: [Wildcards and Destination Lists](https://docs.umbrella.com/deployment-umbrella/docs/wild-cards)
+
+  By configuring `domain.com` address in the block list, we implied to block `*.domain.com/*` (all subdomains would be blocked too).
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -210,13 +248,15 @@
 
   Explanation
 
-  Private Network Monitoring (PNM) provides visibility and threat detection for the on-premises network, delivered from the cloud as a SaaS solution. It is the perfect solution for organizations who prefer SaaS products and desire better awareness and security in their on-premises environments while reducing capital expenditure and operational overhead. It works by deploying lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow. It encrypts this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis. Stealthwatch Cloud consumes metadata only. The packet payloads are never retained or transferred outside the network.
+  <span style="color: #bb6600;">Private Network Monitoring (PNM)</span> provides visibility and threat detection for the on-premises network, delivered from the cloud as a SaaS solution. It is the perfect solution for organizations who prefer SaaS products and desire better awareness and security in their on-premises environments while reducing capital expenditure and operational overhead. It works by deploying lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow. It encrypts this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis. Stealthwatch Cloud consumes metadata only. The packet payloads are never retained or transferred outside the network.
 
   This lab focuses on how to configure a Stealthwatch Cloud Private Network Monitoring (PNM) Sensor, in order to provide visibility and effectively identify active threats, and monitors user and device behavior within on-premises networks.
 
   The Stealthwatch Cloud PNM Sensor is an extremely flexible piece of technology, capable of being utilized in a number of different deployment scenarios. It can be deployed as a complete Ubuntu based virtual appliance on different hypervisors (e.g. –VMware, VirtualBox). It can be deployed on hardware running a number of different Linux-based operating systems.
 
-  Reference: https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2019/pdf/5eU6DfQV/LTRSEC-2240-LG2.pdf
+  Reference: [Cisco Stealthwatch Cloud OnPremise Sensor Deployment Lab](https://www.ciscolive.com/c/dam/r/ciscolive/us/docs/2019/pdf/5eU6DfQV/LTRSEC-2240-LG2.pdf)
+
+  Stealthwatch Cloud Public Cloud Monitoring (PCM) is a visibility, threat identification, and compliance service for Microsoft Azure.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -248,6 +288,8 @@
 
   The Zero Trust model uses microsegmentation — a security technique that involves dividing perimeters into small zones to maintain separate access to every part of the network — to contain attacks.
 
+  Statement: deny all other traffic by default -> Answer C is incorrect
+
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
 
@@ -264,7 +306,7 @@
 
   All IKE policies on the device are sent to the remote peer regardless of what is in the selected policy section. The first IKE Policy matched by the remote peer will be selected for the VPN connection. Choose which policy is sent first using the priority field. Priority 1 will be sent first.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/215470-site-to-site-vpn-configuration-on-ftd-ma.html
+  Reference: [Site to Site VPN Configuration on FTD Managed by FMC](https://www.cisco.com/c/en/us/support/docs/security-vpn/ipsec-negotiation-ike-protocols/215470-site-to-site-vpn-configuration-on-ftd-ma.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -296,22 +338,21 @@
   The following are restrictions for Flexible NetFlow:
   - Traditional NetFlow (TNF) accounting is not supported.
   - Flexible NetFlow v5 export format is not supported, only NetFlow v9 export format is supported.
-  - Both ingress and egress NetFlow accounting is supported.
+  - Both ingress and egress NetFlow accounting is supported. --> Answer A is correct
   - Microflow policing feature shares the NetFlow hardware resource with FNF.
   - Only one flow monitor per interface and per direction is supported.
 
-  Reference: https://www.cisco.com/en/US/docs/switches/lan/catalyst3850/software/release/3se/consolidated_guide/b_consolidated_3850_3se_cg_chapter_011010.html
+  Reference: [Configuring Flexible NetFlow](https://www.cisco.com/en/US/docs/switches/lan/catalyst3850/software/release/3se/consolidated_guide/b_consolidated_3850_3se_cg_chapter_011010.html)
 
   When configuring NetFlow, follow these guidelines and restrictions:
+  - Except in PFC3A mode, NetFlow supports bridged IP traffic. PFC3A mode does not support NetFlow bridged IP traffic. --> Answer E is correct
+  - NetFlow supports multicast IP traffic. --> Answer E is correct
 
-  - Except in PFC3A mode, NetFlow supports bridged IP traffic. PFC3A mode does not support NetFlow bridged IP traffic.
-  - NetFlow supports multicast IP traffic.
+  Reference: [Configuring NetFlow](https://www.cisco.com/en/US/docs/general/Test/dwerblo/broken_guide/netflow.html)
 
-  Reference: https://www.cisco.com/en/US/docs/general/Test/dwerblo/broken_guide/netflow.html
+  The Flexible NetFlow – MPLS Egress NetFlow feature allows you to capture IP flow information for packets that arrive on a router as Multiprotocol Label Switching (MPLS) packets and are transmitted as IP packets. This feature allows you to capture the MPLS VPN IP flows that are traveling through the service provider backbone from one site of a VPN to another site of the same VPN --> Answer E is correct
 
-  The Flexible NetFlow – MPLS Egress NetFlow feature allows you to capture IP flow information for packets that arrive on a router as Multiprotocol Label Switching (MPLS) packets and are transmitted as IP packets. This feature allows you to capture the MPLS VPN IP flows that are traveling through the service provider backbone from one site of a VPN to another site of the same VPN
-
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/cfg-mpls-netflow.html
+  Reference: [NetFlow Configuration Guide, Cisco IOS Release 15M&T](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/cfg-mpls-netflow.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -327,7 +368,7 @@
 
   Explanation
 
-  A Proxy Auto-Configuration (PAC) file is a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server.
+  A <span style="color: #bb6600;">Proxy Auto-Configuration (PAC)</span> file is a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server.
   PAC files are used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy. The big advantage of PAC files is that they are usually relatively easy to create and maintain.
 
 
@@ -359,30 +400,36 @@
 
   An administrator is establishing a new site-to-site VPN connection on a Cisco IOS router. The organization needs to ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24. Which command on the hub will allow the administrator to accomplish this?
 
-  A. crypto ca identity 172.19.20.24<br>
-  B. crypto isakmp key Cisco0123456789 172.19.20.24<br>
-  C. crypto enrollment peer address 172.19.20.24<br>
-  D. crypto isakmp identity address 172.19.20.24<br>
+  A. `crypto ca identity 172.19.20.24`<br>
+  B. `crypto isakmp key Cisco0123456789 172.19.20.24`<br>
+  C. `crypto enrollment peer address 172.19.20.24`<br>
+  D. `crypto isakmp identity address 172.19.20.24`<br>
 
   Answer: B
 
   Explanation
 
-  The command “crypto isakmp identity address 172.19.20.24” is not valid. We can only use “crypto isakmp identity {address | hostname}. The following example uses preshared keys at two peers and sets both their ISAKMP identities to the IP address.
+  The command “`crypto isakmp identity address 172.19.20.24`” is not valid. We can only use “`crypto isakmp identity {address | hostname}`. The following example uses preshared keys at two peers and sets both their ISAKMP identities to the IP address.
 
   At the local peer (at 10.0.0.1) the ISAKMP identity is set and the preshared key is specified:
+
+  ```cft
   crypto isakmp identity address
   crypto isakmp key sharedkeystring address 192.168.1.33
+  ```
 
   At the remote peer (at 192.168.1.33) the ISAKMP identity is set and the same preshared key is specified:
+
+  ```cfg
   crypto isakmp identity address
   crypto isakmp key sharedkeystring address 10.0.0.1
+  ```
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp3880782430
+  Reference: [crypto isakmp identity](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp3880782430)
 
-  The command “crypto enrollment peer address” is not valid either.
+  The command “`crypto enrollment peer address`” is not valid either.
 
-  The command “crypto ca identity …” is only used to declare a trusted CA for the router and puts you in the ca-identity configuration mode. Also it should be followed by a name, not an IP address. For example: “crypto ca identity CA-Server” -> Answer A is not correct.
+  The command “`crypto ca identity …`” is only used to declare a trusted CA for the router and puts you in the ca-identity configuration mode. Also it should be followed by a name, not an IP address. For example: “crypto ca identity CA-Server” -> Answer A is not correct.
 
   Only answer B is the best choice left.
 
@@ -416,13 +463,13 @@
 
   Explanation
 
-  The Modbus, DNP3, and CIP SCADA preprocessors detect traffic anomalies and provide data to intrusion rules. Therefore in this question only answer A or answer C is correct.
+  The <span style="color: #bb6600;">Modbus, DNP3, and CIP SCADA preprocessors</span> detect traffic anomalies and provide data to intrusion rules. Therefore in this question only answer A or answer C is correct.
 
   The DNP3 preprocessor detects anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine, which uses DNP3 keywords to access certain protocol fields.
 
-  The Common Industrial Protocol (CIP) is a widely used application protocol that supports industrial automation applications. EtherNet/IP is an implementation of CIP that is used on Ethernet-based networks.The CIP preprocessor detects CIP and ENIP traffic running on TCP or UDP and sends it to the intrusion rules engine. You can use CIP and ENIP keywords in custom intrusion rules to detect attacks in CIP and ENIP traffic.
+  The Common Industrial Protocol (CIP) is a widely used application protocol that supports industrial automation applications. EtherNet/IP is an implementation of CIP that is used on Ethernet-based networks.  The CIP preprocessor detects CIP and ENIP traffic running on TCP or UDP and sends it to the intrusion rules engine. You can use CIP and ENIP keywords in custom intrusion rules to detect attacks in CIP and ENIP traffic.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/630/configuration/guide/fpmc-config-guide-v63/scada_preprocessors.html
+  Reference: [SCADA Preprocessors](https://www.cisco.com/c/en/us/td/docs/security/firepower/630/configuration/guide/fpmc-config-guide-v63/scada_preprocessors.html)
 
   Both DNP3 and CIP preprocessors can be used to detect traffic anomalies but we choose CIP as it is widely used in industrial applications.
 
@@ -454,7 +501,7 @@
 
   For example, you have specified a mandatory requirement with a user-defined condition to check the existence of C:\temp\text.file in the absolute path. If the file does not exist, the mandatory requirement fails and the user will be moved to Non-Compliant state.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-4/admin_guide/b_ise_admin_guide_14/b_ise_admin_guide_14_chapter_010111.html
+  Reference: [Configure Client Posture Policies](https://www.cisco.com/c/en/us/td/docs/security/ise/1-4/admin_guide/b_ise_admin_guide_14/b_ise_admin_guide_14_chapter_010111.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -470,9 +517,9 @@
 
   Explanation
 
-  The RADIUS Change of Authorization (CoA) feature provides a mechanism to change the attributes of an authentication, authorization, and accounting (AAA) session after it is authenticated.
+  The RADIUS Change of Authorization (CoA) feature provides a mechanism to <span style="color: #bb6600;">change the attributes of an authentication, authorization, and accounting (AAA) session</span> after it is authenticated.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_aaa/configuration/15-sy/sec-usr-aaa-15-sy-book/sec-rad-coa.html
+  Reference: [RADIUS Change of Authorization](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_aaa/configuration/15-sy/sec-usr-aaa-15-sy-book/sec-rad-coa.html)
 
 
 <hr>
@@ -495,7 +542,7 @@
 
   Note: Threat Root Cause shows how malware is getting onto your computers.
 
-  Reference: https://docs.amp.cisco.com/en/A4E/AMP%20for%20Endpoints%20User%20Guide.pdf
+  Reference: [https://docs.amp.cisco.com/en/A4E/AMP%20for%20Endpoints%20User%20Guide.pdf
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
