@@ -1181,8 +1181,11 @@
 
   Refer to the exhibit.
 
+  ```cfg
   crypto ikev2 name-mangler MANGLER
-  dn organization-unit
+   dn organization-unit
+  ```
+
   An engineer is implementing a certificate based VPN. What is the result of the existing configuration?
 
   A. The OU of the IKEv2 peer certificate is used as the identity when matching an IKEv2 authorization policy<br>
@@ -1363,14 +1366,24 @@
 
   Refer to the exhibit.
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2166-dot1x_MAB.jpg"
-      alt    = "802.1X & MAB"
-      title  = "802.1X & MAB"
-    />
-  </figure>
+  Refer to the exhibit.
+
+  ```cfg
+  interface GigabitEthernet1/0/18
+  switchport access vlan 41
+  switchport mode access
+  switchport voice vlan 44
+  device-tracking attach-policy IPDT_MAX_10
+  authentication periodic
+  authentication timer reauthenticate server
+  access-session host-mode multi-domain
+  access-session port-control auto
+  dot1x pae authenticator
+  dot1x timeout tx-period 7
+  dot1x max-reauth-req 3
+  spanning-tree portfast
+  service-policy type control subscriber POLICY_Gi1/0/18
+  ```
 
   What will occur when this device tries to connect to the port?
 
@@ -1379,7 +1392,7 @@
   C. 802.1X will work and the device will be allowed on the network<br>
   D. 802.1X and MAB will both be used and ISE can use policy to determine the access level<br>
 
-  Answer: C
+  Answer: 
 
   Explanation
 
@@ -1403,10 +1416,20 @@
   - snmp trap mac-notification change added
   - snmp trap mac-notification change removed
 
+<!-- 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2166-dot1x_MAB.jpg"
+      alt    = "802.1X & MAB"
+      title  = "802.1X & MAB"
+    />
+  </figure> -->
+
 
 - <span style="color: #008888; font-weight: bold;">Question 67</span>
 
-  An engineer is configuring their router to send NetfFow data to Stealthwatch which has an IP address of 1.1.1.1 using the flow record Steathwatch406397954 command. Which additional command is required to complete the flow record?
+  An engineer is configuring their router to send NetfFow data to Stealthwatch which has an IP address of 1.1.1.1 using the `flow record Steathwatch406397954` command. Which additional command is required to complete the flow record?
 
   A. `transport udp 2055`<br>
   B. `match ipv4 ttl`<br>
@@ -1487,7 +1510,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 71</span>
 
-  What is the function of the crypto isakmp key cisc406397954 address 0.0.0.0 0.0.0.0 command when establishing an IPsec VPN tunnel?
+  What is the function of the `crypto isakmp key cisc406397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel?
 
   A. It defines what data is going to be encrypted via the VPN<br>
   B. It configures the pre-shared authentication key<br>
