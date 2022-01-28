@@ -12,7 +12,7 @@
   C. The Cisco IOS router with Zone-Based Policy Firewall denies all traffic by default, whereas the Cisco ASA starts out by allowing all traffic until rules are added<br>
   D. The Cisco ASA can be configured for high availability whereas the Cisco IOS router with Zone-Based Policy Firewall cannot<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -24,7 +24,7 @@
   C. providing multi-factor authentication<br>
   D. providing attribute-driven policies<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -36,7 +36,7 @@
   C. private<br>
   D. public<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -48,7 +48,7 @@
   C. ESP<br>
   D. IKEv2<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -60,7 +60,7 @@
   C. Cisco Firepower Next-Generation Firewall<br>
   D. Cisco Umbrella<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -73,7 +73,7 @@
   D. backdoor<br>
   E. sync<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -85,7 +85,7 @@
   C. to establish secure VPN connectivity to the corporate network<br>
   D. to enforce posture compliance and mandatory software<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -97,7 +97,7 @@
   C. It logs all event types only to the same collector.<br>
   D. It sends NetFlow data records from active and standby ASAs in an active standby failover pair.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -109,7 +109,7 @@
   C. Cisco Talos<br>
   D. BGP route reflector<br>
 
-  Answer: 
+  Answer: <br><br> 
   
   
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -121,7 +121,7 @@
   C. It provides the ability to add applications to the mobile device through Cisco ISE<br>
   D. It provides network device administration access<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -133,7 +133,7 @@
   C. Configure the `www.domain.com` address in the block list<br>
   D. Configure the `domain.com` address in the block list<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -145,7 +145,7 @@
   C. Cisco Stealthwatch Cloud PCM<br>
   D. Cisco Umbrella On-Premises<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -157,7 +157,7 @@
   C. Cisco FDM<br>
   D. CDO<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
@@ -169,7 +169,7 @@
   C. access control policy<br>
   D. virtual LAN<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -181,7 +181,7 @@
   C. Change the encryption to AES* to support all AES algorithms in the primary policy<br>
   D. Make the priority for the primary policy 10 and the new policy 1<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -193,7 +193,7 @@
   C. linear<br>
   D. nonlinear<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -206,7 +206,7 @@
   D. Does not required packet sampling on interfaces<br>
   E. Can be used to track multicast, MPLS, or bridged traffic<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -218,7 +218,7 @@
   C. PAC file<br>
   D. Bridge mode<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 19</span>
@@ -230,7 +230,7 @@
   C. IP Slock List Center<br>
   D. AMP Reputation Center<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -242,7 +242,7 @@
   C. AES-256<br>
   D. ESP<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>
@@ -254,7 +254,7 @@
   C. `crypto enrollment peer address 172.19.20.24`<br>
   D. `crypto isakmp identity address 172.19.20.24`<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -266,7 +266,7 @@
   C. SQL injection attacks are used to steal information from databases whereas XSS attacks are used to redirect users to websites where attackers can steal data from them<br>
   D. XSS attacks are used to steal information from databases whereas SQL injection attacks are used to redirect users to websites where attackers can steal data from them<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 23</span>
@@ -278,7 +278,7 @@
   C. Configure intrusion rules for the DNP3 preprocessor<br>
   D. Modify the access control policy to trust the industrial traffic<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -290,7 +290,7 @@
   C. Optional<br>
   D. Visibility<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -302,7 +302,7 @@
   C. accessibility<br>
   D. membership<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 <hr>
@@ -317,7 +317,7 @@
   D. vulnerable software<br>
   E. threat root cause<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
@@ -329,7 +329,7 @@
   C. Upload the hash for the file into the policy<br>
   D. Send the file to Cisco Threat Grid for dynamic analysis<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 28</span>
@@ -341,7 +341,7 @@
   C. FlexVPN because it uses multiple SAs and DMVPN does not.<br>
   D. DMVPN because it uses multiple SAs and FlexVPN does not.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 29</span>
@@ -353,7 +353,7 @@
   C. It optimizes a flow path<br>
   D. It sets up a workload forensic score<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -365,7 +365,7 @@
   C. Install the Microsoft Active Directory Connector to give IP address information stitched to the requests in the Cisco Umbrella dashboard<br>
   D. Configure an internal domain within Cisco Umbrella to help identify each address and create policy from the domains<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
@@ -377,7 +377,7 @@
   C. A DoS attack is where a computer is used to flood a server with UDP packets whereas a DDoS attack is where a computer is used to flood a server with TCP packets<br>
   D. A DoS attack is where a computer is used to flood a server with TCP packets whereas a DDoS attack is where a computer is used to flood a server with UDP packets<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -390,7 +390,7 @@
   D. Connect to Information Technology Service Management Platforms<br>
   E. Create new SSIDs on a wireless LAN controller<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -402,7 +402,7 @@
   C. event<br>
   D. multivendor<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 34</span>
@@ -414,7 +414,7 @@
   C. to create the private key for a digital certificate.<br>
   D. to certify the ownership of a public key by the named subject<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 35</span>
@@ -426,7 +426,7 @@
   C. container<br>
   D. security<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 36</span>
@@ -438,7 +438,7 @@
   C. exporter name<br>
   D. exporter description<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 37</span>
@@ -450,7 +450,7 @@
   C. flood attacks<br>
   D. phishing attacks<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 38</span>
@@ -463,7 +463,7 @@
   D. It allows multiple sites to connect to the data center<br>
   E. It enables VPN access for individual users from their machines<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 39</span>
@@ -475,7 +475,7 @@
   C. DH is a symmetric key establishment algorithm intended to output asymmetric keys.<br>
   D. DH is on asymmetric key establishment algorithm intended to output symmetric keys.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 40</span>
@@ -487,7 +487,7 @@
   C. network footprinting<br>
   D. data exfiltration<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 41</span>
@@ -499,7 +499,7 @@
   C. GETVPN is based on IKEv2 and does not support IKEv1<br>
   D. GETVPN is used to build a VPN network with multiple sites without having to statically configure all devices<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 42</span>
@@ -511,7 +511,7 @@
   C. Telemetry uses push and pull which makes it more secure than SNMP<br>
   D. Telemetry uses a push method which makes it faster than SNMP<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 43</span>
@@ -523,7 +523,7 @@
   C. Cisco FTD because it includes URL filtering in the access control policy capabilities, whereas Cisco ASA does not<br>
   D. Cisco FTD because it enables URL filtering and blocks malicious URLs by default, whereas Cisco ASA does not<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 44</span>
@@ -535,7 +535,7 @@
   C. Use the Layer 4 setting in the Cisco WSA to receive explicit forward requests from the network device<br>
   D. Use PAC keys to allow only the required network devices to send the traffic to the Cisco WSA<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 45</span>
@@ -547,7 +547,7 @@
   C. Configure a service template within the switch to standardize the port configurations so that the correct information is sent to Cisco ISE<br>
   D. Configure the device sensor feature within the switch to send the appropriate protocol information<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 46</span>
@@ -559,7 +559,7 @@
   C. Deploy a Cisco FTD sensor to send network events to Cisco Stealthwatch Cloud<br>
   D. Configure a Cisco FMC to send NetFlow to Cisco Stealthwatch Cloud<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 47</span>
@@ -571,7 +571,7 @@
   C. Change the management port on Cisco FMC so that it pushes the change to all managed Cisco FTD devices<br>
   D. Set the tunnel port to 8305<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 48</span>
@@ -583,7 +583,7 @@
   C. SNMP<br>
   D. 802.1X<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 49</span>
@@ -595,7 +595,7 @@
   C. The hash being uploaded is part of a set in an incorrect format<br>
   D. The engineer is attempting to upload a file instead of a hash<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 50</span>
@@ -623,7 +623,7 @@
   3\. detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application<br>
   4\. understand the security posture of the data or activity taking place in public cloud deployments<br>
 
-  Answer:
+  Answer: <br><br>
   
 
 <hr>
@@ -673,7 +673,7 @@
   C. It allows authentication with TLSv1 SSL protocol<br>
   D. It authenticates to a Cisco ISE with an SSH connection<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 <!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -702,7 +702,7 @@
   C. NTP authentication is not enabled.<br>
   D. The router was not rebooted after the NTP configuration updated<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 53</span>
@@ -725,7 +725,7 @@
   C. Traffic is managed by the security settings and blocked<br>
   D. Traffic is proxied through the intelligent proxy<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
   <!-- ======================== New Questions (added on 27th-Sep-2021) ======================== -->
@@ -740,7 +740,7 @@
   C. Open port 8905 on the firewall between the Cisco ISE nodes<br>
   D. Add the DNS entry for the new Cisco ISE node into the DNS server<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 55</span>
@@ -759,7 +759,7 @@
   C. The OU of the IKEv2 peer certificate is encrypted when the OU is set to MANGLER<br>
   D. The OU of the IKEv2 peer certificate is set to MANGLER<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 56</span>
@@ -771,7 +771,7 @@
   C. NetFlow collectors<br>
   D. Cisco Cloudlock<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 57</span>
@@ -783,7 +783,7 @@
   C. as part of the TCP/53 packet header<br>
   D. as part of the DNS response packet<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 58</span>
@@ -795,7 +795,7 @@
   C. Enable two-factor authentication through a TACACS+ server and then join the cluster by using the Cisco ESA GUI<br>
   D. Enable two-factor authentication through a TACACS+ server and then join the cluster by using the Cisco ESA CLI<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 59</span>
@@ -807,7 +807,7 @@
   C. The Exploit Database<br>
   D. threat intelligence<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 60</span>
@@ -819,7 +819,7 @@
   C. Cisco AMP for Network<br>
   D. Cisco AnyConnect<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 61</span>
@@ -831,7 +831,7 @@
   C. core<br>
   D. East-West gateways<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 62</span>
@@ -843,7 +843,7 @@
   C. URL categories are updated more frequently on Cisco CWS than they are on Cisco WSA<br>
   D. Content scanning for SAAS cloud applications is available through Cisco CWS and not available through Cisco WSA<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 63</span>
@@ -855,7 +855,7 @@
   C. Download the threat intelligence feed from the IETF and import it into the Cisco FTD and Cisco WSA databases<br>
   D. Configure the integrations with Talos Intelligence to take advantage of the threat intelligence that it provides<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 64</span>
@@ -867,7 +867,7 @@
   C. authoring<br>
   D. sharing<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 65</span>
@@ -880,7 +880,7 @@
   D. Send VPC Flow Logs to Cisco Stealthwatch Cloud<br>
   E. Configure Cisco Stealthwatch Cloud to ingest AWS information<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 66</span>
@@ -911,7 +911,7 @@
   C. 802.1X will work and the device will be allowed on the network<br>
   D. 802.1X and MAB will both be used and ISE can use policy to determine the access level<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 <!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -933,7 +933,7 @@
   C. `cache timeout active 60`<br>
   D. `destination 1.1.1.1`<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 68</span>
@@ -945,7 +945,7 @@
   C. Map sender IP addresses to a host interface<br>
   D. Enable flagged message handling<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 69</span>
@@ -957,7 +957,7 @@
   C. RADIUS requests are generated only by a router if a RADIUS source interface is defined<br>
   D. Encrypted RADIUS authentication requires the RADIUS source interface be defined<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 70</span>
@@ -988,7 +988,7 @@
   C. Configure authentication event fail retry 2 action authorize vlan 41 on the interface<br>
   D. Add mab to the interface configuration<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 71</span>
@@ -1000,7 +1000,7 @@
   C. It prevents all IP addresses from connecting to the VPN server.<br>
   D. It configures the local address for the VPN server.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 72</span>
@@ -1012,7 +1012,7 @@
   C. Create an identity policy within Cisco ISE to send all authentication requests to Cisco DUO<br>
   D. Modify the current policy with the condition MFASourceSequence DUO=true in the authorization conditions within Cisco ISE<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 73</span>
@@ -1024,7 +1024,7 @@
   C. Platform as a Service because the service provider manages the operating system<br>
   D. Infrastructure as a Service because the service provider manages the operating system<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 74</span>
@@ -1036,7 +1036,7 @@
   C. It acts as a security information and event management solution and receives syslog from other cloud solutions<br>
   D. It scans other cloud solutions being used within the network and identifies vulnerabilities<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 75</span>
@@ -1048,7 +1048,7 @@
   C. The APK must be uploaded for the application that the detection is intended<br>
   D. Detections for MD5 signatures must be configured in the advanced custom detection policies<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 <hr>
@@ -1062,7 +1062,7 @@
   C. An exploit is a weakness that can cause a vulnerability in the network<br>
   D. An exploit is a hypothetical event that causes a vulnerability in the network<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 77</span>
@@ -1074,7 +1074,7 @@
   C. sandboxing<br>
   D. blocklisting<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 78</span>
@@ -1086,7 +1086,7 @@
   C. Lambda<br>
   D. Contiv<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 
@@ -1102,7 +1102,7 @@
   C. publisher<br>
   D. controller<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 80</span>
@@ -1114,7 +1114,7 @@
   C. Use the Cisco FTD IP address as the proxy server setting on the browser<br>
   D. Enable the HTTPS server for the device platform policy<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
   <!-- ======================== New questions (added on 18th-Dec-2021) =========================== -->
@@ -1129,7 +1129,7 @@
   C. Cisco ASA<br>
   D. Cisco FTD<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 82</span>
@@ -1147,7 +1147,7 @@
   C. If four log<br> in attempts fail in 100 seconds, wait for 60 seconds to next log in prompt
   D. If four fail<br>ures occur in 60 seconds, the router goes to quiet mode for 100 seconds
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 83</span>
@@ -1159,7 +1159,7 @@
   C. encapsulation<br>
   D. accuracy<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 84</span>
@@ -1171,7 +1171,7 @@
   C. It protects data by enabling the use of a second validation of identity<br>
   D. It provides visibility into devices to establish device trust<br>
 
-  Answer: C
+  Answer: <br><br> C
   
 
 - <span style="color: #008888; font-weight: bold;">Question 85</span>
@@ -1183,7 +1183,7 @@
   C. GRE over IPsec adds its own header, and L2TP does not<br>
   D. L2TP is an IP packet encapsulation protocol, and GRE over IPsec is a tunneling protocol.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 86</span>
@@ -1196,7 +1196,7 @@
   D. Southbound interfaces utilize device configurations such as VLANs and IP addresses.<br>
   E. Southbound APIs utilize CLI, SNMP, and RESTCONF.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 87</span>
@@ -1209,7 +1209,7 @@
   D. Cisco TrustSec<br>
   E. Cisco Duo Security<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 88</span>
@@ -1221,7 +1221,7 @@
   C. The hosts must have access to the same defined network<br>
   D. The hosts must use a different datastore than the virtual appliance<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 89</span>
@@ -1233,7 +1233,7 @@
   C. DKIM<br>
   D. SPF<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 90</span>
@@ -1245,7 +1245,7 @@
   C. browser WGET<br>
   D. cross-site scripting<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 91</span>
@@ -1258,7 +1258,7 @@
   D. The eDirectory client must be installed on each client workstation<br>
   E. Deploy a separate Active Directory agent such as Cisco Context Directory Agent.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 92</span>
@@ -1270,7 +1270,7 @@
   C. Cisco Identity Services Engine<br>
   D. Cisco AnyConnect with ISE Posture module<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 93</span>
@@ -1282,7 +1282,7 @@
   C. Configure the default policy to redirect the requests to the correct policy.<br>
   D. Place the policy with the most-specific configuration last in the policy order.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 94</span>
@@ -1305,7 +1305,7 @@
   C. aaa authentication login console ise<br>
   D. aaa authentication enable default enable<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 95</span>
@@ -1384,7 +1384,7 @@
   C. changes the hostname of the Cisco ASA<br>
   D. adds a global rule into policies<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 96</span>
@@ -1407,7 +1407,7 @@
   C. Only URLs for botnets with reputation scores of 3-5 will be blocked<br>
   D. Only URLs for botnets with a reputation score of 3 will be blocked<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 97</span>
@@ -1420,7 +1420,7 @@
   D. Northbound APIs form the interface between the SDN controller and the network switches or routers.<br>
   E. OpenFlow is a standardized northbound API protocol.<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 98</span>
@@ -1432,7 +1432,7 @@
   C. application security gateway<br>
   D. modular policy framework<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 99</span>
@@ -1444,7 +1444,7 @@
   C. Add the DACL name for the Airespace ACL configured on the WLC in the Common Tasks section of the authorization profile for the authorization policy line that the unauthenticated devices hit
   D. Use the track movement option within the authorization profile for the authorization policy line that the unauthenticated devices hit
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 100</span>
@@ -1456,7 +1456,7 @@
   C. Cisco AMP for Endpoints automatically researches indicators of compromise and confirms threats, and Cisco Umbrella does not<br>
   D. Cisco AMP for Endpoints is a cloud-based service, and Cisco Umbrella is not<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 <hr>
@@ -1470,7 +1470,7 @@
   C. to exceed the threshold limit of the connection queue<br>
   D. to cause the buffer to overflow<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 102</span>
@@ -1482,7 +1482,7 @@
   C. STIX<br>
   D. Cybox<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 103</span>
@@ -1495,7 +1495,7 @@
   D. CDP AutoDiscovery<br>
   E. Cisco Prime Infrastructure<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 104</span>
@@ -1507,7 +1507,7 @@
   C. Yearly<br>
   D. Monthly<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 105</span>
@@ -1519,7 +1519,7 @@
   C. Create a new site within Cisco Umbrella to block requests from those categories so they can be sent to the proxy device.<br>
   D. Configure URL filtering within Cisco Umbrella to track the URLs and proxy the requests for those categories and below.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 106</span>
@@ -1531,7 +1531,7 @@
   C. sharing<br>
   D. authoring<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 107</span>
@@ -1543,7 +1543,7 @@
   C. so that patching strategies can assist with disabling nonsecure protocols in applications<br>
   D. to take advantage of new features released with patches<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 108</span>
@@ -1555,7 +1555,7 @@
   C. Environments implement private VLAN segmentation to group servers with similar applications<br>
   D. Environments deploy centrally managed host-based firewall rules on each server or container<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 109</span>
@@ -1567,7 +1567,7 @@
   C. Cisco Cloud Platform<br>
   D. Cisco Content Platform<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 110</span>
@@ -1579,7 +1579,7 @@
   C. determines the “what” of threat intelligence<br>
   D. supports STIX information and allows users to describe threat motivations and abilities<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 111</span>
@@ -1591,7 +1591,7 @@
   C. Add the specified addresses to the identities list and create a block action<br>
   D. Modify the application settings to allow only applications to connect to required addresses<br>
 
-  Answer: 
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 112</span>
@@ -1619,7 +1619,7 @@
   3\. detection, blocking and remediation to protect the enterprise against targeted malware attacks<br>
   4\. policy enforcement based on complete visibility of users and communication between virtual machines<br>
 
-  Answer:
+  Answer: <br><br>
 
 
   <!-- ============================ New Questions (added on 8th-Jan-2022) ============================ -->
@@ -1645,7 +1645,7 @@
   C. Configure GigabitEthernet0/1 as promiscuous port, Gigabithernet0/2 as community port and GigabitEthernet0/3 and GigabitEthernet0/4 as isolated ports.<br>
   D. Configure GigabitEthernet0/1 as community port, GigabitEthernet0/2 as isolated port, and GigabitEthernet0/3 and GigabitEthernet0/4 as promiscuous ports.<br>
 
-  Answer: 
+  Answer: <br><br> 
 
 
 
