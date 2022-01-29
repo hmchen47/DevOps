@@ -1090,7 +1090,7 @@
 
 
 
-  ===================== New Questions (added on 29th-Sep-2021) =====================
+  <!-- ===================== New Questions (added on 29th-Sep-2021) ===================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 79</span>
@@ -1323,11 +1323,9 @@
 
   ```python
   ...#{code snippet}
-  ...
   api+path = "/api/access/global/rules"
   url = server + api_path
   f = None
-
   post_data = {
     "sourceService": {
       "kind": serviceKind,
@@ -1347,14 +1345,16 @@
     "position": "1",
     "sourceAddress": {
       "kind": sourceAddressKind,
-      "value": sourceAddress
-    }
+      "value": sourceAddress  }
   }
+  ```
 
+  ```python
   req = urllib2.Request(url, json.dumps(post_data), headers)
   base64string = base64.encodestring(
     "%s: %s" % (username, password)).replace("\n', ")
-  req.add_header("Authorization", "basic %s" % base64string)
+  req.add_header("Authorization", 
+    "basic %s" % base64string)
   try:
     f = urllib2.urlopen(req)
     status_code = f.getcode()
@@ -1481,7 +1481,7 @@
   C. STIX<br>
   D. Cybox<br>
 
-  Answer: <br><br> 
+  Answer: <br><br>
   
 
 - <span style="color: #008888; font-weight: bold;">Question 103</span>
@@ -1598,7 +1598,7 @@
   Drag and drop the descriptions from the right onto the correct positions on the left.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21112-Security_Products.jpg"
       alt    = "Security Products"
@@ -1629,7 +1629,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/21113-Private_VLAN_promiscuous_port.jpg"
       alt    = "Private VLAN promiscuous port"
@@ -1645,7 +1645,6 @@
   D. Configure GigabitEthernet0/1 as community port, GigabitEthernet0/2 as isolated port, and GigabitEthernet0/3 and GigabitEthernet0/4 as promiscuous ports.<br>
 
   Answer: <br><br> 
-
 
 
 
