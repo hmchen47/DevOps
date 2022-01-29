@@ -2304,7 +2304,25 @@
 
   Explanation
 
-  OpenIOC is an open framework, meant for sharing threat intelligence information in a machine-readable format. It was developed by the American cybersecurity firm MANDIANT in November 2011. It is written in eXtensible Markup Language (XML) and can be easily customized for additional intelligence so that incident responders can translate their knowledge into a standard format. Organizations can leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats.
+  OpenIOC is an open framework, meant for sharing threat intelligence information in a machine-readable format. It was developed by the American cybersecurity firm MANDIANT in November 2011. It is written in eXtensible Markup Language (XML) and can be easily customized for additional intelligence so that incident responders can translate their knowledge into a standard format. Organizations can leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats. 
+  
+    Reference: [What is Open Indicators of Compromise (OpenIOC) Framework?](https://cyware.com/educational-guides/cyber-threat-intelligence/what-is-open-indicators-of-compromise-openioc-framework-ed9d)
+
+  Structured Threat Information Expression (STIX™) is a language and serialization format used to exchange cyber threat intelligence (CTI). STIX is open source and free allowing those interested to contribute and ask questions freely. 
+  
+  Reference: [Introduction to STIX](https://oasis-open.github.io/cti-documentation/stix/intro.html)
+
+  STIX and TAXII are standards developed in an effort to improve the prevention and mitigation of cyber-attacks. STIX states the “what” of threat intelligence, while TAXII defines “how” that information is relayed. Unlike previous methods of sharing, STIX and TAXII are machine-readable and therefore easily automated. 
+  
+  Reference: [What Are STIX/TAXII](https://www.anomali.com/resources/what-are-stix-taxii)
+
+  The CybOX Language has been integrated into Version 2.0 of Structured Threat Information eXpression (STIX™). 
+  
+  Refwerece: [Cyber Observable eXpression (CybOX™) Archive Website](https://cyboxproject.github.io/)
+
+  Collects and aggregates multiple sources and formats of data, such as CSV (comma separated value) files, STIX (Structured Threat Information Expression), Custom XML/JSON, CVE (Common Vulnerabilities and Exposures), OpenIOC (indicators of compromise), device logs, and email. This is not your SIEM. Although SIEM systems can handle multiple threat-intelligence-related feeds, they are improperly instrumented for taking in and interpreting the unstructured formats of the free-form, text-heavy unstructured data that frequently characterize intelligence feeds. It is not uncommon to augment a threat intelligence platform with an SIEM, but it is not good to attempt to replace it with one. 
+  
+  Refwerenc: [What Is Threat Intelligence?](https://www.sciencedirect.com/topics/computer-science/structured-threat-information-expression)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 103</span>
@@ -2321,9 +2339,16 @@
 
   Explanation
 
-  Cisco Data Center Network Manager (DCNM) offers network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics. Cisco DCNM uses PowerOn Auto Provisioning (POAP) to automate the process of upgrading software images and installing configuration files on Cisco Nexus switches that are being deployed in the network.
+  Cisco Data Center Network Manager (DCNM) offers network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics. Cisco DCNM uses PowerOn Auto Provisioning (POAP) to automate the process of upgrading software images and installing configuration files on Cisco Nexus switches that are being deployed in the network.  Reference: [DCNM Power-On Auto Provisioning (POAP) Guide](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/prime-data-center-network-manager/guide-c07-740626.html)
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/prime-data-center-network-manager/guide-c07-740626.html
+  To add LAN switches from the Cisco DCNM Web UI, perform the following steps: 
+  - Step 1: Choose Inventory > Discovery > LAN Switches.
+  - Step 2: Click the Add icon to add LAN.
+  - Step 3: Select Hops from seed Switch or Switch List. The fields vary depending on your selection.
+  - Step 4: Enter the Seed Switch IP address for the fabric.<br> For LAN Switches Discovery, DCNM allow both IPv4 and IPv6 address for the Seed Switch.
+  - ...
+
+  Reference: [Cisco DCNM Classic LAN Configuration Guide, Release 11.2(1)](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/11_2_1/config_guide/classiclan/b_dcnm_classic_lan/inventory.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 104</span>
@@ -2340,11 +2365,11 @@
   Explanation
 
   Each guest account must be associated with a guest type. Guest types allow a sponsor to assign different levels of access and different network connection times to a guest account. These guest types are associated with particular network access policies. Cisco ISE includes these default guest types:
-  Contractor – Users who need access to the network for an extended amount of time, up to a year.
-  Daily – Guests who need access to the resources on the network for just 1 to 5 days.
-  Weekly – Users who need access to the network for a couple of weeks.
+  - Contractor: Users who need access to the network for an extended amount of time, up to a year.
+  - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
+  - Weekly: Users who need access to the network for a couple of weeks.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/ise/1-3/admin_guide/b_ise_admin_guide_13/b_ise_admin_guide_sample_chapter_01111.html
+  Reference: [Cisco ISE Guest Services](https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ISE_admin_guide_24/m_ise_guest.html#concept_921E58BE513A4E6EABEEDF380391A7A3)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 105</span>
@@ -2362,7 +2387,9 @@
 
   The ‘greylist’ of risky domains is compromised of domains that host both malicious and safe content — we consider these “risky” domains. These sites often allow users to upload and share content—making them difficult to police, even for the admins of the site.
 
-  Reference: https://docs.umbrella.com/deployment-msp/docs/what-is-the-intelligent-proxy
+  There's no reason to proxy requests to domains that are already known to be safe or bad. Umbrella’s _intelligent proxy_ only routes the requests for risky domains for deeper inspection.
+
+  Reference: [What is the Intelligent Proxy?](https://docs.umbrella.com/deployment-msp/docs/what-is-the-intelligent-proxy)
 
   In order to enable intelligent proxy, we need to use “Advanced Settings”:
 
@@ -2413,7 +2440,9 @@
 
   Explanation
 
-  Zero Trust is a security framework requiring all users, whether in or outside the organization’s network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. Zero Trust assumes that there is no traditional network edge; networks can be local, in the cloud, or a combination or hybrid with resources anywhere as well as workers in any location.
+  Zero Trust is a security framework requiring all users, whether in or outside the organization’s network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. Zero Trust assumes that there is no traditional network edge; networks can be local, in the cloud, or a combination or hybrid with resources anywhere as well as workers in any location. 
+  
+  Reference:[ZERO TRUST SECURITY EXPLAINED: PRINCIPLES OF THE ZERO TRUST MODEL](https://www.crowdstrike.com/cybersecurity-101/zero-trust-security/#:~:text=Zero%20Trust%20is%20a%20security,access%20to%20applications%20and%20data.)
 
   The Zero Trust model uses microsegmentation — a security technique that involves dividing perimeters into small zones to maintain separate access to every part of the network — to contain attacks.
 
@@ -2432,9 +2461,10 @@
   Explanation
 
   The ability to deploy Kubernetes clusters in air-gapped sites
+
   Cisco Container Platform (CCP) tenant images contain all the necessary binaries and don’t need internet access to function.
 
-  Reference: https://www.cisco.com/c/en/us/products/cloud-systems-management/container-platform/index.html#~stickynav=3
+  Reference: [Cisco Container Platform](https://www.cisco.com/c/en/us/products/cloud-systems-management/container-platform/index.html#~stickynav=3)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 110</span>
@@ -2450,13 +2480,13 @@
 
   Explanation
 
-  In short, TAXII is about how parties communicate to exchange threat intelligence and STIX is about describing that threat intelligence in a structured way.
+  In short, TAXII is about how parties communicate to exchange threat intelligence and STIX is about describing that threat intelligence in a structured way. 
+  
+  Reference: [The Importance Of Threat Intelligence Sharing Through TAXII And STIX](https://logsentinel.com/blog/the-importance-of-threat-intelligence-sharing-through-taxii-and-stix/?cookie-state-change=1639912854054)
 
-  Reference: https://logsentinel.com/blog/the-importance-of-threat-intelligence-sharing-through-taxii-and-stix/?cookie-state-change=1639912854054
-
-  STIX states the “what” of threat intelligence, while TAXII defines “how” that information is relayed.
-
-  Reference: https://www.anomali.com/resources/what-are-stix-taxii
+  STIX states the “what” of threat intelligence, while TAXII defines “how” that information is relayed. 
+  
+  Reference: [What Are STIX/TAXII](https://www.anomali.com/resources/what-are-stix-taxii)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 111</span>
@@ -2478,11 +2508,11 @@
 
   Destination Lists allows you to create a unique list of destinations (for example, domain name or URL) to which you can block or allow access -> Answer A is correct.
 
-  Reference: https://docs.umbrella.com/deployment-umbrella/docs/customize-your-policies-1
+  Reference: [Manage Policies](https://docs.umbrella.com/deployment-umbrella/docs/customize-your-policies-1)
 
   An identity list cannot be an address as Umbrella uses the following identities:Network, Network Device, Roaming Computers, Mobile Devices, Chrome Book, Network Tunnel and WebUsers and Groups.
 
-  Reference: https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise/design-zone-security/umbrella-design-guide.pdf
+  Reference: [Cisco Umbrella Design Guide](https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise/design-zone-security/umbrella-design-guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 112</span>
@@ -2499,10 +2529,10 @@
   </figure>
 
   Answer:
-  - threat prevention and mitigation for known and unknown threats: NGIPS
-  - real-time threat intelligence and security protection: Collective Security Intelligence
-  - detection, blocking and remediation to protect the enterprise against targeted malware attacks: AMP
-  - policy enforcement based on complete visibility of users and communication between virtual machines: Full Context Awareness
+  - threat prevention and mitigation for known and unknown threats: NGIPS (B)
+  - real-time threat intelligence and security protection: Collective Security Intelligence (A)
+  - detection, blocking and remediation to protect the enterprise against targeted malware attacks: AMP (D)
+  - policy enforcement based on complete visibility of users and communication between virtual machines: Full Context Awareness (C)
 
 
 
