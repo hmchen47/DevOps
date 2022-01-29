@@ -1720,11 +1720,11 @@
 
   Contiv is an open source project that allows you to deploy micro-segmentation policy-based services in container environments. It offers a higher level of networking abstraction for microservices by providing a policy framework. Contiv has built-in service discovery and service routing functions to allow you to scale out services.
 
-  Reference: https://www.ciscopress.com/articles/article.asp?p=3004581&seqNum=2
+  Reference: [Software-Defined Networking Security and Network Programmability](https://www.ciscopress.com/articles/article.asp?p=3004581&seqNum=2)
 
 
 
-  ===================== New Questions (added on 29th-Sep-2021) =====================
+  <!-- ===================== New Questions (added on 29th-Sep-2021) ===================== -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 79</span>
@@ -1744,16 +1744,16 @@
 
   pxGrid uses a built-in API in ISE and it is comprised of three main components which are the controller, publisher and the subscriber. The controller is the core component to make everything working and as said is going to be ISE. The publisher instead is the partner that has some contextual data to be shared with the other partners. And finally the subscriber is the partner that is interested in parsing some contextual data from the other partners.
 
-  Reference: https://bluenetsec.com/fmc-pxgrid-integration-with-ise/
+  Reference: [FMC pxGrid Integration with ISE](https://bluenetsec.com/fmc-pxgrid-integration-with-ise/)
 
-  In fact, according to figure 6-5 (which is posted below) of this link https://www.ciscopress.com/articles/article.asp?p=2963461&seqNum=2,
+  In fact, according to figure 6-5 (which is posted below) of [this link](https://www.ciscopress.com/articles/article.asp?p=2963461&seqNum=2),
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
       src    = "img/2179-integrate_FMC_ISE_pxGrid.jpg"
-      alt    = "Integration of FMC and ISE w/ pxGrid"
-      title  = "Integration of FMC and ISE w/ pxGrid"
+      alt    = "Sample pxGrid Illustration"
+      title  = "Sample pxGrid Illustration"
     />
   </figure>
 
@@ -1762,7 +1762,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 80</span>
 
-  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address https://<FMC IP>/capure/CAPI/pcap/test.pcap, an error 403: Forbidden is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
+  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address `https://<FMC IP>/capure/CAPI/pcap/test.pcap`, an error 403: Forbidden is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
 
   A. Disable the proxy setting on the browser<br>
   B. Disable the HTTPS server and use HTTP instead<br>
@@ -1775,9 +1775,10 @@
 
   When you see this HTTP RESPONSE in a packet capture (PCAP), it’s likely that proxy is denying the request.
   To verify this, get a policy trace, and look for the exact HTTP REQUEST sent by the client, and match it with the policy rules. You will find either a DENY or Denied by Exception result.
+
   You can then modify the rule to allow this HTTP REQUEST, if appropriate.
 
-  Reference: https://knowledge.broadcom.com/external/article/167567/why-do-my-pcaps-show-an-http-response-fr.html
+  Reference: [Why do my PCAPs show an HTTP RESPONSE from the proxy as HTTP/1.1 403 Forbidden (text/html)?](https://knowledge.broadcom.com/external/article/167567/why-do-my-pcaps-show-an-http-response-fr.html)
 
   Therefore we should modify the policy to allow HTTPS request.
 
@@ -1818,10 +1819,12 @@
 
   The following example shows how to configure your router to enter a 100 second quiet period if 15 failed login attempts is exceeded within 100 seconds; all login requests will be denied during the quiet period except hosts from the ACL “myacl.”
 
+  ```cfg
   Router(config)# login block-for 100 attempts 15 within 100
   Router(config)# login quiet-mode access-class myacl
+  ```
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe-16/sec-usr-cfg-xe-16-book/sec-login-enhance.html
+  Reference: [Cisco IOS Login Enhancements-Login Block](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_cfg/configuration/xe-16/sec-usr-cfg-xe-16-book/sec-login-enhance.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 83</span>
@@ -1839,7 +1842,7 @@
 
   SNMP uses the pull model when retrieving data from a switch. This model cannot scale for today’s high-density platforms, and offers very limited extensibility. The pull model is based on a client sending a request to the switch, then the switch responds to that request. On average, network operators using SNMP poll data every five to thirty minutes. But with today’s speeds and scale that’s not enough to capture important network events.
 
-  Reference: https://blogs.cisco.com/developer/its-time-to-move-away-from-snmp-and-cli-and-use-model-driven-telemetry
+  Reference: [It’s time to move away from SNMP and CLI and use Model-Driven Telemetry](https://blogs.cisco.com/developer/its-time-to-move-away-from-snmp-and-cli-and-use-model-driven-telemetry)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 84</span>
@@ -1939,12 +1942,12 @@
   Explanation
 
   Requirements:
-  - Both physical hosts must have the same network configuration.
-  - Both physical hosts must have access to the same defined network(s) to which the interfaces on the virtual appliance are mapped.
-  - Both physical hosts must have access to the datastore that the virtual appliance uses. This datastore can be a storage area network (SAN) or Network-attached storage (NAS).
-  - The Cisco Secure Email Virtual Gateway must have no mail in its queue.
+  - Both physical hosts must have the same <span style="text-decoration: underline;">network configuration</span>.
+  - Both physical hosts must have access to the same <span style="text-decoration: underline;">defined network(s)</span> to which the interfaces on the virtual appliance are mapped.
+  - Both physical hosts must have access to the <span style="text-decoration: underline;">datastore</span> that the virtual appliance uses. This datastore can be a storage area network (SAN) or Network-attached storage (NAS).
+  - The Cisco Secure Email Virtual Gateway must have <span style="text-decoration: underline;">no mail</span> in its queue.
 
-  Reference: https://www.cisco.com/c/dam/en/us/td/docs/security/content_security/virtual_appliances/Cisco_Content_Security_Virtual_Appliance_Install_Guide.pdf
+  Reference: [Cisco Secure Email and Web Virtual Appliance Installation Guide](https://www.cisco.com/c/dam/en/us/td/docs/security/content_security/virtual_appliances/Cisco_Content_Security_Virtual_Appliance_Install_Guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 89</span>
@@ -1977,11 +1980,11 @@
     </a>
   </div>
   
-  Reference: https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKSEC-3433.pdf
+  Reference: [Protecting your Office 365 environment: Leverage the Firepower API, Cisco Cloud Email Security and more](https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2020/pdf/BRKSEC-3433.pdf)
 
   At this point, you are ready to cut over the domain through a Mail Exchange (MX) record change. Work with your DNS administrator to resolve your MX records to the IP addresses for your Cisco Secure Email Cloud instance as provided in your Cisco Secure Email welcome letter.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/cloud-email-security/214812-configuring-office-365-microsoft-with.html
+  Reference: [Configuring Microsoft 365 with Cisco Secure Email](https://www.cisco.com/c/en/us/support/docs/security/cloud-email-security/214812-configuring-office-365-microsoft-with.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 90</span>
@@ -2011,10 +2014,14 @@
   Explanation
 
   Consider the following when you identify users transparently using Active Directory:
-  - Transparent user identification with Active Directory works with an NTLM or Kerberos authentication scheme only. You cannot use it with an LDAP authentication realm that corresponds to an Active Directory instance.
-  - Transparent user identification works with the versions of Active Directory supported by an Active Directory agent.
+  - Transparent user identification with Active Directory works with an NTLM or Kerberos authentication scheme only. You <span style="text-decoration;">cannot</span> use it with an LDAP authentication realm that corresponds to an Active Directory instance. --> Answer C is correct & Answer A is incorrecct
+  - Transparent user identification works with the versions of Active Directory supported by an Active Directory agent. --> Answer E is correcct
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01001.html
+  Reference: [Acquire End-User Credentials](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01001.html)
+
+  eDirectory is designed to be easy to operate, yet powerful enough to meet all your business needs as your online community grows. 
+  
+  eDirectory is an X.500-compatible directory service software product from NetIQ. 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 92</span>
@@ -2032,7 +2039,7 @@
 
   Umbrella Roaming is a cloud-delivered security service for Cisco’s next-generation firewall. It protects your employees even when they are off the VPN. No additional agents are required. Simply enable the Umbrella functionality in the Cisco AnyConnect client. You’ll get seamless protection against malware, phishing, and command-and-control callbacks wherever your users go.
 
-  Reference: https://www.cisco.com/c/en/us/products/security/umbrella/umbrella-roaming.html
+  Reference: [Cisco Umbrella Roaming](https://www.cisco.com/c/en/us/products/security/umbrella/umbrella-roaming.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 93</span>
@@ -2072,25 +2079,14 @@
   Explanation
 
   - The exhibit in this question shows a a successful MAB authorization for the MAC address (from the line “Status: Authorized” the last line “mab Authc Success”) so we need the keyword “authorization” in our AAA command.
-
   - The authorized device is a Microsoft WorkStation so we need the keyword “network” in our AAA command.
 
-  ->The command “aaa authorization network default group ise” is the correct answer. This command configures network authorization via ISE.
+  -> The command “`aaa authorization network default group ise`” is the correct answer. This command configures network authorization via ISE.
 
 
 - <span style="color: #008888; font-weight: bold;">Question 95</span>
 
   Refer to the exhibit.
-
-<!-- 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2195-ASA_Rest_API_snippet.jpg"
-      alt    = "Snippet of ASA REST API"
-      title  = "Snippet of ASA REST API"
-    />
-  </figure> -->
 
   ```python
   ...#{code snippet}
@@ -2108,12 +2104,13 @@
       "kind": destinationAddressKind,
       "value": destinationAddress
     },
+    
     "remarks": [],
     "destinationService": {
       "kind": serviceKind,
       "value": destinationServiceValue
     },
-    "permit": trueOrfalse,
+    "permit": trueORfalse,
     "active": "true",
     "position": "1",
     "sourceAddress": {
@@ -2124,28 +2121,26 @@
 
   req = urllib2.Request(url, json.dumps(post_data), headers)
   base64string = base64.encodestring(
-    "%s: %s" % (username, password)).replace("\n', ")
-  req.add_header("Authorization", "basic %s" % base64string)
+    '%s:%s' % (username, password)).replace('\n', '')
+  req.add_header("Authorization", "Basic %s" % base64string)
   try:
-    f = urllib2.urlopen(req)
+    f  = urllib2.urlopen(req)
     status_code = f.getcode()
-
-    print "Status code is " + str(status_code)
-    if status == 201:
-    print "Operation successful"
+    print "Status code is "+str(status_code)
+    if status_code == 201:
+      print "Create was successful"
   except urllib2.HTTPError, err:
-    print "Error received from server. HTTP Status code : "
-     + str(err.coe)
-
-  try:
-    json_error = json.loads(err.read())
-    if json_error:
-      print json.dumps(json_error, sort_key=True, 
-        indent=4, separators=(',', ': '))
-  except ValueError:
-    pass
+      print "Error received from server. HTTP Status code :"
+        + str(err.code)
+      try:
+        json_error = json.loads(err.read())
+        if json_error:
+          print json.dumps(json_error, sort_keys=True, 
+            indent=4, separators=(',', ': '))
+      except ValueError:
+        pass
   finally:
-    if f: f.close()
+    if f:  f.close()
   ```
 
   What is the function of the Python script code snippet for the Cisco ASA REST API?
@@ -2159,7 +2154,17 @@
 
   Explanation
 
-  Reference: https://github.com/timwukp/Cisco-ASA-REST-API/blob/master/POST__api_access_global_rules_input_loop.py
+  Reference: [Cisco-ASA-REST-API](https://github.com/timwukp/Cisco-ASA-REST-API/blob/master/POST__api_access_global_rules_input_loop.py)
+
+<!-- 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2195-ASA_Rest_API_snippet.jpg"
+      alt    = "Snippet of ASA REST API"
+      title  = "Snippet of ASA REST API"
+    />
+  </figure> -->
 
 
 - <span style="color: #008888; font-weight: bold;">Question 96</span>
@@ -2188,7 +2193,7 @@
 
   When you create a rule to Block traffic based on a reputation level, selection of a reputation level also selects all of the reputation levels more severe than the level you originally selected. For example, if you configure a rule to block Benign Sites with security risks (level 3), it also automatically blocks Suspicious sites (level 2) and High risk (level 1) sites.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/firesight-management-center/118852-technote-firesight-00.html
+  Reference: [Troubleshoot Issues with URL Filtering on a FireSIGHT System](https://www.cisco.com/c/en/us/support/docs/security/firesight-management-center/118852-technote-firesight-00.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 97</span>
@@ -2208,7 +2213,7 @@
   Northbound APIs present an abstraction of network functions with a programmable interface for applications to consume the network services and configure the network dynamically -> Answer A is correct.
 
   Northbound APIs usually use RESTful APIs to communicate with applications -> Answer C is not correct.
-
+<!-- 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
@@ -2216,9 +2221,10 @@
       alt    = "API - Southbound & Northbound"
       title  = "API - Southbound & Northbound"
     />
-  </figure>
+  </figure> -->
 
   Southbound APIs form the interface between the SDN controller and the network switches or routers -> Answer D is not correct.
+
   OpenFlow and NETCONF are Southbound APIs used for most SDN implementations -> Answer E is not correct.
 
 
@@ -2235,7 +2241,8 @@
 
   Explanation
 
-  According to this link, we can use the following to secure SaaS-based applications:
+  According to this [link](https://www.cyberark.com/resources/blog/how-to-secure-your-saas-applications), we can use the following to secure SaaS-based applications:
+  - all administrative access to SaaS applications as privileged
   - Set up single sign-on (SSO) integrations
   - Use multi-factor authentication (MFA) -> Answer A is correct.
   - Install and integrate an identity governance solution
