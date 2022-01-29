@@ -1809,8 +1809,8 @@
 
   A. After four unsuccessful log in attempts, the line is blocked for 100 seconds and only permit IP addresses A are permitted in ACL 60<br>
   B. After four unsuccessful log in attempts, the line is blocked for 60 seconds and only permit IP addresses C are permitted in ACL 100<br>
-  C. If four log<br> in attempts fail in 100 seconds, wait for 60 seconds to next log in prompt
-  D. If four fail<br>ures occur in 60 seconds, the router goes to quiet mode for 100 seconds
+  C. If four login attempts fail in 100 seconds, wait for 60 seconds to next log in prompt<br>
+  D. If four failures occur in 60 seconds, the router goes to quiet mode for 100 seconds<br>
 
   Answer: D
 
@@ -2062,10 +2062,10 @@
 
   Which configuration item makes it possible to have the AAA session on the network?
 
-  A. aaa authorization network default group ise<br>
-  B. aaa authorization exec default ise<br>
-  C. aaa authentication login console ise<br>
-  D. aaa authentication enable default enable<br>
+  A. `aaa authorization network default group ise`<br>
+  B. `aaa authorization exec default ise`<br>
+  C. `aaa authentication login console ise`<br>
+  D. `aaa authentication enable default enable`<br>
 
   Answer: A
 
@@ -2246,10 +2246,10 @@
 
   A Cisco ISE engineer configures Central Web Authentication (CWA) for wireless guest access and must have the guest endpoints redirect to the guest portal for authentication and authorization. While testing the policy, the engineer notices that the device is not redirected and instead gets full guest access. What must be done for the redirect to work?
 
-  A. Create an advanced attribute setting of Cisco.cisco-gateway-id=guest within the authorization profile for the authorization policy line that the unauthenticated devices hit.
-  B. Tag the guest portal in the CWA part of the Common Tasks section of the authorization profile for the authorization policy line that the unauthenticated devices hit.
-  C. Add the DACL name for the Airespace ACL configured on the WLC in the Common Tasks section of the authorization profile for the authorization policy line that the unauthenticated devices hit
-  D. Use the track movement option within the authorization profile for the authorization policy line that the unauthenticated devices hit
+  A. Create an advanced attribute setting of `Cisco.cisco-gateway-id=guest` within the authorization profile for the authorization policy line that the unauthenticated devices hit.<br>
+  B. Tag the guest portal in the CWA part of the Common Tasks section of the authorization profile for the authorization policy line that the unauthenticated devices hit.<br>
+  C. Add the DACL name for the Airespace ACL configured on the WLC in the Common Tasks section of the authorization profile for the authorization policy line that the unauthenticated devices hit<br>
+  D. Use the track movement option within the authorization profile for the authorization policy line that the unauthenticated devices hit<br>
 
   Answer: B
 
