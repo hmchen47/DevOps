@@ -158,7 +158,31 @@
   - group SA: group members (GMs) sharing a common security association (SA)
 
 
+## Software Defined Network (SDN)
 
+- SDN architecture
+  - centralized architecture to control networking devices in one device
+  - SDN controller
+    - global view of the network
+    - using common management protocols to monitor and configure the network devices
+  - northbound interfact (NBI)
+    - SDN controller communicating w/ network service applications, the management solution
+    - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
+    - usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network
+  - southbound interface (SBI)
+    - SDN controller communicating w/ network devices via API
+    - usually OpenFlow and NETCONF to communicate w/ network devices
+  - eastbound interface (EBI)
+  - wetbound interface (WBI)
+
+
+
+## Cloud Concepts and Solutions
+
+- Cisco DNA Center
+  - the command and control center for Cisco DNA–based networks
+  - helping IT to optimize network performance to dynamically meet business intent
+  - features: 1) policy; 2) automation; 3) assurance
 
 
 
