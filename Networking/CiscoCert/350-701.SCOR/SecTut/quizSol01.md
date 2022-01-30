@@ -37,6 +37,7 @@
 
   Note: In the format “&#xhhhh“, hhhh is the code point in hexadecimal form.
 
+
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which flaw does an attacker leverage when exploiting SQL injection vulnerabilities?
@@ -78,6 +79,7 @@
 
   Answer: A B
 
+
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which two endpoint measures are used to minimize the chances of falling victim to phishing and social engineering attacks? (Choose two)
@@ -106,6 +108,7 @@
 
   Answer: A E
 
+
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
@@ -126,6 +129,7 @@
 
   Like other large but well-formed packets, a ping of death is fragmented into groups of 8 octets before transmission. However, when the target computer reassembles the malformed packet, a buffer overflow can occur, causing a system crash and potentially allowing the injection of malicious code.
 
+
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   Which two preventive measures are used to control cross-site scripting? (Choose two)
@@ -137,6 +141,34 @@
   E. Same Site cookie attribute should not be used.<br>
 
   Answer: A B
+
+  Explanation
+
+  [Types of cross-site scripting attacks](https://www.rapid7.com/fundamentals/cross-site-scripting/)
+  - Reflected XSS
+  - Persistent XSS
+  - Dom-Based XSS
+
+  [How to prevent cross-site scripting attacks](https://www.rapid7.com/fundamentals/cross-site-scripting/)
+  - Sanitize user input:
+    - Validate to catch potentially malicious user-provided input.
+    - Encode output to prevent potentially malicious user-provided data from triggering automatic load-and-execute behavior by a browser.
+  - Limit use of user-provided data:
+    - Only use where it’s necessary.
+  - Utilize the Content Security Policy:
+    - Provides additional levels of protection and mitigation against XSS attempts.
+
+  [XSS Prevention Rules](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#xss-prevention-rules)
+  - RULE #0 - Never Insert Untrusted Data Except in Allowed Locations: deny all
+  - RULE #1 - HTML Encode Before Inserting Untrusted Data into HTML Element Content: absolutely not sufficient for other HTML contexts
+  - RULE #2 - Attribute Encode Before Inserting Untrusted Data into HTML Common Attributes
+  - RULE #3 - JavaScript Encode Before Inserting Untrusted Data into JavaScript Data Values
+  - RULE #4 - CSS Encode And Strictly Validate Before Inserting Untrusted Data into HTML Style Property Values
+  - RULE #5 - URL Encode Before Inserting Untrusted Data into HTML URL Parameter Values
+  - RULE #6 - Sanitize HTML Markup with a Library Designed for the Job
+  - RULE #7 - Avoid JavaScript URLs
+  - RULE #8 - Prevent DOM-based XSS
+
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
@@ -172,6 +204,7 @@
 
   Buffer overflow is a vulnerability in low level codes of C and C++. An attacker can cause the program to crash, make data corrupt, steal some private information or run his/her own code. It basically means to access any buffer outside of it’s alloted memory space. This happens quite frequently in the case of arrays.
 
+
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   What is a language format designed to exchange threat intelligence that can be transported over the TAXII protocol?
@@ -205,11 +238,12 @@
 
   The Trusted Automated eXchangeof Indicator Information (TAXII) specifies mechanisms for exchanging structured cyber threat information between parties over the network.
 
-  TAXII exists to provide specific capabilities to those interested in sharing structured cyber threat information. TAXII Capabilities are the highest level at which TAXII actions can be described. There are three capabilities that this version of TAXII supports: push messaging, pull messaging, and discovery.
+  TAXII exists to provide specific capabilities to those interested in sharing structured cyber threat information. TAXII Capabilities are the highest level at which TAXII actions can be described. There are three capabilities that this version of TAXII supports: <span style="color: #bb6600;">push messaging, pull messaging, and discovery</span>.
 
   Discovery does, however, allow for the automated exchange of information about which TAXII Capabilities a Producer might support and the technical mechanisms they employ in doing so -> Therefore the best alternative word for “Discovery” is “Exchange”.
 
-  Reference: https://docs.oasis-open.org/cti/taxii/v1.1.1/taxii-v1.1.1-part1-overview.html
+  Reference: [TAXII Capabilities](https://docs.oasis-open.org/cti/taxii/v1.1.1/taxii-v1.1.1-part1-overview.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
 
@@ -237,6 +271,7 @@
 
   Exploits and malware are two risks for endpoints that are not up to date. ARP spoofing and eavesdropping are attacks against the network while denial-of-service attack is based on the flooding of IP packets.
 
+
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   Which PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server?
@@ -246,17 +281,17 @@
   C. profile<br>
   D. selfsigned<br>
 
-  Answer: 14
+  Answer: C
 
   Explanation
 
   A trustpoint enrollment mode, which also defines the trustpoint authentication mode, can be performed via 3 main methods:
-
   - 1\. Terminal Enrollment – manual method of performing trustpoint authentication and certificate enrolment using copy-paste in the CLI terminal.
   - 2\. SCEP Enrollment – Trustpoint authentication and enrollment using SCEP over HTTP.
   - 3\. Enrollment Profile – Here, authentication and enrollment methods are defined separately. Along with terminal and SCEP enrollment methods, enrollment profiles provide an option to specify HTTP/TFTP commands to perform file retrieval from the Server, which is defined using an authentication or enrollment url under the profile.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/211333-IOS-PKI-Deployment-Guide-Initial-Design.html
+  Reference: [IOS PKI Deployment Guide: Initial Design and Deployment](https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/211333-IOS-PKI-Deployment-Guide-Initial-Design.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
 
@@ -275,6 +310,7 @@
   The term ‘rootkit’ originally comes from the Unix world, where the word ‘root’ is used to describe a user with the highest possible level of access privileges, similar to an ‘Administrator’ in Windows. The word ‘kit’ refers to the software that grants root-level access to the machine. Put the two together and you get ‘rootkit’, a program that gives someone – with legitimate or malicious intentions – privileged access to a computer.
 
   There are four main types of rootkits: Kernel rootkits, User mode rootkits, Bootloader rootkits, Memory rootkits
+
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
 
