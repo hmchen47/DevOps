@@ -476,7 +476,8 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   The peer-address argument specifies the IP or IPv6 address of the remote peer.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp6039879000
+  Reference: [crypto isakmp key](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-c4.html#wp6039879000)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -491,11 +492,12 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Explanation
 
-  Cisco‘s Group Encrypted Transport VPN (GETVPN) introduces the concept of a trusted group to eliminate point-to-point tunnels and their associated overlay routing. All group members (GMs) share a common security association (SA), also known as a group SA. This enables GMs to decrypt traffic that was encrypted by any other GM.
+  Cisco's Group Encrypted Transport VPN (GETVPN) introduces the concept of a trusted group to eliminate point-to-point tunnels and their associated overlay routing. All group members (GMs) share a common security association (SA), also known as a group SA. This enables GMs to decrypt traffic that was encrypted by any other GM.
 
   GETVPN provides instantaneous large-scale any-to-any IP connectivity using a group IPsec security paradigm.
 
-  Reference: https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf
+  Reference: [Group Encrypted Transport VPN (GETVPN) Design and Implementation Guide](https://www.cisco.com/c/dam/en/us/products/collateral/security/group-encrypted-transport-vpn/GETVPN_DIG_version_2_0_External.pdf)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -523,9 +525,10 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   The IKE and IPsec configuration that is set up on the active device must be duplicated on the standby device. That is, the crypto configuration must be identical with respect to Internet Security Association and Key Management Protocol (ISAKMP) policy, ISAKMP keys (preshared), IPsec profiles, IPsec transform sets, all crypto map sets that are used for stateful failover, all access control lists (ACLs) that are used in match address statements on crypto map sets, all AAA configurations used for crypto, client configuration groups, IP local pools used for crypto, and ISAKMP profiles.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_vpnav/configuration/15-mt/sec-vpn-availability-15-mt-book/sec-state-fail-ipsec.html
+  Reference: [Stateful Failover for IPsec](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_vpnav/configuration/15-mt/sec-vpn-availability-15-mt-book/sec-state-fail-ipsec.html)
 
   Although the prerequisites only stated that “Both routers should be the same type of device” but in the “Restrictions for Stateful Failover for IPsec” section of the link above, it requires “Both the active and standby devices must run the identical version of the Cisco IOS software” so answer E is better than answer B.
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -542,6 +545,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   FlexVPN is an IKEv2-based VPN technology that provides several benefits beyond traditional site-to-site VPN implementations. FlexVPN is a standards-based solution that can interoperate with non-Cisco IKEv2 implementations. Therefore FlexVPN can support a multivendor environment. All of the three VPN technologies support traffic between sites (site-to-site or spoke-to-spoke).
 
+
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
@@ -553,13 +557,14 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer: C
 
+
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-      onclick= "window.open('page')"
+      onclick= "window.open('https://www.securitytut.com/scor/vpns-questions')"
       src    = "img/0306-site_to_site_VPN_isakmp.jpg"
       alt    = "Log messages of Site-to-Site CPN"
       title  = "Log messages of Site-to-Site CPN"
@@ -575,6 +580,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   Answer: C
 
+
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
   What is a difference between FlexVPN and DMVPN?
@@ -585,6 +591,7 @@ DMVPN, FlexVPN and GETVPN comparison:
   D. FlexVPN uses IKEv1 or IKEv2, DMVPN uses only IKEv2<br>
 
   Answer: C
+
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
@@ -601,6 +608,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   DTLS is used for delay sensitive applications (voice and video) as its UDP based while TLS is TCP based. Therefore DTLS offers strongest throughput performance. The throughput of DTLS at the time of AnyConnect connection can be expected to have processing performance close to VPN throughput.
 
+
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   What is a commonality between DMVPN and FlexVPN technologies?
@@ -616,7 +624,7 @@ DMVPN, FlexVPN and GETVPN comparison:
 
   In its essence, FlexVPN is the same as DMVPN. Connections between devices are still point-to-point GRE tunnels, spoke-to-spoke connectivity is still achieved with NHRP redirect message, IOS routers even run the same NHRP code for both DMVPN and FlexVPN, which also means that both are Cisco’s proprietary technologies.
 
-  Reference: https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/
+  Reference: [Cisco FlexVPN DMVPN, Part 1 – Overview and Design](https://packetpushers.net/cisco-flexvpn-dmvpn-high-level-design/)
 
 
 ## 04. Software Defined Network (SDN)

@@ -13,6 +13,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which flaw does an attacker leverage when exploiting SQL injection vulnerabilities?
@@ -23,6 +24,7 @@
   D. web page images<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -36,6 +38,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which two endpoint measures are used to minimize the chances of falling victim to phishing and social engineering attacks? (Choose two)
@@ -47,6 +50,7 @@
   E. Protect systems with an up-to-date antimalware program.<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -60,6 +64,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
   Which two behavioral patterns characterize a ping of death attack? (Choose two)
@@ -71,6 +76,7 @@
   E. Publicly accessible DNS servers are typically used to execute the attack.<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
@@ -84,6 +90,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   What is the difference between deceptive phishing and spear phishing?
@@ -95,6 +102,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   Which attack is commonly associated with C and C++ programming languages?<br>
@@ -104,6 +112,7 @@
   D. buffer overflow<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
 
@@ -115,6 +124,7 @@
   D. SMTP<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
 
@@ -128,6 +138,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
 
   Which two risks is a company vulnerable to if it does not have a well-established patching solution for endpoints? (Choose two)
@@ -140,6 +151,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
 
   Which PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server?
@@ -150,6 +162,7 @@
   D. selfsigned<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
 
@@ -163,6 +176,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   Which form of attack is launched using botnets?
@@ -173,6 +187,7 @@
   D. TCP flood<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 17<span style="color: #008888; font-weight: bold;">
 
@@ -185,6 +200,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
 
   Which type of attack is social engineering?
@@ -195,6 +211,7 @@
   D. MITM<br>
 
   Answer:<br><br>
+
 
 ## 02. Encryption
 
@@ -213,6 +230,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which two descriptions of AES encryption are true? (Choose two)
@@ -225,6 +243,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which algorithm provides encryption and authentication for data plane communication?
@@ -236,6 +255,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Elliptic curve cryptography is a stronger more efficient cryptography method meant to replace which current encryption technology?
@@ -246,6 +266,7 @@
   D. AES<br>
 
   Answer:<br><br>
+
 
 ## 03. VPNs
 
@@ -263,6 +284,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which technology must be used to implement secure VPN connectivity among company branches over a private IP cloud with any-to-any scalable connectivity?
@@ -273,6 +295,7 @@
   D. GET VPN<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -286,6 +309,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
   Which VPN technology can support a multivendor environment and secure traffic between sites?
@@ -297,16 +321,18 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
   A network engineer is configuring DMVPN and entered the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA. The tunnel is not being established to hostB. What action is needed to authenticate the VPN?
 
-  A. Change isakmp to ikev2 in the command on hostA.
-  B. Enter the command with a different password on hostB.
-  C. Enter the same command on hostB.
-  D. Change the password on hostA to the default password.
+  A. Change isakmp to ikev2 in the command on hostA.<br>
+  B. Enter the command with a different password on hostB.<br>
+  C. Enter the same command on hostB.<br>
+  D. Change the password on hostA to the default password.<br>
 
   Answer:<br><br>
+
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
@@ -314,7 +340,7 @@
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-      onclick= "window.open('page')"
+      onclick= "window.open('https://www.securitytut.com/scor/vpns-questions')"
       src    = "img/0306-site_to_site_VPN_isakmp.jpg"
       alt    = "Log messages of Site-to-Site CPN"
       title  = "Log messages of Site-to-Site CPN"
@@ -341,6 +367,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
   Which protocol provides the strongest throughput performance when using Cisco AnyConnect VPN?
@@ -352,6 +379,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
 
   What is a commonality between DMVPN and FlexVPN technologies?
@@ -362,6 +390,7 @@
   D. IOS routers run the same NHRP code for DMVPN and FlexVPN<br>
 
   Answer:<br><br>
+
 
 ## 04. Software Defined Network (SDN)
 
