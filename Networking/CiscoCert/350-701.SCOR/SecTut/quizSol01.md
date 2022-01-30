@@ -396,6 +396,7 @@ Asymmetric cryptography (or “public key cryptography”) is a cryptographic sy
 
   Answer: B D
 
+
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which algorithm provides encryption and authentication for data plane communication?
@@ -415,7 +416,8 @@ Asymmetric cryptography (or “public key cryptography”) is a cryptographic sy
 
   In the Cisco SD-WAN network for unicast traffic, data plane encryption is done by AES-256-GCM, a symmetric-key algorithm that uses the same key to encrypt outgoing packets and to decrypt incoming packets. Each router periodically generates an AES key for its data path (specifically, one key per TLOC) and transmits this key to the vSmart controller in OMP route packets, which are similar to IP route updates.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/security/vedge/security-book/security-overview.html
+  Reference: [Security Overview](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/security/vedge/security-book/security-overview.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
