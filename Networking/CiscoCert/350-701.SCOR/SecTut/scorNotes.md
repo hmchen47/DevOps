@@ -166,6 +166,7 @@
     - global view of the network
     - using common management protocols to monitor and configure the network devices
   - northbound interfact (NBI)
+    - intent API
     - SDN controller communicating w/ network service applications, the management solution
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network
@@ -175,6 +176,29 @@
   - eastbound interface (EBI)
   - wetbound interface (WBI)
 
+
+- AsyncOS API
+  - for Cisco Security Management appliances
+  - a representational state transfer (REST) based set of operations
+  - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
+  - a role based system: the scope of API queries defined by the role of the user
+  - Cisco Content Security Management Appliance -> Cisco Secure Email and Web Manager
+
+
+- REST API
+  - a.k.a. RESTful API
+  - an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services
+  - request methods
+    - `GET` − Provides a read only access to a resource.
+    - `POST` − Used to create a new resource.
+    - `DELETE` − Used to remove a resource.
+    - `PUT` − Used to update a existing resource or create a new resource.
+  - request methods for ASA REST API: 1) get; 2) put; 3) post; 4) delete; 5) patch
+
+
+- Cisco device APIs
+  - DNA Center API to add device: `post /dna/intent/api/v1/network-device`
+  - AMP API to get computer info: `get https://api.amp.cisco.com/v1/computers`
 
 
 ## Cloud Concepts and Solutions
