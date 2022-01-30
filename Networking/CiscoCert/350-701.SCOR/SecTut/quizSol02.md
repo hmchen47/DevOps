@@ -14,6 +14,14 @@
 
   Answer: D
 
+  Explanation
+
+  Cisco Content Security Management Appliance -> Cisco Secure Email and Web Manager
+
+  The AsyncOS API for Cisco Security Management appliances (or AsyncOS API) is a representational state transfer (REST) based set of operations that provide secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration. You can retrieve the Security Management appliance reporting, tracking, and quarantine data (for Email Security appliances) using the API.
+
+  Reference: [Overview of AsyncOS API for Cisco Security Management Appliances](https://www.cisco.com/c/en/us/td/docs/security/security_management/sma/sma14-0/b_sma_api_guide_14_0/m_overview_of_sma_apis.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -42,7 +50,7 @@
   - `DELETE` – Deletes the specified object.
   - `PATCH` – Applies partial modifications to the specified object.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/api/qsg-asa-api.html
+  Reference: [Cisco ASA REST API Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/asa/api/qsg-asa-api.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -97,6 +105,12 @@
 
   Answer: B
 
+  Explanation
+
+  Add Device: `post /dna/intent/api/v1/network-device`
+  
+  Reference: [Add Device](https://developer.cisco.com/docs/dna-center/#!add-device-1)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -146,7 +160,7 @@
 
   The call to API of “https://api.amp.cisco.com/v1/computers” allows us to fetch list of computers across your organization that Advanced Malware Protection (AMP) sees.
 
-  Reference: https://api-docs.amp.cisco.com/api_actions/details?api_action=GET+%2Fv1%2Fcomputers&api_host=api.apjc.amp.cisco.com&api_resource=Computer&api_version=v1
+  Reference: [Cisco AMP for Endpoints API](https://api-docs.amp.cisco.com/api_actions/details?api_action=GET+%2Fv1%2Fcomputers&api_host=api.apjc.amp.cisco.com&api_resource=Computer&api_version=v1)
 
 
 

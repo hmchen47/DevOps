@@ -339,7 +339,7 @@
   Refer to the exhibit.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
       onclick= "window.open('https://www.securitytut.com/scor/vpns-questions')"
       src    = "img/0306-site_to_site_VPN_isakmp.jpg"
       alt    = "Log messages of Site-to-Site CPN"
