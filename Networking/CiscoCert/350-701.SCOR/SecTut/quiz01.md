@@ -408,6 +408,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
   Which two features of Cisco DNA Center are used in a Software Defined Network solution? (Choose two)
@@ -420,6 +421,7 @@
 
   Answer:<br><br>
 
+
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
   Which functions of an SDN architecture require southbound APIs to enable communication?
@@ -430,3 +432,5 @@
   D. SDN controller and the cloud<br>
 
   Answer:<br><br>
+
+

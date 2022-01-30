@@ -685,13 +685,11 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Explanation
 
-  What Cisco DNA Center enables you to do
-  - <span style="color: #bb6600; font-weight: bold;">Automate</span>: Save time by using a single dashboard to manage and automate your network. Quickly scale your business with intuitive workflows and reusable templates. Configure and provision thousands of network devices across your enterprise in minutes, not hours.
-  - <span style="color: #bb6600; font-weight: bold;">Secure policy</span>: Deploy group-based secure access and network segmentation based on business needs. With Cisco DNA Center, you apply policy to users and applications instead of to your network devices. Automation reduces manual operations and the costs associated with human errors, resulting in more uptime and improved security. Assurance then assesses the network and uses context to turn data into intelligence, making sure that changes in the network device policies achieve your intent.
-  - <span style="color: #bb6600; font-weight: bold;">Assurance</span>: Monitor, identify, and react in real time to changing network and wireless conditions. Cisco DNA Center uses your network’s wired and wireless devices to create sensors everywhere, providing real-time feedback based on actual network conditions. The Cisco DNA Assurance engine correlates network sensor insights with streaming telemetry and compares this with the current context of these data sources. With a quick check of the health scores on the Cisco DNA Center dashboard, you can see where there is a performance issue and identify the most likely cause in minutes.
-  - <span style="color: #bb6600; font-weight: bold;">Extend ecosystem</span>: With the new Cisco DNA Center platform, IT can now integrate Cisco® solutions and third-party technologies into a single network operation for streamlining IT workflows and increasing business value and innovation. Cisco DNA Center allows you to run the network with open interfaces with IT and business applications, integrates across IT operations and technology domains, and can manage heterogeneous network devices.
+  [Cisco DNA Center features]((https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html)) [table headings]: 1) policy; 2) automation; 3) assurance
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-cisco-dna-center-aag-cte-en.html
+  [What Cisco DNA Center enables you to do](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-cisco-dna-center-aag-cte-en.html): NetOps, SecOps, AIOps, DevOps
+
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
