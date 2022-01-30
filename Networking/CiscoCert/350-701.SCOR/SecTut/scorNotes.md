@@ -62,10 +62,39 @@
     - a standardized language developed in a collaborative way to represent structured information about cyber threats
     - shared, stored, and otherwise used in a consistent manner
 
+
+## Integrity and Privacy
+
 - Digital Certificate & PKI
   - Trustpoint (Cisco)
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
     - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) profile - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+
+- Cryptography
+  - symmetric key cipher
+    - same secrete key used for both encryption and decryption
+    - same secrete key used by both sender and receiver
+    - suited to internal encryption
+    - pros: 1) faster; 2) efficient
+    - Data Encryption Standard (DES)
+      - encrypt and decrypt in blocks (block cipher): 64 bits block size
+      - key size: 56 bits
+    - Triple DES (3DES):
+      - using DES 3 times
+      - 2 ways: 1) 1st & 3rd w/ the same key, 2nd w/ different key; 2) 3 different keys
+    - Advanced Encryption Standard (AES)
+      - successor of DES
+      - encrypt and decrypt in blocks (block cipher): 128 bits block size
+      - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
+  - asymmetric key
+    - public key cryptography
+    - using keypairs (a private key and a public key)
+    - Diffie-Hellman
+    - RSA
+    - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
+
+
+
 
 
