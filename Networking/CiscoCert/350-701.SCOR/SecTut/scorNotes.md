@@ -13,26 +13,32 @@
   - expolit: a code taking advantage of a software a software vulnerability or security flaw
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
 
+
 - SQL injection
   - occurred when asking a user for input
   - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
+
 
 - Buffer overflow
   - the volume of data exceeds the storage capacity of the memory buffer
   - write the data to the buffer overwrites adjacent memory locations
   - commonly associated w/ C/C++
 
+
 - rootkit
   - a program providing maliciously privileged access to a computer
   - types: 1) kernel; 2) user mode; 3) bootloader; 4) Memory rootkits
+
 
 - botnet
   - a collection of internet-connected devices infected by malware
   - unauthorized access
   - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
 
+
 - DoS and DDoS
   - ping of death behavior: 1) sending malformed or oversized packets w/ ping command; 2) packets fragmented into groups of 8 octets
+
 
 - Social engineering
   - phishing
@@ -45,6 +51,7 @@
   - mitigation: 1) browser alert; 2) email filtering
   - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
 
+
 - Cross Site Script (XSS): 
   - web application gathering malicious data
   - usually gathered in the form of a hyperlink
@@ -52,6 +59,7 @@
   - encode the malicious portion of the link to the site in HEX (or other encoding methods)
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
   - preventive measures: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
+
 
 - TAXII/STIX
   - TAXII (Trusted Automated Exchange of Indicator Information)
@@ -70,6 +78,7 @@
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
     - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) profile - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+
 
 - Cryptography
   - symmetric key cipher
@@ -93,6 +102,63 @@
     - Diffie-Hellman
     - RSA
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
+
+
+## Virtual Private Networks
+
+- IPsec
+  - Phase 1: ISAKMP
+    - modes: 1) main - 6 msgs; 2) quick - 4 msgs
+    - preshared authentication 
+      - global configuration mode
+      - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
+      - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
+      - `keystring`: preshared key
+      - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
+      - `hostname`: FQDN of the peer
+      - same command on two end devices
+      - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
+  - phase 2: IPsec
+  - stateful failover
+    - enable a router to continue processing and forwarding IPsec packets after outage occurs
+    - two identical routers: 1) same type of device; 2) have the same CPU and memory; 3) either no encryption accelerator or identical encryption accelerators
+    - duplicate IKE and IPsec configuration on active decvice on standby device
+
+
+- HHS, TLS & DTLS
+  - DTLS
+    - UDP based
+    - used for delay sensitive applications (voice and video)
+    - strongest throughput performance
+
+
+- DMVPN
+  - full meshed connectivity
+  - simple hub and spoke configuration
+  - forming IPsec tunnel over dynamically/statically addresses spokes
+  - tunneled VPN: IKEv1 (ISAKMP) & IKEv2
+
+
+- FlexVPN
+  - tunneled VPN: IKEv2
+  - a standards-based solution interoperating with non-Cisco IKEv2 implementations
+  - same as DMVPN
+    - point-to-point GRE tunnels
+    - spoke-to-spoke connectivity achieved with NHRP redirect message
+    - IOS routers w/ the same NHRP code
+    - Cisco’s proprietary technologies
+
+
+- GETVPN (Group Encrypted Transport VPN)
+  - a trunnel-less VPN
+  - private IP transport, such as MPLS VPN or private WAN
+  - single SA for all routers in a group
+  - scalable for any-to-any connectivity and encryption
+  - eliminate point-to-point tunnels and their associated overlay routing
+  - group SA: group members (GMs) sharing a common security association (SA)
+
+
+
 
 
 
