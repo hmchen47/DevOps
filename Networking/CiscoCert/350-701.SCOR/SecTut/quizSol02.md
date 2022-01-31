@@ -177,6 +177,12 @@
 
   Answer: B
 
+  Explanation
+
+  Alerting you by email, SNMP trap, or syslog when the system generates either an intrusion event with a specific impact flag, or a specific type of discovery event
+
+  Reference: [Introduction to Network Discovery and Identity](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Introduction_to_Network_Discovery.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -190,6 +196,35 @@
 
   Answer: A C
 
+  Explanation
+
+  The Firepower Threat Defense Virtual (FTDv) is the virtualized component of the Cisco NGFW solution. The FTDv provides next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP).
+
+  You can manage the FTDv using the Firepower Management Center (FMC), a full-featured, multidevice manager on a separate server.
+
+  The FTDv registers and communicates with the FMC on the Management interface that you allocated to the FTDv virtual machine.
+
+  Reference: [About Firepower Threat Defense Virtual with Firepower Management Center](https://www.cisco.com/c/en/us/td/docs/security/firepower/quick_start/aws/ftdv-aws-gsg/m_managing_the_firepower_threat_defense_virtual_with_the_firepower_management_center.html#id_105951)
+
+  Firepower Threat Defense Virtual interface requirements:
+  - Management interfaces (2 — One used to connect the Firepower Threat Defense Virtual to the Firepower Management Center, second used for diagnostics; cannot be used for through traffic.
+  - Traffic interfaces (2) — Used to connect the Firepower Threat Defense Virtual to inside hosts and to the public network.
+
+  -> Answer B & D are incorrect
+
+  Supported Features
+  - Deployment in the Virtual Private Cloud (VPC).
+  - Enhanced networking (SR-IOV) where available.
+  - Deployment from Amazon Marketplace.
+  - Maximum of four vCPUs per instance.
+  - User deployment of L3 networks.
+  - Routed mode (default).
+  - Passive mode via ERSPAN.
+
+  IPv6 is not currently supported -> Answer E is incorrect
+
+  Reference: [Guidelines and Limitations for the FTDv and AWS](https://www.cisco.com/c/en/us/td/docs/security/firepower/quick_start/aws/ftdv-aws-gsg/m_getting-started-with-firepower-threat-defense-virtual-and-aws.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -201,6 +236,12 @@
   D. They identify data that the ASA sends to the Firepower module.<br>
 
   Answer: C
+
+  Explanation
+
+  Impact flags help you evaluate the impact an intrusion has on your network by correlating intrusion data, network discovery data, and vulnerability information.
+
+  Reference: [Configuring Impact Flag Alerting](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/external_alerting_with_alert_responses.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -215,6 +256,18 @@
 
   Answer: A
 
+  Explanation
+
+  The health monitor on the Firepower Management Center tracks a variety of health indicators to ensure that the hardware and software in the Firepower System are working correctly. You can use the health monitor to check the status of critical functionality across your Firepower System deployment.
+
+  You can use the health monitor to create a collection of tests, referred to as a _health policy_, and apply the health policy to one or more appliances. The tests, referred to as _health modules_, are scripts that test for criteria you specify. You can modify a health policy by enabling or disabling tests or by changing test settings, and you can delete health policies that you no longer need. You can also suppress messages from selected appliances by blacklisting them.
+
+  A health policy contains configured health test criteria for several modules. You can control which health modules run against each of your appliances and configure the specific limits used in the tests run by each module.
+
+  When you configure a health policy, you decide whether to enable each health module for that policy. You also select the criteria that control which health status each enabled module reports each time it assesses the health of a process.
+
+  Reference: [Health Monitoring](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Health_Monitoring.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -225,7 +278,24 @@
   C. URL filtering<br>
   D. protect<br>
 
-  Answer: D
+  Answer: 
+  
+  Explanation
+
+  Cisco Firepower Next-Generation IPS (NGIPS) threat appliances provide network visibility, security intelligence, automation and advanced threat protection. It uses industry-leading intrusion prevention capabilities and multiple techniques to detect even the most sophisticated network attacks and protect you against them. Cisco Firepower NGIPS threat appliances all offer the ability to operate in-line via Fail-To-Wire/Bypass network modules.
+
+  Cisco Firepower NGIPS continuously discovers information about your network environment, including data about operating systems, mobile devices, files, applications and users. It then uses this information to build network maps and host profiles. This gives you the contextual information you need to make better decisions about intrusion events. And this information is also used as input to better enable the automation of key threat protection features.
+
+  Cisco’s TALOS Security Intelligence and Research Group collects and correlates threats in real time using the largest threat detection network in the world. Their efforts result in vulnerability-focused IPS rules and embedded IP-, URL-, and DNS-based security intelligence for Firepower NGIPS.
+
+  Security automation correlates intrusion events with your network’s vulnerabilities so you can focus on the threats that matter most. It also analyzes your network’s weaknesses and recommends the appropriate security policies to put in place.
+
+  Cisco Firepower NGIPS threat appliances provide industry leading threat effectiveness against both known and unknown threats. Features include:
+  - IPS rules that identify and block attack traffic that target vulnerabilities in your network
+  - Tightly integrated defense against advanced malware incorporating advanced analysis of network and endpoint activity
+  - Sandboxing technology that uses hundreds of behavioral indicators to identify zero-day and evasive attacks
+
+  Reference: [Cisco Firepower NGIPS Data Sheet](https://www.cisco.com/c/en/us/products/collateral/security/ngips/datasheet-c78-742472.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -240,6 +310,16 @@
 
   Answer: B C
 
+  Explanation
+
+  Intrusion Policy Suppression 
+  
+  You can suppress intrusion event notification when a specific IP address or range of IP addresses triggers a specific rule or preprocessor. This is useful for eliminating false positives. For example, if you have a mail server that transmits packets that look like a specific exploit, you might suppress event notification for that event when it is triggered by your mail server. The rule triggers for all packets, but you only see events for legitimate attacks.
+
+  You can add suppressions from within the packet view of an intrusion event. You can also access suppression settings by using the right-click context menu on the intrusion rules editor page (Objects > Intrusion Rules) and on any intrusion event page (if the event was triggered by an intrusion rule).
+
+  Reference: [Tuning Intrusion Policies Using Rules](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Tuning_Intrusion_Policies_Using_Rules.html#ID-2237-000007fe)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
 
@@ -252,6 +332,14 @@
 
   Answer: B
 
+  Explanation
+
+  A platform settings policy is a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in your deployment, such as time settings and external authentication.
+
+  A shared policy makes it possible to configure multiple managed devices at once, which provides consistency in your deployment and streamlines your management efforts. Any changes to a platform settings policy affects all the managed devices where you applied the policy. Even if you want different settings per device, you must create a shared policy and apply it to the desired device.
+
+  Reference: [Platform Settings Policies](https://www.cisco.com/c/en/us/td/docs/security/firepower/640/configuration/guide/fpmc-config-guide-v64/platform_settings_policies_for_managed_devices.html#ID-2258-000006e8)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
 
@@ -262,7 +350,13 @@
   C. device serial number<br>
   D. registration key<br>
 
-  Answer: D
+  Answer: 
+  
+  Explanation
+
+  Step 5: In the Registration Key field, enter the same registration key that you used when you configured the device to be managed by the Firepower Management Center. The registration key is a one-time-use shared secret.
+
+  Reference: [Device Management Basics](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/device_management_basics.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -284,8 +378,8 @@
   You can configure your ASA FirePOWER module in either an **inline** or a **monitor-only** (inline tap or passive) deployment.
 
   Reference:
-  - https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/asdm72/firewall/asa-firewall-asdm/modules-sfr.html
-  - https://www.cisco.com/c/en/us/td/docs/security/asa/quick_start/sfr/firepower-qsg.html
+  - [ASA FirePOWER (SFR) Module](lhttps://www.cisco.com/c/en/us/td/docs/security/asa/asa92/asdm72/firewall/asa-firewall-asdm/modules-sfr.htm)
+  - [Cisco ASA FirePOWER Module Quick Start Guide](https://www.cisco.com/c/en/us/td/docs/security/asa/quick_start/sfr/firepower-qsg.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -298,6 +392,16 @@
   D. Secured Collaboration Proxy<br>
 
   Answer: A
+
+  Explanation
+
+  For the Cisco Unified Presence solution, the ASA acts as a TLS proxy between the Cisco UP server and the foreign server. This allows the ASA to proxy TLS messages on behalf of the server that initiates the TLS connection, and route the proxied TLS messages to the client. The ASA stores certificate trustpoints for the server and the client, and presents these certificates on establishment of the TLS session.
+
+  Reference: [Information About the ASA in Cisco Unified Communications](https://www.cisco.com/c/en/us/td/docs/security/asa/special/unified-communications/unified-communications-guide/information-about-asa-cisco-unified-communications.html)
+
+  If you are connecting the trunk to a secure device, you must upload a certificate for the secure device to Unified Communications Manager.
+
+  Reference: [TLS Setup](https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/security/14_0/cucm_b_security-guide-1401/cucm_m_tls-setup.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -336,7 +440,7 @@
 
   Note: The Cisco Adaptive Security Virtual Appliance (ASAv) runs the same software as physical Cisco ASAs to deliver proven security functionality in a virtual form factor. The ASAv can be deployed in the public AWS cloud. It can then be configured to protect virtual and physical data center workloads that expand, contract, or shift their location over time.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa96/asav/quick-start-book/asav-96-qsg/asav-aws.html
+  Reference: [Deploy the ASAv On the AWS Cloud](https://www.cisco.com/c/en/us/td/docs/security/asa/asa96/asav/quick-start-book/asav-96-qsg/asav-aws.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -350,6 +454,12 @@
 
   Answer: B
 
+  Explanation
+
+  A traffic profile is a graph of network traffic based on connection data collected over a profiling time window (PTW). This measurement presumably represents normal network traffic. After the learning period, you can detect abnormal network traffic by evaluating new traffic against your profile.
+
+  Reference: [Traffic Profiling](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Creating_Traffic_Profiles.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 14</span>
 
@@ -361,6 +471,23 @@
   D. An interface can be assigned only to one zone.<br>
 
   Answer: D
+
+  Explanation
+
+  Router network interfaces’ membership in zones is subject to several rules that govern interface behavior, as is the traffic moving between zone member interfaces:
+  - A zone must be configured before interfaces can be assigned to the zone.
+  - <span style="color: #bb6600;">An interface can be assigned to only one security zone.</span>
+  - All traffic to and from a given interface is implicitly blocked when the interface is assigned to a zone, except traffic to and from other interfaces in the same zone, and traffic to any interface on the router.
+  - Traffic is implicitly allowed to flow by default among interfaces that are members of the same zone.
+  - In order to permit traffic to and from a zone member interface, a policy allowing or inspecting traffic must be configured between that zone and any other zone.
+  - The self zone is the only exception to the default deny all policy. All traffic to any router interface is allowed until traffic is explicitly denied.
+  - Traffic cannot flow between a zone member interface and any interface that is not a zone member. Pass, inspect, and drop actions can only be applied between two zones.
+  - Interfaces that have not been assigned to a zone function as classical router ports and might still use classical stateful inspection/CBAC configuration.
+  - If it is required that an interface on the box not be part of the zoning/firewall policy. It might still be necessary to put that interface in a zone and configure a pass all policy (sort of a dummy policy) between that zone and any other zone to which traffic flow is desired.
+  - From the preceding it follows that, if traffic is to flow among all the interfaces in a router, all the interfaces must be part of the zoning model (each interface must be a member of one zone or another).
+  - The only exception to the preceding deny by default approach is the traffic to and from the router, which will be permitted by default. An explicit policy can be configured to restrict such traffic.
+
+  Reference: [Zone-Based Policy Firewall Design and Application Guide](https://www.cisco.com/c/en/us/support/docs/security/ios-firewall/98628-zone-design-guide.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -380,17 +507,17 @@
 
   The significant events that are tracked include flow-create, flow-teardown, and flow-denied (excluding those flows that are denied by EtherType ACLs).
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/configuration/general/asa-general-cli/monitor-nsel.html
+  Reference: [NetFlow Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa92/configuration/general/asa-general-cli/monitor-nsel.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   Which CLI command is used to register a Cisco FirePower sensor to Firepower Management Center?
 
-  A. configure system add `<host><key>`<br>
-  B. configure manager `<key>` add host<br>
-  C. configure manager delete<br>
-  D. configure manager add `<host><key>`<br>
+  A. `configure system add <host><key>`<br>
+  B. `configure manager <key> add host`<br>
+  C. `configure manager delete`<br>
+  D. `configure manager add <host><key>`<br>
 
   Answer: D
 
@@ -412,7 +539,7 @@
 
   You can configure your network discovery policy to perform host and application detection.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/640/configuration/guide/fpmc-config-guide-v64/introduction_to_network_discovery_and_identity.html
+  Reference: [Introduction to Network Discovery and Identity](https://www.cisco.com/c/en/us/td/docs/security/firepower/640/configuration/guide/fpmc-config-guide-v64/introduction_to_network_discovery_and_identity.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -425,6 +552,12 @@
   D. routed mode<br>
 
   Answer: C
+
+  Explanation
+
+  You can partition a single ASA into multiple virtual devices, known as security contexts. Each context acts as an independent device, with its own security policy, interfaces, and administrators. Multiple contexts are similar to having multiple standalone devices.
+
+  Reference: [Multiple Context Mode](https://www.cisco.com/c/en/us/td/docs/security/asa/asa97/configuration/general/asa-97-general-config/ha-contexts.html#ID-2171-0000019c)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 19</span>
@@ -451,9 +584,9 @@
 
   The purpose of above commands is to redirect traffic that matches the ACL “redirect-acl” to the Cisco FirePOWER (SFR) module in the inline (normal) mode. In this mode, after the undesired traffic is dropped and any other actions that are applied by policy are performed, the traffic is returned to the ASA for further processing and ultimate transmission.
 
-  The command “service-policy global_policy global” applies the policy to all of the interfaces.
+  The command “`service-policy global_policy global`” applies the policy to all of the interfaces.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/asa-firepower-services/118644-configure-firepower-00.html
+  Reference: [Install and Configure a FirePOWER Services Module on an ASA Platform](https://www.cisco.com/c/en/us/support/docs/security/asa-firepower-services/118644-configure-firepower-00.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -475,7 +608,7 @@
 
   For example, your organization’s security policies may require that your appliances have a “No Unauthorized Use” message when a user logs in. With platform settings, you can set the login banner once in a platform settings policy.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/620/configuration/guide/fpmc-config-guide-v62/platform_settings_policies_for_managed_devices.html
+  Reference: [Platform Settings Policies](https://www.cisco.com/c/en/us/td/docs/security/firepower/620/configuration/guide/fpmc-config-guide-v62/platform_settings_policies_for_managed_devices.html)
 
   Therefore the answer should be “Platform Settings Policy”, not “Platform Service Policy” but it is the best answer here so we have to choose it.
 
@@ -499,15 +632,12 @@
   - 1\. Configuring NSEL <span style="color: #bb6600;">Collectors</span>:
     `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     For example: `hostname (config)# flow-export destination inside 209.165.200.225 2002`
-
     - The `destination` keyword indicates that a NSEL collector is being configured. 
     - The `interface-name argument` is the name of the ASA and ASA Services Module interface through which the collector is reached. 
     - The `ipv4-address` argument is the IP address of the machine running the collector application. 
     - The `hostname` argument is the destination IP address or name of the collector. 
     - The `udp-port` argument is the UDP port number to which NetFlow packets are sent.
-
     (-> Therefore we only need to let the firewall know the IP address that the NetFlow “Collector” will be running on. We don’t need to apply the NetFlow Exporter to any interface -> Answer C is not correct)
-
   - 2\. Defines the <span style="color: #bb6600;">class map</span> that identifies **traffic** for which NSEL events need to be exported.
   - 3\. Defines the <span style="color: #bb6600;">policy map</span> to apply **flow-export actions** to the defined classes.
   - 4\. Adds or edits the <span style="color: #bb6600;">service policy</span> globally.
@@ -522,6 +652,8 @@
   ASA(config-pmap-c)# flow-export event-type all destination 10.254.254.234
   ASA(config)# service-policy global_policy global
   ```
+
+  Reference: [Configuring Network Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/monitor_nsel.html#23742)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -571,7 +703,7 @@
 
   You can configure a maximum of five collectors. After a collector is configured, template records are automatically sent to all configured NSEL collectors.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/monitor_nsel.html
+  Reference: [Configuring Network Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/monitor_nsel.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -610,7 +742,7 @@
 
   Application layer protocols can represent the same data in a variety of ways. The Firepower System provides application layer protocol decoders that normalize specific types of packet data into formats that the intrusion rules engine can analyze. Normalizing application-layer protocol encodings allows the rules engine to effectively apply the same content-related rules to packets whose data is represented differently and obtain meaningful results.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Application_Layer_Preprocessors.html#ID-2244-0000080c
+  Reference: [Application Layer Preprocessors](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Application_Layer_Preprocessors.html#ID-2244-0000080c)
 
   FirePower uses many preprocessors, including DNS, FTP/Telnet, SIP, SSL, SMTP, SSH preprocessors.
 

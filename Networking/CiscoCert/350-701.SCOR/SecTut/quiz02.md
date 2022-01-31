@@ -318,10 +318,10 @@
 
   Which CLI command is used to register a Cisco FirePower sensor to Firepower Management Center?
 
-  A. configure system add `<host><key>`<br>
-  B. configure manager `<key>` add host<br>
-  C. configure manager delete<br>
-  D. configure manager add `<host><key>`<br>
+  A. `configure system add <host><key>`<br>
+  B. `configure manager <key> add host`<br>
+  C. `configure manager delete`<br>
+  D. `configure manager add <host><key>`<br>
 
   Answer:<br><br> 
 
