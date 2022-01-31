@@ -209,6 +209,168 @@
   - features: 1) policy; 2) automation; 3) assurance
 
 
+- Firepower Threat Denfence Virtual (FTDv)
+  - the virtualized component of the Cisco NGFW solution The FTDv 
+  - providing next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
+  - managing the FTDv w/ FMC (either FMCv or physical FMC)
+  - register and communicate with the FMC on the Management interface
+  - FTDv for AWS
+    - run as a guest in the AWS environment
+    - interface requirements:
+      - management interfaces: 2; one for FMC and one for diagnostics
+      - traffic interface: 2 used to connect inside hosts to the public network
+
+
+- ASAv on AWS
+  - same software as physical Cisco ASAs
+  - able to be deployed in the public AWS cloud
+  - features:
+    - Support for Amazon EC2 C5 instances
+    - Deployment in the Virtual Private Cloud (VPC)
+    - Enhanced networking (SR-IOV) where available
+    - Deployment from Amazon Marketplace
+    - Maximum of 4 vCPUs per instance
+    - <span style="color: #bb6600;">User deployment of L3 networks</span>
+    - <span style="color: #bb6600;">Routed mode (default)</span>
+
+
+## Firwalls, IPS, EPP, and DER
+
+- Firepower
+  - devices
+    - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
+    - Firepower Threat Defense Devices
+  - features
+    - appliance and System Management Features
+    - features for Detecting, Preventing, and Processing Potential Threats
+    - integration with External Tools
+
+- Cisco ASA FirePOWER module
+  - known as the ASA SFR, providing next-generation Firewall services, including
+    - Next Generation Intrusion Prevention System (NGIPS)
+    - Application Visibility and Control (AVC)
+    - URL filtering
+    - Advanced Malware Protection (AMP)
+  - redirect traffic to the SFR module
+    - 1\. select the traffic to redirect w/ ACL
+    - 2\. create class-map to match the traffic
+    - 3\. specify the deployment mode: passive (monitor-only) or inline (normal)
+    - 4\. specify a location to apply the policy: `service-policy global_policy global` for global config
+
+
+- Firepower Management Center (FMC)
+  - an integrated suite of network security and traffic management products, deployed either on purpose-built platforms or as a software solution
+  - typical deployment - multiple traffic-sensing managed devices installed on network segments monitor traffic for analysis and report to a manager:
+    - Firepower Management Center
+    - Firepower Device Manager
+    - Adaptive Security Device Manager (ASDM)
+  - network discovery & identity policies:
+    - logging discovery and identity data allows you to take advantage of many features in the Firepower System
+    - collect host, application, and user data for traffic on your network
+  - network discovery policy
+    - control how the system collects data on your organization’s network assets and which network segments and ports are monitored
+    - multidomain deployment: each leaf domain has an independent network discovery policy
+    - perform host and application detection
+  - identity policy
+    - realm: connection between the FMC and the user accounts on the servers you monitor
+    - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
+  - impact flag: evaluating the impact of an intrusion on your network by <span style="trxt-decoration: underline;">correlating</span> intrusion data, network discovery data, and vulnerability information
+  - health policy
+    - using the health monitor to create a health policy (collection of tests)
+    - configured health test criteria for several health modules (tests)
+    - control which health modules against each of your appliances
+    - configure the specific limits used in the tests run by each module
+  - platform settings policy / platform service policy
+    - a shared set of features or parameters that define the aspects of a managed device
+    - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
+    - configure multiple managed devices at once
+  - [add a device to the FMC](https://bit.ly/3GrpP4t)
+    - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
+    - CLI:
+      - register the device to a FireSIGHT Management Center using the `configure manager add` command
+      - syntax: `configure manager add {hostname | IPv4_address | IPv6_address | DONTRESOLVE} reg_key [nat_id]`
+  - application layer preprocessors
+    - providing application layer protocol decoders that normalize specific types of packet data into formats that the intrusion rules engine can analyze
+    -preprocessors: DEC/RPC, DNS, FTP/Telnet, HTTP, Sun RPC, <span style="color: #bb6600;">SIP</span>, GTP, IMAP, POP, SMTP, SSH, <span style="color: #bb6600;">SSL</span>
+
+
+- Firepower Next-Generation IPS (NGIPS) threat appliance
+  - providing network visibility, security intelligence, automation and advanced threat protection
+  - operating in-line via Fail-To-Wire/Bypass network modules
+  - security intelligence
+    - TALOS Security Intelligence and Research Group:
+    - vulnerability-focused IPS rules
+    - embedded IP-, URL-, and DNS-based security intelligence
+  - security automation
+    - correlate intrusion events with your network’s vulnerabilities
+    - analyze network’s weaknesses
+    - recommends the appropriate security policies
+  - features:
+    - IPS rules: identify and block attack traffic
+    - integrated defence: against advanced malware by advanced analysis of network and endpoint activity
+    - sandboxing: using behavioral indicators to identify zero-day amd evasive attacks
+  - suppression
+    - suppressing intrusion event notification
+    - useful for eliminating false positives
+    - types: 1) a specific IP address or range of IP addresses; 2) a specific rule or preprocessor
+  - traffic profile
+    - a graph of network traffic based on connection data collected over a profiling time window (PTW)
+    - presumably representing normal network traffic
+    - detecting abnormal network traffic by evaluating new traffic against the profile 
+
+
+- Firepower Threat Defence Devices
+  - a next-generation firewall (NGFW) w/ NGIPS capabilities
+  - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
+
+
+- ASA FirePOWER module
+  - next-generation firewall services, including Next-Generation IPS (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
+  - single or multiple context mode, and in routed or transparent mode
+  - deployment models:
+    - inline mode: actual traffic is sent to the ASA FirePOWER module; configure **inline interface pairs**
+    - monitor-only (inline tap or passive): a copy of the traffic is sent to the ASA FirePOWER module
+
+
+- ASA in Cisco Unified Communications
+  - Cisco UC proxy: terminate and reoriginate connections between a client and server
+  - deliver a range of security functions such as traffic inspection, protocol conformance, and policy control to ensure security for the internal network
+  - solutions:
+    - TLS proxy:
+      - decryption and inspection of Cisco Unified Communications encrypted signaling
+      - store certificate trustpoints for the server and the client
+    - Mobility Proxy: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
+    - Presence Federation Proxy: secure connectivity btw Cisco Unified Presence servers and Cisco/Microsoft Presence servers
+
+
+- ASA
+  - modes: transparent and routed
+  - bridge group in transprent mode
+    - group interfaces together in a bridge group to maximize the use of security contexts
+    - configure multiple bridge groups, one for each network
+    - each bridge group requires a management IP address
+    - up to 4 interfaces are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
+
+
+- NetFlow
+  - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
+  - NetFlow Secure Event Logging (NSEL)
+    - providing a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
+    - flow-export actions: `flow-export event-type`
+    - significant events: flow-create, flow-teardown, and flow-denied (excluding those flows denied by EtherType ACLs)
+  - configure NetFlow on Cisco ASA 5500 Series firewall
+    - 1\. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    - 2\. Defines the **class map** that identifies traffic for which NSEL events need to be exported
+    - 3\. Defines the **policy map** to apply flow-export actions to the defined classes
+    - 4\. Adds or edits the service policy globally
+
+
+- IOS zone-based firewall
+  - A zone must be configured before interfaces can be assigned to the zone.
+  - An interface can be assigned to only one security zone.
+
+
+
 
 
 
