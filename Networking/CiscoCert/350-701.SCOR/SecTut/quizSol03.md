@@ -26,6 +26,15 @@
   
   Answer: C
 
+  Explanation
+
+  Choose one of the following settings to configure the CoA type:
+  - No CoA (default) — You can use this option to disable the global configuration of CoA. This setting overrides any configured CoA per endpoint profiling policy. If the goal is only visibilibility, retain the default value as No CoA.
+  - Port Bounce — You can use this option, if the switch port exists with only one session. If the port exists with multiple sessions, then use the Reauth option. If the goal is to immediately update the access policy based on profile changes, select the Port Bounce option, this will ensure that any clientless endpoints is reauthorized, and IP address is refreshed, if required.
+  - Reauth — You can use this option to enforce reauthentication of an already authenticated endpoint when it is profiled. Select the Reauth option, if no VLAN or address change is expected following the reauthorization of the current session.
+
+  Reference: [Cisco ISE Endpoint Profiling Policies](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010100.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
   
@@ -38,6 +47,12 @@
   E. SMTP<br>
   
   Answer: A C
+
+  Explanation
+
+  An IOS sensor integration allows Cisco ISE run time and the Cisco ISE profiler to collect any or all of the attributes that are sent from the switch. You can collect DHCP, CDP, and LLDP attributes directly from the switch by using the RADIUS protocol. The attributes that are collected for DHCP, CDP, and LLDP are then parsed and mapped to attributes in the profiler dictionaries in the following location: Policy > Policy Elements > Dictionaries.
+
+  Reference: [Cisco ISE Endpoint Profiling Policies](https://www.cisco.com/c/en/us/td/docs/security/ise/2-1/admin_guide/b_ise_admin_guide_21/b_ise_admin_guide_20_chapter_010100.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -105,6 +120,14 @@
   
   Answer: A
 
+  Explanation
+
+  They were used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+
+  They are no longer offered or supported as our vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
+
+  Reference: [What is inline posture node?](https://community.cisco.com/t5/network-access-control/what-is-an-inline-posture-node/td-p/3787136)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
   
@@ -117,6 +140,14 @@
   E. TACACS+<br>
   
   Answer: B D
+
+  Explanation
+
+  Web Authentication scenarios
+  - local Web Authentication (LWA)
+  - centralized Wen Authentication (CWA)
+
+  Reference: [Web Authentication](https://www.ciscopress.com/articles/article.asp?p=3100059&seqNum=2)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -155,7 +186,7 @@
 
   This question did not clearly specify the type of posture policy requirement (mandatory or optional) is not met so the user can be in Non-compliant or compliant state. But “noncompliant” is the best answer here.
 
-  Reference: [Cisco Identity Services Engine Administrator Guide, Release 2.2](https://www.cisco.com/c/en/us/td/docs/security/ise/2-2/admin_guide/b_ise_admin_guide_22/b_ise_admin_guide_22_chapter_010111.html)
+  Reference: [Configure Client Posture Policies](https://www.cisco.com/c/en/us/td/docs/security/ise/2-2/admin_guide/b_ise_admin_guide_22/b_ise_admin_guide_22_chapter_010111.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>

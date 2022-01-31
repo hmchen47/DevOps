@@ -51,6 +51,9 @@
       "password": password,
       "enablePassword": enable_password
     }
+  ```
+  
+  ```python
     response = requests.post(
       "https://{}/dna/intent/api/v1/network-device".format(dnac_ip),
       data = json.dump(device_object),
