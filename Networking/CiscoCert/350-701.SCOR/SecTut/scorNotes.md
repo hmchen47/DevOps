@@ -210,6 +210,7 @@
     - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs. wen portals, or gateway software; 4) developing applications
     - SaaS: 1) software rent; 2) usually access via front end or web portal
   - most secure service type: provate cloud
+  - DecSecOps: focusing on application development
   - responsibility for customers and service providers
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
@@ -284,6 +285,10 @@
 
 
 
+- pxGrid
+  - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
+  - provides a new WebSockets client and removes dependencies on underlying operating systems and language
+  - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
 
 
 ## Firwalls, IPS, EPP, and DER
@@ -484,5 +489,47 @@
   - The Administrator can configure how much URI text is stored in the logs using the `advancedproxyconfig` CLI command and the HTTPS subcommand. 
   - proxy caching: improve erb traffic performance
 
+
+## Authentication, Authorization, and Accounting (AAA)
+
+- Identity Service Engine (ISE)
+  - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
+  - key functions
+    - combine <span style="color: #bb66oo;">AAA, posture, and profiler</span> into one appliance
+    - provide for comprehensive <span style="color: #bb66oo;">guest access management</span>
+    - enforce <span style="color: #bb66oo;">endpoint compliance</span>
+    - provide support for discovery, profiling, policy-based placement, and monitoring of endpoint devices on the network
+    - enable consistent policy in centralized and distributed deployments
+    - employ advanced enforcement capabilities including Trustsec
+    - support scalability
+    - facilitate TACACS-enabled device administration
+  - integrated solution: 1) Cisco pxGrid; 2) Cisco Rapid Threat Containment
+  - endpoint profiling policy
+    - CoA types: 1) No CoA; 2) port bounce; 3) reauth
+    - attributes collection: DHCP, CDP, and LLDP attributes directly from the switch by using the RADIUS protocol
+  - shadow user: able to delegate AD user as ISE GUI admin to ease admin overheads and manage network efficiently
+  - posture policy
+    - a collection of posture requirements
+    - associated with one or more identity groups and operating systems
+    - posture agent: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
+    - consideration: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
+      - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
+      - remediations: the methods AnyConnect will handle endpoints that are out of compliance.
+      - requirements: the immediate act steps taken by AnyConnect when an endpoint is out of compliance
+      - provisioning: the policy used to determine the version of AnyConnect used and the compliant module installed during ht provisioning progress (methods: URL-redirect and download or a provisioning URL)
+      - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
+    - states: compliant and non-compliant
+  - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
+
+
+- RADIUS Change of Authorization (CoA)
+  - a mechanism to change the attributes of an AAA session after it is authenticated
+  - typically used in a pulled model
+  - Cisco supports RFC 5176 used in a pushed model
+  - main steps of CoA procedure
+    - authentication
+    - posture assessment
+    - CoA re-authorization
+    - network access authorization
 
 
