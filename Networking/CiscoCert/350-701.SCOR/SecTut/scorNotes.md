@@ -201,7 +201,29 @@
   - AMP API to get computer info: `get https://api.amp.cisco.com/v1/computers`
 
 
-## Cloud Concepts and Solutions
+## Cloud Security Concepts and Solutions
+
+- Cloud services
+  - types: private 2) public; 3) hybrid; 4) community - variation of private
+  - types of as-a-Service solution: (from customer/tenant view)
+    - IaaS: 1) renting infrastructure; 2) purchase virtual power to execute your software as needed.; 3) like running a virtual server; 4) managing OS up to Apps
+    - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs. wen portals, or gateway software; 4) developing applications
+    - SaaS: 1) software rent; 2) usually access via front end or web portal
+  - most secure service type: provate cloud
+  - responsibility for customers and service providers
+    - IaaS: OS up to Apps
+    - PaaS: Data & Apps
+    - SaaS: none
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+        onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
+        src    = "img/0803-iaas_paas-saas-compare.png"
+        alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
+        title  = "Cloud Computing: SaaS, PaaS, & IaaS"
+      />
+    </figure>
+
 
 - Cisco DNA Center
   - the command and control center for Cisco DNA–based networks
@@ -233,6 +255,18 @@
     - <span style="color: #bb6600;">User deployment of L3 networks</span>
     - <span style="color: #bb6600;">Routed mode (default)</span>
 
+- Cloudlock
+  - a cloud-based Cloud Access Security Broker (CASB) and cloud cybersecurity platform
+  - helping organizations securely leverage use of applications in the cloud
+  - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
+  - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
+  - core functionality
+    - Data Loss Prevention (DLP)
+    - User and Entity Behavior Analytics (UEBA)
+    - Apps Firewall (Apps Firewall)
+    - App Discovery (App Discovery)
+  - discover and control apps connected to corporate environment
+
 
 - Talos
   - IP and Domain Data Center
@@ -241,6 +275,13 @@
     - detecting and correlating threats in real time
   - Email and Web Traffic Reputation Center
     - transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture
+
+
+- Tetration
+  - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
+  - enabling a zero-trust model using <span style="color: #bb6600;">segmentation</span>
+  - identifying security incidents faster, containing lateral movement, and reducing your attack surface
+
 
 
 
