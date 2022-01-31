@@ -234,6 +234,17 @@
     - <span style="color: #bb6600;">Routed mode (default)</span>
 
 
+- Talos
+  - IP and Domain Data Center
+    - the most comprehensive real-time threat detection network
+    - data made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances
+    - detecting and correlating threats in real time
+  - Email and Web Traffic Reputation Center
+    - transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture
+
+
+
+
 ## Firwalls, IPS, EPP, and DER
 
 - Firepower
@@ -371,6 +382,66 @@
 
 
 
+## Email and Web Security
+
+- AsyncOS operating system
+  - Anti-Spam at the gateway
+  - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
+  - Outbreak Filters
+  - Policy, Virus, and Outbreak Quarantines 
+  - Spam Quarantine
+  - Email Authentication
+  - Cisco Email Encryption
+  - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
+  - On-box message tracking
+  - Mail Flow Monitoring
+  - Access control for inbound senders, based upon the sender’s IP address, IP address range, or domain
+  - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
+  - Message encryption via secure SMTP over Transport Layer Security
+  - Virtual Gateway technology
+  - Protection against malicious attachments and links in email messages
+
+
+- Cisco Email Security Appliance (ESA)
+  - features:
+    - advanced threat protection capabilities to detect, block, and remediate threats faster
+    - prevent data loss (DLP)
+    - secure important information in transit with end-to-end encryption
+  - scenario better than CES: sensitive data remained in site
+  - multilayer approach to fight viruses and malware
+    - 1st layer: outbreak filters, download a list bad mail servers from Cisco SenderBase; Sophos engine
+    - 2nd layer: using antivirus signatures to scan quarantined emails
+    - scan outbond emails to provide antivirus protection
+  - Host Access Table (HAT): hosts allowed to connect to a listener 
+  - Recipient Access Table (RAT): a list of all local domains for which the email gateway will accept mail; inbound email only
+  - Hybrid Secure Email
+    - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
+    - cloud-based infrastructure typically used for inbound email cleaning
+    - on-premise appliance providing granular control - protecting sensitive info w/ DLP and encryption technologies
+    - scenario: deployment flexibility as organization’s needs  -> transition
+  - message tracking w/ `trackingconfig` command
+  - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
+
+
+- Web Security Appliance (WSA)
+  - decryption policies define the handling of HTTPS traffic within the web proxy:
+    - when to decrypt HTTPS traffic.
+    - how to handle requests that use invalid or revoked security certificates
+  - decryption policies to handle HTTPS traffic in the following ways
+    - pass through encrypted traffic
+    - decrypt traffic and apply the content-based access policies defined for HTTP traffic
+    - drop the HTTPS connection
+    - monitor the request as the web proxy continues to evaluate the request against policies
+  - WSA HTTP proxy obtains the client's request can be defined as one of two ways: Transparently or Explicitly.
+    - Transparent
+      - Layer 4 Switch (PBR): A Layer 4 switch is used to redirect based on destination port 80
+      - WCCP: A WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
+      - Bridged mode: Dual NICs, virtually paired. Traffic goes in one NIC and out the other (not available)
+    - Explicitly
+      - Browser Configured: Client browser is explicitly configured to use a proxy
+      - .PAC file configured: Client browser is explicitly configured to us a .PAC file, which in turn, references the proxy
+  - The Administrator can configure how much URI text is stored in the logs using the `advancedproxyconfig` CLI command and the HTTPS subcommand. 
+  - proxy caching: improve erb traffic performance
 
 
 
