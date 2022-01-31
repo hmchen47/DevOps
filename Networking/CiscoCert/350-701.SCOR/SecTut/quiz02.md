@@ -590,7 +590,7 @@
 
   After deploying a Cisco ESA on your network, you notice that some messages fail to reach their destinations. Which task can you perform to determine where each message was lost?
 
-  A. Configure the trackingconfig command to enable message tracking.<br>
+  A. Configure the `trackingconfig` command to enable message tracking.<br>
   B. Generate a system report.<br>
   C. Review the log files.<br>
   D. Perform a trace.<br>

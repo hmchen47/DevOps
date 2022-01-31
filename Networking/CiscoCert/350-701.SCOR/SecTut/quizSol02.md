@@ -784,7 +784,7 @@ With Cisco Email Security customers can:
   - Prevent email threats coming from specific geographic regions.
   - Allow or disallow emails coming from specific geographic regions.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa11-0/user_guide_fs/b_ESA_Admin_Guide_11_0/b_ESA_Admin_Guide_chapter_00.html
+  Reference: [Getting Started with Cisco Email Security](https://www.cisco.com/c/en/us/td/docs/security/esa/esa11-0/user_guide_fs/b_ESA_Admin_Guide_11_0/b_ESA_Admin_Guide_chapter_00.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -811,6 +811,15 @@ With Cisco Email Security customers can:
 
   Answer: A D
 
+  Explanation
+
+  Cisco ESA uses a multilayer approach to fight viruses and malware:
+  - The first layer of defense consists of outbreak filters, which the appliance downloads from Cisco SenderBase. They contain a list of known bad mail servers. 
+  - The second layer of defense is using antivirus signatures to scan quarantined emails, to ensure that they do not carry viruses into the network.
+  - Cisco ESA also scans outbound emails to provide antivirus protection
+
+  Reference: [Newer Cisco Validated Design Guides Available](https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Aug2013/CVD-EmailSecurityUsingCiscoESADesignGuide-AUG13.pdf)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
@@ -822,6 +831,20 @@ With Cisco Email Security customers can:
   D. It provides enhanced HTTPS application detection for AsyncOS.<br>
 
   Answer: D
+
+  Explanation
+
+  Decryption policies define the handling of HTTPS traffic within the web proxy:
+  - When to decrypt HTTPS traffic.
+  - How to handle requests that use invalid or revoked security certificates.
+  
+  You can create decryption policies to handle HTTPS traffic in the following ways:
+  - Pass through encrypted traffic
+  - Decrypt traffic and apply the content-based access policies defined for HTTP traffic. This also makes malware scanning possible. -> Answer D is the best answer
+  - Drop the HTTPS connection
+  - Monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action.
+
+  Reference: [Create Decryption Policies to Control HTTPS Traffic](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-7/user_guide/b_WSA_UserGuide_11_7/b_WSA_UserGuide_11_7_chapter_01011.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -842,6 +865,17 @@ With Cisco Email Security customers can:
   - transport mode: the WSA will respond to both transparent and explicit HTTP requests (explicit - ONLY responds to explicit HTTP requests)
   - forward proxy mode: WSA, as a web proxy, will have two sets of TCP sockets per client request
 
+  WSA HTTP proxy obtains the client's request can be defined as one of two ways: Transparently or Explicitly.
+  - Transparent
+    - Layer 4 Switch (PBR): A Layer 4 switch is used to redirect based on destination port 80
+    - WCCP: A WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
+    - Bridged mode: Dual NICs, virtually paired. Traffic goes in one NIC and out the other (not available)
+  - Explicitly
+    - Browser Configured: Client browser is explicitly configured to use a proxy
+    - .PAC file configured: Client browser is explicitly configured to us a .PAC file, which in turn, references the proxy
+
+  Reference: [Difference between Transparent and Forward proxy mode](https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/117940-qa-wsa-00.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
 
@@ -853,6 +887,10 @@ With Cisco Email Security customers can:
   D. Configure a maximum packet size.<br>
 
   Answer: B
+
+  Handle personally identifiable information with care: If you choose to decrypt an end-user’s HTTPS session, the Web Security appliance access logs and reports may contain personally identifiable information. The Administrator can configure how much URI text is stored in the logs using the `advancedproxyconfig` CLI command and the HTTPS subcommand. You can log the entire URI, or a partial form of the URI with the query portion removed. However, even when you choose to strip the query from the URI, personally identifiable information may still remain.
+
+  Reference: [Create Decryption Policies to Control HTTPS Traffic](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01110.html#con_1230713)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -889,7 +927,7 @@ With Cisco Email Security customers can:
 
   Cisco Hybrid Email Security is a unique service offering that combines a cloud-based email security deployment with an appliance-based email security deployment (on premises) to provide maximum choice and control for your organization. The cloud-based infrastructure is typically used for inbound email cleansing, while the on-premises appliances provide granular control – protecting sensitive information with data loss prevention (DLP) and encryption technologies.
 
-  Reference: https://www.cisco.com/c/dam/en/us/td/docs/security/ces/overview_guide/Cisco_Cloud_Hybrid_Email_Security_Overview_Guide.pdf
+  Reference: [Cisco  Cloud/Hybrid  Secure  Email  Overview](https://www.cisco.com/c/dam/en/us/td/docs/security/ces/overview_guide/Cisco_Cloud_Hybrid_Email_Security_Overview_Guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
