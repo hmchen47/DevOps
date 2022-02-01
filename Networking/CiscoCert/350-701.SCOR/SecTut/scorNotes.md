@@ -532,4 +532,71 @@
     - CoA re-authorization
     - network access authorization
 
+- Cisco devices
+  - enable AAA service: `aaa new-model` in global config mode
+
+
+## Layer 2 Security
+
+- ARP spoofing
+  - a Man in the Middle (MitM) attack that allows attackers to intercept communication between network devices
+  - ARP snooping:
+    - creating ARP snooping entries by using information in ARP packets
+    - becoming invalid if not updated within 15 minutes
+    - attack: receiving an ARP packet w/ different sender MAC address from a valid ARP snooping entry
+  - Atomic ARP engine
+    - define basic Layer 2 ARP signatures and 
+    - provides more advanced detection of the ARP spoof tools `dsniff` and `ettercap`
+
+
+- DHCP spoofing
+  - an attacker attempts to respond to DHCP requests and trying to list itself (spoof) as the default gateway or DNS server
+  - DHCP snooping: a security feature that acts like a firewall between untrusted hosts and trusted DHCP servers
+  - Dynamic ARP Inspection (DAI)
+    - a security feature validating ARP packets in a network
+    - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
+    - after enabling DAI, all ports become untrusted ports
+    - inactive on all VLANs
+    - DHCP snooping enabled on a per-VLAN basis, e.g., `ip dhcp snooping vlan 2`
+
+
+- Broadcast storm
+  - huge amount of broadcast, multicast, or unknown unicast packets flood the LAN, creating excessive traffic and degrading network performance
+  - storm control or broadcast suppression
+    - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
+    - threshold level: a percentage of the total available bandwidth of the port
+    - each port w/ different storm control levels for broadcast, multicast, and unicast type of traffic
+
+
+- 802.1X port-based authentication
+  - roles
+    - supplicant
+    - authenticator: switch & WLC
+    - authentication server: RADIUS, ISE
+  - only applied to switch port 
+  - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
+  - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
+
+
+- MAC Authentication Bypass (MAB)
+  - a MAC-address-based authentication mechanism that allows clients in a network to integrate with the Cisco Identity Based Networking Services (IBNS) and Network Admission Control (NAC) strategy using the client MAC address
+  - benefit:
+    - visibility: linking the IP address, MAC address and port of the device
+    - identity-based service: dynamically deliver customized services based on the MAC address of an endpoint
+    - Access control at the edge
+    - fallback or standalone authentication
+    - device authentication: authenticating devices not capable of 802.1X
+  - MAB request attributes w/ Cisco switches
+    - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
+    - using Attribute 6 to filter MAB requests at the RADIUS server
+
+
+- Catalyst integrated security features
+  - port security
+  - DHCP snooping
+  - Dynamic ARP Inspection (DAI)
+  - IP source guard
+
+
+
 
