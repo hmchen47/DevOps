@@ -615,12 +615,15 @@
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
   - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
+  - Endpoint Admission Control (EAC): access methods for authentication and authorization
+    - 802.1X port-based Authentication
+    - MAC Authentication Bypass (MAB)
+    - Web Authentication (WebAuth)
 
 
 - RADIUS Change of Authorization (CoA)
   - a mechanism to change the attributes of an AAA session after it is authenticated
-  - typically used in a pulled model
-  - Cisco supports RFC 5176 used in a pushed model
+  - enable AAA globally to support CoA: `aaa new-model`
   - main steps of CoA procedure
     - authentication
     - posture assessment
@@ -634,9 +637,81 @@
     - <span style="color: #bb6600;">endpoint deleted</span>
 
 
+- 802.1X port-based authentication
+  - roles
+    - supplicant
+    - authenticator (required): switch & WLC
+    - authentication server (required): RADIUS, ISE
+  - only applied to switch port 
+  - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
+  - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
+  - display information about current Auth Manager sessions:
+    - syntax: `show authentication sessions` $\to$ indicating interface authentication methods, including `dot1x` and `mab`
+    - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
+  - display the IEEE 802.1X administrative and operational status for the switch
+    - syntax: `show dot1x all [details | statistics | summary]`
+    - example outputs
+
+      ```text
+      Device# show dot1x all
+
+      Sysauthcontrol                 Enabled
+      Dot1x Protocol Version          2
+
+      Dot1x Info for FastEthernet1
+      -----------------------------------
+      PAE                       = AUTHENTICATOR
+      PortControl               = AUTO
+      ControlDirection          = Both 
+      HostMode                  = MULTI_HOST
+      ReAuthentication          = Disabled
+      <...truncated...>
+
+      Device# show dot1x all summary
+
+      Interface   PAE    Client            Status 
+      ------------------------------------------------
+      Fa1         AUTH    000d.bcef.bfdc   AUTHORIZED
+      ```
+
+
+- MAC Authentication Bypass (MAB)
+  - a MAC-address-based authentication mechanism that allows clients in a network to integrate with the Cisco Identity Based Networking Services (IBNS) and Network Admission Control (NAC) strategy using the client MAC address
+  - benefit:
+    - visibility: linking the IP address, MAC address and port of the device
+    - identity-based service: dynamically deliver customized services based on the MAC address of an endpoint
+    - Access control at the edge
+    - fallback or standalone authentication
+    - device authentication: authenticating devices not capable of 802.1X
+  - MAB request attributes w/ Cisco switches
+    - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
+    - using Attribute 6 to filter MAB requests at the RADIUS server
+
+
 - Cisco devices basic commands
   - enable AAA service: `aaa new-model` in global config mode
-  -allow user to enter global configuration mode: `privilege exec level 5 configure terminal`
+  - allow user to enter global configuration mode: `privilege exec level 5 configure terminal`
+  - combine authentication adn authorization for RADIUS: `radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`
+  - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
+
+    ```cfg
+    aaa new-model
+    ! Creates an 802.1X port-based authentication method list
+    aaa authentication dot1x default group radius
+    ! Required for VLAN/ACL assignment
+    aaa authorization network default group radius
+    ! Authentication & authorization for webauth transactions
+    aaa authorization auth-proxy default group radius
+    ! Enables accounting for 802.1X and MAB authentications
+    aaa accounting dot1x default start-stop group radius
+    !
+    aaa session-id common
+    !
+    aaa accounting update periodic 5
+    ! Update AAA accounting information periodically every 5 minutes
+    aaa accounting system default start-stop group radius
+    ```
+
 
 
 
@@ -671,32 +746,6 @@
     - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
     - threshold level: a percentage of the total available bandwidth of the port
     - each port w/ different storm control levels for broadcast, multicast, and unicast type of traffic
-
-
-- 802.1X port-based authentication
-  - roles
-    - supplicant
-    - authenticator: switch & WLC
-    - authentication server: RADIUS, ISE
-  - only applied to switch port 
-  - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
-  - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
-  - display information about current Auth Manager sessions:
-    - `show authentication sessions` $\to$ indicating interface authentication methods, including `dot1x` and `mab`
-    - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
-
-
-- MAC Authentication Bypass (MAB)
-  - a MAC-address-based authentication mechanism that allows clients in a network to integrate with the Cisco Identity Based Networking Services (IBNS) and Network Admission Control (NAC) strategy using the client MAC address
-  - benefit:
-    - visibility: linking the IP address, MAC address and port of the device
-    - identity-based service: dynamically deliver customized services based on the MAC address of an endpoint
-    - Access control at the edge
-    - fallback or standalone authentication
-    - device authentication: authenticating devices not capable of 802.1X
-  - MAB request attributes w/ Cisco switches
-    - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
-    - using Attribute 6 to filter MAB requests at the RADIUS server
 
 
 - Catalyst integrated security features
