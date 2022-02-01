@@ -291,8 +291,10 @@
   - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
 
 
-- Advanced Malware Protection (AMP) for Endpoints
+- Secure Endpoint
+  - formerly Advanced Malware Protection (AMP) for Endpoints
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
+  - proactive endpoint protection and centralized admin management
   - file disposition:
     - a categorization from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
@@ -600,8 +602,11 @@
     - facilitate TACACS-enabled device administration
   - integrated solution: 1) Cisco pxGrid; 2) Cisco Rapid Threat Containment
   - endpoint profiling policy
+    - determine the type of device or endpoint connecting to the network
+    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the device fingerprint
+    - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) OUI (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
     - CoA types: 1) No CoA; 2) port bounce; 3) reauth
-    - attributes collection: DHCP, CDP, and LLDP attributes directly from the switch by using the RADIUS protocol
+    - RADIUS protocol: collecting DHCP, CDP, and LLDP attributes directly from the switch
   - shadow user: able to delegate AD user as ISE GUI admin to ease admin overheads and manage network efficiently
   - posture policy
     - a collection of posture requirements
@@ -614,11 +619,19 @@
       - provisioning: the policy used to determine the version of AnyConnect used and the compliant module installed during ht provisioning progress (methods: URL-redirect and download or a provisioning URL)
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
+    - security posture: <span style="color: #bb6600;">detect and mitigate threats</span> that the perimeter security devices do not detect
   - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
     - MAC Authentication Bypass (MAB)
     - Web Authentication (WebAuth)
+  - Mobile Device Management (MDM)
+    - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
+    - ISE functions with external MDM servers:
+      - Manages device registration
+      - Handles device remediation
+      - Augments endpoint
+    - corporate advantages: 1) assest inventory management; 2) allowed application management
 
 
 - RADIUS Change of Authorization (CoA)
@@ -711,6 +724,46 @@
     ! Update AAA accounting information periodically every 5 minutes
     aaa accounting system default start-stop group radius
     ```
+
+- Multi-factor Authentication (MFA)
+  - an authentication method that requires the user to provide two or more verification factors to gain access to a resource
+  - proper MFA using factors from at least two different categories
+  - benefits
+    - flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications
+    - secure access to on-premises and cloud applications
+  - basic MFA methods:
+    - <span style="color: #bb6600;">Knowledge</span>
+      - usually a password
+      - the most commonly used tool in MFA solutions
+    - processing / Physical factors:
+      - possession factors–use tokens, a temporary QR (quick response) code
+    - <span style="color: #bb6600;">Inherent</span>
+      - **biometrics** like fingerprint, face, and retina scans
+      - possibly voice ID or other behavioral inputs like keystroke metrics
+      - reliably unique, always present, and secure
+      - commonly used in mobile phones
+    - Location-based and time-based
+      - using GPS coordinates, network parameters, and metadata for the network in use, and device recognition for MFA
+      - adaptive authentication combining these data points with historical or contextual user data
+  - extended MFA methods
+    - Time-based one-time password (TOTP)
+    - Social media
+    - Risk-based authentication: a.k.a. adaptive multi-factor authentication
+    - Push-based 2FA: confirm a user’s identity with multiple factors of authentication that other methods cannot
+  - against phishing, social engineering and password brute-force attacks
+  - SSO authentication: users with MFA and sharing the authentication with multiple applications
+
+
+- EPP & EDR
+  - Endpoint Protection Platform (EPP)
+    - solely on prevention at the perimeter
+    - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
+  - Endpoint Detection and Response (EDR)
+    - primarily on detecting advanced threats, designed to evade front-line defenses and successfully entered the environment
+    - detect threats across your environment
+    - investigate the entire lifecycle of the threat
+    - containing the threat at the endpoint, eliminate the threat before it can spread
+
 
 
 
