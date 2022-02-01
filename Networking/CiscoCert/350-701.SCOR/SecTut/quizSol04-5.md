@@ -232,6 +232,12 @@
   - [Threat Prevention with AMP](https://www.cisco.com/web/KR/events/CiscoConnect/2014/downloads/Day2_Track5-1.pdf)
   - [Advnaced Malware Protection](https://www.cisco.com/c/dam/m/hr_hr/training-events/2017/cisco-connect/pdf/ConnectCRO_AMP_scsordas.pdf)
 
+  There are a couple minor differences between the Private and Public cloud instance of AMP.
+  - Advanced custom detections: the private cloud only supports Windows, whereas the Public cloud supports Linux, Mac, and other popular operating systems.
+  - ETHOS: This is one of the many detection engines AMP uses to continuously protect you from malware. ETHOS catches families of malware through use of “fuzzy hashes” as a way to counter malware evasion aided by “bit-twiddling”. It is only available in the public cloud.
+
+  Reference: [What is the difference between the Private Cloud and Public Cloud?](https://blogs.cisco.com/security/amp-private-cloud-threat-grid#:~:text=There%20are%20a%20couple%20minor,and%20other%20popular%20operating%20systems.&text=It%20is%20only%20available%20in%20the%20public%20cloud.)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
 
@@ -244,6 +250,23 @@
 
   Answer: C
 
+  The Outbreak Control menu contains items related to controlling outbreaks in your network.
+  - Custom Detections
+    - *Simple* to convict files that are not yet classified.
+    - *Advanced* to create signatures that will detect parts of the Portable Executable (PE) file.
+  - Application Control
+    - *Blocked Lists* to stop executables from running.
+    - *Allowed Lists* to create lists of applications that will not be wrongly detected.
+  - Network
+    - *IP Blocked & Allowed* Lists allow you to explicitly detect or allow connections to specified IP addresses.
+  - Endpoint IOC
+    - *Initiate Scan* to schedule and start IOC scans on your AMP for Endpoints Connectors (Administrator only).
+    - *Installed Endpoint IOCs* to upload new endpoint IOCs and view installed endpoint IOCs (Administrator only).
+    - *Scan Summary* to view the results of endpoint IOC scans.
+  - Automated  Actions
+    - *Automated Actions* lets you set actions that automatically trigger when a specified event occurs on  a computer.
+
+  Reference: [AMP Private Cloud Console User Guide](https://docs.amp.cisco.com/AMPPrivateCloudConsoleUserGuide-latest.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
