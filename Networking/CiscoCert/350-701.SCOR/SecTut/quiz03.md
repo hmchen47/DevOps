@@ -208,9 +208,9 @@
   A network administrator configures Dynamic ARP Inspection on a switch. After Dynamic ARP Inspection is applied, all users on that switch are unable to communicate with any destination. The network administrator checks the interface status of all interfaces, and there is no err-disabled interface. What is causing this problem?
 
   A. DHCP snooping has not been enabled on all VLANs.<br>
-  B. The ip arp inspection limit command is applied on all interfaces and is blocking the traffic of all users.<br>
+  B. The `ip arp inspection limit` command is applied on all interfaces and is blocking the traffic of all users.<br>
   C. Dynamic ARP Inspection has not been enabled on all VLANs<br>
-  D. The no ip arp inspection trust command is applied on all user host interfaces<br>
+  D. The `no ip arp inspection trust` command is applied on all user host interfaces<br>
 
   Answer:<br><br> 
 

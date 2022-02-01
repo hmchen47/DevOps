@@ -214,6 +214,12 @@
 
   Answer: A
 
+  Explanation
+
+  The Atomic ARP engine defines basic Layer 2 ARP signatures and provides more advanced detection of the ARP spoof tools `dsniff` and `ettercap`.
+
+  Reference: [Signature Engines](https://www.cisco.com/c/en/us/td/docs/security/ips/6-1/configuration/guide/cli/cliguide/cli_signature_engines.html#wp1141808)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
 
@@ -225,6 +231,12 @@
   D. DAI intercepts all ARP requests and responses on trusted ports only.<br>
 
   Answer: A
+
+  Explanation
+
+  Dynamic ARP Inspection (DAI) is a security feature that validates Address Resolution Protocol (ARP) packets in a network. DAI allows a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings. This capability protects the network from certain “man-in-the-middle” attacks.
+
+  Reference: [Understanding and Configuring Dynamic ARP Inspection](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/25ew/configuration/guide/conf/dynarp.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -296,9 +308,9 @@
   A network administrator configures Dynamic ARP Inspection on a switch. After Dynamic ARP Inspection is applied, all users on that switch are unable to communicate with any destination. The network administrator checks the interface status of all interfaces, and there is no err-disabled interface. What is causing this problem?
 
   A. DHCP snooping has not been enabled on all VLANs.<br>
-  B. The ip arp inspection limit command is applied on all interfaces and is blocking the traffic of all users.<br>
+  B. The `ip arp inspection limit` command is applied on all interfaces and is blocking the traffic of all users.<br>
   C. Dynamic ARP Inspection has not been enabled on all VLANs<br>
-  D. The no ip arp inspection trust command is applied on all user host interfaces<br>
+  D. The `no ip arp inspection trust` command is applied on all user host interfaces<br>
 
   Answer: A
 
