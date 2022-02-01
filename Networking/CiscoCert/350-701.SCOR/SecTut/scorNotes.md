@@ -352,6 +352,14 @@
 
 
 - Umbrella
+  - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
+  - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
+  - use intelligence to determine if the request is safe, malicious or risky
+  - Umbrella roaming protects employees even when they are off the VPN
+  - risky: domain contains both malicious and legitimate content
+  - safe and malicious requests routed as usual or blocked, respectively
+  - risky requests routed to our cloud-based proxy for deeper inspection
+  - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
   - File Inspection
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
@@ -359,6 +367,39 @@
   - intelligent proxy
     - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
     - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware.
+  - SSL Decryption
+    - an important part of the Umbrella Intelligent Proxy
+    - proxy and inspect traffic that’s sent over HTTPS
+    - does require the root certificate be installed
+  - SafeSearch: an automated filter of pornography and other offensive content 
+  - logging
+    -set  <span style="color: #bb6600;">per-policy</span> when you first create a policy
+    - by default, logging = on and log all requests an identity makes to reach destinations
+    - able to change what level of identity activity Umbrella logs
+    - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
+  - Umbrella Multi-Org console
+    - upload, store, and archive traffic activity logs from locsl Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
+    - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
+    - able to download from an S3 bucket
+    - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
+  - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
+  - Policy
+    - the heart of Umbrella
+    - define how security and access controls are applied to identities
+  - Policy wizard: access control and security-related components when defining policies for your identities
+    - Security Settings:
+      - select which security threat categories Umbrella blocks, e.g., malware
+      - <span style="color: #bb6600;">Security Categories</span>: Malware, Newly Seen Domain, Command Control Callbacks, Phishing Attacks, Dynamic DNS, Potentially Harmful Domains, DNS Tunneling VPN, Cryptomining
+    - Content Categories:
+      - block access to categories of <span style="color: #bb6600;">websites—groupings</span> of sites with similarly themed content
+      - Content Category Settings: High, Moderate, Low, Custom
+    - Application Settings: block access to specific applications, e.g., Netflix, Facebook, or Amazon
+    - Destination Lists: create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
+    - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
+    - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
+
+
+
 
 
 
