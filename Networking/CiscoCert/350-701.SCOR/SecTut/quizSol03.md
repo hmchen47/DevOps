@@ -362,33 +362,29 @@
 
   Which SNMPv3 configuration must be used to support the strongest security possible?
 
-    A.
-
     ```text
+    A.
     asa-host(config)#snmp-server group myv3 v3 priv
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv des ciscXXXXXXXX
     asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
     ```
 
-    B.
-
     ```text
+    B.
     asa-host(config)#snmp-server group myv3 v3 noauth
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
     asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
     ```
 
-    C.
-
     ```text
-    asa-host(config)#snmpserver group myv3 v3 noauth
+    C.
+    asa-host(config)#snmp-server group myv3 v3 noauth
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv 3des ciscXXXXXXXX
     asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
     ```
 
-    D.
-    
     ```text
+    D.
     asa-host(config)#snmp-server group myv3 v3 priv
     asa-host(config)#snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
     asa-host(config)#snmp-server host inside 10.255.254.1 version 3 andy
