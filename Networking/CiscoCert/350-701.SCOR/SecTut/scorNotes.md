@@ -636,8 +636,20 @@
 
 
 
-## Network Access
+## Miscellaneous
 
-- 
+- Data exfiltration
+  - ICMP exfiltration
+    - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
+  - DNS exfiltration
+    - DNS tunnelling
+    - hide and encode data inside DNS requests and queries
+    - encode the data of other programs or protocols in DNS queries and responses
+    - often including data payloads added to an attacked DNS server and used to control a remote server and applications
+    - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
+  - characteristics of messenger protocol for data exflitration
+    - encrypted traffic which prevents visibility on firewalls and IPS systems
+    - messenger apps unable to be segmented w/ standard network controls
+
 
 
