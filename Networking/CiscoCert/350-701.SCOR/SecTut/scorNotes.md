@@ -256,6 +256,7 @@
     - <span style="color: #bb6600;">User deployment of L3 networks</span>
     - <span style="color: #bb6600;">Routed mode (default)</span>
 
+
 - Cloudlock
   - a cloud-based Cloud Access Security Broker (CASB) and cloud cybersecurity platform
   - helping organizations securely leverage use of applications in the cloud
@@ -284,11 +285,81 @@
   - identifying security incidents faster, containing lateral movement, and reducing your attack surface
 
 
-
 - pxGrid
   - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
   - provides a new WebSockets client and removes dependencies on underlying operating systems and language
   - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
+
+
+- Advanced Malware Protection (AMP) for Endpoints
+  - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
+  - file disposition:
+    - a categorization from the AMP cloud that determines what actions are taken on the file download
+    - actions for file disposition
+      - <span style="color: #bb6600;">clean</span> - the file known to be good
+      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
+      - <span style="color: #bb6600;">unknown</span> - insufficient data to classify the file as clean or malicious
+  - differences btw public and private cloud
+    - advanced custom detection: private - Windows only; public - popular OSes
+    - ETHOS: only available in the public cloud; generic signature engine
+  - private cloud deployment modes
+    - cloud proxy mode 
+      - virtual and physical appliance
+      - Internet connection required to complete disposition lookups
+      - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
+      - SHA-256 hash of the file inspected from AMP public cloud
+      - content and software updates automatically from AMP public cloud via AMP private cloud
+    - air-gap mode
+      - only on the physical mode
+      - no Internet connection required to complete disposition lookups
+      - traffic only btw the connectors and the appliance
+      - disposition queries handled by the private cloud
+  - system inspects files using the following tools, in order:
+    - Spero Analysis and AMP Cloud Lookup
+    - Local Malware Analysis
+    - Dynamic Analysis
+  - Spero analysis
+    - examining <span style="color: #bb6600;">structural</span> characteristics such as metadata and header information in executable files
+    - generating a <span style="color: #bb6600;">Spero signature</span> based on this information
+    - eligible executable file: submits file to the Spero heuristic engine in the AMP cloud
+    - determining whether the file is malware according to Spero signature
+    - only upload the signature of the (executable) files to the AMP cloud
+    - machine learning
+  - Dynamic Analysis
+    - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
+    - run the file in a <span style="color: #bb6600;">sandbox</span> environment
+    - analyze the file’s behavior to determine whether the file is malicious
+    - return a threat score that indicates the likelihood that a file contains malware
+  - Local malware analysis
+    - a managed device locally inspecting executables, PDFs, office documents, and other types of files for the most common types of malware
+    - use a detection rule set provided by the Cisco <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group (Talos)
+    - not query the AMP cloud and not run the file
+    - local malware analysis saves time and system resources
+  - outbreak control
+    - custom detections: 1) _Simple_ to convict files not yet classified; 2) _Advanced_ to create signatures
+    - application control: 1) *Blocked Lists*; 2) *Allowed Lists*
+    - network control: *IP blocked and Allowed Lists*
+    - endpoint IOC: 1) *Initiate Scan* - schedule and scan (admin only); 2) *Installed Endpoint IOCs* (admin only); 3) *Scan Summary*
+    - automated actions: *Automated Actions* sets actions automatically triggered
+    - main lists: <span style="color: #bb6600;">Simple Custom Detections</span>, <span style="color: #bb6600;">Blocked Applications</span>, <span style="color: #bb6600;">Allowed Applications</span>, Advanced Custom Detections, and IP Blocked and Allowed Lists
+  - Secure Malware Analytics (formerly Threat Grid)
+    - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from <span style="color: #bb6600;">malware</span>
+    - unified malware analysis and threat intelligence platform
+    - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
+
+
+
+- Umbrella
+  - File Inspection
+    - either the DNS or Web policy
+    - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
+    - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
+  - intelligent proxy
+    - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
+    - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware.
+
+
+
 
 
 ## Firwalls and IPS
