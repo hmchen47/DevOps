@@ -324,6 +324,13 @@
 
   Answer: D
 
+  Explanation
+
+  Once Umbrella passes 'risky' domain 'risky’ to the intelligent proxy, there are internal services within the proxy that handle different parts of the request by breaking the request to the domain into pieces. For instance, the intelligent proxy can block a single URL from a risky domain and allow other URLs within the same risky domain, based on whether or not that URL is known to be bad.
+
+  File inspection works similarly and uses two services to scan. In essence, a file hosted on a website is simply another URL, but for file analysis, we determine what type of file it is and scan it to find out more about it. The request to the file is made from the proxy and when the file is downloaded to the proxy, the file is then passed to both scanners which analyze the file simultaneously.
+
+  Reference: [How Does the Intelligent Proxy Inspect File?](https://docs.umbrella.com/umbrella-user-guide/docs/enable-file-analysis)
 
 
 ## 14. AAA
@@ -403,6 +410,13 @@
   D. Cisco AMP for Endpoints<br>
 
   Answer: B
+
+  Explanation
+
+  Endpoint Admission Control (EAC)—An authentication process for an endpoint user or a device connecting to the TrustSec cloud. EAC typically happens at the access level switch. Successful authentication and authorization in EAC process results in SGT assignment to the user or device. EAC access methods for authentication and authorization includes:
+  - 802.1X port-based authentication
+  - MAC authentication bypass (MAB)
+  - Web authentication (WebAuth)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5

@@ -129,10 +129,10 @@
     />
   </figure>
 
-  A. show dot1x all<br>
-  B. show dot1x<br>
-  C. show dot1x all summary<br>
-  D. show dot1x interface gi1/0/12<br>
+  A. `show dot1x all`<br>
+  B. `show dot1x`<br>
+  C. `show dot1x all summary`<br>
+  D. `show dot1x interface gi1/0/12`<br>
 
   Answer: <br><br>
 
