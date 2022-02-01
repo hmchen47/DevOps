@@ -413,10 +413,13 @@
 
   Explanation
 
-  Endpoint Admission Control (EAC)—An authentication process for an endpoint user or a device connecting to the TrustSec cloud. EAC typically happens at the access level switch. Successful authentication and authorization in EAC process results in SGT assignment to the user or device. EAC access methods for authentication and authorization includes:
-  - 802.1X port-based authentication
-  - MAC authentication bypass (MAB)
-  - Web authentication (WebAuth)
+  Endpoint Admission Control (EAC) access methods for authentication and authorization can include the following:
+  - 802.1X port-based Authentication
+  - MAC Authentication Bypass (MAB)
+  - Web Authentication (WebAuth)
+
+
+  Reference: [Configuring Endpoint Admission Control](https://www.cisco.com/c/en/us/td/docs/switches/lan/trustsec/configuration/guide/trustsec/eac_config.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5
@@ -533,7 +536,17 @@
   D. DDOS<br>
   E. teardrop<br>
 
-  Answer: B C
+  Answer: A C
+
+  Explanation
+
+  2FA protects against phishing, social engineering and password brute-force attacks and secures your logins from attackers exploiting weak or stolen credentials.
+
+  Reference: [What is 2FA?](https://duo.com/product/multi-factor-authentication-mfa/two-factor-authentication-2fa)
+
+  The costs of hacking and phishing attacks can be high. Because MFA helps secure systems against unauthorized users--and their associated threats--the organization is more secure overall.
+
+  Reference: [Benefits of multi-factor authentication](https://www.cisco.com/c/en/us/products/security/what-is-multi-factor-authentication.html#~benefits)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -546,6 +559,12 @@
   D. EDR focuses on network security, and EPP focuses on device security.<br>
 
   Answer: A
+
+  Explanation
+
+  EDR focuses primarily on detecting advanced threats, those designed to evade front-line defenses and have successfully entered the environment. An EPP focuses solely on prevention at the perimeter. It is difficult, if not impossible, for an EPP to block 100 percent of threats. A holistic endpoint security solution deploys both EPP and EDR capabilities.
+
+  Reference: [What Is Endpoint Detection and Response (EDR)?](https://www.cisco.com/c/en/us/products/security/endpoint-security/what-is-endpoint-detection-response-edr-medr.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
