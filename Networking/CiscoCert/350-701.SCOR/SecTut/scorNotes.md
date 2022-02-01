@@ -291,7 +291,7 @@
   - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
 
 
-## Firwalls, IPS, EPP, and DER
+## Firwalls and IPS
 
 - Firepower
   - devices
@@ -422,10 +422,34 @@
     - 4\. Adds or edits the service policy globally
 
 
+- Telemetry
+  - types of data in telemetry info
+    - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
+    - <span style="color: #bb6600;">interpacket variation</span>: any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
+    - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
+
+
 - IOS zone-based firewall
   - A zone must be configured before interfaces can be assigned to the zone.
   - An interface can be assigned to only one security zone.
 
+
+- Simple Network Management Protocol (SNMP)
+  - version 3 security level
+    - `noAuthNoPriv`: authn = username; encry = none
+    - `authNoPriv`: authn = MD5/SHA; encry = none
+    - `authPriv`: authn = MD5/SHA, encry = DES
+  - configures the SNMP server group to enable authentication for members of a specified named access list
+    - syntax: `snmp-server group [group-name {v1 | v2c | v3 [auth | noauth | priv]}] [read <read-view>] [write <write-view>] [notify <notify-view>] [access <access-list>]`
+    - `v1 | v2c | v3`: SNMP version
+    - `auth | noauth | priv`: authenticaton packet options, `priv` encrypted authentication packet
+    - `access <access-list>`: a standard ACL associated w/ the group
+  - add new user to SNMP group:
+    - syntax: `snmp-server user <user-name> <group-name> [remote ip-address [udp-port port]] {v1 | v2c | v3 [encrypted] [auth {md5 | sha} <auth-password>]} [access access-list]`
+    - `snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941`: user-name = andy; group-name = myv3; auth-password = cisc0380739941
+  - specify the recipient of a SNMP notification operation:
+    - syntax: `snmp-server host {hostname | ip-address} [vrf vrf-name | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
+    - `snmp-server host inside 10.255.254.1 version 3 andy`: hostname = inside (interface name); community-name (username) = andy
 
 
 ## Email and Web Security
@@ -531,9 +555,19 @@
     - posture assessment
     - CoA re-authorization
     - network access authorization
+  - enable the profiler service with more control over endpoints
+  - CoA implementation for profiler service:
+    - static assignment of an endpoint
+    - an exception action configured
+    - <span style="color: #bb6600;">an endpoint profiled for the 1st time</span>
+    - <span style="color: #bb6600;">endpoint deleted</span>
 
-- Cisco devices
+
+- Cisco devices basic commands
   - enable AAA service: `aaa new-model` in global config mode
+  -allow user to enter global configuration mode: `privilege exec level 5 configure terminal`
+
+
 
 
 ## Layer 2 Security
@@ -576,6 +610,9 @@
   - only applied to switch port 
   - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
   - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
+  - display information about current Auth Manager sessions:
+    - `show authentication sessions` $\to$ indicating interface authentication methods, including `dot1x` and `mab`
+    - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
 
 
 - MAC Authentication Bypass (MAB)
@@ -598,5 +635,9 @@
   - IP source guard
 
 
+
+## Network Access
+
+- 
 
 
