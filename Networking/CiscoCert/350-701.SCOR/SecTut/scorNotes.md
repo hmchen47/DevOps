@@ -227,9 +227,28 @@
 
 
 - Cisco DNA Center
-  - the command and control center for Cisco DNA–based networks
+  - a central Management and Automation software
+  - used as a management platform for both SD Access, Intent-Based Networks and existing traditional networks
+  - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
   - helping IT to optimize network performance to dynamically meet business intent
   - features: 1) policy; 2) automation; 3) assurance
+  - general sections aligned to IT workflows:
+    - <span style="color: #bb6600;">design</span>: design your network for consistent configurations by device and by site
+    - policy: translate business intent into network policies and apply those policies
+    - <span style="color: #bb6600;">provision</span>: assigned new device to an SGT based on identity—greatly facilitating remote office setups
+    - assurance: using AI/ML, enables every point on the network to become a sensor
+  - open platform capabilities: intent-based API (Northbound API)
+
+
+- Cisco Context Directory Agent (CDA)
+  - map IP Addresses to usernames
+  - allow security gateways to understand which user is using which IP Address in the network
+  - able to make decisions based on those users (or the groups to which the users belong to)
+  - a Cisco Linux machine
+  - monitor in real time a collection of <span style="color: #bb6600;">Active Directory domain controller (DC)</span> machines for authentication-related events that generally indicate user logins
+  - learn, analyze, and cache mappings of IP Addresses and user identities in its database
+  - make the latest mappings available to its consumer devices
+
 
 
 - Firepower Threat Denfence Virtual (FTDv)
@@ -289,6 +308,9 @@
   - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
   - provides a new WebSockets client and removes dependencies on underlying operating systems and language
   - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
+  - multiple security products able to share data and work together
+  - open, scalable, and <span style="color: #bb6600;">IETF standards-driven</span> platform
+  - automate security to get answers and contain threats faster
 
 
 - Secure Endpoint
@@ -407,6 +429,71 @@
 
 ## Firwalls and IPS
 
+- Cisco security solutions
+  - <span style="color: #bb6600; font-weight: bold;">StealWatch</span>: performs security analytics by collecting network flows via NetFlow
+  - <span style="color: #bb6600; font-weight: bold;">ESA</span>:
+    - email security solution which protects against email threats
+    - including ransomware, business email compromise, phishing, whaling, and many other email-driven attacks
+  - <span style="color: #bb6600; font-weight: bold;">AMP for Endpoints (AMP4E)</span>: provides malware protection on endpoints
+  - <span style="color: #bb6600; font-weight: bold;">Umbrella</span>: provides DNS protection by blocking malicious destinations using DNS
+  - <span style="color: #bb6600; font-weight: bold;">Firepower Threat Defense (FTD)</span>
+    - provide a comprehensive suite of security features
+    - including firewall capabilities, monitoring, alerts, Intrusion Detection System (IDS) and Intrusion Prevention System (IPS)
+  - <span style="color: #bb6600; font-weight: bold;">Cisco Cloudlock</span>
+    - secure cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform Cisco Cloudlock 
+    - provide visibility and compliance checks, 
+    - protect data against misuse and exfiltration
+    - provides threat protections against malware like ransomware
+
+
+- StealthWatch
+  - <span style="color: #bb6600">visibility and security analytics solution</span>
+  - collects and analyze network data from the existing network infrastructure
+  - analyze industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices 
+  - detect advanced and persistent security threats such as internally spreading malware, data leakage, botnet command and control traffic and network reconnaissance
+  - Stealthwatch + ISE
+    - network security analysts with a view integrating NetFlow data and contextual information
+    - enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner
+  - components
+    - <span style="color: #bb6600">Stealthwatch Management Console</span>
+      - define, configure, and monitor multiple distributed Stealthwatch Flow Collectors from a single location
+      - graphical representations of network traffic, identity information, customized summary reports, and integrated security and network intelligence for comprehensive analysis
+    - <span style="color: #bb6600">Flow Collector</span>
+      - leverages enterprise telemetry such as NetFlow, IPFIX (Internet Protocol Flow Information Export), and other types of flow data from existing infrastructure
+      - receive and collect telemetry from proxy data sources
+      - analyzed by the cloud-based, multilayered machine learning engine, Cognitive Intelligence, for deep visibility into both web and network traffic
+    - <span style="color: #bb6600">Flow Sensor</span> (optional)
+      - produce telemetry for segments of the switching and routing infrastructure that can’t generate NetFlow natively
+      - provide visibility into the application layer data
+      - provide additional security context to enhance the Stealthwatch security analytics
+      - able to analyze encrypted traffic
+    - <span style="color: #bb6600">UDP Director</span>
+      - simplify the collection and distribution of network and security data across the enterprise
+      - reduce the processing power on network routers and switches by receiving essential network and security information from multiple locations and then 
+      - forwarding it to a single data stream to one or more destinations
+  - deployment models
+    - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
+    - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
+  - <span style="color: #bb6600">Cisco Stealthwatch Cloud</span>
+    - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
+    - available in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)
+
+
+- Cognitive Intelligence
+  - formerly Cognitive Threat Analytics or CTA
+  - quickly detect and respond to sophisticated, clandestine attacks under way or attempting to establish a presence within your environment
+  - automatically identify and investigate suspicious or malicious web-based traffic
+  - identify both potential and confirmed threats
+  - quickly remediate the infection
+  - reduce the scope and damage of an attack
+  - features to protect against
+    - <span style="color: #bb6600">Data exfiltration</span>
+    - <span style="color: #bb6600">Command-and-control (C2) communications</span>
+    - Domain-generation algorithm (DGA)
+    - Exploit kit: (1) visits to an infected webpage, (2) redirects of web requests to a domain-hosting exploit kit, (3) unknowing downloads by users, (4) successful exploitations, and (5) downloads of malicious payloads.
+    - Tunneling through HTTP and HTTPS requests
+
+
 - Firepower
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
@@ -495,6 +582,34 @@
   - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
 
 
+- Cisco Threat Intelligence Director (CTID)
+  - ingest 3rd-party cyber threat intelligence (CTI)
+  - features
+    - operationalize threat intelligence data
+    - aggregate intelligence data
+    - configure defensive actions
+    - analyze threats
+  - supplement other Firepower functionality, offering an additional line of defense against threats
+  - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
+  - deployed by your organization to ingest threat intelligence automatically
+
+
+- Cisco Application Visibility and Control (AVC)
+  - monitors application performance and troubleshoots issues that arise
+  - leverages multiple technologies to recognize, analyze, and control applications
+  - including voice and video, email, file sharing, gaming, peer-to-peer (P2P), and cloud-based applications
+  - <span style="color: #bb6600;">combine several Cisco IOS/IOS XE components</span>
+  - communicating with external tools
+  - integrated into Prime Infrastructure and StealthWatch
+  - functions
+    - application recognition
+    - metrics collection and exporting
+    - management and response systems
+    - control
+
+
+
+
 - ASA FirePOWER module
   - next-generation firewall services, including Next-Generation IPS (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
   - single or multiple context mode, and in routed or transparent mode
@@ -537,10 +652,26 @@
 
 
 - Telemetry
+  - information and/or data
+  - provide awareness and visibility into what is occurring on the network at any given time
+  - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
   - types of data in telemetry info
     - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
     - <span style="color: #bb6600;">interpacket variation</span>: any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
     - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
+  - traditional method
+    - pull model: client requests data from the network
+    - not scale w/ near real-time data
+    - notified only when some data changes, like interfaces status, protocol neighbors change etc
+  - <span style="color: #bb6600;">Model-Driven Telemetry</span>
+    - a new approach for network monitoring
+    - data <span style="color: #bb6600;">streamed</span> from network devices continuously using a push model
+    - provide near real-time access to operational statistics
+    - apps subscribe to specific data items they need
+    - use standard-based YANG data models over NETCONF-YANG
+    - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
+
+
 
 
 - IOS zone-based firewall
@@ -673,6 +804,7 @@
       - Handles device remediation
       - Augments endpoint
     - corporate advantages: 1) assest inventory management; 2) allowed application management
+  - ISE supplements Stealthwatch NetFlowbased behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
 
 
 - RADIUS Change of Authorization (CoA)
