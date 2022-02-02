@@ -1060,10 +1060,20 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   </figure>
 
   Answer:
-  - PortScan Detection: one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports
-  - Port Sweep: one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts
-  - Decoy PortScan: one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address
-  - Distributed PortScan: many-to-one PortScan in which multiple hosts query a single host for open ports
+  - PortScan Detection: one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports (4)
+  - Port Sweep: one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts (3)
+  - Decoy PortScan: one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address (2)
+  - Distributed PortScan: many-to-one PortScan in which multiple hosts query a single host for open ports (1)
+
+  Explanation
+
+  Portscan Types
+  - Portscan Detection: A one-to-one portscan in which an attacker uses one or a few hosts to scan multiple ports on a single target host.
+  - Port Sweep: A one-to-many portsweep in which an attacker uses one or a few hosts to scan a single port on multiple target hosts.
+  - Decoy Portscan: A one-to-one portscan in which the attacker mixes spoofed source IP addresses with the actual scanning IP address.
+  - Distributed Portscan: A many-to-one portscan in which multiple hosts query a single host for open ports.
+
+  Reference: [Detecting Specific Threats](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Detecting_Specific_Threats.html#ID-2236-000000a6)
 
 
 - <span style="color: blue; font-weight: bold;">Question 2</span>
@@ -1080,10 +1090,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   </figure>
 
   Answer:
-  - Next Generation Intrusion Prevention System: superior threat prevention and mitigation for known and unknown threats
-  - Application control and URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
-  - Cisco Web Security Appliance: combined integrated solution of strong defense and web protection, visibility, and controling solutions
-  - Advanced Malware Protection: detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks
+  - Next Generation Intrusion Prevention System (A): superior threat prevention and mitigation for known and unknown threats (3)
+  - Application control and URL filtering (b): application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs (1)
+  - Cisco Web Security Appliance (C): combined integrated solution of strong defense and web protection, visibility, and controling solutions (2)
+  - Advanced Malware Protection (D): detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks (4)
 
 
 - <span style="color: blue; font-weight: bold;">Question 3</span>
@@ -1101,12 +1111,12 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Answer:
   - IKEv1:
-    - uses six packets in main mode to establish phase 1
-    - uses three packets in aggressive mode to establish phase
+    - uses six packets in main mode to establish phase 1 (B)
+    - uses three packets in aggressive mode to establish phase (D)
   - IKEv2:
-  - standard includes NAT-T
-  - uses four packets to establish phase 1 and phase 2
-  - uses EAP for authenticating remote access clients
+  - standard includes NAT-T (A)
+  - uses four packets to establish phase 1 and phase 2 (C)
+  - uses EAP for authenticating remote access clients (E)
 
 
 - <span style="color: blue; font-weight: bold;">Question 4</span>
@@ -1123,9 +1133,9 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   </figure>
 
   Answer:
-  - Step 1: Configure a Machine Agent or SIM Agent
-  - Step 2: Install monitoring extension for AWS EC2
-  - Step 3: Update config.yaml
-  - Step 4: Restart the Machine Agent
+  - Step 1: Configure a Machine Agent or SIM Agent (D)
+  - Step 2: Install monitoring extension for AWS EC2 (A)
+  - Step 3: Update config.yaml (C)
+  - Step 4: Restart the Machine Agent (B)
 
 

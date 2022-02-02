@@ -627,11 +627,11 @@
     />
   </figure>
 
-  Group 1:
-  A. Install monitoring extension for AWS EC2
-  B. Restart the Machine Agent
-  C. Update config.yaml
-  D. Configure a Machine Agent or SIM Agent
+  Group 1:<br>
+  A. Install monitoring extension for AWS EC2<br>
+  B. Restart the Machine Agent<br>
+  C. Update config.yaml<br>
+  D. Configure a Machine Agent or SIM Agent<br>
 
   Answer: <br><br> 
 
