@@ -62,16 +62,18 @@
 
   Explanation
 
-  Cisco standard NetFlow version 5 defines a flow as a unidirectional sequence of packets that all share seven values which define a unique key for the flow:
-  - Ingress interface (SNMP ifIndex)
+  A NetFlow network flow is defined as a unidirectional stream of packets between a given source and destination. The source and destination are each defined by a network-layer IP address and transport-layer source and destination port numbers. Specifically, a flow is defined by the combination of the following seven key fields:
   - Source IP address
   - Destination IP address
-  - IP protocol
-  - Source port for UDP or TCP, 0 for other protocols
-  - Destination port for UDP or TCP, type and code for ICMP, or 0 for other protocols
-  - IP Type of Service
+  - Source port number
+  - Destination port number
+  - Layer 3 protocol type
+  - Type of service (ToS)
+  - Input logical interface
 
   Note: A flow is a unidirectional series of packets between a given source and destination.
+
+  Reference: [Cisco IOS NetFlow Overview](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/ios-netflow-ov.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -493,7 +495,7 @@
 
   Using category and reputation data also simplifies policy creation and administration. It grants you assurance that the system will control web traffic as expected. Finally, because Cisco’s threat intelligence is continually updated with new URLs, as well as new categories and risks for existing URLs, you can ensure that the system uses up-to-date information to filter requested URLs. Malicious sites that represent security threats such as malware, spam, botnets, and phishing may appear and disappear faster than you can update and deploy new policies.
 
-  Reference: [Firepower Management Center Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Access_Control_Rules__URL_Filtering.html)
+  Reference: [Access Control Rules: URL Filtering - FMC Configuration Guide, Version 6.0](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Access_Control_Rules__URL_Filtering.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
