@@ -14,7 +14,14 @@
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
 
 
+- Categories of attacks
+  - volume-based attacks: use high traffic to inundate the network bandwidth
+  - protocol attacks: focus on exploiting server resources
+  - application attacks: focus on web applications and are considered the most sophisticated and serious type of attacks
+
+
 - SQL injection
+  - inserting malicious commands into the database
   - occurred when asking a user for input
   - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
 
@@ -37,7 +44,12 @@
 
 
 - DoS and DDoS
+  - categories of attacks: 1) protocol; 2) volume-based
+  - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
   - ping of death behavior: 1) sending malformed or oversized packets w/ ping command; 2) packets fragmented into groups of 8 octets
+  - smurf attack
+    - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
+    - spoof an IP address, and using ICMP, then ping IP addresses on a given network
 
 
 - Social engineering
@@ -70,6 +82,13 @@
     - a standardized language developed in a collaborative way to represent structured information about cyber threats
     - shared, stored, and otherwise used in a consistent manner
 
+- Common Vulnerabilities and Exposures (CVE)
+  - an identifier assigned to vulnerability disclosured by vendors, security researchers, and vulnerability coordination centers
+  - an industry-wide standard
+  - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
+  - goal: easier to share data across tools, vulnerability repositories, and security services
+
+
 
 ## Integrity and Privacy
 
@@ -93,6 +112,7 @@
       - using DES 3 times
       - 2 ways: 1) 1st & 3rd w/ the same key, 2nd w/ different key; 2) 3 different keys
     - Advanced Encryption Standard (AES)
+      - highest level of protection
       - successor of DES
       - encrypt and decrypt in blocks (block cipher): 128 bits block size
       - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
@@ -102,6 +122,11 @@
     - Diffie-Hellman
     - RSA
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
+
+
+- Security issues of privacy and integrity 
+  - passwords being transmitted in clear text: unencrypted links for traffic
+
 
 
 ## Virtual Private Networks
@@ -135,6 +160,18 @@
     - UDP based
     - used for delay sensitive applications (voice and video)
     - strongest throughput performance
+  - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
+
+    ```text
+    Info: New SMTP ICID 30 Interface Management (192.168.0.100)
+      address 10.128.128.200 reverse dns host unknown verified no
+    Info: ICID 30 ACCEPT SG SUSPECTLIST match sbrs[none] SBRS None
+    Info: ICID 30 TLS success protocol TLSv1 cipher DHE-RSA-AES256-SHA
+    Info: SMTP Auth: (ICID 30) succeeded for user: cisco using
+      AUTH mechanism: LOGIN with profile: ldap_smpt
+    Info: MID 80 matched all recipients for per-recipient policy
+      DEFAULT in the outbound table
+    ```
 
 
 - DMVPN
@@ -174,10 +211,15 @@
     - intent API
     - SDN controller communicating w/ network service applications, the management solution
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
-    - usually RESTful APIs used to communicate between the SDN Controller and the services and applications running over the network
+    - typically RESTful APIs used to communicate between the SDN controller and the services and applications running over the network
+    - used for the orchestration and automation of the network components to align with the needs of different applications via SDN network programmability
+    - basically the link between the applications and the SDN controller
+    - applications can tell the network devices (physical or virtual) what type of resources they need
+    - SDN solution can provide the necessary resources to the application.
   - southbound interface (SBI)
     - SDN controller communicating w/ network devices via API
-    - usually OpenFlow and NETCONF to communicate w/ network devices
+    - usually OpenFlow, NETCONF and RESTCONF used to communicate w/ network devices
+    - enable the controller to dynamically make changes based on real-time demands and scalability needs
   - eastbound interface (EBI)
   - wetbound interface (WBI)
 
@@ -231,9 +273,17 @@
     </figure>
 
 
-- Cisco DNA Center
+- Cisco Intercloud Fabric solution
+  - control shadow IT
+  - discovering resources deployed in the public cloud outside IT control
+  - Intercloud Fabric deployment models
+    - <span style="color: #bb6600;">Enterprise Managed</span> (an enterprise manages its own cloud environments) and 
+    - <span style="color: #bb6600;">Service Provider Managed</span> (the service provider administers and controls all cloud resources).
+
+
+- Cisco DNA Center (DNAC)
   - a central Management and Automation software
-  - used as a management platform for both SD Access, Intent-Based Networks and existing traditional networks
+  - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
   - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
   - helping IT to optimize network performance to dynamically meet business intent
   - features: 1) policy; 2) automation; 3) assurance
@@ -253,7 +303,6 @@
   - monitor in real time a collection of <span style="color: #bb6600;">Active Directory domain controller (DC)</span> machines for authentication-related events that generally indicate user logins
   - learn, analyze, and cache mappings of IP Addresses and user identities in its database
   - make the latest mappings available to its consumer devices
-
 
 
 - Firepower Threat Denfence Virtual (FTDv)
@@ -283,11 +332,11 @@
 
 - Cloudlock
   - a cloud-based Cloud Access Security Broker (CASB) and cloud cybersecurity platform
-  - helping organizations securely leverage use of applications in the cloud
+  - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
   - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
   - core functionality
-    - Data Loss Prevention (DLP)
+    - <span style="color: #bb6600;">Data Loss Prevention (DLP)</span>: protect sensitive data throughout the full environment
     - User and Entity Behavior Analytics (UEBA)
     - Apps Firewall (Apps Firewall)
     - App Discovery (App Discovery)
@@ -301,6 +350,9 @@
     - detecting and correlating threats in real time
   - Email and Web Traffic Reputation Center
     - transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture
+  - Talos Threat Source
+    - a newsletter
+    - a regular intelligence update from Cisco Talos
 
 
 - Tetration
@@ -322,7 +374,15 @@
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
-  - detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks
+  - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+  - detecting targeted, persistent malware attacks
+    - an integrated set of controls and a continuous process
+    - to detect, confirm, track, analyze, and remediate these threats
+  - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
+  - <span style="color: #bb6600;">outbreak control</span> through custom detections
+  - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
+    - Talos Security Intelligence and Research Group
+    - Threat Grid’s threat intelligence
   - file disposition:
     - a categorization from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
@@ -378,10 +438,10 @@
     - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
 
 
-
 - Umbrella
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
+  - improving **defense in depth** by blocking malicious destinations prior to a connection being established
   - use intelligence to determine if the request is safe, malicious or risky
   - Umbrella roaming protects employees even when they are off the VPN
   - risky: domain contains both malicious and legitimate content
@@ -425,6 +485,7 @@
     - Destination Lists: create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
+  - blocking URLs: URL Reputation from 6 to 10
 
 
 - Procedure to enable AppDynamics monitoring AWS EC2 instance
@@ -503,7 +564,11 @@
     - Tunneling through HTTP and HTTPS requests
 
 
-- Firepower
+- Firepower system
+  - use <span style="color: #bb6600">network discovery and identity policies</span> to collect host, application, and user data for traffic on your network
+  - perform forensic analysis, behavioral profiling, access control
+  - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
+  - <span style="color: #bb6600;">superior threat prevention and mitigation</span> to known and unknown threats
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
     - Firepower Threat Defense Devices
@@ -511,6 +576,7 @@
     - appliance and System Management Features
     - features for Detecting, Preventing, and Processing Potential Threats
     - integration with External Tools
+
 
 - Cisco ASA FirePOWER module
   - known as the ASA SFR, providing next-generation Firewall services, including
@@ -569,13 +635,22 @@
       - Port Sweep: one-to-many portsweep; 1/N hosts $\to$ N target + 1 port
       - Decoy Portscan: one-to-one portscan; mixes spoofed and real source IP addresses
       - Distributed Portscan: many-to-one portscan; N host $\to$ 1 target + N ports
+  - URL filtering
+    - under access control rule of <span style="color: #bb6600;">access control policy</span>
+    - a feature to control the websites that users on your network can access:
+      - Category and reputation-based URL filtering (recommended)
+      - Manual URL filtering
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
+  - Custom Block lists or feeds (or objects or groups)
+    - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
+    - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
+
+
 
 
 - Firepower Next-Generation IPS (NGIPS) threat appliance
   - providing network visibility, security intelligence, automation and advanced threat protection
   - operating in-line via Fail-To-Wire/Bypass network modules
-  - superior threat <span style="color: #bb6600;">prevention and mitigation</span> to known and unknown threats
   - security intelligence
     - TALOS Security Intelligence and Research Group:
     - vulnerability-focused IPS rules
@@ -601,18 +676,39 @@
 - Firepower Threat Defence Devices
   - a next-generation firewall (NGFW) w/ NGIPS capabilities
   - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
+  - site-to-site VPN
+    - access control policy used to inspect traffic coming from the users
+    - decrypted traffic is subject to Access Control policy
+    - enable `sysopt permit-vpn` option to bypass access control
+      - bypass the inspection
+      - VPN filter ACL and authorization ACL downloaded from AAA server are still applied to VPN traffic
 
 
 - Cisco Threat Intelligence Director (CTID)
+  - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
+  - mechanism
+    - observables published to the elements
+    - the elements monitor traffic and report observations to the FMC when the system identifies observables in traffic
+    - evaluate the observations against TID indicators
+    - generates or updates incidents associated with the observable's parent indicator(s)
   - features
     - operationalize threat intelligence data
     - aggregate intelligence data
     - configure defensive actions
     - analyze threats
-  - supplement other Firepower functionality, offering an additional line of defense against threats
+  - <span style="color: #bb6600;">supplement other Firepower functionality</span>, offering an additional line of defense against threats
   - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
   - deployed by your organization to ingest threat intelligence automatically
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://bit.ly/3ujCRye')"
+      src    = "https://bit.ly/3IZAqFq"
+      alt    = "Firepower Management Center Data Flow"
+      title  = "Firepower Management Center Data Flow"
+    />
+  </figure>
 
 
 - Cisco Application Visibility and Control (AVC)
@@ -657,9 +753,28 @@
     - configure multiple bridge groups, one for each network
     - each bridge group requires a management IP address
     - up to 4 interfaces are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
+    - access control btw interfaces <span style="color: #bb6600;">controlled</span>
+    - all of the usual firewall checks are in place
+    - each bridge group w/ a Bridge Virtual Interface (BVI)
+    - BVI IP address
+      - as the source address for packets originating from the bridge group
+      - on the same subnet as the bridge group member interfaces
+    - BVI not supporting traffic on secondary networks
+    - only traffic on the same network as the BVI IP address supported
+    - BVI interface <span style="color: #bb6600;">not used for management purpose</span>
+    - able to add a separate Management slot/port but not part of bridge group
 
 
 - NetFlow
+  - a unidirectional stream of packets between a given source and destination
+  - a flow identified as the combination of the following key fields:
+    - Source IP address
+    - Destination IP address
+    - Source port number
+    - <span style="color: #bb6600;">Destination port number</span>
+    - <span style="text-decoration: underline;">Layer 3 protocol type</span>
+    - <span style="color: #bb6600;">Type of service (ToS)</span>
+    - Input logical interface
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - NetFlow Secure Event Logging (NSEL)
     - providing a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
@@ -669,7 +784,8 @@
     - 1\. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     - 2\. Defines the **class map** that identifies traffic for which NSEL events need to be exported
     - 3\. Defines the **policy map** to apply flow-export actions to the defined classes
-    - 4\. Adds or edits the service policy globally
+    - 4\. Adds or edits the service policy 
+
 
 
 - Telemetry
@@ -691,8 +807,6 @@
     - apps subscribe to specific data items they need
     - use standard-based YANG data models over NETCONF-YANG
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
-
-
 
 
 - IOS zone-based firewall
@@ -741,15 +855,15 @@
 - Cisco Email Security Appliance (ESA)
   - features:
     - advanced threat protection capabilities to detect, block, and remediate threats faster
-    - prevent data loss (DLP)
+    - <span style="color: #bb6600;">prevent data loss (DLP)</span>
     - secure important information in transit with end-to-end encryption
   - scenario better than CES: sensitive data remained in site
   - multilayer approach to fight viruses and malware
     - 1st layer: outbreak filters, download a list bad mail servers from Cisco SenderBase; Sophos engine
     - 2nd layer: using antivirus signatures to scan quarantined emails
     - scan outbond emails to provide antivirus protection
-  - Host Access Table (HAT): hosts allowed to connect to a listener 
-  - Recipient Access Table (RAT): a list of all local domains for which the email gateway will accept mail; inbound email only
+  - <span style="color: #bb6600;">Host Access Table (HAT)</span>: hosts allowed to connect to a listener 
+  - <span style="color: #bb6600;">Recipient Access Table (RAT)</span>: a list of all local domains for which the email gateway will accept mail; inbound email only
   - Hybrid Secure Email
     - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
     - cloud-based infrastructure typically used for inbound email cleaning
@@ -757,10 +871,31 @@
     - scenario: deployment flexibility as organization’s needs  -> transition
   - message tracking w/ `trackingconfig` command
   - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
+  - ESA + AMP to upload file for analysis but network congestion: file upload abandoned
+  - dynamic spam protection: ESA w/ real-time updates from Talso
 
 
 - Web Security Appliance (WSA)
+  - including a web proxy, a threat analytics engine, antimalware engine, policy management, and reporting in a single physical or virtual appliance
+  - main purpose: protect users from accessing malicious websites and being infected by malware
   - combined integrated solution of strong defense and web protection, visibility, and controling solutions
+  - WSA HTTP proxy obtains the client's request can be defined as one of two ways: Transparently or Explicitly.
+    - Transparent
+      - the existence of the proxy unknown
+      - network infrastructure devices (layer 3 switches) redirect web traffic to the proxy
+      - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a Layer 3 switch is used to redirect based on destination port 80
+      - WCCP: a WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
+      - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
+    - Explicitly
+      - client knows existence of the proxy $\to$ sending all web traffic to the proxy
+      - no DNS lookup, WAS responsible for DNS resolution
+      - config each client to send traffic to WSA
+      - WSA errsponds w/ its own IP info
+      - Browser Configured: Client browser is explicitly configured to use a proxy
+      - .PAC file configured: Client browser is explicitly configured to us a .PAC file, which in turn, references the proxy
+  - Web Cache Communications Protocol (WCCP)
+    - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
+    - purpose: to establish and maintain the transparent redirection of selected
   - decryption policies define the handling of HTTPS traffic within the web proxy:
     - when to decrypt HTTPS traffic.
     - how to handle requests that use invalid or revoked security certificates
@@ -769,16 +904,8 @@
     - decrypt traffic and apply the content-based access policies defined for HTTP traffic
     - drop the HTTPS connection
     - monitor the request as the web proxy continues to evaluate the request against policies
-  - WSA HTTP proxy obtains the client's request can be defined as one of two ways: Transparently or Explicitly.
-    - Transparent
-      - Layer 4 Switch (PBR): A Layer 4 switch is used to redirect based on destination port 80
-      - WCCP: A WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
-      - Bridged mode: Dual NICs, virtually paired. Traffic goes in one NIC and out the other (not available)
-    - Explicitly
-      - Browser Configured: Client browser is explicitly configured to use a proxy
-      - .PAC file configured: Client browser is explicitly configured to us a .PAC file, which in turn, references the proxy
   - The Administrator can configure how much URI text is stored in the logs using the `advancedproxyconfig` CLI command and the HTTPS subcommand. 
-  - proxy caching: improve erb traffic performance
+  - proxy caching: improve web traffic performance
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -920,6 +1047,9 @@
     aaa accounting system default start-stop group radius
     ```
 
+  -generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
+
+
 - Multi-factor Authentication (MFA)
   - an authentication method that requires the user to provide two or more verification factors to gain access to a resource
   - proper MFA using factors from at least two different categories
@@ -960,7 +1090,7 @@
     - containing the threat at the endpoint, eliminate the threat before it can spread
 
 
-
+- 
 
 
 
