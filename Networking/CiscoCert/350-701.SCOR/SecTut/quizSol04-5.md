@@ -933,6 +933,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Reference: [Automate Threat Intelligence Using Cisco Threat Intelligence Director](https://blogs.cisco.com/developer/automate-threat-intelligence-using-cisco-threat-intelligence-director)
 
+  ingest third party Cyber Threat Intelligence (CTI)
+
+  Reference: [Introduction to Cisco Threat Intelligence Director API’s](https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2018/pdf/DEVNET-1774.pdf)
+
   Note: ThreatQ, AlienVault, Infoblox etc are external Threat Intelligence Platforms
 
 
