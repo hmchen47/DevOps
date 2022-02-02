@@ -106,26 +106,31 @@
 
 ## Virtual Private Networks
 
-- IPsec
-  - Phase 1: ISAKMP
-    - modes: 1) main - 6 msgs; 2) quick - 4 msgs
-    - preshared authentication 
-      - global configuration mode
-      - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
-      - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
-      - `keystring`: preshared key
-      - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
-      - `hostname`: FQDN of the peer
-      - same command on two end devices
-      - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
-  - phase 2: IPsec
-  - stateful failover
-    - enable a router to continue processing and forwarding IPsec packets after outage occurs
-    - two identical routers: 1) same type of device; 2) have the same CPU and memory; 3) either no encryption accelerator or identical encryption accelerators
-    - duplicate IKE and IPsec configuration on active decvice on standby device
+- Internet Key Exchange (IKE) framework
+  - IKEv1
+    - Phase 1: ISAKMP
+      - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
+      - preshared authentication 
+        - global configuration mode
+        - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
+        - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
+        - `keystring`: preshared key
+        - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
+        - `hostname`: FQDN of the peer
+        - same command on two end devices
+        - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
+    - phase 2: IPsec
+    - stateful failover
+      - enable a router to continue processing and forwarding IPsec packets after outage occurs
+      - two identical routers: 1) same type of device; 2) have the same CPU and memory; 3) either no encryption accelerator or identical encryption accelerators
+      - duplicate IKE and IPsec configuration on active decvice on standby device
+  - IKEv2
+    - standard including NAT-T
+    - 4 msgs for both phase 1 & 2
+    - using EAP for authenticating remote access clients
 
 
-- HHS, TLS & DTLS
+- SSL, TLS & DTLS
   - DTLS
     - UDP based
     - used for delay sensitive applications (voice and video)
@@ -317,6 +322,7 @@
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
+  - detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks
   - file disposition:
     - a categorization from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
@@ -421,8 +427,11 @@
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
 
 
-
-
+- Procedure to enable AppDynamics monitoring AWS EC2 instance
+  - 1\. configure a Machine Agent or SIM Agent
+  - 2\. install monitoring extension for AWS EC2
+  - 3\. update `config.yaml`
+  - 4\. restart the Machine Agent
 
 
 
@@ -550,11 +559,23 @@
   - application layer preprocessors
     - providing application layer protocol decoders that normalize specific types of packet data into formats that the intrusion rules engine can analyze
     -preprocessors: DEC/RPC, DNS, FTP/Telnet, HTTP, Sun RPC, <span style="color: #bb6600;">SIP</span>, GTP, IMAP, POP, SMTP, SSH, <span style="color: #bb6600;">SSL</span>
+  - portscan
+    - a form of network reconnaissance
+    - used by attackers as a prelude to an attack
+    - send specially crafted packets to a targeted host
+    - with host responds, the attacker determines which ports are open on the host
+    - types
+      - Portscan Detection: one-to-one portscan; 1/N hosts $\to$ 1 target + N ports
+      - Port Sweep: one-to-many portsweep; 1/N hosts $\to$ N target + 1 port
+      - Decoy Portscan: one-to-one portscan; mixes spoofed and real source IP addresses
+      - Distributed Portscan: many-to-one portscan; N host $\to$ 1 target + N ports
+  - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
 
 
 - Firepower Next-Generation IPS (NGIPS) threat appliance
   - providing network visibility, security intelligence, automation and advanced threat protection
   - operating in-line via Fail-To-Wire/Bypass network modules
+  - superior threat <span style="color: #bb6600;">prevention and mitigation</span> to known and unknown threats
   - security intelligence
     - TALOS Security Intelligence and Research Group:
     - vulnerability-focused IPS rules
@@ -739,6 +760,7 @@
 
 
 - Web Security Appliance (WSA)
+  - combined integrated solution of strong defense and web protection, visibility, and controling solutions
   - decryption policies define the handling of HTTPS traffic within the web proxy:
     - when to decrypt HTTPS traffic.
     - how to handle requests that use invalid or revoked security certificates
