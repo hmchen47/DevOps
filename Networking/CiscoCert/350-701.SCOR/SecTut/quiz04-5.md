@@ -25,7 +25,7 @@
   D. malware analysis<br>
 
   Answer: <br><br>
-  
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -180,7 +180,6 @@
   Answer: <br><br>
 
 
-
 ## 15. Endpoint Protection & Detection
 
 
@@ -310,7 +309,7 @@
   C. SSL Decryption<br>
   D. Destination Lists<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -322,7 +321,7 @@
   C. in the Security Settings section<br>
   D. per network in the Deployments section<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -334,7 +333,7 @@
   C. by the system administrator downloading the logs from the Cisco Umbrella web portal<br>
   D. by being configured to send logs to a self-managed AWS S3 bucket<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -346,7 +345,7 @@
   C. Content Category Blocking<br>
   D. File Analysis<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -358,7 +357,7 @@
   C. DynDNS<br>
   D. Talos<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -370,7 +369,7 @@
   C. security settings<br>
   D. destination lists<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -382,7 +381,7 @@
   C. Cisco Firepower<br>
   D. NGIPS<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 
@@ -405,7 +404,7 @@
   C. It assigns Internet-based DNS protection for clients and servers.<br>
   D. It facilitates secure connectivity between public and private networks.<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -418,7 +417,7 @@
   D. snort<br>
   E. URL categorization<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -430,7 +429,7 @@
   C. syslog<br>
   D. model-driven telemetry<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -442,7 +441,7 @@
   C. Prime Infrastructure<br>
   D. Telemetry<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -454,7 +453,7 @@
   C. Cisco Threat Grid<br>
   D. Cisco Stealthwatch<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -466,7 +465,7 @@
   C. Cisco Model Driven Telemetry<br>
   D. Cisco DNA Center<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -479,7 +478,7 @@
   D. DNS<br>
   E. Provision<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -491,7 +490,7 @@
   C. Cisco Advanced Malware Protection<br>
   D. Cisco Stealthwatch Cloud<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -503,7 +502,7 @@
   C. Multifactor Platform Integration<br>
   D. Firepower Threat Defense<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
   
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -515,7 +514,7 @@
   C. domain integration<br>
   D. application adapters<br>
 
-  Answer: <br><br>
+  Answer: <br><br> 
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -527,8 +526,7 @@
   C. reads the Active Directory logs to map IP addresses to usernames<br>
   D. accepts user authentication requests on behalf of Web Security Appliance for user identification<br>
 
-  Answer: <br><br>
-  
+  Answer: <br><br> 
 
 
 ## 18. Drag Drop
@@ -546,7 +544,19 @@
     />
   </figure>
 
-  Answer:
+  Group 1:<br>
+  A. PortScan Detection<br>
+  B. Port Sweep<br>
+  C. Decoy PortScan<br>
+  D. Distributed PortScan<br>
+
+  Group 2:<br>
+  1\. many-to-one PortScan in which multiple hosts query a single host for open ports<br>
+  2\. one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address<br>
+  3\. one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts<br>
+  4\. one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports<br>
+
+  Answer: <br><br>
   
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -562,7 +572,19 @@
     />
   </figure>
 
-  Answer:
+  Group 1:<br>
+  A. Next Generation Intrusion Prevention System<br>
+  B. Application control and URL filtering<br>
+  C. Cisco Web Security Appliance<br>
+  D. Advanced Malware Protection<br>
+
+  Group 2:<br>
+  1\. application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs<br>
+  2\. combined integrated solution of strong defense and web protection, visibility, and controling solutions<br>
+  3\. superior threat prevention and mitigation for known and unknown threats<br>
+  4\. detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks<br>
+
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -578,7 +600,18 @@
     />
   </figure>
 
-  Answer:
+  Group 1:<br>
+  A. standard includes NAT-T<br>
+  B. uses six packets in main mode to establish phase 1<br>
+  C. uses four packets to establish phase 1 and phase 2<br>
+  D. uses three packets in aggressive mode to establish phase<br>
+  E. uses EAP for authenticating remote access clients<br>
+
+  Group 2:<br>
+  1\. IKEv1<br>
+  2\. IKEv2<br>
+
+  Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -594,6 +627,13 @@
     />
   </figure>
 
-  Answer:
+  Group 1:
+  A. Install monitoring extension for AWS EC2
+  B. Restart the Machine Agent
+  C. Update config.yaml
+  D. Configure a Machine Agent or SIM Agent
+
+  Answer: <br><br> 
+
 
 
