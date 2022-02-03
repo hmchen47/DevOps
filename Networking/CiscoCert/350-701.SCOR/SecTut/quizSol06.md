@@ -738,7 +738,7 @@
   - Rule 4: <span style="color: #bb6600;">Allow</span> is the final rule. For this rule, matching traffic is allowed; however, prohibited files, malware, intrusions, and exploits within that traffic are detected and blocked. Remaining non-prohibited, non-malicious traffic is allowed to its destination, though it is still subject to identity requirements and rate limiting. You can configure Allow rules that perform <span style="text-decoration: underline;">only file inspection, or only intrusion inspection, or neither</span>. -> depending on configuration, might be nor inspection -> Answer D is correct
   - <span style="color: #bb6600;">Default Action</span> handles all traffic that does not match any of the rules. In this scenario, the default action performs intrusion prevention before allowing non-malicious traffic to pass. In a different deployment, you might have a default action that trusts or blocks all traffic, without further inspection. (You cannot perform file or malware inspection on traffic handled by the default action.)
 
-  Reference: [Firepower Management Center Configuration Guide, Version 6.1](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html)
+  Reference: [Access Control Rules - FMC Configuration Guide, Version 6.1](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -791,6 +791,8 @@
   Answer: D
 
   Explanation
+
+  NSEL, a security logging mechanism that is built on NetFlow Version 9 technology, and how to handle events and syslog  messages through NSEL.
 
   The ASA and ASASM implementations of NetFlow Secure Event Logging (NSEL) provide the following major functions:
   - Tracks flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records. 
@@ -1013,9 +1015,9 @@
   Explanation
 
   Cisco Security Manager provides a comprehensive management solution for:
-  – Cisco ASA 5500 Series Adaptive Security Appliances
-  – Cisco intrusion prevention systems 4200 and 4500 Series Sensors
-  – Cisco AnyConnect Secure Mobility Client
+  - Cisco ASA 5500 Series Adaptive Security Appliances
+  - Cisco intrusion prevention systems 4200 and 4500 Series Sensors
+  - Cisco AnyConnect Secure Mobility Client
 
   Reference: [Cisco Security Manager](https://www.cisco.com/c/en/us/products/security/security-manager/index.html)
 
