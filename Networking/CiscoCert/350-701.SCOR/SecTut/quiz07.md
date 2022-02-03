@@ -283,7 +283,7 @@
     'authorization' : Basic API Credentials
     'cache-control' : "no cache"
   }
-  response = requests.request ("GET", url, headers = headers)
+  response = requests.request("GET", url, headers = headers)
   print (response.txt)
   ```
 

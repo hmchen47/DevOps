@@ -41,6 +41,10 @@
 
   Reference: [Network as a Security Sensor White Paper](https://www.cisco.com/c/en/us/solutions/collateral/enterprise-networks/enterprise-network-security/white-paper-c11-736595.html)
 
+  Discovery rules within the policy specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed. Within a rule, you can configure whether hosts, applications, and non-authoritative users are discovered. You can create rules to exclude networks and zones from discovery. You can configure discovery of data from NetFlow exporters and restrict the protocols for traffic where user data is discovered on your network.
+
+  Reference: [Network Discovery Policies - FMC Configuration Guide](https://www.cisco.com/c/en/us/td/docs/security/firepower/60/configuration/guide/fpmc-config-guide-v60/Network_Discovery_Policies.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
 
@@ -488,7 +492,7 @@
     'authorization' : Basic API Credentials
     'cache-control' : "no cache"
   }
-  response = requests.request ("GET", url, headers = headers)
+  response = requests.request("GET", url, headers = headers)
   print (response.txt)
   ```
 
