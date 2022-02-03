@@ -31,3 +31,5 @@
   - 21\. New Questions - Part 3
 
 
+- [SCOR Notes - Summary](scorNotes.md)
+
