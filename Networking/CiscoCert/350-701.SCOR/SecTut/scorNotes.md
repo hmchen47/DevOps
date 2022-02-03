@@ -2,7 +2,7 @@
 
 ## Security Concepts
 
-- Malware and exploits
+- Malware, exploits, and security threats
   - malware:
     - malicious software
     - any software intentionally designed to cause damage to a computer, server, client, or computer network
@@ -13,9 +13,11 @@
   - expolit: a code taking advantage of a software a software vulnerability or security flaw
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
   - Insecure APIs: a malicious user gained access to an organization’s database from a <span style="color: #bb6600;"></span>cloud-based application programming interface</span> that lacked strong authentication controls
-  - DoS/DDoS: an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;"></span>user login information</span>
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;"></span>published online</span>
+  - worm: a software program that copies itself from one computer to another, without human interaction
+  - spam: unwanted messages in an email inbox
+  - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
 
 
 - Categories of attacks
@@ -58,9 +60,11 @@
   - a collection of internet-connected devices infected by malware
   - unauthorized access
   - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
+  - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
 - DoS and DDoS
+  - an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
   - categories of attacks: <span style="color: #bb6600;">protocol & volume-based</span>
   - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
   - DDoS: shutting down a network or service, causing it to be inaccessible to its intended users
@@ -80,6 +84,7 @@
 - Social engineering
   - phishing
     - a form of social engineering
+    - fraudulent attempts by cyber criminals to obtain private information
     - sending fraudulent communications usually through email
   - goals: 1) steal sensitive data or login information; 2) install malware
   - types of phishing
@@ -323,6 +328,14 @@
 
 ## Cloud Security Concepts and Solutions
 
+- Cisco Cloud Security Portfolio
+  - Umbrella: Set up the first line of defense against threats on the Internet wherever users go
+  - Cloudlock: Secure your cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform
+  - Cloud Email Security: Defend against advanced email threats
+  - Stealthwatch Cloud: Extend network visibility, threat detection, and analytics to your public cloud environments
+  - Next-Generation Firewall: Protect critical infrastructure in the cloud with the Cisco Firepower Next-Generation Firewall
+
+
 - Cloud services
   - types: private 2) public; 3) hybrid; 4) community - variation of private
   - types of as-a-Service solution: (from customer/tenant view)
@@ -384,6 +397,9 @@
     - <span style="color: #bb6600;">provision</span>: assigned new device to an SGT based on identity—greatly facilitating remote office setups
     - assurance: using AI/ML, enables every point on the network to become a sensor
   - open platform capabilities: intent-based API (Northbound API)
+  - characteristics of APIs
+    - quickly provision new devices
+    - view the overall health of the network
 
 
 - Cisco Context Directory Agent (CDA)
@@ -452,6 +468,11 @@
     - Apps Firewall (Apps Firewall)
     - App Discovery (App Discovery)
   - discover and control apps connected to corporate environment
+  - <span style="color: #bb6600;">monitor traffic, create incidents based on events, and integrate</span> with other cloud solutions via an API
+    - utilize various techniques to surface potential threats from various categories which focus on Locations, IPs and Users Login Activity
+    - continuously monitor cloud environments with a cloud Data Loss Prevention (DLP) engine to identify sensitive information stored in cloud environments in violation of policy
+    - API-based
+    - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
 
 
 - Talos
@@ -499,7 +520,6 @@
       - including virtualized, bare-metal, and container workloads
 
 
-
 - pxGrid
   - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
   - provides a new WebSockets client and removes dependencies on underlying operating systems and language
@@ -515,6 +535,7 @@
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
   - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+  - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
     - to detect, confirm, track, analyze, and remediate these threats
@@ -554,7 +575,10 @@
     - eligible executable file: submits file to the Spero heuristic engine in the AMP cloud
     - determining whether the file is malware according to Spero signature
     - only upload the signature of the (executable) files to the AMP cloud
-    - machine learning
+    - the Cisco machine-based learning system
+    - SPERO fingerprint: features of a file
+    - send SPERO fingerprint to the cloud
+    - SPERO trees determine whether a file is malicious
   - Dynamic Analysis
     - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
     - run the file in a <span style="color: #bb6600;">sandbox</span> environment
@@ -576,9 +600,25 @@
     - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from <span style="color: #bb6600;">malware</span>
     - unified malware analysis and threat intelligence platform
     - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
+  - ETHOS engine
+    - the Cisco file grouping engine
+    - group families of files together to observe variants of a malware
+    - mark the ETHOS hash as malicious
+    - instantly detect whole <span style="color: #bb6600;">families of malware</span>
+    - perform fuzzy fingerprinting using static/passive heuristics
+  - offline detection engines
+    - TETRA: Windows
+    - ClamAV: Mac and Linux
+  - connector engine (in sequence)
+    - Tetra - full blown AV
+    - Cloud Lookup - based on SHA256
+    - Spero - machine learning
+    - Ethos - malware family
+    - ClamAV - custom detections
 
 
 - Umbrella
+  - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
   - improving **defense in depth** by blocking malicious destinations prior to a connection being established
@@ -641,12 +681,25 @@
     - solve application problems 
     - prevent them from occurring in the future
     - enhance the visibility into your IT architecture
-  - Procedure to enable AppDynamics monitoring AWS EC2 instance
+  - <span style="color: #bb6600;">Procedure to enable AppDynamics</span> monitoring AWS EC2 instance
     - 1\. configure a Machine Agent or SIM Agent
     - 2\. install monitoring extension for AWS EC2
     - 3\. update `config.yaml`
     - 4\. restart the Machine Agent
 
+
+- Cisco Defense Orchestrator
+  - a cloud-based management solution that allows you to 
+  - manage security policies and device configurations with ease across multiple Cisco and cloud-native security platforms
+  - features
+    - Templates for consistent policy design
+    - Optimize your existing platforms
+    - CLI in Bulk
+    - Audit of changes with change-log
+    - ASA to FTD Transition
+    - <span style="color: #bb6600;">Management of hybrid environments</span>: Managing a mix of firewalls running the ASA, FTD, and Meraki MX software
+    - Management of AWS security groups
+    - RAVPN Monitoring and Management 
 
 
 ## Firwalls and IPS
@@ -669,6 +722,7 @@
 
 
 - StealthWatch
+  - rapidly collects and analyzes <span style="color: #bb6600">NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
   - <span style="color: #bb6600">visibility and security analytics solution</span>
   - collects and analyze network data from the existing network infrastructure
   - analyze industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices 
@@ -699,6 +753,7 @@
   - <span style="color: #bb6600">Cisco Stealthwatch Cloud</span>
     - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
     - available in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)
+  - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
 
 
 - Cognitive Intelligence
@@ -750,11 +805,11 @@
   - an integrated suite of network security and traffic management products
   - deployed either on purpose-built platforms or as a software solution
   - centralized event and policy manager for:
-    - Cisco Secure Firewall with the Firewall Threat Defense (FTD) OS
-    - Cisco ASA with FirePOWER Services (not traditional ASA)
-    - Cisco Secure IPS (Firepower Next-Gen IPS / NGIPS)
-    - Cisco FirePOWER Threat Defense for ISR
-    - Cisco Malware Defense (AMP)
+    - Secure Firewall with the Firewall Threat Defense (FTD) OS
+    - ASA with FirePOWER Services (not traditional ASA)
+    - Secure IPS (Firepower Next-Gen IPS / NGIPS)
+    - FirePOWER Threat Defense for ISR
+    - Malware Defense (AMP)
   - typical deployment - multiple traffic-sensing managed devices installed on network segments monitor traffic for analysis and report to a manager:
     - Firepower Management Center
     - Firepower Device Manager
@@ -815,6 +870,7 @@
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
+  - config new FTD device not behind a NAT device to be managed w/ FCM: `configure manager add <FMC IP address> <registration key>`
 
 
 
@@ -946,6 +1002,7 @@
   - connection status of failover w/ 2 ASAs
     - stateful: preserve
     - stateless: reestablish
+  - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
 
 
 - NetFlow
@@ -1031,6 +1088,7 @@
 
 
 - Simple Network Management Protocol (SNMP)
+  - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
   - version 3 security level
     - `noAuthNoPriv`: authn = username; encry = none
     - `authNoPriv`: authn = MD5/SHA; encry = none
@@ -1117,6 +1175,15 @@
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
   - outbreak filter: used to block emails from bad mail server
+  - message action: 1) deliver; 2) drop; 3) quarantine
+  - secondary action:
+    - sending a copy to a plolicy quarantine if deliver
+    - encrypting messages
+    - alerting the subject header w/ DLP violation
+    - <span style="color: #bb6600;">adding disclaimer text to message</span>
+    - sending message to alternative destination
+    - sending copies (bcc) to other receipients
+    - sending a DLP violation notification to sender or other contacts
 
 
 - Web Security Appliance (WSA)
@@ -1156,6 +1223,7 @@
 ## Authentication, Authorization, and Accounting (AAA)
 
 - Identity Service Engine (ISE)
+  - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
   - key functions
     - combine <span style="color: #bb66oo;">AAA, posture, and profiler</span> into one appliance
@@ -1186,6 +1254,7 @@
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
     - security posture: <span style="color: #bb6600;">detect and mitigate threats</span> that the perimeter security devices do not detect
+    - device compliance checks: <span style="color: #bb6600;">validate</span> if anti-virus software installed
   - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
@@ -1215,6 +1284,27 @@
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
     - w/o supplicant profiles: 1) manually config My Device portal; 2) config BYOD rules to register
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company’s network, including mobile phones, tablets, printers, Internet radios, and other network devices
+
+- TrustSec
+  - software-defined segmentation that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
+  - controls defined simply using endpoint roles, not IP addresses
+  - ecurity rules defined using these groups
+  - security groups (SGs)
+    - simplify firewall rules, web security appliance policies and the access control lists used in switches, WLAN controllers and routers
+    - enable software-defined segmentation
+    - allow segmentation patterns to be implemented
+    - change w/o reconfiguring network devices or redesigning the network
+  - Easy Connect
+    - a passive identity method
+    - simplify network access control and segmentation
+    - allow the <span style="color: #bb6600;">assignment of Security Group Tags (STGs)</span> to endpoints without requiring 802.1X on those endpoints, whether using wired or wireless connectivity
+    - used as a backup authentication method to 802.1X
+    - ensure managed assets are classified even when an 802.1X supplicant is not correctly configure
+  - Active Directory logins
+    - map user information onto network connections
+    - used for authorizing users on the network even as the Identity Services Engine (ISE) not involved
+    - authorization method only supports devices that authenticate with a Domain Controller
+    - allow for managed endpoints that <span style="color: #bb6600;">authenticate to AD to be mapped to Security Groups (PassiveID)</span>
 
 
 - RADIUS Change of Authorization (CoA)
@@ -1325,6 +1415,7 @@
 
 
 - Multi-factor Authentication (MFA)
+  - prevent brute force attacks from being successful
   - an authentication method that requires the user to provide two or more verification factors to gain access to a resource
   - proper MFA using factors from at least two different categories
   - benefits
@@ -1397,12 +1488,14 @@
     - all other ports are untrusted (default) and send only DHCP requests
     - shutdown untrusted ports if sending DHCP response
     - enable trust port: `ip dhco snooping trust`
+    - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
     - after enabling DAI, all ports become untrusted ports
     - inactive on all VLANs
     - DHCP snooping enabled on a <span style="color: #bb6600;">per-VLAN basis</span>, e.g., `ip dhcp snooping vlan 2`
+  - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
 
 
 - Broadcast storm
