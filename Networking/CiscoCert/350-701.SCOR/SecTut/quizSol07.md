@@ -733,9 +733,13 @@
 
   Explanation
 
-  Easy Connect simplifies network access control and segmentation by allowing the assignment of Security Group Tags to endpoints without requiring 802.1X on those endpoints, whether using wired or wireless connectivity.
+  With TrustSec, controls are defined simply using endpoint roles, not IP addresses. By classifying systems using human-friendly logical groups, security rules can be defined using these groups, which are more flexible and much easier to manage than using IP address-based controls. These security groups can be used to simplify firewall rules, web security appliance policies and the access control lists used in switches, WLAN controllers and routers. 
+  
+  Security Groups can also be used to enable software-defined segmentation, allowing segmentation patterns to be implemented and changed without reconfiguring network devices or redesigning the network.
 
-  Reference: [TrustSecConfigurationGuide](https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/trustsec/trustsec-with-easy-connect-configuration-guide.pdf)
+  This configuration guide covers how managed endpoints can be mapped into Security Groups using Easy Connect, a passive identity method. Easy Connect simplifies network access control and segmentation by allowing the assignment of Security Group Tags to endpoints without requiring 802.1X on those endpoints, whether using wired or wireless connectivity.  
+  
+    Reference: [TrustSec Configuration Guide](https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/trustsec/trustsec-with-easy-connect-configuration-guide.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
