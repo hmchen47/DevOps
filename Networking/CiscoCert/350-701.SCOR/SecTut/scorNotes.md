@@ -12,6 +12,10 @@
     - spyware: 1) secretely record everything user enter, upload, download and store on computers or mobile devices; 2) keep itself hidden
   - expolit: a code taking advantage of a software a software vulnerability or security flaw
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
+  - Insecure APIs: a malicious user gained access to an organization’s database from a <span style="color: #bb6600;"></span>cloud-based application programming interface</span> that lacked strong authentication controls
+  - DoS/DDoS: an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
+  - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;"></span>user login information</span>
+  - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;"></span>published online</span>
 
 
 - Categories of attacks
@@ -44,13 +48,20 @@
 
 
 - DoS and DDoS
-  - categories of attacks: 1) protocol; 2) volume-based
+  - categories of attacks: <span style="color: #bb6600;">protocol & volume-based</span>
   - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
+  - DDoS: shutting down a network or service, causing it to be inaccessible to its intended users
   - ping of death behavior: 1) sending malformed or oversized packets w/ ping command; 2) packets fragmented into groups of 8 octets
   - smurf attack
+    - a DDoS attack
     - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
     - spoof an IP address, and using ICMP, then ping IP addresses on a given network
+    - large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim’s spoofed source IP are broadcast to a computer network using an IP broadcast address
   - sny flood: too many connection requests
+  - teardrop attack
+    - DoS attack
+    - sending <span style="color: #bb6600;">fragmented packets</span> to a target machine
+    - generally happens on older operating systems
 
 
 - Social engineering
@@ -104,6 +115,18 @@
     - Certificate Authority (CA) using contained <span style="color: #bb6600;">server information</span> (e.g. common name, organization, country) to create your certificate
     - public key included in certificate
     - certificate signed with the corresponding private key
+  - Cisco IOS public key infrastructure (PKI)
+    - provide certificate management to support security protocols
+    - including IP Security (IPSec), secure shell (SSH), and secure socket layer (SSL)
+    - entities
+      - peers communicating on a secure network
+      - at least one certification authority (CA) that grants and maintains certificates
+      - digital certificates: containing information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
+      - optional registration authority (RA) to offload the CA by processing enrollment requests
+      - a distribution mechanism (such as <span style="color: #bb6600;">Lightweight Directory Access Protocol (LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
+  - RSA keys
+    - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
+    - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
 
 
 - Cryptography
@@ -115,7 +138,7 @@
     - Data Encryption Standard (DES)
       - encrypt and decrypt in blocks (block cipher): 64 bits block size
       - key size: 56 bits
-    - Triple DES (3DES):
+    - <span style="color: #bb6600;">Triple DES (3DES):</span>
       - using DES 3 times
       - 2 ways: 1) 1st & 3rd w/ the same key, 2nd w/ different key; 2) 3 different keys
     - Advanced Encryption Standard (AES)
@@ -123,22 +146,41 @@
       - successor of DES
       - encrypt and decrypt in blocks (block cipher): 128 bits block size
       - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
+      - AES-256
+        - secure online connection against cyberattacks that can compromise your security
+        - offer robust protocols to combat malicious attacks
+        - reinforce your online identity
   - asymmetric key
     - public key cryptography
     - using keypairs (a private key and a public key)
-    - Diffie-Hellman
+    - more complex and time man in
+    - <span style="color: #bb6600;">Diffie-Hellman</span>
     - RSA
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
+  - functions of secret key cryptography (=? asymmetric key)
+    - different keys for encryption and decryption
+    - the capability to only know one key on one side
 
 
 - Security issues of privacy and integrity 
   - passwords being transmitted in clear text: unencrypted links for traffic
+  - Secure Hash Algorithm (SHA-1):
+    - a.k.a. HMAC-SHA-1
+    - ensures data has not been changed in transit
+    - one way hash functions to determine if data has been changed
+    - stronger than Message Digest 5 (MD5)
+    - provide data integrity (to guarantee data has not been altered in transit) and authentication (to guarantee data came from the source it was supposed to come from)
+    - used with the digital signature standard
+    - used by IPSec to ensure that a message has not been altered
 
 
 
 ## Virtual Private Networks
 
 - Internet Key Exchange (IKE) framework
+  - IKE SA
+    - describe the security parameters between two IKE devices
+    - the first stage in establishing IPSec
   - IKEv1
     - Phase 1: ISAKMP
       - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
@@ -167,7 +209,6 @@
     - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently.
 
 
-
 - SSL, TLS & DTLS
   - DTLS
     - UDP based
@@ -192,16 +233,25 @@
   - simple hub and spoke configuration
   - forming IPsec tunnel over dynamically/statically addresses spokes
   - tunneled VPN: IKEv1 (ISAKMP) & IKEv2
+  - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
 
 
 - FlexVPN
   - tunneled VPN: IKEv2
   - a standards-based solution interoperating with non-Cisco IKEv2 implementations
+  - NHRP primarily used to establish spoke to spoke communication
+  - spokes not register to hub
   - same as DMVPN
     - point-to-point GRE tunnels
     - spoke-to-spoke connectivity achieved with NHRP redirect message
     - IOS routers w/ the same NHRP code
     - Cisco’s proprietary technologies
+  - differences
+    - P2P GRE tunnels: DMVPN - static; FlexVPN - static/dynamic
+    - crypto: DMVPN - optional; FlexVPN - strongly tied into IPSec
+    - key management protocol: DMVPN - IKEv1/IKEv2; FlexVPN – IKEv2
+    - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
+    - NHRP: DMVPN - 3 phases; FlexVPN - only one standard wat
 
 
 - GETVPN (Group Encrypted Transport VPN)
@@ -235,6 +285,7 @@
     - enable the controller to dynamically make changes based on real-time demands and scalability needs
   - eastbound interface (EBI)
   - wetbound interface (WBI)
+  - security application notify the controller about a specific security threats: northbound and southbound
 
 
 - AsyncOS API
@@ -330,7 +381,7 @@
 
 - Firepower Threat Denfence Virtual (FTDv)
   - the virtualized component of the Cisco NGFW solution The FTDv 
-  - providing next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
+  - providing next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), <span style="color: #bb6600;">URL filtering</span>, and Advanced Malware Protection (AMP)
   - managing the FTDv w/ FMC (either FMCv or physical FMC)
   - register and communicate with the FMC on the Management interface
   - FTDv for AWS
@@ -370,6 +421,7 @@
     - facilitate logging of all the IP traffic to, from, and across your network
     - stored as records in special Amazon CloudWatch log groups
     - provide the same kind of information as NetFlow dat
+  - no URL filtering feature as FTDv
 
 
 - Cloudlock
@@ -427,6 +479,7 @@
 
 - Secure Endpoint
   - formerly Advanced Malware Protection (AMP) for Endpoints
+  - logical security controls on endpoints still exist even training on staffs: human erro or inside threats still exist
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
   - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
@@ -855,6 +908,9 @@
     - only traffic on the same network as the BVI IP address supported
     - BVI interface <span style="color: #bb6600;">not used for management purpose</span>
     - able to add a separate Management slot/port but not part of bridge group
+  - connection status of failover w/ 2 ASAs
+    - stateful: preserve
+    - stateless: reestablish
 
 
 - NetFlow
@@ -884,6 +940,10 @@
       - send template information periodically to NSEL collectors
       - filter NSEL events based on the traffic and event type, then sends records to different collectors
       - <span style="color: #bb6600;">delays the export of flow-create events</span>
+  - template of version 9
+    - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
+    - define a collection of fields, with corresponding descriptions of structure and semantics
+    - format of data records
 
 
   - configure NetFlow on Cisco ASA 5500 Series firewall
@@ -1177,7 +1237,6 @@
     aaa accounting system default start-stop group radius
     ```
 
-  -generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
 
 
 - Multi-factor Authentication (MFA)
@@ -1213,15 +1272,18 @@
   - Endpoint Protection Platform (EPP)
     - solely on prevention at the perimeter
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
+    - prevent endpoint security threats like known and unknown malware
+    - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
+    - act as the first line of defense, filtering out attacks that can be detected by the organization’s deployed security solutions
+    - complemen of EDR
   - Endpoint Detection and Response (EDR)
     - primarily on detecting advanced threats, designed to evade front-line defenses and successfully entered the environment
     - detect threats across your environment
     - investigate the entire lifecycle of the threat
     - containing the threat at the endpoint, eliminate the threat before it can spread
-
-
-- 
-
+    - detect and respond to threats that your EPP and other security tools did not catch
+    - acts as a second layer of protection, enabling security analysts to perform threat hunting and identify more subtle threats to the endpoint
+    - <span style="color: #bb66pp;">more advanced detection capabilities</span>
 
 
 ## Layer 2 Security
