@@ -28,6 +28,19 @@
   - inserting malicious commands into the database
   - occurred when asking a user for input
   - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
+  - an attack where code is injected into a browser
+
+
+- Cross Site Script (XSS): 
+  - web application gathering malicious data
+  - usually gathered in the form of a hyperlink
+  - click on this link from another website, instant message, or simply simply just reading a web board or email message.
+  - encode the malicious portion of the link to the site in HEX (or other encoding methods)
+  - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
+  - preventive measures: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
+  - exploit website vulnerability by injecting scripts that will run at client’s side.
+  - an attack where code is injected into a database (server)
+  - a client-side vulnerability that targets other application users
 
 
 - Buffer overflow
@@ -74,15 +87,6 @@
     - spear: designed to get a single recipient to respond
   - mitigation: 1) browser alert; 2) email filtering
   - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
-
-
-- Cross Site Script (XSS): 
-  - web application gathering malicious data
-  - usually gathered in the form of a hyperlink
-  - click on this link from another website, instant message, or simply simply just reading a web board or email message.
-  - encode the malicious portion of the link to the site in HEX (or other encoding methods)
-  - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
-  - preventive measures: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
 
 
 - TAXII/STIX
@@ -193,6 +197,9 @@
         - `hostname`: FQDN of the peer
         - same command on two end devices
         - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
+        - key exchange
+          - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
+          - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4`
     - phase 2: IPsec
     - stateful failover
       - enable a router to continue processing and forwarding IPsec packets after outage occurs
@@ -309,7 +316,9 @@
 
 - Cisco device APIs
   - DNA Center API to add device: `post /dna/intent/api/v1/network-device`
-  - AMP API to get computer info: `get https://api.amp.cisco.com/v1/computers`
+  - AMP API to get computer info
+    - URL: `get https://api.amp.cisco.com/v1/computers`
+    - list of computers, policies, and connector statuses
 
 
 ## Cloud Security Concepts and Solutions
@@ -336,6 +345,14 @@
       />
     </figure>
 
+  - IaaS provider
+    - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
+    - sercure responsibility: <span style="color: #bb6600;">firewalling virtual machine</span>
+  - responsibility of the installation and maintenance of a product:
+    - on-primese solution: customer
+    - cloud-based solution: provider
+
+
 - DevSecOps (development, security, and operations)
   - a concept describing how to move security activities to the start of the development life cycle
   - built-in security practices in the continuous integration/continuous deployment (CI/CD) pipeline
@@ -356,7 +373,7 @@
 
 
 - Cisco DNA Center (DNAC)
-  - a central Management and Automation software
+  - a <span style="color: #bb6600;">central Management</span> and Automation software
   - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
   - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
   - helping IT to optimize network performance to dynamically meet business intent
@@ -450,6 +467,9 @@
 
 
 - Tetration
+  - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
+  - use behavior and attribute-driven microsegmentation policy generation and enforcement
+  - enable trusted access through automated, exhaustive context from various systems to automatically adapt security policies
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
   - enabling a zero-trust model using <span style="color: #bb6600;">segmentation</span>
   - identifying security incidents faster, containing lateral movement, and reducing your attack surface
@@ -464,8 +484,20 @@
     - raw socket creation: creation of a raw socket by a nonstandard process (for example, ping)
     - <span style="color: #bb6600;">user login suspicious</span>: watche user login failures and user login methods
     - <span style="color: #bb6600;">interesting file access</span>: armed to look at sensitive files
-    - <span style="color: #bb6600;">file access from a different user</span>: learn the normal behavior of which file is accessed by which user
+    - <span style="color: #bb6600;">file access from a different user</span>: <span style="text-decoration: underline">learn the normal behavior</span> of which file is accessed by which user
     - unseen command: learn the behavior and set of commands as well as the lineage of each command over time
+  - micro-segmentation
+    - secure applications by expressly allowing particular application traffic
+    - by default, denying all other traffic
+    - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
+    - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change
+  - generating accurate microsegmentation policy
+    - application dependency mapping to discover the relationships between different application tiers and infrastructure services
+    - supports “what-if” policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
+    - normalized microsegmentation policy:
+      - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
+      - including virtualized, bare-metal, and container workloads
+
 
 
 - pxGrid
@@ -479,7 +511,7 @@
 
 - Secure Endpoint
   - formerly Advanced Malware Protection (AMP) for Endpoints
-  - logical security controls on endpoints still exist even training on staffs: human erro or inside threats still exist
+  - logical security controls on endpoints still exist even training on staffs: human error or inside threats still exist
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
   - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
@@ -560,9 +592,10 @@
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
     - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
-  - intelligent proxy
+  - <span style="color: #bb6600;">intelligent proxy</span>
     - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
     - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware.
+    - prevent malicious content downloads from suspicious domains while allowing normal web traffic
   - SSL Decryption
     - an important part of the Umbrella Intelligent Proxy
     - proxy and inspect traffic that’s sent over HTTPS
@@ -613,12 +646,6 @@
     - 2\. install monitoring extension for AWS EC2
     - 3\. update `config.yaml`
     - 4\. restart the Machine Agent
-
-
-- Cisco Advanced Phishing Protection
-  - formerly known as Cisco Advanced Phishing Protection (APP)
-  - provide sender authentication and BEC detection capabilities
-  - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
 
 
 
@@ -782,6 +809,12 @@
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
     - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
+  - <span style="color: #bb6600;">Network Discovery Policies</span>
+    - controls how the system collects data on your organization’s network assets and which network segments and ports are monitored
+    - able to feed host data from 3rd-party systems
+    - discovery rules
+      - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
+      - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
 
 
 
@@ -824,6 +857,8 @@
 - Cisco Threat Intelligence Director (CTID)
   - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
+  - the ability to <span style="color: #bb6600;">consume</span> threat intelligence via STIX over TAXII
+  - uploads/downloads of STIX annd simple blacklists
   - mechanism
     - observables published to the elements
     - the elements monitor traffic and report observations to the FMC when the system identifies observables in traffic
@@ -927,6 +962,7 @@
     - <span style="color: #bb6600;">Type of service (ToS)</span>
     - Input logical interface
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
+  - flow not containing actual data but metadata for communication
   - NetFlow Secure Event Logging (NSEL)
     - a security logging mechanism built on NetFlow Version 9 technology
     - providing a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
@@ -944,6 +980,11 @@
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
     - format of data records
+  - export formats
+    - version 1: only for legacy systems
+    - version 5: only for main cache
+    - version 8: introduce aggregation caches
+    - version 9: introduce extensibility
 
 
   - configure NetFlow on Cisco ASA 5500 Series firewall
@@ -1061,6 +1102,21 @@
     - attackers to get hold of a valid email address if your organization uses standard format for official e-mail alias
     - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients.
     - Lightweight Directory Access Protocol (LDAP): an Internet protocol that email programs use to look up contact information from a server
+  - reputation service
+    - insufficient info for a definitive verdict $\to$ return a reputation score based on characteristics of the file
+    - score <span style="color: #bb6600;">meets or exceeds</span> threshold $\to$ ESA applies confiured action in the mail policy
+  - <span style="color: #bb6600;">Advanced Phishing Protection</span> (not on WSA)
+    - sensor-based solution
+    - another layer of defense
+    - real-time understanding of sender
+    - auto remove malacious emails
+    - detailed visibility into email attack activity
+    - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
+    - provide sender authentication and BEC detection capabilities
+    - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
+  - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
+  - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
+  - outbreak filter: used to block emails from bad mail server
 
 
 - Web Security Appliance (WSA)
@@ -1085,15 +1141,16 @@
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
   - decryption policies define the handling of HTTPS traffic within the web proxy:
-    - when to decrypt HTTPS traffic.
+    - when to decrypt HTTPS traffic
     - how to handle requests that use invalid or revoked security certificates
   - decryption policies to handle HTTPS traffic in the following ways
     - pass through encrypted traffic
     - decrypt traffic and apply the content-based access policies defined for HTTP traffic
     - drop the HTTPS connection
     - monitor the request as the web proxy continues to evaluate the request against policies
-  - The Administrator can configure how much URI text is stored in the logs using the `advancedproxyconfig` CLI command and the HTTPS subcommand. 
+  - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig`</span> CLI command and the <span style="color: #bb6600;">HTTPS</span> subcommand. 
   - proxy caching: improve web traffic performance
+  - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -1142,6 +1199,21 @@
       - Augments endpoint
     - corporate advantages: 1) assest inventory management; 2) allowed application management
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
+  - Profiling Services
+    - provide dynamic detection and classification of endpoints connected to the network
+    - use MAC addresses as the unique identifier (same as MAB)
+    - collect various attributes for each network endpoint to build an internal endpoint database
+    - match the collected attributes to prebuilt or user-defined conditions for classificattion
+    - endpoints can be authorized to the network and granted access based on their profile after classifying
+  - troubleshoot endpoint authentication failure for 802.1X: RADIUS live log
+  - prerequisites to integrate Active Directory with Cisco ISE
+    - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
+    - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
+    - at least one global catalog server operational and accessible by Cisco ISE
+  - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
+    - securely use personal devices on a corporate network
+    - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
+    - w/o supplicant profiles: 1) manually config My Device portal; 2) config BYOD rules to register
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company’s network, including mobile phones, tablets, printers, Internet radios, and other network devices
 
 
@@ -1211,6 +1283,9 @@
   - MAB request attributes w/ Cisco switches
     - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
     - using Attribute 6 to filter MAB requests at the RADIUS server
+  - a fallback option for devices that don’t support 802.1x
+  - authenticator: using connecting device’s MAC address as its username and password and send to the authentication server
+  - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
 
 
 - Cisco devices basic commands
@@ -1237,6 +1312,16 @@
     aaa accounting system default start-stop group radius
     ```
 
+  - NTP authentication
+    - NTP server - 10.10.10.1; client - 10.10.10.2
+    - client config:
+
+      ```text
+      ntp authentication-key 2 md5 securitytut
+      ntp authenticate
+      ntp trusted-key 2
+      ntp server 10.10.10.1 key 2
+      ```
 
 
 - Multi-factor Authentication (MFA)
@@ -1327,7 +1412,9 @@
     - threshold level: a percentage of the total available bandwidth of the port
     - each port w/ different storm control levels for broadcast, multicast, and unicast type of traffic
   - limit the broadcast traffic on the switch: `storm-control broadcast level [falling-threshold]` in interface config mode
-
+  - actions to bring up errr-disabled state interfaces
+    - `shutdown` and then `no shutdown` the interface
+    - enable detection and recover features
 
 
 - Catalyst integrated security features
