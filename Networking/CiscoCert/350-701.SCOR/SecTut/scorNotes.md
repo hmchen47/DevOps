@@ -50,6 +50,7 @@
   - smurf attack
     - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
     - spoof an IP address, and using ICMP, then ping IP addresses on a given network
+  - sny flood: too many connection requests
 
 
 - Social engineering
@@ -97,6 +98,12 @@
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
     - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) profile - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+  - certificate signing request (CSR)
+    - one of the first steps towards getting your own SSL Certificate
+    - generated on the same server you plan to install the certificate on
+    - Certificate Authority (CA) using contained <span style="color: #bb6600;">server information</span> (e.g. common name, organization, country) to create your certificate
+    - public key included in certificate
+    - certificate signed with the corresponding private key
 
 
 - Cryptography
@@ -153,6 +160,12 @@
     - standard including NAT-T
     - 4 msgs for both phase 1 & 2
     - using EAP for authenticating remote access clients
+  - Cryptographic algorithms w/ IPsec include
+    - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity.
+    - TripleDES-CBC for confidentiality
+    - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality.
+    - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently.
+
 
 
 - SSL, TLS & DTLS
@@ -272,6 +285,16 @@
       />
     </figure>
 
+- DevSecOps (development, security, and operations)
+  - a concept describing how to move security activities to the start of the development life cycle
+  - built-in security practices in the continuous integration/continuous deployment (CI/CD) pipeline
+  - minimize vulnerabilities and bringing security closer to IT and business objectives
+  - attribute: <span style="color: #bb6600;">development security</span>
+  - key things make a real DevSecOps environment:
+    - security testing is done by the development team
+    - issues found during that testing is managed by the development team
+    - fixing those issues stays within the development team
+
 
 - Cisco Intercloud Fabric solution
   - control shadow IT
@@ -317,6 +340,18 @@
       - traffic interface: 2 used to connect inside hosts to the public network
 
 
+- Cisco Firepower NGFW Virtual (NGFWv)
+  - the virtualized version of Cisco’s Firepower next generation firewall
+  - available in the AWS and Azure marketplaces
+  - deployed in routed and passive modes
+  - passive mode design requires ERSPAN,(Encapsulated Remote Switched Port Analyzer)
+    - inspect packets like an Intrusion Detection System (IDS) appliance, only availabe in AWS
+    - no action can be taken on the packet
+  - routed mode 
+    - act as a next hop for workloads
+    - inspect packets and also take action on the packet based on rule and policy definitions
+
+
 - ASAv on AWS
   - same software as physical Cisco ASAs
   - able to be deployed in the public AWS cloud
@@ -328,10 +363,17 @@
     - Maximum of 4 vCPUs per instance
     - <span style="color: #bb6600;">User deployment of L3 networks</span>
     - <span style="color: #bb6600;">Routed mode (default)</span>
+  - scenario: mirror port and NetFlow used in local devices
+    - no mirror port and NetFlow data in cloud environment
+    - virtual private cloud (VPC) in AWS offers VPC Flow log
+  - VPC Flow Logs
+    - facilitate logging of all the IP traffic to, from, and across your network
+    - stored as records in special Amazon CloudWatch log groups
+    - provide the same kind of information as NetFlow dat
 
 
 - Cloudlock
-  - a cloud-based Cloud Access Security Broker (CASB) and cloud cybersecurity platform
+  - a cloud-based <span style="color: #bb6600;">Cloud Access Security Broker (CASB)</span> and cloud cybersecurity platform
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
   - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
@@ -359,6 +401,19 @@
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
   - enabling a zero-trust model using <span style="color: #bb6600;">segmentation</span>
   - identifying security incidents faster, containing lateral movement, and reducing your attack surface
+  - workflow
+    - investigate the behavior of the various processes and applications in the workload
+    - measure behavior against known bad behavior sequences
+    - feedback into the basic building blocks
+  - suspicious patterns in the current release
+    - shell code execution: look for the patterns used by shell code
+    - <span style="color: #bb6600;">privilege escalation</span>: watche for privilege changes from a lower to a higher privilege in the process lineage tree
+    - side channel attacks: watche for cache-timing attacks and page table fault bursts
+    - raw socket creation: creation of a raw socket by a nonstandard process (for example, ping)
+    - <span style="color: #bb6600;">user login suspicious</span>: watche user login failures and user login methods
+    - <span style="color: #bb6600;">interesting file access</span>: armed to look at sensitive files
+    - <span style="color: #bb6600;">file access from a different user</span>: learn the normal behavior of which file is accessed by which user
+    - unseen command: learn the behavior and set of commands as well as the lineage of each command over time
 
 
 - pxGrid
@@ -486,14 +541,31 @@
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
   - blocking URLs: URL Reputation from 6 to 10
+  - Block Page and Block Page Bypass features
+    - present an SSL certificate to browsers that make connections to HTTPS sites
+    - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
+    - CA not trusted by browser $\to$ an error page may be displayed
+    - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
 
 
-- Procedure to enable AppDynamics monitoring AWS EC2 instance
-  - 1\. configure a Machine Agent or SIM Agent
-  - 2\. install monitoring extension for AWS EC2
-  - 3\. update `config.yaml`
-  - 4\. restart the Machine Agent
+- AppDynamics
+  - Application Performance Management (APM) solution
+  - help your organization make critical, strategic decisions
+  - use artificial intelligence (AI) to 
+    - solve application problems 
+    - prevent them from occurring in the future
+    - enhance the visibility into your IT architecture
+  - Procedure to enable AppDynamics monitoring AWS EC2 instance
+    - 1\. configure a Machine Agent or SIM Agent
+    - 2\. install monitoring extension for AWS EC2
+    - 3\. update `config.yaml`
+    - 4\. restart the Machine Agent
 
+
+- Cisco Advanced Phishing Protection
+  - formerly known as Cisco Advanced Phishing Protection (APP)
+  - provide sender authentication and BEC detection capabilities
+  - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
 
 
 
@@ -569,6 +641,7 @@
   - perform forensic analysis, behavioral profiling, access control
   - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
   - <span style="color: #bb6600;">superior threat prevention and mitigation</span> to known and unknown threats
+  - provide <span style="color: #bb6600;">intrustion prevention capabilities natively</span>
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
     - Firepower Threat Defense Devices
@@ -591,8 +664,17 @@
     - 4\. specify a location to apply the policy: `service-policy global_policy global` for global config
 
 
-- Firepower Management Center (FMC)
-  - an integrated suite of network security and traffic management products, deployed either on purpose-built platforms or as a software solution
+- Cisco Secure Firewall Management Center
+  - formerly Firepower Management Center (FMC)
+  - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
+  - an integrated suite of network security and traffic management products
+  - deployed either on purpose-built platforms or as a software solution
+  - centralized event and policy manager for:
+    - Cisco Secure Firewall with the Firewall Threat Defense (FTD) OS
+    - Cisco ASA with FirePOWER Services (not traditional ASA)
+    - Cisco Secure IPS (Firepower Next-Gen IPS / NGIPS)
+    - Cisco FirePOWER Threat Defense for ISR
+    - Cisco Malware Defense (AMP)
   - typical deployment - multiple traffic-sensing managed devices installed on network segments monitor traffic for analysis and report to a manager:
     - Firepower Management Center
     - Firepower Device Manager
@@ -607,7 +689,7 @@
   - identity policy
     - realm: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
-  - impact flag: evaluating the impact of an intrusion on your network by <span style="trxt-decoration: underline;">correlating</span> intrusion data, network discovery data, and vulnerability information
+  - impact flag: evaluating the impact of an intrusion on your network by <span style="text-decoration: underline;">correlating</span> intrusion data, network discovery data, and vulnerability information
   - health policy
     - using the health monitor to create a health policy (collection of tests)
     - configured health test criteria for several health modules (tests)
@@ -635,6 +717,9 @@
       - Port Sweep: one-to-many portsweep; 1/N hosts $\to$ N target + 1 port
       - Decoy Portscan: one-to-one portscan; mixes spoofed and real source IP addresses
       - Distributed Portscan: many-to-one portscan; N host $\to$ 1 target + N ports
+  - access control rules
+    - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
+    - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
   - URL filtering
     - under access control rule of <span style="color: #bb6600;">access control policy</span>
     - a feature to control the websites that users on your network can access:
@@ -644,7 +729,6 @@
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
     - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
-
 
 
 
@@ -725,8 +809,6 @@
     - control
 
 
-
-
 - ASA FirePOWER module
   - next-generation firewall services, including Next-Generation IPS (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
   - single or multiple context mode, and in routed or transparent mode
@@ -744,6 +826,16 @@
       - store certificate trustpoints for the server and the client
     - Mobility Proxy: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
     - Presence Federation Proxy: secure connectivity btw Cisco Unified Presence servers and Cisco/Microsoft Presence servers
+
+
+- Secure Manager
+  - enable consistent policy enforcement and rapid troubleshooting of security events
+  - offer summarized reports across the security deployment
+  - scale efficiently and manage a wide range of Cisco security devices with improved visibility
+  - provide a comprehensive management solution for
+    - Cisco <span style="color: #bb6600;">ASA</span> 5500 Series Adaptive Security Appliances
+    - Cisco intrusion prevention systems 4200 and 4500 Series Sensors
+    - Cisco AnyConnect Secure Mobility Client
 
 
 - ASA
@@ -767,6 +859,9 @@
 
 - NetFlow
   - a unidirectional stream of packets between a given source and destination
+  - provide statistics on packets flowing through the router
+  - the standard for acquiring IP operational data from IP networks
+  - monitor from Layer 2 to 4
   - a flow identified as the combination of the following key fields:
     - Source IP address
     - Destination IP address
@@ -777,15 +872,35 @@
     - Input logical interface
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - NetFlow Secure Event Logging (NSEL)
+    - a security logging mechanism built on NetFlow Version 9 technology
     - providing a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
     - flow-export actions: `flow-export event-type`
     - significant events: flow-create, flow-teardown, and flow-denied (excluding those flows denied by EtherType ACLs)
+    - major functions
+      - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
+      - trigger flow-update events and generate appropriate NSEL data records
+      - define and exports templates that describe the progression of a flow
+      - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
+      - send template information periodically to NSEL collectors
+      - filter NSEL events based on the traffic and event type, then sends records to different collectors
+      - <span style="color: #bb6600;">delays the export of flow-create events</span>
+
+
   - configure NetFlow on Cisco ASA 5500 Series firewall
     - 1\. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     - 2\. Defines the **class map** that identifies traffic for which NSEL events need to be exported
     - 3\. Defines the **policy map** to apply flow-export actions to the defined classes
     - 4\. Adds or edits the service policy 
-
+  - Flexible Netflow
+    - the next-generation in flow technology
+    - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
+    - key advantages
+      - flexibility, scalability
+      - monitor a wider range of packet information
+      - enhanced network anomaly and security 
+      - <span style="color: #bb6600;">user configurable</span> flow information
+      - convergence of multiple accounting technologies into <span style="color: #bb6600;">one accounting mechanism</span>
+      - integral part of Cisco IOS Software allowing all routers or switches in the network to become a source of telemetry and a monitoring device
 
 
 - Telemetry
@@ -873,6 +988,19 @@
   - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
   - ESA + AMP to upload file for analysis but network congestion: file upload abandoned
   - dynamic spam protection: ESA w/ real-time updates from Talso
+  - Mail Flow Policy
+    - access rule: `ACCEPT`, `REJECT`, `RELAY`, `CONTINUE`, and `TCPREFUSE`
+    - `TCPREFUSE`
+      - not allowed to connect to your ESA
+      - appear as if your server is unavailable for sending server
+      - most MTAs (Mail Transfer Agents) retry frequently $\to$ more traffic
+      - `REJECT` will receive a 554 SMTP error (hard bounce)
+    - dropping malicious emails occurs after receiving and examining the mail to make the decision
+  - Directory Harvest Attack (DHA)
+    - a technique used by spammers to find valid/existent email addresses at a domain either by using Brute force or by guessing valid e-mail addresses at a domain using different permutations of common username
+    - attackers to get hold of a valid email address if your organization uses standard format for official e-mail alias
+    - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients.
+    - Lightweight Directory Access Protocol (LDAP): an Internet protocol that email programs use to look up contact information from a server
 
 
 - Web Security Appliance (WSA)
@@ -953,7 +1081,8 @@
       - Handles device remediation
       - Augments endpoint
     - corporate advantages: 1) assest inventory management; 2) allowed application management
-  - ISE supplements Stealthwatch NetFlowbased behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
+  - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
+  - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company’s network, including mobile phones, tablets, printers, Internet radios, and other network devices
 
 
 - RADIUS Change of Authorization (CoA)
@@ -970,6 +1099,7 @@
     - an exception action configured
     - <span style="color: #bb6600;">an endpoint profiled for the 1st time</span>
     - <span style="color: #bb6600;">endpoint deleted</span>
+  - CoA Messages port number: 1) Cisco - <span style="color: #bb6600;">UDP:1700</span>; 2) RFC - UDP:3799
 
 
 - 802.1X port-based authentication
@@ -1109,13 +1239,23 @@
 
 - DHCP spoofing
   - an attacker attempts to respond to DHCP requests and trying to list itself (spoof) as the default gateway or DNS server
-  - DHCP snooping: a security feature that acts like a firewall between untrusted hosts and trusted DHCP servers
+  - a type of attack in that the attacker listens for DHCP Requests from clients and answers them with fake DHCP Response before the authorized DHCP Response comes to the clients
+  - fake DHCP Response often gives its IP address as the client default gateway
+  - all the traffic sent from the client will go through the attacker computer, the attacker becomes a “man-in-the-middle”.
+  - DHCP snooping:
+    - a security feature that acts like a firewall between untrusted hosts and trusted DHCP servers
+    - determine which switch ports can respond to DHCP requests
+    - ports identified as trusted and untrusted
+    - only authorized DHCP server trusted and allowed to send all types of DHCP messages
+    - all other ports are untrusted (default) and send only DHCP requests
+    - shutdown untrusted ports if sending DHCP response
+    - enable trust port: `ip dhco snooping trust`
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
     - after enabling DAI, all ports become untrusted ports
     - inactive on all VLANs
-    - DHCP snooping enabled on a per-VLAN basis, e.g., `ip dhcp snooping vlan 2`
+    - DHCP snooping enabled on a <span style="color: #bb6600;">per-VLAN basis</span>, e.g., `ip dhcp snooping vlan 2`
 
 
 - Broadcast storm
@@ -1124,6 +1264,8 @@
     - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
     - threshold level: a percentage of the total available bandwidth of the port
     - each port w/ different storm control levels for broadcast, multicast, and unicast type of traffic
+  - limit the broadcast traffic on the switch: `storm-control broadcast level [falling-threshold]` in interface config mode
+
 
 
 - Catalyst integrated security features
@@ -1140,11 +1282,12 @@
   - ICMP exfiltration
     - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
   - DNS exfiltration
-    - DNS tunnelling
+    - a.k.a. DNS tunnelling
     - hide and encode data inside DNS requests and queries
     - encode the data of other programs or protocols in DNS queries and responses
     - often including data payloads added to an attacked DNS server and used to control a remote server and applications
     - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
+    - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
   - characteristics of messenger protocol for data exflitration
     - encrypted traffic which prevents visibility on firewalls and IPS systems
     - messenger apps unable to be segmented w/ standard network controls
