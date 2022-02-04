@@ -778,7 +778,7 @@
 
   How is data sent out to the attacker during a DNS tunneling attack?
 
-  A. as part of the UDP’53 packet payload<br>
+  A. as part of the UDP/53 packet payload<br>
   B. as part of the domain name<br>
   C. as part of the TCP/53 packet header<br>
   D. as part of the DNS response packet<br>
@@ -950,7 +950,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 69</span>
 
-  An administrator is adding a new switch onto the network and has configured AAA for network access control. When testing the configuration, the RADIUS authenticates to Cisco ISE but is being rejected. Why is the ip radius source-interface command needed for this configuration?
+  An administrator is adding a new switch onto the network and has configured AAA for network access control. When testing the configuration, the RADIUS authenticates to Cisco ISE but is being rejected. Why is the `ip radius source-interface` command needed for this configuration?
 
   A. Only requests that originate from a configured NAS IP are accepted by a RADIUS server<br>
   B. The RADIUS authentication key is transmitted only from the defined RADIUS source interface<br>

@@ -1076,12 +1076,13 @@
 
   In this question the username of “ersad” is just an example and it is in the comment section (which is started by a #) so it has no effect on the script. In fact the username will be taken from the second argument of the command. For example, suppose the file name of the above script is “Internal_user.py” then if we call the script with the command:
 
-  python Internal_user.py 192.168.1.10 digitaltut digitaltutPassWord!
+  `python Internal_user.py 192.168.1.10 digitaltut digitaltutPassWord!`
+
   Then the username would be “digitaltut”.
 
   -> Answer B is not correct.
 
-  From the line “conn = http.client.HTTPSConnection(“{}:9060″.format(host), context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2))”, we specify we are using TLS version 1.2 as the channel encryption protocol (not TLSv1) -> Answer C is not correct.
+  From the line “`conn = http.client.HTTPSConnection(“{}:9060″.format(host), context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2))`”, we specify we are using TLS version 1.2 as the channel encryption protocol (not TLSv1) -> Answer C is not correct.
 
   Also from the line above, we are using HTTPS to make a request. It is different from a SSH connection so answer D is not correct.
 
@@ -1402,6 +1403,12 @@
 
   Answer: A
 
+  Explanation
+
+  The Cisco SensorBase Network is a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic. SensorBase provides Cisco with an assessment of reliability for known Internet domains. The Web Security appliance uses the SensorBase data feeds to improve the accuracy of Web Reputation Scores.
+
+  Reference: [Introduction to the Product and the Release - User Guide for AsyncOS for Cisco Web Security Appliances (General Deployment)](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-5/user_guide/b_WSA_UserGuide_11_5_1/b_WSA_UserGuide_11_5_1_chapter_00.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 65</span>
 
@@ -1417,8 +1424,6 @@
 
 
 - <span style="color: #008888; font-weight: bold;">Question 66</span>
-
-  Refer to the exhibit.
 
   Refer to the exhibit.
 
