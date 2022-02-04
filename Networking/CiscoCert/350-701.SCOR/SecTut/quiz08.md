@@ -473,7 +473,7 @@
   A. RSA is an asymmetric key establishment algorithm intended to output symmetric keys.<br>
   B. RSA is a symmetric key establishment algorithm intended to output asymmetric keys.<br>
   C. DH is a symmetric key establishment algorithm intended to output asymmetric keys.<br>
-  D. DH is on asymmetric key establishment algorithm intended to output symmetric keys.<br>
+  D. DH is an asymmetric key establishment algorithm intended to output symmetric keys.<br>
 
   Answer: <br><br> 
   
@@ -542,8 +542,8 @@
 
   An administrator configures new authorization policies within Cisco ISE and has difficulty profiling the devices. Attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not. What should the administrator do to address this issue?
 
-  A. Configure the ip dhcp snooping trust command on the DHCP interfaces to get the information to Cisco ISE<br>
-  B. Configure the authentication port-control auto feature within Cisco ISE to identify the devices that are trying to connect<br>
+  A. Configure the `ip dhcp snooping trust` command on the DHCP interfaces to get the information to Cisco ISE<br>
+  B. Configure the `authentication port-control auto` feature within Cisco ISE to identify the devices that are trying to connect<br>
   C. Configure a service template within the switch to standardize the port configurations so that the correct information is sent to Cisco ISE<br>
   D. Configure the device sensor feature within the switch to send the appropriate protocol information<br>
 

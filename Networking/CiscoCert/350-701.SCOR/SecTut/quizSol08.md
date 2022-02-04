@@ -495,19 +495,19 @@
 
   Posture-policy requirements can be set to mandatory, optional, or audit types in posture policies. If requirements are optional and clients fail these requirements, then the clients have an option to continue during posture evaluation of endpoints.
 
-  Mandatory Requirements
+  **Mandatory Requirements**
 
   During policy evaluation, the agent provides remediation options to clients who fail to meet the mandatory requirements defined in the posture policy. End users must remediate to meet the requirements within the time specified in the remediation timer settings.
 
   For example, you have specified a mandatory requirement with a user-defined condition to check the existence of C:\temp\text.file in the absolute path. If the file does not exist, the mandatory requirement fails and the user will be moved to Non-Compliant state.
 
-  Optional Requirements
+  **Optional Requirements**
 
   During policy evaluation, the agent provides an option to clients to continue, when they fail to meet the optional requirements specified in the posture policy. End users are allowed to skip the specified optional requirements.
 
   For example, you have specified an optional requirement with a user-defined condition to check for an application running on the client machine, such as Calc.exe. Although, the client fails to meet the condition, the agent prompts an option to continue further so that the optional requirement is skipped and the end user is moved to Compliant state.
 
-  Audit Requirements
+  **Audit Requirements**
 
   Audit requirements are specified for internal purposes and the agent does not prompt any message or input from end users, regardless of the pass or fail status during policy evaluation.
 
@@ -825,7 +825,7 @@
   A. RSA is an asymmetric key establishment algorithm intended to output symmetric keys.<br>
   B. RSA is a symmetric key establishment algorithm intended to output asymmetric keys.<br>
   C. DH is a symmetric key establishment algorithm intended to output asymmetric keys.<br>
-  D. DH is on asymmetric key establishment algorithm intended to output symmetric keys.<br>
+  D. DH is an asymmetric key establishment algorithm intended to output symmetric keys.<br>
 
   Answer: D
 
@@ -1030,10 +1030,10 @@
   </figure>  
 
   Answer:
-  - cloud data protection assessment: understand the security posture of the data or activity taking place in public cloud deployments (4)
-  - cloud security strategy workshop: develop a cloud security strategy and roadmap aligned to business priorities (2)
-  - cloud security architecture assessment: identify strengths and areas for improvement in the current security architecture during onboarding (1)
-  - user entity behavior assessment: detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application (3)
+  - cloud data protection assessment (A): understand the security posture of the data or activity taking place in public cloud deployments (4)
+  - cloud security strategy workshop (B): develop a cloud security strategy and roadmap aligned to business priorities (2)
+  - cloud security architecture assessment (C): identify strengths and areas for improvement in the current security architecture during onboarding (1)
+  - user entity behavior assessment (D): detect potential anomalies in user behavior that suggest malicious behavior in a Software-as-a-Service application (3)
 
   Explanation
 
