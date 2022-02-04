@@ -71,11 +71,14 @@
   - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
-- DoS and DDoS
-  - an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
+- DoS and DDo
   - categories of attacks: <span style="color: #bb6600;">protocol & volume-based</span>
   - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
-  - DDoS: shutting down a network or service, causing it to be inaccessible to its intended users
+  - DoS: a computer is used to flood a server with TCP and UDP packets
+  - DDoS
+    - multiple systems target a single system with a DoS attack
+    - shutting down a network or service, causing it to be inaccessible to its intended users
+    - an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
   - ping of death behavior: 1) sending malformed or oversized packets w/ ping command; 2) packets fragmented into groups of 8 octets
   - smurf attack
     - a DDoS attack
@@ -126,6 +129,22 @@
   - use <span style="color: #bb6600;">microsegmentation</span> to to contain attacks
 
 
+- Data exfiltration
+  - ICMP exfiltration
+    - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
+  - DNS exfiltration
+    - a.k.a. DNS tunnelling
+    - hide and encode data inside DNS requests and queries
+    - encode the data of other programs or protocols in DNS queries and responses
+    - often including data payloads added to an attacked DNS server and used to control a remote server and applications
+    - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
+    - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
+    - DNS abuse exchanges data between two computers even when there is no direct connection
+  - characteristics of messenger protocol for data exflitration
+    - encrypted traffic which prevents visibility on firewalls and IPS systems
+    - messenger apps unable to be segmented w/ standard network controls
+
+
 ## Integrity and Privacy
 
 - Digital Certificate & PKI
@@ -133,6 +152,7 @@
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
     - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) profile - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+  - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
   - certificate signing request (CSR)
     - one of the first steps towards getting your own SSL Certificate
     - generated on the same server you plan to install the certificate on
@@ -178,7 +198,7 @@
     - public key cryptography
     - using keypairs (a private key and a public key)
     - more complex and time man in
-    - <span style="color: #bb6600;">Diffie-Hellman</span>
+    - <span style="color: #bb6600;">Diffie-Hellman</span>: an asymmetric algorithm used to establish a shared secret for a <span style="color: #bb6600;">symmetric key</span> algorithm
     - RSA
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
@@ -274,6 +294,10 @@
   - forming IPsec tunnel over dynamically/statically addresses spokes
   - tunneled VPN: IKEv1 (ISAKMP) & IKEv2
   - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
+  - not support multiple SAs
+  - AnyConnect superior capabilities:
+    - customization of access policies <span style="color: #bb6600;">based on user identity</span>
+    - enable VPN access for individual users from their machines
 
 
 - FlexVPN
@@ -291,7 +315,8 @@
     - crypto: DMVPN - optional; FlexVPN - strongly tied into IPSec
     - key management protocol: DMVPN - IKEv1/IKEv2; FlexVPN – IKEv2
     - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
-    - NHRP: DMVPN - 3 phases; FlexVPN - only one standard wat
+    - NHRP: DMVPN - 3 phases; FlexVPN - only one standard way
+  - support <span style="color: #bb6600;">multiple SAs</span>
 
 
 - GETVPN (Group Encrypted Transport VPN)
@@ -301,6 +326,7 @@
   - scalable for any-to-any connectivity and encryption
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
+  - <span style="color: #bb6600;">reduce latency and provide encryption</span> over MPLS without the use of a central hub
 
 
 ## Software Defined Network (SDN)
@@ -318,13 +344,22 @@
     - used for the orchestration and automation of the network components to align with the needs of different applications via SDN network programmability
     - basically the link between the applications and the SDN controller
     - applications can tell the network devices (physical or virtual) what type of resources they need
-    - SDN solution can provide the necessary resources to the application.
+    - SDN solution can provide the necessary resources to the application
+    - <span style="color: #bb6600;">provision</span> SSIDs, QoS policies, and <span style="color: #bb6600;">update</span> software versions on switches
   - southbound interface (SBI)
     - SDN controller communicating w/ network devices via API
     - usually OpenFlow, NETCONF and RESTCONF used to communicate w/ network devices
     - enable the controller to dynamically make changes based on real-time demands and scalability needs
   - eastbound interface (EBI)
-  - wetbound interface (WBI)
+  - westbound interface (WBI)
+    - integration capabilities
+    - meet the need to scale and accelerate operations in modern data centers, IT operators require intelligent, end-to-end work flows built with open APIs
+    - provide mechanisms for <span style="color: #bb6600;">integrating</span> Cisco DNA Assurance workflows and data with third-party IT Service Management (ITSM) solutions
+    - power end-to-end IT processes across the value chain by integrating various domains such as ITSM, IPAM, and reporting
+    - leverage the REST-based Integration Adapter APIs
+    - bi-directional interfaces allow the exchange of contextual information between Cisco DNA Center and the external, third-party IT systems
+    - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
+    - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
   - security application notify the controller about a specific security threats: northbound and southbound
 
 
@@ -352,6 +387,16 @@
   - AMP API to get computer info
     - URL: `get https://api.amp.cisco.com/v1/computers`
     - list of computers, policies, and connector statuses
+
+
+- Workload Optimization Manager
+  - provide specific real-time actions that ensure workloads get the resources they need when they need them
+  - enable continuous <span style="color: #bb6600;">placement, resizing, and capacity decisions</span>
+  - automated, driving continuous health in the environment
+  - software’s decisions according to level of comfort:
+    - recommend (view only)
+    - manual (select and apply)
+    - automated (executed in real time by software)
 
 
 ## Cloud Security Concepts and Solutions
@@ -394,6 +439,13 @@
     - cloud-based solution: provider
 
 
+- Cloud security assessment
+  - cloud <span style="text-decoration: underline;">data protection</span> assessment: understand the <span style="color: #bb6600;">security posture of the data</span> or activity taking place in public cloud deployments
+  - cloud security <span style="text-decoration: underline;">strategy</span> workshop: develop a <span style="color: #bb6600;">cloud security strategy and roadmap</span> aligned to business priorities
+  - cloud security <span style="text-decoration: underline;">architecture</span> assessment: identify strengths and areas for improvement in the <span style="color: #bb6600;">current security architecture</span> during onboarding
+  - user entity <span style="text-decoration: underline;">behavior</span> assessment: detect potential anomalies in <span style="color: #bb6600;">user behavior</span> that suggest malicious behavior in a Software-as-a-Service application
+
+
 - DevSecOps (development, security, and operations)
   - a concept describing how to move security activities to the start of the development life cycle
   - built-in security practices in the continuous integration/continuous deployment (CI/CD) pipeline
@@ -403,6 +455,7 @@
     - security testing is done by the development team
     - issues found during that testing is managed by the development team
     - fixing those issues stays within the development team
+  - <span style="color: #bb6600;">CI/CD pipeline</span>: process gives a weekly or daily update instead of monthly or quarterly in the applications
 
 
 - Cisco Intercloud Fabric solution
@@ -646,6 +699,9 @@
     - Spero - machine learning
     - Ethos - malware family
     - ClamAV - custom detections
+  - <span style="color: #bb6600;">prevalence</span>: a list of all files that have been executed
+  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+  - custom detection policy w/ not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
 
 
 - Umbrella
@@ -709,6 +765,12 @@
     - protect employees even when they are off the VPN
     - ensure that assets are secure from malicious links on and off the corporate network
   - wildcards and destination list: asterisk (`*`) not supported for wildcard
+  - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
+    - lightweight virtual machines
+    - act as <span style="color: #bb6600;">conditional DNS forwarders<span style="color: #bb6600;">
+      - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
+      - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
+      - local DNS queries to your existing local DNS servers and forwarders
 
 
 - AppDynamics
@@ -798,6 +860,7 @@
     - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
     - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
     - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
+  - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
 
 
 - Cognitive Intelligence
@@ -926,7 +989,8 @@
     - detect traffic anomalies and provide data to intrusion rules
     - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
     - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
-
+  - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
+  - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed  devices
 
 
 - Firepower Next-Generation IPS (NGIPS) threat appliance
@@ -1000,6 +1064,7 @@
   - including voice and video, email, file sharing, gaming, peer-to-peer (P2P), and cloud-based applications
   - <span style="color: #bb6600;">combine several Cisco IOS/IOS XE components</span>
   - communicating with external tools
+  - supports <span style="color: #bb6600;">NetFlow</span> to export application usage and performance statistics
   - integrated into Prime Infrastructure and StealthWatch
   - functions
     - application recognition
@@ -1067,6 +1132,7 @@
   - the standard for acquiring IP operational data from IP networks
   - monitor from Layer 2 to 4
   - track <span style="color: #bb6600;">multicast, MPLS, or bridged traffic</span>
+  - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - a flow identified as the combination of the following key fields:
     - Source IP address
     - Destination IP address
@@ -1075,6 +1141,10 @@
     - <span style="text-decoration: underline;">Layer 3 protocol type</span>
     - <span style="color: #bb6600;">Type of service (ToS)</span>
     - Input logical interface
+  - characteristics (vs telemetry)
+    - pull model: client requests data from the network
+    - not scale w/ near real-time data
+    - notified only when some data changes, like interfaces status, protocol neighbors change etc
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but metadata for communication
   - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
@@ -1126,14 +1196,11 @@
   - information and/or data
   - provide awareness and visibility into what is occurring on the network at any given time
   - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
+  - use a push method which makes it faster than SNMP
   - types of data in telemetry info
     - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
     - <span style="color: #bb6600;">interpacket variation</span>: any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
     - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
-  - traditional method
-    - pull model: client requests data from the network
-    - not scale w/ near real-time data
-    - notified only when some data changes, like interfaces status, protocol neighbors change etc
   - <span style="color: #bb6600;">Model-Driven Telemetry</span>
     - a new approach for network monitoring
     - data <span style="color: #bb6600;">streamed</span> from network devices continuously using a push model
@@ -1253,11 +1320,11 @@
   - main purpose: protect users from accessing malicious websites and being infected by malware
   - combined integrated solution of strong defense and web protection, visibility, and controling solutions
   - WSA HTTP proxy obtains the client's request can be defined as one of two ways: <span style="color: #bb6600;">Transparently or Explicitly</span>.
-    - Transparent
+    - Transparently
       - the existence of the proxy unknown
       - network infrastructure devices (layer 3 switches) redirect web traffic to the proxy
       - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a Layer 3 switch is used to redirect based on destination port 80
-      - WCCP: a WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
+      - <span style="color: #bb6600;">WCCP</span>: a WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
       - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
     - Explicitly
       - client knows existence of the proxy $\to$ sending all web traffic to the proxy
@@ -1323,10 +1390,10 @@
     - <span style="color: #bb6600;">device compliance</span>
       - validate if anti-virus software installed
       - verification of the latest OS patches
-  - posture requirements
+  - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
-    - types
+    - policy requirement types
       - mandatory
         - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
         - move to Non-Compliant state if failed
@@ -1367,6 +1434,15 @@
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
     - w/o supplicant profiles: 1) manually config My Device portal; 2) config BYOD rules to register
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
+  - <span style="color: #bb6600;">device sensor</span> of authorization policies
+    - a feature of access devices
+    - allow to collect information about connected endpoints
+    - information collected w/
+      - Cisco Discovery Protocol (CDP)
+      - Link Layer Discovery Protocol (LLDP)
+      - Dynamic Host Configuration Protocol (DHCP) 
+
+
 
 - TrustSec
   - software-defined segmentation that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
@@ -1465,6 +1541,7 @@
   - enable AAA service: `aaa new-model` in global config mode
   - allow user to enter global configuration mode: `privilege exec level 5 configure terminal`
   - combine authentication adn authorization for RADIUS: `radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`
+  - enable authentication on a port: `authentication port-control auto`
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
 
     ```cfg
@@ -1570,7 +1647,7 @@
     - only authorized DHCP server trusted and allowed to send all types of DHCP messages
     - all other ports are untrusted (default) and send only DHCP requests
     - shutdown untrusted ports if sending DHCP response
-    - enable trust port: `ip dhco snooping trust`
+    - enable trust port: `ip dhcp snooping trust`
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
@@ -1599,23 +1676,6 @@
   - Dynamic ARP Inspection (DAI)
   - IP source guard
 
-
-
-## Miscellaneous
-
-- Data exfiltration
-  - ICMP exfiltration
-    - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
-  - DNS exfiltration
-    - a.k.a. DNS tunnelling
-    - hide and encode data inside DNS requests and queries
-    - encode the data of other programs or protocols in DNS queries and responses
-    - often including data payloads added to an attacked DNS server and used to control a remote server and applications
-    - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
-    - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
-  - characteristics of messenger protocol for data exflitration
-    - encrypted traffic which prevents visibility on firewalls and IPS systems
-    - messenger apps unable to be segmented w/ standard network controls
 
 
 
