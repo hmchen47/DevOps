@@ -133,16 +133,24 @@
   - ICMP exfiltration
     - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
   - DNS exfiltration
-    - a.k.a. DNS tunnelling
+    - a.k.a. DNS tunneling
     - hide and encode data inside DNS requests and queries
     - encode the data of other programs or protocols in DNS queries and responses
     - often including data payloads added to an attacked DNS server and used to control a remote server and applications
     - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
     - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
     - DNS abuse exchanges data between two computers even when there is no direct connection
+    - daat sent out as part of the <span style="color: #bb6600;">domain name</span>
   - characteristics of messenger protocol for data exflitration
     - encrypted traffic which prevents visibility on firewalls and IPS systems
     - messenger apps unable to be segmented w/ standard network controls
+
+
+- Threat intelligence
+  - the knowledge about an existing or emerging threat to assets including networks and systems
+  - including context, mechanisms, indicators of compromise (IoCs), implications, and actionable advice
+  - referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks
+    - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
 
 
 ## Integrity and Privacy
@@ -231,13 +239,13 @@
   - IKEv1
     - Phase 1: ISAKMP
       - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
-      - preshared authentication key
+      - <span style="color: #bb6600;">preshared authentication key</span>
         - global configuration mode
         - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
-        - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
-        - `keystring`: preshared key
-        - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
-        - `hostname`: FQDN of the peer
+          - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
+          - `keystring`: preshared key
+          - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
+          - `hostname`: FQDN of the peer
         - same command on two end devices
         - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
         - key exchange
@@ -255,6 +263,12 @@
     - standard including NAT-T
     - 4 msgs for both phase 1 & 2
     - using EAP for authenticating remote access clients
+    - name mangler
+      - offer the flexibility to perform AAA-based policy lookup for the peer based on arbitrary portions of the peer IKE identities of various types
+      - referenced from the IKEv2 profile specifically from the aaa authorization and keyring aaa commands that use AAA authorization for policy lookup
+      - OU of the IKEv2 peer certificate used as the identity when matching an IKEv2 authorization policy
+        - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
+        - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
   - Cryptographic algorithms w/ IPsec include
     - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity.
     - TripleDES-CBC for confidentiality
@@ -399,6 +413,27 @@
     - automated (executed in real time by software)
 
 
+- Python script
+  - code snippet
+
+    ```python
+    user = sys.argv[2]      # "ersad"
+    password = sys.argv[3]  # "password1"
+
+    creds = str.encoder(';'.join(user, password))
+    encodedAuth = bytes.decode(base64.b64encode(creds))
+
+    conn= http.client.HTTPSConnection(
+      "{}:9060".format(host), 
+      context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    )
+    ```
+
+    - connection w/ TLS1.2 SSL protocol
+    - username and password from command line inputs
+
+
+
 ## Cloud Security Concepts and Solutions
 
 - Cisco Cloud Security Portfolio
@@ -437,6 +472,7 @@
   - responsibility of the installation and maintenance of a product:
     - on-primese solution: customer
     - cloud-based solution: provider
+  - customers no responsibility of OS patch management: PaaS
 
 
 - Cloud security assessment
@@ -543,6 +579,7 @@
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
   - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
+  - <span style="color: #bb6600;">integrate with other cloud solutions via API</span> and monitors and creates incidents based on events from the cloud solution
   - core functionality
     - <span style="color: #bb6600;">Data Loss Prevention (DLP)</span>: protect sensitive data throughout the full environment
     - User and Entity Behavior Analytics (UEBA)
@@ -556,6 +593,13 @@
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
 
 
+- Cloud Web Security (CWS)
+  - previously known as Cisco Scan Safe
+  - enforce secure communication to and from the Internet
+  - use the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco
+  - eliminate the <span style="color: #bb6600;">need to backhaul traffic</span> through headquarters for remote workers
+
+
 - Talos
   - <span style="color: #bb6600;">IP and Domain Data Center</span>
     - tracking the reputation of IP addresses for email and web traffic
@@ -567,6 +611,17 @@
   - Talos Threat Source
     - a newsletter
     - a regular intelligence update from Cisco Talos
+  - support a <span style="color: #bb6600;">two-way flow of telemetry and protection</span> across market-leading security solutions
+    - Next-Generation Intrusion Prevention System (NGIPS)
+    - Next-Generation Firewall (NGFW)
+    - Advanced Malware Protection (AMP)
+    - Email Security Appliance (ESA)
+    - Cloud Email Security (CES)
+    - Cloud Web Security (CWS)
+    - Web Security Appliance (WSA)
+    - Umbrella, and ThreatGrid
+    - numerous open-source and commercial threat protection systems
+  - utilize the most current intelligence data for URL filtering, reputations, and vulnerability information that can be integrated with the Cisco FTD and Cisco WSA: integrations with <span style="color: #bb6600;">Talos Intelligence</span> to take advantage of the threat intelligence that it provides
 
 
 - Tetration
@@ -589,6 +644,14 @@
     - <span style="color: #bb6600;">interesting file access</span>: armed to look at sensitive files
     - <span style="color: #bb6600;">file access from a different user</span>: <span style="text-decoration: underline">learn the normal behavior</span> of which file is accessed by which user
     - unseen command: learn the behavior and set of commands as well as the lineage of each command over time
+  - use cases
+    - application behavior insight
+    - automated microsegmentation policy generation
+    - automated policy enforcement
+    - policy compliance
+    - <span style="color: #bb6600;">process behavior baseline and deviation</span>
+    - software inventory and vulnerability detection
+    - forensic analysis
   - microsegmentation
     - used by Zero-Trust model
     - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
@@ -701,7 +764,9 @@
     - ClamAV - custom detections
   - <span style="color: #bb6600;">prevalence</span>: a list of all files that have been executed
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
-  - custom detection policy w/ not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+  - custom detection policy 
+    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
 
 
 - Umbrella
@@ -722,15 +787,18 @@
     - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
   - <span style="color: #bb6600;">intelligent proxy</span>
     - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
-    - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware.
+    - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
     - prevent malicious content downloads from suspicious domains while allowing normal web traffic
+    - config procedure
+      - enable '<span style="color: #bb6600;">Enable Intelligence Proxy</span>' in Advanced Settings
+      - <span style="color: #bb6600;">Security Settings</span> > Potential Harmful Domain = On -> block traffic
   - SSL Decryption
     - an important part of the Umbrella Intelligent Proxy
     - proxy and inspect traffic that's sent over HTTPS
     - does require the root certificate be installed
   - SafeSearch: an automated filter of pornography and other offensive content 
   - logging
-    -set  <span style="color: #bb6600;">per-policy</span> when you first create a policy
+    -set <span style="color: #bb6600;">per-policy</span> when you first create a policy
     - by default, logging = on and log all requests an identity makes to reach destinations
     - able to change what level of identity activity Umbrella logs
     - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
@@ -826,6 +894,9 @@
   - collects and analyze network data from the existing network infrastructure
   - analyze industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices 
   - detect advanced and persistent security threats such as internally spreading malware, data leakage, botnet command and control traffic and network reconnaissance
+  - deployment models
+    - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
+    - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
   - Stealthwatch + ISE
     - network security analysts with a view integrating NetFlow data and contextual information
     - enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner
@@ -846,13 +917,15 @@
       - simplify the collection and distribution of network and security data across the enterprise
       - reduce the processing power on network routers and switches by receiving essential network and security information from multiple locations and then 
       - forwarding it to a single data stream to one or more destinations
-  - deployment models
-    - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
-    - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
   - <span style="color: #bb6600">Cisco Stealthwatch Cloud</span>
     - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
     - available in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)
-  - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
+    - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
+    - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
+    - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
+    - actions to collect full metadata information about the traffic going through their AWS cloud services
+      - send VPC Flow Logs to Cisco Stealthwatch Cloud
+      - configure Cisco Stealthwatch Cloud to ingest AWS information
   - Private Network Monitoring (PNM)
     - provide visibility and threat detection for the on-premises network
     - deliver from the cloud as a SaaS solution
@@ -860,7 +933,21 @@
     - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
     - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
     - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
-  - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
+  - Flow Record
+    - define the information that NetFlow gathers
+    - including packets in the flow and the types of counters gathered per flow
+    - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
+    - example: config router to send NetFlow data to StealthWatch
+      - flow record: `flow record Steathwatch406397954`
+      - conditions to match: `match ipv4 ttl`
+  - Flow Exporter
+    - define the physical or virtual Flow Collector IP Address to which NetFlow data is sent
+    - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
+    - consider using a Loopback interface to source NetFlow data from
+    - define transport protocol (TCP or UDP) and destination port
+  - Flow Monitor
+    - tie all of the construct together
+    - reference the Flow Exporter and the Flow Record.
 
 
 - Cognitive Intelligence
@@ -1237,24 +1324,6 @@
 
 ## Email and Web Security
 
-- AsyncOS operating system
-  - Anti-Spam at the gateway
-  - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
-  - Outbreak Filters
-  - Policy, Virus, and Outbreak Quarantines 
-  - Spam Quarantine
-  - Email Authentication
-  - Cisco Email Encryption
-  - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
-  - On-box message tracking
-  - Mail Flow Monitoring
-  - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
-  - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
-  - Message encryption via secure SMTP over Transport Layer Security
-  - Virtual Gateway technology
-  - Protection against malicious attachments and links in email messages
-
-
 - Cisco Email Security Appliance (ESA)
   - features:
     - advanced threat protection capabilities to detect, block, and remediate threats faster
@@ -1313,6 +1382,34 @@
     - sending message to alternative destination
     - sending copies (bcc) to other receipients
     - sending a DLP violation notification to sender or other contacts
+  - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
+
+
+- AsyncOS operating system
+  - Anti-Spam at the gateway
+  - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
+  - Outbreak Filters
+  - Policy, Virus, and Outbreak Quarantines 
+  - Spam Quarantine
+  - Email Authentication
+  - Cisco Email Encryption
+  - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
+  - On-box message tracking
+  - Mail Flow Monitoring
+  - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
+  - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
+  - Message encryption via secure SMTP over Transport Layer Security
+  - Virtual Gateway technology
+  - Protection against malicious attachments and links in email messages
+  - SensorBase Network
+    - a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic
+    - provide Cisco with an assessment of reliability for known Internet domains
+    - action to gather threat information from a variety of Cisco products and services and performs analytics to find patterns on threats: deployment
+  - encryption header
+    - add encryption settings to a message by inserting an SMTP header into a message using either a content filter or a message filter
+    - override the encryption settings defined in the associated encryption profile
+    - apply specified encryption features to messages
+  - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
 
 
 - Web Security Appliance (WSA)
@@ -1351,6 +1448,7 @@
   - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig`</span> CLI command and the <span style="color: #bb6600;">HTTPS</span> subcommand. 
   - proxy caching: improve web traffic performance
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
+  - use the SensorBase data feeds to improve the accuracy of Web Reputation Scores
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -1367,15 +1465,26 @@
     - employ advanced enforcement capabilities including Trustsec
     - support scalability
     - facilitate TACACS-enabled device administration
-  - integrated solution: 1) Cisco pxGrid; 2) Cisco Rapid Threat Containment
-  - endpoint profiling policy
+  - Features
+    - Device Administration
+    - Guest and Secure Wireless
+    - Bring Your Own Device (BYOD)
+    - Asset Visibility
+    - Secure Wired Access
+    - Segmentation
+    - Posture or Compliance
+    - Threat Containment
+    - Security Ecosystem Integrations
+  - integrated solution: 1) Cisco <span style="color: #bb66oo;">pxGrid</span>; 2) Cisco Rapid Threat Containment
+  - ISE nodes for high availability: <span style="color: #bb66oo;">primary and secondary Policy Administration Node (PAN)</span>
+  - <span style="color: #bb66oo;">endpoint profiling policy</span>
     - determine the type of device or endpoint connecting to the network
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the device fingerprint
     - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) OUI (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
     - CoA types: 1) No CoA; 2) port bounce; 3) reauth
     - RADIUS protocol: collecting DHCP, CDP, and LLDP attributes directly from the switch
   - shadow user: able to delegate AD user as ISE GUI admin to ease admin overheads and manage network efficiently
-  - posture policy
+  - <span style="color: #bb66oo;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
     - posture agent: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
@@ -1440,8 +1549,19 @@
     - information collected w/
       - Cisco Discovery Protocol (CDP)
       - Link Layer Discovery Protocol (LLDP)
-      - Dynamic Host Configuration Protocol (DHCP) 
-
+      - Dynamic Host Configuration Protocol (DHCP)
+  - config AAA on switch for the RADIUS authenticates to Cisco ISE
+    - command required: `ip radius source-interface`
+    - only requests originated from a <span style="color: #bb6600;">configured NSA IP</span> are accepted by a RADIUS server
+  - Duo MFA integration w/ ISE for TACACS+ device administration w/ local/internal (ISE) users
+    - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
+    - the proxy will then punt the requests back to ISE for local user authentication
+    - necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc.
+    - success: the end user/admin will be send a “DUO Push”
+    - fail: stop and no “Duo Push” will occur
+    - <span style="color: #bb6600;">config process</span>
+      - install and config Duo authentication proxy
+      - config the identity store within ISE
 
 
 - TrustSec
@@ -1490,7 +1610,9 @@
     - authentication server (required): RADIUS, ISE
   - only applied to switch port 
   - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
-  - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
+  - commands to <span style="color: #bb6600;">enable 802.1X on a port</span>
+    - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
+    - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
   - display information about current Auth Manager sessions:
     - syntax: `show authentication sessions` $\to$ indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
@@ -1519,6 +1641,22 @@
       ------------------------------------------------
       Fa1         AUTH    000d.bcef.bfdc   AUTHORIZED
       ```
+
+  - sample config
+
+    ```cfg
+    <...truncated...>
+    access-session host-mode multi-domain
+    access-session port-control auto
+    dot1x pae authenticator
+    dot1x timeout tx-period 7
+    dot1x max-reauth-req 3
+    <...truncated...>
+    ```
+
+    - 802.1X will work and the device will be allowed on the network
+    - no MAB config
+    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco ISE to allow all device not using machine authentication</span>
 
 
 - MAC Authentication Bypass (MAB)
@@ -1573,6 +1711,8 @@
       ntp server 10.10.10.1 key 2
       ```
 
+    - NTP authentication enforcment: `ntp authenticate`
+
 
 - Multi-factor Authentication (MFA)
   - prevent brute force attacks from being successful
@@ -1606,7 +1746,7 @@
 
 - EPP & EDR
   - Endpoint Protection Platform (EPP)
-    - solely on prevention at the perimeter
+    - solely on prevention at the <span style="color: #bb66pp;">perimeter</span>
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
     - prevent endpoint security threats like known and unknown malware
     - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
