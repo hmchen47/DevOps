@@ -12,11 +12,13 @@
     - spyware: 1) secretely record everything user enter, upload, download and store on computers or mobile devices; 2) keep itself hidden
   - expolit: a code taking advantage of a software a software vulnerability or security flaw
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
-  - Insecure APIs: a malicious user gained access to an organization’s database from a <span style="color: #bb6600;"></span>cloud-based application programming interface</span> that lacked strong authentication controls
-  - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;"></span>user login information</span>
-  - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;"></span>published online</span>
+  - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
+  - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
+  - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - worm: a software program that copies itself from one computer to another, without human interaction
   - spam: unwanted messages in an email inbox
+  - back-door virus: any form of program that grants unauthorised access to an entire system via a software or network vulnerability (Trojan malware attacks)
+  - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
 
 
@@ -31,6 +33,8 @@
   - occurred when asking a user for input
   - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
   - an attack where code is injected into a browser
+  - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of GET/POST parameters
+  - used to <span style="color: #bb6600;">steal information from databases</span>
 
 
 - Cross Site Script (XSS): 
@@ -40,9 +44,11 @@
   - encode the malicious portion of the link to the site in HEX (or other encoding methods)
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
   - preventive measures: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
-  - exploit website vulnerability by injecting scripts that will run at client’s side.
+  - exploit website vulnerability by injecting scripts that will run at client's side.
   - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
+  - inject malicious code (usually malicious links) into a database
+  - used to <span style="color: #bb6600;">redirect users</sapn> to websites where attackers can steal data from them
 
 
 - Buffer overflow
@@ -52,6 +58,8 @@
 
 
 - rootkit
+  - Trojan malware attack
+  - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him persistent remote access to the computer
   - a program providing maliciously privileged access to a computer
   - types: 1) kernel; 2) user mode; 3) bootloader; 4) Memory rootkits
 
@@ -73,7 +81,7 @@
     - a DDoS attack
     - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
     - spoof an IP address, and using ICMP, then ping IP addresses on a given network
-    - large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim’s spoofed source IP are broadcast to a computer network using an IP broadcast address
+    - large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim's spoofed source IP are broadcast to a computer network using an IP broadcast address
   - sny flood: too many connection requests
   - teardrop attack
     - DoS attack
@@ -88,7 +96,7 @@
     - sending fraudulent communications usually through email
   - goals: 1) steal sensitive data or login information; 2) install malware
   - types of phishing
-    - deceptive: steal people’s personal data or login credentials in a legitmate company
+    - deceptive: steal people's personal data or login credentials in a legitmate company
     - spear: designed to get a single recipient to respond
   - mitigation: 1) browser alert; 2) email filtering
   - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
@@ -109,6 +117,13 @@
   - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
   - goal: easier to share data across tools, vulnerability repositories, and security services
 
+
+- Zero Trust
+  - a security framework requiring all users, whether in or outside the organization's network, to be <span style="color: #bb6600;">authenticated, authorized, and continuously validated for security configuration and posture</span> before being granted or keeping access to applications and data
+  - assumptions
+    - no traditional network edge
+    - networks can be local, in the cloud, or a combination or hybrid with resources anywhere and workers in any location
+  - use <span style="color: #bb6600;">microsegmentation</span> to to contain attacks
 
 
 ## Integrity and Privacy
@@ -187,13 +202,16 @@
 ## Virtual Private Networks
 
 - Internet Key Exchange (IKE) framework
+  - used for remote host, network access, and virtual private network (VPN) access
+  - enable two parties on the Internet to communicate securely
+  - a <span style="color: #bb6600;">key management protocol</span> used to set up a security association (SA) using Internet Protocol Security (IPsec)
   - IKE SA
     - describe the security parameters between two IKE devices
     - the first stage in establishing IPSec
   - IKEv1
     - Phase 1: ISAKMP
       - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
-      - preshared authentication 
+      - preshared authentication key
         - global configuration mode
         - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
         - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
@@ -205,6 +223,9 @@
         - key exchange
           - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
           - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4`
+      - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
+        - define the ISAKMP identity used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
+        - configure a preshared authentication key: `crypto isakmp key Cisco0123456789 172.19.20.24`
     - phase 2: IPsec
     - stateful failover
       - enable a router to continue processing and forwarding IPsec packets after outage occurs
@@ -219,6 +240,13 @@
     - TripleDES-CBC for confidentiality
     - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality.
     - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently.
+  - AH protocol
+    - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
+    - provide data integrity, data origin authentication, and an optional replay protection service
+  - ESP protocol
+    - provide data <span style="color: #bb6600;">confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)</span>
+    - used with confidentiality only, authentication only, or both confidentiality and authentication
+    - reliable authenticaton protocol and supporting <span style="color: #bb6600;">ACK and sequence</span>
 
 
 - SSL, TLS & DTLS
@@ -257,7 +285,7 @@
     - point-to-point GRE tunnels
     - spoke-to-spoke connectivity achieved with NHRP redirect message
     - IOS routers w/ the same NHRP code
-    - Cisco’s proprietary technologies
+    - Cisco's proprietary technologies
   - differences
     - P2P GRE tunnels: DMVPN - static; FlexVPN - static/dynamic
     - crypto: DMVPN - optional; FlexVPN - strongly tied into IPSec
@@ -425,7 +453,7 @@
 
 
 - Cisco Firepower NGFW Virtual (NGFWv)
-  - the virtualized version of Cisco’s Firepower next generation firewall
+  - the virtualized version of Cisco's Firepower next generation firewall
   - available in the AWS and Azure marketplaces
   - deployed in routed and passive modes
   - passive mode design requires ERSPAN,(Encapsulated Remote Switched Port Analyzer)
@@ -476,12 +504,13 @@
 
 
 - Talos
-  - IP and Domain Data Center
+  - <span style="color: #bb6600;">IP and Domain Data Center</span>
+    - tracking the reputation of IP addresses for email and web traffic
     - the most comprehensive real-time threat detection network
     - data made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances
     - detecting and correlating threats in real time
   - Email and Web Traffic Reputation Center
-    - transform some of Talos’ data into actionable threat intelligence and tools to improve your security posture
+    - transform some of Talos' data into <span style="color: #bb6600;">actionable threat intelligence and tools</span> to improve your security posture
   - Talos Threat Source
     - a newsletter
     - a regular intelligence update from Cisco Talos
@@ -507,7 +536,9 @@
     - <span style="color: #bb6600;">interesting file access</span>: armed to look at sensitive files
     - <span style="color: #bb6600;">file access from a different user</span>: <span style="text-decoration: underline">learn the normal behavior</span> of which file is accessed by which user
     - unseen command: learn the behavior and set of commands as well as the lineage of each command over time
-  - micro-segmentation
+  - microsegmentation
+    - used by Zero-Trust model
+    - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
     - secure applications by expressly allowing particular application traffic
     - by default, denying all other traffic
     - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
@@ -543,7 +574,7 @@
   - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
     - Talos Security Intelligence and Research Group
-    - Threat Grid’s threat intelligence
+    - Threat Grid's threat intelligence
   - file disposition:
     - a categorization from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
@@ -582,7 +613,7 @@
   - Dynamic Analysis
     - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
     - run the file in a <span style="color: #bb6600;">sandbox</span> environment
-    - analyze the file’s behavior to determine whether the file is malicious
+    - analyze the file's behavior to determine whether the file is malicious
     - return a threat score that indicates the likelihood that a file contains malware
   - Local malware analysis
     - a managed device locally inspecting executables, PDFs, office documents, and other types of files for the most common types of malware
@@ -621,6 +652,7 @@
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
+  - mechanism to increase <span style="color: #bb6600;">reliability of the service</span>: Anycast IP (208.67.222.222 & 208.67.220.220) routing
   - improving **defense in depth** by blocking malicious destinations prior to a connection being established
   - use intelligence to determine if the request is safe, malicious or risky
   - Umbrella roaming protects employees even when they are off the VPN
@@ -638,7 +670,7 @@
     - prevent malicious content downloads from suspicious domains while allowing normal web traffic
   - SSL Decryption
     - an important part of the Umbrella Intelligent Proxy
-    - proxy and inspect traffic that’s sent over HTTPS
+    - proxy and inspect traffic that's sent over HTTPS
     - does require the root certificate be installed
   - SafeSearch: an automated filter of pornography and other offensive content 
   - logging
@@ -672,6 +704,11 @@
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
     - CA not trusted by browser $\to$ an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
+  - Umbrella Roaming
+    - a cloud-delivered security service for Cisco's next-generation firewall
+    - protect employees even when they are off the VPN
+    - ensure that assets are secure from malicious links on and off the corporate network
+  - wildcards and destination list: asterisk (`*`) not supported for wildcard
 
 
 - AppDynamics
@@ -739,7 +776,7 @@
       - receive and collect telemetry from proxy data sources
       - analyzed by the cloud-based, multilayered machine learning engine, Cognitive Intelligence, for deep visibility into both web and network traffic
     - <span style="color: #bb6600">Flow Sensor</span> (optional)
-      - produce telemetry for segments of the switching and routing infrastructure that can’t generate NetFlow natively
+      - produce telemetry for segments of the switching and routing infrastructure that can't generate NetFlow natively
       - provide visibility into the application layer data
       - provide additional security context to enhance the Stealthwatch security analytics
       - able to analyze encrypted traffic
@@ -754,6 +791,13 @@
     - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
     - available in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)
   - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
+  - Private Network Monitoring (PNM)
+    - provide visibility and threat detection for the on-premises network
+    - deliver from the cloud as a SaaS solution
+    - prefer SaaS products and desire better awareness and security in their on-premises environments w/ less capital expenditure and operational overhead
+    - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
+    - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
+    - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
 
 
 - Cognitive Intelligence
@@ -804,7 +848,7 @@
   - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
   - an integrated suite of network security and traffic management products
   - deployed either on purpose-built platforms or as a software solution
-  - centralized event and policy manager for:
+  - <span style="color: #bb6600;">centralized event and policy manager</span> for:
     - Secure Firewall with the Firewall Threat Defense (FTD) OS
     - ASA with FirePOWER Services (not traditional ASA)
     - Secure IPS (Firepower Next-Gen IPS / NGIPS)
@@ -818,7 +862,7 @@
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
   - network discovery policy
-    - control how the system collects data on your organization’s network assets and which network segments and ports are monitored
+    - control how the system collects data on your organization's network assets and which network segments and ports are monitored
     - multidomain deployment: each leaf domain has an independent network discovery policy
     - perform host and application detection
   - identity policy
@@ -865,12 +909,23 @@
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
     - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
   - <span style="color: #bb6600;">Network Discovery Policies</span>
-    - controls how the system collects data on your organization’s network assets and which network segments and ports are monitored
+    - controls how the system collects data on your organization's network assets and which network segments and ports are monitored
     - able to feed host data from 3rd-party systems
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
+
+
+- Firewall Threat Defense (FTD)
   - config new FTD device not behind a NAT device to be managed w/ FCM: `configure manager add <FMC IP address> <registration key>`
+  - execution order of primary and backup policy: backup policy w/ larger number in priority; e.g., backup policy w/ priority 5 and primary polity w/ priority 1
+  - Modbus, DNP3 and CIP SCADA preprocessors
+    - analyze protocol fields and detect anomalies in the traffic from <span style="color: #bb6600;">industrial systems</span>
+    - used to detect traffic anomalies
+    - CIP as it is widely used in industrial applications
+    - detect traffic anomalies and provide data to intrusion rules
+    - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
+    - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
 
 
 
@@ -882,8 +937,8 @@
     - vulnerability-focused IPS rules
     - embedded IP-, URL-, and DNS-based security intelligence
   - security automation
-    - correlate intrusion events with your network’s vulnerabilities
-    - analyze network’s weaknesses
+    - correlate intrusion events with your network's vulnerabilities
+    - analyze network's weaknesses
     - recommends the appropriate security policies
   - features:
     - IPS rules: identify and block attack traffic
@@ -983,6 +1038,7 @@
 
 
 - ASA
+  - deny all traffic by default
   - modes: transparent and routed
   - bridge group in transprent mode
     - group interfaces together in a bridge group to maximize the use of security contexts
@@ -1010,6 +1066,7 @@
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
   - monitor from Layer 2 to 4
+  - track <span style="color: #bb6600;">multicast, MPLS, or bridged traffic</span>
   - a flow identified as the combination of the following key fields:
     - Source IP address
     - Destination IP address
@@ -1020,9 +1077,9 @@
     - Input logical interface
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but metadata for communication
-  - NetFlow Secure Event Logging (NSEL)
+  - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
     - a security logging mechanism built on NetFlow Version 9 technology
-    - providing a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
+    - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
     - flow-export actions: `flow-export event-type`
     - significant events: flow-create, flow-teardown, and flow-denied (excluding those flows denied by EtherType ACLs)
     - major functions
@@ -1031,8 +1088,8 @@
       - define and exports templates that describe the progression of a flow
       - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
       - send template information periodically to NSEL collectors
-      - filter NSEL events based on the traffic and event type, then sends records to different collectors
-      - <span style="color: #bb6600;">delays the export of flow-create events</span>
+      - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
+    - <span style="color: #bb6600;">delay the export of flow-create events</span>
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
@@ -1042,8 +1099,6 @@
     - version 5: only for main cache
     - version 8: introduce aggregation caches
     - version 9: introduce extensibility
-
-
   - configure NetFlow on Cisco ASA 5500 Series firewall
     - 1\. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     - 2\. Defines the **class map** that identifies traffic for which NSEL events need to be exported
@@ -1059,6 +1114,12 @@
       - <span style="color: #bb6600;">user configurable</span> flow information
       - convergence of multiple accounting technologies into <span style="color: #bb6600;">one accounting mechanism</span>
       - integral part of Cisco IOS Software allowing all routers or switches in the network to become a source of telemetry and a monitoring device
+    - restrictions for Flexible NetFlow:
+      - Traditional NetFlow (TNF) accounting is not supported.
+      - Flexible NetFlow v5 export format is not supported, only NetFlow v9 export format is supported.
+      - <span style="color: #bb6600;">Both ingress and egress NetFlow accounting</span> is supported
+      - Microflow policing feature shares the NetFlow hardware resource with FNF.
+      - Only one flow monitor per interface and per direction is supported.
 
 
 - Telemetry
@@ -1083,8 +1144,9 @@
 
 
 - IOS zone-based firewall
-  - A zone must be configured before interfaces can be assigned to the zone.
-  - An interface can be assigned to only one security zone.
+  - a zone must be configured before interfaces can be assigned to the zone
+  - an interface can be assigned to only one security zone
+  - allowing all traffic by default but drop traffic from a different zone by default
 
 
 - Simple Network Management Protocol (SNMP)
@@ -1119,7 +1181,7 @@
   - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
   - On-box message tracking
   - Mail Flow Monitoring
-  - Access control for inbound senders, based upon the sender’s IP address, IP address range, or domain
+  - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
   - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
   - Message encryption via secure SMTP over Transport Layer Security
   - Virtual Gateway technology
@@ -1142,7 +1204,7 @@
     - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
     - cloud-based infrastructure typically used for inbound email cleaning
     - on-premise appliance providing granular control - protecting sensitive info w/ DLP and encryption technologies
-    - scenario: deployment flexibility as organization’s needs  -> transition
+    - scenario: deployment flexibility as organization's needs  -> transition
   - message tracking w/ `trackingconfig` command
   - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
   - ESA + AMP to upload file for analysis but network congestion: file upload abandoned
@@ -1190,7 +1252,7 @@
   - including a web proxy, a threat analytics engine, antimalware engine, policy management, and reporting in a single physical or virtual appliance
   - main purpose: protect users from accessing malicious websites and being infected by malware
   - combined integrated solution of strong defense and web protection, visibility, and controling solutions
-  - WSA HTTP proxy obtains the client's request can be defined as one of two ways: Transparently or Explicitly.
+  - WSA HTTP proxy obtains the client's request can be defined as one of two ways: <span style="color: #bb6600;">Transparently or Explicitly</span>.
     - Transparent
       - the existence of the proxy unknown
       - network infrastructure devices (layer 3 switches) redirect web traffic to the proxy
@@ -1202,8 +1264,12 @@
       - no DNS lookup, WAS responsible for DNS resolution
       - config each client to send traffic to WSA
       - WSA errsponds w/ its own IP info
-      - Browser Configured: Client browser is explicitly configured to use a proxy
-      - .PAC file configured: Client browser is explicitly configured to us a .PAC file, which in turn, references the proxy
+      - browser Configured: client browser is explicitly configured to use a proxy
+      - <span style="color: #bb6600;">.PAC file configured</span>:
+        - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
+        - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server
+        - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
+        - advantage: usually relatively easy to create and maintain
   - Web Cache Communications Protocol (WCCP)
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
@@ -1254,7 +1320,18 @@
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
     - security posture: <span style="color: #bb6600;">detect and mitigate threats</span> that the perimeter security devices do not detect
-    - device compliance checks: <span style="color: #bb6600;">validate</span> if anti-virus software installed
+    - <span style="color: #bb6600;">device compliance</span>
+      - validate if anti-virus software installed
+      - verification of the latest OS patches
+  - posture requirements
+    - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
+    - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
+    - types
+      - mandatory
+        - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
+        - move to Non-Compliant state if failed
+      - optional: allow to skip the specified optional requirements and move to Compliant state
+      - audit: for internal purposes and the agent does not prompt any message or input from end users
   - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
@@ -1267,6 +1344,12 @@
       - Handles device remediation
       - Augments endpoint
     - corporate advantages: 1) assest inventory management; 2) allowed application management
+    - high level use cases
+      - device registration
+      - remediation - restricted access based on compliant state
+      - periodic <span style="color: #bb6600;">compliance check</span>
+      - ability of ISE admin to issue remote actions on devices; e.g., remote wiping
+      - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
   - Profiling Services
     - provide dynamic detection and classification of endpoints connected to the network
@@ -1283,7 +1366,7 @@
     - securely use personal devices on a corporate network
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
     - w/o supplicant profiles: 1) manually config My Device portal; 2) config BYOD rules to register
-  - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company’s network, including mobile phones, tablets, printers, Internet radios, and other network devices
+  - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
 
 - TrustSec
   - software-defined segmentation that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
@@ -1308,7 +1391,7 @@
 
 
 - RADIUS Change of Authorization (CoA)
-  - a mechanism to change the attributes of an AAA session after it is authenticated
+  - a mechanism to change the attributes of an <span style="color: #bb6600;">authentication, authorization, and accounting (AAA) session</span> after it is authenticated
   - enable AAA globally to support CoA: `aaa new-model`
   - main steps of CoA procedure
     - authentication
@@ -1373,8 +1456,8 @@
   - MAB request attributes w/ Cisco switches
     - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
     - using Attribute 6 to filter MAB requests at the RADIUS server
-  - a fallback option for devices that don’t support 802.1x
-  - authenticator: using connecting device’s MAC address as its username and password and send to the authentication server
+  - a fallback option for devices that don't support 802.1x
+  - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
 
 
@@ -1439,7 +1522,7 @@
     - Time-based one-time password (TOTP)
     - Social media
     - Risk-based authentication: a.k.a. adaptive multi-factor authentication
-    - Push-based 2FA: confirm a user’s identity with multiple factors of authentication that other methods cannot
+    - Push-based 2FA: confirm a user's identity with multiple factors of authentication that other methods cannot
   - against phishing, social engineering and password brute-force attacks
   - SSO authentication: users with MFA and sharing the authentication with multiple applications
 
@@ -1450,7 +1533,7 @@
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
     - prevent endpoint security threats like known and unknown malware
     - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
-    - act as the first line of defense, filtering out attacks that can be detected by the organization’s deployed security solutions
+    - act as the first line of defense, filtering out attacks that can be detected by the organization's deployed security solutions
     - complemen of EDR
   - Endpoint Detection and Response (EDR)
     - primarily on detecting advanced threats, designed to evade front-line defenses and successfully entered the environment
