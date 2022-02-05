@@ -234,14 +234,14 @@
 
 
 - Security issues of privacy and integrity 
-  - passwords being transmitted in clear text: unencrypted links for traffic
+  - passwords being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - Secure Hash Algorithm (SHA-1):
     - a.k.a. HMAC-SHA-1
     - ensures data has not been changed in transit
     - one way hash functions to determine if data has been changed
     - stronger than Message Digest 5 (MD5)
     - provide data integrity (to guarantee data has not been altered in transit) and authentication (to guarantee data came from the source it was supposed to come from)
-    - used with the digital signature standard
+    - used with the <span style="color: #bb6600;">digital signature standard</span>
     - used by IPSec to ensure that a message has not been altered
 
 
