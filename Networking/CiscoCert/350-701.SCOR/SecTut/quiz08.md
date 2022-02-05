@@ -1107,7 +1107,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 80</span>
 
-  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address https://<FMC IP>/capure/CAPI/pcap/test.pcap, an error 403: Forbidden is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
+  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address `https://<FMC IP>/capure/CAPI/pcap/test.pcap`, an error `403: Forbidden` is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
 
   A. Disable the proxy setting on the browser<br>
   B. Disable the HTTPS server and use HTTP instead<br>
@@ -1311,16 +1311,6 @@
 
   Refer to the exhibit.
 
-<!-- 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
-      src    = "img/2195-ASA_Rest_API_snippet.jpg"
-      alt    = "Snippet of ASA REST API"
-      title  = "Snippet of ASA REST API"
-    />
-  </figure> -->
-
   ```python
   ...#{code snippet}
   api+path = "/api/access/global/rules"
@@ -1376,6 +1366,7 @@
   finally:
     if f: f.close()
   ```
+
   What is the function of the Python script code snippet for the Cisco ASA REST API?
 
   A. deletes a global rule from policies<br>
@@ -1385,6 +1376,16 @@
 
   Answer: <br><br> 
   
+<!-- 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-3-2')"
+      src    = "img/2195-ASA_Rest_API_snippet.jpg"
+      alt    = "Snippet of ASA REST API"
+      title  = "Snippet of ASA REST API"
+    />
+  </figure> -->
+
 
 - <span style="color: #008888; font-weight: bold;">Question 96</span>
 

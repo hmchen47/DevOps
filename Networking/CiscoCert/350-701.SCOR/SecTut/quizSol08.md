@@ -1779,7 +1779,7 @@
 
 - <span style="color: #008888; font-weight: bold;">Question 80</span>
 
-  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address `https://<FMC IP>/capure/CAPI/pcap/test.pcap`, an error 403: Forbidden is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
+  A network security engineer must export packet captures from the Cisco FMC web browser while troubleshooting an issue. When navigating to the address `https://<FMC IP>/capure/CAPI/pcap/test.pcap`, an error `403: Forbidden` is given instead of the PCAP file. Which action must the engineer take to resolve this issue?
 
   A. Disable the proxy setting on the browser<br>
   B. Disable the HTTPS server and use HTTP instead<br>
@@ -2276,6 +2276,21 @@
   D. Use the track movement option within the authorization profile for the authorization policy line that the unauthenticated devices hit<br>
 
   Answer: B
+
+  Explanation
+
+  9\. In the value field, one can choose Sponsored Guest Portal or Self-Registered Guest Portal from the drop-down list. In the sponsored guest portal, sponsors create guest accounts, and guests access the network using their assigned username and password while in the self-registration guest portal, guests are allowed to create their own accounts and access the network using their assigned username and password. This example uses Sponsored Guest Portal.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+      onclick= "window.open('https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/115732-central-web-auth-00.html')"
+      src    = "https://www.cisco.com/c/dam/en/us/support/docs/security/identity-services-engine/115732-central-web-auth-00-08.png"
+      alt    = "Create Authorization Profile"
+      title  = "Create Authorization Profile"
+    />
+  </figure>
+
+  Reference: [Central Web Authentication on the WLC and ISE Configuration Example](https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine/115732-central-web-auth-00.html#)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 100</span>
