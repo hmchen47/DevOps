@@ -133,11 +133,11 @@
   - leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats
 
 
-- Common Vulnerabilities and Exposures (CVE)
-  - an identifier assigned to vulnerability disclosured by vendors, security researchers, and vulnerability coordination centers
+- <span style="color: #bb6600;">
+  - an <span style="color: #bb6600;">identifier</span> assigned to vulnerability disclosured by vendors, security researchers, and vulnerability coordination centers
   - an industry-wide standard
   - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
-  - goal: easier to share data across tools, vulnerability repositories, and security services
+  - goal: <span style="color: #bb6600;">easier to share data</span> across tools, vulnerability repositories, and security services
 
 
 - Zero Trust
