@@ -89,7 +89,9 @@
     - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
     - spoof an IP address, and using ICMP, then ping IP addresses on a given network
     - large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim's spoofed source IP are broadcast to a computer network using an IP broadcast address
-  - sny flood: too many connection requests
+  - sny flood:
+    - too many connection requests
+    - intent to <span style="color: #bb6600;">exceed the threshold limit of the connection queue </span>
   - teardrop attack
     - DoS attack
     - sending <span style="color: #bb6600;">fragmented packets</span> to a target machine
@@ -115,9 +117,21 @@
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
     - used to author and exchange STIX documents among participants
     - capabilities: 1) push messaging; 2) pull messaging; 3) discovery <- automated exchange
+    - functions
+      - <span style="color: #bb6600;">exchange</span> trusted anomaly intelligence information
+      - determine how threat intelligence information <span style="color: #bb6600;">relayed</span>
   - STIX (Structured Threat Information eXpression)
-    - a standardized language developed in a collaborative way to represent structured information about cyber threats
+    - a standardized language developed in a collaborative way to represent <span style="color: #bb6600;">structured information</span> about cyber threats
     - shared, stored, and otherwise used in a consistent manner
+
+
+- OpenIOC
+  - an open framework, meant for sharing threat intelligence information in a <span style="color: #bb6600;">machine-readable format</span>
+  - developed by the American cybersecurity firm MANDIANT in November 2011
+  - in eXtensible Markup Language (XML) format
+  - easily customized for additional intelligence so that incident responders can translate their knowledge into a standard format
+  - leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats
+
 
 - Common Vulnerabilities and Exposures (CVE)
   - an identifier assigned to vulnerability disclosured by vendors, security researchers, and vulnerability coordination centers
@@ -394,7 +408,9 @@
     - bi-directional interfaces allow the exchange of contextual information between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
     - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
-  - security application notify the controller about a specific security threats: northbound and southbound
+  - security application notify the controller about a specific security threats: northbound and southboun
+  - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
+
 
 
 - AsyncOS API
@@ -530,6 +546,25 @@
   - <span style="color: #bb6600;">CI/CD pipeline</span>: process gives a weekly or daily update instead of monthly or quarterly in the applications
 
 
+- Data Center Network Manager (DCNM)
+  - manage multiple devices, while providing ready-to-use control, automation, monitoring, visualization, and troubleshooting capabilities
+  - working for many switch series
+  - network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics
+  - use <span style="color: #bb6600;">PowerOn Auto Provisioning (POAP)</span> to automates the process of upgrading software images and installing configuration files on Cisco Nexus switches that are being deployed in the network for the first time
+  - add aLAN switch w/ Web UI
+    - 1\. Inventory > Discovery > LAN switches
+    - 2\. Add icon to add LAN
+    - 3\. select Hops from Seed Switch or Switch List
+    - 4\. enter the <span style="color: #bb6600;">Seed Switch IP </span> for the fabric
+    - ...
+
+
+- Cisco Container Platform (CCP)
+  - provide authentication and authorization, security, high availability, networking, load balancing, and operational capabilities to effectively operate and manage <span style="color: #bb6600;">Kubernetes</span> clusters
+  - provide a validated configuration of Kubernetes
+  - integrate with underlying infrastructure components such as Cisco UCS, Cisco HyperFlex, and Cisco ACI
+
+
 - Cisco Intercloud Fabric solution
   - control shadow IT
   - discovering resources deployed in the public cloud outside IT control
@@ -647,6 +682,10 @@
 
 
 - Talos
+  - contributor of Cisco Collective Security Intelligence (CSI) ecosystem
+    - shared across multiple security solutions and provides industry-leading security protections and efficacy
+    - driven by intelligence infrastructure, product and service telemetry, public and private feeds and the open source community
+    - <span style="color: #bb6600;">real-time threat intelligence</span> and security protection
   - <span style="color: #bb6600;">IP and Domain Data Center</span>
     - tracking the reputation of IP addresses for email and web traffic
     - the most comprehensive real-time threat detection network
@@ -704,7 +743,8 @@
     - secure applications by expressly allowing particular application traffic
     - by default, denying all other traffic
     - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
-    - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change
+    - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
+    - environments apply a zero-trust model and specify how applications on different servers or containers can communicate
   - generating accurate microsegmentation policy
     - application dependency mapping to discover the relationships between different application tiers and infrastructure services
     - supports “what-if” policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
@@ -723,7 +763,7 @@
   - logical security controls on endpoints still exist even training on staffs: human error or inside threats still exist
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - proactive endpoint protection and centralized admin management
-  - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+  - <span style="color: #bb6600;">detection, blocking, tracking, analysis, and remediation</span> to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
@@ -810,6 +850,7 @@
   - custom detection policy 
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
+  - patching strategy for endpoint: known vulnerabilities are targeted and having a regular patch cycle reduces risks
 
 
 - Umbrella
@@ -867,6 +908,7 @@
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
   - blocking URLs: URL Reputation from 6 to 10
+  - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - Block Page and Block Page Bypass features
     - present an SSL certificate to browsers that make connections to HTTPS sites
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
@@ -1138,6 +1180,7 @@
 - Firepower Next-Generation IPS (NGIPS) threat appliance
   - providing network visibility, security intelligence, automation and advanced threat protection
   - operating in-line via Fail-To-Wire/Bypass network modules
+  - <span style="color: #bb6600;">threat prevention and mitigation for known and unknown threats</span>
   - security intelligence
     - TALOS Security Intelligence and Research Group:
     - vulnerability-focused IPS rules
@@ -1168,8 +1211,8 @@
 - Cisco Threat Intelligence Director (CTID)
   - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
-  - the ability to <span style="color: #bb6600;">consume</span> threat intelligence via STIX over TAXII
-  - uploads/downloads of STIX annd simple blacklists
+  - the ability to consume</span> threat intelligence via STIX over TAXII
+  - process to use STIX to upload and download blacklists: <span style="color: #bb6600;">consumption</span>
   - mechanism
     - observables published to the elements
     - the elements monitor traffic and report observations to the FMC when the system identifies observables in traffic
@@ -1617,6 +1660,12 @@
     - <span style="color: #bb6600;">config process</span>
       - install and config Duo authentication proxy
       - config the identity store within ISE
+  - guest types
+    - associated with particular network access policies
+    - deault types
+      - <span style="color: #bb6600;">Contractor</span>: Users who need access to the network for an extended amount of time, up to a year.
+      - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
+      - Weekly: Users who need access to the network for a couple of weeks.
 
 
 - TrustSec
@@ -1893,5 +1942,17 @@
   - IP source guard
 
 
+- Private VLAN port types
+  - Isolated
+    - only communicate with promiscuous ports
+    - not even communicate with another isolated port
+    - only 1 isolated VLAN per PVLAN
+  - Promiscuous
+    - communicate with all other ports
+    - default gateway usually connected to this port so that all devices in PVLAN can go outside
+  - Community
+    - communicate with other members of that community and promiscuous ports
+    - not communicate with other communities
+    - multiple community VLANs per PVLAN
 
 
