@@ -101,13 +101,13 @@
 - Social engineering
   - phishing
     - a form of social engineering
-    - fraudulent attempts by cyber criminals to obtain private information
+    - fraudulent attempts by cyber criminals to obtain <span style="color: #bb6600;">private information</span>
     - sending fraudulent communications usually through email
   - goals: 1) steal sensitive data or login information; 2) install malware
   - types of phishing
-    - deceptive: steal people's personal data or login credentials in a legitmate company
-    - spear: designed to get a single recipient to respond
-  - mitigation: 1) browser alert; 2) email filtering
+    - <span style="color: #bb6600;">deceptive<span>: steal people's personal data or login credentials in a legitmate company
+    - <span style="color: #bb6600;">spear<span>: designed to get a single recipient to respond
+  - mitigation: <span style="color: #bb6600;">browser alert & email filtering</span>
   - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
 
