@@ -253,7 +253,7 @@
   - enable two parties on the Internet to communicate securely
   - a <span style="color: #bb6600;">key management protocol</span> used to set up a security association (SA) using Internet Protocol Security (IPsec)
   - IKE SA
-    - describe the security parameters between two IKE devices
+    - describe the <span style="color: #bb6600;">security parameters</span> between two IKE devices
     - the first stage in establishing IPSec
   - IKEv1
     - Phase 1: ISAKMP
@@ -266,7 +266,7 @@
           - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
           - `hostname`: FQDN of the peer
         - same command on two end devices
-        - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' $\to$ sign of key mismatch
+        - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' -> sign of <span style="color: #bb6600;">key mismatch</span>
         - key exchange
           - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
           - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4`
@@ -912,7 +912,7 @@
   - Block Page and Block Page Bypass features
     - present an SSL certificate to browsers that make connections to HTTPS sites
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
-    - CA not trusted by browser $\to$ an error page may be displayed
+    - CA not trusted by browser -> an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
   - Umbrella Roaming
     - a cloud-delivered security service for Cisco's next-generation firewall
@@ -1132,10 +1132,10 @@
     - send specially crafted packets to a targeted host
     - with host responds, the attacker determines which ports are open on the host
     - types
-      - Portscan Detection: one-to-one portscan; 1/N hosts $\to$ 1 target + N ports
-      - Port Sweep: one-to-many portsweep; 1/N hosts $\to$ N target + 1 port
+      - Portscan Detection: one-to-one portscan; 1/N hosts -> 1 target + N ports
+      - Port Sweep: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - Decoy Portscan: one-to-one portscan; mixes spoofed and real source IP addresses
-      - Distributed Portscan: many-to-one portscan; N host $\to$ 1 target + N ports
+      - Distributed Portscan: many-to-one portscan; N host -> 1 target + N ports
   - access control rules
     - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
@@ -1443,7 +1443,7 @@
     - `TCPREFUSE`
       - not allowed to connect to your ESA
       - appear as if your server is unavailable for sending server
-      - most MTAs (Mail Transfer Agents) retry frequently $\to$ more traffic
+      - most MTAs (Mail Transfer Agents) retry frequently -> more traffic
       - `REJECT` will receive a 554 SMTP error (hard bounce)
     - dropping malicious emails occurs after receiving and examining the mail to make the decision
   - Directory Harvest Attack (DHA)
@@ -1452,8 +1452,8 @@
     - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients.
     - Lightweight Directory Access Protocol (LDAP): an Internet protocol that email programs use to look up contact information from a server
   - reputation service
-    - insufficient info for a definitive verdict $\to$ return a reputation score based on characteristics of the file
-    - score <span style="color: #bb6600;">meets or exceeds</span> threshold $\to$ ESA applies confiured action in the mail policy
+    - insufficient info for a definitive verdict -> return a reputation score based on characteristics of the file
+    - score <span style="color: #bb6600;">meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
   - <span style="color: #bb6600;">Advanced Phishing Protection</span> (not on WSA)
     - sensor-based solution
     - another layer of defense
@@ -1518,7 +1518,7 @@
       - <span style="color: #bb6600;">WCCP</span>: a WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
       - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
     - Explicitly
-      - client knows existence of the proxy $\to$ sending all web traffic to the proxy
+      - client knows existence of the proxy -> sending all web traffic to the proxy
       - no DNS lookup, WAS responsible for DNS resolution
       - config each client to send traffic to WSA
       - WSA errsponds w/ its own IP info
@@ -1735,7 +1735,7 @@
     - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
     - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
   - display information about current Auth Manager sessions:
-    - syntax: `show authentication sessions` $\to$ indicating interface authentication methods, including `dot1x` and `mab`
+    - syntax: `show authentication sessions` -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
