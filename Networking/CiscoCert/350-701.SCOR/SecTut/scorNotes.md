@@ -133,7 +133,7 @@
   - leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats
 
 
-- <span style="color: #bb6600;">
+- <span style="color: #bb6600;">Common Vulnerabilities & Exposures (CVE)</span>
   - an <span style="color: #bb6600;">identifier</span> assigned to vulnerability disclosured by vendors, security researchers, and vulnerability coordination centers
   - an industry-wide standard
   - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
@@ -260,11 +260,7 @@
       - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
       - <span style="color: #bb6600;">preshared authentication key</span>
         - global configuration mode
-        - syntax: `crypto isakmp key enc-type-digit keystring {(address peer-address [mask]) | (ipv6 ipv6-address/ ipv6-prefix) | (hostname hostname)} [no-xauth]`
-          - `enc-type-digit`: whether the password to be used is encrypted or unencrypted, 0 - unencrypted, 6 - encrypted
-          - `keystring`: preshared key
-          - `address`/`ipv6`: remote peer ISAKMP IP/IPv6 address
-          - `hostname`: FQDN of the peer
+        - syntax: `crypto isakmp key <keystring> address <peer-address> [mask]` or `crypto isakmp key <keystring> hostname <peer-hostname>`
         - same command on two end devices
         - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' -> sign of <span style="color: #bb6600;">key mismatch</span>
         - key exchange
