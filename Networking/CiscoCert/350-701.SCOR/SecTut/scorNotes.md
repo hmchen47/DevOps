@@ -36,7 +36,7 @@
   - occurred when asking a user for input
   - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
   - an attack where code is injected into a browser
-  - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of GET/POST parameters
+  - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">GET/POST parameters</span>
   - used to <span style="color: #bb6600;">steal information from databases</span>
 
 
@@ -44,13 +44,13 @@
   - web application gathering malicious data
   - usually gathered in the form of a hyperlink
   - click on this link from another website, instant message, or simply simply just reading a web board or email message.
-  - encode the malicious portion of the link to the site in HEX (or other encoding methods)
+  - encode the malicious portion of the link to the site in <span style="color: #bb6600;">HEX (or other encoding methods)</span>
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
-  - preventive measures: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
+  - <span style="color: #bb6600;">preventive measures</span>: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
   - exploit website vulnerability by injecting scripts that will run at client's side.
   - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
-  - inject malicious code (usually malicious links) into a database
+  - <span style="color: #bb6600;">inject malicious code</span> (usually malicious links) into a database
   - used to <span style="color: #bb6600;">redirect users</sapn> to websites where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
 
@@ -58,7 +58,7 @@
 - Buffer overflow
   - the volume of data exceeds the storage capacity of the memory buffer
   - write the data to the buffer overwrites adjacent memory locations
-  - commonly associated w/ C/C++
+  - commonly associated w/ <span style="color: #bb6600;">C/C++</span>
 
 
 - rootkit
@@ -504,7 +504,7 @@
     - SaaS: none
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 25vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
         onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
         src    = "img/0803-iaas_paas-saas-compare.png"
         alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
@@ -922,7 +922,7 @@
   - wildcards and destination list: asterisk (`*`) not supported for wildcard
   - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
     - lightweight virtual machines
-    - act as <span style="color: #bb6600;">conditional DNS forwarders<span style="color: #bb6600;">
+    - act as <span style="color: #bb6600;">conditional DNS forwarders</span>
       - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
       - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
       - local DNS queries to your existing local DNS servers and forwarders
@@ -1228,7 +1228,7 @@
   - deployed by your organization to ingest threat intelligence automatically
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://bit.ly/3ujCRye')"
       src    = "https://bit.ly/3IZAqFq"
       alt    = "Firepower Management Center Data Flow"
