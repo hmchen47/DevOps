@@ -178,7 +178,7 @@
   - Trustpoint (Cisco)
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
-    - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) profile - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+    - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) <span style="color: #bb6600;">profile</span> - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
   - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
   - certificate signing request (CSR)
     - one of the first steps towards getting your own SSL Certificate
