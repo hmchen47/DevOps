@@ -62,8 +62,8 @@
 
 
 - rootkit
-  - Trojan malware attack
-  - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him persistent remote access to the computer
+  - <span style="color: #bb6600;">Trojan</span> malware attack
+  - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
   - a program providing maliciously privileged access to a computer
   - types: 1) kernel; 2) user mode; 3) bootloader; 4) Memory rootkits
 
@@ -72,7 +72,7 @@
   - a collection of internet-connected devices infected by malware
   - unauthorized access
   - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
-  - group of computers connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
+  - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
 - DoS and DDo
