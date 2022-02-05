@@ -10,7 +10,10 @@
     - virus: 1) the most common type of malware; 2) attach malicious code to clean code; 3) wait to be run
     - ransomeware: infect computer and display message demanding a fee to be paid
     - spyware: 1) secretely record everything user enter, upload, download and store on computers or mobile devices; 2) keep itself hidden
-  - expolit: a code taking advantage of a software a software vulnerability or security flaw
+  - vulnerability: a weakness in a software system
+  - expolit:
+    - a code taking advantage of a software a software vulnerability or security flaw
+    - an attack that leverages that vulnerability
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
@@ -49,6 +52,7 @@
   - a client-side vulnerability that targets other application users
   - inject malicious code (usually malicious links) into a database
   - used to <span style="color: #bb6600;">redirect users</sapn> to websites where attackers can steal data from them
+  - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
 
 
 - Buffer overflow
@@ -103,6 +107,7 @@
     - spear: designed to get a single recipient to respond
   - mitigation: 1) browser alert; 2) email filtering
   - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
+  - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
 
 
 - TAXII/STIX
@@ -302,6 +307,20 @@
     ```
 
 
+- Site-to-site VPN
+  - access control policy used to inspect traffic coming from the users
+  - decrypted traffic is subject to Access Control policy
+  - enable `sysopt permit-vpn` option to bypass access control
+    - bypass the inspection
+    - VPN filter ACL and authorization ACL downloaded from AAA server are still applied to VPN traffic
+  - L2TP over IPsec vs GRE over IPsec
+    - L2TP: Layer 2 Tunneling Protocol
+    - GRE: a simple IP packet encapsulation protocol
+    - port number: L2TP UDP:1701; GRE - IP:47 
+    - GRE protocol <span style="color: #bb6600;">adds its own header</span> (4 bytes plus options) between the payload (data) and the delivery header
+    - L2TP packet including payload and L2TP header, sent within a User Datagram Protocol (UDP) datagram
+
+
 - DMVPN
   - full meshed connectivity
   - simple hub and spoke configuration
@@ -352,9 +371,10 @@
     - using common management protocols to monitor and configure the network devices
   - northbound interfact (NBI)
     - intent API
+    - an abstraction of network functions with a programmable interface for <span style="color: #bb6600;">applications</span> to consume the network services and configure the network dynamically
     - SDN controller communicating w/ network service applications, the management solution
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
-    - typically RESTful APIs used to communicate between the SDN controller and the services and applications running over the network
+    - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
     - used for the orchestration and automation of the network components to align with the needs of different applications via SDN network programmability
     - basically the link between the applications and the SDN controller
     - applications can tell the network devices (physical or virtual) what type of resources they need
@@ -362,7 +382,7 @@
     - <span style="color: #bb6600;">provision</span> SSIDs, QoS policies, and <span style="color: #bb6600;">update</span> software versions on switches
   - southbound interface (SBI)
     - SDN controller communicating w/ network devices via API
-    - usually OpenFlow, NETCONF and RESTCONF used to communicate w/ network devices
+    - usually <span style="color: #bb6600;">CLI, SNMP, OpenFlow, NETCONF and RESTCONF</span> used to communicate w/ network devices
     - enable the controller to dynamically make changes based on real-time demands and scalability needs
   - eastbound interface (EBI)
   - westbound interface (WBI)
@@ -414,7 +434,7 @@
 
 
 - Python script
-  - code snippet
+  - make a SSL connection
 
     ```python
     user = sys.argv[2]      # "ersad"
@@ -423,7 +443,7 @@
     creds = str.encoder(';'.join(user, password))
     encodedAuth = bytes.decode(base64.b64encode(creds))
 
-    conn= http.client.HTTPSConnection(
+    conn = http.client.HTTPSConnection(
       "{}:9060".format(host), 
       context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     )
@@ -431,6 +451,16 @@
 
     - connection w/ TLS1.2 SSL protocol
     - username and password from command line inputs
+  - add a global rule into policies
+
+    ```python
+    api+path = "/api/access/global/rules"
+    ...
+    post_data = {
+      ...
+    }
+    req = urllib2.Request(url, json.dumps(post_data), headers)
+    ```
 
 
 
@@ -473,6 +503,12 @@
     - on-primese solution: customer
     - cloud-based solution: provider
   - customers no responsibility of OS patch management: PaaS
+  - secure SaaS-based applications
+    - all administrative access to SaaS applications as privileged
+    - set up single sign-on (SSO) integrations
+    - Use <span style="color: #bb6600;">multi-factor authentication (MFA)</span>
+    - install and integrate an identity governance solution
+    - stay up to date (patch mgmt)
 
 
 - Cloud security assessment
@@ -574,6 +610,16 @@
   - no URL filtering feature as FTDv
 
 
+- Secure Virtual Appliance
+  - functions same as physical Cisco Secure Email Gateway, Cisco Secure Web Appliance, or Cisco Secure Email and Web Manager hardware appliances, with only a few minor differences
+  - requirements to migrate virtual appliance to another physical host
+    - same network configuration
+    - same <span style="color: #bb6600;">defined network(s)</span> to which the interfaces on the virtual appliance are mapped
+    - datastore that the virtual appliance uses
+    - Secure Email Virtual Gateway w/o mail in its queue
+  - migrate a Cisco WSA virtual appliance from one physical host to another physical host by using VMware Motion: access to the same defined network
+
+
 - Cloudlock
   - a cloud-based <span style="color: #bb6600;">Cloud Access Security Broker (CASB)</span> and cloud cybersecurity platform
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
@@ -665,15 +711,11 @@
     - normalized microsegmentation policy:
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
-
-
-- pxGrid
-  - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
-  - provides a new WebSockets client and removes dependencies on underlying operating systems and language
-  - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
-  - multiple security products able to share data and work together
-  - open, scalable, and <span style="color: #bb6600;">IETF standards-driven</span> platform
-  - automate security to get answers and contain threats faster
+  - Contiv
+    - an open source project to deploy microsegmentation policy-based services in container environments
+    - offer a higher level of networking abstraction for microservices by providing a policy framework
+    - built-in service discovery and service routing functions to scale out services
+    - deploy <span style="color: #bb6600;">microsegmentation and multi-tenancy services</span> with a policy-based container
 
 
 - Secure Endpoint
@@ -747,6 +789,7 @@
     - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from <span style="color: #bb6600;">malware</span>
     - unified malware analysis and threat intelligence platform
     - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
+    - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
   - ETHOS engine
     - the Cisco file grouping engine
     - group families of files together to observe variants of a malware
@@ -776,11 +819,12 @@
   - mechanism to increase <span style="color: #bb6600;">reliability of the service</span>: Anycast IP (208.67.222.222 & 208.67.220.220) routing
   - improving **defense in depth** by blocking malicious destinations prior to a connection being established
   - use intelligence to determine if the request is safe, malicious or risky
-  - Umbrella roaming protects employees even when they are off the VPN
   - risky: domain contains both malicious and legitimate content
   - safe and malicious requests routed as usual or blocked, respectively
   - risky requests routed to our cloud-based proxy for deeper inspection
   - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
+  - leverage DNS-layer security
+  - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
   - File Inspection
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
@@ -832,6 +876,7 @@
     - a cloud-delivered security service for Cisco's next-generation firewall
     - protect employees even when they are off the VPN
     - ensure that assets are secure from malicious links on and off the corporate network
+  - protect users of endpoint solution from a phishing: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: asterisk (`*`) not supported for wildcard
   - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
     - lightweight virtual machines
@@ -1004,10 +1049,12 @@
     - Secure IPS (Firepower Next-Gen IPS / NGIPS)
     - FirePOWER Threat Defense for ISR
     - Malware Defense (AMP)
-  - typical deployment - multiple traffic-sensing managed devices installed on network segments monitor traffic for analysis and report to a manager:
-    - Firepower Management Center
-    - Firepower Device Manager
-    - Adaptive Security Device Manager (ASDM)
+  - typical deployment
+    - multiple traffic-sensing managed devices installed
+    - monitor traffic for analysis and report to a manager:
+      - Firepower Management Center
+      - Firepower Device Manager
+      - Adaptive Security Device Manager (ASDM)
   - network discovery & identity policies:
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
@@ -1028,6 +1075,7 @@
     - a shared set of features or parameters that define the aspects of a managed device
     - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
     - configure multiple managed devices at once
+    - web GUI to download capture traffic file: <span style="color: #bb6600;">enable the HTTPS server</span> for the service platform policy
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
     - CLI:
@@ -1050,10 +1098,17 @@
     - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
   - URL filtering
+    - control access to web site based on
+      - category: a general classification for the URL, e.g., Auction category, Job Search category
+      - reputation:
+        - how likely the URL is to be used for purposes that might against orgamnizatio's security policy
+        - level: 1 - High Risk; 2 - Suscpecious sites; 3 - Benign Sites with security risk ; 4 - Benign Sites; 5 - Well Known
+        - block all levels lower than the selected level, e.g., select level 3 and then block scores 1~3
     - under access control rule of <span style="color: #bb6600;">access control policy</span>
     - a feature to control the websites that users on your network can access:
       - Category and reputation-based URL filtering (recommended)
       - Manual URL filtering
+    - create a rule to Block traffic based on a reputation level
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
@@ -1108,12 +1163,6 @@
 - Firepower Threat Defence Devices
   - a next-generation firewall (NGFW) w/ NGIPS capabilities
   - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
-  - site-to-site VPN
-    - access control policy used to inspect traffic coming from the users
-    - decrypted traffic is subject to Access Control policy
-    - enable `sysopt permit-vpn` option to bypass access control
-      - bypass the inspection
-      - VPN filter ACL and authorization ACL downloaded from AAA server are still applied to VPN traffic
 
 
 - Cisco Threat Intelligence Director (CTID)
@@ -1283,7 +1332,8 @@
   - information and/or data
   - provide awareness and visibility into what is occurring on the network at any given time
   - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
-  - use a push method which makes it faster than SNMP
+  - use a <span style="color: #bb6600;">push method</span> which makes it faster than SNMP
+  - advantage over SNMP: <span style="color: #bb6600;">scalability</span>
   - types of data in telemetry info
     - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
     - <span style="color: #bb6600;">interpacket variation</span>: any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
@@ -1383,6 +1433,7 @@
     - sending copies (bcc) to other receipients
     - sending a DLP violation notification to sender or other contacts
   - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
+  - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: MX record
 
 
 - AsyncOS operating system
@@ -1449,6 +1500,9 @@
   - proxy caching: improve web traffic performance
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
   - use the SensorBase data feeds to improve the accuracy of Web Reputation Scores
+  - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
+    - create NTLM or Kerberos authentication realm and enable transparent user identification, NOT LDAP autehtication realm
+    - deploy a separate Active Directory agent such as Cisco Context Directory Agent
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -1509,6 +1563,7 @@
       - optional: allow to skip the specified optional requirements and move to Compliant state
       - audit: for internal purposes and the agent does not prompt any message or input from end users
   - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
+  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: tag the guest portal in the CWA part of the <span style="color: #bb6600;">Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
     - MAC Authentication Bypass (MAB)
@@ -1584,6 +1639,23 @@
     - used for authorizing users on the network even as the Identity Services Engine (ISE) not involved
     - authorization method only supports devices that authenticate with a Domain Controller
     - allow for managed endpoints that <span style="color: #bb6600;">authenticate to AD to be mapped to Security Groups (PassiveID)</span>
+
+
+- pxGrid
+  - stands for Platform Exchange Grid
+  - integrate multiple vendors security products together and group them in an ecosystem domain
+  - purpose: share contextual data between the integrated partners
+  - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
+  - provides a new WebSockets client and removes dependencies on underlying operating systems and language
+  - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
+  - multiple security products able to share data and work together
+  - open, scalable, and <span style="color: #bb6600;">IETF standards-driven</span> platform
+  - automate security to get answers and contain threats faster
+  - use a built-in API in ISE
+  - main components: controller, publisher and subscriber
+    - controller: core component to make everything working, ISE
+    - publisher: partner w/ some contextual data to be shared with the other partners, e.g., FMC
+    - subscriber: partner interested in parsing some contextual data from the other partners
 
 
 - RADIUS Change of Authorization (CoA)
@@ -1673,6 +1745,7 @@
   - a fallback option for devices that don't support 802.1x
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
+  - success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': `aaa authorization network default group ise` config required
 
 
 - Cisco devices basic commands
@@ -1712,11 +1785,14 @@
       ```
 
     - NTP authentication enforcment: `ntp authenticate`
+  - ACL `login block-for 100 attempts 4 within 60`: if four failures occur in 60 seconds, the router goes to quiet mode for 100 seconds
 
 
 - Multi-factor Authentication (MFA)
+  - authentication method two or more verification factors to gain access to a resource
+  - require means of verification that unauthorized users won't have
+  - protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
   - prevent brute force attacks from being successful
-  - an authentication method that requires the user to provide two or more verification factors to gain access to a resource
   - proper MFA using factors from at least two different categories
   - benefits
     - flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications
