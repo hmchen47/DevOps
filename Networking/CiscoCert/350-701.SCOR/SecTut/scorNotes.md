@@ -150,19 +150,19 @@
 
 - Data exfiltration
   - ICMP exfiltration
-    - encrypting the payload in an ICMP packet to carry out command and control tasks on a compromised host
+    - encrypting the payload in an ICMP packet to carry out <span style="color: #bb6600;">command and control tasks</span> on a compromised host
   - DNS exfiltration
     - a.k.a. DNS tunneling
     - hide and encode data inside DNS requests and queries
     - encode the data of other programs or protocols in DNS queries and responses
     - often including data payloads added to an attacked DNS server and used to control a remote server and applications
-    - encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data
+    - <span style="color: #bb6600;">encode the payload with random characters</span> that are broken into short strings and the DNS server rebuilds the exfiltrated data
     - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
     - DNS abuse exchanges data between two computers even when there is no direct connection
-    - daat sent out as part of the <span style="color: #bb6600;">domain name</span>
+    - data sent out as part of the <span style="color: #bb6600;">domain name</span>
   - characteristics of messenger protocol for data exflitration
-    - encrypted traffic which prevents visibility on firewalls and IPS systems
-    - messenger apps unable to be segmented w/ standard network controls
+    - <span style="color: #bb6600;">encrypted traffic</span> which prevents visibility on firewalls and IPS systems
+    - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
 
 
 - Threat intelligence
