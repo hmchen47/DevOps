@@ -215,22 +215,22 @@
     - Advanced Encryption Standard (AES)
       - highest level of protection
       - successor of DES
-      - encrypt and decrypt in blocks (block cipher): 128 bits block size
+      - encrypt and decrypt in blocks (<span style="color: #bb6600;">block cipher</span>): 128 bits block size
       - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
-      - AES-256
-        - secure online connection against cyberattacks that can compromise your security
-        - offer robust protocols to combat malicious attacks
-        - reinforce your online identity
+      - AES-256 capability
+        - secure <span style="color: #bb6600;">online connection</span> against cyberattacks that can compromise your security
+        - offer robust <span style="color: #bb6600;">protocols</span> to combat malicious attacks
+        - reinforce <span style="color: #bb6600;">online identity</span>
   - asymmetric key
     - public key cryptography
     - using keypairs (a private key and a public key)
-    - more complex and time man in
-    - <span style="color: #bb6600;">Diffie-Hellman</span>: an asymmetric algorithm used to establish a shared secret for a <span style="color: #bb6600;">symmetric key</span> algorithm
+    - more complex and time comsuming
+    - Diffie-Hellman: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
     - RSA
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
     - different keys for encryption and decryption
-    - the capability to only know one key on one side
+    - the capability to only <span style="color: #bb6600;">know one key on one side</span>
 
 
 - Security issues of privacy and integrity 
