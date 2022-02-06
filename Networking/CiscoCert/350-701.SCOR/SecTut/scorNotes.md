@@ -323,7 +323,7 @@
 - Site-to-site VPN
   - access control policy used to inspect traffic coming from the users
   - decrypted traffic is subject to Access Control policy
-  - enable `sysopt permit-vpn` option to bypass access control
+  - enable <code style="color: #bb6600;">sysopt permit-vpn</code> option to bypass access control
     - bypass the inspection
     - VPN filter ACL and authorization ACL downloaded from AAA server are still applied to VPN traffic
   - L2TP over IPsec vs GRE over IPsec
