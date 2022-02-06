@@ -949,7 +949,7 @@
 
 
 - Cisco Defense Orchestrator
-  - a cloud-based management solution that allows you to 
+  - a cloud-based management solution
   - manage security policies and device configurations with ease across multiple Cisco and cloud-native security platforms
   - features
     - Templates for consistent policy design
