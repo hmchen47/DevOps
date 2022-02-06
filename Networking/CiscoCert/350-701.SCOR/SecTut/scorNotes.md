@@ -487,11 +487,11 @@
 ## Cloud Security Concepts and Solutions
 
 - Cisco Cloud Security Portfolio
-  - Umbrella: Set up the first line of defense against threats on the Internet wherever users go
-  - Cloudlock: Secure your cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform
-  - Cloud Email Security: Defend against advanced email threats
-  - Stealthwatch Cloud: Extend network visibility, threat detection, and analytics to your public cloud environments
-  - Next-Generation Firewall: Protect critical infrastructure in the cloud with the Cisco Firepower Next-Generation Firewall
+  - Umbrella: Set up the <span style="color: #bb6600;">first line of defense</span> against threats on the Internet wherever users go
+  - Cloudlock: Secure your <span style="color: #bb6600;">cloud users, data, and applications</span> with the cloud-native CASB and cloud cybersecurity platform
+  - Cloud Email Security: Defend against <span style="color: #bb6600;">advanced email threats</span>
+  - Stealthwatch Cloud: Extend <span style="color: #bb6600;">network visibility, threat detection, and analytics</span> to your public cloud environments
+  - Next-Generation Firewall: Protect <span style="color: #bb6600;">critical infrastructure</span> in the cloud with the Cisco Firepower Next-Generation Firewall
 
 
 - Cloud services
