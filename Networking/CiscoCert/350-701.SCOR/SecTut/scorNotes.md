@@ -854,7 +854,7 @@
   - custom detection policy 
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
-  - patching strategy for endpoint: known vulnerabilities are targeted and having a regular patch cycle reduces risks
+  - patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
 
 
 - Umbrella
