@@ -305,7 +305,7 @@
   - DTLS
     - UDP based
     - used for delay sensitive applications (voice and video)
-    - strongest throughput performance
+    - strongest throughput <span style="color: #bb6600;">performance</span>
   - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
 
     ```text
