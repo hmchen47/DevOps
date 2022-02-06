@@ -366,8 +366,8 @@
 
 
 - GETVPN (Group Encrypted Transport VPN)
-  - a trunnel-less VPN
-  - private IP transport, such as MPLS VPN or private WAN
+  - a <span style="color: #bb6600;">trunnel-less</span> VPN
+  - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
   - scalable for any-to-any connectivity and encryption
   - eliminate point-to-point tunnels and their associated overlay routing
