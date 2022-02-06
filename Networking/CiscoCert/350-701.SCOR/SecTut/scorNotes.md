@@ -257,38 +257,37 @@
     - the first stage in establishing IPSec
   - IKEv1
     - Phase 1: ISAKMP
-      - modes: 1) main - 6 msgs; 2) agressive - 4 msgs
+      - modes: <span style="color: #bb6600;">main - 6 msgs; agressive - 4 msgs</sign>
       - <span style="color: #bb6600;">preshared authentication key</span>
         - global configuration mode
         - syntax: `crypto isakmp key <keystring> address <peer-address> [mask]` or `crypto isakmp key <keystring> hostname <peer-hostname>`
         - same command on two end devices
-        - debug msg: 'ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...' -> sign of <span style="color: #bb6600;">key mismatch</span>
-        - key exchange
+        - debug msg: `ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...` -> sign of <span style="color: #bb6600;">key mismatch</span>
+        - example pre-shared key exchange config
           - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
           - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4`
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
-        - define the ISAKMP identity used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
-        - configure a preshared authentication key: `crypto isakmp key Cisco0123456789 172.19.20.24`
+        - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
+        - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 172.19.20.24`
     - phase 2: IPsec
-    - stateful failover
-      - enable a router to continue processing and forwarding IPsec packets after outage occurs
-      - two identical routers: 1) same type of device; 2) have the same CPU and memory; 3) either no encryption accelerator or identical encryption accelerators
-      - duplicate IKE and IPsec configuration on active decvice on standby device
   - IKEv2
     - standard including NAT-T
-    - 4 msgs for both phase 1 & 2
-    - using EAP for authenticating remote access clients
+    - <span style="color: #bb6600;">4 msgs</span> for both phase 1 & 2
+    - using <span style="color: #bb6600;">EAP for authenticating</span> remote access clients
     - name mangler
       - offer the flexibility to perform AAA-based policy lookup for the peer based on arbitrary portions of the peer IKE identities of various types
-      - referenced from the IKEv2 profile specifically from the aaa authorization and keyring aaa commands that use AAA authorization for policy lookup
-      - OU of the IKEv2 peer certificate used as the identity when matching an IKEv2 authorization policy
+      - referenced from the IKEv2 profile specifically from the `aaa authorization` and `keyring aaa` commands that use AAA authorization for policy lookup
+      - config <span style="color: #bb6600;">OU of the IKEv2 peer certificate</span> used as the identity when matching an IKEv2 authorization policy
         - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
+  
+
+- IP Security (Psec)
   - Cryptographic algorithms w/ IPsec include
-    - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity.
+    - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
     - TripleDES-CBC for confidentiality
-    - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality.
-    - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently.
+    - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality
+    - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently
   - AH protocol
     - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
     - provide data integrity, data origin authentication, and an optional replay protection service
@@ -296,6 +295,10 @@
     - provide data <span style="color: #bb6600;">confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)</span>
     - used with confidentiality only, authentication only, or both confidentiality and authentication
     - reliable authenticaton protocol and supporting <span style="color: #bb6600;">ACK and sequence</span>
+  - stateful failover
+    - enable a router to continue processing and forwarding IPsec packets after outage occurs
+    - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
+    - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> on active device on standby device
 
 
 - SSL, TLS & DTLS
