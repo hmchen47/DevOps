@@ -590,8 +590,8 @@
     - assurance: using AI/ML, enables every point on the network to become a sensor
   - open platform capabilities: intent-based API (Northbound API)
   - characteristics of APIs
-    - quickly provision new devices
-    - view the overall health of the network
+    - quickly <span style="color: #bb6600;">provision</span> new devices
+    - view the <span style="color: #bb6600;">overall health</span> of the network
 
 
 - Cisco Context Directory Agent (CDA)
