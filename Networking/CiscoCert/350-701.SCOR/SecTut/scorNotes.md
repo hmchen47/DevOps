@@ -619,7 +619,7 @@
 - Cisco Firepower NGFW Virtual (NGFWv)
   - the virtualized version of Cisco's Firepower next generation firewall
   - available in the AWS and Azure marketplaces
-  - deployed in routed and passive modes
+  - deployed in <span style="color: #bb6600;">routed and passive modes</span>
   - passive mode design requires ERSPAN,(Encapsulated Remote Switched Port Analyzer)
     - inspect packets like an Intrusion Detection System (IDS) appliance, only availabe in AWS
     - no action can be taken on the packet
