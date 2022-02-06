@@ -965,16 +965,16 @@
 ## <span style="color: #008888;">Firewalls and IPS</span>
 
 - Cisco security solutions
-  - <span style="color: #bb6600; font-weight: bold;">StealWatch</span>: performs security analytics by collecting network flows via NetFlow
-  - <span style="color: #bb6600; font-weight: bold;">ESA</span>:
+  - <span style="color: #bb6600;">StealWatch</span>: performs security analytics by collecting network flows via NetFlow
+  - <span style="color: #bb6600;">ESA</span>:
     - email security solution which protects against email threats
     - including ransomware, business email compromise, phishing, whaling, and many other email-driven attacks
-  - <span style="color: #bb6600; font-weight: bold;">AMP for Endpoints (AMP4E)</span>: provides malware protection on endpoints
-  - <span style="color: #bb6600; font-weight: bold;">Umbrella</span>: provides DNS protection by blocking malicious destinations using DNS
-  - <span style="color: #bb6600; font-weight: bold;">Firepower Threat Defense (FTD)</span>
+  - <span style="color: #bb6600;">AMP for Endpoints (AMP4E)</span>: provides malware protection on endpoints
+  - <span style="color: #bb6600;">Umbrella</span>: provides DNS protection by blocking malicious destinations using DNS
+  - <span style="color: #bb6600;">Firepower Threat Defense (FTD)</span>
     - provide a comprehensive suite of security features
     - including firewall capabilities, monitoring, alerts, Intrusion Detection System (IDS) and Intrusion Prevention System (IPS)
-  - <span style="color: #bb6600; font-weight: bold;">Cisco Cloudlock</span>
+  - <span style="color: #bb6600;">Cisco Cloudlock</span>
     - secure cloud users, data, and applications with the cloud-native CASB and cloud cybersecurity platform Cisco Cloudlock 
     - provide visibility and compliance checks, 
     - protect data against misuse and exfiltration
