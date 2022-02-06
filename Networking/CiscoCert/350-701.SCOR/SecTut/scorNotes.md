@@ -775,24 +775,24 @@
   - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
   - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
-    - <span style="text-decoration: underline">Talos Security</span> Intelligence and Research Group
-    - <span style="text-decoration: underline">Threat Grid's</span> threat intelligence
+    - <span style="color: #bb6600;">Talos Security</span> Intelligence and Research Group
+    - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
   - file disposition:
-    - a <span style="text-decoration: underline">categorization</span> from the AMP cloud that determines what actions are taken on the file download
+    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
       - clean - the file known to be good
       - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
       - unknown - insufficient data to classify the file as clean or malicious
   - differences btw public and private cloud
-    - <span style="text-decoration: underline">advanced custom detection</span>: private - Windows only; public - popular OSes
-    - <span style="text-decoration: underline">ETHOS</span>: only available in the public cloud; generic signature engine
+    - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
+    - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - private cloud deployment modes
     - cloud proxy mode 
       - virtual and physical appliance
       - Internet connection required to complete disposition lookups
       - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
-      - <span style="text-decoration: underline">SHA-256 hash</span> of the file inspected from AMP public cloud
-      - <span style="text-decoration: underline">content and software updates automatically</span> from AMP public cloud via AMP private cloud
+      - <span style="color: #bb6600">SHA-256 hash</span> of the file inspected from AMP public cloud
+      - <span style="color: #bb6600">content and software updates automatically</span> from AMP public cloud via AMP private cloud
     - air-gap mode
       - only on the physical mode
       - no Internet connection required to complete disposition lookups
@@ -861,46 +861,21 @@
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
-  - mechanism to increase <span style="color: #bb6600;">reliability of the service</span>: Anycast IP (208.67.222.222 & 208.67.220.220) routing
+  - mechanism to increase reliability of the service: <span style="color: #bb6600;">Anycast IP</span> (208.67.222.222 & 208.67.220.220) routing
   - improving **defense in depth** by blocking malicious destinations prior to a connection being established
-  - use intelligence to determine if the request is safe, malicious or risky
-  - risky: domain contains both malicious and legitimate content
+  - use intelligence to determine if the request is <span style="color: #bb6600;">safe, malicious or risky</span>
   - safe and malicious requests routed as usual or blocked, respectively
-  - risky requests routed to our cloud-based proxy for deeper inspection
+  - risky requests
+    - domain contains both malicious and legitimate content
+    - routed to cloud-based proxy for deeper inspection
   - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
   - leverage DNS-layer security
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
-  - File Inspection
-    - either the DNS or Web policy
-    - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
-    - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
-  - <span style="color: #bb6600;">intelligent proxy</span>
-    - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
-    - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
-    - prevent malicious content downloads from suspicious domains while allowing normal web traffic
-    - config procedure
-      - enable '<span style="color: #bb6600;">Enable Intelligence Proxy</span>' in Advanced Settings
-      - <span style="color: #bb6600;">Security Settings</span> > Potential Harmful Domain = On -> block traffic
-  - SSL Decryption
-    - an important part of the Umbrella Intelligent Proxy
-    - proxy and inspect traffic that's sent over HTTPS
-    - does require the root certificate be installed
-  - SafeSearch: an automated filter of pornography and other offensive content 
-  - logging
-    -set <span style="color: #bb6600;">per-policy</span> when you first create a policy
-    - by default, logging = on and log all requests an identity makes to reach destinations
-    - able to change what level of identity activity Umbrella logs
-    - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
-  - Umbrella Multi-Org console
-    - upload, store, and archive traffic activity logs from locsl Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
-    - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
-    - able to download from an S3 bucket
-    - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
-  - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
   - Policy
     - the heart of Umbrella
     - define how security and access controls are applied to identities
-  - Policy wizard: access control and security-related components when defining policies for your identities
+  - Policy wizard:
+    - access control and security-related components when defining policies for your identities
     - Security Settings:
       - select which security threat categories Umbrella blocks, e.g., malware
       - <span style="color: #bb6600;">Security Categories</span>: Malware, Newly Seen Domain, Command Control Callbacks, Phishing Attacks, Dynamic DNS, Potentially Harmful Domains, DNS Tunneling VPN, Cryptomining
@@ -911,6 +886,33 @@
     - Destination Lists: create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
+  - <span style="color: #bb6600;">intelligent proxy</span>
+    - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
+    - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
+    - prevent malicious content downloads from suspicious domains while allowing normal web traffic
+    - config procedure to block traffic
+      - Advanced Settings > '<span style="color: #bb6600;">Enable Intelligence Proxy</span>' = On
+      - <span style="color: #bb6600;">Security Settings</span> > Potential Harmful Domain = On
+  - File Inspection
+    - either the DNS or Web policy
+    - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
+    - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
+  - SSL Decryption
+    - an important part of the Umbrella Intelligent Proxy
+    - proxy and inspect traffic that's sent over HTTPS
+    - does require the <span style="color: #bb6600;">root certificate</span> installed
+  - SafeSearch: an automated filter of pornography and other offensive content 
+  - logging
+    - set <span style="color: #bb6600;">per-policy</span> when you first create a policy
+    - by default, logging = on and log all requests an identity makes to reach destinations
+    - able to change what level of identity activity Umbrella logs
+    - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
+  - Umbrella Multi-Org console
+    - upload, store, and archive traffic activity logs from local Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
+    - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
+    - able to download from an S3 bucket
+    - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
+  - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
   - blocking URLs: URL Reputation from 6 to 10
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - Block Page and Block Page Bypass features
@@ -921,7 +923,7 @@
   - Umbrella Roaming
     - a cloud-delivered security service for Cisco's next-generation firewall
     - protect employees even when they are off the VPN
-    - ensure that assets are secure from malicious links on and off the corporate network
+    - ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - protect users of endpoint solution from a phishing: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: asterisk (`*`) not supported for wildcard
   - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
@@ -940,10 +942,10 @@
     - prevent them from occurring in the future
     - enhance the visibility into your IT architecture
   - <span style="color: #bb6600;">Procedure to enable AppDynamics</span> monitoring AWS EC2 instance
-    - 1\. configure a Machine Agent or SIM Agent
-    - 2\. install monitoring extension for AWS EC2
-    - 3\. update `config.yaml`
-    - 4\. restart the Machine Agent
+    1. configure a Machine Agent or SIM Agent
+    2. install monitoring extension for AWS EC2
+    3. update `config.yaml`
+    4. restart the Machine Agent
 
 
 - Cisco Defense Orchestrator
