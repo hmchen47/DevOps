@@ -775,24 +775,24 @@
   - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
   - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
-    - Talos Security Intelligence and Research Group
-    - Threat Grid's threat intelligence
+    - <span style="text-decoration: underline">Talos Security</span> Intelligence and Research Group
+    - <span style="text-decoration: underline">Threat Grid's</span> threat intelligence
   - file disposition:
-    - a categorization from the AMP cloud that determines what actions are taken on the file download
+    - a <span style="text-decoration: underline">categorization</span> from the AMP cloud that determines what actions are taken on the file download
     - actions for file disposition
-      - <span style="color: #bb6600;">clean</span> - the file known to be good
+      - clean - the file known to be good
       - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
-      - <span style="color: #bb6600;">unknown</span> - insufficient data to classify the file as clean or malicious
+      - unknown - insufficient data to classify the file as clean or malicious
   - differences btw public and private cloud
-    - advanced custom detection: private - Windows only; public - popular OSes
-    - ETHOS: only available in the public cloud; generic signature engine
+    - <span style="text-decoration: underline">advanced custom detection</span>: private - Windows only; public - popular OSes
+    - <span style="text-decoration: underline">ETHOS</span>: only available in the public cloud; generic signature engine
   - private cloud deployment modes
     - cloud proxy mode 
       - virtual and physical appliance
       - Internet connection required to complete disposition lookups
       - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
-      - SHA-256 hash of the file inspected from AMP public cloud
-      - content and software updates automatically from AMP public cloud via AMP private cloud
+      - <span style="text-decoration: underline">SHA-256 hash</span> of the file inspected from AMP public cloud
+      - <span style="text-decoration: underline">content and software updates automatically</span> from AMP public cloud via AMP private cloud
     - air-gap mode
       - only on the physical mode
       - no Internet connection required to complete disposition lookups
@@ -812,43 +812,43 @@
     - SPERO fingerprint: features of a file
     - send SPERO fingerprint to the cloud
     - SPERO trees determine whether a file is malicious
-  - Dynamic Analysis
-    - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
-    - run the file in a <span style="color: #bb6600;">sandbox</span> environment
-    - analyze the file's behavior to determine whether the file is malicious
-    - return a threat score that indicates the likelihood that a file contains malware
   - Local malware analysis
     - a managed device locally inspecting executables, PDFs, office documents, and other types of files for the most common types of malware
     - use a detection rule set provided by the Cisco <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group (Talos)
     - not query the AMP cloud and not run the file
     - local malware analysis saves time and system resources
+  - Dynamic Analysis
+    - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
+    - run the file in a <span style="color: #bb6600;">sandbox</span> environment
+    - analyze the file's behavior to determine whether the file is malicious
+    - return a threat score that indicates the likelihood that a file contains malware
   - outbreak control
-    - custom detections: 1) _Simple_ to convict files not yet classified; 2) _Advanced_ to create signatures
-    - application control: 1) *Blocked Lists*; 2) *Allowed Lists*
-    - network control: *IP blocked and Allowed Lists*
+    - custom detections: <span style="color: #bb6600;">Simple</span> to convict files not yet classified; <span style="color: #bb6600;">Advanced</span> to create signatures
+    - <span style="color: #bb6600;">application control</span>: Blocked Lists; Allowed Lists
+    - <span style="color: #bb6600;">network control</span>: IP blocked and Allowed Lists
     - endpoint IOC: 1) *Initiate Scan* - schedule and scan (admin only); 2) *Installed Endpoint IOCs* (admin only); 3) *Scan Summary*
-    - automated actions: *Automated Actions* sets actions automatically triggered
+    - <span style="color: #bb6600;">automated actions</span>: set actions automatically triggered
     - main lists: <span style="color: #bb6600;">Simple Custom Detections</span>, <span style="color: #bb6600;">Blocked Applications</span>, <span style="color: #bb6600;">Allowed Applications</span>, Advanced Custom Detections, and IP Blocked and Allowed Lists
   - Secure Malware Analytics (formerly Threat Grid)
     - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from <span style="color: #bb6600;">malware</span>
     - unified malware analysis and threat intelligence platform
     - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
     - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
-  - ETHOS engine
-    - the Cisco file grouping engine
-    - group families of files together to observe variants of a malware
-    - mark the ETHOS hash as malicious
-    - instantly detect whole <span style="color: #bb6600;">families of malware</span>
-    - perform fuzzy fingerprinting using static/passive heuristics
-  - offline detection engines
-    - TETRA: Windows
-    - ClamAV: Mac and Linux
   - connector engine (in sequence)
     - Tetra - full blown AV
     - Cloud Lookup - based on SHA256
     - Spero - machine learning
     - Ethos - malware family
     - ClamAV - custom detections
+  - ETHOS engine
+    - the Cisco file grouping engine
+    - group families of files together to observe variants of a malware
+    - mark the ETHOS hash as malicious
+    - instantly detect whole <span style="color: #bb6600;">families of malware</span>
+    - perform <span style="color: #bb6600;">fuzzy fingerprinting</span> using static/passive heuristics
+  - offline detection engines
+    - <span style="color: #bb6600;">TETRA</span>: Windows
+    - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
   - <span style="color: #bb6600;">prevalence</span>: a list of all files that have been executed
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
   - custom detection policy 
