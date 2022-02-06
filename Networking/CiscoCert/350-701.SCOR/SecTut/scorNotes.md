@@ -555,7 +555,7 @@
   - working for many switch series
   - network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics
   - use <span style="color: #bb6600;">PowerOn Auto Provisioning (POAP)</span> to automates the process of upgrading software images and installing configuration files on Cisco Nexus switches that are being deployed in the network for the first time
-  - add aLAN switch w/ Web UI
+  - add a LAN switch w/ Web UI
     - 1\. Inventory > Discovery > LAN switches
     - 2\. Add icon to add LAN
     - 3\. select Hops from Seed Switch or Switch List
