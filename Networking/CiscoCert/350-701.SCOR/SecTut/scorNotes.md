@@ -375,6 +375,15 @@
   - <span style="color: #bb6600;">reduce latency and provide encryption</span> over MPLS without the use of a central hub
 
 
+- Comparisons of DMVPN, FlexVPN and GETVPN
+  - Infrastructure Network: Public Internet Transport; Public Internet Transport; Private IP Transport
+  - Network Style: Hub-Spoke and Spoke-to-Spoke (Site-to-Site); Hub-Spoke and Spoke-to-Spoke (Client-to-Site and Site-to-Site); Any-to-Any (Site-to-Site)
+  - Routing: Dynamic routing on tunnels; Dynamic routing on tunnels or IKEv2 routing or IKEv2 Dynamic routing; Dynamic routing on IP WAN
+  - Failover Redundancy: Route Distribution Model
+  - Encryption Style: Peer-to-Peer Protection; Peer-to-Peer Protection; Group Protection
+  - IP Multicast: Multicast replication at hub; Multicast replication at hub; Multicast replication in IP WAN network
+
+
 ## Software Defined Network (SDN)
 
 - SDN architecture
