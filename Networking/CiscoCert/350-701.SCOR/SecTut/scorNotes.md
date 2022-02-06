@@ -340,7 +340,7 @@
   - forming IPsec tunnel over dynamically/statically addresses spokes
   - tunneled VPN: IKEv1 (ISAKMP) & IKEv2
   - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
-  - not support multiple SAs
+  - NOT support multiple SAs
   - AnyConnect superior capabilities:
     - customization of access policies <span style="color: #bb6600;">based on user identity</span>
     - enable VPN access for individual users from their machines
@@ -348,7 +348,7 @@
 
 - FlexVPN
   - tunneled VPN: IKEv2
-  - a standards-based solution interoperating with non-Cisco IKEv2 implementations
+  - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementations</span>
   - NHRP primarily used to establish spoke to spoke communication
   - spokes not register to hub
   - same as DMVPN
@@ -357,7 +357,7 @@
     - IOS routers w/ the same NHRP code
     - Cisco's proprietary technologies
   - differences
-    - P2P GRE tunnels: DMVPN - static; FlexVPN - static/dynamic
+    - P2P GRE tunnels: DMVPN - static; FlexVPN - <span style="color: #bb6600;">static/dynamic</span>
     - crypto: DMVPN - optional; FlexVPN - strongly tied into IPSec
     - key management protocol: DMVPN - IKEv1/IKEv2; FlexVPN – IKEv2
     - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
