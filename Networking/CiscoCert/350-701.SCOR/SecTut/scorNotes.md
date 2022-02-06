@@ -698,7 +698,7 @@
   - Email and Web Traffic Reputation Center
     - transform some of Talos' data into <span style="color: #bb6600;">actionable threat intelligence and tools</span> to improve your security posture
   - Talos Threat Source
-    - a newsletter
+    - a <span style="color: #bb6600;">newsletter</span>
     - a regular intelligence update from Cisco Talos
   - support a <span style="color: #bb6600;">two-way flow of telemetry and protection</span> across market-leading security solutions
     - Next-Generation Intrusion Prevention System (NGIPS)
