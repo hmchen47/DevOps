@@ -640,13 +640,13 @@
     - <span style="color: #bb6600;">User deployment of L3 networks</span>
     - <span style="color: #bb6600;">Routed mode (default)</span>
   - scenario: mirror port and NetFlow used in local devices
-    - no mirror port and NetFlow data in cloud environment
-    - virtual private cloud (VPC) in AWS offers VPC Flow log
-  - VPC Flow Logs
+    - NO mirror port and NetFlow data in cloud environment
+    - virtual private cloud (VPC) in AWS offers <span style="color: #bb6600;">VPC Flow log</span>
+  - VPC Flow
     - facilitate logging of all the IP traffic to, from, and across your network
-    - stored as records in special Amazon CloudWatch log groups
-    - provide the same kind of information as NetFlow dat
-  - no URL filtering feature as FTDv
+    - stored as records in special <span style="color: #bb6600;">Amazon CloudWatch log groups</span>
+    - provide the same kind of information as NetFlow data
+  - NO URL filtering feature as FTDv
 
 
 - Secure Virtual Appliance
