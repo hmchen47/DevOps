@@ -457,7 +457,7 @@
       - list of <span style="color: #bb6600;">computers, policies, and connector statuses</span
   - make a SSL connection
     - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
-    - <span style="color: #bb6600;">username and password</span> from command line inputs
+    - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
 
     ```python
     user = sys.argv[2]      # "ersad"
