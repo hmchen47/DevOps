@@ -420,12 +420,11 @@
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
 
 
-
 - AsyncOS API
-  - for Cisco Security Management appliances
+  - for Cisco <span style="color: #bb6600;">Security Management appliances</span>
   - a representational state transfer (REST) based set of operations
   - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
-  - a role based system: the scope of API queries defined by the role of the user
+  - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
   - Cisco Content Security Management Appliance -> Cisco Secure Email and Web Manager
 
 
