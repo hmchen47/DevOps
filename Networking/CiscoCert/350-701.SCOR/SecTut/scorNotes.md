@@ -495,13 +495,13 @@
 
 
 - Cloud services
-  - types: private 2) public; 3) hybrid; 4) community - variation of private
+  - types: 1) private 2) public; 3) hybrid; 4) community - variation of private
   - types of as-a-Service solution: (from customer/tenant view)
     - IaaS: 1) renting infrastructure; 2) purchase virtual power to execute your software as needed.; 3) like running a virtual server; 4) managing OS up to Apps
-    - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs. wen portals, or gateway software; 4) developing applications
+    - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs, web portals, or gateway software; 4) developing applications
     - SaaS: 1) software rent; 2) usually access via front end or web portal
-  - most secure service type: provate cloud
-  - DecSecOps: focusing on application development
+  - most secure service type: <span style="color: #bb6600;">private cloud</span>
+  - DecSecOps: focusing on <span style="color: #bb6600;">application development</span>
   - responsibility for customers and service providers
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
@@ -519,10 +519,10 @@
   - IaaS provider
     - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
     - sercure responsibility: <span style="color: #bb6600;">firewalling virtual machine</span>
-  - responsibility of the installation and maintenance of a product:
+  - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
-  - customers no responsibility of OS patch management: PaaS
+  - customersNO responsibility of <span style="color: #bb6600;">OS patch management</span>: PaaS
   - secure SaaS-based applications
     - all administrative access to SaaS applications as privileged
     - set up single sign-on (SSO) integrations
