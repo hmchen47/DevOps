@@ -1,6 +1,6 @@
 # SCOR 350-701 Notes
 
-## Security Concepts
+## <span style="color: #008888;">Security Concepts</span>
 
 - Malware, exploits, and security threats
   - malware:
@@ -172,7 +172,7 @@
     - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
 
 
-## Integrity and Privacy
+## <span style="color: #008888;">Integrity and Privacy</span>
 
 - Digital Certificate & PKI
   - Trustpoint (Cisco)
@@ -246,7 +246,7 @@
 
 
 
-## Virtual Private Networks
+## <span style="color: #008888;">Virtual Private Networks</span>
 
 - Internet Key Exchange (IKE) framework
   - used for remote host, network access, and virtual private network (VPN) access
@@ -384,7 +384,7 @@
   - IP Multicast: Multicast replication at hub; Multicast replication at hub; Multicast replication in IP WAN network
 
 
-## Software Defined Network (SDN)
+## <span style="color: #008888;">Software Defined Network (SDN)</span>
 
 - SDN architecture
   - centralized architecture to control networking devices in one device
@@ -484,7 +484,7 @@
     ```
 
 
-## Cloud Security Concepts and Solutions
+## <span style="color: #008888;">Cloud Security Concepts and Solutions</span>
 
 - Cisco Cloud Security Portfolio
   - Umbrella: Set up the <span style="color: #bb6600;">first line of defense</span> against threats on the Internet wherever users go
@@ -960,7 +960,7 @@
     - RAVPN Monitoring and Management 
 
 
-## Firwalls and IPS
+## <span style="color: #008888;">Firewalls and IPS</span>
 
 - Cisco security solutions
   - <span style="color: #bb6600; font-weight: bold;">StealWatch</span>: performs security analytics by collecting network flows via NetFlow
@@ -1419,7 +1419,7 @@
     - `snmp-server host inside 10.255.254.1 version 3 andy`: hostname = inside (interface name); community-name (username) = andy
 
 
-## Email and Web Security
+## <span style="color: #008888;">Email and Web Security</span>
 
 - Cisco Email Security Appliance (ESA)
   - features:
@@ -1552,7 +1552,7 @@
     - deploy a separate Active Directory agent such as Cisco Context Directory Agent
 
 
-## Authentication, Authorization, and Accounting (AAA)
+## <span style="color: #008888;">Authentication, Authorization, and Accounting (AAA)</san>
 
 - Identity Service Engine (ISE)
   - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
@@ -1891,7 +1891,7 @@
     - <span style="color: #bb66pp;">more advanced detection capabilities</span>
 
 
-## Layer 2 Security
+## <span style="color: #008888;">Layer 2 Security</span>
 
 - ARP spoofing
   - a Man in the Middle (MitM) attack that allows attackers to intercept communication between network devices
