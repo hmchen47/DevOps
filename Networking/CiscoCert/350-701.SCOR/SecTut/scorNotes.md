@@ -682,7 +682,7 @@
   - previously known as Cisco Scan Safe
   - enforce secure communication to and from the Internet
   - use the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco
-  - eliminate the <span style="color: #bb6600;">need to backhaul traffic</span> through headquarters for remote workers
+  - <span style="color: #bb6600;">eliminate the need to backhaul traffic</span> through headquarters for remote workers
 
 
 - Talos
