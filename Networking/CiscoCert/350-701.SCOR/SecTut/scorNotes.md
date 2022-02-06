@@ -397,10 +397,10 @@
     - SDN controller communicating w/ network service applications, the management solution
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
-    - used for the orchestration and automation of the network components to align with the needs of different applications via SDN network programmability
+    - used for the <span style="color: #bb6600;">orchestration and automation</sapn> of the network components to align with the needs of different applications via SDN network programmability
     - basically the link between the applications and the SDN controller
     - applications can tell the network devices (physical or virtual) what type of resources they need
-    - SDN solution can provide the necessary resources to the application
+    - SDN solution can provide the necessary <span style="color: #bb6600;">resources</span> to the application
     - <span style="color: #bb6600;">provision</span> SSIDs, QoS policies, and <span style="color: #bb6600;">update</span> software versions on switches
   - southbound interface (SBI)
     - SDN controller communicating w/ network devices via API
@@ -408,15 +408,15 @@
     - enable the controller to dynamically make changes based on real-time demands and scalability needs
   - eastbound interface (EBI)
   - westbound interface (WBI)
-    - integration capabilities
+    - <span style="color: #bb6600;">integration capabilities</span>
     - meet the need to scale and accelerate operations in modern data centers, IT operators require intelligent, end-to-end work flows built with open APIs
-    - provide mechanisms for <span style="color: #bb6600;">integrating</span> Cisco DNA Assurance workflows and data with third-party IT Service Management (ITSM) solutions
+    - provide mechanisms for <span style="color: #bb6600;">integrating Cisco DNA Assurance workflows and data</span> with third-party IT Service Management (ITSM) solutions
     - power end-to-end IT processes across the value chain by integrating various domains such as ITSM, IPAM, and reporting
-    - leverage the REST-based Integration Adapter APIs
-    - bi-directional interfaces allow the exchange of contextual information between Cisco DNA Center and the external, third-party IT systems
+    - (?) leverage the REST-based Integration Adapter APIs
+    - bi-directional interfaces allow the <span style="color: #bb6600;">exchange of contextual information</span> between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
     - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
-  - security application notify the controller about a specific security threats: northbound and southboun
+  - security application notify the controller about a specific <span style="color: #bb6600;">security threats</span>: northbound and southbound
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
 
 
