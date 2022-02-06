@@ -605,15 +605,15 @@
 
 
 - Firepower Threat Denfence Virtual (FTDv)
-  - the virtualized component of the Cisco NGFW solution The FTDv 
-  - providing next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), <span style="color: #bb6600;">URL filtering</span>, and Advanced Malware Protection (AMP)
+  - the virtualized component of the Cisco NGFW solution
+  - provide next-generation firewall services, including stateful firewalling, routing, VPN, Next-Generation Intrusion Prevention System (NGIPS), Application Visibility and Control (AVC), <span style="color: #bb6600;">URL filtering</span>, and Advanced Malware Protection (AMP)
   - managing the FTDv w/ FMC (either FMCv or physical FMC)
   - register and communicate with the FMC on the Management interface
   - FTDv for AWS
     - run as a guest in the AWS environment
     - interface requirements:
-      - management interfaces: 2; one for FMC and one for diagnostics
-      - traffic interface: 2 used to connect inside hosts to the public network
+      - <span style="color: #bb6600;">management</span> interfaces: 2; one for FMC and one for diagnostics
+      - <span style="color: #bb6600;">traffic</span> interface: 2 used to connect inside hosts to the public network
 
 
 - Cisco Firepower NGFW Virtual (NGFWv)
