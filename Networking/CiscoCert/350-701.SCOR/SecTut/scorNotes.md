@@ -439,13 +439,6 @@
   - request methods for ASA REST API: 1) get; 2) put; 3) post; 4) delete; 5) patch
 
 
-- Cisco device APIs
-  - DNA Center API to add device: `post /dna/intent/api/v1/network-device`
-  - AMP API to get computer info
-    - URL: `get https://api.amp.cisco.com/v1/computers`
-    - list of computers, policies, and connector statuses
-
-
 - Workload Optimization Manager
   - provide specific real-time actions that ensure workloads get the resources they need when they need them
   - enable continuous <span style="color: #bb6600;">placement, resizing, and capacity decisions</span>
@@ -456,8 +449,15 @@
     - automated (executed in real time by software)
 
 
-- Python script
+- Python script for SDN APIs
+  - device API
+    - DNA Center API to add device: `post /dna/intent/api/v1/network-device`
+    - AMP API to get computer info
+      - URL: `get https://api.amp.cisco.com/v1/computers`
+      - list of <span style="color: #bb6600;">computers, policies, and connector statuses</span
   - make a SSL connection
+    - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
+    - <span style="color: #bb6600;">username and password</span> from command line inputs
 
     ```python
     user = sys.argv[2]      # "ersad"
@@ -472,9 +472,7 @@
     )
     ```
 
-    - connection w/ TLS1.2 SSL protocol
-    - username and password from command line inputs
-  - add a global rule into policies
+  - <span style="color: #bb6600;">add a global rule</span> into policies
 
     ```python
     api+path = "/api/access/global/rules"
@@ -484,7 +482,6 @@
     }
     req = urllib2.Request(url, json.dumps(post_data), headers)
     ```
-
 
 
 ## Cloud Security Concepts and Solutions
