@@ -715,22 +715,22 @@
 
 - Tetration
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
-  - use behavior and attribute-driven microsegmentation policy generation and enforcement
+  - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
   - enable trusted access through automated, exhaustive context from various systems to automatically adapt security policies
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
   - enabling a zero-trust model using <span style="color: #bb6600;">segmentation</span>
   - identifying security incidents faster, containing lateral movement, and reducing your attack surface
   - workflow
-    - investigate the behavior of the various processes and applications in the workload
+    - investigate the <span style="color: #bb6600;">behavior of the various processes and applications</span> in the workload
     - measure behavior against known bad behavior sequences
     - feedback into the basic building blocks
   - suspicious patterns in the current release
     - shell code execution: look for the patterns used by shell code
-    - <span style="color: #bb6600;">privilege escalation</span>: watche for privilege changes from a lower to a higher privilege in the process lineage tree
+    - <span style="color: #bb6600;">privilege escalation</span>: watche for <span style="text-decoration: underline">privilege changes</span> from a lower to a higher privilege in the process lineage tree
     - side channel attacks: watche for cache-timing attacks and page table fault bursts
     - raw socket creation: creation of a raw socket by a nonstandard process (for example, ping)
-    - <span style="color: #bb6600;">user login suspicious</span>: watche user login failures and user login methods
-    - <span style="color: #bb6600;">interesting file access</span>: armed to look at sensitive files
+    - <span style="color: #bb6600;">user login suspicious</span>: watche <span style="text-decoration: underline">user login failures and user login methods</span>
+    - <span style="color: #bb6600;">interesting file access</span>: armed to look at <span style="text-decoration: underline">sensitive files</span>
     - <span style="color: #bb6600;">file access from a different user</span>: <span style="text-decoration: underline">learn the normal behavior</span> of which file is accessed by which user
     - unseen command: learn the behavior and set of commands as well as the lineage of each command over time
   - use cases
@@ -744,14 +744,14 @@
   - microsegmentation
     - used by Zero-Trust model
     - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
-    - secure applications by expressly allowing particular application traffic
+    - secure applications by expressly <span style="text-decoration: underline">allowing particular application traffic</span>
     - by default, denying all other traffic
     - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
     - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
     - environments apply a zero-trust model and specify how applications on different servers or containers can communicate
   - generating accurate microsegmentation policy
     - application dependency mapping to discover the relationships between different application tiers and infrastructure services
-    - supports “what-if” policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
+    - supports "what-if" policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
     - normalized microsegmentation policy:
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
@@ -1659,8 +1659,8 @@
     - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
     - the proxy will then punt the requests back to ISE for local user authentication
     - necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc.
-    - success: the end user/admin will be send a “DUO Push”
-    - fail: stop and no “Duo Push” will occur
+    - success: the end user/admin will be send a "DUO Push"
+    - fail: stop and no "Duo Push" will occur
     - <span style="color: #bb6600;">config process</span>
       - install and config Duo authentication proxy
       - config the identity store within ISE
@@ -1908,7 +1908,7 @@
   - an attacker attempts to respond to DHCP requests and trying to list itself (spoof) as the default gateway or DNS server
   - a type of attack in that the attacker listens for DHCP Requests from clients and answers them with fake DHCP Response before the authorized DHCP Response comes to the clients
   - fake DHCP Response often gives its IP address as the client default gateway
-  - all the traffic sent from the client will go through the attacker computer, the attacker becomes a “man-in-the-middle”.
+  - all the traffic sent from the client will go through the attacker computer, the attacker becomes a "man-in-the-middle".
   - DHCP snooping:
     - a security feature that acts like a firewall between untrusted hosts and trusted DHCP servers
     - determine which switch ports can respond to DHCP requests
