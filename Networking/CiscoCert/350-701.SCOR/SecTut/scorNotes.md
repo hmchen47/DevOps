@@ -1404,7 +1404,7 @@
 - IOS zone-based firewall
   - a zone must be configured before interfaces can be assigned to the zone
   - an interface can be assigned to only one security zone
-  - allowing all traffic by default but drop traffic from a different zone by default
+  - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
 
 
 - Simple Network Management Protocol (SNMP)
