@@ -1414,16 +1414,16 @@
     - `authNoPriv`: authn = MD5/SHA; encry = none
     - `authPriv`: authn = MD5/SHA, encry = DES
   - configures the SNMP server group to enable authentication for members of a specified named access list
-    - syntax: `snmp-server group [group-name {v1 | v2c | v3 [auth | noauth | priv]}] [read <read-view>] [write <write-view>] [notify <notify-view>] [access <access-list>]`
+    - syntax: <span style="color: #bb6600;">`snmp-server group [<group-name> {v1 | v2c | v3 [auth | noauth | priv]}] [read <read-view>] [write <write-view>] [notify <notify-view>] [access <access-list>]`</span>
     - `v1 | v2c | v3`: SNMP version
     - `auth | noauth | priv`: authenticaton packet options, `priv` encrypted authentication packet
     - `access <access-list>`: a standard ACL associated w/ the group
   - add new user to SNMP group:
     - syntax: `snmp-server user <user-name> <group-name> [remote ip-address [udp-port port]] {v1 | v2c | v3 [encrypted] [auth {md5 | sha} <auth-password>]} [access access-list]`
-    - `snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941`: user-name = andy; group-name = myv3; auth-password = cisc0380739941
+    - <span style="color: #bb6600;">`snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941`</span>: user-name = andy; group-name = myv3; auth-password = cisc0380739941
   - specify the recipient of a SNMP notification operation:
-    - syntax: `snmp-server host {hostname | ip-address} [vrf vrf-name | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
-    - `snmp-server host inside 10.255.254.1 version 3 andy`: hostname = inside (interface name); community-name (username) = andy
+    - syntax: `snmp-server host {<hostname> | <ip-address>} [vrf <vrf-name> | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
+    - <span style="color: #bb6600;">`snmp-server host inside 10.255.254.1 version 3 andy`</span>: hostname = inside (interface name); community-name (username) = andy
 
 
 ## <span style="color: #008888;">Email and Web Security</span>
