@@ -1278,26 +1278,26 @@
 
 
 - ASA
-  - deny all traffic by default
+  - <span style="color: #bb6600;">deny all traffic</span> by default
   - modes: transparent and routed
-  - bridge group in transprent mode
+  - <span style="color: #bb6600;">bridge group</span> in transprent mode
     - group interfaces together in a bridge group to maximize the use of security contexts
     - configure multiple bridge groups, one for each network
-    - each bridge group requires a management IP address
-    - up to 4 interfaces are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
-    - access control btw interfaces <span style="color: #bb6600;">controlled</span>
-    - all of the usual firewall checks are in place
+    - each bridge group requires <span style="color: #bb6600;">a management IP address</span>
+    - up to <span style="color: #bb6600;">4 interfaces</span> are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
+    - access control <span style="color: #bb6600;">btw interfaces controlled</span>
+    - all of the usual firewall checks in place
     - each bridge group w/ a Bridge Virtual Interface (BVI)
     - BVI IP address
       - as the source address for packets originating from the bridge group
-      - on the same subnet as the bridge group member interfaces
+      - on the <span style="color: #bb6600;">same subnet</sapn> as the bridge group member interfaces
     - BVI not supporting traffic on secondary networks
     - only traffic on the same network as the BVI IP address supported
     - BVI interface <span style="color: #bb6600;">not used for management purpose</span>
     - able to add a separate Management slot/port but not part of bridge group
   - connection status of failover w/ 2 ASAs
-    - stateful: preserve
-    - stateless: reestablish
+    - <span style="color: #bb6600;">stateful</span>: preserve
+    - <span style="color: #bb6600;">stateless</span>: reestablish
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
 
 
