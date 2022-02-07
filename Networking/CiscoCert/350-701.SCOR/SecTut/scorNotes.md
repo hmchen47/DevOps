@@ -1249,10 +1249,10 @@
 
 
 - ASA FirePOWER module
-  - next-generation firewall services, including Next-Generation IPS (NGIPS), Application Visibility and Control (AVC), URL filtering, and Advanced Malware Protection (AMP)
+  - next-generation firewall services, including NGIPS, AVC, URL filtering, and AMP
   - single or multiple context mode, and in routed or transparent mode
   - deployment models:
-    - inline mode: actual traffic is sent to the ASA FirePOWER module; configure **inline interface pairs**
+    - <span style="color: #bb6600;">inline mode</span>: actual traffic is sent to the ASA FirePOWER module; configure <span style="color: #bb6600;">inline interface pairs</span>
     - monitor-only (inline tap or passive): a copy of the traffic is sent to the ASA FirePOWER module
 
 
