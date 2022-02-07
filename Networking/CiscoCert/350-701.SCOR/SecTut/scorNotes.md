@@ -1307,7 +1307,6 @@
   - the standard for acquiring IP operational data from IP networks
   - monitor from Layer 2 to 4
   - track <span style="color: #bb6600;">multicast, MPLS, or bridged traffic</span>
-  - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - a flow identified as the combination of the following key fields:
     - Source IP address
     - Destination IP address
@@ -1317,8 +1316,8 @@
     - <span style="color: #bb6600;">Type of service (ToS)</span>
     - Input logical interface
   - characteristics (vs telemetry)
-    - pull model: client requests data from the network
-    - not scale w/ near real-time data
+    - <span style="color: #bb6600">pull model</span>: client requests data from the network
+    - <span style="color: #bb6600">NOT scale</span> w/ near real-time data
     - notified only when some data changes, like interfaces status, protocol neighbors change etc
   - Flow Record
     - define the information that NetFlow gathers
@@ -1326,21 +1325,22 @@
     - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
     - example: config router to send NetFlow data to StealthWatch
       - flow record: `flow record Steathwatch406397954`
-      - conditions to match: `match ipv4 ttl`
+      - conditions to match: <span style="color: #bb6600;">`match ipv4 ttl`</span>
   - Flow Exporter
     - define the physical or virtual Flow Collector IP Address to which NetFlow data is sent
     - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
     - consider using a Loopback interface to source NetFlow data from
     - define transport protocol (TCP or UDP) and destination port
+    - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - Flow Monitor
     - tie all of the construct together
     - reference the Flow Exporter and the Flow Record.
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
-  - flow not containing actual data but metadata for communication
+  - flow not containing actual data but <span style="color: #bb6600">metadata</span> for communication
   - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
-    - a security logging mechanism built on NetFlow Version 9 technology
+    - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
     - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
-    - flow-export actions: `flow-export event-type`
+    - flow-export actions: <span style="color: #bb6600">`flow-export event-type`</span>
     - significant events: flow-create, flow-teardown, and flow-denied (excluding those flows denied by EtherType ACLs)
     - major functions
       - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
@@ -1353,17 +1353,17 @@
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
-    - format of data records
+    - <span style="color: #bb6600">format of data records</span>
   - export formats
-    - version 1: only for legacy systems
-    - version 5: only for main cache
-    - version 8: introduce aggregation caches
-    - version 9: introduce extensibility
+    - version 1: only for <span style="color: #bb6600">legacy systems</span>
+    - version 5: only for <span style="color: #bb6600">main cache</span>
+    - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
+    - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
-    2. Defines the **class map** that identifies traffic for which NSEL events need to be exported
-    3. Defines the **policy map** to apply flow-export actions to the defined classes
-    4. Adds or edits the service policy 
+    1. Configuring NSEL <span style="color: #bb6600">Collectors</spamn>: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    2. Defines the <span style="color: #bb6600">class map</span> that identifies traffic for which NSL events need to be exported
+    3. Defines the <<span style="color: #bb6600"policy map</span> to apply flow-export actions to the defined classes
+    4. Adds or edits the <span style="color: #bb6600">service policy</span>
   - Flexible Netflow
     - the next-generation in flow technology
     - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
