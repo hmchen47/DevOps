@@ -1075,8 +1075,7 @@
     4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
 
 
-- Cisco Secure Firewall Management Center
-  - formerly Firepower Management Center (FMC)
+- Cisco Secure Firewall Management Center (FMC)
   - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
   - an integrated suite of network security and traffic management products
   - deployed either on purpose-built platforms or as a software solution
@@ -1097,15 +1096,15 @@
     - collect host, application, and user data for traffic on your network
   - network discovery policy
     - control how the system collects data on your organization's network assets and which network segments and ports are monitored
-    - multidomain deployment: each leaf domain has an independent network discovery policy
-    - perform host and application detection
+    - <span style="color: #bb6600;">multidomain deployment</sapn>: each leaf domain has an independent network discovery policy
+    - perform <span style="color: #bb6600;">host and application detection</span>
   - identity policy
-    - realm: connection between the FMC and the user accounts on the servers you monitor
+    - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
-  - impact flag: evaluating the impact of an intrusion on your network by <span style="text-decoration: underline;">correlating</span> intrusion data, network discovery data, and vulnerability information
+  - impact flag: evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
   - health policy
     - using the health monitor to create a health policy (collection of tests)
-    - configured health test criteria for several health modules (tests)
+    - configured <span style="color: #bb6600;">health test criteria</span> for several health modules (tests)
     - control which health modules against each of your appliances
     - configure the specific limits used in the tests run by each module
   - platform settings policy / platform service policy
@@ -1116,7 +1115,7 @@
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
     - CLI:
-      - register the device to a FireSIGHT Management Center using the `configure manager add` command
+      - register the device to a FireSIGHT Management Center using the <span style="color: #bb6600;">`configure manager add`</span> command
       - syntax: `configure manager add {hostname | IPv4_address | IPv6_address | DONTRESOLVE} reg_key [nat_id]`
   - application layer preprocessors
     - providing application layer protocol decoders that normalize specific types of packet data into formats that the intrusion rules engine can analyze
@@ -1127,10 +1126,10 @@
     - send specially crafted packets to a targeted host
     - with host responds, the attacker determines which ports are open on the host
     - types
-      - Portscan Detection: one-to-one portscan; 1/N hosts -> 1 target + N ports
-      - Port Sweep: one-to-many portsweep; 1/N hosts -> N target + 1 port
-      - Decoy Portscan: one-to-one portscan; mixes spoofed and real source IP addresses
-      - Distributed Portscan: many-to-one portscan; N host -> 1 target + N ports
+      - <span style="color: #bb6600;">Portscan Detection</span>: one-to-one portscan; 1/N hosts -> 1 target + N ports
+      - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
+      - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
+      - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
   - access control rules
     - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
@@ -1138,15 +1137,15 @@
     - control access to web site based on
       - category: a general classification for the URL, e.g., Auction category, Job Search category
       - reputation:
-        - how likely the URL is to be used for purposes that might against orgamnizatio's security policy
+        - how likely the URL is to be used for purposes that might against organization's security policy
         - level: 1 - High Risk; 2 - Suscpecious sites; 3 - Benign Sites with security risk ; 4 - Benign Sites; 5 - Well Known
-        - block all levels lower than the selected level, e.g., select level 3 and then block scores 1~3
-    - under access control rule of <span style="color: #bb6600;">access control policy</span>
+        - <span style="color: #bb6600;">block all levels lower</span> than the selected level, e.g., select level 3 and then block scores 1~3
     - a feature to control the websites that users on your network can access:
-      - Category and reputation-based URL filtering (recommended)
-      - Manual URL filtering
+      - <span style="color: #bb6600;">category and reputation-based URL filtering</span> (recommended)
+      - manual URL filtering
+    - under access control rule of <span style="color: #bb6600;">access control policy</span>
     - create a rule to Block traffic based on a reputation level
-  - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs
+  - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
     - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
