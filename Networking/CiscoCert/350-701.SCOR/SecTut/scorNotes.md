@@ -1069,10 +1069,10 @@
     - URL filtering
     - Advanced Malware Protection (AMP)
   - redirect traffic to the SFR module
-    - 1\. select the traffic to redirect w/ ACL
-    - 2\. create class-map to match the traffic
-    - 3\. specify the deployment mode: passive (monitor-only) or inline (normal)
-    - 4\. specify a location to apply the policy: `service-policy global_policy global` for global config
+    1. select the <span style="color: #bb6600;">traffic</span> to redirect w/ ACL
+    2. create <span style="color: #bb6600;">class-map</span> to match the traffic
+    3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
+    4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
 
 
 - Cisco Secure Firewall Management Center
