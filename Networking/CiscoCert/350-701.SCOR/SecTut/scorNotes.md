@@ -762,6 +762,26 @@
     - deploy <span style="color: #bb6600;">microsegmentation and multi-tenancy services</span> with a policy-based container
 
 
+- Cisco Stealthwatch Cloud
+  - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
+  - available in AWS, Azure, and GCP
+  - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
+  - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
+  - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
+  - actions to collect full metadata information about the traffic going through their AWS cloud services
+    - send <span style="color: #bb6600">VPC Flow Logs</span> to Cisco Stealthwatch Cloud
+    - configure <span style="color: #bb6600">Cisco Stealthwatch Cloud</span> to ingest AWS information
+
+
+- Private Network Monitoring (PNM)
+  - provide visibility and threat detection for the on-premises network
+  - deliver from the cloud as a SaaS solution
+  - prefer SaaS products and desire better awareness and security in their on-premises environments w/ less capital expenditure and operational overhead
+  - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
+  - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
+  - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
+
+
 - Secure Endpoint
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - logical security controls on endpoints still exist even training on staffs: human error or inside threats still exist
@@ -990,9 +1010,6 @@
   - deployment models
     - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
     - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
-  - Stealthwatch + ISE
-    - network security analysts with a view integrating NetFlow data and contextual information
-    - enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner
   - components
     - <span style="color: #bb6600">Stealthwatch Management Console</span>
       - define, configure, and monitor multiple distributed Stealthwatch Flow Collectors from a single location
@@ -1010,37 +1027,9 @@
       - simplify the collection and distribution of network and security data across the enterprise
       - reduce the processing power on network routers and switches by receiving essential network and security information from multiple locations and then 
       - forwarding it to a single data stream to one or more destinations
-  - <span style="color: #bb6600">Cisco Stealthwatch Cloud</span>
-    - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
-    - available in Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)
-    - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
-    - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
-    - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
-    - actions to collect full metadata information about the traffic going through their AWS cloud services
-      - send VPC Flow Logs to Cisco Stealthwatch Cloud
-      - configure Cisco Stealthwatch Cloud to ingest AWS information
-  - Private Network Monitoring (PNM)
-    - provide visibility and threat detection for the on-premises network
-    - deliver from the cloud as a SaaS solution
-    - prefer SaaS products and desire better awareness and security in their on-premises environments w/ less capital expenditure and operational overhead
-    - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
-    - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
-    - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
-  - Flow Record
-    - define the information that NetFlow gathers
-    - including packets in the flow and the types of counters gathered per flow
-    - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
-    - example: config router to send NetFlow data to StealthWatch
-      - flow record: `flow record Steathwatch406397954`
-      - conditions to match: `match ipv4 ttl`
-  - Flow Exporter
-    - define the physical or virtual Flow Collector IP Address to which NetFlow data is sent
-    - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
-    - consider using a Loopback interface to source NetFlow data from
-    - define transport protocol (TCP or UDP) and destination port
-  - Flow Monitor
-    - tie all of the construct together
-    - reference the Flow Exporter and the Flow Record.
+  - Stealthwatch + ISE
+    - network security analysts with a view integrating NetFlow data and contextual information
+    - enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner
 
 
 - Cognitive Intelligence
@@ -1330,6 +1319,21 @@
     - pull model: client requests data from the network
     - not scale w/ near real-time data
     - notified only when some data changes, like interfaces status, protocol neighbors change etc
+  - Flow Record
+    - define the information that NetFlow gathers
+    - including packets in the flow and the types of counters gathered per flow
+    - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
+    - example: config router to send NetFlow data to StealthWatch
+      - flow record: `flow record Steathwatch406397954`
+      - conditions to match: `match ipv4 ttl`
+  - Flow Exporter
+    - define the physical or virtual Flow Collector IP Address to which NetFlow data is sent
+    - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
+    - consider using a Loopback interface to source NetFlow data from
+    - define transport protocol (TCP or UDP) and destination port
+  - Flow Monitor
+    - tie all of the construct together
+    - reference the Flow Exporter and the Flow Record.
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but metadata for communication
   - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
@@ -1355,10 +1359,10 @@
     - version 8: introduce aggregation caches
     - version 9: introduce extensibility
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    - 1\. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
-    - 2\. Defines the **class map** that identifies traffic for which NSEL events need to be exported
-    - 3\. Defines the **policy map** to apply flow-export actions to the defined classes
-    - 4\. Adds or edits the service policy 
+    1. Configuring NSEL **Collectors**: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    2. Defines the **class map** that identifies traffic for which NSEL events need to be exported
+    3. Defines the **policy map** to apply flow-export actions to the defined classes
+    4. Adds or edits the service policy 
   - Flexible Netflow
     - the next-generation in flow technology
     - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
