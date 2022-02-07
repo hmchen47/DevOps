@@ -1155,11 +1155,12 @@
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
+  - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
 
 
 - Firewall Threat Defense (FTD)
-  - config new FTD device not behind a NAT device to be managed w/ FCM: `configure manager add <FMC IP address> <registration key>`
-  - execution order of primary and backup policy: backup policy w/ larger number in priority; e.g., backup policy w/ priority 5 and primary polity w/ priority 1
+  - config new FTD device not behind a NAT device to be managed w/ FCM: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
+  - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>; e.g., backup policy w/ priority 5 and primary polity w/ priority 1
   - Modbus, DNP3 and CIP SCADA preprocessors
     - analyze protocol fields and detect anomalies in the traffic from <span style="color: #bb6600;">industrial systems</span>
     - used to detect traffic anomalies
@@ -1168,7 +1169,6 @@
     - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
     - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
-  - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed  devices
 
 
 - Firepower Next-Generation IPS (NGIPS) threat appliance
