@@ -1040,11 +1040,11 @@
   - quickly remediate the infection
   - reduce the scope and damage of an attack
   - features to protect against
-    - <span style="color: #bb6600">Data exfiltration</span>
+    - <span style="color: #bb6600">data exfiltration</span>
     - <span style="color: #bb6600">Command-and-control (C2) communications</span>
-    - Domain-generation algorithm (DGA)
-    - Exploit kit: (1) visits to an infected webpage, (2) redirects of web requests to a domain-hosting exploit kit, (3) unknowing downloads by users, (4) successful exploitations, and (5) downloads of malicious payloads.
-    - Tunneling through HTTP and HTTPS requests
+    - domain-generation algorithm (DGA)
+    - exploit kit: (1) visits to an infected webpage, (2) redirects of web requests to a domain-hosting exploit kit, (3) unknowing downloads by users, (4) successful exploitations, and (5) downloads of malicious payloads.
+    - tunneling through HTTP and HTTPS requests
 
 
 - Firepower system
