@@ -1171,6 +1171,11 @@
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
 
 
+- Firepower Threat Defence Devices
+  - a next-generation firewall (NGFW) w/ NGIPS capabilities
+  - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
+
+
 - Firepower Next-Generation IPS (NGIPS) threat appliance
   - providing network visibility, security intelligence, automation and advanced threat protection
   - operating in-line via Fail-To-Wire/Bypass network modules
@@ -1180,26 +1185,23 @@
     - vulnerability-focused IPS rules
     - embedded IP-, URL-, and DNS-based security intelligence
   - security automation
-    - correlate intrusion events with your network's vulnerabilities
+    - <span style="color: #bb6600;">correlate intrusion events</span> with your network's vulnerabilities
     - analyze network's weaknesses
-    - recommends the appropriate security policies
+    - recommend the appropriate security policies
   - features:
     - IPS rules: identify and block attack traffic
     - integrated defence: against advanced malware by advanced analysis of network and endpoint activity
     - sandboxing: using behavioral indicators to identify zero-day amd evasive attacks
   - suppression
     - suppressing intrusion event notification
-    - useful for eliminating false positives
-    - types: 1) a specific IP address or range of IP addresses; 2) a specific rule or preprocessor
+    - useful for <span style="color: #bb6600;">eliminating false positives</span>
+    - types:
+      - <span style="color: #bb6600;">a specific IP address or range of IP addresses</span>
+      - a specific rule or preprocessor
   - traffic profile
     - a graph of network traffic based on connection data collected over a profiling time window (PTW)
     - presumably representing normal network traffic
-    - detecting abnormal network traffic by evaluating new traffic against the profile 
-
-
-- Firepower Threat Defence Devices
-  - a next-generation firewall (NGFW) w/ NGIPS capabilities
-  - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
+    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile 
 
 
 - Cisco Threat Intelligence Director (CTID)
