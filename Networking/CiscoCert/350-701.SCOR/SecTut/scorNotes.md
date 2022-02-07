@@ -1260,10 +1260,10 @@
   - Cisco UC proxy: terminate and reoriginate connections between a client and server
   - deliver a range of security functions such as traffic inspection, protocol conformance, and policy control to ensure security for the internal network
   - solutions:
-    - TLS proxy:
+    - <span style="color: #bb6600;">TLS proxy</span>:
       - decryption and inspection of Cisco Unified Communications encrypted signaling
       - store certificate trustpoints for the server and the client
-    - Mobility Proxy: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
+    - <span style="color: #bb6600;">Mobility Proxy</span>: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
     - Presence Federation Proxy: secure connectivity btw Cisco Unified Presence servers and Cisco/Microsoft Presence servers
 
 
