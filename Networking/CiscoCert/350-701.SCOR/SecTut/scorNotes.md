@@ -7,9 +7,15 @@
     - malicious software
     - any software intentionally designed to cause damage to a computer, server, client, or computer network
   - most popular types of malware
-    - virus: 1) the most common type of malware; 2) attach malicious code to clean code; 3) wait to be run
+    - virus:
+      - the most common type of malware
+      - attach malicious code to clean code
+      - wait to be run
+      - gain <span style="color: #bb6600;">unauthorized access</span> to a computer system
     - ransomeware: infect computer and display message demanding a fee to be paid
-    - spyware: 1) secretely record everything user enter, upload, download and store on computers or mobile devices; 2) keep itself hidden
+    - spyware:
+      - secretely record everything user enter, upload, download and store on computers or mobile devices
+      - keep itself hidden
   - vulnerability: a weakness in a software system
   - expolit:
     - a code taking advantage of a software a software vulnerability or security flaw
@@ -50,7 +56,7 @@
   - click on this link from another website, instant message, or simply simply just reading a web board or email message.
   - encode the malicious portion of the link to the site in <span style="color: #bb6600;">HEX (or other encoding methods)</span>
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
-  - <span style="color: #bb6600;">preventive measures</span>: 1) client-side scripts on a per-domain basis; 2) contextual output encoding/escaping
+  - preventive measures: 1) enable client-side scripts on a <span style="color: #bb6600;">per-domain basis</span>; 2) <span style="color: #bb6600;">contextual output encoding/escaping</span>
   - exploit website vulnerability by injecting scripts that will run at client's side.
   - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
@@ -62,14 +68,14 @@
 - Buffer overflow
   - the volume of data exceeds the storage capacity of the memory buffer
   - write the data to the buffer overwrites adjacent memory locations
-  - commonly associated w/ <span style="color: #bb6600;">C/C++</span>
+  - commonly associated w/ <span style="color: #bb6600;">C/C++</span> programming languages
 
 
 - rootkit
   - <span style="color: #bb6600;">Trojan</span> malware attack
   - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
   - a program providing maliciously privileged access to a computer
-  - types: 1) kernel; 2) user mode; 3) bootloader; 4) Memory rootkits
+  - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
 
 
 - botnet
@@ -103,11 +109,11 @@
 
 
 - Social engineering
+  - goals: 1) <span style="color: #bb6600;">steal sensitive data or login information</span>; 2) <span style="color: #bb6600;">install malware</span>
   - phishing
     - a form of social engineering
     - fraudulent attempts by cyber criminals to obtain <span style="color: #bb6600;">private information</span>
     - sending fraudulent communications usually through email
-  - goals: 1) steal sensitive data or login information; 2) install malware
   - types of phishing
     - <span style="color: #bb6600;">deceptive<span>: steal people's personal data or login credentials in a legitmate company
     - <span style="color: #bb6600;">spear<span>: designed to get a single recipient to respond
@@ -121,13 +127,14 @@
   - TAXII (Trusted Automated Exchange of Indicator Information)
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
     - used to author and exchange STIX documents among participants
-    - capabilities: 1) push messaging; 2) pull messaging; 3) discovery <- automated exchange
+    - capabilities: 1) push messaging; 2) <span style="color: #bb6600;">pull messaging</span>; 3) discovery <- automated <span style="color: #bb6600;">exchange</span>
     - functions
       - <span style="color: #bb6600;">exchange</span> trusted anomaly intelligence information
       - determine how threat intelligence information <span style="color: #bb6600;">relayed</span>
   - STIX (Structured Threat Information eXpression)
-    - a standardized language developed in a collaborative way to represent <span style="color: #bb6600;">structured information</span> about cyber threats
+    - a standardized language developed in a collaborative way to represent structured information about cyber threats
     - shared, stored, and otherwise used in a consistent manner
+    - a language format designed to <span style="color: #bb6600;">exchange threat intelligence</span> transported over the TAXII protocol
 
 
 - OpenIOC
@@ -183,7 +190,7 @@
   - Trustpoint (Cisco)
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
-    - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) <span style="color: #bb6600;">profile</span> - authentication + enrollment (providing an option to specify HTTP/TFTP commands to perform file retrieval from the Server)
+    - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) <span style="color: #bb6600;">profile</span> - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
   - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
   - certificate signing request (CSR)
     - one of the first steps towards getting your own SSL Certificate
@@ -880,6 +887,7 @@
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
   - patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
+  - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
 
 
 - Umbrella
