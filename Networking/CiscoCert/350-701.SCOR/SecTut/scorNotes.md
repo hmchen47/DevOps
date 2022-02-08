@@ -1806,32 +1806,33 @@
 
 - Cisco devices basic commands
   - enable AAA service: `aaa new-model` in global config mode
-  - allow user to enter global configuration mode: `privilege exec level 5 configure terminal`
-  - combine authentication adn authorization for RADIUS: `radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`
-  - enable authentication on a port: `authentication port-control auto`
+  - allow user to enter global configuration mode: <span style="color: #bb6600;">`privilege exec level 5 configure terminal`</span>
+  - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
+  - enable authentication on a port: <span style="color: #bb6600;">`authentication port-control auto`</span>
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
 
     ```cfg
     aaa new-model
-    ! Creates an 802.1X port-based authentication method list
+    ! Creates an 802.1X port-based authn method list
     aaa authentication dot1x default group radius
     ! Required for VLAN/ACL assignment
     aaa authorization network default group radius
-    ! Authentication & authorization for webauth transactions
+    ! Authn & autho for webauth transactions
     aaa authorization auth-proxy default group radius
-    ! Enables accounting for 802.1X and MAB authentications
+    ! Enables accounting for 802.1X and MAB authn
     aaa accounting dot1x default start-stop group radius
     !
     aaa session-id common
     !
     aaa accounting update periodic 5
-    ! Update AAA accounting information periodically every 5 minutes
+    ! Update AAA accounting infon periodically every 5 min
     aaa accounting system default start-stop group radius
     ```
 
   - NTP authentication
     - NTP server - 10.10.10.1; client - 10.10.10.2
-    - client config:
+    - NTP authentication enforcment: <span style="color: #bb6600;">`ntp authenticate`</span>
+    - other client config:
 
       ```text
       ntp authentication-key 2 md5 securitytut
@@ -1840,8 +1841,7 @@
       ntp server 10.10.10.1 key 2
       ```
 
-    - NTP authentication enforcment: `ntp authenticate`
-  - ACL `login block-for 100 attempts 4 within 60`: if four failures occur in 60 seconds, the router goes to quiet mode for 100 seconds
+  - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
 
 
 - Multi-factor Authentication (MFA)
