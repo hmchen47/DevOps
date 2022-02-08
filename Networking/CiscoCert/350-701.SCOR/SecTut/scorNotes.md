@@ -38,6 +38,10 @@
   - an attack where code is injected into a browser
   - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">GET/POST parameters</span>
   - used to <span style="color: #bb6600;">steal information from databases</span>
+  - the <span style="text-decoration:underline;">flaw</span> leveraging when exploiting SQL injection: <span style="color: #bb6600;">user input validation</span> in a web page or web application
+  - prevention techniques used to mitigate SQL injection attacks
+    - check integer, float, or Boolean string parameters to <span style="color: #bb6600;">ensure accurate values</span>
+    - use <span style="color: #bb6600;">prepared statements and parameterized queries</span>
 
 
 - Cross Site Script (XSS): 
@@ -108,8 +112,9 @@
     - <span style="color: #bb6600;">deceptive<span>: steal people's personal data or login credentials in a legitmate company
     - <span style="color: #bb6600;">spear<span>: designed to get a single recipient to respond
   - mitigation: <span style="color: #bb6600;">browser alert & email filtering</span>
-  - endpoint mitigation: 1) spam & virus filter; 2) up-to-date antimalware
+  - endpoint measures used to minimize the chances: 1) <span style="color: #bb6600;">spam and virus filter</span>; 2) <span style="color: #bb6600;">up-to-date antimalware<span>
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
+  - mechanisms used to control phising attacks: 1) <span style="color: #bb6600;">enable browser alerts for fraudulent</span>; 2) <span style="color: #bb6600;">implement email filtering techniques</span>
 
 
 - TAXII/STIX
