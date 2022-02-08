@@ -1677,7 +1677,7 @@
 
 
 - TrustSec
-  - software-defined segmentation that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
+  - <span style="color: #bb6600;">software-defined segmentation</span> that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
   - controls defined simply using endpoint roles, not IP addresses
   - ecurity rules defined using these groups
   - security groups (SGs)
@@ -1686,7 +1686,7 @@
     - allow segmentation patterns to be implemented
     - change w/o reconfiguring network devices or redesigning the network
   - Easy Connect
-    - a passive identity method
+    - a <span style="color: #bb6600;">passive identity method</span>
     - simplify network access control and segmentation
     - allow the <span style="color: #bb6600;">assignment of Security Group Tags (STGs)</span> to endpoints without requiring 802.1X on those endpoints, whether using wired or wireless connectivity
     - used as a backup authentication method to 802.1X
