@@ -1573,7 +1573,7 @@
     - employ advanced enforcement capabilities including Trustsec
     - support scalability
     - facilitate TACACS-enabled device administration
-  - Features
+  - features
     - Device Administration
     - Guest and Secure Wireless
     - Bring Your Own Device (BYOD)
@@ -1586,24 +1586,24 @@
   - integrated solution: 1) Cisco <span style="color: #bb66oo;">pxGrid</span>; 2) Cisco Rapid Threat Containment
   - ISE nodes for high availability: <span style="color: #bb66oo;">primary and secondary Policy Administration Node (PAN)</span>
   - <span style="color: #bb66oo;">endpoint profiling policy</span>
-    - determine the type of device or endpoint connecting to the network
-    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the device fingerprint
-    - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) OUI (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
-    - CoA types: 1) No CoA; 2) port bounce; 3) reauth
-    - RADIUS protocol: collecting DHCP, CDP, and LLDP attributes directly from the switch
-  - shadow user: able to delegate AD user as ISE GUI admin to ease admin overheads and manage network efficiently
+    - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
+    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
+    - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
+    - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
+    - RADIUS protocol: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
+  - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
   - <span style="color: #bb66oo;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
-    - posture agent: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
-    - consideration: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
+    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
+    - considerations: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
       - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
-      - remediations: the methods AnyConnect will handle endpoints that are out of compliance.
+      - remediations: the methods AnyConnect will handle endpoints that are <span style="color: #bb6600;">out of compliance</span>
       - requirements: the immediate act steps taken by AnyConnect when an endpoint is out of compliance
-      - provisioning: the policy used to determine the version of AnyConnect used and the compliant module installed during ht provisioning progress (methods: URL-redirect and download or a provisioning URL)
+      - provisioning policy: determine the version of AnyConnect used and the compliant module installed during the provisioning progress (methods: URL-redirect and download or a provisioning URL)
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
-    - security posture: <span style="color: #bb6600;">detect and mitigate threats</span> that the perimeter security devices do not detect
+    - security posture: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
     - <span style="color: #bb6600;">device compliance</span>
       - validate if anti-virus software installed
       - verification of the latest OS patches
@@ -1616,7 +1616,7 @@
         - move to Non-Compliant state if failed
       - optional: allow to skip the specified optional requirements and move to Compliant state
       - audit: for internal purposes and the agent does not prompt any message or input from end users
-  - web authentication scenarios: 1) Local Web Authentication (LWA); 2) Centralized Web Authentication (CWA)
+  - web authentication scenarios: Local Web Authentication (LWA) & Centralized Web Authentication (CWA)
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: tag the guest portal in the CWA part of the <span style="color: #bb6600;">Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
@@ -1625,24 +1625,24 @@
   - Mobile Device Management (MDM)
     - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
     - ISE functions with external MDM servers:
-      - Manages device registration
-      - Handles device remediation
+      - Manages device <span style="color: #bb6600;">registration</span>
+      - Handles device <span style="color: #bb6600;">remediation</span>
       - Augments endpoint
-    - corporate advantages: 1) assest inventory management; 2) allowed application management
+    - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
     - high level use cases
       - device registration
       - remediation - restricted access based on compliant state
       - periodic <span style="color: #bb6600;">compliance check</span>
-      - ability of ISE admin to issue remote actions on devices; e.g., remote wiping
+      - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
       - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
   - Profiling Services
-    - provide dynamic detection and classification of endpoints connected to the network
-    - use MAC addresses as the unique identifier (same as MAB)
+    - provide <span style="color: #bb6600;">dynamic detection and classification of endpoints</span> connected to the network
+    - use <span style="color: #bb6600;">MAC addresses</span> as the unique identifier (same as MAB)
     - collect various attributes for each network endpoint to build an internal endpoint database
     - match the collected attributes to prebuilt or user-defined conditions for classificattion
     - endpoints can be authorized to the network and granted access based on their profile after classifying
-  - troubleshoot endpoint authentication failure for 802.1X: RADIUS live log
+  - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
   - prerequisites to integrate Active Directory with Cisco ISE
     - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
     - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
@@ -1650,15 +1650,12 @@
   - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
     - securely use personal devices on a corporate network
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
-    - w/o supplicant profiles: 1) manually config My Device portal; 2) config BYOD rules to register
+    - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
   - <span style="color: #bb6600;">device sensor</span> of authorization policies
     - a feature of access devices
     - allow to collect information about connected endpoints
-    - information collected w/
-      - Cisco Discovery Protocol (CDP)
-      - Link Layer Discovery Protocol (LLDP)
-      - Dynamic Host Configuration Protocol (DHCP)
+    - information collected w/ <span style="color: #bb6600;">CDP, LLDP, DHCP</span>
   - config AAA on switch for the RADIUS authenticates to Cisco ISE
     - command required: `ip radius source-interface`
     - only requests originated from a <span style="color: #bb6600;">configured NSA IP</span> are accepted by a RADIUS server
