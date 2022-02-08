@@ -299,7 +299,7 @@
     - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
     - TripleDES-CBC for confidentiality
     - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality
-    - AES-GCM and ChaCha20-Poly1305 providing confidentiality and authentication together efficiently
+    - <span style="color: #bb6600;">AES-GCM</span> and ChaCha20-Poly1305 providing confidentiality (encryption) and authentication together efficiently
   - AH protocol
     - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
     - provide data integrity, data origin authentication, and an optional replay protection service
