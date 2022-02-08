@@ -1246,6 +1246,7 @@
     - metrics collection and exporting
     - management and response systems
     - control
+  - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
 
 
 - ASA FirePOWER module
@@ -1532,7 +1533,7 @@
       - client knows existence of the proxy -> sending all web traffic to the proxy
       - no DNS lookup, WAS responsible for DNS resolution
       - config each client to send traffic to WSA
-      - WSA errsponds w/ its own IP info
+      - WSA responds w/ its own IP info
       - browser Configured: client browser is explicitly configured to use a proxy
       - <span style="color: #bb6600;">.PAC file configured</span>:
         - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
@@ -1543,20 +1544,19 @@
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
   - decryption policies define the handling of HTTPS traffic within the web proxy:
-    - when to decrypt HTTPS traffic
-    - how to handle requests that use invalid or revoked security certificates
+    - when to <span style="color: #bb6600;">decrypt HTTPS traffic</span>
+    - how to handle requests that use <span style="color: #bb6600;">invalid or revoked security certificates</span>
   - decryption policies to handle HTTPS traffic in the following ways
     - pass through encrypted traffic
     - decrypt traffic and apply the content-based access policies defined for HTTP traffic
-    - drop the HTTPS connection
-    - monitor the request as the web proxy continues to evaluate the request against policies
+    - <span style="color: #bb6600;">drop</span> the HTTPS connection
+    - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies
   - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig`</span> CLI command and the <span style="color: #bb6600;">HTTPS</span> subcommand. 
   - proxy caching: improve web traffic performance
-  - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
-  - use the SensorBase data feeds to improve the accuracy of Web Reputation Scores
+  - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
-    - create NTLM or Kerberos authentication realm and enable transparent user identification, NOT LDAP autehtication realm
-    - deploy a separate Active Directory agent such as Cisco Context Directory Agent
+    - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
+    - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
 
 
 ## <span style="color: #008888;">Authentication, Authorization, and Accounting (AAA)</san>
