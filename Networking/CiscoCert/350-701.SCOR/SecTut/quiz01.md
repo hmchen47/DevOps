@@ -164,7 +164,7 @@
   Answer:<br><br>
 
 
-- <span style="color: #008888; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   What are two rootkit types? (Choose two)
 
@@ -177,7 +177,7 @@
   Answer:<br><br>
 
 
-- <span style="color: #008888; font-weight: bold;">Question 16</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   Which form of attack is launched using botnets?
 
@@ -189,7 +189,7 @@
   Answer:<br><br>
 
 
-- <span style="color: #008888; font-weight: bold;">Question 17<span style="color: #008888; font-weight: bold;">
+- <span style="color: #008888; font-weight: bold;">Question 16<span style="color: #008888; font-weight: bold;">
 
   Which threat involves software being used to gain unauthorized access to a computer system?
 
@@ -201,7 +201,7 @@
   Answer:<br><br>
 
 
-- <span style="color: #008888; font-weight: bold;">Question 18</span>
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
 
   Which type of attack is social engineering?
 

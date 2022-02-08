@@ -293,7 +293,7 @@
   Reference: [IOS PKI Deployment Guide: Initial Design and Deployment](https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/211333-IOS-PKI-Deployment-Guide-Initial-Design.html)
 
 
-- <span style="color: #008888; font-weight: bold;">Question 15</span>
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
 
   What are two rootkit types? (Choose two)
 
@@ -312,7 +312,7 @@
   There are four main types of rootkits: Kernel rootkits, User mode rootkits, Bootloader rootkits, Memory rootkits
 
 
-- <span style="color: #008888; font-weight: bold;">Question 16</span>
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
 
   Which form of attack is launched using botnets?
 
@@ -327,7 +327,7 @@
 
   A botnet is a collection of internet-connected devices infected by malware that allow hackers to control them. Cyber criminals use botnets to instigate botnet attacks, which include malicious activities such as credentials leaks, unauthorized access, data theft and DDoS attacks.
 
-- <span style="color: #008888; font-weight: bold;">Question 17</span>
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
 
   Which threat involves software being used to gain unauthorized access to a computer system?
 
@@ -338,7 +338,7 @@
 
   Answer: A
 
-- <span style="color: #008888; font-weight: bold;">Question 18</span>
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
 
   Which type of attack is social engineering?
 
