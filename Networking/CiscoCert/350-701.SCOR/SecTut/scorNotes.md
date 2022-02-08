@@ -239,7 +239,7 @@
     - more complex and time comsuming
     - Diffie-Hellman: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
     - RSA
-    - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation,as well as memory, energy and bandwidth savings
+    - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation, as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
     - different keys for encryption and decryption
     - the capability to only <span style="color: #bb6600;">know one key on one side</span>
@@ -294,7 +294,7 @@
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
   
 
-- IP Security (Psec)
+- IP Security (IPsec)
   - Cryptographic algorithms w/ IPsec include
     - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
     - TripleDES-CBC for confidentiality
