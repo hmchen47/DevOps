@@ -1509,9 +1509,9 @@
   - SensorBase Network
     - a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic
     - provide Cisco with an assessment of reliability for known Internet domains
-    - action to gather threat information from a variety of Cisco products and services and performs analytics to find patterns on threats: deployment
+    - action to gather threat information from a variety of Cisco products and services and performs analytics to find patterns on threats: <span style="color: #bb6600;">deployment</span>
   - encryption header
-    - add encryption settings to a message by inserting an SMTP header into a message using either a content filter or a message filter
+    - add encryption settings to a message by <span style="color: #bb6600;">inserting an SMTP header</span> into a message using either a content filter or a message filter
     - override the encryption settings defined in the associated encryption profile
     - apply specified encryption features to messages
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
