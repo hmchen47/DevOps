@@ -1848,7 +1848,7 @@
   - authentication method two or more verification factors to gain access to a resource
   - require means of verification that unauthorized users won't have
   - protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
-  - prevent brute force attacks from being successful
+  - prevent <span style="color: #bb6600;">brute force attacks</span> from being successful
   - proper MFA using factors from at least two different categories
   - benefits
     - flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications
@@ -1857,10 +1857,10 @@
     - <span style="color: #bb6600;">Knowledge</span>
       - usually a password
       - the most commonly used tool in MFA solutions
-    - processing / Physical factors:
+    - possession:
       - possession factors–use tokens, a temporary QR (quick response) code
-    - <span style="color: #bb6600;">Inherent</span>
-      - **biometrics** like fingerprint, face, and retina scans
+    - <span style="color: #bb6600;">Inherent</span> / Physical factors
+      - <span style="color: #bb6600;">biometrics</span> like fingerprint, face, and retina scans
       - possibly voice ID or other behavioral inputs like keystroke metrics
       - reliably unique, always present, and secure
       - commonly used in mobile phones
@@ -1872,8 +1872,8 @@
     - Social media
     - Risk-based authentication: a.k.a. adaptive multi-factor authentication
     - Push-based 2FA: confirm a user's identity with multiple factors of authentication that other methods cannot
-  - against phishing, social engineering and password brute-force attacks
-  - SSO authentication: users with MFA and sharing the authentication with multiple applications
+  - against <span style="color: #bb6600;">phishing, social engineering and password brute-force attacks</span>
+  - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple applications
 
 
 - EPP & EDR
