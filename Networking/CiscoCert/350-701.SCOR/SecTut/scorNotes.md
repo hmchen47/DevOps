@@ -1433,38 +1433,38 @@
     - advanced threat protection capabilities to detect, block, and remediate threats faster
     - <span style="color: #bb6600;">prevent data loss (DLP)</span>
     - secure important information in transit with end-to-end encryption
-  - scenario better than CES: sensitive data remained in site
+  - scenario better than CES: <span style="color: #bb6600;">sensitive data remained in site</span>
   - multilayer approach to fight viruses and malware
-    - 1st layer: outbreak filters, download a list bad mail servers from Cisco SenderBase; Sophos engine
-    - 2nd layer: using antivirus signatures to scan quarantined emails
-    - scan outbond emails to provide antivirus protection
+    - 1st layer: outbreak filters, download a list bad mail servers from Cisco SenderBase; <span style="color: #bb6600;">Sophos engine</span>
+    - 2nd layer: using <span style="color: #bb6600;">antivirus signatures</span> to scan quarantined emails
+    - scan <span style="color: #bb6600;">outbond emails</span> to provide antivirus protection
   - <span style="color: #bb6600;">Host Access Table (HAT)</span>: hosts allowed to connect to a listener 
   - <span style="color: #bb6600;">Recipient Access Table (RAT)</span>: a list of all local domains for which the email gateway will accept mail; inbound email only
   - Hybrid Secure Email
     - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
     - cloud-based infrastructure typically used for inbound email cleaning
     - on-premise appliance providing granular control - protecting sensitive info w/ DLP and encryption technologies
-    - scenario: deployment flexibility as organization's needs  -> transition
-  - message tracking w/ `trackingconfig` command
+    - scenario: deployment flexibility as organization's needs  -> <span style="color: #bb6600;">transition</span>
+  - message tracking w/ <span style="color: #bb6600;">`trackingconfig`</span command
   - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
-  - ESA + AMP to upload file for analysis but network congestion: file upload abandoned
-  - dynamic spam protection: ESA w/ real-time updates from Talso
+  - ESA + AMP to upload file for analysis but network congestion: <span style="color: #bb6600;">file upload abandoned</span>
+  - <span style="color: #bb6600;">dynamic spam protection</span>: ESA w/ real-time updates from Talso
   - Mail Flow Policy
     - access rule: `ACCEPT`, `REJECT`, `RELAY`, `CONTINUE`, and `TCPREFUSE`
     - `TCPREFUSE`
       - not allowed to connect to your ESA
       - appear as if your server is unavailable for sending server
       - most MTAs (Mail Transfer Agents) retry frequently -> more traffic
-      - `REJECT` will receive a 554 SMTP error (hard bounce)
+      - <span style="color: #bb6600;">`REJECT`</span> will receive a 554 SMTP error (hard bounce)
     - dropping malicious emails occurs after receiving and examining the mail to make the decision
   - Directory Harvest Attack (DHA)
     - a technique used by spammers to find valid/existent email addresses at a domain either by using Brute force or by guessing valid e-mail addresses at a domain using different permutations of common username
     - attackers to get hold of a valid email address if your organization uses standard format for official e-mail alias
-    - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients.
-    - Lightweight Directory Access Protocol (LDAP): an Internet protocol that email programs use to look up contact information from a server
+    - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients
+    - <span style="color: #bb6600;">Lightweight Directory Access Protocol (LDAP)</span>: an Internet protocol that email programs use to look up contact information from a server
   - reputation service
     - insufficient info for a definitive verdict -> return a reputation score based on characteristics of the file
-    - score <span style="color: #bb6600;">meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
+    - <span style="color: #bb6600;">score meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
   - <span style="color: #bb6600;">Advanced Phishing Protection</span> (not on WSA)
     - sensor-based solution
     - another layer of defense
@@ -1477,7 +1477,7 @@
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
   - outbreak filter: used to block emails from bad mail server
-  - message action: 1) deliver; 2) drop; 3) quarantine
+  - message main action: 1) deliver; 2) drop; 3) quarantine
   - secondary action:
     - sending a copy to a plolicy quarantine if deliver
     - encrypting messages
@@ -1487,7 +1487,7 @@
     - sending copies (bcc) to other receipients
     - sending a DLP violation notification to sender or other contacts
   - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
-  - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: MX record
+  - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
 
 
 - AsyncOS operating system
