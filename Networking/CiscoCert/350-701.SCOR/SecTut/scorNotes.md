@@ -1794,14 +1794,14 @@
     - identity-based service: dynamically deliver customized services based on the MAC address of an endpoint
     - Access control at the edge
     - fallback or standalone authentication
-    - device authentication: authenticating devices not capable of 802.1X
+    - device authentication: <span style="color: #bb6600;">authenticating devices not capable of 802.1X</span>
   - MAB request attributes w/ Cisco switches
     - identifying MAB request by setting Attribute 6 (Service Type) to 10 (Call Check)
-    - using Attribute 6 to filter MAB requests at the RADIUS server
+    - using <span style="color: #bb6600;">Attribute 6</span> to filter MAB requests at the RADIUS server
   - a fallback option for devices that don't support 802.1x
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
-  - success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': `aaa authorization network default group ise` config required
+  - success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <span style="color: #bb6600;">`aaa authorization network default group ise`</span> config required
 
 
 - Cisco devices basic commands
