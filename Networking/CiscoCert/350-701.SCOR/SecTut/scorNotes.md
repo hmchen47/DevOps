@@ -1701,7 +1701,7 @@
 - pxGrid
   - stands for Platform Exchange Grid
   - integrate multiple vendors security products together and group them in an ecosystem domain
-  - purpose: share contextual data between the integrated partners
+  - purpose: <span style="color: #bb6600;">share contextual data</span> between the integrated partners
   - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
   - provides a new WebSockets client and removes dependencies on underlying operating systems and language
   - used to share IP-to-SGT information about endpoints allowing security products to apply Security Group access control using SGTs
@@ -1711,7 +1711,7 @@
   - use a built-in API in ISE
   - main components: controller, publisher and subscriber
     - controller: core component to make everything working, ISE
-    - publisher: partner w/ some contextual data to be shared with the other partners, e.g., FMC
+    - <span style="color: #bb6600;">publisher</span>: partner w/ some contextual data to be shared with the other partners, e.g., FMC
     - subscriber: partner interested in parsing some contextual data from the other partners
 
 
