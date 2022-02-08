@@ -1896,6 +1896,13 @@
 
 ## <span style="color: #008888;">Layer 2 Security</span>
 
+- Catalyst integrated security features
+  - port security
+  - DHCP snooping
+  - Dynamic ARP Inspection (DAI)
+  - IP source guard
+
+
 - ARP spoofing
   - a Man in the Middle (MitM) attack that allows attackers to intercept communication between network devices
   - ARP snooping:
@@ -1940,13 +1947,6 @@
   - actions to <span style="color: #bb6600;">bring up errr-disabled state interfaces</span>
     - `shutdown` and then `no shutdown` the interface
     - enable detection and recover features
-
-
-- Catalyst integrated security features
-  - port security
-  - DHCP snooping
-  - Dynamic ARP Inspection (DAI)
-  - IP source guard
 
 
 - Private VLAN port types
