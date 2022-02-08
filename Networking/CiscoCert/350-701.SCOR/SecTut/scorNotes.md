@@ -1735,15 +1735,15 @@
 - 802.1X port-based authentication
   - roles
     - supplicant
-    - authenticator (required): switch & WLC
-    - authentication server (required): RADIUS, ISE
-  - only applied to switch port 
-  - globally enables 802.1X port-based authentication.: `dot1x system-auth-control`
+    - <span style="color: #bb6600;">authenticator</span> (required): switch & WLC
+    - <span style="color: #bb6600;">authentication server</span> (required): RADIUS, ISE
+  - only applied to switch port
+  - globally enables 802.1X port-based authentication.: <span style="color: #bb6600;">`dot1x system-auth-control`</span>
   - commands to <span style="color: #bb6600;">enable 802.1X on a port</span>
     - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
     - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
   - display information about current Auth Manager sessions:
-    - syntax: `show authentication sessions` -> indicating interface authentication methods, including `dot1x` and `mab`
+    - syntax: <span style="color: #bb6600;">`show authentication sessions`</span> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
@@ -1766,12 +1766,15 @@
 
       Device# show dot1x all summary
 
-      Interface   PAE    Client            Status 
-      ------------------------------------------------
-      Fa1         AUTH    000d.bcef.bfdc   AUTHORIZED
+      Interface PAE  Client          Status 
+      -----------------------------------------
+      Fa1       AUTH  000d.bcef.bfdc AUTHORIZED
       ```
 
-  - sample config
+  - example config
+    - 802.1X will <span style="color: #bb6600;">work</span> and the device will be <span style="color: #bb6600;">allowed</span> on the network
+    - no MAB config
+    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco ISE to allow all device NOT using machine authentication</span>
 
     ```cfg
     <...truncated...>
@@ -1782,10 +1785,6 @@
     dot1x max-reauth-req 3
     <...truncated...>
     ```
-
-    - 802.1X will work and the device will be allowed on the network
-    - no MAB config
-    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco ISE to allow all device not using machine authentication</span>
 
 
 - MAC Authentication Bypass (MAB)
