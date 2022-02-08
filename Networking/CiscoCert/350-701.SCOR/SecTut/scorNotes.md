@@ -1776,7 +1776,7 @@
     - no MAB config
     - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco ISE to allow all device NOT using machine authentication</span>
 
-    ```cfg
+    ```text
     <...truncated...>
     access-session host-mode multi-domain
     access-session port-control auto
@@ -1792,7 +1792,7 @@
   - benefit:
     - visibility: linking the IP address, MAC address and port of the device
     - identity-based service: dynamically deliver customized services based on the MAC address of an endpoint
-    - Access control at the edge
+    - access control at the edge
     - fallback or standalone authentication
     - device authentication: <span style="color: #bb6600;">authenticating devices not capable of 802.1X</span>
   - MAB request attributes w/ Cisco switches
@@ -1811,7 +1811,7 @@
   - enable authentication on a port: <span style="color: #bb6600;">`authentication port-control auto`</span>
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
 
-    ```cfg
+    ```text
     aaa new-model
     ! Creates an 802.1X port-based authn method list
     aaa authentication dot1x default group radius
@@ -1825,7 +1825,7 @@
     aaa session-id common
     !
     aaa accounting update periodic 5
-    ! Update AAA accounting infon periodically every 5 min
+    ! Update AAA accounting info periodically every 5 min
     aaa accounting system default start-stop group radius
     ```
 
