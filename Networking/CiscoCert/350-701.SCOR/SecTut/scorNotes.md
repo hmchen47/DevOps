@@ -1903,8 +1903,8 @@
     - becoming invalid if not updated within 15 minutes
     - attack: receiving an ARP packet w/ different sender MAC address from a valid ARP snooping entry
   - Atomic ARP engine
-    - define basic Layer 2 ARP signatures and 
-    - provides more advanced detection of the ARP spoof tools `dsniff` and `ettercap`
+    - define basic Layer 2 ARP signatures
+    - provide more advanced detection of the ARP spoof tools `dsniff` and `ettercap`
 
 
 - DHCP spoofing
@@ -1918,13 +1918,13 @@
     - ports identified as trusted and untrusted
     - only authorized DHCP server trusted and allowed to send all types of DHCP messages
     - all other ports are untrusted (default) and send only DHCP requests
-    - shutdown untrusted ports if sending DHCP response
-    - enable trust port: `ip dhcp snooping trust`
+    - <span style="color: #bb6600;">shutdown untrusted ports</span> if receiving DHCP response
+    - enable trust port: <span style="color: #bb6600;">`ip dhcp snooping trust`</span>
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
-    - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
-    - after enabling DAI, all ports become untrusted ports
+    - allowing a network administrator to intercept, log, and discard ARP packets with <span style="color: #bb6600;">invalid MAC address to IP address bindings</span>
+    - after enabling DAI, all ports become <span style="color: #bb6600;">untrusted ports</span>
     - inactive on all VLANs
     - DHCP snooping enabled on a <span style="color: #bb6600;">per-VLAN basis</span>, e.g., `ip dhcp snooping vlan 2`
   - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
