@@ -1857,7 +1857,7 @@
     - <span style="color: #bb6600;">Knowledge</span>
       - usually a password
       - the most commonly used tool in MFA solutions
-    - possession:
+    - Possession:
       - possession factors–use tokens, a temporary QR (quick response) code
     - <span style="color: #bb6600;">Inherent</span> / Physical factors
       - <span style="color: #bb6600;">biometrics</span> like fingerprint, face, and retina scans
@@ -1880,16 +1880,16 @@
   - Endpoint Protection Platform (EPP)
     - solely on prevention at the <span style="color: #bb66pp;">perimeter</span>
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
-    - prevent endpoint security threats like known and unknown malware
+    - prevent <span style="color: #bb66pp;">endpoint security threats</span> like known and unknown malware
     - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
     - act as the first line of defense, filtering out attacks that can be detected by the organization's deployed security solutions
-    - complemen of EDR
+    - complement of EDR
   - Endpoint Detection and Response (EDR)
-    - primarily on detecting advanced threats, designed to evade front-line defenses and successfully entered the environment
+    - primarily on detecting <span style="color: #bb66pp;">advanced threats</span>, designed to evade front-line defenses and successfully entered the environment
     - detect threats across your environment
     - investigate the entire lifecycle of the threat
-    - containing the threat at the endpoint, eliminate the threat before it can spread
-    - detect and respond to threats that your EPP and other security tools did not catch
+    - contain the threat at the endpoint, eliminate the threat before it can spread
+    - detect and respond to threats that EPP and other security tools did not catch
     - acts as a second layer of protection, enabling security analysts to perform threat hunting and identify more subtle threats to the endpoint
     - <span style="color: #bb66pp;">more advanced detection capabilities</span>
 
