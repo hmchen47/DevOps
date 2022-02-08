@@ -1935,9 +1935,9 @@
   - storm control or broadcast suppression
     - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
     - threshold level: a percentage of the total available bandwidth of the port
-    - each port w/ different storm control levels for broadcast, multicast, and unicast type of traffic
+    - each port w/ different storm <span style="color: #bb6600;">control levels for broadcast, multicast, and unicast</span> type of traffic
   - limit the broadcast traffic on the switch: `storm-control broadcast level [falling-threshold]` in interface config mode
-  - actions to bring up errr-disabled state interfaces
+  - actions to <span style="color: #bb6600;">bring up errr-disabled state interfaces</span>
     - `shutdown` and then `no shutdown` the interface
     - enable detection and recover features
 
