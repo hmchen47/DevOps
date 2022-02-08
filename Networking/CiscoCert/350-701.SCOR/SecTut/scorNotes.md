@@ -1717,12 +1717,12 @@
 
 - RADIUS Change of Authorization (CoA)
   - a mechanism to change the attributes of an <span style="color: #bb6600;">authentication, authorization, and accounting (AAA) session</span> after it is authenticated
-  - enable AAA globally to support CoA: `aaa new-model`
+  - enable AAA globally to support CoA: <span style="color: #bb6600;">`aaa new-model`</span>
   - main steps of CoA procedure
-    - authentication
-    - posture assessment
-    - CoA re-authorization
-    - network access authorization
+    1. authentication
+    2. posture assessment
+    3. CoA re-authorization
+    4. network access authorization
   - enable the profiler service with more control over endpoints
   - CoA implementation for profiler service:
     - static assignment of an endpoint
