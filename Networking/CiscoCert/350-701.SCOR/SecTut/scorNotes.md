@@ -1950,14 +1950,14 @@
 
 
 - Private VLAN port types
-  - Isolated
+  - <span style="color: #bb6600;">Isolated</span>
     - only communicate with promiscuous ports
     - not even communicate with another isolated port
     - only 1 isolated VLAN per PVLAN
-  - Promiscuous
+  - <span style="color: #bb6600;">Promiscuous</span>
     - communicate with all other ports
     - default gateway usually connected to this port so that all devices in PVLAN can go outside
-  - Community
+  - <span style="color: #bb6600;">Community</span>
     - communicate with other members of that community and promiscuous ports
     - not communicate with other communities
     - multiple community VLANs per PVLAN
