@@ -523,9 +523,13 @@
       />
     </figure>
 
-  - IaaS provider
+  - IaaS service
     - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
-    - sercure responsibility: <span style="color: #bb6600;">firewalling virtual machine</span>
+    - sercure responsibility of provider: <span style="color: #bb6600;">firewalling virtual machine</span>
+    - tenant responsible for <span style="color: #bb6600;">virtual machine OS patching</span>
+  - PaaS service
+    - offer an environment for cloud consumers to <span style="color: #bb6600;">develop and deploy applications</span> without needing to manage or maintain the underlying cloud infrastructure
+  - SaaS service: provide a complete packaged solution
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
@@ -701,8 +705,8 @@
     - shared across multiple security solutions and provides industry-leading security protections and efficacy
     - driven by intelligence infrastructure, product and service telemetry, public and private feeds and the open source community
     - <span style="color: #bb6600;">real-time threat intelligence</span> and security protection
-  - <span style="color: #bb6600;">IP and Domain Data Center</span>
-    - tracking the reputation of IP addresses for email and web traffic
+  - IP and Domain Data Center
+    - tracking the <span style="color: #bb6600;">reputation of IP addresses for email and web traffic</span>
     - the most comprehensive real-time threat detection network
     - data made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances
     - detecting and correlating threats in real time
@@ -1487,18 +1491,19 @@
     - secure important information in transit with end-to-end encryption
   - scenario better than CES: <span style="color: #bb6600;">sensitive data remained in site</span>
   - multilayer approach to fight viruses and malware
-    - 1st layer: outbreak filters, download a list bad mail servers from Cisco SenderBase; <span style="color: #bb6600;">Sophos engine</span>
-    - 2nd layer: using <span style="color: #bb6600;">antivirus signatures</span> to scan quarantined emails
+    - 1st layer: <span style="color: #bb6600;">outbreak filters</span>, download a list bad mail servers from Cisco SenderBase
+    - 2nd layer: using antivirus signatures to scan quarantined emails, e.g., <span style="color: #bb6600;">Sophos or McAfee Anti-Virus</span>
     - scan <span style="color: #bb6600;">outbond emails</span> to provide antivirus protection
   - <span style="color: #bb6600;">Host Access Table (HAT)</span>: hosts allowed to connect to a listener 
   - <span style="color: #bb6600;">Recipient Access Table (RAT)</span>: a list of all local domains for which the email gateway will accept mail; inbound email only
   - Hybrid Secure Email
     - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
     - cloud-based infrastructure typically used for inbound email cleaning
-    - on-premise appliance providing granular control - protecting sensitive info w/ DLP and encryption technologies
+    - on-premise appliance providing granular control - protecting sensitive info w/ <span style="color: #bb6600;">DLP and encryption</span> technologies
+    - primary benefit: provide email security while supporting the <span style="color: #bb6600;">transition to the cloud</span>
     - scenario: deployment flexibility as organization's needs  -> <span style="color: #bb6600;">transition</span>
-  - message tracking w/ <span style="color: #bb6600;">`trackingconfig`</span command
-  - acting as a Mail Transfer Agent (MTA) within the email-delivery chain
+  - <span style="color: #bb6600;">message tracking enabled w/ `trackingconfig`</span> command to provide a detailed view of message flow
+  - acting as a <span style="color: #bb6600;">Mail Transfer Agent (MTA)</span> (primary role of ESA) within the email-delivery chain
   - ESA + AMP to upload file for analysis but network congestion: <span style="color: #bb6600;">file upload abandoned</span>
   - <span style="color: #bb6600;">dynamic spam protection</span>: ESA w/ real-time updates from Talso
   - Mail Flow Policy
@@ -1540,6 +1545,7 @@
     - sending a DLP violation notification to sender or other contacts
   - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
+  - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation -based filtering</span>
 
 
 - AsyncOS operating system
@@ -1566,6 +1572,15 @@
     - add encryption settings to a message by <span style="color: #bb6600;">inserting an SMTP header</span> into a message using either a content filter or a message filter
     - override the encryption settings defined in the associated encryption profile
     - apply specified encryption features to messages
+  - decryption policies
+    - handling of HTTPS traffic within the web proxy
+      - when to decryp HTTPS traffic
+      - how to handle requests that use invalid or revoked security certificates
+    - ways to handle HTTPS traffic
+      - pass through encrypted traffic
+      - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible -> provide <span style="color: #bb6600;">enhanced HTTPS application detection</span> for AsyncOS
+      - drop the HTTPS connection
+      - monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
   - API for Cisco <span style="color: #bb6600;">Security Management appliances</span>
     - a representational state transfer (REST) based set of operations
@@ -1582,16 +1597,16 @@
     - Transparently
       - the existence of the proxy unknown
       - network infrastructure devices (layer 3 switches) redirect web traffic to the proxy
-      - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a Layer 3 switch is used to redirect based on destination port 80
-      - <span style="color: #bb6600;">WCCP</span>: a WCCP v2 enabled device (typically a router, switch, PIX, or ASA) redirects port 80
+      - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a <span style="color: #bb6600;">Layer 4 switch is used to redirect based on destination port 80</span>
+      - <span style="color: #bb6600;">Web Cache Communications Protocol (WCCP)</span>: a <span style="color: #bb6600;">WCCP v2 enabled device</span> (typically a router, switch, PIX, or ASA) redirects port 80
       - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
     - Explicitly
       - client knows existence of the proxy -> sending all web traffic to the proxy
       - no DNS lookup, WAS responsible for DNS resolution
       - config each client to send traffic to WSA
-      - WSA responds w/ its own IP info
+      - WSA responds w/ <span style="color: #bb6600;">its own IP info</span>
       - browser Configured: client browser is explicitly configured to use a proxy
-      - <span style="color: #bb6600;">.PAC file configured</span>:
+      - <span style="color: #bb6600;">`.PAC` file configured</span>:
         - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
         - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server
         - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
@@ -1599,6 +1614,7 @@
   - Web Cache Communications Protocol (WCCP)
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
+    - improve <span style="color: #bb6600;">web traffic performance</span>
   - decryption policies define the handling of HTTPS traffic within the web proxy:
     - when to <span style="color: #bb6600;">decrypt HTTPS traffic</span>
     - how to handle requests that use <span style="color: #bb6600;">invalid or revoked security certificates</span>
@@ -1607,7 +1623,7 @@
     - decrypt traffic and apply the content-based access policies defined for HTTP traffic
     - <span style="color: #bb6600;">drop</span> the HTTPS connection
     - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies
-  - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig`</span> CLI command and the <span style="color: #bb6600;">HTTPS</span> subcommand. 
+  - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>. 
   - proxy caching: improve web traffic performance
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
