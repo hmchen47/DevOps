@@ -529,7 +529,10 @@
     - tenant responsible for <span style="color: #bb6600;">virtual machine OS patching</span>
   - PaaS service
     - offer an environment for cloud consumers to <span style="color: #bb6600;">develop and deploy applications</span> without needing to manage or maintain the underlying cloud infrastructure
-  - SaaS service: provide a complete packaged solution
+    - tenant responsible for <span style="color: #bb6600;">application maintaining and patching</span>
+  - SaaS service:
+    - provide a complete packaged solution
+    - software rented out to the user
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
@@ -691,6 +694,7 @@
     - continuously monitor cloud environments with a cloud Data Loss Prevention (DLP) engine to identify sensitive information stored in cloud environments in violation of policy
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
+  - App Firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
 
 
 - Cloud Web Security (CWS)
@@ -730,6 +734,7 @@
 
 - Tetration
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
+  - protect hybrid cloud delpoyment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
   - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
   - enable trusted access through automated, exhaustive context from various systems to automatically adapt security policies
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
