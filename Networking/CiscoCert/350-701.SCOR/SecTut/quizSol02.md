@@ -819,6 +819,10 @@ With Cisco Email Security customers can:
 
   Reference: [Newer Cisco Validated Design Guides Available](https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Aug2013/CVD-EmailSecurityUsingCiscoESADesignGuide-AUG13.pdf)
 
+  Cisco recommends that you enable Sophos or McAfee Anti-Virus in addition to Outbreak Filters to increase your defense against viral attachments. However, Outbreak Filters can operate independently without requiring Sophos or McAfee Anti-Virus to be enabled.
+
+  Reference: [Can I use Outbreak Filters even if I am not running Sophos or McAfee Anti-Virus on my ESA?](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118188-qanda-esa-00.html#anc2)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
