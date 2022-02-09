@@ -1667,12 +1667,12 @@
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
     - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
     - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
-    - RADIUS protocol: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
+    - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
   - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
   - <span style="color: #bb66oo;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
-    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
+    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Age
     - considerations: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
       - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
       - remediations: the methods AnyConnect will handle endpoints that are <span style="color: #bb6600;">out of compliance</span>
@@ -1681,19 +1681,24 @@
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and non-compliant
     - security posture: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
+    - benefit to ensure as an endpoint is compliant with a posture policy configured in ISE: verify that the endpoint has the <span style="color: #bb6600;">latest Microsoft security patches installed</span>
     - <span style="color: #bb6600;">device compliance</span>
       - validate if anti-virus software installed
       - verification of the latest OS patches
+    - solution for posture check on MS Windows endpoint w/o MS17-010 patch:
+      - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
+      - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
     - policy requirement types
-      - mandatory
+      - mandator
         - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
-        - move to Non-Compliant state if failed
+        - move to <span style="color: #bb6600;">Non-Compliant</span> state if failed
       - optional: allow to skip the specified optional requirements and move to Compliant state
       - audit: for internal purposes and the agent does not prompt any message or input from end users
-  - web authentication scenarios: Local Web Authentication (LWA) & Centralized Web Authentication (CWA)
+    - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
+  - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: tag the guest portal in the CWA part of the <span style="color: #bb6600;">Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
@@ -1751,6 +1756,11 @@
       - <span style="color: #bb6600;">Contractor</span>: Users who need access to the network for an extended amount of time, up to a year.
       - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
       - Weekly: Users who need access to the network for a couple of weeks.
+  - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
+  - inline posture node
+    - feature ofASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
 
 
 - TrustSec
