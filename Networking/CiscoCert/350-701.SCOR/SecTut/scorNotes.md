@@ -273,11 +273,12 @@
       - <span style="color: #bb6600;">preshared authentication key</span>
         - global configuration mode
         - syntax: `crypto isakmp key <keystring> address <peer-address> [mask]` or `crypto isakmp key <keystring> hostname <peer-hostname>`
-        - same command on two end devices
-        - debug msg: `ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...` -> sign of <span style="color: #bb6600;">key mismatch</span>
+        - <span style="color: #bb6600;">same command on two end devices</span>
+        - debug msg: `ISAKMP:(1002): retransmitting phase 1 MM_KEY_EXCH...` -> sign of <span style="color: #bb6600;">authentication key mismatch</span>
         - example pre-shared key exchange config
           - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
-          - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4`
+          - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4` or `crypto isakmp key cisco address 1.2.3.4 255.255.255.255`
+          - cmd `crypto isakmp key ciscXXXXXXXX address 172.16.0.0`: authenticates the IP address of the <span style="color: #bb6600;">172.16.0.0/32 peer</span> by using the key `ciscXXXXXXXX`
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 172.19.20.24`
@@ -310,14 +311,14 @@
   - stateful failover
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
     - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
-    - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> on active device on standby device
+    - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> of active device on standby device
 
 
 - SSL, TLS & DTLS
   - DTLS
     - UDP based
     - used for delay sensitive applications (voice and video)
-    - strongest throughput <span style="color: #bb6600;">performance</span>
+    - <span style="color: #bb6600;">strongest throughput performance</span>
   - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
 
     ```text
@@ -350,7 +351,7 @@
   - full meshed connectivity
   - simple hub and spoke configuration
   - forming IPsec tunnel over dynamically/statically addresses spokes
-  - tunneled VPN: IKEv1 (ISAKMP) & IKEv2
+  - tunneled VPN: <span style="color: #bb6600;">IKEv1 (ISAKMP) & IKEv2</span>
   - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
   - NOT support multiple SAs
   - AnyConnect superior capabilities:
@@ -360,12 +361,13 @@
 
 - FlexVPN
   - tunneled VPN: IKEv2
-  - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementations</span>
+  - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementation</span>
+  - support <span style="color: #bb6600;">multivendor environment</span> and secre traffic btw sites
   - NHRP primarily used to establish spoke to spoke communication
   - spokes not register to hub
   - same as DMVPN
     - point-to-point GRE tunnels
-    - spoke-to-spoke connectivity achieved with NHRP redirect message
+    - spoke-to-spoke connectivity achieved with <span style="color: #bb6600;">NHRP redirect message</span>
     - IOS routers w/ the same NHRP code
     - Cisco's proprietary technologies
   - differences
@@ -381,7 +383,7 @@
   - a <span style="color: #bb6600;">trunnel-less</span> VPN
   - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
-  - scalable for any-to-any connectivity and encryption
+  - scalable for `crypto isakmp key cisco address 1.2.3.4`any-to-any connectivity and encryption</span>
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
   - <span style="color: #bb6600;">reduce latency and provide encryption</span> over MPLS without the use of a central hub
