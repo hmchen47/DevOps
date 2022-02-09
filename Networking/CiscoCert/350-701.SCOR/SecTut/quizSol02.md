@@ -138,15 +138,6 @@
       print(mac, ip , ipv6)
   ```
 
-  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-      onclick= "window.open('https://www.securitytut.com/scor/python-api')"
-      src    = "img/0504-Cisco_security_appliance_API.jpg"
-      alt    = "Python Script w/ Security Appliance API"
-      title  = "Python Script w/ Security Appliance API"
-    />
-  </figure> -->
-
   What does the API do when connected to a Cisco security appliance?
 
   A. get the process and PID information from the computers in the network<br>
@@ -162,6 +153,14 @@
 
   Reference: [Cisco AMP for Endpoints API](https://api-docs.amp.cisco.com/api_actions/details?api_action=GET+%2Fv1%2Fcomputers&api_host=api.apjc.amp.cisco.com&api_resource=Computer&api_version=v1)
 
+  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/python-api')"
+      src    = "img/0504-Cisco_security_appliance_API.jpg"
+      alt    = "Python Script w/ Security Appliance API"
+      title  = "Python Script w/ Security Appliance API"
+    />
+  </figure> -->
 
 
 ## 06. Firewall & Intrusion Prevention
@@ -278,7 +277,7 @@
   C. URL filtering<br>
   D. protect<br>
 
-  Answer: 
+  Answer: D
   
   Explanation
 
@@ -350,7 +349,7 @@
   C. device serial number<br>
   D. registration key<br>
 
-  Answer: 
+  Answer: D
   
   Explanation
 
@@ -411,7 +410,7 @@
   A. To view bandwidth usage for NetFlow records, the QoS feature must be enabled.<br>
   B. A sysopt command can be used to enable NSEL on a specific interface.<br>
   C. NSEL can be used without a collector configured.<br>
-  D. A flow-export event type must be defined under a policy.<br>
+  D. A `flow-export event-type` must be defined under a policy.<br>
 
   Answer: D
 

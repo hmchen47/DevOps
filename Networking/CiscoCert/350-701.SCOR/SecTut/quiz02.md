@@ -265,7 +265,7 @@
   A. To view bandwidth usage for NetFlow records, the QoS feature must be enabled.<br>
   B. A sysopt command can be used to enable NSEL on a specific interface.<br>
   C. NSEL can be used without a collector configured.<br>
-  D. A flow-export event type must be defined under a policy.<br>
+  D. A `flow-export event-type` must be defined under a policy.<br>
 
   Answer:<br><br> 
 
@@ -358,14 +358,28 @@
 
   Refer to the exhibit. What is a result of the configuration?
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
-      onclick= "window.open('page')"
-      src    = "img/0619-ACL_DMZ.jpg"
-      alt    = "text"
-      title  = "text"
-    />
-  </figure>
+  ```text
+  Gateway of last resort is 1.1.1.1 to network 0.0.0.0
+
+  S* 0.0.0. 0.0.0.0 [1/0] via 1.1.1.1, outside
+  C   1.1.1.0 255.255.255.0 is directly connected, outside
+  S   172.16.0.0 255.255.0.0 [1/0] via 192.168.100.1, inside
+  C   192.168.100.0 255.255.255.0 is directly connected, inside
+  C   172.16.10.0 255.255.255.0 is directly connected, dmz
+  S      10.10.10.0 255.255.255.0 [1/0] via 172.16.10.1, dmz
+  --------------------------------------------------------------
+  access-list redirect-acl permit ip 192.168.100.0 255.255.255.0 any
+  access-list redirect-acl permit ip 172.16.0.0 255.255.0.0 any
+
+  class-map redirect-class
+   match access-list redirect-acl
+
+  policy map inside-policy
+   class redirect-class
+   sfr fail open
+
+  service-policy inside-policy global
+  ```
 
   A. Traffic from the DMZ network is redirected<br>
   B. Traffic from the inside network is redirected<br>
@@ -373,7 +387,15 @@
   D. Traffic from the inside and DMZ networks is redirected<br>
 
   Answer:<br><br> 
-
+<!-- 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+      onclick= "window.open('page')"
+      src    = "img/0619-ACL_DMZ.jpg"
+      alt    = "text"
+      title  = "text"
+    />
+  </figure> -->
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
 
