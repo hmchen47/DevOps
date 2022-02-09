@@ -461,7 +461,7 @@
     - AMP API to print <span style="color: #bb6600;">network interface info</span>
       - URL: `get https://api.amp.cisco.com/v1/computers
       - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
-      - list of network interface info: `print(mac, ip , ipv6)`
+      - list of network interface info: `print(mac, ip , ipv6)
   - make a SSL connection
     - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
     - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
@@ -617,6 +617,9 @@
   - managing the FTDv w/ FMC (either FMCv or physical FMC)
   - register and communicate with the FMC on the Management interface
   - FTDv for AWS
+    - deployment model coinfigurations in routed mode
+      - managened by an <span style="color: #bb6600;">FMCv installed in AWS</span>
+      - managed by a <span style="color: #bb6600;">physical FMC appliance on premises</span>
     - run as a guest in the AWS environment
     - interface requirements:
       - <span style="color: #bb6600;">management</span> interfaces: 2; one for FMC and one for diagnostics
@@ -646,6 +649,7 @@
     - Maximum of 4 vCPUs per instance
     - <span style="color: #bb6600;">User deployment of L3 networks</span>
     - <span style="color: #bb6600;">Routed mode (default)</span>
+  - NOT supporting Multiple context mode
   - scenario: mirror port and NetFlow used in local devices
     - NO mirror port and NetFlow data in cloud environment
     - virtual private cloud (VPC) in AWS offers <span style="color: #bb6600;">VPC Flow log</span>
@@ -1109,9 +1113,15 @@
   - identity policy
     - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
-  - impact flag: evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
-  - health policy
+  - device management policy
+    - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment
+  - impact flag:
+    - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
+    - required for <span style="color: #bb6600;">network discovery policy</span>
+    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
+  - <span style="color: #bb6600;">health policy</span>
     - using the health monitor to create a health policy (collection of tests)
+    - used to collect health modules alerts from managed devices
     - configured <span style="color: #bb6600;">health test criteria</span> for several health modules (tests)
     - control which health modules against each of your appliances
     - configure the specific limits used in the tests run by each module
@@ -1119,6 +1129,7 @@
     - a shared set of features or parameters that define the aspects of a managed device
     - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
     - configure multiple managed devices at once
+    - feature configured for managed devices: <span style="color: #bb6600;">time schronization</span>
     - web GUI to download capture traffic file: <span style="color: #bb6600;">enable the HTTPS server</span> for the service platform policy
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
@@ -1164,6 +1175,7 @@
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
+  - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
 
 
 - Firewall Threat Defense (FTD)
@@ -1189,9 +1201,10 @@
   - operating in-line via Fail-To-Wire/Bypass network modules
   - <span style="color: #bb6600;">threat prevention and mitigation for known and unknown threats</span>
   - security intelligence
-    - TALOS Security Intelligence and Research Group:
+    - TALOS Security Intelligence and Research Group: collect and correlate threats in real time
     - vulnerability-focused IPS rules
     - embedded IP-, URL-, and DNS-based security intelligence
+    - <span style="color: #bb6600;">protect license</span> to enable the feature
   - security automation
     - <span style="color: #bb6600;">correlate intrusion events</span> with your network's vulnerabilities
     - analyze network's weaknesses
@@ -1204,12 +1217,14 @@
     - suppressing intrusion event notification
     - useful for <span style="color: #bb6600;">eliminating false positives</span>
     - types:
-      - <span style="color: #bb6600;">a specific IP address or range of IP addresses</span>
-      - a specific rule or preprocessor
+      - <span style="color: #bb6600;">source</span>: a specific IP address or range of IP addresses
+      - <span style="color: #bb6600;">rule</span>: a specific rule or preprocessor
   - traffic profile
     - a graph of network traffic based on connection data collected over a profiling time window (PTW)
     - presumably representing normal network traffic
-    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile 
+    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile
+    - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
+  - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
 
 
 - Cisco Threat Intelligence Director (CTID)
@@ -1259,20 +1274,22 @@
 
 - ASA FirePOWER module
   - next-generation firewall services, including NGIPS, AVC, URL filtering, and AMP
-  - single or multiple context mode, and in routed or transparent mode
+  - single or multiple context mode and in routed or transparent mode
   - deployment models:
-    - <span style="color: #bb6600;">inline mode</span>: actual traffic is sent to the ASA FirePOWER module; configure <span style="color: #bb6600;">inline interface pairs</span>
-    - monitor-only (inline tap or passive): a copy of the traffic is sent to the ASA FirePOWER module
+    - <span style="color: #bb6600;">inline mode</span>:
+      - actual traffic is sent to the ASA FirePOWER module; 
+      - configure <span style="color: #bb6600;">inline interface pairs</span>
+    - <span style="color: #bb6600;">monitor-only (inline tap or passive)</span>: a copy of the traffic is sent to the ASA FirePOWER module
 
 
 - ASA in Cisco Unified Communications
   - Cisco UC proxy: terminate and reoriginate connections between a client and server
   - deliver a range of security functions such as traffic inspection, protocol conformance, and policy control to ensure security for the internal network
   - solutions:
-    - <span style="color: #bb6600;">TLS proxy</span>:
+    - TLS proxy:
       - decryption and inspection of Cisco Unified Communications encrypted signaling
-      - store certificate trustpoints for the server and the client
-    - <span style="color: #bb6600;">Mobility Proxy</span>: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
+      - store certificate trustpoints for the server and the client -> <span style="color: #bb6600;">certificate trust list</span>
+    - Mobility Proxy: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
     - Presence Federation Proxy: secure connectivity btw Cisco Unified Presence servers and Cisco/Microsoft Presence servers
 
 
@@ -1288,6 +1305,9 @@
 
 - ASA
   - <span style="color: #bb6600;">deny all traffic</span> by default
+  - <span style="color: #bb6600;">multiple context mode</span>
+    - deployment mode to seperate management on a shared appliance
+    - example: separation of masnagement and customer security service in mall
   - modes: transparent and routed
   - <span style="color: #bb6600;">bridge group</span> in transprent mode
     - group interfaces together in a bridge group to maximize the use of security contexts
@@ -1349,8 +1369,8 @@
   - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
     - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
     - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
-    - flow-export actions: <span style="color: #bb6600">`flow-export event-type`</span>
-    - significant events: flow-create, flow-teardown, and flow-denied (excluding those flows denied by EtherType ACLs)
+    - flow-export actions: <span style="color: #bb6600">`flow-export event-type`</span> must be defined under a policy
+    - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
     - major functions
       - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
       - trigger flow-update events and generate appropriate NSEL data records
@@ -1369,10 +1389,11 @@
     - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
     - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring NSEL <span style="color: #bb6600">Collectors</spamn>: `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    1. Configuring NSEL <span style="color: #bb6600">Collectors</spamn> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     2. Defines the <span style="color: #bb6600">class map</span> that identifies traffic for which NSL events need to be exported
-    3. Defines the <<span style="color: #bb6600"policy map</span> to apply flow-export actions to the defined classes
-    4. Adds or edits the <span style="color: #bb6600">service policy</span>
+    3. Defines the policy map to apply flow-export actions to the defined classes
+    4. Adds or edits the service policy
+    - generate NetFlow records on traffic traversing the Cisco ASA:<span style="color: #bb6600">`flow-export destination inside 1.1.1.1 2055`</span>
   - Flexible Netflow
     - the next-generation in flow technology
     - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
@@ -1412,9 +1433,31 @@
 
 - IOS zone-based firewall
   - a zone must be configured before interfaces can be assigned to the zone
-  - an interface can be assigned to only one security zone
+  - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
   - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
+  - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMXZ network is redirected</span>
+    ```text
+    Gateway of last resort is 1.1.1.1 to network 0.0.0.0
 
+    S* 0.0.0. 0.0.0.0 [1/0] via 1.1.1.1, outside
+    C   1.1.1.0 255.255.255.0 is directly connected, outside
+    S   172.16.0.0 255.255.0.0 [1/0] via 192.168.100.1, inside
+    C   192.168.100.0 255.255.255.0 is directly connected, inside
+    C   172.16.10.0 255.255.255.0 is directly connected, dmz
+    S      10.10.10.0 255.255.255.0 [1/0] via 172.16.10.1, dmz
+    --------------------------------------------------------------
+    access-list redirect-acl permit ip 192.168.100.0 255.255.255.0 any
+    access-list redirect-acl permit ip 172.16.0.0 255.255.0.0 any
+
+    class-map redirect-class
+    match access-list redirect-acl
+
+    policy map inside-policy
+    class redirect-class
+    sfr fail open
+
+    service-policy inside-policy global
+    ```
 
 - Simple Network Management Protocol (SNMP)
   - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
