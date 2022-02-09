@@ -408,7 +408,7 @@
   - northbound interfact (NBI)
     - intent API
     - an abstraction of network functions with a programmable interface for <span style="color: #bb6600;">applications</span> to consume the network services and configure the network dynamically
-    - SDN controller communicating w/ network service applications, the management solution
+    - SDN controller communicating w/ <span style="color: #bb6600;">network service applications, the management solution </span>
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
     - used for the <span style="color: #bb6600;">orchestration and automation</sapn> of the network components to align with the needs of different applications via SDN network programmability
@@ -434,14 +434,6 @@
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
 
 
-- AsyncOS API
-  - for Cisco <span style="color: #bb6600;">Security Management appliances</span>
-  - a representational state transfer (REST) based set of operations
-  - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
-  - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
-  - Cisco Content Security Management Appliance -> Cisco Secure Email and Web Manager
-
-
 - REST API
   - a.k.a. RESTful API
   - an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services
@@ -465,10 +457,11 @@
 
 - Python script for SDN APIs
   - device API
-    - DNA Center API to add device: `post /dna/intent/api/v1/network-device`
-    - AMP API to get computer info
-      - URL: `get https://api.amp.cisco.com/v1/computers`
-      - list of <span style="color: #bb6600;">computers, policies, and connector statuses</span
+    - add a switch to <span style="color: #bb6600;">DNA Center</span>: `requests.post("https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
+    - AMP API to print <span style="color: #bb6600;">network interface info</span>
+      - URL: `get https://api.amp.cisco.com/v1/computers
+      - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
+      - list of network interface info: `print(mac, ip , ipv6)`
   - make a SSL connection
     - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
     - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
@@ -596,7 +589,7 @@
   - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
   - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
   - helping IT to optimize network performance to dynamically meet business intent
-  - features: 1) policy; 2) automation; 3) assurance
+  - features: 1) policy; 2) <span style="color: #bb6600;">automation</span>; 3) <span style="color: #bb6600;">assurance</span>
   - general sections aligned to IT workflows:
     - <span style="color: #bb6600;">design</span>: design your network for consistent configurations by device and by site
     - policy: translate business intent into network policies and apply those policies
@@ -1531,6 +1524,11 @@
     - override the encryption settings defined in the associated encryption profile
     - apply specified encryption features to messages
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
+  - API for Cisco <span style="color: #bb6600;">Security Management appliances</span>
+    - a representational state transfer (REST) based set of operations
+    - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
+    - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
+    - Cisco <span style="color: #bb6600;">Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
 
 
 - Web Security Appliance (WSA)
