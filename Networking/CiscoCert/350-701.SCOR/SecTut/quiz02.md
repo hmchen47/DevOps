@@ -33,10 +33,11 @@
   Refer to the exhibit.
 
   ```python
-  def add_device_to_dnac(dnac_ip, device_ip, snmp_version, 
-      snmp_ro_community, snmp_rw_community, snmpretry, 
-      snmptimeout, cli_transport, username, password, 
-      enable_password):
+  def add_device_to_dnac(dnac_ip, device_ip,
+      snmp_version, snmp_ro_community, 
+      snmp_rw_community, snmpretry, 
+      snmptimeout, cli_transport, username, 
+      password, enable_password):
     device_object = {
       "ipAddress": [device_ip],
       "type": "NETWORK_DEVICE",

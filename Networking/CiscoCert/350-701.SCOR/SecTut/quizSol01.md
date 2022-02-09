@@ -685,7 +685,7 @@ SDN northbound APIs are usually RESTful APIs used to communicate between the SDN
 
   Explanation
 
-  [Cisco DNA Center features]((https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html)) [table headings]: 1) policy; 2) automation; 3) assurance
+  [Cisco DNA Center features](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-dna-center-so-cte-en.html) [table headings]: 1) policy; 2) automation; 3) assurance
 
   [What Cisco DNA Center enables you to do](https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/dna-center/nb-06-cisco-dna-center-aag-cte-en.html): NetOps, SecOps, AIOps, DevOps
 
