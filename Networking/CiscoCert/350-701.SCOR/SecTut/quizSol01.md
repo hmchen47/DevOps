@@ -571,7 +571,7 @@ DMVPN, FlexVPN and GETVPN comparison:
     />
   </figure>
 
-  A network administrator configured a site-to-site VPN tunnel between two Cisco IOS routers, and hosts are unable to communicate between two sites of VPN. The network administrator runs the debug crypto isakmp sa command to track VPN status. What is the problem according to this command output?
+  A network administrator configured a site-to-site VPN tunnel between two Cisco IOS routers, and hosts are unable to communicate between two sites of VPN. The network administrator runs the `debug crypto isakmp sa` command to track VPN status. What is the problem according to this command output?
 
   A. hashing algorithm mismatch<br>
   B. encryption algorithm mismatch<br>
