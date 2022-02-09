@@ -1829,6 +1829,7 @@
   - commands to <span style="color: #bb6600;">enable 802.1X on a port</span>
     - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
     - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
+    - missing port configuration to enable authentication on laptop: `dot1x pae authentication`
   - display information about current Auth Manager sessions:
     - syntax: <span style="color: #bb6600;">`show authentication sessions`</span> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
@@ -1996,9 +1997,10 @@
     - creating ARP snooping entries by using information in ARP packets
     - becoming invalid if not updated within 15 minutes
     - attack: receiving an ARP packet w/ different sender MAC address from a valid ARP snooping entry
-  - Atomic ARP engine
+  - <span style="color: #bb6600;">Atomic ARP engine</span>
     - define basic Layer 2 ARP signatures
     - provide more advanced detection of the ARP spoof tools `dsniff` and `ettercap`
+    - IPS engine to detect ARZP spoofing
 
 
 - DHCP spoofing
@@ -2017,11 +2019,14 @@
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
-    - allowing a network administrator to intercept, log, and discard ARP packets with <span style="color: #bb6600;">invalid MAC address to IP address bindings</span>
+    - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
     - after enabling DAI, all ports become <span style="color: #bb6600;">untrusted ports</span>
     - inactive on all VLANs
-    - DHCP snooping enabled on a <span style="color: #bb6600;">per-VLAN basis</span>, e.g., `ip dhcp snooping vlan 2`
+    - DHCP snooping enabled on a per-VLAN basis, e.g., `ip dhcp snooping vlan 2`
+    - characteristic: determine the validity of an ARP packet based on <span style="color: #bb6600;">valid IP to MAC address bindings</span> from the DHCP snooping binding database
+    - unable to communicate on switch after config DAI and w/o err-disabled interface: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANS</span>
   - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
+  - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span>
 
 
 - Broadcast storm
@@ -2034,6 +2039,7 @@
   - actions to <span style="color: #bb6600;">bring up errr-disabled state interfaces</span>
     - `shutdown` and then `no shutdown` the interface
     - enable detection and recover features
+    - characteristic of traffic storm control behavior: <span style="color: #bb6600;">drop all broadcast and multicast traffic</spa> if the combined traffic exceeds the level within the interval
 
 
 - Private VLAN port types
