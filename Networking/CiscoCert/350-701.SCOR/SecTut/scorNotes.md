@@ -115,10 +115,10 @@
     - fraudulent attempts by cyber criminals to obtain <span style="color: #bb6600;">private information</span>
     - sending fraudulent communications usually through email
   - types of phishing
-    - <span style="color: #bb6600;">deceptive<span>: steal people's personal data or login credentials in a legitmate company
-    - <span style="color: #bb6600;">spear<span>: designed to get a single recipient to respond
+    - <span style="color: #bb6600;">deceptive</span>: steal people's personal data or login credentials in a legitmate company
+    - <span style="color: #bb6600;">spear</span>: designed to get a single recipient to respond
   - mitigation: <span style="color: #bb6600;">browser alert & email filtering</span>
-  - endpoint measures used to minimize the chances: 1) <span style="color: #bb6600;">spam and virus filter</span>; 2) <span style="color: #bb6600;">up-to-date antimalware<span>
+  - endpoint measures used to minimize the chances: 1) <span style="color: #bb6600;">spam and virus filter</span>; 2) <span style="color: #bb6600;">up-to-date antimalware</span>
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
   - mechanisms used to control phising attacks: 1) <span style="color: #bb6600;">enable browser alerts for fraudulent</span>; 2) <span style="color: #bb6600;">implement email filtering techniques</span>
 
@@ -1429,7 +1429,9 @@
   - advantage over SNMP: <span style="color: #bb6600;">scalability</span>
   - types of data in telemetry info
     - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
-    - <span style="color: #bb6600;">interpacket variation</span>: any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
+    - <span style="color: #bb6600;">interpacket variation</span>:
+      - any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
+      - capture variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length
     - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
   - <span style="color: #bb6600;">Model-Driven Telemetry</span>
     - a new approach for network monitoring
@@ -1445,6 +1447,7 @@
   - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
   - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
   - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMXZ network is redirected</span>
+  
     ```text
     Gateway of last resort is 1.1.1.1 to network 0.0.0.0
 
@@ -1485,6 +1488,14 @@
   - specify the recipient of a SNMP notification operation:
     - syntax: `snmp-server host {<hostname> | <ip-address>} [vrf <vrf-name> | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
     - <span style="color: #bb6600;">`snmp-server host inside 10.255.254.1 version 3 andy`</span>: hostname = inside (interface name); community-name (username) = andy
+  - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
+  - strongest security possibility of SNMPv3 config
+
+    ```text
+    snmp-server group myv3 v3 priv
+    snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
+    snmp-server host inside 10.255.254.1 version 3 andy
+    ```
 
 
 ## <span style="color: #008888;">Email and Web Security</span>
@@ -1815,7 +1826,7 @@
     - static assignment of an endpoint
     - an exception action configured
     - <span style="color: #bb6600;">an endpoint profiled for the 1st time</span>
-    - <span style="color: #bb6600;">endpoint deleted</span>
+    - <span style="color: #bb6600;">endpoint deleted</span> on the ISE
   - CoA Messages port number: 1) Cisco - <span style="color: #bb6600;">UDP:1700</span>; 2) RFC - UDP:3799
 
 
@@ -1833,6 +1844,7 @@
   - display information about current Auth Manager sessions:
     - syntax: <span style="color: #bb6600;">`show authentication sessions`</span> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
+    - display status of an 802.1X connection on interface gi0/1: <span style="color: #bb6600;">`show authen sess int gi0/1`</span>
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
     - example outputs
@@ -1930,6 +1942,16 @@
       ```
 
   - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
+  - result of configurations w/ the authorization for the admin 5 user
+    - <span style="color: #bb6600;">complete no configuration</span> w/ the config
+    - add `privilege exec level 5 configure terminal` command to enable the configurations
+
+      ```text 
+      username admin5 privilege 5
+      privilege interface level 5 shutdown
+      privilege interface level 5 ip
+      privilege interface level 5 description
+      ```
 
 
 - Multi-factor Authentication (MFA)
