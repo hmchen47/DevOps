@@ -26,9 +26,10 @@
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - worm: a software program that copies itself from one computer to another, without human interaction
   - spam: unwanted messages in an email inbox
-  - back-door virus: any form of program that grants unauthorised access to an entire system via a software or network vulnerability (Trojan malware attacks)
+  - back-door virus: any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
+  - vulnerability to see th epassword being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
 
 
 - Categories of attacks
@@ -349,6 +350,22 @@
     - port number: L2TP UDP:1701; GRE - IP:47 
     - GRE protocol <span style="color: #bb6600;">adds its own header</span> (4 bytes plus options) between the payload (data) and the delivery header
     - L2TP packet including payload and L2TP header, sent within a User Datagram Protocol (UDP) datagram
+  - reason of traffic not passing through IPsec site-to-site VPN on the Fire power Threat Defense appliance
+    - <span style="color: #bb6600;">access control policy</span> is not allowing VPN traffic in
+
+    ```text
+    > show crypto ipsec sa
+    interface: Outside
+      crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
+
+      access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0 255.255.255.0 10.0.10.0 255.255.255.0
+      local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
+      remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
+      current peer: 209.165.202.129
+      <...truncated...>
+      local crypto endpt.: 209.165.200.225/500, remote crypto endpt.: 209.165.200.129/500
+      <...truncated...>
+    ```
 
 
 - DMVPN
@@ -423,7 +440,7 @@
   - southbound interface (SBI)
     - SDN controller communicating w/ network devices via API
     - usually <span style="color: #bb6600;">CLI, SNMP, OpenFlow, NETCONF and RESTCONF</span> used to communicate w/ network devices
-    - enable the controller to dynamically make changes based on real-time demands and scalability needs
+    - enable <span style="color: #bb6600;">the controller to dynamically make changes</span> based on real-time demands and scalability needs
   - eastbound interface (EBI)
   - westbound interface (WBI)
     - <span style="color: #bb6600;">integration capabilities</span>
@@ -1206,9 +1223,11 @@
     - under access control rule of <span style="color: #bb6600;">access control policy</span>
     - create a rule to Block traffic based on a reputation level
     - reputation score to configure a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category: <span style="color: #bb6600;">6~10</span> to clean
+  - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
+    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span
     - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
   - <span style="color: #bb6600;">Network Discovery Policies</span>
     - controls how the system collects data on your organization's network assets and which network segments and ports are monitored
