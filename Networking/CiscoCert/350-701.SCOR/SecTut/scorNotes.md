@@ -919,6 +919,7 @@
     - domain contains both malicious and legitimate content
     - routed to cloud-based proxy for deeper inspection
   - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
+  - solution integrated w/ Umbrella to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - leverage DNS-layer security
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
   - Policy
@@ -933,7 +934,9 @@
       - block access to categories of <span style="color: #bb6600;">websites—groupings</span> of sites with similarly themed content
       - Content Category Settings: High, Moderate, Low, Custom
     - Application Settings: block access to specific applications, e.g., Netflix, Facebook, or Amazon
-    - Destination Lists: create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
+    - <span style="color: #bb6600;">Destination Lists</span>:
+      - create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
+      - individual sites to be blocklisted
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
   - <span style="color: #bb6600;">intelligent proxy</span>
@@ -947,17 +950,19 @@
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
     - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
-    - prerequiste to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600">enable intelligent proxy</span>
-  - SSL Decryption
+    - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600">enable intelligent proxy</span>
+  - <span style="color: #bb6600;">SSL Decryption</span>
     - an important part of the Umbrella Intelligent Proxy
     - proxy and inspect traffic that's sent over HTTPS
     - does require the <span style="color: #bb6600;">root certificate</span> installed
+    - inspect secure HTTPS traffic
   - SafeSearch: an automated filter of pornography and other offensive content 
   - logging
     - set <span style="color: #bb6600;">per-policy</span> when you first create a policy
     - by default, logging = on and log all requests an identity makes to reach destinations
     - able to change what level of identity activity Umbrella logs
     - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
+    - archive logs to an enterprise owned storage: configured to <span style="color: #bb6600;">send logs to a self-managed AWS S3 bucket</span>
   - Umbrella Multi-Org console
     - upload, store, and archive traffic activity logs from local Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
     - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
@@ -983,6 +988,8 @@
       - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
       - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
       - local DNS queries to your existing local DNS servers and forwarders
+  - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
+  - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
 
 
 - AppDynamics
