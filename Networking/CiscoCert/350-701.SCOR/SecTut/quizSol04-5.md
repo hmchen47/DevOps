@@ -1060,10 +1060,10 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
   </figure>
 
   Answer:
-  - PortScan Detection: one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports (4)
-  - Port Sweep: one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts (3)
-  - Decoy PortScan: one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address (2)
-  - Distributed PortScan: many-to-one PortScan in which multiple hosts query a single host for open ports (1)
+  - PortScan Detection (A): one-to-one PortScan, an attacker against one or a few hosts to scan one or multiple ports (4)
+  - Port Sweep (B): one-to-many port sweep, an attacker against one or a few hosts to scan a single port on multiple target hosts (3)
+  - Decoy PortScan (C): one-to-one PortScan, attacker mixes spoofed source IP addresses with the actual scanning IP address (2)
+  - Distributed PortScan (D): many-to-one PortScan in which multiple hosts query a single host for open ports (1)
 
   Explanation
 
@@ -1091,7 +1091,7 @@ Cisco Stealthwatch Cloud: Available as an SaaS product offer to provide visibili
 
   Answer:
   - Next Generation Intrusion Prevention System (A): superior threat prevention and mitigation for known and unknown threats (3)
-  - Application control and URL filtering (b): application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs (1)
+  - Application control and URL filtering (B): application-layer control and ability to enforce usage and tailor detection policies based on custom applications and URLs (1)
   - Cisco Web Security Appliance (C): combined integrated solution of strong defense and web protection, visibility, and controling solutions (2)
   - Advanced Malware Protection (D): detection, blocking, tracking, analysis, and remediation to protect against targeted persistent malware attacks (4)
 
