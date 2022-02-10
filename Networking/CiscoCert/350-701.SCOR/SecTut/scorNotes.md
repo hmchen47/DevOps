@@ -150,6 +150,7 @@
   - an industry-wide standard
   - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
   - goal: <span style="color: #bb6600;">easier to share data</span> across tools, vulnerability repositories, and security services
+  - industry organizations <span style="color: #bb6600;">publish and inform</span> users of known security findings and vulnerabilities
 
 
 - Zero Trust
@@ -607,6 +608,7 @@
   - characteristics of APIs
     - quickly <span style="color: #bb6600;">provision</span> new devices
     - view the <span style="color: #bb6600;">overall health</span> of the network
+  - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
 
 
 - Cisco Context Directory Agent (CDA)
@@ -811,6 +813,10 @@
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
   - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
+  - characteristics
+    - detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+    - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
+    - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
     - to detect, confirm, track, analyze, and remediate these threats
@@ -1100,6 +1106,10 @@
     - appliance and System Management Features
     - features for Detecting, Preventing, and Processing Potential Threats
     - integration with External Tools
+  - characteristics
+    - the ability to perform <span style="color: #bb6600;">network discovery</span>
+    - intrusion <span style="color: #bb6600;">prevention before</span> malware comprises the host
+    - <span style="color: #bb6600;">superior threat prevention and mitigation</span> for known and unknown threats
 
 
 - Cisco ASA FirePOWER module
@@ -1351,8 +1361,9 @@
       - on the <span style="color: #bb6600;">same subnet</sapn> as the bridge group member interfaces
     - BVI not supporting traffic on secondary networks
     - only traffic on the same network as the BVI IP address supported
-    - BVI interface <span style="color: #bb6600;">not used for management purpose</span>
+    - BVI interface not used for management purpose</span>
     - able to add a separate Management slot/port but not part of bridge group
+    - characteristics: include <span style="color: #bb6600;">multiple interfaces and access rules between interfaces are customizable</span>
   - connection status of failover w/ 2 ASAs
     - <span style="color: #bb6600;">stateful</span>: preserve
     - <span style="color: #bb6600;">stateless</span>: reestablish
