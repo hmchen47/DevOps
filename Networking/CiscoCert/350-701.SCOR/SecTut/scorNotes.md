@@ -103,8 +103,8 @@
     - spoof an IP address, and using ICMP, then ping IP addresses on a given network
     - large numbers of Internet Control Message Protocol (ICMP) packets with the intended victim's spoofed source IP are broadcast to a computer network using an IP broadcast address
   - sny flood:
-    - too many connection requests
-    - intent to <span style="color: #bb6600;">exceed the threshold limit of the connection queue </span>
+    - receive <span style="color: #bb6600;">too many connection requests</span> from multiple machines
+    - intent to <span style="color: #bb6600;">exceed the threshold limit of the connection queue</span>
   - teardrop attack
     - DoS attack
     - sending <span style="color: #bb6600;">fragmented packets</span> to a target machine
@@ -176,6 +176,7 @@
     - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
     - DNS abuse exchanges data between two computers even when there is no direct connection
     - data sent out as part of the <span style="color: #bb6600;">domain name</span>
+    - <span style="color: #bb6600;">register a domain</span> that a client connects to based on DNS records and send malware through that connection
   - characteristics of messenger protocol for data exflitration
     - <span style="color: #bb6600;">encrypted traffic</span> which prevents visibility on firewalls and IPS systems
     - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
@@ -1454,7 +1455,7 @@
     - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
     - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring NSEL <span style="color: #bb6600">Collectors</spamn> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    1. Configuring NSEL <span style="color: #bb6600">Collectors</span> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
     2. Defines the <span style="color: #bb6600">class map</span> that identifies traffic for which NSL events need to be exported
     3. Defines the policy map to apply flow-export actions to the defined classes
     4. Adds or edits the service policy
@@ -1466,7 +1467,7 @@
       - flexibility, scalability
       - monitor a wider range of packet information
       - enhanced network anomaly and security 
-      - <span style="color: #bb6600;">user configurable</span> flow information
+      - user configurable flow information -> allow the user to configure flow information to perform <span style="color: #bb6600;">customized traffic identification</span>
       - convergence of multiple accounting technologies into <span style="color: #bb6600;">one accounting mechanism</span>
       - integral part of Cisco IOS Software allowing all routers or switches in the network to become a source of telemetry and a monitoring device
     - restrictions for Flexible NetFlow:
@@ -1620,6 +1621,8 @@
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
   - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
   - action to dynamically determine how harmfulthe SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
+  - device to ensure that machines that connect torganizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ESA</span>
+  - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
 
 
 - AsyncOS operating system
