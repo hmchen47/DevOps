@@ -594,6 +594,7 @@
 - Cisco DNA Center (DNAC)
   - a <span style="color: #bb6600;">central Management</span> and Automation software
   - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
+  - feature of open platform capabilities: <span style="color: #bb6600;">intent-based APIs</span>
   - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
   - helping IT to optimize network performance to dynamically meet business intent
   - features: 1) policy; 2) <span style="color: #bb6600;">automation</span>; 3) <span style="color: #bb6600;">assurance</span>
@@ -612,10 +613,11 @@
   - map IP Addresses to usernames
   - allow security gateways to understand which user is using which IP Address in the network
   - able to make decisions based on those users (or the groups to which the users belong to)
-  - a Cisco Linux machine
-  - monitor in real time a collection of <span style="color: #bb6600;">Active Directory domain controller (DC)</span> machines for authentication-related events that generally indicate user logins
+  - a Cisco Linux machin
+  - monitor in real time a collection of Active Directory domain controller (DC) machines for authentication-related events that generally indicate user logins
   - learn, analyze, and cache mappings of IP Addresses and user identities in its database
   - make the latest mappings available to its consumer devices
+  - read <span style="color: #bb6600;">Active Directory logs to map IP addresses to usernames</span>
 
 
 - Firepower Threat Denfence Virtual (FTDv)
@@ -991,7 +993,6 @@
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
 
-
 - AppDynamics
   - Application Performance Management (APM) solution
   - help your organization make critical, strategic decisions
@@ -1041,13 +1042,14 @@
 
 - StealthWatch
   - rapidly collects and analyzes <span style="color: #bb6600">NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
-  - <span style="color: #bb6600">visibility and security analytics solution</span>
+  - visibility and security analytics solution
   - collects and analyze network data from the existing network infrastructure
   - analyze industry standard NetFlow data from Cisco and other vendors Routers, Switches, Firewalls, and other network devices 
   - detect advanced and persistent security threats such as internally spreading malware, data leakage, botnet command and control traffic and network reconnaissance
   - deployment models
     - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
     - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
+  - way of StealthWatch Cloud provides security for cloud environment: <span style="color: #bb6600">deliver visibility and threatdetection</span>
   - components
     - <span style="color: #bb6600">Stealthwatch Management Console</span>
       - define, configure, and monitor multiple distributed Stealthwatch Flow Collectors from a single location
@@ -1076,8 +1078,8 @@
   - automatically identify and investigate suspicious or malicious web-based traffic
   - identify both potential and confirmed threats
   - quickly remediate the infection
-  - reduce the scope and damage of an attack
-  - features to protect against
+  - reduce the scope ad damage of an attack
+  - detection and analytics features (engines)
     - <span style="color: #bb6600">data exfiltration</span>
     - <span style="color: #bb6600">Command-and-control (C2) communications</span>
     - domain-generation algorithm (DGA)
@@ -1270,6 +1272,7 @@
     - analyze threats
   - <span style="color: #bb6600;">supplement other Firepower functionality</span>, offering an additional line of defense against threats
   - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
+  - <span style="color: #bb6600;">external threat feeds</span>: provide information about security threats, which allows the SOC to proactively automate responses to those threats
   - deployed by your organization to ingest threat intelligence automatically
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -1286,7 +1289,7 @@
   - monitors application performance and troubleshoots issues that arise
   - leverages multiple technologies to recognize, analyze, and control applications
   - including voice and video, email, file sharing, gaming, peer-to-peer (P2P), and cloud-based applications
-  - <span style="color: #bb6600;">combine several Cisco IOS/IOS XE components</span>
+  - <span style="color: #bb6600;">combine several Cisco IOS/IOS XE components</span> to enable administrators to recognize applications, collect and send network metrics to Cisco Prime and other third-party management tools, and prioritize application traffic
   - communicating with external tools
   - supports <span style="color: #bb6600;">NetFlow</span> to export application usage and performance statistics
   - integrated into Prime Infrastructure and StealthWatch
@@ -1440,7 +1443,7 @@
 
 - Telemetry
   - information and/or data
-  - provide awareness and visibility into what is occurring on the network at any given time
+  - provide <span style="color: #bb6600;">awareness and visibility</span> info what is occurring on the network at any given 
   - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
   - use a <span style="color: #bb6600;">push method</span> which makes it faster than SNMP
   - advantage over SNMP: <span style="color: #bb6600;">scalability</span>
@@ -1457,6 +1460,7 @@
     - apps subscribe to specific data items they need
     - use standard-based YANG data models over NETCONF-YANG
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
+  - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
 
 
 - IOS zone-based firewall
@@ -1815,7 +1819,7 @@
 
 
 - pxGrid
-  - stands for Platform Exchange Grid
+  - stands for <span style="color: #bb6600;">Platform Exchange Grid</span>
   - integrate multiple vendors security products together and group them in an ecosystem domain
   - purpose: <span style="color: #bb6600;">share contextual data</span> between the integrated partners
   - a highly scalable IT clearinghouse for multiple security tools to communicate automatically with each other in real time
