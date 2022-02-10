@@ -164,7 +164,7 @@
   - ICMP exfiltration
     - encrypting the payload in an ICMP packet to carry out <span style="color: #bb6600;">command and control tasks</span> on a compromised host
   - DNS exfiltration
-    - a.k.a. DNS tunneling
+    - a.k.a. <span style="color: #bb6600;">DNS tunneling</span>
     - hide and encode data inside DNS requests and queries
     - encode the data of other programs or protocols in DNS queries and responses
     - often including data payloads added to an attacked DNS server and used to control a remote server and applications
