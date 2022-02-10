@@ -937,7 +937,7 @@
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
   - <span style="color: #bb6600;">intelligent proxy</span>
-    - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorized or "grey" domains
+    - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorize or "grey" domains
     - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
     - prevent malicious content downloads from suspicious domains while allowing normal web traffic
     - config procedure to block traffic
@@ -1782,6 +1782,7 @@
     - feature ofASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
+  - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
 
 
 - TrustSec
@@ -1842,7 +1843,7 @@
 
 - 802.1X port-based authentication
   - roles
-    - supplicant
+    - supplicant: AnyConnect ISE Posture module
     - <span style="color: #bb6600;">authenticator</span> (required): switch & WLC
     - <span style="color: #bb6600;">authentication server</span> (required): RADIUS, ISE
   - only applied to switch port
@@ -1862,29 +1863,29 @@
       ```text
       Device# show dot1x all
 
-      Sysauthcontrol                 Enabled
-      Dot1x Protocol Version          2
+      Sysauthcontrol             Enabled
+      Dot1x Protocol Version      2
 
       Dot1x Info for FastEthernet1
       -----------------------------------
-      PAE                       = AUTHENTICATOR
-      PortControl               = AUTO
-      ControlDirection          = Both 
-      HostMode                  = MULTI_HOST
-      ReAuthentication          = Disabled
+      PAE                 = AUTHENTICATOR
+      PortControl         = AUTO
+      ControlDirection    = Both 
+      HostMode            = MULTI_HOST
+      ReAuthentication    = Disabled
       <...truncated...>
 
       Device# show dot1x all summary
 
-      Interface PAE  Client          Status 
-      -----------------------------------------
-      Fa1       AUTH  000d.bcef.bfdc AUTHORIZED
+      Iface PAE  Client         Status 
+      --------------------------------------
+      Fa1   AUTH 000d.bcef.bfdc AUTHORIZED
       ```
 
   - example config
     - 802.1X will <span style="color: #bb6600;">work</span> and the device will be <span style="color: #bb6600;">allowed</span> on the network
     - no MAB config
-    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco ISE to allow all device NOT using machine authentication</span>
+    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco  to allow all device NOT using machine authentication</span>
 
     ```text
     <...truncated...>
@@ -1895,6 +1896,15 @@
     dot1x max-reauth-req 3
     <...truncated...>
     ```
+
+  - example config
+    - the authentication and authorization requests are <span style="color: #bb6600;">grouped in a single packet</span>
+
+    ```text
+    aaa new-mod
+    radius-server host 10.0.0.12 key secret12
+    ```
+
 
 
 - MAC Authentication Bypass (MAB)
@@ -1915,13 +1925,13 @@
 
 
 - Cisco devices basic commands
-  - enable AAA service: `aaa new-model` in global config mode
+  - enable AAA service to support CoA: `aaa new-model` in global config mode
   - allow user to enter global configuration mode: <span style="color: #bb6600;">`privilege exec level 5 configure terminal`</span>
   - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
   - enable authentication on a port: <span style="color: #bb6600;">`authentication port-control auto`</span>
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
 
-    ```text
+    ```tex
     aaa new-model
     ! Creates an 802.1X port-based authn method list
     aaa authentication dot1x default group radius
@@ -1937,7 +1947,7 @@
     aaa accounting update periodic 5
     ! Update AAA accounting info periodically every 5 min
     aaa accounting system default start-stop group radius
-    ```
+    `
 
   - NTP authentication
     - NTP server - 10.10.10.1; client - 10.10.10.2
