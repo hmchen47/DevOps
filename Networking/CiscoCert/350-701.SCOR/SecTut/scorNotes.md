@@ -38,9 +38,11 @@
 
 
 - SQL injection
-  - inserting malicious commands into the database
+  - <span style="color: #bb6600;">inserting malicious commands into the database</span>
   - occurred when asking a user for input
-  - mitigate: 1) check parameters to ensure actual values; 2) use prepared statements amd parameterized queries
+  - mitigate:
+    - check parameters to ensure actual values
+    - use prepared statements amd parameterized queries
   - an attack where code is injected into a browser
   - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">GET/POST parameters</span>
   - used to <span style="color: #bb6600;">steal information from databases</span>
@@ -211,6 +213,7 @@
   - RSA keys
     - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
     - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
+    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key</span> using the `crypto key generate rsa` command
 
 
 - Cryptography
@@ -699,6 +702,7 @@
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
   - App Firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
+  - tool to protect sensitive data throughout the fullenvironment: <span style="color: #bb6600;">Cloudluck</span>
 
 
 - Cloud Web Security (CWS)
@@ -721,7 +725,7 @@
   - Email and Web Traffic Reputation Center
     - transform some of Talos' data into <span style="color: #bb6600;">actionable threat intelligence and tools</span> to improve your security posture
   - Talos Threat Source
-    - a <span style="color: #bb6600;">newsletter</span>
+    - a weekly <span style="color: #bb6600;">newsletter</span> to help cybersecurity professionals remain aware of the ongoing and most prevalent threats
     - a regular intelligence update from Cisco Talos
   - support a <span style="color: #bb6600;">two-way flow of telemetry and protection</span> across market-leading security solutions
     - Next-Generation Intrusion Prevention System (NGIPS)
@@ -920,8 +924,7 @@
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
   - mechanism to increase reliability of the service: <span style="color: #bb6600;">Anycast IP</span> (208.67.222.222 & 208.67.220.220) routing
-  - improving **defense in depth** by blocking malicious destinations prior to a connection being established
-  - use intelligence to determine if the request is <span style="color: #bb6600;">safe, malicious or risky</span>
+  - improving defense in depth by blocking malicious destinations prior to a connection being established: <span style="color: #bb6600;">Umbrella</span>
   - safe and malicious requests routed as usual or blocked, respectively
   - risky requests
     - domain contains both malicious and legitimate content
@@ -1202,6 +1205,7 @@
       - manual URL filtering
     - under access control rule of <span style="color: #bb6600;">access control policy</span>
     - create a rule to Block traffic based on a reputation level
+    - reputation score to configure a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category: <span style="color: #bb6600;">6~10</span> to clean
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
@@ -1214,10 +1218,11 @@
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
+  - 
 
 
 - Firewall Threat Defense (FTD)
-  - config new FTD device not behind a NAT device to be managed w/ FCM: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
+  - config new FTD device not behind a NAT device to be managed w/ FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>; e.g., backup policy w/ priority 5 and primary polity w/ priority 1
   - Modbus, DNP3 and CIP SCADA preprocessors
     - analyze protocol fields and detect anomalies in the traffic from <span style="color: #bb6600;">industrial systems</span>
@@ -1268,7 +1273,7 @@
 - Cisco Threat Intelligence Director (CTID)
   - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
-  - the ability to consume</span> threat intelligence via STIX over TAXII
+  - the ability to consume threat intelligence via STIX over TAXII
   - process to use STIX to upload and download blacklists: <span style="color: #bb6600;">consumption</span>
   - mechanism
     - observables published to the elements
@@ -1283,6 +1288,7 @@
   - <span style="color: #bb6600;">supplement other Firepower functionality</span>, offering an additional line of defense against threats
   - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
   - <span style="color: #bb6600;">external threat feeds</span>: provide information about security threats, which allows the SOC to proactively automate responses to those threats
+  - FMC to push security intelligence observable to its sensors from other products: <span style="color: #bb6600;">Threat Intelligence Director</span>
   - deployed by your organization to ingest threat intelligence automatically
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -1593,7 +1599,8 @@
     - sending a DLP violation notification to sender or other contacts
   - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
-  - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation -based filtering</span>
+  - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
+  - action to dynamically determine how harmfulthe SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
 
 
 - AsyncOS operating system
@@ -1644,7 +1651,7 @@
   - WSA HTTP proxy obtains the client's request can be defined as one of two ways: <span style="color: #bb6600;">Transparently or Explicitly</span>.
     - Transparently
       - the existence of the proxy unknown
-      - network infrastructure devices (layer 3 switches) redirect web traffic to the proxy
+      - network infrastructure <span style="color: #bb6600;">devices (layer 3 switches) redirect web traffic</span> to the proxy
       - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a <span style="color: #bb6600;">Layer 4 switch is used to redirect based on destination port 80</span>
       - <span style="color: #bb6600;">Web Cache Communications Protocol (WCCP)</span>: a <span style="color: #bb6600;">WCCP v2 enabled device</span> (typically a router, switch, PIX, or ASA) redirects port 80
       - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
@@ -1805,6 +1812,7 @@
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
+  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
 
 
 - TrustSec
@@ -1946,7 +1954,7 @@
   - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
-- Cisco devices basic commands
+- Cisco devices basic commands and debug info
   - enable AAA service to support CoA: `aaa new-model` in global config mode
   - allow user to enter global configuration mode: <span style="color: #bb6600;">`privilege exec level 5 configure terminal`</span>
   - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
@@ -1995,6 +2003,20 @@
       privilege interface level 5 description
       ```
 
+  - type of authentication
+    - <span style="color: #bb6600;">external user</span> and relay mail authentication
+
+    ```text
+    Info: New SMTP ICID 30 Interface Management (192.168.0.100)
+      address 10.128.128.200 reverse dns host unknown verified no
+    Info: ICID 30 ACCEPT SG SUSPECTLIST match sbrs[none] SBRS None
+    Info: ICID 30 TLS success protocol TLSv1 cipher DHE-RSA-AES256-SHA
+    Info: SMTP Auth: (ICID 30) succeeded for user: cisco using
+      AUTH mechanism: LOGIN with profile: ldap_smpt
+    Info: MID 80 matched all recipients for per-recipient policy
+      DEFAULT in the outbound table
+    ```
+
 
 - Multi-factor Authentication (MFA)
   - authentication method two or more verification factors to gain access to a resource
@@ -2002,6 +2024,7 @@
   - protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
   - prevent <span style="color: #bb6600;">brute force attacks</span> from being successful
   - proper MFA using factors from at least two different categories
+  - the highest level of prtection against brute-force attacks: <span style="color: #bb6600;">SHA</span>
   - benefits
     - flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications
     - secure access to on-premises and cloud applications
