@@ -806,8 +806,8 @@
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - logical security controls on endpoints still exist even training on staffs: human error or inside threats still exist
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
-  - proactive endpoint protection and centralized admin management
-  - <span style="color: #bb6600;">detection, blocking, tracking, analysis, and remediation</span> to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+  - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
+  - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
@@ -1700,8 +1700,8 @@
       - requirements: the immediate act steps taken by AnyConnect when an endpoint is out of compliance
       - provisioning policy: determine the version of AnyConnect used and the compliant module installed during the provisioning progress (methods: URL-redirect and download or a provisioning URL)
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
-    - states: compliant and non-compliant
-    - security posture: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
+    - states: compliant and <span style="color: #bb6600;">non-compliant</span>
+    - endpoint security provide overall security posture of an organization: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
     - benefit to ensure as an endpoint is compliant with a posture policy configured in ISE: verify that the endpoint has the <span style="color: #bb6600;">latest Microsoft security patches installed</span>
     - <span style="color: #bb6600;">device compliance</span>
       - validate if anti-virus software installed
@@ -1906,7 +1906,6 @@
     ```
 
 
-
 - MAC Authentication Bypass (MAB)
   - a MAC-address-based authentication mechanism that allows clients in a network to integrate with the Cisco Identity Based Networking Services (IBNS) and Network Admission Control (NAC) strategy using the client MAC address
   - benefit:
@@ -1922,6 +1921,7 @@
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
   - success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <span style="color: #bb6600;">`aaa authorization network default group ise`</span> config required
+  - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
 - Cisco devices basic commands
@@ -1987,9 +1987,9 @@
     - <span style="color: #bb6600;">Knowledge</span>
       - usually a password
       - the most commonly used tool in MFA solutions
-    - Possession:
+    - Possession / Physical factors:
       - possession factors–use tokens, a temporary QR (quick response) code
-    - <span style="color: #bb6600;">Inherent</span> / Physical factors
+    - <span style="color: #bb6600;">Inherent</span>
       - <span style="color: #bb6600;">biometrics</span> like fingerprint, face, and retina scans
       - possibly voice ID or other behavioral inputs like keystroke metrics
       - reliably unique, always present, and secure
@@ -2003,25 +2003,27 @@
     - Risk-based authentication: a.k.a. adaptive multi-factor authentication
     - Push-based 2FA: confirm a user's identity with multiple factors of authentication that other methods cannot
   - against <span style="color: #bb6600;">phishing, social engineering and password brute-force attacks</span>
-  - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple applications
+  - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple application
+  - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
 
 
 - EPP & EDR
   - Endpoint Protection Platform (EPP)
-    - solely on prevention at the <span style="color: #bb66pp;">perimeter</span>
+    - solely on prevention <span style="color: #bb66pp;">at the perimeter</span>
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
     - prevent <span style="color: #bb66pp;">endpoint security threats</span> like known and unknown malware
     - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
     - act as the first line of defense, filtering out attacks that can be detected by the organization's deployed security solutions
     - complement of EDR
   - Endpoint Detection and Response (EDR)
-    - primarily on detecting <span style="color: #bb66pp;">advanced threats</span>, designed to evade front-line defenses and successfully entered the environment
+    - primarily on detecting advanced threats, designed to <span style="color: #bb66pp;">evade front-line defenses and successfully entered the environment</span>
     - detect threats across your environment
     - investigate the entire lifecycle of the threat
     - contain the threat at the endpoint, eliminate the threat before it can spread
     - detect and respond to threats that EPP and other security tools did not catch
     - acts as a second layer of protection, enabling security analysts to perform threat hunting and identify more subtle threats to the endpoint
     - <span style="color: #bb66pp;">more advanced detection capabilities</span>
+  - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb66pp;">advanced threats that envade perimeter defences</span>
 
 
 ## <span style="color: #008888;">Layer 2 Security</span>
