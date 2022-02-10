@@ -838,6 +838,7 @@
       - no Internet connection required to complete disposition lookups
       - traffic only btw the connectors and the appliance
       - disposition queries handled by the private cloud
+    - deployment architecture designed to keep data wiythin a network perimeter: <span style="color: #bb6600">private cloud</span
   - system inspects files using the following tools, in order:
     - Spero Analysis and AMP Cloud Lookup
     - Local Malware Analysis
@@ -852,28 +853,36 @@
     - SPERO fingerprint: features of a file
     - send SPERO fingerprint to the cloud
     - SPERO trees determine whether a file is malicious
+    - disposition changes from Unknown to Malware only on positive identification of malware
   - Local malware analysis
     - a managed device locally inspecting executables, PDFs, office documents, and other types of files for the most common types of malware
     - use a detection rule set provided by the Cisco <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group (Talos)
     - not query the AMP cloud and not run the file
     - local malware analysis saves time and system resources
+    - disposition changes from Unknown to Malware only on positive identification of malware
   - Dynamic Analysis
-    - submit <span style="color: #bb6600;">(the whole) files</span> to Cisco Threat Grid (formerly AMP Threat Grid)
+    - submit <span style="color: #bb6600;">(the whole) files</span> to Secure Malware Analytics (formerly AMP Threat Grid)
     - run the file in a <span style="color: #bb6600;">sandbox</span> environment
     - analyze the file's behavior to determine whether the file is malicious
     - return a threat score that indicates the likelihood that a file contains malware
+    - eligible files uploaded to the public cloud or an on-premises appliance
+    - threat score determines maliciousness of a file
+    - disposition based on the threat score threshold configured in the file policy
+  - feature to copy a file from AMP for Network to AMP Cloud for analysis: <span style="color: #bb6600;">dynamic analysis</span>
   - outbreak control
-    - custom detections: <span style="color: #bb6600;">Simple</span> to convict files not yet classified; <span style="color: #bb6600;">Advanced</span> to create signatures
+    - <span style="color: #bb6600">Simple and Advanced custom detections</span>: Simple to convict files not yet classified; Advanced to create signatures
     - <span style="color: #bb6600;">application control</span>: Blocked Lists; Allowed Lists
     - <span style="color: #bb6600;">network control</span>: IP blocked and Allowed Lists
     - endpoint IOC: 1) *Initiate Scan* - schedule and scan (admin only); 2) *Installed Endpoint IOCs* (admin only); 3) *Scan Summary*
     - <span style="color: #bb6600;">automated actions</span>: set actions automatically triggered
     - main lists: <span style="color: #bb6600;">Simple Custom Detections</span>, <span style="color: #bb6600;">Blocked Applications</span>, <span style="color: #bb6600;">Allowed Applications</span>, Advanced Custom Detections, and IP Blocked and Allowed Lists
+    - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span
   - Secure Malware Analytics (formerly Threat Grid)
-    - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from <span style="color: #bb6600;">malware</span>
+    - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from malware
     - unified malware analysis and threat intelligence platform
-    - <span style="color: #bb6600;">automated static and dynamic analysis</span>, producing human readable behavior indicators for each file submitted
+    - automated static and dynamic analysis, producing human readable behavior indicators for each file submitted
     - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
+    - primary function: <span style="color: #bb6600">automated malware analysis</span>
   - connector engine (in sequence)
     - Tetra - full blown AV
     - Cloud Lookup - based on SHA256
@@ -938,6 +947,7 @@
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
     - DNS Policies > File Analysis = On; Advanced Settings: <span style="color: #bb6600;">Enable Intelligent Proxy</span> = On > File Analysis
+    - prerequiste to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600">enable intelligent proxy</span>
   - SSL Decryption
     - an important part of the Umbrella Intelligent Proxy
     - proxy and inspect traffic that's sent over HTTPS
