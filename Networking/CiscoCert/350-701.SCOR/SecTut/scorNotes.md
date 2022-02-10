@@ -203,6 +203,7 @@
     - Certificate Authority (CA) using contained <span style="color: #bb6600;">server information</span> (e.g. common name, organization, country) to create your certificate
     - public key included in certificate
     - certificate signed with the corresponding private key
+    - purpose of certificate signing request when adding a new certificate for a server: provide the <span style="color: #bb6600;">server information</span> so a certificate can be created and signed
   - Cisco IOS public key infrastructure (PKI)
     - provide certificate management to support security protocols
     - including IP Security (IPSec), secure shell (SSH), and secure socket layer (SSL)
@@ -668,6 +669,7 @@
   - routed mode 
     - act as a next hop for workloads
     - inspect packets and also take action on the packet based on rule and policy definitions
+  - public cloud provider: <span style="color: #bb6600;">Amazon Web Services</span
 
 
 - ASAv on AWS
@@ -689,6 +691,7 @@
     - facilitate logging of all the IP traffic to, from, and across your network
     - stored as records in special <span style="color: #bb6600;">Amazon CloudWatch log groups</span>
     - provide the same kind of information as NetFlow data
+    - mechanism to configure the organization’s public cloud to send telemetry using the cloud provider’s mechanisms to a security device: <span style="color: #bb6600;">VPC flow logs</span>
   - NO URL filtering feature as FTDv
 
 
@@ -1444,7 +1447,7 @@
       - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
       - send template information periodically to NSEL collectors
       - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
-    - <span style="color: #bb6600;">delay the export of flow-create events</span>
+      - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
@@ -1593,6 +1596,7 @@
     - attackers to get hold of a valid email address if your organization uses standard format for official e-mail alias
     - <span style="color: #bb6600;">DHA Prevention</span> to prevent malicious actors from quickly identifying valid recipients
     - <span style="color: #bb6600;">Lightweight Directory Access Protocol (LDAP)</span>: an Internet protocol that email programs use to look up contact information from a server
+    - prevent from quickly identifying all valid recipients as LDAP accepts queries on a listener: <span style="color: #bb6600;">config Directory Hast Attack Prevention</span>  
   - reputation service
     - insufficient info for a definitive verdict -> return a reputation score based on characteristics of the file
     - <span style="color: #bb6600;">score meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
@@ -1835,6 +1839,7 @@
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
+  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span
 
 
 - TrustSec
@@ -2128,6 +2133,7 @@
     - <span style="color: #bb6600;">shutdown untrusted ports</span> if receiving DHCP response
     - enable trust port: <span style="color: #bb6600;">`ip dhcp snooping trust`</span>
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
+    - example: user on VLAN 41 on a new switch no IP address obtained due to missing <span style="color: #bb6600;">`ip dhcp snooping trust`</span> config
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
