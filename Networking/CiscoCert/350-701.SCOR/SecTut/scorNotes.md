@@ -660,6 +660,7 @@
     - interface requirements:
       - <span style="color: #bb6600;">management</span> interfaces: 2; one for FMC and one for diagnostics
       - <span style="color: #bb6600;">traffic</span> interface: 2 used to connect inside hosts to the public network
+  - reason for FTDv over ASAv: support <span style="color: #bb6600;">URL filtering</span>
 
 
 - Cisco Firepower NGFW Virtual (NGFWv)
@@ -2113,6 +2114,7 @@
     - acts as a second layer of protection, enabling security analysts to perform threat hunting and identify more subtle threats to the endpoint
     - <span style="color: #bb66pp;">more advanced detection capabilities</span>
   - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb66pp;">advanced threats that envade perimeter defences</span>
+  - Endpoint Detection and Response solution versus Endpoint Protection Platform: <span style="color: #bb66pp;">a need to have more advanced detection capabilities</span>
 
 
 ## Layer 2 Security
