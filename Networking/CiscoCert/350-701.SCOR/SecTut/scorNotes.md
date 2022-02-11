@@ -1134,6 +1134,7 @@
     - the ability to perform <span style="color: #bb6600;">network discovery</span>
     - intrusion <span style="color: #bb6600;">prevention before</span> malware comprises the host
     - <span style="color: #bb6600;">superior threat prevention and mitigation</span> for known and unknown threats
+  - difference btw Firepower and ASA: Firepower <span style="color: #bb6600;">natively provides intrusion prevention capabilities</span>
 
 
 - Cisco ASA FirePOWER module
@@ -1241,7 +1242,7 @@
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
-  - 
+  - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
 
 
 - Firewall Threat Defense (FTD)
@@ -1397,6 +1398,16 @@
     - <span style="color: #bb6600;">stateful</span>: preserve
     - <span style="color: #bb6600;">stateless</span>: reestablish
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
+  
+  
+- Security Manager
+  - enable consistent policy enforcement and rapid troubleshooting of security events
+  - offer summarized reports across the security deployment
+  - w/ centralized interface, scale efficiently and manage a wide range of Cisco security devices with improved visibility
+  - provide a comprehensive management solution for
+    - Cisco <span style="color: #bb6600;">ASA</span> 5500 Series Adaptive Security Appliances
+    - Cisco intrusion prevention systems 4200 and 4500 Series Sensors
+    - Cisco AnyConnect Secure Mobility Client
 
 
 - NetFlow
@@ -1609,6 +1620,7 @@
     - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
     - provide sender authentication and BEC detection capabilities
     - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
+    - use  <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
   - outbreak filter: used to block emails from bad mail server
@@ -1834,7 +1846,7 @@
       - Weekly: Users who need access to the network for a couple of weeks.
   - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - inline posture node
-    - feature ofASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
