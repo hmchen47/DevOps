@@ -24,8 +24,8 @@
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
-  - worm: a software program that copies itself from one computer to another, without human interaction
-  - spam: unwanted messages in an email inbox
+  - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
+  - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span>
   - back-door virus: any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
@@ -33,6 +33,7 @@
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
   - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
+  - risk of using an Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
 
 
 - Categories of attacks
@@ -234,6 +235,7 @@
     - Triple DES (<span style="color: #bb6600;">3DES</span>):
       - using DES 3 times
       - 2 ways: 1) 1st & 3rd w/ the same key, 2nd w/ different key; 2) 3 different keys
+      - function of 3DES: <span style="color: #bb6600;">encrypt traffic</span>
     - Advanced Encryption Standard (AES)
       - highest level of protection
       - successor of DES
@@ -492,6 +494,10 @@
       - URL: `get https://api.amp.cisco.com/v1/computers`
       - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
       - list of network interface info: `print(mac, ip , ipv6)`
+    - AMP API to print hostname
+      - URL: `get https://api.amp.cisco.com/v1/computers`
+      - print list of computer hostname: `print(hostname)`
+      - pull all computer hostnames and print them
   - make a SSL connection
     - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
     - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
@@ -524,11 +530,18 @@
 ## Cloud Security Concepts and Solutions
 
 - Cisco Cloud Security Portfolio
-  - Umbrella: Set up the <span style="color: #bb6600;">first line of defense</span> against threats on the Internet wherever users go
-  - Cloudlock: Secure your <span style="color: #bb6600;">cloud users, data, and applications</span> with the cloud-native CASB and cloud cybersecurity platform
+  - Umbrella: 
+    - Set up the <span style="color: #bb6600;">first line of defense</span> against threats on the Internet wherever users go
+    - <span style="color: #bb6600;">secure Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network agaist threats on the Internet by using <span style="color: #bb6600;">DNS</span>
+  - Cloudlock:
+    - Secure your <span style="color: #bb6600;">cloud users, data, and applications</span> with the cloud-native CASB and cloud cybersecurity platform
   - Cloud Email Security: Defend against <span style="color: #bb6600;">advanced email threats</span>
-  - Stealthwatch Cloud: Extend <span style="color: #bb6600;">network visibility, threat detection, and analytics</span> to your public cloud environments
+  - Stealthwatch Cloud:
+    - Extend <span style="color: #bb6600;">network visibility, threat detection, and analytics</span> to your public cloud environments
+    - rapidly <span style="color: #bb6600;">collects and analyzes NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
   - Next-Generation Firewall: Protect <span style="color: #bb6600;">critical infrastructure</span> in the cloud with the Cisco Firepower Next-Generation Firewall
+  - Tetration
+    - TrustSec: <span style="color: #bb6600;">software-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
 
 
 - Cloud services
@@ -718,6 +731,7 @@
 
 - Cloudlock
   - a cloud-based <span style="color: #bb6600;">Cloud Access Security Broker (CASB)</span> and cloud cybersecurity platform
+  - a cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an <span style="color: #bb6600;">API</span>
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
   - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
@@ -1068,6 +1082,7 @@
     - <span style="color: #bb6600;">Management of hybrid environments</span>: Managing a mix of firewalls running the ASA, FTD, and Meraki MX software
     - Management of AWS security groups
     - RAVPN Monitoring and Management 
+  - software to use Cisco Firepower and Cisco Meraki MX for network security and needs to centrally manage cloud policies across these platforms: <span style="color: #bb6600;">Cisco Defense Orchestrator</span>
 
 
 ## Firewalls and IPS
@@ -1263,8 +1278,10 @@
     - config to feed host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
+  - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
+  - 
 
 
 - Firewall Threat Defense (FTD)
@@ -1584,6 +1601,7 @@
     - syntax: `snmp-server host {<hostname> | <ip-address>} [vrf <vrf-name> | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
     - <span style="color: #bb6600;">`snmp-server host inside 10.255.254.1 version 3 andy`</span>: hostname = inside (interface name); community-name (username) = andy
   - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
+  - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
   - strongest security possibility of SNMPv3 config
 
     ```text
@@ -1665,6 +1683,7 @@
   - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
+  - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
 
 
 - AsyncOS operating system
@@ -2182,7 +2201,10 @@
     - <span style="color: #bb6600;">shutdown untrusted ports</span> if receiving DHCP response
     - enable trust port: <span style="color: #bb6600;">`ip dhcp snooping trust`</span>
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
-    - example: user on VLAN 41 on a new switch no IP address obtained due to missing <span style="color: #bb6600;">`ip dhcp snooping trust`</span> config
+    - user on VLAN 41 on a new switch no IP address obtained due to missing <span style="color: #bb6600;">`ip dhcp snooping trust`</span> config
+    - configure a DHCP server to better secure their environment and able to rate-limit the traffic and ensure that legitimate requests are not dropped: <span style="color: #bb6600;">set a trusted interface for the DHCP server</span>
+    
+
   - Dynamic ARP Inspection (DAI)
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
@@ -2192,7 +2214,7 @@
     - characteristic: determine the validity of an ARP packet based on <span style="color: #bb6600;">valid IP to MAC address bindings</span> from the DHCP snooping binding database
     - unable to communicate on switch after config DAI and w/o err-disabled interface: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANS</span>
   - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
-  - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span>
+  - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span
 
 
 - Broadcast storm
