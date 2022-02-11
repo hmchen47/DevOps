@@ -46,8 +46,8 @@
   - occurred when asking a user for input
   - mitigate:
     - check parameters to ensure actual values
-    - use prepared statements amd parameterized queries
-  - an attack where code is injected into a browser
+    - use prepared statements and parameterized queries
+  - an attack where <span style="color: #bb6600;">code is injected into a browser</span>
   - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">GET/POST parameters</span>
   - used to <span style="color: #bb6600;">steal information from databases</span>
   - the <span style="text-decoration:underline;">flaw</span> leveraging when exploiting SQL injection: <span style="color: #bb6600;">user input validation</span> in a web page or web application
@@ -59,15 +59,15 @@
 - Cross Site Script (XSS): 
   - web application gathering malicious data
   - usually gathered in the form of a hyperlink
-  - click on this link from another website, instant message, or simply simply just reading a web board or email message.
+  - click on this link from another website, instant message, or simply simply just reading a web board or email message
   - encode the malicious portion of the link to the site in <span style="color: #bb6600;">HEX (or other encoding methods)</span>
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
   - preventive measures: 1) enable client-side scripts on a <span style="color: #bb6600;">per-domain basis</span>; 2) <span style="color: #bb6600;">contextual output encoding/escaping</span>
   - exploit website vulnerability by injecting scripts that will run at client's side.
   - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
-  - <span style="color: #bb6600;">inject malicious code</span> (usually malicious links) into a database
-  - used to <span style="color: #bb6600;">redirect users</sapn> to websites where attackers can steal data from them
+  - <span style="color: #bb6600;">inject malicious code (usually malicious links) into a database</span>
+  - used to <span style="color: #bb6600;">redirect users</span> to websites where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
 
 
@@ -441,7 +441,7 @@
     - SDN controller communicating w/ <span style="color: #bb6600;">network service applications, the management solution </span>
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
-    - used for the <span style="color: #bb6600;">orchestration and automation</sapn> of the network components to align with the needs of different applications via SDN network programmability
+    - used for the <span style="color: #bb6600;">orchestration and automation</span> of the network components to align with the needs of different applications via SDN network programmability
     - basically the link between the applications and the SDN controller
     - applications can tell the network devices (physical or virtual) what type of resources they need
     - SDN solution can provide the necessary <span style="color: #bb6600;">resources</span> to the application
@@ -489,9 +489,9 @@
   - device API
     - add a switch to <span style="color: #bb6600;">DNA Center</span>: `requests.post("https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
     - AMP API to print <span style="color: #bb6600;">network interface info</span>
-      - URL: `get https://api.amp.cisco.com/v1/computers
+      - URL: `get https://api.amp.cisco.com/v1/computers`
       - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
-      - list of network interface info: `print(mac, ip , ipv6)
+      - list of network interface info: `print(mac, ip , ipv6)`
   - make a SSL connection
     - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
     - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
@@ -573,6 +573,8 @@
     - Use <span style="color: #bb6600;">multi-factor authentication (MFA)</span>
     - install and integrate an identity governance solution
     - stay up to date (patch mgmt)
+  - factor to choose on-primse solution over cloud-based solution: <span style="color: #bb6600;">with an on-premise solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
+
 
 
 - Cloud security assessment
@@ -768,6 +770,7 @@
     - Umbrella, and ThreatGrid
     - numerous open-source and commercial threat protection systems
   - utilize the most current intelligence data for URL filtering, reputations, and vulnerability information that can be integrated with the Cisco FTD and Cisco WSA: integrations with <span style="color: #bb6600;">Talos Intelligence</span> to take advantage of the threat intelligence that it provides
+  - Firepower downloads threat intelligence updates from Cisco Talos: <span style="color: #bb6600;">comsumption</span>
 
 
 - Tetration
@@ -796,7 +799,7 @@
     - automated microsegmentation policy generation
     - automated policy enforcement
     - policy compliance
-    - <span style="color: #bb6600;">process behavior baseline and deviation</span>
+    - <pan style="color: #bb6600;">process behavior baseline and deviation</span>
     - software inventory and vulnerability detection
     - forensic analysis
   - microsegmentation
@@ -813,6 +816,7 @@
     - normalized microsegmentation policy:
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
+    - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration</span>
   - Contiv
     - an open source project to deploy microsegmentation policy-based services in container environments
     - offer a higher level of networking abstraction for microservices by providing a policy framework
@@ -820,10 +824,11 @@
     - deploy <span style="color: #bb6600;">microsegmentation and multi-tenancy services</span> with a policy-based container
 
 
-- Cisco Stealthwatch Cloud
+- Cisco Stealhwatch Cloud
   - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
   - available in AWS, Azure, and GCP
   - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
+  - Stealthwatch Cloud deploymed and Cloud logging works access as expected but logs are not being received from the on-premise network: <span style="color: #bb6600">deploy a Cisco Stealthwatch Cloud sensor on the network to send data to Cisco Stealthwatch Cloud</span>
   - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
   - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
   - actions to collect full metadata information about the traffic going through their AWS cloud services
@@ -937,6 +942,7 @@
     - mark the ETHOS hash as malicious
     - instantly detect whole <span style="color: #bb6600;">families of malware</span>
     - perform <span style="color: #bb6600;">fuzzy fingerprinting</span> using static/passive heuristics
+    - feature to detect different family of malware: <span style="color: #bb6600;">Ethos Engine to perform fuzzy fingerprinting</span>
   - offline detection engines
     - <span style="color: #bb6600;">TETRA</span>: Windows
     - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
@@ -1355,6 +1361,7 @@
     - management and response systems
     - control
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
+  - config to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity w/ installed WSA: <span style="color: #bb6600;">use an access policy group to configure application control settings</span>
 
 
 - ASA FirePOWER module
@@ -1795,6 +1802,7 @@
     - solution for posture check on MS Windows endpoint w/o MS17-010 patch:
       - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
+    - benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
@@ -1840,6 +1848,7 @@
     - securely use personal devices on a corporate network
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
     - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
+    - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
   - <span style="color: #bb6600;">device sensor</span> of authorization policies
     - a feature of access devices
@@ -1894,6 +1903,10 @@
     - used for authorizing users on the network even as the Identity Services Engine (ISE) not involved
     - authorization method only supports devices that authenticate with a Domain Controller
     - allow for managed endpoints that <span style="color: #bb6600;">authenticate to AD to be mapped to Security Groups (PassiveID)</span>
+    - prerequisit to integrate IS server and AD domain: <span style="color: #bb6600;">synchronize the clocks of the Cisco ISE server and the AD server</spa
+  - ways of Easy Connect help control network access when used with Cisco TrustSec:
+    - allow for the <span style="color: #bb6600;">assignment of Security Group Tags</span> and not require 802.1x to be configured on the switch or the endpoint
+    - allow for managed endpoints that authenticate to AD to be mapped to <span style="color: #bb6600;">Security Groups (PassiveID)</span>
 
 
 - pxGrid
