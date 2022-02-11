@@ -219,15 +219,6 @@
 
   Refer to the exhibit.
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
-      src    = "img/1917-Mail_authentication.jpg"
-      alt    = "MailA Authentication"
-      title  = "MailA Authentication"
-    />
-  </figure>
-
   ```text
   Info: New SMTP ICID 30 Interface Management (192.168.0.100)
     address 10.128.128.200 reverse dns host unknown verified no
@@ -248,6 +239,16 @@
 
   Answer: <br><br> 
   
+<!-- 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions')"
+      src    = "img/1917-Mail_authentication.jpg"
+      alt    = "MailA Authentication"
+      title  = "MailA Authentication"
+    />
+  </figure> -->
+
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
 
@@ -342,9 +343,7 @@
     #TFC rsvd: 0, #TFC sent: 0
     #Valid ICMP Errors rcvd: 0, Invalid ICMP Errors rcvd: 0
     #send errors: 0, #recv errors: 0
-  ```
     
-  ```text
     local crypto endpt.: 209.165.200.225/500, remote crypto endpt.: 209.165.200.129/500
     path mtu 1500, ipsec overhead 55(36), media mtu 1500
     PMTU time remaining (sec): 0, DF policy: copy-df
