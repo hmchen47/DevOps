@@ -32,6 +32,7 @@
   - vulnerability to see th epassword being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
+  - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
 
 
 - Categories of attacks
@@ -236,18 +237,19 @@
     - Advanced Encryption Standard (AES)
       - highest level of protection
       - successor of DES
-      - encrypt and decrypt in blocks (block cipher): 128 bits block size
+      - encrypt and decrypt in blocks (block cipher): <span style="color: #bb6600;">128 bits block size</span>
       - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
       - AES-256 capability
         - secure <span style="color: #bb6600;">online connection</span> against cyberattacks that can compromise your security
         - offer robust <span style="color: #bb6600;">protocols</span> to combat malicious attacks
         - reinforce <span style="color: #bb6600;">online identity</span>
+      - ensures <span style="color: #bb6600;">data confidentiality</span>
   - asymmetric key
     - public key cryptography
     - using keypairs (a private key and a public key)
     - more complex and time comsuming -> <span style="color: #bb6600;">require more time</span>
     - <span style="color: #bb6600;">Diffie-Hellman exchange</span>: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
-    - <span style="color: #bb6600;">RSA</span>
+    - <span style="color: #bb6600;">RSA</span>: provide <span style="color: #bb6600;">authentication</spam>
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation, as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
     - <span style="color: #bb6600;">different keys</span> for encryption and decryption
@@ -258,6 +260,7 @@
   - passwords being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - Secure Hash Algorithm (SHA-1):
     - a.k.a. HMAC-SHA-1
+    - ensure <span style="color: #bb6600;">data integrity</span>
     - ensures data has not been changed in transit
     - one way hash functions to determine if data has been changed
     - stronger than Message Digest 5 (MD5)
@@ -278,6 +281,7 @@
     - the first stage in establishing IPSec
   - IKEv1
     - Phase 1: ISAKMP
+      - define <span style="color: #bb6600;">IKE SAs</span>
       - modes: <span style="color: #bb6600;">main - 6 msgs; agressive - 4 msgs</sign>
       - <span style="color: #bb6600;">preshared authentication key</span>
         - global configuration mode
@@ -1401,8 +1405,8 @@
     - able to add a separate Management slot/port but not part of bridge group
     - characteristics: include <span style="color: #bb6600;">multiple interfaces and access rules between interfaces are customizable</span>
   - connection status of failover w/ 2 ASAs
-    - <span style="color: #bb6600;">stateful</span>: preserve
-    - <span style="color: #bb6600;">stateless</span>: reestablish
+    - stateful: <span style="color: #bb6600;">preserve</span>
+    - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
   
   
@@ -1416,7 +1420,7 @@
     - Cisco AnyConnect Secure Mobility Client
 
 
-- NetFlow
+- 
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
@@ -1468,7 +1472,7 @@
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
-    - <span style="color: #bb6600">format of data records</span>
+    - define the <span style="color: #bb6600">format of data records</span>
   - export formats
     - version 1: only for <span style="color: #bb6600">legacy systems</span>
     - version 5: only for <span style="color: #bb6600">main cache</span>
