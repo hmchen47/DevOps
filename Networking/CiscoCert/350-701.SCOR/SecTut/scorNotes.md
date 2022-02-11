@@ -69,7 +69,7 @@
   - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
   - <span style="color: #bb6600;">inject malicious code (usually malicious links) into a database</span>
-  - used to <span style="color: #bb6600;">redirect users</span> to websites where attackers can steal data from them
+  - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
 
 
@@ -325,7 +325,8 @@
     - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
     - used with confidentiality only, authentication only, or both confidentiality and authentication
     - reliable authenticaton protocol and supporting <span style="color: #bb6600;">ACK and sequence</span>
-    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for pac</span>
+    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for packet</span>
+    - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
   - stateful failover
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
     - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
@@ -488,6 +489,7 @@
     - recommend (view only)
     - manual (select and apply)
     - automated (executed in real time by software)
+  - way to mitigate application performance issue: <span style="color: #bb6600;">automate resource resizing</span>
 
 
 - Python script for SDN APIs
@@ -966,8 +968,9 @@
   - offline detection engines
     - <span style="color: #bb6600;">TETRA</span>: Windows
     - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
-  - <span style="color: #bb6600;">prevalence</span>: a list of all files that have been executed
+  - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
   - custom detection policy 
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
@@ -1061,6 +1064,7 @@
       - local DNS queries to your existing local DNS servers and forwarders
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
+  - config to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
 
 
 - AppDynamics
@@ -1302,6 +1306,7 @@
     - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
+  - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
 
 
 - Firepower Threat Defence Devices
@@ -1570,6 +1575,7 @@
       - <span style="color: #bb6600;">Both ingress and egress NetFlow accounting</span> is supported
       - Microflow policing feature shares the NetFlow hardware resource with FNF.
       - Only one flow monitor per interface and per direction is supported.
+  - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
 
 
 - Telemetry
@@ -1760,6 +1766,7 @@
         - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server
         - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
         - advantage: usually relatively easy to create and maintain
+        - method allows the client desktop browsers to be configured to select <span style="color: #bb6600;">when to connect direct or when to use the proxy</span>
   - Web Cache Communications Protocol (WCCP)
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
@@ -1838,12 +1845,13 @@
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
     - policy requirement types
-      - mandator
+      - Mandator
         - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
         - move to <span style="color: #bb6600;">Non-Compliant</span> state if failed
-      - optional: allow to skip the specified optional requirements and move to Compliant state
-      - audit: for internal purposes and the agent does not prompt any message or input from end users
+      - Optional: allow to skip the specified optional requirements and move to Compliant state
+      - Audit: for internal purposes and the agent does not prompt any message or input from end users
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
+    - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: tag the guest portal in the CWA part of the <span style="color: #bb6600;">Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
@@ -1973,6 +1981,7 @@
     - <span style="color: #bb6600;">an endpoint profiled for the 1st time</span>
     - <span style="color: #bb6600;">endpoint deleted</span> on the ISE
   - CoA Messages port number: 1) Cisco - <span style="color: #bb6600;">UDP:1700</span>; 2) RFC - UDP:3799
+  - attribute w/ the ability to change during the RADIUS CoA: <span style="color: #bb6600;">authroization</span>
 
 
 - 802.1X port-based authentication
