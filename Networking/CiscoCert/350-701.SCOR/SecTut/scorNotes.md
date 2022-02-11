@@ -22,14 +22,16 @@
     - an attack that leverages that vulnerability
   - endpoint risks as company vulnerable: 1) malware; 2) expolit
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
-  - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
+  - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - worm: a software program that copies itself from one computer to another, without human interaction
   - spam: unwanted messages in an email inbox
   - back-door virus: any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
   - vulnerability to see th epassword being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
+  - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
+  - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
 
 
 - Categories of attacks
@@ -212,7 +214,7 @@
       - at least one certification authority (CA) that grants and maintains certificates
       - digital certificates: containing information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
       - optional registration authority (RA) to offload the CA by processing enrollment requests
-      - a distribution mechanism (such as <span style="color: #bb6600;">Lightweight Directory Access Protocol (LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
+      - a distribution mechanism (such as Lightweight Directory Access Protocol <span style="color: #bb6600;">(LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
   - RSA keys
     - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
     - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
@@ -221,20 +223,20 @@
 
 - Cryptography
   - symmetric key cipher
-    - same secrete key used for both encryption and decryption
+    - same <span style="color: #bb6600;">secrete key</span> used for both encryption and decryption
     - same secrete key used by both sender and receiver
     - suited to internal encryption
     - pros: 1) faster; 2) efficient
     - Data Encryption Standard (DES)
       - encrypt and decrypt in blocks (block cipher): 64 bits block size
       - key size: 56 bits
-    - <span style="color: #bb6600;">Triple DES (3DES):</span>
+    - Triple DES (<span style="color: #bb6600;">3DES</span>):
       - using DES 3 times
       - 2 ways: 1) 1st & 3rd w/ the same key, 2nd w/ different key; 2) 3 different keys
     - Advanced Encryption Standard (AES)
       - highest level of protection
       - successor of DES
-      - encrypt and decrypt in blocks (<span style="color: #bb6600;">block cipher</span>): 128 bits block size
+      - encrypt and decrypt in blocks (block cipher): 128 bits block size
       - key size: 128, 192, or 256 -> AES-128, AES-192, or AES-256
       - AES-256 capability
         - secure <span style="color: #bb6600;">online connection</span> against cyberattacks that can compromise your security
@@ -243,12 +245,12 @@
   - asymmetric key
     - public key cryptography
     - using keypairs (a private key and a public key)
-    - more complex and time comsuming
-    - Diffie-Hellman: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
-    - RSA
+    - more complex and time comsuming -> <span style="color: #bb6600;">require more time</span>
+    - <span style="color: #bb6600;">Diffie-Hellman exchange</span>: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
+    - <span style="color: #bb6600;">RSA</span>
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation, as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
-    - different keys for encryption and decryption
+    - <span style="color: #bb6600;">different keys</span> for encryption and decryption
     - the capability to only <span style="color: #bb6600;">know one key on one side</span>
 
 
@@ -400,6 +402,7 @@
     - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
     - NHRP: DMVPN - 3 phases; FlexVPN - only one standard way
   - support <span style="color: #bb6600;">multiple SAs</span>
+  - active/active FlexVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
 
 
 - GETVPN (Group Encrypted Transport VPN)
