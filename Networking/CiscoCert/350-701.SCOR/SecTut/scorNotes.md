@@ -27,8 +27,9 @@
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
   - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span>
   - back-door virus: any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
+  - Trojan malware attacks: <span style="color: #bb6600;">rootkit & backdoor</span>
   - front-door attacks: require the actions of the user to allow the virus to infect the system
-  - risk of Internet browser to access cloud-based service: vulnerabilities within protocol
+  - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
   - vulnerability to see th epassword being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
@@ -79,7 +80,7 @@
 
 
 - rootkit
-  - <span style="color: #bb6600;">Trojan</span> malware attack
+  - Trojan malware attack
   - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
   - a program providing maliciously privileged access to a computer
   - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
@@ -166,6 +167,7 @@
     - no traditional network edge
     - networks can be local, in the cloud, or a combination or hybrid with resources anywhere and workers in any location
   - use <span style="color: #bb6600;">microsegmentation</span> to to contain attacks
+  - technology to secure data in a cloud environment where 1) all users be authenticated and authorized; 2) security configuration and posture continuously validated before access is granted or maintained to applications and data; 3) allow certain application traffic and deny all other traffic by default: <span style="color: #bb6600;">microsegmentation</span>
 
 
 - Data exfiltration
@@ -320,9 +322,10 @@
     - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
     - provide data integrity, data origin authentication, and an optional replay protection service
   - ESP protocol
-    - provide data <span style="color: #bb6600;">confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)</span>
+    - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
     - used with confidentiality only, authentication only, or both confidentiality and authentication
     - reliable authenticaton protocol and supporting <span style="color: #bb6600;">ACK and sequence</span>
+    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for pac</span>
   - stateful failover
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
     - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
@@ -579,14 +582,15 @@
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
-  - customersNO responsibility of <span style="color: #bb6600;">OS patch management</span>: PaaS
+  - customers: NO responsibility of <span style="color: #bb6600;">OS patch management</span>: PaaS
   - secure SaaS-based applications
     - all administrative access to SaaS applications as privileged
     - set up single sign-on (SSO) integrations
     - Use <span style="color: #bb6600;">multi-factor authentication (MFA)</span>
     - install and integrate an identity governance solution
     - stay up to date (patch mgmt)
-  - factor to choose on-primse solution over cloud-based solution: <span style="color: #bb6600;">with an on-premise solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
+  - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
+  - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
 
 
 
@@ -749,6 +753,7 @@
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
   - App Firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
   - tool to protect sensitive data throughout the fullenvironment: <span style="color: #bb6600;">Cloudluck</span>
+  - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
 
 
 - Cloud Web Security (CWS)
@@ -857,6 +862,7 @@
   - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
   - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
   - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
+  - solution to extract metadata from network packet flow while ensuring that payloads are not retained or transferred outside the network winthin an organization provides visibility and to identify active threats in its network using a VM: <span style="color: #bb6600">StealthwatchCloud PNM</span>
 
 
 - Secure Endpoint
@@ -1043,9 +1049,10 @@
   - Umbrella Roaming
     - a cloud-delivered security service for Cisco's next-generation firewall
     - protect employees even when they are off the VPN
-    - ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
+    - role to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - protect users of endpoint solution from a phishing: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
-  - wildcards and destination list: asterisk (`*`) not supported for wildcard
+  - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
+  - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
     - lightweight virtual machines
     - act as <span style="color: #bb6600;">conditional DNS forwarders</span>
@@ -1281,12 +1288,11 @@
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
-  - 
 
 
 - Firewall Threat Defense (FTD)
   - config new FTD device not behind a NAT device to be managed w/ FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
-  - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>; e.g., backup policy w/ priority 5 and primary polity w/ priority 1
+  - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>; e.g., <span style="color: #bb6600;">backup policy w/ priority 5 and primary polity w/ priority 1</span>
   - Modbus, DNP3 and CIP SCADA preprocessors
     - analyze protocol fields and detect anomalies in the traffic from <span style="color: #bb6600;">industrial systems</span>
     - used to detect traffic anomalies
@@ -1295,6 +1301,7 @@
     - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
     - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
+  - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
 
 
 - Firepower Threat Defence Devices
@@ -1438,8 +1445,40 @@
     - stateful: <span style="color: #bb6600;">preserve</span>
     - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
+
+
+- IOS zone-based firewall
+  - a zone must be configured before interfaces can be assigned to the zone
+  - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
+  - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
+  - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMXZ network is redirected</span>
   
-  
+    ```text
+    Gateway of last resort is 1.1.1.1 to network 0.0.0.0
+
+    S* 0.0.0. 0.0.0.0 [1/0] via 1.1.1.1, outside
+    C   1.1.1.0 255.255.255.0 is directly connected, outside
+    S   172.16.0.0 255.255.0.0 [1/0] via 192.168.100.1, inside
+    C   192.168.100.0 255.255.255.0 is directly connected, inside
+    C   172.16.10.0 255.255.255.0 is directly connected, dmz
+    S      10.10.10.0 255.255.255.0 [1/0] via 172.16.10.1, dmz
+    --------------------------------------------------------------
+    access-list redirect-acl permit ip 192.168.100.0 255.255.255.0 any
+    access-list redirect-acl permit ip 172.16.0.0 255.255.0.0 any
+
+    class-map redirect-class
+    match access-list redirect-acl
+
+    policy map inside-policy
+    class redirect-class
+    sfr fail open
+
+    service-policy inside-policy global
+    ```
+
+  - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: ASA <span style="color: #bb6600;">denies all traffic by default</span> whereas the IOS router with Zone-Based Policy Firewall starts out by <span style="color: #bb6600;">allowing all traffic</span>, even on untrusted interfaces
+
+
 - Security Manager
   - enable consistent policy enforcement and rapid troubleshooting of security events
   - offer summarized reports across the security deployment
@@ -1450,7 +1489,7 @@
     - Cisco AnyConnect Secure Mobility Client
 
 
-- 
+- NetFlow
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
@@ -1498,6 +1537,7 @@
       - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
       - send template information periodically to NSEL collectors
       - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
+      - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
       - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
@@ -1553,35 +1593,6 @@
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
 
-
-- IOS zone-based firewall
-  - a zone must be configured before interfaces can be assigned to the zone
-  - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
-  - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
-  - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMXZ network is redirected</span>
-  
-    ```text
-    Gateway of last resort is 1.1.1.1 to network 0.0.0.0
-
-    S* 0.0.0. 0.0.0.0 [1/0] via 1.1.1.1, outside
-    C   1.1.1.0 255.255.255.0 is directly connected, outside
-    S   172.16.0.0 255.255.0.0 [1/0] via 192.168.100.1, inside
-    C   192.168.100.0 255.255.255.0 is directly connected, inside
-    C   172.16.10.0 255.255.255.0 is directly connected, dmz
-    S      10.10.10.0 255.255.255.0 [1/0] via 172.16.10.1, dmz
-    --------------------------------------------------------------
-    access-list redirect-acl permit ip 192.168.100.0 255.255.255.0 any
-    access-list redirect-acl permit ip 172.16.0.0 255.255.0.0 any
-
-    class-map redirect-class
-    match access-list redirect-acl
-
-    policy map inside-policy
-    class redirect-class
-    sfr fail open
-
-    service-policy inside-policy global
-    ```
 
 - Simple Network Management Protocol (SNMP)
   - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
@@ -1822,6 +1833,7 @@
       - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
     - benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
+    - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
@@ -1851,6 +1863,7 @@
       - periodic <span style="color: #bb6600;">compliance check</span>
       - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
       - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
+    - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
   - Profiling Services
     - provide <span style="color: #bb6600;">dynamic detection and classification of endpoints</span> connected to the network
