@@ -638,6 +638,7 @@
     - quickly <span style="color: #bb6600;">provision</span> new devices
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
+  - type of dashboard for complete control of the network: <span style="color: #bb6600;">centralized management</span>
 
 
 - Cisco Context Directory Agent (CDA)
@@ -771,7 +772,7 @@
 
 - Tetration
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
-  - protect hybrid cloud delpoyment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
+  - protect hybrid cloud deployment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
   - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
   - enable trusted access through automated, exhaustive context from various systems to automatically adapt security policies
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
@@ -986,6 +987,7 @@
     - config procedure to block traffic
       - Advanced Settings > '<span style="color: #bb6600;">Enable Intelligence Proxy</span>' = On
       - <span style="color: #bb6600;">Security Settings</span> > Potential Harmful Domain = On
+    - prevent malicious content downloads for suspicious domains while allowing normal web traffic: <span style="color: #bb6600;">configure the intelligent proxy</span>
   - File Inspection
     - either the DNS or Web policy
     - scan files through Cisco Advanced Malware Protection (AMP) and Umbrella's antivirus
@@ -1032,6 +1034,7 @@
       - local DNS queries to your existing local DNS servers and forwarders
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
+
 
 - AppDynamics
   - Application Performance Management (APM) solution
@@ -1250,9 +1253,12 @@
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
+    - determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
+    - config to feed host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
+  - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
 
 
 - Firewall Threat Defense (FTD)
@@ -1621,6 +1627,7 @@
   - reputation service
     - insufficient info for a definitive verdict -> return a reputation score based on characteristics of the file
     - <span style="color: #bb6600;">score meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
+    - reason of testing a newly installed service to help create policy based on the reputation but not dropping files that have an undetermined verdict: <span style="color: #bb6600;">file w/ a reputation score that is below the threshold</span>
   - <span style="color: #bb6600;">Advanced Phishing Protection</span> (not on WSA)
     - sensor-based solution
     - another layer of defense
@@ -1630,7 +1637,7 @@
     - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
     - provide sender authentication and BEC detection capabilities
     - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
-    - use  <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
+    - use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
   - outbreak filter: used to block emails from bad mail server
@@ -1649,6 +1656,8 @@
   - action to dynamically determine how harmfulthe SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
   - device to ensure that machines that connect torganizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ESA</span>
   - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
+  - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
+  - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
 
 
 - AsyncOS operating system
@@ -1861,7 +1870,8 @@
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
-  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span
+  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
+  - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
 
 
 - TrustSec
@@ -2026,9 +2036,9 @@
     aaa accounting update periodic 5
     ! Update AAA accounting info periodically every 5 min
     aaa accounting system default start-stop group radius
-    `
+    ```
 
-  - NTP authentication
+  - NTP authentication 1
     - NTP server - 10.10.10.1; client - 10.10.10.2
     - NTP authentication enforcment: <span style="color: #bb6600;">`ntp authenticate`</span>
     - other client config:
@@ -2040,6 +2050,9 @@
       ntp server 10.10.10.1 key 2
       ```
 
+  - NTP authentication 2
+    - NTP server - 1.1.1.1; client - 1.1.1.2
+    - command to enable the client to accept the server’s authentication key: <span style="color: #bb6600;">`ntp server 1.1.1.1 key 1`</span>
   - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
   - result of configurations w/ the authorization for the admin 5 user
     - <span style="color: #bb6600;">complete no configuration</span> w/ the config
