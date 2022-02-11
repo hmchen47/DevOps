@@ -1,6 +1,6 @@
 # SCOR 350-701 Notes
 
-## <span style="color: #008888;">Security Concepts</span>
+## Security Concepts
 
 - Malware, exploits, and security threats
   - malware:
@@ -189,7 +189,7 @@
     - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
 
 
-## <span style="color: #008888;">Integrity and Privacy</span>
+## Integrity and Privacy
 
 - Digital Certificate & PKI
   - Trustpoint (Cisco)
@@ -265,7 +265,7 @@
 
 
 
-## <span style="color: #008888;">Virtual Private Networks</span>
+## Virtual Private Networks
 
 - Internet Key Exchange (IKE) framework
   - used for remote host, network access, and virtual private network (VPN) access
@@ -421,7 +421,7 @@
   - IP Multicast: Multicast replication at hub; Multicast replication at hub; Multicast replication in IP WAN network
 
 
-## <span style="color: #008888;">Software Defined Network (SDN)</span>
+## Software Defined Network (SDN)
 
 - SDN architecture
   - centralized architecture to control networking devices in one device
@@ -514,7 +514,7 @@
     ```
 
 
-## <span style="color: #008888;">Cloud Security Concepts and Solutions</span>
+## Cloud Security Concepts and Solutions
 
 - Cisco Cloud Security Portfolio
   - Umbrella: Set up the <span style="color: #bb6600;">first line of defense</span> against threats on the Internet wherever users go
@@ -1001,7 +1001,9 @@
     - able to download from an S3 bucket
     - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
   - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
-  - blocking URLs: URL Reputation from 6 to 10
+  - URL blocking:
+    - URL Reputation from 6 to 10
+    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - Block Page and Block Page Bypass features
     - present an SSL certificate to browsers that make connections to HTTPS sites
@@ -1051,7 +1053,7 @@
     - RAVPN Monitoring and Management 
 
 
-## <span style="color: #008888;">Firewalls and IPS</span>
+## Firewalls and IPS
 
 - Cisco security solutions
   - <span style="color: #bb6600;">StealWatch</span>: performs security analytics by collecting network flows via NetFlow
@@ -1570,7 +1572,7 @@
     ```
 
 
-## <span style="color: #008888;">Email and Web Security</span>
+## Email and Web Security
 
 - Cisco Email Security Appliance (ESA)
   - features:
@@ -1724,7 +1726,7 @@
     - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
 
 
-## <span style="color: #008888;">Authentication, Authorization, and Accounting (AAA)</san>
+## Authentication, Authorization, and Accounting (AAA)
 
 - Identity Service Engine (ISE)
   - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
@@ -2110,7 +2112,7 @@
   - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb66pp;">advanced threats that envade perimeter defences</span>
 
 
-## <span style="color: #008888;">Layer 2 Security</span>
+## Layer 2 Security
 
 - Catalyst integrated security features
   - port security
