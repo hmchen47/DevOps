@@ -183,6 +183,7 @@
     - DNS abuse exchanges data between two computers even when there is no direct connection
     - data sent out as part of the <span style="color: #bb6600;">domain name</span>
     - <span style="color: #bb6600;">register a domain</span> that a client connects to based on DNS records and send malware through that connection
+    - type of DNS abuse exchanges data between two computers even when there is no direct connection: <span style="color: #bb6600;">data exfiltration</span>
   - characteristics of messenger protocol for data exflitration
     - <span style="color: #bb6600;">encrypted traffic</span> which prevents visibility on firewalls and IPS systems
     - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
@@ -210,6 +211,7 @@
     - public key included in certificate
     - certificate signed with the corresponding private key
     - purpose of certificate signing request when adding a new certificate for a server: provide the <span style="color: #bb6600;">server information</span> so a certificate can be created and signed
+    - purpose of CA in a PKI: <span style="color: #bb6600;">issue and revoke digital certificates</span>
   - Cisco IOS public key infrastructure (PKI)
     - provide certificate management to support security protocols
     - including IP Security (IPSec), secure shell (SSH), and secure socket layer (SSL)
@@ -252,7 +254,7 @@
     - public key cryptography
     - using keypairs (a private key and a public key)
     - more complex and time comsuming -> <span style="color: #bb6600;">require more time</span>
-    - <span style="color: #bb6600;">Diffie-Hellman exchange</span>: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret</span> for a symmetric key algorithm
+    - <span style="color: #bb6600;">Diffie-Hellman exchange</span>: an asymmetric algorithm used to establish <span style="color: #bb6600;">a shared secret for a symmetric key algorithm</span>
     - <span style="color: #bb6600;">RSA</span>: provide <span style="color: #bb6600;">authentication</spam>
     - Elliptic Curve Cryptography (ECC): smaller key sizes, faster computation, as well as memory, energy and bandwidth savings
   - functions of secret key cryptography (=? asymmetric key)
@@ -392,6 +394,9 @@
   - AnyConnect superior capabilities:
     - customization of access policies <span style="color: #bb6600;">based on user identity</span>
     - enable VPN access for individual users from their machines
+  - advantages of using Cisco Any connect over DMVPN
+    - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
+    - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
 
 
 - FlexVPN
@@ -422,7 +427,7 @@
   - scalable for `crypto isakmp key cisco address 1.2.3.4`any-to-any connectivity and encryption</span>
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
-  - <span style="color: #bb6600;">reduce latency and provide encryption</span> over MPLS without the use of a central hub
+  - a difference between GETVPN and IPsec: GETVPN reduces latency and provides encryption over MPLS <span style="color: #bb6600;">without the use of a central hub</span>
 
 
 - Comparisons of DMVPN, FlexVPN and GETVPN
@@ -612,7 +617,7 @@
     - security testing is done by the development team
     - issues found during that testing is managed by the development team
     - fixing those issues stays within the development team
-  - <span style="color: #bb6600;">CI/CD pipeline</span>: process gives a weekly or daily update instead of monthly or quarterly in the applications
+  - DevSecOps implementation process gives a weekly or daily update instead of monthly or quarterly in the applications: <span style="color: #bb6600;">CI/CD pipeline</span>
 
 
 - Data Center Network Manager (DCNM)
@@ -660,6 +665,10 @@
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
   - type of dashboard for complete control of the network: <span style="color: #bb6600;">centralized management</span>
+  - capabilities of <span style="color: #bb6600;">Integration APIs</span> are utilized with Cisco DNA center (westbound)
+    - application monitors for <span style="color: #bb6600;">power utilization</span> of devices and IoT sensors
+    - connect to <span style="color: #bb6600;">Information Technology Service Management Platforms</span>
+  - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
 
 
 - Cisco Context Directory Agent (CDA)
@@ -1307,6 +1316,7 @@
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
   - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
+  - solution to meet the requirement that URLs must be blocked from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy:  <span style="color: #bb6600;">FTD because it includes URL filtering in the access control policy capabilities</span>, whereas Cisco ASA does not
 
 
 - Firepower Threat Defence Devices
@@ -1598,6 +1608,7 @@
     - use standard-based YANG data models over NETCONF-YANG
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
+  - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
 
 
 - Simple Network Management Protocol (SNMP)
@@ -1785,6 +1796,7 @@
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
     - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
     - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
+  - feature to meet the requirements 1) configure a Cisco WSA to receive redirected traffic over ports 80 and 443; 2) a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility; 3) make this invisible to the users: <span style="color: #bb6600;">configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -1921,6 +1933,7 @@
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
   - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
+  - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
 
 
 - TrustSec
