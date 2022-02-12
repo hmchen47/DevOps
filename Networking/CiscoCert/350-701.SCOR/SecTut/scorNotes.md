@@ -20,7 +20,7 @@
   - expolit:
     - a code taking advantage of a software a software vulnerability or security flaw
     - an attack that leverages that vulnerability
-  - endpoint risks as company vulnerable: 1) malware; 2) expolit
+  - endpoint risks as company vulnerable: 1) <span style="color: #bb6600;">malware</span>; 2) <span style="color: #bb6600;">expolit</span>
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
@@ -30,11 +30,12 @@
   - Trojan malware attacks: <span style="color: #bb6600;">rootkit & backdoor</span>
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
-  - vulnerability to see th epassword being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
+  - vulnerability to see the password being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
   - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
   - risk of using an Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
+  - difference between a vulnerability and an exploit: <span style="color: #bb6600;">a vulnerability is a weakness that can be exploited by an attacker</span>
 
 
 - Categories of attacks
@@ -71,6 +72,7 @@
   - <span style="color: #bb6600;">inject malicious code (usually malicious links) into a database</span>
   - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
+  - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
 
 
 - Buffer overflow
@@ -301,7 +303,7 @@
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 172.19.20.24`
-      - function of the `crypto isakmp key cisc406397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
+      - function of the `crypto isakmp key cisc6397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
     - phase 2: IPsec
   - IKEv2
     - standard including NAT-T
@@ -367,6 +369,7 @@
     - port number: L2TP UDP:1701; GRE - IP:47 
     - GRE protocol <span style="color: #bb6600;">adds its own header</span> (4 bytes plus options) between the payload (data) and the delivery header
     - L2TP packet including payload and L2TP header, sent within a User Datagram Protocol (UDP) datagram
+    - factor about using L2TP or GRE over IPsec for their site-to-site VPN implementation: <span style="color: #bb6600;">GRE over IPsec adds its own header, and L2TP does not</span>
   - reason of traffic not passing through IPsec site-to-site VPN on the Fire power Threat Defense appliance
     - <span style="color: #bb6600;">access control policy</span> is not allowing VPN traffic in
 
@@ -857,7 +860,7 @@
     - an open source project to deploy microsegmentation policy-based services in container environments
     - offer a higher level of networking abstraction for microservices by providing a policy framework
     - built-in service discovery and service routing functions to scale out services
-    - deploy <span style="color: #bb6600;">microsegmentation and multi-tenancy services</span> with a policy-based container
+    - system faciltates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
 
 
@@ -1010,6 +1013,7 @@
   - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
   - solution integrated w/ Umbrella to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - leverage DNS-layer security
+  - security solution protects users leveraging DNS-layer security: <span style="color: #bb6600;">Umbrella</span>
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
   - Policy
     - the heart of Umbrella
@@ -1312,6 +1316,7 @@
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
+  - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
 
 - Firewall Threat Defense (FTD)
@@ -1621,6 +1626,7 @@
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
+  - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
 
 
 - Simple Network Management Protocol (SNMP)
@@ -1989,8 +1995,9 @@
   - use a built-in API in ISE
   - main components: controller, publisher and subscriber
     - controller: core component to make everything working, ISE
-    - <span style="color: #bb6600;">publisher</span>: partner w/ some contextual data to be shared with the other partners, e.g., FMC
+    - publisher: partner w/ some contextual data to be shared with the other partners, e.g., FMC
     - subscriber: partner interested in parsing some contextual data from the other partners
+  - role of FMC when integrating FMC and ISE wusing pxGrid: <span style="color: #bb6600;">publisher</span>
 
 
 - RADIUS Change of Authorization (CoA)
@@ -2164,8 +2171,7 @@
 
 - Multi-factor Authentication (MFA)
   - authentication method two or more verification factors to gain access to a resource
-  - require means of verification that unauthorized users won't have
-  - protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
+  - require means of verification that unauthorized users won't 
   - prevent <span style="color: #bb6600;">brute force attacks</span> from being successful
   - proper MFA using factors from at least two different categories
   - the highest level of prtection against brute-force attacks: <span style="color: #bb6600;">SHA</span>
@@ -2194,6 +2200,7 @@
   - against <span style="color: #bb6600;">phishing, social engineering and password brute-force attacks</span>
   - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple application
   - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
+  - benefit of using a multifactor authentication strategy: protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
 
 
 - EPP & EDR
