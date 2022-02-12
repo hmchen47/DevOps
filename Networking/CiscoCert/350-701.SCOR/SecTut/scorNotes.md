@@ -48,9 +48,9 @@
     - check parameters to ensure actual values
     - use prepared statements and parameterized queries
   - an attack where <span style="color: #bb6600;">code is injected into a browser</span>
-  - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">GET/POST parameters</span>
+  - inject SQL code (via his browser) into forms, cookies, or HTTP headers that do not use data sanitizing or validation methods of <span style="color: #bb6600;">PUT/POST parameters</span>
   - used to <span style="color: #bb6600;">steal information from databases</span>
-  - the <span style="text-decoration:underline;">flaw</span> leveraging when exploiting SQL injection: <span style="color: #bb6600;">user input validation</span> in a web page or web application
+  - what <span style="text-decoration:underline;">flaw</span> leveraging when exploiting SQL injection: <span style="color: #bb6600;">user input validation</span> in a web page or web application
   - prevention techniques used to mitigate SQL injection attacks
     - check integer, float, or Boolean string parameters to <span style="color: #bb6600;">ensure accurate values</span>
     - use <span style="color: #bb6600;">prepared statements and parameterized queries</span>
