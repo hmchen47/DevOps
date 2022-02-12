@@ -12,7 +12,7 @@
       - attach malicious code to clean code
       - wait to be run
       - gain <span style="color: #bb6600;">unauthorized access</span> to a computer system
-    - ransomeware: infect computer and display message demanding a fee to be paid
+    - ransomware: infect computer and display message demanding a fee to be paid
     - spyware:
       - secretely record everything user enter, upload, download and store on computers or mobile devices
       - keep itself hidden
