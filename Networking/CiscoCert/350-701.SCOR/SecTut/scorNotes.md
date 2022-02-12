@@ -309,7 +309,7 @@
     - name mangler
       - offer the flexibility to perform AAA-based policy lookup for the peer based on arbitrary portions of the peer IKE identities of various types
       - referenced from the IKEv2 profile specifically from the `aaa authorization` and `keyring aaa` commands that use AAA authorization for policy lookup
-      - config <span style="color: #bb6600;">OU of the IKEv2 peer certificate</span> used as the identity when matching an IKEv2 authorization policy
+      - config OU of the IKEv2 peer certificate <span style="color: #bb6600;">used as the identity</span> when matching an IKEv2 authorization policy
         - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
   
@@ -509,8 +509,9 @@
       - print list of computer hostname: `print(hostname)`
       - pull all computer hostnames and print them
   - make a SSL connection
-    - connection w/ <span style="color: #bb6600;">TLS1.2 SSL protocol</span>
-    - access w/ <span style="color: #bb6600;">username and password</span> from command line inputs
+    - connection w/ TLS1.2 SSL protocol,not SSH
+    - username and password read from command line
+    - list the LDAP users from the <span style="color: #bb6600;">external identity store</span> configured on Cisco ISE
 
     ```python
     user = sys.argv[2]      # "ersad"
@@ -771,7 +772,7 @@
   - previously known as Cisco Scan Safe
   - enforce secure communication to and from the Internet
   - use the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco
-  - <span style="color: #bb6600;">eliminate the need to backhaul traffic</span> through headquarters for remote workers
+  - a benefit of using Cisco CWS compared to an on-premises Cisco WSA: <span style="color: #bb6600;">CWS eliminates the need to backhaul traffic through headquarters for remote workers</span>
 
 
 - Talos
@@ -801,6 +802,8 @@
     - numerous open-source and commercial threat protection systems
   - utilize the most current intelligence data for URL filtering, reputations, and vulnerability information that can be integrated with the Cisco FTD and Cisco WSA: integrations with <span style="color: #bb6600;">Talos Intelligence</span> to take advantage of the threat intelligence that it provides
   - Firepower downloads threat intelligence updates from Cisco Talos: <span style="color: #bb6600;">comsumption</span>
+  - information about threats and threat actors that helps mitigate harmful events that would otherwise compromise networks or systems: <span style="color: #bb6600;">threat intelligence</span>
+  - solution to integrate with the Cisco FTD and Cisco WSA to improve its cybersecurity processes and to add intelligence to its data by utilizing the most current intelligence data for URL filtering, reputations, and vulnerability information: configure <span style="color: #bb6600;">the integrations with Talos Intelligence</span> to take advantage of the threat intelligence that it provides
 
 
 - Tetration
@@ -852,6 +855,7 @@
     - offer a higher level of networking abstraction for microservices by providing a policy framework
     - built-in service discovery and service routing functions to scale out services
     - deploy <span style="color: #bb6600;">microsegmentation and multi-tenancy services</span> with a policy-based container
+  - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
 
 
 - Cisco Stealhwatch Cloud
@@ -859,11 +863,13 @@
   - available in AWS, Azure, and GCP
   - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
   - Stealthwatch Cloud deploymed and Cloud logging works access as expected but logs are not being received from the on-premise network: <span style="color: #bb6600">deploy a Cisco Stealthwatch Cloud sensor on the network to send data to Cisco Stealthwatch Cloud</span>
-  - on-premises behavior data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
+  - solution using the Ubuntu-based VM appliance deployed in a VMware-based hypervisor to monitor user and device behavior within the on-premises network while data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
   - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
-  - actions to collect full metadata information about the traffic going through their AWS cloud services
+  - actions to collect full metadata information about the traffic going through their AWS cloud services to use this information for behavior analytics and statistics
     - send <span style="color: #bb6600">VPC Flow Logs</span> to Cisco Stealthwatch Cloud
     - configure <span style="color: #bb6600">Cisco Stealthwatch Cloud</span> to ingest AWS information
+  - a cloud-delivered and SaaS-based solution to provide visibility and threat detection across the AWS network deploy without software agents and rely on AWS VPC flow logs instead: <span style="color: #bb6600">Stealthwatch Cloud</span>
+
 
 
 - Private Network Monitoring (PNM)
@@ -1017,7 +1023,8 @@
       - create <span style="color: #bb6600;">a unique list of destinations</span> (e.g., domain name or URL) to which you can block or allow access
       - individual sites to be blocklisted
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
-    - File Inspection: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
+    - <span style="color: #bb6600;">File Inspection</span>: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
+    - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - <span style="color: #bb6600;">intelligent proxy</span>
     - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorize or "grey" domains
     - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
@@ -1401,6 +1408,7 @@
     - control
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
   - config to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity w/ installed WSA: <span style="color: #bb6600;">use an access policy group to configure application control settings</span>
+  - service allowing a user to export application usage and performance statistics with Cisco Application Visibility and control: <span style="color: #bb6600;">NetFlow</span>
 
 
 - ASA FirePOWER module
@@ -1825,6 +1833,7 @@
     - Security Ecosystem Integrations
   - integrated solution: 1) Cisco <span style="color: #bb66oo;">pxGrid</span>; 2) Cisco Rapid Threat Containment
   - ISE nodes for high availability: <span style="color: #bb66oo;">primary and secondary Policy Administration Node (PAN)</span>
+  - action to ensure that the addition of the ISE node will be successful when inputting the FQDN: <span style="color: #bb6600;">make the new Cisco ISE node a secondary PAN before registering it with the primary</span>
   - <span style="color: #bb66oo;">endpoint profiling policy</span>
     - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
@@ -2132,6 +2141,7 @@
       privilege interface level 5 description
       ```
 
+  - test NTP authentication but any device synchronizes time with this router and that NTP authentication is not enforced: <span style="color: #bb6600;">NTP authentication is not enabled</span>
   - type of authentication
     - <span style="color: #bb6600;">external user</span> and relay mail authentication
 
@@ -2199,6 +2209,7 @@
     - <span style="color: #bb66pp;">more advanced detection capabilities</span>
   - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb66pp;">advanced threats that envade perimeter defences</span>
   - Endpoint Detection and Response solution versus Endpoint Protection Platform: <span style="color: #bb66pp;">a need to have more advanced detection capabilities</span>
+  - portion of the network do EPP solutions solely focus on and EDR solutions do not: <span style="color: #bb66pp;">perimeter</span>
 
 
 ## Layer 2 Security
