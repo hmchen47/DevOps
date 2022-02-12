@@ -301,6 +301,7 @@
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 172.19.20.24`
+      - function of the `crypto isakmp key cisc406397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
     - phase 2: IPsec
   - IKEv2
     - standard including NAT-T
@@ -599,6 +600,7 @@
     - stay up to date (patch mgmt)
   - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
+  - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
 
 
 
@@ -766,6 +768,7 @@
   - App Firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
   - tool to protect sensitive data throughout the fullenvironment: <span style="color: #bb6600;">Cloudluck</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
+  - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
 
 
 - Cloud Web Security (CWS)
@@ -991,6 +994,7 @@
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
   - patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
+  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
 
 
 - Umbrella
@@ -1534,7 +1538,7 @@
     - define the information that NetFlow gathers
     - including packets in the flow and the types of counters gathered per flow
     - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
-    - example: config router to send NetFlow data to StealthWatch
+    - config router to send NetFlow data to StealthWatch
       - flow record: `flow record Steathwatch406397954`
       - conditions to match: <span style="color: #bb6600;">`match ipv4 ttl`</span>
   - Flow Exporter
@@ -1915,18 +1919,19 @@
     - a feature of access devices
     - allow to collect information about connected endpoints
     - information collected w/ <span style="color: #bb6600;">CDP, LLDP, DHCP</span>
-  - config AAA on switch for the RADIUS authenticates to Cisco ISE
+  - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
     - command required: `ip radius source-interface`
-    - only requests originated from a <span style="color: #bb6600;">configured NSA IP</span> are accepted by a RADIUS server
+    - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server
   - Duo MFA integration w/ ISE for TACACS+ device administration w/ local/internal (ISE) users
     - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
     - the proxy will then punt the requests back to ISE for local user authentication
     - necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc.
     - success: the end user/admin will be send a "DUO Push"
     - fail: stop and no "Duo Push" will occur
-    - <span style="color: #bb6600;">config process</span>
+    - config process
       - install and config Duo authentication proxy
       - config the identity store within ISE
+    - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
   - guest types
     - associated with particular network access policies
     - deault types
@@ -2050,7 +2055,7 @@
   - example config
     - 802.1X will <span style="color: #bb6600;">work</span> and the device will be <span style="color: #bb6600;">allowed</span> on the network
     - no MAB config
-    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco  to allow all device NOT using machine authentication</span>
+    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco to allow all device NOT using machine authentication</span>
 
     ```text
     <...truncated...>
