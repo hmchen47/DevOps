@@ -129,9 +129,13 @@
     - <span style="color: #bb6600;">deceptive</span>: steal people's personal data or login credentials in a legitmate company
     - <span style="color: #bb6600;">spear</span>: designed to get a single recipient to respond
   - mitigation: <span style="color: #bb6600;">browser alert & email filtering</span>
-  - endpoint measures used to minimize the chances: 1) <span style="color: #bb6600;">spam and virus filter</span>; 2) <span style="color: #bb6600;">up-to-date antimalware</span>
+  - endpoint measures used to minimize the chances
+    - <span style="color: #bb6600;">spam and virus filter</span>
+    - <span style="color: #bb6600;">up-to-date antimalware</span>
+  - mechanisms used to control phising attacks
+    - <span style="color: #bb6600;">enable browser alerts for fraudulent</span>
+    - <span style="color: #bb6600;">implement email filtering techniques</span>
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
-  - mechanisms used to control phising attacks: 1) <span style="color: #bb6600;">enable browser alerts for fraudulent</span>; 2) <span style="color: #bb6600;">implement email filtering techniques</span>
 
 
 - TAXII/STIX
