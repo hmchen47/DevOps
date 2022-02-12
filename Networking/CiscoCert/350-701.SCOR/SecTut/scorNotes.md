@@ -25,9 +25,7 @@
   - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
-  - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span>
-  - back-door virus: any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
-  - Trojan malware attacks: <span style="color: #bb6600;">rootkit & backdoor</span>
+  - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
   - vulnerability to see the password being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
@@ -75,24 +73,25 @@
   - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
 
 
+- Trojan malware attacks
+  - <span style="color: #bb6600;">back-door virus</span>
+    - any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
+  - <span style="color: #bb6600;"></span>
+    - Trojan malware attack
+    - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
+    - a program providing maliciously privileged access to a computer
+    - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
+  - botnet
+    - a collection of internet-connected devices infected by malware
+    - unauthorized access
+    - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
+    - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
+
+
 - Buffer overflow
   - the volume of data exceeds the storage capacity of the memory buffer
   - write the data to the buffer overwrites adjacent memory locations
   - commonly associated w/ <span style="color: #bb6600;">C/C++</span> programming languages
-
-
-- rootkit
-  - Trojan malware attack
-  - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
-  - a program providing maliciously privileged access to a computer
-  - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
-
-
-- botnet
-  - a collection of internet-connected devices infected by malware
-  - unauthorized access
-  - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
-  - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
 - DoS and DDoS
@@ -378,13 +377,10 @@
     > show crypto ipsec sa
     interface: Outside
       crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
-
       access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0 255.255.255.0 10.0.10.0 255.255.255.0
       local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
       remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
       current peer: 209.165.202.129
-      <...truncated...>
-      local crypto endpt.: 209.165.200.225/500, remote crypto endpt.: 209.165.200.129/500
       <...truncated...>
     ```
 
@@ -2048,10 +2044,8 @@
 
       ```text
       Device# show dot1x all
-
       Sysauthcontrol             Enabled
       Dot1x Protocol Version      2
-
       Dot1x Info for FastEthernet1
       -----------------------------------
       PAE                 = AUTHENTICATOR
@@ -2060,7 +2054,7 @@
       HostMode            = MULTI_HOST
       ReAuthentication    = Disabled
       <...truncated...>
-
+      
       Device# show dot1x all summary
 
       Iface PAE  Client         Status 
