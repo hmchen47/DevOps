@@ -138,7 +138,7 @@
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
     - used to author and exchange STIX documents among participants
     - capabilities: 1) push messaging; 2) <span style="color: #bb6600;">pull messaging</span>; 3) discovery <- automated <span style="color: #bb6600;">exchange</span>
-    - functions
+    - functions of TAXII in threat intelligence sharing
       - <span style="color: #bb6600;">exchange</span> trusted anomaly intelligence information
       - determine how threat intelligence information <span style="color: #bb6600;">relayed</span>
   - STIX (Structured Threat Information eXpression)
@@ -648,6 +648,7 @@
   - provide authentication and authorization, security, high availability, networking, load balancing, and operational capabilities to effectively operate and manage <span style="color: #bb6600;">Kubernetes</span> clusters
   - provide a validated configuration of Kubernetes
   - integrate with underlying infrastructure components such as Cisco UCS, Cisco HyperFlex, and Cisco ACI
+  - security product enables administrators to deploy Kubernetes clusters in air-gapped sites without needing Internet access: <span style="color: #bb6600;">Cisco Container Platform</span>
 
 
 - Cisco Intercloud Fabric solution
@@ -853,7 +854,7 @@
     - by default, denying all other traffic
     - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
     - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
-    - environments apply a zero-trust model and specify how applications on different servers or containers can communicate
+    - a description of microsegmentation: environments apply a <span style="color: #bb6600;">zero-trust model</span> and specify how applications on different servers or containers can communicate
   - generating accurate microsegmentation policy
     - application dependency mapping to discover the relationships between different application tiers and infrastructure services
     - supports "what-if" policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
@@ -1000,7 +1001,7 @@
   - custom detection policy 
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
-  - patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
+  - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
@@ -1382,7 +1383,7 @@
   - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
   - the ability to consume threat intelligence via STIX over TAXII
-  - process to use STIX to upload and download blacklists: <span style="color: #bb6600;">consumption</span>
+  - process to use STIX to upload and download black lists w/ Threat Intelligence Director on a FMC: <span style="color: #bb6600;">consumption</span>
   - mechanism
     - observables published to the elements
     - the elements monitor traffic and report observations to the FMC when the system identifies observables in traffic
