@@ -97,12 +97,14 @@
 - DoS and DDoS
   - categories of attacks: <span style="color: #bb6600;">protocol & volume-based</span>
   - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
-  - DoS: a computer is used to flood a server with TCP and UDP packets
+  - DoS: <span style="color: #bb6600;">a computer</span> is used to flood a server with TCP and UDP packets
   - DDoS
     - multiple systems target a single system with a DoS attack
-    - shutting down a network or service, causing it to be inaccessible to its intended users
+    - <span style="color: #bb6600;">shutting down</span> a network or service, causing it to be inaccessible to its intended users
     - an application attack using <span style="color: #bb6600;">botnet</span> from multiple remote locations that flood a web application causing a degraded performance or a complete outage
-  - ping of death behavior: 1) sending <span style="color: #bb6600;">malformed or oversized packets</span> w/ ping command; 2) packets fragmented into <span style="color: #bb6600;">groups of 8 octets</span>
+  - ping of death behavior
+    - sending <span style="color: #bb6600;">malformed or oversized packets</span> w/ ping command
+    - packets fragmented into <span style="color: #bb6600;">groups of 8 octets</span>
   - smurf attack
     - a DDoS attack
     - using a malware program to exploit Internet Protocol (IP) and Internet Control Message Protocol (ICMP)
