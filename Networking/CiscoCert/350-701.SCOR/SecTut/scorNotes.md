@@ -141,7 +141,7 @@
 - TAXII/STIX
   - TAXII (Trusted Automated Exchange of Indicator Information)
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
-    - used to author and exchange STIX documents among participants
+    - used to autho and exchange STIX documents among participants
     - capabilities: 1) push messaging; 2) <span style="color: #bb6600;">pull messaging</span>; 3) discovery <- automated <span style="color: #bb6600;">exchange</span>
     - functions of TAXII in threat intelligence sharing
       - <span style="color: #bb6600;">exchange</span> trusted anomaly intelligence information
@@ -174,7 +174,7 @@
   - assumptions
     - no traditional network edge
     - networks can be local, in the cloud, or a combination or hybrid with resources anywhere and workers in any location
-  - use <span style="color: #bb6600;">microsegmentation</span> to to contain attacks
+  - use <span style="color: #bb6600;">microsegmentation</span> to contain attacks
   - technology to secure data in a cloud environment where 1) all users be authenticated and authorized; 2) security configuration and posture continuously validated before access is granted or maintained to applications and data; 3) allow certain application traffic and deny all other traffic by default: <span style="color: #bb6600;">microsegmentation</span>
 
 
