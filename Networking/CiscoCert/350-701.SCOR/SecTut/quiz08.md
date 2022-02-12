@@ -1313,7 +1313,7 @@
 
   ```python
   ...#{code snippet}
-  api+path = "/api/access/global/rules"
+  api_path = "/api/access/global/rules"
   url = server + api_path
   f = None
   post_data = {
