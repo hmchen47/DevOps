@@ -56,7 +56,7 @@
     - use <span style="color: #bb6600;">prepared statements and parameterized queries</span>
 
 
-- Cross Site Script (XSS): 
+- Cross Site Scripting (XSS): 
   - web application gathering malicious data
   - usually gathered in the form of a hyperlink
   - click on this link from another website, instant message, or simply simply just reading a web board or email message
@@ -64,9 +64,8 @@
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
   - preventive measures: 1) enable client-side scripts on a <span style="color: #bb6600;">per-domain basis</span>; 2) <span style="color: #bb6600;">contextual output encoding/escaping</span>
   - exploit website vulnerability by injecting scripts that will run at client's side.
-  - an attack where code is injected into a database (server)
   - a client-side vulnerability that targets other application users
-  - <span style="color: #bb6600;">inject malicious code (usually malicious links) into a database</span>
+  - attack by <span style="color: #bb6600;">injecting malicious code (usually malicious links) into a database</span>
   - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
   - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
