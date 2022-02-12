@@ -148,11 +148,12 @@
 
 
 - OpenIOC
-  - an open framework, meant for sharing threat intelligence information in a <span style="color: #bb6600;">machine-readable format</span>
+  - an open framework, meant for sharing threat intelligence information in a machine-readable format
   - developed by the American cybersecurity firm MANDIANT in November 2011
   - in eXtensible Markup Language (XML) format
   - easily customized for additional intelligence so that incident responders can translate their knowledge into a standard format
   - leverage this format to share threat-related latest Indicators of Compromise (IoCs) with other organizations, enabling real-time protection against the latest threats
+  - open standard creates a framework for sharing threat intelligence in a machine-digestible format: <span style="color: #bb6600;">OpenIoC</span>
 
 
 - <span style="color: #bb6600;">Common Vulnerabilities & Exposures (CVE)</span>
@@ -452,8 +453,9 @@
     - using common management protocols to monitor and configure the network devices
   - northbound interfact (NBI)
     - intent API
-    - an abstraction of network functions with a programmable interface for <span style="color: #bb6600;">applications</span> to consume the network services and configure the network dynamically
-    - SDN controller communicating w/ <span style="color: #bb6600;">network service applications, the management solution </span>
+    - an abstraction of network functions with <span style="color: #bb6600;">a programmable interface for applications</span> to consume the network services and configure the network dynamically
+    - SDN controller communicating w/ network service applications, the management solution
+    - form the interface between the SDN controller and <span style="color: #bb6600;">business applications</span>
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
     - used for the <span style="color: #bb6600;">orchestration and automation</span> of the network components to align with the needs of different applications via SDN network programmability
@@ -530,10 +532,11 @@
     )
     ```
 
-  - <span style="color: #bb6600;">add a global rule</span> into policies
+  - POST data to global rules
+    - <span style="color: #bb6600;">add a global rule into policies</span>
 
     ```python
-    api+path = "/api/access/global/rules"
+    api_path = "/api/access/global/rules"
     ...
     post_data = {
       ...
@@ -598,9 +601,10 @@
   - secure SaaS-based applications
     - all administrative access to SaaS applications as privileged
     - set up single sign-on (SSO) integrations
-    - Use <span style="color: #bb6600;">multi-factor authentication (MFA)</span>
+    - use multi-factor authentication (MFA)
     - install and integrate an identity governance solution
     - stay up to date (patch mgmt)
+  - enable to secure SaaS-based applications: <span style="color: #bb6600;">two-factor authentication</span>
   - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
   - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
@@ -626,7 +630,7 @@
   - DevSecOps implementation process gives a weekly or daily update instead of monthly or quarterly in the applications: <span style="color: #bb6600;">CI/CD pipeline</span>
 
 
-- Data Center Network Manager (DCNM)
+- Data Center Network Manager )
   - manage multiple devices, while providing ready-to-use control, automation, monitoring, visualization, and troubleshooting capabilities
   - working for many switch series
   - network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics
@@ -637,6 +641,7 @@
     - 3\. select Hops from Seed Switch or Switch List
     - 4\. enter the <span style="color: #bb6600;">Seed Switch IP </span> for the fabric
     - ...
+  - methods must be used to add switches into the fabric so that administrators can control how switches are added into DCNM for private cloud management: <span style="color: #bb6600;">PowerOn Auto Provisioning</span> and <span style="color: #bb6600;">Seed IP</span>
 
 
 - Cisco Container Platform (CCP)
@@ -998,7 +1003,7 @@
   - patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
-
+  - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
 
 - Umbrella
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
@@ -1077,7 +1082,7 @@
     - a cloud-delivered security service for Cisco's next-generation firewall
     - protect employees even when they are off the VPN
     - role to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
-  - protect users of endpoint solution from a phishing: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
+  - endpoint solution protects a user from a phishing attack: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
@@ -1321,7 +1326,9 @@
 
 - Firewall Threat Defense (FTD)
   - config new FTD device not behind a NAT device to be managed w/ FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
-  - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>; e.g., <span style="color: #bb6600;">backup policy w/ priority 5 and primary polity w/ priority 1</span>
+  - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>
+    - <span style="color: #bb6600;">backup policy w/ priority 5 and primary polity w/ priority 1</span>
+    - configure Cisco Umbrella and has an identity that references two different policies and ensures that the policy that the identity must use takes precedence over the second one: <span style="color: #bb6600;">make the correct policy first in the policy order</span>
   - Modbus, DNP3 and CIP SCADA preprocessors
     - analyze protocol fields and detect anomalies in the traffic from <span style="color: #bb6600;">industrial systems</span>
     - used to detect traffic anomalies
@@ -1884,7 +1891,7 @@
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
-  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: tag the guest portal in the CWA part of the <span style="color: #bb6600;">Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
+  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
     - 802.1X port-based Authentication
     - MAC Authentication Bypass (MAB)
@@ -1944,6 +1951,7 @@
       - <span style="color: #bb6600;">Contractor</span>: Users who need access to the network for an extended amount of time, up to a year.
       - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
       - Weekly: Users who need access to the network for a couple of weeks.
+    - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
   - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - inline posture node
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
@@ -2097,7 +2105,7 @@
   - a fallback option for devices that don't support 802.1x
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
-  - success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <span style="color: #bb6600;">`aaa authorization network default group ise`</span> config required
+  - command to make AAA session w/ success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <span style="color: #bb6600;">`aaa authorization network default group ise`</span> config required
   - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
