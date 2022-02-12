@@ -75,23 +75,25 @@
 
 - Trojan malware attacks
   - <span style="color: #bb6600;">back-door virus</span>
-    - any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
+  - any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
   - <span style="color: #bb6600;"></span>
     - Trojan malware attack
     - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
     - a program providing maliciously privileged access to a computer
     - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
-  - botnet
-    - a collection of internet-connected devices infected by malware
-    - unauthorized access
-    - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
-    - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
 - Buffer overflow
   - the volume of data exceeds the storage capacity of the memory buffer
   - write the data to the buffer overwrites adjacent memory locations
   - commonly associated w/ <span style="color: #bb6600;">C/C++</span> programming languages
+
+
+- botnet
+  - a collection of internet-connected devices infected by malware
+  - unauthorized access
+  - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
+  - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
 - DoS and DDoS
