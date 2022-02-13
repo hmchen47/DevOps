@@ -14,7 +14,7 @@
       - gain <span style="color: #bb6600;">unauthorized access</span> to a computer system
     - ransomware: infect computer and display message demanding a fee to be paid
     - spyware:
-      - secretely record everything user enter, upload, download and store on computers or mobile devices
+      - secretly record everything user enter, upload, download and store on computers or mobile devices
       - keep itself hidden
   - vulnerability: a weakness in a software system
   - expolit:
@@ -187,11 +187,9 @@
     - encode the data of other programs or protocols in DNS queries and responses
     - often including data payloads added to an attacked DNS server and used to control a remote server and applications
     - <span style="color: #bb6600;">encode the payload with random characters</span> that are broken into short strings and the DNS server rebuilds the exfiltrated data
-    - An attacker registers a domain that a client connects to based on DNS records and sends malware through that connection.
-    - DNS abuse exchanges data between two computers even when there is no direct connection
     - data sent out as part of the <span style="color: #bb6600;">domain name</span>
-    - <span style="color: #bb6600;">register a domain</span> that a client connects to based on DNS records and send malware through that connection
-    - type of DNS abuse exchanges data between two computers even when there is no direct connection: <span style="color: #bb6600;">data exfiltration</span>
+    - an attacker <span style="color: #bb6600;">registers a domain</span> that a client connects to based on DNS records and send malware through that connection
+    - type of risk that DNS abuse exchanges data between two computers even when there is no direct connection: <span style="color: #bb6600;">data exfiltration</span>
   - characteristics of messenger protocol for data exflitration
     - <span style="color: #bb6600;">encrypted traffic</span> which prevents visibility on firewalls and IPS systems
     - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
@@ -237,8 +235,8 @@
 
 - Cryptography
   - symmetric key cipher
-    - same <span style="color: #bb6600;">secrete key</span> used for both encryption and decryption
-    - same secrete key used by both sender and receiver
+    - same <span style="color: #bb6600;">secret key</span> used for both encryption and decryption
+    - same secret key used by both sender and receiver
     - suited to internal encryption
     - pros: 1) faster; 2) efficient
     - Data Encryption Standard (DES)
