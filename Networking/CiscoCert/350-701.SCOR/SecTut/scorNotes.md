@@ -306,17 +306,17 @@
           - cmd `crypto isakmp key ciscXXXXXXXX address 172.16.0.0`: authenticates the IP address of the <span style="color: #bb6600;">172.16.0.0/32 peer</span> by using the key `ciscXXXXXXXX`
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
-        - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 172.19.20.24`
+        - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 address 172.19.20.24`
       - function of the `crypto isakmp key cisc6397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
     - phase 2: IPsec
   - IKEv2
-    - standard including NAT-T
+    - standard  <span style="color: #bb6600;">including NAT-T</span>
     - <span style="color: #bb6600;">4 msgs</span> for both phase 1 & 2
     - using <span style="color: #bb6600;">EAP for authenticating</span> remote access clients
     - name mangler
       - offer the flexibility to perform AAA-based policy lookup for the peer based on arbitrary portions of the peer IKE identities of various types
       - referenced from the IKEv2 profile specifically from the `aaa authorization` and `keyring aaa` commands that use AAA authorization for policy lookup
-      - config OU of the IKEv2 peer certificate <span style="color: #bb6600;">used as the identity</span> when matching an IKEv2 authorization policy
+      - config OU of the <span style="color: #bb6600;">IKEv2 peer certificate used as the identity</span> when matching an IKEv2 authorization policy
         - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
   
