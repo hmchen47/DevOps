@@ -372,7 +372,7 @@
     - port number: L2TP UDP:1701; GRE - IP:47 
     - GRE protocol <span style="color: #bb6600;">adds its own header</span> (4 bytes plus options) between the payload (data) and the delivery header
     - L2TP packet including payload and L2TP header, sent within a User Datagram Protocol (UDP) datagram
-    - factor about using L2TP or GRE over IPsec for their site-to-site VPN implementation: <span style="color: #bb6600;">GRE over IPsec adds its own header, and L2TP does not</span>
+    - fact about using L2TP or GRE over IPsec for their site-to-site VPN implementation: <span style="color: #bb6600;">GRE over IPsec adds its own header, and L2TP does not</span>
   - reason of traffic not passing through IPsec site-to-site VPN on the Fire power Threat Defense appliance
     - <span style="color: #bb6600;">access control policy</span> is not allowing VPN traffic in
 
@@ -380,6 +380,7 @@
     > show crypto ipsec sa
     interface: Outside
       crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
+      
       access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0 255.255.255.0 10.0.10.0 255.255.255.0
       local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
       remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
