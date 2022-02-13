@@ -413,7 +413,7 @@
   - same as DMVPN
     - point-to-point GRE tunnels
     - spoke-to-spoke connectivity achieved with <span style="color: #bb6600;">NHRP redirect message</span>
-    - IOS routers w/ the same NHRP code
+    - IOS routers w/ the <span style="color: #bb6600;">same NHRP code</span>
     - Cisco's proprietary technologies
   - differences
     - P2P GRE tunnels: DMVPN - static; FlexVPN - <span style="color: #bb6600;">static/dynamic</span>
