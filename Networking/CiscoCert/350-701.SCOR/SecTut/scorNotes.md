@@ -397,8 +397,8 @@
   - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
   - NOT support multiple SAs
   - AnyConnect superior capabilities:
-    - customization of access policies <span style="color: #bb6600;">based on user identity</span>
-    - enable VPN access for individual users from their machines
+    - customization of <span style="color: #bb6600;">access policies based on user identity</span>
+    - enable VPN access for <span style="color: #bb6600;">individual users</span> from their machines
   - advantages of using Cisco Any connect over DMVPN
     - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
