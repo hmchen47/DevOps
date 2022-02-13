@@ -220,7 +220,7 @@
     - purpose of CA in a PKI: <span style="color: #bb6600;">issue and revoke digital certificates</span>
   - Cisco IOS public key infrastructure (PKI)
     - provide certificate management to support security protocols
-    - including IP Security (IPSec), secure shell (SSH), and secure socket layer (SSL)
+    - including IP Security (IPsec), secure shell (SSH), and secure socket layer (SSL)
     - entities
       - peers communicating on a secure network
       - at least one certification authority (CA) that grants and maintains certificates
@@ -278,7 +278,7 @@
     - stronger than Message Digest 5 (MD5)
     - provide data integrity (to guarantee data has not been altered in transit) and authentication (to guarantee data came from the source it was supposed to come from)
     - used with the <span style="color: #bb6600;">digital signature standard</span>
-    - used by IPSec to ensure that a message has not been altered
+    - used by IPsec to ensure that a message has not been altered
 
 
 
@@ -290,7 +290,7 @@
   - a <span style="color: #bb6600;">key management protocol</span> used to set up a security association (SA) using Internet Protocol Security (IPsec)
   - IKE SA
     - describe the <span style="color: #bb6600;">security parameters</span> between two IKE devices
-    - the first stage in establishing IPSec
+    - the first stage in establishing IPsec
   - IKEv1
     - Phase 1: ISAKMP
       - define <span style="color: #bb6600;">IKE SAs</span>
@@ -333,7 +333,6 @@
   - ESP protocol
     - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
     - used with confidentiality only, authentication only, or both confidentiality and authentication
-    - reliable authenticaton protocol and supporting <span style="color: #bb6600;">ACK and sequence</span>
     - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for packet</span>
     - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
   - stateful failover
@@ -417,7 +416,7 @@
     - Cisco's proprietary technologies
   - differences
     - P2P GRE tunnels: DMVPN - static; FlexVPN - <span style="color: #bb6600;">static/dynamic</span>
-    - crypto: DMVPN - optional; FlexVPN - strongly tied into IPSec
+    - crypto: DMVPN - optional; FlexVPN - strongly tied into IPsec
     - key management protocol: DMVPN - IKEv1/IKEv2; FlexVPN – IKEv2
     - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
     - NHRP: DMVPN - 3 phases; FlexVPN - only one standard way
