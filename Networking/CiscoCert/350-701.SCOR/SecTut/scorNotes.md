@@ -342,7 +342,7 @@
 
 
 - SSL, TLS & DTLS
-  - DTLS
+  - Datagram Transport Layer Security (DTLS)
     - UDP based
     - used for delay sensitive applications (voice and video)
     - <span style="color: #bb6600;">strongest throughput performance</span>
