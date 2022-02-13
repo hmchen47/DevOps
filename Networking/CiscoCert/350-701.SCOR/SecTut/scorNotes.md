@@ -429,7 +429,7 @@
   - a <span style="color: #bb6600;">trunnel-less</span> VPN
   - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
-  - scalable for `crypto isakmp key cisco address 1.2.3.4`any-to-any connectivity and encryption</span>
+  - scalable for `crypto isakmp key cisco address 1.2.3.4` any-to-any connectivity and encryption</span>
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
   - a difference between GETVPN and IPsec: GETVPN reduces latency and provides encryption over MPLS <span style="color: #bb6600;">without the use of a central hub</span>
