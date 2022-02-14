@@ -599,7 +599,6 @@
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
-  - customers: NO responsibility of <span style="color: #bb6600;">OS patch management</span>: PaaS
   - secure SaaS-based applications
     - all administrative access to SaaS applications as privileged
     - set up single sign-on (SSO) integrations
