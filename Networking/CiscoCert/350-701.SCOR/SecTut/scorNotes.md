@@ -719,7 +719,7 @@
   - routed mode 
     - act as a next hop for workloads
     - inspect packets and also take action on the packet based on rule and policy definitions
-  - public cloud provider: <span style="color: #bb6600;">Amazon Web Services</span
+  - public cloud provider: <span style="color: #bb6600;">Amazon Web Services</span>
 
 
 - ASAv on AWS
