@@ -757,9 +757,15 @@
   - migrate a Cisco WSA virtual appliance from one physical host to another physical host by using VMware Motion: <span style="color: #bb6600;">access to the same defined network</span>
 
 
+- Cloud Web Security (CWS)
+  - previously known as Cisco Scan Safe
+  - enforce secure communication to and from the Internet
+  - use the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco
+  - a benefit of using Cisco CWS compared to an on-premises Cisco WSA: <span style="color: #bb6600;">CWS eliminates the need to backhaul traffic through headquarters for remote workers</span>
+
+
 - Cloudlock
   - a cloud-based <span style="color: #bb6600;">Cloud Access Security Broker (CASB)</span> and cloud cybersecurity platform
-  - a cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an <span style="color: #bb6600;">API</span>
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
   - able to access and use Cisco Umbrella features, including DNS monitoring, Umbrella App Discovery and Umbrella Cloud Malware
@@ -770,22 +776,15 @@
     - Apps Firewall (Apps Firewall)
     - App Discovery (App Discovery)
   - discover and control apps connected to corporate environment
-  - <span style="color: #bb6600;">monitor traffic, create incidents based on events, and integrate</span> with other cloud solutions via an API
+  - <span style="color: #bb6600;">monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API</span>
     - utilize various techniques to surface potential threats from various categories which focus on Locations, IPs and Users Login Activity
     - continuously monitor cloud environments with a cloud Data Loss Prevention (DLP) engine to identify sensitive information stored in cloud environments in violation of policy
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
-  - App Firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
-  - tool to protect sensitive data throughout the fullenvironment: <span style="color: #bb6600;">Cloudluck</span>
+  - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
+  - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
-
-
-- Cloud Web Security (CWS)
-  - previously known as Cisco Scan Safe
-  - enforce secure communication to and from the Internet
-  - use the Cisco AnyConnect Secure Mobility Client 3.0 to provide remote workers the same level of security as onsite employees when using a laptop issued by Cisco
-  - a benefit of using Cisco CWS compared to an on-premises Cisco WSA: <span style="color: #bb6600;">CWS eliminates the need to backhaul traffic through headquarters for remote workers</span>
 
 
 - Talos
