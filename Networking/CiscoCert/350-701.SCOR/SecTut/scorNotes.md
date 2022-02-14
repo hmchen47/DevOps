@@ -630,7 +630,7 @@
   - DevSecOps implementation process gives a weekly or daily update instead of monthly or quarterly in the applications: <span style="color: #bb6600;">CI/CD pipeline</span>
 
 
-- Data Center Network Manager )
+- Data Center Network Manager (DCNM)
   - manage multiple devices, while providing ready-to-use control, automation, monitoring, visualization, and troubleshooting capabilities
   - working for many switch series
   - network management system (NMS) support for traditional or multiple-tenant LAN and SAN fabrics
@@ -660,7 +660,7 @@
 
 
 - Cisco DNA Center (DNAC)
-  - a <span style="color: #bb6600;">central Management</span> and Automation software
+  - a <span style="color: #bb6600;">central Management and Automation</span> software
   - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
   - feature of open platform capabilities: <span style="color: #bb6600;">intent-based APIs</span>
   - the <span style="color: #bb6600;">command and control center</span> for Cisco DNA–based networks
@@ -671,7 +671,6 @@
     - policy: translate business intent into network policies and apply those policies
     - <span style="color: #bb6600;">provision</span>: assigned new device to an SGT based on identity—greatly facilitating remote office setups
     - assurance: using AI/ML, enables every point on the network to become a sensor
-  - open platform capabilities: intent-based API (Northbound API)
   - characteristics of APIs
     - quickly <span style="color: #bb6600;">provision</span> new devices
     - view the <span style="color: #bb6600;">overall health</span> of the network
