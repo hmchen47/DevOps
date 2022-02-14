@@ -504,20 +504,19 @@
 
 
 - Python script for SDN APIs
-  - device API
-    - add a switch to <span style="color: #bb6600;">DNA Center</span>: `requests.post("https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
-    - AMP API to print <span style="color: #bb6600;">network interface info</span>
-      - URL: `get https://api.amp.cisco.com/v1/computers`
-      - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
-      - list of network interface info: `print(mac, ip , ipv6)`
-    - AMP API to print hostname
-      - URL: `get https://api.amp.cisco.com/v1/computers`
-      - print list of computer hostname: `print(hostname)`
-      - pull all computer hostnames and print them
+  - <span style="color: #bb6600;">add a switch to DNA Center</span>: `requests.post( "https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
+  - AMP API to <span style="color: #bb6600;">print network interface info</span>
+    - URL: `get https://api.amp.cisco.com/v1/computers`
+    - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
+    - list of network interface info: `print(mac, ip , ipv6)`
+  - AMP API to <span style="color: #bb6600;">print hostname</span>
+    - URL: `get https://api.amp.cisco.com/v1/computers`
+    - print list of computer hostname: `print(hostname)`
+    - pull all computer hostnames and print them
   - make a SSL connection
-    - connection w/ TLS1.2 SSL protocol,not SSH
+    - connection w/ TLS1.2 SSL protocol, not SSH
     - username and password read from command line
-    - list the LDAP users from the <span style="color: #bb6600;">external identity store</span> configured on Cisco ISE
+    - <span style="color: #bb6600;">list the LDAP users from the external identity store</span> configured on Cisco ISE
 
     ```python
     user = sys.argv[2]      # "ersad"
@@ -530,6 +529,8 @@
       "{}:9060".format(host), 
       context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     )
+
+    ...
     ```
 
   - POST data to global rules
@@ -542,6 +543,7 @@
       ...
     }
     req = urllib2.Request(url, json.dumps(post_data), headers)
+    ...
     ```
 
 
@@ -574,16 +576,6 @@
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
     - SaaS: none
-
-    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-        onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
-        src    = "img/0803-iaas_paas-saas-compare.png"
-        alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
-        title  = "Cloud Computing: SaaS, PaaS, & IaaS"
-      />
-    </figure>
-
   - IaaS service
     - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
     - sercure responsibility of provider: <span style="color: #bb6600;">firewalling virtual machine</span>
@@ -594,6 +586,16 @@
   - SaaS service:
     - provide a complete packaged solution
     - software rented out to the user
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/cloud-questions')"
+      src    = "img/0803-iaas_paas-saas-compare.png"
+      alt    = "Cloud Computing: SaaS, PaaS, & IaaS"
+      title  = "Cloud Computing: SaaS, PaaS, & IaaS"
+    />
+  </figure>
+
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
@@ -608,7 +610,6 @@
   - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
   - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
-
 
 
 - Cloud security assessment
