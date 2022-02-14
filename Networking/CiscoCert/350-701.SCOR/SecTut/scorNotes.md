@@ -737,12 +737,14 @@
   - scenario: mirror port and NetFlow used in local devices
     - NO mirror port and NetFlow data in cloud environment
     - virtual private cloud (VPC) in AWS offers <span style="color: #bb6600;">VPC Flow log</span>
-  - VPC Flow
-    - facilitate logging of all the IP traffic to, from, and across your network
-    - stored as records in special <span style="color: #bb6600;">Amazon CloudWatch log groups</span>
-    - provide the same kind of information as NetFlow data
-    - mechanism to configure the organization’s public cloud to send telemetry using the cloud provider’s mechanisms to a security device: <span style="color: #bb6600;">VPC flow logs</span>
   - NO URL filtering feature as FTDv
+
+
+- VPC Flow
+  - facilitate logging of all the IP traffic to, from, and across your network
+  - stored as records in special <span style="color: #bb6600;">Amazon CloudWatch log groups</span>
+  - provide the same kind of information as NetFlow data
+  - mechanism to configure the organization’s public cloud to send telemetry using the cloud provider’s mechanisms to a security device: <span style="color: #bb6600;">VPC flow logs</span>
 
 
 - Secure Virtual Appliance
