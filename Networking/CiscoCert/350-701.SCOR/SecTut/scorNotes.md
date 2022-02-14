@@ -751,10 +751,10 @@
   - functions same as physical Cisco Secure Email Gateway, Cisco Secure Web Appliance, or Cisco Secure Email and Web Manager hardware appliances, with only a few minor differences
   - requirements to migrate virtual appliance to another physical host
     - same network configuration
-    - same <span style="color: #bb6600;">defined network(s)</span> to which the interfaces on the virtual appliance are mapped
+    - same defined network(s) to which the interfaces on the virtual appliance are mapped
     - datastore that the virtual appliance uses
     - Secure Email Virtual Gateway w/o mail in its queue
-  - migrate a Cisco WSA virtual appliance from one physical host to another physical host by using VMware Motion: access to the same defined network
+  - migrate a Cisco WSA virtual appliance from one physical host to another physical host by using VMware Motion: <span style="color: #bb6600;">access to the same defined network</span>
 
 
 - Cloudlock
