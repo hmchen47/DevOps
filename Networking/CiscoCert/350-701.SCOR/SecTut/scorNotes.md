@@ -571,7 +571,6 @@
     - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs, web portals, or gateway software; 4) developing applications
     - SaaS: 1) software rent; 2) usually access via front end or web portal
   - most secure service type: <span style="color: #bb6600;">private cloud</span>
-  - DecSecOps: focusing on <span style="color: #bb6600;">application development</span>
   - responsibility for customers and service providers
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
@@ -623,6 +622,7 @@
   - built-in security practices in the continuous integration/continuous deployment (CI/CD) pipeline
   - minimize vulnerabilities and bringing security closer to IT and business objectives
   - attribute: <span style="color: #bb6600;">development security</span>
+  - focusing on <span style="color: #bb6600;">application development</span>
   - key things make a real DevSecOps environment:
     - security testing is done by the development team
     - issues found during that testing is managed by the development team
