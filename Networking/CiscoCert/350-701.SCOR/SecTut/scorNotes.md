@@ -452,7 +452,7 @@
     - global view of the network
     - using common management protocols to monitor and configure the network devices
   - northbound interfact (NBI)
-    - intent API
+    - <span style="color: #bb6600;">intent API</span>
     - an abstraction of network functions with <span style="color: #bb6600;">a programmable interface for applications</span> to consume the network services and configure the network dynamically
     - SDN controller communicating w/ network service applications, the management solution
     - form the interface between the SDN controller and <span style="color: #bb6600;">business applications</span>
@@ -473,11 +473,11 @@
     - meet the need to scale and accelerate operations in modern data centers, IT operators require intelligent, end-to-end work flows built with open APIs
     - provide mechanisms for <span style="color: #bb6600;">integrating Cisco DNA Assurance workflows and data</span> with third-party IT Service Management (ITSM) solutions
     - power end-to-end IT processes across the value chain by integrating various domains such as ITSM, IPAM, and reporting
-    - (?) leverage the REST-based Integration Adapter APIs
+    - leverage the REST-based Integration Adapter APIs
     - bi-directional interfaces allow the <span style="color: #bb6600;">exchange of contextual information</span> between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
     - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
-  - security application notify the controller about a specific <span style="color: #bb6600;">security threats</span>: northbound and southbound
+  - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
 
 
