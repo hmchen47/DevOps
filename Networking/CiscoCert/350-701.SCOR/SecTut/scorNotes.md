@@ -898,7 +898,6 @@
   - logical security controls on endpoints still exist even training on staffs: <span style="color: #bb6600;">human error or inside threats still exist</span>
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
-  - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - characteristics
     - detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
@@ -911,7 +910,7 @@
     - <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group
     - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
   - file disposition:
-    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
+    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines <span style="color: #bb6600">what actions are taken on the file download</span>
     - actions for file disposition
       - clean - the file known to be good
       - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
