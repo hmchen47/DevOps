@@ -890,7 +890,7 @@
   - deploy lightweight software in a virtual machine or server that can consume a variety of native sources of telemetry or extract metadata from network packet flow
   - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
   - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
-  - solution to extract metadata from network packet flow while ensuring that payloads are not retained or transferred outside the network winthin an organization provides visibility and to identify active threats in its network using a VM: <span style="color: #bb6600">StealthwatchCloud PNM</span>
+  - solution to extract metadata from network packet flow while ensuring that payloads are not retained or transferred outside the network winthin an organization provides visibility and to identify active threats in its network using a VM: <span style="color: #bb6600">Stealthwatch Cloud PNM</span>
 
 
 - Secure Endpoint
