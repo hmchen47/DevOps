@@ -332,26 +332,6 @@
       - config OU of the <span style="color: #bb6600;">IKEv2 peer certificate used as the identity</span> when matching an IKEv2 authorization policy
         - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
-  
-
-- IP Security (IPsec)
-  - Cryptographic algorithms w/ IPsec include
-    - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
-    - TripleDES-CBC for confidentiality
-    - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality
-    - <span style="color: #bb6600;">AES-GCM</span> and ChaCha20-Poly1305 providing confidentiality (encryption) and authentication together efficiently
-  - AH protocol
-    - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
-    - provide data integrity, data origin authentication, and an optional replay protection service
-  - ESP protocol
-    - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
-    - used with confidentiality only, authentication only, or both confidentiality and authentication
-    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for packet</span>
-    - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
-  - stateful failover
-    - enable a router to continue processing and forwarding IPsec packets after outage occurs
-    - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
-    - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> of active device on standby device
 
 
 - SSL, TLS & DTLS
@@ -371,6 +351,26 @@
     Info: MID 80 matched all recipients for per-recipient policy
       DEFAULT in the outbound table
     ```
+
+
+- IP Security (IPsec)
+  - Cryptographic algorithms w/ IPsec include
+    - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
+    - TripleDES-CBC for confidentiality
+    - <span style="color: #bb6600;">AES-CBC</span> and AES-CTR for confidentiality
+    - <span style="color: #bb6600;">AES-GCM</span> and ChaCha20-Poly1305 providing confidentiality (encryption) and authentication together efficiently
+  - AH protocol
+    - provide a mechanism for <span style="color: #bb6600;">authentication only</span>
+    - provide data integrity, data origin authentication, and an optional replay protection service
+  - ESP protocol
+    - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
+    - used with confidentiality only, authentication only, or both confidentiality and authentication
+    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for packet</span>
+    - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
+  - stateful failover
+    - enable a router to continue processing and forwarding IPsec packets after outage occurs
+    - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
+    - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> of active device on standby device
 
 
 - Site-to-site VPN
@@ -588,16 +588,6 @@
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
     - SaaS: none
-  - IaaS service
-    - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
-    - sercure responsibility of provider: <span style="color: #bb6600;">firewalling virtual machine</span>
-    - tenant responsible for <span style="color: #bb6600;">virtual machine OS patching</span>
-  - PaaS service
-    - offer an environment for cloud consumers to <span style="color: #bb6600;">develop and deploy applications</span> without needing to manage or maintain the underlying cloud infrastructure
-    - tenant responsible for <span style="color: #bb6600;">application maintaining and patching</span>
-  - SaaS service:
-    - provide a complete packaged solution
-    - software rented out to the user
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
@@ -608,6 +598,16 @@
     />
   </figure>
 
+  - IaaS service
+    - resources to users/machines including computers as virtual machines, raw (block) storage, firewalls, load balancers, and network devices
+    - sercure responsibility of provider: <span style="color: #bb6600;">firewalling virtual machine</span>
+    - tenant responsible for <span style="color: #bb6600;">virtual machine OS patching</span>
+  - PaaS service
+    - offer an environment for cloud consumers to <span style="color: #bb6600;">develop and deploy applications</span> without needing to manage or maintain the underlying cloud infrastructure
+    - tenant responsible for <span style="color: #bb6600;">application maintaining and patching</span>
+  - SaaS service:
+    - provide a complete packaged solution
+    - software rented out to the user
   - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
     - on-primese solution: customer
     - cloud-based solution: provider
