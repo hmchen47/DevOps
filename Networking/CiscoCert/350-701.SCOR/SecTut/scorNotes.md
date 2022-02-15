@@ -899,51 +899,76 @@
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
+  - outbreak control: a variety of lists that allow to customize it to users' needs
+  - exclusion set: a list of directories,file extensions, or threat names that users do not want Secure Endpoint connector to scan or convict
+  - policy
+    - combining outbreak control and exclusions sets w/ other settings
+    - affect the behavior and certain settings of the connectors
+    -applied to a computer via Groups
+  - group: allow the computers inn organization to be managed according to their function, location, or  other criteria that is determined by the administrator
   - characteristics
     - detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
     - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
     - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
-    - to detect, confirm, track, analyze, and remediate these threats
-  - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
-    - <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group
-    - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
-  - file disposition:
-    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines <span style="color: #bb6600">what actions are taken on the file download</span>
-    - actions for file disposition
-      - clean - the file known to be good
-      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
-      - unknown - insufficient data to classify the file as clean or malicious
-  - private cloud deployment modes
-    - cloud proxy mode 
-      - virtual and physical appliance
-      - Internet connection required to complete disposition lookups
-      - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
-      - <span style="color: #bb6600">SHA-256 hash</span> of the file inspected from AMP public cloud
-      - <span style="color: #bb6600">content and software updates automatically</span> from AMP public cloud via AMP private cloud
-    - air-gap mode
-      - only on the physical mode
-      - no Internet connection required to complete disposition lookups
-      - traffic only btw the connectors and the appliance
-      - disposition queries handled by the private cloud
-    - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
-  - differences btw public and private cloud
-    - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
-    - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
-  - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
-  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
-  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
-  - custom detection policy 
-    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
-    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
+    - to detect, confirm, track, analyze, and remediate these
   - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
-  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
 
 
-- File inspection of AMP for Endpoints
+- Secure Endpoint (AMP for Endpoints) - Outbreak control
+  - Custom Detection
+    - <span style="color: #bb6600">Simple</span> to convict files not yet classified
+    - <span style="color: #bb6600">Advanced</span> to create signatures that will detect parts of Portable Executable (PE) file 
+    - <span style="color: #bb6600">Android</span> to warm of new threats or unwanted apps
+  - Application Control
+    - <span style="color: #bb6600">locked Lists</span> to stop executable from running
+    - <span style="color: #bb6600">llowed Lists</span> to create lists of applications that will not be wrongly
+  - Network
+    - <span style="color: #bb6600">IP blocked and Allowed Lists</span> explicitly detect or allow connections to specified IP addresses
+  - endpoint IOC
+    - <span style="color: #bb6600">Initiate Scan</span> to schedule and start IOC scans on your connectors (admin only)
+    - <span style="color: #bb6600">Installed Endpoint </span> to upload new endpoint IOCs adn view installed endpoint IOCs (admin only)
+    - <span style="color: #bb6600">Scan Summary</span> to view the results of endpoint IOC scans
+  - Automated Actions 
+    - <span style="color: #bb6600">Automated Actions</span> to set actions automatically trigger when a specified event occurs on a computer
+  - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span>
+
+
+- Secure Endpoint (AMP for Endpoints) - File disposition
+  - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines <span style="color: #bb6600">what actions are taken on the file download</span>
+  - actions for file disposition
+    - clean - the file known to be good
+    - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
+    - unknown - insufficient data to classify the file as clean or malicious
+- private cloud deployment modes
+  - cloud proxy mode 
+    - virtual and physical appliance
+    - Internet connection required to complete disposition lookups
+    - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
+    - <span style="color: #bb6600">SHA-256 hash</span> of the file inspected from AMP public cloud
+    - <span style="color: #bb6600">content and software updates automatically</span> from AMP public cloud via AMP private cloud
+  - air-gap mode
+    - only on the physical mode
+    - no Internet connection required to complete disposition lookups
+    - traffic only btw the connectors and the appliance
+    - disposition queries handled by the private cloud
+  - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
+- differences btw public and private cloud
+  - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
+  - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
+- option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
+- create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+- action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
+- custom detection policy 
+  - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+  - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 
+- a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>signature
+
+
+- Secure Endpoint (AMP for Endpoints) - File inspection
   - system inspects files using the following tools, in order:
     - Spero Analysis and AMP Cloud Lookup
     - Local Malware Analysis
@@ -951,17 +976,17 @@
   - Spero analysis
     - examining <span style="color: #bb6600;">structural</span> characteristics such as metadata and header information in executable files
     - generating a <span style="color: #bb6600;">Spero signature</span> based on this information
-    - eligible executable file: submits file to the Spero heuristic engine in the AMP cloud
+    - eligible executable file: submits file to  <span style="color: #bb6600;">the Spero heuristic engine in the AMP cloud</span>?
     - determining whether the file is malware according to Spero signature
     - only upload the signature of the (executable) files to the AMP cloud
     - the Cisco machine-based learning system
-    - SPERO fingerprint: features of a file
+    - <span style="color: #bb6600;">SPERO fingerprint</span>: features of a file
     - send SPERO fingerprint to the cloud
     - SPERO trees determine whether a file is malicious
     - disposition changes from Unknown to Malware only on positive identification of malware
   - Local malware analysis
     - a managed device locally inspecting executables, PDFs, office documents, and other types of files for the most common types of malware
-    - use a detection rule set provided by the Cisco <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group (Talos)
+    - use a  <span style="color: #bb6600;">detection rule set</span> provided by the Cisco <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group (Talos)
     - not query the AMP cloud and not run the file
     - local malware analysis saves time and system resources
     - disposition changes from Unknown to Malware only on positive identification of malware
@@ -974,23 +999,20 @@
     - threat score determines maliciousness of a file
     - disposition based on the threat score threshold configured in the file policy
   - feature to copy a file from AMP for Network to AMP Cloud for analysis: <span style="color: #bb6600;">dynamic analysis</span>
-  - outbreak control
-    - <span style="color: #bb6600">Simple and Advanced custom detections</span>: Simple to convict files not yet classified; Advanced to create signatures
-    - <span style="color: #bb6600;">application control</span>: Blocked Lists; Allowed Lists
-    - <span style="color: #bb6600;">network control</span>: IP blocked and Allowed Lists
-    - endpoint IOC: 1) *Initiate Scan* - schedule and scan (admin only); 2) *Installed Endpoint IOCs* (admin only); 3) *Scan Summary*
-    - <span style="color: #bb6600;">automated actions</span>: set actions automatically triggered
-    - main lists: <span style="color: #bb6600;">Simple Custom Detections</span>, <span style="color: #bb6600;">Blocked Applications</span>, <span style="color: #bb6600;">Allowed Applications</span>, Advanced Custom Detections, and IP Blocked and Allowed Lists
-    - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span
-  - Secure Malware Analytics (formerly Threat Grid)
-    - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from malware
-    - unified malware analysis and threat intelligence platform
-    - automated static and dynamic analysis, producing human readable behavior indicators for each file submitted
-    - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
-    - primary function: <span style="color: #bb6600">automated malware analysis</span>
+  - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
+    - <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group
+    - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
 
 
-- Malwale indpection of AMP forEndpoints
+- Secure Malware Analytics (formerly Threat Grid)
+  - combine advanced sandboxing with threat intelligence into one unified solution to protect organizations from malware
+  - unified malware analysis and threat intelligence platform
+  - automated static and dynamic analysis, producing human readable behavior indicators for each file submitted
+  - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
+  - primary function: <span style="color: #bb6600">automated malware analysis</span>
+
+
+- Secure Endpoint (AMP for Endpoints) - Malwale indpection 
   - connector engine (in sequence)
     - Tetra - full blown AV
     - Cloud Lookup - based on SHA256
