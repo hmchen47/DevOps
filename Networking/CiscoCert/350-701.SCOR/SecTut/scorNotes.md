@@ -792,7 +792,7 @@
     - shared across multiple security solutions and provides industry-leading security protections and efficacy
     - driven by intelligence infrastructure, product and service telemetry, public and private feeds and the open source community
     - <span style="color: #bb6600;">real-time threat intelligence</span> and security protection
-  - IP and Domain Data Center
+  - IP and Domain Reputation Center
     - tracking the <span style="color: #bb6600;">reputation of IP addresses for email and web traffic</span>
     - the most comprehensive real-time threat detection network
     - data made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances
@@ -812,7 +812,6 @@
     - Web Security Appliance (WSA)
     - Umbrella, and ThreatGrid
     - numerous open-source and commercial threat protection systems
-  - utilize the most current intelligence data for URL filtering, reputations, and vulnerability information that can be integrated with the Cisco FTD and Cisco WSA: integrations with <span style="color: #bb6600;">Talos Intelligence</span> to take advantage of the threat intelligence that it provides
   - Firepower downloads threat intelligence updates from Cisco Talos: <span style="color: #bb6600;">comsumption</span>
   - information about threats and threat actors that helps mitigate harmful events that would otherwise compromise networks or systems: <span style="color: #bb6600;">threat intelligence</span>
   - solution to integrate with the Cisco FTD and Cisco WSA to improve its cybersecurity processes and to add intelligence to its data by utilizing the most current intelligence data for URL filtering, reputations, and vulnerability information: configure <span style="color: #bb6600;">the integrations with Talos Intelligence</span> to take advantage of the threat intelligence that it provides
