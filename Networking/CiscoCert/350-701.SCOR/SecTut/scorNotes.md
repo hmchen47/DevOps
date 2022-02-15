@@ -895,7 +895,7 @@
 
 - Secure Endpoint
   - formerly Advanced Malware Protection (AMP) for Endpoints
-  - logical security controls on endpoints still exist even training on staffs: human error or inside threats still exist
+  - logical security controls on endpoints still exist even training on staffs: <span style="color: #bb6600;">human error or inside threats still exist</span>
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
   - detection, blocking, tracking, analysis, and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
@@ -910,14 +910,8 @@
   - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
   - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
-    - <span style="color: #bb6600;">Talos Security</span> Intelligence and Research Group
+    - <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group
     - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
-  - file disposition:
-    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
-    - actions for file disposition
-      - clean - the file known to be good
-      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
-      - unknown - insufficient data to classify the file as clean or malicious
   - differences btw public and private cloud
     - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
@@ -933,7 +927,26 @@
       - no Internet connection required to complete disposition lookups
       - traffic only btw the connectors and the appliance
       - disposition queries handled by the private cloud
-    - deployment architecture designed to keep data wiythin a network perimeter: <span style="color: #bb6600">private cloud</span
+    - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
+  - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
+  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
+  - custom detection policy 
+    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
+  - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
+  - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
+  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
+  - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
+
+
+- File inspection of AMP for Endpoints
+  - file disposition:
+    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
+    - actions for file disposition
+      - clean - the file known to be good
+      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
+      - unknown - insufficient data to classify the file as clean or malicious
   - system inspects files using the following tools, in order:
     - Spero Analysis and AMP Cloud Lookup
     - Local Malware Analysis
@@ -978,6 +991,9 @@
     - automated static and dynamic analysis, producing human readable behavior indicators for each file submitted
     - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
     - primary function: <span style="color: #bb6600">automated malware analysis</span>
+
+
+- Malwale indpection of AMP forEndpoints
   - connector engine (in sequence)
     - Tetra - full blown AV
     - Cloud Lookup - based on SHA256
@@ -994,16 +1010,8 @@
   - offline detection engines
     - <span style="color: #bb6600;">TETRA</span>: Windows
     - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
-  - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
-  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
-  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
-  - custom detection policy 
-    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
-    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
-  - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
-  - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
-  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
-  - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
+
+
 
 - Umbrella
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
