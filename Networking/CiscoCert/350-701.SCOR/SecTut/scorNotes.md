@@ -169,13 +169,26 @@
   - industry organizations <span style="color: #bb6600;">publish and inform</span> users of known security findings and vulnerabilities
 
 
-- Zero Trust
+- Zero Trust Model
   - a security framework requiring all users, whether in or outside the organization's network, to be <span style="color: #bb6600;">authenticated, authorized, and continuously validated for security configuration and posture</span> before being granted or keeping access to applications and data
   - assumptions
     - no traditional network edge
     - networks can be local, in the cloud, or a combination or hybrid with resources anywhere and workers in any location
   - use <span style="color: #bb6600;">microsegmentation</span> to contain attacks
   - technology to secure data in a cloud environment where 1) all users be authenticated and authorized; 2) security configuration and posture continuously validated before access is granted or maintained to applications and data; 3) allow certain application traffic and deny all other traffic by default: <span style="color: #bb6600;">microsegmentation</span>
+  - microsegmentation
+    - used by model
+    - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
+    - secure applications by expressly <span style="text-decoration: underline">allowing particular application traffic</span>
+    - by default, denying all other traffic
+    - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
+    - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
+    - a description of microsegmentation: environments apply a <span style="color: #bb6600;">zero-trust model</span> and specify how applications on different servers or containers can communicate
+  - Contiv
+    - an open source project to deploy microsegmentation policy-based services in container environments
+    - offer a higher level of networking abstraction for microservices by providing a policy framework
+    - built-in service discovery and service routing functions to scale out services
+    - system faciltates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
 
 
 - Data exfiltration
@@ -831,7 +844,7 @@
     - feedback into the basic building blocks
   - suspicious patterns in the current release
     - shell code execution: look for the patterns used by shell code
-    - <span style="color: #bb6600;">privilege escalation</span>: watche for <span style="text-decoration: underline">privilege changes</span> from a lower to a higher privilege in the process lineage tree
+    - <span style="color: #bb6600;">privilege escalation</span>: watch for <span style="text-decoration: underline">privilege changes</span> from a lower to a higher privilege in the process lineage tree
     - side channel attacks: watche for cache-timing attacks and page table fault bursts
     - raw socket creation: creation of a raw socket by a nonstandard process (for example, ping)
     - <span style="color: #bb6600;">user login suspicious</span>: watche <span style="text-decoration: underline">user login failures and user login methods</span>
@@ -845,27 +858,14 @@
     - policy compliance
     - <pan style="color: #bb6600;">process behavior baseline and deviation</span>
     - software inventory and vulnerability detection
-    - forensic analysis
-  - microsegmentation
-    - used by Zero-Trust model
-    - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
-    - secure applications by expressly <span style="text-decoration: underline">allowing particular application traffic</span>
-    - by default, denying all other traffic
-    - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
-    - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
-    - a description of microsegmentation: environments apply a <span style="color: #bb6600;">zero-trust model</span> and specify how applications on different servers or containers can communicate
+    - forensic 
   - generating accurate microsegmentation policy
     - application dependency mapping to discover the relationships between different application tiers and infrastructure services
     - supports "what-if" policy analysis using real-time data or historical data to assist in the validation and risk assessment of policy application pre-enforcement to ensure ongoing application availability
     - normalized microsegmentation policy:
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
-    - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration</span>
-  - Contiv
-    - an open source project to deploy microsegmentation policy-based services in container environments
-    - offer a higher level of networking abstraction for microservices by providing a policy framework
-    - built-in service discovery and service routing functions to scale out services
-    - system faciltates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
+  - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration analysis</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
 
 
