@@ -907,14 +907,15 @@
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
     - to detect, confirm, track, analyze, and remediate these threats
-  - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
-  - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - using global threat intelligence to defense and protect against known and emerging threats w/ feeds from 
     - <span style="color: #bb6600;">Talos</span> Security Intelligence and Research Group
     - <span style="color: #bb6600;">Threat Grid's</span> threat intelligence
-  - differences btw public and private cloud
-    - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
-    - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
+  - file disposition:
+    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
+    - actions for file disposition
+      - clean - the file known to be good
+      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
+      - unknown - insufficient data to classify the file as clean or malicious
   - private cloud deployment modes
     - cloud proxy mode 
       - virtual and physical appliance
@@ -928,6 +929,9 @@
       - traffic only btw the connectors and the appliance
       - disposition queries handled by the private cloud
     - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
+  - differences btw public and private cloud
+    - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
+    - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
   - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
@@ -941,12 +945,6 @@
 
 
 - File inspection of AMP for Endpoints
-  - file disposition:
-    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines what actions are taken on the file download
-    - actions for file disposition
-      - clean - the file known to be good
-      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
-      - unknown - insufficient data to classify the file as clean or malicious
   - system inspects files using the following tools, in order:
     - Spero Analysis and AMP Cloud Lookup
     - Local Malware Analysis
