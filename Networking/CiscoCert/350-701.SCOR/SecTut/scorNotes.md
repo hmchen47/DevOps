@@ -214,6 +214,17 @@
   - referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks
     - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
 
+- Cisco security solutions
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 450vw;"
+      onclick= "window.open('https://bit.ly/3gR9ICU')"
+      src    = "img/0000-CiscoSecuritySol.png"
+      alt    = "Cisco Security Solution - Product Relations"
+      title  = "Cisco Security Solution - Product Relations"
+    />
+  </figure>
+
 
 ## Integrity and Privacy
 
@@ -1274,7 +1285,7 @@
         title  = "Access Control Policy Default Actions"
       />
     </figure>
-<!-- 
+  <!-- 
   - Network Analysis and Intrusion Policy
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -1285,7 +1296,6 @@
         title  = "Access Control Policy Default Actions"
       />
     </figure> -->
-
   - network discovery & identity policies:
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
