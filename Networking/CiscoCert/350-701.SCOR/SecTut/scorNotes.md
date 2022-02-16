@@ -923,15 +923,15 @@
   - Custom Detection
     - <span style="color: #bb6600">Simple</span> to convict files not yet classified
     - <span style="color: #bb6600">Advanced</span> to create signatures that will detect parts of Portable Executable (PE) file 
-    - <span style="color: #bb6600">Android</span> to warm of new threats or unwanted apps
+    - <span style="color: #bb6600">Android</span> to warn of new threats or unwanted apps
   - Application Control
     - <span style="color: #bb6600">Blocked Lists</span> to stop executable from running
     - <span style="color: #bb6600">Allowed Lists</span> to create lists of applications that will not be wrongly
   - Network
     - <span style="color: #bb6600">IP blocked and Allowed Lists</span> explicitly detect or allow connections to specified IP addresses
-  - endpoint IOC
+  - Endpoint IOC
     - <span style="color: #bb6600">Initiate Scan</span> to schedule and start IOC scans on your connectors (admin only)
-    - <span style="color: #bb6600">Installed Endpoint </span> to upload new endpoint IOCs adn view installed endpoint IOCs (admin only)
+    - <span style="color: #bb6600">Installed Endpoint IOCs</span> to upload new endpoint IOCs and view installed endpoint IOCs (admin only)
     - <span style="color: #bb6600">Scan Summary</span> to view the results of endpoint IOC scans
   - Automated Actions 
     - <span style="color: #bb6600">Automated Actions</span> to set actions automatically trigger when a specified event occurs on a computer
