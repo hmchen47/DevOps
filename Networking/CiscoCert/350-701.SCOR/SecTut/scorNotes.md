@@ -1341,6 +1341,10 @@
   - access control rules
     - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
+  - Custom Block lists or feeds (or objects or groups)
+    - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
+    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span
+    - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
@@ -1363,10 +1367,6 @@
   - reputation score to configure a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category: <span style="color: #bb6600;">6~10</span> to clean
   - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
-  - Custom Block lists or feeds (or objects or groups)
-    - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
-    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span
-    - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
 
 
 - Firewall Threat Defense (FTD)
