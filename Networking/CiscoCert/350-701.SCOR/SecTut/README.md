@@ -29,6 +29,8 @@
   - 20\. New Questions - Part 2
 - [Quiz Set 8](quiz08.md) & [Sol](quizSol08.md)
   - 21\. New Questions - Part 3
+- [Quiz Set 9](quiz09.md) & [Sol](quizSol09.md)
+  - 21\. New Questions - Part 4
 
 
 - [SCOR Notes - Summary](scorNotes.md)
