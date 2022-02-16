@@ -404,16 +404,15 @@
     > show crypto ipsec sa
     interface: Outside
       crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
-      
+
       access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0 255.255.255.0 10.0.10.0 255.255.255.0
-      local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
-      remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
+      <...truncated...>
       current peer: 209.165.202.129
       <...truncated...>
     ```
 
 
-- <mark style="background: #e0ffff;">DMVPN</mark>>
+- <mark style="background: #e0ffff;">DMVPN</mark>
   - full meshed connectivity
   - simple hub and spoke configuration
   - forming IPsec tunnel over dynamically/statically addresses spokes
@@ -1350,7 +1349,7 @@
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
   - URL filtering
     - control access to web site based on
-      - category: a general classification for the URL, e.g., Auction category, Job Search category
+      - category: a general classification for the URL, e.g., Auction, Job Search
       - reputation:
         - how likely the URL is to be used for purposes that might against organization's security policy
         - level: 1 - High Risk; 2 - Suscpecious sites; 3 - Benign Sites with security risk ; 4 - Benign Sites; 5 - Well Known
@@ -1884,7 +1883,7 @@
 
 ## Authentication, Authorization, and Accounting (AAA)
 
-- <mark style="background: #e0ffff;">Identity Service Engine (ISE)</marlk>
+- <mark style="background: #e0ffff;">Identity Service Engine (ISE)</mark>
   - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
   - key functions
