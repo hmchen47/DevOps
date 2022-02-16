@@ -438,7 +438,7 @@
   - active/active FlexVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
 
 
-- <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mrk>
+- <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mark>
   - a <span style="color: #bb6600;">trunnel-less</span> VPN
   - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
@@ -893,7 +893,7 @@
   - solution to extract metadata from network packet flow while ensuring that payloads are not retained or transferred outside the network winthin an organization provides visibility and to identify active threats in its network using a VM: <span style="color: #bb6600">Stealthwatch Cloud PNM</span>
 
 
-- Umbrella - Overview
+- <mark style="background: #e0ffff;">Umbrella - Overview</mark>
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
@@ -1234,7 +1234,6 @@
   - use <span style="color: #bb6600">network discovery and identity policies</span> to collect host, application, and user data for traffic on your network
   - perform forensic analysis, behavioral profiling, access control
   - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
-  - <span style="color: #bb6600;">superior threat prevention and mitigation</span> to known and unknown threats
   - provide <span style="color: #bb6600;">intrustion prevention capabilities natively</span>
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
