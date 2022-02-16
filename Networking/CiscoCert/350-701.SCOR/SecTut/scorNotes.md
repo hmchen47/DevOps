@@ -913,10 +913,17 @@
     - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
-    - to detect, confirm, track, analyze, and remediate these
+    - to detect, confirm, track, analyze, and remediate 
+  - file disposition
+    - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines <span style="color: #bb6600">what actions are taken on the file download</span>
+    - actions for file disposition
+      - clean - the file known to be good
+      - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
+      - unknown - insufficient data to classify the file as clean or malicious
   - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
+  - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
 
 
 - Secure Endpoint (AMP for Endpoints) - Outbreak control
@@ -938,35 +945,29 @@
   - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span>
 
 
-- Secure Endpoint (AMP for Endpoints) - File disposition
-  - a <span style="color: #bb6600">categorization</span> from the AMP cloud that determines <span style="color: #bb6600">what actions are taken on the file download</span>
-  - actions for file disposition
-    - clean - the file known to be good
-    - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
-    - unknown - insufficient data to classify the file as clean or malicious
-- private cloud deployment modes
-  - cloud proxy mode 
-    - virtual and physical appliance
-    - Internet connection required to complete disposition lookups
-    - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
-    - <span style="color: #bb6600">SHA-256 hash</span> of the file inspected from AMP public cloud
-    - <span style="color: #bb6600">content and software updates automatically</span> from AMP public cloud via AMP private cloud
-  - air-gap mode
-    - only on the physical mode
-    - no Internet connection required to complete disposition lookups
-    - traffic only btw the connectors and the appliance
-    - disposition queries handled by the private cloud
+- Secure Endpoint (AMP for Endpoints) - Cloud Deployment
+  - private cloud deployment modes
+    - cloud proxy mode 
+      - virtual and physical appliance
+      - Internet connection required to complete disposition lookups
+      - traffic from endpoint connectors w/ private cloud while disposition lookup performed btw AMP private cloud and AMP public cloud
+      - <span style="color: #bb6600">SHA-256 hash</span> of the file inspected from AMP public cloud
+      - <span style="color: #bb6600">content and software updates automatically</span> from AMP public cloud via AMP private cloud
+    - air-gap mode
+      - only on the physical mode
+      - no Internet connection required to complete disposition lookups
+      - traffic only btw the connectors and the appliance
+      - disposition queries handled by the private cloud
+  - differences btw public and private cloud
+    - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
+    - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
-- differences btw public and private cloud
-  - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
-  - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
-- option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
-- create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
-- action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
-- custom detection policy 
-  - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
-  - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 
-- a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>signature
+  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
+  - custom detection policy 
+    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 
+  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>signature
 
 
 - Secure Endpoint (AMP for Endpoints) - File inspection
