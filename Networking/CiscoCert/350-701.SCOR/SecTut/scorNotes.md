@@ -899,13 +899,14 @@
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
   - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
+  - Secure Endpoint Connector: the software package installed to endpoints providing protection and generating the telemetry information for the Cloud Detection Engnes
   - outbreak control: a variety of lists that allow to customize it to users' needs
-  - exclusion set: a list of directories,file extensions, or threat names that users do not want Secure Endpoint connector to scan or convict
+  - exclusion set: a list of directories, file extensions, or threat names that users do not want Secure Endpoint connector to scan or convict
   - policy
     - combining outbreak control and exclusions sets w/ other settings
     - affect the behavior and certain settings of the connectors
-    -applied to a computer via Groups
-  - group: allow the computers inn organization to be managed according to their function, location, or  other criteria that is determined by the administrator
+    - applied to a computer via Groups
+  - group: allow the computers in organization to be managed according to their function, location, or  other criteria that is determined by the administrator
   - characteristics
     - detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
     - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
@@ -924,8 +925,8 @@
     - <span style="color: #bb6600">Advanced</span> to create signatures that will detect parts of Portable Executable (PE) file 
     - <span style="color: #bb6600">Android</span> to warm of new threats or unwanted apps
   - Application Control
-    - <span style="color: #bb6600">locked Lists</span> to stop executable from running
-    - <span style="color: #bb6600">llowed Lists</span> to create lists of applications that will not be wrongly
+    - <span style="color: #bb6600">Blocked Lists</span> to stop executable from running
+    - <span style="color: #bb6600">Allowed Lists</span> to create lists of applications that will not be wrongly
   - Network
     - <span style="color: #bb6600">IP blocked and Allowed Lists</span> explicitly detect or allow connections to specified IP addresses
   - endpoint IOC
