@@ -41,7 +41,7 @@
   - application attacks: focus on web applications and are considered the most sophisticated and serious type of attacks
 
 
-- SQL injection
+- <mark style="background: #e0ffff;">SQL injection</mark>
   - <span style="color: #bb6600;">inserting malicious commands into the database</span>
   - occurred when asking a user for input
   - mitigate:
@@ -56,7 +56,7 @@
     - use <span style="color: #bb6600;">prepared statements and parameterized queries</span>
 
 
-- Cross Site Scripting (XSS): 
+- <mark style="background: #e0ffff;">Cross Site Scripting (XSS)</mark>
   - web application gathering malicious data
   - usually gathered in the form of a hyperlink
   - click on this link from another website, instant message, or simply simply just reading a web board or email message
@@ -94,7 +94,7 @@
   - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
 
 
-- DoS and DDoS
+- <mark style="background: #e0ffff;">DoS and DDoS</mark>
   - categories of attacks: <span style="color: #bb6600;">protocol & volume-based</span>
   - common attacks: syn flood, udp flood, http flood, ping of death, smurf attack, fraggle attack, slowloris, application level attacks, NTP amplification,advanced persistent DoS (APDoS), zer-day DDoS attacks
   - DoS: <span style="color: #bb6600;">a computer</span> is used to flood a server with TCP and UDP packets
@@ -119,7 +119,7 @@
     - generally happen on older operating systems
 
 
-- Social engineering
+- <mark style="background: #e0ffff;">Social engineering</mark>
   - goals: 1) <span style="color: #bb6600;">steal sensitive data or login information</span>; 2) <span style="color: #bb6600;">install malware</span>
   - phishing
     - a form of social engineering
@@ -138,7 +138,7 @@
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
 
 
-- TAXII/STIX
+- <mark style="background: #e0ffff;">TAXII/STIX</mark>
   - TAXII (Trusted Automated Exchange of Indicator Information)
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
     - used to autho and exchange STIX documents among participants
@@ -169,7 +169,7 @@
   - industry organizations <span style="color: #bb6600;">publish and inform</span> users of known security findings and vulnerabilities
 
 
-- Zero Trust Model
+- <mark style="background: #e0ffff;">Zero Trust Model</mark>
   - a security framework requiring all users, whether in or outside the organization's network, to be <span style="color: #bb6600;">authenticated, authorized, and continuously validated for security configuration and posture</span> before being granted or keeping access to applications and data
   - assumptions
     - no traditional network edge
@@ -191,7 +191,7 @@
     - system faciltates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
 
 
-- Data exfiltration
+- <mark style="background: #e0ffff;">Data exfiltration</mark>
   - ICMP exfiltration
     - encrypting the payload in an ICMP packet to carry out <span style="color: #bb6600;">command and control tasks</span> on a compromised host
   - DNS exfiltration
@@ -217,7 +217,7 @@
 
 ## Integrity and Privacy
 
-- Digital Certificate & PKI
+- <mark style="background: #e0ffff;">Digital Certificate & PKI</mark>
   - Trustpoint (Cisco)
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
@@ -246,7 +246,7 @@
     - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key</span> using the `crypto key generate rsa` command
 
 
-- Cryptography
+- <mark style="background: #e0ffff;">Cryptography</mark>
   - symmetric key cipher
     - same <span style="color: #bb6600;">secret key</span> used for both encryption and decryption
     - same secret key used by both sender and receiver
@@ -297,7 +297,7 @@
 
 ## Virtual Private Networks
 
-- Internet Key Exchange (IKE) framework
+- <mark style="background: #e0ffff;">Internet Key Exchange (IKE) framework</mark>
   - used for remote host, network access, and virtual private network (VPN) access
   - enable two parties on the Internet to communicate securely
   - a <span style="color: #bb6600;">key management protocol</span> used to set up a security association (SA) using Internet Protocol Security (IPsec)
@@ -353,7 +353,7 @@
     ```
 
 
-- IP Security (IPsec)
+- <mark style="background: #e0ffff;">IP Security (IPsec)</mark>
   - Cryptographic algorithms w/ IPsec include
     - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
     - TripleDES-CBC for confidentiality
@@ -402,7 +402,7 @@
     ```
 
 
-- DMVPN
+- <mark style="background: #e0ffff;">DMVPN</mark>>
   - full meshed connectivity
   - simple hub and spoke configuration
   - forming IPsec tunnel over dynamically/statically addresses spokes
@@ -417,7 +417,7 @@
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
 
 
-- FlexVPN
+- <mark style="background: #e0ffff;">FlexVPN</mark>>
   - tunneled VPN: IKEv2
   - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementation</span>
   - support <span style="color: #bb6600;">multivendor environment</span> and secre traffic btw sites
@@ -438,7 +438,7 @@
   - active/active FlexVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
 
 
-- GETVPN (Group Encrypted Transport VPN)
+- <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mrk>
   - a <span style="color: #bb6600;">trunnel-less</span> VPN
   - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
@@ -459,7 +459,7 @@
 
 ## Software Defined Network (SDN)
 
-- SDN architecture
+- <mark style="background: #e0ffff;">SDN architecture</mark>
   - centralized architecture to control networking devices in one device
   - SDN controller
     - global view of the network
@@ -577,7 +577,7 @@
     - TrustSec: <span style="color: #bb6600;">software-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
 
 
-- Cloud services
+- <mark style="background: #e0ffff;">Cloud services</mark>
   - types: 1) private 2) public; 3) hybrid; 4) community - variation of private
   - types of as-a-Service solution: (from customer/tenant view)
     - IaaS: 1) renting infrastructure; 2) purchase virtual power to execute your software as needed.; 3) like running a virtual server; 4) managing OS up to Apps
@@ -672,7 +672,7 @@
     - <span style="color: #bb6600;">Service Provider Managed</span> (the service provider administers and controls all cloud resources).
 
 
-- Cisco DNA Center (DNAC)
+- <mark style="background: #e0ffff;">Cisco DNA Center (DNAC)</mark>
   - a <span style="color: #bb6600;">central Management and Automation</span> software
   - used as a management platform for both SD (Software-Defined) Access, Intent-Based Networks and existing traditional networks
   - feature of open platform capabilities: <span style="color: #bb6600;">intent-based APIs</span>
@@ -777,7 +777,7 @@
   - a benefit of using Cisco CWS compared to an on-premises Cisco WSA: <span style="color: #bb6600;">CWS eliminates the need to backhaul traffic through headquarters for remote workers</span>
 
 
-- Cloudlock
+- <mark style="background: #e0ffff;">Cloudlock</mark>
   - a cloud-based <span style="color: #bb6600;">Cloud Access Security Broker (CASB)</span> and cloud cybersecurity platform
   - helping organizations securely leverage <span style="color: #bb6600;">use of applications</span> in the cloud
   - delivering <span style="color: #bb6600;">visibility and control</span> for cloud application environments across users, data, and applications
@@ -800,7 +800,7 @@
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
 
 
-- Talos
+- <mark style="background: #e0ffff;">Talos</mark>
   - contributor of Cisco Collective Security Intelligence (CSI) ecosystem
     - shared across multiple security solutions and provides industry-leading security protections and efficacy
     - driven by intelligence infrastructure, product and service telemetry, public and private feeds and the open source community
@@ -830,7 +830,7 @@
   - solution to integrate with the Cisco FTD and Cisco WSA to improve its cybersecurity processes and to add intelligence to its data by utilizing the most current intelligence data for URL filtering, reputations, and vulnerability information: configure <span style="color: #bb6600;">the integrations with Talos Intelligence</span> to take advantage of the threat intelligence that it provides
 
 
-- Tetration
+- <mark style="background: #e0ffff;">Tetration</mark>
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
   - protect hybrid cloud deployment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
   - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
@@ -1043,7 +1043,7 @@
     - provides threat protections against malware like ransomware
 
 
-- StealthWatch
+- <mark style="background: #e0ffff;">StealthWatch</mark>
   - rapidly collects and analyzes <span style="color: #bb6600">NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
   - visibility and security analytics solution
   - collects and analyze network data from the existing network infrastructure
@@ -1090,7 +1090,7 @@
     - tunneling through HTTP and HTTPS requests
 
 
-- Secure Endpoint
+- <mark style="background: #e0ffff;">Secure Endpoint - Overview</mark>
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - logical security controls on endpoints still exist even training on staffs: <span style="color: #bb6600;">human error or inside threats still exist</span>
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
@@ -1230,7 +1230,7 @@
     - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
 
 
-- Firepower system
+- <mark style="background: #e0ffff;">Firepower system</mark>
   - use <span style="color: #bb6600">network discovery and identity policies</span> to collect host, application, and user data for traffic on your network
   - perform forensic analysis, behavioral profiling, access control
   - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
@@ -1263,7 +1263,7 @@
     4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
 
 
-- Cisco Secure Firewall Management Center (FMC)
+- <mark style="background: #e0ffff;">Cisco Secure Firewall Management Center (FMC)</mark>
   - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
   - an integrated suite of network security and traffic management products
   - deployed either on purpose-built platforms or as a software solution
@@ -1497,7 +1497,7 @@
     - Cisco AnyConnect Secure Mobility Client
 
 
-- ASA
+- <mark style="background: #e0ffff;">ASA</mark>
   - <span style="color: #bb6600;">deny all traffic</span> by default
   - <span style="color: #bb6600;">multiple context mode</span>
     - deployment mode to seperate management on a shared appliance
@@ -1567,7 +1567,7 @@
     - Cisco AnyConnect Secure Mobility Client
 
 
-- NetFlow
+- <mark style="background: #e0ffff;">NetFlow</mark>
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
@@ -1651,7 +1651,7 @@
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
 
 
-- Telemetry
+- <mark style="background: #e0ffff;">Telemetry</mark>
   - information and/or data
   - provide <span style="color: #bb6600;">awareness and visibility</span> info what is occurring on the network at any given 
   - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
@@ -1675,7 +1675,7 @@
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
 
 
-- Simple Network Management Protocol (SNMP)
+- <mark style="background: #e0ffff;">Simple Network Management Protocol (SNMP)</mark>
   - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
   - version 3 security level
     - `noAuthNoPriv`: authn = username; encry = none
@@ -1705,7 +1705,7 @@
 
 ## Email and Web Security
 
-- Cisco Email Security Appliance (ESA)
+- <mark style="background: #e0ffff;">Cisco Email Security Appliance (ESA)</mark>
   - features:
     - advanced threat protection capabilities to detect, block, and remediate threats faster
     - <span style="color: #bb6600;">prevent data loss (DLP)</span>
@@ -1819,7 +1819,7 @@
     - Cisco <span style="color: #bb6600;">Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
 
 
-- Web Security Appliance (WSA)
+- <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
   - including a web proxy, a threat analytics engine, antimalware engine, policy management, and reporting in a single physical or virtual appliance
   - main purpose: protect users from accessing malicious websites and being infected by malware
   - combined integrated solution of strong defense and web protection, visibility, and controling solutions
@@ -1865,7 +1865,7 @@
 
 ## Authentication, Authorization, and Accounting (AAA)
 
-- Identity Service Engine (ISE)
+- <mark style="background: #e0ffff;">Identity Service Engine (ISE)</marlk>
   - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
   - key functions
@@ -2003,7 +2003,7 @@
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
 
 
-- TrustSec
+- <mark style="background: #e0ffff;">TrustSec</mark>
   - <span style="color: #bb6600;">software-defined segmentation</span> that uses <span style="color: #bb6600;">SGTs</span> and allows administrators to quickly scale and enforce policies across the network
   - controls defined simply using endpoint roles, not IP addresses
   - ecurity rules defined using these groups
@@ -2029,7 +2029,7 @@
     - allow for managed endpoints that authenticate to AD to be mapped to <span style="color: #bb6600;">Security Groups (PassiveID)</span>
 
 
-- pxGrid
+- <mark style="background: #e0ffff;">pxGrid</mark>
   - stands for <span style="color: #bb6600;">Platform Exchange Grid</span>
   - integrate multiple vendors security products together and group them in an ecosystem domain
   - purpose: <span style="color: #bb6600;">share contextual data</span> between the integrated partners
@@ -2047,7 +2047,7 @@
   - role of FMC when integrating FMC and ISE wusing pxGrid: <span style="color: #bb6600;">publisher</span>
 
 
-- RADIUS Change of Authorization (CoA)
+- <mark style="background: #e0ffff;">RADIUS Change of Authorization (CoA)</mark>
   - a mechanism to change the attributes of an <span style="color: #bb6600;">authentication, authorization, and accounting (AAA) session</span> after it is authenticated
   - enable AAA globally to support CoA: <span style="color: #bb6600;">`aaa new-model`</span>
   - main steps of CoA procedure
@@ -2065,7 +2065,7 @@
   - attribute w/ the ability to change during the RADIUS CoA: <span style="color: #bb6600;">authroization</span>
 
 
-- 802.1X port-based authentication
+- <mark style="background: #e0ffff;">802.1X port-based authentication</mark>
   - roles
     - supplicant: AnyConnect ISE Posture module
     - <span style="color: #bb6600;">authenticator</span> (required): switch & WLC
@@ -2214,7 +2214,7 @@
     ```
 
 
-- Multi-factor Authentication (MFA)
+- <mark style="background: #e0ffff;">Multi-factor Authentication (MFA)</mark>
   - authentication method two or more verification factors to gain access to a resource
   - require means of verification that unauthorized users won't 
   - prevent <span style="color: #bb6600;">brute force attacks</span> from being successful
@@ -2248,7 +2248,7 @@
   - benefit of using a multifactor authentication strategy: protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
 
 
-- EPP & EDR
+- <mark style="background: #e0ffff;">EPP & EDR</mark>
   - Endpoint Protection Platform (EPP)
     - solely on prevention <span style="color: #bb66pp;">at the perimeter</span>
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
@@ -2290,7 +2290,7 @@
     - IPS engine to detect ARZP spoofing
 
 
-- DHCP spoofing
+- <mark style="background: #e0ffff;">DHCP spoofing</mark>
   - an attacker attempts to respond to DHCP requests and trying to list itself (spoof) as the default gateway or DNS server
   - a type of attack in that the attacker listens for DHCP Requests from clients and answers them with fake DHCP Response before the authorized DHCP Response comes to the clients
   - fake DHCP Response often gives its IP address as the client default gateway
@@ -2308,7 +2308,7 @@
     - configure a DHCP server to better secure their environment and able to rate-limit the traffic and ensure that legitimate requests are not dropped: <span style="color: #bb6600;">set a trusted interface for the DHCP server</span>
     
 
-  - Dynamic ARP Inspection (DAI)
+  - <mark style="background: #e0ffff;">Dynamic ARP Inspection (DAI)</mark>
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
     - after enabling DAI, all ports become <span style="color: #bb6600;">untrusted ports</span>
@@ -2320,7 +2320,7 @@
   - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span
 
 
-- Broadcast storm
+- <mark style="background: #e0ffff;">Broadcast storm</mark>
   - huge amount of broadcast, multicast, or unknown unicast packets flood the LAN, creating excessive traffic and degrading network performance
   - storm control or broadcast suppression
     - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
