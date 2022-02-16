@@ -1078,17 +1078,6 @@
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
     - CA not trusted by browser -> an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
-  - logging
-    - set <span style="color: #bb6600;">per-policy</span> when you first create a policy
-    - by default, logging = on and log all requests an identity makes to reach destinations
-    - able to change what level of identity activity Umbrella logs
-    - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
-    - archive logs to an enterprise owned storage: configured to <span style="color: #bb6600;">send logs to a self-managed AWS S3 bucket</span>
-  - Umbrella Multi-Org console
-    - upload, store, and archive traffic activity logs from local Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
-    - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
-    - able to download from an S3 bucket
-    - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
@@ -1114,6 +1103,19 @@
     - proxy and inspect traffic that's sent over HTTPS
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
+
+
+- Umbrella - logging
+  - set <span style="color: #bb6600;">per-policy</span> when you first create a policy
+  - by default, logging = on and log all requests an identity makes to reach destinations
+  - able to change what level of identity activity Umbrella logs
+  - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
+  - archive logs to an enterprise owned storage: configured to <span style="color: #bb6600;">send logs to a self-managed AWS S3 bucket</span>
+  - Umbrella Multi-Org console
+    - upload, store, and archive traffic activity logs from local Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
+    - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
+    - able to download from an S3 bucket
+    - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
 
 
 - Umbrella Roaming
