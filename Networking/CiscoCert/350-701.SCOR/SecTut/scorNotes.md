@@ -1046,6 +1046,7 @@
   - Umbrella proxy using Cisco <span style="color: #bb6600;">Talos web reputation</span> and other third-party feeds to determine if a URL is malicious
   - solution integrated w/ Umbrella to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - leverage DNS-layer security
+  - SafeSearch: an automated filter of pornography and other offensive content 
   - security solution protects users leveraging DNS-layer security: <span style="color: #bb6600;">Umbrella</span>
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
   - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
@@ -1068,7 +1069,16 @@
       - individual sites to be blocklisted
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - <span style="color: #bb6600;">File Inspection</span>: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
-    - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
+  - URL blocking:
+    - URL Reputation from 6 to 10
+    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
+  - Block Page and Block Page Bypass features
+    - present an SSL certificate to browsers that make connections to HTTPS sites
+    - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
+    - CA not trusted by browser -> an error page may be displayed
+    - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
+  - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
+  - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
 
@@ -1092,16 +1102,6 @@
     - proxy and inspect traffic that's sent over HTTPS
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
-  - SafeSearch: an automated filter of pornography and other offensive content 
-  - URL blocking:
-    - URL Reputation from 6 to 10
-    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
-  - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
-  - Block Page and Block Page Bypass features
-    - present an SSL certificate to browsers that make connections to HTTPS sites
-    - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
-    - CA not trusted by browser -> an error page may be displayed
-    - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
 
 
 - Umbrella - AWS
