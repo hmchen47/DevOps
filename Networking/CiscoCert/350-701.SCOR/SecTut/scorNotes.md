@@ -1033,8 +1033,7 @@
     - <span style="color: #bb6600;">ClamAV</span>: Mac and Linux
 
 
-
-- Umbrella
+- Umbrella - Overview
   - secure <span style="color: #bb6600;">Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using <span style="color: #bb6600;">DNS</span>
   - protect users from accessing malicious domains by proactively analyzing and blocking unsafe destinations
   - protect from <span style="color: #bb6600;">phishing attacks</span> by blocking suspicious domains when users click on the given links that an attacker sent
@@ -1049,9 +1048,12 @@
   - leverage DNS-layer security
   - security solution protects users leveraging DNS-layer security: <span style="color: #bb6600;">Umbrella</span>
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
-  - Policy
-    - the heart of Umbrella
-    - define how security and access controls are applied to identities
+  - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
+
+
+- Umbrella - Policy
+  - the heart of Umbrella
+  - define how security and access controls are applied to identities
   - Policy wizard:
     - access control and security-related components when defining policies for your identities
     - Security Settings:
@@ -1067,6 +1069,11 @@
     - Block Pages: configure the web page users see when an attempt is made to reach a blocked destination
     - <span style="color: #bb6600;">File Inspection</span>: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
     - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
+  - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
+  - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
+
+
+- Umbrella - Advance Settings
   - <span style="color: #bb6600;">intelligent proxy</span>
     - intercept and proxy requests for URLs, potentially malicious files, and domain names associated with certain uncategorize or "grey" domains
     - some websites have content that most users want to access while also posing a risk because of the possibility of hosting malware
@@ -1086,6 +1093,18 @@
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
   - SafeSearch: an automated filter of pornography and other offensive content 
+  - URL blocking:
+    - URL Reputation from 6 to 10
+    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
+  - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
+  - Block Page and Block Page Bypass features
+    - present an SSL certificate to browsers that make connections to HTTPS sites
+    - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
+    - CA not trusted by browser -> an error page may be displayed
+    - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
+
+
+- Umbrella - AWS
   - logging
     - set <span style="color: #bb6600;">per-policy</span> when you first create a policy
     - by default, logging = on and log all requests an identity makes to reach destinations
@@ -1098,30 +1117,22 @@
     - able to download from an S3 bucket
     - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
   - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
-  - URL blocking:
-    - URL Reputation from 6 to 10
-    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
-  - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
-  - Block Page and Block Page Bypass features
-    - present an SSL certificate to browsers that make connections to HTTPS sites
-    - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
-    - CA not trusted by browser -> an error page may be displayed
-    - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
-  - Umbrella Roaming
-    - a cloud-delivered security service for Cisco's next-generation firewall
-    - protect employees even when they are off the VPN
-    - role to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
+
+
+- Umbrella Roaming
+  - a cloud-delivered security service for Cisco's next-generation firewall
+  - protect employees even when they are off the VPN
+  - role to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - endpoint solution protects a user from a phishing attack: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
-  - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
-  - <span style="color: #bb6600;">Umbrella virtual appliances (VAs)</span>
-    - lightweight virtual machines
-    - act as <span style="color: #bb6600;">conditional DNS forwarders</span>
-      - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
-      - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
-      - local DNS queries to your existing local DNS servers and forwarders
-  - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
-  - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
+
+
+- Umbrella virtual appliances (VAs)
+  - lightweight virtual machines
+  - act as <span style="color: #bb6600;">conditional DNS forwarders</span>
+    - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
+    - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
+    - local DNS queries to your existing local DNS servers and forwarders
   - config to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
 
 
