@@ -1249,7 +1249,7 @@
 
 
 - <mark style="background: #e0ffff;">Cisco Secure Firewall Management Center (FMC)</mark>
-  - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
+  - provide centralized, integrated, and streamlined management
   - an integrated suite of network security and traffic management products
   - deployed either on purpose-built platforms or as a software solution
   - <span style="color: #bb6600;">centralized event and policy manager</span> for:
@@ -1264,12 +1264,34 @@
       - Firepower Management Center
       - Firepower Device Manager
       - Adaptive Security Device Manager (ASDM)
+  - access control policies
+  
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://bit.ly/3JxPEl1')"
+        src    = "https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373461.jpg"
+        alt    = "Access Control Policy Default Actions"
+        title  = "Access Control Policy Default Actions"
+      />
+    </figure>
+<!-- 
+  - Network Analysis and Intrusion Policy
+
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://bit.ly/33rodKv')"
+        src    = "https://bit.ly/33tOibQ"
+        alt    = "Access Control Policy Default Actions"
+        title  = "Access Control Policy Default Actions"
+      />
+    </figure> -->
+
   - network discovery & identity policies:
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
   - network discovery policy
     - control how the system collects data on your organization's network assets and which network segments and ports are monitored
-    - <span style="color: #bb6600;">multidomain deployment</sapn>: each leaf domain has an independent network discovery policy
+    - <span style="color: #bb6600;">multidomain deployment</span>: each leaf domain has an independent network discovery policy
     - perform <span style="color: #bb6600;">host and application detection</span>
   - identity policy
     - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
