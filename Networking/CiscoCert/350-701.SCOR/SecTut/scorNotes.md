@@ -1275,17 +1275,6 @@
       - Firepower Management Center
       - Firepower Device Manager
       - Adaptive Security Device Manager (ASDM)
-  - access control policies
-  
-    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-        onclick= "window.open('https://bit.ly/3JxPEl1')"
-        src    = "https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373461.jpg"
-        alt    = "Access Control Policy Default Actions"
-        title  = "Access Control Policy Default Actions"
-      />
-    </figure>
-    
   - network discovery & identity policies:
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
@@ -1338,13 +1327,6 @@
       - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
       - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
-  - access control rules
-    - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
-    - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
-  - Custom Block lists or feeds (or objects or groups)
-    - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
-    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span
-    - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
   - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
@@ -1352,18 +1334,36 @@
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
 
-- Firepower Management Conter (FMC) - URL filtering
-  - control access to web site based on
-    - category: a general classification for the URL, e.g., Auction category, Job Search category
-    - reputation:
-      - how likely the URL is to be used for purposes that might against organization's security policy
-      - level: 1 - High Risk; 2 - Suscpecious sites; 3 - Benign Sites with security risk ; 4 - Benign Sites; 5 - Well Known
-      - <span style="color: #bb6600;">block all levels lower</span> than the selected level, e.g., select level 3 and then block scores 1~3
-  - a feature to control the websites that users on your network can access:
-    - <span style="color: #bb6600;">category and reputation-based URL filtering</span> (recommended)
-    - manual URL filtering
-  - under access control rule of <span style="color: #bb6600;">access control policy</span>
-  - create a rule to Block traffic based on a reputation level
+- Firepower Management Conter (FMC) - Access Control Policy
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      onclick= "window.open('https://bit.ly/3JxPEl1')"
+      src    = "https://www.cisco.com/c/dam/en/us/td/i/300001-400000/370001-380000/373001-374000/373461.jpg"
+      alt    = "Access Control Policy Default Actions"
+      title  = "Access Control Policy Default Actions"
+    />
+  </figure>
+    
+  - access control rules
+    - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
+    - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
+  - URL filtering
+    - control access to web site based on
+      - category: a general classification for the URL, e.g., Auction category, Job Search category
+      - reputation:
+        - how likely the URL is to be used for purposes that might against organization's security policy
+        - level: 1 - High Risk; 2 - Suscpecious sites; 3 - Benign Sites with security risk ; 4 - Benign Sites; 5 - Well Known
+        - <span style="color: #bb6600;">block all levels lower</span> than the selected level, e.g., select level 3 and then block scores 1~3
+    - a feature to control the websites that users on your network can access:
+      - <span style="color: #bb6600;">category and reputation-based URL filtering</span> (recommended)
+      - manual URL filtering
+    - under access control rule of <span style="color: #bb6600;">access control policy</span>
+    - create a rule to Block traffic based on a reputation level
+  - Custom Block lists or feeds (or objects or groups)
+    - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
+    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span>
+    - example: if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the Block list in the Security Intelligence tab of your access control policy.
   - reputation score to configure a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category: <span style="color: #bb6600;">6~10</span> to clean
   - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
