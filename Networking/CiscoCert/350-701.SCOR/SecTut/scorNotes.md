@@ -224,7 +224,7 @@
       title  = "Cisco Security Solution - Product Relations"
     />
   </figure>
-
+  
 
 ## Integrity and Privacy
 
@@ -1285,17 +1285,7 @@
         title  = "Access Control Policy Default Actions"
       />
     </figure>
-  <!-- 
-  - Network Analysis and Intrusion Policy
-
-    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-        onclick= "window.open('https://bit.ly/33rodKv')"
-        src    = "https://bit.ly/33tOibQ"
-        alt    = "Access Control Policy Default Actions"
-        title  = "Access Control Policy Default Actions"
-      />
-    </figure> -->
+    
   - network discovery & identity policies:
     - logging discovery and identity data allows you to take advantage of many features in the Firepower System
     - collect host, application, and user data for traffic on your network
@@ -1308,10 +1298,6 @@
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
   - device management policy
     - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment
-  - impact flag:
-    - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
-    - required for <span style="color: #bb6600;">network discovery policy</span>
-    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
   - <span style="color: #bb6600;">health policy</span>
     - using the health monitor to create a health policy (collection of tests)
     - used to collect health modules alerts from managed devices
@@ -1324,6 +1310,10 @@
     - configure multiple managed devices at once
     - feature configured for managed devices: <span style="color: #bb6600;">time schronization</span>
     - web GUI to download capture traffic file: <span style="color: #bb6600;">enable the HTTPS server</span> for the service platform policy
+  - impact flag:
+    - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
+    - required for <span style="color: #bb6600;">network discovery policy</span>
+    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
     - CLI:
