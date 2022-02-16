@@ -1233,8 +1233,7 @@
 - <mark style="background: #e0ffff;">Firepower system</mark>
   - use <span style="color: #bb6600">network discovery and identity policies</span> to collect host, application, and user data for traffic on your network
   - perform forensic analysis, behavioral profiling, access control
-  - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
-  - provide <span style="color: #bb6600;">intrustion prevention capabilities natively</span>
+  - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and 
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
     - Firepower Threat Defense Devices
