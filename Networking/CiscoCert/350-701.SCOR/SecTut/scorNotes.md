@@ -1249,19 +1249,6 @@
   - difference btw Firepower and ASA: Firepower <span style="color: #bb6600;">natively provides intrusion prevention capabilities</span>
 
 
-- Cisco ASA FirePOWER module
-  - known as the ASA SFR, providing next-generation Firewall services, including
-    - Next Generation Intrusion Prevention System (NGIPS)
-    - Application Visibility and Control (AVC)
-    - URL filtering
-    - Advanced Malware Protection (AMP)
-  - redirect traffic to the SFR module
-    1. select the <span style="color: #bb6600;">traffic</span> to redirect w/ ACL
-    2. create <span style="color: #bb6600;">class-map</span> to match the traffic
-    3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
-    4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
-
-
 - <mark style="background: #e0ffff;">Cisco Secure Firewall Management Center (FMC)</mark>
   - provide <span style="color: #bb6600;">centralized</span>, integrated, and streamlined management
   - an integrated suite of network security and traffic management products
@@ -1414,6 +1401,19 @@
     - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile
     - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
   - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
+
+
+- Cisco ASA FirePOWER module
+  - known as the ASA SFR, providing next-generation Firewall services, including
+    - Next Generation Intrusion Prevention System (NGIPS)
+    - Application Visibility and Control (AVC)
+    - URL filtering
+    - Advanced Malware Protection (AMP)
+  - redirect traffic to the SFR module
+    1. select the <span style="color: #bb6600;">traffic</span> to redirect w/ ACL
+    2. create <span style="color: #bb6600;">class-map</span> to match the traffic
+    3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
+    4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
 
 
 - Cisco Threat Intelligence Director (CTID)
