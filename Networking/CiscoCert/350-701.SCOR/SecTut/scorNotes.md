@@ -976,9 +976,9 @@
     - Local Malware Analysis
     - Dynamic Analysis
   - Spero analysis
-    - examining <span style="color: #bb6600;">structural</span> characteristics such as metadata and header information in executable files
+    - examining <span style="color: #bb6600;">structural characteristics</span> such as metadata and header information in executable files
     - generating a <span style="color: #bb6600;">Spero signature</span> based on this information
-    - eligible executable file: submits file to  <span style="color: #bb6600;">the Spero heuristic engine in the AMP cloud</span>?
+    - eligible executable file: submits file to  <span style="color: #bb6600;">the Spero heuristic engine in the AMP cloud</span>
     - determining whether the file is malware according to Spero signature
     - only upload the signature of the (executable) files to the AMP cloud
     - the Cisco machine-based learning system
