@@ -1296,16 +1296,14 @@
   - identity policy
     - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
-  - device management policy
-    - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment
   - <span style="color: #bb6600;">health policy</span>
     - using the health monitor to create a health policy (collection of tests)
     - used to collect health modules alerts from managed devices
     - configured <span style="color: #bb6600;">health test criteria</span> for several health modules (tests)
     - control which health modules against each of your appliances
     - configure the specific limits used in the tests run by each module
-  - platform settings policy / platform service policy
-    - a shared set of features or parameters that define the aspects of a managed device
+  - device management policy / platform settings policy / platform service policy
+    - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device 
     - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
     - configure multiple managed devices at once
     - feature configured for managed devices: <span style="color: #bb6600;">time schronization</span>
