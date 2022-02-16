@@ -941,7 +941,12 @@
     - <span style="color: #bb6600">Installed Endpoint IOCs</span> to upload new endpoint IOCs and view installed endpoint IOCs (admin only)
     - <span style="color: #bb6600">Scan Summary</span> to view the results of endpoint IOC scans
   - Automated Actions 
-    - <span style="color: #bb6600">Automated Actions</span> to set actions automatically trigger when a specified event occurs on a computer
+    - <span style="color: #bb6600">Automated Actions</span> to set actions automatically trigger when a specified event occurs on a 
+  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
+  - custom detection policy 
+    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
+    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 
+  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>signature
   - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span>
 
 
@@ -963,11 +968,6 @@
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
-  - action of a created custom file policy for discovering an attack 1) propagating through their network via a file; 2) discovered during testing that the scans are not detecting the file as an indicator of compromise; 3) tracked in the future and ensured no other endpoints execute the infected file: <span style="color: #bb6600;">block the application that the file was using to open</span>
-  - custom detection policy 
-    - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
-    - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 
-  - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>signature
 
 
 - Secure Endpoint (AMP for Endpoints) - File inspection
