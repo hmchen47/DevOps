@@ -1874,7 +1874,7 @@
 - <mark style="background: #e0ffff;">Identity Service Engine (ISE)</mark> - Overview
   - obtain <span style="color: #bb6600;">contextual identity and profiles</span><span style="color: #bb6600;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
-  - key functions
+  - key characteristics
     - combine <span style="color: #bb6600;">AAA, posture, and profiler</span> into one appliance
     - provide for comprehensive <span style="color: #bb6600;">guest access management</span>
     - enforce <span style="color: #bb6600;">endpoint compliance</span>
@@ -1896,6 +1896,78 @@
   - integrated solution: 1) Cisco <span style="color: #bb6600;">pxGrid</span>; 2) Cisco Rapid Threat Containment
   - ISE nodes for high availability: <span style="color: #bb6600;">primary and secondary Policy Administration Node (PAN)</span>
   - action to ensure that the addition of the ISE node will be successful when inputting the FQDN: <span style="color: #bb6600;">make the new Cisco ISE node a secondary PAN before registering it with the primary</span>
+
+
+- Identity Service Engine (ISE) - AAA
+  - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
+  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
+  - Endpoint Admission Control (EAC): access methods for authentication and authorization
+    - 802.1X port-based Authentication
+    - MAC Authentication Bypass (MAB)
+    - Web Authentication (WebAuth)
+  - Mobile Device Management (MDM)
+    - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
+    - ISE functions with external MDM servers:
+      - Manages device <span style="color: #bb6600;">registration</span>
+      - Handles device <span style="color: #bb6600;">remediation</span>
+      - Augments endpoint
+    - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
+    - high level use cases
+      - device registration
+      - remediation - restricted access based on compliant state
+      - periodic <span style="color: #bb6600;">compliance check</span>
+      - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
+      - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
+    - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
+  - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
+  - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
+    - command required: `ip radius source-interface`
+    - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server
+  - Duo MFA integration w/ ISE for TACACS+ device administration w/ local/internal (ISE) users
+    - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
+    - the proxy will then punt the requests back to ISE for local user authentication
+    - necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc.
+    - success: the end user/admin will be send a "DUO Push"
+    - fail: stop and no "Duo Push" will occur
+    - config process
+      - install and config Duo authentication proxy
+      - config the identity store within ISE
+    - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
+
+
+- Identity Service Engine (ISE) - Posture
+  - <span style="color: #bb6600;">posture policy</span>
+    - a collection of posture requirements
+    - associated with one or more identity groups and operating systems
+    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Age
+    - considerations: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
+      - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
+      - remediations: the methods AnyConnect will handle endpoints that are <span style="color: #bb6600;">out of compliance</span>
+      - requirements: the immediate act steps taken by AnyConnect when an endpoint is out of compliance
+      - provisioning policy: determine the version of AnyConnect used and the compliant module installed during the provisioning progress (methods: URL-redirect and download or a provisioning URL)
+      - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
+    - states: compliant and <span style="color: #bb6600;">non-compliant</span>
+    - endpoint security provide overall security posture of an organization: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
+    - benefit to ensure as an endpoint is compliant with a posture policy configured in ISE: verify that the endpoint has the <span style="color: #bb6600;">latest Microsoft security patches installed</span>
+    - <span style="color: #bb6600;">device compliance</span>
+      - validate if anti-virus software installed
+      - verification of the latest OS patches
+    - solution for posture check on MS Windows endpoint w/o MS17-010 patch:
+      - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
+      - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
+    - benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
+    - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
+  - posture assessment requirements
+    - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
+    - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
+    - policy requirement types
+      - Mandator
+        - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
+        - move to <span style="color: #bb6600;">Non-Compliant</span> state if failed
+      - Optional: allow to skip the specified optional requirements and move to Compliant state
+      - Audit: for internal purposes and the agent does not prompt any message or input from end users
+    - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
+    - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
 
 
 - Identity Service Engine (ISE) - Endpoint Profiling
@@ -1944,78 +2016,6 @@
   - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
-
-
-- Identity Service Engine (ISE) - Posture service
-  - <span style="color: #bb6600;">posture policy</span>
-    - a collection of posture requirements
-    - associated with one or more identity groups and operating systems
-    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Age
-    - considerations: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
-      - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
-      - remediations: the methods AnyConnect will handle endpoints that are <span style="color: #bb6600;">out of compliance</span>
-      - requirements: the immediate act steps taken by AnyConnect when an endpoint is out of compliance
-      - provisioning policy: determine the version of AnyConnect used and the compliant module installed during the provisioning progress (methods: URL-redirect and download or a provisioning URL)
-      - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
-    - states: compliant and <span style="color: #bb6600;">non-compliant</span>
-    - endpoint security provide overall security posture of an organization: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
-    - benefit to ensure as an endpoint is compliant with a posture policy configured in ISE: verify that the endpoint has the <span style="color: #bb6600;">latest Microsoft security patches installed</span>
-    - <span style="color: #bb6600;">device compliance</span>
-      - validate if anti-virus software installed
-      - verification of the latest OS patches
-    - solution for posture check on MS Windows endpoint w/o MS17-010 patch:
-      - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
-      - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
-    - benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
-    - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
-  - posture assessment requirements
-    - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
-    - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
-    - policy requirement types
-      - Mandator
-        - <span style="color: #bb6600;">must remediate</span> to meet the requirements within the time specified in the remediation timer settings
-        - move to <span style="color: #bb6600;">Non-Compliant</span> state if failed
-      - Optional: allow to skip the specified optional requirements and move to Compliant state
-      - Audit: for internal purposes and the agent does not prompt any message or input from end users
-    - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
-    - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
-
-
-- Identity Service Engine (ISE) - Authentication
-  - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
-  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
-  - Endpoint Admission Control (EAC): access methods for authentication and authorization
-    - 802.1X port-based Authentication
-    - MAC Authentication Bypass (MAB)
-    - Web Authentication (WebAuth)
-  - Mobile Device Management (MDM)
-    - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
-    - ISE functions with external MDM servers:
-      - Manages device <span style="color: #bb6600;">registration</span>
-      - Handles device <span style="color: #bb6600;">remediation</span>
-      - Augments endpoint
-    - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
-    - high level use cases
-      - device registration
-      - remediation - restricted access based on compliant state
-      - periodic <span style="color: #bb6600;">compliance check</span>
-      - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
-      - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
-    - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
-  - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
-  - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
-    - command required: `ip radius source-interface`
-    - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server
-  - Duo MFA integration w/ ISE for TACACS+ device administration w/ local/internal (ISE) users
-    - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
-    - the proxy will then punt the requests back to ISE for local user authentication
-    - necessary for organizations that want to utilize the local user database on ISE and not relay on external identity sources such as Active Directory, LDAP, etc.
-    - success: the end user/admin will be send a "DUO Push"
-    - fail: stop and no "Duo Push" will occur
-    - config process
-      - install and config Duo authentication proxy
-      - config the identity store within ISE
-    - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
 
 
 - <mark style="background: #e0ffff;">TrustSec</mark>
