@@ -1899,26 +1899,6 @@
 
 
 - Identity Service Engine (ISE) - AAA
-  - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
-  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
-  - Endpoint Admission Control (EAC): access methods for authentication and authorization
-    - 802.1X port-based Authentication
-    - MAC Authentication Bypass (MAB)
-    - Web Authentication (WebAuth)
-  - Mobile Device Management (MDM)
-    - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
-    - ISE functions with external MDM servers:
-      - Manages device <span style="color: #bb6600;">registration</span>
-      - Handles device <span style="color: #bb6600;">remediation</span>
-      - Augments endpoint
-    - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
-    - high level use cases
-      - device registration
-      - remediation - restricted access based on compliant state
-      - periodic <span style="color: #bb6600;">compliance check</span>
-      - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
-      - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
-    - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
   - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
     - command required: `ip radius source-interface`
@@ -1933,7 +1913,25 @@
       - install and config Duo authentication proxy
       - config the identity store within ISE
     - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
+  - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
+  - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit
 
+
+- Mobile Device Management (MDM)
+  - secure, monitor, manage, and support mobile devices deployed across mobile operators, service providers, and enterprises
+  - ISE functions with external MDM servers:
+    - Manages device <span style="color: #bb6600;">registration</span>
+    - Handles device <span style="color: #bb6600;">remediation</span>
+    - Augments endpoint
+  - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
+  - high level use cases
+    - device registration
+    - remediation - restricted access based on compliant state
+    - periodic <span style="color: #bb6600;">compliance check</span>
+    - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
+    - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
+  - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
+  
 
 - Identity Service Engine (ISE) - Posture
   - <span style="color: #bb6600;">posture policy</span>
@@ -1970,7 +1968,11 @@
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
 
 
-- Identity Service Engine (ISE) - Endpoint Profiling
+- Identity Service Engine (ISE) - Endpoint Profiling 
+  - Endpoint Admission Control (EAC): access methods for authentication and authorization
+    - 802.1X port-based Authentication
+    - MAC Authentication Bypass (MAB)
+    - Web Authentication (WebAuth)
   - <span style="color: #bb6600;">endpoint profiling policy</span>
     - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
