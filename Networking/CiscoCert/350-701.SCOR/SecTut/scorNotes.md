@@ -1547,7 +1547,7 @@
   - a zone must be configured before interfaces can be assigned to the zone
   - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
   - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
-  - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMXZ network is redirected</span>
+  - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMZ network is redirected</span>
   
     ```text
     Gateway of last resort is 1.1.1.1 to network 0.0.0.0
@@ -1611,7 +1611,7 @@
     - reference the Flow Exporter and the Flow Record.
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but <span style="color: #bb6600">metadata</span> for communication
-  - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
+  - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
     - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
     - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
     - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
