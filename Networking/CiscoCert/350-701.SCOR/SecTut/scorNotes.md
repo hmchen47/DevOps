@@ -1717,6 +1717,49 @@
 
 ## Email and Web Security
 
+- AsyncOS operating system
+  - features
+    - Anti-Spam at the gateway
+    - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
+    - Outbreak Filters
+    - Policy, Virus, and Outbreak Quarantines 
+    - Spam Quarantine
+    - Email Authentication
+    - Cisco Email Encryption
+    - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
+    - On-box message tracking
+    - Mail Flow Monitoring
+    - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
+    - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
+    - Message encryption via secure SMTP over Transport Layer Security
+    - Virtual Gateway technology
+    - Protection against malicious attachments and links in email messages
+  - SensorBase Network
+    - a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic
+    - provide Cisco with an assessment of reliability for known Internet domains
+    - action to gather threat information from a variety of Cisco products and services and performs analytics to find patterns on threats: <span style="color: #bb6600;">deployment</span>
+  - encryption header
+    - add encryption settings to a message by <span style="color: #bb6600;">inserting an SMTP header</span> into a message using either a content filter or a message filter
+    - override the encryption settings defined in the associated encryption profile
+    - apply specified encryption features to messages
+  - decryption policies
+    - handling of HTTPS traffic within the web proxy
+      - when to decryp HTTPS traffic
+      - how to handle requests that use invalid or revoked security certificates
+    - ways to handle HTTPS traffic
+      - pass through encrypted traffic
+      - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible -> provide <span style="color: #bb6600;">enhanced HTTPS application detection</span> for AsyncOS
+      - drop the HTTPS connection
+      - monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
+  - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
+  - API for Cisco Security Management appliances
+    - a representational state transfer (REST) based set of operations
+    - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
+    - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
+    - Cisco Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
+  - API used for Content Security: <span style="color: #bb6600;">AsyncOS API</span>
+
+
 - <mark style="background: #e0ffff;">Cisco Email Security Appliance (ESA)</mark>
   - features:
     - advanced threat protection capabilities to detect, block, and remediate threats faster
@@ -1788,49 +1831,6 @@
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
   - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
-
-
-- AsyncOS operating system
-  - features
-    - Anti-Spam at the gateway
-    - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
-    - Outbreak Filters
-    - Policy, Virus, and Outbreak Quarantines 
-    - Spam Quarantine
-    - Email Authentication
-    - Cisco Email Encryption
-    - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
-    - On-box message tracking
-    - Mail Flow Monitoring
-    - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
-    - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
-    - Message encryption via secure SMTP over Transport Layer Security
-    - Virtual Gateway technology
-    - Protection against malicious attachments and links in email messages
-  - SensorBase Network
-    - a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic
-    - provide Cisco with an assessment of reliability for known Internet domains
-    - action to gather threat information from a variety of Cisco products and services and performs analytics to find patterns on threats: <span style="color: #bb6600;">deployment</span>
-  - encryption header
-    - add encryption settings to a message by <span style="color: #bb6600;">inserting an SMTP header</span> into a message using either a content filter or a message filter
-    - override the encryption settings defined in the associated encryption profile
-    - apply specified encryption features to messages
-  - decryption policies
-    - handling of HTTPS traffic within the web proxy
-      - when to decryp HTTPS traffic
-      - how to handle requests that use invalid or revoked security certificates
-    - ways to handle HTTPS traffic
-      - pass through encrypted traffic
-      - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible -> provide <span style="color: #bb6600;">enhanced HTTPS application detection</span> for AsyncOS
-      - drop the HTTPS connection
-      - monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
-  - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
-  - API for Cisco Security Management appliances
-    - a representational state transfer (REST) based set of operations
-    - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
-    - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
-    - Cisco Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
-  - API used for Content Security: <span style="color: #bb6600;">AsyncOS API</span>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
