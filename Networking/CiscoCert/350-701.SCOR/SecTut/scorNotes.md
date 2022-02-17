@@ -1663,30 +1663,6 @@
     - Only one flow monitor per interface and per direction is supported.
 
 
-- <mark style="background: #e0ffff;">Telemetry</mark>
-  - information and/or data
-  - provide <span style="color: #bb6600;">awareness and visibility</span> info what is occurring on the network at any given 
-  - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
-  - use a <span style="color: #bb6600;">push method</span> which makes it faster than SNMP
-  - advantage over SNMP: <span style="color: #bb6600;">scalability</span>
-  - types of data in telemetry info
-    - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
-    - <span style="color: #bb6600;">interpacket variation</span>:
-      - any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
-      - capture variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length
-    - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
-  - <span style="color: #bb6600;">Model-Driven Telemetry</span>
-    - a new approach for network monitoring
-    - data <span style="color: #bb6600;">streamed</span> from network devices continuously using a push model
-    - provide near real-time access to operational statistics
-    - apps subscribe to specific data items they need
-    - use standard-based YANG data models over NETCONF-YANG
-    - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
-  - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
-  - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
-  - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
-
-
 - <mark style="background: #e0ffff;">Simple Network Management Protocol (SNMP)</mark>
   - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
   - version 3 security level
@@ -1713,6 +1689,30 @@
     snmp-server user andy myv3 auth sha cisco priv aes 256 ciscXXXXXXXX
     snmp-server host inside 10.255.254.1 version 3 andy
     ```
+
+
+- <mark style="background: #e0ffff;">Telemetry</mark>
+  - information and/or data
+  - provide <span style="color: #bb6600;">awareness and visibility</span> info what is occurring on the network at any given 
+  - core function of the device not to generate security alerts designed to detect unwanted or malicious activity from computer networks
+  - use a <span style="color: #bb6600;">push method</span> which makes it faster than SNMP
+  - advantage over SNMP: <span style="color: #bb6600;">scalability</span>
+  - types of data in telemetry info
+    - flow info: endpoints, protocols, ports, when the flow started, how long the flow was active, etc.
+    - <span style="color: #bb6600;">interpacket variation</span>:
+      - any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
+      - capture variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length
+    - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
+  - <span style="color: #bb6600;">Model-Driven Telemetry</span>
+    - a new approach for network monitoring
+    - data <span style="color: #bb6600;">streamed</span> from network devices continuously using a push model
+    - provide near real-time access to operational statistics
+    - apps subscribe to specific data items they need
+    - use standard-based YANG data models over NETCONF-YANG
+    - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
+  - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
+  - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
+  - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
 
 
 ## Email and Web Security
