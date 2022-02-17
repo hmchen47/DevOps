@@ -1311,7 +1311,7 @@
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
     - CLI:
-      - register the device to a FireSIGHT Management Center using the <span style="color: #bb6600;">`configure manager add`</span> command
+      - register the device to a FireSIGHT Management Center using the <code style="color: #bb6600;">configure manager add</code> command
       - syntax: `configure manager add {hostname | IPv4_address | IPv6_address | DONTRESOLVE} reg_key [nat_id]`
   - application layer preprocessors
     - providing application layer protocol decoders that normalize specific types of packet data into formats that the intrusion rules engine can analyze
@@ -1326,8 +1326,8 @@
       - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
       - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
-  - command used to register a Cisco FirePower sensor to FMC: <span style="color: #bb6600;">`configure manager add <host> <key>`</span>
-  - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
+  - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
+  - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
@@ -1369,7 +1369,7 @@
 
 
 - Firewall Threat Defense (FTD)
-  - config new FTD device not behind a NAT device to be managed w/ FMC: <span style="color: #bb6600;">`configure manager add <FMC IP address> <registration key>`</span>
+  - config new FTD device not behind a NAT device to be managed w/ FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>
     - <span style="color: #bb6600;">backup policy w/ priority 5 and primary polity w/ priority 1</span>
     - configure Cisco Umbrella and has an identity that references two different policies and ensures that the policy that the identity must use takes precedence over the second one: <span style="color: #bb6600;">make the correct policy first in the policy order</span>
@@ -1452,7 +1452,7 @@
     - analyze threats
   - <span style="color: #bb6600;">supplement other Firepower functionality</span>, offering an additional line of defense against threats
   - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
-  - <span style="color: #bb6600;">external threat feeds</span>: provide information about security threats, which allows the SOC to proactively automate responses to those threats
+  - <span style="color: #bb6600;">external threat feeds</span>: provide information about security threats, which allows the SOC (Security Operations Center) to proactively automate responses to those threats
   - FMC to push security intelligence observable to its sensors from other products: <span style="color: #bb6600;">Threat Intelligence Director</span>
   - deployed by your organization to ingest threat intelligence automatically
 
@@ -1575,16 +1575,6 @@
   - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: ASA <span style="color: #bb6600;">denies all traffic by default</span> whereas the IOS router with Zone-Based Policy Firewall starts out by <span style="color: #bb6600;">allowing all traffic</span>, even on untrusted interfaces
 
 
-- Security Manager
-  - enable consistent policy enforcement and rapid troubleshooting of security events
-  - offer summarized reports across the security deployment
-  - w/ centralized interface, scale efficiently and manage a wide range of Cisco security devices with improved visibility
-  - provide a comprehensive management solution for
-    - Cisco <span style="color: #bb6600;">ASA</span> 5500 Series Adaptive Security Appliances
-    - Cisco intrusion prevention systems 4200 and 4500 Series Sensors
-    - Cisco AnyConnect Secure Mobility Client
-
-
 - <mark style="background: #e0ffff;">NetFlow</mark>
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
@@ -1606,11 +1596,11 @@
   - Flow Record
     - define the information that NetFlow gathers
     - including packets in the flow and the types of counters gathered per flow
-    - custom flor record: specify a <span style="color: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
+    - custom flor record: specify a <span style="clor: #bb6600">series of match</span> and collect commands that tell the device what fields to include in the outgoing NetFlow PDU
     - config router to send NetFlow data to StealthWatch
       - flow record: `flow record Steathwatch406397954`
-      - conditions to match: <span style="color: #bb6600;">`match ipv4 ttl`</span>
-  - Flow Exporter
+      - conditions to match: <code style="color: #bb6600;">match ipv4 ttl</code>
+  - Flow Exporter 
     - define the physical or virtual Flow Collector IP Address to which NetFlow data is sent
     - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
     - consider using a Loopback interface to source NetFlow data from
@@ -1624,7 +1614,7 @@
   - NetFlow Secure Event Logging (NSEL) in ASA and ASASM
     - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
     - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
-    - flow-export actions: <span style="color: #bb6600">`flow-export event-type`</span> must be defined under a policy
+    - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
     - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
     - major functions
       - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
@@ -1649,7 +1639,7 @@
     2. Defines the <span style="color: #bb6600">class map</span> that identifies traffic for which NSL events need to be exported
     3. Defines the policy map to apply flow-export actions to the defined classes
     4. Adds or edits the service policy
-    - generate NetFlow records on traffic traversing the Cisco ASA:<span style="color: #bb6600">`flow-export destination inside 1.1.1.1 2055`</span>
+    - generate NetFlow records on traffic traversing the Cisco ASA:<code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
   - Flexible Netflow
     - the next-generation in flow technology
     - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
@@ -1700,16 +1690,16 @@
     - `authNoPriv`: authn = MD5/SHA; encry = none
     - `authPriv`: authn = MD5/SHA, encry = DES
   - configures the SNMP server group to enable authentication for members of a specified named access list
-    - syntax: <span style="color: #bb6600;">`snmp-server group [<group-name> {v1 | v2c | v3 [auth | noauth | priv]}] [read <read-view>] [write <write-view>] [notify <notify-view>] [access <access-list>]`</span>
+    - syntax: <code style="color: #bb6600;">snmp-server group [<group-name> {v1 | v2c | v3 [auth | noauth | priv]}] [read <read-view>] [write <write-view>] [notify <notify-view>] [access <access-list>]</code>
     - `v1 | v2c | v3`: SNMP version
     - `auth | noauth | priv`: authenticaton packet options, `priv` encrypted authentication packet
     - `access <access-list>`: a standard ACL associated w/ the group
   - add new user to SNMP group:
     - syntax: `snmp-server user <user-name> <group-name> [remote ip-address [udp-port port]] {v1 | v2c | v3 [encrypted] [auth {md5 | sha} <auth-password>]} [access access-list]`
-    - <span style="color: #bb6600;">`snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941`</span>: user-name = andy; group-name = myv3; auth-password = cisc0380739941
+    - <code style="color: #bb6600;">snmp-server user andy myv3 auth sha cisco priv aes 256 cisc0380739941</code>: user-name = andy; group-name = myv3; auth-password = cisc0380739941
   - specify the recipient of a SNMP notification operation:
     - syntax: `snmp-server host {<hostname> | <ip-address>} [vrf <vrf-name> | informs | traps | version {1 | 2c | 3 [auth | noauth | priv]}] <community-string> [udp-port <port> [<notification-type>] | <notification-type>]`
-    - <span style="color: #bb6600;">`snmp-server host inside 10.255.254.1 version 3 andy`</span>: hostname = inside (interface name); community-name (username) = andy
+    - <code style="color: #bb6600;">snmp-server host inside 10.255.254.1 version 3 andy</code>: hostname = inside (interface name); community-name (username) = andy
   - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
   - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
   - strongest security possibility of SNMPv3 config
@@ -1751,7 +1741,7 @@
       - not allowed to connect to your ESA
       - appear as if your server is unavailable for sending server
       - most MTAs (Mail Transfer Agents) retry frequently -> more traffic
-      - <span style="color: #bb6600;">`REJECT`</span> will receive a 554 SMTP error (hard bounce)
+      - <code style="color: #bb6600;">REJECT</code> will receive a 554 SMTP error (hard bounce)
     - dropping malicious emails occurs after receiving and examining the mail to make the decision
   - Directory Harvest Attack (DHA)
     - a technique used by spammers to find valid/existent email addresses at a domain either by using Brute force or by guessing valid e-mail addresses at a domain using different permutations of common username
@@ -1854,7 +1844,7 @@
       - config each client to send traffic to WSA
       - WSA responds w/ <span style="color: #bb6600;">its own IP info</span>
       - browser Configured: client browser is explicitly configured to use a proxy
-      - <span style="color: #bb6600;">`.PAC` file configured</span>:
+      - <span style="color: #bb6600;">.PAC file configured</span>:
         - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
         - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server
         - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
@@ -2067,7 +2057,7 @@
 
 - <mark style="background: #e0ffff;">RADIUS Change of Authorization (CoA)</mark>
   - a mechanism to change the attributes of an <span style="color: #bb6600;">authentication, authorization, and accounting (AAA) session</span> after it is authenticated
-  - enable AAA globally to support CoA: <span style="color: #bb6600;">`aaa new-model`</span>
+  - enable AAA globally to support CoA: <code style="color: #bb6600;">aaa new-model</code>
   - main steps of CoA procedure
     1. authentication
     2. posture assessment
@@ -2089,15 +2079,15 @@
     - <span style="color: #bb6600;">authenticator</span> (required): switch & WLC
     - <span style="color: #bb6600;">authentication server</span> (required): RADIUS, ISE
   - only applied to switch port
-  - globally enables 802.1X port-based authentication.: <span style="color: #bb6600;">`dot1x system-auth-control`</span>
+  - globally enables 802.1X port-based authentication.: <code style="color: #bb6600;">dot1x system-auth-control</code>
   - commands to <span style="color: #bb6600;">enable 802.1X on a port</span>
     - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
     - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
     - missing port configuration to enable authentication on laptop: `dot1x pae authentication`
   - display information about current Auth Manager sessions:
-    - syntax: <span style="color: #bb6600;">`show authentication sessions`</span> -> indicating interface authentication methods, including `dot1x` and `mab`
+    - syntax: <code style="color: #bb6600;">show authentication sessions</code> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
-    - display status of an 802.1X connection on interface gi0/1: <span style="color: #bb6600;">`show authen sess int gi0/1`</span>
+    - display status of an 802.1X connection on interface gi0/1: <code style="color: #bb6600;">show authen sess int gi0/1</code>
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
     - example outputs
@@ -2160,15 +2150,15 @@
   - a fallback option for devices that don't support 802.1x
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
-  - command to make AAA session w/ success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <span style="color: #bb6600;">`aaa authorization network default group ise`</span> config required
+  - command to make AAA session w/ success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <code style="color: #bb6600;">aaa authorization network default group ise</code> config required
   - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
 - Cisco devices basic commands and debug info
   - enable AAA service to support CoA: `aaa new-model` in global config mode
-  - allow user to enter global configuration mode: <span style="color: #bb6600;">`privilege exec level 5 configure terminal`</span>
+  - allow user to enter global configuration mode: <code style="color: #bb6600;">privilege exec level 5 configure terminal</code>
   - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
-  - enable authentication on a port: <span style="color: #bb6600;">`authentication port-control auto`</span>
+  - enable authentication on a port: <code style="color: #bb6600;">authentication port-control auto</code>
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
 
     ```tex
@@ -2191,7 +2181,7 @@
 
   - NTP authentication 1
     - NTP server - 10.10.10.1; client - 10.10.10.2
-    - NTP authentication enforcment: <span style="color: #bb6600;">`ntp authenticate`</span>
+    - NTP authentication enforcment: <code style="color: #bb6600;">ntp authenticate</code>
     - other client config:
 
       ```text
@@ -2203,7 +2193,7 @@
 
   - NTP authentication 2
     - NTP server - 1.1.1.1; client - 1.1.1.2
-    - command to enable the client to accept the server’s authentication key: <span style="color: #bb6600;">`ntp server 1.1.1.1 key 1`</span>
+    - command to enable the client to accept the server’s authentication key: <code style="color: #bb6600;">ntp server 1.1.1.1 key 1</code>
   - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
   - result of configurations w/ the authorization for the admin 5 user
     - <span style="color: #bb6600;">complete no configuration</span> w/ the config
@@ -2320,9 +2310,9 @@
     - only authorized DHCP server trusted and allowed to send all types of DHCP messages
     - all other ports are untrusted (default) and send only DHCP requests
     - <span style="color: #bb6600;">shutdown untrusted ports</span> if receiving DHCP response
-    - enable trust port: <span style="color: #bb6600;">`ip dhcp snooping trust`</span>
+    - enable trust port: <code style="color: #bb6600;">ip dhcp snooping trust</code>
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
-    - user on VLAN 41 on a new switch no IP address obtained due to missing <span style="color: #bb6600;">`ip dhcp snooping trust`</span> config
+    - user on VLAN 41 on a new switch no IP address obtained due to missing <code style="color: #bb6600;">ip dhcp snooping trust</code> config
     - configure a DHCP server to better secure their environment and able to rate-limit the traffic and ensure that legitimate requests are not dropped: <span style="color: #bb6600;">set a trusted interface for the DHCP server</span>
     
 
