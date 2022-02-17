@@ -238,4 +238,154 @@
 
 
 
+- <span style="color: #008888; font-weight: bold;">Question 19</span>
+
+  What is the function of the `crypto isakmp key cisc414685095 address 192.168.50.1 255.255.255.255` command when establishing an IPsec VPN tunnel?
+
+  A. It prevents 192.168.50.1 from connecting to the VPN server.<br>
+  B. It defines that data destined to 192.168.50.1 is going to be encrypted.<br>
+  C. It configures the pre-shared authentication key for host 192.168.50.1.<br>
+  D. It configures the local address for the VPN server 192.168.50.1.<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 20</span>
+
+  Which CLI command is used to enable URL filtering support for shortened URLs on the Cisco ESA?
+
+  A. outbreakconfig<br>
+  B. websecurityadvancedconfig<br>
+  C. webadvancedconfig<br>
+  D. websecurityconfig<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 21</span>
+
+  Which Cisco ASA deployment model is used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network?
+
+  A. single context mode<br>
+  B. routed mode<br>
+  C. transparent mode<br>
+  D. multiple context mode<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 22</span>
+
+  Which open source tool does Cisco use to create graphical visualizations of network telemetry on Cisco IOS XE devices?
+
+  A. SNMP<br>
+  B. Splunk<br>
+  C. Grafana<br>
+  D. InfluxDB<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 23</span>
+
+  Which Cisco DNA Center Intent API action is used to retrieve the number of devices known to a DNA Center?
+
+  A. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device/count`<br>
+  B. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device/startIndex/recordsToReturn`<br>
+  C. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device`<br>
+  D. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device?parameter1=value&parameter2=value&…`<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 24</span>
+
+  When NetFlow is applied to an interface, which component creates the flow monitor cache that is used to collect traffic based on the key and nonkey fields in the configured record?
+
+  A. flow sampler<br>
+  B. flow exporter<br>
+  C. records<br>
+  D. flow monitor<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 25</span>
+
+  Refer to the exhibit.
+
+  ```text
+  ASA# show service-policy sfr
+
+  Global policy:
+    Service-policy: global_policy
+      Class-map: SFR
+        SFR: card status Up, mode fail-open monitor-only
+          packet input 0, packet output 44715478687, drop 0, reset-drop 0
+  ```
+
+  What are two indications of the Cisco Firepower Services Module configuration? (Choose two)
+
+  A. The module is operating in IPS mode.<br>
+  B. The module fails to receive redirected traffic.<br>
+  C. Traffic is blocked if the module fails.<br>
+  D. Traffic continues to flow if the module fails.<br>
+  E. The module is operating in IDS mode.<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 26</span>
+
+  Why is it important for the organization to have an endpoint patching strategy?
+
+  A. so the organization can identify endpoint vulnerabilities<br>
+  B. so the network administrator is notified when an existing bug is encountered<br>
+  C. so the internal PSIRT organization is aware of the latest bugs<br>
+  D. so the latest security fixes are installed on the endpoints<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 27</span>
+
+  Which system is InfluxDB and Grafana be used on to pull the data and display the visualization information?
+
+  A. Docker containers
+  B. Windows Server 2019
+  C. specialized Cisco Linux system
+  D. Windows Server 2016
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 28</span>
+
+  Which Cisco ASA Platform mode disables the threat detection features except for Advanced Threat Statistics?
+
+  A. routed<br>
+  B. multiple context<br>
+  C. cluster<br>
+  D. transparent<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 29</span>
+
+  Which two parameters are used for device compliance checks? (Choose two)
+
+  A. device operating system version<br>
+  B. DHCP snooping checks<br>
+  C. Windows registry values<br>
+  D. endpoint protection software version<br>
+  E. DNS integrity checks<br>
+
+  Answer: <br><br>
+
+
+(to be continued…)
+
+
+
 
