@@ -1744,13 +1744,13 @@
     - apply specified encryption features to messages
   - decryption policies
     - handling of HTTPS traffic within the web proxy
-      - when to decryp HTTPS traffic
-      - how to handle requests that use invalid or revoked security certificates
+      - when to <span style="color: #bb6600;">decrypt HTTPS traffic</span>
+      - how to handle requests that use <span style="color: #bb6600;">invalid or revoked security certificates</span>
     - ways to handle HTTPS traffic
       - pass through encrypted traffic
       - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible -> provide <span style="color: #bb6600;">enhanced HTTPS application detection</span> for AsyncOS
-      - drop the HTTPS connection
-      - monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
+      - <span style="color: #bb6600;">drop</span> the HTTPS connection
+      - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
   - API for Cisco Security Management appliances
     - a representational state transfer (REST) based set of operations
@@ -1860,14 +1860,7 @@
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
     - improve <span style="color: #bb6600;">web traffic performance</span>
-  - decryption policies define the handling of HTTPS traffic within the web proxy:
-    - when to <span style="color: #bb6600;">decrypt HTTPS traffic</span>
-    - how to handle requests that use <span style="color: #bb6600;">invalid or revoked security certificates</span>
-  - decryption policies to handle HTTPS traffic in the following ways
-    - pass through encrypted traffic
-    - decrypt traffic and apply the content-based access policies defined for HTTP traffic
-    - <span style="color: #bb6600;">drop</span> the HTTPS connection
-    - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies
+  - decryption policies same as decryption policies in AsyncOS
   - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>. 
   - proxy caching: improve web traffic performance
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
