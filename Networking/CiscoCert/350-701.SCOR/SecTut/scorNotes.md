@@ -1703,7 +1703,7 @@
       - any interpacket variations within the flow, e.g., variation in Time To Live (TTL), IP and TCP flags, payload length, etc
       - capture variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length
     - context details: derived outside the packet header, including variation in buffer utilization, packet drops within a flow, association with tunnel endpoints, etc.
-  - <span style="color: #bb6600;">Model-Driven Telemetry</span>
+  - model-driven telemetry
     - a new approach for network monitoring
     - data <span style="color: #bb6600;">streamed</span> from network devices continuously using a push model
     - provide near real-time access to operational statistics
