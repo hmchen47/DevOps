@@ -1379,7 +1379,7 @@
     - CIP as it is widely used in industrial applications
     - detect traffic anomalies and provide data to intrusion rules
     - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
-    - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports industrial automation applications
+    - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports <span style="text-decoration: underline;">industrial automation applications</span>
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
   - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
