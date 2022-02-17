@@ -1872,12 +1872,12 @@
 ## Authentication, Authorization, and Accounting (AAA)
 
 - <mark style="background: #e0ffff;">Identity Service Engine (ISE)</mark>
-  - obtain <span style="color: #bb66oo;">contextual identity and profiles</span><span style="color: #bb66oo;"> for all the users and devices connected on a network
+  - obtain <span style="color: #bb6600;">contextual identity and profiles</span><span style="color: #bb6600;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
   - key functions
-    - combine <span style="color: #bb66oo;">AAA, posture, and profiler</span> into one appliance
-    - provide for comprehensive <span style="color: #bb66oo;">guest access management</span>
-    - enforce <span style="color: #bb66oo;">endpoint compliance</span>
+    - combine <span style="color: #bb6600;">AAA, posture, and profiler</span> into one appliance
+    - provide for comprehensive <span style="color: #bb6600;">guest access management</span>
+    - enforce <span style="color: #bb6600;">endpoint compliance</span>
     - provide support for discovery, profiling, policy-based placement, and monitoring of endpoint devices on the network
     - enable consistent policy in centralized and distributed deployments
     - employ advanced enforcement capabilities including Trustsec
@@ -1893,17 +1893,17 @@
     - Posture or Compliance
     - Threat Containment
     - Security Ecosystem Integrations
-  - integrated solution: 1) Cisco <span style="color: #bb66oo;">pxGrid</span>; 2) Cisco Rapid Threat Containment
-  - ISE nodes for high availability: <span style="color: #bb66oo;">primary and secondary Policy Administration Node (PAN)</span>
+  - integrated solution: 1) Cisco <span style="color: #bb6600;">pxGrid</span>; 2) Cisco Rapid Threat Containment
+  - ISE nodes for high availability: <span style="color: #bb6600;">primary and secondary Policy Administration Node (PAN)</span>
   - action to ensure that the addition of the ISE node will be successful when inputting the FQDN: <span style="color: #bb6600;">make the new Cisco ISE node a secondary PAN before registering it with the primary</span>
-  - <span style="color: #bb66oo;">endpoint profiling policy</span>
+  - <span style="color: #bb6600;">endpoint profiling policy</span>
     - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
     - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
     - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
     - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
   - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
-  - <span style="color: #bb66oo;">posture policy</span>
+  - <span style="color: #bb6600;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
     - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Age
