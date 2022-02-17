@@ -1575,7 +1575,7 @@
   - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: ASA <span style="color: #bb6600;">denies all traffic by default</span> whereas the IOS router with Zone-Based Policy Firewall starts out by <span style="color: #bb6600;">allowing all traffic</span>, even on untrusted interfaces
 
 
-- <mark style="background: #e0ffff;">NetFlow</mark>
+- NetFlow
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
@@ -1611,20 +1611,6 @@
     - reference the Flow Exporter and the Flow Record.
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but <span style="color: #bb6600">metadata</span> for communication
-  - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
-    - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
-    - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
-    - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
-    - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
-    - major functions
-      - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
-      - trigger flow-update events and generate appropriate NSEL data records
-      - define and exports templates that describe the progression of a flow
-      - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
-      - send template information periodically to NSEL collectors
-      - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
-      - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
-      - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
   - template of version 9
     - export format using templates to provide access to observations of IP packet flows in a flexible and extensible manner
     - define a collection of fields, with corresponding descriptions of structure and semantics
@@ -1640,23 +1626,41 @@
     3. Defines the policy map to apply flow-export actions to the defined classes
     4. Adds or edits the service policy
     - generate NetFlow records on traffic traversing the Cisco ASA:<code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
-  - Flexible Netflow
-    - the next-generation in flow technology
-    - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
-    - key advantages
-      - flexibility, scalability
-      - monitor a wider range of packet information
-      - enhanced network anomaly and security 
-      - user configurable flow information -> allow the user to configure flow information to perform <span style="color: #bb6600;">customized traffic identification</span>
-      - convergence of multiple accounting technologies into <span style="color: #bb6600;">one accounting mechanism</span>
-      - integral part of Cisco IOS Software allowing all routers or switches in the network to become a source of telemetry and a monitoring device
-    - restrictions for Flexible NetFlow:
-      - Traditional NetFlow (TNF) accounting is not supported.
-      - Flexible NetFlow v5 export format is not supported, only NetFlow v9 export format is supported.
-      - <span style="color: #bb6600;">Both ingress and egress NetFlow accounting</span> is supported
-      - Microflow policing feature shares the NetFlow hardware resource with FNF.
-      - Only one flow monitor per interface and per direction is supported.
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
+
+
+- NetFlow Secure EveLogging (NSEL) in ASA and ASASM
+  - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
+  - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
+  - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
+  - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
+  - major functions
+    - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
+    - trigger flow-update events and generate appropriate NSEL data records
+    - define and exports templates that describe the progression of a flow
+    - track configured NSEL collectors and deliver templates and data records to configured NSEL collectors through NetFlow over UDP only
+    - send template information periodically to NSEL collectors
+    - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
+    - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
+    - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
+
+
+- Flexible Netflow
+  - the next-generation in flow technology
+  - allowing optimization of the network infrastructure, reducing operation costs, improving capacity planning and security incident detection with increased flexibility and scalability
+  - key advantages
+    - flexibility, scalability
+    - monitor a wider range of packet information
+    - enhanced network anomaly and security 
+    - user configurable flow information -> allow the user to configure flow information to perform <span style="color: #bb6600;">customized traffic identification</span>
+    - convergence of multiple accounting technologies into <span style="color: #bb6600;">one accounting mechanism</span>
+    - integral part of Cisco IOS Software allowing all routers or switches in the network to become a source of telemetry and a monitoring device
+  - restrictions for Flexible NetFlow:
+    - Traditional NetFlow (TNF) accounting is not supported.
+    - Flexible NetFlow v5 export format is not supported, only NetFlow v9 export format is supported.
+    - <span style="color: #bb6600;">Both ingress and egress NetFlow accounting</span> is supported
+    - Microflow policing feature shares the NetFlow hardware resource with FNF.
+    - Only one flow monitor per interface and per direction is supported.
 
 
 - <mark style="background: #e0ffff;">Telemetry</mark>
