@@ -1859,10 +1859,9 @@
   - Web Cache Communications Protocol (WCCP)
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
-    - improve <span style="color: #bb6600;">web traffic performance</span>
+    - improve <span style="color: #bb6600;">web traffic performance</span> <- proxy caching
   - decryption policies same as decryption policies in AsyncOS
-  - The Administrator can configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>. 
-  - proxy caching: improve web traffic performance
+  - configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
     - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
