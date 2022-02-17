@@ -1727,6 +1727,7 @@
     - 1st layer: <span style="color: #bb6600;">outbreak filters</span>, download a list bad mail servers from Cisco SenderBase
     - 2nd layer: using antivirus signatures to scan quarantined emails, e.g., <span style="color: #bb6600;">Sophos or McAfee Anti-Virus</span>
     - scan <span style="color: #bb6600;">outbond emails</span> to provide antivirus protection
+  - outbreak filter: used to block emails from bad mail server
   - <span style="color: #bb6600;">Host Access Table (HAT)</span>: hosts allowed to connect to a listener 
   - <span style="color: #bb6600;">Recipient Access Table (RAT)</span>: a list of all local domains for which the email gateway will accept mail; inbound email only
   - Hybrid Secure Email
@@ -1769,7 +1770,6 @@
     - use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
-  - outbreak filter: used to block emails from bad mail server
   - message main action: 1) deliver; 2) drop; 3) quarantine
   - secondary action:
     - sending a copy to a plolicy quarantine if deliver
@@ -1779,11 +1779,11 @@
     - sending message to alternative destination
     - sending copies (bcc) to other receipients
     - sending a DLP violation notification to sender or other contacts
-  - using 2FA to access ESA and join a clustermachine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
+  - using 2FA to access ESA and join a cluster machine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
   - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
-  - action to dynamically determine how harmfulthe SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
-  - device to ensure that machines that connect torganizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ESA</span>
+  - action to dynamically determine how harmful the SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
+  - device to ensure that machines that connect to organizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ESA</span>
   - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
@@ -1791,21 +1791,22 @@
 
 
 - AsyncOS operating system
-  - Anti-Spam at the gateway
-  - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
-  - Outbreak Filters
-  - Policy, Virus, and Outbreak Quarantines 
-  - Spam Quarantine
-  - Email Authentication
-  - Cisco Email Encryption
-  - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
-  - On-box message tracking
-  - Mail Flow Monitoring
-  - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
-  - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
-  - Message encryption via secure SMTP over Transport Layer Security
-  - Virtual Gateway technology
-  - Protection against malicious attachments and links in email messages
+  - features
+    - Anti-Spam at the gateway
+    - Anti-Virus at the gateway with the Sophos and McAfee Anti-Virus scanning engines
+    - Outbreak Filters
+    - Policy, Virus, and Outbreak Quarantines 
+    - Spam Quarantine
+    - Email Authentication
+    - Cisco Email Encryption
+    - Email Security Manager: a single, comprehensive dashboard to manage all email security services and applications on the appliance
+    - On-box message tracking
+    - Mail Flow Monitoring
+    - Access control for inbound senders, based upon the sender's IP address, IP address range, or domain
+    - Extensive message and content filtering technology allows you to enforce corporate policy and act on specific messages as they enter or leave your corporate infrastructure
+    - Message encryption via secure SMTP over Transport Layer Security
+    - Virtual Gateway technology
+    - Protection against malicious attachments and links in email messages
   - SensorBase Network
     - a threat management database that tracks millions of domains around the world and maintains a global watch list for Internet traffic
     - provide Cisco with an assessment of reliability for known Internet domains
@@ -1824,11 +1825,12 @@
       - drop the HTTPS connection
       - monitor the request (take no final action) as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
-  - API for Cisco <span style="color: #bb6600;">Security Management appliances</span>
+  - API for Cisco Security Management appliances
     - a representational state transfer (REST) based set of operations
     - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
     - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
-    - Cisco <span style="color: #bb6600;">Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
+    - Cisco Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
+  - API used for Content Security: <span style="color: #bb6600;">AsyncOS API</span>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
