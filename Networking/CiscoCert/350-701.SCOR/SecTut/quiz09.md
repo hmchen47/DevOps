@@ -112,6 +112,130 @@
   Answer: <br><br>
 
 
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
 
-(to be continued…)
+  Which standard is used to automate exchanging cyber threat information?
+
+  A. IoC<br>
+  B. TAXII<br>
+  C. MITRE<br>
+  D. STIX<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
+
+  Which security solution uses NetFlow to provide visibility across the network, data center, branch offices, and cloud?
+
+  A. Cisco Encrypted Traffic Analytics<br>
+  B. Cisco CTA<br>
+  C. Cisco Umbrella<br>
+  D. Cisco Stealthwatch<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
+
+  An email administrator is setting up a new Cisco ESA. The administrator wants to enable the blocking of greymail for the end user. Which feature must the administrator enable first?
+
+  A. IP Reputation Filtering<br>
+  B. Anti-Virus Filtering<br>
+  C. File Analysis<br>
+  D. Intelligent Multi-Scan<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
+
+  Drag and drop the exploits from the left onto the type of security vulnerability on the right.
+
+  Group 1:
+  A. causes memory access errors
+  B. makes the client the target of attack
+  C. gives unauthorized access to web server files
+  D. accesses or modifies application data
+
+  Group 2: 
+  1. path transversal
+  2. cross-site request forgery
+  3. SQL injection
+  4. buffer overflow
+
+  Answer: <br><br>
+
+  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+      src    = "img/2213-exploits_vulnerability.jpg"
+      alt    = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+      title  = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+    />
+  </figure> -->
+
+
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
+
+  Which technology provides the benefit of Layer 3 through Layer 7 innovative deep packet inspection, enabling the platform to identify and output various applications within the network traffic flows?
+
+  A. Cisco ASAv<br>
+  B. Cisco Prime Infrastructure<br>
+  C. Cisco NBAR2<br>
+  D. Account on Resolution<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
+
+  An organization must add new firewalls to its infrastructure and wants to use Cisco ASA or Cisco FTD. The chosen firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a warning page and to reset the connection. Which solution should the organization choose?
+
+  A. Cisco ASA because it has an additional module that can be installed to provide multiple blocking capabilities, whereas Cisco FTD does not.<br>
+  B. Cisco FTD because it enables interactive blocking and blocking with reset natively, whereas Cisco ASA does not.<br>
+  C. Cisco FTD because it supports system rate level traffic blocking, whereas Cisco ASA does not.<br>
+  D. Cisco ASA because it allows for interactive blocking and blocking with reset to be configured via the GUI, whereas Cisco FTD does not.<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
+
+  An engineer is configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway. The requirement is that all traffic needs to be filtered. Using the SSL decryption feature, which type of certificate should be presented to the end-user to accomplish this goal?
+
+  A. third-party<br>
+  B. SubCA<br>
+  C. self-signed<br>
+  D. organization owned root<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
+
+  Which two parameters are used to prevent a data breach in the cloud? (Choose two)
+
+  A. encryption<br>
+  B. complex cloud-based web proxies<br>
+  C. strong user authentication<br>
+  D. antispoofing programs<br>
+  E. DLP solutions<br>
+
+  Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 18</span>
+
+  What is the term for when an endpoint is associated to a provisioning WLAN that is shared with guest access, and the same guest portal is used as the BYOD portal?
+
+  A. streamlined access<br>
+  B. multichannel GUI<br>
+  C. single-SSID BYOD<br>
+  D. dual-SSID BYOD<br>
+
+  Answer: <br><br>
+
+
+
 

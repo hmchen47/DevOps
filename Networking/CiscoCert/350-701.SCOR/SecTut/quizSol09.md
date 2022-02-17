@@ -184,5 +184,173 @@
 
 
 
+- <span style="color: #008888; font-weight: bold;">Question 10</span>
+
+  Which standard is used to automate exchanging cyber threat information?
+
+  A. IoC<br>
+  B. TAXII<br>
+  C. MITRE<br>
+  D. STIX<br>
+
+  Answer: B
+
+  Explanation
+
+  Structured Threat Information Expression (STIX) and Trusted Automated Exchange of Intelligence Information (TAXII) are standards developed in an effort to improve the prevention and mitigation of cyber-attacks. STIX states the “what” of threat intelligence, while TAXII defines “how” that information is relayed. Unlike previous methods of sharing, STIX and TAXII are machine-readable and therefore easily automated.
+
+  TAXII should be the best answer here because it is Trusted Automated Exchange of Intelligence Information.
+
+
+- <span style="color: #008888; font-weight: bold;">Question 11</span>
+
+  Which security solution uses NetFlow to provide visibility across the network, data center, branch offices, and cloud?
+
+  A. Cisco Encrypted Traffic Analytics<br>
+  B. Cisco CTA<br>
+  C. Cisco Umbrella<br>
+  D. Cisco Stealthwatch<br>
+
+  Answer: D
+
+
+- <span style="color: #008888; font-weight: bold;">Question 12</span>
+
+  An email administrator is setting up a new Cisco ESA. The administrator wants to enable the blocking of greymail for the end user. Which feature must the administrator enable first?
+
+  A. IP Reputation Filtering<br>
+  B. Anti-Virus Filtering<br>
+  C. File Analysis<br>
+  D. Intelligent Multi-Scan<br>
+
+  Answer: D
+
+  Explanation
+
+  For graymail detection, anti-spam scanning must be enabled globally. This can be either the IronPort Anti-Spam, the Intelligent Multi-Scan feature, or Outbreak Filters.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_01101.html
+
+
+- <span style="color: #008888; font-weight: bold;">Question 13</span>
+
+  Drag and drop the exploits from the left onto the type of security vulnerability on the right.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+      src    = "img/2213-exploits_vulnerability.jpg"
+      alt    = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+      title  = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+    />
+  </figure>
+
+  Answer:
+  - path transversal: gives unauthorized access to web server files
+  - cross-site request forgery: makes the client the target of attack
+  - SQL injection: accesses or modifies application data
+  - buffer overflow: causes memory access errors
+
+  Explanation
+
+  The directory traversal/path traversal attack (also known as dot dot slash attack) is an HTTP exploit that allows an attacker to access restricted files, directories and commands that reside outside the web server’s root directory.
+
+
+- <span style="color: #008888; font-weight: bold;">Question 14</span>
+
+  Which technology provides the benefit of Layer 3 through Layer 7 innovative deep packet inspection, enabling the platform to identify and output various applications within the network traffic flows?
+
+  A. Cisco ASAv<br>
+  B. Cisco Prime Infrastructure<br>
+  C. Cisco NBAR2<br>
+  D. Account on Resolution<br>
+
+  Answer: C
+
+  Explanation
+
+  Operating on Cisco IOS and Cisco IOS XE, NBAR2 utilizes innovative deep packet inspection (DPI) technology to identify a wide variety of applications within the network traffic flow, using L3 to L7 data.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/avc/guide/avc-user-guide/avc_tech_overview.pdf
+
+
+- <span style="color: #008888; font-weight: bold;">Question 15</span>
+
+  An organization must add new firewalls to its infrastructure and wants to use Cisco ASA or Cisco FTD. The chosen firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a warning page and to reset the connection. Which solution should the organization choose?
+
+  A. Cisco ASA because it has an additional module that can be installed to provide multiple blocking capabilities, whereas Cisco FTD does not.<br>
+  B. Cisco FTD because it enables interactive blocking and blocking with reset natively, whereas Cisco ASA does not.<br>
+  C. Cisco FTD because it supports system rate level traffic blocking, whereas Cisco ASA does not.<br>
+  D. Cisco ASA because it allows for interactive blocking and blocking with reset to be configured via the GUI, whereas Cisco FTD does not.<br>
+
+  Answer: B
+
+  Explanation
+
+  Firepower Management Center Configuration Guide
+  …
+  Interactive Block Response Page: Warns users, but also allows them to click a button (or refresh the page) to load the originally requested site. Users may have to refresh after bypassing the response page to load page elements that did not load.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/620/configuration/guide/fpmc-config-guide-v62/http_response_pages_and_interactive_blocking.html
+
+
+- <span style="color: #008888; font-weight: bold;">Question 16</span>
+
+  An engineer is configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway. The requirement is that all traffic needs to be filtered. Using the SSL decryption feature, which type of certificate should be presented to the end-user to accomplish this goal?
+
+  A. third-party<br>
+  B. SubCA<br>
+  C. self-signed<br>
+  D. organization owned root<br>
+
+  Answer: D
+
+  Explanation
+
+  The SSL Decryption feature does require the root certificate be installed.
+
+  Reference: https://community.cisco.com/t5/security-blogs/cisco-umbrella-intelligent-proxy-and-ssl-decryption/ba-p/4453056
+
+
+- <span style="color: #008888; font-weight: bold;">Question 17</span>
+
+  Which two parameters are used to prevent a data breach in the cloud? (Choose two)
+
+  A. encryption<br>
+  B. complex cloud-based web proxies<br>
+  C. strong user authentication<br>
+  D. antispoofing programs<br>
+  E. DLP solutions<br>
+
+  Answer: A C
+
+  Explanation
+
+  A data breach is a security violation or incident that leads to the theft of sensitive or critical data or its exposure to an unauthorized party. These incidents can be intentional, such as a database hack, or accidental, such as an employee emailing confidential files to the wrong recipient.
+
+  Two-factor authentication and secure access solutions for cloud apps make it more difficult for malicious hackers or insiders to compromise users, including those who work remotely or on a contract basis -> Answer C is correct.
+
+  Reference: https://www.cisco.com/c/en/us/products/security/what-is-data-breach.html#~how-to-prevent-a-breach
+
+  In the Data Breaches in Cloud Computing article, encryption is one of the top five methods to prevent data breach in the cloud -> Answer A is correct.
+
+
+- <span style="color: #008888; font-weight: bold;">Question 18</span>
+
+  What is the term for when an endpoint is associated to a provisioning WLAN that is shared with guest access, and the same guest portal is used as the BYOD portal?
+
+  A. streamlined access<br>
+  B. multichannel GUI<br>
+  C. single-SSID BYOD<br>
+  D. dual-SSID BYOD<br>
+
+  Answer: D
+
+  Explanation
+
+  If guest access is utilizing one of the named guest account, then same guest portal can be used for employee BYOD portal. This flow is called Dual-SSID BYOD, where the endpoint is associated to a provisioning WLAN which is typically shared with guest access.
+
+  Reference: https://community.cisco.com/t5/security-documents/ise-byod-dual-vs-single-ssid-onboarding/ta-p/3641422
+
 (to be continued…)
 
