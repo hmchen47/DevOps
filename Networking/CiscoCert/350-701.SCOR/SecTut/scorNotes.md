@@ -1575,7 +1575,7 @@
   - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: ASA <span style="color: #bb6600;">denies all traffic by default</span> whereas the IOS router with Zone-Based Policy Firewall starts out by <span style="color: #bb6600;">allowing all traffic</span>, even on untrusted interfaces
 
 
-- NetFlow
+- <mark style="background: #e0ffff;">NetFlow</mark>
   - a unidirectional stream of packets between a given source and destination
   - provide statistics on packets flowing through the router
   - the standard for acquiring IP operational data from IP networks
