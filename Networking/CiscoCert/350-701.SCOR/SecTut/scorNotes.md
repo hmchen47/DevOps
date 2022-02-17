@@ -1871,7 +1871,7 @@
 
 ## Authentication, Authorization, and Accounting (AAA)
 
-- <mark style="background: #e0ffff;">Identity Service Engine (ISE)</mark>
+- <mark style="background: #e0ffff;">Identity Service Engine (ISE)</mark> - Overview
   - obtain <span style="color: #bb6600;">contextual identity and profiles</span><span style="color: #bb6600;"> for all the users and devices connected on a network
   - a consolidated policy-based access control system that incorporates a superset of features available in existing Cisco policy platforms
   - key functions
@@ -1896,6 +1896,9 @@
   - integrated solution: 1) Cisco <span style="color: #bb6600;">pxGrid</span>; 2) Cisco Rapid Threat Containment
   - ISE nodes for high availability: <span style="color: #bb6600;">primary and secondary Policy Administration Node (PAN)</span>
   - action to ensure that the addition of the ISE node will be successful when inputting the FQDN: <span style="color: #bb6600;">make the new Cisco ISE node a secondary PAN before registering it with the primary</span>
+
+
+- Identity Service Engine (ISE) - Endpoint Profiling
   - <span style="color: #bb6600;">endpoint profiling policy</span>
     - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
     - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
@@ -1903,6 +1906,47 @@
     - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
     - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
   - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
+  - Profiling Services
+    - provide <span style="color: #bb6600;">dynamic detection and classification of endpoints</span> connected to the network
+    - use <span style="color: #bb6600;">MAC addresses</span> as the unique identifier (same as MAB)
+    - collect various attributes for each network endpoint to build an internal endpoint database
+    - match the collected attributes to prebuilt or user-defined conditions for classificattion
+    - endpoints can be authorized to the network and granted access based on their profile after classifying
+  - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
+  - prerequisites to integrate Active Directory with Cisco ISE
+    - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
+    - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
+    - at least one global catalog server operational and accessible by Cisco ISE
+  - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
+    - securely use personal devices on a corporate network
+    - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
+    - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
+    - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
+  - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
+  - <span style="color: #bb6600;">device sensor</span> of authorization policies
+    - a feature of access devices
+    - allow to collect information about connected endpoints
+    - information collected w/ <span style="color: #bb6600;">CDP, LLDP, DHCP</span>
+  - guest types
+    - associated with particular network access policies
+    - deault types
+      - <span style="color: #bb6600;">Contractor</span>: Users who need access to the network for an extended amount of time, up to a year.
+      - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
+      - Weekly: Users who need access to the network for a couple of weeks.
+    - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
+  - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
+  - inline posture node
+    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
+  - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
+  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
+  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
+  - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
+  - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
+
+
+- Identity Service Engine (ISE) - Posture service
   - <span style="color: #bb6600;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
@@ -1935,6 +1979,9 @@
       - Audit: for internal purposes and the agent does not prompt any message or input from end users
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
+
+
+- Identity Service Engine (ISE) - Authentication
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit 
   - Endpoint Admission Control (EAC): access methods for authentication and authorization
@@ -1956,27 +2003,6 @@
       - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
     - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
-  - Profiling Services
-    - provide <span style="color: #bb6600;">dynamic detection and classification of endpoints</span> connected to the network
-    - use <span style="color: #bb6600;">MAC addresses</span> as the unique identifier (same as MAB)
-    - collect various attributes for each network endpoint to build an internal endpoint database
-    - match the collected attributes to prebuilt or user-defined conditions for classificattion
-    - endpoints can be authorized to the network and granted access based on their profile after classifying
-  - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
-  - prerequisites to integrate Active Directory with Cisco ISE
-    - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
-    - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
-    - at least one global catalog server operational and accessible by Cisco ISE
-  - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
-    - securely use personal devices on a corporate network
-    - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
-    - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
-    - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
-  - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
-  - <span style="color: #bb6600;">device sensor</span> of authorization policies
-    - a feature of access devices
-    - allow to collect information about connected endpoints
-    - information collected w/ <span style="color: #bb6600;">CDP, LLDP, DHCP</span>
   - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
     - command required: `ip radius source-interface`
     - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server
@@ -1990,23 +2016,6 @@
       - install and config Duo authentication proxy
       - config the identity store within ISE
     - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
-  - guest types
-    - associated with particular network access policies
-    - deault types
-      - <span style="color: #bb6600;">Contractor</span>: Users who need access to the network for an extended amount of time, up to a year.
-      - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
-      - Weekly: Users who need access to the network for a couple of weeks.
-    - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
-  - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
-  - inline posture node
-    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
-    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
-    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
-  - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
-  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
-  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
-  - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
-  - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
 
 
 - <mark style="background: #e0ffff;">TrustSec</mark>
