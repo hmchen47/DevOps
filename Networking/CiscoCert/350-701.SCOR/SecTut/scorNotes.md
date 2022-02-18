@@ -1952,6 +1952,11 @@
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
     - a benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
+  - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
+  - inline posture node
+    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
@@ -1963,31 +1968,32 @@
       - Audit: for internal purposes and the agent does not prompt any message or input from end users
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
+  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
 
 
 - Identity Service Engine (ISE) - Endpoint Profiling 
-  - Endpoint Admission Control (EAC): access methods for authentication and authorization
-    - 802.1X port-based Authentication
-    - MAC Authentication Bypass (MAB)
-    - Web Authentication (WebAuth)
-  - <span style="color: #bb6600;">endpoint profiling policy</span>
-    - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
-    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
-    - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
-    - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
-    - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
-  - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
   - Profiling Services
     - provide <span style="color: #bb6600;">dynamic detection and classification of endpoints</span> connected to the network
     - use <span style="color: #bb6600;">MAC addresses</span> as the unique identifier (same as MAB)
     - collect various attributes for each network endpoint to build an internal endpoint database
     - match the collected attributes to prebuilt or user-defined conditions for classificattion
     - endpoints can be authorized to the network and granted access based on their profile after classifying
+  - endpoint profiling policy
+    - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
+    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
+    - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
+    - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
+    - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
+  - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
   - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
   - prerequisites to integrate Active Directory with Cisco ISE
     - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
     - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
     - at least one global catalog server operational and accessible by Cisco ISE
+  - Endpoint Admission Control (EAC): access methods for authentication and authorization
+    - 802.1X port-based Authentication
+    - MAC Authentication Bypass (MAB)
+    - Web Authentication (WebAuth)
   - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
     - securely use personal devices on a corporate network
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
@@ -2005,13 +2011,7 @@
       - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
       - Weekly: Users who need access to the network for a couple of weeks.
     - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
-  - implemenation to ensure all devi compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
-  - inline posture node
-    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture nod: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
-    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
-    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
-  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
   - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
