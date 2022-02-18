@@ -2228,7 +2228,7 @@
 - <mark style="background: #e0ffff;">Multi-factor Authentication (MFA)</mark>
   - authentication method two or more verification factors to gain access to a resource
   - require means of verification that unauthorized users won't 
-  - prevent <span style="color: #bb6600;">brute force attacks</span> from being successful
+  - prevent brute force attacks from being successful
   - proper MFA using factors from at least two different categories
   - the highest level of prtection against brute-force attacks: <span style="color: #bb6600;">SHA</span>
   - benefits
