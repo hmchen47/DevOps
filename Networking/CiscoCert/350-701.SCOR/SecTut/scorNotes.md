@@ -1937,7 +1937,7 @@
   - <span style="color: #bb6600;">posture policy</span>
     - a collection of posture requirements
     - associated with one or more identity groups and operating systems
-    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Age
+    - <span style="color: #bb6600;">posture agent</span>: an agent runs on the endpoint, like the AnyConnect ISE Posture Agentor, Network Admission Control (NAC) Agent
     - considerations: Conditions, Remediations, Requirements, Posture Policy, Client Provisioning and Access Policy
       - conditions: a set of rule to define a compliant endpoint, inclusing include the installation of a firewall, anti-virus software, anti-malware, hotfixes, disk encryption and more
       - remediations: the methods AnyConnect will handle endpoints that are <span style="color: #bb6600;">out of compliance</span>
@@ -1945,15 +1945,12 @@
       - provisioning policy: determine the version of AnyConnect used and the compliant module installed during the provisioning progress (methods: URL-redirect and download or a provisioning URL)
       - access policy: enable the posture policy and define that form of policy the endpoint will be subjected to if it is <span style="color: #bb6600;">compliant, non-compliant or requires provisioning</span> of AnyConnect
     - states: compliant and <span style="color: #bb6600;">non-compliant</span>
-    - endpoint security provide overall security posture of an organization: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
+    - reason for endpoint security provide overall security posture of an organization: detect and mitigate threats that the <span style="color: #bb6600;">perimeter security devices do not detect</span>
     - benefit to ensure as an endpoint is compliant with a posture policy configured in ISE: verify that the endpoint has the <span style="color: #bb6600;">latest Microsoft security patches installed</span>
-    - <span style="color: #bb6600;">device compliance</span>
-      - validate if anti-virus software installed
-      - verification of the latest OS patches
     - solution for posture check on MS Windows endpoint w/o MS17-010 patch:
       - config a posture polict in ISE to <span style="color: #bb6600;">install the MS17-010 patch</span> before allowing access on the network
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
-    - benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
+    - a benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
