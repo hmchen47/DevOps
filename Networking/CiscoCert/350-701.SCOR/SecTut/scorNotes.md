@@ -2264,23 +2264,23 @@
 
 - <mark style="background: #e0ffff;">EPP & EDR</mark>
   - Endpoint Protection Platform (EPP)
-    - solely on prevention <span style="color: #bb66pp;">at the perimeter</span>
+    - solely on prevention <span style="color: #bb6600;">at the perimeter</span>
     - provide an integrated endpoint security solution by leveraging personal firewall, port and device control, and anti-malware capabilities
-    - prevent <span style="color: #bb66pp;">endpoint security threats</span> like known and unknown malware
+    - prevent <span style="color: #bb6600;">endpoint security threats</span> like known and unknown malware
     - provide device-level protection by identifying malicious files, detecting potentially malicious activity, and providing tools for incident investigation and response
     - act as the first line of defense, filtering out attacks that can be detected by the organization's deployed security solutions
     - complement of EDR
   - Endpoint Detection and Response (EDR)
-    - primarily on detecting advanced threats, designed to <span style="color: #bb66pp;">evade front-line defenses and successfully entered the environment</span>
+    - primarily on detecting advanced threats, designed to <span style="color: #bb6600;">evade front-line defenses and successfully entered the environment</span>
     - detect threats across your environment
     - investigate the entire lifecycle of the threat
     - contain the threat at the endpoint, eliminate the threat before it can spread
     - detect and respond to threats that EPP and other security tools did not catch
     - acts as a second layer of protection, enabling security analysts to perform threat hunting and identify more subtle threats to the endpoint
-    - <span style="color: #bb66pp;">more advanced detection capabilities</span>
-  - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb66pp;">advanced threats that envade perimeter defences</span>
-  - Endpoint Detection and Response solution versus Endpoint Protection Platform: <span style="color: #bb66pp;">a need to have more advanced detection capabilities</span>
-  - portion of the network do EPP solutions solely focus on and EDR solutions do not: <span style="color: #bb66pp;">perimeter</span>
+    - <span style="color: #bb6600;">more advanced detection capabilities</span>
+  - difference: EPP focuses on prevention while EDR focuses on <span style="color: #bb6600;">advanced threats that envade perimeter defences</span>
+  - Endpoint Detection and Response solution versus Endpoint Protection Platform: <span style="color: #bb6600;">a need to have more advanced detection capabilities</span>
+  - portion of the network do EPP solutions solely focus on and EDR solutions do not: <span style="color: #bb6600;">perimeter</span>
 
 
 ## Layer 2 Security
