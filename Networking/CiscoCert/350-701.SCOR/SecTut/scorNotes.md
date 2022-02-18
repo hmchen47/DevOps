@@ -234,6 +234,14 @@
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
     - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) <span style="color: #bb6600;">profile</span> - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
   - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
+  - Registration Authority (RA):
+    - an authority in a network that verifies user requests for a digital certificate 
+    - part of a public key infrastructure (PKI)
+    - a networked system that enables companies and users to exchange information and money safely and securely
+    - Certificate revocation list (CRL): This is 
+    - a list of certificates
+    - initially issued by a CA but have since been revoked and as a result should not be trusted
+  - function performed by certificate authorities but a limitation of registration authorities: <span style="color: #bb6600;">CRL publishing</span>
   - certificate signing request (CSR)
     - one of the first steps towards getting your own SSL Certificate
     - generated on the same server you plan to install the certificate on
@@ -280,6 +288,7 @@
         - offer robust <span style="color: #bb6600;">protocols</span> to combat malicious attacks
         - reinforce <span style="color: #bb6600;">online identity</span>
       - ensures <span style="color: #bb6600;">data confidentiality</span>
+    - encryption algorithm provides highly secure VPN communications: <span style="color: #bb6600;">AES 256</span>
   - asymmetric key
     - public key cryptography
     - using keypairs (a private key and a public key)
@@ -1634,6 +1643,8 @@
   - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
   - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
+  - IP flow tracking method exporting <span style="color: #bb6600">only records that indicate significant events in a flow</span>
+  - filtering NSEL events based on the traffic and event type through Modular Policy Framework -> send records to different collectors 
   - major functions
     - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
     - trigger flow-update events and generate appropriate NSEL data records
@@ -1643,6 +1654,7 @@
     - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
     - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
     - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
+  - 
 
 
 - Flexible Netflow
@@ -1860,6 +1872,11 @@
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
     - improve <span style="color: #bb6600;">web traffic performance</span> <- proxy caching
+  - WCCP proxy health checking
+    - WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds
+    - proxy up and running: WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds
+    - WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA
+  - message to verify a WCCP-configured router working w/ the Cisco WSA: the WSA sends a <span style="color: #bb6600;">Here-I-Am message every 10 seconds</span>, and the router <span style="color: #bb6600;">acknowledges with an I-See-You message</span>
   - decryption policies same as decryption policies in AsyncOS
   - configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
@@ -1915,6 +1932,7 @@
     - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit
+  - product to prevent a hacker initiated a social engineering attack and stole username and passwords of some users within a company: <span style="color: #bb6600;">Cisco Duo</span>
 
 
 - Mobile Device Management (MDM)
