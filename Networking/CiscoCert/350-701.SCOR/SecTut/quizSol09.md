@@ -636,7 +636,15 @@
 
   DMVPN, FlexVPN and GETVPN comparison:
 
-  DMVPN_FlexVPN_GETVPN_comparison.jpg
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+      src    = "img/0300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
+      alt    = "Comparison of DMVPN, FlexVPN and GETVPN"
+      title  = "Comparison of DMVPN, FlexVPN and GETVPN"
+    />
+  </figure>
+  
 
   Note: GETVPN is tunnel-less VPN while DMVPN is tunnel-based.
 
