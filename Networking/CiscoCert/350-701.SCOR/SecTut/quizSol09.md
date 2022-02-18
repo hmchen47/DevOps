@@ -579,5 +579,66 @@
   Answer: A D
 
 
-(to be continued…)
+- <span style="color: #008888; font-weight: bold;">Question 30</span>
+
+  A network engineer entered the `snmp-server user asmith myv7 auth sha cisco priv aes 256 cisc0414685095` command and needs to send SNMP information to a host at `10.255.255.1`. Which command achieves this goal?
+
+  A. `snmp-server host inside 10.255.255.1 version 3 asmith`<br>
+  B. `snmp-server host inside 10.255.255.1 snmpv3 myv7`<br>
+  C. `snmp-server host inside 10.255.255.1 snmpv3 asmith`<br>
+  D. `snmp-server host inside 10.255.255.1 version 3 myv7`<br>
+
+  Answer: A
+
+  Explanation
+
+  The command snmp-server user asmith myv7 auth sha cisco priv aes 256 cisc0414685095 creates a user name “asmith” and he belongs to group “myv7”. The password for this user is “cisco” and “cisc0414685095” is the shared secret.
+
+  In order to send SNMP information to a remote host, we have to configure the username (not password) in the “snmp-server host …” command. So the command must include “asmith” as the username. And we configure SNMPv3 by using keyword “version 3”, not “snmpv3”.
+
+
+- <span style="color: #008888; font-weight: bold;">Question 31</span>
+
+  An engineer is configuring Cisco WSA and needs to enable a separated email transfer flow from the Internet and from the LAN. Which deployment mode must be used to accomplish this goal?
+
+  A. two-interface<br>
+  B. single interface<br>
+  C. multi-context<br>
+  D. transparent<br>
+
+  Answer: C
+
+
+- <span style="color: #008888; font-weight: bold;">Question 32</span>
+
+  A small organization needs to reduce the VPN bandwidth load on their headend Cisco ASA in order to ensure that bandwidth is available for VPN users needing access to corporate resources on the 10.0.0.0/24 local HQ network. How is this accomplished without adding additional devices to the network?
+
+  A. Configure VPN load balancing to send non-corporate traffic straight to the internet.<br>
+  B. Use split tunneling to tunnel traffic for the 10.0.0.0/24 network only.<br>
+  C. Configure VPN load balancing to distribute traffic for the 10.0.0.0/24 network.<br>
+  D. Use split tunneling to tunnel all traffic except for the 10.0.0.0/24 network.<br>
+
+  Answer: C
+
+
+- <span style="color: #008888; font-weight: bold;">Question 33</span>
+
+  Which benefit does DMVPN provide over GETVPN?
+
+  A. DMVPN can be used over the public Internet, and GETVPN requires a private network<br>
+  B. DMVPN is a tunnel-less VPN, and GETVPN is tunnel-based.<br>
+  C. DMVPN supports QoS, multicast, and routing, and GETVPN supports only QoS.<br>
+  D. DMVPN supports non-IP protocols, and GETVPN supports only IP protocols.<br>
+
+  Answer: A
+
+  Explanation
+
+  DMVPN, FlexVPN and GETVPN comparison:
+
+  DMVPN_FlexVPN_GETVPN_comparison.jpg
+
+  Note: GETVPN is tunnel-less VPN while DMVPN is tunnel-based.
+
+
 
