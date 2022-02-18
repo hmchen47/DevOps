@@ -2160,8 +2160,7 @@
 
 
 - Cisco devices basic commands and debug info
-  - enable AAA service to support CoA: `aaa new-model` in global config mode
-  - allow user to enter global configuration mode: <code style="color: #bb6600;">privilege exec level 5 configure terminal</code>
+  - enable AAA service to support CoA: `aaa new-model` in global config 
   - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
   - enable authentication on a port: <code style="color: #bb6600;">authentication port-control auto</code>
   - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
@@ -2186,7 +2185,7 @@
 
   - NTP authentication 1
     - NTP server - 10.10.10.1; client - 10.10.10.2
-    - NTP authentication enforcment: <code style="color: #bb6600;">ntp authenticate</code>
+    - NTP authentication enforcement: <code style="color: #bb6600;">ntp authenticate</code>
     - other client config:
 
       ```text
@@ -2199,6 +2198,7 @@
   - NTP authentication 2
     - NTP server - 1.1.1.1; client - 1.1.1.2
     - command to enable the client to accept the server’s authentication key: <code style="color: #bb6600;">ntp server 1.1.1.1 key 1</code>
+  - test NTP authentication but any device synchronizes time with this router and that NTP authentication is not enforced: <span style="color: #bb6600;">NTP authentication is not enabled</span>
   - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
   - result of configurations w/ the authorization for the admin 5 user
     - <span style="color: #bb6600;">complete no configuration</span> w/ the config
@@ -2211,9 +2211,7 @@
       privilege interface level 5 description
       ```
 
-  - test NTP authentication but any device synchronizes time with this router and that NTP authentication is not enforced: <span style="color: #bb6600;">NTP authentication is not enabled</span>
-  - type of authentication
-    - <span style="color: #bb6600;">external user</span> and relay mail authentication
+  - type of authentication: <span style="color: #bb6600;">external user</span> and relay mail authentication
 
     ```text
     Info: New SMTP ICID 30 Interface Management (192.168.0.100)
