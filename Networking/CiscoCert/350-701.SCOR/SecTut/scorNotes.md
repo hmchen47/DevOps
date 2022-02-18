@@ -2157,7 +2157,6 @@
   - authenticator: using connecting device's MAC address as its username and password and send to the authentication server
   - authentication server: check policies and send back an `Access-Accept` or `Access-Reject`
   - command to make AAA session w/ success MAB authorization of AAA session via ISE w/ 'Status: Authorized' and 'mab Authc Succes': <code style="color: #bb6600;">aaa authorization network default group ise</code> config required
-  - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
 - Cisco devices basic commands and debug info
@@ -2260,6 +2259,7 @@
   - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple application
   - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
   - benefit of using a multifactor authentication strategy: protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
+  - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
 - <mark style="background: #e0ffff;">EPP & EDR</mark>
