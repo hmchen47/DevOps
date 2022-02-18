@@ -628,7 +628,7 @@
     - install and integrate an identity governance solution
     - stay up to date (patch mgmt)
   - enable to secure SaaS-based applications: <span style="color: #bb6600;">two-factor authentication</span>
-  - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the provider is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the customer is responsible for it</span>
+  - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the customer is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the provider is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
   - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
 
