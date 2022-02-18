@@ -2037,7 +2037,7 @@
     - used for authorizing users on the network even as the Identity Services Engine (ISE) not involved
     - authorization method only supports devices that authenticate with a Domain Controller
     - allow for managed endpoints that <span style="color: #bb6600;">authenticate to AD to be mapped to Security Groups (PassiveID)</span>
-    - prerequisit to integrate IS server and AD domain: <span style="color: #bb6600;">synchronize the clocks of the Cisco ISE server and the AD server</spa
+    - prerequisit to integrate IS server and AD domain: <span style="color: #bb6600;">synchronize the clocks of the Cisco ISE server and the AD server</span>
   - ways of Easy Connect help control network access when used with Cisco TrustSec:
     - allow for the <span style="color: #bb6600;">assignment of Security Group Tags</span> and not require 802.1x to be configured on the switch or the endpoint
     - allow for managed endpoints that authenticate to AD to be mapped to <span style="color: #bb6600;">Security Groups (PassiveID)</span>
