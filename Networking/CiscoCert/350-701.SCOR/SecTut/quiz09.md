@@ -12,7 +12,7 @@
   C. certificate re-enrollment<br>
   D. accepts enrollment requests<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 2</span>
@@ -24,7 +24,7 @@
   C. AES 256<br>
   D. AES 128<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -36,7 +36,7 @@
   C. Cisco Duo<br>
   D. Cisco AnyConnect<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -48,7 +48,7 @@
   C. The router sends a Here-I-Am message every 10 seconds, and the WSA acknowledges with an I-See-You message.<br>
   D. The WSA sends a Here-I-Am message every 10 seconds, and the router acknowledges with an I-See-You message.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -60,7 +60,7 @@
   C. It filters NSEL events based on the traffic and event type through RSVP.<br>
   D. It delivers data records to NSEL collectors through NetFlow over TCP only.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 6</span>
@@ -73,7 +73,7 @@
   D. Add an SNMP host access entry.<br>
   E. Specify an SNMP user group.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -85,7 +85,7 @@
   C. NetFlow<br>
   D. Cisco Talos<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -97,7 +97,7 @@
   C. Cisco ASAv<br>
   D. Cisco WSAv<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -109,7 +109,7 @@
   C. It collects near-real time data from servers and inventories the software packages that exist on servers<br>
   D. It collects enforcement data from servers and collects interpacket variation.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
@@ -121,7 +121,7 @@
   C. MITRE<br>
   D. STIX<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 11</span>
@@ -133,7 +133,7 @@
   C. Cisco Umbrella<br>
   D. Cisco Stealthwatch<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -145,7 +145,7 @@
   C. File Analysis<br>
   D. Intelligent Multi-Scan<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -164,7 +164,7 @@
   3. SQL injection
   4. buffer overflow
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
   <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
@@ -185,7 +185,7 @@
   C. Cisco NBAR2<br>
   D. Account on Resolution<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -197,7 +197,7 @@
   C. Cisco FTD because it supports system rate level traffic blocking, whereas Cisco ASA does not.<br>
   D. Cisco ASA because it allows for interactive blocking and blocking with reset to be configured via the GUI, whereas Cisco FTD does not.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
@@ -209,7 +209,7 @@
   C. self-signed<br>
   D. organization owned root<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -222,7 +222,7 @@
   D. antispoofing programs<br>
   E. DLP solutions<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 18</span>
@@ -234,7 +234,7 @@
   C. single-SSID BYOD<br>
   D. dual-SSID BYOD<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 
@@ -247,7 +247,7 @@
   C. It configures the pre-shared authentication key for host 192.168.50.1.<br>
   D. It configures the local address for the VPN server 192.168.50.1.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -259,7 +259,7 @@
   C. webadvancedconfig<br>
   D. websecurityconfig<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>
@@ -271,7 +271,7 @@
   C. transparent mode<br>
   D. multiple context mode<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -283,7 +283,7 @@
   C. Grafana<br>
   D. InfluxDB<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 23</span>
@@ -295,7 +295,7 @@
   C. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device`<br>
   D. `GET https://fqdnOrlPofDnaCenterPlatform/dna/intent/api/v1/network-device?parameter1=value&parameter2=value&…`<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -307,7 +307,7 @@
   C. records<br>
   D. flow monitor<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -332,7 +332,7 @@
   D. Traffic continues to flow if the module fails.<br>
   E. The module is operating in IDS mode.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
@@ -344,7 +344,7 @@
   C. so the internal PSIRT organization is aware of the latest bugs<br>
   D. so the latest security fixes are installed on the endpoints<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
@@ -356,7 +356,7 @@
   C. specialized Cisco Linux system
   D. Windows Server 2016
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 28</span>
@@ -368,7 +368,7 @@
   C. cluster<br>
   D. transparent<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 29</span>
@@ -381,7 +381,7 @@
   D. endpoint protection software version<br>
   E. DNS integrity checks<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -393,7 +393,7 @@
   C. `snmp-server host inside 10.255.255.1 snmpv3 asmith`<br>
   D. `snmp-server host inside 10.255.255.1 version 3 myv7`<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
@@ -405,7 +405,7 @@
   C. multi-context<br>
   D. transparent<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -417,7 +417,7 @@
   C. Configure VPN load balancing to distribute traffic for the `10.0.0.0/24` network.<br>
   D. Use split tunneling to tunnel all traffic except for the `10.0.0.0/24` network.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -429,6 +429,6 @@
   C. DMVPN supports QoS, multicast, and routing, and GETVPN supports only QoS.<br>
   D. DMVPN supports non-IP protocols, and GETVPN supports only IP protocols.<br>
 
-  Answer: <br><br>
+  <br>Answer: <br><br>
 
 
