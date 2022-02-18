@@ -7,17 +7,17 @@
     - malicious software
     - any software intentionally designed to cause damage to a computer, server, client, or computer network
   - most popular types of malware
-    - virus:
+    - virus
       - the most common type of malware
       - attach malicious code to clean code
       - wait to be run
       - gain <span style="color: #bb6600;">unauthorized access</span> to a computer system
     - ransomware: infect computer and display message demanding a fee to be paid
-    - spyware:
+    - spyware
       - secretly record everything user enter, upload, download and store on computers or mobile devices
       - keep itself hidden
   - vulnerability: a weakness in a software system
-  - expolit:
+  - expolit
     - a code taking advantage of a software a software vulnerability or security flaw
     - an attack that leverages that vulnerability
   - endpoint risks as company vulnerable: 1) <span style="color: #bb6600;">malware</span>; 2) <span style="color: #bb6600;">expolit</span>
@@ -44,7 +44,7 @@
 - <mark style="background: #e0ffff;">SQL injection</mark>
   - <span style="color: #bb6600;">inserting malicious commands into the database</span>
   - occurred when asking a user for input
-  - mitigate:
+  - mitigate
     - check parameters to ensure actual values
     - use prepared statements and parameterized queries
   - an attack where <span style="color: #bb6600;">code is injected into a browser</span>
