@@ -12,7 +12,7 @@
   C. certificate re-enrollment<br>
   D. accepts enrollment requests<br>
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
@@ -30,7 +30,7 @@
   C. AES 256<br>
   D. AES 128<br>
 
-  Answer: C
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 3</span>
@@ -42,7 +42,7 @@
   C. Cisco Duo<br>
   D. Cisco AnyConnect<br>
 
-  Answer: C
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
@@ -54,7 +54,7 @@
   C. The router sends a Here-I-Am message every 10 seconds, and the WSA acknowledges with an I-See-You message.<br>
   D. The WSA sends a Here-I-Am message every 10 seconds, and the router acknowledges with an I-See-You message.<br>
 
-  Answer: D
+  <br>Answer: D
 
   Explanation
 
@@ -62,7 +62,7 @@
 
   After a WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_0111.html
+  Reference: [Connect, Install, and Configure - User Guide for AsyncOS 11.0 for Cisco Web Security Appliances](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_0111.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 5</span>
@@ -74,7 +74,7 @@
   C. It filters NSEL events based on the traffic and event type through RSVP.<br>
   D. It delivers data records to NSEL collectors through NetFlow over TCP only.<br>
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
@@ -85,7 +85,7 @@
   - Tracks configured NSEL collectors and delivers templates and data records to these configured NSEL collectors through NetFlow over UDP only -> Answer D is not correct.
   - Filters NSEL events based on the traffic and event type through Modular Policy Framework, then sends records to different collectors -> Answer C is not correct.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/asa/asa91/asdm71/general/asdm_71_general_config/monitor_nsel.pdf
+  Reference: [Configuring  NetFlow Secure Event Logging (NSEL)](https://www.cisco.com/c/en/us/td/docs/security/asa/asa91/asdm71/general/asdm_71_general_config/monitor_nsel.pdf)
 
   Only NSEL version 9 supports templates -> Answer B is not correct.
 
@@ -100,7 +100,7 @@
   D. Add an SNMP host access entry.<br>
   E. Specify an SNMP user group.<br>
 
-  Answer: B D
+  <br>Answer: B D
 
   Explanation
 
@@ -139,7 +139,7 @@
   C. NetFlow<br>
   D. Cisco Talos<br>
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
@@ -157,7 +157,7 @@
   C. Cisco ASAv<br>
   D. Cisco WSAv<br>
 
-  Answer: A
+  <br>Answer: A
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -169,7 +169,7 @@
   C. It collects near-real time data from servers and inventories the software packages that exist on servers<br>
   D. It collects enforcement data from servers and collects interpacket variation.<br>
 
-  Answer: C
+  <br>Answer: C
 
   Explanation
 
@@ -193,7 +193,7 @@
   C. MITRE<br>
   D. STIX<br>
 
-  Answer: B
+  <br>Answer: B
 
   Explanation
 
@@ -211,7 +211,7 @@
   C. Cisco Umbrella<br>
   D. Cisco Stealthwatch<br>
 
-  Answer: D
+  <br>Answer: D
 
 
 - <span style="color: #008888; font-weight: bold;">Question 12</span>
@@ -223,7 +223,7 @@
   C. File Analysis<br>
   D. Intelligent Multi-Scan<br>
 
-  Answer: D
+  <br>Answer: D
 
   Explanation
 
@@ -245,7 +245,7 @@
     />
   </figure>
 
-  Answer:
+  <br>Answer:
   - path transversal: gives unauthorized access to web server files
   - cross-site request forgery: makes the client the target of attack
   - SQL injection: accesses or modifies application data
@@ -265,7 +265,7 @@
   C. Cisco NBAR2<br>
   D. Account on Resolution<br>
 
-  Answer: C
+  <br>Answer: C
 
   Explanation
 
@@ -283,7 +283,7 @@
   C. Cisco FTD because it supports system rate level traffic blocking, whereas Cisco ASA does not.<br>
   D. Cisco ASA because it allows for interactive blocking and blocking with reset to be configured via the GUI, whereas Cisco FTD does not.<br>
 
-  Answer: B
+  <br>Answer: B
 
   Explanation
 
@@ -303,7 +303,7 @@
   C. self-signed<br>
   D. organization owned root<br>
 
-  Answer: D
+  <br>Answer: D
 
   Explanation
 
@@ -322,7 +322,7 @@
   D. antispoofing programs<br>
   E. DLP solutions<br>
 
-  Answer: A C
+  <br>Answer: A C
 
   Explanation
 
@@ -344,7 +344,7 @@
   C. single-SSID BYOD<br>
   D. dual-SSID BYOD<br>
 
-  Answer: D
+  <br>Answer: D
 
   Explanation
 
@@ -363,7 +363,7 @@
   C. It configures the pre-shared authentication key for host 192.168.50.1.<br>
   D. It configures the local address for the VPN server 192.168.50.1.<br>
 
-  Answer: C
+  <br>Answer: C
 
   Explanation
 
@@ -381,7 +381,7 @@
   C. webadvancedconfig<br>
   D. websecurityconfig<br>
 
-  Answer: B
+  <br>Answer: B
 
   Explanation
 
@@ -399,7 +399,7 @@
   C. transparent mode<br>
   D. multiple context mode<br>
 
-  Answer: C
+  <br>Answer: C
 
   Explanation
 
@@ -417,7 +417,7 @@
   C. Grafana<br>
   D. InfluxDB<br>
 
-  Answer: C
+  <br>Answer: C
 
   Explanation
 
@@ -440,7 +440,7 @@
 
   
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
@@ -464,7 +464,7 @@
   C. records<br>
   D. flow monitor<br>
 
-  Answer: D
+  <br>Answer: D
 
   Explanation
 
@@ -497,7 +497,7 @@
 
   
 
-  Answer: A D
+  <br>Answer: A D
 
   Explanation
 
@@ -533,7 +533,7 @@
   C. so the internal PSIRT organization is aware of the latest bugs<br>
   D. so the latest security fixes are installed on the endpoints<br>
 
-  Answer: B
+  <br>Answer: B
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
@@ -545,7 +545,7 @@
   C. specialized Cisco Linux system
   D. Windows Server 2016
 
-  Answer: C
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 28</span>
@@ -557,7 +557,7 @@
   C. cluster<br>
   D. transparent<br>
 
-  Answer: B
+  <br>Answer: B
 
   Explanation
 
@@ -576,7 +576,7 @@
   D. endpoint protection software version<br>
   E. DNS integrity checks<br>
 
-  Answer: A D
+  <br>Answer: A D
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -588,7 +588,7 @@
   C. `snmp-server host inside 10.255.255.1 snmpv3 asmith`<br>
   D. `snmp-server host inside 10.255.255.1 version 3 myv7`<br>
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
@@ -606,7 +606,7 @@
   C. multi-context<br>
   D. transparent<br>
 
-  Answer: C
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -618,7 +618,7 @@
   C. Configure VPN load balancing to distribute traffic for the 10.0.0.0/24 network.<br>
   D. Use split tunneling to tunnel all traffic except for the 10.0.0.0/24 network.<br>
 
-  Answer: C
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -630,7 +630,7 @@
   C. DMVPN supports QoS, multicast, and routing, and GETVPN supports only QoS.<br>
   D. DMVPN supports non-IP protocols, and GETVPN supports only IP protocols.<br>
 
-  Answer: A
+  <br>Answer: A
 
   Explanation
 
