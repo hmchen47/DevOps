@@ -2318,8 +2318,6 @@
     - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
     - user on VLAN 41 on a new switch no IP address obtained due to missing <code style="color: #bb6600;">ip dhcp snooping trust</code> config
     - configure a DHCP server to better secure their environment and able to rate-limit the traffic and ensure that legitimate requests are not dropped: <span style="color: #bb6600;">set a trusted interface for the DHCP server</span>
-    
-
   - <mark style="background: #e0ffff;">Dynamic ARP Inspection (DAI)</mark>
     - a security feature validating ARP packets in a network
     - allowing a network administrator to intercept, log, and discard ARP packets with invalid MAC address to IP address bindings
@@ -2338,11 +2336,11 @@
     - monitoring incoming traffic levels over a 1-second traffic storm control interval and, during the interval compares the traffic level with the traffic storm control level configured
     - threshold level: a percentage of the total available bandwidth of the port
     - each port w/ different storm <span style="color: #bb6600;">control levels for broadcast, multicast, and unicast</span> type of traffic
-  - limit the broadcast traffic on the switch: `storm-control broadcast level [falling-threshold]` in interface config mode
-  - actions to <span style="color: #bb6600;">bring up errr-disabled state interfaces</span>
-    - `shutdown` and then `no shutdown` the interface
-    - enable detection and recover features
-    - characteristic of traffic storm control behavior: <span style="color: #bb6600;">drop all broadcast and multicast traffic</spa> if the combined traffic exceeds the level within the interval
+  - limit the broadcast traffic on the switch: `storm-control broadcast <level> [<falling-threshold>]` in interface config mode
+  - actions to bring up errr-disabled state interfaces
+    - <code style="color: #bb6600;">shutdown</code> and then <code style="color: #bb6600;">no shutdown</code> the interface
+    - <span style="color: #bb6600;">enable detection and recover features</span>
+  - characteristic of traffic storm control behavior: <span style="color: #bb6600;">drop all broadcast and multicast traffic</spa> if the combined traffic exceeds the level within the interval
 
 
 - Private VLAN port types
