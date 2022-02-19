@@ -3,7 +3,7 @@
 ## Security Concepts
 
 - Malware, exploits, and security threats
-  - malware:
+  - malware
     - malicious software
     - any software intentionally designed to cause damage to a computer, server, client, or computer network
   - most popular types of malware
@@ -849,7 +849,16 @@
   - solution to integrate with the Cisco FTD and Cisco WSA to improve its cybersecurity processes and to add intelligence to its data by utilizing the most current intelligence data for URL filtering, reputations, and vulnerability information: configure <span style="color: #bb6600;">the integrations with Talos Intelligence</span> to take advantage of the threat intelligence that it provides
 
 
-- <mark style="background: #e0ffff;">Tetration</mark>
+- <mark style="background: #e0ffff;">Secure Workload</mark>
+  - formerly Tetration
+  - collect packet header metadata, process details and installed software package information
+  - collected via the software sensors deployed on the workloads and made available as part of the solution
+  - high-level details regarding the telemetry data collected by Cisco Secure Workload:
+    - Flow information: Contains details about flow endpoints, protocols, and ports, when the flow started, how long the flow was active, etc.
+    - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packetʼs Time to Live (TTL), IP/TCP flags, packet length, etc.
+    - Process details: Captures processes executed on the server, including information about process parameters, start and stop time, process binary hash, etc.
+    - Software packages: Inventory of all software packages installed on the server along with the version and publisher information
+    - Cisco Secure Workload forensics capability: If a customer turns on the Cisco Secure Workload forensics capability, additional Personally Identifiable Information may be collected.
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
   - protect hybrid cloud deployment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
   - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
@@ -886,6 +895,8 @@
       - including virtualized, bare-metal, and container workloads
   - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration analysis</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
+  - a benefit of using Cisco Tetration: collect <span style="color: #bb6600;">near-real time data from servers and inventories the software packages that exist on servers</span>
+
 
 
 - Cisco Stealhwatch Cloud
@@ -1694,6 +1705,7 @@
     - <code style="color: #bb6600;">snmp-server host inside 10.255.254.1 version 3 andy</code>: hostname = inside (interface name); community-name (username) = andy
   - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
   - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
+  - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
   - strongest security possibility of SNMPv3 config
 
     ```text
@@ -2077,6 +2089,7 @@
     - publisher: partner w/ some contextual data to be shared with the other partners, e.g., FMC
     - subscriber: partner interested in parsing some contextual data from the other partners
   - role of FMC when integrating FMC and ISE using pxGrid: <span style="color: #bb6600;">publisher</span>
+  - technology enables integration between Cisco ISE and other platforms to gather and share network and vulnerability data and SIEM and location information: <span style="color: #bb6600;">pxGrid</span>
 
 
 - <mark style="background: #e0ffff;">RADIUS Change of Authorization (CoA)</mark>
