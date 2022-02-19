@@ -432,3 +432,66 @@
   <br>Answer: <br><br>
 
 
+
+- <span style="color: #008888; font-weight: bold;">Question 34</span>
+
+  Which system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container?
+
+  A. Docker<br>
+  B. SDLC<br>
+  C. Lambda<br>
+  D. Contiv<br>
+
+  <br>Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 35</span>
+
+  An engineer needs to configure an access control policy rule to always send traffic for inspection without using the default action. Which action should be configured for this rule?
+
+  A. monitor<br>
+  B. allow<br>
+  C. trust<br>
+  D. block<br>
+
+  <br>Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 36</span>
+
+  Which two functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks? (Choose two)
+
+  A. uses a static algorithm to determine malicious<br>
+  B. determines if the email messages are malicious<br>
+  C. does a real-time user web browsing behavior analysis<br>
+  D. blocks malicious websites and adds them to a block list<br>
+  E. provides a defense for on-premises email deployments<br>
+
+
+  <br>Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 37</span>
+
+  What are two things to consider when using PAC files with the Cisco WSA? (Choose two)
+
+  A. If the WSA host port is changed, the default port redirects web traffic to the correct port automatically<br>
+  B. The WSA hosts PAC files on port 6001 by default.<br>
+  C. PAC files use if-else statements to determine whether to use a proxy or a direct connection for traffic between the PC and the host.<br>
+  D. By default, they direct traffic through a proxy when the PC and the host are on the same subnet<br>
+  E. The WSA hosts PAC files on port 9001 by default.<br>
+
+  <br>Answer: <br><br>
+
+
+- <span style="color: #008888; font-weight: bold;">Question 38</span>
+
+  When implementing transparent user identification for single sign-on with Internet Explorer, how is the redirect hostname configured?
+
+  A. as an IP address<br>
+  B. as a FQDN<br>
+  C. as a distinguished name<br>
+  D. as a short host name<br>
+
+  <br>Answer: <br><br>
+

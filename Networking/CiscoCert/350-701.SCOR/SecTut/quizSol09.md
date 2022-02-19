@@ -100,7 +100,7 @@
   D. Add an SNMP host access entry.<br>
   E. Specify an SNMP user group.<br>
 
-  <br>Answer: B D
+  <br>Answer: D E
 
   Explanation
 
@@ -127,7 +127,7 @@
     />
   </figure>
 
-  Reference: https://www.plixer.com/blog/setting-up-snmp-on-the-cisco-asa-using-asdm/
+  Reference: [Setting up SNMP on the Cisco ASA using ASDM](https://www.plixer.com/blog/setting-up-snmp-on-the-cisco-asa-using-asdm/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 7</span>
@@ -145,7 +145,7 @@
 
   Cisco ISE uses Cisco Platform Exchange Grid (pxGrid) technology to share contextual data with leading SIEM and TD partner solutions.
 
-  Reference: https://www.cisco.com/c/en/us/products/collateral/security/identity-services-engine/at-a-glance-c45-732858.html
+  Reference: [Cisco Identity Services Engine with Integrated Security Information and Event Management and Threat Defense Platforms At-a-Glance](https://www.cisco.com/c/en/us/products/collateral/security/identity-services-engine/at-a-glance-c45-732858.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 8</span>
@@ -157,7 +157,7 @@
   C. Cisco ASAv<br>
   D. Cisco WSAv<br>
 
-  <br>Answer: A
+  <br>Answer: C
 
 
 - <span style="color: #008888; font-weight: bold;">Question 9</span>
@@ -175,12 +175,12 @@
 
   Cisco Secure Workload (formerly Tetration) collects packet header metadata, process details and installed software package information. This is collected via the software sensors deployed on the workloads and made available as part of the solution. More detailed information is available in the Cisco Secure Workload product documentation. Below are the high-level details regarding the telemetry data that is collected by Cisco Secure Workload:
   - Flow information: Contains details about flow endpoints, protocols, and ports, when the flow started, how long the flow was active, etc.
-  - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packetʼs Time to Live (TTL), IP/TCP flags, packet length, etc.
+  - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packet's Time to Live (TTL), IP/TCP flags, packet length, etc.
   - Process details: Captures processes executed on the server, including information about process parameters, start and stop time, process binary hash, etc.
   - Software packages: Inventory of all software packages installed on the server along with the version and publisher information
   - Cisco Secure Workload forensics capability: If a customer turns on the Cisco Secure Workload forensics capability, additional Personally Identifiable Information may be collected.
 
-  Reference: https://trustportal.cisco.com/c/dam/r/ctp/docs/privacydatasheet/security/cisco-tetration-privacy-data-sheet.pdf
+  Reference: [Cisco Secure Workload as a Service](https://trustportal.cisco.com/c/dam/r/ctp/docs/privacydatasheet/security/cisco-tetration-privacy-data-sheet.pdf)
 
 
 
@@ -645,8 +645,116 @@
     />
   </figure>
   
-
   Note: GETVPN is tunnel-less VPN while DMVPN is tunnel-based.
+
+
+- <span style="color: #008888; font-weight: bold;">Question 34</span>
+
+  Which system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container?
+
+  A. Docker<br>
+  B. SDLC<br>
+  C. Lambda<br>
+  D. Contiv<br>
+
+  <br>Answer: A
+
+
+- <span style="color: #008888; font-weight: bold;">Question 35</span>
+
+  An engineer needs to configure an access control policy rule to always send traffic for inspection without using the default action. Which action should be configured for this rule?
+
+  A. monitor<br>
+  B. allow<br>
+  C. trust<br>
+  D. block<br>
+
+  <br>Answer: B
+
+  Explanation
+
+  Monitor evaluates traffic first. Monitor rules track and log network traffic. The system continues to match traffic against additional rules to determine whether to permit or deny it. -> Therefore monitor rule still uses other rules below, including the default action.
+
+  For Allow rule, matching traffic is allowed; however, prohibited files, malware, intrusions, and exploits within that traffic are detected and blocked. Remaining non-prohibited, non-malicious traffic is allowed to its destination, though it is still subject to identity requirements and rate limiting. You can configure Allow rules that perform only file inspection, or only intrusion inspection, or neither.
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+      src    = "img/2235-FMC_rules.jpg"
+      alt    = "FMC Access Control Rules"
+      title  = "FMC Access Control Rules"
+    />
+  </figure>
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html
+
+
+- <span style="color: #008888; font-weight: bold;">Question 36</span>
+
+  Which two functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks? (Choose two)
+
+  A. uses a static algorithm to determine malicious<br>
+  B. determines if the email messages are malicious<br>
+  C. does a real-time user web browsing behavior analysis<br>
+  D. blocks malicious websites and adds them to a block list<br>
+  E. provides a defense for on-premises email deployments<br>
+
+
+  <br>Answer: B E
+
+  Explanation
+
+  Benefits of Cisco Advanced Phishing Protection
+
+  …
+
+  - Provides another layer of defense to more effectively secure your email environment. -> Answer E is correct
+  - Automatically remove malicious emails from the recipient’s inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks. -> Answer B is correct.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa13-5/user_guide/b_ESA_Admin_Guide_13-5/m_advanced_phishing_protection.html
+
+
+- <span style="color: #008888; font-weight: bold;">Question 37</span>
+
+  What are two things to consider when using PAC files with the Cisco WSA? (Choose two)
+
+  A. If the WSA host port is changed, the default port redirects web traffic to the correct port automatically<br>
+  B. The WSA hosts PAC files on port 6001 by default.<br>
+  C. PAC files use if-else statements to determine whether to use a proxy or a direct connection for traffic between the PC and the host.<br>
+  D. By default, they direct traffic through a proxy when the PC and the host are on the same subnet<br>
+  E. The WSA hosts PAC files on port 9001 by default.<br>
+
+  <br>Answer: C E
+
+  Explanation
+
+  By default, the proxy PAC file would be hosted on port 9001. When using WSA to host PAC files, by default, we need to point the browser to the following location http://WSA_IP:9001/pacfile.pac -> Answer B is not correct while answer E is correct.
+
+  The PAC file checks the local IP subnet address of the PC and then makes a decision based on IF / ELSE statement/s -> Answer C is correct.
+
+  If the default port is changed in the PAC file hosting settings, then we would need to change the port accordingly in the above URL -> Answer A is not correct.
+
+  Reference: https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/118082-qanda-wsa-00.html
+
+
+- <span style="color: #008888; font-weight: bold;">Question 38</span>
+
+  When implementing transparent user identification for single sign-on with Internet Explorer, how is the redirect hostname configured?
+
+  A. as an IP address<br>
+  B. as a FQDN<br>
+  C. as a distinguished name<br>
+  D. as a short host name<br>
+
+  <br>Answer: D
+
+  Explanation
+
+  Configuring Single-Sign-on
+  Obtaining credentials transparently facilitates a single-sign-on environment. Transparent user identification is an authentication realm setting.
+  For Internet Explorer, be sure the Redirect Hostname is the short host name (containing no dots) or the NetBIOS name rather than a fully qualified domain.
+
+  Reference: https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01001.html
 
 
 
