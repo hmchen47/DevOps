@@ -461,6 +461,7 @@
   - advantages of using Cisco Any connect over DMVPN
     - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
+  - DMVPN over GETVPN: <span style="color: #bb6600;">DMVPN can be used over the public Internet, and GETVPN requires a private network</span>
 
 
 - <mark style="background: #e0ffff;">FlexVPN</mark>>
@@ -538,6 +539,7 @@
     - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
+  - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
 
 
 - REST API
@@ -923,7 +925,6 @@
   - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration analysis</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
   - a benefit of using Cisco Tetration: collect <span style="color: #bb6600;">near-real time data from servers and inventories the software packages that exist on servers</span>
-
 
 
 - Cisco Stealhwatch Cloud
@@ -1396,8 +1397,9 @@
   </figure>
     
   - access control rules
-    - traffic evaluation sequence: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
+    - traffic evaluation <span style="color: #bb6600;">sequence</span>: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
     - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
+    - action of an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - URL filtering
     - control access to web site based on
       - category: a general classification for the URL, e.g., Auction, Job Search
@@ -1952,6 +1954,8 @@
     - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
     - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
   - feature to meet the requirements 1) configure a Cisco WSA to receive redirected traffic over ports 80 and 443; 2) a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility; 3) make this invisible to the users: <span style="color: #bb6600;">configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
+  - deployment mode to enable a separated email transfer flow from the Internet and from the LAN on WSA: <span style="color: #bb6600;">multi-context</span>
+
 
 
 ## Authentication, Authorization, and Accounting (AAA)
@@ -2038,7 +2042,7 @@
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
     - a benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
-    - parameters used for device compliance checks: <span style="color: #bb6600;">device operating system version</span> and <span style="color: #bb6600;">endpoint protection software version</span>
+    - parameters used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
   - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - inline posture node
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
