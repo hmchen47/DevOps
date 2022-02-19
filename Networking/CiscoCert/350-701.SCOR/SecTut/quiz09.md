@@ -152,17 +152,17 @@
 
   Drag and drop the exploits from the left onto the type of security vulnerability on the right.
 
-  Group 1:
-  A. causes memory access errors
-  B. makes the client the target of attack
-  C. gives unauthorized access to web server files
-  D. accesses or modifies application data
+  Group 1:<br>
+  A. causes memory access errors<br>
+  B. makes the client the target of attack<br>
+  C. gives unauthorized access to web server files<br>
+  D. accesses or modifies application data<br>
 
-  Group 2: 
-  1. path transversal
-  2. cross-site request forgery
-  3. SQL injection
-  4. buffer overflow
+  Group 2: <br>
+  1\. path transversal<br>
+  2\. cross-site request forgery<br>
+  3\. SQL injection<br>
+  4\. buffer overflow<br>
 
   <br>Answer: <br><br>
 
