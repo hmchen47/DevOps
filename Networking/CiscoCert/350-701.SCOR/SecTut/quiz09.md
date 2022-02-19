@@ -351,10 +351,10 @@
 
   Which system is InfluxDB and Grafana be used on to pull the data and display the visualization information?
 
-  A. Docker containers
-  B. Windows Server 2019
-  C. specialized Cisco Linux system
-  D. Windows Server 2016
+  A. Docker containers<br>
+  B. Windows Server 2019<br>
+  C. specialized Cisco Linux system<br>
+  D. Windows Server 2016<br>
 
   <br>Answer: <br><br>
 

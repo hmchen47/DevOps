@@ -58,7 +58,7 @@
 
   Explanation
 
-  If WCCP proxy health checking is enabled, the WSA’s WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds. If the proxy is up and running, the WCCP service receives a response from the proxy and the WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds. If the WCCP service doesn’t receive a reply from the proxy, then HIA messages are not sent to the WCCP routers.
+  If WCCP proxy health checking is enabled, the WSA’s WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds. If the proxy is up and running, the WCCP service receives a response from the proxy and the WSA sends a WCCP "here I am" (HIA) message to the specified WCCP-enabled routers every 10 seconds. If the WCCP service doesn’t receive a reply from the proxy, then HIA messages are not sent to the WCCP routers.
 
   After a WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA.
 
@@ -196,7 +196,7 @@
 
   Explanation
 
-  Structured Threat Information Expression (STIX) and Trusted Automated Exchange of Intelligence Information (TAXII) are standards developed in an effort to improve the prevention and mitigation of cyber-attacks. STIX states the “what” of threat intelligence, while TAXII defines “how” that information is relayed. Unlike previous methods of sharing, STIX and TAXII are machine-readable and therefore easily automated.
+  Structured Threat Information Expression (STIX) and Trusted Automated Exchange of Intelligence Information (TAXII) are standards developed in an effort to improve the prevention and mitigation of cyber-attacks. STIX states the "what" of threat intelligence, while TAXII defines "how" that information is relayed. Unlike previous methods of sharing, STIX and TAXII are machine-readable and therefore easily automated.
 
   TAXII should be the best answer here because it is Trusted Automated Exchange of Intelligence Information.
 
@@ -365,8 +365,8 @@
   Explanation
 
   Note:
-  - “address 192.168.60.1 255.255.255.255” means remote peer is host 192.168.50.1
-  - The Phase 1 password is “cisc414685095”.
+  - "address 192.168.60.1 255.255.255.255" means remote peer is host 192.168.50.1
+  - The Phase 1 password is "cisc414685095".
 
 
 - <span style="color: #008888; font-weight: bold;">Question 20</span>
@@ -492,7 +492,7 @@
   D. Traffic continues to flow if the module fails.<br>
   E. The module is operating in IDS mode.<br>
 
-  <br>Answer: A D
+  <br>Answer: D E
 
   Explanation
 
@@ -512,14 +512,13 @@
 
   The Cisco ASA 5500 security appliance is not just a plain firewall. With an add-on security module (AIP-SSM), you can transform the ASA 5500 into an IDS/IPS sensor as well.
 
-  The Sensor operates in either “Promiscuous Mode” (IDS functionality) or “Inline Mode” (IPS functionality).
+  The Sensor operates in either "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality).
 
-  In Promiscuous Mode, the sensor does not intervene in traffic flow, but just “sniffs” the traffic that passes through the firewall and takes appropriate actions in the event of an attack.
+  In Promiscuous Mode, the sensor does not intervene in traffic flow, but just "sniffs" the traffic that passes through the firewall and takes appropriate actions in the event of an attack.
 
   -> This module is operating in IPS mode.
 
-  Reference: [Cisco IDS/IPS Module for Cisco ASA Firewalls (AIP-SSM)
-](https://www.networkstraining.com/cisco-ids-ips-module-for-cisco-asa-firewalls-aip-ssm/)
+  Reference: [Cisco IDS/IPS Module for Cisco ASA Firewalls (AIP-SSM)](https://www.networkstraining.com/cisco-ids-ips-module-for-cisco-asa-firewalls-aip-ssm/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
@@ -531,17 +530,17 @@
   C. so the internal PSIRT organization is aware of the latest bugs<br>
   D. so the latest security fixes are installed on the endpoints<br>
 
-  <br>Answer: B
+  <br>Answer: A
 
 
 - <span style="color: #008888; font-weight: bold;">Question 27</span>
 
   Which system is InfluxDB and Grafana be used on to pull the data and display the visualization information?
 
-  A. Docker containers
-  B. Windows Server 2019
-  C. specialized Cisco Linux system
-  D. Windows Server 2016
+  A. Docker containers<br>
+  B. Windows Server 2019<br>
+  C. specialized Cisco Linux system<br>
+  D. Windows Server 2016<br>
 
   <br>Answer: C
 
@@ -561,7 +560,7 @@
 
   Cisco ASA Threat Detection does not support multiple context mode.
 
-  Reference: https://grumpy-networkers-journal.readthedocs.io/en/latest/VENDOR/CISCO/FIREWALL/ASA/THREATDETECT.html
+  Reference: [Cisco ASA Threat Detection](https://grumpy-networkers-journal.readthedocs.io/en/latest/VENDOR/CISCO/FIREWALL/ASA/THREATDETECT.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 29</span>
@@ -590,9 +589,9 @@
 
   Explanation
 
-  The command snmp-server user asmith myv7 auth sha cisco priv aes 256 cisc0414685095 creates a user name “asmith” and he belongs to group “myv7”. The password for this user is “cisco” and “cisc0414685095” is the shared secret.
+  The command `snmp-server user asmith myv7 auth sha cisco priv aes 256 cisc0414685095` creates a user name "asmith" and he belongs to group "myv7". The password for this user is "cisco" and "cisc0414685095" is the shared secret.
 
-  In order to send SNMP information to a remote host, we have to configure the username (not password) in the “snmp-server host …” command. So the command must include “asmith” as the username. And we configure SNMPv3 by using keyword “version 3”, not “snmpv3”.
+  In order to send SNMP information to a remote host, we have to configure the username (not password) in the "snmp-server host …" command. So the command must include "asmith" as the username. And we configure SNMPv3 by using keyword "version 3", not "snmpv3".
 
 
 - <span style="color: #008888; font-weight: bold;">Question 31</span>
