@@ -1177,7 +1177,9 @@
       - clean - the file known to be good
       - <span style="color: #bb6600;">malicious</span> - The file known to be harmful
       - unknown - insufficient data to classify the file as clean or malicious
-  - importance of patching strategy for endpoint: <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
+  - importance of patching strategy for endpoint:
+    - <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
+    - <span style="color: #bb6600;">the organization can identify endpoint vulnerabilities</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
@@ -1445,53 +1447,6 @@
   - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
 
 
-- Firepower Next-Generation IPS (NGIPS) threat appliance
-  - providing network visibility, security intelligence, automation and advanced threat protection
-  - operating in-line via Fail-To-Wire/Bypass network modules
-  - <span style="color: #bb6600;">threat prevention and mitigation for known and unknown threats</span>
-  - security intelligence
-    - TALOS Security Intelligence and Research Group: collect and correlate threats in real time
-    - vulnerability-focused IPS rules
-    - embedded IP-, URL-, and DNS-based security intelligence
-    - <span style="color: #bb6600;">protect license</span> to enable the feature
-  - security automation
-    - <span style="color: #bb6600;">correlate intrusion events</span> with your network's vulnerabilities
-    - analyze network's weaknesses
-    - recommend the appropriate security policies
-  - features:
-    - IPS rules: identify and block attack traffic
-    - integrated defence: against advanced malware by advanced analysis of network and endpoint activity
-    - sandboxing: using behavioral indicators to identify zero-day amd evasive attacks
-  - suppression
-    - suppressing intrusion event notification
-    - useful for <span style="color: #bb6600;">eliminating false positives</span>
-    - types:
-      - <span style="color: #bb6600;">source</span>: a specific IP address or range of IP addresses
-      - <span style="color: #bb6600;">rule</span>: a specific rule or preprocessor
-  - traffic profile
-    - a graph of network traffic based on connection data collected over a profiling time window (PTW)
-    - presumably representing normal network traffic
-    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile
-    - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
-  - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
-
-
-- Cisco ASA Firepower module
-  - known as the ASA SFR, providing next-generation Firewall services, including
-    - Next Generation Intrusion Prevention System (NGIPS)
-    - Application Visibility and Control (AVC)
-    - URL filtering
-    - Advanced Malware Protection (AMP)
-  - redirect traffic to the SFR module
-    1. select the <span style="color: #bb6600;">traffic</span> to redirect w/ ACL
-    2. create <span style="color: #bb6600;">class-map</span> to match the traffic
-    3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
-    4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
-  - indications of the Cisco Firepower Services Module configuration w/ `SFR: card status Up, mode fail-open monitor-only`
-    - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module
-    - `fail-open`: <span style="color: #bb6600;">IPS</span> - action to open connection & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality)
-
-
 - Cisco Threat Intelligence Director (CTID)
   - part of FMC
   - ingest 3rd-party cyber threat intelligence (CTI)
@@ -1523,6 +1478,60 @@
   </figure>
 
 
+- Firepower Next-Generation IPS (NGIPS) threat appliance
+  - providing network visibility, security intelligence, automation and advanced threat protection
+  - operating in-line via Fail-To-Wire/Bypass network modules
+  - <span style="color: #bb6600;">threat prevention and mitigation for known and unknown threats</span>
+  - security intelligence
+    - TALOS Security Intelligence and Research Group: collect and correlate threats in real time
+    - vulnerability-focused IPS rules
+    - embedded IP-, URL-, and DNS-based security intelligence
+    - <span style="color: #bb6600;">protect license</span> to enable the feature
+  - security automation
+    - <span style="color: #bb6600;">correlate intrusion events</span> with your network's vulnerabilities
+    - analyze network's weaknesses
+    - recommend the appropriate security policies
+  - features:
+    - IPS rules: identify and block attack traffic
+    - integrated defence: against advanced malware by advanced analysis of network and endpoint activity
+    - sandboxing: using behavioral indicators to identify zero-day amd evasive attacks
+  - suppression
+    - suppressing intrusion event notification
+    - useful for <span style="color: #bb6600;">eliminating false positives</span>
+    - types:
+      - <span style="color: #bb6600;">source</span>: a specific IP address or range of IP addresses
+      - <span style="color: #bb6600;">rule</span>: a specific rule or preprocessor
+  - traffic profile
+    - a graph of network traffic based on connection data collected over a profiling time window (PTW)
+    - presumably representing normal network traffic
+    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile
+    - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
+  - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
+
+
+- ASA Firepower module
+  - known as the ASA SFR, providing next-generation Firewall services, including
+    - Next Generation Intrusion Prevention System (NGIPS)
+    - Application Visibility and Control (AVC)
+    - URL filtering
+    - Advanced Malware Protection (AMP)
+  - next-generation firewall services, including NGIPS, AVC, URL filtering, and AMP
+  - single or multiple context mode and in routed or transparent mode
+  - deployment models:
+    - <span style="color: #bb6600;">inline mode</span>:
+      - actual traffic is sent to the ASA FirePOWER module; 
+      - configure <span style="color: #bb6600;">inline interface pairs</span>
+    - <span style="color: #bb6600;">monitor-only (inline tap or passive)</span>: a copy of the traffic is sent to the ASA FirePOWER module
+  - redirect traffic to the SFR module
+    1. select the <span style="color: #bb6600;">traffic</span> to redirect w/ ACL
+    2. create <span style="color: #bb6600;">class-map</span> to match the traffic
+    3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
+    4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
+  - indications of the Cisco Firepower Services Module configuration w/ `SFR: card status Up, mode fail-open monitor-only`
+    - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module
+    - passive mode & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality): <span style="color: #bb6600;">IDS</span> 
+
+
 - Cisco Application Visibility and Control (AVC)
   - monitors application performance and troubleshoots issues that arise
   - leverages multiple technologies to recognize, analyze, and control applications
@@ -1543,16 +1552,6 @@
   - config to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity w/ installed WSA: <span style="color: #bb6600;">use an access policy group to configure application control settings</span>
   - service allowing a user to export application usage and performance statistics with Cisco Application Visibility and control: <span style="color: #bb6600;">NetFlow</span>
   - technology providing the benefit of Layer 3 through Layer 7 innovative deep packet inspection, enabling the platform to identify and output various applications within the network traffic flows:<span style="color: #bb6600;">NBAR2</span>
-
-
-- ASA FirePOWER module
-  - next-generation firewall services, including NGIPS, AVC, URL filtering, and AMP
-  - single or multiple context mode and in routed or transparent mode
-  - deployment models:
-    - <span style="color: #bb6600;">inline mode</span>:
-      - actual traffic is sent to the ASA FirePOWER module; 
-      - configure <span style="color: #bb6600;">inline interface pairs</span>
-    - <span style="color: #bb6600;">monitor-only (inline tap or passive)</span>: a copy of the traffic is sent to the ASA FirePOWER module
 
 
 - ASA in Cisco Unified Communications
@@ -1752,7 +1751,10 @@
   - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
   - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
   - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
-  - strongest security possibility of SNMPv3 config
+  - SNMPv3 config
+    - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
+    - new user for the group: username =`andy` w/ passowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
+    - recepient: username = <code style="color: #bb6600;">andy</code>; receipient addr = '10.255.254.1'; SNMP version = <code style="color: #bb6600;">version 3</code>; no group name involved
 
     ```text
     snmp-server group myv3 v3 priv
@@ -1784,7 +1786,8 @@
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
-  - open source tool used to use to create graphical visualizations of network telemetry:  <span style="color: #bb6600;">Grafana</span>
+  - open source tool used to use to create graphical visualizations of network telemetry: <span style="color: #bb6600;">Grafana</span>
+  - system used for InfluxDB and Grafana to pull the data and display the visualization information: <span style="color: #bb6600;">specialized Cisco Linux system</span>
 
 
 ## Email and Web Security
@@ -2035,6 +2038,7 @@
       - config a posture policy in ISE to <span style="color: #bb6600;">check that an endpoint patch level</span> is met before allowing access on the network
     - a benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
+    - parameters used for device compliance checks: <span style="color: #bb6600;">device operating system version</span> and <span style="color: #bb6600;">endpoint protection software version</span>
   - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - inline posture node
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
