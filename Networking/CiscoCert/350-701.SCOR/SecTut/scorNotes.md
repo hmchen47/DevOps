@@ -22,7 +22,6 @@
     - an attack that leverages that vulnerability
   - endpoint risks as company vulnerable: 1) <span style="color: #bb6600;">malware</span>; 2) <span style="color: #bb6600;">expolit</span>
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
-  - data breach: a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
   - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span
@@ -87,6 +86,25 @@
     - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
     - a program providing maliciously privileged access to a computer
     - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
+
+
+- Data breach
+  - a stolen customer database that contained social security numbers and was <span style="color: #bb6600;">published online</span>
+  - a security violation or incident that leads to the theft of sensitive or critical data or its exposure to an unauthorized party
+  - intentional, such as a database hack, or accidental, such as an employee emailing confidential files to the wrong recipient
+  - possible attack methods
+    - system or device vulnerabilities
+    - compromised webpage
+    - malware in email attachments
+    - compromised email accounts
+    - system misconfigurations or weak or absent data encryption
+  - mitigation
+    - two-factor authentication and secure access solutions for cloud apps make it more difficult for malicious hackers or insiders to compromise users, including those who work remotely or on a contract basis
+    - patching vulnerabilities; updating operating systems; securing endpoints, including Internet of Things (IoT) devices; and addressing "shadow IT" risks
+    - zero-trust approach: identify what data needs to be protected and applies stringent measures to shield it from unauthorized access or exposur
+    - user education and training
+    - data encryption
+  - two parameters used to prevent a data breach in the cloud:  <span style="color: #bb6600;">encryption</span> and  <span style="color: #bb6600;">strong user authentication</span>
 
 
 - Buffer overflow
@@ -349,6 +367,7 @@
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 address 172.19.20.24`
       - function of the `crypto isakmp key cisc6397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
+      - function of the crypto isakmp key cisc414685095 address 192.168.50.1 255.255.255.255 command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configures the pre-shared authentication key for host 192.168.50.1</span>
     - phase 2: IPsec
   - IKEv2
     - standard  <span style="color: #bb6600;">including NAT-T</span>
@@ -976,10 +995,12 @@
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
     - CA not trusted by browser -> an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
+  - SSL Decryption feature requiring the <span style="color: #bb6600;">root certificate</span> be installed
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
+  - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
 
 
 - Umbrella - Advance Settings
@@ -1876,6 +1897,7 @@
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
   - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
   - feature to enable the blocking of greymail for the end user w/ ESA: <span style="color: #bb6600;">Intelligent Multi-Scan</span>
+  - CLI command used to enable URL filtering support for shortened URLs on the Cisco ESA: <code style="color: #bb6600;">websecurityadvancedconfig</code>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
@@ -2051,6 +2073,14 @@
     - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
     - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
+  - single-SSID BYOD
+    - guest access is using hotspot access 
+    - the open SSID using hotspot portal ubalble to be used for initial BYOD portal at the same time
+    - the endpoint associates to a secure WLAN gets onboarded then after the endpoint automatically reconnects the endpoint is granted full network access via same WLAN
+  - dual-SSID BYOD
+    - portal for named guest account and employee BYOD porta
+    - the endpoint is associated to a provisioning WLAN which is typically shared with guest access.
+    - employee user: direct the user to the BYOD flow where the endpoint gets onboarded
   - <span style="color: #bb6600;">device sensor</span> of authorization policies
     - a feature of access devices
     - allow to collect information about connected endpoints
@@ -2066,6 +2096,7 @@
   - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
+  - an endpoint is associated to a provisioning WLAN that is shared with guest access, and the same guest portal is used as the BYOD portal: <span style="color: #bb6600;">dual-SSID BYOD</span> 
 
 
 - <mark style="background: #e0ffff;">TrustSec</mark>
