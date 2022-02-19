@@ -183,7 +183,6 @@
   Reference: [Cisco Secure Workload as a Service](https://trustportal.cisco.com/c/dam/r/ctp/docs/privacydatasheet/security/cisco-tetration-privacy-data-sheet.pdf)
 
 
-
 - <span style="color: #008888; font-weight: bold;">Question 10</span>
 
   Which standard is used to automate exchanging cyber threat information?
@@ -229,7 +228,7 @@
 
   For graymail detection, anti-spam scanning must be enabled globally. This can be either the IronPort Anti-Spam, the Intelligent Multi-Scan feature, or Outbreak Filters.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_01101.html
+  Reference: [Managing Graymail - User Guide for AsyncOS 12.0 for Cisco Email Security Appliances - GD](https://www.cisco.com/c/en/us/td/docs/security/esa/esa12-0/user_guide/b_ESA_Admin_Guide_12_0/b_ESA_Admin_Guide_chapter_01101.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 13</span>
@@ -237,7 +236,7 @@
   Drag and drop the exploits from the left onto the type of security vulnerability on the right.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
       src    = "img/2213-exploits_vulnerability.jpg"
       alt    = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
@@ -246,10 +245,10 @@
   </figure>
 
   <br>Answer:
-  - path transversal: gives unauthorized access to web server files
-  - cross-site request forgery: makes the client the target of attack
-  - SQL injection: accesses or modifies application data
-  - buffer overflow: causes memory access errors
+  - path transversal (1): gives unauthorized access to web server files (C)
+  - cross-site request forgery (2): makes the client the target of attack (B)
+  - SQL injection (3): accesses or modifies application data (D)
+  - buffer overflow (4): causes memory access errors (A)
 
   Explanation
 
@@ -271,7 +270,7 @@
 
   Operating on Cisco IOS and Cisco IOS XE, NBAR2 utilizes innovative deep packet inspection (DPI) technology to identify a wide variety of applications within the network traffic flow, using L3 to L7 data.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/avc/guide/avc-user-guide/avc_tech_overview.pdf
+  Reference: [Techology Overview](https://www.cisco.com/c/en/us/td/docs/ios/solutions_docs/avc/guide/avc-user-guide/avc_tech_overview.pdf)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 15</span>
@@ -287,11 +286,9 @@
 
   Explanation
 
-  Firepower Management Center Configuration Guide
-  …
   Interactive Block Response Page: Warns users, but also allows them to click a button (or refresh the page) to load the originally requested site. Users may have to refresh after bypassing the response page to load page elements that did not load.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/620/configuration/guide/fpmc-config-guide-v62/http_response_pages_and_interactive_blocking.html
+  Reference: [HTTP Response Pages and Interactive Blocking - Firepower Management Center Configuration Guide](https://www.cisco.com/c/en/us/td/docs/security/firepower/620/configuration/guide/fpmc-config-guide-v62/http_response_pages_and_interactive_blocking.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 16</span>
