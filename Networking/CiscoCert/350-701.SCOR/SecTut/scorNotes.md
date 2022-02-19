@@ -1476,7 +1476,7 @@
   - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
 
 
-- Cisco ASA FirePOWER module
+- Cisco ASA Firepower module
   - known as the ASA SFR, providing next-generation Firewall services, including
     - Next Generation Intrusion Prevention System (NGIPS)
     - Application Visibility and Control (AVC)
@@ -1487,6 +1487,9 @@
     2. create <span style="color: #bb6600;">class-map</span> to match the traffic
     3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
     4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
+  - indications of the Cisco Firepower Services Module configuration w/ `SFR: card status Up, mode fail-open monitor-only`
+    - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module
+    - `fail-open`: <span style="color: #bb6600;">IPS</span> - action to open connection & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality)
 
 
 - Cisco Threat Intelligence Director (CTID)
@@ -1579,6 +1582,7 @@
     - deployment mode to seperate management on a shared appliance
     - example: separation of masnagement and customer security service in mall
   - modes: transparent and routed
+  - transparent mode: operating at Layer 2 
   - <span style="color: #bb6600;">bridge group</span> in transprent mode
     - group interfaces together in a bridge group to maximize the use of security contexts
     - configure multiple bridge groups, one for each network
@@ -1599,6 +1603,7 @@
     - stateful: <span style="color: #bb6600;">preserve</span>
     - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
+  - ASA deployment model is used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
 
 
 - IOS zone-based firewall
@@ -1666,7 +1671,9 @@
     - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - Flow Monitor
     - tie all of the construct together
-    - reference the Flow Exporter and the Flow Record.
+    - reference the Flow Exporter and the Flow Record
+    - provide the actual traffic monitoring on a configured interface
+    - <span style="color: #bb6600;">flow monitor cache</span> created to collect the traffic based on the key and nonkey fields in the configured record
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but <span style="color: #bb6600">metadata</span> for communication
   - template of version 9
@@ -1685,6 +1692,7 @@
     4. Adds or edits the service policy
     - generate NetFlow records on traffic traversing the Cisco ASA:<code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
+  - component creating the flow monitor cache that is used to collect traffic based on the key and nonkey fields in the configured record: <span style="color: #bb6600;">flow monitor</span>
 
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
@@ -1772,9 +1780,11 @@
     - apps subscribe to specific data items they need
     - use standard-based YANG data models over NETCONF-YANG
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
+  - Telegraf which receives the telemetry data, InfluxDB which stores it, and Grafana which is responsible for visualizations and alerting.
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
+  - open source tool used to use to create graphical visualizations of network telemetry:  <span style="color: #bb6600;">Grafana</span>
 
 
 ## Email and Web Security
