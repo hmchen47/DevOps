@@ -27,12 +27,20 @@
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
   - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span
   - front-door attacks: require the actions of the user to allow the virus to infect the system
+  - directory traversal/path traversal attack
+    - a.k.a. dot dot slash attack
+    - an HTTP exploit to <span style="color: #bb6600;">access restricted files, directories and commands</span> that reside outside the web server’s root directory
   - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
   - vulnerability to see the password being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
   - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
   - difference between a vulnerability and an exploit: <span style="color: #bb6600;">a vulnerability is a weakness that can be exploited by an attacker</span>
+  - vulnerabilities -> explots
+    - path transversal: gives <span style="color: #bb6600;">unauthorized access</span> to web server files
+    - cross-site request forgery: makes the <span style="color: #bb6600;">client</span> the target of attack
+    - SQL injection: accesses or modifies <span style="color: #bb6600;">application data</span>
+    - buffer overflow: causes <span style="color: #bb6600;">memory</span> access errors 
 
 
 - Categories of attacks
@@ -1103,6 +1111,7 @@
   - Stealthwatch + ISE
     - network security analysts with a view integrating NetFlow data and contextual information
     - enabling the security analyst to detect and discern the potential severity of threats in a timely, efficient, and cost-effective manner
+  - security solution using NetFlow to provide visibility across the network, data center, branch offices, and cloud: <span style="color: #bb6600">Stealtwatch</span>
 
 
 - Cognitive Intelligence
@@ -1403,7 +1412,11 @@
   - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
   - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
-  - solution to meet the requirement that URLs must be blocked from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy:  <span style="color: #bb6600;">FTD because it includes URL filtering in the access control policy capabilities</span>, whereas Cisco ASA does not
+  - solution to meet the requirement that URLs must be blocked from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy: <span style="color: #bb6600;">FTD because it includes URL filtering in the access control policy capabilities</span>, whereas Cisco ASA does not
+  - Interactive Block Response Page
+    - warn users, but also allows them to click a button (or refresh the page) to load the originally requested site
+    - users may have to refresh after bypassing the response page to load page elements that did not load
+  - firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a warning page and to reset the connection: FTD enables <span style="color: #bb6600;">interactive blocking and blocking with reset</span> natively, whereas ASA does not
 
 
 - Firepower Threat Defence Devices
@@ -1499,9 +1512,13 @@
     - metrics collection and exporting
     - management and response systems
     - control
+  - NBAR2
+    - <span style="color: #bb6600;">application recognition</span>
+    - utilize innovative deep  packet inspection (DPI) technology to identify a wide variety of  applications within  the network traffic flow, using L3 to L7 data
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
   - config to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity w/ installed WSA: <span style="color: #bb6600;">use an access policy group to configure application control settings</span>
   - service allowing a user to export application usage and performance statistics with Cisco Application Visibility and control: <span style="color: #bb6600;">NetFlow</span>
+  - technology providing the benefit of Layer 3 through Layer 7 innovative deep packet inspection, enabling the platform to identify and output various applications within the network traffic flows:<span style="color: #bb6600;">NBAR2</span>
 
 
 - ASA FirePOWER module
@@ -1846,6 +1863,9 @@
     - sending message to alternative destination
     - sending copies (bcc) to other receipients
     - sending a DLP violation notification to sender or other contacts
+  - graymail detection
+    - anti-spam scanning enabled globally
+    - IronPort Anti-Spam, <span style="color: #bb6600;">the Intelligent Multi-Scan feature</span>, or Outbreak Filters
   - using 2FA to access ESA and join a cluster machine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
   - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
@@ -1855,6 +1875,7 @@
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
   - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
+  - feature to enable the blocking of greymail for the end user w/ ESA: <span style="color: #bb6600;">Intelligent Multi-Scan</span>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
