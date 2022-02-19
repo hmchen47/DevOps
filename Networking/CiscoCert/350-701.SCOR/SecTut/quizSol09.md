@@ -306,7 +306,7 @@
 
   The SSL Decryption feature does require the root certificate be installed.
 
-  Reference: https://community.cisco.com/t5/security-blogs/cisco-umbrella-intelligent-proxy-and-ssl-decryption/ba-p/4453056
+  Reference: [Cisco Umbrella Intelligent Proxy and SSL Decryption](https://community.cisco.com/t5/security-blogs/cisco-umbrella-intelligent-proxy-and-ssl-decryption/ba-p/4453056)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 17</span>
@@ -327,7 +327,7 @@
 
   Two-factor authentication and secure access solutions for cloud apps make it more difficult for malicious hackers or insiders to compromise users, including those who work remotely or on a contract basis -> Answer C is correct.
 
-  Reference: https://www.cisco.com/c/en/us/products/security/what-is-data-breach.html#~how-to-prevent-a-breach
+  Reference: [Steps that can help prevent a data breach](https://www.cisco.com/c/en/us/products/security/what-is-data-breach.html#~how-to-prevent-a-breach)
 
   In the Data Breaches in Cloud Computing article, encryption is one of the top five methods to prevent data breach in the cloud -> Answer A is correct.
 
@@ -347,7 +347,7 @@
 
   If guest access is utilizing one of the named guest account, then same guest portal can be used for employee BYOD portal. This flow is called Dual-SSID BYOD, where the endpoint is associated to a provisioning WLAN which is typically shared with guest access.
 
-  Reference: https://community.cisco.com/t5/security-documents/ise-byod-dual-vs-single-ssid-onboarding/ta-p/3641422
+  Reference: [ISE BYOD: Dual vs. Single SSID Onboarding](https://community.cisco.com/t5/security-documents/ise-byod-dual-vs-single-ssid-onboarding/ta-p/3641422)
 
 
 
@@ -373,18 +373,18 @@
 
   Which CLI command is used to enable URL filtering support for shortened URLs on the Cisco ESA?
 
-  A. outbreakconfig<br>
-  B. websecurityadvancedconfig<br>
-  C. webadvancedconfig<br>
-  D. websecurityconfig<br>
+  A. `outbreakconfig`<br>
+  B. `websecurityadvancedconfig`<br>
+  C. `webadvancedconfig`<br>
+  D. `websecurityconfig`<br>
 
   <br>Answer: B
 
   Explanation
 
-  Enabling URL filtering support for shortened URLs is able to be done by CLI only, using websecurityadvancedconfig
+  Enabling URL filtering support for shortened URLs is able to be done by CLI only, using `websecurityadvancedconfig`
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118775-technote-esa-00.html
+  Reference: [URL Filtering Configuration and Best Practices for Cisco Email Security](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/118775-technote-esa-00.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 21</span>

@@ -254,10 +254,10 @@
 
   Which CLI command is used to enable URL filtering support for shortened URLs on the Cisco ESA?
 
-  A. outbreakconfig<br>
-  B. websecurityadvancedconfig<br>
-  C. webadvancedconfig<br>
-  D. websecurityconfig<br>
+  A. `outbreakconfig`<br>
+  B. `websecurityadvancedconfig`<br>
+  C. `webadvancedconfig`<br>
+  D. `websecurityconfig`<br>
 
   <br>Answer: <br><br>
 
