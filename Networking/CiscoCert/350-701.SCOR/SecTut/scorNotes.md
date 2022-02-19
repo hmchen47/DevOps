@@ -1753,7 +1753,7 @@
   - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
   - SNMPv3 config
     - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
-    - new user for the group: username =`andy` w/ passowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
+    - new user for the group: username =`andy` w/ pasowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
     - recepient: username = <code style="color: #bb6600;">andy</code>; receipient addr = '10.255.254.1'; SNMP version = <code style="color: #bb6600;">version 3</code>; no group name involved
 
     ```text
