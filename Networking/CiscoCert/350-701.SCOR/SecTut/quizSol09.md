@@ -402,7 +402,7 @@
 
   An ASA Firewall is capable of operating at Layer 2 when running in transparent mode. Ability to filter traffic between hosts using higher-level protocols (e.g. IP addressing and ports) without readdressing the network.
 
-  Reference: https://grumpy-networkers-journal.readthedocs.io/en/latest/VENDOR/CISCO/FIREWALL/ASA/TRANSPARENTFW.html
+  Reference: [Cisco ASA Transparent Firewalls](https://grumpy-networkers-journal.readthedocs.io/en/latest/VENDOR/CISCO/FIREWALL/ASA/TRANSPARENTFW.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 22</span>
@@ -421,7 +421,7 @@
   Visualization with Grafana
   Grafana is the visualization engine that is used to display the telemetry data.
 
-  Reference: https://blogs.cisco.com/developer/getting-started-with-model-driven-telemetry
+  Reference: [Enterprise Streaming Telemetry and You: Getting Started with Model Driven Telemetry](https://blogs.cisco.com/developer/getting-started-with-model-driven-telemetry)
 
   Note: InfluxDB is used to store the telemetry data.
 
@@ -449,7 +449,7 @@
   print(response.json())
   ```
 
-  Reference: https://developer.cisco.com/docs/dna-center/#!devices/devices-api
+  Reference: [Devices Count](https://developer.cisco.com/docs/dna-center/#!devices/devices-api)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 24</span>
@@ -467,7 +467,7 @@
 
   The Netflow flow monitor component is used to provide the actual traffic monitoring on a configured interface. When a flow monitor is applied to an interface, a flow monitor cache is created that is used to collect the traffic based on the key and nonkey fields in the configured record.
 
-  Reference: https://www.ciscopress.com/articles/article.asp?p=1730890
+  Reference: [Flexible Netflow Concepts and Configuration](https://www.ciscopress.com/articles/article.asp?p=1730890)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 25</span>
@@ -492,8 +492,6 @@
   D. Traffic continues to flow if the module fails.<br>
   E. The module is operating in IDS mode.<br>
 
-  
-
   <br>Answer: A D
 
   Explanation
@@ -502,9 +500,11 @@
 
   If you want to configure the SFR module in passive mode, use the monitor-only keyword (as shown in the next example). If you do not include the keyword, the traffic is sent in inline mode.
 
+  ```text
   ciscoasa(config-pmap-c)# sfr fail-open monitor-only
+  ```
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/asa-firepower-services/118644-configure-firepower-00.html
+  Reference: [Install and Configure a FirePOWER Services Module on an ASA Platform](https://www.cisco.com/c/en/us/support/docs/security/asa-firepower-services/118644-configure-firepower-00.html)
 
   -> This SFR module is configured in passive mode -> Answer E is not correct.
 
@@ -516,9 +516,10 @@
 
   In Promiscuous Mode, the sensor does not intervene in traffic flow, but just “sniffs” the traffic that passes through the firewall and takes appropriate actions in the event of an attack.
 
-  -> This  module is operating in IPS mode.
+  -> This module is operating in IPS mode.
 
-  Reference: https://www.networkstraining.com/cisco-ids-ips-module-for-cisco-asa-firewalls-aip-ssm/
+  Reference: [Cisco IDS/IPS Module for Cisco ASA Firewalls (AIP-SSM)
+](https://www.networkstraining.com/cisco-ids-ips-module-for-cisco-asa-firewalls-aip-ssm/)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 26</span>
