@@ -573,7 +573,7 @@
   D. endpoint protection software version<br>
   E. DNS integrity checks<br>
 
-  <br>Answer: A D
+  <br>Answer: C D
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -675,7 +675,7 @@
   For Allow rule, matching traffic is allowed; however, prohibited files, malware, intrusions, and exploits within that traffic are detected and blocked. Remaining non-prohibited, non-malicious traffic is allowed to its destination, though it is still subject to identity requirements and rate limiting. You can configure Allow rules that perform only file inspection, or only intrusion inspection, or neither.
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
       src    = "img/2235-FMC_rules.jpg"
       alt    = "FMC Access Control Rules"
@@ -683,7 +683,7 @@
     />
   </figure>
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html
+  Reference: [Firepower Management Center Configuration Guide, Version 6.1](https://www.cisco.com/c/en/us/td/docs/security/firepower/610/configuration/guide/fpmc-config-guide-v61/access_control_rules.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 36</span>
