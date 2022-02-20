@@ -854,6 +854,7 @@
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
+  - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
 
 
 - <mark style="background: #e0ffff;">Talos</mark>
@@ -887,12 +888,12 @@
 
 
 - <mark style="background: #e0ffff;">Secure Workload</mark>
-  - formerly Tetration
+  - formerly <span style="color: #bb6600;">Tetration</span>
   - collect packet header metadata, process details and installed software package information
   - collected via the software sensors deployed on the workloads and made available as part of the solution
   - high-level details regarding the telemetry data collected by Cisco Secure Workload:
     - Flow information: Contains details about flow endpoints, protocols, and ports, when the flow started, how long the flow was active, etc.
-    - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packetʼs Time to Live (TTL), IP/TCP flags, packet length, etc.
+    - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packet's Time to Live (TTL), IP/TCP flags, packet length, etc.
     - Process details: Captures processes executed on the server, including information about process parameters, start and stop time, process binary hash, etc.
     - Software packages: Inventory of all software packages installed on the server along with the version and publisher information
     - Cisco Secure Workload forensics capability: If a customer turns on the Cisco Secure Workload forensics capability, additional Personally Identifiable Information may be collected.
