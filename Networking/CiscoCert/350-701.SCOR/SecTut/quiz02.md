@@ -45,7 +45,7 @@
       "snmpVersion": snmp_version,
       "snmpROCommunity": snm-_ro_community,
       "snmpRWCommunity": snmp_rw_community,
-      "snmpRetyr": snmpretry,
+      "snmpRetry": snmpretry,
       "snmpTimeout": snmptimeout,
       "cliTransport": cli_transport,
       "userName": username,
