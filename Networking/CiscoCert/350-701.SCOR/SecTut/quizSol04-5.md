@@ -536,7 +536,7 @@
   D. DDOS<br>
   E. teardrop<br>
 
-  Answer: A C
+  Answer: A (?C) (B)
 
   Explanation
 
