@@ -799,13 +799,14 @@
     - Enhanced networking (SR-IOV) where available
     - Deployment from Amazon Marketplace
     - Maximum of 4 vCPUs per instance
-    - <span style="color: #bb6600;">User deployment of L3 networks</span>
+    - user deployment of L3 networks
     - <span style="color: #bb6600;">Routed mode (default)</span>
   - NOT supporting Multiple context mode
   - scenario: mirror port and NetFlow used in local devices
     - NO mirror port and NetFlow data in cloud environment
     - virtual private cloud (VPC) in AWS offers <span style="color: #bb6600;">VPC Flow log</span>
   - NO URL filtering feature as FTDv
+  - feature supported when deploying Cisco ASAv within AWS public cloud: <span style="color: #bb6600;">User deployment of L3 networks</span>
 
 
 - VPC Flow
@@ -1386,6 +1387,7 @@
       - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
       - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
+  - policy used to collect health modules alerts from managed devices: <span style="color: #bb6600;">health policy</span>, not helath awareness policy
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
@@ -1507,14 +1509,16 @@
   - suppression
     - suppressing intrusion event notification
     - useful for <span style="color: #bb6600;">eliminating false positives</span>
-    - types:
-      - <span style="color: #bb6600;">source</span>: a specific IP address or range of IP addresses
-      - <span style="color: #bb6600;">rule</span>: a specific rule or preprocessor
+    - types
+      - source: a specific IP address or range of IP addresses
+      - rule: a specific rule or preprocessor
   - traffic profile
     - a graph of network traffic based on connection data collected over a profiling time window (PTW)
     - presumably representing normal network traffic
-    - <span style="color: #bb6600;">detecting abnormal network traffic</span> by evaluating new traffic against the profile
+    - detecting abnormal network traffic by evaluating new traffic against the profile
     - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
+  - valid suppression types on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Source</span> and <span style="color: #bb6600;">Rule</span>
+  - statement describing a traffic profile on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">define a traffic baseline for traffic anomaly deduction</span>
   - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
 
 
@@ -1694,14 +1698,17 @@
     - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
     - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring NSEL <span style="color: #bb6600">Collectors</span> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
-    2. Defines the <span style="color: #bb6600">class map</span> that identifies traffic for which NSL events need to be exported
+    1. Configuring NSEL Collectors w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    2. Defines the class map that identifies traffic for which NSL events need to be exported
     3. Defines the policy map to apply flow-export actions to the defined classes
     4. Adds or edits the service policy
     - generate NetFlow records on traffic traversing the Cisco ASA:<code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
   - component creating the flow monitor cache that is used to collect traffic based on the key and nonkey fields in the configured record: <span style="color: #bb6600;">flow monitor</span>
-
+  - tasks allow NetFlow on a Cisco ASA 5500 Series firewall:
+    - Define a  <span style="color: #bb6600;">NetFlow collector</span> by using the flow-export command.
+    - Create a  <span style="color: #bb6600;">class map</span> to match interesting traffic.
+    - 
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
   - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
