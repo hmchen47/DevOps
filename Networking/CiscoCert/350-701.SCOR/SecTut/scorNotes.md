@@ -2088,10 +2088,6 @@
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
     - parameters used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
   - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
-  - inline posture node
-    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
-    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
-    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
@@ -2103,6 +2099,10 @@
       - Audit: for internal purposes and the agent does not prompt any message or input from end users
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
+  - inline posture node
+    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+    - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
 
 
