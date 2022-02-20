@@ -2400,9 +2400,10 @@
     - Push-based 2FA: confirm a user's identity with multiple factors of authentication that other methods cannot
   - against <span style="color: #bb6600;">phishing, social engineering and password brute-force attacks</span>
   - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple application
-  - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
   - benefit of using a multifactor authentication strategy: protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
   - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
+  - kinds of attacks are prevented by multifactor authentication: <span style="color: #bb6600;">phising</span> and <span style="color: #bb6600;">brute-force</span>
+  - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
 
 
 - <mark style="background: #e0ffff;">EPP & EDR</mark>
