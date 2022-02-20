@@ -2470,7 +2470,7 @@
     - inactive on all VLANs
     - DHCP snooping enabled on a per-VLAN basis, e.g., `ip dhcp snooping vlan 2`
     - characteristic: determine the validity of an ARP packet based on <span style="color: #bb6600;">valid IP to MAC address bindings</span> from the DHCP snooping binding database
-    - unable to communicate on switch after config DAI and w/o err-disabled interface: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANS</span>
+    - unable to communicate on switch after config DAI and w/o err-disabled interface when configuring Dynamic ARP Inspection on a switch: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANs</span>
   - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
   - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span>
 
