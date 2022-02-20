@@ -69,7 +69,7 @@
   - click on this link from another website, instant message, or simply simply just reading a web board or email message
   - encode the malicious portion of the link to the site in <span style="color: #bb6600;">HEX (or other encoding methods)</span>
   - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
-  - preventive measures: 1) enable client-side scripts on a <span style="color: #bb6600;">per-domain basis</span>; 2) <span style="color: #bb6600;">contextual output encoding/escaping</span>
+  - preventive measures used to control cross-site scripting: 1) enable <span style="color: #bb6600;">client-side scripts on a per-domain basis</span>; 2) incorp[orate <span style="color: #bb6600;">contextual output encoding/escaping</span>
   - exploit website vulnerability by injecting scripts that will run at client's side.
   - a client-side vulnerability that targets other application users
   - attack by <span style="color: #bb6600;">injecting malicious code (usually malicious links) into a database</span>
@@ -258,7 +258,11 @@
   - Trustpoint (Cisco)
     - an abstract container to hold a certificate in IOS
     - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
-    - enrollment modes: 1) terminal - manual; 2) SCEP - over HTTP; 3) <span style="color: #bb6600;">profile</span> - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
+    - trustpoint enrollment modes
+      - terminal - manual
+      - SCEP - over HTTP
+      - profile - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
+    - PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server: <span style="color: #bb6600;">profile</span>
   - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
   - Registration Authority (RA):
     - an authority in a network that verifies user requests for a digital certificate 
