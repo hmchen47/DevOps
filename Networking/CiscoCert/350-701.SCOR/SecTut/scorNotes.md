@@ -2100,9 +2100,9 @@
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
   - inline posture node
-    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
+    - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
 
 
