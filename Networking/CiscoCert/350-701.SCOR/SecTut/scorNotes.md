@@ -1839,7 +1839,7 @@
       - how to handle requests that use <span style="color: #bb6600;">invalid or revoked security certificates</span>
     - ways to handle HTTPS traffic
       - pass through encrypted traffic
-      - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible -> provide <span style="color: #bb6600;">enhanced HTTPS application detection</span> for AsyncOS
+      - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible
       - <span style="color: #bb6600;">drop</span> the HTTPS connection
       - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
   - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
@@ -1849,6 +1849,7 @@
     - a <span style="color: #bb6600;">role based system</span>: the scope of API queries defined by the role of the user
     - Cisco Content Security</span> Management Appliance -> Cisco Secure Email and Web Manager
   - API used for Content Security: <span style="color: #bb6600;">AsyncOS API</span>
+  - purpose of the Decrypt for Application Detection feature within the WSA Decryption options: provide <span style="color: #bb6600;">enhanced HTTPS application detection for AsyncOS</span>
 
 
 - <mark style="background: #e0ffff;">Cisco Email Security Appliance (ESA)</mark>
@@ -1906,6 +1907,7 @@
   - graymail detection
     - anti-spam scanning enabled globally
     - IronPort Anti-Spam, <span style="color: #bb6600;">the Intelligent Multi-Scan feature</span>, or Outbreak Filters
+  - features are used to configure Cisco ESA with a multilayer approach to fight viruses and malware: <span style="color: #bb6600;">Sophosengine</span> and  <span style="color: #bb6600;">outbreak filters</span>
   - using 2FA to access ESA and join a cluster machine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
   - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
@@ -1917,6 +1919,7 @@
   - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
   - feature to enable the blocking of greymail for the end user w/ ESA: <span style="color: #bb6600;">Intelligent Multi-Scan</span>
   - CLI command used to enable URL filtering support for shortened URLs on the Cisco ESA: <code style="color: #bb6600;">websecurityadvancedconfig</code>
+  - primary benefit of deploying an ESA in hybrid mode:provide email security while supporting the <span style="color: #bb6600;">transition to the cloud</span>
 
 
 - Advanced Phishing Protection (not on WSA)
@@ -1950,9 +1953,10 @@
     - Transparently
       - the existence of the proxy unknown
       - network infrastructure <span style="color: #bb6600;">devices (layer 3 switches) redirect web traffic</span> to the proxy
-      - <span style="color: #bb6600;">Policy Based Routing (PBR)</span>: a <span style="color: #bb6600;">Layer 4 switch is used to redirect based on destination port 80</span>
-      - <span style="color: #bb6600;">Web Cache Communications Protocol (WCCP)</span>: a <span style="color: #bb6600;">WCCP v2 enabled device</span> (typically a router, switch, PIX, or ASA) redirects port 80
-      - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
+      - methods
+        - <span style="color: #bb6600;">Layer 4 Switch (PBR)</span>: Policy Based Routing (PBR)
+        - <span style="color: #bb6600;">Web Cache Communications Protocol (WCCP)</span>
+        - Bridged mode: Dual NICs, virtually paired, traffic goes in one NIC and out the other (not available)
     - Explicitly
       - client knows existence of the proxy -> sending all web traffic to the proxy
       - no DNS lookup, WAS responsible for DNS resolution
@@ -1968,15 +1972,6 @@
         - hosted on <span style="color: #bb6600;">port 9001</span>
         - by default, point the browser to the following location `http://WSA_IP:9001/pacfile.pac`
         - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
-  - Web Cache Communications Protocol (WCCP)
-    - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
-    - purpose: to establish and maintain the transparent redirection of selected
-    - improve <span style="color: #bb6600;">web traffic performance</span> <- proxy caching
-  - WCCP proxy health checking
-    - WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds
-    - proxy up and running: WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds
-    - WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA
-  - message to verify a WCCP-configured router working w/ the Cisco WSA: the WSA sends a <span style="color: #bb6600;">Here-I-Am message every 10 seconds</span>, and the router <span style="color: #bb6600;">acknowledges with an I-See-You message</span>
   - decryption policies same as decryption policies in AsyncOS
   - configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
@@ -1988,6 +1983,22 @@
   - things to consider when using PAC files with the Cisco WSA:
     - use <span style="color: #bb6600;">if-else statements</span> to determine whether to use a proxy or a direct connection for traffic between the PC and the host
     - WSA hosts PAC files on <span style="color: #bb6600;">port 9001 by default</span>
+  - statements about a Cisco WSA configured in Transparent mode
+    - <span style="color: #bb6600;">WCCP v2-enabled devices</span> can automatically redirect traffic destined to port 80.
+    - <span style="color: #bb6600;">Layer 4 switches</span> can automatically redirect traffic destined to port 80.
+  - proxy mode used on Cisco WSA to redirect TCP traffic with WCCP: <span style="color: #bb6600;">transparent</span>
+  - ways that a system administrator send web traffic transparently to the Web Security Appliance: configure <span style="color: #bb6600;">policy-based routing</span> on the network infrastructure and use <span style="color: #bb6600;">Web Cache Communication Protocol</span>
+
+
+- Web Cache Communications Protocol (WCCP)
+  - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
+  - purpose: to establish and maintain the transparent redirection of selected
+  - improve <span style="color: #bb6600;">web traffic performance</span> <- proxy caching
+  - WCCP proxy health checking
+    - WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds
+    - proxy up and running: WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds
+    - WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA
+  - message to verify a WCCP-configured router working w/ the Cisco WSA: the WSA sends a <span style="color: #bb6600;">Here-I-Am message every 10 seconds</span>, and the router <span style="color: #bb6600;">acknowledges with an I-See-You message</span>
 
 
 ## Authentication, Authorization, and Accounting (AAA)
