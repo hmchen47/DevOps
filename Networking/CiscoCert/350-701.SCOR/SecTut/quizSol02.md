@@ -88,15 +88,6 @@
     return response.json
   ```
 
-  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
-      onclick= "window.open('https://www.securitytut.com/scor/python-api')"
-      src    = "img/0503-Python_script_DNA_Center_API.jpg"
-      alt    = "Python Script w/ DNA Center API"
-      title  = "Python Script w/ DNA Center API"
-    />
-  </figure> -->
-
   What is the result of this Python script of the Cisco DNA Center API?
 
   A. adds authentication to a switch<br>
@@ -111,6 +102,14 @@
   
   Reference: [Add Device](https://developer.cisco.com/docs/dna-center/#!add-device-1)
 
+  <!-- <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+      onclick= "window.open('https://www.securitytut.com/scor/python-api')"
+      src    = "img/0503-Python_script_DNA_Center_API.jpg"
+      alt    = "Python Script w/ DNA Center API"
+      title  = "Python Script w/ DNA Center API"
+    />
+  </figure> -->
 
 - <span style="color: #008888; font-weight: bold;">Question 4</span>
 
