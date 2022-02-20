@@ -422,6 +422,9 @@
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
     - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
     - <span style="color: #bb6600;">duplicate IKE and IPsec configuration</span> of active device on standby device
+  - prerequisite conditions of stateful failover for IPsec:
+    - The <span style="color: #bb6600;">IPsec configuration</span> that is set up on the active device must be duplicated on the standby device
+    - The active and standby devices must run the <span style="color: #bb6600;">same version of the Cisco IOS software</span> and must be the <span style="color: #bb6600;">same type of device</span>.
 
 
 - Site-to-site VPN
