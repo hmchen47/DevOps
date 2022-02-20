@@ -758,7 +758,7 @@
   - monitor in real time a collection of Active Directory domain controller (DC) machines for authentication-related events that generally indicate user logins
   - learn, analyze, and cache mappings of IP Addresses and user identities in its database
   - make the latest mappings available to its consumer devices
-  - read <span style="color: #bb6600;">Active Directory logs to map IP addresses to usernames</span>
+  - function of the Context Directory Agent: read <span style="color: #bb6600;">Active Directory logs to map IP addresses to usernames</span> 
 
 
 - Firepower Threat Denfence Virtual (FTDv)
@@ -1153,11 +1153,12 @@
   - quickly remediate the infection
   - reduce the scope ad damage of an attack
   - detection and analytics features (engines)
-    - <span style="color: #bb6600">data exfiltration</span>
-    - <span style="color: #bb6600">Command-and-control (C2) communications</span>
+    - data exfiltration
+    - Command-and-control (C2) communications
     - domain-generation algorithm (DGA)
     - exploit kit: (1) visits to an infected webpage, (2) redirects of web requests to a domain-hosting exploit kit, (3) unknowing downloads by users, (4) successful exploitations, and (5) downloads of malicious payloads.
     - tunneling through HTTP and HTTPS requests
+  - two Detection and Analytics Engines of Cognitive Threat Analytics: <span style="color: #bb6600">data exfiltration</span> and <span style="color: #bb6600">command and control communication</span>
 
 
 - <mark style="background: #e0ffff;">Secure Endpoint - Overview</mark>
@@ -1476,7 +1477,7 @@
     - analyze threats
   - <span style="color: #bb6600;">supplement other Firepower functionality</span>, offering an additional line of defense against threats
   - integrated with existing Threat Intelligence Platforms (ThreatQ, AlienVault, Infoblox etc)
-  - <span style="color: #bb6600;">external threat feeds</span>: provide information about security threats, which allows the SOC (Security Operations Center) to proactively automate responses to those threats
+  - solution integrated with Cisco Threat Intelligence Director to provide information about security threats, which allows the SOC (Security Operations Center) to proactively automate responses to those threats: <span style="color: #bb6600;">External Threat Feeds</speed>
   - FMC to push security intelligence observable to its sensors from other products: <span style="color: #bb6600;">Threat Intelligence Director</span>
   - deployed by your organization to ingest threat intelligence automatically
 
@@ -1550,7 +1551,6 @@
   - monitors application performance and troubleshoots issues that arise
   - leverages multiple technologies to recognize, analyze, and control applications
   - including voice and video, email, file sharing, gaming, peer-to-peer (P2P), and cloud-based applications
-  - <span style="color: #bb6600;">combine several Cisco IOS/IOS XE components</span> to enable administrators to recognize applications, collect and send network metrics to Cisco Prime and other third-party management tools, and prioritize application traffic
   - communicating with external tools
   - supports <span style="color: #bb6600;">NetFlow</span> to export application usage and performance statistics
   - integrated into Prime Infrastructure and StealthWatch
@@ -1562,6 +1562,7 @@
   - NBAR2
     - <span style="color: #bb6600;">application recognition</span>
     - utilize innovative deep  packet inspection (DPI) technology to identify a wide variety of  applications within  the network traffic flow, using L3 to L7 data
+  - solution combines Cisco IOS and IOS XE components to enable administrators to recognize applications, collect and send network metrics to Cisco Prime and other third-party management tools, and prioritize application traffic: <span style="color: #bb6600;">Cisco Application Visibility and Control</span>
   - integrating AVC to control application specific activity: configure <span style="color: #bb6600;">application control settings</span> in Access Policy groups
   - config to take advantage of the AVC engine to allow the organization to create a policy to control application specific activity w/ installed WSA: <span style="color: #bb6600;">use an access policy group to configure application control settings</span>
   - service allowing a user to export application usage and performance statistics with Cisco Application Visibility and control: <span style="color: #bb6600;">NetFlow</span>
