@@ -43,7 +43,7 @@
       "type": "NETWORK_DEVICE",
       "ComputeDevice": False,
       "snmpVersion": snmp_version,
-      "snmpROCommunity": snm-_ro_community,
+      "snmpROCommunity": snmp_ro_community,
       "snmpRWCommunity": snmp_rw_community,
       "snmpRetry": snmpretry,
       "snmpTimeout": snmptimeout,
