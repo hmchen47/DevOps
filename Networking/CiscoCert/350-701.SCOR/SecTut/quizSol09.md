@@ -708,7 +708,7 @@
   - Provides another layer of defense to more effectively secure your email environment. -> Answer E is correct
   - Automatically remove malicious emails from the recipient’s inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks. -> Answer B is correct.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/esa/esa13-5/user_guide/b_ESA_Admin_Guide_13-5/m_advanced_phishing_protection.html
+  Reference: [Integrating the Email Gateway with Cisco Advanced Phishing Protection](https://www.cisco.com/c/en/us/td/docs/security/esa/esa13-5/user_guide/b_ESA_Admin_Guide_13-5/m_advanced_phishing_protection.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 37</span>
@@ -725,13 +725,13 @@
 
   Explanation
 
-  By default, the proxy PAC file would be hosted on port 9001. When using WSA to host PAC files, by default, we need to point the browser to the following location http://WSA_IP:9001/pacfile.pac -> Answer B is not correct while answer E is correct.
+  By default, the proxy PAC file would be hosted on port 9001. When using WSA to host PAC files, by default, we need to point the browser to the following location `http://WSA_IP:9001/pacfile.pac` -> Answer B is not correct while answer E is correct.
 
   The PAC file checks the local IP subnet address of the PC and then makes a decision based on IF / ELSE statement/s -> Answer C is correct.
 
   If the default port is changed in the PAC file hosting settings, then we would need to change the port accordingly in the above URL -> Answer A is not correct.
 
-  Reference: https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/118082-qanda-wsa-00.html
+  Reference: [What is a PAC file and where is it located on WSA?](https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/118082-qanda-wsa-00.html)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 38</span>
@@ -748,10 +748,10 @@
   Explanation
 
   Configuring Single-Sign-on
-  Obtaining credentials transparently facilitates a single-sign-on environment. Transparent user identification is an authentication realm setting.
-  For Internet Explorer, be sure the Redirect Hostname is the short host name (containing no dots) or the NetBIOS name rather than a fully qualified domain.
+  - Obtaining credentials transparently facilitates a single-sign-on environment. Transparent user identification is an authentication realm setting.
+  - For Internet Explorer, be sure the Redirect Hostname is the short host name (containing no dots) or the NetBIOS name rather than a fully qualified domain.
 
-  Reference: https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01001.html
+  Reference: [Acquire End-User Credentials - User Guide for AsyncOS 11.0 for Cisco Web Security Appliances](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_01001.html)
 
 
 
