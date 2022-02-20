@@ -1878,16 +1878,6 @@
     - insufficient info for a definitive verdict -> return a reputation score based on characteristics of the file
     - <span style="color: #bb6600;">score meets or exceeds</span> threshold -> ESA applies confiured action in the mail policy
     - reason of testing a newly installed service to help create policy based on the reputation but not dropping files that have an undetermined verdict: <span style="color: #bb6600;">file w/ a reputation score that is below the threshold</span>
-  - <span style="color: #bb6600;">Advanced Phishing Protection</span> (not on WSA)
-    - sensor-based solution
-    - another layer of defense
-    - real-time understanding of sender
-    - auto remove malacious emails
-    - detailed visibility into email attack activity
-    - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
-    - provide sender authentication and BEC detection capabilities
-    - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
-    - use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
   - scan emails using <span style="color: #bb6600;">AntiVirus signatures</span> to make sure there are no viruses attached in emails
   - <span style="color: #bb6600;">SenderBase</span>: an email reputation service designed to help email administrators research senders, identify legitimate sources of email, and block spammers
   - message main action: 1) deliver; 2) drop; 3) quarantine
@@ -1915,6 +1905,29 @@
   - CLI command used to enable URL filtering support for shortened URLs on the Cisco ESA: <code style="color: #bb6600;">websecurityadvancedconfig</code>
 
 
+- Advanced Phishing Protection (not on WSA)
+  - sensor-based solution
+  - another layer of defense
+  - real-time understanding of sender
+  - auto remove malacious emails
+  - detailed visibility into email attack activity
+  - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
+  - provide sender authentication and BEC detection capabilities
+  - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
+  - use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
+  - benefits
+    - The Sensor-based solution can be rapidly deployed to ensure that your users are fully protected from damaging breaches.
+    - Provides <span style="color: #bb6600;">another layer of defense</span> to more effectively secure your email environment.
+    - Gain a real-time understanding of senders, learn, and authenticate email identities and behavioral relationships to protect against BEC attacks.
+    - Automatically <span style="color: #bb6600;">remove malicious emails</span> from the recipient’s inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks.
+    - Get detailed visibility into email attack activity, including total messages secured and attacks prevented.
+    - Prevents the following:
+      - Attacks that use compromised accounts and social engineering.
+      - Phishing, ransomware, zero-day attacks and spoofing.
+      - BEC with no malicious payload or URL.
+    - functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks: <span style="color: #bb6600;">determine if the email messages are malicious</span> and <span style="color: #bb6600;">provide a defense for on-premises email deployments</span>
+
+
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
   - including a web proxy, a threat analytics engine, antimalware engine, policy management, and reporting in a single physical or virtual appliance
   - main purpose: protect users from accessing malicious websites and being infected by malware
@@ -1938,6 +1951,9 @@
         - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
         - advantage: usually relatively easy to create and maintain
         - method allows the client desktop browsers to be configured to select <span style="color: #bb6600;">when to connect direct or when to use the proxy</span>
+        - hosted on <span style="color: #bb6600;">port 9001</span>
+        - by default, point the browser to the following location `http://WSA_IP:9001/pacfile.pac`
+        - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
   - Web Cache Communications Protocol (WCCP)
     - specify interactions between one or more routers (or Layer 3 switches) and one or more web-caches
     - purpose: to establish and maintain the transparent redirection of selected
@@ -1955,7 +1971,9 @@
     - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
   - feature to meet the requirements 1) configure a Cisco WSA to receive redirected traffic over ports 80 and 443; 2) a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility; 3) make this invisible to the users: <span style="color: #bb6600;">configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
   - deployment mode to enable a separated email transfer flow from the Internet and from the LAN on WSA: <span style="color: #bb6600;">multi-context</span>
-
+  - things to consider when using PAC files with the Cisco WSA:
+    - use <span style="color: #bb6600;">if-else statements</span> to determine whether to use a proxy or a direct connection for traffic between the PC and the host
+    - WSA hosts PAC files on <span style="color: #bb6600;">port 9001 by default</span>
 
 
 ## Authentication, Authorization, and Accounting (AAA)
