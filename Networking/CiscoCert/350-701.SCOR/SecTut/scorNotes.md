@@ -1724,6 +1724,7 @@
   - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
   - IP flow tracking method exporting <span style="color: #bb6600">only records that indicate significant events in a flow</span>
+  - a feature of NetFlow Secure Event Logging: <span style="color: #bb6600">only records that indicate significant events in a flow</span>
   - filtering NSEL events based on the traffic and event type through Modular Policy Framework -> send records to different collectors 
   - major functions
     - track flow-create, flow-teardown, and flow-denied events, and generates appropriate NSEL data records
@@ -2005,7 +2006,7 @@
     - WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds
     - proxy up and running: WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds
     - WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA
-  - message to verify a WCCP-configured router working w/ the Cisco WSA: the WSA sends a <span style="color: #bb6600;">Here-I-Am message every 10 seconds</span>, and the router <span style="color: #bb6600;">acknowledges with an I-See-You message</span>
+  - message to verify a WCCP-configured router working w/ the Cisco WSA: <span style="color: #bb6600;">the WSA sends a Here-I-Am message every 10 seconds, and the router acknowledges with an I-See-You message</span>
 
 
 ## Authentication, Authorization, and Accounting (AAA)
