@@ -746,9 +746,9 @@
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
   - type of dashboard for complete control of the network: <span style="color: #bb6600;">centralized management</span>
-  - capabilities of <span style="color: #bb6600;">Integration APIs</span> are utilized with Cisco DNA center (westbound)
+  - capabilities of Integration APIs are utilized with Cisco DNA center (westbound)
     - application monitors for <span style="color: #bb6600;">power utilization</span> of devices and IoT sensors
-    - connect to <span style="color: #bb6600;">Information Technology Service Management Platforms</span>
+    - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
 
 
@@ -1055,7 +1055,7 @@
 - Umbrella Roaming
   - a cloud-delivered security service for Cisco's next-generation firewall
   - protect employees even when they are off the VPN
-  - role to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
+  - role of Umbrella Roaming installed on an endpoint: to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - endpoint solution protects a user from a phishing attack: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
 
@@ -1243,6 +1243,7 @@
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
+  - action to ensure a custom file policy created to track a discovered attack via a file, not detected the test file as an indicator of compromise during test, and ensure no other endpoints execute the infected file: <span style="color: #bb6600;">upload the hash for the file to the policy</span>
 
 
 - Secure Endpoint (AMP for Endpoints) - File inspection
@@ -2070,7 +2071,7 @@
     - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
     - ability for end user to leverage My Devices Portal to manage personal devices, e.g., wipe, pin lock
   - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
-  
+
 
 - Identity Service Engine (ISE) - Posture
   - <span style="color: #bb6600;">posture policy</span>
