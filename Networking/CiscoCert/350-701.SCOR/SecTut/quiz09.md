@@ -1,7 +1,7 @@
 # Quiz Set 9
 
 
-## 22. New SCOR Questions – Part 4
+## 22. New Questions – Part 4
 
 - <span style="color: #008888; font-weight: bold;">Question 1</span>
 
