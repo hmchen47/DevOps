@@ -380,7 +380,7 @@
     - name mangler
       - offer the flexibility to perform AAA-based policy lookup for the peer based on arbitrary portions of the peer IKE identities of various types
       - referenced from the IKEv2 profile specifically from the `aaa authorization` and `keyring aaa` commands that use AAA authorization for policy lookup
-      - config OU of the <span style="color: #bb6600;">IKEv2 peer certificate used as the identity</span> when matching an IKEv2 authorization policy
+      - config <span style="color: #bb6600;">the OU of the IKEv2 peer certificate used as the identity when matching an IKEv2 authorization policy</span>
         - define a name mangler and enter IKEv2 name mangler config: `crypto ikev2 name-mangler MANGLER`
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
 
@@ -500,7 +500,7 @@
   - scalable for `crypto isakmp key cisco address 1.2.3.4` any-to-any connectivity and encryption</span>
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
-  - a difference between GETVPN and IPsec: GETVPN reduces latency and provides encryption over MPLS <span style="color: #bb6600;">without the use of a central hub</span>
+  - a difference between GETVPN and IPsec: GETVPN <span style="color: #bb6600;">reduces latency</span> and provides encryption over MPLS <span style="color: #bb6600;">without the use of a central hub</span>
 
 
 - Comparisons of DMVPN, FlexVPN and GETVPN
@@ -945,7 +945,6 @@
   - available in AWS, Azure, and GCP
   - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
   - Stealthwatch Cloud deploymed and Cloud logging works access as expected but logs are not being received from the on-premise network: <span style="color: #bb6600">deploy a Cisco Stealthwatch Cloud sensor on the network to send data to Cisco Stealthwatch Cloud</span>
-  - solution using the Ubuntu-based VM appliance deployed in a VMware-based hypervisor to monitor user and device behavior within the on-premises network while data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
   - provide visibility and threat detection across the AWS network relying on <span style="color: #bb6600">AWS VPC flow logs</span>
   - actions to collect full metadata information about the traffic going through their AWS cloud services to use this information for behavior analytics and statistics
     - send <span style="color: #bb6600">VPC Flow Logs</span> to Cisco Stealthwatch Cloud
@@ -962,6 +961,7 @@
   - encrypt this metadata and sends it to the Stealthwatch Cloud analytics platform for analysis
   - consume <span style="color: #bb6600">metadata only</span>, packet payloads never retained or transferred outside the network
   - solution to extract metadata from network packet flow while ensuring that payloads are not retained or transferred outside the network winthin an organization provides visibility and to identify active threats in its network using a VM: <span style="color: #bb6600">Stealthwatch Cloud PNM</span>
+  - solution using the Ubuntu-based VM appliance deployed in a VMware-based hypervisor to monitor user and device behavior within the on-premises network while data sent to the Cisco Stealthwatch Cloud analytics platform for analysis: deploy the Cisco <span style="color: #bb6600">Stealthwatch Cloud PNM sensor</span>
 
 
 - <mark style="background: #e0ffff;">Umbrella - Overview</mark>
