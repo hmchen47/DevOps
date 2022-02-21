@@ -1601,7 +1601,7 @@
   - <span style="color: #bb6600;">multiple context mode</span>
     - deployment mode to seperate management on a shared appliance
     - example: separation of masnagement and customer security service in mall
-  - modes: transparent and routed
+  - deployment modes: transparent and routed
   - transparent mode: operating at Layer 2 
   - <span style="color: #bb6600;">bridge group</span> in transprent mode
     - group interfaces together in a bridge group to maximize the use of security contexts
@@ -1623,7 +1623,7 @@
     - stateful: <span style="color: #bb6600;">preserve</span>
     - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
-  - ASA deployment model is used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
+  - ASA deployment model used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
 
 
 - IOS zone-based firewall
@@ -1808,6 +1808,7 @@
     - use standard-based YANG data models over NETCONF-YANG
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
   - Telegraf which receives the telemetry data, InfluxDB which stores it, and Grafana which is responsible for visualizations and alerting.
+  - InfluxDB and Grafana: run inside Docker containers or natively on Linux
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
