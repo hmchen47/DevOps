@@ -575,6 +575,15 @@
 
   <br>Answer: A D (C D)
 
+  Simple Posture Conditions
+  - File Conditions: A condition that checks the existence of a file, the date of a file, and the versions of a file on the client.
+  - Registry Conditions: A condition that checks for the existence of a registry key or the value of the registry key on the client.
+  - Application Conditions: A condition that checks if an application or process is running or not running on the client.
+  - Service Conditions: A condition that checks if a service is running or not running on the client.
+  - Dictionary Conditions: A condition that checks a dictionary attribute with a value.
+  - USB Conditions: A condition that checks for the presence of USB mass storage device.
+
+  Reference: [Configure Client Posture Policies - Cisco Identity Services Engine Administrator Guide, Release 2.2](https://www.cisco.com/c/en/us/td/docs/security/ise/2-2/admin_guide/b_ise_admin_guide_22/b_ise_admin_guide_22_chapter_010111.html)
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
 
