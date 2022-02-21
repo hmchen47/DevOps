@@ -449,7 +449,8 @@
       crypto map tag: CSM_Outside_map, seq num: 1, local addr: 200.165.200.225
 
       access-list CSM_IPSEC_ACL extended permit ip 10.0.11.0 255.255.255.0 10.0.10.0 255.255.255.0
-      <...truncated...>
+      local  ident (addr/mask/prot/port): (10.0.11.0/255.255.255.0/0/0)
+      remote ident (addr/mask/prot/port): (10.0.10.0/255.255.255.0/0/0)
       current peer: 209.165.202.129
       <...truncated...>
     ```
@@ -489,7 +490,7 @@
     - QoS: DMVPN - other protocol; FlexVPN - embedded in IKEv2
     - NHRP: DMVPN - 3 phases; FlexVPN - only one standard way
   - support <span style="color: #bb6600;">multiple SAs</span>
-  - active/active FlexVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
+  - reason that an engineer opts for an active/active FlexVPN configuration as opposed to DMVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
 
 
 - <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mark>
@@ -544,6 +545,7 @@
     - bi-directional interfaces allow the <span style="color: #bb6600;">exchange of contextual information</span> between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
     - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
+  - function of SDN southbound API protocols: <span style="color: #bb6600;">enable the controller to make changes</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
   - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
@@ -1011,6 +1013,7 @@
   - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
+  - scenario when implementing URL blocking using Cisco Umbrella the the users are able to go to some sites but other sites are not accessible due to an error: Client computers <span style="color: #bb6600;">do not have the Cisco Umbrella Root CA certificate installed.</span>
 
 
 - Umbrella - Advance Settings
@@ -1914,7 +1917,6 @@
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
   - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
   - action to dynamically determine how harmful the SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
-  - device to ensure that machines that connect to organizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ESA</span>
   - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
@@ -2064,7 +2066,7 @@
     - remediation - restricted access based on compliant state
     - periodic <span style="color: #bb6600;">compliance check</span>
     - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
-    - ability for end user to leverage My Device Portal to manage personal devices, e.g., wipe, pin lock
+    - ability for end user to leverage My Devices Portal to manage personal devices, e.g., wipe, pin lock
   - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
   
 
@@ -2104,7 +2106,8 @@
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
-  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span
+  - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span>
+  - device to ensure that machines that connect to organizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ISE</span>
 
 
 - Identity Service Engine (ISE) - Endpoint Profiling 
@@ -2133,7 +2136,7 @@
   - <span style="color: #bb6600;">Bring Your Own Device (BYOD) on boarding</span>
     - securely use personal devices on a corporate network
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
-    - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Device portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
+    - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Devices portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
     - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
   - single-SSID BYOD
@@ -2156,7 +2159,7 @@
       - Weekly: Users who need access to the network for a couple of weeks.
     - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
-  - purpose of My Device Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
+  - purpose of My Devices Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
   - an endpoint is associated to a provisioning WLAN that is shared with guest access, and the same guest portal is used as the BYOD portal: <span style="color: #bb6600;">dual-SSID BYOD</span> 
