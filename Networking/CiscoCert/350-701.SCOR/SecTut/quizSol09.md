@@ -100,32 +100,32 @@
   D. Add an SNMP host access entry.<br>
   E. Specify an SNMP user group.<br>
 
-  <br>Answer: D E
+  <br>Answer: A D  (D E)
 
   Explanation
 
   This is how to configure SNMP on your Cisco ASA using ASDM:
-  The first order of business is to navigate to the screen shown below:
+  - The first order of business is to navigate to the screen shown below:
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
-      src    = "img/2206-configure_SNMP_ASA_using_ASDM.jpg"
-      alt    = "Snapshot of Config SNMP ASA using ASDM - List"
-      title  = "Snapshot of Config SNMP ASA using ASDM - List"
-    />
-  </figure>
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+        onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+        src    = "img/2206-configure_SNMP_ASA_using_ASDM.jpg"
+        alt    = "Snapshot of Config SNMP ASA using ASDM - List"
+        title  = "Snapshot of Config SNMP ASA using ASDM - List"
+      />
+    </figure>
 
-  Next, click on the Add button above and the window below appears:
+  - Next, click on the Add button above and the window below appears:
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 10vw;"
-      onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
-      src    = "img/2206-configure_SNMP_ASA_using_ASDM2.jpg"
-      alt    = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
-      title  = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
-    />
-  </figure>
+    <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+        onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
+        src    = "img/2206-configure_SNMP_ASA_using_ASDM2.jpg"
+        alt    = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+        title  = "Snapshot of Config SNMP ASA using ASDM - SNMP Host Access Entry"
+      />
+    </figure>
 
   Reference: [Setting up SNMP on the Cisco ASA using ASDM](https://www.plixer.com/blog/setting-up-snmp-on-the-cisco-asa-using-asdm/)
 
@@ -573,7 +573,7 @@
   D. endpoint protection software version<br>
   E. DNS integrity checks<br>
 
-  <br>Answer: C D
+  <br>Answer: A D (C D)
 
 
 - <span style="color: #008888; font-weight: bold;">Question 30</span>
@@ -603,7 +603,7 @@
   C. multi-context<br>
   D. transparent<br>
 
-  <br>Answer: C
+  <br>Answer: A
 
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
@@ -615,7 +615,7 @@
   C. Configure VPN load balancing to distribute traffic for the 10.0.0.0/24 network.<br>
   D. Use split tunneling to tunnel all traffic except for the 10.0.0.0/24 network.<br>
 
-  <br>Answer: C
+  <br>Answer: B
 
 
 - <span style="color: #008888; font-weight: bold;">Question 33</span>
@@ -654,7 +654,7 @@
   C. Lambda<br>
   D. Contiv<br>
 
-  <br>Answer: A
+  <br>Answer: D
 
 
 - <span style="color: #008888; font-weight: bold;">Question 35</span>
