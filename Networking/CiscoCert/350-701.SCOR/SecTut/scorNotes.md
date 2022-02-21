@@ -854,6 +854,7 @@
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
   - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
+  - cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
   - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
@@ -934,6 +935,7 @@
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
   - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration analysis</span>
+  - solution to maintain and force compliance by implement micro-segmentaion on the network and wants to be able to gain visibility on the applications within the network: <span style="color: #bb6600;">Cisco Tetrartion</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
   - a benefit of using Cisco Tetration: collect <span style="color: #bb6600;">near-real time data from servers and inventories the software packages that exist on servers</span>
 
@@ -1169,7 +1171,6 @@
   - logical security controls on endpoints still exist even training on staffs: <span style="color: #bb6600;">human error or inside threats still exist</span>
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
   - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
-  - benefit: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - Secure Endpoint Connector: the software package installed to endpoints providing protection and generating the telemetry information for the Cloud Detection Engnes
   - outbreak control: a variety of lists that allow to customize it to users' needs
   - exclusion set: a list of directories, file extensions, or threat names that users do not want Secure Endpoint connector to scan or convict
@@ -1194,6 +1195,7 @@
   - importance of patching strategy for endpoint:
     - <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
     - <span style="color: #bb6600;">the organization can identify endpoint vulnerabilities</span>
+  - benefit of installing Cisco AMP for Endpoints on a network: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
