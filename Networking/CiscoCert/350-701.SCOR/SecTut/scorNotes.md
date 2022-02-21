@@ -161,7 +161,7 @@
   - mechanisms used to control phising attacks
     - <span style="color: #bb6600;">enable browser alerts for fraudulent</span>
     - <span style="color: #bb6600;">implement email filtering techniques</span>
-  - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella & Duo Security</span>
+  - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella</span> and <span style="color: #bb6600;">Duo Security</span>
 
 
 - <mark style="background: #e0ffff;">TAXII/STIX</mark>
@@ -1850,7 +1850,7 @@
       - decrypt traffic and apply the content-based access policies defined for HTTP traffic -> make malware scanning possible
       - <span style="color: #bb6600;">drop</span> the HTTPS connection
       - <span style="color: #bb6600;">monitor</span> the request as the web proxy continues to evaluate the request against policies that may lead to a final drop, pass through, or decrypt action
-  - add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
+  - config to add protection for data in transit and have headers in the email message: <span style="color: #bb6600;">deploy a encryption appliance</span>
   - API for Cisco Security Management appliances
     - a representational state transfer (REST) based set of operations
     - providing secure and authenticated access to the Security Management appliance reports, report counters, tracking, quarantine, and configuration
@@ -2051,7 +2051,7 @@
     - config process
       - install and config Duo authentication proxy
       - config the identity store within ISE
-    - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">Install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
+    - action to authenticate users using their account when they log into network devices by adding a Cisco DUO solution to the current TACACS+ deployment using Cisco ISE: <span style="color: #bb6600;">install and configure the Cisco DUO Authentication Proxy and configure the identity source sequence within Cisco ISE</span>
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit
   - product to prevent a hacker initiated a social engineering attack and stole username and passwords of some users within a company: <span style="color: #bb6600;">Cisco Duo</span>
