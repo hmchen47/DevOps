@@ -214,7 +214,7 @@
     - an open source project to deploy microsegmentation policy-based services in container environments
     - offer a higher level of networking abstraction for microservices by providing a policy framework
     - built-in service discovery and service routing functions to scale out services
-    - system faciltates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
+    - system facilitates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
 
 
 - <mark style="background: #e0ffff;">Data exfiltration</mark>
@@ -1624,6 +1624,8 @@
     - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
   - ASA deployment model used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
+  - ASA Platform mode to disable the threat detection features except for Advanced Threat Statistics: <span style="color: #bb6600;">multiple context</span>
+  - config to reduce the VPN bandwidth load on their headend Cisco ASA in order to ensure that bandwidth is available for VPN users needing access to corporate resources on the `10.0.0.0/24` local HQ network w/o additional devices: <span style="color: #bb6600;">Use split tunneling to tunnel traffic for the 10.0.0.0/24 network only.</span>
 
 
 - IOS zone-based firewall
@@ -1779,7 +1781,7 @@
   - SNMPv3 config
     - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
     - new user for the group: username =`andy` w/ pasowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
-    - recepient: username = <code style="color: #bb6600;">andy</code>; receipient addr = '10.255.254.1'; SNMP version = <code style="color: #bb6600;">version 3</code>; no group name involved
+    - recepient: username = <code style="color: #bb6600;">andy</code>; receipient addr = '10.255.254.1'; SNMP version = <code style="color: #bb6600;">version 3</code>; no group name but username involved
 
     ```text
     snmp-server group myv3 v3 priv
@@ -2095,6 +2097,13 @@
     - a benefit of conducting device compliance checks: <span style="color: #bb6600;">validate if anti-virus software is installed</span>
     - a benefit of performing device compliance: <span style="color: #bb6600;">verification of the latest OS patches</span>
     - parameters used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
+  - simple posture conditions
+    - File Conditions: A condition that checks the existence of a file, the date of a file, and the versions of a file on the client.
+    - Registry Conditions: A condition that checks for the existence of a registry key or the value of the registry key on the client.
+    - Application Conditions: A condition that checks if an application or process is running or not running on the client.
+    - Service Conditions: A condition that checks if a service is running or not running on the client.
+    - Dictionary Conditions: A condition that checks a dictionary attribute with a value.
+    - USB Conditions: A condition that checks for the presence of USB mass storage device.
   - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
@@ -2111,6 +2120,7 @@
     - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
+  - parameters are used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span>
   - device to ensure that machines that connect to organizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ISE</span>
 
