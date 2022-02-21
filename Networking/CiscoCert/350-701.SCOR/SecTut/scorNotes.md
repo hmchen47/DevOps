@@ -386,10 +386,6 @@
 
 
 - SSL, TLS & DTLS
-  - Datagram Transport Layer Security (DTLS)
-    - UDP based
-    - used for delay sensitive applications (voice and video)
-    - <span style="color: #bb6600;">strongest throughput performance</span>
   - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
 
     ```text
@@ -402,6 +398,11 @@
     Info: MID 80 matched all recipients for per-recipient policy
       DEFAULT in the outbound table
     ```
+
+  - Datagram Transport Layer Security (DTLS)
+    - UDP based
+    - used for delay sensitive applications (voice and video)
+    - <span style="color: #bb6600;">strongest throughput performance</span>
 
 
 - <mark style="background: #e0ffff;">IP Security (IPsec)</mark>
@@ -1437,6 +1438,7 @@
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
   - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
+  - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
 
 
 - Firewall Threat Defense (FTD)
@@ -1629,9 +1631,6 @@
 
 
 - IOS zone-based firewall
-  - a zone must be configured before interfaces can be assigned to the zone
-  - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
-  - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
   - result of the confifguration: <span style="color: #bb6600;">traffic from inside and DMZ network is redirected</span>
   
     ```text
@@ -1657,6 +1656,9 @@
     service-policy inside-policy global
     ```
 
+  - a zone must be configured before interfaces can be assigned to the zone
+  - an interface can be assigned to <span style="color: #bb6600;">only one security zone</span>
+  - allowing all traffic by default but <span style="color: #bb6600;">drop traffic from a different zone</span> by default
   - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: ASA <span style="color: #bb6600;">denies all traffic by default</span> whereas the IOS router with Zone-Based Policy Firewall starts out by <span style="color: #bb6600;">allowing all traffic</span>, even on untrusted interfaces
 
 
@@ -1934,13 +1936,6 @@
 
 
 - Advanced Phishing Protection (not on WSA)
-  - sensor-based solution
-  - another layer of defense
-  - real-time understanding of sender
-  - auto remove malacious emails
-  - detailed visibility into email attack activity
-  - prevention: compromised accounts, social engineering, phishing, ransomware, zero-day attacks and spoofing
-  - provide sender authentication and BEC detection capabilities
   - use advanced machine learning techniques, real-time behavior analytics, relationship modeling, and telemetry to protect against identity deception-based threats
   - use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
   - benefits
@@ -1953,7 +1948,7 @@
       - Attacks that use compromised accounts and social engineering.
       - Phishing, ransomware, zero-day attacks and spoofing.
       - BEC with no malicious payload or URL.
-    - functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks: <span style="color: #bb6600;">determine if the email messages are malicious</span> and <span style="color: #bb6600;">provide a defense for on-premises email deployments</span>
+  - functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks: <span style="color: #bb6600;">determine if the email messages are malicious</span> and <span style="color: #bb6600;">provide a defense for on-premises email deployments</span>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
@@ -2327,26 +2322,6 @@
   - enable AAA service to support CoA: `aaa new-model` in global config 
   - combine authentication and authorization for RADIUS`radius-server host {<hostname> | <ip-address>} [auth-port <port-number>] [acct-port <port-number>] [timeout <seconds>] [retransmit <retries>] [<key string>] [alias{hostname | ip-address}]`, e.g., `radius server host`
   - enable authentication on a port: <code style="color: #bb6600;">authentication port-control auto</code>
-  - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
-
-    ```tex
-    aaa new-model
-    ! Creates an 802.1X port-based authn method list
-    aaa authentication dot1x default group radius
-    ! Required for VLAN/ACL assignment
-    aaa authorization network default group radius
-    ! Authn & autho for webauth transactions
-    aaa authorization auth-proxy default group radius
-    ! Enables accounting for 802.1X and MAB authn
-    aaa accounting dot1x default start-stop group radius
-    !
-    aaa session-id common
-    !
-    aaa accounting update periodic 5
-    ! Update AAA accounting info periodically every 5 min
-    aaa accounting system default start-stop group radius
-    ```
-
   - NTP authentication 1
     - NTP server - 10.10.10.1; client - 10.10.10.2
     - NTP authentication enforcement: <code style="color: #bb6600;">ntp authenticate</code>
@@ -2374,6 +2349,26 @@
       privilege interface level 5 ip
       privilege interface level 5 description
       ```
+
+  - enable the various AAA functions btw the switch and Cisco ISE, including 802.1X and MAB authentication functions on switch
+
+    ```tex
+    aaa new-model
+    ! Creates an 802.1X port-based authn method list
+    aaa authentication dot1x default group radius
+    ! Required for VLAN/ACL assignment
+    aaa authorization network default group radius
+    ! Authn & autho for webauth transactions
+    aaa authorization auth-proxy default group radius
+    ! Enables accounting for 802.1X and MAB authn
+    aaa accounting dot1x default start-stop group radius
+    !
+    aaa session-id common
+    !
+    aaa accounting update periodic 5
+    ! Update AAA accounting info periodically every 5 min
+    aaa accounting system default start-stop group radius
+    ```
 
   - type of authentication: <span style="color: #bb6600;">external user</span> and relay mail authentication
 
