@@ -711,11 +711,15 @@
   Explanation
 
   Benefits of Cisco Advanced Phishing Protection
-
-  …
-
+  - The Sensor-based solution can be rapidly deployed to ensure that your users are fully protected from damaging breaches.
   - Provides another layer of defense to more effectively secure your email environment. -> Answer E is correct
+  - Gain a real-time understanding of senders, learn, and authenticate email identities and behavioral relationships to protect against BEC attacks.
   - Automatically remove malicious emails from the recipient’s inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks. -> Answer B is correct.
+  - Get detailed visibility into email attack activity, including total messages secured and attacks prevented.
+  - Prevents the following:
+    - Attacks that use compromised accounts and social engineering.
+    - Phishing, ransomware, zero-day attacks and spoofing.
+    - BEC with no malicious payload or URL. 
 
   Reference: [Integrating the Email Gateway with Cisco Advanced Phishing Protection](https://www.cisco.com/c/en/us/td/docs/security/esa/esa13-5/user_guide/b_ESA_Admin_Guide_13-5/m_advanced_phishing_protection.html)
 
