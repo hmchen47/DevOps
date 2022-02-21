@@ -68,8 +68,13 @@
   - usually gathered in the form of a hyperlink
   - click on this link from another website, instant message, or simply simply just reading a web board or email message
   - encode the malicious portion of the link to the site in <span style="color: #bb6600;">HEX (or other encoding methods)</span>
-  - prevention: 1) sanitize user input; 2) limit use of user-provided data; 3) utilize the content security policy
-  - preventive measures used to control cross-site scripting: 1) enable <span style="color: #bb6600;">client-side scripts on a per-domain basis</span>; 2) incorp[orate <span style="color: #bb6600;">contextual output encoding/escaping</span>
+  - prevention:
+    - sanitize user input
+      - Validate to catch potentially malicious user-provided input.
+      - Encode output to prevent potentially malicious user-provided data from triggering automatic load-and-execute behavior by a browser.
+    - limit use of user-provided data: only use where it's necessary
+    - utilize the content security policy: Provides additional levels of protection and mitigation against XSS attempts.
+  - preventive measures used to control cross-site scripting: 1) enable <span style="color: #bb6600;">client-side scripts on a per-domain basis</span>; 2) incorporate <span style="color: #bb6600;">contextual output encoding/escaping</span>
   - exploit website vulnerability by injecting scripts that will run at client's side.
   - a client-side vulnerability that targets other application users
   - attack by <span style="color: #bb6600;">injecting malicious code (usually malicious links) into a database</span>
@@ -155,11 +160,11 @@
     - <span style="color: #bb6600;">deceptive</span>: steal people's personal data or login credentials in a legitmate company
     - <span style="color: #bb6600;">spear</span>: designed to get a single recipient to respond
   - mitigation: <span style="color: #bb6600;">browser alert & email filtering</span>
-  - endpoint measures used to minimize the chances
-    - <span style="color: #bb6600;">spam and virus filter</span>
-    - <span style="color: #bb6600;">up-to-date antimalware</span>
+  - endpoint measures used to minimize the chances of falling victim to phishing and social engineering attacks
+    - install a <span style="color: #bb6600;">spam and virus filter</span>
+    - protect systems with an <span style="color: #bb6600;">up-to-date antimalware</span>
   - mechanisms used to control phising attacks
-    - <span style="color: #bb6600;">enable browser alerts for fraudulent</span>
+    - <span style="color: #bb6600;">enable browser alerts for fraudulent websites</span>
     - <span style="color: #bb6600;">implement email filtering techniques</span>
   - solutions to combat social engineering and phishing at the endpoint level: <span style="color: #bb6600;">Umbrella</span> and <span style="color: #bb6600;">Duo Security</span>
 
