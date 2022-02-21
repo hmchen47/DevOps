@@ -859,10 +859,10 @@
   </figure>
 
   Answer:
-  - Cisco Tetration platform can be armed to look at sensitive files: (A) interesting file access
-  - Watches for privilege changes in the process lineage tree: (D) privilege escalation
-  - Cisco Tetration platform watches user login failures and user login methods: (C) user login suspicious behavior
-  - Cisco Tetration platform learns the normal behavior of which file is accessed by which user: (B) file access from a different user
+  - Cisco Tetration platform can be armed to look at sensitive files (1): interesting file access (A)
+  - Watches for privilege changes in the process lineage tree (2): privilege escalation (D)
+  - Cisco Tetration platform watches user login failures and user login methods (3): user login suspicious behavior (C)
+  - Cisco Tetration platform learns the normal behavior of which file is accessed by which user (4): file access from a different user (B)
 
   Explanation
 
