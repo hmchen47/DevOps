@@ -1406,9 +1406,13 @@
       - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
       - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
+  - feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Impact Flags</span>
+  - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
+  - feature onfigured for managed devices in the device platform settings of the Firepower Management Center: <span style="color: #bb6600;">time synchronization</span>
   - policy used to collect health modules alerts from managed devices: <span style="color: #bb6600;">health policy</span>, not helath awareness policy
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
+  - information required when adding a device to Firepower Management Center: <code style="color: #bb6600;">registration key</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
@@ -1517,7 +1521,6 @@
     - TALOS Security Intelligence and Research Group: collect and correlate threats in real time
     - vulnerability-focused IPS rules
     - embedded IP-, URL-, and DNS-based security intelligence
-    - <span style="color: #bb6600;">protect license</span> to enable the feature
   - security automation
     - <span style="color: #bb6600;">correlate intrusion events</span> with your network's vulnerabilities
     - analyze network's weaknesses
@@ -1537,6 +1540,7 @@
     - presumably representing normal network traffic
     - detecting abnormal network traffic by evaluating new traffic against the profile
     - define a <span style="color: #bb6600;">traffic baseline</span> for traffic anomaly deduction
+  - license required for Cisco Security Intelligence to work on the Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">protect</span>
   - valid suppression types on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Source</span> and <span style="color: #bb6600;">Rule</span>
   - statement describing a traffic profile on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">define a traffic baseline for traffic anomaly deduction</span>
   - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
@@ -1593,9 +1597,10 @@
   - solutions:
     - TLS proxy:
       - decryption and inspection of Cisco Unified Communications encrypted signaling
-      - store certificate trustpoints for the server and the client -> <span style="color: #bb6600;">certificate trust list</span>
+      - store certificate trustpoints for the server and the client
     - Mobility Proxy: secure connectivity btw Cisco Unified Mobility Advantage server and Cisco Unified Mobile Communicator clients
     - Presence Federation Proxy: secure connectivity btw Cisco Unified Presence servers and Cisco/Microsoft Presence servers
+  - option for the ASA added on the Cisco UC Manager platform to support TLS proxy for encrypted Cisco Unified Communications traffic: <span style="color: #bb6600;">Certificate Trust List</span>
 
 
 - Secure Manager
