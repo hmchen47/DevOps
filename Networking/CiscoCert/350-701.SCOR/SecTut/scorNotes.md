@@ -11,7 +11,7 @@
       - the most common type of malware
       - attach malicious code to clean code
       - wait to be run
-      - gain <span style="color: #bb6600;">unauthorized access</span> to a computer system
+      - gain unauthorized access to a computer system
     - ransomware: infect computer and display message demanding a fee to be paid
     - spyware
       - secretly record everything user enter, upload, download and store on computers or mobile devices
@@ -20,7 +20,8 @@
   - expolit
     - a code taking advantage of a software a software vulnerability or security flaw
     - an attack that leverages that vulnerability
-  - endpoint risks as company vulnerable: 1) <span style="color: #bb6600;">malware</span>; 2) <span style="color: #bb6600;">expolit</span>
+  - threat involving software being used to gain unauthorized access to a computer system: <span style="color: #bb6600;">virus</span>
+  - endpoint risks as company vulnerable w/o a well-established patching solution for endpoints: <span style="color: #bb6600;">malware</span> and <span style="color: #bb6600;">expolit</span>
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
@@ -123,6 +124,7 @@
   - unauthorized access
   - malicious activities including credentials leaks, unauthorized access, data theft and DDoS attacks
   - <span style="color: #bb6600;">group of computers</span> connected to the Internet that have been compromised by a hacker using a virus or Trojan horse
+  - form of attack is launched using botnets: <span style="color: #bb6600;">DDOS</span>
 
 
 - <mark style="background: #e0ffff;">DoS and DDoS</mark>
@@ -172,7 +174,7 @@
 - <mark style="background: #e0ffff;">TAXII/STIX</mark>
   - TAXII (Trusted Automated Exchange of Indicator Information)
     - a transport mechanism (data exchange) of cyber threat intelligence information in STIX format
-    - used to autho and exchange STIX documents among participants
+    - used to authorization and exchange STIX documents among participants
     - capabilities: 1) push messaging; 2) <span style="color: #bb6600;">pull messaging</span>; 3) discovery <- automated <span style="color: #bb6600;">exchange</span>
     - functions of TAXII in threat intelligence sharing
       - <span style="color: #bb6600;">exchange</span> trusted anomaly intelligence information
@@ -181,6 +183,7 @@
     - a standardized language developed in a collaborative way to represent structured information about cyber threats
     - shared, stored, and otherwise used in a consistent manner
     - a language format designed to <span style="color: #bb6600;">exchange threat intelligence</span> transported over the TAXII protocol
+  - capabilities TAXII support: <span style="color: #bb6600;">Exchange</span> and <span style="color: #bb6600;">Pull messaging</span>
 
 
 - OpenIOC
