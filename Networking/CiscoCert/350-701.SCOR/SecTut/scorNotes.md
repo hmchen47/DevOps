@@ -997,6 +997,8 @@
   - action to ensure policy take precedence over the second one: make the <span style="color: #bb6600;">correct policy first</span> in the policy order
   - security solution protects remote users against phising attacks when not connected to the VPN: <span style="color: #bb6600;">Umbrella</span>
   - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
+  - action to configure a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network: <span style="color: #bb6600;">Browse to <code>http://welcome.umbrella.com/</code> to validate that the new identity is working.</span>
+  - solution that Cisco Umbrella integrates with to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
 
 
 - Umbrella - Policy
@@ -1027,10 +1029,11 @@
   - SSL Decryption feature requiring the <span style="color: #bb6600;">root certificate</span> be installed
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
-  - feature of web policies to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">security category blocking</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
   - scenario when implementing URL blocking using Cisco Umbrella the the users are able to go to some sites but other sites are not accessible due to an error: Client computers <span style="color: #bb6600;">do not have the Cisco Umbrella Root CA certificate installed.</span>
+  - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
+  - web policies configured in Cisco Umbrella to provide the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">Security Category Blocking</span>
 
 
 - Umbrella - Advance Settings
@@ -1066,6 +1069,8 @@
     - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
     - able to download from an S3 bucket
     - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
+  - Cisco Umbrella configured to log only security events: <span style="color: #bb6600;">per policy</span>
+  - Cisco Umbrella archive logs to an enterprise owned storage: <span style="color: #bb6600;">by being configured to send logs to a self-managed AWS S3 bucket</span>
 
 
 - Umbrella Roaming
