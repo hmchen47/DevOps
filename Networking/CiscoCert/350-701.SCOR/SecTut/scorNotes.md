@@ -703,7 +703,7 @@
   - built-in security practices in the continuous integration/continuous deployment (CI/CD) pipeline
   - minimize vulnerabilities and bringing security closer to IT and business objectives
   - attribute: <span style="color: #bb6600;">development security</span>
-  - focusing on <span style="color: #bb6600;">application development</span>
+  - focusing on <span style="color: #bb6600;">application development</span> as  part of the IT environmen
   - key things make a real DevSecOps environment:
     - security testing is done by the development team
     - issues found during that testing is managed by the development team
@@ -863,12 +863,14 @@
     - continuously monitor cloud environments with a cloud Data Loss Prevention (DLP) engine to identify sensitive information stored in cloud environments in violation of policy
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
+  - technology reduces data loss by identifying sensitive information stored in public computing environments: <span style="color: #bb6600;">Cloudlock</span>
   - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
   - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
+  - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss preventions</span>
 
 
 - <mark style="background: #e0ffff;">Talos</mark>
@@ -912,7 +914,6 @@
     - Software packages: Inventory of all software packages installed on the server along with the version and publisher information
     - Cisco Secure Workload forensics capability: If a customer turns on the Cisco Secure Workload forensics capability, additional Personally Identifiable Information may be collected.
   - an application workload security platform designed to secure compute instances across any infrastructure and any cloud
-  - protect hybrid cloud deployment <span style="color: #bb6600;">workloads w/ application visibility and segmentation</span>
   - use <span style="color: #bb6600;">behavior and attribute-driven microsegmentation policy</span> generation and enforcement
   - enable trusted access through automated, exhaustive context from various systems to automatically adapt security policies
   - offerring holistic workload protection for <span style="color: #bb6600;">multicloud data centers</span>
@@ -946,9 +947,10 @@
       - enforced through the application workload itself for a consistent approach to workload microsegmentation across any environment
       - including virtualized, bare-metal, and container workloads
   - implement micro-segmentation on the network, able to gain visibility on the applications within the network,and able to maintain and force compliance: <span style="color: #bb6600;">Tetration analysis</span>
-  - solution to maintain and force compliance by implement micro-segmentaion on the network and wants to be able to gain visibility on the applications within the network: <span style="color: #bb6600;">Cisco Tetrartion</span>
+  - solution to maintain and force compliance by implement micro-segmentation on the network and wants to be able to gain visibility on the applications within the network: <span style="color: #bb6600;">Cisco Tetration</span>
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
   - a benefit of using Cisco Tetration: collect <span style="color: #bb6600;">near-real time data from servers and inventories the software packages that exist on servers</span>
+  - solution protects hybrid cloud deployment workloads with application visibility and segmentation: <span style="color: #bb6600;">Tetration</span>
 
 
 - Cisco Stealhwatch Cloud
@@ -1993,7 +1995,7 @@
       - browser Configured: client browser is explicitly configured to use a proxy
       - <span style="color: #bb6600;">.PAC file configured</span>:
         - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
-        - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to the destination or are forwarded to a web proxy server
+        - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to technology reduces data loss by identifying sensitive information stored in public computing environmentsthe destination or are forwarded to a web proxy server
         - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
         - advantage: usually relatively easy to create and maintain
         - method allows the client desktop browsers to be configured to select <span style="color: #bb6600;">when to connect direct or when to use the proxy</span>
