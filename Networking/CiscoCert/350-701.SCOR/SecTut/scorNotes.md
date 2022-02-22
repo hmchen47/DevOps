@@ -375,6 +375,7 @@
           - apply to any device: `crypto isakmp key cisco address 0.0.0.0`
           - apply to exact devices: `crypto isakmp key cisco address 1.2.3.4` or `crypto isakmp key cisco address 1.2.3.4 255.255.255.255`
           - cmd `crypto isakmp key ciscXXXXXXXX address 172.16.0.0`: authenticates the IP address of the <span style="color: #bb6600;">172.16.0.0/32 peer</span> by using the key `ciscXXXXXXXX`
+      - action to authenticate the VPN by configuring DMVPN and entering the `crypto isakmp key cisc0380739941 address 0.0.0.0` command on hostA but tunnel is not being established to hostB: <span style="color: #bb6600;">Enter the same command on hostB.</span>
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 address 172.19.20.24`
@@ -484,13 +485,13 @@
 - <mark style="background: #e0ffff;">FlexVPN</mark>>
   - tunneled VPN: IKEv2
   - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementation</span>
-  - support <span style="color: #bb6600;">multivendor environment</span> and secre traffic btw sites
+  - support <span style="color: #bb6600;">multivendor environment</span> and secret traffic btw sites
   - NHRP primarily used to establish spoke to spoke communication
   - spokes not register to hub
   - same as DMVPN
     - point-to-point GRE tunnels
     - spoke-to-spoke connectivity achieved with <span style="color: #bb6600;">NHRP redirect message</span>
-    - IOS routers w/ the <span style="color: #bb6600;">same NHRP code</span>
+    - IOS routers wrunning the <span style="color: #bb6600;">same NHRP code</span>
     - Cisco's proprietary technologies
   - differences
     - P2P GRE tunnels: DMVPN - static; FlexVPN - <span style="color: #bb6600;">static/dynamic</span>
@@ -500,13 +501,14 @@
     - NHRP: DMVPN - 3 phases; FlexVPN - only one standard way
   - support <span style="color: #bb6600;">multiple SAs</span>
   - reason that an engineer opts for an active/active FlexVPN configuration as opposed to DMVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
+  - VPN technology supports a multivendor environment and secure traffic between sites: <span style="color: #bb6600;">FlexVPN</span>
 
 
 - <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mark>
   - a <span style="color: #bb6600;">trunnel-less</span> VPN
   - private IP transport, such as <span style="color: #bb6600;">MPLS VPN or private WAN</span>
   - single SA for all routers in a group
-  - scalable for `crypto isakmp key cisco address 1.2.3.4` any-to-any connectivity and encryption</span>
+  - scalable for `crypto isakmp key cisco address 1.2.3.4` <span style="color: #bb6600;">any-to-any connectivity and encryption</span>
   - eliminate point-to-point tunnels and their associated overlay routing
   - group SA: group members (GMs) sharing a common security association (SA)
   - a difference between GETVPN and IPsec: GETVPN <span style="color: #bb6600;">reduces latency</span> and provides encryption over MPLS <span style="color: #bb6600;">without the use of a central hub</span>
