@@ -1941,10 +1941,12 @@
   - graymail detection
     - anti-spam scanning enabled globally
     - IronPort Anti-Spam, <span style="color: #bb6600;">the Intelligent Multi-Scan feature</span>, or Outbreak Filters
-  - features are used to configure Cisco ESA with a multilayer approach to fight viruses and malware: <span style="color: #bb6600;">Sophosengine</span> and  <span style="color: #bb6600;">outbreak filters</span>
+  - features used to configure Cisco ESA with a multilayer approach to fight viruses and malware: <span style="color: #bb6600;">Sophos engine</span> and  <span style="color: #bb6600;">outbreak filters</span>
   - using 2FA to access ESA and join a cluster machine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
-  - features to protect organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
+  - features of Cisco Email Security to protect your organization against email threats: <span style="color: #bb6600;">data loss protection</span> & <span style="color: #bb6600;">geolocation-based filtering</span>
+  - on-premises ESA over the CES solution: <span style="color: #bb6600;">sensitive data must remain onsite</span>
+  - two services must remain as on-premises equipment when a hybrid email solution is deployed: <span style="color: #bb6600;">DLP</span> and <span style="color: #bb6600;">encryption</span>
   - action to dynamically determine how harmful the SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
   - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
@@ -1999,7 +2001,7 @@
         - by default, point the browser to the following location `http://WSA_IP:9001/pacfile.pac`
         - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
   - decryption policies same as decryption policies in AsyncOS
-  - configure how much URI text is stored in the logs using the <span style="color: #bb6600;">`advancedproxyconfig` CLI command and the HTTPS subcommand</span>.
+  - configure how much URI text is stored in the logs using the <code style="color: #bb6600;">advancedproxyconfig</code> <span style="color: #bb6600;">CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
     - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
