@@ -2213,6 +2213,7 @@
       - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
       - Weekly: Users who need access to the network for a couple of weeks.
     - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
+  - product to enhance wired and wireless network security by requiring users and endpoints to use 802.1X, MAB, or WebAuth: <span style="color: #bb6600;">Cisco Identity Services Engine</span>
   - probes configured to gather attributes of connected endpoints using Cisco Identity Services Engine: <span style="color: #bb6600;">RADIUS</span> and <span style="color: #bb6600;">DHCP</span>
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
   - purpose of My Devices Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
@@ -2268,7 +2269,6 @@
 
 - <mark style="background: #e0ffff;">RADIUS Change of Authorization (CoA)</mark>
   - a mechanism to change the attributes of an <span style="color: #bb6600;">authentication, authorization, and accounting (AAA) session</span> after it is authenticated
-  - enable AAA globally to support CoA: <code style="color: #bb6600;">aaa new-model</code>
   - main steps of CoA procedure
     1. authentication
     2. posture assessment
@@ -2282,6 +2282,7 @@
     - <span style="color: #bb6600;">endpoint deleted</span> on the ISE
   - CoA Messages port number: 1) Cisco - <span style="color: #bb6600;">UDP:1700</span>; 2) RFC - UDP:3799
   - attribute w/ the ability to change during the RADIUS CoA: <span style="color: #bb6600;">authroization</span>
+  - command enables authentication, authorization, and accounting globally so that CoA is supported on the device: <code style="color: #bb6600;">aaa new-model</code>
 
 
 - <mark style="background: #e0ffff;">802.1X port-based authentication</mark>
@@ -2340,7 +2341,7 @@
     ```
 
   - example config
-    - the authentication and authorization requests are <span style="color: #bb6600;">grouped in a single packet</span>
+    - the <span style="color: #bb6600;">authentication and authorization requests are grouped in a single packet</span>
 
     ```text
     aaa new-mod
