@@ -1139,6 +1139,11 @@
     - provide visibility and compliance checks, 
     - protect data against misuse and exfiltration
     - provides threat protections against malware like ransomware
+  - capabilities of products
+    - <span style="color: #bb6600;">Next Generation Intrusion Prevention System</span>: <span style="text-decoration: underline;">superior threat prevention and mitigation</span> for known and unknown threats
+    - <span style="color: #bb6600;">Application control and URL filtering</span>: <span style="text-decoration: underline;">application-layer control and ability</span> to enforce usage and tailor detection policies based on custom applications and URLs
+    - <span style="color: #bb6600;">Cisco Web Security Appliance</span>: combined integrated solution of strong defense and <span style="text-decoration: underline;">web protection</span>, visibility, and controling solutions
+    - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against <span style="text-decoration: underline;">targeted persistent malware attacks</span>
 
 
 - <mark style="background: #e0ffff;">StealthWatch</mark>
