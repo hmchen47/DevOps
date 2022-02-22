@@ -763,6 +763,8 @@
     - application monitors for <span style="color: #bb6600;">power utilization of devices and IoT sensors</span>
     - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
+  - activities using Cisco DNA Center: <span style="color: #bb6600;">Designing</span> and <span style="color: #bb6600;">Provision</span>
+  - a feature of the open platform capabilities of Cisco DNA Center: <span style="color: #bb6600;">intent-based APIs</span>
 
 
 - Cisco Context Directory Agent (CDA)
@@ -965,6 +967,7 @@
     - send <span style="color: #bb6600">VPC Flow Logs</span> to Cisco Stealthwatch Cloud
     - configure <span style="color: #bb6600">Cisco Stealthwatch Cloud</span> to ingest AWS information
   - a cloud-delivered and SaaS-based solution to provide visibility and threat detection across the AWS network deploy without software agents and rely on AWS VPC flow logs instead: <span style="color: #bb6600">Stealthwatch Cloud</span>
+  - Cisco Stealthwatch Cloud provide security for cloud environments: <span style="color: #bb6600">deliver visibility and threat detection</span>
 
 
 
@@ -1859,6 +1862,7 @@
   - telemetry data captures variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length: <span style="color: #bb6600;">interpacket variation</span>
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
+  - visibility and awareness into what is currently occurring on the network: <span style="color: #bb6600;">telemetry</span>
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
   - open source tool used to use to create graphical visualizations of network telemetry: <span style="color: #bb6600;">Grafana</span>
   - system used for InfluxDB and Grafana to pull the data and display the visualization information: <span style="color: #bb6600;">specialized Cisco Linux system</span>
@@ -2258,7 +2262,7 @@
 
 
 - <mark style="background: #e0ffff;">pxGrid</mark>
-  - stands for <span style="color: #bb6600;">Platform Exchange Grid</span>
+  - stands for <span style="color: #bb6600;"></span>
   - integrate multiple vendors security products together and group them in an ecosystem domain
   - purpose: <span style="color: #bb6600;">share contextual data</span> between the integrated partners
   - a highly scalable IT clearing house for multiple security tools to communicate automatically with each other in real time
@@ -2274,6 +2278,8 @@
     - subscriber: partner interested in parsing some contextual data from the other partners
   - role of FMC when integrating FMC and ISE using pxGrid: <span style="color: #bb6600;">publisher</span>
   - technology enables integration between Cisco ISE and other platforms to gather and share network and vulnerability data and SIEM and location information: <span style="color: #bb6600;">pxGrid</span>
+  - feature used to share data between multiple security products: <span style="color: #bb6600;">Cisco Platform Exchange Grid</span>
+  - product is open, scalable, and built on IETF standards to allow multiple security products from Cisco and other vendors to share data and interoperate with each other: <span style="color: #bb6600;">Platform Exchange Grid</span>
 
 
 - <mark style="background: #e0ffff;">RADIUS Change of Authorization (CoA)</mark>
