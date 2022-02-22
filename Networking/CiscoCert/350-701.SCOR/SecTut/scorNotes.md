@@ -227,16 +227,18 @@
 
 - <mark style="background: #e0ffff;">Data exfiltration</mark>
   - ICMP exfiltration
-    - encrypting the payload in an ICMP packet to carry out <span style="color: #bb6600;">command and control tasks</span> on a compromised host
+    - <span style="color: #bb6600;">encrypting the payload</span> in an ICMP packet to carry out <span style="color: #bb6600;">command and control tasks</span> on a compromised host
   - DNS exfiltration
-    - a.k.a. <span style="color: #bb6600;">DNS tunneling</span>
+    - a.k.a. DNS tunneling
     - hide and encode data inside DNS requests and queries
-    - encode the data of other programs or protocols in DNS queries and responses
-    - often including data payloads added to an attacked DNS server and used to control a remote server and applications
+    - encode the data of other programs or protocols <span style="color: #bb6600;">in DNS queries and responses</span>
+    - often including data payloads added to an attacked DNS server and used to <span style="color: #bb6600;">control a remote server and applications</span>
     - <span style="color: #bb6600;">encode the payload with random characters</span> that are broken into short strings and the DNS server rebuilds the exfiltrated data
     - data sent out as part of the <span style="color: #bb6600;">domain name</span>
     - an attacker <span style="color: #bb6600;">registers a domain</span> that a client connects to based on DNS records and send malware through that connection
     - type of risk that DNS abuse exchanges data between two computers even when there is no direct connection: <span style="color: #bb6600;">data exfiltration</span>
+  - exfiltration method that an attacker use to hide and encode data inside DNS requests and queries: <span style="color: #bb6600;">DNS tunneling</span>
+  - DNS tunneling used to exfiltrate data out of a corporate network: <span style="color: #bb6600;">encode the payload with random characters that are broken into short strings and the DNS server rebuilds the exfiltrated data</span>
   - characteristics of messenger protocol for data exflitration
     - <span style="color: #bb6600;">encrypted traffic</span> which prevents visibility on firewalls and IPS systems
     - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
