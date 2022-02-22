@@ -1567,7 +1567,8 @@
     4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
   - indications of the Cisco Firepower Services Module configuration w/ `SFR: card status Up, mode fail-open monitor-only`
     - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module
-    - passive mode & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality): <span style="color: #bb6600;">IDS</span> 
+    - passive mode & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality): <span style="color: #bb6600;">IDS</span>
+  - a characteristic of Firepower NGIPS inline deployment mode: <span style="color: #bb6600;">It must have inline interface pairs configured.</span>
 
 
 - Cisco Application Visibility and Control (AVC)
@@ -1628,7 +1629,7 @@
     - group interfaces together in a bridge group to maximize the use of security contexts
     - configure multiple bridge groups, one for each network
     - each bridge group requires <span style="color: #bb6600;">a management IP address</span>
-    - up to <span style="color: #bb6600;">4 interfaces</span> are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
+    - <span style="color: #bb6600;">up to 4 interfaces</span> are permitted per bridge–group (inside, outside, DMZ1, DMZ2)
     - access control <span style="color: #bb6600;">btw interfaces controlled</span>
     - all of the usual firewall checks in place
     - each bridge group w/ a Bridge Virtual Interface (BVI)
@@ -1729,11 +1730,11 @@
     - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
     - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring NSEL Collectors w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
-    2. Defines the class map that identifies traffic for which NSL events need to be exported
-    3. Defines the policy map to apply flow-export actions to the defined classes
-    4. Adds or edits the service policy
-    - generate NetFlow records on traffic traversing the Cisco ASA:<code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
+    1. Configuring <span style="text-decoration: underliine;">NSEL Collectors</span> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    2. Defines the <span style="text-decoration: underliine;">class map</span> that identifies traffic for which NSL events need to be exported
+    3. Defines the <span style="text-decoration: underliine;">policy map</span> to apply flow-export actions to the defined classes
+    4. Adds or edits the <span style="text-decoration: underliine;">service policy</span>
+  - generate NetFlow records on traffic traversing the Cisco ASA: <code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
   - component creating the flow monitor cache that is used to collect traffic based on the key and nonkey fields in the configured record: <span style="color: #bb6600;">flow monitor</span>
   - tasks allow NetFlow on a Cisco ASA 5500 Series firewall:
