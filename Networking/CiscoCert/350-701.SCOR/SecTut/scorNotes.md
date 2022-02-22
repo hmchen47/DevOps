@@ -1903,10 +1903,10 @@
     - combining a cloud-based email security deployment with an appliance-based email security deployment (on premises)
     - cloud-based infrastructure typically used for inbound email cleaning
     - on-premise appliance providing granular control - protecting sensitive info w/ <span style="color: #bb6600;">DLP and encryption</span> technologies
-    - primary benefit: provide email security while supporting the <span style="color: #bb6600;">transition to the cloud</span>
-    - scenario: deployment flexibility as organization's needs  -> <span style="color: #bb6600;">transition</span>
-  - <span style="color: #bb6600;">message tracking enabled w/ `trackingconfig`</span> command to provide a detailed view of message flow
-  - acting as a <span style="color: #bb6600;">Mail Transfer Agent (MTA)</span> (primary role of ESA) within the email-delivery chain
+    - scenario: deployment flexibility as organization's needs
+  - primary benefit of deploying an ESA in hybrid mode: provide email security while supporting the <span style="color: #bb6600;">transition to the cloud</span>
+  - task to determine where each message was lost as some messages fail to reach their destinations after deploying a ESA: <span style="color: #bb6600;">message tracking enabled w/</span> <code style="color: #bb6600;">trackingconfig</code> command to provide a detailed view of message flow
+  - primary role of the Cisco Email Security Appliance: <span style="color: #bb6600;">Mail Transfer Agent (MTA)</span> (primary role of ESA) within the email-delivery chain
   - ESA + AMP to upload file for analysis but network congestion: <span style="color: #bb6600;">file upload abandoned</span>
   - <span style="color: #bb6600;">dynamic spam protection</span>: ESA w/ real-time updates from Talso
   - Mail Flow Policy
