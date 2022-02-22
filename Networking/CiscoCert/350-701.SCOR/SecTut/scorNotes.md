@@ -1186,7 +1186,7 @@
   - formerly Advanced Malware Protection (AMP) for Endpoints
   - logical security controls on endpoints still exist even training on staffs: <span style="color: #bb6600;">human error or inside threats still exist</span>
   - a cloud-managed endpoint security solution providing advanced protection against viruses, malware, and other cyber-threats by detecting, preventing, and responding to threats
-  - <span style="color: #bb6600;">proactive endpoint protection</span> and <span style="color: #bb6600;">centralized admin management</span>
+  - proactive endpoint protection and centralized admin management
   - Secure Endpoint Connector: the software package installed to endpoints providing protection and generating the telemetry information for the Cloud Detection Engnes
   - outbreak control: a variety of lists that allow to customize it to users' needs
   - exclusion set: a list of directories, file extensions, or threat names that users do not want Secure Endpoint connector to scan or convict
@@ -1223,6 +1223,7 @@
   - valid Cisco AMP file disposition: <span style="color: #bb6600;">malware</span>
   - benefit of installing Cisco AMP for Endpoints on a network: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
+  - product provides proactive endpoint protection and allows administrators to centrally manage the deployment: <span style="color: #bb6600;">AMP</span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
@@ -2074,6 +2075,7 @@
   - integrated solution: 1) Cisco <span style="color: #bb6600;">pxGrid</span>; 2) Cisco Rapid Threat Containment
   - ISE nodes for high availability: <span style="color: #bb6600;">primary and secondary Policy Administration Node (PAN)</span>
   - action to ensure that the addition of the ISE node will be successful when inputting the FQDN: <span style="color: #bb6600;">make the new Cisco ISE node a secondary PAN before registering it with the primary</span>
+  - benefit of endpoint security provides the overall security posture of an organization: <span style="color: #bb6600;">allow the organization to detect and mitigate threats that the perimeter security devices do not detect</span>>
 
 
 - Identity Service Engine (ISE) - AAA
@@ -2095,6 +2097,7 @@
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit
   - product to prevent a hacker initiated a social engineering attack and stole username and passwords of some users within a company: <span style="color: #bb6600;">Cisco Duo</span>
   - mechanisms used to redirect users to a web portal to authenticate to ISE for guest services:<span style="color: #bb6600;">local web authentication & centralized web authentication</span>
+  - reasons for implementing a multifactor authentication solution such as Duo Security provide to an organization: <span style="color: #bb6600;">flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications</span> and <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
 
 
 - Mobile Device Management (MDM)
@@ -2103,7 +2106,6 @@
     - Manages device <span style="color: #bb6600;">registration</span>
     - Handles device <span style="color: #bb6600;">remediation</span>
     - Augments endpoint
-  - corporate advantages: 1) <span style="color: #bb6600;">assest inventory</span> management; 2) <span style="color: #bb6600;">allowed application</span> management
   - high level use cases
     - device registration
     - remediation - restricted access based on compliant state
@@ -2111,6 +2113,7 @@
     - ability of ISE admin to issue remote actions on devices; e.g., <span style="color: #bb6600;">remote wiping</span>
     - ability for end user to leverage My Devices Portal to manage personal devices, e.g., wipe, pin lock
   - benefit of integrating ISE and MDM solution: <span style="color: #bb6600;">provide compliance checks for access to the network</span>
+  - advantages to an organization with regards to device management w/ MDM: <span style="color: #bb6600;">asset inventory management</span> and <span style="color: #bb6600;">allowed application management</span>
 
 
 - Identity Service Engine (ISE) - Posture
@@ -2216,6 +2219,7 @@
   - product to enhance wired and wireless network security by requiring users and endpoints to use 802.1X, MAB, or WebAuth: <span style="color: #bb6600;">Cisco Identity Services Engine</span>
   - probes configured to gather attributes of connected endpoints using Cisco Identity Services Engine: <span style="color: #bb6600;">RADIUS</span> and <span style="color: #bb6600;">DHCP</span>
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
+  - probe to to automatically assign endpoints that have a specific OUI into a new endpoint group: <span style="color: #bb6600;">NMAP</span>
   - purpose of My Devices Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
