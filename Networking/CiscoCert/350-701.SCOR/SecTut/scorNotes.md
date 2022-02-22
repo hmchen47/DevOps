@@ -1410,6 +1410,7 @@
   - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
   - feature onfigured for managed devices in the device platform settings of the Firepower Management Center: <span style="color: #bb6600;">time synchronization</span>
   - policy used to collect health modules alerts from managed devices: <span style="color: #bb6600;">health policy</span>, not helath awareness policy
+  - policy representing a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment: <code style="color: #bb6600;">Platform Service Policy</span>
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - information required when adding a device to Firepower Management Center: <code style="color: #bb6600;">registration key</span>
@@ -1543,7 +1544,7 @@
   - license required for Cisco Security Intelligence to work on the Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">protect</span>
   - valid suppression types on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Source</span> and <span style="color: #bb6600;">Rule</span>
   - statement describing a traffic profile on a Cisco Next Generation Intrusion Prevention System: <span style="color: #bb6600;">define a traffic baseline for traffic anomaly deduction</span>
-  - policy required to capture host info: <span style="color: #bb6600;">Network Discovery</span>
+  - policy used to capture host information on the Cisco Firepower Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Network Discovery</span>
 
 
 - ASA Firepower module
@@ -1581,7 +1582,10 @@
     - metrics collection and exporting
     - management and response systems
     - control
-  - NBAR2
+  - NBAR2 Custom Protocol
+    - Network Based Application Recognition (NBAR): a classification engine that recognizes and classifies a wide variety of protocols and applications
+    - Custom protocols support static port-based protocols and applications that NBAR does not currently support
+    - ablre to configure the network to apply the appropriate quality of service (QoS) for that application or traffic with the classified protoco
     - <span style="color: #bb6600;">application recognition</span>
     - utilize innovative deep  packet inspection (DPI) technology to identify a wide variety of  applications within  the network traffic flow, using L3 to L7 data
   - solution combines Cisco IOS and IOS XE components to enable administrators to recognize applications, collect and send network metrics to Cisco Prime and other third-party management tools, and prioritize application traffic: <span style="color: #bb6600;">Cisco Application Visibility and Control</span>
@@ -1616,7 +1620,7 @@
 - <mark style="background: #e0ffff;">ASA</mark>
   - <span style="color: #bb6600;">deny all traffic</span> by default
   - <span style="color: #bb6600;">multiple context mode</span>
-    - deployment mode to seperate management on a shared appliance
+    - deployment mode to <span style="color: #bb6600;">seperate management on a shared appliance</span>
     - example: separation of masnagement and customer security service in mall
   - deployment modes: transparent and routed
   - transparent mode: operating at Layer 2 
@@ -1735,12 +1739,11 @@
   - tasks allow NetFlow on a Cisco ASA 5500 Series firewall:
     - Define a  <span style="color: #bb6600;">NetFlow collector</span> by using the flow-export command.
     - Create a  <span style="color: #bb6600;">class map</span> to match interesting traffic.
-    - 
+  
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
   - a security logging mechanism built on <span style="color: #bb6600">NetFlow Version 9</span> technology
   - provide a stateful, IP flow tracking method that exports only those records that indicate significant events in a flow
-  - flow-export actions: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - significant events: <span style="color: #bb6600">flow-create, flow-teardown, and flow-denied</span> (excluding those flows denied by EtherType ACLs)
   - IP flow tracking method exporting <span style="color: #bb6600">only records that indicate significant events in a flow</span>
   - a feature of NetFlow Secure Event Logging: <span style="color: #bb6600">only records that indicate significant events in a flow</span>
@@ -1754,7 +1757,8 @@
     - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
     - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
     - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
-  - 
+  - statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
+  - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <code style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
 
 
 - Flexible Netflow
