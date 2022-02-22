@@ -2274,15 +2274,16 @@
     - <span style="color: #bb6600;">authenticator</span> (required): switch & WLC
     - <span style="color: #bb6600;">authentication server</span> (required): RADIUS, ISE
   - only applied to switch port
-  - globally enables 802.1X port-based authentication.: <code style="color: #bb6600;">dot1x system-auth-control</code>
+  - globally enables 802.1X port-based authentication: <code style="color: #bb6600;">dot1x system-auth-control</code>
   - commands to <span style="color: #bb6600;">enable 802.1X on a port</span>
     - enable 802.1X port-based authentication on the interface: `access-session port-control auto`
     - set the Port Access Entity (PAE) type: `dot1x pae [supplicant | authenticator | both]`
-    - missing port configuration to enable authentication on laptop: `dot1x pae authentication`
+    - missing port configuration to enable authentication on laptop: <code style="color: #bb6600;">dot1x pae authentication</code>
   - display information about current Auth Manager sessions:
     - syntax: <code style="color: #bb6600;">show authentication sessions</code> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
     - display status of an 802.1X connection on interface gi0/1: <code style="color: #bb6600;">show authen sess int gi0/1</code>
+  - RADIUS attribute to filter MAB requests in an 802.1 x deployment: <code style="color: #bb6600;">6</span>
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
     - example outputs
@@ -2486,10 +2487,10 @@
     - creating ARP snooping entries by using information in ARP packets
     - becoming invalid if not updated within 15 minutes
     - attack: receiving an ARP packet w/ different sender MAC address from a valid ARP snooping entry
-  - <span style="color: #bb6600;">Atomic ARP engine</span>
+  - Atomic ARP engine
     - define basic Layer 2 ARP signatures
     - provide more advanced detection of the ARP spoof tools `dsniff` and `ettercap`
-    - IPS engine to detect ARZP spoofing
+  - IPS engine to detect ARP spoofing: <span style="color: #bb6600;">Atomic ARP engine</span>
 
 
 - <mark style="background: #e0ffff;">DHCP spoofing</mark>
@@ -2514,10 +2515,10 @@
     - after enabling DAI, all ports become <span style="color: #bb6600;">untrusted ports</span>
     - inactive on all VLANs
     - DHCP snooping enabled on a per-VLAN basis, e.g., `ip dhcp snooping vlan 2`
-    - characteristic: determine the validity of an ARP packet based on <span style="color: #bb6600;">valid IP to MAC address bindings</span> from the DHCP snooping binding database
-    - unable to communicate on switch after config DAI and w/o err-disabled interface when configuring Dynamic ARP Inspection on a switch: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANs</span>
+  - characteristic of Dynamic ARP Inspection: determine the validity of an ARP packet based on <span style="color: #bb6600;">valid IP to MAC address bindings</span> from the DHCP snooping binding database
+  - unable to communicate on switch after config DAI and w/o err-disabled interface when configuring Dynamic ARP Inspection on a switch: <span style="color: #bb6600;">DHCP snooping not enabled on all VLANs</span>
   - DAI enabled switch receiving a spoofed ARP request on a <span style="color: #bb6600;">trusted interface</span>: forward the packet w/o violation
-  - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping and Dynamic ARP Inspection</span>
+  - catalyst switch security features to prevent futhur violations by spoofing printer connects authorized using MAB on 4 different switch ports: <span style="color: #bb6600;">DHCP Snooping</span> and <span style="color: #bb6600;">Dynamic ARP Inspection</span>
 
 
 - <mark style="background: #e0ffff;">Broadcast storm</mark>
