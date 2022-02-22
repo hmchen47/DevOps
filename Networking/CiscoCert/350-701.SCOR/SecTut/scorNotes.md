@@ -491,7 +491,7 @@
   - same as DMVPN
     - point-to-point GRE tunnels
     - spoke-to-spoke connectivity achieved with <span style="color: #bb6600;">NHRP redirect message</span>
-    - IOS routers wrunning the <span style="color: #bb6600;">same NHRP code</span>
+    - IOS routers running the <span style="color: #bb6600;">same NHRP code</span>
     - Cisco's proprietary technologies
   - differences
     - P2P GRE tunnels: DMVPN - static; FlexVPN - <span style="color: #bb6600;">static/dynamic</span>
@@ -555,8 +555,8 @@
     - leverage the REST-based Integration Adapter APIs
     - bi-directional interfaces allow the <span style="color: #bb6600;">exchange of contextual information</span> between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
-    - <span style="color: #bb6600;">application monitors</span> for power utilization of devices and IoT sensors
-  - function of SDN southbound API protocols: <span style="color: #bb6600;">enable the controller to make changes</span>
+  - main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network: <span style="color: #bb6600;">SDN controller and the management solution</span>
+  - function of an SDN architecture requiring southbound API protocols to enable communication: <span style="color: #bb6600;">enable the controller to make changes</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
   - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
@@ -758,7 +758,7 @@
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
   - type of dashboard for complete control of the network: <span style="color: #bb6600;">centralized management</span>
   - capabilities of Integration APIs are utilized with Cisco DNA center (westbound)
-    - application monitors for <span style="color: #bb6600;">power utilization</span> of devices and IoT sensors
+    - application monitors for <span style="color: #bb6600;">power utilization of devices and IoT sensors</span>
     - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
 
