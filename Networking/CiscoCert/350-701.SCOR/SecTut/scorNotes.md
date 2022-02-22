@@ -1835,6 +1835,7 @@
     - Cisco IOS XE streaming telemetry allows to push data off of the device to an external collector at a much higher frequency, more efficiently, as well as data on-change streaming.
   - Telegraf which receives the telemetry data, InfluxDB which stores it, and Grafana which is responsible for visualizations and alerting.
   - InfluxDB and Grafana: run inside Docker containers or natively on Linux
+  - telemetry data captures variations seen within the flow, such as the packets TTL, IP/TCP flags, and payload length: <span style="color: #bb6600;">interpacket variation</span>
   - network monitoring solution uses streams and push operational data to provide nnear real-time of activity: <span style="color: #bb6600;">model-driven telemetry</span>
   - benefit of using telemetry over SNMP to configure new routers for monitoring purposes: <span style="color: #bb6600;">telemetry uses a push method which makes it faster than SNMP</span>
   - advantage of network telemetry over SNMP pulls: <span style="color: #bb6600;">scalability</span>
