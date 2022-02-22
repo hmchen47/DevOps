@@ -870,7 +870,7 @@
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
   - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
-  - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss preventions</span>
+  - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss prevention</span>
 
 
 - <mark style="background: #e0ffff;">Talos</mark>
@@ -2078,6 +2078,7 @@
   - web authentication scenarios: <span style="color: #bb6600;">Local Web Authentication (LWA) & Centralized Web Authentication (CWA)</span>
   - Centralized Web Authentication (CWA) for wireless guest access not rediect to guest portal for authentication and authorization: <span style="color: #bb6600;">tag the guest portal in the CWA part of the Common Tasks section of the authorization profile</span> for the authorization policy line that the unauthenticated devices hit
   - product to prevent a hacker initiated a social engineering attack and stole username and passwords of some users within a company: <span style="color: #bb6600;">Cisco Duo</span>
+  - mechanisms used to redirect users to a web portal to authenticate to ISE for guest services:<span style="color: #bb6600;">local web authentication & centralized web authentication</span>
 
 
 - Mobile Device Management (MDM)
@@ -2123,7 +2124,7 @@
     - Service Conditions: A condition that checks if a service is running or not running on the client.
     - Dictionary Conditions: A condition that checks a dictionary attribute with a value.
     - USB Conditions: A condition that checks for the presence of USB mass storage device.
-  - implemenation to ensure all device compliant before endpoints allowed on the network: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
+  - implemenation to ensure all device compliant before endpoints allowed on the network that all endpoints are compliant before users are allowed access on the corporate network, in which the endpoints must have the corporate antivirus application installed and be running the latest build of Windows 10: <span style="color: #bb6600;">ISE and AnyConnect Posture Module</span>
   - posture assessment requirements
     - a set of compound conditions with an associated remediation action that can be linked with a role and an operating system
     - all the clients connecting to your network must meet mandatory requirements during posture evaluation to become compliant on the network
@@ -2142,6 +2143,9 @@
   - parameters are used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
   - enforce reauthentication of an endpoint session when an endpoint is deteleted from an identity group: <span style="color: #bb6600;">CoA</span>
   - device to ensure that machines that connect to organizational networks have the recommended antiviruse definitions and patches to help prevent an organizational malware outbreak: <span style="color: #bb6600;">Cisco ISE</span>
+  - solutions mitigate the risk of this ransom that used a posture check on a Microsoft Windows endpoint and discovered that the MS17-010 patch was not installed
+    - Configure a <span style="color: #bb6600;">posture policy</span> in Cisco Identity Services Engine to install the MS17-010 patch before allowing access on the network.
+    - Configure a <span style="color: #bb6600;">posture policy</span> in Cisco Identity Services Engine to check that an endpoint patch level is met before allowing access on the network.
 
 
 - Identity Service Engine (ISE) - Endpoint Profiling 
@@ -2153,11 +2157,12 @@
     - endpoints can be authorized to the network and granted access based on their profile after classifying
   - endpoint profiling policy
     - determine the <span style="color: #bb6600;">type of device or endpoint</span> connecting to the network
-    - using DHCP, SNMP, Span, NetFlow, HTTP, RADIUS, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
+    - using DHCP, SNMP, Span, NetFlow, HTTP, DNS, or NMAP scans to collect as much metadata as possible to learn the <span style="color: #bb6600;">device fingerprint</span>
     - NMAP scan probe collecting the endpoint attributes: 1) EndPointPolicy; 2) LastNameScanCount; 3) NmapScanCount; 4) <span style="color: #bb6600;">OUI</span> (Organizationally Unique Identifier - 1st 6 hexadecimal value of MAC address); 5) OS
     - CoA types: 1) No CoA; 2) port bounce; 3) <span style="color: #bb6600;">reauth</span>
     - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
   - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
+  - ID store requires that a shadow user be created on Cisco ISE for the admin login to work: <span style="color: #bb6600;">Active Directory</span>
   - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
   - prerequisites to integrate Active Directory with Cisco ISE
     - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
@@ -2192,6 +2197,7 @@
       - Daily: Guests who need access to the resources on the network for just 1 to 5 days.
       - Weekly: Users who need access to the network for a couple of weeks.
     - role as a default guest type in Cisco ISE: <span style="color: #bb6600;">Contractor</span>
+  - probes configured to gather attributes of connected endpoints using Cisco Identity Services Engine: <span style="color: #bb6600;">RADIUS</span> and <span style="color: #bb6600;">DHCP</span>
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
   - purpose of My Devices Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
   - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
