@@ -1052,6 +1052,7 @@
     - proxy and inspect traffic that's sent over HTTPS
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
+  - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600;">Enable Intelligent Proxy.</span>
 
 
 - Umbrella - logging
@@ -1210,10 +1211,22 @@
   - importance of patching strategy for endpoint:
     - <span style="color: #bb6600;">known vulnerabilities are targeted</span> and <span style="color: #bb6600;">having a regular patch cycle reduces risks</span>
     - <span style="color: #bb6600;">the organization can identify endpoint vulnerabilities</span>
+  - cloud detection engines
+    - One-to-one signature engine
+    - Generic signature engine (ETHOS)
+    - Machine learning engine (SPERO)
+    - Dynamic analysis engine (Threat Grid)
+    - Advanced analytics engine: identify new threats that normally can't be detected
+  - minor differences between the Private and Public cloud instance of AMP
+    - Advanced custom detections: the private cloud only supports Windows, whereas the Public cloud supports Linux, Mac, and other popular operating systems.
+    - ETHOS: This is one of the many detection engines AMP uses to continuously protect you from malware. ETHOS catches families of malware through use of "fuzzy hashes" as a way to counter malware evasion aided by "bit-twiddling". It is only available in the public cloud.
+  - valid Cisco AMP file disposition: <span style="color: #bb6600;">malware</span>
   - benefit of installing Cisco AMP for Endpoints on a network: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
+  - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
+  - exclusive capability to a Cisco AMP public cloud instance as compared to a private cloud instance: <span style="color: #bb6600;">ETHOS detection engine</span>
 
 
 - Secure Endpoint (AMP for Endpoints) - Outbreak control
@@ -1263,9 +1276,9 @@
 
 - Secure Endpoint (AMP for Endpoints) - File inspection
   - system inspects files using the following tools, in order:
-    - Spero Analysis and AMP Cloud Lookup
-    - Local Malware Analysis
-    - Dynamic Analysis
+    - <span style="color: #bb6600;">Spero Analysis and AMP Cloud Lookup</span>
+    - <span style="color: #bb6600;">Local Malware Analysis</span>
+    - <span style="color: #bb6600;">Dynamic Analysis</span>
   - Spero analysis
     - examining <span style="color: #bb6600;">structural characteristics</span> such as metadata and header information in executable files
     - generating a <span style="color: #bb6600;">Spero signature</span> based on this information
@@ -1302,7 +1315,7 @@
   - unified malware analysis and threat intelligence platform
   - automated static and dynamic analysis, producing human readable behavior indicators for each file submitted
   - feature leveraged by advanced antimalware capabilities to be an effective endpoint protection platform: <span style="color: #bb6600;">sandboxing</span>
-  - primary function: <span style="color: #bb6600">automated malware analysis</span>
+  - the primary function of Cisco AMP threat Grid: <span style="color: #bb6600">automated malware analysis</span>
 
 
 - Secure Endpoint (AMP for Endpoints) - Malwale indpection 
@@ -1453,7 +1466,7 @@
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
     - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span>
     - if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the <span style="color: #bb6600;">Block list in the Security Intelligence tab of your access control policy</span>.
-  - reputation score to configure a rule in an access control policy to block certain URLs and selects the “Chat and Instant Messaging” category: <span style="color: #bb6600;">6~10</span> to clean
+  - reputation score to configure a rule in an access control policy to block certain URLs and selects the "Chat and Instant Messaging" category: <span style="color: #bb6600;">6~10</span> to clean
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
   - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
@@ -2029,7 +2042,7 @@
   - improve <span style="color: #bb6600;">web traffic performance</span> <- proxy caching
   - WCCP proxy health checking
     - WCCP daemon sends a proxy health check message (xmlrpc client request) to the xmlrpc server running on the Web proxy every 10 seconds
-    - proxy up and running: WSA sends a WCCP “here I am” (HIA) message to the specified WCCP-enabled routers every 10 seconds
+    - proxy up and running: WSA sends a WCCP "here I am" (HIA) message to the specified WCCP-enabled routers every 10 seconds
     - WCCP router misses three consecutive HIA messages, the router removes the WSA from its service group and traffic is no longer forwarded to the WSA
   - message to verify a WCCP-configured router working w/ the Cisco WSA: <span style="color: #bb6600;">the WSA sends a Here-I-Am message every 10 seconds, and the router acknowledges with an I-See-You message</span>
 
