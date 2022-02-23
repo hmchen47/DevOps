@@ -41,6 +41,7 @@
     - cross-site request forgery: makes the <span style="color: #bb6600;">client</span> the target of attack
     - SQL injection: accesses or modifies <span style="color: #bb6600;">application data</span>
     - buffer overflow: causes <span style="color: #bb6600;">memory</span> access errors 
+  - Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities: <span style="color: #bb6600;">Common Vulnerabilities and Exposures</span>
 
 
 - Categories of attacks
@@ -302,7 +303,7 @@
   - RSA keys
     - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
     - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
-    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key</span> using the `crypto key generate rsa` command
+    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code>crypto key generate rsa</code> command</span>
 
 
 - <mark style="background: #e0ffff;">Cryptography</mark>
@@ -765,6 +766,7 @@
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
   - activities using Cisco DNA Center: <span style="color: #bb6600;">Designing</span> and <span style="color: #bb6600;">Provision</span>
   - a feature of the open platform capabilities of Cisco DNA Center: <span style="color: #bb6600;">intent-based APIs</span>
+  - the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
 
 
 - Cisco Context Directory Agent (CDA)
@@ -875,6 +877,7 @@
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
   - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
   - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss prevention</span>
+  - tool to protect sensitive data throughout the full environment when experiencing exfiltration of credit card numbers that are not being stored on-premise: <span style="color: #bb6600;">Cloudlock</span>
 
 
 - <mark style="background: #e0ffff;">Talos</mark>
@@ -1002,6 +1005,7 @@
   - validate traffic routed to Umbrella: browse `http://welcome.umbrella.com/` or `http://welcome.opendns.com/`
   - action to configure a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network: <span style="color: #bb6600;">Browse to <code>http://welcome.umbrella.com/</code> to validate that the new identity is working.</span>
   - solution that Cisco Umbrella integrates with to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
+  - product to improve their Defense in Depth by blocking malicious destinations prior to a connection being established and to block certain applications from being used within the network: <span style="color: #bb6600;">Cisco Ummbrella</span>
 
 
 - Umbrella - Policy
@@ -1241,6 +1245,10 @@
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
   - exclusive capability to a Cisco AMP public cloud instance as compared to a private cloud instance: <span style="color: #bb6600;">ETHOS detection engine</span>
+  - capabilities of Cisco AMP
+    - provides detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
+    - provides the <span style="color: #bb6600;">root cause of a threat</span> based on the indicators of compromise seen
+    - provides <span style="color: #bb6600;">outbreak control</span> through custom detections
 
 
 - Secure Endpoint (AMP for Endpoints) - Outbreak control
@@ -1367,6 +1375,10 @@
     - intrusion <span style="color: #bb6600;">prevention before</span> malware comprises the host
     - <span style="color: #bb6600;">superior threat prevention and mitigation</span> for known and unknown threats
   - difference btw Firepower and ASA: Firepower <span style="color: #bb6600;">natively provides intrusion prevention capabilities</span>
+  - capabilities of Cisco Firepower
+    - provides the ability to perform <span style="color: #bb6600;">network discovery</span>
+    - provides <span style="color: #bb6600;">intrusion prevention</span> before malware comprises the host
+    - provides <span style="color: #bb6600;">superior threat prevention and mitigation</span> for known and unknown threats
 
 
 - <mark style="background: #e0ffff;">Cisco Secure Firewall Management Center (FMC)</mark>
@@ -1678,6 +1690,7 @@
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
   - ASA deployment model used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
   - ASA Platform mode to disable the threat detection features except for Advanced Threat Statistics: <span style="color: #bb6600;">multiple context</span>
+  - a characteristic of a bridge group in ASA Firewall transparent mode: <span style="color: #bb6600;">include multiple interfaces and access rules between interfaces are customizable</span>
   - config to reduce the VPN bandwidth load on their headend Cisco ASA in order to ensure that bandwidth is available for VPN users needing access to corporate resources on the `10.0.0.0/24` local HQ network w/o additional devices: <span style="color: #bb6600;">Use split tunneling to tunnel traffic for the 10.0.0.0/24 network only.</span>
 
 
@@ -1771,6 +1784,7 @@
   - tasks allow NetFlow on a Cisco ASA 5500 Series firewall:
     - Define a  <span style="color: #bb6600;">NetFlow collector</span> by using the flow-export command.
     - Create a  <span style="color: #bb6600;">class map</span> to match interesting traffic.
+  - two fields are defined in the NetFlow flow: <span style="color: #bb6600;">type of service byte</span> and <span style="color: #bb6600;">destination port</span>
   
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
