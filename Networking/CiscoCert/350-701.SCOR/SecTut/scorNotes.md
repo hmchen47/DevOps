@@ -152,6 +152,7 @@
     - sending <span style="color: #bb6600;">fragmented packets</span> to a target machine
     - generally happen on older operating systems
   - type of attack that a user has a device in the network that is receiving too many connection requests from multiple machines: <span style="color: #bb6600;">SYN flood</span>
+  - Dos attack uses fragmented packets to crash a target machine: <span style="color: #bb6600;">teardrop</span>
 
 
 - <mark style="background: #e0ffff;">Social engineering</mark>
@@ -305,6 +306,7 @@
     - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
     - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
     - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code>crypto key generate rsa</code> command</span>
+  - two types of Servers are used as a distribution point for CRLs for IOS PKI: <span style="color: #bb6600;">LDAP</span> and <span style="color: #bb6600;">HTTP</span> 
 
 
 - <mark style="background: #e0ffff;">Cryptography</mark>
