@@ -608,7 +608,7 @@
     - retrieve info: `response = requests.get(url, auth=(client_id, api_key))`
     - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
     - list of network interface info: `print(mac, ip , ipv6)`
-  - AMP API to <span style="color: #bb6600;">print hostname</span>
+  - AMP API to <span style="color: #bb6600;">pull all computer hostnames and print them</span>
     - URL: `https://api.amp.cisco.com/v1/computers`
     - retrieve info: `response = requests.get(url, auth=(client_id, api_key))`
     - print list of computer hostname: `print(hostname)`
@@ -896,9 +896,11 @@
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - API-based broker that helps reduce compromises, application risks, and data breaches in an environment that is not on-premise: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
-  - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company's corporate environment
+  - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps</span> that are connected to a company's corporate environment
   - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss prevention</span>
   - tool to protect sensitive data throughout the full environment when experiencing exfiltration of credit card numbers that are not being stored on-premise: <span style="color: #bb6600;">Cloudlock</span>
+  - product to use the Cisco cloud native CASB and cloud cybersecurity platform by implementing a solution that can be leveraged for securing the cloud users, data, and applications: <span style="color: #bb6600;">Cisco Cloudlock</span>
+  - solution to monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
 
 
 - <mark style="background: #e0ffff;">Talos</mark>
@@ -1169,8 +1171,13 @@
     - <span style="color: #bb6600;">Next Generation Intrusion Prevention System</span>: <span style="text-decoration: underline;">superior threat prevention and mitigation</span> for known and unknown threats
     - <span style="color: #bb6600;">Application control and URL filtering</span>: <span style="text-decoration: underline;">application-layer control and ability</span> to enforce usage and tailor detection policies based on custom applications and URLs
     - <span style="color: #bb6600;">Cisco Web Security Appliance</span>: combined integrated solution of strong defense and <span style="text-decoration: underline;">web protection</span>, visibility, and controling solutions
-    - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against <span style="text-decoration: underline;">targeted persistent malware attacks</span>
-
+    - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against 
+    targeted persistent malware attacks</span>
+  - solutions and solution's benefits
+    - Cisco TrustSec: <span style="text-decoration: underline;">oftware-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
+    - Cisco Stealthwatch: rapidly <span style="text-decoration: underline;">collects and analyzes NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
+    - Cisco Umbrella: <span style="text-decoration: underline;">secure Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS
+    - Cisco ISE: obtains <span style="text-decoration: underline;">contextual identity and profiles</span> for all the users and devices connected on a network
 
 - <mark style="background: #e0ffff;">StealthWatch</mark>
   - rapidly collects and analyzes <span style="color: #bb6600">NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
@@ -1711,6 +1718,7 @@
     - stateful: <span style="color: #bb6600;">preserve</span>
     - stateless: <span style="color: #bb6600;">reestablish</span>
   - AnyConnect Connection profile to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificates: set <span style="color: #bb6600;">Method = Both</span>
+  - config item to utilize an external token authentication mechanism in conjunction with AAA authentication using machine certificate when configuring a remote access VPN solution terminating on the Cisco ASA: <span style="color: #bb6600;">Method</span>
   - ASA deployment model used to filter traffic between hosts in the same IP subnet using higher-level protocols without readdressing the network: <span style="color: #bb6600;">transparent</span>
   - ASA Platform mode to disable the threat detection features except for Advanced Threat Statistics: <span style="color: #bb6600;">multiple context</span>
   - a characteristic of a bridge group in ASA Firewall transparent mode: <span style="color: #bb6600;">include multiple interfaces and access rules between interfaces are customizable</span>
@@ -1853,7 +1861,6 @@
 
 
 - <mark style="background: #e0ffff;">Simple Network Management Protocol (SNMP)</mark>
-  - new device to access SNMPv3 view: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
   - version 3 security level
     - `noAuthNoPriv`: authn = username; encry = none
     - `authNoPriv`: authn = MD5/SHA; encry = none
@@ -1873,6 +1880,7 @@
   - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
   - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
   - two actions taken to ensure that interfaces are put back into service due to a traffic storm put two interfaces error-disabled: enter the <span style="color: #bb6600;">shutdown and no shutdown commands</span> on the interfaces & ensure that interfaces are <span style="color: #bb6600;">configured with the error-disable detection and recovery feature</span>
+  - config SNMPv3 on a new router to facilitate access to the SNMP views w/ already been created users: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
   - SNMPv3 config
     - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
     - new user for the group: username =`andy` w/ pasowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
@@ -2591,8 +2599,8 @@
     - all other ports are untrusted (default) and send only DHCP requests
     - <span style="color: #bb6600;">shutdown untrusted ports</span> if receiving DHCP response
     - enable trust port: <code style="color: #bb6600;">ip dhcp snooping trust</code>
-    - config DHCP server to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
-    - user on VLAN 41 on a new switch no IP address obtained due to missing <code style="color: #bb6600;">ip dhcp snooping trust</code> config
+    - config DHCP server to better secure the environment to limit traffic w/ rate and ensure legitimate requests not dropped: <span style="color: #bb6600;">trusted interface</span>
+    - user on VLAN 41 on a new switch no IP address obtained due to missing <code style="color: #bb6600;">ip dhcp snooping trust</code> config  
     - configure a DHCP server to better secure their environment and able to rate-limit the traffic and ensure that legitimate requests are not dropped: <span style="color: #bb6600;">set a trusted interface for the DHCP server</span>
   - <mark style="background: #e0ffff;">Dynamic ARP Inspection (DAI)</mark>
     - a security feature validating ARP packets in a network
