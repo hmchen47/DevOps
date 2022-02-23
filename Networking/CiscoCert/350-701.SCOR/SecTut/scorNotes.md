@@ -439,6 +439,7 @@
   - prerequisite conditions of stateful failover for IPsec:
     - The <span style="color: #bb6600;">IPsec configuration</span> that is set up on the active device must be duplicated on the standby device
     - The active and standby devices must run the <span style="color: #bb6600;">same version of the Cisco IOS software</span> and must be the <span style="color: #bb6600;">same type of device</span>.
+  - two cryptographic algorithms are used with IPsec: <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> and <span style="color: #bb6600;">AES-CBC</span>
 
 
 - Site-to-site VPN
@@ -876,6 +877,7 @@
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
+  - API-based broker that helps reduce compromises, application risks, and data breaches in an environment that is not on-premise: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
   - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
   - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss prevention</span>
@@ -1029,7 +1031,7 @@
     - <span style="color: #bb6600;">File Inspection</span>: scan and inspect files for malicious content hosted on risky domains before those files are downloaded
   - URL blocking:
     - URL Reputation from 6 to 10
-    - able to go to some sites but other sites are not accessible due to an error: client computers do <span style="color: #bb6600;">not have the Cisco Umbrella Root CA certificate installed</span>
+    - scenario when implementing URL blocking using Cisco Umbrella the the users are able to go to some sites but other sites are not accessible due to an error: Client computers <span style="color: #bb6600;">do not have the Cisco Umbrella Root CA certificate installed.</span>
   - Block Page and Block Page Bypass features
     - present an SSL certificate to browsers that make connections to HTTPS sites
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
@@ -1040,7 +1042,6 @@
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
-  - scenario when implementing URL blocking using Cisco Umbrella the the users are able to go to some sites but other sites are not accessible due to an error: Client computers <span style="color: #bb6600;">do not have the Cisco Umbrella Root CA certificate installed.</span>
   - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
   - web policies configured in Cisco Umbrella to provide the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">Security Category Blocking</span>
 
@@ -1695,6 +1696,7 @@
   - ASA Platform mode to disable the threat detection features except for Advanced Threat Statistics: <span style="color: #bb6600;">multiple context</span>
   - a characteristic of a bridge group in ASA Firewall transparent mode: <span style="color: #bb6600;">include multiple interfaces and access rules between interfaces are customizable</span>
   - config to reduce the VPN bandwidth load on their headend Cisco ASA in order to ensure that bandwidth is available for VPN users needing access to corporate resources on the `10.0.0.0/24` local HQ network w/o additional devices: <span style="color: #bb6600;">Use split tunneling to tunnel traffic for the 10.0.0.0/24 network only.</span>
+  - product managed by Cisco Security Manager: <span style="color: #bb6600;">ASA</span>
 
 
 - IOS zone-based firewall
@@ -2024,6 +2026,7 @@
       - Phishing, ransomware, zero-day attacks and spoofing.
       - BEC with no malicious payload or URL.
   - functions does the Cisco Advanced Phishing Protection solution perform in trying to protect from phishing attacks: <span style="color: #bb6600;">determine if the email messages are malicious</span> and <span style="color: #bb6600;">provide a defense for on-premises email deployments</span>
+  - way of Advanced Phishing Protection protecting users: use <span style="color: #bb6600;">machine learning and real-time behavior analytics</span>
 
 
 - <mark style="background: #e0ffff;">Web Security Appliance (WSA)</mark>
