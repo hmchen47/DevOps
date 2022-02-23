@@ -151,6 +151,7 @@
     - DoS attack
     - sending <span style="color: #bb6600;">fragmented packets</span> to a target machine
     - generally happen on older operating systems
+  - type of attack that a user has a device in the network that is receiving too many connection requests from multiple machines: <span style="color: #bb6600;">SYN flood</span>
 
 
 - <mark style="background: #e0ffff;">Social engineering</mark>
@@ -560,6 +561,7 @@
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
   - main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network: <span style="color: #bb6600;">SDN controller and the management solution</span>
   - function of an SDN architecture requiring southbound API protocols to enable communication: <span style="color: #bb6600;">enable the controller to make changes</span>
+  - the function of SDN southbound API protocols: <span style="color: #bb6600;">enable the controller to make changes</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
   - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
@@ -1490,11 +1492,11 @@
     - create a rule to Block traffic based on a reputation level
   - Custom Block lists or feeds (or objects or groups)
     - block specific <span style="color: #bb6600;">IP addresses, URLs, or domain names</span> using a manually-created list or feed
-    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs and IP addresses</span>
+    - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs</span> and <span style="color: #bb6600;">IP addresses</span>
     - if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the <span style="color: #bb6600;">Block list in the Security Intelligence tab of your access control policy</span>.
   - reputation score to configure a rule in an access control policy to block certain URLs and selects the "Chat and Instant Messaging" category: <span style="color: #bb6600;">6~10</span> to clean
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
-  - action to prevent from phising attacks originates from a malicious site: <span style="color: #bb6600;">modify an access policy</span>
+  - action to prevent from phising attacks in the future which originates from a result of users visiting known malicious websites: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
 
@@ -1823,6 +1825,7 @@
     - <span style="color: #bb6600;">Both ingress and egress NetFlow accounting</span> is supported
     - Microflow policing feature shares the NetFlow hardware resource with FNF.
     - Only one flow monitor per interface and per direction is supported.
+  - two benefits of Flexible NetFlow records: <span style="color: #bb6600;">allow the user to configure flow information to perform customized traffic identification</span> and <span style="color: #bb6600;">converge multiple accounting technologies into one accounting mechanism</span>
 
 
 - <mark style="background: #e0ffff;">Simple Network Management Protocol (SNMP)</mark>
@@ -1995,7 +1998,7 @@
   - on-premises ESA over the CES solution: <span style="color: #bb6600;">sensitive data must remain onsite</span>
   - two services must remain as on-premises equipment when a hybrid email solution is deployed: <span style="color: #bb6600;">DLP</span> and <span style="color: #bb6600;">encryption</span>
   - action to dynamically determine how harmful the SPAM messages: config ESA to receive <span style="color: #bb6600;">real-time updates from Talos</span>
-  - prevent from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
+  - prevent the session during the initial TCP communication from receiving SPAM emails from a known malicious domain when a session during the initial TCP communication: <span style="color: #bb6600;">config policies to stop and reject communication</span>
   - attack preventable by Cisco ESA but not by the Cisco WSA: <span style="color: #bb6600;">phising</span>
   - config ESA to meet 1) ensure there are no viruses before quarantined emails are delivered; 2) delivery of mail from known bad mail servers must be prevented: <span style="color: #bb6600;">scan quarantined emails using AntiVirus signatures</span> and <span style="color: #bb6600;">use outbreak filters from SenderBase</span>
   - action of ESA to set up with policies and would like to customize the action assigned for violations. The organization wants a copy of the message to be delivered with a message added to flag it as a DLP violation: <span style="color: #bb6600;">deliver and add disclaimer text</span>
