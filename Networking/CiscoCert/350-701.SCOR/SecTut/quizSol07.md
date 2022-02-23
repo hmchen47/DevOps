@@ -943,6 +943,33 @@
 
   Answer: B
 
+  Explanation
+
+  The Cisco IOS software supports the following versions of SNMP:
+  - SNMPv1—Simple Network Management Protocol: a full Internet standard, defined in RFC 1157. (RFC 1157 replaces the earlier versions that were published as RFC 1067 and RFC 1098.) Security is based on community strings.
+  - SNMPv2c—The community string-based Administrative Framework for SNMPv2. SNMPv2c (the “c” is for “community”) is an experimental Internet protocol defined in RFC 1901, RFC 1905, and RFC 1906. SNMPv2c is an update of the protocol operations and data types of SNMPv2p (SNMPv2 Classic) and uses the community-based security model of SNMPv1.
+  - SNMPv3—Version 3 of SNMP. SNMPv3 is an interoperable standards-based protocol defined in RFCs 3413 to 3415. SNMPv3 provides secure access to devices by authenticating and encrypting packets over the network.
+
+  Reference: [Configuring SNMP Support - SNMP Configuration Guide](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/snmp/configuration/xe-16/snmp-xe-16-book/nm-snmp-cfg-snmp-support.html)
+
+  1.4.2. Authentication Protocol
+
+  Section 6 describes the HMAC-MD5-96 authentication protocol which is the first authentication protocol that MUST be supported with the User-based Security Model.  Section 7 describes the HMAC-SHA-96 authentication protocol which is another authentication protocol that SHOULD be supported with the User-based Security Model.  In the future additional or replacement authentication protocols may be defined as new needs arise.
+
+  The User-based Security Model prescribes that, if authentication is used, then the complete message is checked for integrity in the authentication module.
+
+  For a message to be authenticated, it needs to pass authentication check by the authentication module and the timeliness check which is a fixed part of this User-based Security model.
+
+  Reference: [User-based Security Model (USM) for version 3 of the Simple Network Management Protocol (SNMPv3): Authentication Protocol](https://datatracker.ietf.org/doc/html/rfc3414#section-1.4.2)
+
+  When authenticating a request, the SNMP agent verifies that the authentication key sent in an SNMPv3 request can be used to create a message digest that matches the message digest created from the authentication key defined by the user.
+
+  The authentication key is generated from two pieces of information:
+  - The specified password
+  - The identification of the SNMP agent at which the key will be used. If the agent is an IBM® agent, and its engineID was generated using the vendor-specific engineID formula, the agent may be identified by IP address or host name. Otherwise, the engineID must be provided as the agent identification.
+
+  Reference: [SNMPv3 authentication keys](https://www.ibm.com/docs/en/aix/7.2?topic=snmpv3-authentication-keys)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 40</span>
 
