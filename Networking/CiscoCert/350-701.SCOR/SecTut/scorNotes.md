@@ -153,6 +153,7 @@
     - generally happen on older operating systems
   - type of attack that a user has a device in the network that is receiving too many connection requests from multiple machines: <span style="color: #bb6600;">SYN flood</span>
   - Dos attack uses fragmented packets to crash a target machine: <span style="color: #bb6600;">teardrop</span>
+  - attack type attempts to shut down a machine or network so that users are not able to access it: <span style="color: #bb6600;">smurf</span>
 
 
 - <mark style="background: #e0ffff;">Social engineering</mark>
@@ -487,6 +488,7 @@
     - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
   - DMVPN over GETVPN: <span style="color: #bb6600;">DMVPN can be used over the public Internet, and GETVPN requires a private network</span>
+  - difference between DMVPN and sVTI: DMVPN supports <span style="color: #bb6600;">dynamic tunnel establishment</span>, whereas sVTI does not.
 
 
 - <mark style="background: #e0ffff;">FlexVPN</mark>>
@@ -528,6 +530,13 @@
   - Failover Redundancy: Route Distribution Model
   - Encryption Style: Peer-to-Peer Protection; Peer-to-Peer Protection; Group Protection
   - IP Multicast: Multicast replication at hub; Multicast replication at hub; Multicast replication in IP WAN network
+
+
+- VPN functions
+  - AES: ensures data confidentiality 
+  - ISAKMP: defines IKE SAs
+  - SHA-1: ensures data integrity
+  - RSA: provides authentication
 
 
 ## Software Defined Network (SDN)
@@ -798,7 +807,7 @@
     - interface requirements:
       - <span style="color: #bb6600;">management</span> interfaces: 2; one for FMC and one for diagnostics
       - <span style="color: #bb6600;">traffic</span> interface: 2 used to connect inside hosts to the public network
-  - reason for FTDv over ASAv: support <span style="color: #bb6600;">URL filtering</span>
+  - reason for FTDv over ASAv: FTDv supports <span style="color: #bb6600;">URL filtering</span> while ASAv does not 
 
 
 - Cisco Firepower NGFW Virtual (NGFWv)
@@ -1792,6 +1801,7 @@
     - Define a  <span style="color: #bb6600;">NetFlow collector</span> by using the flow-export command.
     - Create a  <span style="color: #bb6600;">class map</span> to match interesting traffic.
   - two fields are defined in the NetFlow flow: <span style="color: #bb6600;">type of service byte</span> and <span style="color: #bb6600;">destination port</span>
+  - purpose of a Netflow version 9 template record: <span style="color: #bb6600;">define the format of data records</span>
   
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
