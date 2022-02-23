@@ -39,7 +39,7 @@
   - vulnerabilities -> explots
     - path transversal: gives <span style="color: #bb6600;">unauthorized access</span> to web server files
     - cross-site request forgery: makes the <span style="color: #bb6600;">client</span> the target of attack
-    - SQL injection: accesses or modifies <span style="color: #bb6600;">application data</span>
+    - injection: accesses or modifies <span style="color: #bb6600;">application data</span>
     - buffer overflow: causes <span style="color: #bb6600;">memory</span> access errors 
   - Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities: <span style="color: #bb6600;">Common Vulnerabilities and Exposures</span>
 
@@ -83,6 +83,7 @@
   - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
   - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
+  - difference between Cross-site Scripting and SQL Injection attacks: <span style="color: #bb6600;">Cross-site Scripting is an attack where code is injected into a database, whereas SQL Injection is an attack where code is injected into a browser</span>
 
 
 - Trojan malware attacks
@@ -600,17 +601,22 @@
     - automated (executed in real time by software)
   - way to mitigate application performance issue: <span style="color: #bb6600;">automate resource resizing</span>
 
-
 - Python script for SDN APIs
   - <span style="color: #bb6600;">add a switch to DNA Center</span>: `requests.post( "https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
   - AMP API to <span style="color: #bb6600;">print network interface info</span>
-    - URL: `get https://api.amp.cisco.com/v1/computers`
+    - URL: `https://api.amp.cisco.com/v1/computers`
+    - retrieve info: `response = requests.get(url, auth=(client_id, api_key))`
     - network interface info: `mac = network_interface.get('mac'); ip = network_interface('ip'); ipv6 = network_interface('ipv6')`
     - list of network interface info: `print(mac, ip , ipv6)`
   - AMP API to <span style="color: #bb6600;">print hostname</span>
-    - URL: `get https://api.amp.cisco.com/v1/computers`
+    - URL: `https://api.amp.cisco.com/v1/computers`
+    - retrieve info: `response = requests.get(url, auth=(client_id, api_key))`
     - print list of computer hostname: `print(hostname)`
     - pull all computer hostnames and print them
+  - AMP API to print <span style="color: #bb6600;">the list of computers, policies, and connector statuses will be received from Cisco AMP</span>
+    - URL: `https://api.amp.cisco.com/v1/computers`
+    - retrieve info: `response = requests.request("GET", url, headers = headers)`
+    - print response: `print (response.txt)`
   - make a SSL connection
     - connection w/ TLS1.2 SSL protocol, not SSH
     - username and password read from command line
@@ -769,7 +775,7 @@
     - policy: translate business intent into network policies and apply those policies
     - <span style="color: #bb6600;">provision</span>: assigned new device to an SGT based on identity—greatly facilitating remote office setups
     - assurance: using AI/ML, enables every point on the network to become a sensor
-  - characteristics of APIs
+  - characteristics of Cisco DNA Center APIs APIs
     - quickly <span style="color: #bb6600;">provision</span> new devices
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
@@ -973,6 +979,7 @@
   - platform processes behavior baselines, monitors for deviations, and reviews for malicious processes in data center traffic and servers while performing software vulnerability detection: <span style="color: #bb6600;">Tetration</span>
   - a benefit of using Cisco Tetration: collect <span style="color: #bb6600;">near-real time data from servers and inventories the software packages that exist on servers</span>
   - solution protects hybrid cloud deployment workloads with application visibility and segmentation: <span style="color: #bb6600;">Tetration</span>
+  - suspicious pattern enables the Cisco Tetration platform to learn the normal behavior of users: <span style="color: #bb6600;">file access from a different user</span>
 
 
 - Cisco Stealhwatch Cloud
@@ -1077,6 +1084,7 @@
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
   - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600;">Enable Intelligent Proxy.</span>
+  - action to use Cisco Umbrella to prevent this activity for suspicious domains while allowing normal web traffic as an increase in malicious content downloads: <span style="color: #bb6600;">Configure the intelligent proxy.</span>
 
 
 - Umbrella - logging
@@ -1423,7 +1431,7 @@
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
-    - config to feed host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
+    - config to find out what assets currently exist on the network by feeding host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
     - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - feature to determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
   - identity policy
@@ -1864,6 +1872,7 @@
   - representation of `15` in `snmp-server group SNMP v3 auth access 15`: <span style="color: #bb6600;">access list</span> that identifies the SNMP devices that can access the router
   - SNMPv3 to facilitate access to the SNMP views: <span style="color: #bb6600;">set the password to be used for SNMPv3 authentication</span>
   - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
+  - two actions taken to ensure that interfaces are put back into service due to a traffic storm put two interfaces error-disabled: enter the <span style="color: #bb6600;">shutdown and no shutdown commands</span> on the interfaces & ensure that interfaces are <span style="color: #bb6600;">configured with the error-disable detection and recovery feature</span>
   - SNMPv3 config
     - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
     - new user for the group: username =`andy` w/ pasowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
@@ -2233,7 +2242,7 @@
     - <span style="color: #bb6600;">RADIUS protocol</span>: collecting <span style="color: #bb6600;">DHCP, CDP, and LLDP attributes</span> directly from the switch
   - shadow user: able to delegate <span style="color: #bb6600;">AD user as ISE GUI admin</span> to ease admin overheads and manage network efficiently
   - ID store requires that a shadow user be created on Cisco ISE for the admin login to work: <span style="color: #bb6600;">Active Directory</span>
-  - troubleshoot endpoint authentication failure for 802.1X: <span style="color: #bb6600;">RADIUS live log</span>
+  - troubleshoot endpoint authentication failure for 802.1X by configuring a switch to use Cisco ISE for 802.1X. An endpoint is failing authentication and is unable to access the network: <span style="color: #bb6600;">RADIUS Live Logs</span>
   - prerequisites to integrate Active Directory with Cisco ISE
     - <span style="color: #bb6600;">synchronize the time</span> between the Cisco ISE server and Active Directory
     - trust relationships btw the domain connected to Cisco ISE and the other domains if using multidomain forest or is divided into multiple forests
@@ -2247,6 +2256,7 @@
     - add personal devices to the network w/ supplicant provisioning (Network Setup Assistant) or My Devices portal
     - w/o supplicant profiles: 1) manually config <span style="color: #bb6600;">My Devices portal</span>; 2) config <span style="color: #bb6600;">BYOD rules to register</span>
     - used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources
+  - method used to deploy certificates and configure the supplicant on mobile devices to gain access to network resources: <span style="color: #bb6600;">BYOD on boarding</span>
   - <span style="color: #bb6600;">My Devices portal</span>: register and manage devices on your company's network, including mobile phones, tablets, printers, Internet radios, and other network devices
   - single-SSID BYOD
     - guest access is using hotspot access 
