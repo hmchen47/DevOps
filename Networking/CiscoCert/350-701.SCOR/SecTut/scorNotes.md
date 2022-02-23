@@ -29,7 +29,7 @@
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - directory traversal/path traversal attack
     - a.k.a. dot dot slash attack
-    - an HTTP exploit to <span style="color: #bb6600;">access restricted files, directories and commands</span> that reside outside the web server’s root directory
+    - an HTTP exploit to <span style="color: #bb6600;">access restricted files, directories and commands</span> that reside outside the web server's root directory
   - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
   - vulnerability to see the password being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
@@ -594,7 +594,7 @@
   - provide specific real-time actions that ensure workloads get the resources they need when they need them
   - enable continuous <span style="color: #bb6600;">placement, resizing, and capacity decisions</span>
   - automated, driving continuous health in the environment
-  - software’s decisions according to level of comfort:
+  - software's decisions according to level of comfort:
     - recommend (view only)
     - manual (select and apply)
     - automated (executed in real time by software)
@@ -773,7 +773,7 @@
     - quickly <span style="color: #bb6600;">provision</span> new devices
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
-  - type of dashboard for complete control of the network: <span style="color: #bb6600;">centralized management</span>
+  - type of dashboard in DNA Center to complete control of the network: <span style="color: #bb6600;">centralized management</span>
   - capabilities of Integration APIs are utilized with Cisco DNA center (westbound)
     - application monitors for <span style="color: #bb6600;">power utilization of devices and IoT sensors</span>
     - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
@@ -846,7 +846,7 @@
   - facilitate logging of all the IP traffic to, from, and across your network
   - stored as records in special <span style="color: #bb6600;">Amazon CloudWatch log groups</span>
   - provide the same kind of information as NetFlow data
-  - mechanism to configure the organization’s public cloud to send telemetry using the cloud provider’s mechanisms to a security device: <span style="color: #bb6600;">VPC flow logs</span>
+  - mechanism to configure the organization's public cloud to send telemetry using the cloud provider's mechanisms to a security device: <span style="color: #bb6600;">VPC flow logs</span>
 
 
 - Secure Virtual Appliance
@@ -884,13 +884,13 @@
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
   - technology reduces data loss by identifying sensitive information stored in public computing environments: <span style="color: #bb6600;">Cloudlock</span>
-  - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company’s corporate environment
+  - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company's corporate environment
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
   - API-based broker that helps reduce compromises, application risks, and data breaches in an environment that is not on-premise: <span style="color: #bb6600;">Cloudlock</span>
   - a cloud access security broker function: <span style="color: #bb6600;">integrate with other cloud solutions via APIs and monitors and creates incidents based on events from the cloud solution</span>
-  - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company’s corporate environment
+  - Cloudlock Apps Firewall to mitigate security concerns from an application perspective: <span style="color: #bb6600;">discover and control cloud apps<span style="color: #bb6600;"> that are connected to a company's corporate environment
   - the function of Cisco Cloudlock for data security: <span style="color: #bb6600;">data loss prevention</span>
   - tool to protect sensitive data throughout the full environment when experiencing exfiltration of credit card numbers that are not being stored on-premise: <span style="color: #bb6600;">Cloudlock</span>
 
@@ -1106,7 +1106,7 @@
   - lightweight virtual machines
   - act as <span style="color: #bb6600;">conditional DNS forwarders</span>
     - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
-    - intelligently forwarding public DNS queries to Cisco Umbrella’s global network
+    - intelligently forwarding public DNS queries to Cisco Umbrella's global network
     - local DNS queries to your existing local DNS servers and forwarders
   - config to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
 
@@ -1423,9 +1423,9 @@
     - discovery rules
       - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
       - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
-    - determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
     - config to feed host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
     - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
+  - feature to determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
   - identity policy
     - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
@@ -2031,7 +2031,7 @@
     - The Sensor-based solution can be rapidly deployed to ensure that your users are fully protected from damaging breaches.
     - Provides <span style="color: #bb6600;">another layer of defense</span> to more effectively secure your email environment.
     - Gain a real-time understanding of senders, learn, and authenticate email identities and behavioral relationships to protect against BEC attacks.
-    - Automatically <span style="color: #bb6600;">remove malicious emails</span> from the recipient’s inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks.
+    - Automatically <span style="color: #bb6600;">remove malicious emails</span> from the recipient's inbox and calls out identity deception techniques to prevent wire fraud or other advanced attacks.
     - Get detailed visibility into email attack activity, including total messages secured and attacks prevented.
     - Prevents the following:
       - Attacks that use compromised accounts and social engineering.
@@ -2207,7 +2207,7 @@
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
     - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
   - inline posture node
-    - used as a stop gap to support posture on VPN concentrator that didn’t support url redirection for posture discovery
+    - used as a stop gap to support posture on VPN concentrator that didn't support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
     - feature of ASA allowing users to be postured against Cisco ISE without requiring an inline posture node: <span style="color: #bb6600;">RADIUS Change of Authorization</span>
   - parameters are used for device compliance checks: <span style="color: #bb6600;">Windows registry values</span> and <span style="color: #bb6600;">endpoint protection software version</span>
@@ -2272,7 +2272,7 @@
   - product to meet the requirements: 1) TACACS+ authn and autho for device admin; 2) enhance wired and wireless network security; 3) users and endpoints to use 802.1X, MAB, and WebAuth -><span style="color: #bb6600;">ISE</span>
   - probe to to automatically assign endpoints that have a specific OUI into a new endpoint group: <span style="color: #bb6600;">NMAP</span>
   - purpose of My Devices Portal: <span style="color: #bb6600;">to register new laptop and mobile devices</span>
-  - securely adding a new medical device w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
+  - securely adding a new medical device to the network w/o supplicant capability to the network: use <span style="color: #bb6600;">MAB with profiling</span>
   - configure new authorization policies within Cisco ISE and has difficulty profiling the devices where attributes for the new Cisco IP phones that are profiled based on the RADIUS authentication are seen however the attributes for CDP or DHCP are not: <span style="color: #bb6600;">configure the device sensor feature within the switch</span> to send the appropriate protocol information
   - an endpoint is associated to a provisioning WLAN that is shared with guest access, and the same guest portal is used as the BYOD portal: <span style="color: #bb6600;">dual-SSID BYOD</span> 
 
@@ -2442,7 +2442,7 @@
 
   - NTP authentication 2
     - NTP server - 1.1.1.1; client - 1.1.1.2
-    - command to enable the client to accept the server’s authentication key: <code style="color: #bb6600;">ntp server 1.1.1.1 key 1</code>
+    - command to enable the client to accept the server's authentication key: <code style="color: #bb6600;">ntp server 1.1.1.1 key 1</code>
   - test NTP authentication but any device synchronizes time with this router and that NTP authentication is not enforced: <span style="color: #bb6600;">NTP authentication is not enabled</span>
   - ACL `login block-for 100 attempts 4 within 60`: if <span style="color: #bb6600;">four failures occur in 60 seconds</span>, the router goes to quiet mode for 100 seconds
   - result of configurations w/ the authorization for the admin 5 user
