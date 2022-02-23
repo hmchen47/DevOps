@@ -739,8 +739,8 @@
   - control shadow IT
   - discovering resources deployed in the public cloud outside IT control
   - Intercloud Fabric deployment models
-    - <span style="color: #bb6600;">Enterprise Managed</span> (an enterprise manages its own cloud environments) and 
-    - <span style="color: #bb6600;">Service Provider Managed</span> (the service provider administers and controls all cloud resources).
+    - <span style="color: #bb6600;">Enterprise Managed</span> (an enterprise manages its own cloud environments) 
+    - <span style="color: #bb6600;">Service Provider Managed</span> (the service provider administers and controls all cloud resources)
 
 
 - <mark style="background: #e0ffff;">Cisco DNA Center (DNAC)</mark>
@@ -2038,16 +2038,17 @@
       - config each client to send traffic to WSA
       - WSA responds w/ <span style="color: #bb6600;">its own IP info</span>
       - browser Configured: client browser is explicitly configured to use a proxy
-      - <span style="color: #bb6600;">.PAC file configured</span>:
-        - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
-        - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to technology reduces data loss by identifying sensitive information stored in public computing environmentsthe destination or are forwarded to a web proxy server
-        - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
-        - advantage: usually relatively easy to create and maintain
-        - method allows the client desktop browsers to be configured to select <span style="color: #bb6600;">when to connect direct or when to use the proxy</span>
-        - hosted on <span style="color: #bb6600;">port 9001</span>
-        - by default, point the browser to the following location `http://WSA_IP:9001/pacfile.pac`
-        - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
+      - <span style="color: #bb6600;">.PAC file configured</span>
   - decryption policies same as decryption policies in AsyncOS
+  - PAC file
+    - client browser is explicitly configured to us a `.PAC` file, which in turn, references the proxy
+    - a JavaScript function definition that determines whether web browser requests (HTTP, HTTPS, and FTP) go direct to technology reduces data loss by identifying sensitive information stored in public computing environmentsthe destination or are forwarded to a web proxy server
+    - used to support explicit proxy deployments in which client browsers are explicitly configured to send traffic to the web proxy
+    - advantage: usually relatively easy to create and maintain
+    - method allows the client desktop browsers to be configured to select <span style="color: #bb6600;">when to connect direct or when to use the proxy</span>
+    - hosted on <span style="color: #bb6600;">port 9001</span>
+    - by default, point the browser to the following location `http://WSA_IP:9001/pacfile.pac`
+    - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
   - configure how much URI text is stored in the logs using the <code style="color: #bb6600;">advancedproxyconfig</code> <span style="color: #bb6600;">CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
   - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
@@ -2063,6 +2064,7 @@
     - <span style="color: #bb6600;">Layer 4 switches</span> can automatically redirect traffic destined to port 80.
   - proxy mode used on Cisco WSA to redirect TCP traffic with WCCP: <span style="color: #bb6600;">transparent</span>
   - ways that a system administrator send web traffic transparently to the Web Security Appliance: configure <span style="color: #bb6600;">policy-based routing</span> on the network infrastructure and use <span style="color: #bb6600;">Web Cache Communication Protocol</span>
+  - differences between a Cisco WSA that is running in transparent mode and one running in explicit mode: <span style="color: #bb6600;">respond with its own IP address only if it is running in explicit mode</span> and <span style="color: #bb6600;">use a Layer 3 device to redirect traffic only if it is running in transparent mode</span>
 
 
 - Web Cache Communications Protocol (WCCP)
@@ -2452,7 +2454,7 @@
     aaa accounting system default start-stop group radius
     ```
 
-  - type of authentication: <span style="color: #bb6600;">external user</span> and relay mail authentication
+  - type of authentication: <span style="color: #bb6600;">external user and relay mail authentication</span>
 
     ```text
     Info: New SMTP ICID 30 Interface Management (192.168.0.100)
