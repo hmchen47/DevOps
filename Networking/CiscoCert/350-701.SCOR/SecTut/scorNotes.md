@@ -290,8 +290,8 @@
     - Certificate Authority (CA) using contained <span style="color: #bb6600;">server information</span> (e.g. common name, organization, country) to create your certificate
     - public key included in certificate
     - certificate signed with the corresponding private key
-    - purpose of certificate signing request when adding a new certificate for a server: provide the <span style="color: #bb6600;">server information</span> so a certificate can be created and signed
-    - purpose of CA in a PKI: <span style="color: #bb6600;">issue and revoke digital certificates</span>
+  - purpose of certificate signing request when adding a new certificate for a server: provide the <span style="color: #bb6600;">server information</span> so a certificate can be created and signed
+  - purpose of CA in a PKI: <span style="color: #bb6600;">issue and revoke digital certificates</span>
   - Cisco IOS public key infrastructure (PKI)
     - provide certificate management to support security protocols
     - including IP Security (IPsec), secure shell (SSH), and secure socket layer (SSL)
@@ -808,7 +808,7 @@
   - routed mode 
     - act as a next hop for workloads
     - inspect packets and also take action on the packet based on rule and policy definitions
-  - public cloud provider: <span style="color: #bb6600;">Amazon Web Services</span>
+  - public cloud provider supports the Cisco Next Generation Firewall Virtual: <span style="color: #bb6600;">Amazon Web Services</span>
 
 
 - ASAv on AWS
@@ -1499,6 +1499,7 @@
   - action to prevent from phising attacks in the future which originates from a result of users visiting known malicious websites: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
+  - two actions to allow the traffic to pass without inspection when configuring a rule on Firepower to allow a new application that has never been seen on the network: <span style="color: #bb6600;">trust</span> and <span style="color: #bb6600;">allow</span>
 
 
 - Firewall Threat Defense (FTD)
@@ -1807,6 +1808,7 @@
     - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
   - statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <code style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
+  - a feature of Cisco NetFlow Secure Event Logging for Cisco ASAs: <span style="color: #bb6600;">Flow-create events are delayed</span>
 
 
 - Flexible Netflow
@@ -2005,6 +2007,7 @@
   - feature to enable the blocking of greymail for the end user w/ ESA: <span style="color: #bb6600;">Intelligent Multi-Scan</span>
   - CLI command used to enable URL filtering support for shortened URLs on the Cisco ESA: <code style="color: #bb6600;">websecurityadvancedconfig</code>
   - primary benefit of deploying an ESA in hybrid mode:provide email security while supporting the <span style="color: #bb6600;">transition to the cloud</span>
+  - action on the Cisco ESA to enable LDAP accept queries on a listener as malicious actors must be prevented from quickly identifying all valid recipients: <span style="color: #bb6600;">Configure Directory Harvest Attack Prevention</span>
 
 
 - Advanced Phishing Protection (not on WSA)
@@ -2322,6 +2325,7 @@
   - CoA Messages port number: 1) Cisco - <span style="color: #bb6600;">UDP:1700</span>; 2) RFC - UDP:3799
   - attribute w/ the ability to change during the RADIUS CoA: <span style="color: #bb6600;">authroization</span>
   - command enables authentication, authorization, and accounting globally so that CoA is supported on the device: <code style="color: #bb6600;">aaa new-model</code>
+  - port on the firewall must be opened to allow the CoA traffic to traverse the network for configuring 802.1X authentication on Cisco switches in the network and is using CoA as a mechanism: <span style="color: #bb6600;">UDP 1700</span>
 
 
 - <mark style="background: #e0ffff;">802.1X port-based authentication</mark>
