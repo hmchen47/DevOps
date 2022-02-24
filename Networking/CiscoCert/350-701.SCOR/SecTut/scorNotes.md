@@ -390,8 +390,8 @@
       - ensure that the ISAKMP key on the hub is used only for terminating traffic from the IP address of 172.19.20.24
         - define the <span style="color: #bb6600;">ISAKMP identity</span> used by the router when participating in the Internet Key Exchange (IKE) protocol: `crypto isakmp identity {address | hostname}`
         - configure a <span style="color: #bb6600;">preshared authentication key</span>: `crypto isakmp key Cisco0123456789 address 172.19.20.24`
-      - function of the `crypto isakmp key cisc6397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
-      - function of the crypto isakmp key cisc414685095 address 192.168.50.1 255.255.255.255 command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configures the pre-shared authentication key for host 192.168.50.1</span>
+      - function of the `crypto isakmp key cisc406397954 address 0.0.0.0 0.0.0.0` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configure the pre-shared authentication key</span>
+      - function of the `crypto isakmp key cisc414685095 address 192.168.50.1 255.255.255.255` command when establishing an IPsec VPN tunnel: <span style="color: #bb6600;">configures the pre-shared authentication key for host 192.168.50.1</span>
     - phase 2: IPsec
   - IKEv2
     - standard  <span style="color: #bb6600;">including NAT-T</span>
