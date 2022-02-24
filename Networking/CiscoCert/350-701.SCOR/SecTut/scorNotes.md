@@ -37,10 +37,10 @@
   - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
   - difference between a vulnerability and an exploit: <span style="color: #bb6600;">a vulnerability is a weakness that can be exploited by an attacker</span>
   - vulnerabilities -> explots
-    - path transversal: gives <span style="color: #bb6600;">unauthorized access</span> to web server files
-    - cross-site request forgery: makes the <span style="color: #bb6600;">client</span> the target of attack
-    - injection: accesses or modifies <span style="color: #bb6600;">application data</span>
-    - buffer overflow: causes <span style="color: #bb6600;">memory</span> access errors 
+    - <span style="color: #bb6600;">path transversal</span>: gives <span style="text-decoration: underline;">unauthorized access</span> to web server files
+    - <span style="color: #bb6600;">cross-site request forgery</span>: makes the <span style="text-decoration: underline;">client</span> the target of attack
+    - <span style="color: #bb6600;">SQL injection</span>: accesses or modifies <span style="text-decoration: underline;">application data</span>
+    - <span style="color: #bb6600;">buffer overflow</span>: causes <span style="text-decoration: underline;">memory</span> access errors 
   - Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities: <span style="color: #bb6600;">Common Vulnerabilities and Exposures</span>
 
 
@@ -191,6 +191,7 @@
     - shared, stored, and otherwise used in a consistent manner
     - a language format designed to <span style="color: #bb6600;">exchange threat intelligence</span> transported over the TAXII protocol
   - capabilities TAXII support: <span style="color: #bb6600;">Exchange</span> and <span style="color: #bb6600;">Pull messaging</span>
+  - standard used to automate exchanging cyber threat information: <span style="color: #bb6600;">TAXII</span>
 
 
 - OpenIOC
@@ -1574,7 +1575,7 @@
   - Interactive Block Response Page
     - warn users, but also allows them to click a button (or refresh the page) to load the originally requested site
     - users may have to refresh after bypassing the response page to load page elements that did not load
-  - firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a warning page and to reset the connection: FTD enables <span style="color: #bb6600;">interactive blocking and blocking with reset</span> natively, whereas ASA does not
+  - firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a  and to reset the connection: FTD enables <span style="color: #bb6600;">interactive blocking and blocking with reset</span> natively, whereas ASA does not
 
 
 - Firepower Threat Defence Devices
@@ -1665,8 +1666,8 @@
     3. specify the <span style="color: #bb6600;">deployment mode</span>: passive (monitor-only) or inline (normal)
     4. specify a <span style="color: #bb6600;">location</span> to apply the policy: `service-policy global_policy global` for global config
   - indications of the Cisco Firepower Services Module configuration w/ `SFR: card status Up, mode fail-open monitor-only`
-    - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module
-    - passive mode & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality): <span style="color: #bb6600;">IDS</span>
+    - `monitor-only`: <span style="color: #bb6600;">passive mode</span> - a copy of the traffic is sent to the SFR service module -> <span style="color: #bb6600;">Traffic continues to flow if the module fails.</span>
+    - passive mode & "Promiscuous Mode" (IDS functionality) or "Inline Mode" (IPS functionality): <span style="color: #bb6600;">The module is operating in IDS mode.</span>
   - a characteristic of Firepower NGIPS inline deployment mode: <span style="color: #bb6600;">It must have inline interface pairs configured.</span>
 
 
@@ -1819,7 +1820,7 @@
     - tie all of the construct together
     - reference the Flow Exporter and the Flow Record
     - provide the actual traffic monitoring on a configured interface
-    - <span style="color: #bb6600;">flow monitor cache</span> created to collect the traffic based on the key and nonkey fields in the configured record
+    - <span style="color: #bb6600;">f</span> created to collect the traffic based on the key and nonkey fields in the configured record
   - providing a set of IP services, including network traffic accounting, usage-based network billing, network planning, security, Denial of Service monitoring capabilities, and network monitoring
   - flow not containing actual data but <span style="color: #bb6600">metadata</span> for communication
   - template of version 9
@@ -1864,6 +1865,7 @@
     - <span style="color: #bb6600;">filter NSEL events</span> based on the traffic and event type, then sends records to different collectors
     - a capability of ASA NetwFlow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
     - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
+  - a feature of NetFlow Secure Event Logging: <span style="color: #bb6600;">export only records that indicate significant events in a flow</span>
   - statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <code style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
   - a feature of Cisco NetFlow Secure Event Logging for Cisco ASAs: <span style="color: #bb6600;">Flow-create events are delayed</span>
@@ -1910,6 +1912,8 @@
   - tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">specify a community string</span> and <span style="color: #bb6600;">add an SNMP host access entry</span>
   - two actions taken to ensure that interfaces are put back into service due to a traffic storm put two interfaces error-disabled: enter the <span style="color: #bb6600;">shutdown and no shutdown commands</span> on the interfaces & ensure that interfaces are <span style="color: #bb6600;">configured with the error-disable detection and recovery feature</span>
   - config SNMPv3 on a new router to facilitate access to the SNMP views w/ already been created users: set the <span style="color: #bb6600;">password</span> to be used for SNMPv3 authentication
+  - two tasks to configure the Cisco ASA via ASDM such that the network management system can actively monitor the host using SNMPv3: <span style="color: #bb6600;">Specify the SNMP manager and UDP port</span> and <span style="color: #bb6600;">Add an SNMP host access entry</span>
+  - command for the `snmp-server user asmith myv7 auth sha cisco priv aes 256 cisc0414685095` command and needs to send SNMP information to a host at 10.255.255.1: <code style="color: #bb6600;">snmp-server host inside 10.255.255.1 version 3 asmith</code>
   - SNMPv3 config
     - SNMP server group: group name = <code style="color: #bb6600;">myv3</code>; SNMP version = <code style="color: #bb6600;">v3</code>
     - new user for the group: username =`andy` w/ pasowrd = `cisco`; encryption = <code style="color: #bb6600;">aes 256</code>; authenticatoion = `sha` w/ option = `priv`; sharedsecret = `ciscXXXXXXXX`
@@ -2052,7 +2056,7 @@
     - sending a DLP violation notification to sender or other contacts
   - graymail detection
     - anti-spam scanning enabled globally
-    - IronPort Anti-Spam, <span style="color: #bb6600;">the Intelligent Multi-Scan feature</span>, or Outbreak Filters
+    - IronPort Anti-Spam, <span style="color: #bb6600;">the  feature</span>, or Outbreak Filters
   - features used to configure Cisco ESA with a multilayer approach to fight viruses and malware: <span style="color: #bb6600;">Sophos engine</span> and  <span style="color: #bb6600;">outbreak filters</span>
   - using 2FA to access ESA and join a cluster machine using preshared keys: enable 2FA via <span style="color: #bb6600;">TACACS+</span> server and joing cluster w/ <span style="color: #bb6600;">ESA CLI</span>
   - DNS record to modify when implementing Cisco CES in an existing Microsoft Office 365 environment and must route inbound email to Cisco CES addresses: <span style="color: #bb6600;">MX record</span>
