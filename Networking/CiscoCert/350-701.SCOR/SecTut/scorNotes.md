@@ -214,8 +214,6 @@
   - assumptions
     - no traditional network edge
     - networks can be local, in the cloud, or a combination or hybrid with resources anywhere and workers in any location
-  - use <span style="color: #bb6600;">microsegmentation</span> to contain attacks
-  - technology to secure data in a cloud environment where 1) all users be authenticated and authorized; 2) security configuration and posture continuously validated before access is granted or maintained to applications and data; 3) allow certain application traffic and deny all other traffic by default: <span style="color: #bb6600;">microsegmentation</span>
   - microsegmentation
     - used by model
     - a security technique by dividing perimeters into small zones to maintain separate access to every part of the network
@@ -224,11 +222,13 @@
     - the foundation of <span style="color: #bb6600;">zero-trust security model</span> for application workloads in the data center and cloud
     - monitor continuously for compliance deviations to ensure the segmentation policy up to date as the application behavior change 
     - a description of microsegmentation: environments apply a <span style="color: #bb6600;">zero-trust model</span> and specify how applications on different servers or containers can communicate
+  - use <span style="color: #bb6600;">microsegmentation</span> to contain attacks
+  - technology to secure data in a cloud environment where 1) all users be authenticated and authorized; 2) security configuration and posture continuously validated before access is granted or maintained to applications and data; 3) allow certain application traffic and deny all other traffic by default: <span style="color: #bb6600;">microsegmentation</span>
   - Contiv
     - an open source project to deploy microsegmentation policy-based services in container environments
     - offer a higher level of networking abstraction for microservices by providing a policy framework
     - built-in service discovery and service routing functions to scale out services
-    - system facilitates deploying <span style="text-decoration:  underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
+  - system facilitates deploying <span style="text-decoration: underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
 
 
 - <mark style="background: #e0ffff;">Data exfiltration</mark>
@@ -435,8 +435,8 @@
   - ESP protocol
     - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
     - used with confidentiality only, authentication only, or both confidentiality and authentication
-    - cryptographic process provides origin confidentiality, integrity, and origin authentication for packet: <span style="color: #bb6600;">ESP</span>
-    - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
+  - cryptographic process provides origin confidentiality, integrity, and origin authentication for packet: <span style="color: #bb6600;">ESP</span>
+  - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
   - stateful failover
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
     - two <span style="color: #bb6600;">identical routers</span>: same type of device; the same CPU and memory; either no encryption accelerator or identical encryption accelerators
@@ -1487,6 +1487,7 @@
   - policy representing a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment: <code style="color: #bb6600;">Platform Service Policy</span>
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
+  - solution to deploy multiple Cisco FTD appliances and want to manage them using one centralized solution w/o a local VM but w/ existing Cisco ASAs that must migrate over to Cisco FTDs: <code style="color: #bb6600;">Cisco FMC</span>
   - information required when adding a device to Firepower Management Center: <code style="color: #bb6600;">registration key</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
