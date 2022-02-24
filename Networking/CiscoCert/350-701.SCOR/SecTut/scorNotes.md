@@ -639,8 +639,13 @@
       "{}:9060".format(host), 
       context=ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     )
-
     ...
+    conn.request("GET", "/ers/config/internaluser/", headers=headers)
+    ...
+
+    print("Status: {}".format(res.status))
+    print("Header:\n".fromat(res.headers))
+    print("Body:\n".format(data.encoded("utf-8")))
     ```
 
   - POST data to global rules
