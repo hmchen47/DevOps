@@ -87,13 +87,14 @@
 
 
 - Trojan malware attacks
-  - <span style="color: #bb6600;">back-door virus</span>
+  - back-door virus
   - any form of program that grants unauthorized access to an entire system via a software or network vulnerability (Trojan malware attacks)
-  - <span style="color: #bb6600;"></span>
+  - rootkit
     - Trojan malware attack
     - a type of malware that is designed to infect a target PC and allow an attacker to install a set of tools that grant him <span style="color: #bb6600;">persistent remote access</span> to the computer
     - a program providing maliciously privileged access to a computer
     - types: 1) kernel; 2) <span style="color: #bb6600;">user mode</span>; 3) <span style="color: #bb6600;">bootloader</span>; 4) Memory rootkits
+  - two Trojan malware attacks: <span style="color: #bb6600;">rootkit</span> & <span style="color: #bb6600;">backdoor</span>
 
 
 - Data breach
@@ -434,7 +435,7 @@
   - ESP protocol
     - provide data confidentiality (encryption) and authentication (data integrity, data origin authentication, and replay protection)
     - used with confidentiality only, authentication only, or both confidentiality and authentication
-    - cryptographic process provides <span style="color: #bb6600;">origin confidentiality, integrity, and origin authentication for packet</span>
+    - cryptographic process provides origin confidentiality, integrity, and origin authentication for packet: <span style="color: #bb6600;">ESP</span>
     - protocol to config IPsec VPN and as an authentication protocol that is reliable and supports ACK and sequence: <span style="color: #bb6600;">ESP</span>
   - stateful failover
     - enable a router to continue processing and forwarding IPsec packets after outage occurs
@@ -1110,6 +1111,7 @@
   - role of Umbrella Roaming installed on an endpoint: to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - endpoint solution protects a user from a phishing attack: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
+  - the role of Cisco Umbrella Roaming when it is installed on an endpoint: <span style="color: #bb6600;">to ensure that assets are secure from malicious links on and off the corporate network</span>
 
 
 - Umbrella virtual appliances (VAs)
@@ -1724,6 +1726,7 @@
   - a characteristic of a bridge group in ASA Firewall transparent mode: <span style="color: #bb6600;">include multiple interfaces and access rules between interfaces are customizable</span>
   - config to reduce the VPN bandwidth load on their headend Cisco ASA in order to ensure that bandwidth is available for VPN users needing access to corporate resources on the `10.0.0.0/24` local HQ network w/o additional devices: <span style="color: #bb6600;">Use split tunneling to tunnel traffic for the 10.0.0.0/24 network only.</span>
   - product managed by Cisco Security Manager: <span style="color: #bb6600;">ASA</span>
+  - functional difference between a Cisco ASA and a Cisco IOS router with Zone-based policy firewall: The Cisco <span style="color: #bb6600;">ASA denies all traffic by default</span> whereas the Cisco IOS router with Zone-Based Policy Firewall starts out by allowing all traffic, even on untrusted interfaces.
 
 
 - IOS zone-based firewall
@@ -1839,6 +1842,7 @@
   - statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
   - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <code style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
   - a feature of Cisco NetFlow Secure Event Logging for Cisco ASAs: <span style="color: #bb6600;">Flow-create events are delayed</span>
+  - a capability of Cisco ASA Netflow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
 
 
 - Flexible Netflow
