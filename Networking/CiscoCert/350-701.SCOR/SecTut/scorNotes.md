@@ -1837,6 +1837,7 @@
     - Create a  <span style="color: #bb6600;">class map</span> to match interesting traffic.
   - two fields are defined in the NetFlow flow: <span style="color: #bb6600;">type of service byte</span> and <span style="color: #bb6600;">destination port</span>
   - purpose of a Netflow version 9 template record: <span style="color: #bb6600;">define the format of data records</span>
+  - additional command to complete the flow record by sending NetfFow data to Stealthwatch which has an IP address of 1.1.1.1 using the flow record Steathwatch406397954 command: <code style="color: #bb6600;">match ipv4 ttl</code>
   
 
 - NetFlow Secure EveLogging (NSEL) in ASA and ASASM
@@ -2187,6 +2188,7 @@
   - product to prevent a hacker initiated a social engineering attack and stole username and passwords of some users within a company: <span style="color: #bb6600;">Cisco Duo</span>
   - mechanisms used to redirect users to a web portal to authenticate to ISE for guest services:<span style="color: #bb6600;">local web authentication & centralized web authentication</span>
   - reasons for implementing a multifactor authentication solution such as Duo Security provide to an organization: <span style="color: #bb6600;">flexibility of different methods of 2FA such as phone callbacks, SMS passcodes, and push notifications</span> and <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
+  - reason for `ip radius source-interface` command by adding a new switch onto the network and has configured AAA for network access control and the RADIUS authenticates to Cisco ISE but is being rejected: <span style="color: #bb6600;">Only requests that originate from a configured NAS IP are accepted by a RADIUS server</span>
 
 
 - Mobile Device Management (MDM)
@@ -2425,7 +2427,7 @@
   - example config
     - 802.1X will <span style="color: #bb6600;">work</span> and the device will be <span style="color: #bb6600;">allowed</span> on the network
     - no MAB config
-    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco to allow all device NOT using machine authentication</span>
+    - allowing printers and cameras to get on the network and still maintaining security control: change the default policy in <span style="color: #bb6600;">Cisco to allow all device not using machine authentication</span>
 
     ```text
     <...truncated...>
