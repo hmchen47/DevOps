@@ -757,7 +757,7 @@
     3. select Hops from Seed Switch or Switch List
     4. enter the <span style="color: #bb6600;">Seed Switch IP </span> for the fabric
     <br>&nbsp;&nbsp; ...
-  - methods must be used to add switches into the fabric so that administrators can control how switches are added into DCNM for private cloud management: <span style="color: #bb6600;">PowerOn Auto Provisioning</span> and <span style="color: #bb6600;">Seed IP</span>
+  - two methods must be used to add switches into the fabric so that administrators can control how switches are added into DCNM for private cloud management: <span style="color: #bb6600;">PowerOn Auto Provisioning</span> and <span style="color: #bb6600;">Seed IP</span>
 
 
 - Cisco Container Platform (CCP)
@@ -1102,6 +1102,7 @@
     - inspect secure HTTPS traffic
   - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600;">Enable Intelligent Proxy.</span>
   - action to use Cisco Umbrella to prevent this activity for suspicious domains while allowing normal web traffic as an increase in malicious content downloads: <span style="color: #bb6600;">Configure the intelligent proxy.</span>
+  - action to configure new features within the Cisco Umbrella dashboard and want to identify and proxy traffic that is categorized as risky domains and may contain safe and malicious content: <span style="color: #bb6600;">configure intelligent proxy within Cisco Umbrella to intercept and proxy the requests for only those categories</span>
 
 
 - Umbrella - logging
