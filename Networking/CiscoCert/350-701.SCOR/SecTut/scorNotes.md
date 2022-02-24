@@ -1191,10 +1191,16 @@
     - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against 
     targeted persistent malware attacks</span>
   - solutions and solution's benefits
-    - Cisco TrustSec: <span style="text-decoration: underline;">oftware-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
-    - Cisco Stealthwatch: rapidly <span style="text-decoration: underline;">collects and analyzes NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
-    - Cisco Umbrella: <span style="text-decoration: underline;">secure Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS
-    - Cisco ISE: obtains <span style="text-decoration: underline;">contextual identity and profiles</span> for all the users and devices connected on a network
+    - <span style="color: #bb6600;">Cisco TrustSec</span>: <span style="text-decoration: underline;">oftware-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
+    - <span style="color: #bb6600;">Cisco Stealthwatch</span>: rapidly <span style="text-decoration: underline;">collects and analyzes NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
+    - <span style="color: #bb6600;">Cisco Umbrella</span>: <span style="text-decoration: underline;">secure Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS
+    - <span style="color: #bb6600;">Cisco ISE</span>: obtains <span style="text-decoration: underline;">contextual identity and profiles</span> for all the users and devices connected on a network
+  - feature or products
+    - <span style="color: #bb6600;">NGIPS</span>: <span style="text-decoration: underline;">threat prevention and mitigation</span> for known and unknown threats
+    - <span style="color: #bb6600;">Collective Security Intelligence</span>: <span style="text-decoration: underline;">real-time threat intelligence</span> and security protection
+    - <span style="color: #bb6600;">AMP</span>: detection, blocking and remediation to protect the enterprise against <span style="text-decoration: underline;">targeted malware attacks</span>
+    - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication <span style="text-decoration: underline;">between virtual machines
+    </span>
 
 - <mark style="background: #e0ffff;">StealthWatch</mark>
   - rapidly collects and analyzes <span style="color: #bb6600">NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
