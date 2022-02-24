@@ -83,6 +83,7 @@
   - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
   - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
   - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
+  - a difference between an XSS attack and an SQL injection attack: <span style="color: #bb6600;">SQL injection attacks are used to steal information from databases whereas XSS attacks are used to redirect users to websites where attackers can steal data from them</span>
   - difference between Cross-site Scripting and SQL Injection attacks: <span style="color: #bb6600;">Cross-site Scripting is an attack where code is injected into a database, whereas SQL Injection is an attack where code is injected into a browser</span>
 
 
@@ -346,6 +347,7 @@
   - functions of secret key cryptography (=? asymmetric key)
     - <span style="color: #bb6600;">different keys</span> for encryption and decryption
     - the capability to only <span style="color: #bb6600;">know one key on one side</span>
+  - algorithm considered about Diffie Hellman and RSA for key establishment: <span style="color: #bb6600;">DH is an asymmetric key establishment algorithm intended to output symmetric keys.</span>
 
 
 - Security issues of privacy and integrity 
@@ -486,7 +488,7 @@
   - AnyConnect superior capabilities:
     - customization of <span style="color: #bb6600;">access policies based on user identity</span>
     - enable VPN access for <span style="color: #bb6600;">individual users</span> from their machines
-  - advantages of using Cisco Any connect over DMVPN
+  - two advantages of using Cisco Any connect over DMVPN
     - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
   - DMVPN over GETVPN: <span style="color: #bb6600;">DMVPN can be used over the public Internet, and GETVPN requires a private network</span>
@@ -513,6 +515,7 @@
   - support <span style="color: #bb6600;">multiple SAs</span>
   - reason that an engineer opts for an active/active FlexVPN configuration as opposed to DMVPN: <span style="color: #bb6600;">traffic distributed statically by default</span>
   - VPN technology supports a multivendor environment and secure traffic between sites: <span style="color: #bb6600;">FlexVPN</span>
+  - solution for more stringent security multiple security associations for the connections, more efficient VPN establishment as well consuming less bandwidth to figure out whether FlexVPN or DMVPN would fit better: <span style="color: #bb6600;">FlexVPN because it uses multiple SAs and DMVPN does not.</span>
 
 
 - <mark style="background: #e0ffff;">GETVPN (Group Encrypted Transport VPN)</mark>
@@ -574,6 +577,7 @@
     - bi-directional interfaces allow the <span style="color: #bb6600;">exchange of contextual information</span> between Cisco DNA Center and the external, third-party IT systems
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
   - main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network: <span style="color: #bb6600;">SDN controller and the management solution</span>
+  - kind of API that is used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
   - function of an SDN architecture requiring southbound API protocols to enable communication: <span style="color: #bb6600;">enable the controller to make changes</span>
   - the function of SDN southbound API protocols: <span style="color: #bb6600;">enable the controller to make changes</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
@@ -601,6 +605,7 @@
     - manual (select and apply)
     - automated (executed in real time by software)
   - way to mitigate application performance issue: <span style="color: #bb6600;">automate resource resizing</span>
+
 
 - Python script for SDN APIs
   - <span style="color: #bb6600;">add a switch to DNA Center</span>: `requests.post( "https://{}/dna/intent/api/v1/network-device".format(dnac_ip),...)`
@@ -781,7 +786,7 @@
     - view the <span style="color: #bb6600;">overall health</span> of the network
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
   - type of dashboard in DNA Center to complete control of the network: <span style="color: #bb6600;">centralized management</span>
-  - capabilities of Integration APIs are utilized with Cisco DNA center (westbound)
+  - capabilities of Integration APIs utilized with Cisco DNA center (westbound)
     - application monitors for <span style="color: #bb6600;">power utilization of devices and IoT sensors</span>
     - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
@@ -1031,6 +1036,8 @@
   - action to configure a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network: <span style="color: #bb6600;">Browse to <code>http://welcome.umbrella.com/</code> to validate that the new identity is working.</span>
   - solution that Cisco Umbrella integrates with to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - product to improve their Defense in Depth by blocking malicious destinations prior to a connection being established and to block certain applications from being used within the network: <span style="color: #bb6600;">Cisco Ummbrella</span>
+  - action to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">Set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
+
 
 
 - Umbrella - Policy
@@ -1065,6 +1072,7 @@
   - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
   - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
   - web policies configured in Cisco Umbrella to provide the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">Security Category Blocking</span>
+  - purpose of CA in a PKI: <span style="color: #bb6600;">to issue and revoke digital certificates</span>
 
 
 - Umbrella - Advance Settings
@@ -1792,7 +1800,6 @@
     - define the source interface from which the Flow Exporter device will send NetFlow data, a physical or logical address
     - consider using a Loopback interface to source NetFlow data from
     - define transport protocol (TCP or UDP) and destination port
-    - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - Flow Monitor
     - tie all of the construct together
     - reference the Flow Exporter and the Flow Record
@@ -1815,6 +1822,7 @@
     3. Defines the <span style="text-decoration: underliine;">policy map</span> to apply flow-export actions to the defined classes
     4. Adds or edits the <span style="text-decoration: underliine;">service policy</span>
   - generate NetFlow records on traffic traversing the Cisco ASA: <code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
+  - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
   - component creating the flow monitor cache that is used to collect traffic based on the key and nonkey fields in the configured record: <span style="color: #bb6600;">flow monitor</span>
   - tasks allow NetFlow on a Cisco ASA 5500 Series firewall:
@@ -2227,7 +2235,7 @@
       - Optional: allow to skip the specified optional requirements and move to Compliant state
       - Audit: for internal purposes and the agent does not prompt any message or input from end users
     - conditions of an endpoint to be checked: <span style="color: #bb6600;">Windows service and Windows firewall</span>
-    - option to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
+    - option of posture assessment requirement to the client for remediation and requires the remediation within a certain timeframe: <span style="color: #bb6600;">Mandatory</span>
   - inline posture node
     - used as a stop gap to support posture on VPN concentrator that didn't support url redirection for posture discovery
     - no longer offered or supported as vpn products support posture fully and newest use and Anyconnect no longer require url Redirection to work
