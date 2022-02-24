@@ -1284,6 +1284,7 @@
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
   - exclusive capability to a Cisco AMP public cloud instance as compared to a private cloud instance: <span style="color: #bb6600;">ETHOS detection engine</span>
+  - issue of dashboard indicates that the hash is not 64 characters and is non-zero vy adding a custom detection policy to a Cisco AMP deployment and encounters issues with the configuration: <span style="color: #bb6600;">The engineer is attempting to upload a hash created using MD5 instead of SHA-256</span>
   - capabilities of Cisco AMP
     - provides detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
     - provides the <span style="color: #bb6600;">root cause of a threat</span> based on the indicators of compromise seen
@@ -1556,6 +1557,7 @@
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
   - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
   - solution to meet the requirement that URLs must be blocked from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy: <span style="color: #bb6600;">FTD because it includes URL filtering in the access control policy capabilities</span>, whereas Cisco ASA does not
+  - solution to block specific URLs from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy: <span style="color: #bb6600;">Cisco FTD because it includes URL filtering in the access control policy capabilities, whereas Cisco ASA does not</span>
   - Interactive Block Response Page
     - warn users, but also allows them to click a button (or refresh the page) to load the originally requested site
     - users may have to refresh after bypassing the response page to load page elements that did not load
@@ -2114,6 +2116,7 @@
     - <span style="color: #bb6600;">WCCP v2-enabled devices</span> can automatically redirect traffic destined to port 80.
     - <span style="color: #bb6600;">Layer 4 switches</span> can automatically redirect traffic destined to port 80.
   - proxy mode used on Cisco WSA to redirect TCP traffic with WCCP: <span style="color: #bb6600;">transparent</span>
+  - action on WSA to receive redirected traffic over ports 80 and 443 as a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility, while making this invisible to the users: <span style="color: #bb6600;">Configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
   - ways that a system administrator send web traffic transparently to the Web Security Appliance: configure <span style="color: #bb6600;">policy-based routing</span> on the network infrastructure and use <span style="color: #bb6600;">Web Cache Communication Protocol</span>
   - differences between a Cisco WSA that is running in transparent mode and one running in explicit mode: <span style="color: #bb6600;">respond with its own IP address only if it is running in explicit mode</span> and <span style="color: #bb6600;">use a Layer 3 device to redirect traffic only if it is running in transparent mode</span>
 
