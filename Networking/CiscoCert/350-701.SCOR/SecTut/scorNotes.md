@@ -553,9 +553,8 @@
     - using common management protocols to monitor and configure the network devices
   - northbound interfact (NBI)
     - <span style="color: #bb6600;">intent API</span>
-    - an abstraction of network functions with <span style="color: #bb6600;">a programmable interface for applications</span> to consume the network services and configure the network dynamically
+    - an abstraction of network functions with a programmable interface for applications to consume the network services and configure the network dynamically
     - SDN controller communicating w/ network service applications, the management solution
-    - form the interface between the SDN controller and <span style="color: #bb6600;">business applications</span>
     - applications for network services, including network virtualization, dynamic virtual network provisioning, firewall monitoring, user identity management and access policy control
     - typically <span style="color: #bb6600;">RESTful APIs</span> used to communicate between the SDN controller and the services and applications running over the network
     - used for the <span style="color: #bb6600;">orchestration and automation</span> of the network components to align with the needs of different applications via SDN network programmability
@@ -578,8 +577,10 @@
     - provide the capability to publish the network data, events and notifications to the external systems and consume information in Cisco DNA Center from the connected systems
   - main function of northbound APIs in the SDN architecture is to enable communication between which two areas of a network: <span style="color: #bb6600;">SDN controller and the management solution</span>
   - kind of API that is used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
+  - two functionalities of SDN Northbound APIs: <span style="color: #bb6600;">provide a programmable interface for applications to dynamically configure the network</span> & <span style="color: #bb6600;">form the interface between the SDN controller and business applications</span>
   - function of an SDN architecture requiring southbound API protocols to enable communication: <span style="color: #bb6600;">enable the controller to make changes</span>
   - the function of SDN southbound API protocols: <span style="color: #bb6600;">enable the controller to make changes</span>
+  - two functionalities of northbound and southbound APIs within Cisco SDN architecture: <span style="color: #bb6600;">Northbound APIs utilize RESTful API methods such as GET, POST, and DELETE.</span> & <span style="color: #bb6600;">Southbound APIs utilize CLI, SNMP, and RESTCONF.</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
   - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
@@ -2110,7 +2111,7 @@
     - check the local IP subnet address of the PC and then makes a <span style="color: #bb6600;">decision based on IF / ELSE statement/s</span>
   - configure how much URI text is stored in the logs using the <code style="color: #bb6600;">advancedproxyconfig</code> <span style="color: #bb6600;">CLI command and the HTTPS subcommand</span>.
   - use the SensorBase data feeds to improve the <span style="color: #bb6600;">accuracy of Web Reputation Scores</span>
-  - ways of <span style="color: #bb6600;">transparent user identification</span> using Active Directory on the Cisco WSA
+  - two ways of transparent user identification using Active Directory on the Cisco WSA
     - create <span style="color: #bb6600;">NTLM or Kerberos authentication realm</span> and enable transparent user identification, NOT LDAP autehtication realm
     - deploy a separate <span style="color: #bb6600;">Active Directory agent</span> such as Cisco Context Directory Agent
   - feature to meet the requirements 1) configure a Cisco WSA to receive redirected traffic over ports 80 and 443; 2) a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility; 3) make this invisible to the users: <span style="color: #bb6600;">configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
