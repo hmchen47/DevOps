@@ -614,6 +614,10 @@
 
   <br>Answer: A
 
+  Always use at least two data interfaces on the WSA: one that faces the end-user computers, and another one for outbound operation (connected to the upstream proxy or Internet). This is done in order to eliminate possible resource constrains, such as when the number of TCP ports are exhausted or when network buffers become full (with the use of a single interfaces for both inside and outside especially).
+
+  Reference: [Web Security Appliance Design Guide](https://www.cisco.com/c/en/us/support/docs/security/web-security-appliance/118885-technote-wsa-00.html)
+
 
 - <span style="color: #008888; font-weight: bold;">Question 32</span>
 
@@ -643,7 +647,7 @@
   DMVPN, FlexVPN and GETVPN comparison:
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
       onclick= "window.open('https://www.securitytut.com/new-scor-questions/new-scor-questions-part-4-2')"
       src    = "img/0300-DMVPN_FlexVPN_GETVPN_comparison.jpg"
       alt    = "Comparison of DMVPN, FlexVPN and GETVPN"
