@@ -108,11 +108,11 @@
     - compromised email accounts
     - system misconfigurations or weak or absent data encryption
   - mitigation
-    - two-factor authentication and secure access solutions for cloud apps make it more difficult for malicious hackers or insiders to compromise users, including those who work remotely or on a contract basis
-    - patching vulnerabilities; updating operating systems; securing endpoints, including Internet of Things (IoT) devices; and addressing "shadow IT" risks
-    - zero-trust approach: identify what data needs to be protected and applies stringent measures to shield it from unauthorized access or exposur
-    - user education and training
-    - data encryption
+    - <span style="text-decoration:underline;">two-factor authentication</span> and secure access solutions for cloud apps make it more difficult for malicious hackers or insiders to compromise users, including those who work remotely or on a contract basis
+    - <span style="text-decoration:underline;">patching</span> vulnerabilities; updating operating systems; securing endpoints, including Internet of Things (IoT) devices; and addressing "shadow IT" risks
+    - <span style="text-decoration:underline;">zero-trust approach</span>: identify what data needs to be protected and applies stringent measures to shield it from unauthorized access or exposur
+    - <span style="text-decoration:underline;">user education</span> and training
+    - <span style="text-decoration:underline;">data encryption</span>
   - two parameters used to prevent a data breach in the cloud:  <span style="color: #bb6600;">encryption</span> and  <span style="color: #bb6600;">strong user authentication</span>
 
 
