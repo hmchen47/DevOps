@@ -81,7 +81,6 @@
   - a client-side vulnerability that targets other application users
   - attack by <span style="color: #bb6600;">injecting malicious code (usually malicious links) into a database</span>
   - used to <span style="color: #bb6600;">redirect users to websites</span> where attackers can steal data from them
-  - send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code
   - method of attack is used by a hacker to send malicious code through a web application to an unsuspecting user to request that the victims web browser executes the code: <span style="color: #bb6600;">cross-site scripting</span>
   - a difference between an XSS attack and an SQL injection attack: <span style="color: #bb6600;">SQL injection attacks are used to steal information from databases whereas XSS attacks are used to redirect users to websites where attackers can steal data from them</span>
   - difference between Cross-site Scripting and SQL Injection attacks: <span style="color: #bb6600;">Cross-site Scripting is an attack where code is injected into a database, whereas SQL Injection is an attack where code is injected into a browser</span>
