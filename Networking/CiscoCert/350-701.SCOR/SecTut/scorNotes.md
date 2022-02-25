@@ -782,18 +782,17 @@
     - policy: translate business intent into network policies and apply those policies
     - <span style="color: #bb6600;">provision</span>: assigned new device to an SGT based on identity—greatly facilitating remote office setups
     - assurance: using AI/ML, enables every point on the network to become a sensor
-  - characteristics of Cisco DNA Center APIs APIs
-    - quickly <span style="color: #bb6600;">provision</span> new devices
-    - view the <span style="color: #bb6600;">overall health</span> of the network
+  - characteristics of Cisco DNA Center API
+    - quickly <span style="color: #bb6600;">provision new devices</span>
+    - view the overall <span style="color: #bb6600;">health of the network</span>
   - feature w/ the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
   - type of dashboard in DNA Center to complete control of the network: <span style="color: #bb6600;">centralized management</span>
   - capabilities of Integration APIs utilized with Cisco DNA center (westbound)
     - application monitors for <span style="color: #bb6600;">power utilization of devices and IoT sensors</span>
-    - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSEM) Platforms<
+    - connect to <span style="color: #bb6600;">Information Technology Service Management (ITSM) Platforms
   - API used with Cisco DNA Center provisions SSIDs, QoS policies, and update software versions on switches: <span style="color: #bb6600;">intent</span>
   - activities using Cisco DNA Center: <span style="color: #bb6600;">Designing</span> and <span style="color: #bb6600;">Provision</span>
   - a feature of the open platform capabilities of Cisco DNA Center: <span style="color: #bb6600;">intent-based APIs</span>
-  - the ability to program and monitor networks from somewhere other than the DNAC GUI: <span style="color: #bb6600;">API</span>
 
 
 - Cisco Context Directory Agent (CDA)
