@@ -346,9 +346,8 @@
     - <span style="color: #bb6600;">different keys</span> for encryption and decryption
     - the capability to only <span style="color: #bb6600;">know one key on one side</span>
   - RSA keys
-    - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
+    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code  style="color: #bb6600;">crypto key generate rsa</code> command</span>
     - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
-    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code>crypto key generate rsa</code> command</span>
   - algorithm considered about Diffie Hellman and RSA for key establishment: <span style="color: #bb6600;">DH is an asymmetric key establishment algorithm intended to output symmetric keys.</span>
 
 
