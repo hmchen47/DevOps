@@ -725,6 +725,7 @@
   - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the customer is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the provider is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
   - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
+  - the redirect hostname configured by implementing transparent user identification for single sign-on with Internet Explorer: <span style="color: #bb6600;">as a short host name</span>
 
 
 - Cloud security assessment
@@ -2137,6 +2138,7 @@
   - action on WSA to receive redirected traffic over ports 80 and 443 as a network device with specific WSA integration capabilities be configured to send the traffic to the WSA to proxy the requests and increase visibility, while making this invisible to the users: <span style="color: #bb6600;">Configure transparent traffic redirection using WCCP in the Cisco WSA and on the network device</span>
   - ways that a system administrator send web traffic transparently to the Web Security Appliance: configure <span style="color: #bb6600;">policy-based routing</span> on the network infrastructure and use <span style="color: #bb6600;">Web Cache Communication Protocol</span>
   - differences between a Cisco WSA that is running in transparent mode and one running in explicit mode: <span style="color: #bb6600;">respond with its own IP address only if it is running in explicit mode</span> and <span style="color: #bb6600;">use a Layer 3 device to redirect traffic only if it is running in transparent mode</span>
+  - deployment mode to enable a separated email transfer flow from the Internet and from the LAN on WSA: <span style="color: #bb6600;">two-interface</span>
 
 
 - Web Cache Communications Protocol (WCCP)
