@@ -684,7 +684,7 @@
     - SaaS: 1) software rent; 2) usually access via front end or web portal
   - most secure service type: <span style="color: #bb6600;">private cloud</span>
 
-- Clould service responsibility
+- Cloud service responsibility
   - responsibility for customers and service providers
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
@@ -706,12 +706,9 @@
   - PaaS service
     - offer an environment for cloud consumers to <span style="color: #bb6600;">develop and deploy applications</span> without needing to manage or maintain the underlying cloud infrastructure
     - tenant responsible for <span style="color: #bb6600;">application maintaining and patching</span>
-  - SaaS service:
+  - SaaS service
     - provide a complete packaged solution
     - software rented out to the user
-  - responsibility of the <span style="color: #bb6600;">installation and maintenance of a product</span>:
-    - on-primese solution: customer
-    - cloud-based solution: provider
   - secure SaaS-based applications
     - all administrative access to SaaS applications as privileged
     - set up single sign-on (SSO) integrations
