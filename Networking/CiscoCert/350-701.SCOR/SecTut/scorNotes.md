@@ -229,6 +229,7 @@
     - offer a higher level of networking abstraction for microservices by providing a policy framework
     - built-in service discovery and service routing functions to scale out services
   - system facilitates deploying <span style="text-decoration: underline">microsegmentation and multi-tenancy services</span> with a policy-based container: <span style="color: #bb6600;">Contiv</span>
+  - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
 
 
 - <mark style="background: #e0ffff;">Data exfiltration</mark>
@@ -471,7 +472,7 @@
   - difference between DMVPN and sVTI: DMVPN supports <span style="color: #bb6600;">dynamic tunnel establishment</span>, whereas sVTI does not.
 
 
-- <mark style="background: #e0ffff;">FlexVPN</mark>>
+- <mark style="background: #e0ffff;">FlexVPN</mark>
   - tunneled VPN: IKEv2
   - a standards-based solution interoperating with <span style="color: #bb6600;">non-Cisco IKEv2 implementation</span>
   - support <span style="color: #bb6600;">multivendor environment</span> and secret traffic btw sites
@@ -579,7 +580,6 @@
   - two functionalities of northbound and southbound APIs within Cisco SDN architecture: <span style="color: #bb6600;">Northbound APIs utilize RESTful API methods such as GET, POST, and DELETE.</span> & <span style="color: #bb6600;">Southbound APIs utilize CLI, SNMP, and RESTCONF.</span>
   - security application notify the controller about a specific security threats: <span style="color: #bb6600;">northbound and southbound</span>
   - <span style="color: #bb6600;">Full Context Awareness</span>: policy enforcement based on complete visibility of users and communication between virtual machines
-  - system facilitates deploying microsegmentation and multi-tenancy services with a policy-based container: <span style="color: #bb6600;">Docker</span>
 
 
 - REST API
