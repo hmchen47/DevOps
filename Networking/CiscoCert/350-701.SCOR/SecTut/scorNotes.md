@@ -363,7 +363,6 @@
     - used by IPsec to ensure that a message has not been altered
 
 
-
 ## Virtual Private Networks
 
 - <mark style="background: #e0ffff;">Internet Key Exchange (IKE) framework</mark>
@@ -465,9 +464,6 @@
   - tunneled VPN: <span style="color: #bb6600;">IKEv1 (ISAKMP) & IKEv2</span>
   - provide <span style="color: #bb6600;">dynamic tunnel establishment</span> but not w/ sVTI
   - NOT support multiple SAs
-  - AnyConnect superior capabilities:
-    - customization of <span style="color: #bb6600;">access policies based on user identity</span>
-    - enable VPN access for <span style="color: #bb6600;">individual users</span> from their machines
   - two advantages of using Cisco Any connect over DMVPN
     - allow customization of access policies based on <span style="color: #bb6600;">user identity</span>
     - enable VPN <span style="color: #bb6600;">access for individual users</span> from their machines
