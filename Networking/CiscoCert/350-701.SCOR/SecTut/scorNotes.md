@@ -41,7 +41,6 @@
     - <span style="color: #bb6600;">cross-site request forgery</span>: makes the <span style="text-decoration: underline;">client</span> the target of attack
     - <span style="color: #bb6600;">SQL injection</span>: accesses or modifies <span style="text-decoration: underline;">application data</span>
     - <span style="color: #bb6600;">buffer overflow</span>: causes <span style="text-decoration: underline;">memory</span> access errors 
-  - Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities: <span style="color: #bb6600;">Common Vulnerabilities and Exposures</span>
 
 
 - Categories of attacks
@@ -207,6 +206,7 @@
   - sponsored by US-CERT, the office of Cybersecurity and Communications at the U.S. Department of Homeland Security
   - goal: <span style="color: #bb6600;">easier to share data</span> across tools, vulnerability repositories, and security services
   - industry organizations <span style="color: #bb6600;">publish and inform</span> users of known security findings and vulnerabilities
+  - Cisco and other industry organizations publish and inform users of known security findings and vulnerabilities: <span style="color: #bb6600;">Common Vulnerabilities and Exposures</span>
 
 
 - <mark style="background: #e0ffff;">Zero Trust Model</mark>
@@ -308,7 +308,7 @@
     - digital certificates: containing information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
     - optional registration authority (RA) to offload the CA by processing enrollment requests
     - a distribution mechanism (such as Lightweight Directory Access Protocol <span style="color: #bb6600;">(LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
-  - two types of Servers are used as a distribution point for CRLs for IOS PKI: <span style="color: #bb6600;">LDAP</span> and <span style="color: #bb6600;">HTTP</span> 
+  - two types of Servers used as a distribution point for CRLs for IOS PKI: <span style="color: #bb6600;">LDAP</span> and <span style="color: #bb6600;">HTTP</span> 
 
 
 - <mark style="background: #e0ffff;">Cryptography</mark>
@@ -352,7 +352,6 @@
 
 
 - Security issues of privacy and integrity 
-  - passwords being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
   - Secure Hash Algorithm (SHA-1):
     - a.k.a. HMAC-SHA-1
     - ensure <span style="color: #bb6600;">data integrity</span>
