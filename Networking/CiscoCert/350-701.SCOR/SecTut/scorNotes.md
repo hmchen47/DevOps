@@ -17,22 +17,22 @@
       - secretly record everything user enter, upload, download and store on computers or mobile devices
       - keep itself hidden
   - vulnerability: a weakness in a software system
-  - expolit
+  - exploit
     - a code taking advantage of a software a software vulnerability or security flaw
     - an attack that leverages that vulnerability
   - threat involving software being used to gain unauthorized access to a computer system: <span style="color: #bb6600;">virus</span>
-  - endpoint risks as company vulnerable w/o a well-established patching solution for endpoints: <span style="color: #bb6600;">malware</span> and <span style="color: #bb6600;">expolit</span>
+  - endpoint risks as company vulnerable w/o a well-established patching solution for endpoints: <span style="color: #bb6600;">malware</span> and <span style="color: #bb6600;">exploit</span>
   - Insecure APIs: a malicious user gained access to an organization's database from a <span style="color: #bb6600;">cloud-based application programming interface</span> that lacked strong authentication controls
   - compromised credentials: a phishing site appearing to be a legitimate login page captures <span style="color: #bb6600;">user login information</span>
   - worm: a software program that <span style="color: #bb6600;">copies itself</span> from one computer to another, without human interaction
-  - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span
+  - spam: unwanted messages in an <span style="color: #bb6600;">email inbox</span>
   - front-door attacks: require the actions of the user to allow the virus to infect the system
   - directory traversal/path traversal attack
     - a.k.a. dot dot slash attack
     - an HTTP exploit to <span style="color: #bb6600;">access restricted files, directories and commands</span> that reside outside the web server's root directory
   - risk of Internet browser to access cloud-based service: <span style="color: #bb6600;">vulnerabilities within protocol</span>
   - vulnerability to see the password being transmitted in clear text: <span style="color: #bb6600;">unencrypted links for traffic</span>
-  - <span style="color: #bb6600;">main-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
+  - <span style="color: #bb6600;">man-in-the-middle</span>: type of attack does the attacker insert their machine between two hosts that are communicating with each other
   - reason to have logical security controls on endpoints even though the users are trained to spot security threats and the network devices already help prevent them: <span style="color: #bb6600;">human error or insider threats will still exist</span>
   - vulnerability helps an attacker brute force their way into the systems: <span style="color: #bb6600;">weak passwords</span>
   - difference between a vulnerability and an exploit: <span style="color: #bb6600;">a vulnerability is a weakness that can be exploited by an attacker</span>
