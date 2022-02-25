@@ -270,22 +270,14 @@
 ## Integrity and Privacy
 
 - <mark style="background: #e0ffff;">Digital Certificate & PKI</mark>
-  - Trustpoint (Cisco)
-    - an abstract container to hold a certificate in IOS
-    - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
-    - trustpoint enrollment modes
-      - terminal - manual
-      - SCEP - over HTTP
-      - profile - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
-    - PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server: <span style="color: #bb6600;">profile</span>
   - CA (certificate authority): <span style="color: #bb6600;">issue and revoke</span> digital certificates
   - Registration Authority (RA):
     - an authority in a network that verifies user requests for a digital certificate 
     - part of a public key infrastructure (PKI)
     - a networked system that enables companies and users to exchange information and money safely and securely
-    - Certificate revocation list (CRL): This is 
-    - a list of certificates
-    - initially issued by a CA but have since been revoked and as a result should not be trusted
+    - Certificate revocation list (CRL)
+      - a list of revoked certificates
+      - initially issued by a CA but revoked and not trusted
   - function performed by certificate authorities but a limitation of registration authorities: <span style="color: #bb6600;">CRL publishing</span>
   - certificate signing request (CSR)
     - one of the first steps towards getting your own SSL Certificate
@@ -295,19 +287,27 @@
     - certificate signed with the corresponding private key
   - purpose of certificate signing request when adding a new certificate for a server: provide the <span style="color: #bb6600;">server information</span> so a certificate can be created and signed
   - purpose of CA in a PKI: <span style="color: #bb6600;">issue and revoke digital certificates</span>
-  - Cisco IOS public key infrastructure (PKI)
-    - provide certificate management to support security protocols
-    - including IP Security (IPsec), secure shell (SSH), and secure socket layer (SSL)
-    - entities
-      - peers communicating on a secure network
-      - at least one certification authority (CA) that grants and maintains certificates
-      - digital certificates: containing information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
-      - optional registration authority (RA) to offload the CA by processing enrollment requests
-      - a distribution mechanism (such as Lightweight Directory Access Protocol <span style="color: #bb6600;">(LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
-  - RSA keys
-    - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
-    - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
-    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code>crypto key generate rsa</code> command</span>
+
+
+- Trustpoint (Cisco)
+  - an abstract container to hold a certificate in IOS
+  - capable of storing two active certificates at any given time: 1) CA certificate; 2) ID certificate issued by CA
+  - trustpoint enrollment modes
+    - terminal - manual
+    - SCEP - over HTTP
+    - profile - separating authentication and enrollment actions and providing an option to specify HTTP/TFTP commands to perform file retrieval from the server
+  - PKI enrollment method allows the user to separate authentication and enrollment actions and also provides an option to specify HTTP/TFTP commands to perform file retrieval from the server: <span style="color: #bb6600;">profile</span>
+
+
+- Cisco IOS public key infrastructure (PKI)
+  - provide certificate management to support security protocols
+  - including IP Security (IPsec), secure shell (SSH), and secure socket layer (SSL)
+  - entities
+    - peers communicating on a secure network
+    - at least one certification authority (CA) that grants and maintains certificates
+    - digital certificates: containing information such as the certificate validity period, peer identity information, encryptions keys that are used for secure communications, and the signature of the issuing CA
+    - optional registration authority (RA) to offload the CA by processing enrollment requests
+    - a distribution mechanism (such as Lightweight Directory Access Protocol <span style="color: #bb6600;">(LDAP) or HTTP</span>) for certificate revocation lists (CRLs)
   - two types of Servers are used as a distribution point for CRLs for IOS PKI: <span style="color: #bb6600;">LDAP</span> and <span style="color: #bb6600;">HTTP</span> 
 
 
@@ -345,6 +345,10 @@
   - functions of secret key cryptography (=? asymmetric key)
     - <span style="color: #bb6600;">different keys</span> for encryption and decryption
     - the capability to only <span style="color: #bb6600;">know one key on one side</span>
+  - RSA keys
+    - generate Rivest, Shamir, and Adelman (RSA) keypairs: `crypto key generate rsa`
+    - export and import RSA key to encrypt and decrypt the PKCS12 file or the PEM file: <span style="color: #bb6600;">passphrase</span>
+    - action to securely connect to a router and prevent insecure algorithms used: <span style="color: #bb6600;">generate the RSA key using the <code>crypto key generate rsa</code> command</span>
   - algorithm considered about Diffie Hellman and RSA for key establishment: <span style="color: #bb6600;">DH is an asymmetric key establishment algorithm intended to output symmetric keys.</span>
 
 
