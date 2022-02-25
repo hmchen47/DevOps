@@ -252,12 +252,6 @@
     - <span style="color: #bb6600;">messenger apps unable to be segmented</span> w/ standard network controls
 
 
-- Threat intelligence
-  - the knowledge about an existing or emerging threat to assets including networks and systems
-  - including context, mechanisms, indicators of compromise (IoCs), implications, and actionable advice
-  - referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks
-    - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
-
 - Cisco security solutions
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
@@ -268,6 +262,13 @@
       title  = "Cisco Security Solution - Product Relations"
     />
   </figure>
+
+
+- Threat intelligence
+  - the knowledge about an existing or emerging threat to assets including networks and systems
+  - including context, mechanisms, indicators of compromise (IoCs), implications, and actionable advice
+  - referred to as the information about the observables, IoCs intent, and capabilities of internal and external threat actors and their attacks
+    - <span style="color: #bb6600;">information about threats and threat actors</span> to help mitigate harmful events
   
 
 ## Integrity and Privacy
@@ -406,26 +407,6 @@
         - derive the name from any of the fields in the remote identity of type DN (distinguished name): `dn organization-unit`
 
 
-- SSL, TLS & DTLS
-  - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
-
-    ```text
-    Info: New SMTP ICID 30 Interface Management (192.168.0.100)
-      address 10.128.128.200 reverse dns host unknown verified no
-    Info: ICID 30 ACCEPT SG SUSPECTLIST match sbrs[none] SBRS None
-    Info: ICID 30 TLS success protocol TLSv1 cipher DHE-RSA-AES256-SHA
-    Info: SMTP Auth: (ICID 30) succeeded for user: cisco using
-      AUTH mechanism: LOGIN with profile: ldap_smpt
-    Info: MID 80 matched all recipients for per-recipient policy
-      DEFAULT in the outbound table
-    ```
-
-  - Datagram Transport Layer Security (DTLS)
-    - UDP based
-    - used for delay sensitive applications (voice and video)
-    - <span style="color: #bb6600;">strongest throughput performance</span>
-
-
 - <mark style="background: #e0ffff;">IP Security (IPsec)</mark>
   - Cryptographic algorithms w/ IPsec include
     - <span style="color: #bb6600;">HMAC-SHA1/SHA2</span> for integrity protection and authenticity
@@ -543,6 +524,26 @@
   - ISAKMP: defines IKE SAs
   - SHA-1: ensures data integrity
   - RSA: provides authentication
+
+
+- SSL, TLS & DTLS
+  - successful TLS connection from <span style="color: #bb6600;">remote host</span> (reception) in mail logs
+
+    ```text
+    Info: New SMTP ICID 30 Interface Management (192.168.0.100)
+      address 10.128.128.200 reverse dns host unknown verified no
+    Info: ICID 30 ACCEPT SG SUSPECTLIST match sbrs[none] SBRS None
+    Info: ICID 30 TLS success protocol TLSv1 cipher DHE-RSA-AES256-SHA
+    Info: SMTP Auth: (ICID 30) succeeded for user: cisco using
+      AUTH mechanism: LOGIN with profile: ldap_smpt
+    Info: MID 80 matched all recipients for per-recipient policy
+      DEFAULT in the outbound table
+    ```
+
+  - Datagram Transport Layer Security (DTLS)
+    - UDP based
+    - used for delay sensitive applications (voice and video)
+    - <span style="color: #bb6600;">strongest throughput performance</span>
 
 
 ## Software Defined Network (SDN)
@@ -1508,11 +1509,11 @@
   - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
   - feature onfigured for managed devices in the device platform settings of the Firepower Management Center: <span style="color: #bb6600;">time synchronization</span>
   - policy used to collect health modules alerts from managed devices: <span style="color: #bb6600;">health policy</span>, not helath awareness policy
-  - policy representing a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment: <code style="color: #bb6600;">Platform Service Policy</span>
+  - policy representing a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment: <span style="color: #bb6600;">Platform Service Policy</span>
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
-  - solution to deploy multiple Cisco FTD appliances and want to manage them using one centralized solution w/o a local VM but w/ existing Cisco ASAs that must migrate over to Cisco FTDs: <code style="color: #bb6600;">Cisco FMC</span>
-  - information required when adding a device to Firepower Management Center: <code style="color: #bb6600;">registration key</span>
+  - solution to deploy multiple Cisco FTD appliances and want to manage them using one centralized solution w/o a local VM but w/ existing Cisco ASAs that must migrate over to Cisco FTDs: <span style="color: #bb6600;">Cisco FMC</span>
+  - information required when adding a device to Firepower Management Center: <span style="color: #bb6600;">registration key</span>
   - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
@@ -1868,7 +1869,7 @@
     - delay the export of flow-create events -> <span style="color: #bb6600;">flow-create events delayed</span>
   - a feature of NetFlow Secure Event Logging: <span style="color: #bb6600;">export only records that indicate significant events in a flow</span>
   - statement about the configuration of Cisco ASA NetFlow v9 Secure Event Logging: <code style="color: #bb6600">flow-export event-type</code> must be defined under a policy
-  - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <code style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
+  - a characteristic of Cisco ASA Netflow v9 Secure Event Logging: <span style="color: #bb6600">track flow-create, flow-teardown, and flow-denied events</span>
   - a feature of Cisco NetFlow Secure Event Logging for Cisco ASAs: <span style="color: #bb6600;">Flow-create events are delayed</span>
   - a capability of Cisco ASA Netflow: <span style="color: #bb6600;">filter NSEL events based on traffic</span>
 
@@ -2413,7 +2414,7 @@
     - syntax: <code style="color: #bb6600;">show authentication sessions</code> -> indicating interface authentication methods, including `dot1x` and `mab`
     - syntax: `show authentication sessions [ handle handle-number | interface type number | mac mac-address | method method-name interface type number | session-id session-id ]`
     - display status of an 802.1X connection on interface gi0/1: <code style="color: #bb6600;">show authen sess int gi0/1</code>
-  - RADIUS attribute to filter MAB requests in an 802.1 x deployment: <code style="color: #bb6600;">6</span>
+  - RADIUS attribute to filter MAB requests in an 802.1 x deployment: <span style="color: #bb6600;">6</span>
   - display the IEEE 802.1X administrative and operational status for the switch
     - syntax: `show dot1x all [details | statistics | summary]`
     - example outputs
