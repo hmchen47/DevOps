@@ -683,6 +683,8 @@
     - PaaS: 1) managing applications and data only; 2) all phases of SDLC; 3) using APIs, web portals, or gateway software; 4) developing applications
     - SaaS: 1) software rent; 2) usually access via front end or web portal
   - most secure service type: <span style="color: #bb6600;">private cloud</span>
+
+- Clould service responsibility
   - responsibility for customers and service providers
     - IaaS: OS up to Apps
     - PaaS: Data & Apps
@@ -720,7 +722,6 @@
   - factor to choose on-premises solution over cloud-based solution: <span style="color: #bb6600;">with an on-premises solution, the customer is responsible for the installation and maintenance of the product, whereas with a cloud-based solution, the provider is responsible for it</span>
   - cloud model is a collaborative effort where infrastructure is shared and jointly accessed by <span style="color: #bb6600;">several organizations</span> from a specific group: <span style="color: #bb6600;">community cloud</span>
   - select a cloud architecture and not be responsible for patch management of the operating systems: <span style="color: #bb6600;">Platform as a Service because the service provider manages the operating system</span>
-  - the redirect hostname configured by implementing transparent user identification for single sign-on with Internet Explorer: <span style="color: #bb6600;">as a short host name</span>
 
 
 - Cloud security assessment
@@ -2570,10 +2571,11 @@
     - Push-based 2FA: confirm a user's identity with multiple factors of authentication that other methods cannot
   - against <span style="color: #bb6600;">phishing, social engineering and password brute-force attacks</span>
   - <span style="color: #bb6600;">SSO authentication</span>: users with MFA and sharing the authentication with multiple application
+  - the redirect hostname configured by implementing transparent user identification for single sign-on with Internet Explorer: <span style="color: #bb6600;">as a short host name</span>
   - benefit of using a multifactor authentication strategy: protect data by enabling the use of a <span style="color: #bb6600;">second validation of identity</span>
   - reasons for implementing MFA solution: 1) <span style="color: #bb6600;">flexibility of different methods of 2FA</span> such as phone callbacks, SMS passcodes, and push notifications; 2) <span style="color: #bb6600;">secure access to on-premises and cloud applications</span>
   - kinds of attacks are prevented by multifactor authentication: <span style="color: #bb6600;">phising</span> and <span style="color: #bb6600;">brute-force</span>
-  - attacks prevented by MFA: <span style="color: #bb6600;">phishing and man-in-the-middle</span>
+  - attacks prevented by MFA: <span style="color: #bb6600;">phishing</span> and <span style="color: #bb6600;">man-in-the-middle</span>
 
 
 - <mark style="background: #e0ffff;">EPP & EDR</mark>
