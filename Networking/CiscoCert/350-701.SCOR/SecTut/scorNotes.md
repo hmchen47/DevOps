@@ -944,7 +944,7 @@
   - collected via the software sensors deployed on the workloads and made available as part of the solution
   - high-level details regarding the telemetry data collected by Cisco Secure Workload:
     - Flow information: Contains details about flow endpoints, protocols, and ports, when the flow started, how long the flow was active, etc.
-    - Inter-packet variation: Captures any inter-packet variations seen within the flow, including variations in the packet's Time to Live (TTL), IP/TCP flags, packet length, etc.
+    - <span style="color: #bb6600;">Inter-packet variation</span>: Captures any inter-packet variations seen within the flow, including variations in the packet's Time to Live (TTL), IP/TCP flags, packet length, etc.
     - Process details: Captures processes executed on the server, including information about process parameters, start and stop time, process binary hash, etc.
     - Software packages: Inventory of all software packages installed on the server along with the version and publisher information
     - Cisco Secure Workload forensics capability: If a customer turns on the Cisco Secure Workload forensics capability, additional Personally Identifiable Information may be collected.
