@@ -940,6 +940,12 @@
 
 - <mark style="background: #e0ffff;">Secure Workload</mark>
   - formerly <span style="color: #bb6600;">Tetration</span>
+  - solution for
+    - complete visibility to enable implementation of a zero-trust model in the data center
+    - automatically generating microsegmentation policy based on application behavior
+    - enforcing segmentation policy across a multicloud infrastructure
+    - identifying software vulnerabilities abd exposures
+    - processing behavior baselining and identifying deviations to detect IOCs
   - collect packet header metadata, process details and installed software package information
   - collected via the software sensors deployed on the workloads and made available as part of the solution
   - high-level details regarding the telemetry data collected by Cisco Secure Workload:
