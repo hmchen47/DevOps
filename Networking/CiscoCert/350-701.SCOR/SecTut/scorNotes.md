@@ -1376,7 +1376,7 @@
   - the primary function of Cisco AMP threat Grid: <span style="color: #bb6600">automated malware analysis</span>
 
 
-- Secure Endpoint (AMP for Endpoints) - Malwale indpection 
+- Secure Endpoint (AMP for Endpoints) - Malwale inspection 
   - connector engine (in sequence)
     - Tetra - full blown AV
     - Cloud Lookup - based on SHA256
