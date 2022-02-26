@@ -1329,7 +1329,6 @@
     - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
   - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
-  - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
   - action to ensure a custom file policy created to track a discovered attack via a file, not detected the test file as an indicator of compromise during test, and ensure no other endpoints execute the infected file: <span style="color: #bb6600;">upload the hash for the file to the policy</span>
 
 
