@@ -1201,7 +1201,6 @@
   - deployment models
     - On-premises: a hardware appliance or a virtual machine called Stealthwatch Enterprise
     - Cloud-delivered: a software-as-a-service (SaaS) solution called <span style="color: #bb6600;">Stealthwatch Cloud</span>
-  - way of StealthWatch Cloud provides security for cloud environment: <span style="color: #bb6600">deliver visibility and threatdetection</span>
   - components
     - <span style="color: #bb6600">Stealthwatch Management Console</span>
       - define, configure, and monitor multiple distributed Stealthwatch Flow Collectors from a single location
