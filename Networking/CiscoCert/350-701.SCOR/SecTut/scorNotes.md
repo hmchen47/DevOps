@@ -990,7 +990,7 @@
   - suspicious pattern enables the Cisco Tetration platform to learn the normal behavior of users: <span style="color: #bb6600;">file access from a different user</span>
 
 
-- Cisco Stealhwatch Cloud
+- <mark style="background: #e0ffff;">Cisco Stealhwatch Cloud</span>
   - available as an SaaS product offer to provide <span style="color: #bb6600">visibility and threat detection</span> within public cloud infrastructures
   - available in AWS, Azure, and GCP
   - monitor on-premises networks: at least one Cisco <span style="color: #bb6600">Stealthwatch cloud sensor appliance</span> deployed
