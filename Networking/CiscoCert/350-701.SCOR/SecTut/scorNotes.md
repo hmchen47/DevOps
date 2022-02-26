@@ -1033,8 +1033,7 @@
   - action to configure a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network: <span style="color: #bb6600;">Browse to <code>http://welcome.umbrella.com/</code> to validate that the new identity is working.</span>
   - solution that Cisco Umbrella integrates with to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - product to improve their Defense in Depth by blocking malicious destinations prior to a connection being established and to block certain applications from being used within the network: <span style="color: #bb6600;">Cisco Ummbrella</span>
-  - action to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">Set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
-
+  - action to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">Set up a Cisco Umbrella virtual appliance to internally filter the requests and see the traffic of each IP address</span>
 
 
 - Umbrella - Policy
@@ -1057,19 +1056,15 @@
   - URL blocking:
     - URL Reputation from 6 to 10
     - scenario when implementing URL blocking using Cisco Umbrella the the users are able to go to some sites but other sites are not accessible due to an error: Client computers <span style="color: #bb6600;">do not have the Cisco Umbrella Root CA certificate installed.</span>
-  - Block Page and Block Page Bypass features
-    - present an SSL certificate to browsers that make connections to HTTPS sites
+  - Root Certificate
+    - Block Page and Block Page Bypass features present an SSL certificate to browsers that make connections to HTTPS sites
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
     - CA not trusted by browser -> an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
-  - SSL Decryption feature requiring the <span style="color: #bb6600;">root certificate</span> be installed
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
-  - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
-  - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
   - web policies configured in Cisco Umbrella to provide the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">Security Category Blocking</span>
-  - purpose of CA in a PKI: <span style="color: #bb6600;">to issue and revoke digital certificates</span>
 
 
 - Umbrella - Advance Settings
@@ -1091,6 +1086,9 @@
     - proxy and inspect traffic that's sent over HTTPS
     - does require the <span style="color: #bb6600;">root certificate</span> installed
     - inspect secure HTTPS traffic
+  - SSL Decryption feature requiring the <span style="color: #bb6600;">root certificate</span> be installed
+  - type of certificate configuring web filtering for a network using Cisco Umbrella Secure Internet Gateway to filter all traffic w/ SSL decryption feature: <span style="color: #bb6600;">organization owned root</span>
+  - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
   - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600;">Enable Intelligent Proxy.</span>
   - action to use Cisco Umbrella to prevent this activity for suspicious domains while allowing normal web traffic as an increase in malicious content downloads: <span style="color: #bb6600;">Configure the intelligent proxy.</span>
   - action to configure new features within the Cisco Umbrella dashboard and want to identify and proxy traffic that is categorized as risky domains and may contain safe and malicious content: <span style="color: #bb6600;">configure intelligent proxy within Cisco Umbrella to intercept and proxy the requests for only those categories</span>
