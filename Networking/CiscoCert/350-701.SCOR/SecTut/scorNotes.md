@@ -1099,14 +1099,13 @@
   - by default, logging = on and log all requests an identity makes to reach destinations
   - able to change what level of identity activity Umbrella logs
   - log settings in Policy wizard: 1) Log All Requests; 2) Log Only Security Events; 3) Don't Log Any Requests
-  - archive logs to an enterprise owned storage: configured to <span style="color: #bb6600;">send logs to a self-managed AWS S3 bucket</span>
+  - Cisco Umbrella archive logs to an enterprise owned storage: <span style="color: #bb6600;">by being configured to send logs to a self-managed AWS S3 bucket</span>
   - Umbrella Multi-Org console
     - upload, store, and archive traffic activity logs from local Umbrella dashboards to the cloud through <span style="color: #bb6600;">Amazon S3</span>
     - CSV formatted Umbrella logs are compressed (gzip) and uploaded every ten minutes
     - able to download from an S3 bucket
     - logs uploaded to an S3 bucket, then download logs automatically to keep in perpetuity in backup storage
   - Cisco Umbrella configured to log only security events: <span style="color: #bb6600;">per policy</span>
-  - Cisco Umbrella archive logs to an enterprise owned storage: <span style="color: #bb6600;">by being configured to send logs to a self-managed AWS S3 bucket</span>
 
 
 - Umbrella Roaming
