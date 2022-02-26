@@ -945,7 +945,7 @@
     - automatically generating microsegmentation policy based on application behavior
     - enforcing segmentation policy across a multicloud infrastructure
     - identifying software vulnerabilities abd exposures
-    - processing behavior baselining and identifying deviations to detect IOCs
+    - providing process behavior baselining and identifying deviations to detect IOCs
   - collect packet header metadata, process details and installed software package information
   - collected via the software sensors deployed on the workloads and made available as part of the solution
   - high-level details regarding the telemetry data collected by Cisco Secure Workload:
