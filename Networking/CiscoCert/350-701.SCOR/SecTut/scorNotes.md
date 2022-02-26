@@ -1038,7 +1038,6 @@
   - action to configure a new network identity in Cisco Umbrella but must verify that traffic is being routed through the Cisco Umbrella network: <span style="color: #bb6600;">Browse to <code>http://welcome.umbrella.com/</code> to validate that the new identity is working.</span>
   - solution that Cisco Umbrella integrates with to determine if a URL is malicious: <span style="color: #bb6600;">Talos</span>
   - product to improve their Defense in Depth by blocking malicious destinations prior to a connection being established and to block certain applications from being used within the network: <span style="color: #bb6600;">Cisco Ummbrella</span>
-  - action to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">Set up a Cisco Umbrella virtual appliance to internally filter the requests and see the traffic of each IP address</span>
 
 
 - Umbrella - Policy
