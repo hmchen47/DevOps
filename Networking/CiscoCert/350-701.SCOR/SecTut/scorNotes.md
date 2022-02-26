@@ -1179,12 +1179,11 @@
     - <span style="color: #bb6600;">Next Generation Intrusion Prevention System</span>: <span style="text-decoration: underline;">superior threat prevention and mitigation</span> for known and unknown threats
     - <span style="color: #bb6600;">Application control and URL filtering</span>: <span style="text-decoration: underline;">application-layer control and ability</span> to enforce usage and tailor detection policies based on custom applications and URLs
     - <span style="color: #bb6600;">Cisco Web Security Appliance</span>: combined integrated solution of strong defense and <span style="text-decoration: underline;">web protection</span>, visibility, and controling solutions
-    - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against 
-    targeted persistent malware attacks</span>
+    - <span style="color: #bb6600;">Advanced Malware Protection</span>: detection, blocking, tracking, analysis, and remediation to protect against <span style="text-decoration: underline;"> targeted persistent malware attacks</span> 
   - solutions and solution's benefits
     - <span style="color: #bb6600;">Cisco TrustSec</span>: <span style="text-decoration: underline;">oftware-defined segmentation</span> that uses SGTs and allows administrators to quickly scale and enforce policies across the network
     - <span style="color: #bb6600;">Cisco Stealthwatch</span>: rapidly <span style="text-decoration: underline;">collects and analyzes NetFlow and telemetry data</span> to deliver in-depth visibility and understanding of network traffic
-    - <span style="color: #bb6600;">Cisco Umbrella</span>: <span style="text-decoration: underline;">secure Internet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS
+    - <span style="color: #bb6600;">Cisco Umbrella</span>: <span style="text-decoration: underline;">secure I nternet gateway</span> in the cloud that provides a security solution that protects endpoints on and off the network against threats on the Internet by using DNS
     - <span style="color: #bb6600;">Cisco ISE</span>: obtains <span style="text-decoration: underline;">contextual identity and profiles</span> for all the users and devices connected on a network
   - feature or products
     - <span style="color: #bb6600;">NGIPS</span>: <span style="text-decoration: underline;">threat prevention and mitigation</span> for known and unknown threats
