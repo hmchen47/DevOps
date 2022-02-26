@@ -1277,7 +1277,6 @@
   - product provides proactive endpoint protection and allows administrators to centrally manage the deployment: <span style="color: #bb6600;">AMP</span>
   - a difference between Cisco AMP for Endpoints and Cisco Umbrella: Cisco AMP for Endpoints prevents, detects, and responds to attacks <span style="color: #bb6600;">before damage can be done</span>, and Cisco Umbrella provides <span style="color: #bb6600;">the first line of defense against Internet threats.</span>
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
-  - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
   - exclusive capability to a Cisco AMP public cloud instance as compared to a private cloud instance: <span style="color: #bb6600;">ETHOS detection engine</span>
   - capabilities of Cisco AMP
     - provides detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
@@ -1329,7 +1328,7 @@
   - differences btw public and private cloud
     - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
-  - deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600">private cloud</span>
+  - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
   - create a policy to block endpoint executing an infected file: <span style="color: #bb6600;">upload the hash</span> for the file to the policy
   - action to ensure a custom file policy created to track a discovered attack via a file, not detected the test file as an indicator of compromise during test, and ensure no other endpoints execute the infected file: <span style="color: #bb6600;">upload the hash for the file to the policy</span>
 
