@@ -1253,10 +1253,6 @@
     - affect the behavior and certain settings of the connectors
     - applied to a computer via Groups
   - group: allow the computers in organization to be managed according to their function, location, or  other criteria that is determined by the administrator
-  - characteristics
-    - detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
-    - the <span style="color: #bb6600;">root cause</span> of a threat based on the indicators of compromise seen
-    - <span style="color: #bb6600;">outbreak control</span> through custom detections
   - detecting targeted, persistent malware attacks
     - an integrated set of controls and a continuous process
     - to detect, confirm, track, analyze, and remediate 
@@ -1275,9 +1271,6 @@
     - Machine learning engine (SPERO)
     - Dynamic analysis engine (Threat Grid)
     - Advanced analytics engine: identify new threats that normally can't be detected
-  - minor differences between the Private and Public cloud instance of AMP
-    - Advanced custom detections: the private cloud only supports Windows, whereas the Public cloud supports Linux, Mac, and other popular operating systems.
-    - ETHOS: This is one of the many detection engines AMP uses to continuously protect you from malware. ETHOS catches families of malware through use of "fuzzy hashes" as a way to counter malware evasion aided by "bit-twiddling". It is only available in the public cloud.
   - valid Cisco AMP file disposition: <span style="color: #bb6600;">malware</span>
   - benefit of installing Cisco AMP for Endpoints on a network: protect endpoint systems through <span style="color: #bb6600;">application control and real-time streaming</span>
   - risks w/o well-established patching solution for endpoints: 1) <span style="color: #bb6600;">exploits</span>; 2) <span style="color: #bb6600;">malware </span>
@@ -1286,7 +1279,6 @@
   - option to show a list of all files that have been executed w/ AMP for Endpoints: <span style="color: #bb6600;">prevalence</span>
   - Cisco Advanced Malware protection for Endpoints deployment architecture designed to keep data within a network perimeter: <span style="color: #bb6600;">private cloud</span>
   - exclusive capability to a Cisco AMP public cloud instance as compared to a private cloud instance: <span style="color: #bb6600;">ETHOS detection engine</span>
-  - issue of dashboard indicates that the hash is not 64 characters and is non-zero vy adding a custom detection policy to a Cisco AMP deployment and encounters issues with the configuration: <span style="color: #bb6600;">The engineer is attempting to upload a hash created using MD5 instead of SHA-256</span>
   - capabilities of Cisco AMP
     - provides detection, blocking, tracking, analyse and remediation to protect against <span style="color: #bb6600;">targeted persistent malware attacks</span>
     - provides the <span style="color: #bb6600;">root cause of a threat</span> based on the indicators of compromise seen
@@ -1313,6 +1305,7 @@
   - custom detection policy
     - not 64 characters and none zero hash: upload a hash created <span style="color: #bb6600;">using MD5 instead of SHA-256</span>
     - config in <span style="color: #bb6600;">advanced detection policies</span> required to detect for MD5 signature
+  - issue of dashboard indicates that the hash is not 64 characters and is non-zero by adding a custom detection policy to a Cisco AMP deployment and encounters issues with the configuration: <span style="color: #bb6600;">The engineer is attempting to upload a hash created using MD5 instead of SHA-256</span>
   - a custom detection policy to add specific MD5 signatures by config created in the simple detection policy section but not work: <span style="color: #bb6600;">detections for MD5 signatures must be configured in the advanced custom detection policies</span>
   - outbreak control method used to block certain files from executing: <span style="color: #bb6600">application blocking list</span>
 
@@ -1330,6 +1323,9 @@
       - no Internet connection required to complete disposition lookups
       - traffic only btw the connectors and the appliance
       - disposition queries handled by the private cloud
+  - minor differences between the Private and Public cloud instance of AMP
+    - Advanced custom detections: the private cloud only supports Windows, whereas the Public cloud supports Linux, Mac, and other popular operating systems.
+    - ETHOS: This is one of the many detection engines AMP uses to continuously protect you from malware. ETHOS catches families of malware through use of "fuzzy hashes" as a way to counter malware evasion aided by "bit-twiddling". It is only available in the public cloud.
   - differences btw public and private cloud
     - <span style="color: #bb6600">advanced custom detection</span>: private - Windows only; public - popular OSes
     - <span style="color: #bb6600">ETHOS</span>: only available in the public cloud; generic signature engine
