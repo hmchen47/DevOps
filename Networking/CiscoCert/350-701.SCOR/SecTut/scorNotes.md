@@ -1358,7 +1358,7 @@
     - submit <span style="color: #bb6600;">(the whole) files</span> to Secure Malware Analytics (formerly AMP Threat Grid)
     - run the file in a <span style="color: #bb6600;">sandbox</span> environment
     - analyze the file's behavior to determine whether the file is malicious
-    - return a threat score that indicates the likelihood that a file contains malware
+    - return a <span style="color: #bb6600;">threat score</span> that indicates the likelihood that a file contains malware
     - eligible files uploaded to the public cloud or an on-premises appliance
     - threat score determines maliciousness of a file
     - disposition based on the threat score threshold configured in the file policy
