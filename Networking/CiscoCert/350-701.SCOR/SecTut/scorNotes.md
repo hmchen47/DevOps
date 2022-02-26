@@ -1126,7 +1126,7 @@
     - record the internal IP address information of DNS requests for usage in reports, security enforcement, and category filtering policies while VA used
     - intelligently forwarding public DNS queries to Cisco Umbrella's global network
     - local DNS queries to your existing local DNS servers and forwarders
-  - config to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">set up a Cisco Umbrella virtual appliance to internally field the requests and see the traffic of each IP address</span>
+  - config to block traffic based on the subnet that the endpoint is on but it sees only the requests from its public IP address instead of each internal IP address: <span style="color: #bb6600;">set up a Cisco Umbrella virtual appliance to internally filter the requests and see the traffic of each IP address</span>
 
 
 - AppDynamics
