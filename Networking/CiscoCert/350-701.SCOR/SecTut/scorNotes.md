@@ -1008,7 +1008,6 @@
   - Cisco Stealthwatch Cloud provide security for cloud environments: <span style="color: #bb6600">deliver visibility and threat detection</span>
 
 
-
 - Stealhwatch Cloud Private Network Monitoring (PNM)
   - provide visibility and threat detection for the on-premises network
   - deliver from the cloud as a SaaS solution
@@ -1120,7 +1119,6 @@
   - role of Umbrella Roaming installed on an endpoint: to ensure that assets are secure from malicious links <span style="color: #bb6600;">on and off the corporate network</span>
   - endpoint solution protects a user from a phishing attack: <span style="color: #bb6600;">AnyConnect w/ Umbrella Roaming module</span>
   - wildcards and destination list: <span style="color: #bb6600;">asterisk (`*`) not supported</span> for wildcard
-  - the role of Cisco Umbrella Roaming when it is installed on an endpoint: <span style="color: #bb6600;">to ensure that assets are secure from malicious links on and off the corporate network</span>
 
 
 - Umbrella virtual appliances (VAs)
