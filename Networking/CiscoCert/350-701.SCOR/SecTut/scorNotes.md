@@ -896,7 +896,6 @@
     - API-based
     - Incidents triggered by the Cloudlock policy engine when a policy detection criteria result in a match in an object (document, field, folder, post, or file)
   - technology reduces data loss by identifying sensitive information stored in public computing environments: <span style="color: #bb6600;">Cloudlock</span>
-  - app firewall mitigating security concerns from an application aspects: <span style="color: #bb6600;">discover and control cloud apps</span> connected to a company's corporate environment
   - tool to protect sensitive data throughout the full environment: <span style="color: #bb6600;">Cloudluck</span>
   - cloud solution that will monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API: <span style="color: #bb6600;">Cisco Cloudlock</span>
   - API-based solution to secure users, data, and applications in the cloud and operate as a cloud-native CASB: <span style="color: #bb6600;">Cloudlock</span>
@@ -913,12 +912,12 @@
   - contributor of Cisco Collective Security Intelligence (CSI) ecosystem
     - shared across multiple security solutions and provides industry-leading security protections and efficacy
     - driven by intelligence infrastructure, product and service telemetry, public and private feeds and the open source community
-    - <span style="color: #bb6600;">real-time threat intelligence</span> and security protection
+    - <span style="color: #bb6600;">real-time threat intelligence and security protection</span>
   - IP and Domain Reputation Center
     - tracking the <span style="color: #bb6600;">reputation of IP addresses for email and web traffic</span>
     - the most comprehensive real-time threat detection network
     - data made up of daily security intelligence across millions of deployed web, email, firewall and IPS appliances
-    - detecting and correlating threats in real time
+    - <span style="color: #bb6600;">detecting and correlating threats</span> in real time
   - Email and Web Traffic Reputation Center
     - transform some of Talos' data into <span style="color: #bb6600;">actionable threat intelligence and tools</span> to improve your security posture
   - Talos Threat Source
