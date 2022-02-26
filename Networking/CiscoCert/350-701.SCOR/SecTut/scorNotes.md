@@ -1398,7 +1398,7 @@
 - <mark style="background: #e0ffff;">Firepower system</mark>
   - use <span style="color: #bb6600">network discovery and identity policies</span> to collect host, application, and user data for traffic on your network
   - perform forensic analysis, behavioral profiling, access control
-  - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and 
+  - <span style="color: #bb6600;">mitigate and respond</span> to the vulnerabilities and exploits
   - devices
     - Classic devices run next-generation IPS (NGIPS) software: 1) Firepower 7000 & 8000; 2) NGIPSv; 3) ASA w/ Firepower services
     - Firepower Threat Defense Devices
@@ -1406,10 +1406,6 @@
     - appliance and System Management Features
     - features for Detecting, Preventing, and Processing Potential Threats
     - integration with External Tools
-  - characteristics
-    - the ability to perform <span style="color: #bb6600;">network discovery</span>
-    - intrusion <span style="color: #bb6600;">prevention before</span> malware comprises the host
-    - <span style="color: #bb6600;">superior threat prevention and mitigation</span> for known and unknown threats
   - difference btw Firepower and ASA: Firepower <span style="color: #bb6600;">natively provides intrusion prevention capabilities</span>
   - capabilities of Cisco Firepower
     - provides the ability to perform <span style="color: #bb6600;">network discovery</span>
