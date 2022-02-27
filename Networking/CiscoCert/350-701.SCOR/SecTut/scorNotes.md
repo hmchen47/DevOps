@@ -1429,9 +1429,17 @@
       - Firepower Management Center
       - Firepower Device Manager
       - Adaptive Security Device Manager (ASDM)
-  - network discovery & identity policies:
-    - logging discovery and identity data allows you to take advantage of many features in the Firepower System
+  - device management
+    - configure policies for all devices
+    - install various types of sogyware updates on devices
+    - push health policies to managed devices and monitor healt status from FMC
+  - [add a device to the FMC](https://bit.ly/3GrpP4t)
+    - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
+    - CLI:
+      - register the device to a FireSIGHT Management Center using the <code style="color: #bb6600;">configure manager add</code> command
+      - syntax: `configure manager add {hostname | IPv4_address | IPv6_address | DONTRESOLVE} reg_key [nat_id]`
     - collect host, application, and user data for traffic on your network
+  - network discovery & identity policies: logging discovery and identity data allows you to take advantage of many features in the Firepower System
   - identity policy
     - <span style="color: #bb6600;">realm</span>: connection between the FMC and the user accounts on the servers you monitor
     - A realm consists of one or more LDAP or Microsoft Active Directory servers that share the same directory credentials.
@@ -1454,11 +1462,20 @@
       - <span style="color: #bb6600;">Port Sweep</span>: one-to-many portsweep; 1/N hosts -> N target + 1 port
       - <span style="color: #bb6600;">Decoy Portscan</span>: one-to-one portscan; mixes spoofed and real source IP addresses
       - <span style="color: #bb6600;">Distributed Portscan</span>: many-to-one portscan; N host -> 1 target + N ports
+  - impact flag:
+    - a value of the event in Intrusion Event Record
+    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating intrusion data, network discovery data, and vulnerability information</span>
+    - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
+    - required for <span style="color: #bb6600;">network discovery policy</span>
+  - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
+  - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
+  - information required when adding a device to Firepower Management Center: <span style="color: #bb6600;">registration key</span>
+  - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - policy used to collect health modules alerts from managed devices: <span style="color: #bb6600;">health policy</span>, not helath awareness policy
   - solution to deploy multiple Cisco FTD appliances and want to manage them using one centralized solution w/o a local VM but w/ existing Cisco ASAs that must migrate over to Cisco FTDs: <span style="color: #bb6600;">Cisco FMC</span>
 
 
-- Firepower Management Center (FMC) - Network Discovery Policy
+- FMC - Network Discovery Policy
   - control how the system collects data on your organization's network assets and which network segments and ports are monitored
   - <span style="color: #bb6600;">multidomain deployment</span>: each leaf domain has an independent network discovery policy
   - perform <span style="color: #bb6600;">host and application detection</span>
@@ -1470,33 +1487,17 @@
   - config to find out what assets currently exist on the network by feeding host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - feature to determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
-  - impact flag:
-    - a value of the event in Intrusion Event Record
-    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating intrusion data, network discovery data, and vulnerability information</span>
-    - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
-    - required for <span style="color: #bb6600;">network discovery policy</span>
-  - [add a device to the FMC](https://bit.ly/3GrpP4t)
-    - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
-    - CLI:
-      - register the device to a FireSIGHT Management Center using the <code style="color: #bb6600;">configure manager add</code> command
-      - syntax: `configure manager add {hostname | IPv4_address | IPv6_address | DONTRESOLVE} reg_key [nat_id]`
   - feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Impact Flags</span>
   - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
 
 
-- Firepower Management Center (FMC) - Device Management Policy
-  - a.k.a. platform settings policy or platform service policy
-  - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device 
-  - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
-  - configure multiple managed devices at once
-  - feature configured for managed devices: <span style="color: #bb6600;">time schronization</span>
-  - web GUI to download capture traffic file: <span style="color: #bb6600;">enable the HTTPS server</span> for the service platform policy
+- FMC - Platform Setting Policy
+  - platform settings policy
+    - a <span style="color: #bb6600;">shared set of features or parameters</span> that define the aspects of a managed device 
+    - likely to be similar to other managed devices in your deployment, such as time settings and external authentication
+    - configure multiple managed devices at once
   - feature onfigured for managed devices in the device platform settings of the Firepower Management Center: <span style="color: #bb6600;">time synchronization</span>
   - policy representing a shared set of features or parameters that define the aspects of a managed device that are likely to be similar to other managed devices in a deployment: <span style="color: #bb6600;">Platform Service Policy</span>
-  - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
-  - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
-  - information required when adding a device to Firepower Management Center: <span style="color: #bb6600;">registration key</span>
-  - benefit using FMC over ADSM: <span style="color: #bb6600;">centralized management</span>
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
 
