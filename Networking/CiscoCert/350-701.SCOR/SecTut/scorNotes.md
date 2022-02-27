@@ -1537,6 +1537,7 @@
   - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - two actions to allow the traffic to pass without inspection when configuring a rule on Firepower to allow a new application that has never been seen on the network: <span style="color: #bb6600;">trust</span> and <span style="color: #bb6600;">allow</span>
 
+
 - Firepower Threat Defense (FTD)
   - a next-generation firewall (NGFW) w/ NGIPS capabilities
   - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
@@ -1551,10 +1552,8 @@
     - detect traffic anomalies and provide data to intrusion rules
     - DNP3 preprocessor: detect anomalies in DNP3 traffic and decodes the DNP3 protocol for processing by the rules engine
     - <span style="color: #bb6600;">Common Industrial Protocol (CIP)</span>: a widely used application protocol that supports <span style="text-decoration: underline;">industrial automation applications</span>
-  - FTD over ASA: <span style="color: #bb6600;">include URL filtering in the access control policy capabilities</span>
   - solution to deploy multiple Cisco FTD appliances, manage them using one centralized solution, and migrate ASAs over to Cisco FTDs: <span style="color: #bb6600;">FMC</span>
   - configure a Cisco FTD to analyze protocol fields and detect anomalies in the traffic from industrial systems: <span style="color: #bb6600;">implement pre-filter policies for the CIP preprocessor</span>
-  - solution to meet the requirement that URLs must be blocked from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy: <span style="color: #bb6600;">FTD because it includes URL filtering in the access control policy capabilities</span>, whereas Cisco ASA does not
   - solution to block specific URLs from being accessed via the firewall which requires that the administrator input the bad URL categories that the organization wants blocked into the access policy: <span style="color: #bb6600;">Cisco FTD because it includes URL filtering in the access control policy capabilities, whereas Cisco ASA does not</span>
   - Interactive Block Response Page
     - warn users, but also allows them to click a button (or refresh the page) to load the originally requested site
