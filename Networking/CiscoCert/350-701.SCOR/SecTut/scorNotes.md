@@ -1065,6 +1065,8 @@
     - SSL certificate matches the requested site but will be signed by the Cisco Umbrella certificate authority (CA)
     - CA not trusted by browser -> an error page may be displayed
     - avoid these error pages, install the <span style="color: #bb6600;">Cisco Umbrella root certificate</span> into browser
+  - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
+  - action to prevent from phising attacks in the future which originates from a result of users visiting known malicious websites: <span style="color: #bb6600;">modify an access policy</span>
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
   - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
@@ -1514,8 +1516,6 @@
     
   - access control rules
     - traffic evaluation <span style="color: #bb6600;">sequence</span>: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
-    - pass w/o further inspection: <span style="color: #bb6600;">trust<span style="color: #bb6600;"> and <span style="color: #bb6600;">allow</span>
-    - action of an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - URL filtering
     - control access to web site based on
       - category: a general classification for the URL, e.g., Auction, Job Search
@@ -1533,8 +1533,6 @@
     - criteria of Firepower block based in Security Intelligence policies: <span style="color: #bb6600;">URLs</span> and <span style="color: #bb6600;">IP addresses</span>
     - if aware of malicious sites or addresses not yet blocked by a feed, add these sites to a custom Security Intelligence list and add this custom list to the <span style="color: #bb6600;">Block list in the Security Intelligence tab of your access control policy</span>.
   - reputation score to configure a rule in an access control policy to block certain URLs and selects the "Chat and Instant Messaging" category: <span style="color: #bb6600;">6~10</span> to clean
-  - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
-  - action to prevent from phising attacks in the future which originates from a result of users visiting known malicious websites: <span style="color: #bb6600;">modify an access policy</span>
   - Application Control & URL filtering: application-layer control and ability to enforce usage and tailor detection policies based on <span style="color: #bb6600;">custom applications and URLs</span>
   - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - two actions to allow the traffic to pass without inspection when configuring a rule on Firepower to allow a new application that has never been seen on the network: <span style="color: #bb6600;">trust</span> and <span style="color: #bb6600;">allow</span>
