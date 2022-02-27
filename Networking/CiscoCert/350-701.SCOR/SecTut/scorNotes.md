@@ -1467,6 +1467,8 @@
     - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating intrusion data, network discovery data, and vulnerability information</span>
     - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
     - required for <span style="color: #bb6600;">network discovery policy</span>
+  - feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Impact Flags</span>
+  - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
   - command used to register a Cisco FirePower sensor to FMC: <code style="color: #bb6600;">configure manager add <host> <key></code>
   - command to add a new Cisco FTD device to their network and wants to manage it with Cisco FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - information required when adding a device to Firepower Management Center: <span style="color: #bb6600;">registration key</span>
@@ -1480,15 +1482,13 @@
   - <span style="color: #bb6600;">multidomain deployment</span>: each leaf domain has an independent network discovery policy
   - perform <span style="color: #bb6600;">host and application detection</span>
   - control how the system collects data on your organization's network assets and which network segments and ports are monitored
-  - able to feed host data from 3rd-party systems
+  - able to <span style="color: #bb6600;">feed host data from 3rd-party systems</span>
   - discovery rules
     - specify which networks and ports the Firepower System monitors to generate discovery data based on network data in traffic, and the zones to which the policy is deployed
     - able to configure whether hosts, <span style="color: #bb6600;">applications</span>, and non-authoritative users are discovered
   - config to find out what assets currently exist on the network by feeding host data from 3rd-party systems into Cisco Firepower: a <span style="color: #bb6600;">Network Discovery policy</span> to receive data from the host
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - feature to determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
-  - feature requires a network discovery policy on the Cisco Firepower Next Generation Intrusion Prevention System: <span style="color: #bb6600;">Impact Flags</span>
-  - main function of Cisco Firepower impact flags: <span style="color: #bb6600;">correlate data about intrusions and vulnerability</span>
 
 
 - FMC - Platform Setting Policy
@@ -1501,7 +1501,7 @@
   - export packet captures from the Cisco FMC web browser while troubleshooting an issue but showing `403: Forbidden` instead of given instead of the PCAP file when navigating `https://<FMC IP>/capure/CAPI/pcap/test.pcap`: <span style="color: #bb6600;">enable the HTTPS server for the device platform policy</span>
 
 
-- Firepower Management Conter (FMC) - Access Control Policy
+- FMC - Access Control Policy
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
     <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
@@ -1514,7 +1514,7 @@
     
   - access control rules
     - traffic evaluation <span style="color: #bb6600;">sequence</span>: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
-    - pass w/o further inspection: <span style="color: #bb6600;">trust & allow</span>
+    - pass w/o further inspection: <span style="color: #bb6600;">trust<span style="color: #bb6600;"> and <span style="color: #bb6600;">allow</span>
     - action of an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - URL filtering
     - control access to web site based on
