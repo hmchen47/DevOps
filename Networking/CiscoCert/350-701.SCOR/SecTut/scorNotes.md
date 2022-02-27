@@ -1471,9 +1471,10 @@
   - default management port conflicts w/ other communications: <span style="color: #bb6600;">manually change</span> the management port on FMC and all managed devices
   - feature to determine which applications used in the network but not sending metadata to Cisco Firepower: <span style="color: #bb6600;">Network Discovery</span>
   - impact flag:
+    - a value of the event in Intrusion Event Record
+    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating intrusion data, network discovery data, and vulnerability information</span>
     - alerted w/ email, SNMP trap, or syslog when the system generates either an intrusion event
     - required for <span style="color: #bb6600;">network discovery policy</span>
-    - evaluating the impact of an intrusion on your network by <span style="color: #bb6600;">correlating</span> intrusion data, network discovery data, and vulnerability information
   - [add a device to the FMC](https://bit.ly/3GrpP4t)
     - web user interface: 1) Devices > Device Management; 2) 'Add' menu > Device; 3) Host = IP address or the hostname of the device added; 4) Display Name = name for the device; 5) <span style="color: #bb6600;">Registration Key</span> = the same registration key used when you configured the device to be managed by the FMC; 6) multidomain deployment, assign the device to a leaf Domain; 7) ... 
     - CLI:
