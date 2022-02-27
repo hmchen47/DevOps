@@ -1537,8 +1537,9 @@
   - action to configure an access control policy rule to always send traffic for inspection without using the default action: <span style="color: #bb6600;">allow</span>
   - two actions to allow the traffic to pass without inspection when configuring a rule on Firepower to allow a new application that has never been seen on the network: <span style="color: #bb6600;">trust</span> and <span style="color: #bb6600;">allow</span>
 
-
-- Firewall Threat Defense (FTD)
+- Firepower Threat Defense (FTD)
+  - a next-generation firewall (NGFW) w/ NGIPS capabilities
+  - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
   - config new FTD device not behind a NAT device to be managed w/ FMC: <code style="color: #bb6600;">configure manager add <FMC IP address> <registration key></code>
   - execution order of primary and backup policy: backup policy w/ <span style="color: #bb6600;">larger number in priority</span>
     - <span style="color: #bb6600;">backup policy w/ priority 5 and primary polity w/ priority 1</span>
@@ -1559,11 +1560,6 @@
     - warn users, but also allows them to click a button (or refresh the page) to load the originally requested site
     - users may have to refresh after bypassing the response page to load page elements that did not load
   - firewalls must provide methods of blocking traffic that include offering the user the option to bypass the block for certain sites after displaying a  and to reset the connection: FTD enables <span style="color: #bb6600;">interactive blocking and blocking with reset</span> natively, whereas ASA does not
-
-
-- Firepower Threat Defence Devices
-  - a next-generation firewall (NGFW) w/ NGIPS capabilities
-  - features including site-to-site and remote access VPN, robust routing, NAT, clustering, and other optimizations in application inspection and access control
 
 
 - Cisco Threat Intelligence Director (CTID)
