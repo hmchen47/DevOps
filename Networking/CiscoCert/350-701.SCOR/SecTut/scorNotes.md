@@ -887,8 +887,8 @@
   - core functionality
     - <span style="color: #bb6600;">Data Loss Prevention (DLP)</span>: protect sensitive data throughout the full environment
     - User and Entity Behavior Analytics (UEBA)
-    - Apps Firewall (Apps Firewall)
-    - App Discovery (App Discovery)
+    - Apps Firewall
+    - App Discovery
   - discover and control apps connected to corporate environment
   - <span style="color: #bb6600;">monitor traffic, create incidents based on events, and integrate with other cloud solutions via an API</span>
     - utilize various techniques to surface potential threats from various categories which focus on Locations, IPs and Users Login Activity
