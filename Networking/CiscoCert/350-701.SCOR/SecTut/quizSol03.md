@@ -279,7 +279,7 @@
 
   A. `dot1x system-auth-control`<br>
   B. `dot1x pae authenticator`<br>
-  C. `authentication port-control aut`<br>
+  C. `authentication port-control auto`<br>
   D. `aaa new-model`<br>
 
   Answer: A
