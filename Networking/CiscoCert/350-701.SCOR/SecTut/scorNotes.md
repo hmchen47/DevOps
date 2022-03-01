@@ -1626,7 +1626,7 @@
 
 
 - ASA Firepower module
-  - known as the ASA SFR, providing next-generation Firewall services, including
+  - known as the <span style="color: #bb6600;">ASA SFR</span>, providing next-generation Firewall services, including
     - Next Generation Intrusion Prevention System (NGIPS)
     - Application Visibility and Control (AVC)
     - URL filtering
