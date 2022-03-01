@@ -1515,7 +1515,7 @@
   </figure>
     
   - access control rules
-    - traffic evaluation <span style="color: #bb6600;">sequence</span>: 1) monitor; 2) trust; 3) block; 4) allow; 5) default action
+    - traffic evaluation (in sequence): monitor -> <span style="color: #bb6600;">trust</span> -> block -> <span style="color: #bb6600;">allow</span> -> default action
   - URL filtering
     - control access to web site based on
       - category: a general classification for the URL, e.g., Auction, Job Search
