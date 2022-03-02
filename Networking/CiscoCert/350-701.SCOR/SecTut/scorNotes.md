@@ -1811,10 +1811,10 @@
     - version 8: introduce <span style="color: #bb6600">aggregation caches</span>
     - version 9: introduce <span style="color: #bb6600">extensibility</span>
   - configure NetFlow on Cisco ASA 5500 Series firewall
-    1. Configuring <span style="text-decoration: underliine;">NSEL Collectors</span> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
-    2. Defines the <span style="text-decoration: underliine;">class map</span> that identifies traffic for which NSL events need to be exported
-    3. Defines the <span style="text-decoration: underliine;">policy map</span> to apply flow-export actions to the defined classes
-    4. Adds or edits the <span style="text-decoration: underliine;">service policy</span>
+    1. Configuring <span style="text-decoration: underline;">NSEL Collectors</span> w/ `flow-export destination interface-name [ipv4-address | hostname] udp-port`
+    2. Defines the <span style="text-decoration: underline;">class map</span> that identifies traffic for which NSL events need to be exported
+    3. Defines the <span style="text-decoration: underline;">policy map</span> to apply flow-export actions to the defined classes
+    4. Adds or edits the <span style="text-decoration: underline;">service policy</span>
   - generate NetFlow records on traffic traversing the Cisco ASA: <code style="color: #bb6600">flow-export destination inside 1.1.1.1 2055</code>
   - required parameter to config a NetFlow exporter on a router: <span style="color: #bb6600;">exporter name</span>, `flow expoter <name>`
   - features of NetFlow flow monitoring: <span style="color: #bb6600;">track ingress and egress info</soan> and <span style="color: #bb6600;">track multicast MPLS or bridged traffic</span>
