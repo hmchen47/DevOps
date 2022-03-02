@@ -1068,7 +1068,6 @@
   - role of an endpoint in protecting a user from a phishing attack: use <span style="color: #bb6600;">machine learning models</span> to help identify anomalies and determine expected sending behavior
   - action to prevent from phising attacks in the future which originates from a result of users visiting known malicious websites: <span style="color: #bb6600;">modify an access policy</span>
   - modify a policy used by many devices to block specific addresses: create a <span style="color: #bb6600;">destination list for addresses</span> to be allowed or blocked
-  - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - ensure that all subdomains of `domain.com` are blocked: <span style="color: #bb6600;">configure the `domain.com` address in the block list</span>
   - web policies configured in Cisco Umbrella to provide the ability to ensure that domains are blocked when they host malware, command and control, phishing, and more threats: <span style="color: #bb6600;">Security Category Blocking</span>
 
@@ -1097,6 +1096,7 @@
   - feature within Cisco Umbrella allows for the ability to inspect secure HTTP traffic: <span style="color: #bb6600;">SSL Decryption</span>
   - prerequisite to enable malware file scanning for the Secure Internet Gateway: <span style="color: #bb6600;">Enable Intelligent Proxy.</span>
   - action to use Cisco Umbrella to prevent this activity for suspicious domains while allowing normal web traffic as an increase in malicious content downloads: <span style="color: #bb6600;">Configure the intelligent proxy.</span>
+  - how to manage traffic that is directed toward risky domains: traffic is <span style="color: #bb6600;">managed by the security settings and blocked</span>
   - action to configure new features within the Cisco Umbrella dashboard and want to identify and proxy traffic that is categorized as risky domains and may contain safe and malicious content: <span style="color: #bb6600;">configure intelligent proxy within Cisco Umbrella to intercept and proxy the requests for only those categories</span>
 
 
