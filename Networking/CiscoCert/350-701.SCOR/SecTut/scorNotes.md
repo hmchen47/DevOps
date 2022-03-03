@@ -1228,11 +1228,12 @@
 
 - Cognitive Intelligence
   - formerly Cognitive Threat Analytics or CTA
+  - feed from Stealthewatch w/ Flow Collector
   - quickly detect and respond to sophisticated, clandestine attacks under way or attempting to establish a presence within your environment
   - automatically identify and investigate suspicious or malicious web-based traffic
   - identify both potential and confirmed threats
   - quickly remediate the infection
-  - reduce the scope ad damage of an attack
+  - reduce the scope and damage of an attack
   - detection and analytics features (engines)
     - data exfiltration
     - Command-and-control (C2) communications
