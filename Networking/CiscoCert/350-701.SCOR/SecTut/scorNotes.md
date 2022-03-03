@@ -1632,7 +1632,6 @@
     - Application Visibility and Control (AVC)
     - URL filtering
     - Advanced Malware Protection (AMP)
-  - next-generation firewall services, including NGIPS, AVC, URL filtering, and AMP
   - single or multiple context mode and in routed or transparent mode
   - deployment models:
     - <span style="color: #bb6600;">inline mode</span>:
