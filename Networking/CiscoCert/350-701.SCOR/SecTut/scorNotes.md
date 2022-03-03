@@ -2163,7 +2163,7 @@
   - ISE supplements Stealthwatch NetFlow-based behavioral threat detection data with contextual information such as user identity, user authorization level, device-type, and posture.
   - config AAA of network access control for a new added switch and test the RADIUS authenticates to Cisco ISE but rejected
     - command required: `ip radius source-interface`
-    - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server
+    - reason: <span style="color: #bb6600;">only requests originated from a configured NAS IP</span> are accepted by a RADIUS server (RADOIUS Attribute: the identifying IP Address of the NAS, Network Access Serrver, which is requesting authentication of the user)
   - Duo MFA integration w/ ISE for TACACS+ device administration w/ local/internal (ISE) users
     - ISE forwards the TACACS+ authentication requests to the Duo Authentication proxy
     - the proxy will then punt the requests back to ISE for local user authentication
