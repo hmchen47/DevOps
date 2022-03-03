@@ -1522,6 +1522,18 @@
   Answer: B
 
 
+  Enable Email Encryption on the ESA
+
+  Complete these steps from the GUI:
+  1. Under Security Services, choose Cisco IronPort Email Encryption > Enable Email Encryption, and click Edit Settings.
+  2. Click Add Encryption Profile in order to create a new Encryption Profile.
+  3. Choose Cisco Registered Envelope Service or Cisco IronPort Encryption Appliance (if the Encryption Appliance is purchased) for the Key Service Type.
+  4. Click Submit and Commit Changes.
+  5. After the Encryption Profile has been created, you are given the option to Provision it to the Cisco's Registered Envelope Service (CRES) server. A Provision button should display next to the new profile. Click Provision.
+
+  Reference: [ESA Email Encryption Configuration Example](https://www.cisco.com/c/en/us/support/docs/security/email-security-appliance/117863-configure-esa-00.html)
+
+
 - <span style="color: #008888; font-weight: bold;">Question 69</span>
 
   An administrator is adding a new switch onto the network and has configured AAA for network access control. When testing the configuration, the RADIUS authenticates to Cisco ISE but is being rejected. Why is the `ip radius source-interface` command needed for this configuration?
