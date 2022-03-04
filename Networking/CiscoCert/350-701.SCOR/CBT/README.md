@@ -20,7 +20,7 @@ Institution: CBY Nugget
 - [Security for Cloud Service](00g-CloudSec.md)
 - [Application Layer Security](00h-AppLSec.md)
 - [Endpoint Security](00i-EndptSec.md)
-- [Security Miscellaneous](00j-SecMisc.md)
+- [Data Exfiltration](00j-Exfiltrate.md)
 
 
 
@@ -564,7 +564,7 @@ Institution: CBY Nugget
 
 
 
-## Security Miscellaneous
+## Data Exfiltration
 
 ### 49\. [Explain Exfiltration Techniques](49-Exfiltration.md)
 
@@ -575,14 +575,15 @@ Institution: CBY Nugget
 - Text-Based Protocols
 - Recapping Exfiltration Techniques
 
-### 50\. [Explaining the Benefits of Streaming Telemetry](50-Telemetry.md)
+### 50\. [Explaining the Benefits of Streaming Telemetry](50-Streaming.md)
 
 - Introducing Streaming Telemetry
 - What is Telemetry?
 - Network Telemetry
 - Endpoint Telemetry
+- Summarizing Telemetry
 
-### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer.md)
+### 51\. [Describing the Features of Various Cisco Security Offerings](51-SecOffer,md)
 
 - Introducing Cisco Security Platforms
 - Stealthwatch
@@ -590,5 +591,6 @@ Institution: CBY Nugget
 - Umbrella Investigate
 - Cognitive Threat Analytics
 - AnyConnect Network Visibility Module
+- Summarizing Cisco Security Platforms
 
 
