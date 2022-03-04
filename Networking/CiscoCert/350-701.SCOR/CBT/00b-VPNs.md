@@ -1,12 +1,10 @@
 
 # IPsec Virtual Private network (VPN)
 
+# 04. IPsec Fundamentals
 
 
-## 04. IPsec Fundamentals
-
-
-### IPsec Overview
+## IPsec Overview
 
 - IPsec concept
   - main goals
@@ -24,26 +22,19 @@
   - prefix ESP header: port 50
   - prefix new IP header: src = R1, dst = R2
 
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
-      onclick= "window.open('page')"
-      src    = "img/03-netarch.png"
-      alt    = "Example network topology"
-      title  = "Example network topology"
-    />
-  </figure>
-
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
-    <a href="https://www.ciscopress.com/articles/article.asp?p=25477" ismap target="_blank">
+    <a href="url" ismap target="_blank">
       <img style="margin: 0.1em;" height=150
-        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig2.gif"
-        alt   = "AH tunnel versus transport mode."
-        title = "AH tunnel versus transport mode."
+        src   = "img/03-netarch.png"
+        alt   = "Example network topology"
+        title = "Example network topology"
       >
+    </a>
+    <a href="http://www.sharetechnote.com/html/IP_Network_IPSec_ESP.html" ismap target="_blank">
       <img style="margin: 0.1em;" height=150
-        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig3.gif"
-        alt   = "ESP tunnel versus transport mode"
-        title = "ESP tunnel versus transport mode"
+        src   = "http://www.sharetechnote.com/image/IP_Security_IPSec_ESP_01.png"
+        alt   = "IPsec packet format"
+        title = "IPsec packet format"
       >
     </a>
   </div>
@@ -63,10 +54,10 @@
     - old fashion and not flexible
   - virtual tunnel interface (VTI)
     - using GRE on virtual tunnel
-    - applying crypto on the traffic and sending via the virtual tunnel
+    - applying crypto on the traffic abd sending via the virtual tunnel
 
 
-### IKEv1 and IKEv2
+## IKEv1 and IKEv2
 
 - [IKE properties](https://learningnetwork.cisco.com/s/article/comparison-between-ikev1-and-ikev2)
   - negotiate SA attributes
@@ -107,7 +98,7 @@
 
 - IKEv1 and IKev2 comparisons
 
-  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 700px;" cellspacing=0 cellpadding=5 border=1 align="center">
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 50vw;" cellspacing=0 cellpadding=5 border=1 align="center">
     <caption style="font-size: 1.5em; margin: 0.2em;"><a href="http://rockhoppervpn.sourceforge.net/techdoc_ikev1vsikev2.html">Differences between IKEv1 and IKEv2</a></caption>
     <colgroup>
       <col style="width: 200%">
@@ -124,23 +115,23 @@
       <tr><td>Exchange modes:<br><ul><li>Main mode</li><li>Aggressive mode</li> </ul></td> <td>Only one exchange procedure is defined.<br>Exchange modes were obsoleted.</td></tr>
       <tr><td>Exchanged messages to establish VPN.<br> <ul> <li>Main mode: 9 messages    </li> <li>Aggressive mode: 6 messages    </li> </ul></td> <td>Only 4 messages.</td></tr>
       <tr> <td>Authentication methods ( 4 methods ):  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> <li>Public Key Encryption    </li> <li>Revised Mode of Public key Encryption    </li> </ul></td> <td>Only 2 methods:  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> </ul></td></tr>
-      <tr> <td>Both peers must use the same authentication  method.</td> <td> <br>  Each peer can use a different authentication method (Asymmetrical authentication).<br>(e.g. Initiator: PSK and Responder: RSA-Sig)  <br> <br> </td></tr>
-      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selector between peers is required.</li> </ul></td> <td> <br> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
-      <tr> <td>Lifetime for SAs:  <br>  &nbsp; Agreement between peers is required.</td> <td> <br>  NOT negotiated. Each peer can  delete&nbsp;SAs anytime by exchanging DELETE payloads.<br> <br> </td></tr>
-      <tr> <td>Multi-hosting:  <br>  &nbsp; Basically, NOT supported.</td> <td> <br>  Supported by using multiple IDs on  a single  IP address and port pair.<br> <br> </td></tr>
+      <tr> <td>Both peers must use the same authentication  method.</td> <td>  Each peer can use a different authentication method (Asymmetrical authentication).<br>(e.g. Initiator: PSK and Responder: RSA-Sig)  <br> </td></tr>
+      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selectorbetween peers is required.</li> </ul></td> <td> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
+      <tr> <td>Lifetime for SAs:  <br>  &nbsp; Agreement between peers is required.</td> <td>  NOT negotiated. Each peer can  delete&nbsp;SAs anytime by exchanging DELETE payloads.<br> </td></tr>
+      <tr> <td>Multi-hosting:  <br>  &nbsp; Basically, NOT supported.</td> <td>  Supported by using multiple IDs on  a single  IP address and port pair.<br> </td></tr>
       <tr> <td>Rekeying:  <br>  &nbsp; NOT defined.</td> <td>Defined.</td></tr>
       <tr> <td>NAT Traversal:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
       <tr> <td>Dead Peer Detection / Keep-alive for SAs:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
-      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td> <br>  Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated with IKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
-      <tr> <td>Multi-homing:<br>&nbsp; Basically, NOT supported.</td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
-      <tr> <td>Mobile Clients:<br>  &nbsp; Basically, NOT supported. </td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
-      <tr> <td>DoS protections:  <br>  &nbsp; Basically, NOT supported. </td> <td> <br> <ul> <li>Anti-replay function is supported.</li> <li>'Cookies' is supported for mitigating flooding attacks.</li> <li>Many vulnerabilities in IKEv1 were fixed.</li> </ul></td></tr>
-      <tr> <td>Less reliable than IKEv2.</td> <td> <br>More reliable.<br> <ul> <li>All message types are defined as Request and Response pairs.</li> <li>A procedure to delete SAs is defined.</li> <li> A procedure to retransmit a message is defined.</li> </ul></td></tr>
-      <tr> <td>Extensions are very poor.</td> <td> <br>  Useful extentions in actual network environment.<br> <br> <ul> <li>"Redirect Mechanism for IKEv2 (RFC5685)" </li> <li>"IKEv2 Session Resumption (RFC5723)" </li> <li>"An Extension for EAP-Only Authentication in IKEv2 (RFC5998)" </li> <li>"Protocol Support for High Availability of IKEv2/IPsec (RFC6311)" </li> <li>"A Quick Crash Detection Method for the Internet Key Exchange Protocol (IKE) (RFC6290)" </li> </ul> <div style="margin-left: 320px;"> etc.<br> </div> See the <a target="_blank" href="http://datatracker.ietf.org/wg/ipsecme/">IETF  ipsecme-WG's web page</a>. </td></tr>
+      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td>Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated withIKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
+      <tr> <td>Multi-homing:<br>&nbsp; Basically, NOT supported.</td> <td>Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> </td></tr>
+      <tr> <td>Mobile Clients:<br>  &nbsp; Basically, NOT supported. </td> <td>Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> </td></tr>
+      <tr> <td>DoS protections:  <br>  &nbsp; Basically, NOT supported. </td> <td> <ul> <li>Anti-replay function is supported.</li> <li>'Cookies' is supported for mitigating flooding attacks.</li> <li>Many vulnerabilities in IKEv1 were fixed.</li> </ul></td></tr>
+      <tr> <td>Less reliable than IKEv2.</td> <td>More reliable.<br> <ul> <li>All message types are defined as Request and Response pairs.</li> <li>A procedure to delete SAs is defined.</li> <li> A procedure to retransmit a message is defined.</li> </ul></td></tr>
+      <tr> <td>Extensions are very poor.</td> <td>  Useful extentions in actual network environment.<br> <ul> <li>"Redirect Mechanism for IKEv2 (RFC5685)" </li> <li>"IKEv2 Session Resumption (RFC5723)" </li> <li>"An Extension for EAP-Only Authentication in IKEv2 (RFC5998)" </li> <li>"Protocol Support for High Availability of IKEv2/IPsec (RFC6311)" </li> <li>"A Quick Crash Detection Method for the Internet Key Exchange Protocol (IKE) (RFC6290)" </li> </ul> <div style="margin-left: 320px;"> etc.<br> </div> See the <a target="_blank" href="http://datatracker.ietf.org/wg/ipsecme/">IETF  ipsecme-WG's web page</a>. </td></tr>
     </tbody>
   </table>
 
-### Crypto Map IPsec
+## Crypto Map IPsec
 
 - Crypto map concept
   - ACL to control interested traffic, e.g., traffic from PC1 subnet 10.1.0.0/24 to PC2 subnet 10.2.0.0/24
@@ -158,10 +149,10 @@
     - default mode for IPsec
   - transport mode
     - using the original IP header, i.e. PC1 and PC2 as the src and dst address
-    - using original tunnel w/ minimal maniplation to form IPsec
+    - using original tunnel w/ minimal manpiplation to form IPsec
 
 
-### VTI IPsec
+## VTI IPsec
 
 - Virtual Tunnel Interface (VTI) concept
   - create virtual tunnel on R1: `R1(config)# in tunnel 0`
@@ -179,7 +170,7 @@
   - create template w/ IPsec profile, IP address for remote user, 
 
 
-### DMVPNs
+## DMVPNs
 
 - Dynamic Multipoint Virtual Private Network (DMVPN) concept
   - topology: hub-and-spoke network architecture
@@ -193,7 +184,7 @@
 
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/04-dmvpn.png"
       alt    = "text"
@@ -202,7 +193,7 @@
   </figure>
 
 
-### FlexVPN
+## FlexVPN
 
 - FlexVPN concept
   - multiple types of VPNs, such as site2site, remote access, DMVPN, etc.
@@ -210,7 +201,7 @@
   - many default options $\to$ using or modifying these defaults
 
 
-### GET VPN
+## GET VPN
 
 - Group Encrypted Transfer (GET) VPN concept
   - cloud as service and reaching all sites (R1~4)
@@ -223,7 +214,7 @@
     - encrypted packet prefixing an IP header but using original src and dst addresses
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
       onclick= "window.open('page')"
       src    = "img/04-getvpn.png"
       alt    = "Example network topology for GET VPN"
@@ -232,85 +223,14 @@
   </figure>
 
 
-- Comparison of DMVPN, FlexVPN and GETVPN
-
-  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 700px;" cellspacing=0 cellpadding=5 border=1 align="center">
-    <caption style="font-size: 1.2em; margin: 0.2em;"><a href="https://bit.ly/33ThaKm">GETVPN Solution Comparison</a></caption>
-    <colgroup>
-      <col style="width: 20%">
-      <col style="width: 20%">
-      <col style="width: 20%">
-      <col style="width: 20%">
-    </colgroup>
-    <thead>
-    <tr style="font-size: 1.0em; vertical-align:middle;">
-      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Solution</th>
-      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">DMVPN</th>
-      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">FlexVPN</th>
-      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">GETVPN</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">Infrastructure Network</td>
-      <td style="text-align: center;">Public Internet Transport</td>
-      <td style="text-align: center;">Public Internet Transport</td>
-      <td style="text-align: center;">Private IP Transport </td>
-    </tr>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">Network Style</td>
-      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Site-to-Site)</td>
-      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Client-to-Site and Site-to-Site)</td>
-      <td style="text-align: center;">Any-to-Any; (Site-to-Site)</td>
-    </tr>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">Routing</td>
-      <td style="text-align: center;">Dynamic routing on tunnels</td>
-      <td style="text-align: center;">Dynamic routing on tunnels or IKEv2 routing or IKEv2 Dynamic routing</td>
-      <td style="text-align: center;">Dynamic routing on IP WAN</td>
-    </tr>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">Failover Redundancy</td>
-      <td style="text-align: center;">Route Distribution Model</td>
-      <td style="text-align: center;">Route Distribution Model</td>
-      <td style="text-align: center;">Route Distribution Model</td>
-    </tr>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">Encryption Style </td>
-      <td style="text-align: center;">Peer-to-Peer Protection</td>
-      <td style="text-align: center;">Peer-to-Peer Protection</td>
-      <td style="text-align: center;">Group Protection</td>
-    </tr>
-    <tr style="vertical-align:middle">
-      <td style="font-weight: bold;">IP Multicast</td>
-      <td style="text-align: center;">Multicast replication at hub</td>
-      <td style="text-align: center;">Multicast replication at hub</td>
-      <td style="text-align: center;">Multicast replication in IP WAN network </td>
-    </tr>
-    </tbody>
-  </table><br/>
-
-
-- Tunnel comparison
-
-  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 700px;"
-      onclick= "window.open('https://bit.ly/3IqQQWR')"
-      src    = "img/04-tunnel_comparison.jpeg"
-      alt    = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
-      title  = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
-    />
-  </figure>
-
-
-### NAT Traversal
+## NAT Traversal
 
 - NAT Traversal concept
   - a.k.a. NAT transparency
   - NAT/PAT btw PC1 and PC2
   - NAT/PAT unable to handle Layer 4 ESP protocol (port 50)
   - implemented in many IKEv1 and all IKEv2
-  - using hash value on the IP address, receiver detects NAT/PAT used in btw
+  - using hash value on th eIP address, receiver detects NAT/PAT used in btw
   - using UDP instead of ESP for the tunnel
     - prefix UDP header than IP header for encrypted packet
     - prefix an IP header w/ original src and dst addresses
@@ -318,14 +238,14 @@
 
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
     <a href="https://bit.ly/3muy60h" ismap target="_blank">
-      <img style="margin: 0.1em;" height=250
+      <img style="margin: 0.1em;" height=180
         src   = "https://www.netmanias.com/en/?m=attach&no=3563"
         alt   = "NAT/PAT mapping"
         title = "NAT/PAT mapping"
       >
     </a>
     <a href="https://support.huawei.com/enterprise/en/doc/EDOC1100055047/9b0b323f/ipsec-nat-traversal" ismap target="_blank">
-      <img style="margin: 0.1em;" height=200
+      <img style="margin: 0.1em;" height=150
         src   = "https://download.huawei.com/mdl/image/download?uuid=af9d9d6b414d453eaa39e504156c41ca"
         alt   = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
         title = "Format of a packet added with the UDP header transmitted in transport mode and tunnel mode"
@@ -339,26 +259,18 @@
   - the process applied for both IKEv1 & IKEv2
   - pkt: src = CLT, dst = SRV, protocol = ISAKMP, info = IKE SA INIT MID=00 Initiator Request
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59704, Dst Port: 500</span>
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59704, Dst Port: 500</span>
     - Payload: Internet Security Association and Key Management Protocol
       - Payload: Notify (41) - NAT_DETECTION_SOURCE_IP
       - Payload: Notify (41) - NAT_DETECTION_DESTINATION_IP
   - pkt: src = CLT, dst = SRV, protocol = ESP, Info = ESP (SPI=0xc2a16345) [randomly selected one]
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
     - Payload: Encapsulating Security Payload
 
 
 
-
 ## 05. Cisco Router Site-To-Site VPNs
-
-
-### Introducing Site-To-Site VPNs
-
-- Learning goal
-  - configure IPsec site-to-site tunnels by using IKEv1 and crypto maps
-  - verify IPsec site-to-site tunnels
 
 
 ### Planning for IPsec Site-To-Site
@@ -431,7 +343,7 @@
     Success rate is 100 percent (5/5), round-trip min/avg/max = 4/6/11 ms
     ```
 
-  - R1 & R2 reachability: `` $\to$ `!!!!!`
+  - R1 & R2 reachability: `ping 25.2.2.2` $\to$ `!!!!!`
   - PC1 basic info and reachability check:
 
     ```text
@@ -464,7 +376,9 @@
 
   ```text
   R1# sh run | section crypto
-  
+  ```
+
+  ```text
   R1# sh crypto isakmp policy
   Global IKE policy
   Default protection suite
@@ -479,21 +393,6 @@
   R1(config)# crypto isakmp policy 5
   R1(config-isakmp)# authentication pre-share
   R1(config-isakmp)# hash sha512
-  R1(config-isakmp)# do sh crypto isakmp policy
-  Global IKE policy
-  Protection suite of priority 5
-          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
-          hash algorithm:         Secure Hash Standard 2 (256 bit)
-          authentication method:  Pre-Shared Key
-          Diffie-Hellman group:   #1 (768 bit)
-          lifetime:               86400 seconds, no volume limit
-  Default protection suite
-          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
-          hash algorithm:         Secure Hash Standard
-          authentication method:  Rivest-Shamir-Adleman Signature
-          Diffie-Hellman group:   #1 (768 bit)
-          lifetime:               86400 seconds, no volume limit
-  
   R1(config-isakmp)# encryption aes 256
   R1(config-isakmp)# group 5
   R1(config-isakmp)# lifetime 
@@ -505,12 +404,17 @@
           authentication method:  Pre-Shared Key
           Diffie-Hellman group:   #5 (1536 bit)
           lifetime:               5000 seconds, no volume limit
+  Default protection suite
+          encryption algorithm:   DES - Data Encryption Standard (56 bit keys).
+          hash algorithm:         Secure Hash Standard
+          authentication method:  Rivest-Shamir-Adleman Signature
+          Diffie-Hellman group:   #1 (768 bit)
+          lifetime:               86400 seconds, no volume limit
   
   ! config pre-shared key
   R1(config-isakmp)# exit
-  R1(config)# crypto isakmp key Cisco!23 address 25.2.2.2 ! specified iface
-  R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0  ! all ifaces
-  
+  R1(config)# crypto isakmp key Cisco!23 address 25.2.2.2 ! specified intf
+  R1(config)# crypto isakmp key Cisco!23 address 0.0.0.0  ! all intfs
   R1# sh crypto isakmp key
   Keyring      Hostname/Address                            Preshared Key
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
@@ -548,16 +452,16 @@
   R1(config-crypto-map)# exit
   R1(config)# do sh crypto map
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
-          Peer = 25.2.2.2
-          Extended IP access list Crypto-ACL
-              access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
-          Security association lifetime: 4608000 kilobytes/3600 seconds
-          PFS (Y/N): Y
-          DH group:  group15
-          Transform sets={ 
-                  Demo-SET:    { esp-aes esp-sha384-hmac  }, 
-          }
-          Interfaces using crypto map Demo-MAP:
+      Peer = 25.2.2.2
+      Extended IP access list Crypto-ACL
+          access-list Crypto-ACL permit ip 10.1.0.0 0.0.255.255 10.2.0.0 0.0.255.255
+      Security association lifetime: 4608000 kilobytes/3600 seconds
+      PFS (Y/N): Y
+      DH group:  group15
+      Transform sets={ 
+              Demo-SET:    { esp-aes esp-sha384-hmac  }, 
+      }
+      Interfaces using crypto map Demo-MAP:
   ```
 
 
@@ -577,11 +481,11 @@
           authentication method:  Pre-Shared Key
           Diffie-Hellman group:   #5 (1536 bit)
           lifetime:               5000 seconds, no volume limit
-  
+          
   R2# sh crypto isakmp key
   Keyring      Hostname/Address                            Preshared Key
   default      0.0.0.0        [0.0.0.0        ]            Cisco!23
-  
+
   R2# show crypto mao
   Crypto Map "Demo-MAP" 10 ipsec-isakmp
           Peer = 25.2.2.2
@@ -632,7 +536,7 @@
       #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 25.2.2.2, remote crypto endpt.: 15.1.1.1
        plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/2
@@ -672,9 +576,9 @@
     ```text
     PC1# traceroute10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
-     1  10.1.0.1  (10.1.0.1)    4.028 ms    ...
-     2  25.2.2.2  (25.2.2.2)    24.343 ms   ...
-     3  10.2.0.50 (10.2.0.50)   70.862 ms   ...
+     1  10.1.0.1  (10.1.0.1)    4.028 ms    <...truncated...>
+     2  25.2.2.2  (25.2.2.2)    24.343 ms   <...truncated...>
+     3  10.2.0.50 (10.2.0.50)   70.862 ms   <...truncated...>
     ```
 
   - verify sa negotiation on R1
@@ -707,7 +611,7 @@
       #pkts decaps: 10, #pkts decrypt: 10, #pkts verify: 10
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
        plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
@@ -738,16 +642,6 @@
 
 
 ## 06. Cisco Point-To-Point GRE over IPsec VPNs
-
-
-### Introduction to P2P GRE over IPsec VPNs
-
-- Learning goal
-  - GRE tunneling protocol
-  - the configuration and verification of Cisco Remote Access VPNs
-  - the use of AnyConnect
-  - the configuration and verification of Cisco Remote Access VPNs
-  - the use of AnyConnect
 
 
 ### Overview of GRE over IPsec VPNs
@@ -835,7 +729,7 @@
   GigabitEthernet0/1  15.1.1.1    YES TFTP    up                    up
   GigabitEthernet0/2  unassigned  YES TFTP    administratively down down
   GigabitEthernet0/3  10.1.0.1    YES TFTP    up                    up
-
+  
   ! create tunnel intf 0 w/ Ip addr
   R1# conf t
   R1(config)# int tunnel 0
@@ -844,7 +738,7 @@
   R1(config-if)# tunnel destination 25.2.2.2
   R1(config-if)# do show run int tun 0
   Current configuration : 115 bytes
-  ! 
+  !
   interface Tunnel0
    ip address 10.12.12.1 255.255.255.0
    tunnel source 15.1.1.1
@@ -977,7 +871,7 @@
           authentication method:  Pre-Shared Key
           Diffie-Hellman group:   #5 (1536 bit)
           lifetime:               5000 seconds, no volume limit
-
+          
   ! config pre-shared key
   R1(config)#crypto isakmp key Cisco!23 address 0.0.0.0
   R1(config)#do sh crypto isakmp key
@@ -1032,7 +926,7 @@
           authentication method:  Pre-Shared Key
           Diffie-Hellman group:   #5 (1536 bit)
           lifetime:               5000 seconds, no volume limit
-  
+          
   ! config pre-shared key
   R2(config)# exit
   R2(config)#crypto isakmp key Cisco!23 address 0.0.0.0
@@ -1065,7 +959,7 @@
         6  IPsec   AES+SHA384          25        0        0 15.1.1.1
      1001  IKE     SHA256+AES256        0        0        0 15.1.1.1
      1002  IKE     SHA256+AES256        0        0        0 15.1.1.1
-     
+    
     R1#show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst             src             state          conn-id status
@@ -1120,11 +1014,6 @@
 
 
 ### Introduction to DMVPN
-
-- Learning goals
-  - concept of DMVPN
-  - implementing and verifying mGRE
-  - configuring and verifying of DMVPM
 
 - Procedure to implement DMVPN
   - 1\. config mGRE on tunnel intf
@@ -1289,9 +1178,7 @@
   R2(config-if)# ip nhs 172.16.123.1
   R2(config-if)# ip nhrp shortcut
   R2(config-if)# end
-  ```
-
-  ```text
+  
   R2# show run int tun 0
   Current configuration : 379 bytes
   !
@@ -1325,7 +1212,7 @@
      Tunnel0 created 00:01:08, expire 00:08:52
      Type: dynamic, Flags: registered nhop
      NBMA address: 35.3.3.3
-  
+    
   R2# show ip nhrp
   172.16.123.1/32 via 172.16.123.1
      Tunnel0 created 00:02:06, never expire
@@ -1446,7 +1333,7 @@
 
     ```text
     R1# show dmvpn
-    ...
+    <...truncated...>
     Interface: Runnel0, IPv4 NHRP Details
     Type: Hub, NHRP Peers:2,
 
@@ -1471,7 +1358,7 @@
 
     ```text
     R2# show dmvpn
-    ...
+    <...truncated...>
     Interface: Runnel0, IPv4 NHRP Details
     Type: Spoke, NHRP Peers:1,
 
@@ -1579,16 +1466,12 @@
   ```text
   ! IKE key
   R1(config)# crypto isakmp key cisco!23 address 0.0.0.0
-  ```
-
-  ```text
+  
   ! IKE phase 2
   R1(config)# crypto ipsec transform-set Demo-Set esp-aes 256 esp-sha512-hmac
   R1(cfg-crypto-trans)# mode transport
   R1(cfg-crypto-trans)# exit
-  ```
 
-  ```text
   ! 
   R1(config)# int tunnel 0
   R1(config-if)# tunnel protection ipsec profile Deno-IPsec-Profile
@@ -1606,9 +1489,7 @@
   dst             src             state          conn-id status
   15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
   25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
-  ```
-
-  ```text
+  
   R2# show crypto engine connections active
     Crypto Engine Connections
 
@@ -1619,9 +1500,7 @@
         4  IPsec   AES256+SHA512       17        0        0 25.2.2.2
      1001  IKE     SHA256+AES256        0        0        0 25.2.2.2
      1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
-  ```
-
-  ```text
+     
   R2(config)# do show crypto map
   Crypto Map "Tunnel0-head-0" 65536 ipsec-isakmp
           Profile name: Demo-IPsec-Profile
@@ -1632,9 +1511,7 @@
           Transform sets={ 
                   Demo-SET:    { esp-256-aes esp-sha512-hmac  }, 
           }
-  ```
-
-  ```text
+          
   Crypto Map "Tunnel0-head-0" 65537 ipsec-isakmp
           MAP is a PROFILE INSTANCE.
           Peer = 15.1.1.1
@@ -1650,9 +1527,7 @@
           }
           Interfaces using crypto map Tunnel0-head-0:
                   Tunnel0
-  ```
-
-  ```text
+  
   R1# show ip route
   Gateway of last resort is not set
 
@@ -1668,16 +1543,12 @@
         172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks
   C        172.16.123.0/24 is directly connected, Tunnel0
   L        172.16.123.2/32 is directly connected, Tunnel0
-  ```
-
-  ```text
+  
   R2# ping 10.3.0.50 source 10.2.0.2
   !!!!!
   R2# ping 10.3.0.50 source 10.2.0.2
   !!!!!
-  ```
-
-  ```text
+  
   R1# show ip route
   Gateway of last resort is 25.2.2.2 to network 0.0.0.0
 
@@ -1694,15 +1565,11 @@
   C        172.16.123.0/24 is directly connected, Tunnel0
   L        172.16.123.2/32 is directly connected, Tunnel0
   H        172.16.123.3/32 is directly connected, 00:00:06, Tunnel0
-  ```
-
-  ```text
+  
   R2# show ip cef 10.3.0.0
   10.3.0.0/24
     nexthop 172.16.123.3 Tunnel0
-  ```
-
-  ```text
+  
   R2# show crypto engine connections active
     Crypto Engine Connections
 
@@ -1717,9 +1584,7 @@
         8  IPsec   AES256+SHA512        1        0        0 25.2.2.2
      1001  IKE     SHA256+AES256        0        0        0 25.2.2.2
      1002  IKE     SHA256+AES256        0        0        0 25.2.2.2
-  ```
-
-  ```text
+     
   R2# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
   dst             src             state          conn-id status
@@ -1727,9 +1592,7 @@
   15.1.1.1        25.2.2.2        QM_IDLE           1001 ACTIVE
   25.2.2.2        15.1.1.1        QM_IDLE           1002 ACTIVE
   25.2.2.2        35.3.3.3        QM_IDLE           1003 ACTIVE
-  ```
-
-  ```text
+  
   R2# show crypto
   Number of Crypto Socket connection 2
      Tu0 Peers (local/remote): 25.2.2.2/15.1.1.1
@@ -1738,9 +1601,7 @@
          IPsec Profile: "Demo-IPsec-Profile"
          Socket State: Open
          Client: "TUNNEL SEC" (Client State: Active
-  ```
-
-  ```text
+         
      Tu0 Peers (local/remote): 25.2.2.2/35.3.3.3
          Local Ident  (addr/mask/port/prot): (25.2.2.2/255.255.255.255/0/47)
          Remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
@@ -1749,9 +1610,7 @@
          Client: "TUNNEL SEC" (Client State: Active)
   Crypto Socket in Listen State:
   Client: "TUNNEL SEC" Profile: "Demo-IPsec_Profile" Map-name: "Runnel0-head-0"
-  ```
-
-  ```text
+  
   R2# show ip sec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
@@ -1761,28 +1620,22 @@
     remote Ident (addr/mask/port/prot): (35.3.3.3/255.255.255.255/0/47)
     current-peer 35.3.3.3 port 500
       PERMIT, flags={origin_is-acl,}
-  ```
-
-  ```text
+      
     #pkts encaps: 6, #pkts encrypt: 6, #pkts digest: 6
     #pkts decaps: 6, #pkts decrypt: 6, #pkts verify: 6
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
-  ```
-
-  ```text
+    #pkts errors 0, #recv errors 0
+    
      local crypto endpt.: 25.2.2.2, remote crypto endpt.: 35.3.3.3
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x71D29954(1929627220)
      FPS (Y/N): N, DH group: none
 
      inbound esp sas:
-  ```
-
-  ```text
+     
   R2# pint 10.3.0.50 source 10.2.0.2 repeat 1000
-  !!!!!...!!!!
+  !!!!!<...truncated...>!!!! ()
   R2# show ip sec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 25.2.2.2
@@ -1797,20 +1650,10 @@
     #pkts decaps: 1006, #pkts decrypt: 1006, #pkts verify: 1006
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
-  ...
+    #pkts errors 0, #recv errors 0
+  <...truncated...>
   ```
 
-
-### DMVPN Summary
-
-- IPsec to protect networks
-  - IPsec fundamental
-  - site-to-site tunel w/ crypto map
-  - GRE ove IPsec
-  - DMVPN
-  - GET VPN
-  - FlexVPN
 
 
 
@@ -1828,7 +1671,7 @@
 
 ### GET VPN Overview
 
-- GET VPN overview
+- GET VPN topology
   - group member: R1~R3
   - encrypted w/ IPsec
   - example: client (.50) w/ R3 subnet sending queries to server (.10) in R1 subnet
@@ -2146,7 +1989,7 @@
   ACL Downloaded From KS 4.4.4.4
     access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
     access-list   deny ip any any
-  
+    
   KEK POLICY:
     Rekey Transport Type      : unicast
     Lifetime (secs)           : 1767
@@ -2200,7 +2043,7 @@
   C-id  Local         Remote        I-VRF   Status  Encr  Hash    Auth  DH  Lifetime
   1001  15.1.1.1      4.4.4.4               ACTIVE  aes   sha256  psk   14  23:47:21
          Engine-id:Conn-id = SW:1
-  
+         
   R1# show crypto ipsec sa 
   interface: GigabitEthernet0/1
       Crypto map tag: TGM-Map, local addr 15.1.1.1
@@ -2222,7 +2065,7 @@
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x5111511F(1360077087)
      FPS (Y/N): N, DH group: none
-  
+     
   R1# ping 10.2.0.2 source 10.1.0.1
   !!!!!
   
@@ -2240,13 +2083,13 @@
     #pkts decaps: 5, #pkts decrypt: 5, #pkts verify: 5
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
+    #pkts errors 0, #recv errors 0
 
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 0.0.0.0
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x5111511F(1360077087)
      FPS (Y/N): N, DH group: none
-  
+     
   R1# show crypto gdoi
   GROUP INFORMATION
     Group Name                : Demo-GETVPN-Group (Unicast)
@@ -2258,7 +2101,7 @@
     IPsec SA Direction        : Both
 
      Group server list        : 4.4.4.4
-  
+     
   Group Member Information For Group Demo-GETVPN-Group:
     IPsec SA Direction        : Both
     ACL Received From KS      : gdoi_group_Demo_GETVPN-Group_temp_acl
@@ -2283,7 +2126,7 @@
       IPsec init reg postponed  : 0
       active TEK Number       : 1
       SA Track (OID/status)   : disabled
-  
+      
       allowable rekey cipher  : any
       allowable rekey hash    : any
       allowable transformtag  : any ESP
@@ -2292,7 +2135,7 @@
       Total received          : 0
       After latest register   : 0
       Rekey Acks sents        : 0
-  
+      
   ACL Downloaded From KS 4.4.4.4
     access-list   permit ip 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255
     access-list   deny ip any any
@@ -2469,7 +2312,7 @@
       Integrity  : SHA512 SHA 384 SHA256 SHA96 MD596
       PRF        : SHA512 SHA 384 SHA256 SHA1 MD5
       DH Group   : DH_GROUP_4096_MODP/Group 16
-  
+      
   ! config keyring
   R1(config)# crypto ikev2 keyring ISO-Keys
   R1(config-ikev2-keyring)# peer R2
@@ -2521,18 +2364,18 @@
       Integrity  : SHA512 SHA 384 SHA256 SHA96 MD596
       PRF        : SHA512 SHA 384 SHA256 SHA1 MD5
       DH Group   : DH_GROUP_4096_MODP/Group 16
-  
+      
   R1# show crypto ikev2 sa
   Tunnel-id Local         Remote        fvrf/ivrf   Status
   1         15.1.1.1/500  25.2.2.2/500  none/none   READ
     Encr: AES-CBC, Keysize: 256, PRF: SHA512, Hash: SHA512, DH Grp:16, Auth sign: PSK, Auth verify: PSK
-  
+    
   R1# show crypto ipsec transform-set
   Transfor set deafult: { esp-aes esp-sha-hmac  }
       will negotiate = { Transport,  },
   Transfor set Demo-Set: { esp-256-aes esp-sha512-hmac  }
       will negotiate = { Tunnel,  },
-  
+      
   R1# sho crypto ipsec profile
   IPSEC profile Demo-IPsec-Profile
       IKEv2 Profile: Demo-v2-Profile
@@ -2543,7 +2386,7 @@
       Transfor set = {
         Demo-Set: { esp-256-aes esp-sha512-hmac  }
       }
-  
+      
   IPSEC profile default
       IKEv2 Profile: Demo-v2-Profile
       Security association lifetime; 4608000 kilobytes/3600 seconds
@@ -2553,7 +2396,7 @@
       Transfor set = {
         Demo-Set: { esp-aes esp-sha-hmac  }
       }
-  
+      
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Tunnel0-head-0, local addr 15.1.1.1
@@ -2563,14 +2406,14 @@
     remote Ident (addr/mask/port/prot): (10.0.0.0/0.0.0.0/0/0)
     current-peer 25.2.2.2 port 500
       PERMIT, flags={origin_is_acl}
-  
+      
     #pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
     #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
     #pkts not decompressed: 0, #pkts decompress failed: 0
     #pkts errors 0, #recv errors 0
-  
+    
      local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0xD6F40E5C(3606318684)
@@ -2585,7 +2428,7 @@
         IV size: 16 bytes
         replay detection support: Y
         Status: ACTIVE(ACTIVE)
-  
+        
      inbound ah sas:
 
      inbound pcp sas:
@@ -2751,7 +2594,7 @@
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
      current outbound spi: 0x83A96616(2208917014)
      FPS (Y/N): N, DH group: none
-    ...
+    <...truncated...>
   ```
 
 
@@ -2858,7 +2701,7 @@
   R1(config)# crypto key generate rsa general-keys modulus 2048
   The name for th ekeys will be: R1.ogit.online
   % The key modulus size is 2048 bits
-  % Generating 2048 bit RSA keys, keys will be non-exportable...
+  % Generating 2048 bit RSA keys, keys will be non-exportable<...truncated...>
   %SSH-5-ENABLE: SSH 1.99 has been enabled
   
   ! issue certificate
@@ -3289,7 +3132,6 @@
     IPv4 Crypto ISAKMP Sa
 
     C-id  Local   Remote    I-VRF   Status  Encr  Hash  aAuth DH Lifetime
-
     R1# show crypto isakmp policy
     Global IKE policy
     Protection suite of priority 5
@@ -3351,10 +3193,10 @@
 
     R1# ping 10.2.0.2 source 10.1.0.1
     !!!!!
-    ...
+    <...truncated...>
     ISAKMP: (0): Can not start Aggressive mode, trying Main mode.
     ISAKMP: (0): found peer-shared key matching 25.2.2.2
-    ...
+    <...truncated...>
     ISAKMP: (0): Checking ISAKMP transfor 1 against priority 5 policy
     ISAKMP: (0):      encryption AES-CBC
     ISAKMP: (0):      keylength of 256
@@ -3364,27 +3206,16 @@
     ISAKMP: (0):      life type in seconds
     ISAKMP: (0):      life duration (basic) of 5000
     ISAKMP: (0): attrs are acceptable. Next payload is 0
-    ...
     ISAKMP: (0): Old State = IKE_I_MM2    New State = IKE_I_MM2
     ISAKMP-PAK: (0): sending packet to 25.2.2.2 my_port 500 peer_port 500 (I) MM_SA
-    ...
     ISAKMP: (0): Old State = IKE_I_MM2    New State = IKE_I_MM3
-    ...
     ISAKMP: (0): Old State = IKE_I_MM3    New State = IKE_I_MM4
-    ...
     ISAKMP: (1001): Old State = IKE_I_MM4    New State = IKE_I_MM5
-    ...
-    ```
-
-    ```text
     ISAKMP: (1001): Old State = IKE_I_MM5    New State = IKE_I_MM6
-    ...
     ISAKMP: (1001): Old State = IKE_I_MM6    New State = IKE_P1_COMPLETE
 
     R1# undebug all
-    ```
-
-    ```text
+    
     R1# show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst       src       state     conn-id status
@@ -3421,14 +3252,14 @@
   crypto isakmp key Cisco!23 address 0.0.0.0
   crypto ipsec transform-set Demo-Set esp-aes esp-sha384-hmac
    mode tunnel
-  
+   
   crypto map Demo-Map 10 ipsec-isakmp
    set peer 25.2.2.2
    set transform-set Demo-Set
    set pfs group15
    match address Crypto-ACL
    crypto map Demo-Map
-  
+   
   R1# show ip route
   Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -3439,7 +3270,7 @@
           15.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
     C        15.1.1.0/24 is directly connected, GigabitEthernet0/1
     L        15.1.1.1/32 is directly connected, GigabitEthernet0/1
-  
+    
   R2# show ip route
   Gateway of last resort is 15.1.1.1 to network 0.0.0.0
 
@@ -3468,7 +3299,7 @@
   R1# show debugging
   Cryptographic subsystems:
     Crypto ISAKMP debugging is on
-  
+    
   R1# ping 10.2.0.2 source 10.1.0.1
 
   R1# undebug all
@@ -3476,9 +3307,9 @@
   
   R2# 
   ISAKMP-PAK: (0): received packet from 15.1.1.1 dport 500 sport 500 Global (N) 
-  ...
+  <...truncated...>
   ISAKMP: (0): found peer pre-shared key match 15.1.1.1
-  ...
+  <...truncated...>
   ISAKMP-ERROR: (0): Proposed key length does not match policy
   ISAKMP-ERROR: (0): attrs are not acceptable. Next payload is 0
   ISAKMP-ERROR: (0): no offers accepted!
@@ -3492,7 +3323,7 @@
         authentication method:  Pre-Shared Key
         Diffie-Hellman group:   #5 (1536 bit)
         lifetime:               5000 seconds, no volume limit
-  
+        
   R1# show crypto isakmp policy
   Global IKE policy
     Protection suite of priority 5
@@ -3501,7 +3332,7 @@
           authentication method:  Pre-Shared Key
           Diffie-Hellman group:   #5 (1536 bit)
           lifetime:               5000 seconds, no volume limit
-  
+          
   R1# conf t
   R1(config)# crypto isakmp policy 5
   R1(config-isakmp)# encryption aes 256
@@ -3519,7 +3350,7 @@
     Security association lifetime: 4608000 kilobytes/3600 seconds
     Responder-Only (Y/N): N
     PFS (Y/N): Y
-  
+    
     DH group:  group15
     Transform sets={ 
       Demo-SET:    { esp-aes esp-sha384-hmac  }, 
@@ -3529,7 +3360,7 @@
       
   R1# ping 10.2.0.2 source 10.1.0.1
   !!!!
-  ... ! ni ISAKMP-ERROR shown
+  <...truncated...> ! ni ISAKMP-ERROR shown
   
   R1# show crypto isakmp sa
   IPv4 Crypto ISAKMP SA
@@ -3633,7 +3464,7 @@
      FPS (Y/N): N, DH group: none
 
      inbound esp sas:
-      ...
+      <...truncated...>
   
   R1# show crypto engine connections active
   Crypto Engine Connections
@@ -3758,7 +3589,6 @@
       protocol= ESP, transform=esp-aes (Tunnel),
       lifedur= 3600s and 4608000kb,
       spi= 0x0(0), conn_id= 0, keysize= 128, flags= 0x0
-
   IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1
   IPSEC:(SESSION_ID = 1) (key_engine) request timer fired: count = 1,
     (identity) local= 15.1.1.1:0, remote= 10.2.2.2:0,
@@ -3798,7 +3628,7 @@
       IKEv1 SA: local 15.1.1.1/500 remote 25.2.2.2/500 Active
       IPSEC FLOW: permit ip 10.1.0.0/255.255.0.0 10.2.0.0/255.255.0.0
             Active SAs: 2, origin: crypto map
-
+  
   R1# show crypto ipsec sa
   interface: Tunnel0
       Crypto map tag: Virtual-Access1-head-0, local addr 15.1.1.1
@@ -3808,7 +3638,7 @@
     remote Ident (addr/mask/port/prot): (10.2.0.0/255.255.255.255/0/0)
     current-peer 25.2.2.2 port 500
       PERMIT, flags={origin_is_acl}
-  
+      
     #pkts encaps: 4, #pkts encrypt: 4, #pkts digest: 4
     #pkts decaps: 4, #pkts decrypt: 4, #pkts verify: 4
     #pkts compressed: 0, #pkts decompressed: 0
@@ -3822,7 +3652,7 @@
      FPS (Y/N): N, DH group: none
 
      inbound esp sas:
-    <...truncated...>
+      <...truncated...>
   ```
 
 
@@ -3946,12 +3776,12 @@
 
      inbound esp sas:
       spi: 0xA1A...38(27...48)
-      ...
+      <...truncated...>
       status: ACTIVE(ACTIVE)
-      ...
+      <...truncated...>
     outbound esp sas:
       spi: 0x87...73(228...39)
-      ...
+      <...truncated...>
       Status: ACTIVE (ACTIVE)
   
   ! turn on debug
@@ -3961,7 +3791,7 @@
   R1# conf t
   R1(config)# int tun 0
   R1(config-if)# shutdown
-  ...
+  
   R1(config-if)# end
 
   R1# show log

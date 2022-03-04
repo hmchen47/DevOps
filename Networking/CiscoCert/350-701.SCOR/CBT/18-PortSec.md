@@ -371,7 +371,7 @@ Trainer: Keith Barker
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
       <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
         onclick= "window.open('page')"
-        src    = "img/18-portsec.png"
+        src    = "img/19-dhcpprod.png"
         alt    = "Example network topology for port security"
         title  = "Example network topology for port security"
       />

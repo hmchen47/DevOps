@@ -80,16 +80,16 @@ Trainer: Keith Barker
     Success rate is 100 percent (5/5), round-trip min/avg/max = 4/6/11 ms
     ```
 
-  - R1 & R2 reachability: `` $\to$ `!!!!!`
+  - R1 & R2 reachability: `ping 25.2.2.2` $\to$ `!!!!!`
   - PC1 basic info and reachability check:
 
     ```text
     PC1# ip addr
-    ...
+    <...truncated...>
     82: eth0@if81: ...
-      ...
+      <...truncated...>
       inet 10.1.0.51/24 scope global eth0
-      ...
+      <...truncated...>
     
     PC1# route
     Kernel IP routing table
@@ -281,7 +281,7 @@ Trainer: Keith Barker
       #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 25.2.2.2, remote crypto endpt.: 15.1.1.1
        plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/2
@@ -321,9 +321,9 @@ Trainer: Keith Barker
     ```text
     PC1# traceroute10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
-     1  10.1.0.1  (10.1.0.1)    4.028 ms    ...
-     2  25.2.2.2  (25.2.2.2)    24.343 ms   ...
-     3  10.2.0.50 (10.2.0.50)   70.862 ms   ...
+     1  10.1.0.1  (10.1.0.1)    4.028 ms    <...truncated...>
+     2  25.2.2.2  (25.2.2.2)    24.343 ms   <...truncated...>
+     3  10.2.0.50 (10.2.0.50)   70.862 ms   <...truncated...>
     ```
 
   - verify sa negotiation on R1
@@ -356,7 +356,7 @@ Trainer: Keith Barker
       #pkts decaps: 10, #pkts decrypt: 10, #pkts verify: 10
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
        plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1

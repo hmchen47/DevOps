@@ -617,7 +617,7 @@ Trainer: Keith Barker
     #pkts decaps: 6, #pkts decrypt: 6, #pkts verify: 6
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
+    #pkts errors 0, #recv errors 0
 
      local crypto endpt.: 25.2.2.2, remote crypto endpt.: 35.3.3.3
      plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1
@@ -641,7 +641,7 @@ Trainer: Keith Barker
     #pkts decaps: 1006, #pkts decrypt: 1006, #pkts verify: 1006
     #pkts compressed: 0, #pkts decompressed: 0
     #pkts not compressed: 0, #pkts compr. failed: 0
-    #pkts errros 0, #recv errors 0
+    #pkts errors 0, #recv errors 0
   ...
   ```
 
