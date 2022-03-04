@@ -17,11 +17,10 @@ Institution: CBY Nugget
 - [L2 Security](00d-L2Sec.md)
 - [Routing Authentication](00e-RoutingSec.md)
 - [Management Plane Security](00f-MgmtSec.md)
-- [Security for Cloud Service](00g-SDN.md)
-- [Security for User Interaction](00h-UserSec.md)
-- [Cisco Umbrella](00i-Umbrella.md)
-- [Endpoint Security with 802.1X](00j-Dot1X.md)
-- [Data Exfiltration](00k-Exfiltrate.md)
+- [Security for Cloud Service](00g-CloudSec.md)
+- [Application Layer Security](00h-AppLSec.md)
+- [Endpoint Security](00i-EndptSec.md)
+- [Data Exfiltration](00j-Exfiltrate.md)
 
 
 
@@ -434,7 +433,6 @@ Institution: CBY Nugget
 - Secure Container Images and Registries
 - Orchestrating Containers
 - Open Web Application Security Project Controls
-- OWASP Protective Controls Continued
 - Cisco Zero-Trust Architecture Overview
 - Securing Workloads with Cisco Tetration
 - Visibility with Cisco AppDynamics
@@ -442,7 +440,7 @@ Institution: CBY Nugget
 
 
 
-## Security for User Interaction
+## Application Layer Security
 
 ### 38\. [Capture and Redirection Methods](38-Redirect.md)
 
@@ -482,11 +480,6 @@ Institution: CBY Nugget
 - Encryption
 
 
-
-
-## Cisco Umbrella
-
-
 ### 41\. [Cisco Umbrella](41-Umbrella.md)
 
 - Introduction to Cisco Umbrella
@@ -501,6 +494,9 @@ Institution: CBY Nugget
 - Umbrella VA
 - Umbrella Summary
 
+
+## Endpoint Security
+
 ### 42\. [Understand and Configure AMP for Endpoints](42-AMPEndpt.md)
 
 - Introducing Endpoint Security
@@ -509,7 +505,6 @@ Institution: CBY Nugget
 - Configuring Simple Outbreak Controls in AMP
 - Explore Other Outbreak Controls
 - Understand Groups and Policies
-- Summarizing Endpoint Security
 
 ### 43\. [Explain Various Types of Endpoint Defenses](43-EndptTypes.md)
 
@@ -538,12 +533,7 @@ Institution: CBY Nugget
 - Posture Assessment
 - Cisco TrustSec and Security Group Tags (SGTs)
 - Change of Authorization (CoA)
-- Summarizing Network Access Controls for Endpoints
 
-
-
-
-## Endpoint Security with 802.1X
 
 ### 46\. [802.1X Fundamentals](46-8021xFund.md)
 
@@ -552,7 +542,7 @@ Institution: CBY Nugget
 - Options for Authentication
 - Options after Authentication
 
-### 47\. [Configure ISE for 802.1X](47-ISE8021x.md)
+### 47\. [Configure ISE for 802.1X](47-ISEdot1x.md)
 
 - Introduction to Configuring ISE
 - Identity Stores
@@ -561,9 +551,8 @@ Institution: CBY Nugget
 - Policy Set Overview
 - Creating a Policy Set
 - Authorization Policies
-- Summary
 
-### 48\. [Configure a Switch for 802.1X](48-Sw8021x.md)
+### 48\. [Configure a Switch for 802.1X](48-SwDot1x.md)
 
 - Introduction to Switch Configuration for 802.1X
 - Configure Global AAA Parameters
