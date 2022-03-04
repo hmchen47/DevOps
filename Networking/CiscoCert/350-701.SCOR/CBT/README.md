@@ -495,7 +495,9 @@ Institution: CBY Nugget
 - Umbrella Summary
 
 
+
 ## Endpoint Security
+
 
 ### 42\. [Understand and Configure AMP for Endpoints](42-AMPEndpt.md)
 
