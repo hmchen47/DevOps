@@ -1,18 +1,10 @@
-# 18. Configure and Verify Cisco Port Security
-
-Trainer: Keith Barker
+# Layer 2 Security
 
 
-## Introducing Port Security
-
-- Learning goals
-  - configure and verify port security on a Cisco switch port
-  - how to change the default settings of port security
-  - how to use errdisable recovery
-  - how to apply port security to multilayer switch trunk interfaces
+## 18. Configure and Verify Cisco Port Security
 
 
-## Understanding Port Security and Why we Need It
+### Understanding Port Security and Why we Need It
 
 - Security challenges of switch port
   - 1\. who/what connect to the port
@@ -22,7 +14,7 @@ Trainer: Keith Barker
 
 - Demo: CAM table overflow
 
-  ```bash
+  ```text
   SW# show vlan brief
   VLAN Name           Status    Ports
   ---- -------------- --------- -----------------------------
@@ -61,7 +53,9 @@ Trainer: Keith Barker
     10  0015.5d67.8322  DYNAMIC Gi0/0
     10  0015.5d77.7701  DYNAMIC Gi0/0
   Total Mac Addresses for this criterion: 3
+  ```
 
+  ```text
   Kali# macof -i eth0 -n 50
 
   SW# show mac address-table count vlan 10
@@ -76,7 +70,7 @@ Trainer: Keith Barker
 
 
 
-## Port Security Defaults
+### Port Security Defaults
 
 - Switch port mode for port security
   - access mode: `switchport mode access`
@@ -98,12 +92,12 @@ Trainer: Keith Barker
   - action w/ violation: shutdown
 
 
-## Implementing Port Security on Layer 2 Interface
+### Implementing Port Security on Layer 2 Interface
 
 - Demo: config port security
   - plan: port g0/0 connected to a PC w/ Vlan 10
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -111,9 +105,9 @@ Trainer: Keith Barker
   SW(config-if)# switchport host
 
   SW(config-if)# do show vlan brief
-  ...
+  
   SW(config-if)# do show mac address-table vlan 10
-  ...
+  <...truncated...>
   SW(config-if)# do show port-security int g0/0
   Port Security              : Disabled
   Port Status                : Secure-down
@@ -160,11 +154,7 @@ Trainer: Keith Barker
 
 
 
-## Customizing Port Security
-
-- Demo: customizing port security
   - `maximum`: set maximum mac address allowed on the port
-  - `mac-address ...`: hard coded mac address
   - `sticky`: learn mac address dynamically on the port
   - `violation`: violation actions:
     - shutdown: default, shutdown the port
@@ -173,7 +163,7 @@ Trainer: Keith Barker
   - all port security settings not in function until port security enabled
   - resume shutdowned interface by executing `shutdown` and `no shutdown` on the interface
 
-  ```bash
+  ```text
   SW# conf t
   SW(config)# int g0/0
   SW(config-if)# switchport mode access
@@ -191,7 +181,9 @@ Trainer: Keith Barker
   -------------------------------------------------------------------------------
   Total Addresses in System (excluding one mac per port)     : 0
   Max Addresses limit in System (excluding one mac per port) : 4096
+  ```
 
+  ```text
   SW(config-if)# switchport port-security
 
   SW(config-if)# do show port security
@@ -245,7 +237,11 @@ Trainer: Keith Barker
   Total Mac Addresses for this criterion: 4
 
   ! generate traffic w/ different mac address
+<<<<<<< HEAD
   Kali# macof -i  eth0 -n 10
+=======
+  Kali# macof -i  eth0 -n 10
+>>>>>>> cbt04
 
   SW#
   %PORT_SECURITY-2-PSECURE_CIOLATION: Security violation occurred, 
@@ -267,11 +263,11 @@ Trainer: Keith Barker
   ```
 
 
-## Configuring Auto Errdisable Recovery
+### Configuring Auto Errdisable Recovery
 
 - Demo: config auto recovery for port security violation
 
-  ```bash
+  ```text
   SW# show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
@@ -312,10 +308,12 @@ Trainer: Keith Barker
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
-  ...
+  <...truncated...>
   psecure-violation       Disabled
-  ...
+  <...truncated...>
+  ```
 
+  ```text
   ! port security violation auto recovery in 30 secs
   SW# conf t
   SW(config)# errdisable recovery cause psecure-violation
@@ -328,9 +326,9 @@ Trainer: Keith Barker
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
-  ...
+  <...truncated...>
   psecure-violation       Enable
-  ...
+  <...truncated...>
 
   Timer interval: 30 seconds
 
@@ -349,9 +347,9 @@ Trainer: Keith Barker
   ErrDisable Reason       Timer Status
   -----------------       ------------
   arp-inspection          Disabled
-  ...
+  <...truncated...>
   psecure-violation       Enable
-  ...
+  <...truncated...>
 
   Timer interval: 30 seconds
 
@@ -363,15 +361,16 @@ Trainer: Keith Barker
 
 
 
-## Applying Port Security Skills in Production
+
+### Applying Port Security Skills in Production
 
 - Demo: applying port security in production
   - topology
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
         onclick= "window.open('page')"
-        src    = "img/18-portsec.png"
+        src    = "img/19-dhcpprod.png"
         alt    = "Example network topology for port security"
         title  = "Example network topology for port security"
       />
@@ -385,9 +384,9 @@ Trainer: Keith Barker
       - max mac addresses: 2000
       - violation action: protect
 
-  ```bash
+  ```text
   ! config Core1
-  Core1# show cdp neighbor
+  Core1## show cdp neighbor
   Device ID   Local Interface   Holdtime  Capability  Platform  Port ID
   Core 2      Gig 1/2           146            R S I  ISOv      Gig 2/1
   Core 2      Gig 1/3           177            R S I  ISOv      Gig 2/0
@@ -395,7 +394,7 @@ Trainer: Keith Barker
 
   Total cdp entries displayed: 3
 
-  Core1# show port-security
+  Core1## show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
                    (Count)         (Count)           (Count)
   -------------------------------------------------------------------------------
@@ -404,10 +403,6 @@ Trainer: Keith Barker
   Max Addresses limit in System (excluding one mac per port) : 4096
 
   Core1# conf t
-  Core1(config)# int g1/0
-  Core1(config-if)# switchport port-security maximum 2000
-  Core1(config-if)# switchport port-security violation protect
-  Core1(config-if)# switchport port-security
   Core1(config-if)# emd
 
   Core1# show port-security 
@@ -432,7 +427,9 @@ Trainer: Keith Barker
   Sticky Mac Addresses       : 0
   Last Source Addresses:Vlan : 0015.5d44.5566:1
   Security Violation Count   : 0
+  ```
 
+  ```text
   ! config Core 2
   Core2# show port-security
   Secure Port   MaxSecureAddr   CurrentAddr   SecurityViolation   Security Action
@@ -483,7 +480,7 @@ Trainer: Keith Barker
 
 
 
-## Review of Configure and Verify Cisco Port Security
+### Review of Configure and Verify Cisco Port Security
 
 - Quest 1
 
@@ -504,23 +501,24 @@ Trainer: Keith Barker
   - cmd to set action: `switchport port-security violation shutdown|protect|restrict`
 
 
-## Cisco CCNA (200-301) Assessment Lab: Security
+### Cisco CCNA (200-301) Assessment Lab: Security
 
 - Ref: [New Training: Cisco CCNA (200-301) Assessment Lab: Security](https://www.cbtnuggets.com/blog/new-skills/new-training-cisco-ccna-200-301-assessment-lab-security)
 
-# 19. Configure and Verify Cisco DHCP Snooping
-
-Trainer: Keith Barker
 
 
-## Introducing DHCP Snooping
+
+## 19. Configure and Verify Cisco DHCP Snooping
+
+
+### Introducing DHCP Snooping
 
 - Learning goals
   - benefits of DHCP snooping
   - trusted and untrusted ports
   - enable switch to verify IP and MAC addresses before receiving frames
 
-## Why is DHCP Snooping Needed
+### Why is DHCP Snooping Needed
 
 - DHCP DORA process
   - Discover (broadcast): client sending out DHCP server request
@@ -545,7 +543,7 @@ Trainer: Keith Barker
   - DHCP server messages w/ DHCP Option 82 - Agent Information Option
 
 
-## The Recipe for DHCP Snooping
+### The Recipe for DHCP Snooping
 
 - Commands for DHCP snooping
   - enable DHCP snooping: `SW(config)# ip dhcp snooping`
@@ -555,12 +553,12 @@ Trainer: Keith Barker
 
 
 
-## Building and Implementing DHCP Snooping in PT
+### Building and Implementing DHCP Snooping in PT
 
 - Demo: config DHCP snooping
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/19-dhcpdemo.png"
       alt    = "Demo network topology for DHCP snooping"
@@ -568,7 +566,7 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   SW# show vlan brief
   ! all ports on native vlan
 
@@ -625,7 +623,7 @@ Trainer: Keith Barker
   - bootup PC1 and observe interfaces connected to DHCP Good and DHCP Bad
   - check IP address of PC1 & PC2 $\gets$ both from DHCP Good server
 
-  ```bash
+  ```text
   SW# show ip dhcp binding
   MacAddress          IpAddress     Lease (sec)   Type            VLAN  Interface
   -----------------   ------------  -----------   -------------   ----  ---------------
@@ -636,7 +634,7 @@ Trainer: Keith Barker
 
 
 
-## Adding Source Guard to a Switch
+### Adding Source Guard to a Switch
 
 - Source guard overview
   - a per-interface traffic filter
@@ -647,7 +645,7 @@ Trainer: Keith Barker
 
 - Demo: config source guard
 
-  ```bash
+  ```text
   SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
   30
@@ -691,7 +689,7 @@ Trainer: Keith Barker
   ```
 
 
-## Applying DHCP Snooping in Production
+### Applying DHCP Snooping in Production
 
 - Demo: DHCP snooping in production
   - tasks:
@@ -709,9 +707,9 @@ Trainer: Keith Barker
     />
   </figure>
 
-  ```bash
+  ```text
   ! always verify basic info before conducting any config
-  R3# show ip int brief
+  R3## show ip int brief
   Interface              IP-Address     OK? Method Status                Protocol
   Ethernet0/0            unassigned     YES NVRAM  administratively down down
   GigabitEthernet0/0     10.16.7.7      YES VNARM  up                    up
@@ -719,10 +717,10 @@ Trainer: Keith Barker
   GigabitEthernet1/0.30  10.16.20.7     YES VNARM  up                    up
   GigabitEthernet1/0.40  10.16.22.7     YES VNARM  up                    up
   GigabitEthernet2/0     unassigned     YES NVRAM  administratively down down
-  ...
+  <...truncated...>
   Loopback0              3.3.3.3        YES VNARM  up                    up
 
-  R3# conf t
+  R3## conf t
   R3(config)# ip dhcp pool DEMOPOOL
   R3(dhcp-config)# default-router 10.16.20.7
   R3(dhcp-config)# dns-server 8.8.8.8
@@ -740,7 +738,6 @@ Trainer: Keith Barker
    1 subnets are currently in the pool :
    Current index        IP address range           Leased/Exclude/Total
    10.16.20.1           10.16.20.1 - 10.16.20.254  0     / 10    / 254
-   
   ! config switch
   SW# show ip dhcp snooping
   DHCP snooping is configured on the following VLANs:
@@ -748,7 +745,7 @@ Trainer: Keith Barker
   DHCP snooping is operational on the following VLANs:
   none
   DHCP snooping is configured on the following L3 Interfaces:
-
+  
   Insertion of option 82 is disabled
     circuit-id default format: vlan-mod-port
     remote-id: 00dc.d2b2.ff00 (MAC)
@@ -833,7 +830,7 @@ Trainer: Keith Barker
 
 
 
-## Review of Configure and Verify Cisco DHCP Snooping
+### Review of Configure and Verify Cisco DHCP Snooping
 
 - Question 1
 
@@ -870,25 +867,16 @@ Trainer: Keith Barker
 
   Ans: B
 
-## Configure and Verify Cisco DHCP Snooping
+### Configure and Verify Cisco DHCP Snooping
 
 - [CCNA Lab Assessment Online Training](https://www.cbtnuggets.com/it-training/cisco/assessment-labs)
 
-# 20. Configure and Verify Cisco Dynamic ARP Inspection
-
-Trainer: keith Barker
 
 
-## Introducing Dynamic ARP Inspection (DAI)
-
-- Learning goals
-  - Dynamic ARP Inspection (DAI)
-  - implement DAI
-  - ARP ACL
-  - DAI options and features
+## 20. Configure and Verify Cisco Dynamic ARP Inspection
 
 
-## Why is DAI Needed
+### Why is DAI Needed
 
 - ARP and issue
   - PCA $\leftrightarrow$ PAC
@@ -902,7 +890,7 @@ Trainer: keith Barker
   - Solution: Dynamic ARP Inspection (DAI)
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/20-arp.png"
       alt    = "APR process and issue"
@@ -912,7 +900,7 @@ Trainer: keith Barker
 
 
 
-## The Recipe and Commands for DAI
+### The Recipe and Commands for DAI
 
 - DAI overview
   - DHCP snooping used to map IP and MAC addresses
@@ -925,7 +913,7 @@ Trainer: keith Barker
     - config the port on switch connected to router as a trusted port
 
 
-## Implementing DAI
+### Implementing DAI
 
 - Config DAI
   - topology:
@@ -934,7 +922,7 @@ Trainer: keith Barker
     - another switch (subnet 10.1.0.0/24) connected to SW on port g0/1
   - task: implement DAI for SW
   
-  ```bash
+  ```text
   ! verify DHCP snooping enabled
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
@@ -986,25 +974,25 @@ Trainer: keith Barker
     30 Deny        Deny         Off
 
   ! ARP deny msgs
-  SW#
+  SW# show log
   ...
   %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
     ([0015.5d67.8322/10.1.0.111/0000.0000.0000/10.1.0.1/00:29:59 UTC ...])
   %SW_DAI-4-DHCP_SNOOPING_DENY: 2 Invalid ARPs (Req) on Gi0/1, vlan 30.
     ([0015.5d44.5566/10.1.0.120/0000.0000.0000/10.1.0.1/00:30:00 UTC ...])
-  ...TRUNCATED...
+  <...truncated...>
 
   ! another switch connected to SW  w/ untrusted port
   ! DHCP messages dropped amd no (IP, MAC) mapping generated
   ```
 
 
-## ARP Access Lists for Non-DHCP Devices
+### ARP Access Lists for Non-DHCP Devices
 
 - Troubleshooting dropped ARP msgs from untrusted port connected to a switch
   - dropped DHCP messages allowed by permitted ACL
   
-  ```bash
+  ```text
   SW# show ip dhcp snooping binding
   MacAddress           IpAddress    LeaseSec   Type           VLAN    Interface
   -------------------  ----------   ---------  -------------  ----    -------------------
@@ -1019,7 +1007,9 @@ Trainer: keith Barker
   SW(config-if)# exit
 
   SW(config)# ip arp inspection vlan 30
+  ```
 
+  ```text
   SW(config)# arp access-list DEMO-LIST
   SW(config-arp-nacl)# permit ip host 10.1.0.111 mac host 0015.5d67.8322
   SW(config-arp-nacl)# permit ip host 10.1.0.120 mac host 0015.5d44.5566
@@ -1061,11 +1051,11 @@ Trainer: keith Barker
 
   ! generate traffic from Kali Linux
   Kali# ifconfig
-  eth0: flags=4163 ...TRUNCATED...
-      inet 10.16.20.102 ...TRUNCATED...
+  eth0: flags=4163 <...truncated...>
+      inet 10.16.20.102 <...truncated...>
 
   Kali# ping 10.16.20.7
-  ...TRUNCATED...
+  <...fail...>
 
   ! statistics increased
   SW# show ip arp inspection statistics
@@ -1083,17 +1073,17 @@ Trainer: keith Barker
   ```
 
 
-## Additional DAI Options and Features
+### Additional DAI Options and Features
 
 - Demo: config DAI parameters
 
-  ```bash
+  ```text
   SW# show ip arp inspection interfaces
   Interface       Trust State Rate (pps)  Burst Interval
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
   Gi0/0           Untrusted           15               1
-  ...TRUNCATED...
+  <...truncated...>
   Gi3/3           Trusted           None             N/A
 
   ! config DAI on g3/3 w/ rate limit = 100 pkts/sec
@@ -1107,7 +1097,7 @@ Trainer: keith Barker
   --------------- ----------- ----------  --------------
   Gi0/0           Untrusted           15               1
   Gi0/0           Untrusted          100               1
-  ...TRUNCATED...
+  <...truncated...>
   Gi3/3           Trusted           None             N/A
 
   ! verify w/ nmap to scan IP addr space w/o port scan
@@ -1137,19 +1127,19 @@ Trainer: keith Barker
   Kali# arpspoof -i eth0 10.16.20.7 
   0:15:5d:77:77:1 ff:ff:ff:ff:ff:ff 0896 42: arp reply 10.16.20.7 
     is-at 0:15:5d:77:77:1
-  ...TRUNCATED...
+  <...truncated...>
 
   SW#
   %SW_DAI-4-DHCP_SNOOPING_DENY: 1 INvalid ARPs (Res) on Gi0/1, Vlan 30
     ([0015.5d77.7701/10.16.20.7/ffff.ffff.ffff/0.0.0.0/00:36:14 UTC ...])
-  ...
-
+  <...truncated...>
+  
   ! disable src/dst MAC & IP addresses validation by default
   SW# show ip arp inspection vlan 30
   Source Mac Validation       : Disabled
   Destination Mac Validation  : Disabled
   IP Address Validation       : Disabled
-  ...
+  <...truncated...>
 
   ! enable src/dst MAC & IP addresses validation
   SW# conf t
@@ -1160,11 +1150,11 @@ Trainer: keith Barker
   Source Mac Validation       : Enabled
   Destination Mac Validation  : Enabled
   IP Address Validation       : Enabled
-  ...TRUNCATED...
+  <...truncated...>
   ```
 
 
-## Applying DAI to the Production Network
+### Applying DAI to the Production Network
 
 - Demo: config DAI in production network
   - topology
@@ -1173,7 +1163,7 @@ Trainer: keith Barker
     - PC2 = FL-PC2
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 500px;"
         onclick= "window.open('page')"
         src    = "img/19-dhcpprod.png"
         alt    = "An example production network"
@@ -1186,7 +1176,7 @@ Trainer: keith Barker
     - trust port g3/3 $\gets$ g1/0 on R3 not assigned via DHCP
     - verify DAI working correctly
   
-  ```bash
+  ```text
   ! verify basic info
   SW# show vlan brief
   VLAN Name                             Status    Ports
@@ -1195,12 +1185,12 @@ Trainer: keith Barker
                                                   ...
   30   Engineering                      active    Gi0/1
   40   Sales                            active    Gi0/2
-  ...TRUNCATED...
+  <...truncated...>
 
   SW# show cdp neighbor
   Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
   R3               Gig 3/3           177               R    7206VXR   Gig 1/0
-
+  
   SW# conf t
   SW(config)# int g3/3
   SW(config-if)# ip arp inspection trust
@@ -1242,7 +1232,7 @@ Trainer: keith Barker
   MTU         : 1500
 
   PC1> ping 10.16.22.7
-  ...successful...
+  <...successful...>
 
   ! PC2 w/ static IP address -> no (IP, MAC) mapping on SW
   ! ARP msg from PC2 unable to be verified --> pkt dropped
@@ -1250,12 +1240,12 @@ Trainer: keith Barker
   PC2: 10.16.22.200 255.255.255.0
 
   PC2> ping 10.16.22.7
-  ..UNSUCCESS...
+  <...Fail...>
 
   SW#
   %SW_DAI-4-DHCP_SNOOPING_DENY: 1 Invalid ARPs (Eeq) on Gi0/2, vlan 40
     ([0050.7966.6800/10.16.22.200/ffff.ffff.ffff/10.16.22.200/00:27:36 UTC ...])
-  ...TRUNCATED...
+  <...truncated...>
 
   ! PC2 changes back to dynamic IP address
   PC2> ip dhcp
@@ -1271,12 +1261,12 @@ Trainer: keith Barker
 
   ! verify connectivity on PC2
   PC2> pint 10.16.22.7
-  ...SUCCESS...
+  <...success...>
   ```
 
 
 
-## Review of Configure and Verify Cisco Dynamic ARP Inspection
+### Review of Configure and Verify Cisco Dynamic ARP Inspection
 
 - Question 1
 
@@ -1317,26 +1307,15 @@ Trainer: keith Barker
 
 
 
-## Configure and Verify Cisco Dynamic ARP Inspection
+### Configure and Verify Cisco Dynamic ARP Inspection
 
 - [CCNA Lab Assessment Online Training](https://www.cbtnuggets.com/it-training/cisco/assessment-labs)
 
 
-# 21. Private VLANS
-
-Trainer: Keith Barker
+## 21. Private VLANS
 
 
-## Introduction to Private VLANs
-
-- Learning goals
-  - PVLANs modes
-  - config PVLANs
-  - Verify PVLANs
-  - trunkking w/ PVLANs
-
-
-## PVLANs Overview
+### PVLANs Overview
 
 - VLAN fundamentals
   - traditional VLAN
@@ -1361,7 +1340,7 @@ Trainer: Keith Barker
   - ports w/ the same primary vlan and IP address space $\to$ IP address not decisive
 
 
-## Promiscuous Ports
+### Promiscuous Ports
 
 - Promiscuous ports overview
   - ports w/o any restriction in a primary vlan
@@ -1375,7 +1354,7 @@ Trainer: Keith Barker
   - ports connected to other switches as trunk w/ associated community vlan
 
 
-## PVLAN Design
+### PVLAN Design
 
 - Planning PVLAN
   - primary vlan: 100
@@ -1389,7 +1368,7 @@ Trainer: Keith Barker
   - DHCP service on SW1
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
       onclick= "window.open('page')"
       src    = "img/21-pvlan.png"
       alt    = "Example topology of PVLAN network"
@@ -1399,19 +1378,20 @@ Trainer: Keith Barker
 
 
 
-## Implement PVLANs
+### Implement PVLANs
 
 - Demo: config PVLAN
 
-  ```bash
+  ```text
   SW# conf t
-
   ! reset existed config
   SW1(config)# no vlan 2-1000
   SW1(config)# deafult int range g0/0-3
   SW1(config)# default int range 1/0-3
   SW1(config)# default int range 2/0-3
+  ```
 
+  ```text
   SW1(config)# spanning mode rapid
 
   SW1(config)# vtp mode ransport
@@ -1463,11 +1443,11 @@ Trainer: Keith Barker
   SW1(config-if)# end
   ```
 
-## Verify PVLANs
+### Verify PVLANs
 
 - Demo: verify PVLAN
 
-  ```bash
+  ```text
   SW1# show int brief
   Port      Name     Status       Vlan       Duplex  Speed Type
   Gi0/0              connect      1          a-full  auto  RJ45
@@ -1503,21 +1483,21 @@ Trainer: Keith Barker
   Switchport: Enable
   Administrative Mode: private-vlan host
   Operational Mode: private-vlan host
-  ...TRUNCATED...
+  <...truncated...>
   Administrative private-vlan host-association: 100 (Primary VLAN) 200 (Community A)
-  ...TRUNCATED...
+  <...truncated...>
 
   SW1# show int gig 1/1 switchport
   Name: Gi1/1
-  ...TRUNCATED...
+  <...truncated...>
   Administrative private-vlan host-association: 100 (Primary VLAN) 300 (Community B)
-  ...TRUNCATED...
+  <...truncated...>
 
   SW1# show int gig 2/1 switchport
   Name: Gi2/1
-  ...TRUNCATED...
+  <...truncated...>
   Administrative private-vlan host-association: 100 (Primary VLAN) 400 (Isolated VLAN)
-  ...TRUNCATED...
+  <...truncated...>
 
   ! config dhcp pool for DHCP service
   SW1# conf t
@@ -1560,7 +1540,7 @@ Trainer: Keith Barker
   ```
 
 
-## Trunking and PVLANs
+### Trunking and PVLANs
 
 - Trunking & PVLAN
   - broadcast frames on any port of a community vlan, communicate to
@@ -1579,14 +1559,14 @@ Trainer: Keith Barker
     - config to allow Roamer to access PC 300-1 & 300-2
     - verify the reachability from Roamer
 
-  ```bash
+  ```text
   SW2# show vlan private-vlan
   Primary Secondary Type              Ports
   ------- --------- ----------------- -------------------------
   100     200       community         Gi0/1, Gi0/2   
   100     300       community         Gi1/1, Gi1/2
   100     400       isolated          Gi2/1, Gi2/2
-
+  
   SW2# show int trunk
   Port    Mode  Encapsulation Status    Native vlan
   Gi0/0   on    802.1q        trunking  1
@@ -1634,33 +1614,12 @@ Trainer: Keith Barker
     - pkt: src=10.100.0.53, dst=10.100.0.57, prot=ICMP, info=Echo (ping) reply id=0x7f88, seq=1/256, ttl=64 (reply in 112)
       - L2.5 frame: 802.1Q V, PRI: 0, DEI: 0, ID:300
 
-## PVLAN Summary
-
-- Summary
-  - logically dividing a L2 network into sub-vlans w/ PVLAN
-  - primary VLAN associated w/ second vlans
-  - types of secondary vlans: community and isolated 
-  - promicusous port:
-    - associate w/ primary vlan
-    - acting as default gateway in L3
 
 
-# 22. VRF-lite
-
-Trainer: Keith Barker
+## 22. VRF-lite
 
 
-## Introduction to VRF-lite
-
-- Learning goals
-  - VRF-lite
-  - config VRF-lite
-  - VRF-lite on multi-layer switch
-  - VRF-lite w/ routing
-  - DHCP VRF services
-
-
-## VRF-lite Overview
+### VRF-lite Overview
 
 - Virtual Routing Forwarding-Light (VRF-lite) fundamentals
   - a feature enabling a service provider to support two or more VPNs whose IP addresses probably overlapped
@@ -1695,7 +1654,7 @@ Trainer: Keith Barker
   - analogy: VLAN on L2 switches
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
       onclick= "window.open('page')"
       src   = "img/22-vrflite.png"
       alt   = "VRF-lit for seperated VPNs"
@@ -1705,7 +1664,7 @@ Trainer: Keith Barker
 
 
 
-## VRF-lite Configuration Basics
+### VRF-lite Configuration Basics
 
 - Commands for VRF-lites
   - procedure
@@ -1719,7 +1678,7 @@ Trainer: Keith Barker
   - config each interface: `if) vrf forwarding VRF_NAME`
 
 
-## VRFs on a Multi-Layer Switch
+### VRFs on a Multi-Layer Switch
 
 - VRFs and Multi-layer switches
   - procedure
@@ -1729,7 +1688,7 @@ Trainer: Keith Barker
   - associate SVI to designed VRF
 
 
-## VRF-lite Design
+### VRF-lite Design
 
 - Plan for VRF-lite
   - cust1 w/ 2 subnets: 10.101.0.0/24 & 10.12.0.0/24
@@ -1744,7 +1703,7 @@ Trainer: Keith Barker
   - vlan 102 & 202 w/ the same IP address space
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src   = "img/22-vrfdemo.png"
       alt   = "Example network for VRF-lite"
@@ -1753,7 +1712,7 @@ Trainer: Keith Barker
   </figure>
 
 
-## VRF-lite Implementation
+### VRF-lite Implementation
 
 - Demo: config VRF-lite on SW1
 
@@ -1844,19 +1803,19 @@ Trainer: Keith Barker
   SW2(config)# int vlan 101
   SW2(config-if)# vrf forwarding Cust1
   SW2(config-if)# ip address 10.101.0.2 255.255.255.0
-  ...TRUNCATED...
+  <...truncated...>
   SW2(config)# int vlan 102
   SW2(config-if)# vrf forwarding Cust1
   SW2(config-if)# ip address 10.12.0.2 255.255.255.0
-  ...TRUNCATED...
+  <...truncated...>
   SW2(config)# int vlan 201
   SW2(config-if)# vrf forwarding Cust2
   SW2(config-if)# ip address 10.201.0.2 255.255.255.0
-  ...TRUNCATED...
+  <...truncated...>
   SW2(config)# int vlan 202
   SW2(config-if)# vrf forwarding Cust2
   SW2(config-if)# ip address 10.12.0.2 255.255.255.0
-  ...TRUNCATED...
+  <...truncated...>
 
   SW2# show vrf
   Name    Default RD    Protocols   Interfaces
@@ -1886,7 +1845,7 @@ Trainer: Keith Barker
   ```
 
 
-## VRF-lite Adding Routing
+### VRF-lite Adding Routing
 
 - Demo: config routing per VRF
   - Cust1: OSPF routinng
@@ -1903,7 +1862,7 @@ Trainer: Keith Barker
   SW1(config-router)# address-family ipv4 vrf Cust2 autonomous-system 1
   SW1(config-router-af)# network 0.0.0.0
   SW1(config-router-af)# end
-
+  
   SW1# show ip ospf neighbor
   Neighbor ID     Pri    State      Dead Time    Address     Interface
   10.101.0.2        1    FULL/DR    00:00:33     10.12.0.2   Vlan102
@@ -1934,7 +1893,7 @@ Trainer: Keith Barker
   ```
 
 
-## VRF-lite Routing Verification
+### VRF-lite Routing Verification
 
 - Demo: verify VRF-lite
 
@@ -1967,7 +1926,7 @@ Trainer: Keith Barker
   SW1(config-if)# vrf forwarding Cust1
   SW1(config-if)# ip addr 1.1.1.1 255.255.255.255
   SW1(config-if)# end
-
+  
   ! verify reachability
   SW2# show ip route
   Gateway of last resort is not set.
@@ -1975,7 +1934,7 @@ Trainer: Keith Barker
   O    1.1.1.1 [110/2] via 10.101.0.1, 00:00:20, Vlan101
                [110/2] via 10.12.0.1, 00:00:20, Vlan102
       10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
-  ...TRUNCATED...
+  <...truncated...>
 
   SW2# ping 1.1.1.1
   .....
@@ -1998,7 +1957,7 @@ Trainer: Keith Barker
   O      1.1.1.1 [110/2] via 10.101.0.1, 00:00:20, Vlan101
                  [110/2] via 10.12.0.1, 00:00:20, Vlan102
         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
-  ...TRUNCATED...
+  <...truncated...>
 
   SW2# conf t
   SW2(config)# int loop 0
@@ -2054,14 +2013,14 @@ Trainer: Keith Barker
   D      2.2.2.2 [90/10880] via 10.201.0.1, 00:00:43, Vlan201
                  [90/10880] via 10.12.0.1, 00:00:43, Vlan202
         10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
-  ...TRUNCATED...
+  <...truncated...>
 
   SW1# ping vrf Cust2 2.2.2.2
   !!!!!
   ```
 
 
-## DHCP VRF Services
+### DHCP VRF Services
 
 - Demo: verify reachability w/ DHCP and VRF-lite
 
@@ -2086,7 +2045,6 @@ Trainer: Keith Barker
   Continue? [no]: yes
   SW2(dhcp-config)# yes
   SW2(dhcp-config)# exit
-
   SW2(config)# ip dhcp pool 201-subnet
   SW2(dhcp-config)# network 10.201.0.0 /24
   SW2(dhcp-config)# default-router 10.201.0.2
@@ -2154,7 +2112,7 @@ Trainer: Keith Barker
   Port      Name      Status        VLan    Duplex  Speed Type
   Gi0/0               connected     trunk   a-full  auto  RJ45
   Gi0/1               not connected 1       a-full  auto  RJ45
-  ...TRUNCATED...
+  <...truncated...>
   Gi1/0               connected     101     a-full  auto  RJ45
   Gi1/1               connected     102     a-full  auto  RJ45
   Gi1/2               connected     201     a-full  auto  RJ45
@@ -2164,401 +2122,12 @@ Trainer: Keith Barker
   ```
 
 
-## VRF-lite Summary
 
-- Summary
-  - VRF-lite: separating subnets into VPNs
-  - creating VRFs
-  - assigning VRFs to intrfaces
-  - adding routing for VRFs
-  - DHCP service for VRFs
 
+## 24. Configure Cisco TrustSec
 
-# 23. Network Infrastructure Device Hardening
 
-Trainer: keith Barker
-
-
-## Introduction to Device Hardening
-
-- Learning goals
-  - securing network infrastructure
-  - best pratices to protect
-    - management plane
-    - control plane
-    - data plane
-  - routers and switches hardening
-
-
-
-## Device Hardening Overview
-
-- Device hardening overview
-  - improving security possibly broken 
-    - management plane
-    - control plane
-    - data plane
-  - management plane
-    - protocols btw users and systems
-    - e.g., SSH, SNMP, NetFlow, FTP. TFTP, AAA, NTP, Syslog, etc.
-  - control plane
-    - protocols btw devices
-    - e.g., routing protocols, STP, MAC addresses
-  - data plane: user traffic, end-to-end
-
-
-## Cisco Guide to Harden IOS Devices
-
-- Cisco device hardening guideline
-  - [Cisco Guide to Harden Cisco IOS Devices](https://www.cisco.com/c/en/us/support/docs/ip/access-lists/13608-21.html)
-  - Document ID: 13608
-  - considerations for the document
-    - not every solution perfect for every network
-    - testing every plan before deploying
-
-
-## Management Plane Hardening
-
-- General Management Plane Hardening
-  - password mgmt: TACACS+ + local user account
-    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secrete, type 9 password
-    - `secrete`: using type 5 password
-  - enhanced password security
-  - login password retry lockout
-  - no Service Password-Recovery
-  - disable Unused Services (*)
-  - EXEC Timeout: timeout connection
-  - keepalives for TCP Sessions
-  - management Interface Use: create loopback intf w/ IP address
-  - Memory Threshold Notifications
-  - CPU Thresholding Notification (*)
-  - Reserve Memory for Console Access
-  - Memory Leak Detector
-  - Buffer Overflow: Detection and Correction of Redzone Corruption
-  - Enhanced Crashinfo File Collection
-  - Network Time Protocol: authentication always
-  - Disable Smart Install
-
-  ```text
-  ! local user account
-  R1(config)# username admin1 privilege 15 password Cisco!23
-  R1(config)# username admin1 privilege 15 secrete Cisco!23
-  R1(config)# username admin1 privilege 15 algorithm-type scrypt secrete Cisco!23
-
-  ! disable unused services
-  R1# show control-plane host open-ports
-  Active internet connections (servers and established)
-  Prot        Local Address      Foreign Address             Service    State
-   tcp                 *:23                  *:0              Telnet   LISTEN
-
-  R1(config)# line vty 0 4
-  R1(config-line)# transport input ssh
-  R1(config-line)# exit
-  R1(config)# ip http secure-server
-  R1(config)# end
-
-  R1# show control-plane host open-ports
-  Active internet connections (servers and established)
-  Prot        Local Address      Foreign Address             Service    State
-   tcp                 *:22                  *:0          SSH-Server   LISTEN
-   tcp                 *:23                  *:0              Telnet   LISTEN
-   tcp                *:443                  *:0        HTTPS-Server   LISTEN
-   tcp                *:443                  *:0           HTTP CORE ESTABLIS
-  ```
-
-
-- Limit Access to the Network with Infrastructure ACLs
-  - infrastructure ACL:
-    - on edge routers
-    - only allowing from certain admin computers to access management plane
-    - specifying connections from hosts or networks that need to be allowed to network devices
-    - all other traffic to the infrastructure is explicitly denied
-  - ICMP Packet Filtering
-  - Filter IP Fragments
-  - ACL Support for Filtering IP Options
-  - ACL Support to Filter on TTL Value
-
-
-- Secure Interactive Management Sessions
-  - Management Plane Protection
-  - Control Plane Protection: very granularity to protect CPU, queue, threshold, etc.; control plane policing - less granularity to protect CPU
-  - Encrypt Management Sessions
-  - SSHv2 (*)
-  - SSHv2 Enhancements for RSA Keys
-  - Console and AUX Ports
-  - Control vty and tty Lines
-  - Control Transport for vty and tty Lines
-  - Warning Banners
-
-
-- Authentication, Authorization, and Accounting
-  - TACACS+ Authentication
-  - Authentication Fallback
-  - Use of Type 7 Passwords: even type 9
-  - TACACS+ Command Authorization
-  - TACACS+ Command Accounting
-  - Redundant AAA Servers
-
-
-- Fortify the Simple Network Management Protocol
-  - SNMP Community Strings
-  - SNMP Community Strings with ACLs
-  - Infrastructure ACLs
-  - SNMP Views
-  - SNMP Version 3: preferred
-  - Management Plane Protection
-
-
-- Logging Best Practices
-  - Send Logs to a Central Location
-  - Logging Level
-  - Do Not Log to Console or Monitor Sessions
-  - Use Buffered Logging (*)
-  - Configure Logging Source Interface
-  - Configure Logging Timestamps
-
-
-- Cisco IOS Software Configuration Management
-  - Configuration Replace and Configuration Rollback
-  - Exclusive Configuration Change Access
-  - Cisco IOS Software Resilient Configuration
-  - Digitally Signed Cisco Software
-  - Configuration Change Notification and Logging
-
-  ```text
-  R1# dir
-  ! get the iso file name
-
-  R1# show software authenticity file flash0:vios-adventerprisek9-m
-
-  ! configuration rollback
-  R1(config)# archive
-  R1(config-archive)# path flash0:KB-Backup.cfg
-  R1(config-archive)# maximum 10
-  R1(config-archive)# time-period 2
-  R1(config-archive)# write-memory
-  R1(config-archive)# log config
-  R1(config-archive-log-cfg)# end
-
-  R1# dir 
-  ! a copy of curren running config
-  R1# write
-  ! generate a startup config but also a copy of backup
-  R1# configure replace flash0:KB-Backup.cfg-....
-  ! replace current running config w/ the backup config
-  ```
-
-
-
-
-## Control Plane Hardening
-
-- Primary considerations of control plane
-  - routing protocols
-  - authentication
-
-
-- General Control Plane Hardening
-  - consider to turn of the features
-  - IP ICMP Redirects: suggesting better routes
-  - ICMP Unreachables: hacker flooding to explore existence of subnets
-  - Proxy ARP
-
-
-- Limit CPU Impact of Control Plane Traffi
-  - Understand Control Plane Traffic: drop pkts before impact CPU
-  - Infrastructure ACLs (*)
-  - Receive ACLs (*)
-  - CoPP
-  - Control Plane Protection
-  - Hardware Rate Limiters
-
-
-- Secure BGP
-  - TTL-based Security Protections (*)
-  - BGP Peer Authentication with MD5
-  - Configure Maximum Prefixes
-  - Filter BGP Prefixes with Prefix Lists (*)
-  - Filter BGP Prefixes with Autonomous System Path Access Lists 
-
-
-- Secure Interior Gateway Protocols
-  - Routing Protocol Authentication and Verification with Message Digest 5
-  - Passive-Interface Commands
-  - Route Filtering
-  - Routing Process Resource Consumption
-
-
-- Secure First Hop Redundancy Protocols (FHRP)
-  - including: HSRP, VRRP, GLBP
-  - no authentication by default
-
-
-## Data Plane Hardening
-
-- General Data Plane Hardening
-  - IP Options Selective Drop
-  - Disable IP Source Routing
-  - Disable ICMP Redirects
-  - Disable or Limit IP Directed Broadcasts
-
-
-- Filter Transit Traffic with Transit ACLs
-  - ICMP Packet Filtering
-  - Filter IP Fragments
-  - ACL Support for Filtering IP Options
-
-
-- Anti-Spoofing Protections (*)
-  - Unicast RPF
-  - IP Source Guard
-  - Port Security
-  - Dynamic ARP Inspection
-  - Anti-Spoofing ACLs
-
-
-- Limit CPU Impact of Data Plane Traffic
-  - Features and Traffic Types that Impact the CPU
-  - Filter on TTL Value
-  - Filter on the Presence of IP Options
-  - Control Plane Protection
-
-
-- Traffic Identification and Traceback
-  - NetFlow (*)
-  - Classification ACLs
-
-
-- Access Control with VLAN Maps and Port Access Control Lists
-  - Access Control with VLAN Maps
-  - Access Control with PACLs
-  - Access Control with MAC
-
-
-- Private VLAN Use
-  - Isolated VLANs
-  - Community VLANs
-  - Promiscuous Ports
-  - VRF-lite
-
-
-## Device Hardening Checklist
-
-- Management Plane
-  - Passwords
-    - Enable MD5 hashing (secret option) for enable and local user passwords
-    - Configure the password retry lockout
-    - Disable password recovery (consider risk)
-  - Disable unused services
-  - Configure TCP keepalives for management sessions
-  - Set memory and CPU threshold notifications
-  - Configure
-    - Memory and CPU threshold notifications
-    - Reserve memory for console access
-    - Memory leak detector
-    - Buffer overflow detection
-    - Enhanced crashinfo collection
-  - Use iACLs to restrict management access
-  - Filter (consider risk)
-    - ICMP packets
-    - IP fragments
-    - IP options
-    - TTL value in packets
-  - Control Plane Protection
-    - Configure port filtering
-    - Configure queue thresholds
-  - Management access
-    - Use Management Plane Protection to restrict management interfaces
-    - Set exec timeout
-    - Use an encrypted transport protocol (such as SSH) for CLI access
-    - Control transport for vty and tty lines (access class option)
-    - Warn using banners
-  - AAA
-    - Use AAA for authentication and fallback
-    - Use AAA (TACACS+) for command authorization
-    - Use AAA for accounting
-    - Use redundant AAA servers
-  - SNMP
-    - Configure SNMPv2 communities and apply ACLs
-    - Configure SNMPv3
-  - Logging
-    - Configure centralized logging
-    - Set logging levels for all relevant components
-    - Set logging source-interface
-    - Configure logging timestamp granularity
-  - Configuration Management
-    - Replace and rollback
-    - Exclusive Configuration Change Access
-    - Software resilience configuration
-    - Configuration change notifications
-
-
-- Control Plane
-  - Disable (consider risk)
-    - ICMP redirects
-    - ICMP unreachables
-    - Proxy ARP
-  - Configure NTP authentication if NTP is being used
-  - Configure Control Plane Policing/Protection (port filtering, queue thresholds)
-  - Secure routing protocols
-    - BGP (TTL, MD5, maximum prefixes, prefix lists, system path ACLs)
-    - IGP (MD5, passive interface, route filtering, resource consumption)
-  - Configure hardware rate limiters
-  - Secure First Hop Redundancy Protocols (GLBP, HSRP, VRRP)
-
-
-- Data Plane
-  - Configure IP Options Selective Drop
-  - Disable (consider risk)
-    - IP source routing
-    - IP Directed Broadcasts
-    - ICMP redirects
-  - Limit IP Directed Broadcasts
-  - Configure tACLs (consider risk)
-    - Filter ICMP
-    - Filter IP fragments
-    - Filter IP options
-    - Filter TTL values
-  - Configure required anti-spoofing protections
-    - ACLs
-    - IP Source Guard
-    - Dynamic ARP Inspection
-    - Unicast RPF
-    - Port security
-  - Control Plane Protection (control-plane cef-exception)
-  - Configure NetFlow and classification ACLs for traffic identification
-  - Configure required access control ACLs (VLAN maps, PACLs, MAC)
-  - Configure Private VLANs
-
-
-
-## Hardening Review
-
-- Summary
-  - management plane
-  - control plane
-  - data plane
-  - checklist
-
-
-
-# 24. Configure Cisco TrustSec
-
-Trainer: Keith Barker
-
-
-## Introduction to TrustSec
-
-- Learning goals
-  - TrustSec
-  - group ACLs
-  - TrustSec policies
-  - config TrustSec
-  - verify TrustSec
-  - SGT eXchange protocol (SXP)
-
-
-## TrustSec Overview
+### TrustSec Overview
 
 - TrustSec overview
   - Device A connected to SW-A w/ MAB or 802.1x
@@ -2594,7 +2163,7 @@ Trainer: Keith Barker
 
 
 
-## TrustSec Security Groups
+### TrustSec Security Groups
 
 - Demo: create TrustSec security groups on ISE
   - Work Centers tab > TrustSec: subtabs - Overview, Components, TrustSec Policy, Policy Sets, SXP, Troubleshoot, Reports, Settings
@@ -2607,7 +2176,7 @@ Trainer: Keith Barker
   - 'Add' icon > Security Groups List > New Security Group: Name = PCB_PCs, SGT = 18 > 'Submit' button
 
 
-## Security Group ACLs
+### Security Group ACLs
 
 - Demo: create security group policies on ISE
   - Work Centers tab > TrustSec > Components subtab > Security Group ACLs
@@ -2618,7 +2187,7 @@ Trainer: Keith Barker
   - Security Group ACLs: new entry - Name = No_Telnet, IP Version = IPv4
 
 
-## TrustSec Policies
+### TrustSec Policies
 
 - Plan for TrustSec policies btw groups
   - deny telnet: ISE-Ops $\to$ PCB-PCs
@@ -2634,7 +2203,7 @@ Trainer: Keith Barker
   - 'Add' icon > Create Security Group ACL Mapping ... > Source Security Group = ISE_Ops; Destination Security Group = PCB_PCs; Assigned Security Group ACLs = No_Telnet > 'Save' button
 
 
-## Configure Network Devices for TrustSec
+### Configure Network Devices for TrustSec
 
 - Demo: config network devices for TrustSec
   - SW-A = SW2-3750x
@@ -2659,7 +2228,7 @@ Trainer: Keith Barker
   SW2(config)# radius server Demo_ISE
   SW2(config)# pac key Cisco!23
   SW2(config)# exit
-
+  
   SW2# cts credentials id SW2-3750x-136 password Cisco!23
   SW2# show cts pacs
   AID: CE01...56FE
@@ -2685,17 +2254,17 @@ Trainer: Keith Barker
   Local Device SGT:
     SGT tag = 2-04:TrustSec_Devices
   Server List Info:
-  <...TRUNCATED...>
+  <...truncated...>
   Security Group Name Table:
-    <...TRUNCATED...>
+    <...truncated...>
     16-c3:ISE_Admins
     17-c3:ISE_Ops
     18-c3:PCB_PCs
-  <...TRUNCATED...>
+  <...truncated...>
   ```
 
 
-## ISE and NAD TrustSec Integration
+### ISE and NAD TrustSec Integration
 
 - Demo: integrating ISE and NAD TrustSec
   - Work Centers > TrustSec > Components subtab > Network Devices folder
@@ -2709,7 +2278,7 @@ Trainer: Keith Barker
     - Generate Pac: Identity = SW2-3750x-136, Encryption Key = `****`, PAC Time to Live = 1 week > 'Generate' button
 
 
-## Verify TrustSec
+### Verify TrustSec
 
 - Demo: verify TrustSec config
   - topology
@@ -2719,7 +2288,7 @@ Trainer: Keith Barker
     - PCB-PC connected to SW2 w/ MAB on g2/0/2
 
     <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-      <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+      <img style="margin: 0.1em; padding-top: 0.5em; width: 450px;"
         onclick= "window.open('page')"
         src    = "img/24-trustsecnet.png"
         alt    = "Example network for TrustSec"
@@ -2772,7 +2341,7 @@ Trainer: Keith Barker
     SW2# show cts security groups
     Security Group Table:
     =====================
-      <...TRUNCATED...>
+      <<...truncated...>>
       16:ISE_Admins
       17:ISE_Ops
       18:PCB_PCs
@@ -2833,8 +2402,8 @@ Trainer: Keith Barker
     Admin> ping 10.80.0.12
     !!!!!
 
-    Raspberrypi# ip addr
-    <...TRUNCATED...>
+    Raspberrypi## ip addr
+    <...truncated...>
     2: eth0: ...
       inet 10.80.1.12/24 ...
     
@@ -2851,7 +2420,7 @@ Trainer: Keith Barker
 
 
 
-## SGT eXchange Protocol (SXP)
+### SGT eXchange Protocol (SXP)
 
 - SXP overview
   - not all devices w/ Cisco
@@ -2876,11 +2445,11 @@ Trainer: Keith Barker
     SW2# show cts security-groups
     Security Group Table:
     =====================
-      <...TRUNCATED...>
+      <...truncated...>
       16:ISE_Admins
       17:ISE_Ops
       18:PCB_PCs
-
+    
     SW2# show cts role-based sgt-map all
     IP Address        SGT         Source
     ============================================
@@ -2953,21 +2522,10 @@ Trainer: Keith Barker
     ```
 
 
-# 25. Additional Layer 2 Security
-
-Trainer: Keith Barker
+## 25. Additional Layer 2 Security
 
 
-## Introduction to Additional Layer 2 Security Options
-
-- Learning goals
-  - L2 security tools
-  - storm control
-  - root guard
-  - BPDU guard
-
-
-## Layer 2 Security Overview
+### Layer 2 Security Overview
 
 - Info required for L2 security
   - network segmentation @ VLAN level $\to$ TrustSec on ISE
@@ -2977,7 +2535,7 @@ Trainer: Keith Barker
   - ACLs
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 40vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 400px;"
       onclick= "window.open('page')"
       src    = "img/25-l2sec.png"
       alt    = "L2 Hardening"
@@ -2986,7 +2544,7 @@ Trainer: Keith Barker
   </figure>
 
 
-## Storm Control
+### Storm Control
 
 - Storm control fundamentals
   - L2 loop forming $\to$ broadcast storm
@@ -3000,7 +2558,7 @@ Trainer: Keith Barker
   - disable STP on VLAN 1
 
   <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
-    <img style="margin: 0.1em; padding-top: 0.5em; width: 20vw;"
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 350px;"
       onclick= "window.open('page')"
       src    = "img/25-swloop.png"
       alt    = "Lopped switches"
@@ -3015,21 +2573,23 @@ Trainer: Keith Barker
   SW2.ogit.com     Fas 0/5           179           R S I    WS-C3560- Fas 0/5
 
   SW1# show spanning-tree vlan 1
-  ...TRUNCATED... 
+  <...truncated...> 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Desg FWD 19        128.4    P2p
   Fa0/4            Desg FWD 19        128.5    P2p
+  ```
 
+  ```text
   SW2# show spanning-tree vlan 1
-  ...TRUNCATED... 
+  <...truncated...> 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Altn BLK 19        128.6    P2p
 
   SW3# show spanning-tree vlan 1
-  ...TRUNCATED... 
+  <...truncated...> 
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/4            Root FWD 19        128.5    P2p
@@ -3050,7 +2610,7 @@ Trainer: Keith Barker
   FastEthernet0/1     unassigned    YES NVRAM   administratively down down
   FastEthernet0/2     unassigned    YES NVRAM   administratively down down
   FastEthernet0/3     unassigned    YES NVRAM   up                    up
-  ...TRUNCATED... 
+  <...truncated...> 
   GigabitEthernet0/1  192.168.1.201 YES NVRAM   up                    up
 
   SW1# ping 1.1.1.88
@@ -3069,7 +2629,7 @@ Trainer: Keith Barker
   FA0/2               not connected 1       a-full  auto   10/100BaseT
   FA0/3               connected     trunk   a-full  a-100  10/100BaseT
   FA0/4               connected     trunk   a-full  a-100  10/100BaseT
-  ...TRUNCATED... 
+  <...truncated...> 
   Gi0/1               connected     routed  a-full  a-1000 10/100/1000BaseT
 
   SW1# conf t
@@ -3111,7 +2671,7 @@ Trainer: Keith Barker
 
 
 
-## Root Guard
+### Root Guard
 
 - Root Guard overview
   - STP on 2 switched network (shown as above)
@@ -3140,17 +2700,17 @@ Trainer: Keith Barker
     Root ID   Priority  24577
               Address   a418.75a2.7880
               This bridge is the root
-    <...TRUNCATED...>
-
+    <...truncated...>
+  
   SW2# show spanning-tree vlan 1
-  <...TRUNCATED... >
+  <...truncated... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Altn BLK 19        128.6    P2p
 
   SW3# show spanning-tree vlan 1
-  <...TRUNCATED...>
+  <...truncated...>
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/4            Root FWD 19        128.5    P2p
@@ -3174,19 +2734,19 @@ Trainer: Keith Barker
     Root ID   Priority  24577
               Address   a418.75a2.7880
               This bridge is the root
-    <...TRUNCATED...>
+    <<...truncated...>>
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
   Fa0/5            Desg BLK 19        128.6    P2p
 
   SW3# show log
-  <...TRUNCATED...>
+  <...truncated...>
   %SPANTREE-2-ROOTGUARD_CONFIG_CHANGE: Root guard enabled on port FastEthernet0/5 on VLAN 1
   %SPANTREE-2-ROOTGUARD_BLOCK: Root guard blocking port FastEthernet0/5 on VLAN 1
 
   SW3# show spanning-tree vlan 1
-  <...TRUNCATED...>
+  <...truncated...>
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- ---------------
   Fa0/4            Root FWD 19        128.5    P2p
@@ -3201,7 +2761,7 @@ Trainer: Keith Barker
   ```
 
 
-## BPDU Guard
+### BPDU Guard
 
 - BPDU guard
   - a feature to protect the port from receiving STP BPDUs
@@ -3222,7 +2782,7 @@ Trainer: Keith Barker
 
   ```text
   SW2# show spanning-tree vlan 1
-  <...TRUNCATED... >
+  <...truncated... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
@@ -3234,7 +2794,7 @@ Trainer: Keith Barker
   SW2(config-if)# do show spanning-tree vlan 1
   VLAN0001
     spanning tree enabled protocol rstp
-  <...TRUNCATED... >
+  <...truncated... >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/5            Root FWD 19        128.6    P2p
@@ -3249,7 +2809,7 @@ Trainer: Keith Barker
   FA0/2               notconnected  1       auto    auto   10/100BaseT
   FA0/3               err-disabled  1       auto    auto   10/100BaseT
   FA0/4               notconnected  1       auto    auto   10/100BaseT
-  ...TRUNCATED... 
+  <...truncated...> 
   Gi0/1               connected     routed  a-full  a-1000 10/100/1000BaseT
 
   SW2# show int status err-disabled
@@ -3263,7 +2823,7 @@ Trainer: Keith Barker
    switchport mode trunk
    spanning-tree bpduguard enable
   end
-
+  
   SW2# conf t
   SW2(config)# int f0/3
   SW2(config-if)# no spanning-tree bpduguard enable
@@ -3272,7 +2832,7 @@ Trainer: Keith Barker
   SW2(config-if)# end
 
   SW2# show spanning-tree vlan 1
-  <...TRUNCATED... >
+  <<...truncated...> >
   Interface        Role Sts Cost      Prio.Nbr Status
   ---------------- ---- --- --------- -------- --------
   Fa0/3            Root FWD 19        128.4    P2p
@@ -3280,12 +2840,6 @@ Trainer: Keith Barker
   ```
 
 
-## Summary of Layer 2 Security
-
-- Summar
-  - storm control
-  - root guard
-  - bpdu guard
 
 
 

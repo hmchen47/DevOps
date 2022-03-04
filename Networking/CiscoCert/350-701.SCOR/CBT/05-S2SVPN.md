@@ -66,7 +66,7 @@ Trainer: Keith Barker
   - ensure the connectivity of public network
   - R1 interfaces na reachability check
 
-    ```bash
+    ```text
     R1# sh ip int br
     Interface           IP-Address  OK? Method  Status                Protocol
     GigabitEthernet0/0  unassigned  YES TFTP    administratively down down
@@ -80,16 +80,16 @@ Trainer: Keith Barker
     Success rate is 100 percent (5/5), round-trip min/avg/max = 4/6/11 ms
     ```
 
-  - R1 & R2 reachability: `` $\to$ `!!!!!`
+  - R1 & R2 reachability: `ping 25.2.2.2` $\to$ `!!!!!`
   - PC1 basic info and reachability check:
 
-    ```bash
+    ```text
     PC1# ip addr
-    ...
+    <...truncated...>
     82: eth0@if81: ...
-      ...
+      <...truncated...>
       inet 10.1.0.51/24 scope global eth0
-      ...
+      <...truncated...>
     
     PC1# route
     Kernel IP routing table
@@ -111,7 +111,7 @@ Trainer: Keith Barker
 - Implementing IKE Phase 1 on R1
   - isakmp policy number: lower number taking priority
 
-  ```bash
+  ```text
   R1# sh run | section crypto
 
   R1# sh crypto isakmp policy
@@ -176,7 +176,7 @@ Trainer: Keith Barker
   - crypto map sequence number: used ti identify if multiple crypto maps used for different sites
   - crypto map not enabled on any interface
 
-  ```bash
+  ```text
   ! config transform set
   R1# conf t
   R1(config)# crypto ipsec transform-set Demo-SET esp-aes 128 esp-sha384-hmac
@@ -216,7 +216,7 @@ Trainer: Keith Barker
 - Verify IKEv1 config on R2
   - ensure the crypto config same as R1
 
-  ```bash
+  ```text
   ! verify R2
   R2# sh crypto isakmp policy
   Global IKE policy
@@ -248,7 +248,7 @@ Trainer: Keith Barker
 
 - Applying crypto map to egress interface on R2
 
-  ```bash
+  ```text
   R2(config)# int gig 0/2
   R2(config-if)# crypto map Demo-MAP
   R2(config-if)# end
@@ -281,7 +281,7 @@ Trainer: Keith Barker
       #pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 25.2.2.2, remote crypto endpt.: 15.1.1.1
        plaintext mtu 1500, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/2
@@ -294,7 +294,7 @@ Trainer: Keith Barker
 
 - Applying crypto map to egress interface on R1
 
-  ```bash
+  ```text
   R1(config)# int gig 0/1
   R1(config-if)# crypto map Demo-MAP
   R1(config-if)# end
@@ -306,7 +306,7 @@ Trainer: Keith Barker
   - IPsec VPN created unless traffic flow btw
   - enable debug tool on R1 to observe the negotiation
 
-    ```bash
+    ```text
     R1# show crypto isakmp sa
     IPv4 Crypto ISAKMP SA
     dst       src     state     conn-id status
@@ -318,18 +318,18 @@ Trainer: Keith Barker
 
   - init traffic on PC1:
 
-    ```bash
+    ```text
     PC1# traceroute10.2.0.50
     traceroute to 10.2.0.50 (10.2.0.50), 30 hops max, 60 byte packets
-     1  10.1.0.1  (10.1.0.1)    4.028 ms    ...
-     2  25.2.2.2  (25.2.2.2)    24.343 ms   ...
-     3  10.2.0.50 (10.2.0.50)   70.862 ms   ...
+     1  10.1.0.1  (10.1.0.1)    4.028 ms    <...truncated...>
+     2  25.2.2.2  (25.2.2.2)    24.343 ms   <...truncated...>
+     3  10.2.0.50 (10.2.0.50)   70.862 ms   <...truncated...>
     ```
 
   - verify sa negotiation on R1
     - `OM_IDLE`: not build tunnel unless traffic triggered
 
-    ```bash
+    ```text
     R1# undebug all
 
     R1# show crypto isakmp sa
@@ -356,7 +356,7 @@ Trainer: Keith Barker
       #pkts decaps: 10, #pkts decrypt: 10, #pkts verify: 10
       #pkts compressed: 0, #pkts decompressed: 0
       #pkts not compressed: 0, #pkts compr. failed: 0
-      #pkts errros 0, #recv errors 0
+      #pkts errors 0, #recv errors 0
 
        local crypto endpt.: 15.1.1.1, remote crypto endpt.: 25.2.2.2
        plaintext mtu 1422, path mtu 1500, ip mtu 1500, ip mtu idb GigabitEthernet0/1

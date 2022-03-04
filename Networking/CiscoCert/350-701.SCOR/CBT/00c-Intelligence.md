@@ -745,7 +745,7 @@
   - observe inbound and outbound traffic on R1 g/0
   - expotor: IP addr = 1.2.3.4/32, traffic type = UDP:6783
 
-  ```bash
+  ```text
   R1# show ip int brief
   Interface           IP-Address  OK? Method  Status                Protocol
   Ethernet0/0         unassigned  YES NVRAM   administratively down down
@@ -789,7 +789,7 @@
   SrcIf     SrcIPaddress    DstIf     DstIPaddress    Pr  SrcP  DstP  Pkts
   ```
 
-  ```bash
+  ```text
   ! generate traffic
   R8# show ip int brief
   Interface           IP-Address  OK? Method  Status                Protocol
@@ -854,7 +854,7 @@
     - protocol to export: IPFIX
   - `flow record SW_RECORD` specify what to pay attention and what to collect
 
-  ```bash
+  ```text
   RA# show run int g0/3
   !
   interface GigabitEthernet0/3
@@ -888,7 +888,7 @@
    ...
   ```
 
-  ```bash
+  ```text
   R1# show run | sec flow export
   flow expoter EFExport
    destination 172.20.30.155 vrf Internal

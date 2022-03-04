@@ -79,7 +79,7 @@ Trainer: Keith Barker
 
 - Demo: config PVLAN
 
-  ```bash
+  ```text
   SW# conf t
 
   ! reset existed config
@@ -143,7 +143,7 @@ Trainer: Keith Barker
 
 - Demo: verify PVLAN
 
-  ```bash
+  ```text
   SW1# show int brief
   Port      Name     Status       Vlan       Duplex  Speed Type
   Gi0/0              connect      1          a-full  auto  RJ45
@@ -255,7 +255,7 @@ Trainer: Keith Barker
     - config to allow Roamer to access PC 300-1 & 300-2
     - verify the reachability from Roamer
 
-  ```bash
+  ```text
   SW2# show vlan private-vlan
   Primary Secondary Type              Ports
   ------- --------- ----------------- -------------------------

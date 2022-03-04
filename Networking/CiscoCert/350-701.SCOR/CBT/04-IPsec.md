@@ -28,19 +28,26 @@ Trainer: Keith Barker
   - prefix ESP header: port 50
   - prefix new IP header: src = R1, dst = R2
 
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 30vw;"
+      onclick= "window.open('page')"
+      src    = "img/03-netarch.png"
+      alt    = "Example network topology"
+      title  = "Example network topology"
+    />
+  </figure>
+
   <div style="margin: 0.5em; display: flex; justify-content: center; align-items: center; flex-flow: row wrap;">
-    <a href="url" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
-        src   = "img/03-netarch.png"
-        alt   = "Example network topology"
-        title = "Example network topology"
+    <a href="https://www.ciscopress.com/articles/article.asp?p=25477" ismap target="_blank">
+      <img style="margin: 0.1em;" height=170
+        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig2.gif"
+        alt   = "AH tunnel versus transport mode."
+        title = "AH tunnel versus transport mode."
       >
-    </a>
-    <a href="http://www.sharetechnote.com/html/IP_Network_IPSec_ESP.html" ismap target="_blank">
-      <img style="margin: 0.1em;" height=150
-        src   = "http://www.sharetechnote.com/image/IP_Security_IPSec_ESP_01.png"
-        alt   = "IPsec packet format"
-        title = "IPsec packet format"
+      <img style="margin: 0.1em;" height=170
+        src   = "https://ptgmedia.pearsoncmg.com/images/art_mason_ipsec2/elementLinks/mason2_fig3.gif"
+        alt   = "ESP tunnel versus transport mode"
+        title = "ESP tunnel versus transport mode"
       >
     </a>
   </div>
@@ -60,7 +67,7 @@ Trainer: Keith Barker
     - old fashion and not flexible
   - virtual tunnel interface (VTI)
     - using GRE on virtual tunnel
-    - applying crypto on the traffic abd sending via the virtual tunnel
+    - applying crypto on the traffic and sending via the virtual tunnel
 
 
 ## IKEv1 and IKEv2
@@ -121,19 +128,19 @@ Trainer: Keith Barker
       <tr><td>Exchange modes:<br><ul><li>Main mode</li><li>Aggressive mode</li> </ul></td> <td>Only one exchange procedure is defined.<br>Exchange modes were obsoleted.</td></tr>
       <tr><td>Exchanged messages to establish VPN.<br> <ul> <li>Main mode: 9 messages    </li> <li>Aggressive mode: 6 messages    </li> </ul></td> <td>Only 4 messages.</td></tr>
       <tr> <td>Authentication methods ( 4 methods ):  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> <li>Public Key Encryption    </li> <li>Revised Mode of Public key Encryption    </li> </ul></td> <td>Only 2 methods:  <br> <ul> <li>Pre-Shared Key (PSK)    </li> <li>Digital Signature (RSA-Sig)    </li> </ul></td></tr>
-      <tr> <td>Both peers must use the same authentication  method.</td> <td> <br>  Each peer can use a different authentication method (Asymmetrical authentication).<br>(e.g. Initiator: PSK and Responder: RSA-Sig)  <br> <br> </td></tr>
-      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selectorbetween peers is required.</li> </ul></td> <td> <br> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
-      <tr> <td>Lifetime for SAs:  <br>  &nbsp; Agreement between peers is required.</td> <td> <br>  NOT negotiated. Each peer can  delete&nbsp;SAs anytime by exchanging DELETE payloads.<br> <br> </td></tr>
-      <tr> <td>Multi-hosting:  <br>  &nbsp; Basically, NOT supported.</td> <td> <br>  Supported by using multiple IDs on  a single  IP address and port pair.<br> <br> </td></tr>
+      <tr> <td>Both peers must use the same authentication  method.</td> <td>  Each peer can use a different authentication method (Asymmetrical authentication).<br>(e.g. Initiator: PSK and Responder: RSA-Sig)  <br> </td></tr>
+      <tr> <td>Traffic selector:  <br> <ul> <li>Only a combination of a source IP range, a destination IP range,a source port and a destination port is allowed per IPsec SA.</li> <li>Exact agreement of the traffic selectorbetween peers is required.</li> </ul></td> <td> <ul> <li>Multiple combinations of a source IP range, a destination IP range,a source port range and a destination port range are allowed per Child SA. Of course, IPv4 and IPv6 addresses can be configuredfor the same Child SA.</li> <li>Narrowing traffic selectors between peersis allowed.</li> </ul></td></tr>
+      <tr> <td>Lifetime for SAs:  <br>  &nbsp; Agreement between peers is required.</td> <td>  NOT negotiated. Each peer can  delete&nbsp;SAs anytime by exchanging DELETE payloads.<br> </td></tr>
+      <tr> <td>Multi-hosting:  <br>  &nbsp; Basically, NOT supported.</td> <td>  Supported by using multiple IDs on  a single  IP address and port pair.<br> </td></tr>
       <tr> <td>Rekeying:  <br>  &nbsp; NOT defined.</td> <td>Defined.</td></tr>
       <tr> <td>NAT Traversal:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
       <tr> <td>Dead Peer Detection / Keep-alive for SAs:  <br>  &nbsp; Defined as an extension.</td> <td>Supported by default.</td></tr>
-      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td> <br>  Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated withIKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
-      <tr> <td>Multi-homing:<br>&nbsp; Basically, NOT supported.</td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
-      <tr> <td>Mobile Clients:<br>  &nbsp; Basically, NOT supported. </td> <td> <br>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> <br> </td></tr>
-      <tr> <td>DoS protections:  <br>  &nbsp; Basically, NOT supported. </td> <td> <br> <ul> <li>Anti-replay function is supported.</li> <li>'Cookies' is supported for mitigating flooding attacks.</li> <li>Many vulnerabilities in IKEv1 were fixed.</li> </ul></td></tr>
-      <tr> <td>Less reliable than IKEv2.</td> <td> <br>More reliable.<br> <ul> <li>All message types are defined as Request and Response pairs.</li> <li>A procedure to delete SAs is defined.</li> <li> A procedure to retransmit a message is defined.</li> </ul></td></tr>
-      <tr> <td>Extensions are very poor.</td> <td> <br>  Useful extentions in actual network environment.<br> <br> <ul> <li>"Redirect Mechanism for IKEv2 (RFC5685)" </li> <li>"IKEv2 Session Resumption (RFC5723)" </li> <li>"An Extension for EAP-Only Authentication in IKEv2 (RFC5998)" </li> <li>"Protocol Support for High Availability of IKEv2/IPsec (RFC6311)" </li> <li>"A Quick Crash Detection Method for the Internet Key Exchange Protocol (IKE) (RFC6290)" </li> </ul> <div style="margin-left: 320px;"> etc.<br> </div> See the <a target="_blank" href="http://datatracker.ietf.org/wg/ipsecme/">IETF  ipsecme-WG's web page</a>. </td></tr>
+      <tr> <td>Remote Access VPN:  <br>  NOT defined. Supported by vender-specific implementations:  <br> <ul> <li>Mode config    </li> <li>XAUTH    </li> </ul></td> <td>  Supported by default:  <br> <ul> <li>Extensible Authentication Protocol (EAP)    </li> <li>User authentication over EAP is associated withIKE's authentication.</li> <li>Configuration payload (CP)    </li> </ul></td></tr>
+      <tr> <td>Multi-homing:<br>&nbsp; Basically, NOT supported.</td> <td>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> </td></tr>
+      <tr> <td>Mobile Clients:<br>  &nbsp; Basically, NOT supported. </td> <td>  Supported by MOBIKE (IKEv2 Mobility and Multihoming Protocol:<a target="_blank" href="http://www.ietf.org/rfc/rfc4555.txt">RFC 4555</a>).<br> </td></tr>
+      <tr> <td>DoS protections:  <br>  &nbsp; Basically, NOT supported. </td> <td> <ul> <li>Anti-replay function is supported.</li> <li>'Cookies' is supported for mitigating flooding attacks.</li> <li>Many vulnerabilities in IKEv1 were fixed.</li> </ul></td></tr>
+      <tr> <td>Less reliable than IKEv2.</td> <td>More reliable.<br> <ul> <li>All message types are defined as Request and Response pairs.</li> <li>A procedure to delete SAs is defined.</li> <li> A procedure to retransmit a message is defined.</li> </ul></td></tr>
+      <tr> <td>Extensions are very poor.</td> <td>  Useful extentions in actual network environment.<br> <ul> <li>"Redirect Mechanism for IKEv2 (RFC5685)" </li> <li>"IKEv2 Session Resumption (RFC5723)" </li> <li>"An Extension for EAP-Only Authentication in IKEv2 (RFC5998)" </li> <li>"Protocol Support for High Availability of IKEv2/IPsec (RFC6311)" </li> <li>"A Quick Crash Detection Method for the Internet Key Exchange Protocol (IKE) (RFC6290)" </li> </ul> <div style="margin-left: 320px;"> etc.<br> </div> See the <a target="_blank" href="http://datatracker.ietf.org/wg/ipsecme/">IETF  ipsecme-WG's web page</a>. </td></tr>
     </tbody>
   </table>
 
@@ -229,6 +236,77 @@ Trainer: Keith Barker
   </figure>
 
 
+- Comparison of DMVPN, FlexVPN and GETVPN
+
+  <table style="font-family: Arial,Helvetica,Sans-Serif; margin: 0 auto; width: 60vw;" cellspacing=0 cellpadding=5 border=1 align="center">
+    <caption style="font-size: 1.2em; margin: 0.2em;"><a href="https://bit.ly/33ThaKm">GETVPN Solution Comparison</a></caption>
+    <colgroup>
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+    </colgroup>
+    <thead>
+    <tr style="font-size: 1.0em; vertical-align:middle;">
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">Solution</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">DMVPN</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">FlexVPN</th>
+      <th scope=row style="text-align: center; background-color: #3d64ff; color: #ffffff;">GETVPN</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Infrastructure Network</td>
+      <td style="text-align: center;">Public Internet Transport</td>
+      <td style="text-align: center;">Public Internet Transport</td>
+      <td style="text-align: center;">Private IP Transport </td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Network Style</td>
+      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Site-to-Site)</td>
+      <td style="text-align: center;">Hub-Spoke and Spoke-to- Spoke; (Client-to-Site and Site-to-Site)</td>
+      <td style="text-align: center;">Any-to-Any; (Site-to-Site)</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Routing</td>
+      <td style="text-align: center;">Dynamic routing on tunnels</td>
+      <td style="text-align: center;">Dynamic routing on tunnels or IKEv2 routing or IKEv2 Dynamic routing</td>
+      <td style="text-align: center;">Dynamic routing on IP WAN</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Failover Redundancy</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+      <td style="text-align: center;">Route Distribution Model</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">Encryption Style </td>
+      <td style="text-align: center;">Peer-to-Peer Protection</td>
+      <td style="text-align: center;">Peer-to-Peer Protection</td>
+      <td style="text-align: center;">Group Protection</td>
+    </tr>
+    <tr style="vertical-align:middle">
+      <td style="font-weight: bold;">IP Multicast</td>
+      <td style="text-align: center;">Multicast replication at hub</td>
+      <td style="text-align: center;">Multicast replication at hub</td>
+      <td style="text-align: center;">Multicast replication in IP WAN network </td>
+    </tr>
+    </tbody>
+  </table><br/>
+
+
+- Tunnel comparison
+
+  <figure style="margin: 0.5em; display: flex; justify-content: center; align-items: center;">
+    <img style="margin: 0.1em; padding-top: 0.5em; width: 50vw;"
+      onclick= "window.open('https://bit.ly/3IqQQWR')"
+      src    = "img/04-tunnel_comparison.jpeg"
+      alt    = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
+      title  = "Comparisons of GETVPN, DMVPN, GREVPN, and IPsec VPN"
+    />
+  </figure>
+
+
 ## NAT Traversal
 
 - NAT Traversal concept
@@ -236,7 +314,7 @@ Trainer: Keith Barker
   - NAT/PAT btw PC1 and PC2
   - NAT/PAT unable to handle Layer 4 ESP protocol (port 50)
   - implemented in many IKEv1 and all IKEv2
-  - using hash value on th eIP address, receiver detects NAT/PAT used in btw
+  - using hash value on the IP address, receiver detects NAT/PAT used in btw
   - using UDP instead of ESP for the tunnel
     - prefix UDP header than IP header for encrypted packet
     - prefix an IP header w/ original src and dst addresses
@@ -265,13 +343,13 @@ Trainer: Keith Barker
   - the process applied for both IKEv1 & IKEv2
   - pkt: src = CLT, dst = SRV, protocol = ISAKMP, info = IKE SA INIT MID=00 Initiator Request
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59704, Dst Port: 500</span>
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59704, Dst Port: 500</span>
     - Payload: Internet Security Association and Key Management Protocol
       - Payload: Notify (41) - NAT_DETECTION_SOURCE_IP
       - Payload: Notify (41) - NAT_DETECTION_DESTINATION_IP
   - pkt: src = CLT, dst = SRV, protocol = ESP, Info = ESP (SPI=0xc2a16345) [randomly selected one]
     - L3: Internet Protocol Version 4, Src: 10.5.5.51, Dst: 15.1.1.1 $\to$ Protocol: UDP (17)
-    - L4: User Datagram Protocol, <span style="color: cyan;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
+    - L4: User Datagram Protocol, <span style="color: #bb6600;">Src Port : 59705, Dst Port: 4500</span>, UDP Encapsulation of IPsec Packets
     - Payload: Encapsulating Security Payload
 
 

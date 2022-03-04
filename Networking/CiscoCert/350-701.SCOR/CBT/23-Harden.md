@@ -18,6 +18,13 @@ Trainer: keith Barker
 ## Device Hardening Overview
 
 - Device hardening overview
+  - the process to eliminate a means of attack by 
+    - patching vulnerabilities
+    - turning off non-essential services and 
+    - configuring system with security controls
+      - password management
+      - file permissions and 
+      - disabling unused network ports
   - improving security possibly broken 
     - management plane
     - control plane
@@ -45,8 +52,8 @@ Trainer: keith Barker
 
 - General Management Plane Hardening
   - password mgmt: TACACS+ + local user account
-    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plantext secrete, type 9 password
-    - `secrete`: using type 5 password
+    - `algorithm-type [md5 | scrypt | sha256]`: algorithm to user for hashing the plaintext secret, type 9 password
+    - `secret`: using type 5 password
   - enhanced password security
   - login password retry lockout
   - no Service Password-Recovery
@@ -66,8 +73,8 @@ Trainer: keith Barker
   ```text
   ! local user account
   R1(config)# username admin1 privilege 15 password Cisco!23
-  R1(config)# username admin1 privilege 15 secrete Cisco!23
-  R1(config)# username admin1 privilege 15 algorithm-type scrypt secrete Cisco!23
+  R1(config)# username admin1 privilege 15 secret Cisco!23
+  R1(config)# username admin1 privilege 15 algorithm-type scrypt secret Cisco!23
 
   ! disable unused services
   R1# show control-plane host open-ports
@@ -75,6 +82,7 @@ Trainer: keith Barker
   Prot        Local Address      Foreign Address             Service    State
    tcp                 *:23                  *:0              Telnet   LISTEN
 
+  ! enable ssh & https
   R1(config)# line vty 0 4
   R1(config-line)# transport input ssh
   R1(config-line)# exit
@@ -164,6 +172,7 @@ Trainer: keith Barker
   R1(config-archive)# log config
   R1(config-archive-log-cfg)# end
 
+  ! verify rollback
   R1# dir 
   ! a copy of curren running config
   R1# write
@@ -189,7 +198,14 @@ Trainer: keith Barker
   - Proxy ARP
 
 
-- Limit CPU Impact of Control Plane Traffi
+- General Control Plane Hardening
+  - consider to turn off the features
+  - IP ICMP Redirects: suggesting better routes
+  - ICMP Unreachables: hacker flooding to explore existence of subnets
+  - Proxy ARP
+
+
+- Limit CPU Impact of Control Plane Traffic
   - Understand Control Plane Traffic: drop pkts before impact CPU
   - Infrastructure ACLs (*)
   - Receive ACLs (*)
@@ -208,7 +224,7 @@ Trainer: keith Barker
 
 - Secure Interior Gateway Protocols
   - Routing Protocol Authentication and Verification with Message Digest 5
-  - Passive-Interface Commands
+  - Passive-Interface Commands: stop sending routing updates
   - Route Filtering
   - Routing Process Resource Consumption
 
