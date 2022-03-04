@@ -61,21 +61,6 @@ Institution: CBY Nugget
 - Authentication
 - Components of Cryptography Summary
 
-
-### 04\. [IPsec Fundamentals](04-IPsec.md)
-
-- Introduction to IPsec
-- IPsec Overview
-- IKEv1 and IKEv2
-- Crypto Map IPsec
-- VTI IPsec
-- DMVPNs
-- FlexVPN
-- GET VPN
-- NAT Traversal
-- IPsec Fundamentals Summary
-
-
 ### 23\. [Network Infrastructure Device Hardening](23-Harden.md)
 
 - Introduction to Device Hardening
@@ -90,6 +75,21 @@ Institution: CBY Nugget
 
 
 ## Virtual Private Networks (VPNs)
+
+
+### 04\. [IPsec Fundamentals](04-IPsec.md)
+
+- Introduction to IPsec
+- IPsec Overview
+- IKEv1 and IKEv2
+- Crypto Map IPsec
+- VTI IPsec
+- DMVPNs
+- FlexVPN
+- GET VPN
+- NAT Traversal
+- IPsec Fundamentals Summary
+
 
 ### 05\. [Cisco Router Site-To-Site VPNs](05-S2SVPN.md)
 
